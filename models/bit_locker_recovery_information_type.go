@@ -15,7 +15,7 @@ const (
 func (i BitLockerRecoveryInformationType) String() string {
     return []string{"passwordAndKey", "passwordOnly"}[i]
 }
-func ParseBitLockerRecoveryInformationType(v string) (interface{}, error) {
+func ParseBitLockerRecoveryInformationType(v string) (any, error) {
     result := PASSWORDANDKEY_BITLOCKERRECOVERYINFORMATIONTYPE
     switch v {
         case "passwordAndKey":

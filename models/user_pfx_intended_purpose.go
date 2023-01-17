@@ -21,7 +21,7 @@ const (
 func (i UserPfxIntendedPurpose) String() string {
     return []string{"unassigned", "smimeEncryption", "smimeSigning", "vpn", "wifi"}[i]
 }
-func ParseUserPfxIntendedPurpose(v string) (interface{}, error) {
+func ParseUserPfxIntendedPurpose(v string) (any, error) {
     result := UNASSIGNED_USERPFXINTENDEDPURPOSE
     switch v {
         case "unassigned":

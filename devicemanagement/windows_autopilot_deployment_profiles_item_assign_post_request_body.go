@@ -7,7 +7,7 @@ import (
 // WindowsAutopilotDeploymentProfilesItemAssignPostRequestBody 
 type WindowsAutopilotDeploymentProfilesItemAssignPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The deviceIds property
     deviceIds []string
 }
@@ -15,7 +15,7 @@ type WindowsAutopilotDeploymentProfilesItemAssignPostRequestBody struct {
 func NewWindowsAutopilotDeploymentProfilesItemAssignPostRequestBody()(*WindowsAutopilotDeploymentProfilesItemAssignPostRequestBody) {
     m := &WindowsAutopilotDeploymentProfilesItemAssignPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWindowsAutopilotDeploymentProfilesItemAssignPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateWindowsAutopilotDeploymentProfilesItemAssignPostRequestBodyFromDiscri
     return NewWindowsAutopilotDeploymentProfilesItemAssignPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsAutopilotDeploymentProfilesItemAssignPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *WindowsAutopilotDeploymentProfilesItemAssignPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeviceIds gets the deviceIds property value. The deviceIds property
@@ -66,7 +66,7 @@ func (m *WindowsAutopilotDeploymentProfilesItemAssignPostRequestBody) Serialize(
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsAutopilotDeploymentProfilesItemAssignPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *WindowsAutopilotDeploymentProfilesItemAssignPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeviceIds sets the deviceIds property value. The deviceIds property

@@ -21,7 +21,7 @@ const (
 func (i IntendedPurpose) String() string {
     return []string{"unassigned", "smimeEncryption", "smimeSigning", "vpn", "wifi"}[i]
 }
-func ParseIntendedPurpose(v string) (interface{}, error) {
+func ParseIntendedPurpose(v string) (any, error) {
     result := UNASSIGNED_INTENDEDPURPOSE
     switch v {
         case "unassigned":

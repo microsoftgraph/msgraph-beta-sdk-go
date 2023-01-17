@@ -23,7 +23,7 @@ const (
 func (i UserPfxPaddingScheme) String() string {
     return []string{"none", "pkcs1", "oaepSha1", "oaepSha256", "oaepSha384", "oaepSha512"}[i]
 }
-func ParseUserPfxPaddingScheme(v string) (interface{}, error) {
+func ParseUserPfxPaddingScheme(v string) (any, error) {
     result := NONE_USERPFXPADDINGSCHEME
     switch v {
         case "none":

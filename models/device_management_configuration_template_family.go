@@ -37,7 +37,7 @@ const (
 func (i DeviceManagementConfigurationTemplateFamily) String() string {
     return []string{"none", "endpointSecurityAntivirus", "endpointSecurityDiskEncryption", "endpointSecurityFirewall", "endpointSecurityEndpointDetectionAndResponse", "endpointSecurityAttackSurfaceReduction", "endpointSecurityAccountProtection", "endpointSecurityApplicationControl", "endpointSecurityEndpointPrivilegeManagement", "enrollmentConfiguration", "appQuietTime", "baseline", "unknownFutureValue"}[i]
 }
-func ParseDeviceManagementConfigurationTemplateFamily(v string) (interface{}, error) {
+func ParseDeviceManagementConfigurationTemplateFamily(v string) (any, error) {
     result := NONE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
     switch v {
         case "none":

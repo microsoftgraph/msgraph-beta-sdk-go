@@ -14,7 +14,7 @@ const (
 func (i CloudPcUserAccountType) String() string {
     return []string{"standardUser", "administrator", "unknownFutureValue"}[i]
 }
-func ParseCloudPcUserAccountType(v string) (interface{}, error) {
+func ParseCloudPcUserAccountType(v string) (any, error) {
     result := STANDARDUSER_CLOUDPCUSERACCOUNTTYPE
     switch v {
         case "standardUser":

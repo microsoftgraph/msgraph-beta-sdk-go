@@ -7,7 +7,7 @@ import (
 // JoinedGroupsGetByIdsPostRequestBody 
 type JoinedGroupsGetByIdsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The ids property
     ids []string
     // The types property
@@ -17,7 +17,7 @@ type JoinedGroupsGetByIdsPostRequestBody struct {
 func NewJoinedGroupsGetByIdsPostRequestBody()(*JoinedGroupsGetByIdsPostRequestBody) {
     m := &JoinedGroupsGetByIdsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateJoinedGroupsGetByIdsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateJoinedGroupsGetByIdsPostRequestBodyFromDiscriminatorValue(parseNode i
     return NewJoinedGroupsGetByIdsPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *JoinedGroupsGetByIdsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *JoinedGroupsGetByIdsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -92,7 +92,7 @@ func (m *JoinedGroupsGetByIdsPostRequestBody) Serialize(writer i878a80d2330e89d2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *JoinedGroupsGetByIdsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *JoinedGroupsGetByIdsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIds sets the ids property value. The ids property

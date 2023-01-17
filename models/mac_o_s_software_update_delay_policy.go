@@ -21,7 +21,7 @@ const (
 func (i MacOSSoftwareUpdateDelayPolicy) String() string {
     return []string{"none", "delayOSUpdateVisibility", "delayAppUpdateVisibility", "unknownFutureValue", "delayMajorOsUpdateVisibility"}[i]
 }
-func ParseMacOSSoftwareUpdateDelayPolicy(v string) (interface{}, error) {
+func ParseMacOSSoftwareUpdateDelayPolicy(v string) (any, error) {
     result := NONE_MACOSSOFTWAREUPDATEDELAYPOLICY
     switch v {
         case "none":

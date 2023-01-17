@@ -7,7 +7,7 @@ import (
 // AppliedConditionalAccessPolicy 
 type AppliedConditionalAccessPolicy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The custom authentication strength enforced in a Conditional Access policy.
     authenticationStrength AuthenticationStrengthable
     // Refers to the conditional access policy conditions that are not satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client,ipAddressSeenByAzureAD,ipAddressSeenByResourceProvider,unknownFutureValue,servicePrincipals,servicePrincipalRisk. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals,servicePrincipalRisk.
@@ -37,7 +37,7 @@ type AppliedConditionalAccessPolicy struct {
 func NewAppliedConditionalAccessPolicy()(*AppliedConditionalAccessPolicy) {
     m := &AppliedConditionalAccessPolicy{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAppliedConditionalAccessPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +45,7 @@ func CreateAppliedConditionalAccessPolicyFromDiscriminatorValue(parseNode i878a8
     return NewAppliedConditionalAccessPolicy(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AppliedConditionalAccessPolicy) GetAdditionalData()(map[string]interface{}) {
+func (m *AppliedConditionalAccessPolicy) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAuthenticationStrength gets the authenticationStrength property value. The custom authentication strength enforced in a Conditional Access policy.
@@ -335,7 +335,7 @@ func (m *AppliedConditionalAccessPolicy) Serialize(writer i878a80d2330e89d268963
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AppliedConditionalAccessPolicy) SetAdditionalData(value map[string]interface{})() {
+func (m *AppliedConditionalAccessPolicy) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAuthenticationStrength sets the authenticationStrength property value. The custom authentication strength enforced in a Conditional Access policy.

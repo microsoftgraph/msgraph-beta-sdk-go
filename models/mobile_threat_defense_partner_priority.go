@@ -17,7 +17,7 @@ const (
 func (i MobileThreatDefensePartnerPriority) String() string {
     return []string{"defenderOverThirdPartyPartner", "thirdPartyPartnerOverDefender", "unknownFutureValue"}[i]
 }
-func ParseMobileThreatDefensePartnerPriority(v string) (interface{}, error) {
+func ParseMobileThreatDefensePartnerPriority(v string) (any, error) {
     result := DEFENDEROVERTHIRDPARTYPARTNER_MOBILETHREATDEFENSEPARTNERPRIORITY
     switch v {
         case "defenderOverThirdPartyPartner":

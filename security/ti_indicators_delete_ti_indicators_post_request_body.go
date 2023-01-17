@@ -7,7 +7,7 @@ import (
 // TiIndicatorsDeleteTiIndicatorsPostRequestBody 
 type TiIndicatorsDeleteTiIndicatorsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The value property
     value []string
 }
@@ -15,7 +15,7 @@ type TiIndicatorsDeleteTiIndicatorsPostRequestBody struct {
 func NewTiIndicatorsDeleteTiIndicatorsPostRequestBody()(*TiIndicatorsDeleteTiIndicatorsPostRequestBody) {
     m := &TiIndicatorsDeleteTiIndicatorsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTiIndicatorsDeleteTiIndicatorsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateTiIndicatorsDeleteTiIndicatorsPostRequestBodyFromDiscriminatorValue(p
     return NewTiIndicatorsDeleteTiIndicatorsPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TiIndicatorsDeleteTiIndicatorsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *TiIndicatorsDeleteTiIndicatorsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -66,7 +66,7 @@ func (m *TiIndicatorsDeleteTiIndicatorsPostRequestBody) Serialize(writer i878a80
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TiIndicatorsDeleteTiIndicatorsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *TiIndicatorsDeleteTiIndicatorsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetValue sets the value property value. The value property

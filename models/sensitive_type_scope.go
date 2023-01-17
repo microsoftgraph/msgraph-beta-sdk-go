@@ -13,7 +13,7 @@ const (
 func (i SensitiveTypeScope) String() string {
     return []string{"fullDocument", "partialDocument"}[i]
 }
-func ParseSensitiveTypeScope(v string) (interface{}, error) {
+func ParseSensitiveTypeScope(v string) (any, error) {
     result := FULLDOCUMENT_SENSITIVETYPESCOPE
     switch v {
         case "fullDocument":

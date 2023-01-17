@@ -7,7 +7,7 @@ import (
 // SharePointOneDriveOptions 
 type SharePointOneDriveOptions struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The type of search content. The possible values are: privateContent, sharedContent. Read-only.
     includeContent *SearchContent
     // The OdataType property
@@ -17,7 +17,7 @@ type SharePointOneDriveOptions struct {
 func NewSharePointOneDriveOptions()(*SharePointOneDriveOptions) {
     m := &SharePointOneDriveOptions{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSharePointOneDriveOptionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateSharePointOneDriveOptionsFromDiscriminatorValue(parseNode i878a80d233
     return NewSharePointOneDriveOptions(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SharePointOneDriveOptions) GetAdditionalData()(map[string]interface{}) {
+func (m *SharePointOneDriveOptions) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -85,7 +85,7 @@ func (m *SharePointOneDriveOptions) Serialize(writer i878a80d2330e89d26896388a3f
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SharePointOneDriveOptions) SetAdditionalData(value map[string]interface{})() {
+func (m *SharePointOneDriveOptions) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIncludeContent sets the includeContent property value. The type of search content. The possible values are: privateContent, sharedContent. Read-only.

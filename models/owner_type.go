@@ -17,7 +17,7 @@ const (
 func (i OwnerType) String() string {
     return []string{"unknown", "company", "personal"}[i]
 }
-func ParseOwnerType(v string) (interface{}, error) {
+func ParseOwnerType(v string) (any, error) {
     result := UNKNOWN_OWNERTYPE
     switch v {
         case "unknown":

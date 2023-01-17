@@ -7,7 +7,7 @@ import (
 // TeamworkHardwareConfiguration 
 type TeamworkHardwareConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The compute property
     compute TeamworkPeripheralable
     // The hdmiIngest property
@@ -21,7 +21,7 @@ type TeamworkHardwareConfiguration struct {
 func NewTeamworkHardwareConfiguration()(*TeamworkHardwareConfiguration) {
     m := &TeamworkHardwareConfiguration{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTeamworkHardwareConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateTeamworkHardwareConfigurationFromDiscriminatorValue(parseNode i878a80
     return NewTeamworkHardwareConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkHardwareConfiguration) GetAdditionalData()(map[string]interface{}) {
+func (m *TeamworkHardwareConfiguration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCompute gets the compute property value. The compute property
@@ -128,7 +128,7 @@ func (m *TeamworkHardwareConfiguration) Serialize(writer i878a80d2330e89d2689638
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkHardwareConfiguration) SetAdditionalData(value map[string]interface{})() {
+func (m *TeamworkHardwareConfiguration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCompute sets the compute property value. The compute property

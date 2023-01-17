@@ -19,7 +19,7 @@ const (
 func (i SetupStatus) String() string {
     return []string{"unknown", "notRegisteredYet", "registeredSetupNotStarted", "registeredSetupInProgress", "registrationAndSetupCompleted", "registrationFailed", "registrationTimedOut", "disabled"}[i]
 }
-func ParseSetupStatus(v string) (interface{}, error) {
+func ParseSetupStatus(v string) (any, error) {
     result := UNKNOWN_SETUPSTATUS
     switch v {
         case "unknown":

@@ -7,7 +7,7 @@ import (
 // AlertDataReferenceString 
 type AlertDataReferenceString struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The displayName property
     displayName *string
     // The OdataType property
@@ -17,7 +17,7 @@ type AlertDataReferenceString struct {
 func NewAlertDataReferenceString()(*AlertDataReferenceString) {
     m := &AlertDataReferenceString{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAlertDataReferenceStringFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateAlertDataReferenceStringFromDiscriminatorValue(parseNode i878a80d2330
     return NewAlertDataReferenceString(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AlertDataReferenceString) GetAdditionalData()(map[string]interface{}) {
+func (m *AlertDataReferenceString) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDisplayName gets the displayName property value. The displayName property
@@ -84,7 +84,7 @@ func (m *AlertDataReferenceString) Serialize(writer i878a80d2330e89d26896388a3f4
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AlertDataReferenceString) SetAdditionalData(value map[string]interface{})() {
+func (m *AlertDataReferenceString) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. The displayName property

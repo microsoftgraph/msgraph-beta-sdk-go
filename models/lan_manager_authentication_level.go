@@ -23,7 +23,7 @@ const (
 func (i LanManagerAuthenticationLevel) String() string {
     return []string{"lmAndNltm", "lmNtlmAndNtlmV2", "lmAndNtlmOnly", "lmAndNtlmV2", "lmNtlmV2AndNotLm", "lmNtlmV2AndNotLmOrNtm"}[i]
 }
-func ParseLanManagerAuthenticationLevel(v string) (interface{}, error) {
+func ParseLanManagerAuthenticationLevel(v string) (any, error) {
     result := LMANDNLTM_LANMANAGERAUTHENTICATIONLEVEL
     switch v {
         case "lmAndNltm":

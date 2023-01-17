@@ -7,7 +7,7 @@ import (
 // IsManagedAppUserBlockedResponse 
 type IsManagedAppUserBlockedResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The value property
     value *bool
 }
@@ -15,7 +15,7 @@ type IsManagedAppUserBlockedResponse struct {
 func NewIsManagedAppUserBlockedResponse()(*IsManagedAppUserBlockedResponse) {
     m := &IsManagedAppUserBlockedResponse{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateIsManagedAppUserBlockedResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateIsManagedAppUserBlockedResponseFromDiscriminatorValue(parseNode i878a
     return NewIsManagedAppUserBlockedResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IsManagedAppUserBlockedResponse) GetAdditionalData()(map[string]interface{}) {
+func (m *IsManagedAppUserBlockedResponse) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *IsManagedAppUserBlockedResponse) Serialize(writer i878a80d2330e89d26896
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IsManagedAppUserBlockedResponse) SetAdditionalData(value map[string]interface{})() {
+func (m *IsManagedAppUserBlockedResponse) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetValue sets the value property value. The value property

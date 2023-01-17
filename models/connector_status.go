@@ -13,7 +13,7 @@ const (
 func (i ConnectorStatus) String() string {
     return []string{"active", "inactive"}[i]
 }
-func ParseConnectorStatus(v string) (interface{}, error) {
+func ParseConnectorStatus(v string) (any, error) {
     result := ACTIVE_CONNECTORSTATUS
     switch v {
         case "active":

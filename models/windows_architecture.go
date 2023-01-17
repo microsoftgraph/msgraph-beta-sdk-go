@@ -23,7 +23,7 @@ const (
 func (i WindowsArchitecture) String() string {
     return []string{"none", "x86", "x64", "arm", "neutral", "arm64"}[i]
 }
-func ParseWindowsArchitecture(v string) (interface{}, error) {
+func ParseWindowsArchitecture(v string) (any, error) {
     result := NONE_WINDOWSARCHITECTURE
     switch v {
         case "none":

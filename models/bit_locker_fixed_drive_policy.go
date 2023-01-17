@@ -7,7 +7,7 @@ import (
 // BitLockerFixedDrivePolicy bitLocker Fixed Drive Policies.
 type BitLockerFixedDrivePolicy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Select the encryption method for fixed drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.
     encryptionMethod *BitLockerEncryptionMethod
     // The OdataType property
@@ -21,7 +21,7 @@ type BitLockerFixedDrivePolicy struct {
 func NewBitLockerFixedDrivePolicy()(*BitLockerFixedDrivePolicy) {
     m := &BitLockerFixedDrivePolicy{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateBitLockerFixedDrivePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateBitLockerFixedDrivePolicyFromDiscriminatorValue(parseNode i878a80d233
     return NewBitLockerFixedDrivePolicy(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BitLockerFixedDrivePolicy) GetAdditionalData()(map[string]interface{}) {
+func (m *BitLockerFixedDrivePolicy) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEncryptionMethod gets the encryptionMethod property value. Select the encryption method for fixed drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.
@@ -129,7 +129,7 @@ func (m *BitLockerFixedDrivePolicy) Serialize(writer i878a80d2330e89d26896388a3f
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BitLockerFixedDrivePolicy) SetAdditionalData(value map[string]interface{})() {
+func (m *BitLockerFixedDrivePolicy) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEncryptionMethod sets the encryptionMethod property value. Select the encryption method for fixed drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.

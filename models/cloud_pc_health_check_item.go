@@ -8,7 +8,7 @@ import (
 // CloudPcHealthCheckItem 
 type CloudPcHealthCheckItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Additional message for this health check.
     additionalDetails *string
     // The connectivity health check item name.
@@ -24,7 +24,7 @@ type CloudPcHealthCheckItem struct {
 func NewCloudPcHealthCheckItem()(*CloudPcHealthCheckItem) {
     m := &CloudPcHealthCheckItem{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCloudPcHealthCheckItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,7 +32,7 @@ func CreateCloudPcHealthCheckItemFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewCloudPcHealthCheckItem(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CloudPcHealthCheckItem) GetAdditionalData()(map[string]interface{}) {
+func (m *CloudPcHealthCheckItem) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAdditionalDetails gets the additionalDetails property value. Additional message for this health check.
@@ -152,7 +152,7 @@ func (m *CloudPcHealthCheckItem) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CloudPcHealthCheckItem) SetAdditionalData(value map[string]interface{})() {
+func (m *CloudPcHealthCheckItem) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAdditionalDetails sets the additionalDetails property value. Additional message for this health check.

@@ -18,7 +18,7 @@ const (
 func (i ProtocolType) String() string {
     return []string{"none", "oAuth2", "ropc", "wsFederation", "saml20", "deviceCode", "unknownFutureValue"}[i]
 }
-func ParseProtocolType(v string) (interface{}, error) {
+func ParseProtocolType(v string) (any, error) {
     result := NONE_PROTOCOLTYPE
     switch v {
         case "none":

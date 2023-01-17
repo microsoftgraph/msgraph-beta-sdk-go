@@ -7,7 +7,7 @@ import (
 // ApprovalStage 
 type ApprovalStage struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The number of days that a request can be pending a response before it is automatically denied.
     approvalStageTimeOutInDays *int32
     // If escalation is enabled and the primary approvers do not respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests. This can be a collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors.  When creating or updating a policy, if there are no escalation approvers, or escalation approvers are not required for the stage, the value of this property should be an empty collection.
@@ -27,7 +27,7 @@ type ApprovalStage struct {
 func NewApprovalStage()(*ApprovalStage) {
     m := &ApprovalStage{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateApprovalStageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateApprovalStageFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewApprovalStage(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ApprovalStage) GetAdditionalData()(map[string]interface{}) {
+func (m *ApprovalStage) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApprovalStageTimeOutInDays gets the approvalStageTimeOutInDays property value. The number of days that a request can be pending a response before it is automatically denied.
@@ -210,7 +210,7 @@ func (m *ApprovalStage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ApprovalStage) SetAdditionalData(value map[string]interface{})() {
+func (m *ApprovalStage) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetApprovalStageTimeOutInDays sets the approvalStageTimeOutInDays property value. The number of days that a request can be pending a response before it is automatically denied.

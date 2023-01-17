@@ -13,7 +13,7 @@ const (
 func (i RoleSummaryStatus) String() string {
     return []string{"ok", "bad"}[i]
 }
-func ParseRoleSummaryStatus(v string) (interface{}, error) {
+func ParseRoleSummaryStatus(v string) (any, error) {
     result := OK_ROLESUMMARYSTATUS
     switch v {
         case "ok":

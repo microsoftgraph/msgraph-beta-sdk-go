@@ -7,7 +7,7 @@ import (
 // TargetPolicyEndpoints 
 type TargetPolicyEndpoints struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // Use to filter the notification distribution to a specific platform or platforms. Valid values are Windows, iOS, Android and WebPush. By default, all push endpoint types (Windows, iOS, Android and WebPush) are enabled.
@@ -17,7 +17,7 @@ type TargetPolicyEndpoints struct {
 func NewTargetPolicyEndpoints()(*TargetPolicyEndpoints) {
     m := &TargetPolicyEndpoints{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTargetPolicyEndpointsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateTargetPolicyEndpointsFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewTargetPolicyEndpoints(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TargetPolicyEndpoints) GetAdditionalData()(map[string]interface{}) {
+func (m *TargetPolicyEndpoints) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,7 +88,7 @@ func (m *TargetPolicyEndpoints) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TargetPolicyEndpoints) SetAdditionalData(value map[string]interface{})() {
+func (m *TargetPolicyEndpoints) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

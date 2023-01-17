@@ -22,7 +22,7 @@ const (
 func (i CloudPcStatus) String() string {
     return []string{"notProvisioned", "provisioning", "provisioned", "inGracePeriod", "deprovisioning", "failed", "provisionedWithWarnings", "resizing", "restoring", "pendingProvision", "unknownFutureValue"}[i]
 }
-func ParseCloudPcStatus(v string) (interface{}, error) {
+func ParseCloudPcStatus(v string) (any, error) {
     result := NOTPROVISIONED_CLOUDPCSTATUS
     switch v {
         case "notProvisioned":

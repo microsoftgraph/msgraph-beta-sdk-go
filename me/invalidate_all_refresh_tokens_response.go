@@ -7,7 +7,7 @@ import (
 // InvalidateAllRefreshTokensResponse 
 type InvalidateAllRefreshTokensResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The value property
     value *bool
 }
@@ -15,7 +15,7 @@ type InvalidateAllRefreshTokensResponse struct {
 func NewInvalidateAllRefreshTokensResponse()(*InvalidateAllRefreshTokensResponse) {
     m := &InvalidateAllRefreshTokensResponse{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateInvalidateAllRefreshTokensResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateInvalidateAllRefreshTokensResponseFromDiscriminatorValue(parseNode i8
     return NewInvalidateAllRefreshTokensResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *InvalidateAllRefreshTokensResponse) GetAdditionalData()(map[string]interface{}) {
+func (m *InvalidateAllRefreshTokensResponse) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *InvalidateAllRefreshTokensResponse) Serialize(writer i878a80d2330e89d26
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *InvalidateAllRefreshTokensResponse) SetAdditionalData(value map[string]interface{})() {
+func (m *InvalidateAllRefreshTokensResponse) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetValue sets the value property value. The value property

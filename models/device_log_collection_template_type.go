@@ -13,7 +13,7 @@ const (
 func (i DeviceLogCollectionTemplateType) String() string {
     return []string{"predefined"}[i]
 }
-func ParseDeviceLogCollectionTemplateType(v string) (interface{}, error) {
+func ParseDeviceLogCollectionTemplateType(v string) (any, error) {
     result := PREDEFINED_DEVICELOGCOLLECTIONTEMPLATETYPE
     switch v {
         case "predefined":

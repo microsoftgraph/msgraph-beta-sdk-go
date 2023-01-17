@@ -11,9 +11,7 @@ type AuthenticationEventListenerable interface {
     GetAuthenticationEventsFlowId()(*string)
     GetConditions()(AuthenticationConditionsable)
     GetPriority()(*int32)
-    GetTags()([]KeyValuePairable)
     SetAuthenticationEventsFlowId(value *string)()
     SetConditions(value AuthenticationConditionsable)()
     SetPriority(value *int32)()
-    SetTags(value []KeyValuePairable)()
 }

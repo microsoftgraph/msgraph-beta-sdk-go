@@ -7,7 +7,7 @@ import (
 // AccessPackageAssignmentRequestRequirements 
 type AccessPackageAssignmentRequestRequirements struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Answers that have already been provided.
     existingAnswers []AccessPackageAnswerable
     // Indicates whether a request must be approved by an approver.
@@ -35,7 +35,7 @@ type AccessPackageAssignmentRequestRequirements struct {
 func NewAccessPackageAssignmentRequestRequirements()(*AccessPackageAssignmentRequestRequirements) {
     m := &AccessPackageAssignmentRequestRequirements{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAccessPackageAssignmentRequestRequirementsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,7 +43,7 @@ func CreateAccessPackageAssignmentRequestRequirementsFromDiscriminatorValue(pars
     return NewAccessPackageAssignmentRequestRequirements(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessPackageAssignmentRequestRequirements) GetAdditionalData()(map[string]interface{}) {
+func (m *AccessPackageAssignmentRequestRequirements) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExistingAnswers gets the existingAnswers property value. Answers that have already been provided.
@@ -298,7 +298,7 @@ func (m *AccessPackageAssignmentRequestRequirements) Serialize(writer i878a80d23
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessPackageAssignmentRequestRequirements) SetAdditionalData(value map[string]interface{})() {
+func (m *AccessPackageAssignmentRequestRequirements) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetExistingAnswers sets the existingAnswers property value. Answers that have already been provided.

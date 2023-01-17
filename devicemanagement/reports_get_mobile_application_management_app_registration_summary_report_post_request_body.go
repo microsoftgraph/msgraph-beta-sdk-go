@@ -7,7 +7,7 @@ import (
 // ReportsGetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody 
 type ReportsGetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The filter property
     filter *string
     // The groupBy property
@@ -31,7 +31,7 @@ type ReportsGetMobileApplicationManagementAppRegistrationSummaryReportPostReques
 func NewReportsGetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody()(*ReportsGetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody) {
     m := &ReportsGetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateReportsGetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ func CreateReportsGetMobileApplicationManagementAppRegistrationSummaryReportPost
     return NewReportsGetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ReportsGetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ReportsGetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -250,7 +250,7 @@ func (m *ReportsGetMobileApplicationManagementAppRegistrationSummaryReportPostRe
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ReportsGetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ReportsGetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetFilter sets the filter property value. The filter property

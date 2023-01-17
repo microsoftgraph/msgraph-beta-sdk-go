@@ -7,7 +7,7 @@ import (
 // CommsApplication 
 type CommsApplication struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The calls property
     calls []Callable
     // The OdataType property
@@ -19,7 +19,7 @@ type CommsApplication struct {
 func NewCommsApplication()(*CommsApplication) {
     m := &CommsApplication{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCommsApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateCommsApplicationFromDiscriminatorValue(parseNode i878a80d2330e89d2689
     return NewCommsApplication(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CommsApplication) GetAdditionalData()(map[string]interface{}) {
+func (m *CommsApplication) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCalls gets the calls property value. The calls property
@@ -122,7 +122,7 @@ func (m *CommsApplication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CommsApplication) SetAdditionalData(value map[string]interface{})() {
+func (m *CommsApplication) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCalls sets the calls property value. The calls property

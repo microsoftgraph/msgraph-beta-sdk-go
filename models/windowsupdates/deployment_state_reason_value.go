@@ -17,7 +17,7 @@ const (
 func (i DeploymentStateReasonValue) String() string {
     return []string{"scheduledByOfferWindow", "offeringByRequest", "pausedByRequest", "pausedByMonitoring", "unknownFutureValue", "faultedByContentOutdated"}[i]
 }
-func ParseDeploymentStateReasonValue(v string) (interface{}, error) {
+func ParseDeploymentStateReasonValue(v string) (any, error) {
     result := SCHEDULEDBYOFFERWINDOW_DEPLOYMENTSTATEREASONVALUE
     switch v {
         case "scheduledByOfferWindow":

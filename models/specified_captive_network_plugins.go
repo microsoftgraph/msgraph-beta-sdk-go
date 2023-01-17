@@ -7,7 +7,7 @@ import (
 // SpecifiedCaptiveNetworkPlugins specifies all the Captive network plugins allowed during the IKEv2 AlwaysOn VPN connection
 type SpecifiedCaptiveNetworkPlugins struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Address of the IKEv2 server. Must be a FQDN, UserFQDN, network address, or ASN1DN
     allowedBundleIdentifiers []string
     // The OdataType property
@@ -17,7 +17,7 @@ type SpecifiedCaptiveNetworkPlugins struct {
 func NewSpecifiedCaptiveNetworkPlugins()(*SpecifiedCaptiveNetworkPlugins) {
     m := &SpecifiedCaptiveNetworkPlugins{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSpecifiedCaptiveNetworkPluginsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateSpecifiedCaptiveNetworkPluginsFromDiscriminatorValue(parseNode i878a8
     return NewSpecifiedCaptiveNetworkPlugins(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SpecifiedCaptiveNetworkPlugins) GetAdditionalData()(map[string]interface{}) {
+func (m *SpecifiedCaptiveNetworkPlugins) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowedBundleIdentifiers gets the allowedBundleIdentifiers property value. Address of the IKEv2 server. Must be a FQDN, UserFQDN, network address, or ASN1DN
@@ -88,7 +88,7 @@ func (m *SpecifiedCaptiveNetworkPlugins) Serialize(writer i878a80d2330e89d268963
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SpecifiedCaptiveNetworkPlugins) SetAdditionalData(value map[string]interface{})() {
+func (m *SpecifiedCaptiveNetworkPlugins) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowedBundleIdentifiers sets the allowedBundleIdentifiers property value. Address of the IKEv2 server. Must be a FQDN, UserFQDN, network address, or ASN1DN

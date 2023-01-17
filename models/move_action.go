@@ -7,7 +7,7 @@ import (
 // MoveAction 
 type MoveAction struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The name of the location the item was moved from.
     from *string
     // The OdataType property
@@ -19,7 +19,7 @@ type MoveAction struct {
 func NewMoveAction()(*MoveAction) {
     m := &MoveAction{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMoveActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateMoveActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
     return NewMoveAction(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MoveAction) GetAdditionalData()(map[string]interface{}) {
+func (m *MoveAction) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -106,7 +106,7 @@ func (m *MoveAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MoveAction) SetAdditionalData(value map[string]interface{})() {
+func (m *MoveAction) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetFrom sets the from property value. The name of the location the item was moved from.

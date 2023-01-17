@@ -7,7 +7,7 @@ import (
 // CorsConfiguration 
 type CorsConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The request headers that the origin domain may specify on the CORS request. The wildcard character * indicates that any header beginning with the specified prefix is allowed.
     allowedHeaders []string
     // The HTTP request methods that the origin domain may use for a CORS request.
@@ -25,7 +25,7 @@ type CorsConfiguration struct {
 func NewCorsConfiguration()(*CorsConfiguration) {
     m := &CorsConfiguration{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCorsConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateCorsConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewCorsConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CorsConfiguration) GetAdditionalData()(map[string]interface{}) {
+func (m *CorsConfiguration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowedHeaders gets the allowedHeaders property value. The request headers that the origin domain may specify on the CORS request. The wildcard character * indicates that any header beginning with the specified prefix is allowed.
@@ -184,7 +184,7 @@ func (m *CorsConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CorsConfiguration) SetAdditionalData(value map[string]interface{})() {
+func (m *CorsConfiguration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowedHeaders sets the allowedHeaders property value. The request headers that the origin domain may specify on the CORS request. The wildcard character * indicates that any header beginning with the specified prefix is allowed.

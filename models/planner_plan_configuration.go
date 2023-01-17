@@ -8,19 +8,19 @@ import (
 // PlannerPlanConfiguration 
 type PlannerPlanConfiguration struct {
     Entity
-    // The buckets property
+    // List the buckets that should be created in the plan.
     buckets []PlannerPlanConfigurationBucketDefinitionable
-    // The createdBy property
+    // The identity of the creator of the plan configuration.
     createdBy IdentitySetable
-    // The createdDateTime property
+    // The date and time when the plan configuration was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The defaultLanguage property
+    // The language code for the default language to be used for the names of the objects created for the plan.
     defaultLanguage *string
-    // The lastModifiedBy property
+    // The identity of the user who last modified the plan configuration.
     lastModifiedBy IdentitySetable
-    // The lastModifiedDateTime property
+    // The date and time when the plan configuration was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The localizations property
+    // Localized names for the plan configuration.
     localizations []PlannerPlanConfigurationLocalizationable
 }
 // NewPlannerPlanConfiguration instantiates a new plannerPlanConfiguration and sets the default values.
@@ -34,19 +34,19 @@ func NewPlannerPlanConfiguration()(*PlannerPlanConfiguration) {
 func CreatePlannerPlanConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerPlanConfiguration(), nil
 }
-// GetBuckets gets the buckets property value. The buckets property
+// GetBuckets gets the buckets property value. List the buckets that should be created in the plan.
 func (m *PlannerPlanConfiguration) GetBuckets()([]PlannerPlanConfigurationBucketDefinitionable) {
     return m.buckets
 }
-// GetCreatedBy gets the createdBy property value. The createdBy property
+// GetCreatedBy gets the createdBy property value. The identity of the creator of the plan configuration.
 func (m *PlannerPlanConfiguration) GetCreatedBy()(IdentitySetable) {
     return m.createdBy
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the plan configuration was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *PlannerPlanConfiguration) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.createdDateTime
 }
-// GetDefaultLanguage gets the defaultLanguage property value. The defaultLanguage property
+// GetDefaultLanguage gets the defaultLanguage property value. The language code for the default language to be used for the names of the objects created for the plan.
 func (m *PlannerPlanConfiguration) GetDefaultLanguage()(*string) {
     return m.defaultLanguage
 }
@@ -133,15 +133,15 @@ func (m *PlannerPlanConfiguration) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// GetLastModifiedBy gets the lastModifiedBy property value. The identity of the user who last modified the plan configuration.
 func (m *PlannerPlanConfiguration) GetLastModifiedBy()(IdentitySetable) {
     return m.lastModifiedBy
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the plan configuration was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *PlannerPlanConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastModifiedDateTime
 }
-// GetLocalizations gets the localizations property value. The localizations property
+// GetLocalizations gets the localizations property value. Localized names for the plan configuration.
 func (m *PlannerPlanConfiguration) GetLocalizations()([]PlannerPlanConfigurationLocalizationable) {
     return m.localizations
 }
@@ -203,31 +203,31 @@ func (m *PlannerPlanConfiguration) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetBuckets sets the buckets property value. The buckets property
+// SetBuckets sets the buckets property value. List the buckets that should be created in the plan.
 func (m *PlannerPlanConfiguration) SetBuckets(value []PlannerPlanConfigurationBucketDefinitionable)() {
     m.buckets = value
 }
-// SetCreatedBy sets the createdBy property value. The createdBy property
+// SetCreatedBy sets the createdBy property value. The identity of the creator of the plan configuration.
 func (m *PlannerPlanConfiguration) SetCreatedBy(value IdentitySetable)() {
     m.createdBy = value
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the plan configuration was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *PlannerPlanConfiguration) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// SetDefaultLanguage sets the defaultLanguage property value. The defaultLanguage property
+// SetDefaultLanguage sets the defaultLanguage property value. The language code for the default language to be used for the names of the objects created for the plan.
 func (m *PlannerPlanConfiguration) SetDefaultLanguage(value *string)() {
     m.defaultLanguage = value
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+// SetLastModifiedBy sets the lastModifiedBy property value. The identity of the user who last modified the plan configuration.
 func (m *PlannerPlanConfiguration) SetLastModifiedBy(value IdentitySetable)() {
     m.lastModifiedBy = value
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the plan configuration was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *PlannerPlanConfiguration) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// SetLocalizations sets the localizations property value. The localizations property
+// SetLocalizations sets the localizations property value. Localized names for the plan configuration.
 func (m *PlannerPlanConfiguration) SetLocalizations(value []PlannerPlanConfigurationLocalizationable)() {
     m.localizations = value
 }

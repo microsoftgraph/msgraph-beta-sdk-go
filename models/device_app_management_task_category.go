@@ -15,7 +15,7 @@ const (
 func (i DeviceAppManagementTaskCategory) String() string {
     return []string{"unknown", "advancedThreatProtection"}[i]
 }
-func ParseDeviceAppManagementTaskCategory(v string) (interface{}, error) {
+func ParseDeviceAppManagementTaskCategory(v string) (any, error) {
     result := UNKNOWN_DEVICEAPPMANAGEMENTTASKCATEGORY
     switch v {
         case "unknown":

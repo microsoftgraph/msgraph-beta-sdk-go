@@ -15,7 +15,7 @@ const (
 func (i AssignmentFilterPayloadType) String() string {
     return []string{"notSet", "enrollmentRestrictions"}[i]
 }
-func ParseAssignmentFilterPayloadType(v string) (interface{}, error) {
+func ParseAssignmentFilterPayloadType(v string) (any, error) {
     result := NOTSET_ASSIGNMENTFILTERPAYLOADTYPE
     switch v {
         case "notSet":

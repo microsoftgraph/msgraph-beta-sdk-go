@@ -17,7 +17,7 @@ const (
 func (i InkAccessSetting) String() string {
     return []string{"notConfigured", "enabled", "disabled"}[i]
 }
-func ParseInkAccessSetting(v string) (interface{}, error) {
+func ParseInkAccessSetting(v string) (any, error) {
     result := NOTCONFIGURED_INKACCESSSETTING
     switch v {
         case "notConfigured":

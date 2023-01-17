@@ -17,7 +17,7 @@ const (
 func (i AndroidDeviceOwnerPlayStoreMode) String() string {
     return []string{"notConfigured", "allowList", "blockList"}[i]
 }
-func ParseAndroidDeviceOwnerPlayStoreMode(v string) (interface{}, error) {
+func ParseAndroidDeviceOwnerPlayStoreMode(v string) (any, error) {
     result := NOTCONFIGURED_ANDROIDDEVICEOWNERPLAYSTOREMODE
     switch v {
         case "notConfigured":

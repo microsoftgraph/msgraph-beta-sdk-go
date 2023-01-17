@@ -19,7 +19,7 @@ const (
 func (i LocalSecurityOptionsSmartCardRemovalBehaviorType) String() string {
     return []string{"noAction", "lockWorkstation", "forceLogoff", "disconnectRemoteDesktopSession"}[i]
 }
-func ParseLocalSecurityOptionsSmartCardRemovalBehaviorType(v string) (interface{}, error) {
+func ParseLocalSecurityOptionsSmartCardRemovalBehaviorType(v string) (any, error) {
     result := NOACTION_LOCALSECURITYOPTIONSSMARTCARDREMOVALBEHAVIORTYPE
     switch v {
         case "noAction":

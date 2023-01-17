@@ -7,7 +7,7 @@ import (
 // DeviceManagementConfigurationOptionDefinition 
 type DeviceManagementConfigurationOptionDefinition struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // List of Settings that depends on this option
     dependedOnBy []DeviceManagementConfigurationSettingDependedOnByable
     // List of dependent settings for this option
@@ -31,7 +31,7 @@ type DeviceManagementConfigurationOptionDefinition struct {
 func NewDeviceManagementConfigurationOptionDefinition()(*DeviceManagementConfigurationOptionDefinition) {
     m := &DeviceManagementConfigurationOptionDefinition{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceManagementConfigurationOptionDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ func CreateDeviceManagementConfigurationOptionDefinitionFromDiscriminatorValue(p
     return NewDeviceManagementConfigurationOptionDefinition(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementConfigurationOptionDefinition) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceManagementConfigurationOptionDefinition) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDependedOnBy gets the dependedOnBy property value. List of Settings that depends on this option
@@ -254,7 +254,7 @@ func (m *DeviceManagementConfigurationOptionDefinition) Serialize(writer i878a80
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementConfigurationOptionDefinition) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceManagementConfigurationOptionDefinition) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDependedOnBy sets the dependedOnBy property value. List of Settings that depends on this option

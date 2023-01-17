@@ -14,7 +14,7 @@ const (
 func (i TitleAreaTextAlignmentType) String() string {
     return []string{"left", "center", "unknownFutureValue"}[i]
 }
-func ParseTitleAreaTextAlignmentType(v string) (interface{}, error) {
+func ParseTitleAreaTextAlignmentType(v string) (any, error) {
     result := LEFT_TITLEAREATEXTALIGNMENTTYPE
     switch v {
         case "left":

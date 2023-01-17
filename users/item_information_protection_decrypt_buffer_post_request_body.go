@@ -7,7 +7,7 @@ import (
 // ItemInformationProtectionDecryptBufferPostRequestBody 
 type ItemInformationProtectionDecryptBufferPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The encryptedBuffer property
     encryptedBuffer []byte
     // The publishingLicense property
@@ -17,7 +17,7 @@ type ItemInformationProtectionDecryptBufferPostRequestBody struct {
 func NewItemInformationProtectionDecryptBufferPostRequestBody()(*ItemInformationProtectionDecryptBufferPostRequestBody) {
     m := &ItemInformationProtectionDecryptBufferPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemInformationProtectionDecryptBufferPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateItemInformationProtectionDecryptBufferPostRequestBodyFromDiscriminato
     return NewItemInformationProtectionDecryptBufferPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemInformationProtectionDecryptBufferPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemInformationProtectionDecryptBufferPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEncryptedBuffer gets the encryptedBuffer property value. The encryptedBuffer property
@@ -84,7 +84,7 @@ func (m *ItemInformationProtectionDecryptBufferPostRequestBody) Serialize(writer
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemInformationProtectionDecryptBufferPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemInformationProtectionDecryptBufferPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEncryptedBuffer sets the encryptedBuffer property value. The encryptedBuffer property

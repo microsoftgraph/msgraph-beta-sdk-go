@@ -7,7 +7,7 @@ import (
 // MicrosoftTunnelSitesItemMicrosoftTunnelServersItemGetHealthMetricsPostRequestBody 
 type MicrosoftTunnelSitesItemMicrosoftTunnelServersItemGetHealthMetricsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The metricNames property
     metricNames []string
 }
@@ -15,7 +15,7 @@ type MicrosoftTunnelSitesItemMicrosoftTunnelServersItemGetHealthMetricsPostReque
 func NewMicrosoftTunnelSitesItemMicrosoftTunnelServersItemGetHealthMetricsPostRequestBody()(*MicrosoftTunnelSitesItemMicrosoftTunnelServersItemGetHealthMetricsPostRequestBody) {
     m := &MicrosoftTunnelSitesItemMicrosoftTunnelServersItemGetHealthMetricsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMicrosoftTunnelSitesItemMicrosoftTunnelServersItemGetHealthMetricsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateMicrosoftTunnelSitesItemMicrosoftTunnelServersItemGetHealthMetricsPos
     return NewMicrosoftTunnelSitesItemMicrosoftTunnelServersItemGetHealthMetricsPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MicrosoftTunnelSitesItemMicrosoftTunnelServersItemGetHealthMetricsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *MicrosoftTunnelSitesItemMicrosoftTunnelServersItemGetHealthMetricsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -66,7 +66,7 @@ func (m *MicrosoftTunnelSitesItemMicrosoftTunnelServersItemGetHealthMetricsPostR
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MicrosoftTunnelSitesItemMicrosoftTunnelServersItemGetHealthMetricsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *MicrosoftTunnelSitesItemMicrosoftTunnelServersItemGetHealthMetricsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetMetricNames sets the metricNames property value. The metricNames property

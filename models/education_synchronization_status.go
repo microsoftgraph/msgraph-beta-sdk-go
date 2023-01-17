@@ -20,7 +20,7 @@ const (
 func (i EducationSynchronizationStatus) String() string {
     return []string{"paused", "inProgress", "success", "error", "validationError", "quarantined", "unknownFutureValue", "extracting", "validating"}[i]
 }
-func ParseEducationSynchronizationStatus(v string) (interface{}, error) {
+func ParseEducationSynchronizationStatus(v string) (any, error) {
     result := PAUSED_EDUCATIONSYNCHRONIZATIONSTATUS
     switch v {
         case "paused":

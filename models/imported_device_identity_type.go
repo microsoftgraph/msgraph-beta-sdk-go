@@ -17,7 +17,7 @@ const (
 func (i ImportedDeviceIdentityType) String() string {
     return []string{"unknown", "imei", "serialNumber"}[i]
 }
-func ParseImportedDeviceIdentityType(v string) (interface{}, error) {
+func ParseImportedDeviceIdentityType(v string) (any, error) {
     result := UNKNOWN_IMPORTEDDEVICEIDENTITYTYPE
     switch v {
         case "unknown":

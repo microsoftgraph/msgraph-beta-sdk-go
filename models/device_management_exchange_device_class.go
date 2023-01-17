@@ -7,7 +7,7 @@ import (
 // DeviceManagementExchangeDeviceClass device Class in Exchange.
 type DeviceManagementExchangeDeviceClass struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Name of the device class which will be impacted by this rule.
     name *string
     // The OdataType property
@@ -19,7 +19,7 @@ type DeviceManagementExchangeDeviceClass struct {
 func NewDeviceManagementExchangeDeviceClass()(*DeviceManagementExchangeDeviceClass) {
     m := &DeviceManagementExchangeDeviceClass{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceManagementExchangeDeviceClassFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateDeviceManagementExchangeDeviceClassFromDiscriminatorValue(parseNode i
     return NewDeviceManagementExchangeDeviceClass(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementExchangeDeviceClass) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceManagementExchangeDeviceClass) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -107,7 +107,7 @@ func (m *DeviceManagementExchangeDeviceClass) Serialize(writer i878a80d2330e89d2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementExchangeDeviceClass) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceManagementExchangeDeviceClass) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetName sets the name property value. Name of the device class which will be impacted by this rule.

@@ -15,7 +15,7 @@ const (
 func (i QualityUpdateClassification) String() string {
     return []string{"all", "security", "nonSecurity", "unknownFutureValue"}[i]
 }
-func ParseQualityUpdateClassification(v string) (interface{}, error) {
+func ParseQualityUpdateClassification(v string) (any, error) {
     result := ALL_QUALITYUPDATECLASSIFICATION
     switch v {
         case "all":

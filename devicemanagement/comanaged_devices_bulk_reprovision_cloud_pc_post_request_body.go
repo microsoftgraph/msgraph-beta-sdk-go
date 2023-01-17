@@ -7,7 +7,7 @@ import (
 // ComanagedDevicesBulkReprovisionCloudPcPostRequestBody 
 type ComanagedDevicesBulkReprovisionCloudPcPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The managedDeviceIds property
     managedDeviceIds []string
 }
@@ -15,7 +15,7 @@ type ComanagedDevicesBulkReprovisionCloudPcPostRequestBody struct {
 func NewComanagedDevicesBulkReprovisionCloudPcPostRequestBody()(*ComanagedDevicesBulkReprovisionCloudPcPostRequestBody) {
     m := &ComanagedDevicesBulkReprovisionCloudPcPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateComanagedDevicesBulkReprovisionCloudPcPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateComanagedDevicesBulkReprovisionCloudPcPostRequestBodyFromDiscriminato
     return NewComanagedDevicesBulkReprovisionCloudPcPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ComanagedDevicesBulkReprovisionCloudPcPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ComanagedDevicesBulkReprovisionCloudPcPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -66,7 +66,7 @@ func (m *ComanagedDevicesBulkReprovisionCloudPcPostRequestBody) Serialize(writer
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ComanagedDevicesBulkReprovisionCloudPcPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ComanagedDevicesBulkReprovisionCloudPcPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetManagedDeviceIds sets the managedDeviceIds property value. The managedDeviceIds property

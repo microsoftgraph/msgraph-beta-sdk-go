@@ -19,7 +19,7 @@ const (
 func (i DefenderSecurityCenterITContactDisplayType) String() string {
     return []string{"notConfigured", "displayInAppAndInNotifications", "displayOnlyInApp", "displayOnlyInNotifications"}[i]
 }
-func ParseDefenderSecurityCenterITContactDisplayType(v string) (interface{}, error) {
+func ParseDefenderSecurityCenterITContactDisplayType(v string) (any, error) {
     result := NOTCONFIGURED_DEFENDERSECURITYCENTERITCONTACTDISPLAYTYPE
     switch v {
         case "notConfigured":

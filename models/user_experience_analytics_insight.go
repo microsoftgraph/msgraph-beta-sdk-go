@@ -7,7 +7,7 @@ import (
 // UserExperienceAnalyticsInsight the user experience analytics insight is the recomendation to improve the user experience analytics score.
 type UserExperienceAnalyticsInsight struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The unique identifier of the user experience analytics insight.
     insightId *string
     // The OdataType property
@@ -23,7 +23,7 @@ type UserExperienceAnalyticsInsight struct {
 func NewUserExperienceAnalyticsInsight()(*UserExperienceAnalyticsInsight) {
     m := &UserExperienceAnalyticsInsight{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUserExperienceAnalyticsInsightFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateUserExperienceAnalyticsInsightFromDiscriminatorValue(parseNode i878a8
     return NewUserExperienceAnalyticsInsight(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserExperienceAnalyticsInsight) GetAdditionalData()(map[string]interface{}) {
+func (m *UserExperienceAnalyticsInsight) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -159,7 +159,7 @@ func (m *UserExperienceAnalyticsInsight) Serialize(writer i878a80d2330e89d268963
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserExperienceAnalyticsInsight) SetAdditionalData(value map[string]interface{})() {
+func (m *UserExperienceAnalyticsInsight) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetInsightId sets the insightId property value. The unique identifier of the user experience analytics insight.

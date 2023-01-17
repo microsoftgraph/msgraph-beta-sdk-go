@@ -8,7 +8,7 @@ import (
 // ItemCalendarCalendarViewItemExceptionOccurrencesItemInstancesItemAttachmentsCreateUploadSessionPostRequestBody 
 type ItemCalendarCalendarViewItemExceptionOccurrencesItemInstancesItemAttachmentsCreateUploadSessionPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The AttachmentItem property
     attachmentItem ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentItemable
 }
@@ -16,7 +16,7 @@ type ItemCalendarCalendarViewItemExceptionOccurrencesItemInstancesItemAttachment
 func NewItemCalendarCalendarViewItemExceptionOccurrencesItemInstancesItemAttachmentsCreateUploadSessionPostRequestBody()(*ItemCalendarCalendarViewItemExceptionOccurrencesItemInstancesItemAttachmentsCreateUploadSessionPostRequestBody) {
     m := &ItemCalendarCalendarViewItemExceptionOccurrencesItemInstancesItemAttachmentsCreateUploadSessionPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemCalendarCalendarViewItemExceptionOccurrencesItemInstancesItemAttachmentsCreateUploadSessionPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateItemCalendarCalendarViewItemExceptionOccurrencesItemInstancesItemAtta
     return NewItemCalendarCalendarViewItemExceptionOccurrencesItemInstancesItemAttachmentsCreateUploadSessionPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemCalendarCalendarViewItemExceptionOccurrencesItemInstancesItemAttachmentsCreateUploadSessionPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemCalendarCalendarViewItemExceptionOccurrencesItemInstancesItemAttachmentsCreateUploadSessionPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAttachmentItem gets the attachmentItem property value. The AttachmentItem property
@@ -63,7 +63,7 @@ func (m *ItemCalendarCalendarViewItemExceptionOccurrencesItemInstancesItemAttach
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemCalendarCalendarViewItemExceptionOccurrencesItemInstancesItemAttachmentsCreateUploadSessionPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemCalendarCalendarViewItemExceptionOccurrencesItemInstancesItemAttachmentsCreateUploadSessionPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAttachmentItem sets the attachmentItem property value. The AttachmentItem property

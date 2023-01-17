@@ -9,7 +9,7 @@ type AccessPackageAnswerChoice struct {
     // The actual value of the selected choice. This is typically a string value which is understandable by applications. Required.
     actualValue *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The localized display values shown to the requestor and approvers. Required.
     displayValue AccessPackageLocalizedContentable
     // The OdataType property
@@ -19,7 +19,7 @@ type AccessPackageAnswerChoice struct {
 func NewAccessPackageAnswerChoice()(*AccessPackageAnswerChoice) {
     m := &AccessPackageAnswerChoice{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAccessPackageAnswerChoiceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func (m *AccessPackageAnswerChoice) GetActualValue()(*string) {
     return m.actualValue
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessPackageAnswerChoice) GetAdditionalData()(map[string]interface{}) {
+func (m *AccessPackageAnswerChoice) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDisplayValue gets the displayValue property value. The localized display values shown to the requestor and approvers. Required.
@@ -110,7 +110,7 @@ func (m *AccessPackageAnswerChoice) SetActualValue(value *string)() {
     m.actualValue = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessPackageAnswerChoice) SetAdditionalData(value map[string]interface{})() {
+func (m *AccessPackageAnswerChoice) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDisplayValue sets the displayValue property value. The localized display values shown to the requestor and approvers. Required.

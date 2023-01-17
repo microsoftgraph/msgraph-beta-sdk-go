@@ -22,7 +22,7 @@ const (
 func (i DelegatedAdminRelationshipStatus) String() string {
     return []string{"activating", "active", "approvalPending", "approved", "created", "expired", "expiring", "terminated", "terminating", "terminationRequested", "unknownFutureValue"}[i]
 }
-func ParseDelegatedAdminRelationshipStatus(v string) (interface{}, error) {
+func ParseDelegatedAdminRelationshipStatus(v string) (any, error) {
     result := ACTIVATING_DELEGATEDADMINRELATIONSHIPSTATUS
     switch v {
         case "activating":

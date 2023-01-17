@@ -15,7 +15,7 @@ const (
 func (i DeviceManagementResourceAccessProfileIntent) String() string {
     return []string{"apply", "remove"}[i]
 }
-func ParseDeviceManagementResourceAccessProfileIntent(v string) (interface{}, error) {
+func ParseDeviceManagementResourceAccessProfileIntent(v string) (any, error) {
     result := APPLY_DEVICEMANAGEMENTRESOURCEACCESSPROFILEINTENT
     switch v {
         case "apply":

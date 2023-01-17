@@ -17,7 +17,7 @@ const (
 func (i EmailCertificateType) String() string {
     return []string{"none", "certificate", "derivedCredential"}[i]
 }
-func ParseEmailCertificateType(v string) (interface{}, error) {
+func ParseEmailCertificateType(v string) (any, error) {
     result := NONE_EMAILCERTIFICATETYPE
     switch v {
         case "none":

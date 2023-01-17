@@ -7,7 +7,7 @@ import (
 // CloudPCsItemRestorePostRequestBody 
 type CloudPCsItemRestorePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The cloudPcSnapshotId property
     cloudPcSnapshotId *string
 }
@@ -15,7 +15,7 @@ type CloudPCsItemRestorePostRequestBody struct {
 func NewCloudPCsItemRestorePostRequestBody()(*CloudPCsItemRestorePostRequestBody) {
     m := &CloudPCsItemRestorePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCloudPCsItemRestorePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateCloudPCsItemRestorePostRequestBodyFromDiscriminatorValue(parseNode i8
     return NewCloudPCsItemRestorePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CloudPCsItemRestorePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *CloudPCsItemRestorePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCloudPcSnapshotId gets the cloudPcSnapshotId property value. The cloudPcSnapshotId property
@@ -62,7 +62,7 @@ func (m *CloudPCsItemRestorePostRequestBody) Serialize(writer i878a80d2330e89d26
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CloudPCsItemRestorePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *CloudPCsItemRestorePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCloudPcSnapshotId sets the cloudPcSnapshotId property value. The cloudPcSnapshotId property

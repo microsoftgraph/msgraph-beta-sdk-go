@@ -10,7 +10,7 @@ type ManagedDevicesExecuteActionPostRequestBody struct {
     // The actionName property
     actionName *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceRemoteAction
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The carrierUrl property
     carrierUrl *string
     // The deprovisionReason property
@@ -36,7 +36,7 @@ type ManagedDevicesExecuteActionPostRequestBody struct {
 func NewManagedDevicesExecuteActionPostRequestBody()(*ManagedDevicesExecuteActionPostRequestBody) {
     m := &ManagedDevicesExecuteActionPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateManagedDevicesExecuteActionPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -48,7 +48,7 @@ func (m *ManagedDevicesExecuteActionPostRequestBody) GetActionName()(*ie233ee762
     return m.actionName
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedDevicesExecuteActionPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ManagedDevicesExecuteActionPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCarrierUrl gets the carrierUrl property value. The carrierUrl property
@@ -292,7 +292,7 @@ func (m *ManagedDevicesExecuteActionPostRequestBody) SetActionName(value *ie233e
     m.actionName = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedDevicesExecuteActionPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ManagedDevicesExecuteActionPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCarrierUrl sets the carrierUrl property value. The carrierUrl property

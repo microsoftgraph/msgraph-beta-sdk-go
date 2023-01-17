@@ -17,7 +17,7 @@ const (
 func (i AndroidDeviceOwnerEnrollmentProfileType) String() string {
     return []string{"notConfigured", "dedicatedDevice", "fullyManaged"}[i]
 }
-func ParseAndroidDeviceOwnerEnrollmentProfileType(v string) (interface{}, error) {
+func ParseAndroidDeviceOwnerEnrollmentProfileType(v string) (any, error) {
     result := NOTCONFIGURED_ANDROIDDEVICEOWNERENROLLMENTPROFILETYPE
     switch v {
         case "notConfigured":

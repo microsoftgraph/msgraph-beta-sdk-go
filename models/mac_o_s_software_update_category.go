@@ -19,7 +19,7 @@ const (
 func (i MacOSSoftwareUpdateCategory) String() string {
     return []string{"critical", "configurationDataFile", "firmware", "other"}[i]
 }
-func ParseMacOSSoftwareUpdateCategory(v string) (interface{}, error) {
+func ParseMacOSSoftwareUpdateCategory(v string) (any, error) {
     result := CRITICAL_MACOSSOFTWAREUPDATECATEGORY
     switch v {
         case "critical":

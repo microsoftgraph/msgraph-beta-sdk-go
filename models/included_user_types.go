@@ -15,7 +15,7 @@ const (
 func (i IncludedUserTypes) String() string {
     return []string{"all", "member", "guest", "unknownFutureValue"}[i]
 }
-func ParseIncludedUserTypes(v string) (interface{}, error) {
+func ParseIncludedUserTypes(v string) (any, error) {
     result := ALL_INCLUDEDUSERTYPES
     switch v {
         case "all":

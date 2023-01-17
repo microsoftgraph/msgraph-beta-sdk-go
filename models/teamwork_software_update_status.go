@@ -7,7 +7,7 @@ import (
 // TeamworkSoftwareUpdateStatus 
 type TeamworkSoftwareUpdateStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The available software version to update.
     availableVersion *string
     // The current software version.
@@ -21,7 +21,7 @@ type TeamworkSoftwareUpdateStatus struct {
 func NewTeamworkSoftwareUpdateStatus()(*TeamworkSoftwareUpdateStatus) {
     m := &TeamworkSoftwareUpdateStatus{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue(parseNode i878a80d
     return NewTeamworkSoftwareUpdateStatus(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkSoftwareUpdateStatus) GetAdditionalData()(map[string]interface{}) {
+func (m *TeamworkSoftwareUpdateStatus) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAvailableVersion gets the availableVersion property value. The available software version to update.
@@ -129,7 +129,7 @@ func (m *TeamworkSoftwareUpdateStatus) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkSoftwareUpdateStatus) SetAdditionalData(value map[string]interface{})() {
+func (m *TeamworkSoftwareUpdateStatus) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAvailableVersion sets the availableVersion property value. The available software version to update.

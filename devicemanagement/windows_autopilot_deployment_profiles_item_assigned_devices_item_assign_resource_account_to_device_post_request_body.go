@@ -7,7 +7,7 @@ import (
 // WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemAssignResourceAccountToDevicePostRequestBody 
 type WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemAssignResourceAccountToDevicePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The addressableUserName property
     addressableUserName *string
     // The resourceAccountName property
@@ -19,7 +19,7 @@ type WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemAssignResourceAcco
 func NewWindowsAutopilotDeploymentProfilesItemAssignedDevicesItemAssignResourceAccountToDevicePostRequestBody()(*WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemAssignResourceAccountToDevicePostRequestBody) {
     m := &WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemAssignResourceAccountToDevicePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWindowsAutopilotDeploymentProfilesItemAssignedDevicesItemAssignResourceAccountToDevicePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateWindowsAutopilotDeploymentProfilesItemAssignedDevicesItemAssignResour
     return NewWindowsAutopilotDeploymentProfilesItemAssignedDevicesItemAssignResourceAccountToDevicePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemAssignResourceAccountToDevicePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemAssignResourceAccountToDevicePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAddressableUserName gets the addressableUserName property value. The addressableUserName property
@@ -106,7 +106,7 @@ func (m *WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemAssignResource
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemAssignResourceAccountToDevicePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemAssignResourceAccountToDevicePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAddressableUserName sets the addressableUserName property value. The addressableUserName property

@@ -7,7 +7,7 @@ import (
 // DataProcessorServiceForWindowsFeaturesOnboarding a configuration entity for MEM features that utilize Data Processor Service for Windows (DPSW) data.
 type DataProcessorServiceForWindowsFeaturesOnboarding struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicates whether the tenant has enabled MEM features utilizing Data Processor Service for Windows (DPSW) data. When TRUE, the tenant has enabled MEM features utilizing Data Processor Service for Windows (DPSW) data. When FALSE, the tenant has not enabled MEM features utilizing Data Processor Service for Windows (DPSW) data. Default value is FALSE.
     areDataProcessorServiceForWindowsFeaturesEnabled *bool
     // Indicates whether the tenant has required Windows license. When TRUE, the tenant has the required Windows license. When FALSE, the tenant does not have the required Windows license. Default value is FALSE.
@@ -19,7 +19,7 @@ type DataProcessorServiceForWindowsFeaturesOnboarding struct {
 func NewDataProcessorServiceForWindowsFeaturesOnboarding()(*DataProcessorServiceForWindowsFeaturesOnboarding) {
     m := &DataProcessorServiceForWindowsFeaturesOnboarding{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDataProcessorServiceForWindowsFeaturesOnboardingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateDataProcessorServiceForWindowsFeaturesOnboardingFromDiscriminatorValu
     return NewDataProcessorServiceForWindowsFeaturesOnboarding(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DataProcessorServiceForWindowsFeaturesOnboarding) GetAdditionalData()(map[string]interface{}) {
+func (m *DataProcessorServiceForWindowsFeaturesOnboarding) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAreDataProcessorServiceForWindowsFeaturesEnabled gets the areDataProcessorServiceForWindowsFeaturesEnabled property value. Indicates whether the tenant has enabled MEM features utilizing Data Processor Service for Windows (DPSW) data. When TRUE, the tenant has enabled MEM features utilizing Data Processor Service for Windows (DPSW) data. When FALSE, the tenant has not enabled MEM features utilizing Data Processor Service for Windows (DPSW) data. Default value is FALSE.
@@ -106,7 +106,7 @@ func (m *DataProcessorServiceForWindowsFeaturesOnboarding) Serialize(writer i878
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DataProcessorServiceForWindowsFeaturesOnboarding) SetAdditionalData(value map[string]interface{})() {
+func (m *DataProcessorServiceForWindowsFeaturesOnboarding) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAreDataProcessorServiceForWindowsFeaturesEnabled sets the areDataProcessorServiceForWindowsFeaturesEnabled property value. Indicates whether the tenant has enabled MEM features utilizing Data Processor Service for Windows (DPSW) data. When TRUE, the tenant has enabled MEM features utilizing Data Processor Service for Windows (DPSW) data. When FALSE, the tenant has not enabled MEM features utilizing Data Processor Service for Windows (DPSW) data. Default value is FALSE.

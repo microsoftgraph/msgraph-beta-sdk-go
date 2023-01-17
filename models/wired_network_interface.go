@@ -25,7 +25,7 @@ const (
 func (i WiredNetworkInterface) String() string {
     return []string{"anyEthernet", "firstActiveEthernet", "secondActiveEthernet", "thirdActiveEthernet", "firstEthernet", "secondEthernet", "thirdEthernet"}[i]
 }
-func ParseWiredNetworkInterface(v string) (interface{}, error) {
+func ParseWiredNetworkInterface(v string) (any, error) {
     result := ANYETHERNET_WIREDNETWORKINTERFACE
     switch v {
         case "anyEthernet":

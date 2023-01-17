@@ -18,7 +18,7 @@ const (
 func (i LanguageProficiencyLevel) String() string {
     return []string{"elementary", "conversational", "limitedWorking", "professionalWorking", "fullProfessional", "nativeOrBilingual", "unknownFutureValue"}[i]
 }
-func ParseLanguageProficiencyLevel(v string) (interface{}, error) {
+func ParseLanguageProficiencyLevel(v string) (any, error) {
     result := ELEMENTARY_LANGUAGEPROFICIENCYLEVEL
     switch v {
         case "elementary":

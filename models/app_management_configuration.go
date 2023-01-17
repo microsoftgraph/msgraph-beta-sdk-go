@@ -7,7 +7,7 @@ import (
 // AppManagementConfiguration 
 type AppManagementConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Collection of keyCredential restrictions settings to be applied to an application or service principal.
     keyCredentials []KeyCredentialConfigurationable
     // The OdataType property
@@ -19,7 +19,7 @@ type AppManagementConfiguration struct {
 func NewAppManagementConfiguration()(*AppManagementConfiguration) {
     m := &AppManagementConfiguration{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAppManagementConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateAppManagementConfigurationFromDiscriminatorValue(parseNode i878a80d23
     return NewAppManagementConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AppManagementConfiguration) GetAdditionalData()(map[string]interface{}) {
+func (m *AppManagementConfiguration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -122,7 +122,7 @@ func (m *AppManagementConfiguration) Serialize(writer i878a80d2330e89d26896388a3
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AppManagementConfiguration) SetAdditionalData(value map[string]interface{})() {
+func (m *AppManagementConfiguration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetKeyCredentials sets the keyCredentials property value. Collection of keyCredential restrictions settings to be applied to an application or service principal.

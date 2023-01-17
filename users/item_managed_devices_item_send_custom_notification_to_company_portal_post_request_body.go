@@ -7,7 +7,7 @@ import (
 // ItemManagedDevicesItemSendCustomNotificationToCompanyPortalPostRequestBody 
 type ItemManagedDevicesItemSendCustomNotificationToCompanyPortalPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The notificationBody property
     notificationBody *string
     // The notificationTitle property
@@ -17,7 +17,7 @@ type ItemManagedDevicesItemSendCustomNotificationToCompanyPortalPostRequestBody 
 func NewItemManagedDevicesItemSendCustomNotificationToCompanyPortalPostRequestBody()(*ItemManagedDevicesItemSendCustomNotificationToCompanyPortalPostRequestBody) {
     m := &ItemManagedDevicesItemSendCustomNotificationToCompanyPortalPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemManagedDevicesItemSendCustomNotificationToCompanyPortalPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateItemManagedDevicesItemSendCustomNotificationToCompanyPortalPostReques
     return NewItemManagedDevicesItemSendCustomNotificationToCompanyPortalPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemManagedDevicesItemSendCustomNotificationToCompanyPortalPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemManagedDevicesItemSendCustomNotificationToCompanyPortalPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -84,7 +84,7 @@ func (m *ItemManagedDevicesItemSendCustomNotificationToCompanyPortalPostRequestB
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemManagedDevicesItemSendCustomNotificationToCompanyPortalPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemManagedDevicesItemSendCustomNotificationToCompanyPortalPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetNotificationBody sets the notificationBody property value. The notificationBody property

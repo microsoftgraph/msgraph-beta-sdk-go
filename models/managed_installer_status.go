@@ -15,7 +15,7 @@ const (
 func (i ManagedInstallerStatus) String() string {
     return []string{"disabled", "enabled"}[i]
 }
-func ParseManagedInstallerStatus(v string) (interface{}, error) {
+func ParseManagedInstallerStatus(v string) (any, error) {
     result := DISABLED_MANAGEDINSTALLERSTATUS
     switch v {
         case "disabled":

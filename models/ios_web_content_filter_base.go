@@ -7,7 +7,7 @@ import (
 // IosWebContentFilterBase represents an iOS Web Content Filter setting base type. An empty and abstract base. Caller should use one of derived types for configurations.
 type IosWebContentFilterBase struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
 }
@@ -15,7 +15,7 @@ type IosWebContentFilterBase struct {
 func NewIosWebContentFilterBase()(*IosWebContentFilterBase) {
     m := &IosWebContentFilterBase{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateIosWebContentFilterBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,7 +43,7 @@ func CreateIosWebContentFilterBaseFromDiscriminatorValue(parseNode i878a80d2330e
     return NewIosWebContentFilterBase(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IosWebContentFilterBase) GetAdditionalData()(map[string]interface{}) {
+func (m *IosWebContentFilterBase) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -82,7 +82,7 @@ func (m *IosWebContentFilterBase) Serialize(writer i878a80d2330e89d26896388a3f48
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IosWebContentFilterBase) SetAdditionalData(value map[string]interface{})() {
+func (m *IosWebContentFilterBase) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

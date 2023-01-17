@@ -33,7 +33,7 @@ const (
 func (i DeviceManagementConfigurationTechnologies) String() string {
     return []string{"none", "mdm", "windows10XManagement", "configManager", "appleRemoteManagement", "microsoftSense", "exchangeOnline", "linuxMdm", "enrollment", "endpointPrivilegeManagement", "unknownFutureValue"}[i]
 }
-func ParseDeviceManagementConfigurationTechnologies(v string) (interface{}, error) {
+func ParseDeviceManagementConfigurationTechnologies(v string) (any, error) {
     result := NONE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
     switch v {
         case "none":

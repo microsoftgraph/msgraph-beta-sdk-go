@@ -9,7 +9,7 @@ import (
 // PowerliftIncidentMetadata collection of app diagnostics associated with a user.
 type PowerliftIncidentMetadata struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The name of the application the diagnostic is from. Example: com.microsoft.CompanyPortal
     application *string
     // The version of the application. Example: 5.2203.1
@@ -33,7 +33,7 @@ type PowerliftIncidentMetadata struct {
 func NewPowerliftIncidentMetadata()(*PowerliftIncidentMetadata) {
     m := &PowerliftIncidentMetadata{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePowerliftIncidentMetadataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,7 +41,7 @@ func CreatePowerliftIncidentMetadataFromDiscriminatorValue(parseNode i878a80d233
     return NewPowerliftIncidentMetadata(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PowerliftIncidentMetadata) GetAdditionalData()(map[string]interface{}) {
+func (m *PowerliftIncidentMetadata) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApplication gets the application property value. The name of the application the diagnostic is from. Example: com.microsoft.CompanyPortal
@@ -244,7 +244,7 @@ func (m *PowerliftIncidentMetadata) Serialize(writer i878a80d2330e89d26896388a3f
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PowerliftIncidentMetadata) SetAdditionalData(value map[string]interface{})() {
+func (m *PowerliftIncidentMetadata) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetApplication sets the application property value. The name of the application the diagnostic is from. Example: com.microsoft.CompanyPortal

@@ -25,7 +25,7 @@ const (
 func (i Win32LobAppFileSystemDetectionType) String() string {
     return []string{"notConfigured", "exists", "modifiedDate", "createdDate", "version", "sizeInMB", "doesNotExist"}[i]
 }
-func ParseWin32LobAppFileSystemDetectionType(v string) (interface{}, error) {
+func ParseWin32LobAppFileSystemDetectionType(v string) (any, error) {
     result := NOTCONFIGURED_WIN32LOBAPPFILESYSTEMDETECTIONTYPE
     switch v {
         case "notConfigured":

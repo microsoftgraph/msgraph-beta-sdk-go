@@ -7,7 +7,7 @@ import (
 // AndroidDeviceOwnerSystemUpdateFreezePeriod represents one item in the list of freeze periods for Android Device Owner system updates
 type AndroidDeviceOwnerSystemUpdateFreezePeriod struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The day of the end date of the freeze period. Valid values 1 to 31
     endDay *int32
     // The month of the end date of the freeze period. Valid values 1 to 12
@@ -23,7 +23,7 @@ type AndroidDeviceOwnerSystemUpdateFreezePeriod struct {
 func NewAndroidDeviceOwnerSystemUpdateFreezePeriod()(*AndroidDeviceOwnerSystemUpdateFreezePeriod) {
     m := &AndroidDeviceOwnerSystemUpdateFreezePeriod{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAndroidDeviceOwnerSystemUpdateFreezePeriodFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateAndroidDeviceOwnerSystemUpdateFreezePeriodFromDiscriminatorValue(pars
     return NewAndroidDeviceOwnerSystemUpdateFreezePeriod(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AndroidDeviceOwnerSystemUpdateFreezePeriod) GetAdditionalData()(map[string]interface{}) {
+func (m *AndroidDeviceOwnerSystemUpdateFreezePeriod) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEndDay gets the endDay property value. The day of the end date of the freeze period. Valid values 1 to 31
@@ -150,7 +150,7 @@ func (m *AndroidDeviceOwnerSystemUpdateFreezePeriod) Serialize(writer i878a80d23
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AndroidDeviceOwnerSystemUpdateFreezePeriod) SetAdditionalData(value map[string]interface{})() {
+func (m *AndroidDeviceOwnerSystemUpdateFreezePeriod) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEndDay sets the endDay property value. The day of the end date of the freeze period. Valid values 1 to 31

@@ -23,7 +23,7 @@ const (
 func (i AndroidDeviceOwnerKioskModeIconSize) String() string {
     return []string{"notConfigured", "smallest", "small", "regular", "large", "largest"}[i]
 }
-func ParseAndroidDeviceOwnerKioskModeIconSize(v string) (interface{}, error) {
+func ParseAndroidDeviceOwnerKioskModeIconSize(v string) (any, error) {
     result := NOTCONFIGURED_ANDROIDDEVICEOWNERKIOSKMODEICONSIZE
     switch v {
         case "notConfigured":

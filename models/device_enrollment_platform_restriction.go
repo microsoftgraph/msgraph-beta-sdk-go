@@ -7,7 +7,7 @@ import (
 // DeviceEnrollmentPlatformRestriction platform specific enrollment restrictions
 type DeviceEnrollmentPlatformRestriction struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Collection of blocked Manufacturers.
     blockedManufacturers []string
     // Collection of blocked Skus.
@@ -27,7 +27,7 @@ type DeviceEnrollmentPlatformRestriction struct {
 func NewDeviceEnrollmentPlatformRestriction()(*DeviceEnrollmentPlatformRestriction) {
     m := &DeviceEnrollmentPlatformRestriction{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceEnrollmentPlatformRestrictionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateDeviceEnrollmentPlatformRestrictionFromDiscriminatorValue(parseNode i
     return NewDeviceEnrollmentPlatformRestriction(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceEnrollmentPlatformRestriction) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceEnrollmentPlatformRestriction) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBlockedManufacturers gets the blockedManufacturers property value. Collection of blocked Manufacturers.
@@ -202,7 +202,7 @@ func (m *DeviceEnrollmentPlatformRestriction) Serialize(writer i878a80d2330e89d2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceEnrollmentPlatformRestriction) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceEnrollmentPlatformRestriction) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetBlockedManufacturers sets the blockedManufacturers property value. Collection of blocked Manufacturers.

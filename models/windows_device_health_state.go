@@ -23,7 +23,7 @@ const (
 func (i WindowsDeviceHealthState) String() string {
     return []string{"clean", "fullScanPending", "rebootPending", "manualStepsPending", "offlineScanPending", "critical"}[i]
 }
-func ParseWindowsDeviceHealthState(v string) (interface{}, error) {
+func ParseWindowsDeviceHealthState(v string) (any, error) {
     result := CLEAN_WINDOWSDEVICEHEALTHSTATE
     switch v {
         case "clean":

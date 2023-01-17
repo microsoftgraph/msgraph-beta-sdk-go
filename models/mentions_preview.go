@@ -7,7 +7,7 @@ import (
 // MentionsPreview 
 type MentionsPreview struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // True if the signed-in user is mentioned in the parent resource instance. Read-only. Supports filter.
     isMentioned *bool
     // The OdataType property
@@ -17,7 +17,7 @@ type MentionsPreview struct {
 func NewMentionsPreview()(*MentionsPreview) {
     m := &MentionsPreview{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMentionsPreviewFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateMentionsPreviewFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewMentionsPreview(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MentionsPreview) GetAdditionalData()(map[string]interface{}) {
+func (m *MentionsPreview) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -84,7 +84,7 @@ func (m *MentionsPreview) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MentionsPreview) SetAdditionalData(value map[string]interface{})() {
+func (m *MentionsPreview) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIsMentioned sets the isMentioned property value. True if the signed-in user is mentioned in the parent resource instance. Read-only. Supports filter.

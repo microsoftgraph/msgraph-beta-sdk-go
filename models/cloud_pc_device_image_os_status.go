@@ -14,7 +14,7 @@ const (
 func (i CloudPcDeviceImageOsStatus) String() string {
     return []string{"supported", "supportedWithWarning", "unknownFutureValue"}[i]
 }
-func ParseCloudPcDeviceImageOsStatus(v string) (interface{}, error) {
+func ParseCloudPcDeviceImageOsStatus(v string) (any, error) {
     result := SUPPORTED_CLOUDPCDEVICEIMAGEOSSTATUS
     switch v {
         case "supported":

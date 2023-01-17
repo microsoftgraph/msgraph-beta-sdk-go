@@ -16,7 +16,7 @@ const (
 func (i MicrosoftManagedDesktopType) String() string {
     return []string{"notManaged", "premiumManaged", "standardManaged", "starterManaged", "unknownFutureValue"}[i]
 }
-func ParseMicrosoftManagedDesktopType(v string) (interface{}, error) {
+func ParseMicrosoftManagedDesktopType(v string) (any, error) {
     result := NOTMANAGED_MICROSOFTMANAGEDDESKTOPTYPE
     switch v {
         case "notManaged":

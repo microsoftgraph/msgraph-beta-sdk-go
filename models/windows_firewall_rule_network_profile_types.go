@@ -19,7 +19,7 @@ const (
 func (i WindowsFirewallRuleNetworkProfileTypes) String() string {
     return []string{"notConfigured", "domain", "private", "public"}[i]
 }
-func ParseWindowsFirewallRuleNetworkProfileTypes(v string) (interface{}, error) {
+func ParseWindowsFirewallRuleNetworkProfileTypes(v string) (any, error) {
     result := NOTCONFIGURED_WINDOWSFIREWALLRULENETWORKPROFILETYPES
     switch v {
         case "notConfigured":

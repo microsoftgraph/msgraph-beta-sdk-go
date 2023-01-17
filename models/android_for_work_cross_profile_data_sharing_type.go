@@ -19,7 +19,7 @@ const (
 func (i AndroidForWorkCrossProfileDataSharingType) String() string {
     return []string{"deviceDefault", "preventAny", "allowPersonalToWork", "noRestrictions"}[i]
 }
-func ParseAndroidForWorkCrossProfileDataSharingType(v string) (interface{}, error) {
+func ParseAndroidForWorkCrossProfileDataSharingType(v string) (any, error) {
     result := DEVICEDEFAULT_ANDROIDFORWORKCROSSPROFILEDATASHARINGTYPE
     switch v {
         case "deviceDefault":

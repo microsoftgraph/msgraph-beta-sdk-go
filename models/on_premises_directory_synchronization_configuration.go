@@ -9,7 +9,7 @@ type OnPremisesDirectorySynchronizationConfiguration struct {
     // Contains the accidental deletion prevention configuration for a tenant.
     accidentalDeletionPrevention OnPremisesAccidentalDeletionPreventionable
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Interval of time that the customer requested the sync client waits between sync cycles.
     customerRequestedSynchronizationInterval *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The OdataType property
@@ -21,7 +21,7 @@ type OnPremisesDirectorySynchronizationConfiguration struct {
 func NewOnPremisesDirectorySynchronizationConfiguration()(*OnPremisesDirectorySynchronizationConfiguration) {
     m := &OnPremisesDirectorySynchronizationConfiguration{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateOnPremisesDirectorySynchronizationConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func (m *OnPremisesDirectorySynchronizationConfiguration) GetAccidentalDeletionP
     return m.accidentalDeletionPrevention
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OnPremisesDirectorySynchronizationConfiguration) GetAdditionalData()(map[string]interface{}) {
+func (m *OnPremisesDirectorySynchronizationConfiguration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCustomerRequestedSynchronizationInterval gets the customerRequestedSynchronizationInterval property value. Interval of time that the customer requested the sync client waits between sync cycles.
@@ -132,7 +132,7 @@ func (m *OnPremisesDirectorySynchronizationConfiguration) SetAccidentalDeletionP
     m.accidentalDeletionPrevention = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OnPremisesDirectorySynchronizationConfiguration) SetAdditionalData(value map[string]interface{})() {
+func (m *OnPremisesDirectorySynchronizationConfiguration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCustomerRequestedSynchronizationInterval sets the customerRequestedSynchronizationInterval property value. Interval of time that the customer requested the sync client waits between sync cycles.

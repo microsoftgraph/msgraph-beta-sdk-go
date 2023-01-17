@@ -15,7 +15,7 @@ const (
 func (i ActionSource) String() string {
     return []string{"manual", "automatic", "recommended", "default"}[i]
 }
-func ParseActionSource(v string) (interface{}, error) {
+func ParseActionSource(v string) (any, error) {
     result := MANUAL_ACTIONSOURCE
     switch v {
         case "manual":

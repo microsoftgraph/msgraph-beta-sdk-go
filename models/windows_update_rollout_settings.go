@@ -8,7 +8,7 @@ import (
 // WindowsUpdateRolloutSettings a complex type to store the windows update rollout settings including offer start date time, offer end date time, and days between each set of offers.
 type WindowsUpdateRolloutSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // The feature update's ending  of release date and time to be set, update, and displayed for a feature Update profile for example: 2020-06-09T10:00:00Z.
@@ -22,7 +22,7 @@ type WindowsUpdateRolloutSettings struct {
 func NewWindowsUpdateRolloutSettings()(*WindowsUpdateRolloutSettings) {
     m := &WindowsUpdateRolloutSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWindowsUpdateRolloutSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateWindowsUpdateRolloutSettingsFromDiscriminatorValue(parseNode i878a80d
     return NewWindowsUpdateRolloutSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsUpdateRolloutSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *WindowsUpdateRolloutSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -129,7 +129,7 @@ func (m *WindowsUpdateRolloutSettings) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsUpdateRolloutSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *WindowsUpdateRolloutSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

@@ -19,7 +19,7 @@ const (
 func (i MessageStatus) String() string {
     return []string{"gettingStatus", "pending", "failed", "delivered", "expanded", "quarantined", "filteredAsSpam", "unknownFutureValue"}[i]
 }
-func ParseMessageStatus(v string) (interface{}, error) {
+func ParseMessageStatus(v string) (any, error) {
     result := GETTINGSTATUS_MESSAGESTATUS
     switch v {
         case "gettingStatus":

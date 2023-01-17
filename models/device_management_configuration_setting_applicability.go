@@ -7,7 +7,7 @@ import (
 // DeviceManagementConfigurationSettingApplicability 
 type DeviceManagementConfigurationSettingApplicability struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // description of the setting
     description *string
     // Describes applicability for the mode the device is in
@@ -23,7 +23,7 @@ type DeviceManagementConfigurationSettingApplicability struct {
 func NewDeviceManagementConfigurationSettingApplicability()(*DeviceManagementConfigurationSettingApplicability) {
     m := &DeviceManagementConfigurationSettingApplicability{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceManagementConfigurationSettingApplicabilityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -51,7 +51,7 @@ func CreateDeviceManagementConfigurationSettingApplicabilityFromDiscriminatorVal
     return NewDeviceManagementConfigurationSettingApplicability(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementConfigurationSettingApplicability) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceManagementConfigurationSettingApplicability) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDescription gets the description property value. description of the setting
@@ -173,7 +173,7 @@ func (m *DeviceManagementConfigurationSettingApplicability) Serialize(writer i87
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementConfigurationSettingApplicability) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceManagementConfigurationSettingApplicability) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDescription sets the description property value. description of the setting

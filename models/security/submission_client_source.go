@@ -14,7 +14,7 @@ const (
 func (i SubmissionClientSource) String() string {
     return []string{"microsoft", "other", "unknownFutureValue"}[i]
 }
-func ParseSubmissionClientSource(v string) (interface{}, error) {
+func ParseSubmissionClientSource(v string) (any, error) {
     result := MICROSOFT_SUBMISSIONCLIENTSOURCE
     switch v {
         case "microsoft":

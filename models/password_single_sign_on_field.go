@@ -7,7 +7,7 @@ import (
 // PasswordSingleSignOnField 
 type PasswordSingleSignOnField struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Title/label override for customization.
     customizedLabel *string
     // Label that would be used if no customizedLabel is provided. Read only.
@@ -23,7 +23,7 @@ type PasswordSingleSignOnField struct {
 func NewPasswordSingleSignOnField()(*PasswordSingleSignOnField) {
     m := &PasswordSingleSignOnField{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePasswordSingleSignOnFieldFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreatePasswordSingleSignOnFieldFromDiscriminatorValue(parseNode i878a80d233
     return NewPasswordSingleSignOnField(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PasswordSingleSignOnField) GetAdditionalData()(map[string]interface{}) {
+func (m *PasswordSingleSignOnField) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCustomizedLabel gets the customizedLabel property value. Title/label override for customization.
@@ -150,7 +150,7 @@ func (m *PasswordSingleSignOnField) Serialize(writer i878a80d2330e89d26896388a3f
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PasswordSingleSignOnField) SetAdditionalData(value map[string]interface{})() {
+func (m *PasswordSingleSignOnField) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCustomizedLabel sets the customizedLabel property value. Title/label override for customization.

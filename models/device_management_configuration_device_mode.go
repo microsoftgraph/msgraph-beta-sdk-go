@@ -15,7 +15,7 @@ const (
 func (i DeviceManagementConfigurationDeviceMode) String() string {
     return []string{"none", "kiosk"}[i]
 }
-func ParseDeviceManagementConfigurationDeviceMode(v string) (interface{}, error) {
+func ParseDeviceManagementConfigurationDeviceMode(v string) (any, error) {
     result := NONE_DEVICEMANAGEMENTCONFIGURATIONDEVICEMODE
     switch v {
         case "none":

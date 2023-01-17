@@ -18,7 +18,7 @@ const (
 func (i ExpirationRequirement) String() string {
     return []string{"rememberMultifactorAuthenticationOnTrustedDevices", "tenantTokenLifetimePolicy", "audienceTokenLifetimePolicy", "signInFrequencyPeriodicReauthentication", "ngcMfa", "signInFrequencyEveryTime", "unknownFutureValue"}[i]
 }
-func ParseExpirationRequirement(v string) (interface{}, error) {
+func ParseExpirationRequirement(v string) (any, error) {
     result := REMEMBERMULTIFACTORAUTHENTICATIONONTRUSTEDDEVICES_EXPIRATIONREQUIREMENT
     switch v {
         case "rememberMultifactorAuthenticationOnTrustedDevices":

@@ -14,7 +14,7 @@ const (
 func (i TenantAllowBlockListAction) String() string {
     return []string{"allow", "block", "unknownFutureValue"}[i]
 }
-func ParseTenantAllowBlockListAction(v string) (interface{}, error) {
+func ParseTenantAllowBlockListAction(v string) (any, error) {
     result := ALLOW_TENANTALLOWBLOCKLISTACTION
     switch v {
         case "allow":

@@ -7,7 +7,7 @@ import (
 // OnPremisesPublishingSingleSignOn 
 type OnPremisesPublishingSingleSignOn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The Kerberos Constrained Delegation settings for applications that use Integrated Window Authentication.
     kerberosSignOnSettings KerberosSignOnSettingsable
     // The OdataType property
@@ -19,7 +19,7 @@ type OnPremisesPublishingSingleSignOn struct {
 func NewOnPremisesPublishingSingleSignOn()(*OnPremisesPublishingSingleSignOn) {
     m := &OnPremisesPublishingSingleSignOn{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateOnPremisesPublishingSingleSignOnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateOnPremisesPublishingSingleSignOnFromDiscriminatorValue(parseNode i878
     return NewOnPremisesPublishingSingleSignOn(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OnPremisesPublishingSingleSignOn) GetAdditionalData()(map[string]interface{}) {
+func (m *OnPremisesPublishingSingleSignOn) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -107,7 +107,7 @@ func (m *OnPremisesPublishingSingleSignOn) Serialize(writer i878a80d2330e89d2689
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OnPremisesPublishingSingleSignOn) SetAdditionalData(value map[string]interface{})() {
+func (m *OnPremisesPublishingSingleSignOn) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetKerberosSignOnSettings sets the kerberosSignOnSettings property value. The Kerberos Constrained Delegation settings for applications that use Integrated Window Authentication.

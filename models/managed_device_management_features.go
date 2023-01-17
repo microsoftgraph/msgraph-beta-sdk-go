@@ -15,7 +15,7 @@ const (
 func (i ManagedDeviceManagementFeatures) String() string {
     return []string{"none", "microsoftManagedDesktop"}[i]
 }
-func ParseManagedDeviceManagementFeatures(v string) (interface{}, error) {
+func ParseManagedDeviceManagementFeatures(v string) (any, error) {
     result := NONE_MANAGEDDEVICEMANAGEMENTFEATURES
     switch v {
         case "none":

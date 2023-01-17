@@ -7,7 +7,7 @@ import (
 // TeamworkActivePeripherals 
 type TeamworkActivePeripherals struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The communicationSpeaker property
     communicationSpeaker TeamworkPeripheralable
     // The contentCamera property
@@ -25,7 +25,7 @@ type TeamworkActivePeripherals struct {
 func NewTeamworkActivePeripherals()(*TeamworkActivePeripherals) {
     m := &TeamworkActivePeripherals{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTeamworkActivePeripheralsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateTeamworkActivePeripheralsFromDiscriminatorValue(parseNode i878a80d233
     return NewTeamworkActivePeripherals(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkActivePeripherals) GetAdditionalData()(map[string]interface{}) {
+func (m *TeamworkActivePeripherals) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCommunicationSpeaker gets the communicationSpeaker property value. The communicationSpeaker property
@@ -172,7 +172,7 @@ func (m *TeamworkActivePeripherals) Serialize(writer i878a80d2330e89d26896388a3f
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkActivePeripherals) SetAdditionalData(value map[string]interface{})() {
+func (m *TeamworkActivePeripherals) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCommunicationSpeaker sets the communicationSpeaker property value. The communicationSpeaker property

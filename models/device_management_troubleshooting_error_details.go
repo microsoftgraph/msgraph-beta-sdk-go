@@ -7,7 +7,7 @@ import (
 // DeviceManagementTroubleshootingErrorDetails object containing detailed information about the error and its remediation.
 type DeviceManagementTroubleshootingErrorDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Not yet documented
     context *string
     // Not yet documented
@@ -25,7 +25,7 @@ type DeviceManagementTroubleshootingErrorDetails struct {
 func NewDeviceManagementTroubleshootingErrorDetails()(*DeviceManagementTroubleshootingErrorDetails) {
     m := &DeviceManagementTroubleshootingErrorDetails{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceManagementTroubleshootingErrorDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateDeviceManagementTroubleshootingErrorDetailsFromDiscriminatorValue(par
     return NewDeviceManagementTroubleshootingErrorDetails(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementTroubleshootingErrorDetails) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceManagementTroubleshootingErrorDetails) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContext gets the context property value. Not yet documented
@@ -180,7 +180,7 @@ func (m *DeviceManagementTroubleshootingErrorDetails) Serialize(writer i878a80d2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementTroubleshootingErrorDetails) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceManagementTroubleshootingErrorDetails) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetContext sets the context property value. Not yet documented

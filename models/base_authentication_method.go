@@ -24,7 +24,7 @@ const (
 func (i BaseAuthenticationMethod) String() string {
     return []string{"password", "voice", "hardwareOath", "softwareOath", "sms", "fido2", "windowsHelloForBusiness", "microsoftAuthenticator", "temporaryAccessPass", "email", "x509Certificate", "federation", "unknownFutureValue"}[i]
 }
-func ParseBaseAuthenticationMethod(v string) (interface{}, error) {
+func ParseBaseAuthenticationMethod(v string) (any, error) {
     result := PASSWORD_BASEAUTHENTICATIONMETHOD
     switch v {
         case "password":

@@ -7,7 +7,7 @@ import (
 // EducationFileSynchronizationVerificationMessage 
 type EducationFileSynchronizationVerificationMessage struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Detailed information about the message type.
     description *string
     // The fileName property
@@ -21,7 +21,7 @@ type EducationFileSynchronizationVerificationMessage struct {
 func NewEducationFileSynchronizationVerificationMessage()(*EducationFileSynchronizationVerificationMessage) {
     m := &EducationFileSynchronizationVerificationMessage{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateEducationFileSynchronizationVerificationMessageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateEducationFileSynchronizationVerificationMessageFromDiscriminatorValue
     return NewEducationFileSynchronizationVerificationMessage(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EducationFileSynchronizationVerificationMessage) GetAdditionalData()(map[string]interface{}) {
+func (m *EducationFileSynchronizationVerificationMessage) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDescription gets the description property value. Detailed information about the message type.
@@ -128,7 +128,7 @@ func (m *EducationFileSynchronizationVerificationMessage) Serialize(writer i878a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EducationFileSynchronizationVerificationMessage) SetAdditionalData(value map[string]interface{})() {
+func (m *EducationFileSynchronizationVerificationMessage) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDescription sets the description property value. Detailed information about the message type.

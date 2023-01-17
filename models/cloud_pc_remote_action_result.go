@@ -12,7 +12,7 @@ type CloudPcRemoteActionResult struct {
     // State of the action. Possible values are: None, pending, canceled, active, done, failed, notSupported. Read-only.
     actionState *ActionState
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The ID of the Cloud PC device on which the remote action is performed. Read-only.
     cloudPcId *string
     // Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
@@ -30,7 +30,7 @@ type CloudPcRemoteActionResult struct {
 func NewCloudPcRemoteActionResult()(*CloudPcRemoteActionResult) {
     m := &CloudPcRemoteActionResult{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCloudPcRemoteActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -46,7 +46,7 @@ func (m *CloudPcRemoteActionResult) GetActionState()(*ActionState) {
     return m.actionState
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CloudPcRemoteActionResult) GetAdditionalData()(map[string]interface{}) {
+func (m *CloudPcRemoteActionResult) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCloudPcId gets the cloudPcId property value. The ID of the Cloud PC device on which the remote action is performed. Read-only.
@@ -226,7 +226,7 @@ func (m *CloudPcRemoteActionResult) SetActionState(value *ActionState)() {
     m.actionState = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CloudPcRemoteActionResult) SetAdditionalData(value map[string]interface{})() {
+func (m *CloudPcRemoteActionResult) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCloudPcId sets the cloudPcId property value. The ID of the Cloud PC device on which the remote action is performed. Read-only.

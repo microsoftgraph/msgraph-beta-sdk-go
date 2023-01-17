@@ -15,7 +15,7 @@ const (
 func (i AndroidSafetyNetEvaluationType) String() string {
     return []string{"basic", "hardwareBacked"}[i]
 }
-func ParseAndroidSafetyNetEvaluationType(v string) (interface{}, error) {
+func ParseAndroidSafetyNetEvaluationType(v string) (any, error) {
     result := BASIC_ANDROIDSAFETYNETEVALUATIONTYPE
     switch v {
         case "basic":

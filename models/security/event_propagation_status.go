@@ -16,7 +16,7 @@ const (
 func (i EventPropagationStatus) String() string {
     return []string{"none", "inProcessing", "failed", "success", "unknownFutureValue"}[i]
 }
-func ParseEventPropagationStatus(v string) (interface{}, error) {
+func ParseEventPropagationStatus(v string) (any, error) {
     result := NONE_EVENTPROPAGATIONSTATUS
     switch v {
         case "none":

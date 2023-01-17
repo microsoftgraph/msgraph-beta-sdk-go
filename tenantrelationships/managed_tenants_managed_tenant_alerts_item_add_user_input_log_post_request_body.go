@@ -7,7 +7,7 @@ import (
 // ManagedTenantsManagedTenantAlertsItemAddUserInputLogPostRequestBody 
 type ManagedTenantsManagedTenantAlertsItemAddUserInputLogPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The logInformation property
     logInformation *string
 }
@@ -15,7 +15,7 @@ type ManagedTenantsManagedTenantAlertsItemAddUserInputLogPostRequestBody struct 
 func NewManagedTenantsManagedTenantAlertsItemAddUserInputLogPostRequestBody()(*ManagedTenantsManagedTenantAlertsItemAddUserInputLogPostRequestBody) {
     m := &ManagedTenantsManagedTenantAlertsItemAddUserInputLogPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateManagedTenantsManagedTenantAlertsItemAddUserInputLogPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateManagedTenantsManagedTenantAlertsItemAddUserInputLogPostRequestBodyFr
     return NewManagedTenantsManagedTenantAlertsItemAddUserInputLogPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedTenantsManagedTenantAlertsItemAddUserInputLogPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ManagedTenantsManagedTenantAlertsItemAddUserInputLogPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ManagedTenantsManagedTenantAlertsItemAddUserInputLogPostRequestBody) Se
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedTenantsManagedTenantAlertsItemAddUserInputLogPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ManagedTenantsManagedTenantAlertsItemAddUserInputLogPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetLogInformation sets the logInformation property value. The logInformation property

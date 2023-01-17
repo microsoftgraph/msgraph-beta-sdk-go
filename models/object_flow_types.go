@@ -15,7 +15,7 @@ const (
 func (i ObjectFlowTypes) String() string {
     return []string{"None", "Add", "Update", "Delete"}[i]
 }
-func ParseObjectFlowTypes(v string) (interface{}, error) {
+func ParseObjectFlowTypes(v string) (any, error) {
     result := NONE_OBJECTFLOWTYPES
     switch v {
         case "None":

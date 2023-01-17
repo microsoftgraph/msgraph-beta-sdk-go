@@ -15,7 +15,7 @@ const (
 func (i ChangeUefiSettingsPermission) String() string {
     return []string{"notConfiguredOnly", "none"}[i]
 }
-func ParseChangeUefiSettingsPermission(v string) (interface{}, error) {
+func ParseChangeUefiSettingsPermission(v string) (any, error) {
     result := NOTCONFIGUREDONLY_CHANGEUEFISETTINGSPERMISSION
     switch v {
         case "notConfiguredOnly":

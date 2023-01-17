@@ -19,7 +19,7 @@ const (
 func (i QuarantineReason) String() string {
     return []string{"EncounteredBaseEscrowThreshold", "EncounteredTotalEscrowThreshold", "EncounteredEscrowProportionThreshold", "EncounteredQuarantineException", "Unknown", "QuarantinedOnDemand", "TooManyDeletes", "IngestionInterrupted"}[i]
 }
-func ParseQuarantineReason(v string) (interface{}, error) {
+func ParseQuarantineReason(v string) (any, error) {
     result := ENCOUNTEREDBASEESCROWTHRESHOLD_QUARANTINEREASON
     switch v {
         case "EncounteredBaseEscrowThreshold":

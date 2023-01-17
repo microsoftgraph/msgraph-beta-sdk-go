@@ -7,7 +7,7 @@ import (
 // CertificateConnectorDetailsItemGetHealthMetricsPostRequestBody 
 type CertificateConnectorDetailsItemGetHealthMetricsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The metricNames property
     metricNames []string
 }
@@ -15,7 +15,7 @@ type CertificateConnectorDetailsItemGetHealthMetricsPostRequestBody struct {
 func NewCertificateConnectorDetailsItemGetHealthMetricsPostRequestBody()(*CertificateConnectorDetailsItemGetHealthMetricsPostRequestBody) {
     m := &CertificateConnectorDetailsItemGetHealthMetricsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCertificateConnectorDetailsItemGetHealthMetricsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateCertificateConnectorDetailsItemGetHealthMetricsPostRequestBodyFromDis
     return NewCertificateConnectorDetailsItemGetHealthMetricsPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CertificateConnectorDetailsItemGetHealthMetricsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *CertificateConnectorDetailsItemGetHealthMetricsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -66,7 +66,7 @@ func (m *CertificateConnectorDetailsItemGetHealthMetricsPostRequestBody) Seriali
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CertificateConnectorDetailsItemGetHealthMetricsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *CertificateConnectorDetailsItemGetHealthMetricsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetMetricNames sets the metricNames property value. The metricNames property

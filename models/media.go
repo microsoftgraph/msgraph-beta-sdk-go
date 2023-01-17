@@ -7,7 +7,7 @@ import (
 // Media 
 type Media struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // If a file has a transcript, this setting controls if the closed captions / transcription for the media file should be shown to people during viewing. Read-Write.
     isTranscriptionShown *bool
     // Information about the source of media. Read-only.
@@ -19,7 +19,7 @@ type Media struct {
 func NewMedia()(*Media) {
     m := &Media{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMediaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateMediaFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487e
     return NewMedia(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Media) GetAdditionalData()(map[string]interface{}) {
+func (m *Media) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -106,7 +106,7 @@ func (m *Media) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Media) SetAdditionalData(value map[string]interface{})() {
+func (m *Media) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIsTranscriptionShown sets the isTranscriptionShown property value. If a file has a transcript, this setting controls if the closed captions / transcription for the media file should be shown to people during viewing. Read-Write.

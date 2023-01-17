@@ -7,7 +7,7 @@ import (
 // RuleThreshold 
 type RuleThreshold struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicates the built-in aggregation methods. The possible values are: count, percentage, affectedCloudPcCount, affectedCloudPcPercentage, unknownFutureValue.
     aggregation *AggregationType
     // The OdataType property
@@ -21,7 +21,7 @@ type RuleThreshold struct {
 func NewRuleThreshold()(*RuleThreshold) {
     m := &RuleThreshold{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRuleThresholdFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateRuleThresholdFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewRuleThreshold(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RuleThreshold) GetAdditionalData()(map[string]interface{}) {
+func (m *RuleThreshold) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAggregation gets the aggregation property value. Indicates the built-in aggregation methods. The possible values are: count, percentage, affectedCloudPcCount, affectedCloudPcPercentage, unknownFutureValue.
@@ -130,7 +130,7 @@ func (m *RuleThreshold) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RuleThreshold) SetAdditionalData(value map[string]interface{})() {
+func (m *RuleThreshold) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAggregation sets the aggregation property value. Indicates the built-in aggregation methods. The possible values are: count, percentage, affectedCloudPcCount, affectedCloudPcPercentage, unknownFutureValue.

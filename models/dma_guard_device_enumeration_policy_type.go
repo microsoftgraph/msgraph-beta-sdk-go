@@ -17,7 +17,7 @@ const (
 func (i DmaGuardDeviceEnumerationPolicyType) String() string {
     return []string{"deviceDefault", "blockAll", "allowAll"}[i]
 }
-func ParseDmaGuardDeviceEnumerationPolicyType(v string) (interface{}, error) {
+func ParseDmaGuardDeviceEnumerationPolicyType(v string) (any, error) {
     result := DEVICEDEFAULT_DMAGUARDDEVICEENUMERATIONPOLICYTYPE
     switch v {
         case "deviceDefault":

@@ -21,7 +21,7 @@ const (
 func (i AndroidDeviceOwnerCrossProfileDataSharing) String() string {
     return []string{"notConfigured", "crossProfileDataSharingBlocked", "dataSharingFromWorkToPersonalBlocked", "crossProfileDataSharingAllowed", "unkownFutureValue"}[i]
 }
-func ParseAndroidDeviceOwnerCrossProfileDataSharing(v string) (interface{}, error) {
+func ParseAndroidDeviceOwnerCrossProfileDataSharing(v string) (any, error) {
     result := NOTCONFIGURED_ANDROIDDEVICEOWNERCROSSPROFILEDATASHARING
     switch v {
         case "notConfigured":

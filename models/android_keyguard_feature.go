@@ -33,7 +33,7 @@ const (
 func (i AndroidKeyguardFeature) String() string {
     return []string{"notConfigured", "camera", "notifications", "unredactedNotifications", "trustAgents", "fingerprint", "remoteInput", "allFeatures", "face", "iris", "biometrics"}[i]
 }
-func ParseAndroidKeyguardFeature(v string) (interface{}, error) {
+func ParseAndroidKeyguardFeature(v string) (any, error) {
     result := NOTCONFIGURED_ANDROIDKEYGUARDFEATURE
     switch v {
         case "notConfigured":

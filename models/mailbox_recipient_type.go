@@ -18,7 +18,7 @@ const (
 func (i MailboxRecipientType) String() string {
     return []string{"unknown", "user", "linked", "shared", "room", "equipment", "others"}[i]
 }
-func ParseMailboxRecipientType(v string) (interface{}, error) {
+func ParseMailboxRecipientType(v string) (any, error) {
     result := UNKNOWN_MAILBOXRECIPIENTTYPE
     switch v {
         case "unknown":

@@ -7,7 +7,7 @@ import (
 // WinGetAppRestartSettings contains properties describing restart coordination following an app installation.
 type WinGetAppRestartSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The number of minutes before the restart time to display the countdown dialog for pending restarts.
     countdownDisplayBeforeRestartInMinutes *int32
     // The number of minutes to wait before restarting the device after an app installation.
@@ -21,7 +21,7 @@ type WinGetAppRestartSettings struct {
 func NewWinGetAppRestartSettings()(*WinGetAppRestartSettings) {
     m := &WinGetAppRestartSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWinGetAppRestartSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateWinGetAppRestartSettingsFromDiscriminatorValue(parseNode i878a80d2330
     return NewWinGetAppRestartSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WinGetAppRestartSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *WinGetAppRestartSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCountdownDisplayBeforeRestartInMinutes gets the countdownDisplayBeforeRestartInMinutes property value. The number of minutes before the restart time to display the countdown dialog for pending restarts.
@@ -128,7 +128,7 @@ func (m *WinGetAppRestartSettings) Serialize(writer i878a80d2330e89d26896388a3f4
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WinGetAppRestartSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *WinGetAppRestartSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCountdownDisplayBeforeRestartInMinutes sets the countdownDisplayBeforeRestartInMinutes property value. The number of minutes before the restart time to display the countdown dialog for pending restarts.

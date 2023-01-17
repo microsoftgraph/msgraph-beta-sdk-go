@@ -16,7 +16,7 @@ const (
 func (i SharingCapabilities) String() string {
     return []string{"disabled", "externalUserSharingOnly", "externalUserAndGuestSharing", "existingExternalUserSharingOnly", "unknownFutureValue"}[i]
 }
-func ParseSharingCapabilities(v string) (interface{}, error) {
+func ParseSharingCapabilities(v string) (any, error) {
     result := DISABLED_SHARINGCAPABILITIES
     switch v {
         case "disabled":

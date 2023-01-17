@@ -8,7 +8,7 @@ import (
 // ChatsItemMarkChatReadForUserPostRequestBody 
 type ChatsItemMarkChatReadForUserPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The tenantId property
     tenantId *string
     // The user property
@@ -18,7 +18,7 @@ type ChatsItemMarkChatReadForUserPostRequestBody struct {
 func NewChatsItemMarkChatReadForUserPostRequestBody()(*ChatsItemMarkChatReadForUserPostRequestBody) {
     m := &ChatsItemMarkChatReadForUserPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateChatsItemMarkChatReadForUserPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateChatsItemMarkChatReadForUserPostRequestBodyFromDiscriminatorValue(par
     return NewChatsItemMarkChatReadForUserPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ChatsItemMarkChatReadForUserPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ChatsItemMarkChatReadForUserPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -85,7 +85,7 @@ func (m *ChatsItemMarkChatReadForUserPostRequestBody) Serialize(writer i878a80d2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ChatsItemMarkChatReadForUserPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ChatsItemMarkChatReadForUserPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetTenantId sets the tenantId property value. The tenantId property

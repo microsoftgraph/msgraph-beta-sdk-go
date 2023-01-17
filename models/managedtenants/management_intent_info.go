@@ -7,7 +7,7 @@ import (
 // ManagementIntentInfo 
 type ManagementIntentInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The display name for the management intent. Optional. Read-only.
     managementIntentDisplayName *string
     // The identifier for the management intent. Required. Read-only.
@@ -21,7 +21,7 @@ type ManagementIntentInfo struct {
 func NewManagementIntentInfo()(*ManagementIntentInfo) {
     m := &ManagementIntentInfo{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateManagementIntentInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateManagementIntentInfoFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewManagementIntentInfo(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagementIntentInfo) GetAdditionalData()(map[string]interface{}) {
+func (m *ManagementIntentInfo) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -136,7 +136,7 @@ func (m *ManagementIntentInfo) Serialize(writer i878a80d2330e89d26896388a3f487ee
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagementIntentInfo) SetAdditionalData(value map[string]interface{})() {
+func (m *ManagementIntentInfo) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetManagementIntentDisplayName sets the managementIntentDisplayName property value. The display name for the management intent. Optional. Read-only.

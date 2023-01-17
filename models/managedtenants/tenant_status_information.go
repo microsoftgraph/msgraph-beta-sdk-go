@@ -8,7 +8,7 @@ import (
 // TenantStatusInformation 
 type TenantStatusInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges. Optional. Read-only.
     delegatedPrivilegeStatus *DelegatedPrivilegeStatus
     // The date and time the delegated admin privileges status was updated. Optional. Read-only.
@@ -34,7 +34,7 @@ type TenantStatusInformation struct {
 func NewTenantStatusInformation()(*TenantStatusInformation) {
     m := &TenantStatusInformation{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTenantStatusInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -42,7 +42,7 @@ func CreateTenantStatusInformationFromDiscriminatorValue(parseNode i878a80d2330e
     return NewTenantStatusInformation(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TenantStatusInformation) GetAdditionalData()(map[string]interface{}) {
+func (m *TenantStatusInformation) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDelegatedPrivilegeStatus gets the delegatedPrivilegeStatus property value. The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges. Optional. Read-only.
@@ -272,7 +272,7 @@ func (m *TenantStatusInformation) Serialize(writer i878a80d2330e89d26896388a3f48
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TenantStatusInformation) SetAdditionalData(value map[string]interface{})() {
+func (m *TenantStatusInformation) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDelegatedPrivilegeStatus sets the delegatedPrivilegeStatus property value. The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges. Optional. Read-only.

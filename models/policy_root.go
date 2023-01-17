@@ -11,7 +11,7 @@ type PolicyRoot struct {
     // The policy that controls the idle time out for web sessions for applications.
     activityBasedTimeoutPolicies []ActivityBasedTimeoutPolicyable
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The policy by which consent requests are created and managed for the entire tenant.
     adminConsentRequestPolicy AdminConsentRequestPolicyable
     // The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
@@ -69,7 +69,7 @@ type PolicyRoot struct {
 func NewPolicyRoot()(*PolicyRoot) {
     m := &PolicyRoot{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePolicyRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -85,7 +85,7 @@ func (m *PolicyRoot) GetActivityBasedTimeoutPolicies()([]ActivityBasedTimeoutPol
     return m.activityBasedTimeoutPolicies
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PolicyRoot) GetAdditionalData()(map[string]interface{}) {
+func (m *PolicyRoot) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAdminConsentRequestPolicy gets the adminConsentRequestPolicy property value. The policy by which consent requests are created and managed for the entire tenant.
@@ -792,7 +792,7 @@ func (m *PolicyRoot) SetActivityBasedTimeoutPolicies(value []ActivityBasedTimeou
     m.activityBasedTimeoutPolicies = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PolicyRoot) SetAdditionalData(value map[string]interface{})() {
+func (m *PolicyRoot) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAdminConsentRequestPolicy sets the adminConsentRequestPolicy property value. The policy by which consent requests are created and managed for the entire tenant.

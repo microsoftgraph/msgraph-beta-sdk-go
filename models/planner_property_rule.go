@@ -7,17 +7,17 @@ import (
 // PlannerPropertyRule 
 type PlannerPropertyRule struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
-    // The ruleKind property
+    // Identifies which type of property rules is represented by this instance. The possible values are: taskRule, bucketRule, planRule, unknownFutureValue.
     ruleKind *PlannerRuleKind
 }
 // NewPlannerPropertyRule instantiates a new plannerPropertyRule and sets the default values.
 func NewPlannerPropertyRule()(*PlannerPropertyRule) {
     m := &PlannerPropertyRule{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePlannerPropertyRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +47,7 @@ func CreatePlannerPropertyRuleFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewPlannerPropertyRule(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PlannerPropertyRule) GetAdditionalData()(map[string]interface{}) {
+func (m *PlannerPropertyRule) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -79,7 +79,7 @@ func (m *PlannerPropertyRule) GetFieldDeserializers()(map[string]func(i878a80d23
 func (m *PlannerPropertyRule) GetOdataType()(*string) {
     return m.odataType
 }
-// GetRuleKind gets the ruleKind property value. The ruleKind property
+// GetRuleKind gets the ruleKind property value. Identifies which type of property rules is represented by this instance. The possible values are: taskRule, bucketRule, planRule, unknownFutureValue.
 func (m *PlannerPropertyRule) GetRuleKind()(*PlannerRuleKind) {
     return m.ruleKind
 }
@@ -107,14 +107,14 @@ func (m *PlannerPropertyRule) Serialize(writer i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PlannerPropertyRule) SetAdditionalData(value map[string]interface{})() {
+func (m *PlannerPropertyRule) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PlannerPropertyRule) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetRuleKind sets the ruleKind property value. The ruleKind property
+// SetRuleKind sets the ruleKind property value. Identifies which type of property rules is represented by this instance. The possible values are: taskRule, bucketRule, planRule, unknownFutureValue.
 func (m *PlannerPropertyRule) SetRuleKind(value *PlannerRuleKind)() {
     m.ruleKind = value
 }

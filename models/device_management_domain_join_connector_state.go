@@ -17,7 +17,7 @@ const (
 func (i DeviceManagementDomainJoinConnectorState) String() string {
     return []string{"active", "error", "inactive"}[i]
 }
-func ParseDeviceManagementDomainJoinConnectorState(v string) (interface{}, error) {
+func ParseDeviceManagementDomainJoinConnectorState(v string) (any, error) {
     result := ACTIVE_DEVICEMANAGEMENTDOMAINJOINCONNECTORSTATE
     switch v {
         case "active":

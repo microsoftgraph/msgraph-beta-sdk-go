@@ -15,7 +15,7 @@ const (
 func (i CloudPcConnectivityEventResult) String() string {
     return []string{"unknown", "success", "failure", "unknownFutureValue"}[i]
 }
-func ParseCloudPcConnectivityEventResult(v string) (interface{}, error) {
+func ParseCloudPcConnectivityEventResult(v string) (any, error) {
     result := UNKNOWN_CLOUDPCCONNECTIVITYEVENTRESULT
     switch v {
         case "unknown":

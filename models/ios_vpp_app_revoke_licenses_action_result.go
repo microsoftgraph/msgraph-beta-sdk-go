@@ -14,7 +14,7 @@ type IosVppAppRevokeLicensesActionResult struct {
     // The actionState property
     actionState *ActionState
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // A count of the number of licenses for which revoke failed.
     failedLicensesCount *int32
     // Time the action state was last updated
@@ -34,7 +34,7 @@ type IosVppAppRevokeLicensesActionResult struct {
 func NewIosVppAppRevokeLicensesActionResult()(*IosVppAppRevokeLicensesActionResult) {
     m := &IosVppAppRevokeLicensesActionResult{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateIosVppAppRevokeLicensesActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -54,7 +54,7 @@ func (m *IosVppAppRevokeLicensesActionResult) GetActionState()(*ActionState) {
     return m.actionState
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IosVppAppRevokeLicensesActionResult) GetAdditionalData()(map[string]interface{}) {
+func (m *IosVppAppRevokeLicensesActionResult) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFailedLicensesCount gets the failedLicensesCount property value. A count of the number of licenses for which revoke failed.
@@ -275,7 +275,7 @@ func (m *IosVppAppRevokeLicensesActionResult) SetActionState(value *ActionState)
     m.actionState = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IosVppAppRevokeLicensesActionResult) SetAdditionalData(value map[string]interface{})() {
+func (m *IosVppAppRevokeLicensesActionResult) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetFailedLicensesCount sets the failedLicensesCount property value. A count of the number of licenses for which revoke failed.

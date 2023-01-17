@@ -7,7 +7,7 @@ import (
 // ConfigurationPoliciesItemReorderPostRequestBody 
 type ConfigurationPoliciesItemReorderPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The priority property
     priority *int32
 }
@@ -15,7 +15,7 @@ type ConfigurationPoliciesItemReorderPostRequestBody struct {
 func NewConfigurationPoliciesItemReorderPostRequestBody()(*ConfigurationPoliciesItemReorderPostRequestBody) {
     m := &ConfigurationPoliciesItemReorderPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateConfigurationPoliciesItemReorderPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateConfigurationPoliciesItemReorderPostRequestBodyFromDiscriminatorValue
     return NewConfigurationPoliciesItemReorderPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConfigurationPoliciesItemReorderPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ConfigurationPoliciesItemReorderPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ConfigurationPoliciesItemReorderPostRequestBody) Serialize(writer i878a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConfigurationPoliciesItemReorderPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ConfigurationPoliciesItemReorderPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetPriority sets the priority property value. The priority property

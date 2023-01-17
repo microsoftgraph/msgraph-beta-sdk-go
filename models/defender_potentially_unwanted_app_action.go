@@ -17,7 +17,7 @@ const (
 func (i DefenderPotentiallyUnwantedAppAction) String() string {
     return []string{"deviceDefault", "block", "audit"}[i]
 }
-func ParseDefenderPotentiallyUnwantedAppAction(v string) (interface{}, error) {
+func ParseDefenderPotentiallyUnwantedAppAction(v string) (any, error) {
     result := DEVICEDEFAULT_DEFENDERPOTENTIALLYUNWANTEDAPPACTION
     switch v {
         case "deviceDefault":

@@ -15,7 +15,7 @@ const (
 func (i AndroidDeviceOwnerEnrollmentTokenType) String() string {
     return []string{"default", "corporateOwnedDedicatedDeviceWithAzureADSharedMode"}[i]
 }
-func ParseAndroidDeviceOwnerEnrollmentTokenType(v string) (interface{}, error) {
+func ParseAndroidDeviceOwnerEnrollmentTokenType(v string) (any, error) {
     result := DEFAULT_ESCAPED_ANDROIDDEVICEOWNERENROLLMENTTOKENTYPE
     switch v {
         case "default":

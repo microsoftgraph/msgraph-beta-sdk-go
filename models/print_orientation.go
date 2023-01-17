@@ -15,7 +15,7 @@ const (
 func (i PrintOrientation) String() string {
     return []string{"portrait", "landscape", "reverseLandscape", "reversePortrait"}[i]
 }
-func ParsePrintOrientation(v string) (interface{}, error) {
+func ParsePrintOrientation(v string) (any, error) {
     result := PORTRAIT_PRINTORIENTATION
     switch v {
         case "portrait":

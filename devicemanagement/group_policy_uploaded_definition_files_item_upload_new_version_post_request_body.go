@@ -8,7 +8,7 @@ import (
 // GroupPolicyUploadedDefinitionFilesItemUploadNewVersionPostRequestBody 
 type GroupPolicyUploadedDefinitionFilesItemUploadNewVersionPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The content property
     content []byte
     // The groupPolicyUploadedLanguageFiles property
@@ -18,7 +18,7 @@ type GroupPolicyUploadedDefinitionFilesItemUploadNewVersionPostRequestBody struc
 func NewGroupPolicyUploadedDefinitionFilesItemUploadNewVersionPostRequestBody()(*GroupPolicyUploadedDefinitionFilesItemUploadNewVersionPostRequestBody) {
     m := &GroupPolicyUploadedDefinitionFilesItemUploadNewVersionPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateGroupPolicyUploadedDefinitionFilesItemUploadNewVersionPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateGroupPolicyUploadedDefinitionFilesItemUploadNewVersionPostRequestBody
     return NewGroupPolicyUploadedDefinitionFilesItemUploadNewVersionPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *GroupPolicyUploadedDefinitionFilesItemUploadNewVersionPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *GroupPolicyUploadedDefinitionFilesItemUploadNewVersionPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContent gets the content property value. The content property
@@ -93,7 +93,7 @@ func (m *GroupPolicyUploadedDefinitionFilesItemUploadNewVersionPostRequestBody) 
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *GroupPolicyUploadedDefinitionFilesItemUploadNewVersionPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *GroupPolicyUploadedDefinitionFilesItemUploadNewVersionPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetContent sets the content property value. The content property

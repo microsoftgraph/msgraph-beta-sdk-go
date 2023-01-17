@@ -21,7 +21,7 @@ const (
 func (i DerivedCredentialProviderType) String() string {
     return []string{"notConfigured", "entrustDataCard", "purebred", "xTec", "intercede"}[i]
 }
-func ParseDerivedCredentialProviderType(v string) (interface{}, error) {
+func ParseDerivedCredentialProviderType(v string) (any, error) {
     result := NOTCONFIGURED_DERIVEDCREDENTIALPROVIDERTYPE
     switch v {
         case "notConfigured":

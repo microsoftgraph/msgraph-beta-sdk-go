@@ -7,7 +7,7 @@ import (
 // ItemSitesItemPagesItemGetWebPartsByPositionPostRequestBody 
 type ItemSitesItemPagesItemGetWebPartsByPositionPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The columnId property
     columnId *float64
     // The horizontalSectionId property
@@ -21,7 +21,7 @@ type ItemSitesItemPagesItemGetWebPartsByPositionPostRequestBody struct {
 func NewItemSitesItemPagesItemGetWebPartsByPositionPostRequestBody()(*ItemSitesItemPagesItemGetWebPartsByPositionPostRequestBody) {
     m := &ItemSitesItemPagesItemGetWebPartsByPositionPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemSitesItemPagesItemGetWebPartsByPositionPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateItemSitesItemPagesItemGetWebPartsByPositionPostRequestBodyFromDiscrim
     return NewItemSitesItemPagesItemGetWebPartsByPositionPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemSitesItemPagesItemGetWebPartsByPositionPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemSitesItemPagesItemGetWebPartsByPositionPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetColumnId gets the columnId property value. The columnId property
@@ -128,7 +128,7 @@ func (m *ItemSitesItemPagesItemGetWebPartsByPositionPostRequestBody) Serialize(w
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemSitesItemPagesItemGetWebPartsByPositionPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemSitesItemPagesItemGetWebPartsByPositionPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetColumnId sets the columnId property value. The columnId property

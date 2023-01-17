@@ -7,7 +7,7 @@ import (
 // KeySetsItemUploadSecretPostRequestBody 
 type KeySetsItemUploadSecretPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The exp property
     exp *int64
     // The k property
@@ -21,7 +21,7 @@ type KeySetsItemUploadSecretPostRequestBody struct {
 func NewKeySetsItemUploadSecretPostRequestBody()(*KeySetsItemUploadSecretPostRequestBody) {
     m := &KeySetsItemUploadSecretPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateKeySetsItemUploadSecretPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateKeySetsItemUploadSecretPostRequestBodyFromDiscriminatorValue(parseNod
     return NewKeySetsItemUploadSecretPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *KeySetsItemUploadSecretPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *KeySetsItemUploadSecretPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExp gets the exp property value. The exp property
@@ -128,7 +128,7 @@ func (m *KeySetsItemUploadSecretPostRequestBody) Serialize(writer i878a80d2330e8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *KeySetsItemUploadSecretPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *KeySetsItemUploadSecretPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetExp sets the exp property value. The exp property

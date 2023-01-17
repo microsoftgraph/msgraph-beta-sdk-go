@@ -14,7 +14,7 @@ const (
 func (i TermGroupScope) String() string {
     return []string{"global", "system", "siteCollection"}[i]
 }
-func ParseTermGroupScope(v string) (interface{}, error) {
+func ParseTermGroupScope(v string) (any, error) {
     result := GLOBAL_TERMGROUPSCOPE
     switch v {
         case "global":

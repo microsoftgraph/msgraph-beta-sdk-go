@@ -7,7 +7,7 @@ import (
 // MacOSIncludedApp contains properties of an included .app in a MacOS app.
 type MacOSIncludedApp struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The CFBundleIdentifier.
     bundleId *string
     // The CFBundleVersion.
@@ -19,7 +19,7 @@ type MacOSIncludedApp struct {
 func NewMacOSIncludedApp()(*MacOSIncludedApp) {
     m := &MacOSIncludedApp{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMacOSIncludedAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateMacOSIncludedAppFromDiscriminatorValue(parseNode i878a80d2330e89d2689
     return NewMacOSIncludedApp(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MacOSIncludedApp) GetAdditionalData()(map[string]interface{}) {
+func (m *MacOSIncludedApp) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBundleId gets the bundleId property value. The CFBundleIdentifier.
@@ -106,7 +106,7 @@ func (m *MacOSIncludedApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MacOSIncludedApp) SetAdditionalData(value map[string]interface{})() {
+func (m *MacOSIncludedApp) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetBundleId sets the bundleId property value. The CFBundleIdentifier.

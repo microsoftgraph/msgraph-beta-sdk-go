@@ -15,7 +15,7 @@ const (
 func (i OnPremisesDirectorySynchronizationDeletionPreventionType) String() string {
     return []string{"disabled", "enabledForCount", "enabledForPercentage", "unknownFutureValue"}[i]
 }
-func ParseOnPremisesDirectorySynchronizationDeletionPreventionType(v string) (interface{}, error) {
+func ParseOnPremisesDirectorySynchronizationDeletionPreventionType(v string) (any, error) {
     result := DISABLED_ONPREMISESDIRECTORYSYNCHRONIZATIONDELETIONPREVENTIONTYPE
     switch v {
         case "disabled":

@@ -7,7 +7,7 @@ import (
 // EntitlementManagementAccessPackagesItemMoveToCatalogPostRequestBody 
 type EntitlementManagementAccessPackagesItemMoveToCatalogPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The catalogId property
     catalogId *string
 }
@@ -15,7 +15,7 @@ type EntitlementManagementAccessPackagesItemMoveToCatalogPostRequestBody struct 
 func NewEntitlementManagementAccessPackagesItemMoveToCatalogPostRequestBody()(*EntitlementManagementAccessPackagesItemMoveToCatalogPostRequestBody) {
     m := &EntitlementManagementAccessPackagesItemMoveToCatalogPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateEntitlementManagementAccessPackagesItemMoveToCatalogPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateEntitlementManagementAccessPackagesItemMoveToCatalogPostRequestBodyFr
     return NewEntitlementManagementAccessPackagesItemMoveToCatalogPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EntitlementManagementAccessPackagesItemMoveToCatalogPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *EntitlementManagementAccessPackagesItemMoveToCatalogPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCatalogId gets the catalogId property value. The catalogId property
@@ -62,7 +62,7 @@ func (m *EntitlementManagementAccessPackagesItemMoveToCatalogPostRequestBody) Se
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EntitlementManagementAccessPackagesItemMoveToCatalogPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *EntitlementManagementAccessPackagesItemMoveToCatalogPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCatalogId sets the catalogId property value. The catalogId property

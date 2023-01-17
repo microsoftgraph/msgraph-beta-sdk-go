@@ -14,7 +14,7 @@ const (
 func (i LayoutTemplateType) String() string {
     return []string{"default", "verticalSplit", "unknownFutureValue"}[i]
 }
-func ParseLayoutTemplateType(v string) (interface{}, error) {
+func ParseLayoutTemplateType(v string) (any, error) {
     result := DEFAULT_ESCAPED_LAYOUTTEMPLATETYPE
     switch v {
         case "default":

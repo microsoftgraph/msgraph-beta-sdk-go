@@ -27,7 +27,7 @@ const (
 func (i MicrosoftTunnelServerHealthStatus) String() string {
     return []string{"unknown", "healthy", "unhealthy", "warning", "offline", "upgradeInProgress", "upgradeFailed", "unknownFutureValue"}[i]
 }
-func ParseMicrosoftTunnelServerHealthStatus(v string) (interface{}, error) {
+func ParseMicrosoftTunnelServerHealthStatus(v string) (any, error) {
     result := UNKNOWN_MICROSOFTTUNNELSERVERHEALTHSTATUS
     switch v {
         case "unknown":

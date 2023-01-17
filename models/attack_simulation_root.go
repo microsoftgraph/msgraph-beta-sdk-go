@@ -7,6 +7,10 @@ import (
 // AttackSimulationRoot 
 type AttackSimulationRoot struct {
     Entity
+    // The operations property
+    operations []AttackSimulationOperationable
+    // The payloads property
+    payloads []Payloadable
     // Represents simulation automation created to run on a tenant.
     simulationAutomations []SimulationAutomationable
     // Represents an attack simulation training campaign in a tenant.
@@ -26,6 +30,34 @@ func CreateAttackSimulationRootFromDiscriminatorValue(parseNode i878a80d2330e89d
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AttackSimulationRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["operations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAttackSimulationOperationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AttackSimulationOperationable, len(val))
+            for i, v := range val {
+                res[i] = v.(AttackSimulationOperationable)
+            }
+            m.SetOperations(res)
+        }
+        return nil
+    }
+    res["payloads"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePayloadFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Payloadable, len(val))
+            for i, v := range val {
+                res[i] = v.(Payloadable)
+            }
+            m.SetPayloads(res)
+        }
+        return nil
+    }
     res["simulationAutomations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSimulationAutomationFromDiscriminatorValue)
         if err != nil {
@@ -56,6 +88,14 @@ func (m *AttackSimulationRoot) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
+// GetOperations gets the operations property value. The operations property
+func (m *AttackSimulationRoot) GetOperations()([]AttackSimulationOperationable) {
+    return m.operations
+}
+// GetPayloads gets the payloads property value. The payloads property
+func (m *AttackSimulationRoot) GetPayloads()([]Payloadable) {
+    return m.payloads
+}
 // GetSimulationAutomations gets the simulationAutomations property value. Represents simulation automation created to run on a tenant.
 func (m *AttackSimulationRoot) GetSimulationAutomations()([]SimulationAutomationable) {
     return m.simulationAutomations
@@ -69,6 +109,26 @@ func (m *AttackSimulationRoot) Serialize(writer i878a80d2330e89d26896388a3f487ee
     err := m.Entity.Serialize(writer)
     if err != nil {
         return err
+    }
+    if m.GetOperations() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOperations()))
+        for i, v := range m.GetOperations() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("operations", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetPayloads() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPayloads()))
+        for i, v := range m.GetPayloads() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("payloads", cast)
+        if err != nil {
+            return err
+        }
     }
     if m.GetSimulationAutomations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSimulationAutomations()))
@@ -91,6 +151,14 @@ func (m *AttackSimulationRoot) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     return nil
+}
+// SetOperations sets the operations property value. The operations property
+func (m *AttackSimulationRoot) SetOperations(value []AttackSimulationOperationable)() {
+    m.operations = value
+}
+// SetPayloads sets the payloads property value. The payloads property
+func (m *AttackSimulationRoot) SetPayloads(value []Payloadable)() {
+    m.payloads = value
 }
 // SetSimulationAutomations sets the simulationAutomations property value. Represents simulation automation created to run on a tenant.
 func (m *AttackSimulationRoot) SetSimulationAutomations(value []SimulationAutomationable)() {

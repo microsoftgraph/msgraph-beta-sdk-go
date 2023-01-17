@@ -15,7 +15,7 @@ const (
 func (i Windows10DeviceModeType) String() string {
     return []string{"standardConfiguration", "sModeConfiguration"}[i]
 }
-func ParseWindows10DeviceModeType(v string) (interface{}, error) {
+func ParseWindows10DeviceModeType(v string) (any, error) {
     result := STANDARDCONFIGURATION_WINDOWS10DEVICEMODETYPE
     switch v {
         case "standardConfiguration":

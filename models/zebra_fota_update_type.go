@@ -19,7 +19,7 @@ const (
 func (i ZebraFotaUpdateType) String() string {
     return []string{"custom", "latest", "auto", "unknownFutureValue"}[i]
 }
-func ParseZebraFotaUpdateType(v string) (interface{}, error) {
+func ParseZebraFotaUpdateType(v string) (any, error) {
     result := CUSTOM_ZEBRAFOTAUPDATETYPE
     switch v {
         case "custom":

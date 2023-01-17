@@ -7,7 +7,7 @@ import (
 // TenantAttachRBACEnablePostRequestBody 
 type TenantAttachRBACEnablePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The enable property
     enable *bool
 }
@@ -15,7 +15,7 @@ type TenantAttachRBACEnablePostRequestBody struct {
 func NewTenantAttachRBACEnablePostRequestBody()(*TenantAttachRBACEnablePostRequestBody) {
     m := &TenantAttachRBACEnablePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTenantAttachRBACEnablePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateTenantAttachRBACEnablePostRequestBodyFromDiscriminatorValue(parseNode
     return NewTenantAttachRBACEnablePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TenantAttachRBACEnablePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *TenantAttachRBACEnablePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEnable gets the enable property value. The enable property
@@ -62,7 +62,7 @@ func (m *TenantAttachRBACEnablePostRequestBody) Serialize(writer i878a80d2330e89
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TenantAttachRBACEnablePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *TenantAttachRBACEnablePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEnable sets the enable property value. The enable property

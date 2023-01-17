@@ -7,7 +7,7 @@ import (
 // TenantContract 
 type TenantContract struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The type of relationship that exists between the managing entity and tenant. Optional. Read-only.
     contractType *int32
     // The default domain name for the tenant. Required. Read-only.
@@ -21,7 +21,7 @@ type TenantContract struct {
 func NewTenantContract()(*TenantContract) {
     m := &TenantContract{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTenantContractFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateTenantContractFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewTenantContract(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TenantContract) GetAdditionalData()(map[string]interface{}) {
+func (m *TenantContract) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContractType gets the contractType property value. The type of relationship that exists between the managing entity and tenant. Optional. Read-only.
@@ -128,7 +128,7 @@ func (m *TenantContract) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TenantContract) SetAdditionalData(value map[string]interface{})() {
+func (m *TenantContract) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetContractType sets the contractType property value. The type of relationship that exists between the managing entity and tenant. Optional. Read-only.

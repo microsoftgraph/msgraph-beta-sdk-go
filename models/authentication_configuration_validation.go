@@ -7,7 +7,7 @@ import (
 // AuthenticationConfigurationValidation 
 type AuthenticationConfigurationValidation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The errors property
     errors []GenericErrorable
     // The OdataType property
@@ -19,7 +19,7 @@ type AuthenticationConfigurationValidation struct {
 func NewAuthenticationConfigurationValidation()(*AuthenticationConfigurationValidation) {
     m := &AuthenticationConfigurationValidation{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAuthenticationConfigurationValidationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateAuthenticationConfigurationValidationFromDiscriminatorValue(parseNode
     return NewAuthenticationConfigurationValidation(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuthenticationConfigurationValidation) GetAdditionalData()(map[string]interface{}) {
+func (m *AuthenticationConfigurationValidation) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetErrors gets the errors property value. The errors property
@@ -122,7 +122,7 @@ func (m *AuthenticationConfigurationValidation) Serialize(writer i878a80d2330e89
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuthenticationConfigurationValidation) SetAdditionalData(value map[string]interface{})() {
+func (m *AuthenticationConfigurationValidation) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetErrors sets the errors property value. The errors property

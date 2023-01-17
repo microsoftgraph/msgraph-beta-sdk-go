@@ -17,7 +17,7 @@ const (
 func (i AndroidForWorkSyncStatus) String() string {
     return []string{"success", "credentialsNotValid", "androidForWorkApiError", "managementServiceError", "unknownError", "none"}[i]
 }
-func ParseAndroidForWorkSyncStatus(v string) (interface{}, error) {
+func ParseAndroidForWorkSyncStatus(v string) (any, error) {
     result := SUCCESS_ANDROIDFORWORKSYNCSTATUS
     switch v {
         case "success":

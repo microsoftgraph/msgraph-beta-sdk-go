@@ -19,7 +19,7 @@ const (
 func (i AndroidRequiredPasswordComplexity) String() string {
     return []string{"none", "low", "medium", "high"}[i]
 }
-func ParseAndroidRequiredPasswordComplexity(v string) (interface{}, error) {
+func ParseAndroidRequiredPasswordComplexity(v string) (any, error) {
     result := NONE_ANDROIDREQUIREDPASSWORDCOMPLEXITY
     switch v {
         case "none":

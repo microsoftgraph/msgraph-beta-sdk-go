@@ -19,7 +19,7 @@ const (
 func (i EndpointSecurityConfigurationApplicablePlatform) String() string {
     return []string{"unknown", "macOS", "windows10AndLater", "windows10AndWindowsServer"}[i]
 }
-func ParseEndpointSecurityConfigurationApplicablePlatform(v string) (interface{}, error) {
+func ParseEndpointSecurityConfigurationApplicablePlatform(v string) (any, error) {
     result := UNKNOWN_ENDPOINTSECURITYCONFIGURATIONAPPLICABLEPLATFORM
     switch v {
         case "unknown":

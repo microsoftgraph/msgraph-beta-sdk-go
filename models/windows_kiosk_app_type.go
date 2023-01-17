@@ -19,7 +19,7 @@ const (
 func (i WindowsKioskAppType) String() string {
     return []string{"unknown", "store", "desktop", "aumId"}[i]
 }
-func ParseWindowsKioskAppType(v string) (interface{}, error) {
+func ParseWindowsKioskAppType(v string) (any, error) {
     result := UNKNOWN_WINDOWSKIOSKAPPTYPE
     switch v {
         case "unknown":

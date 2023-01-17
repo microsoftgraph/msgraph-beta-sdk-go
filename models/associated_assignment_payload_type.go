@@ -35,7 +35,7 @@ const (
 func (i AssociatedAssignmentPayloadType) String() string {
     return []string{"unknown", "deviceConfigurationAndCompliance", "application", "androidEnterpriseApp", "enrollmentConfiguration", "groupPolicyConfiguration", "zeroTouchDeploymentDeviceConfigProfile", "androidEnterpriseConfiguration", "deviceFirmwareConfigurationInterfacePolicy", "resourceAccessPolicy", "win32app", "deviceManagmentConfigurationAndCompliancePolicy"}[i]
 }
-func ParseAssociatedAssignmentPayloadType(v string) (interface{}, error) {
+func ParseAssociatedAssignmentPayloadType(v string) (any, error) {
     result := UNKNOWN_ASSOCIATEDASSIGNMENTPAYLOADTYPE
     switch v {
         case "unknown":

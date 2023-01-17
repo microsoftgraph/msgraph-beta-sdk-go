@@ -7,7 +7,7 @@ import (
 // ItemManagedDevicesItemRestoreCloudPcPostRequestBody 
 type ItemManagedDevicesItemRestoreCloudPcPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The cloudPcSnapshotId property
     cloudPcSnapshotId *string
 }
@@ -15,7 +15,7 @@ type ItemManagedDevicesItemRestoreCloudPcPostRequestBody struct {
 func NewItemManagedDevicesItemRestoreCloudPcPostRequestBody()(*ItemManagedDevicesItemRestoreCloudPcPostRequestBody) {
     m := &ItemManagedDevicesItemRestoreCloudPcPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemManagedDevicesItemRestoreCloudPcPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemManagedDevicesItemRestoreCloudPcPostRequestBodyFromDiscriminatorV
     return NewItemManagedDevicesItemRestoreCloudPcPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemManagedDevicesItemRestoreCloudPcPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemManagedDevicesItemRestoreCloudPcPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCloudPcSnapshotId gets the cloudPcSnapshotId property value. The cloudPcSnapshotId property
@@ -62,7 +62,7 @@ func (m *ItemManagedDevicesItemRestoreCloudPcPostRequestBody) Serialize(writer i
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemManagedDevicesItemRestoreCloudPcPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemManagedDevicesItemRestoreCloudPcPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCloudPcSnapshotId sets the cloudPcSnapshotId property value. The cloudPcSnapshotId property

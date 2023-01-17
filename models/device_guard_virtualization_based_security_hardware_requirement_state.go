@@ -21,7 +21,7 @@ const (
 func (i DeviceGuardVirtualizationBasedSecurityHardwareRequirementState) String() string {
     return []string{"meetHardwareRequirements", "secureBootRequired", "dmaProtectionRequired", "hyperVNotSupportedForGuestVM", "hyperVNotAvailable"}[i]
 }
-func ParseDeviceGuardVirtualizationBasedSecurityHardwareRequirementState(v string) (interface{}, error) {
+func ParseDeviceGuardVirtualizationBasedSecurityHardwareRequirementState(v string) (any, error) {
     result := MEETHARDWAREREQUIREMENTS_DEVICEGUARDVIRTUALIZATIONBASEDSECURITYHARDWAREREQUIREMENTSTATE
     switch v {
         case "meetHardwareRequirements":

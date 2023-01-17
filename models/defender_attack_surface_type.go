@@ -21,7 +21,7 @@ const (
 func (i DefenderAttackSurfaceType) String() string {
     return []string{"userDefined", "block", "auditMode", "warn", "disable"}[i]
 }
-func ParseDefenderAttackSurfaceType(v string) (interface{}, error) {
+func ParseDefenderAttackSurfaceType(v string) (any, error) {
     result := USERDEFINED_DEFENDERATTACKSURFACETYPE
     switch v {
         case "userDefined":

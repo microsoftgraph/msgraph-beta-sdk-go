@@ -7,7 +7,7 @@ import (
 // WebPartData 
 type WebPartData struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Audience information of the web part. By using this property, specific content will be prioritized to specific audiences.
     audiences []string
     // Data version of the web part. The value is defined by the web part developer. Different dataVersions usually refers to a different property structure.
@@ -27,7 +27,7 @@ type WebPartData struct {
 func NewWebPartData()(*WebPartData) {
     m := &WebPartData{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWebPartDataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateWebPartDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     return NewWebPartData(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WebPartData) GetAdditionalData()(map[string]interface{}) {
+func (m *WebPartData) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAudiences gets the audiences property value. Audience information of the web part. By using this property, specific content will be prioritized to specific audiences.
@@ -198,7 +198,7 @@ func (m *WebPartData) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WebPartData) SetAdditionalData(value map[string]interface{})() {
+func (m *WebPartData) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAudiences sets the audiences property value. Audience information of the web part. By using this property, specific content will be prioritized to specific audiences.

@@ -23,7 +23,7 @@ const (
 func (i WiredNetworkAuthenticationType) String() string {
     return []string{"none", "user", "machine", "machineOrUser", "guest", "unknownFutureValue"}[i]
 }
-func ParseWiredNetworkAuthenticationType(v string) (interface{}, error) {
+func ParseWiredNetworkAuthenticationType(v string) (any, error) {
     result := NONE_WIREDNETWORKAUTHENTICATIONTYPE
     switch v {
         case "none":

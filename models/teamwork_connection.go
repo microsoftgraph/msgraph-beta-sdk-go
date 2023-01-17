@@ -8,7 +8,7 @@ import (
 // TeamworkConnection 
 type TeamworkConnection struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicates whether a component/peripheral is connected/disconnected or its state is unknown. The possible values are: unknown, connected, disconnected, unknownFutureValue.
     connectionStatus *TeamworkConnectionStatus
     // Time at which the state was last changed. For example, indicates connected since when the state is connected and disconnected since when the state is disconnected.
@@ -20,7 +20,7 @@ type TeamworkConnection struct {
 func NewTeamworkConnection()(*TeamworkConnection) {
     m := &TeamworkConnection{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTeamworkConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,7 +28,7 @@ func CreateTeamworkConnectionFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewTeamworkConnection(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkConnection) GetAdditionalData()(map[string]interface{}) {
+func (m *TeamworkConnection) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetConnectionStatus gets the connectionStatus property value. Indicates whether a component/peripheral is connected/disconnected or its state is unknown. The possible values are: unknown, connected, disconnected, unknownFutureValue.
@@ -108,7 +108,7 @@ func (m *TeamworkConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkConnection) SetAdditionalData(value map[string]interface{})() {
+func (m *TeamworkConnection) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetConnectionStatus sets the connectionStatus property value. Indicates whether a component/peripheral is connected/disconnected or its state is unknown. The possible values are: unknown, connected, disconnected, unknownFutureValue.

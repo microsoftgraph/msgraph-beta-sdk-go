@@ -14,7 +14,7 @@ const (
 func (i DefaultRecordBehavior) String() string {
     return []string{"startLocked", "startUnlocked", "unknownFutureValue"}[i]
 }
-func ParseDefaultRecordBehavior(v string) (interface{}, error) {
+func ParseDefaultRecordBehavior(v string) (any, error) {
     result := STARTLOCKED_DEFAULTRECORDBEHAVIOR
     switch v {
         case "startLocked":

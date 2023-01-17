@@ -7,7 +7,7 @@ import (
 // DeviceProtectionOverview hardware information of a given device.
 type DeviceProtectionOverview struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Clean device count.
     cleanDeviceCount *int32
     // Critical failures device count.
@@ -37,7 +37,7 @@ type DeviceProtectionOverview struct {
 func NewDeviceProtectionOverview()(*DeviceProtectionOverview) {
     m := &DeviceProtectionOverview{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceProtectionOverviewFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +45,7 @@ func CreateDeviceProtectionOverviewFromDiscriminatorValue(parseNode i878a80d2330
     return NewDeviceProtectionOverview(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceProtectionOverview) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceProtectionOverview) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCleanDeviceCount gets the cleanDeviceCount property value. Clean device count.
@@ -304,7 +304,7 @@ func (m *DeviceProtectionOverview) Serialize(writer i878a80d2330e89d26896388a3f4
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceProtectionOverview) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceProtectionOverview) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCleanDeviceCount sets the cleanDeviceCount property value. Clean device count.

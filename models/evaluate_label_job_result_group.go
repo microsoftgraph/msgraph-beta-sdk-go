@@ -7,7 +7,7 @@ import (
 // EvaluateLabelJobResultGroup 
 type EvaluateLabelJobResultGroup struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The automatic property
     automatic EvaluateLabelJobResultable
     // The OdataType property
@@ -19,7 +19,7 @@ type EvaluateLabelJobResultGroup struct {
 func NewEvaluateLabelJobResultGroup()(*EvaluateLabelJobResultGroup) {
     m := &EvaluateLabelJobResultGroup{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateEvaluateLabelJobResultGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateEvaluateLabelJobResultGroupFromDiscriminatorValue(parseNode i878a80d2
     return NewEvaluateLabelJobResultGroup(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EvaluateLabelJobResultGroup) GetAdditionalData()(map[string]interface{}) {
+func (m *EvaluateLabelJobResultGroup) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAutomatic gets the automatic property value. The automatic property
@@ -106,7 +106,7 @@ func (m *EvaluateLabelJobResultGroup) Serialize(writer i878a80d2330e89d26896388a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EvaluateLabelJobResultGroup) SetAdditionalData(value map[string]interface{})() {
+func (m *EvaluateLabelJobResultGroup) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAutomatic sets the automatic property value. The automatic property

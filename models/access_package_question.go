@@ -7,7 +7,7 @@ import (
 // AccessPackageQuestion 
 type AccessPackageQuestion struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // ID of the question.
     id *string
     // Specifies whether the requestor is allowed to edit answers to questions.
@@ -25,7 +25,7 @@ type AccessPackageQuestion struct {
 func NewAccessPackageQuestion()(*AccessPackageQuestion) {
     m := &AccessPackageQuestion{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAccessPackageQuestionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,7 +53,7 @@ func CreateAccessPackageQuestionFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewAccessPackageQuestion(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessPackageQuestion) GetAdditionalData()(map[string]interface{}) {
+func (m *AccessPackageQuestion) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -192,7 +192,7 @@ func (m *AccessPackageQuestion) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessPackageQuestion) SetAdditionalData(value map[string]interface{})() {
+func (m *AccessPackageQuestion) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetId sets the id property value. ID of the question.

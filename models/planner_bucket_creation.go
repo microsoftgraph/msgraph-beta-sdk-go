@@ -7,7 +7,7 @@ import (
 // PlannerBucketCreation 
 type PlannerBucketCreation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Specifies what kind of creation source the bucket is created with. The possible values are: external, publication and unknownFutureValue.
     creationSourceKind *PlannerCreationSourceKind
     // The OdataType property
@@ -17,7 +17,7 @@ type PlannerBucketCreation struct {
 func NewPlannerBucketCreation()(*PlannerBucketCreation) {
     m := &PlannerBucketCreation{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePlannerBucketCreationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,7 +43,7 @@ func CreatePlannerBucketCreationFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewPlannerBucketCreation(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PlannerBucketCreation) GetAdditionalData()(map[string]interface{}) {
+func (m *PlannerBucketCreation) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCreationSourceKind gets the creationSourceKind property value. Specifies what kind of creation source the bucket is created with. The possible values are: external, publication and unknownFutureValue.
@@ -103,7 +103,7 @@ func (m *PlannerBucketCreation) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PlannerBucketCreation) SetAdditionalData(value map[string]interface{})() {
+func (m *PlannerBucketCreation) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCreationSourceKind sets the creationSourceKind property value. Specifies what kind of creation source the bucket is created with. The possible values are: external, publication and unknownFutureValue.

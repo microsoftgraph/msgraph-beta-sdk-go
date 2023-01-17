@@ -17,7 +17,7 @@ const (
 func (i AndroidManagedAppSafetyNetDeviceAttestationType) String() string {
     return []string{"none", "basicIntegrity", "basicIntegrityAndDeviceCertification"}[i]
 }
-func ParseAndroidManagedAppSafetyNetDeviceAttestationType(v string) (interface{}, error) {
+func ParseAndroidManagedAppSafetyNetDeviceAttestationType(v string) (any, error) {
     result := NONE_ANDROIDMANAGEDAPPSAFETYNETDEVICEATTESTATIONTYPE
     switch v {
         case "none":

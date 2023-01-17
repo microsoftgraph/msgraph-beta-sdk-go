@@ -20,7 +20,7 @@ const (
 func (i ManagementParameterValueType) String() string {
     return []string{"string", "integer", "boolean", "guid", "stringCollection", "integerCollection", "booleanCollection", "guidCollection", "unknownFutureValue"}[i]
 }
-func ParseManagementParameterValueType(v string) (interface{}, error) {
+func ParseManagementParameterValueType(v string) (any, error) {
     result := STRING_MANAGEMENTPARAMETERVALUETYPE
     switch v {
         case "string":

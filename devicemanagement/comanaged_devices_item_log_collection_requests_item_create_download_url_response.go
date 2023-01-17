@@ -7,7 +7,7 @@ import (
 // ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlResponse 
 type ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The value property
     value *string
 }
@@ -15,7 +15,7 @@ type ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlResponse stru
 func NewComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlResponse()(*ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlResponse) {
     m := &ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlResponse{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRespons
     return NewComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlResponse) GetAdditionalData()(map[string]interface{}) {
+func (m *ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlResponse) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlResponse)
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlResponse) SetAdditionalData(value map[string]interface{})() {
+func (m *ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlResponse) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetValue sets the value property value. The value property

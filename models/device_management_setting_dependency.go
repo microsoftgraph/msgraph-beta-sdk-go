@@ -7,7 +7,7 @@ import (
 // DeviceManagementSettingDependency dependency information for a setting
 type DeviceManagementSettingDependency struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Collection of constraints for the dependency setting value
     constraints []DeviceManagementConstraintable
     // The setting definition ID of the setting depended on
@@ -19,7 +19,7 @@ type DeviceManagementSettingDependency struct {
 func NewDeviceManagementSettingDependency()(*DeviceManagementSettingDependency) {
     m := &DeviceManagementSettingDependency{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceManagementSettingDependencyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateDeviceManagementSettingDependencyFromDiscriminatorValue(parseNode i87
     return NewDeviceManagementSettingDependency(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementSettingDependency) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceManagementSettingDependency) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetConstraints gets the constraints property value. Collection of constraints for the dependency setting value
@@ -114,7 +114,7 @@ func (m *DeviceManagementSettingDependency) Serialize(writer i878a80d2330e89d268
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementSettingDependency) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceManagementSettingDependency) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetConstraints sets the constraints property value. Collection of constraints for the dependency setting value

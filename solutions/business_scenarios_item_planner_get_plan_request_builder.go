@@ -42,7 +42,10 @@ func NewBusinessScenariosItemPlannerGetPlanRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewBusinessScenariosItemPlannerGetPlanRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action getPlan
+// Post get information about the plannerPlan mapped to a given target. If a **plannerPlan** doesn't exist for the specified target at the time of the request, a new plan will be created for the businessScenario.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/businessscenarioplanner-getplan?view=graph-rest-1.0
 func (m *BusinessScenariosItemPlannerGetPlanRequestBuilder) Post(ctx context.Context, body BusinessScenariosItemPlannerGetPlanPostRequestBodyable, requestConfiguration *BusinessScenariosItemPlannerGetPlanRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioPlanReferenceable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -52,7 +55,7 @@ func (m *BusinessScenariosItemPlannerGetPlanRequestBuilder) Post(ctx context.Con
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateBusinessScenarioPlanReferenceFromDiscriminatorValue, errorMapping)
+    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateBusinessScenarioPlanReferenceFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -61,7 +64,7 @@ func (m *BusinessScenariosItemPlannerGetPlanRequestBuilder) Post(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioPlanReferenceable), nil
 }
-// ToPostRequestInformation invoke action getPlan
+// ToPostRequestInformation get information about the plannerPlan mapped to a given target. If a **plannerPlan** doesn't exist for the specified target at the time of the request, a new plan will be created for the businessScenario.
 func (m *BusinessScenariosItemPlannerGetPlanRequestBuilder) ToPostRequestInformation(ctx context.Context, body BusinessScenariosItemPlannerGetPlanPostRequestBodyable, requestConfiguration *BusinessScenariosItemPlannerGetPlanRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

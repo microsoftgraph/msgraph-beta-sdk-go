@@ -19,7 +19,7 @@ const (
 func (i AndroidDeviceOwnerSystemUpdateInstallType) String() string {
     return []string{"deviceDefault", "postpone", "windowed", "automatic"}[i]
 }
-func ParseAndroidDeviceOwnerSystemUpdateInstallType(v string) (interface{}, error) {
+func ParseAndroidDeviceOwnerSystemUpdateInstallType(v string) (any, error) {
     result := DEVICEDEFAULT_ANDROIDDEVICEOWNERSYSTEMUPDATEINSTALLTYPE
     switch v {
         case "deviceDefault":

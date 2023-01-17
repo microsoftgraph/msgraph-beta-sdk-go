@@ -19,7 +19,7 @@ const (
 func (i DefenderSubmitSamplesConsentType) String() string {
     return []string{"sendSafeSamplesAutomatically", "alwaysPrompt", "neverSend", "sendAllSamplesAutomatically"}[i]
 }
-func ParseDefenderSubmitSamplesConsentType(v string) (interface{}, error) {
+func ParseDefenderSubmitSamplesConsentType(v string) (any, error) {
     result := SENDSAFESAMPLESAUTOMATICALLY_DEFENDERSUBMITSAMPLESCONSENTTYPE
     switch v {
         case "sendSafeSamplesAutomatically":

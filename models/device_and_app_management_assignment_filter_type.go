@@ -17,7 +17,7 @@ const (
 func (i DeviceAndAppManagementAssignmentFilterType) String() string {
     return []string{"none", "include", "exclude"}[i]
 }
-func ParseDeviceAndAppManagementAssignmentFilterType(v string) (interface{}, error) {
+func ParseDeviceAndAppManagementAssignmentFilterType(v string) (any, error) {
     result := NONE_DEVICEANDAPPMANAGEMENTASSIGNMENTFILTERTYPE
     switch v {
         case "none":

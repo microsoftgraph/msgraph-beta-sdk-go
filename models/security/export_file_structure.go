@@ -15,7 +15,7 @@ const (
 func (i ExportFileStructure) String() string {
     return []string{"none", "directory", "pst", "unknownFutureValue"}[i]
 }
-func ParseExportFileStructure(v string) (interface{}, error) {
+func ParseExportFileStructure(v string) (any, error) {
     result := NONE_EXPORTFILESTRUCTURE
     switch v {
         case "none":

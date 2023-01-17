@@ -7,7 +7,7 @@ import (
 // EducationSynchronizationLicenseAssignment 
 type EducationSynchronizationLicenseAssignment struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The user role type to assign to license. Possible values are: student, teacher, faculty.
     appliesTo *EducationUserRole
     // The OdataType property
@@ -19,7 +19,7 @@ type EducationSynchronizationLicenseAssignment struct {
 func NewEducationSynchronizationLicenseAssignment()(*EducationSynchronizationLicenseAssignment) {
     m := &EducationSynchronizationLicenseAssignment{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateEducationSynchronizationLicenseAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateEducationSynchronizationLicenseAssignmentFromDiscriminatorValue(parse
     return NewEducationSynchronizationLicenseAssignment(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EducationSynchronizationLicenseAssignment) GetAdditionalData()(map[string]interface{}) {
+func (m *EducationSynchronizationLicenseAssignment) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAppliesTo gets the appliesTo property value. The user role type to assign to license. Possible values are: student, teacher, faculty.
@@ -111,7 +111,7 @@ func (m *EducationSynchronizationLicenseAssignment) Serialize(writer i878a80d233
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EducationSynchronizationLicenseAssignment) SetAdditionalData(value map[string]interface{})() {
+func (m *EducationSynchronizationLicenseAssignment) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAppliesTo sets the appliesTo property value. The user role type to assign to license. Possible values are: student, teacher, faculty.

@@ -17,7 +17,7 @@ const (
 func (i OfficeUpdateChannel) String() string {
     return []string{"none", "current", "deferred", "firstReleaseCurrent", "firstReleaseDeferred", "monthlyEnterprise"}[i]
 }
-func ParseOfficeUpdateChannel(v string) (interface{}, error) {
+func ParseOfficeUpdateChannel(v string) (any, error) {
     result := NONE_OFFICEUPDATECHANNEL
     switch v {
         case "none":

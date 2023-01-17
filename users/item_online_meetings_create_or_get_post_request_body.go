@@ -9,7 +9,7 @@ import (
 // ItemOnlineMeetingsCreateOrGetPostRequestBody 
 type ItemOnlineMeetingsCreateOrGetPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The chatInfo property
     chatInfo ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatInfoable
     // The endDateTime property
@@ -27,7 +27,7 @@ type ItemOnlineMeetingsCreateOrGetPostRequestBody struct {
 func NewItemOnlineMeetingsCreateOrGetPostRequestBody()(*ItemOnlineMeetingsCreateOrGetPostRequestBody) {
     m := &ItemOnlineMeetingsCreateOrGetPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemOnlineMeetingsCreateOrGetPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateItemOnlineMeetingsCreateOrGetPostRequestBodyFromDiscriminatorValue(pa
     return NewItemOnlineMeetingsCreateOrGetPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemOnlineMeetingsCreateOrGetPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemOnlineMeetingsCreateOrGetPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetChatInfo gets the chatInfo property value. The chatInfo property
@@ -174,7 +174,7 @@ func (m *ItemOnlineMeetingsCreateOrGetPostRequestBody) Serialize(writer i878a80d
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemOnlineMeetingsCreateOrGetPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemOnlineMeetingsCreateOrGetPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetChatInfo sets the chatInfo property value. The chatInfo property

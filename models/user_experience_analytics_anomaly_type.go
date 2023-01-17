@@ -23,7 +23,7 @@ const (
 func (i UserExperienceAnalyticsAnomalyType) String() string {
     return []string{"device", "application", "stopError", "driver", "other", "unknownFutureValue"}[i]
 }
-func ParseUserExperienceAnalyticsAnomalyType(v string) (interface{}, error) {
+func ParseUserExperienceAnalyticsAnomalyType(v string) (any, error) {
     result := DEVICE_USEREXPERIENCEANALYTICSANOMALYTYPE
     switch v {
         case "device":

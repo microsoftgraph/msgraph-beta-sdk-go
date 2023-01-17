@@ -17,7 +17,7 @@ const (
 func (i AndroidDeviceOwnerRequiredPasswordUnlock) String() string {
     return []string{"deviceDefault", "daily", "unkownFutureValue"}[i]
 }
-func ParseAndroidDeviceOwnerRequiredPasswordUnlock(v string) (interface{}, error) {
+func ParseAndroidDeviceOwnerRequiredPasswordUnlock(v string) (any, error) {
     result := DEVICEDEFAULT_ANDROIDDEVICEOWNERREQUIREDPASSWORDUNLOCK
     switch v {
         case "deviceDefault":

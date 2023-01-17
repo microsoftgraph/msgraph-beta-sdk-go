@@ -23,7 +23,7 @@ const (
 func (i MacOSContentCachingParentSelectionPolicy) String() string {
     return []string{"notConfigured", "roundRobin", "firstAvailable", "urlPathHash", "random", "stickyAvailable"}[i]
 }
-func ParseMacOSContentCachingParentSelectionPolicy(v string) (interface{}, error) {
+func ParseMacOSContentCachingParentSelectionPolicy(v string) (any, error) {
     result := NOTCONFIGURED_MACOSCONTENTCACHINGPARENTSELECTIONPOLICY
     switch v {
         case "notConfigured":

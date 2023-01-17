@@ -15,7 +15,7 @@ const (
 func (i DomainNameSource) String() string {
     return []string{"fullDomainName", "netBiosDomainName"}[i]
 }
-func ParseDomainNameSource(v string) (interface{}, error) {
+func ParseDomainNameSource(v string) (any, error) {
     result := FULLDOMAINNAME_DOMAINNAMESOURCE
     switch v {
         case "fullDomainName":

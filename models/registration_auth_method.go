@@ -21,7 +21,7 @@ const (
 func (i RegistrationAuthMethod) String() string {
     return []string{"email", "mobilePhone", "officePhone", "securityQuestion", "appNotification", "appCode", "alternateMobilePhone", "fido", "appPassword", "unknownFutureValue"}[i]
 }
-func ParseRegistrationAuthMethod(v string) (interface{}, error) {
+func ParseRegistrationAuthMethod(v string) (any, error) {
     result := EMAIL_REGISTRATIONAUTHMETHOD
     switch v {
         case "email":

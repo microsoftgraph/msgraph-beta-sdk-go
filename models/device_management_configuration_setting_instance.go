@@ -7,7 +7,7 @@ import (
 // DeviceManagementConfigurationSettingInstance setting instance within policy
 type DeviceManagementConfigurationSettingInstance struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // Setting Definition Id
@@ -19,7 +19,7 @@ type DeviceManagementConfigurationSettingInstance struct {
 func NewDeviceManagementConfigurationSettingInstance()(*DeviceManagementConfigurationSettingInstance) {
     m := &DeviceManagementConfigurationSettingInstance{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceManagementConfigurationSettingInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -59,7 +59,7 @@ func CreateDeviceManagementConfigurationSettingInstanceFromDiscriminatorValue(pa
     return NewDeviceManagementConfigurationSettingInstance(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementConfigurationSettingInstance) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceManagementConfigurationSettingInstance) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -138,7 +138,7 @@ func (m *DeviceManagementConfigurationSettingInstance) Serialize(writer i878a80d
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementConfigurationSettingInstance) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceManagementConfigurationSettingInstance) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

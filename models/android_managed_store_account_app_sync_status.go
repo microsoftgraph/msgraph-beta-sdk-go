@@ -17,7 +17,7 @@ const (
 func (i AndroidManagedStoreAccountAppSyncStatus) String() string {
     return []string{"success", "credentialsNotValid", "androidForWorkApiError", "managementServiceError", "unknownError", "none"}[i]
 }
-func ParseAndroidManagedStoreAccountAppSyncStatus(v string) (interface{}, error) {
+func ParseAndroidManagedStoreAccountAppSyncStatus(v string) (any, error) {
     result := SUCCESS_ANDROIDMANAGEDSTOREACCOUNTAPPSYNCSTATUS
     switch v {
         case "success":

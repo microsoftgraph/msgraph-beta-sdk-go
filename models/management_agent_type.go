@@ -38,7 +38,7 @@ const (
 func (i ManagementAgentType) String() string {
     return []string{"eas", "mdm", "easMdm", "intuneClient", "easIntuneClient", "configurationManagerClient", "configurationManagerClientMdm", "configurationManagerClientMdmEas", "unknown", "jamf", "googleCloudDevicePolicyController", "microsoft365ManagedMdm", "msSense", "intuneAosp"}[i]
 }
-func ParseManagementAgentType(v string) (interface{}, error) {
+func ParseManagementAgentType(v string) (any, error) {
     result := EAS_MANAGEMENTAGENTTYPE
     switch v {
         case "eas":

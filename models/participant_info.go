@@ -7,7 +7,7 @@ import (
 // ParticipantInfo 
 type ParticipantInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The ISO 3166-1 Alpha-2 country code of the participant's best estimated physical location at the start of the call. Read-only.
     countryCode *string
     // The type of endpoint the participant is using. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue. Read-only.
@@ -31,7 +31,7 @@ type ParticipantInfo struct {
 func NewParticipantInfo()(*ParticipantInfo) {
     m := &ParticipantInfo{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateParticipantInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ func CreateParticipantInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewParticipantInfo(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ParticipantInfo) GetAdditionalData()(map[string]interface{}) {
+func (m *ParticipantInfo) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCountryCode gets the countryCode property value. The ISO 3166-1 Alpha-2 country code of the participant's best estimated physical location at the start of the call. Read-only.
@@ -239,7 +239,7 @@ func (m *ParticipantInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ParticipantInfo) SetAdditionalData(value map[string]interface{})() {
+func (m *ParticipantInfo) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCountryCode sets the countryCode property value. The ISO 3166-1 Alpha-2 country code of the participant's best estimated physical location at the start of the call. Read-only.

@@ -17,7 +17,7 @@ const (
 func (i DeploymentStateValue) String() string {
     return []string{"scheduled", "offering", "paused", "faulted", "archived", "unknownFutureValue"}[i]
 }
-func ParseDeploymentStateValue(v string) (interface{}, error) {
+func ParseDeploymentStateValue(v string) (any, error) {
     result := SCHEDULED_DEPLOYMENTSTATEVALUE
     switch v {
         case "scheduled":

@@ -15,7 +15,7 @@ const (
 func (i AndroidForWorkBindStatus) String() string {
     return []string{"notBound", "bound", "boundAndValidated", "unbinding"}[i]
 }
-func ParseAndroidForWorkBindStatus(v string) (interface{}, error) {
+func ParseAndroidForWorkBindStatus(v string) (any, error) {
     result := NOTBOUND_ANDROIDFORWORKBINDSTATUS
     switch v {
         case "notBound":

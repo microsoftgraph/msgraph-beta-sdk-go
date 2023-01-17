@@ -7,7 +7,7 @@ import (
 // RoleDefinition 
 type RoleDefinition struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The description for the role.
     description *string
     // The display name for the role assignment.
@@ -21,7 +21,7 @@ type RoleDefinition struct {
 func NewRoleDefinition()(*RoleDefinition) {
     m := &RoleDefinition{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRoleDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateRoleDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewRoleDefinition(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RoleDefinition) GetAdditionalData()(map[string]interface{}) {
+func (m *RoleDefinition) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDescription gets the description property value. The description for the role.
@@ -128,7 +128,7 @@ func (m *RoleDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RoleDefinition) SetAdditionalData(value map[string]interface{})() {
+func (m *RoleDefinition) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDescription sets the description property value. The description for the role.

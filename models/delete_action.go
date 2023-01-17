@@ -7,7 +7,7 @@ import (
 // DeleteAction 
 type DeleteAction struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The name of the item that was deleted.
     name *string
     // File or Folder, depending on the type of the deleted item.
@@ -19,7 +19,7 @@ type DeleteAction struct {
 func NewDeleteAction()(*DeleteAction) {
     m := &DeleteAction{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeleteActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateDeleteActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewDeleteAction(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeleteAction) GetAdditionalData()(map[string]interface{}) {
+func (m *DeleteAction) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -106,7 +106,7 @@ func (m *DeleteAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeleteAction) SetAdditionalData(value map[string]interface{})() {
+func (m *DeleteAction) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetName sets the name property value. The name of the item that was deleted.

@@ -12,10 +12,12 @@ type IdentityGovernanceable interface {
     GetAppConsent()(AppConsentApprovalRouteable)
     GetEntitlementManagement()(EntitlementManagementable)
     GetOdataType()(*string)
+    GetPrivilegedAccess()(PrivilegedAccessRootable)
     GetTermsOfUse()(TermsOfUseContainerable)
     SetAccessReviews(value AccessReviewSetable)()
     SetAppConsent(value AppConsentApprovalRouteable)()
     SetEntitlementManagement(value EntitlementManagementable)()
     SetOdataType(value *string)()
+    SetPrivilegedAccess(value PrivilegedAccessRootable)()
     SetTermsOfUse(value TermsOfUseContainerable)()
 }

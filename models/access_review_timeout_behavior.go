@@ -15,7 +15,7 @@ const (
 func (i AccessReviewTimeoutBehavior) String() string {
     return []string{"keepAccess", "removeAccess", "acceptAccessRecommendation", "unknownFutureValue"}[i]
 }
-func ParseAccessReviewTimeoutBehavior(v string) (interface{}, error) {
+func ParseAccessReviewTimeoutBehavior(v string) (any, error) {
     result := KEEPACCESS_ACCESSREVIEWTIMEOUTBEHAVIOR
     switch v {
         case "keepAccess":

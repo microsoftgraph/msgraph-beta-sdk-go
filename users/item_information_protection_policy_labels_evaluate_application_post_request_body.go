@@ -8,7 +8,7 @@ import (
 // ItemInformationProtectionPolicyLabelsEvaluateApplicationPostRequestBody 
 type ItemInformationProtectionPolicyLabelsEvaluateApplicationPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The contentInfo property
     contentInfo ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentInfoable
     // The labelingOptions property
@@ -18,7 +18,7 @@ type ItemInformationProtectionPolicyLabelsEvaluateApplicationPostRequestBody str
 func NewItemInformationProtectionPolicyLabelsEvaluateApplicationPostRequestBody()(*ItemInformationProtectionPolicyLabelsEvaluateApplicationPostRequestBody) {
     m := &ItemInformationProtectionPolicyLabelsEvaluateApplicationPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemInformationProtectionPolicyLabelsEvaluateApplicationPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateItemInformationProtectionPolicyLabelsEvaluateApplicationPostRequestBo
     return NewItemInformationProtectionPolicyLabelsEvaluateApplicationPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemInformationProtectionPolicyLabelsEvaluateApplicationPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemInformationProtectionPolicyLabelsEvaluateApplicationPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContentInfo gets the contentInfo property value. The contentInfo property
@@ -85,7 +85,7 @@ func (m *ItemInformationProtectionPolicyLabelsEvaluateApplicationPostRequestBody
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemInformationProtectionPolicyLabelsEvaluateApplicationPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemInformationProtectionPolicyLabelsEvaluateApplicationPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetContentInfo sets the contentInfo property value. The contentInfo property

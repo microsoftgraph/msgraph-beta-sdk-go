@@ -16,7 +16,7 @@ const (
 func (i SynchronizationStatusCode) String() string {
     return []string{"NotConfigured", "NotRun", "Active", "Paused", "Quarantine"}[i]
 }
-func ParseSynchronizationStatusCode(v string) (interface{}, error) {
+func ParseSynchronizationStatusCode(v string) (any, error) {
     result := NOTCONFIGURED_SYNCHRONIZATIONSTATUSCODE
     switch v {
         case "NotConfigured":

@@ -16,7 +16,7 @@ const (
 func (i RuleSeverityType) String() string {
     return []string{"unknown", "informational", "warning", "critical", "unknownFutureValue"}[i]
 }
-func ParseRuleSeverityType(v string) (interface{}, error) {
+func ParseRuleSeverityType(v string) (any, error) {
     result := UNKNOWN_RULESEVERITYTYPE
     switch v {
         case "unknown":

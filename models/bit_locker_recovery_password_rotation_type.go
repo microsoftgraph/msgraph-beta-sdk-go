@@ -19,7 +19,7 @@ const (
 func (i BitLockerRecoveryPasswordRotationType) String() string {
     return []string{"notConfigured", "disabled", "enabledForAzureAd", "enabledForAzureAdAndHybrid"}[i]
 }
-func ParseBitLockerRecoveryPasswordRotationType(v string) (interface{}, error) {
+func ParseBitLockerRecoveryPasswordRotationType(v string) (any, error) {
     result := NOTCONFIGURED_BITLOCKERRECOVERYPASSWORDROTATIONTYPE
     switch v {
         case "notConfigured":

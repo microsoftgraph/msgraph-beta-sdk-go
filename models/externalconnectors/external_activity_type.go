@@ -16,7 +16,7 @@ const (
 func (i ExternalActivityType) String() string {
     return []string{"viewed", "modified", "created", "commented", "unknownFutureValue"}[i]
 }
-func ParseExternalActivityType(v string) (interface{}, error) {
+func ParseExternalActivityType(v string) (any, error) {
     result := VIEWED_EXTERNALACTIVITYTYPE
     switch v {
         case "viewed":

@@ -7,7 +7,7 @@ import (
 // MicrosoftManagedDesktop 
 type MicrosoftManagedDesktop struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // The name of the Microsoft Managed Desktop profile that the Windows 365 Cloud PC is associated with.
@@ -19,7 +19,7 @@ type MicrosoftManagedDesktop struct {
 func NewMicrosoftManagedDesktop()(*MicrosoftManagedDesktop) {
     m := &MicrosoftManagedDesktop{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMicrosoftManagedDesktopFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateMicrosoftManagedDesktopFromDiscriminatorValue(parseNode i878a80d2330e
     return NewMicrosoftManagedDesktop(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MicrosoftManagedDesktop) GetAdditionalData()(map[string]interface{}) {
+func (m *MicrosoftManagedDesktop) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -107,7 +107,7 @@ func (m *MicrosoftManagedDesktop) Serialize(writer i878a80d2330e89d26896388a3f48
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MicrosoftManagedDesktop) SetAdditionalData(value map[string]interface{})() {
+func (m *MicrosoftManagedDesktop) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

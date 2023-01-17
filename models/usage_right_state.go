@@ -16,7 +16,7 @@ const (
 func (i UsageRightState) String() string {
     return []string{"active", "inactive", "warning", "suspended", "unknownFutureValue"}[i]
 }
-func ParseUsageRightState(v string) (interface{}, error) {
+func ParseUsageRightState(v string) (any, error) {
     result := ACTIVE_USAGERIGHTSTATE
     switch v {
         case "active":

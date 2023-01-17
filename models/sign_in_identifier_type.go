@@ -17,7 +17,7 @@ const (
 func (i SignInIdentifierType) String() string {
     return []string{"userPrincipalName", "phoneNumber", "proxyAddress", "qrCode", "onPremisesUserPrincipalName", "unknownFutureValue"}[i]
 }
-func ParseSignInIdentifierType(v string) (interface{}, error) {
+func ParseSignInIdentifierType(v string) (any, error) {
     result := USERPRINCIPALNAME_SIGNINIDENTIFIERTYPE
     switch v {
         case "userPrincipalName":

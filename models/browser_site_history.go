@@ -8,7 +8,7 @@ import (
 // BrowserSiteHistory the history for the site modifications
 type BrowserSiteHistory struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Controls the behavior of redirected sites. If true, indicates that the site will open in Internet Explorer 11 or Microsoft Edge even if the site is navigated to as part of a HTTP or meta refresh redirection chain.
     allowRedirect *bool
     // The comment for the site.
@@ -30,7 +30,7 @@ type BrowserSiteHistory struct {
 func NewBrowserSiteHistory()(*BrowserSiteHistory) {
     m := &BrowserSiteHistory{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateBrowserSiteHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ func CreateBrowserSiteHistoryFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewBrowserSiteHistory(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BrowserSiteHistory) GetAdditionalData()(map[string]interface{}) {
+func (m *BrowserSiteHistory) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowRedirect gets the allowRedirect property value. Controls the behavior of redirected sites. If true, indicates that the site will open in Internet Explorer 11 or Microsoft Edge even if the site is navigated to as part of a HTTP or meta refresh redirection chain.
@@ -220,7 +220,7 @@ func (m *BrowserSiteHistory) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BrowserSiteHistory) SetAdditionalData(value map[string]interface{})() {
+func (m *BrowserSiteHistory) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowRedirect sets the allowRedirect property value. Controls the behavior of redirected sites. If true, indicates that the site will open in Internet Explorer 11 or Microsoft Edge even if the site is navigated to as part of a HTTP or meta refresh redirection chain.

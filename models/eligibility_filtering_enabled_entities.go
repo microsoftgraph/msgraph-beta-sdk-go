@@ -10,12 +10,13 @@ const (
     SWAPREQUEST_ELIGIBILITYFILTERINGENABLEDENTITIES
     OFFERSHIFTREQUEST_ELIGIBILITYFILTERINGENABLEDENTITIES
     UNKNOWNFUTUREVALUE_ELIGIBILITYFILTERINGENABLEDENTITIES
+    TIMEOFFREASON_ELIGIBILITYFILTERINGENABLEDENTITIES
 )
 
 func (i EligibilityFilteringEnabledEntities) String() string {
-    return []string{"none", "swapRequest", "offerShiftRequest", "unknownFutureValue"}[i]
+    return []string{"none", "swapRequest", "offerShiftRequest", "unknownFutureValue", "timeOffReason"}[i]
 }
-func ParseEligibilityFilteringEnabledEntities(v string) (interface{}, error) {
+func ParseEligibilityFilteringEnabledEntities(v string) (any, error) {
     result := NONE_ELIGIBILITYFILTERINGENABLEDENTITIES
     switch v {
         case "none":
@@ -26,6 +27,8 @@ func ParseEligibilityFilteringEnabledEntities(v string) (interface{}, error) {
             result = OFFERSHIFTREQUEST_ELIGIBILITYFILTERINGENABLEDENTITIES
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ELIGIBILITYFILTERINGENABLEDENTITIES
+        case "timeOffReason":
+            result = TIMEOFFREASON_ELIGIBILITYFILTERINGENABLEDENTITIES
         default:
             return 0, errors.New("Unknown EligibilityFilteringEnabledEntities value: " + v)
     }

@@ -13,7 +13,7 @@ const (
 func (i PlannerTaskTargetKind) String() string {
     return []string{"group", "unknownFutureValue"}[i]
 }
-func ParsePlannerTaskTargetKind(v string) (interface{}, error) {
+func ParsePlannerTaskTargetKind(v string) (any, error) {
     result := GROUP_PLANNERTASKTARGETKIND
     switch v {
         case "group":

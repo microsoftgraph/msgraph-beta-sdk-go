@@ -14,7 +14,7 @@ const (
 func (i CloudPcDeviceImageStatus) String() string {
     return []string{"pending", "ready", "failed"}[i]
 }
-func ParseCloudPcDeviceImageStatus(v string) (interface{}, error) {
+func ParseCloudPcDeviceImageStatus(v string) (any, error) {
     result := PENDING_CLOUDPCDEVICEIMAGESTATUS
     switch v {
         case "pending":

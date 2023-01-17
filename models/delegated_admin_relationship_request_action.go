@@ -15,7 +15,7 @@ const (
 func (i DelegatedAdminRelationshipRequestAction) String() string {
     return []string{"lockForApproval", "approve", "terminate", "unknownFutureValue"}[i]
 }
-func ParseDelegatedAdminRelationshipRequestAction(v string) (interface{}, error) {
+func ParseDelegatedAdminRelationshipRequestAction(v string) (any, error) {
     result := LOCKFORAPPROVAL_DELEGATEDADMINRELATIONSHIPREQUESTACTION
     switch v {
         case "lockForApproval":

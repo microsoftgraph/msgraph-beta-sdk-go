@@ -7,7 +7,7 @@ import (
 // LoginPageLayoutConfiguration 
 type LoginPageLayoutConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Option to show the footer on the sign-in page.
     isFooterShown *bool
     // Option to show the header on the sign-in page.
@@ -21,7 +21,7 @@ type LoginPageLayoutConfiguration struct {
 func NewLoginPageLayoutConfiguration()(*LoginPageLayoutConfiguration) {
     m := &LoginPageLayoutConfiguration{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateLoginPageLayoutConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateLoginPageLayoutConfigurationFromDiscriminatorValue(parseNode i878a80d
     return NewLoginPageLayoutConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *LoginPageLayoutConfiguration) GetAdditionalData()(map[string]interface{}) {
+func (m *LoginPageLayoutConfiguration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -129,7 +129,7 @@ func (m *LoginPageLayoutConfiguration) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *LoginPageLayoutConfiguration) SetAdditionalData(value map[string]interface{})() {
+func (m *LoginPageLayoutConfiguration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIsFooterShown sets the isFooterShown property value. Option to show the footer on the sign-in page.

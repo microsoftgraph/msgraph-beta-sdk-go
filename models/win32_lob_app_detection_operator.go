@@ -25,7 +25,7 @@ const (
 func (i Win32LobAppDetectionOperator) String() string {
     return []string{"notConfigured", "equal", "notEqual", "greaterThan", "greaterThanOrEqual", "lessThan", "lessThanOrEqual"}[i]
 }
-func ParseWin32LobAppDetectionOperator(v string) (interface{}, error) {
+func ParseWin32LobAppDetectionOperator(v string) (any, error) {
     result := NOTCONFIGURED_WIN32LOBAPPDETECTIONOPERATOR
     switch v {
         case "notConfigured":

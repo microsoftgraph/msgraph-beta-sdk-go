@@ -14,7 +14,7 @@ const (
 func (i RecommendationPriority) String() string {
     return []string{"low", "medium", "high"}[i]
 }
-func ParseRecommendationPriority(v string) (interface{}, error) {
+func ParseRecommendationPriority(v string) (any, error) {
     result := LOW_RECOMMENDATIONPRIORITY
     switch v {
         case "low":

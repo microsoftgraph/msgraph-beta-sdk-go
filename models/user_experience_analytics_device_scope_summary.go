@@ -7,7 +7,7 @@ import (
 // UserExperienceAnalyticsDeviceScopeSummary the user experience analytics tenant level information for all the device scope configurations
 type UserExperienceAnalyticsDeviceScopeSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // A collection of the user experience analytics device scope Unique Identifiers that are enabled and finished recalculating the report metric.
     completedDeviceScopeIds []string
     // A collection of user experience analytics device scope Unique Identitfiers that are enabled but there is insufficient data to calculate results.
@@ -23,7 +23,7 @@ type UserExperienceAnalyticsDeviceScopeSummary struct {
 func NewUserExperienceAnalyticsDeviceScopeSummary()(*UserExperienceAnalyticsDeviceScopeSummary) {
     m := &UserExperienceAnalyticsDeviceScopeSummary{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUserExperienceAnalyticsDeviceScopeSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateUserExperienceAnalyticsDeviceScopeSummaryFromDiscriminatorValue(parse
     return NewUserExperienceAnalyticsDeviceScopeSummary(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserExperienceAnalyticsDeviceScopeSummary) GetAdditionalData()(map[string]interface{}) {
+func (m *UserExperienceAnalyticsDeviceScopeSummary) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCompletedDeviceScopeIds gets the completedDeviceScopeIds property value. A collection of the user experience analytics device scope Unique Identifiers that are enabled and finished recalculating the report metric.
@@ -158,7 +158,7 @@ func (m *UserExperienceAnalyticsDeviceScopeSummary) Serialize(writer i878a80d233
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserExperienceAnalyticsDeviceScopeSummary) SetAdditionalData(value map[string]interface{})() {
+func (m *UserExperienceAnalyticsDeviceScopeSummary) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCompletedDeviceScopeIds sets the completedDeviceScopeIds property value. A collection of the user experience analytics device scope Unique Identifiers that are enabled and finished recalculating the report metric.

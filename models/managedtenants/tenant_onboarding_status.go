@@ -16,7 +16,7 @@ const (
 func (i TenantOnboardingStatus) String() string {
     return []string{"ineligible", "inProcess", "active", "inactive", "unknownFutureValue"}[i]
 }
-func ParseTenantOnboardingStatus(v string) (interface{}, error) {
+func ParseTenantOnboardingStatus(v string) (any, error) {
     result := INELIGIBLE_TENANTONBOARDINGSTATUS
     switch v {
         case "ineligible":

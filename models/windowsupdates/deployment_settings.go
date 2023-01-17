@@ -7,7 +7,7 @@ import (
 // DeploymentSettings 
 type DeploymentSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Settings governing conditions to monitor and automated actions to take.
     monitoring MonitoringSettingsable
     // The OdataType property
@@ -21,7 +21,7 @@ type DeploymentSettings struct {
 func NewDeploymentSettings()(*DeploymentSettings) {
     m := &DeploymentSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeploymentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +47,7 @@ func CreateDeploymentSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewDeploymentSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeploymentSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *DeploymentSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -146,7 +146,7 @@ func (m *DeploymentSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeploymentSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *DeploymentSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetMonitoring sets the monitoring property value. Settings governing conditions to monitor and automated actions to take.

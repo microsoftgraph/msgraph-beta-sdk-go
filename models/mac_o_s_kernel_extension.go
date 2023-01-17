@@ -7,7 +7,7 @@ import (
 // MacOSKernelExtension represents a specific macOS kernel extension. A macOS kernel extension can be described by its team identifier plus its bundle identifier.
 type MacOSKernelExtension struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Bundle ID of the kernel extension.
     bundleId *string
     // The OdataType property
@@ -19,7 +19,7 @@ type MacOSKernelExtension struct {
 func NewMacOSKernelExtension()(*MacOSKernelExtension) {
     m := &MacOSKernelExtension{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMacOSKernelExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateMacOSKernelExtensionFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewMacOSKernelExtension(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MacOSKernelExtension) GetAdditionalData()(map[string]interface{}) {
+func (m *MacOSKernelExtension) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBundleId gets the bundleId property value. Bundle ID of the kernel extension.
@@ -106,7 +106,7 @@ func (m *MacOSKernelExtension) Serialize(writer i878a80d2330e89d26896388a3f487ee
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MacOSKernelExtension) SetAdditionalData(value map[string]interface{})() {
+func (m *MacOSKernelExtension) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetBundleId sets the bundleId property value. Bundle ID of the kernel extension.

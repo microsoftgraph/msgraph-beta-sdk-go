@@ -19,7 +19,7 @@ const (
 func (i DeviceManagementDerivedCredentialIssuer) String() string {
     return []string{"intercede", "entrustDatacard", "purebred", "xTec"}[i]
 }
-func ParseDeviceManagementDerivedCredentialIssuer(v string) (interface{}, error) {
+func ParseDeviceManagementDerivedCredentialIssuer(v string) (any, error) {
     result := INTERCEDE_DEVICEMANAGEMENTDERIVEDCREDENTIALISSUER
     switch v {
         case "intercede":

@@ -15,7 +15,7 @@ const (
 func (i AndroidManagedStoreAccountBindStatus) String() string {
     return []string{"notBound", "bound", "boundAndValidated", "unbinding"}[i]
 }
-func ParseAndroidManagedStoreAccountBindStatus(v string) (interface{}, error) {
+func ParseAndroidManagedStoreAccountBindStatus(v string) (any, error) {
     result := NOTBOUND_ANDROIDMANAGEDSTOREACCOUNTBINDSTATUS
     switch v {
         case "notBound":

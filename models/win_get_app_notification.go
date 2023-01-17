@@ -19,7 +19,7 @@ const (
 func (i WinGetAppNotification) String() string {
     return []string{"showAll", "showReboot", "hideAll", "unknownFutureValue"}[i]
 }
-func ParseWinGetAppNotification(v string) (interface{}, error) {
+func ParseWinGetAppNotification(v string) (any, error) {
     result := SHOWALL_WINGETAPPNOTIFICATION
     switch v {
         case "showAll":

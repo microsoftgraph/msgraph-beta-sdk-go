@@ -7,7 +7,7 @@ import (
 // UserExperienceAnalyticsAutopilotDevicesSummary the user experience analytics summary of Devices not windows autopilot ready.
 type UserExperienceAnalyticsAutopilotDevicesSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The count of intune devices that are not autopilot registerd.
     devicesNotAutopilotRegistered *int32
     // The count of intune devices not autopilot profile assigned.
@@ -21,7 +21,7 @@ type UserExperienceAnalyticsAutopilotDevicesSummary struct {
 func NewUserExperienceAnalyticsAutopilotDevicesSummary()(*UserExperienceAnalyticsAutopilotDevicesSummary) {
     m := &UserExperienceAnalyticsAutopilotDevicesSummary{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUserExperienceAnalyticsAutopilotDevicesSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateUserExperienceAnalyticsAutopilotDevicesSummaryFromDiscriminatorValue(
     return NewUserExperienceAnalyticsAutopilotDevicesSummary(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetAdditionalData()(map[string]interface{}) {
+func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDevicesNotAutopilotRegistered gets the devicesNotAutopilotRegistered property value. The count of intune devices that are not autopilot registerd.
@@ -128,7 +128,7 @@ func (m *UserExperienceAnalyticsAutopilotDevicesSummary) Serialize(writer i878a8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserExperienceAnalyticsAutopilotDevicesSummary) SetAdditionalData(value map[string]interface{})() {
+func (m *UserExperienceAnalyticsAutopilotDevicesSummary) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDevicesNotAutopilotRegistered sets the devicesNotAutopilotRegistered property value. The count of intune devices that are not autopilot registerd.

@@ -28,7 +28,7 @@ const (
 func (i AuthenticationMethodModes) String() string {
     return []string{"password", "voice", "hardwareOath", "softwareOath", "sms", "fido2", "windowsHelloForBusiness", "microsoftAuthenticatorPush", "deviceBasedPush", "temporaryAccessPassOneTime", "temporaryAccessPassMultiUse", "email", "x509CertificateSingleFactor", "x509CertificateMultiFactor", "federatedSingleFactor", "federatedMultiFactor", "unknownFutureValue"}[i]
 }
-func ParseAuthenticationMethodModes(v string) (interface{}, error) {
+func ParseAuthenticationMethodModes(v string) (any, error) {
     result := PASSWORD_AUTHENTICATIONMETHODMODES
     switch v {
         case "password":

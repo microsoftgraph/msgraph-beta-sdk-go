@@ -23,7 +23,7 @@ const (
 func (i SecurityBaselineComplianceState) String() string {
     return []string{"unknown", "secure", "notApplicable", "notSecure", "error", "conflict"}[i]
 }
-func ParseSecurityBaselineComplianceState(v string) (interface{}, error) {
+func ParseSecurityBaselineComplianceState(v string) (any, error) {
     result := UNKNOWN_SECURITYBASELINECOMPLIANCESTATE
     switch v {
         case "unknown":

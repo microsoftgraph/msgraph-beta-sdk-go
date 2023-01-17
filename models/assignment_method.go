@@ -14,7 +14,7 @@ const (
 func (i AssignmentMethod) String() string {
     return []string{"standard", "privileged", "auto"}[i]
 }
-func ParseAssignmentMethod(v string) (interface{}, error) {
+func ParseAssignmentMethod(v string) (any, error) {
     result := STANDARD_ASSIGNMENTMETHOD
     switch v {
         case "standard":

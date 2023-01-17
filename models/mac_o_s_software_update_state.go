@@ -41,7 +41,7 @@ const (
 func (i MacOSSoftwareUpdateState) String() string {
     return []string{"success", "downloading", "downloaded", "installing", "idle", "available", "scheduled", "downloadFailed", "downloadInsufficientSpace", "downloadInsufficientPower", "downloadInsufficientNetwork", "installInsufficientSpace", "installInsufficientPower", "installFailed", "commandFailed"}[i]
 }
-func ParseMacOSSoftwareUpdateState(v string) (interface{}, error) {
+func ParseMacOSSoftwareUpdateState(v string) (any, error) {
     result := SUCCESS_MACOSSOFTWAREUPDATESTATE
     switch v {
         case "success":

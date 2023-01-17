@@ -17,7 +17,7 @@ const (
 func (i CloudPcReportName) String() string {
     return []string{"remoteConnectionHistoricalReports", "dailyAggregatedRemoteConnectionReports", "totalAggregatedRemoteConnectionReports", "sharedUseLicenseUsageReport", "sharedUseLicenseUsageRealTimeReport", "unknownFutureValue"}[i]
 }
-func ParseCloudPcReportName(v string) (interface{}, error) {
+func ParseCloudPcReportName(v string) (any, error) {
     result := REMOTECONNECTIONHISTORICALREPORTS_CLOUDPCREPORTNAME
     switch v {
         case "remoteConnectionHistoricalReports":

@@ -7,7 +7,7 @@ import (
 // JoinedGroupsEvaluateDynamicMembershipPostRequestBody 
 type JoinedGroupsEvaluateDynamicMembershipPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The memberId property
     memberId *string
     // The membershipRule property
@@ -17,7 +17,7 @@ type JoinedGroupsEvaluateDynamicMembershipPostRequestBody struct {
 func NewJoinedGroupsEvaluateDynamicMembershipPostRequestBody()(*JoinedGroupsEvaluateDynamicMembershipPostRequestBody) {
     m := &JoinedGroupsEvaluateDynamicMembershipPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateJoinedGroupsEvaluateDynamicMembershipPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateJoinedGroupsEvaluateDynamicMembershipPostRequestBodyFromDiscriminator
     return NewJoinedGroupsEvaluateDynamicMembershipPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *JoinedGroupsEvaluateDynamicMembershipPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *JoinedGroupsEvaluateDynamicMembershipPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -84,7 +84,7 @@ func (m *JoinedGroupsEvaluateDynamicMembershipPostRequestBody) Serialize(writer 
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *JoinedGroupsEvaluateDynamicMembershipPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *JoinedGroupsEvaluateDynamicMembershipPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetMemberId sets the memberId property value. The memberId property

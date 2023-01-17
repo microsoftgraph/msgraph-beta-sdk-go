@@ -16,7 +16,7 @@ const (
 func (i RuleMode) String() string {
     return []string{"audit", "auditAndNotify", "enforce", "pendingDeletion", "test"}[i]
 }
-func ParseRuleMode(v string) (interface{}, error) {
+func ParseRuleMode(v string) (any, error) {
     result := AUDIT_RULEMODE
     switch v {
         case "audit":

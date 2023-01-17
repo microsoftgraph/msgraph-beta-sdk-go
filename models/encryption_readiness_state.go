@@ -15,7 +15,7 @@ const (
 func (i EncryptionReadinessState) String() string {
     return []string{"notReady", "ready"}[i]
 }
-func ParseEncryptionReadinessState(v string) (interface{}, error) {
+func ParseEncryptionReadinessState(v string) (any, error) {
     result := NOTREADY_ENCRYPTIONREADINESSSTATE
     switch v {
         case "notReady":

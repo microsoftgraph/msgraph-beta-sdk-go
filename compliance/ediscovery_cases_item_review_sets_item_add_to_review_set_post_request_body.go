@@ -8,7 +8,7 @@ import (
 // EdiscoveryCasesItemReviewSetsItemAddToReviewSetPostRequestBody 
 type EdiscoveryCasesItemReviewSetsItemAddToReviewSetPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The additionalDataOptions property
     additionalDataOptions *ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.AdditionalDataOptions
     // The sourceCollection property
@@ -18,7 +18,7 @@ type EdiscoveryCasesItemReviewSetsItemAddToReviewSetPostRequestBody struct {
 func NewEdiscoveryCasesItemReviewSetsItemAddToReviewSetPostRequestBody()(*EdiscoveryCasesItemReviewSetsItemAddToReviewSetPostRequestBody) {
     m := &EdiscoveryCasesItemReviewSetsItemAddToReviewSetPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateEdiscoveryCasesItemReviewSetsItemAddToReviewSetPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateEdiscoveryCasesItemReviewSetsItemAddToReviewSetPostRequestBodyFromDis
     return NewEdiscoveryCasesItemReviewSetsItemAddToReviewSetPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EdiscoveryCasesItemReviewSetsItemAddToReviewSetPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *EdiscoveryCasesItemReviewSetsItemAddToReviewSetPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAdditionalDataOptions gets the additionalDataOptions property value. The additionalDataOptions property
@@ -86,7 +86,7 @@ func (m *EdiscoveryCasesItemReviewSetsItemAddToReviewSetPostRequestBody) Seriali
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EdiscoveryCasesItemReviewSetsItemAddToReviewSetPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *EdiscoveryCasesItemReviewSetsItemAddToReviewSetPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAdditionalDataOptions sets the additionalDataOptions property value. The additionalDataOptions property

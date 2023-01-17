@@ -25,7 +25,7 @@ const (
 func (i DeviceManagementConfigurationControlType) String() string {
     return []string{"default", "dropdown", "smallTextBox", "largeTextBox", "toggle", "multiheaderGrid", "contextPane"}[i]
 }
-func ParseDeviceManagementConfigurationControlType(v string) (interface{}, error) {
+func ParseDeviceManagementConfigurationControlType(v string) (any, error) {
     result := DEFAULT_ESCAPED_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
     switch v {
         case "default":

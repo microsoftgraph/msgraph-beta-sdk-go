@@ -14,7 +14,7 @@ const (
 func (i MonitoringAction) String() string {
     return []string{"alertError", "pauseDeployment", "unknownFutureValue"}[i]
 }
-func ParseMonitoringAction(v string) (interface{}, error) {
+func ParseMonitoringAction(v string) (any, error) {
     result := ALERTERROR_MONITORINGACTION
     switch v {
         case "alertError":

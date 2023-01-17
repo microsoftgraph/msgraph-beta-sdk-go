@@ -16,7 +16,7 @@ type BusinessScenariosRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// BusinessScenariosRequestBuilderGetQueryParameters get businessScenarios from solutions
+// BusinessScenariosRequestBuilderGetQueryParameters get a list of all businessScenario objects in an organization.
 type BusinessScenariosRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewBusinessScenariosRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *BusinessScenariosRequestBuilder) Count()(*BusinessScenariosCountRequestBuilder) {
     return NewBusinessScenariosCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get get businessScenarios from solutions
+// Get get a list of all businessScenario objects in an organization.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/solutionsroot-list-businessscenarios?view=graph-rest-1.0
 func (m *BusinessScenariosRequestBuilder) Get(ctx context.Context, requestConfiguration *BusinessScenariosRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -84,7 +87,7 @@ func (m *BusinessScenariosRequestBuilder) Get(ctx context.Context, requestConfig
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateBusinessScenarioCollectionResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateBusinessScenarioCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -93,7 +96,10 @@ func (m *BusinessScenariosRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioCollectionResponseable), nil
 }
-// Post create new navigation property to businessScenarios for solutions
+// Post create a new businessScenario object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/solutionsroot-post-businessscenarios?view=graph-rest-1.0
 func (m *BusinessScenariosRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioable, requestConfiguration *BusinessScenariosRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -103,7 +109,7 @@ func (m *BusinessScenariosRequestBuilder) Post(ctx context.Context, body ie233ee
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateBusinessScenarioFromDiscriminatorValue, errorMapping)
+    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateBusinessScenarioFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -112,7 +118,7 @@ func (m *BusinessScenariosRequestBuilder) Post(ctx context.Context, body ie233ee
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioable), nil
 }
-// ToGetRequestInformation get businessScenarios from solutions
+// ToGetRequestInformation get a list of all businessScenario objects in an organization.
 func (m *BusinessScenariosRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -128,7 +134,7 @@ func (m *BusinessScenariosRequestBuilder) ToGetRequestInformation(ctx context.Co
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to businessScenarios for solutions
+// ToPostRequestInformation create a new businessScenario object.
 func (m *BusinessScenariosRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioable, requestConfiguration *BusinessScenariosRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

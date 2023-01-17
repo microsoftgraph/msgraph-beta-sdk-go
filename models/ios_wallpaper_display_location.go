@@ -19,7 +19,7 @@ const (
 func (i IosWallpaperDisplayLocation) String() string {
     return []string{"notConfigured", "lockScreen", "homeScreen", "lockAndHomeScreens"}[i]
 }
-func ParseIosWallpaperDisplayLocation(v string) (interface{}, error) {
+func ParseIosWallpaperDisplayLocation(v string) (any, error) {
     result := NOTCONFIGURED_IOSWALLPAPERDISPLAYLOCATION
     switch v {
         case "notConfigured":

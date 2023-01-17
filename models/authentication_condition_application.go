@@ -7,7 +7,7 @@ import (
 // AuthenticationConditionApplication 
 type AuthenticationConditionApplication struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The appId property
     appId *string
     // The OdataType property
@@ -17,7 +17,7 @@ type AuthenticationConditionApplication struct {
 func NewAuthenticationConditionApplication()(*AuthenticationConditionApplication) {
     m := &AuthenticationConditionApplication{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAuthenticationConditionApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateAuthenticationConditionApplicationFromDiscriminatorValue(parseNode i8
     return NewAuthenticationConditionApplication(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuthenticationConditionApplication) GetAdditionalData()(map[string]interface{}) {
+func (m *AuthenticationConditionApplication) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAppId gets the appId property value. The appId property
@@ -84,7 +84,7 @@ func (m *AuthenticationConditionApplication) Serialize(writer i878a80d2330e89d26
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuthenticationConditionApplication) SetAdditionalData(value map[string]interface{})() {
+func (m *AuthenticationConditionApplication) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAppId sets the appId property value. The appId property

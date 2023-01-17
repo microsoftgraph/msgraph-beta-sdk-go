@@ -8,7 +8,7 @@ import (
 // ConfigurationManagerClientHealthState configuration manager client health state
 type ConfigurationManagerClientHealthState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Error code for failed state.
     errorCode *int32
     // Datetime for last sync with configuration manager management point.
@@ -22,7 +22,7 @@ type ConfigurationManagerClientHealthState struct {
 func NewConfigurationManagerClientHealthState()(*ConfigurationManagerClientHealthState) {
     m := &ConfigurationManagerClientHealthState{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateConfigurationManagerClientHealthStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateConfigurationManagerClientHealthStateFromDiscriminatorValue(parseNode
     return NewConfigurationManagerClientHealthState(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConfigurationManagerClientHealthState) GetAdditionalData()(map[string]interface{}) {
+func (m *ConfigurationManagerClientHealthState) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetErrorCode gets the errorCode property value. Error code for failed state.
@@ -130,7 +130,7 @@ func (m *ConfigurationManagerClientHealthState) Serialize(writer i878a80d2330e89
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConfigurationManagerClientHealthState) SetAdditionalData(value map[string]interface{})() {
+func (m *ConfigurationManagerClientHealthState) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetErrorCode sets the errorCode property value. Error code for failed state.

@@ -8,7 +8,7 @@ import (
 // DeviceCustomAttributeShellScriptsItemAssignPostRequestBody 
 type DeviceCustomAttributeShellScriptsItemAssignPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The deviceManagementScriptAssignments property
     deviceManagementScriptAssignments []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptAssignmentable
     // The deviceManagementScriptGroupAssignments property
@@ -18,7 +18,7 @@ type DeviceCustomAttributeShellScriptsItemAssignPostRequestBody struct {
 func NewDeviceCustomAttributeShellScriptsItemAssignPostRequestBody()(*DeviceCustomAttributeShellScriptsItemAssignPostRequestBody) {
     m := &DeviceCustomAttributeShellScriptsItemAssignPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceCustomAttributeShellScriptsItemAssignPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateDeviceCustomAttributeShellScriptsItemAssignPostRequestBodyFromDiscrim
     return NewDeviceCustomAttributeShellScriptsItemAssignPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceCustomAttributeShellScriptsItemAssignPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceCustomAttributeShellScriptsItemAssignPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeviceManagementScriptAssignments gets the deviceManagementScriptAssignments property value. The deviceManagementScriptAssignments property
@@ -101,7 +101,7 @@ func (m *DeviceCustomAttributeShellScriptsItemAssignPostRequestBody) Serialize(w
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceCustomAttributeShellScriptsItemAssignPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceCustomAttributeShellScriptsItemAssignPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeviceManagementScriptAssignments sets the deviceManagementScriptAssignments property value. The deviceManagementScriptAssignments property

@@ -18,7 +18,7 @@ const (
 func (i ClientCredentialType) String() string {
     return []string{"none", "clientSecret", "clientAssertion", "federatedIdentityCredential", "managedIdentity", "certificate", "unknownFutureValue"}[i]
 }
-func ParseClientCredentialType(v string) (interface{}, error) {
+func ParseClientCredentialType(v string) (any, error) {
     result := NONE_CLIENTCREDENTIALTYPE
     switch v {
         case "none":

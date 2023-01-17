@@ -15,7 +15,7 @@ const (
 func (i MeetingRegistrantStatus) String() string {
     return []string{"registered", "canceled", "processing", "unknownFutureValue"}[i]
 }
-func ParseMeetingRegistrantStatus(v string) (interface{}, error) {
+func ParseMeetingRegistrantStatus(v string) (any, error) {
     result := REGISTERED_MEETINGREGISTRANTSTATUS
     switch v {
         case "registered":

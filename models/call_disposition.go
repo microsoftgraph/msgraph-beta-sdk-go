@@ -14,7 +14,7 @@ const (
 func (i CallDisposition) String() string {
     return []string{"default", "simultaneousRing", "forward"}[i]
 }
-func ParseCallDisposition(v string) (interface{}, error) {
+func ParseCallDisposition(v string) (any, error) {
     result := DEFAULT_ESCAPED_CALLDISPOSITION
     switch v {
         case "default":

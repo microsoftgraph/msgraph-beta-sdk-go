@@ -13,7 +13,7 @@ const (
 func (i SecurityBaselinePolicySourceType) String() string {
     return []string{"deviceConfiguration", "deviceIntent"}[i]
 }
-func ParseSecurityBaselinePolicySourceType(v string) (interface{}, error) {
+func ParseSecurityBaselinePolicySourceType(v string) (any, error) {
     result := DEVICECONFIGURATION_SECURITYBASELINEPOLICYSOURCETYPE
     switch v {
         case "deviceConfiguration":

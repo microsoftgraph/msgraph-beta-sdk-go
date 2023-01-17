@@ -14,7 +14,7 @@ const (
 func (i EquivalentContentOption) String() string {
     return []string{"none", "latestSecurity", "unknownFutureValue"}[i]
 }
-func ParseEquivalentContentOption(v string) (interface{}, error) {
+func ParseEquivalentContentOption(v string) (any, error) {
     result := NONE_EQUIVALENTCONTENTOPTION
     switch v {
         case "none":

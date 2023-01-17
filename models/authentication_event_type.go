@@ -14,7 +14,7 @@ const (
 func (i AuthenticationEventType) String() string {
     return []string{"tokenIssuanceStart", "pageRenderStart", "unknownFutureValue"}[i]
 }
-func ParseAuthenticationEventType(v string) (interface{}, error) {
+func ParseAuthenticationEventType(v string) (any, error) {
     result := TOKENISSUANCESTART_AUTHENTICATIONEVENTTYPE
     switch v {
         case "tokenIssuanceStart":

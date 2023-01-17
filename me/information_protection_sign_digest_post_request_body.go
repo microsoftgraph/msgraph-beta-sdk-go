@@ -7,7 +7,7 @@ import (
 // InformationProtectionSignDigestPostRequestBody 
 type InformationProtectionSignDigestPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The digest property
     digest []byte
 }
@@ -15,7 +15,7 @@ type InformationProtectionSignDigestPostRequestBody struct {
 func NewInformationProtectionSignDigestPostRequestBody()(*InformationProtectionSignDigestPostRequestBody) {
     m := &InformationProtectionSignDigestPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateInformationProtectionSignDigestPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateInformationProtectionSignDigestPostRequestBodyFromDiscriminatorValue(
     return NewInformationProtectionSignDigestPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *InformationProtectionSignDigestPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *InformationProtectionSignDigestPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDigest gets the digest property value. The digest property
@@ -62,7 +62,7 @@ func (m *InformationProtectionSignDigestPostRequestBody) Serialize(writer i878a8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *InformationProtectionSignDigestPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *InformationProtectionSignDigestPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDigest sets the digest property value. The digest property

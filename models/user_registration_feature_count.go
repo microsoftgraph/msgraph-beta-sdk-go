@@ -7,7 +7,7 @@ import (
 // UserRegistrationFeatureCount 
 type UserRegistrationFeatureCount struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The feature property
     feature *AuthenticationMethodFeature
     // The OdataType property
@@ -19,7 +19,7 @@ type UserRegistrationFeatureCount struct {
 func NewUserRegistrationFeatureCount()(*UserRegistrationFeatureCount) {
     m := &UserRegistrationFeatureCount{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUserRegistrationFeatureCountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateUserRegistrationFeatureCountFromDiscriminatorValue(parseNode i878a80d
     return NewUserRegistrationFeatureCount(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserRegistrationFeatureCount) GetAdditionalData()(map[string]interface{}) {
+func (m *UserRegistrationFeatureCount) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFeature gets the feature property value. The feature property
@@ -107,7 +107,7 @@ func (m *UserRegistrationFeatureCount) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserRegistrationFeatureCount) SetAdditionalData(value map[string]interface{})() {
+func (m *UserRegistrationFeatureCount) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetFeature sets the feature property value. The feature property

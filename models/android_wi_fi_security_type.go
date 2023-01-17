@@ -17,7 +17,7 @@ const (
 func (i AndroidWiFiSecurityType) String() string {
     return []string{"open", "wpaEnterprise", "wpa2Enterprise"}[i]
 }
-func ParseAndroidWiFiSecurityType(v string) (interface{}, error) {
+func ParseAndroidWiFiSecurityType(v string) (any, error) {
     result := OPEN_ANDROIDWIFISECURITYTYPE
     switch v {
         case "open":

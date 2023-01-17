@@ -7,7 +7,7 @@ import (
 // DriveItemSource 
 type DriveItemSource struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Enumeration value that indicates the source application where the file was created.
     application *DriveItemSourceApplication
     // The external identifier for the drive item from the source.
@@ -19,7 +19,7 @@ type DriveItemSource struct {
 func NewDriveItemSource()(*DriveItemSource) {
     m := &DriveItemSource{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDriveItemSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateDriveItemSourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewDriveItemSource(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DriveItemSource) GetAdditionalData()(map[string]interface{}) {
+func (m *DriveItemSource) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApplication gets the application property value. Enumeration value that indicates the source application where the file was created.
@@ -107,7 +107,7 @@ func (m *DriveItemSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DriveItemSource) SetAdditionalData(value map[string]interface{})() {
+func (m *DriveItemSource) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetApplication sets the application property value. Enumeration value that indicates the source application where the file was created.

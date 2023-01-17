@@ -7,7 +7,7 @@ import (
 // VppTokenLicenseSummary license summary of a given app in a token.
 type VppTokenLicenseSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The Apple Id associated with the given Apple Volume Purchase Program Token.
     appleId *string
     // The number of VPP licenses available.
@@ -25,7 +25,7 @@ type VppTokenLicenseSummary struct {
 func NewVppTokenLicenseSummary()(*VppTokenLicenseSummary) {
     m := &VppTokenLicenseSummary{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateVppTokenLicenseSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateVppTokenLicenseSummaryFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewVppTokenLicenseSummary(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VppTokenLicenseSummary) GetAdditionalData()(map[string]interface{}) {
+func (m *VppTokenLicenseSummary) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAppleId gets the appleId property value. The Apple Id associated with the given Apple Volume Purchase Program Token.
@@ -172,7 +172,7 @@ func (m *VppTokenLicenseSummary) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VppTokenLicenseSummary) SetAdditionalData(value map[string]interface{})() {
+func (m *VppTokenLicenseSummary) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAppleId sets the appleId property value. The Apple Id associated with the given Apple Volume Purchase Program Token.

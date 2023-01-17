@@ -13,7 +13,7 @@ const (
 func (i CloudPcProvisioningPolicyImageType) String() string {
     return []string{"gallery", "custom"}[i]
 }
-func ParseCloudPcProvisioningPolicyImageType(v string) (interface{}, error) {
+func ParseCloudPcProvisioningPolicyImageType(v string) (any, error) {
     result := GALLERY_CLOUDPCPROVISIONINGPOLICYIMAGETYPE
     switch v {
         case "gallery":

@@ -34,7 +34,7 @@ const (
 func (i ConditionalAccessRule) String() string {
     return []string{"allApps", "firstPartyApps", "office365", "appId", "acr", "appFilter", "allUsers", "guest", "groupId", "roleId", "userId", "allDevicePlatforms", "devicePlatform", "allLocations", "insideCorpnet", "allTrustedLocations", "locationId", "allDevices", "deviceFilter", "deviceState", "unknownFutureValue", "deviceFilterIncludeRuleNotMatched", "allDeviceStates"}[i]
 }
-func ParseConditionalAccessRule(v string) (interface{}, error) {
+func ParseConditionalAccessRule(v string) (any, error) {
     result := ALLAPPS_CONDITIONALACCESSRULE
     switch v {
         case "allApps":

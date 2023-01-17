@@ -27,7 +27,7 @@ const (
 func (i ZebraFotaDeploymentState) String() string {
     return []string{"pendingCreation", "createFailed", "created", "inProgress", "completed", "pendingCancel", "canceled", "unknownFutureValue"}[i]
 }
-func ParseZebraFotaDeploymentState(v string) (interface{}, error) {
+func ParseZebraFotaDeploymentState(v string) (any, error) {
     result := PENDINGCREATION_ZEBRAFOTADEPLOYMENTSTATE
     switch v {
         case "pendingCreation":

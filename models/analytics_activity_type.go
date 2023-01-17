@@ -16,7 +16,7 @@ const (
 func (i AnalyticsActivityType) String() string {
     return []string{"Email", "Meeting", "Focus", "Chat", "Call"}[i]
 }
-func ParseAnalyticsActivityType(v string) (interface{}, error) {
+func ParseAnalyticsActivityType(v string) (any, error) {
     result := EMAIL_ANALYTICSACTIVITYTYPE
     switch v {
         case "Email":

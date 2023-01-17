@@ -7,7 +7,7 @@ import (
 // VersionAction 
 type VersionAction struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The name of the new version that was created by this action.
     newVersion *string
     // The OdataType property
@@ -17,7 +17,7 @@ type VersionAction struct {
 func NewVersionAction()(*VersionAction) {
     m := &VersionAction{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateVersionActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateVersionActionFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewVersionAction(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VersionAction) GetAdditionalData()(map[string]interface{}) {
+func (m *VersionAction) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -84,7 +84,7 @@ func (m *VersionAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VersionAction) SetAdditionalData(value map[string]interface{})() {
+func (m *VersionAction) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetNewVersion sets the newVersion property value. The name of the new version that was created by this action.

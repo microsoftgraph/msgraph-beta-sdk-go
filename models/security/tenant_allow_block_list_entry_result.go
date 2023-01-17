@@ -8,7 +8,7 @@ import (
 // TenantAllowBlockListEntryResult 
 type TenantAllowBlockListEntryResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The entry type of tenant allow block list. The possible values are: url, fileHash, sender, recipient and unkownFutureValue.
     entryType *TenantAllowBlockListEntryType
     // Specifies when will this entry expire in date time.
@@ -26,7 +26,7 @@ type TenantAllowBlockListEntryResult struct {
 func NewTenantAllowBlockListEntryResult()(*TenantAllowBlockListEntryResult) {
     m := &TenantAllowBlockListEntryResult{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTenantAllowBlockListEntryResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -34,7 +34,7 @@ func CreateTenantAllowBlockListEntryResultFromDiscriminatorValue(parseNode i878a
     return NewTenantAllowBlockListEntryResult(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TenantAllowBlockListEntryResult) GetAdditionalData()(map[string]interface{}) {
+func (m *TenantAllowBlockListEntryResult) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEntryType gets the entryType property value. The entry type of tenant allow block list. The possible values are: url, fileHash, sender, recipient and unkownFutureValue.
@@ -175,7 +175,7 @@ func (m *TenantAllowBlockListEntryResult) Serialize(writer i878a80d2330e89d26896
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TenantAllowBlockListEntryResult) SetAdditionalData(value map[string]interface{})() {
+func (m *TenantAllowBlockListEntryResult) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEntryType sets the entryType property value. The entry type of tenant allow block list. The possible values are: url, fileHash, sender, recipient and unkownFutureValue.

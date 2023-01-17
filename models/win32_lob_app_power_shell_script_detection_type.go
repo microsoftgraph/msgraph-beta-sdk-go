@@ -25,7 +25,7 @@ const (
 func (i Win32LobAppPowerShellScriptDetectionType) String() string {
     return []string{"notConfigured", "string", "dateTime", "integer", "float", "version", "boolean"}[i]
 }
-func ParseWin32LobAppPowerShellScriptDetectionType(v string) (interface{}, error) {
+func ParseWin32LobAppPowerShellScriptDetectionType(v string) (any, error) {
     result := NOTCONFIGURED_WIN32LOBAPPPOWERSHELLSCRIPTDETECTIONTYPE
     switch v {
         case "notConfigured":

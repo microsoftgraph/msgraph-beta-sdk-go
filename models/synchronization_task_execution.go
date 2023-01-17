@@ -10,7 +10,7 @@ type SynchronizationTaskExecution struct {
     // Identifier of the job run.
     activityIdentifier *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Count of processed entries that were assigned for this application.
     countEntitled *int64
     // Count of processed entries that were assigned for provisioning.
@@ -44,7 +44,7 @@ type SynchronizationTaskExecution struct {
 func NewSynchronizationTaskExecution()(*SynchronizationTaskExecution) {
     m := &SynchronizationTaskExecution{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSynchronizationTaskExecutionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -56,7 +56,7 @@ func (m *SynchronizationTaskExecution) GetActivityIdentifier()(*string) {
     return m.activityIdentifier
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SynchronizationTaskExecution) GetAdditionalData()(map[string]interface{}) {
+func (m *SynchronizationTaskExecution) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCountEntitled gets the countEntitled property value. Count of processed entries that were assigned for this application.
@@ -376,7 +376,7 @@ func (m *SynchronizationTaskExecution) SetActivityIdentifier(value *string)() {
     m.activityIdentifier = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SynchronizationTaskExecution) SetAdditionalData(value map[string]interface{})() {
+func (m *SynchronizationTaskExecution) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCountEntitled sets the countEntitled property value. Count of processed entries that were assigned for this application.

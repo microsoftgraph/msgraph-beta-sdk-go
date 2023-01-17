@@ -7,7 +7,7 @@ import (
 // OnPremisesAccidentalDeletionPrevention 
 type OnPremisesAccidentalDeletionPrevention struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Threshold value which triggers accidental deletion prevention. The threshold is either an absolute number of objects or a percentage number of objects.
     alertThreshold *int32
     // The OdataType property
@@ -19,7 +19,7 @@ type OnPremisesAccidentalDeletionPrevention struct {
 func NewOnPremisesAccidentalDeletionPrevention()(*OnPremisesAccidentalDeletionPrevention) {
     m := &OnPremisesAccidentalDeletionPrevention{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateOnPremisesAccidentalDeletionPreventionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateOnPremisesAccidentalDeletionPreventionFromDiscriminatorValue(parseNod
     return NewOnPremisesAccidentalDeletionPrevention(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OnPremisesAccidentalDeletionPrevention) GetAdditionalData()(map[string]interface{}) {
+func (m *OnPremisesAccidentalDeletionPrevention) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAlertThreshold gets the alertThreshold property value. Threshold value which triggers accidental deletion prevention. The threshold is either an absolute number of objects or a percentage number of objects.
@@ -107,7 +107,7 @@ func (m *OnPremisesAccidentalDeletionPrevention) Serialize(writer i878a80d2330e8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OnPremisesAccidentalDeletionPrevention) SetAdditionalData(value map[string]interface{})() {
+func (m *OnPremisesAccidentalDeletionPrevention) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAlertThreshold sets the alertThreshold property value. Threshold value which triggers accidental deletion prevention. The threshold is either an absolute number of objects or a percentage number of objects.

@@ -19,7 +19,7 @@ const (
 func (i LocalSecurityOptionsInformationShownOnLockScreenType) String() string {
     return []string{"notConfigured", "userDisplayNameDomainUser", "userDisplayNameOnly", "doNotDisplayUser"}[i]
 }
-func ParseLocalSecurityOptionsInformationShownOnLockScreenType(v string) (interface{}, error) {
+func ParseLocalSecurityOptionsInformationShownOnLockScreenType(v string) (any, error) {
     result := NOTCONFIGURED_LOCALSECURITYOPTIONSINFORMATIONSHOWNONLOCKSCREENTYPE
     switch v {
         case "notConfigured":

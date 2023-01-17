@@ -7,7 +7,7 @@ import (
 // CollapseProperty 
 type CollapseProperty struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Defines the collapse group to trim results. The properties in this collection must be sortable/refinable properties. Required.
     fields []string
     // Defines a maximum limit count for this field. This numeric value must be a positive integer. Required.
@@ -19,7 +19,7 @@ type CollapseProperty struct {
 func NewCollapseProperty()(*CollapseProperty) {
     m := &CollapseProperty{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCollapsePropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateCollapsePropertyFromDiscriminatorValue(parseNode i878a80d2330e89d2689
     return NewCollapseProperty(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CollapseProperty) GetAdditionalData()(map[string]interface{}) {
+func (m *CollapseProperty) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -110,7 +110,7 @@ func (m *CollapseProperty) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CollapseProperty) SetAdditionalData(value map[string]interface{})() {
+func (m *CollapseProperty) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetFields sets the fields property value. Defines the collapse group to trim results. The properties in this collection must be sortable/refinable properties. Required.

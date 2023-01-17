@@ -15,7 +15,7 @@ const (
 func (i PagePromotionType) String() string {
     return []string{"microsoftReserved", "page", "newsPost", "unknownFutureValue"}[i]
 }
-func ParsePagePromotionType(v string) (interface{}, error) {
+func ParsePagePromotionType(v string) (any, error) {
     result := MICROSOFTRESERVED_PAGEPROMOTIONTYPE
     switch v {
         case "microsoftReserved":

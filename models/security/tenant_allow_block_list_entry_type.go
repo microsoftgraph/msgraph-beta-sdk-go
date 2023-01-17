@@ -16,7 +16,7 @@ const (
 func (i TenantAllowBlockListEntryType) String() string {
     return []string{"url", "fileHash", "sender", "recipient", "unknownFutureValue"}[i]
 }
-func ParseTenantAllowBlockListEntryType(v string) (interface{}, error) {
+func ParseTenantAllowBlockListEntryType(v string) (any, error) {
     result := URL_TENANTALLOWBLOCKLISTENTRYTYPE
     switch v {
         case "url":

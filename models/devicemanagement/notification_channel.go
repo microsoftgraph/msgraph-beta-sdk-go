@@ -7,7 +7,7 @@ import (
 // NotificationChannel 
 type NotificationChannel struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The type of the notification channel. The possible values are: portal, email, phoneCall, sms, unknownFutureValue.
     notificationChannelType *NotificationChannelType
     // Information about the notification receivers, such as locale and contact information. For example, en-us for locale and serena.davis@contoso.com for contact information.
@@ -21,7 +21,7 @@ type NotificationChannel struct {
 func NewNotificationChannel()(*NotificationChannel) {
     m := &NotificationChannel{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateNotificationChannelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateNotificationChannelFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewNotificationChannel(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *NotificationChannel) GetAdditionalData()(map[string]interface{}) {
+func (m *NotificationChannel) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -141,7 +141,7 @@ func (m *NotificationChannel) Serialize(writer i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *NotificationChannel) SetAdditionalData(value map[string]interface{})() {
+func (m *NotificationChannel) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetNotificationChannelType sets the notificationChannelType property value. The type of the notification channel. The possible values are: portal, email, phoneCall, sms, unknownFutureValue.

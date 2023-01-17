@@ -7,7 +7,7 @@ import (
 // DeviceHealthScriptRemediationSummary the number of device health scripts deployed and the number of devices the scripts remediated.
 type DeviceHealthScriptRemediationSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // The number of devices remediated by device health scripts.
@@ -19,7 +19,7 @@ type DeviceHealthScriptRemediationSummary struct {
 func NewDeviceHealthScriptRemediationSummary()(*DeviceHealthScriptRemediationSummary) {
     m := &DeviceHealthScriptRemediationSummary{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceHealthScriptRemediationSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateDeviceHealthScriptRemediationSummaryFromDiscriminatorValue(parseNode 
     return NewDeviceHealthScriptRemediationSummary(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceHealthScriptRemediationSummary) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceHealthScriptRemediationSummary) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -106,7 +106,7 @@ func (m *DeviceHealthScriptRemediationSummary) Serialize(writer i878a80d2330e89d
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceHealthScriptRemediationSummary) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceHealthScriptRemediationSummary) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

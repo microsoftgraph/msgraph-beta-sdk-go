@@ -21,7 +21,7 @@ const (
 func (i EdgeKioskModeRestrictionType) String() string {
     return []string{"notConfigured", "digitalSignage", "normalMode", "publicBrowsingSingleApp", "publicBrowsingMultiApp"}[i]
 }
-func ParseEdgeKioskModeRestrictionType(v string) (interface{}, error) {
+func ParseEdgeKioskModeRestrictionType(v string) (any, error) {
     result := NOTCONFIGURED_EDGEKIOSKMODERESTRICTIONTYPE
     switch v {
         case "notConfigured":

@@ -7,7 +7,7 @@ import (
 // SolutionsRoot 
 type SolutionsRoot struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The businessScenarios property
     businessScenarios []BusinessScenarioable
     // The OdataType property
@@ -17,7 +17,7 @@ type SolutionsRoot struct {
 func NewSolutionsRoot()(*SolutionsRoot) {
     m := &SolutionsRoot{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSolutionsRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateSolutionsRootFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewSolutionsRoot(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SolutionsRoot) GetAdditionalData()(map[string]interface{}) {
+func (m *SolutionsRoot) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBusinessScenarios gets the businessScenarios property value. The businessScenarios property
@@ -92,7 +92,7 @@ func (m *SolutionsRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SolutionsRoot) SetAdditionalData(value map[string]interface{})() {
+func (m *SolutionsRoot) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetBusinessScenarios sets the businessScenarios property value. The businessScenarios property

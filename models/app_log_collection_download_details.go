@@ -7,7 +7,7 @@ import (
 // AppLogCollectionDownloadDetails 
 type AppLogCollectionDownloadDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The appLogDecryptionAlgorithm property
     appLogDecryptionAlgorithm *AppLogDecryptionAlgorithm
     // DecryptionKey as string
@@ -21,7 +21,7 @@ type AppLogCollectionDownloadDetails struct {
 func NewAppLogCollectionDownloadDetails()(*AppLogCollectionDownloadDetails) {
     m := &AppLogCollectionDownloadDetails{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAppLogCollectionDownloadDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateAppLogCollectionDownloadDetailsFromDiscriminatorValue(parseNode i878a
     return NewAppLogCollectionDownloadDetails(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AppLogCollectionDownloadDetails) GetAdditionalData()(map[string]interface{}) {
+func (m *AppLogCollectionDownloadDetails) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAppLogDecryptionAlgorithm gets the appLogDecryptionAlgorithm property value. The appLogDecryptionAlgorithm property
@@ -129,7 +129,7 @@ func (m *AppLogCollectionDownloadDetails) Serialize(writer i878a80d2330e89d26896
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AppLogCollectionDownloadDetails) SetAdditionalData(value map[string]interface{})() {
+func (m *AppLogCollectionDownloadDetails) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAppLogDecryptionAlgorithm sets the appLogDecryptionAlgorithm property value. The appLogDecryptionAlgorithm property

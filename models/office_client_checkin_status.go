@@ -8,7 +8,7 @@ import (
 // OfficeClientCheckinStatus 
 type OfficeClientCheckinStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // List of policies delivered to the device as last checkin.
     appliedPolicies []string
     // Last device check-in time in UTC.
@@ -34,7 +34,7 @@ type OfficeClientCheckinStatus struct {
 func NewOfficeClientCheckinStatus()(*OfficeClientCheckinStatus) {
     m := &OfficeClientCheckinStatus{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateOfficeClientCheckinStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -42,7 +42,7 @@ func CreateOfficeClientCheckinStatusFromDiscriminatorValue(parseNode i878a80d233
     return NewOfficeClientCheckinStatus(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OfficeClientCheckinStatus) GetAdditionalData()(map[string]interface{}) {
+func (m *OfficeClientCheckinStatus) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAppliedPolicies gets the appliedPolicies property value. List of policies delivered to the device as last checkin.
@@ -265,7 +265,7 @@ func (m *OfficeClientCheckinStatus) Serialize(writer i878a80d2330e89d26896388a3f
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OfficeClientCheckinStatus) SetAdditionalData(value map[string]interface{})() {
+func (m *OfficeClientCheckinStatus) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAppliedPolicies sets the appliedPolicies property value. List of policies delivered to the device as last checkin.

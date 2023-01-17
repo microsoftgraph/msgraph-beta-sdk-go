@@ -16,7 +16,7 @@ const (
 func (i MediaSourceContentCategory) String() string {
     return []string{"meeting", "liveStream", "presentation", "screenRecording", "unknownFutureValue"}[i]
 }
-func ParseMediaSourceContentCategory(v string) (interface{}, error) {
+func ParseMediaSourceContentCategory(v string) (any, error) {
     result := MEETING_MEDIASOURCECONTENTCATEGORY
     switch v {
         case "meeting":

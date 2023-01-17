@@ -7,7 +7,7 @@ import (
 // TeamworkDisplayConfiguration 
 type TeamworkDisplayConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The list of configured displays. Applicable only for Microsoft Teams Rooms devices.
     configuredDisplays []TeamworkConfiguredPeripheralable
     // Total number of connected displays, including the inbuilt display. Applicable only for Teams Rooms devices.
@@ -25,7 +25,7 @@ type TeamworkDisplayConfiguration struct {
 func NewTeamworkDisplayConfiguration()(*TeamworkDisplayConfiguration) {
     m := &TeamworkDisplayConfiguration{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTeamworkDisplayConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateTeamworkDisplayConfigurationFromDiscriminatorValue(parseNode i878a80d
     return NewTeamworkDisplayConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkDisplayConfiguration) GetAdditionalData()(map[string]interface{}) {
+func (m *TeamworkDisplayConfiguration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetConfiguredDisplays gets the configuredDisplays property value. The list of configured displays. Applicable only for Microsoft Teams Rooms devices.
@@ -180,7 +180,7 @@ func (m *TeamworkDisplayConfiguration) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkDisplayConfiguration) SetAdditionalData(value map[string]interface{})() {
+func (m *TeamworkDisplayConfiguration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetConfiguredDisplays sets the configuredDisplays property value. The list of configured displays. Applicable only for Microsoft Teams Rooms devices.

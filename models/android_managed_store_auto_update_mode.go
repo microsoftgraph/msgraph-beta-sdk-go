@@ -19,7 +19,7 @@ const (
 func (i AndroidManagedStoreAutoUpdateMode) String() string {
     return []string{"default", "postponed", "priority", "unknownFutureValue"}[i]
 }
-func ParseAndroidManagedStoreAutoUpdateMode(v string) (interface{}, error) {
+func ParseAndroidManagedStoreAutoUpdateMode(v string) (any, error) {
     result := DEFAULT_ESCAPED_ANDROIDMANAGEDSTOREAUTOUPDATEMODE
     switch v {
         case "default":

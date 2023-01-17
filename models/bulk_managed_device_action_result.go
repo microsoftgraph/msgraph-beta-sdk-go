@@ -7,7 +7,7 @@ import (
 // BulkManagedDeviceActionResult 
 type BulkManagedDeviceActionResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Failed devices
     failedDeviceIds []string
     // Not found devices
@@ -23,7 +23,7 @@ type BulkManagedDeviceActionResult struct {
 func NewBulkManagedDeviceActionResult()(*BulkManagedDeviceActionResult) {
     m := &BulkManagedDeviceActionResult{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateBulkManagedDeviceActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateBulkManagedDeviceActionResultFromDiscriminatorValue(parseNode i878a80
     return NewBulkManagedDeviceActionResult(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BulkManagedDeviceActionResult) GetAdditionalData()(map[string]interface{}) {
+func (m *BulkManagedDeviceActionResult) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFailedDeviceIds gets the failedDeviceIds property value. Failed devices
@@ -166,7 +166,7 @@ func (m *BulkManagedDeviceActionResult) Serialize(writer i878a80d2330e89d2689638
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BulkManagedDeviceActionResult) SetAdditionalData(value map[string]interface{})() {
+func (m *BulkManagedDeviceActionResult) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetFailedDeviceIds sets the failedDeviceIds property value. Failed devices

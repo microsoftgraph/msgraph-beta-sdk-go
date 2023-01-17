@@ -23,7 +23,7 @@ const (
 func (i Platform) String() string {
     return []string{"unknown", "ios", "android", "windows", "windowsMobile", "macOS"}[i]
 }
-func ParsePlatform(v string) (interface{}, error) {
+func ParsePlatform(v string) (any, error) {
     result := UNKNOWN_PLATFORM
     switch v {
         case "unknown":

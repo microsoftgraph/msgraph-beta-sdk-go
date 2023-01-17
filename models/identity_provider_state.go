@@ -14,7 +14,7 @@ const (
 func (i IdentityProviderState) String() string {
     return []string{"enabled", "disabled", "unknownFutureValue"}[i]
 }
-func ParseIdentityProviderState(v string) (interface{}, error) {
+func ParseIdentityProviderState(v string) (any, error) {
     result := ENABLED_IDENTITYPROVIDERSTATE
     switch v {
         case "enabled":

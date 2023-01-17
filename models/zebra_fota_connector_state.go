@@ -19,7 +19,7 @@ const (
 func (i ZebraFotaConnectorState) String() string {
     return []string{"none", "connected", "disconnected", "unknownFutureValue"}[i]
 }
-func ParseZebraFotaConnectorState(v string) (interface{}, error) {
+func ParseZebraFotaConnectorState(v string) (any, error) {
     result := NONE_ZEBRAFOTACONNECTORSTATE
     switch v {
         case "none":

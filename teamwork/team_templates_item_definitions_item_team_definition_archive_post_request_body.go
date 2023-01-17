@@ -7,7 +7,7 @@ import (
 // TeamTemplatesItemDefinitionsItemTeamDefinitionArchivePostRequestBody 
 type TeamTemplatesItemDefinitionsItemTeamDefinitionArchivePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The shouldSetSpoSiteReadOnlyForMembers property
     shouldSetSpoSiteReadOnlyForMembers *bool
 }
@@ -15,7 +15,7 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionArchivePostRequestBody struct
 func NewTeamTemplatesItemDefinitionsItemTeamDefinitionArchivePostRequestBody()(*TeamTemplatesItemDefinitionsItemTeamDefinitionArchivePostRequestBody) {
     m := &TeamTemplatesItemDefinitionsItemTeamDefinitionArchivePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTeamTemplatesItemDefinitionsItemTeamDefinitionArchivePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateTeamTemplatesItemDefinitionsItemTeamDefinitionArchivePostRequestBodyF
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionArchivePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionArchivePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionArchivePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionArchivePostRequestBody) S
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionArchivePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionArchivePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetShouldSetSpoSiteReadOnlyForMembers sets the shouldSetSpoSiteReadOnlyForMembers property value. The shouldSetSpoSiteReadOnlyForMembers property

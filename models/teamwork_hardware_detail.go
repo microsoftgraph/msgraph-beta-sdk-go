@@ -7,7 +7,7 @@ import (
 // TeamworkHardwareDetail 
 type TeamworkHardwareDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // MAC address.
     macAddresses []string
     // Device manufacturer.
@@ -25,7 +25,7 @@ type TeamworkHardwareDetail struct {
 func NewTeamworkHardwareDetail()(*TeamworkHardwareDetail) {
     m := &TeamworkHardwareDetail{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTeamworkHardwareDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateTeamworkHardwareDetailFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewTeamworkHardwareDetail(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkHardwareDetail) GetAdditionalData()(map[string]interface{}) {
+func (m *TeamworkHardwareDetail) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -176,7 +176,7 @@ func (m *TeamworkHardwareDetail) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkHardwareDetail) SetAdditionalData(value map[string]interface{})() {
+func (m *TeamworkHardwareDetail) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetMacAddresses sets the macAddresses property value. MAC address.

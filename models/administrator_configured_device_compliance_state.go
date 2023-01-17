@@ -15,7 +15,7 @@ const (
 func (i AdministratorConfiguredDeviceComplianceState) String() string {
     return []string{"basedOnDeviceCompliancePolicy", "nonCompliant"}[i]
 }
-func ParseAdministratorConfiguredDeviceComplianceState(v string) (interface{}, error) {
+func ParseAdministratorConfiguredDeviceComplianceState(v string) (any, error) {
     result := BASEDONDEVICECOMPLIANCEPOLICY_ADMINISTRATORCONFIGUREDDEVICECOMPLIANCESTATE
     switch v {
         case "basedOnDeviceCompliancePolicy":

@@ -7,7 +7,7 @@ import (
 // ManagedDevicesItemRestoreCloudPcPostRequestBody 
 type ManagedDevicesItemRestoreCloudPcPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The cloudPcSnapshotId property
     cloudPcSnapshotId *string
 }
@@ -15,7 +15,7 @@ type ManagedDevicesItemRestoreCloudPcPostRequestBody struct {
 func NewManagedDevicesItemRestoreCloudPcPostRequestBody()(*ManagedDevicesItemRestoreCloudPcPostRequestBody) {
     m := &ManagedDevicesItemRestoreCloudPcPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateManagedDevicesItemRestoreCloudPcPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateManagedDevicesItemRestoreCloudPcPostRequestBodyFromDiscriminatorValue
     return NewManagedDevicesItemRestoreCloudPcPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedDevicesItemRestoreCloudPcPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ManagedDevicesItemRestoreCloudPcPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCloudPcSnapshotId gets the cloudPcSnapshotId property value. The cloudPcSnapshotId property
@@ -62,7 +62,7 @@ func (m *ManagedDevicesItemRestoreCloudPcPostRequestBody) Serialize(writer i878a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedDevicesItemRestoreCloudPcPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ManagedDevicesItemRestoreCloudPcPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCloudPcSnapshotId sets the cloudPcSnapshotId property value. The cloudPcSnapshotId property

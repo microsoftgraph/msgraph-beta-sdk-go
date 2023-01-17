@@ -18,7 +18,7 @@ const (
 func (i LifecycleWorkflowProcessingStatus) String() string {
     return []string{"queued", "inProgress", "completed", "completedWithErrors", "canceled", "failed", "unknownFutureValue"}[i]
 }
-func ParseLifecycleWorkflowProcessingStatus(v string) (interface{}, error) {
+func ParseLifecycleWorkflowProcessingStatus(v string) (any, error) {
     result := QUEUED_LIFECYCLEWORKFLOWPROCESSINGSTATUS
     switch v {
         case "queued":

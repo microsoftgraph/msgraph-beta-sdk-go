@@ -15,7 +15,7 @@ const (
 func (i AuthenticationContextDetail) String() string {
     return []string{"required", "previouslySatisfied", "notApplicable", "unknownFutureValue"}[i]
 }
-func ParseAuthenticationContextDetail(v string) (interface{}, error) {
+func ParseAuthenticationContextDetail(v string) (any, error) {
     result := REQUIRED_AUTHENTICATIONCONTEXTDETAIL
     switch v {
         case "required":

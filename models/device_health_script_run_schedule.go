@@ -7,7 +7,7 @@ import (
 // DeviceHealthScriptRunSchedule base type of Device health script run schedule.
 type DeviceHealthScriptRunSchedule struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The x value of every x hours for hourly schedule, every x days for Daily Schedule, every x weeks for weekly schedule, every x months for Monthly Schedule. Valid values 1 to 23
     interval *int32
     // The OdataType property
@@ -17,7 +17,7 @@ type DeviceHealthScriptRunSchedule struct {
 func NewDeviceHealthScriptRunSchedule()(*DeviceHealthScriptRunSchedule) {
     m := &DeviceHealthScriptRunSchedule{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceHealthScriptRunScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -49,7 +49,7 @@ func CreateDeviceHealthScriptRunScheduleFromDiscriminatorValue(parseNode i878a80
     return NewDeviceHealthScriptRunSchedule(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceHealthScriptRunSchedule) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceHealthScriptRunSchedule) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,7 +108,7 @@ func (m *DeviceHealthScriptRunSchedule) Serialize(writer i878a80d2330e89d2689638
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceHealthScriptRunSchedule) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceHealthScriptRunSchedule) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetInterval sets the interval property value. The x value of every x hours for hourly schedule, every x days for Daily Schedule, every x weeks for weekly schedule, every x months for Monthly Schedule. Valid values 1 to 23

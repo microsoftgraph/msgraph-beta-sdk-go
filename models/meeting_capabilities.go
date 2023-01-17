@@ -13,7 +13,7 @@ const (
 func (i MeetingCapabilities) String() string {
     return []string{"questionAndAnswer", "unknownFutureValue"}[i]
 }
-func ParseMeetingCapabilities(v string) (interface{}, error) {
+func ParseMeetingCapabilities(v string) (any, error) {
     result := QUESTIONANDANSWER_MEETINGCAPABILITIES
     switch v {
         case "questionAndAnswer":

@@ -15,7 +15,7 @@ const (
 func (i RestrictedAppsState) String() string {
     return []string{"prohibitedApps", "notApprovedApps"}[i]
 }
-func ParseRestrictedAppsState(v string) (interface{}, error) {
+func ParseRestrictedAppsState(v string) (any, error) {
     result := PROHIBITEDAPPS_RESTRICTEDAPPSSTATE
     switch v {
         case "prohibitedApps":

@@ -17,7 +17,7 @@ const (
 func (i WiFiAuthenticationMethod) String() string {
     return []string{"certificate", "usernameAndPassword", "derivedCredential"}[i]
 }
-func ParseWiFiAuthenticationMethod(v string) (interface{}, error) {
+func ParseWiFiAuthenticationMethod(v string) (any, error) {
     result := CERTIFICATE_WIFIAUTHENTICATIONMETHOD
     switch v {
         case "certificate":

@@ -49,7 +49,7 @@ const (
 func (i AppleVpnConnectionType) String() string {
     return []string{"ciscoAnyConnect", "pulseSecure", "f5EdgeClient", "dellSonicWallMobileConnect", "checkPointCapsuleVpn", "customVpn", "ciscoIPSec", "citrix", "ciscoAnyConnectV2", "paloAltoGlobalProtect", "zscalerPrivateAccess", "f5Access2018", "citrixSso", "paloAltoGlobalProtectV2", "ikEv2", "alwaysOn", "microsoftTunnel", "netMotionMobility", "microsoftProtect"}[i]
 }
-func ParseAppleVpnConnectionType(v string) (interface{}, error) {
+func ParseAppleVpnConnectionType(v string) (any, error) {
     result := CISCOANYCONNECT_APPLEVPNCONNECTIONTYPE
     switch v {
         case "ciscoAnyConnect":

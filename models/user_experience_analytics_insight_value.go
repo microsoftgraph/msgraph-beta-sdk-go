@@ -7,7 +7,7 @@ import (
 // UserExperienceAnalyticsInsightValue the value in an user experience analytics insight.
 type UserExperienceAnalyticsInsightValue struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
 }
@@ -15,7 +15,7 @@ type UserExperienceAnalyticsInsightValue struct {
 func NewUserExperienceAnalyticsInsightValue()(*UserExperienceAnalyticsInsightValue) {
     m := &UserExperienceAnalyticsInsightValue{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUserExperienceAnalyticsInsightValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,7 +43,7 @@ func CreateUserExperienceAnalyticsInsightValueFromDiscriminatorValue(parseNode i
     return NewUserExperienceAnalyticsInsightValue(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserExperienceAnalyticsInsightValue) GetAdditionalData()(map[string]interface{}) {
+func (m *UserExperienceAnalyticsInsightValue) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -82,7 +82,7 @@ func (m *UserExperienceAnalyticsInsightValue) Serialize(writer i878a80d2330e89d2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserExperienceAnalyticsInsightValue) SetAdditionalData(value map[string]interface{})() {
+func (m *UserExperienceAnalyticsInsightValue) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

@@ -7,7 +7,7 @@ import (
 // DeviceManagementConfigurationOptionDefinitionTemplate option Definition Template
 type DeviceManagementConfigurationOptionDefinitionTemplate struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Option Children
     children []DeviceManagementConfigurationSettingInstanceTemplateable
     // Option ItemId
@@ -19,7 +19,7 @@ type DeviceManagementConfigurationOptionDefinitionTemplate struct {
 func NewDeviceManagementConfigurationOptionDefinitionTemplate()(*DeviceManagementConfigurationOptionDefinitionTemplate) {
     m := &DeviceManagementConfigurationOptionDefinitionTemplate{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceManagementConfigurationOptionDefinitionTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateDeviceManagementConfigurationOptionDefinitionTemplateFromDiscriminato
     return NewDeviceManagementConfigurationOptionDefinitionTemplate(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementConfigurationOptionDefinitionTemplate) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceManagementConfigurationOptionDefinitionTemplate) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetChildren gets the children property value. Option Children
@@ -114,7 +114,7 @@ func (m *DeviceManagementConfigurationOptionDefinitionTemplate) Serialize(writer
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementConfigurationOptionDefinitionTemplate) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceManagementConfigurationOptionDefinitionTemplate) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetChildren sets the children property value. Option Children

@@ -16,7 +16,7 @@ const (
 func (i ValueType) String() string {
     return []string{"enum", "string", "int", "bool", "unknownFutureValue"}[i]
 }
-func ParseValueType(v string) (interface{}, error) {
+func ParseValueType(v string) (any, error) {
     result := ENUM_VALUETYPE
     switch v {
         case "enum":

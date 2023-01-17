@@ -19,7 +19,7 @@ const (
 func (i ConfigurationUsage) String() string {
     return []string{"blocked", "required", "allowed", "notConfigured"}[i]
 }
-func ParseConfigurationUsage(v string) (interface{}, error) {
+func ParseConfigurationUsage(v string) (any, error) {
     result := BLOCKED_CONFIGURATIONUSAGE
     switch v {
         case "blocked":

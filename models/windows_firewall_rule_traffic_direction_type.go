@@ -17,7 +17,7 @@ const (
 func (i WindowsFirewallRuleTrafficDirectionType) String() string {
     return []string{"notConfigured", "out", "in"}[i]
 }
-func ParseWindowsFirewallRuleTrafficDirectionType(v string) (interface{}, error) {
+func ParseWindowsFirewallRuleTrafficDirectionType(v string) (any, error) {
     result := NOTCONFIGURED_WINDOWSFIREWALLRULETRAFFICDIRECTIONTYPE
     switch v {
         case "notConfigured":

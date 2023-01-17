@@ -7,7 +7,7 @@ import (
 // CloudPcStatusDetails 
 type CloudPcStatusDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Any additional information about the Cloud PC status.
     additionalInformation []KeyValuePairable
     // The code associated with the Cloud PC status.
@@ -21,7 +21,7 @@ type CloudPcStatusDetails struct {
 func NewCloudPcStatusDetails()(*CloudPcStatusDetails) {
     m := &CloudPcStatusDetails{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCloudPcStatusDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateCloudPcStatusDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewCloudPcStatusDetails(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CloudPcStatusDetails) GetAdditionalData()(map[string]interface{}) {
+func (m *CloudPcStatusDetails) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAdditionalInformation gets the additionalInformation property value. Any additional information about the Cloud PC status.
@@ -136,7 +136,7 @@ func (m *CloudPcStatusDetails) Serialize(writer i878a80d2330e89d26896388a3f487ee
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CloudPcStatusDetails) SetAdditionalData(value map[string]interface{})() {
+func (m *CloudPcStatusDetails) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAdditionalInformation sets the additionalInformation property value. Any additional information about the Cloud PC status.

@@ -8,7 +8,7 @@ import (
 // AssignmentFilterEvaluationSummary represent result summary for assignment filter evaluation
 type AssignmentFilterEvaluationSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The admin defined name for assignment filter.
     assignmentFilterDisplayName *string
     // Unique identifier for the assignment filter object
@@ -32,7 +32,7 @@ type AssignmentFilterEvaluationSummary struct {
 func NewAssignmentFilterEvaluationSummary()(*AssignmentFilterEvaluationSummary) {
     m := &AssignmentFilterEvaluationSummary{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAssignmentFilterEvaluationSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +40,7 @@ func CreateAssignmentFilterEvaluationSummaryFromDiscriminatorValue(parseNode i87
     return NewAssignmentFilterEvaluationSummary(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AssignmentFilterEvaluationSummary) GetAdditionalData()(map[string]interface{}) {
+func (m *AssignmentFilterEvaluationSummary) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAssignmentFilterDisplayName gets the assignmentFilterDisplayName property value. The admin defined name for assignment filter.
@@ -250,7 +250,7 @@ func (m *AssignmentFilterEvaluationSummary) Serialize(writer i878a80d2330e89d268
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AssignmentFilterEvaluationSummary) SetAdditionalData(value map[string]interface{})() {
+func (m *AssignmentFilterEvaluationSummary) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAssignmentFilterDisplayName sets the assignmentFilterDisplayName property value. The admin defined name for assignment filter.

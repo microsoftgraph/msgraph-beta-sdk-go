@@ -16,7 +16,7 @@ const (
 func (i CloudPcExportJobStatus) String() string {
     return []string{"notStarted", "inProgress", "completed", "failed", "unknownFutureValue"}[i]
 }
-func ParseCloudPcExportJobStatus(v string) (interface{}, error) {
+func ParseCloudPcExportJobStatus(v string) (any, error) {
     result := NOTSTARTED_CLOUDPCEXPORTJOBSTATUS
     switch v {
         case "notStarted":

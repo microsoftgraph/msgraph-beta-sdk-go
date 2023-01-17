@@ -30,7 +30,7 @@ const (
 func (i UserMailboxSetting) String() string {
     return []string{"none", "junkMailDeletion", "isFromAddressInAddressBook", "isFromAddressInAddressSafeList", "isFromAddressInAddressBlockList", "isFromAddressInAddressImplicitSafeList", "isFromAddressInAddressImplicitJunkList", "isFromDomainInDomainSafeList", "isFromDomainInDomainBlockList", "isRecipientInRecipientSafeList", "customRule", "junkMailRule", "senderPraPresent", "fromFirstTimeSender", "exclusive", "priorSeenPass", "senderAuthenticationSucceeded", "isJunkMailRuleEnabled", "unknownFutureValue"}[i]
 }
-func ParseUserMailboxSetting(v string) (interface{}, error) {
+func ParseUserMailboxSetting(v string) (any, error) {
     result := NONE_USERMAILBOXSETTING
     switch v {
         case "none":

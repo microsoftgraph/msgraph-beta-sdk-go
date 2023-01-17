@@ -15,7 +15,7 @@ const (
 func (i TeamworkSoftwareFreshness) String() string {
     return []string{"unknown", "latest", "updateAvailable", "unknownFutureValue"}[i]
 }
-func ParseTeamworkSoftwareFreshness(v string) (interface{}, error) {
+func ParseTeamworkSoftwareFreshness(v string) (any, error) {
     result := UNKNOWN_TEAMWORKSOFTWAREFRESHNESS
     switch v {
         case "unknown":

@@ -17,7 +17,7 @@ const (
 func (i NdesConnectorState) String() string {
     return []string{"none", "active", "inactive"}[i]
 }
-func ParseNdesConnectorState(v string) (interface{}, error) {
+func ParseNdesConnectorState(v string) (any, error) {
     result := NONE_NDESCONNECTORSTATE
     switch v {
         case "none":

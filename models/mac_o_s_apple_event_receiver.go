@@ -7,7 +7,7 @@ import (
 // MacOSAppleEventReceiver represents a process that can receive an Apple Event notification.
 type MacOSAppleEventReceiver struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Allow or block this app from receiving Apple events.
     allowed *bool
     // Code requirement for the app or binary that receives the Apple Event.
@@ -23,7 +23,7 @@ type MacOSAppleEventReceiver struct {
 func NewMacOSAppleEventReceiver()(*MacOSAppleEventReceiver) {
     m := &MacOSAppleEventReceiver{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMacOSAppleEventReceiverFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateMacOSAppleEventReceiverFromDiscriminatorValue(parseNode i878a80d2330e
     return NewMacOSAppleEventReceiver(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MacOSAppleEventReceiver) GetAdditionalData()(map[string]interface{}) {
+func (m *MacOSAppleEventReceiver) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowed gets the allowed property value. Allow or block this app from receiving Apple events.
@@ -151,7 +151,7 @@ func (m *MacOSAppleEventReceiver) Serialize(writer i878a80d2330e89d26896388a3f48
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MacOSAppleEventReceiver) SetAdditionalData(value map[string]interface{})() {
+func (m *MacOSAppleEventReceiver) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowed sets the allowed property value. Allow or block this app from receiving Apple events.

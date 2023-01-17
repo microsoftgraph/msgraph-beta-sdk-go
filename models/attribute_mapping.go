@@ -7,7 +7,7 @@ import (
 // AttributeMapping 
 type AttributeMapping struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Default value to be used in case the source property was evaluated to null. Optional.
     defaultValue *string
     // For internal use only.
@@ -29,7 +29,7 @@ type AttributeMapping struct {
 func NewAttributeMapping()(*AttributeMapping) {
     m := &AttributeMapping{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAttributeMappingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,7 +37,7 @@ func CreateAttributeMappingFromDiscriminatorValue(parseNode i878a80d2330e89d2689
     return NewAttributeMapping(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AttributeMapping) GetAdditionalData()(map[string]interface{}) {
+func (m *AttributeMapping) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDefaultValue gets the defaultValue property value. Default value to be used in case the source property was evaluated to null. Optional.
@@ -218,7 +218,7 @@ func (m *AttributeMapping) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AttributeMapping) SetAdditionalData(value map[string]interface{})() {
+func (m *AttributeMapping) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDefaultValue sets the defaultValue property value. Default value to be used in case the source property was evaluated to null. Optional.

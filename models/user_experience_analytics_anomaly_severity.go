@@ -23,7 +23,7 @@ const (
 func (i UserExperienceAnalyticsAnomalySeverity) String() string {
     return []string{"high", "medium", "low", "informational", "other", "unknownFutureValue"}[i]
 }
-func ParseUserExperienceAnalyticsAnomalySeverity(v string) (interface{}, error) {
+func ParseUserExperienceAnalyticsAnomalySeverity(v string) (any, error) {
     result := HIGH_USEREXPERIENCEANALYTICSANOMALYSEVERITY
     switch v {
         case "high":

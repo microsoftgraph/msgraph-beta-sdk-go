@@ -7,7 +7,7 @@ import (
 // InformationProtectionVerifySignaturePostRequestBody 
 type InformationProtectionVerifySignaturePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The digest property
     digest []byte
     // The signature property
@@ -19,7 +19,7 @@ type InformationProtectionVerifySignaturePostRequestBody struct {
 func NewInformationProtectionVerifySignaturePostRequestBody()(*InformationProtectionVerifySignaturePostRequestBody) {
     m := &InformationProtectionVerifySignaturePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateInformationProtectionVerifySignaturePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateInformationProtectionVerifySignaturePostRequestBodyFromDiscriminatorV
     return NewInformationProtectionVerifySignaturePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *InformationProtectionVerifySignaturePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *InformationProtectionVerifySignaturePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDigest gets the digest property value. The digest property
@@ -106,7 +106,7 @@ func (m *InformationProtectionVerifySignaturePostRequestBody) Serialize(writer i
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *InformationProtectionVerifySignaturePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *InformationProtectionVerifySignaturePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDigest sets the digest property value. The digest property

@@ -7,7 +7,7 @@ import (
 // JoinMeetingIdSettings 
 type JoinMeetingIdSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
     isPasscodeRequired *bool
     // The meeting ID to be used to join a meeting. Optional. Read-only.
@@ -21,7 +21,7 @@ type JoinMeetingIdSettings struct {
 func NewJoinMeetingIdSettings()(*JoinMeetingIdSettings) {
     m := &JoinMeetingIdSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateJoinMeetingIdSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateJoinMeetingIdSettingsFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewJoinMeetingIdSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *JoinMeetingIdSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *JoinMeetingIdSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,7 +128,7 @@ func (m *JoinMeetingIdSettings) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *JoinMeetingIdSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *JoinMeetingIdSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIsPasscodeRequired sets the isPasscodeRequired property value. Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.

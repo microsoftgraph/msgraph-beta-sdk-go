@@ -15,7 +15,7 @@ const (
 func (i PlayPromptCompletionReason) String() string {
     return []string{"unknown", "completedSuccessfully", "mediaOperationCanceled", "unknownFutureValue"}[i]
 }
-func ParsePlayPromptCompletionReason(v string) (interface{}, error) {
+func ParsePlayPromptCompletionReason(v string) (any, error) {
     result := UNKNOWN_PLAYPROMPTCOMPLETIONREASON
     switch v {
         case "unknown":

@@ -7,7 +7,7 @@ import (
 // IosBookmark iOS URL bookmark
 type IosBookmark struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The folder into which the bookmark should be added in Safari
     bookmarkFolder *string
     // The display name of the bookmark
@@ -21,7 +21,7 @@ type IosBookmark struct {
 func NewIosBookmark()(*IosBookmark) {
     m := &IosBookmark{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateIosBookmarkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateIosBookmarkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     return NewIosBookmark(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IosBookmark) GetAdditionalData()(map[string]interface{}) {
+func (m *IosBookmark) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBookmarkFolder gets the bookmarkFolder property value. The folder into which the bookmark should be added in Safari
@@ -128,7 +128,7 @@ func (m *IosBookmark) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IosBookmark) SetAdditionalData(value map[string]interface{})() {
+func (m *IosBookmark) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetBookmarkFolder sets the bookmarkFolder property value. The folder into which the bookmark should be added in Safari

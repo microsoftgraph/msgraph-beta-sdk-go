@@ -13,7 +13,7 @@ const (
 func (i PageOrientation) String() string {
     return []string{"horizontal", "diagonal"}[i]
 }
-func ParsePageOrientation(v string) (interface{}, error) {
+func ParsePageOrientation(v string) (any, error) {
     result := HORIZONTAL_PAGEORIENTATION
     switch v {
         case "horizontal":

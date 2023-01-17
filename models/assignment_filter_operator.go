@@ -33,7 +33,7 @@ const (
 func (i AssignmentFilterOperator) String() string {
     return []string{"notSet", "equals", "notEquals", "startsWith", "notStartsWith", "contains", "notContains", "in", "notIn", "endsWith", "notEndsWith"}[i]
 }
-func ParseAssignmentFilterOperator(v string) (interface{}, error) {
+func ParseAssignmentFilterOperator(v string) (any, error) {
     result := NOTSET_ASSIGNMENTFILTEROPERATOR
     switch v {
         case "notSet":

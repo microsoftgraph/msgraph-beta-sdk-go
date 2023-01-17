@@ -8,7 +8,7 @@ import (
 // LoggedOnUser logged On User
 type LoggedOnUser struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Date time when user logs on
     lastLogOnDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The OdataType property
@@ -20,7 +20,7 @@ type LoggedOnUser struct {
 func NewLoggedOnUser()(*LoggedOnUser) {
     m := &LoggedOnUser{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateLoggedOnUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,7 +28,7 @@ func CreateLoggedOnUserFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewLoggedOnUser(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *LoggedOnUser) GetAdditionalData()(map[string]interface{}) {
+func (m *LoggedOnUser) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -107,7 +107,7 @@ func (m *LoggedOnUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *LoggedOnUser) SetAdditionalData(value map[string]interface{})() {
+func (m *LoggedOnUser) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetLastLogOnDateTime sets the lastLogOnDateTime property value. Date time when user logs on

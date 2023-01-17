@@ -7,7 +7,7 @@ import (
 // DowngradeJustification 
 type DowngradeJustification struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicates whether the downgrade is or is not justified.
     isDowngradeJustified *bool
     // Message that indicates why a downgrade is justified. The message will appear in administrative logs.
@@ -19,7 +19,7 @@ type DowngradeJustification struct {
 func NewDowngradeJustification()(*DowngradeJustification) {
     m := &DowngradeJustification{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDowngradeJustificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateDowngradeJustificationFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewDowngradeJustification(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DowngradeJustification) GetAdditionalData()(map[string]interface{}) {
+func (m *DowngradeJustification) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -106,7 +106,7 @@ func (m *DowngradeJustification) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DowngradeJustification) SetAdditionalData(value map[string]interface{})() {
+func (m *DowngradeJustification) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIsDowngradeJustified sets the isDowngradeJustified property value. Indicates whether the downgrade is or is not justified.

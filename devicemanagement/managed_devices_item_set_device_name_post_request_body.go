@@ -7,7 +7,7 @@ import (
 // ManagedDevicesItemSetDeviceNamePostRequestBody 
 type ManagedDevicesItemSetDeviceNamePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The deviceName property
     deviceName *string
 }
@@ -15,7 +15,7 @@ type ManagedDevicesItemSetDeviceNamePostRequestBody struct {
 func NewManagedDevicesItemSetDeviceNamePostRequestBody()(*ManagedDevicesItemSetDeviceNamePostRequestBody) {
     m := &ManagedDevicesItemSetDeviceNamePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateManagedDevicesItemSetDeviceNamePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateManagedDevicesItemSetDeviceNamePostRequestBodyFromDiscriminatorValue(
     return NewManagedDevicesItemSetDeviceNamePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedDevicesItemSetDeviceNamePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ManagedDevicesItemSetDeviceNamePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeviceName gets the deviceName property value. The deviceName property
@@ -62,7 +62,7 @@ func (m *ManagedDevicesItemSetDeviceNamePostRequestBody) Serialize(writer i878a8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedDevicesItemSetDeviceNamePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ManagedDevicesItemSetDeviceNamePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeviceName sets the deviceName property value. The deviceName property

@@ -7,7 +7,7 @@ import (
 // AndroidForWorkSettingsRequestSignupUrlPostRequestBody 
 type AndroidForWorkSettingsRequestSignupUrlPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The hostName property
     hostName *string
 }
@@ -15,7 +15,7 @@ type AndroidForWorkSettingsRequestSignupUrlPostRequestBody struct {
 func NewAndroidForWorkSettingsRequestSignupUrlPostRequestBody()(*AndroidForWorkSettingsRequestSignupUrlPostRequestBody) {
     m := &AndroidForWorkSettingsRequestSignupUrlPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAndroidForWorkSettingsRequestSignupUrlPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateAndroidForWorkSettingsRequestSignupUrlPostRequestBodyFromDiscriminato
     return NewAndroidForWorkSettingsRequestSignupUrlPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AndroidForWorkSettingsRequestSignupUrlPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *AndroidForWorkSettingsRequestSignupUrlPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *AndroidForWorkSettingsRequestSignupUrlPostRequestBody) Serialize(writer
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AndroidForWorkSettingsRequestSignupUrlPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *AndroidForWorkSettingsRequestSignupUrlPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetHostName sets the hostName property value. The hostName property

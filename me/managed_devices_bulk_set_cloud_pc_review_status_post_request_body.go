@@ -8,7 +8,7 @@ import (
 // ManagedDevicesBulkSetCloudPcReviewStatusPostRequestBody 
 type ManagedDevicesBulkSetCloudPcReviewStatusPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The managedDeviceIds property
     managedDeviceIds []string
     // The reviewStatus property
@@ -18,7 +18,7 @@ type ManagedDevicesBulkSetCloudPcReviewStatusPostRequestBody struct {
 func NewManagedDevicesBulkSetCloudPcReviewStatusPostRequestBody()(*ManagedDevicesBulkSetCloudPcReviewStatusPostRequestBody) {
     m := &ManagedDevicesBulkSetCloudPcReviewStatusPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateManagedDevicesBulkSetCloudPcReviewStatusPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateManagedDevicesBulkSetCloudPcReviewStatusPostRequestBodyFromDiscrimina
     return NewManagedDevicesBulkSetCloudPcReviewStatusPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedDevicesBulkSetCloudPcReviewStatusPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ManagedDevicesBulkSetCloudPcReviewStatusPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -89,7 +89,7 @@ func (m *ManagedDevicesBulkSetCloudPcReviewStatusPostRequestBody) Serialize(writ
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedDevicesBulkSetCloudPcReviewStatusPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ManagedDevicesBulkSetCloudPcReviewStatusPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetManagedDeviceIds sets the managedDeviceIds property value. The managedDeviceIds property

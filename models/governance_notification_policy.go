@@ -7,7 +7,7 @@ import (
 // GovernanceNotificationPolicy 
 type GovernanceNotificationPolicy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The enabledTemplateTypes property
     enabledTemplateTypes []string
     // The notificationTemplates property
@@ -19,7 +19,7 @@ type GovernanceNotificationPolicy struct {
 func NewGovernanceNotificationPolicy()(*GovernanceNotificationPolicy) {
     m := &GovernanceNotificationPolicy{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateGovernanceNotificationPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateGovernanceNotificationPolicyFromDiscriminatorValue(parseNode i878a80d
     return NewGovernanceNotificationPolicy(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *GovernanceNotificationPolicy) GetAdditionalData()(map[string]interface{}) {
+func (m *GovernanceNotificationPolicy) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEnabledTemplateTypes gets the enabledTemplateTypes property value. The enabledTemplateTypes property
@@ -118,7 +118,7 @@ func (m *GovernanceNotificationPolicy) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *GovernanceNotificationPolicy) SetAdditionalData(value map[string]interface{})() {
+func (m *GovernanceNotificationPolicy) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEnabledTemplateTypes sets the enabledTemplateTypes property value. The enabledTemplateTypes property

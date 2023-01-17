@@ -23,7 +23,7 @@ const (
 func (i DeviceManangementIntentValueType) String() string {
     return []string{"integer", "boolean", "string", "complex", "collection", "abstractComplex"}[i]
 }
-func ParseDeviceManangementIntentValueType(v string) (interface{}, error) {
+func ParseDeviceManangementIntentValueType(v string) (any, error) {
     result := INTEGER_DEVICEMANANGEMENTINTENTVALUETYPE
     switch v {
         case "integer":

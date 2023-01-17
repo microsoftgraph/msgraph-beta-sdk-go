@@ -25,7 +25,7 @@ const (
 func (i GroupPolicyUploadedDefinitionFileStatus) String() string {
     return []string{"none", "uploadInProgress", "available", "assigned", "removalInProgress", "uploadFailed", "removalFailed"}[i]
 }
-func ParseGroupPolicyUploadedDefinitionFileStatus(v string) (interface{}, error) {
+func ParseGroupPolicyUploadedDefinitionFileStatus(v string) (any, error) {
     result := NONE_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS
     switch v {
         case "none":

@@ -7,7 +7,7 @@ import (
 // AndroidEnrollmentCompanyCode a class to hold specialty enrollment data used for enrolling via Google's Android Management API, such as Token, Url, and QR code content
 type AndroidEnrollmentCompanyCode struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Enrollment Token used by the User to enroll their device.
     enrollmentToken *string
     // The OdataType property
@@ -21,7 +21,7 @@ type AndroidEnrollmentCompanyCode struct {
 func NewAndroidEnrollmentCompanyCode()(*AndroidEnrollmentCompanyCode) {
     m := &AndroidEnrollmentCompanyCode{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAndroidEnrollmentCompanyCodeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateAndroidEnrollmentCompanyCodeFromDiscriminatorValue(parseNode i878a80d
     return NewAndroidEnrollmentCompanyCode(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AndroidEnrollmentCompanyCode) GetAdditionalData()(map[string]interface{}) {
+func (m *AndroidEnrollmentCompanyCode) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEnrollmentToken gets the enrollmentToken property value. Enrollment Token used by the User to enroll their device.
@@ -128,7 +128,7 @@ func (m *AndroidEnrollmentCompanyCode) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AndroidEnrollmentCompanyCode) SetAdditionalData(value map[string]interface{})() {
+func (m *AndroidEnrollmentCompanyCode) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEnrollmentToken sets the enrollmentToken property value. Enrollment Token used by the User to enroll their device.

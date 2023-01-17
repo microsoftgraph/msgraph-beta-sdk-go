@@ -7,7 +7,7 @@ import (
 // MobileAppIntentAndStateDetail mobile App Intent and Install State for a given device.
 type MobileAppIntentAndStateDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // MobieApp identifier.
     applicationId *string
     // The admin provided or imported title of the app.
@@ -27,7 +27,7 @@ type MobileAppIntentAndStateDetail struct {
 func NewMobileAppIntentAndStateDetail()(*MobileAppIntentAndStateDetail) {
     m := &MobileAppIntentAndStateDetail{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMobileAppIntentAndStateDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateMobileAppIntentAndStateDetailFromDiscriminatorValue(parseNode i878a80
     return NewMobileAppIntentAndStateDetail(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MobileAppIntentAndStateDetail) GetAdditionalData()(map[string]interface{}) {
+func (m *MobileAppIntentAndStateDetail) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApplicationId gets the applicationId property value. MobieApp identifier.
@@ -204,7 +204,7 @@ func (m *MobileAppIntentAndStateDetail) Serialize(writer i878a80d2330e89d2689638
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MobileAppIntentAndStateDetail) SetAdditionalData(value map[string]interface{})() {
+func (m *MobileAppIntentAndStateDetail) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetApplicationId sets the applicationId property value. MobieApp identifier.

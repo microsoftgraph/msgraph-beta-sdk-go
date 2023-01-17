@@ -14,7 +14,7 @@ const (
 func (i SynchronizationTaskExecutionResult) String() string {
     return []string{"Succeeded", "Failed", "EntryLevelErrors"}[i]
 }
-func ParseSynchronizationTaskExecutionResult(v string) (interface{}, error) {
+func ParseSynchronizationTaskExecutionResult(v string) (any, error) {
     result := SUCCEEDED_SYNCHRONIZATIONTASKEXECUTIONRESULT
     switch v {
         case "Succeeded":

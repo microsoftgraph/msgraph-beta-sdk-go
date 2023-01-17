@@ -8,7 +8,7 @@ import (
 // MobileAppTroubleshootingHistoryItem history Item contained in the Mobile App Troubleshooting Event.
 type MobileAppTroubleshootingHistoryItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Time when the history item occurred.
     occurrenceDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The OdataType property
@@ -20,7 +20,7 @@ type MobileAppTroubleshootingHistoryItem struct {
 func NewMobileAppTroubleshootingHistoryItem()(*MobileAppTroubleshootingHistoryItem) {
     m := &MobileAppTroubleshootingHistoryItem{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMobileAppTroubleshootingHistoryItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -54,7 +54,7 @@ func CreateMobileAppTroubleshootingHistoryItemFromDiscriminatorValue(parseNode i
     return NewMobileAppTroubleshootingHistoryItem(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MobileAppTroubleshootingHistoryItem) GetAdditionalData()(map[string]interface{}) {
+func (m *MobileAppTroubleshootingHistoryItem) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -133,7 +133,7 @@ func (m *MobileAppTroubleshootingHistoryItem) Serialize(writer i878a80d2330e89d2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MobileAppTroubleshootingHistoryItem) SetAdditionalData(value map[string]interface{})() {
+func (m *MobileAppTroubleshootingHistoryItem) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOccurrenceDateTime sets the occurrenceDateTime property value. Time when the history item occurred.

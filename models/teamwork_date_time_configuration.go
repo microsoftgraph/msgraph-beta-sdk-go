@@ -7,7 +7,7 @@ import (
 // TeamworkDateTimeConfiguration 
 type TeamworkDateTimeConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The date format for the device.
     dateFormat *string
     // The OdataType property
@@ -25,7 +25,7 @@ type TeamworkDateTimeConfiguration struct {
 func NewTeamworkDateTimeConfiguration()(*TeamworkDateTimeConfiguration) {
     m := &TeamworkDateTimeConfiguration{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTeamworkDateTimeConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateTeamworkDateTimeConfigurationFromDiscriminatorValue(parseNode i878a80
     return NewTeamworkDateTimeConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkDateTimeConfiguration) GetAdditionalData()(map[string]interface{}) {
+func (m *TeamworkDateTimeConfiguration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDateFormat gets the dateFormat property value. The date format for the device.
@@ -172,7 +172,7 @@ func (m *TeamworkDateTimeConfiguration) Serialize(writer i878a80d2330e89d2689638
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkDateTimeConfiguration) SetAdditionalData(value map[string]interface{})() {
+func (m *TeamworkDateTimeConfiguration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDateFormat sets the dateFormat property value. The date format for the device.

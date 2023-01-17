@@ -7,7 +7,7 @@ import (
 // DeviceManagementApplicabilityRuleDeviceMode 
 type DeviceManagementApplicabilityRuleDeviceMode struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Windows 10 Device Mode type.
     deviceMode *Windows10DeviceModeType
     // Name for object.
@@ -21,7 +21,7 @@ type DeviceManagementApplicabilityRuleDeviceMode struct {
 func NewDeviceManagementApplicabilityRuleDeviceMode()(*DeviceManagementApplicabilityRuleDeviceMode) {
     m := &DeviceManagementApplicabilityRuleDeviceMode{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceManagementApplicabilityRuleDeviceModeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateDeviceManagementApplicabilityRuleDeviceModeFromDiscriminatorValue(par
     return NewDeviceManagementApplicabilityRuleDeviceMode(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementApplicabilityRuleDeviceMode) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceManagementApplicabilityRuleDeviceMode) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeviceMode gets the deviceMode property value. Windows 10 Device Mode type.
@@ -130,7 +130,7 @@ func (m *DeviceManagementApplicabilityRuleDeviceMode) Serialize(writer i878a80d2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementApplicabilityRuleDeviceMode) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceManagementApplicabilityRuleDeviceMode) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeviceMode sets the deviceMode property value. Windows 10 Device Mode type.

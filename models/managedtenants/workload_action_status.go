@@ -17,7 +17,7 @@ const (
 func (i WorkloadActionStatus) String() string {
     return []string{"toAddress", "completed", "error", "timeOut", "inProgress", "unknownFutureValue"}[i]
 }
-func ParseWorkloadActionStatus(v string) (interface{}, error) {
+func ParseWorkloadActionStatus(v string) (any, error) {
     result := TOADDRESS_WORKLOADACTIONSTATUS
     switch v {
         case "toAddress":

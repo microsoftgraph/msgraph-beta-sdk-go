@@ -7,7 +7,7 @@ import (
 // ExpressionEvaluationDetails 
 type ExpressionEvaluationDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Represents expression which has been evaluated.
     expression *string
     // Represents the details of the evaluation of the expression.
@@ -23,7 +23,7 @@ type ExpressionEvaluationDetails struct {
 func NewExpressionEvaluationDetails()(*ExpressionEvaluationDetails) {
     m := &ExpressionEvaluationDetails{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateExpressionEvaluationDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateExpressionEvaluationDetailsFromDiscriminatorValue(parseNode i878a80d2
     return NewExpressionEvaluationDetails(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ExpressionEvaluationDetails) GetAdditionalData()(map[string]interface{}) {
+func (m *ExpressionEvaluationDetails) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExpression gets the expression property value. Represents expression which has been evaluated.
@@ -158,7 +158,7 @@ func (m *ExpressionEvaluationDetails) Serialize(writer i878a80d2330e89d26896388a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ExpressionEvaluationDetails) SetAdditionalData(value map[string]interface{})() {
+func (m *ExpressionEvaluationDetails) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetExpression sets the expression property value. Represents expression which has been evaluated.

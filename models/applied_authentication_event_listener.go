@@ -7,7 +7,7 @@ import (
 // AppliedAuthenticationEventListener 
 type AppliedAuthenticationEventListener struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The eventType property
     eventType *AuthenticationEventType
     // The executedListenerId property
@@ -21,7 +21,7 @@ type AppliedAuthenticationEventListener struct {
 func NewAppliedAuthenticationEventListener()(*AppliedAuthenticationEventListener) {
     m := &AppliedAuthenticationEventListener{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAppliedAuthenticationEventListenerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateAppliedAuthenticationEventListenerFromDiscriminatorValue(parseNode i8
     return NewAppliedAuthenticationEventListener(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AppliedAuthenticationEventListener) GetAdditionalData()(map[string]interface{}) {
+func (m *AppliedAuthenticationEventListener) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEventType gets the eventType property value. The eventType property
@@ -129,7 +129,7 @@ func (m *AppliedAuthenticationEventListener) Serialize(writer i878a80d2330e89d26
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AppliedAuthenticationEventListener) SetAdditionalData(value map[string]interface{})() {
+func (m *AppliedAuthenticationEventListener) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEventType sets the eventType property value. The eventType property

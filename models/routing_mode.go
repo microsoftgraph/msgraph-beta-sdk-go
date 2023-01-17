@@ -13,7 +13,7 @@ const (
 func (i RoutingMode) String() string {
     return []string{"oneToOne", "multicast"}[i]
 }
-func ParseRoutingMode(v string) (interface{}, error) {
+func ParseRoutingMode(v string) (any, error) {
     result := ONETOONE_ROUTINGMODE
     switch v {
         case "oneToOne":

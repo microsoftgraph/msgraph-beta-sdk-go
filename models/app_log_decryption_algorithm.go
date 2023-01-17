@@ -12,7 +12,7 @@ const (
 func (i AppLogDecryptionAlgorithm) String() string {
     return []string{"aes256"}[i]
 }
-func ParseAppLogDecryptionAlgorithm(v string) (interface{}, error) {
+func ParseAppLogDecryptionAlgorithm(v string) (any, error) {
     result := AES256_APPLOGDECRYPTIONALGORITHM
     switch v {
         case "aes256":

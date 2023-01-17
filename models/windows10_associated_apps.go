@@ -7,7 +7,7 @@ import (
 // Windows10AssociatedApps windows 10 Associated Application definition.
 type Windows10AssociatedApps struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Windows 10 Application type.
     appType *Windows10AppType
     // Identifier.
@@ -19,7 +19,7 @@ type Windows10AssociatedApps struct {
 func NewWindows10AssociatedApps()(*Windows10AssociatedApps) {
     m := &Windows10AssociatedApps{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWindows10AssociatedAppsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateWindows10AssociatedAppsFromDiscriminatorValue(parseNode i878a80d2330e
     return NewWindows10AssociatedApps(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Windows10AssociatedApps) GetAdditionalData()(map[string]interface{}) {
+func (m *Windows10AssociatedApps) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAppType gets the appType property value. Windows 10 Application type.
@@ -107,7 +107,7 @@ func (m *Windows10AssociatedApps) Serialize(writer i878a80d2330e89d26896388a3f48
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Windows10AssociatedApps) SetAdditionalData(value map[string]interface{})() {
+func (m *Windows10AssociatedApps) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAppType sets the appType property value. Windows 10 Application type.

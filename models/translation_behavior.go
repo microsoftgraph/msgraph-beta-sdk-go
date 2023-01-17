@@ -14,7 +14,7 @@ const (
 func (i TranslationBehavior) String() string {
     return []string{"Ask", "Yes", "No"}[i]
 }
-func ParseTranslationBehavior(v string) (interface{}, error) {
+func ParseTranslationBehavior(v string) (any, error) {
     result := ASK_TRANSLATIONBEHAVIOR
     switch v {
         case "Ask":

@@ -21,7 +21,7 @@ const (
 func (i BrowserSharedCookieStatus) String() string {
     return []string{"published", "pendingAdd", "pendingEdit", "pendingDelete", "unknownFutureValue"}[i]
 }
-func ParseBrowserSharedCookieStatus(v string) (interface{}, error) {
+func ParseBrowserSharedCookieStatus(v string) (any, error) {
     result := PUBLISHED_BROWSERSHAREDCOOKIESTATUS
     switch v {
         case "published":

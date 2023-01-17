@@ -7,7 +7,7 @@ import (
 // MacOSAssociatedDomainsItem a mapping of application identifiers to associated domains.
 type MacOSAssociatedDomainsItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The application identifier of the app to associate domains with.
     applicationIdentifier *string
     // Determines whether data should be downloaded directly or via a CDN.
@@ -21,7 +21,7 @@ type MacOSAssociatedDomainsItem struct {
 func NewMacOSAssociatedDomainsItem()(*MacOSAssociatedDomainsItem) {
     m := &MacOSAssociatedDomainsItem{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMacOSAssociatedDomainsItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateMacOSAssociatedDomainsItemFromDiscriminatorValue(parseNode i878a80d23
     return NewMacOSAssociatedDomainsItem(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MacOSAssociatedDomainsItem) GetAdditionalData()(map[string]interface{}) {
+func (m *MacOSAssociatedDomainsItem) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApplicationIdentifier gets the applicationIdentifier property value. The application identifier of the app to associate domains with.
@@ -132,7 +132,7 @@ func (m *MacOSAssociatedDomainsItem) Serialize(writer i878a80d2330e89d26896388a3
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MacOSAssociatedDomainsItem) SetAdditionalData(value map[string]interface{})() {
+func (m *MacOSAssociatedDomainsItem) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetApplicationIdentifier sets the applicationIdentifier property value. The application identifier of the app to associate domains with.

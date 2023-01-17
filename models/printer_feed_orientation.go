@@ -13,7 +13,7 @@ const (
 func (i PrinterFeedOrientation) String() string {
     return []string{"longEdgeFirst", "shortEdgeFirst"}[i]
 }
-func ParsePrinterFeedOrientation(v string) (interface{}, error) {
+func ParsePrinterFeedOrientation(v string) (any, error) {
     result := LONGEDGEFIRST_PRINTERFEEDORIENTATION
     switch v {
         case "longEdgeFirst":

@@ -23,7 +23,7 @@ const (
 func (i DiffieHellmanGroup) String() string {
     return []string{"group1", "group2", "group14", "ecp256", "ecp384", "group24"}[i]
 }
-func ParseDiffieHellmanGroup(v string) (interface{}, error) {
+func ParseDiffieHellmanGroup(v string) (any, error) {
     result := GROUP1_DIFFIEHELLMANGROUP
     switch v {
         case "group1":

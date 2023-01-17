@@ -18,7 +18,7 @@ const (
 func (i OnPremisesPublishingType) String() string {
     return []string{"applicationProxy", "exchangeOnline", "authentication", "provisioning", "intunePfx", "oflineDomainJoin", "unknownFutureValue"}[i]
 }
-func ParseOnPremisesPublishingType(v string) (interface{}, error) {
+func ParseOnPremisesPublishingType(v string) (any, error) {
     result := APPLICATIONPROXY_ONPREMISESPUBLISHINGTYPE
     switch v {
         case "applicationProxy":

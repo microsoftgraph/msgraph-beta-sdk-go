@@ -23,7 +23,7 @@ const (
 func (i SubjectAlternativeNameType) String() string {
     return []string{"none", "emailAddress", "userPrincipalName", "customAzureADAttribute", "domainNameService", "universalResourceIdentifier"}[i]
 }
-func ParseSubjectAlternativeNameType(v string) (interface{}, error) {
+func ParseSubjectAlternativeNameType(v string) (any, error) {
     result := NONE_SUBJECTALTERNATIVENAMETYPE
     switch v {
         case "none":

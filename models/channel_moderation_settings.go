@@ -7,7 +7,7 @@ import (
 // ChannelModerationSettings 
 type ChannelModerationSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicates whether bots are allowed to post messages.
     allowNewMessageFromBots *bool
     // Indicates whether connectors are allowed to post messages.
@@ -23,7 +23,7 @@ type ChannelModerationSettings struct {
 func NewChannelModerationSettings()(*ChannelModerationSettings) {
     m := &ChannelModerationSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateChannelModerationSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateChannelModerationSettingsFromDiscriminatorValue(parseNode i878a80d233
     return NewChannelModerationSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ChannelModerationSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *ChannelModerationSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowNewMessageFromBots gets the allowNewMessageFromBots property value. Indicates whether bots are allowed to post messages.
@@ -152,7 +152,7 @@ func (m *ChannelModerationSettings) Serialize(writer i878a80d2330e89d26896388a3f
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ChannelModerationSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *ChannelModerationSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowNewMessageFromBots sets the allowNewMessageFromBots property value. Indicates whether bots are allowed to post messages.

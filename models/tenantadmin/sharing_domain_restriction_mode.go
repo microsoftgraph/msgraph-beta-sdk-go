@@ -15,7 +15,7 @@ const (
 func (i SharingDomainRestrictionMode) String() string {
     return []string{"none", "allowList", "blockList", "unknownFutureValue"}[i]
 }
-func ParseSharingDomainRestrictionMode(v string) (interface{}, error) {
+func ParseSharingDomainRestrictionMode(v string) (any, error) {
     result := NONE_SHARINGDOMAINRESTRICTIONMODE
     switch v {
         case "none":

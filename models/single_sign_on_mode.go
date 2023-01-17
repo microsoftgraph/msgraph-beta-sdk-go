@@ -11,13 +11,14 @@ const (
     SAML_SINGLESIGNONMODE
     PINGHEADERBASED_SINGLESIGNONMODE
     AADHEADERBASED_SINGLESIGNONMODE
+    OAUTHTOKEN_SINGLESIGNONMODE
     UNKNOWNFUTUREVALUE_SINGLESIGNONMODE
 )
 
 func (i SingleSignOnMode) String() string {
-    return []string{"none", "onPremisesKerberos", "saml", "pingHeaderBased", "aadHeaderBased", "unknownFutureValue"}[i]
+    return []string{"none", "onPremisesKerberos", "saml", "pingHeaderBased", "aadHeaderBased", "oAuthToken", "unknownFutureValue"}[i]
 }
-func ParseSingleSignOnMode(v string) (interface{}, error) {
+func ParseSingleSignOnMode(v string) (any, error) {
     result := NONE_SINGLESIGNONMODE
     switch v {
         case "none":
@@ -30,6 +31,8 @@ func ParseSingleSignOnMode(v string) (interface{}, error) {
             result = PINGHEADERBASED_SINGLESIGNONMODE
         case "aadHeaderBased":
             result = AADHEADERBASED_SINGLESIGNONMODE
+        case "oAuthToken":
+            result = OAUTHTOKEN_SINGLESIGNONMODE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SINGLESIGNONMODE
         default:

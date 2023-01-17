@@ -15,7 +15,7 @@ const (
 func (i HashAlgorithms) String() string {
     return []string{"sha1", "sha2"}[i]
 }
-func ParseHashAlgorithms(v string) (interface{}, error) {
+func ParseHashAlgorithms(v string) (any, error) {
     result := SHA1_HASHALGORITHMS
     switch v {
         case "sha1":

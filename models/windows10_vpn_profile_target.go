@@ -17,7 +17,7 @@ const (
 func (i Windows10VpnProfileTarget) String() string {
     return []string{"user", "device", "autoPilotDevice"}[i]
 }
-func ParseWindows10VpnProfileTarget(v string) (interface{}, error) {
+func ParseWindows10VpnProfileTarget(v string) (any, error) {
     result := USER_WINDOWS10VPNPROFILETARGET
     switch v {
         case "user":

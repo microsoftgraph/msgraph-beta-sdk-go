@@ -7,7 +7,7 @@ import (
 // UpdateAllowedCombinationsResult 
 type UpdateAllowedCombinationsResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Information about why the updateAllowedCombinations action was successful or failed.
     additionalInformation *string
     // References to existing Conditional Access policies that use this authentication strength.
@@ -23,7 +23,7 @@ type UpdateAllowedCombinationsResult struct {
 func NewUpdateAllowedCombinationsResult()(*UpdateAllowedCombinationsResult) {
     m := &UpdateAllowedCombinationsResult{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUpdateAllowedCombinationsResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateUpdateAllowedCombinationsResultFromDiscriminatorValue(parseNode i878a
     return NewUpdateAllowedCombinationsResult(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UpdateAllowedCombinationsResult) GetAdditionalData()(map[string]interface{}) {
+func (m *UpdateAllowedCombinationsResult) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAdditionalInformation gets the additionalInformation property value. Information about why the updateAllowedCombinations action was successful or failed.
@@ -162,7 +162,7 @@ func (m *UpdateAllowedCombinationsResult) Serialize(writer i878a80d2330e89d26896
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UpdateAllowedCombinationsResult) SetAdditionalData(value map[string]interface{})() {
+func (m *UpdateAllowedCombinationsResult) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAdditionalInformation sets the additionalInformation property value. Information about why the updateAllowedCombinations action was successful or failed.

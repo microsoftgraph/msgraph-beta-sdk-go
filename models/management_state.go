@@ -35,7 +35,7 @@ const (
 func (i ManagementState) String() string {
     return []string{"managed", "retirePending", "retireFailed", "wipePending", "wipeFailed", "unhealthy", "deletePending", "retireIssued", "wipeIssued", "wipeCanceled", "retireCanceled", "discovered"}[i]
 }
-func ParseManagementState(v string) (interface{}, error) {
+func ParseManagementState(v string) (any, error) {
     result := MANAGED_MANAGEMENTSTATE
     switch v {
         case "managed":

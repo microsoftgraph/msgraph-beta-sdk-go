@@ -21,7 +21,7 @@ const (
 func (i ManagedAppDeviceThreatLevel) String() string {
     return []string{"notConfigured", "secured", "low", "medium", "high"}[i]
 }
-func ParseManagedAppDeviceThreatLevel(v string) (interface{}, error) {
+func ParseManagedAppDeviceThreatLevel(v string) (any, error) {
     result := NOTCONFIGURED_MANAGEDAPPDEVICETHREATLEVEL
     switch v {
         case "notConfigured":

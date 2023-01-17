@@ -33,7 +33,7 @@ const (
 func (i IosUpdatesInstallStatus) String() string {
     return []string{"updateScanFailed", "deviceOsHigherThanDesiredOsVersion", "updateError", "sharedDeviceUserLoggedInError", "notSupportedOperation", "installFailed", "installPhoneCallInProgress", "installInsufficientPower", "installInsufficientSpace", "installing", "downloadInsufficientNetwork", "downloadInsufficientPower", "downloadInsufficientSpace", "downloadRequiresComputer", "downloadFailed", "downloading", "timeout", "mdmClientCrashed", "success", "available", "idle", "unknown"}[i]
 }
-func ParseIosUpdatesInstallStatus(v string) (interface{}, error) {
+func ParseIosUpdatesInstallStatus(v string) (any, error) {
     result := UPDATESCANFAILED_IOSUPDATESINSTALLSTATUS
     switch v {
         case "updateScanFailed":

@@ -15,7 +15,7 @@ const (
 func (i ResourceConnectionState) String() string {
     return []string{"connected", "notAuthorized", "notFound", "unknownFutureValue"}[i]
 }
-func ParseResourceConnectionState(v string) (interface{}, error) {
+func ParseResourceConnectionState(v string) (any, error) {
     result := CONNECTED_RESOURCECONNECTIONSTATE
     switch v {
         case "connected":

@@ -8,7 +8,7 @@ import (
 // RetentionEventStatus 
 type RetentionEventStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The error if the status is not successful.
     error ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublicErrorable
     // The OdataType property
@@ -20,7 +20,7 @@ type RetentionEventStatus struct {
 func NewRetentionEventStatus()(*RetentionEventStatus) {
     m := &RetentionEventStatus{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRetentionEventStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,7 +28,7 @@ func CreateRetentionEventStatusFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewRetentionEventStatus(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RetentionEventStatus) GetAdditionalData()(map[string]interface{}) {
+func (m *RetentionEventStatus) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetError gets the error property value. The error if the status is not successful.
@@ -108,7 +108,7 @@ func (m *RetentionEventStatus) Serialize(writer i878a80d2330e89d26896388a3f487ee
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RetentionEventStatus) SetAdditionalData(value map[string]interface{})() {
+func (m *RetentionEventStatus) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetError sets the error property value. The error if the status is not successful.

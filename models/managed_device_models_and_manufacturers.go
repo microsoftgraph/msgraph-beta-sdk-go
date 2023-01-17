@@ -7,7 +7,7 @@ import (
 // ManagedDeviceModelsAndManufacturers models and Manufactures meatadata for managed devices in the account
 type ManagedDeviceModelsAndManufacturers struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // List of Manufactures for managed devices in the account
     deviceManufacturers []string
     // List of Models for managed devices in the account
@@ -19,7 +19,7 @@ type ManagedDeviceModelsAndManufacturers struct {
 func NewManagedDeviceModelsAndManufacturers()(*ManagedDeviceModelsAndManufacturers) {
     m := &ManagedDeviceModelsAndManufacturers{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateManagedDeviceModelsAndManufacturersFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateManagedDeviceModelsAndManufacturersFromDiscriminatorValue(parseNode i
     return NewManagedDeviceModelsAndManufacturers(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedDeviceModelsAndManufacturers) GetAdditionalData()(map[string]interface{}) {
+func (m *ManagedDeviceModelsAndManufacturers) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeviceManufacturers gets the deviceManufacturers property value. List of Manufactures for managed devices in the account
@@ -114,7 +114,7 @@ func (m *ManagedDeviceModelsAndManufacturers) Serialize(writer i878a80d2330e89d2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedDeviceModelsAndManufacturers) SetAdditionalData(value map[string]interface{})() {
+func (m *ManagedDeviceModelsAndManufacturers) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeviceManufacturers sets the deviceManufacturers property value. List of Manufactures for managed devices in the account

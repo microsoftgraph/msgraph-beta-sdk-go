@@ -17,7 +17,7 @@ const (
 func (i TenantOnboardingEligibilityReason) String() string {
     return []string{"none", "contractType", "delegatedAdminPrivileges", "usersCount", "license", "unknownFutureValue"}[i]
 }
-func ParseTenantOnboardingEligibilityReason(v string) (interface{}, error) {
+func ParseTenantOnboardingEligibilityReason(v string) (any, error) {
     result := NONE_TENANTONBOARDINGELIGIBILITYREASON
     switch v {
         case "none":

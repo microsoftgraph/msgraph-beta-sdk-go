@@ -15,7 +15,7 @@ const (
 func (i AndroidForWorkEnrollmentTarget) String() string {
     return []string{"none", "all", "targeted", "targetedAsEnrollmentRestrictions"}[i]
 }
-func ParseAndroidForWorkEnrollmentTarget(v string) (interface{}, error) {
+func ParseAndroidForWorkEnrollmentTarget(v string) (any, error) {
     result := NONE_ANDROIDFORWORKENROLLMENTTARGET
     switch v {
         case "none":

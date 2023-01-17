@@ -16,7 +16,7 @@ const (
 func (i AuthenticationMethodFeature) String() string {
     return []string{"ssprRegistered", "ssprEnabled", "ssprCapable", "passwordlessCapable", "mfaCapable"}[i]
 }
-func ParseAuthenticationMethodFeature(v string) (interface{}, error) {
+func ParseAuthenticationMethodFeature(v string) (any, error) {
     result := SSPRREGISTERED_AUTHENTICATIONMETHODFEATURE
     switch v {
         case "ssprRegistered":

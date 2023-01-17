@@ -23,7 +23,7 @@ const (
 func (i DeviceManagementSubscriptions) String() string {
     return []string{"none", "intune", "office365", "intunePremium", "intune_EDU", "intune_SMB"}[i]
 }
-func ParseDeviceManagementSubscriptions(v string) (interface{}, error) {
+func ParseDeviceManagementSubscriptions(v string) (any, error) {
     result := NONE_DEVICEMANAGEMENTSUBSCRIPTIONS
     switch v {
         case "none":

@@ -18,7 +18,7 @@ const (
 func (i CloudPcPartnerAgentInstallStatus) String() string {
     return []string{"installed", "installFailed", "installing", "uninstalling", "uninstallFailed", "licensed", "unknownFutureValue"}[i]
 }
-func ParseCloudPcPartnerAgentInstallStatus(v string) (interface{}, error) {
+func ParseCloudPcPartnerAgentInstallStatus(v string) (any, error) {
     result := INSTALLED_CLOUDPCPARTNERAGENTINSTALLSTATUS
     switch v {
         case "installed":

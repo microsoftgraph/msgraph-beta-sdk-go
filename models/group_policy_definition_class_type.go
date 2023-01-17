@@ -15,7 +15,7 @@ const (
 func (i GroupPolicyDefinitionClassType) String() string {
     return []string{"user", "machine"}[i]
 }
-func ParseGroupPolicyDefinitionClassType(v string) (interface{}, error) {
+func ParseGroupPolicyDefinitionClassType(v string) (any, error) {
     result := USER_GROUPPOLICYDEFINITIONCLASSTYPE
     switch v {
         case "user":

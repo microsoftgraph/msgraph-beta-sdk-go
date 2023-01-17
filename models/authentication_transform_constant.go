@@ -23,7 +23,7 @@ const (
 func (i AuthenticationTransformConstant) String() string {
     return []string{"md5_96", "sha1_96", "sha_256_128", "aes128Gcm", "aes192Gcm", "aes256Gcm"}[i]
 }
-func ParseAuthenticationTransformConstant(v string) (interface{}, error) {
+func ParseAuthenticationTransformConstant(v string) (any, error) {
     result := MD5_96_AUTHENTICATIONTRANSFORMCONSTANT
     switch v {
         case "md5_96":

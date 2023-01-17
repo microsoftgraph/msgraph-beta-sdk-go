@@ -8,7 +8,7 @@ import (
 // CloudPcOnPremisesConnectionHealthCheck 
 type CloudPcOnPremisesConnectionHealthCheck struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Additional details about the health check or the recommended action.
     additionalDetails *string
     // The display name for this health check item.
@@ -30,7 +30,7 @@ type CloudPcOnPremisesConnectionHealthCheck struct {
 func NewCloudPcOnPremisesConnectionHealthCheck()(*CloudPcOnPremisesConnectionHealthCheck) {
     m := &CloudPcOnPremisesConnectionHealthCheck{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCloudPcOnPremisesConnectionHealthCheckFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ func CreateCloudPcOnPremisesConnectionHealthCheckFromDiscriminatorValue(parseNod
     return NewCloudPcOnPremisesConnectionHealthCheck(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CloudPcOnPremisesConnectionHealthCheck) GetAdditionalData()(map[string]interface{}) {
+func (m *CloudPcOnPremisesConnectionHealthCheck) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAdditionalDetails gets the additionalDetails property value. Additional details about the health check or the recommended action.
@@ -219,7 +219,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) Serialize(writer i878a80d2330e8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CloudPcOnPremisesConnectionHealthCheck) SetAdditionalData(value map[string]interface{})() {
+func (m *CloudPcOnPremisesConnectionHealthCheck) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAdditionalDetails sets the additionalDetails property value. Additional details about the health check or the recommended action.

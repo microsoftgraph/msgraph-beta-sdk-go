@@ -18,7 +18,7 @@ const (
 func (i SynchronizationJobRestartScope) String() string {
     return []string{"None", "ConnectorDataStore", "Escrows", "Watermark", "QuarantineState", "Full", "ForceDeletes"}[i]
 }
-func ParseSynchronizationJobRestartScope(v string) (interface{}, error) {
+func ParseSynchronizationJobRestartScope(v string) (any, error) {
     result := NONE_SYNCHRONIZATIONJOBRESTARTSCOPE
     switch v {
         case "None":

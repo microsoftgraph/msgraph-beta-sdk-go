@@ -17,7 +17,7 @@ const (
 func (i IncomingTokenType) String() string {
     return []string{"none", "primaryRefreshToken", "saml11", "saml20", "unknownFutureValue", "remoteDesktopToken"}[i]
 }
-func ParseIncomingTokenType(v string) (interface{}, error) {
+func ParseIncomingTokenType(v string) (any, error) {
     result := NONE_INCOMINGTOKENTYPE
     switch v {
         case "none":

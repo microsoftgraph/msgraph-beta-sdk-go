@@ -21,7 +21,7 @@ const (
 func (i BrowserSiteStatus) String() string {
     return []string{"published", "pendingAdd", "pendingEdit", "pendingDelete", "unknownFutureValue"}[i]
 }
-func ParseBrowserSiteStatus(v string) (interface{}, error) {
+func ParseBrowserSiteStatus(v string) (any, error) {
     result := PUBLISHED_BROWSERSITESTATUS
     switch v {
         case "published":

@@ -7,7 +7,7 @@ import (
 // ConditionalAccessExternalTenants 
 type ConditionalAccessExternalTenants struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Represents the membership kind. The possible values are: all, enumerated, unknownFutureValue. enumerated references an object of conditionalAccessEnumeratedExternalTenants derived type.
     membershipKind *ConditionalAccessExternalTenantsMembershipKind
     // The OdataType property
@@ -17,7 +17,7 @@ type ConditionalAccessExternalTenants struct {
 func NewConditionalAccessExternalTenants()(*ConditionalAccessExternalTenants) {
     m := &ConditionalAccessExternalTenants{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateConditionalAccessExternalTenantsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +45,7 @@ func CreateConditionalAccessExternalTenantsFromDiscriminatorValue(parseNode i878
     return NewConditionalAccessExternalTenants(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessExternalTenants) GetAdditionalData()(map[string]interface{}) {
+func (m *ConditionalAccessExternalTenants) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -105,7 +105,7 @@ func (m *ConditionalAccessExternalTenants) Serialize(writer i878a80d2330e89d2689
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessExternalTenants) SetAdditionalData(value map[string]interface{})() {
+func (m *ConditionalAccessExternalTenants) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetMembershipKind sets the membershipKind property value. Represents the membership kind. The possible values are: all, enumerated, unknownFutureValue. enumerated references an object of conditionalAccessEnumeratedExternalTenants derived type.

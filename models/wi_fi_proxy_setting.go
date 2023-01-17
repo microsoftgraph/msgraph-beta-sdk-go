@@ -17,7 +17,7 @@ const (
 func (i WiFiProxySetting) String() string {
     return []string{"none", "manual", "automatic"}[i]
 }
-func ParseWiFiProxySetting(v string) (interface{}, error) {
+func ParseWiFiProxySetting(v string) (any, error) {
     result := NONE_WIFIPROXYSETTING
     switch v {
         case "none":

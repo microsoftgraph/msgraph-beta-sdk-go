@@ -7,7 +7,7 @@ import (
 // HasPayloadLinkResultItem a class containing the result of HasPayloadLinks action.
 type HasPayloadLinkResultItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Exception information indicates if check for this item was successful or not.Empty string for no error.
     error *string
     // Indicate whether a payload has any link or not.
@@ -23,7 +23,7 @@ type HasPayloadLinkResultItem struct {
 func NewHasPayloadLinkResultItem()(*HasPayloadLinkResultItem) {
     m := &HasPayloadLinkResultItem{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateHasPayloadLinkResultItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateHasPayloadLinkResultItemFromDiscriminatorValue(parseNode i878a80d2330
     return NewHasPayloadLinkResultItem(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *HasPayloadLinkResultItem) GetAdditionalData()(map[string]interface{}) {
+func (m *HasPayloadLinkResultItem) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetError gets the error property value. Exception information indicates if check for this item was successful or not.Empty string for no error.
@@ -154,7 +154,7 @@ func (m *HasPayloadLinkResultItem) Serialize(writer i878a80d2330e89d26896388a3f4
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *HasPayloadLinkResultItem) SetAdditionalData(value map[string]interface{})() {
+func (m *HasPayloadLinkResultItem) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetError sets the error property value. Exception information indicates if check for this item was successful or not.Empty string for no error.

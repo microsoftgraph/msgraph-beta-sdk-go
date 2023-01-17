@@ -7,7 +7,7 @@ import (
 // CloudPcAuditActor 
 type CloudPcAuditActor struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Name of the application.
     applicationDisplayName *string
     // Azure AD application ID.
@@ -37,7 +37,7 @@ type CloudPcAuditActor struct {
 func NewCloudPcAuditActor()(*CloudPcAuditActor) {
     m := &CloudPcAuditActor{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCloudPcAuditActorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +45,7 @@ func CreateCloudPcAuditActorFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewCloudPcAuditActor(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CloudPcAuditActor) GetAdditionalData()(map[string]interface{}) {
+func (m *CloudPcAuditActor) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApplicationDisplayName gets the applicationDisplayName property value. Name of the application.
@@ -317,7 +317,7 @@ func (m *CloudPcAuditActor) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CloudPcAuditActor) SetAdditionalData(value map[string]interface{})() {
+func (m *CloudPcAuditActor) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetApplicationDisplayName sets the applicationDisplayName property value. Name of the application.

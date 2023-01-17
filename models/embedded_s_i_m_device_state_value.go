@@ -27,7 +27,7 @@ const (
 func (i EmbeddedSIMDeviceStateValue) String() string {
     return []string{"notEvaluated", "failed", "installing", "installed", "deleting", "error", "deleted", "removedByUser"}[i]
 }
-func ParseEmbeddedSIMDeviceStateValue(v string) (interface{}, error) {
+func ParseEmbeddedSIMDeviceStateValue(v string) (any, error) {
     result := NOTEVALUATED_EMBEDDEDSIMDEVICESTATEVALUE
     switch v {
         case "notEvaluated":

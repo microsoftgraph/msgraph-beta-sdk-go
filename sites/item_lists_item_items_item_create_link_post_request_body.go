@@ -9,7 +9,7 @@ import (
 // ItemListsItemItemsItemCreateLinkPostRequestBody 
 type ItemListsItemItemsItemCreateLinkPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The expirationDateTime property
     expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The password property
@@ -27,7 +27,7 @@ type ItemListsItemItemsItemCreateLinkPostRequestBody struct {
 func NewItemListsItemItemsItemCreateLinkPostRequestBody()(*ItemListsItemItemsItemCreateLinkPostRequestBody) {
     m := &ItemListsItemItemsItemCreateLinkPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemListsItemItemsItemCreateLinkPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateItemListsItemItemsItemCreateLinkPostRequestBodyFromDiscriminatorValue
     return NewItemListsItemItemsItemCreateLinkPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemListsItemItemsItemCreateLinkPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemListsItemItemsItemCreateLinkPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The expirationDateTime property
@@ -182,7 +182,7 @@ func (m *ItemListsItemItemsItemCreateLinkPostRequestBody) Serialize(writer i878a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemListsItemItemsItemCreateLinkPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemListsItemItemsItemCreateLinkPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetExpirationDateTime sets the expirationDateTime property value. The expirationDateTime property

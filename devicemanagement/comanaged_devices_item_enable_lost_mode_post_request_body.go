@@ -7,7 +7,7 @@ import (
 // ComanagedDevicesItemEnableLostModePostRequestBody 
 type ComanagedDevicesItemEnableLostModePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The footer property
     footer *string
     // The message property
@@ -19,7 +19,7 @@ type ComanagedDevicesItemEnableLostModePostRequestBody struct {
 func NewComanagedDevicesItemEnableLostModePostRequestBody()(*ComanagedDevicesItemEnableLostModePostRequestBody) {
     m := &ComanagedDevicesItemEnableLostModePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateComanagedDevicesItemEnableLostModePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateComanagedDevicesItemEnableLostModePostRequestBodyFromDiscriminatorVal
     return NewComanagedDevicesItemEnableLostModePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ComanagedDevicesItemEnableLostModePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ComanagedDevicesItemEnableLostModePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -106,7 +106,7 @@ func (m *ComanagedDevicesItemEnableLostModePostRequestBody) Serialize(writer i87
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ComanagedDevicesItemEnableLostModePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ComanagedDevicesItemEnableLostModePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetFooter sets the footer property value. The footer property

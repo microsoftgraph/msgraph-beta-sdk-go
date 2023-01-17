@@ -8,7 +8,7 @@ import (
 // DeletedTeamsItemChannelsItemMembersAddPostRequestBody 
 type DeletedTeamsItemChannelsItemMembersAddPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The values property
     values []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable
 }
@@ -16,7 +16,7 @@ type DeletedTeamsItemChannelsItemMembersAddPostRequestBody struct {
 func NewDeletedTeamsItemChannelsItemMembersAddPostRequestBody()(*DeletedTeamsItemChannelsItemMembersAddPostRequestBody) {
     m := &DeletedTeamsItemChannelsItemMembersAddPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeletedTeamsItemChannelsItemMembersAddPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateDeletedTeamsItemChannelsItemMembersAddPostRequestBodyFromDiscriminato
     return NewDeletedTeamsItemChannelsItemMembersAddPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeletedTeamsItemChannelsItemMembersAddPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *DeletedTeamsItemChannelsItemMembersAddPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -71,7 +71,7 @@ func (m *DeletedTeamsItemChannelsItemMembersAddPostRequestBody) Serialize(writer
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeletedTeamsItemChannelsItemMembersAddPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *DeletedTeamsItemChannelsItemMembersAddPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetValues sets the values property value. The values property

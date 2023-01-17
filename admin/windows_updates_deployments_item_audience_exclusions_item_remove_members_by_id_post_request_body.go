@@ -7,7 +7,7 @@ import (
 // WindowsUpdatesDeploymentsItemAudienceExclusionsItemRemoveMembersByIdPostRequestBody 
 type WindowsUpdatesDeploymentsItemAudienceExclusionsItemRemoveMembersByIdPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The ids property
     ids []string
     // The memberEntityType property
@@ -17,7 +17,7 @@ type WindowsUpdatesDeploymentsItemAudienceExclusionsItemRemoveMembersByIdPostReq
 func NewWindowsUpdatesDeploymentsItemAudienceExclusionsItemRemoveMembersByIdPostRequestBody()(*WindowsUpdatesDeploymentsItemAudienceExclusionsItemRemoveMembersByIdPostRequestBody) {
     m := &WindowsUpdatesDeploymentsItemAudienceExclusionsItemRemoveMembersByIdPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWindowsUpdatesDeploymentsItemAudienceExclusionsItemRemoveMembersByIdPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateWindowsUpdatesDeploymentsItemAudienceExclusionsItemRemoveMembersByIdP
     return NewWindowsUpdatesDeploymentsItemAudienceExclusionsItemRemoveMembersByIdPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsItemRemoveMembersByIdPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsItemRemoveMembersByIdPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,7 +88,7 @@ func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsItemRemoveMembersByIdPos
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsItemRemoveMembersByIdPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsItemRemoveMembersByIdPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIds sets the ids property value. The ids property

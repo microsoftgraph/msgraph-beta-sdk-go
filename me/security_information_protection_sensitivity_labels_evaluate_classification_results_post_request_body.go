@@ -8,7 +8,7 @@ import (
 // SecurityInformationProtectionSensitivityLabelsEvaluateClassificationResultsPostRequestBody 
 type SecurityInformationProtectionSensitivityLabelsEvaluateClassificationResultsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The classificationResults property
     classificationResults []i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ClassificationResultable
     // The contentInfo property
@@ -18,7 +18,7 @@ type SecurityInformationProtectionSensitivityLabelsEvaluateClassificationResults
 func NewSecurityInformationProtectionSensitivityLabelsEvaluateClassificationResultsPostRequestBody()(*SecurityInformationProtectionSensitivityLabelsEvaluateClassificationResultsPostRequestBody) {
     m := &SecurityInformationProtectionSensitivityLabelsEvaluateClassificationResultsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSecurityInformationProtectionSensitivityLabelsEvaluateClassificationResultsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateSecurityInformationProtectionSensitivityLabelsEvaluateClassificationR
     return NewSecurityInformationProtectionSensitivityLabelsEvaluateClassificationResultsPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SecurityInformationProtectionSensitivityLabelsEvaluateClassificationResultsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *SecurityInformationProtectionSensitivityLabelsEvaluateClassificationResultsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetClassificationResults gets the classificationResults property value. The classificationResults property
@@ -93,7 +93,7 @@ func (m *SecurityInformationProtectionSensitivityLabelsEvaluateClassificationRes
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SecurityInformationProtectionSensitivityLabelsEvaluateClassificationResultsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *SecurityInformationProtectionSensitivityLabelsEvaluateClassificationResultsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetClassificationResults sets the classificationResults property value. The classificationResults property

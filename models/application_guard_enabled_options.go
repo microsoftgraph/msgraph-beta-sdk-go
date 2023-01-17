@@ -19,7 +19,7 @@ const (
 func (i ApplicationGuardEnabledOptions) String() string {
     return []string{"notConfigured", "enabledForEdge", "enabledForOffice", "enabledForEdgeAndOffice"}[i]
 }
-func ParseApplicationGuardEnabledOptions(v string) (interface{}, error) {
+func ParseApplicationGuardEnabledOptions(v string) (any, error) {
     result := NOTCONFIGURED_APPLICATIONGUARDENABLEDOPTIONS
     switch v {
         case "notConfigured":

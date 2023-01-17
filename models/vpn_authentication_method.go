@@ -21,7 +21,7 @@ const (
 func (i VpnAuthenticationMethod) String() string {
     return []string{"certificate", "usernameAndPassword", "sharedSecret", "derivedCredential", "azureAD"}[i]
 }
-func ParseVpnAuthenticationMethod(v string) (interface{}, error) {
+func ParseVpnAuthenticationMethod(v string) (any, error) {
     result := CERTIFICATE_VPNAUTHENTICATIONMETHOD
     switch v {
         case "certificate":

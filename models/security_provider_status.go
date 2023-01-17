@@ -7,7 +7,7 @@ import (
 // SecurityProviderStatus 
 type SecurityProviderStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The enabled property
     enabled *bool
     // The endpoint property
@@ -25,7 +25,7 @@ type SecurityProviderStatus struct {
 func NewSecurityProviderStatus()(*SecurityProviderStatus) {
     m := &SecurityProviderStatus{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSecurityProviderStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateSecurityProviderStatusFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewSecurityProviderStatus(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SecurityProviderStatus) GetAdditionalData()(map[string]interface{}) {
+func (m *SecurityProviderStatus) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEnabled gets the enabled property value. The enabled property
@@ -172,7 +172,7 @@ func (m *SecurityProviderStatus) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SecurityProviderStatus) SetAdditionalData(value map[string]interface{})() {
+func (m *SecurityProviderStatus) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEnabled sets the enabled property value. The enabled property

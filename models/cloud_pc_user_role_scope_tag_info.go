@@ -7,7 +7,7 @@ import (
 // CloudPcUserRoleScopeTagInfo 
 type CloudPcUserRoleScopeTagInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Scope tag display name.
     displayName *string
     // The OdataType property
@@ -19,7 +19,7 @@ type CloudPcUserRoleScopeTagInfo struct {
 func NewCloudPcUserRoleScopeTagInfo()(*CloudPcUserRoleScopeTagInfo) {
     m := &CloudPcUserRoleScopeTagInfo{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCloudPcUserRoleScopeTagInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateCloudPcUserRoleScopeTagInfoFromDiscriminatorValue(parseNode i878a80d2
     return NewCloudPcUserRoleScopeTagInfo(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CloudPcUserRoleScopeTagInfo) GetAdditionalData()(map[string]interface{}) {
+func (m *CloudPcUserRoleScopeTagInfo) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDisplayName gets the displayName property value. Scope tag display name.
@@ -106,7 +106,7 @@ func (m *CloudPcUserRoleScopeTagInfo) Serialize(writer i878a80d2330e89d26896388a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CloudPcUserRoleScopeTagInfo) SetAdditionalData(value map[string]interface{})() {
+func (m *CloudPcUserRoleScopeTagInfo) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. Scope tag display name.

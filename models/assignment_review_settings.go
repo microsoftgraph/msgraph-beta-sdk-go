@@ -10,7 +10,7 @@ type AssignmentReviewSettings struct {
     // The default decision to apply if the request is not reviewed within the period specified in durationInDays. The possible values are: acceptAccessRecommendation, keepAccess, removeAccess, and unknownFutureValue.
     accessReviewTimeoutBehavior *AccessReviewTimeoutBehavior
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The number of days within which reviewers should provide input.
     durationInDays *int32
     // Specifies whether to display recommendations to the reviewer. The default value is true
@@ -34,7 +34,7 @@ type AssignmentReviewSettings struct {
 func NewAssignmentReviewSettings()(*AssignmentReviewSettings) {
     m := &AssignmentReviewSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAssignmentReviewSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -46,7 +46,7 @@ func (m *AssignmentReviewSettings) GetAccessReviewTimeoutBehavior()(*AccessRevie
     return m.accessReviewTimeoutBehavior
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AssignmentReviewSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *AssignmentReviewSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDurationInDays gets the durationInDays property value. The number of days within which reviewers should provide input.
@@ -274,7 +274,7 @@ func (m *AssignmentReviewSettings) SetAccessReviewTimeoutBehavior(value *AccessR
     m.accessReviewTimeoutBehavior = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AssignmentReviewSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *AssignmentReviewSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDurationInDays sets the durationInDays property value. The number of days within which reviewers should provide input.

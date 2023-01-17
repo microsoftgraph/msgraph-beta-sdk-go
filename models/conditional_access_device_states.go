@@ -7,7 +7,7 @@ import (
 // ConditionalAccessDeviceStates 
 type ConditionalAccessDeviceStates struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // States excluded from the scope of the policy. Possible values: Compliant, DomainJoined.
     excludeStates []string
     // States in the scope of the policy. All is the only allowed value.
@@ -19,7 +19,7 @@ type ConditionalAccessDeviceStates struct {
 func NewConditionalAccessDeviceStates()(*ConditionalAccessDeviceStates) {
     m := &ConditionalAccessDeviceStates{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateConditionalAccessDeviceStatesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateConditionalAccessDeviceStatesFromDiscriminatorValue(parseNode i878a80
     return NewConditionalAccessDeviceStates(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessDeviceStates) GetAdditionalData()(map[string]interface{}) {
+func (m *ConditionalAccessDeviceStates) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExcludeStates gets the excludeStates property value. States excluded from the scope of the policy. Possible values: Compliant, DomainJoined.
@@ -114,7 +114,7 @@ func (m *ConditionalAccessDeviceStates) Serialize(writer i878a80d2330e89d2689638
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessDeviceStates) SetAdditionalData(value map[string]interface{})() {
+func (m *ConditionalAccessDeviceStates) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetExcludeStates sets the excludeStates property value. States excluded from the scope of the policy. Possible values: Compliant, DomainJoined.

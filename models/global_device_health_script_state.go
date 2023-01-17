@@ -17,7 +17,7 @@ const (
 func (i GlobalDeviceHealthScriptState) String() string {
     return []string{"notConfigured", "pending", "enabled"}[i]
 }
-func ParseGlobalDeviceHealthScriptState(v string) (interface{}, error) {
+func ParseGlobalDeviceHealthScriptState(v string) (any, error) {
     result := NOTCONFIGURED_GLOBALDEVICEHEALTHSCRIPTSTATE
     switch v {
         case "notConfigured":

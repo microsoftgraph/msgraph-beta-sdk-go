@@ -17,7 +17,7 @@ const (
 func (i TeamworkDeviceHealthStatus) String() string {
     return []string{"unknown", "offline", "critical", "nonUrgent", "healthy", "unknownFutureValue"}[i]
 }
-func ParseTeamworkDeviceHealthStatus(v string) (interface{}, error) {
+func ParseTeamworkDeviceHealthStatus(v string) (any, error) {
     result := UNKNOWN_TEAMWORKDEVICEHEALTHSTATUS
     switch v {
         case "unknown":

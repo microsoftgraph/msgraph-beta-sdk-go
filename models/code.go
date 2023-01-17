@@ -75,7 +75,7 @@ const (
 func (i Code) String() string {
     return []string{"none", "jsonFileInvalid", "jsonFileMissing", "jsonFileTooLarge", "rulesMissing", "duplicateRules", "tooManyRulesSpecified", "operatorMissing", "operatorNotSupported", "datatypeMissing", "datatypeNotSupported", "operatorDataTypeCombinationNotSupported", "moreInfoUriMissing", "moreInfoUriInvalid", "moreInfoUriTooLarge", "descriptionMissing", "descriptionInvalid", "descriptionTooLarge", "titleMissing", "titleInvalid", "titleTooLarge", "operandMissing", "operandInvalid", "operandTooLarge", "settingNameMissing", "settingNameInvalid", "settingNameTooLarge", "englishLocaleMissing", "duplicateLocales", "unrecognizedLocale", "unknown", "remediationStringsMissing"}[i]
 }
-func ParseCode(v string) (interface{}, error) {
+func ParseCode(v string) (any, error) {
     result := NONE_CODE
     switch v {
         case "none":

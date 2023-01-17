@@ -7,7 +7,7 @@ import (
 // CurrentLabel 
 type CurrentLabel struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The applicationMode property
     applicationMode *ApplicationMode
     // The id property
@@ -19,7 +19,7 @@ type CurrentLabel struct {
 func NewCurrentLabel()(*CurrentLabel) {
     m := &CurrentLabel{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCurrentLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateCurrentLabelFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewCurrentLabel(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CurrentLabel) GetAdditionalData()(map[string]interface{}) {
+func (m *CurrentLabel) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApplicationMode gets the applicationMode property value. The applicationMode property
@@ -107,7 +107,7 @@ func (m *CurrentLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CurrentLabel) SetAdditionalData(value map[string]interface{})() {
+func (m *CurrentLabel) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetApplicationMode sets the applicationMode property value. The applicationMode property

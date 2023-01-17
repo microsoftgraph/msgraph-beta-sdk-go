@@ -7,7 +7,7 @@ import (
 // MediaSource 
 type MediaSource struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Enumeration value that indicates the media content category.
     contentCategory *MediaSourceContentCategory
     // The OdataType property
@@ -17,7 +17,7 @@ type MediaSource struct {
 func NewMediaSource()(*MediaSource) {
     m := &MediaSource{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMediaSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateMediaSourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     return NewMediaSource(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MediaSource) GetAdditionalData()(map[string]interface{}) {
+func (m *MediaSource) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContentCategory gets the contentCategory property value. Enumeration value that indicates the media content category.
@@ -85,7 +85,7 @@ func (m *MediaSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MediaSource) SetAdditionalData(value map[string]interface{})() {
+func (m *MediaSource) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetContentCategory sets the contentCategory property value. Enumeration value that indicates the media content category.

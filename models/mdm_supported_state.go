@@ -19,7 +19,7 @@ const (
 func (i MdmSupportedState) String() string {
     return []string{"unknown", "supported", "unsupported", "deprecated"}[i]
 }
-func ParseMdmSupportedState(v string) (interface{}, error) {
+func ParseMdmSupportedState(v string) (any, error) {
     result := UNKNOWN_MDMSUPPORTEDSTATE
     switch v {
         case "unknown":

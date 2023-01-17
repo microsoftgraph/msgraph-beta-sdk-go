@@ -14,7 +14,7 @@ const (
 func (i ConditionalAccessExternalTenantsMembershipKind) String() string {
     return []string{"all", "enumerated", "unknownFutureValue"}[i]
 }
-func ParseConditionalAccessExternalTenantsMembershipKind(v string) (interface{}, error) {
+func ParseConditionalAccessExternalTenantsMembershipKind(v string) (any, error) {
     result := ALL_CONDITIONALACCESSEXTERNALTENANTSMEMBERSHIPKIND
     switch v {
         case "all":

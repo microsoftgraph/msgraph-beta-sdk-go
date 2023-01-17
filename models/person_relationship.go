@@ -27,7 +27,7 @@ const (
 func (i PersonRelationship) String() string {
     return []string{"manager", "colleague", "directReport", "dotLineReport", "assistant", "dotLineManager", "alternateContact", "friend", "spouse", "sibling", "child", "parent", "sponsor", "emergencyContact", "other", "unknownFutureValue"}[i]
 }
-func ParsePersonRelationship(v string) (interface{}, error) {
+func ParsePersonRelationship(v string) (any, error) {
     result := MANAGER_PERSONRELATIONSHIP
     switch v {
         case "manager":

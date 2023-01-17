@@ -7,7 +7,7 @@ import (
 // RoleScopeTagInfo a class containing the properties of Role Scope Tag Object.
 type RoleScopeTagInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Scope Tag Display name.
     displayName *string
     // The OdataType property
@@ -19,7 +19,7 @@ type RoleScopeTagInfo struct {
 func NewRoleScopeTagInfo()(*RoleScopeTagInfo) {
     m := &RoleScopeTagInfo{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRoleScopeTagInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateRoleScopeTagInfoFromDiscriminatorValue(parseNode i878a80d2330e89d2689
     return NewRoleScopeTagInfo(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RoleScopeTagInfo) GetAdditionalData()(map[string]interface{}) {
+func (m *RoleScopeTagInfo) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDisplayName gets the displayName property value. Scope Tag Display name.
@@ -106,7 +106,7 @@ func (m *RoleScopeTagInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RoleScopeTagInfo) SetAdditionalData(value map[string]interface{})() {
+func (m *RoleScopeTagInfo) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. Scope Tag Display name.

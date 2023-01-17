@@ -7,7 +7,7 @@ import (
 // AuthenticationContext 
 type AuthenticationContext struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Describes how the conditional access authentication context was triggered. A value of previouslySatisfied means the auth context was because the user already satisfied the requirements for that authentication context in some previous authentication event. A value of required means the user had to meet the authentication context requirement as part of the sign-in flow. The possible values are: required, previouslySatisfied, notApplicable, unknownFutureValue.
     detail *AuthenticationContextDetail
     // The identifier of a authentication context in your tenant.
@@ -19,7 +19,7 @@ type AuthenticationContext struct {
 func NewAuthenticationContext()(*AuthenticationContext) {
     m := &AuthenticationContext{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAuthenticationContextFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateAuthenticationContextFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewAuthenticationContext(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuthenticationContext) GetAdditionalData()(map[string]interface{}) {
+func (m *AuthenticationContext) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDetail gets the detail property value. Describes how the conditional access authentication context was triggered. A value of previouslySatisfied means the auth context was because the user already satisfied the requirements for that authentication context in some previous authentication event. A value of required means the user had to meet the authentication context requirement as part of the sign-in flow. The possible values are: required, previouslySatisfied, notApplicable, unknownFutureValue.
@@ -107,7 +107,7 @@ func (m *AuthenticationContext) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuthenticationContext) SetAdditionalData(value map[string]interface{})() {
+func (m *AuthenticationContext) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDetail sets the detail property value. Describes how the conditional access authentication context was triggered. A value of previouslySatisfied means the auth context was because the user already satisfied the requirements for that authentication context in some previous authentication event. A value of required means the user had to meet the authentication context requirement as part of the sign-in flow. The possible values are: required, previouslySatisfied, notApplicable, unknownFutureValue.

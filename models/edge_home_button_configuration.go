@@ -7,7 +7,7 @@ import (
 // EdgeHomeButtonConfiguration the home button configuration base class used to identify the available options
 type EdgeHomeButtonConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
 }
@@ -15,7 +15,7 @@ type EdgeHomeButtonConfiguration struct {
 func NewEdgeHomeButtonConfiguration()(*EdgeHomeButtonConfiguration) {
     m := &EdgeHomeButtonConfiguration{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateEdgeHomeButtonConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +47,7 @@ func CreateEdgeHomeButtonConfigurationFromDiscriminatorValue(parseNode i878a80d2
     return NewEdgeHomeButtonConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EdgeHomeButtonConfiguration) GetAdditionalData()(map[string]interface{}) {
+func (m *EdgeHomeButtonConfiguration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -86,7 +86,7 @@ func (m *EdgeHomeButtonConfiguration) Serialize(writer i878a80d2330e89d26896388a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EdgeHomeButtonConfiguration) SetAdditionalData(value map[string]interface{})() {
+func (m *EdgeHomeButtonConfiguration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

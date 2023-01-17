@@ -25,7 +25,7 @@ const (
 func (i EmailSyncSchedule) String() string {
     return []string{"userDefined", "asMessagesArrive", "manual", "fifteenMinutes", "thirtyMinutes", "sixtyMinutes", "basedOnMyUsage"}[i]
 }
-func ParseEmailSyncSchedule(v string) (interface{}, error) {
+func ParseEmailSyncSchedule(v string) (any, error) {
     result := USERDEFINED_EMAILSYNCSCHEDULE
     switch v {
         case "userDefined":

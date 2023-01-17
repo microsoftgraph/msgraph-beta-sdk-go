@@ -7,7 +7,7 @@ import (
 // EmployeeExperience 
 type EmployeeExperience struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // A collection of learning providers.
     learningProviders []LearningProviderable
     // The OdataType property
@@ -17,7 +17,7 @@ type EmployeeExperience struct {
 func NewEmployeeExperience()(*EmployeeExperience) {
     m := &EmployeeExperience{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateEmployeeExperienceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateEmployeeExperienceFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewEmployeeExperience(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EmployeeExperience) GetAdditionalData()(map[string]interface{}) {
+func (m *EmployeeExperience) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -92,7 +92,7 @@ func (m *EmployeeExperience) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EmployeeExperience) SetAdditionalData(value map[string]interface{})() {
+func (m *EmployeeExperience) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetLearningProviders sets the learningProviders property value. A collection of learning providers.

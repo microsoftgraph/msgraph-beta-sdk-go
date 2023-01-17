@@ -33,7 +33,7 @@ const (
 func (i MessageEventType) String() string {
     return []string{"received", "sent", "delivered", "failed", "processingFailed", "distributionGroupExpanded", "submitted", "delayed", "redirected", "resolved", "dropped", "recipientsAdded", "malwareDetected", "malwareDetectedInMessage", "malwareDetectedInAttachment", "ttZapped", "ttDelivered", "spamDetected", "transportRuleTriggered", "dlpRuleTriggered", "journaled", "unknownFutureValue"}[i]
 }
-func ParseMessageEventType(v string) (interface{}, error) {
+func ParseMessageEventType(v string) (any, error) {
     result := RECEIVED_MESSAGEEVENTTYPE
     switch v {
         case "received":

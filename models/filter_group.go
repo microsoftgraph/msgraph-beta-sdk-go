@@ -7,7 +7,7 @@ import (
 // FilterGroup 
 type FilterGroup struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Filter clauses (conditions) of this group. All clauses in a group must be satisfied in order for the filter group to evaluate to true.
     clauses []FilterClauseable
     // Human-readable name of the filter group.
@@ -19,7 +19,7 @@ type FilterGroup struct {
 func NewFilterGroup()(*FilterGroup) {
     m := &FilterGroup{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateFilterGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateFilterGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     return NewFilterGroup(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *FilterGroup) GetAdditionalData()(map[string]interface{}) {
+func (m *FilterGroup) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetClauses gets the clauses property value. Filter clauses (conditions) of this group. All clauses in a group must be satisfied in order for the filter group to evaluate to true.
@@ -114,7 +114,7 @@ func (m *FilterGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *FilterGroup) SetAdditionalData(value map[string]interface{})() {
+func (m *FilterGroup) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetClauses sets the clauses property value. Filter clauses (conditions) of this group. All clauses in a group must be satisfied in order for the filter group to evaluate to true.

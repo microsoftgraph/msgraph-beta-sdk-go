@@ -14,7 +14,7 @@ const (
 func (i SynchronizationScheduleState) String() string {
     return []string{"Active", "Disabled", "Paused"}[i]
 }
-func ParseSynchronizationScheduleState(v string) (interface{}, error) {
+func ParseSynchronizationScheduleState(v string) (any, error) {
     result := ACTIVE_SYNCHRONIZATIONSCHEDULESTATE
     switch v {
         case "Active":

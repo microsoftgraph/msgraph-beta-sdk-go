@@ -8,7 +8,7 @@ import (
 // AssignmentFiltersValidateFilterPostRequestBody 
 type AssignmentFiltersValidateFilterPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The deviceAndAppManagementAssignmentFilter property
     deviceAndAppManagementAssignmentFilter ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAndAppManagementAssignmentFilterable
 }
@@ -16,7 +16,7 @@ type AssignmentFiltersValidateFilterPostRequestBody struct {
 func NewAssignmentFiltersValidateFilterPostRequestBody()(*AssignmentFiltersValidateFilterPostRequestBody) {
     m := &AssignmentFiltersValidateFilterPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAssignmentFiltersValidateFilterPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateAssignmentFiltersValidateFilterPostRequestBodyFromDiscriminatorValue(
     return NewAssignmentFiltersValidateFilterPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AssignmentFiltersValidateFilterPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *AssignmentFiltersValidateFilterPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeviceAndAppManagementAssignmentFilter gets the deviceAndAppManagementAssignmentFilter property value. The deviceAndAppManagementAssignmentFilter property
@@ -63,7 +63,7 @@ func (m *AssignmentFiltersValidateFilterPostRequestBody) Serialize(writer i878a8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AssignmentFiltersValidateFilterPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *AssignmentFiltersValidateFilterPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeviceAndAppManagementAssignmentFilter sets the deviceAndAppManagementAssignmentFilter property value. The deviceAndAppManagementAssignmentFilter property

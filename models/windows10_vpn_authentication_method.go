@@ -19,7 +19,7 @@ const (
 func (i Windows10VpnAuthenticationMethod) String() string {
     return []string{"certificate", "usernameAndPassword", "customEapXml", "derivedCredential"}[i]
 }
-func ParseWindows10VpnAuthenticationMethod(v string) (interface{}, error) {
+func ParseWindows10VpnAuthenticationMethod(v string) (any, error) {
     result := CERTIFICATE_WINDOWS10VPNAUTHENTICATIONMETHOD
     switch v {
         case "certificate":

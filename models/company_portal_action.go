@@ -17,7 +17,7 @@ const (
 func (i CompanyPortalAction) String() string {
     return []string{"unknown", "remove", "reset"}[i]
 }
-func ParseCompanyPortalAction(v string) (interface{}, error) {
+func ParseCompanyPortalAction(v string) (any, error) {
     result := UNKNOWN_COMPANYPORTALACTION
     switch v {
         case "unknown":

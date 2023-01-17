@@ -7,7 +7,7 @@ import (
 // PendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody 
 type PendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The decision property
     decision *string
     // The justification property
@@ -21,7 +21,7 @@ type PendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody struct 
 func NewPendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody()(*PendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody) {
     m := &PendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreatePendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBodyFr
     return NewPendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *PendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDecision gets the decision property value. The decision property
@@ -128,7 +128,7 @@ func (m *PendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody) Se
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *PendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDecision sets the decision property value. The decision property

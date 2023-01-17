@@ -7,7 +7,7 @@ import (
 // AccessPackageLocalizedContent 
 type AccessPackageLocalizedContent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The fallback string, which is used when a requested localization is not available. Required.
     defaultText *string
     // Content represented in a format for a specific locale.
@@ -19,7 +19,7 @@ type AccessPackageLocalizedContent struct {
 func NewAccessPackageLocalizedContent()(*AccessPackageLocalizedContent) {
     m := &AccessPackageLocalizedContent{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAccessPackageLocalizedContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateAccessPackageLocalizedContentFromDiscriminatorValue(parseNode i878a80
     return NewAccessPackageLocalizedContent(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessPackageLocalizedContent) GetAdditionalData()(map[string]interface{}) {
+func (m *AccessPackageLocalizedContent) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDefaultText gets the defaultText property value. The fallback string, which is used when a requested localization is not available. Required.
@@ -114,7 +114,7 @@ func (m *AccessPackageLocalizedContent) Serialize(writer i878a80d2330e89d2689638
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessPackageLocalizedContent) SetAdditionalData(value map[string]interface{})() {
+func (m *AccessPackageLocalizedContent) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDefaultText sets the defaultText property value. The fallback string, which is used when a requested localization is not available. Required.

@@ -7,7 +7,7 @@ import (
 // SynchronizationRule 
 type SynchronizationRule struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
     editable *bool
     // Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
@@ -31,7 +31,7 @@ type SynchronizationRule struct {
 func NewSynchronizationRule()(*SynchronizationRule) {
     m := &SynchronizationRule{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSynchronizationRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ func CreateSynchronizationRuleFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewSynchronizationRule(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SynchronizationRule) GetAdditionalData()(map[string]interface{}) {
+func (m *SynchronizationRule) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEditable gets the editable property value. true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
@@ -254,7 +254,7 @@ func (m *SynchronizationRule) Serialize(writer i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SynchronizationRule) SetAdditionalData(value map[string]interface{})() {
+func (m *SynchronizationRule) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEditable sets the editable property value. true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.

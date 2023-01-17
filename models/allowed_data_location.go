@@ -16,7 +16,7 @@ type AllowedDataLocation struct {
     // The location property
     location *string
 }
-// NewAllowedDataLocation instantiates a new allowedDataLocation and sets the default values.
+// NewAllowedDataLocation instantiates a new AllowedDataLocation and sets the default values.
 func NewAllowedDataLocation()(*AllowedDataLocation) {
     m := &AllowedDataLocation{
         Entity: *NewEntity(),

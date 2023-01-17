@@ -16,7 +16,7 @@ const (
 func (i DelegatedAdminRelationshipRequestStatus) String() string {
     return []string{"created", "pending", "succeeded", "failed", "unknownFutureValue"}[i]
 }
-func ParseDelegatedAdminRelationshipRequestStatus(v string) (interface{}, error) {
+func ParseDelegatedAdminRelationshipRequestStatus(v string) (any, error) {
     result := CREATED_DELEGATEDADMINRELATIONSHIPREQUESTSTATUS
     switch v {
         case "created":

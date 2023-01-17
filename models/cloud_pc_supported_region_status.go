@@ -15,7 +15,7 @@ const (
 func (i CloudPcSupportedRegionStatus) String() string {
     return []string{"available", "restricted", "unavailable", "unknownFutureValue"}[i]
 }
-func ParseCloudPcSupportedRegionStatus(v string) (interface{}, error) {
+func ParseCloudPcSupportedRegionStatus(v string) (any, error) {
     result := AVAILABLE_CLOUDPCSUPPORTEDREGIONSTATUS
     switch v {
         case "available":

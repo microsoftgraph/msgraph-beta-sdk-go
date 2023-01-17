@@ -16,7 +16,7 @@ const (
 func (i ManagementCategory) String() string {
     return []string{"custom", "devices", "identity", "data", "unknownFutureValue"}[i]
 }
-func ParseManagementCategory(v string) (interface{}, error) {
+func ParseManagementCategory(v string) (any, error) {
     result := CUSTOM_MANAGEMENTCATEGORY
     switch v {
         case "custom":

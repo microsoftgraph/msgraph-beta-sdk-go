@@ -7,7 +7,7 @@ import (
 // IosManagedAppProtectionsHasPayloadLinksPostRequestBody 
 type IosManagedAppProtectionsHasPayloadLinksPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The payloadIds property
     payloadIds []string
 }
@@ -15,7 +15,7 @@ type IosManagedAppProtectionsHasPayloadLinksPostRequestBody struct {
 func NewIosManagedAppProtectionsHasPayloadLinksPostRequestBody()(*IosManagedAppProtectionsHasPayloadLinksPostRequestBody) {
     m := &IosManagedAppProtectionsHasPayloadLinksPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateIosManagedAppProtectionsHasPayloadLinksPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateIosManagedAppProtectionsHasPayloadLinksPostRequestBodyFromDiscriminat
     return NewIosManagedAppProtectionsHasPayloadLinksPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IosManagedAppProtectionsHasPayloadLinksPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *IosManagedAppProtectionsHasPayloadLinksPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -66,7 +66,7 @@ func (m *IosManagedAppProtectionsHasPayloadLinksPostRequestBody) Serialize(write
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IosManagedAppProtectionsHasPayloadLinksPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *IosManagedAppProtectionsHasPayloadLinksPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetPayloadIds sets the payloadIds property value. The payloadIds property

@@ -8,7 +8,7 @@ import (
 // ItemScheduleTimeCardsItemEndBreakPostRequestBody 
 type ItemScheduleTimeCardsItemEndBreakPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The atApprovedLocation property
     atApprovedLocation *bool
     // The notes property
@@ -18,7 +18,7 @@ type ItemScheduleTimeCardsItemEndBreakPostRequestBody struct {
 func NewItemScheduleTimeCardsItemEndBreakPostRequestBody()(*ItemScheduleTimeCardsItemEndBreakPostRequestBody) {
     m := &ItemScheduleTimeCardsItemEndBreakPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemScheduleTimeCardsItemEndBreakPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateItemScheduleTimeCardsItemEndBreakPostRequestBodyFromDiscriminatorValu
     return NewItemScheduleTimeCardsItemEndBreakPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemScheduleTimeCardsItemEndBreakPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemScheduleTimeCardsItemEndBreakPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAtApprovedLocation gets the atApprovedLocation property value. The atApprovedLocation property
@@ -85,7 +85,7 @@ func (m *ItemScheduleTimeCardsItemEndBreakPostRequestBody) Serialize(writer i878
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemScheduleTimeCardsItemEndBreakPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemScheduleTimeCardsItemEndBreakPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAtApprovedLocation sets the atApprovedLocation property value. The atApprovedLocation property

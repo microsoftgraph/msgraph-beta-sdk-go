@@ -8,7 +8,7 @@ import (
 // EncryptBufferPostRequestBody 
 type EncryptBufferPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The buffer property
     buffer []byte
     // The labelId property
@@ -18,7 +18,7 @@ type EncryptBufferPostRequestBody struct {
 func NewEncryptBufferPostRequestBody()(*EncryptBufferPostRequestBody) {
     m := &EncryptBufferPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateEncryptBufferPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateEncryptBufferPostRequestBodyFromDiscriminatorValue(parseNode i878a80d
     return NewEncryptBufferPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EncryptBufferPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *EncryptBufferPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBuffer gets the buffer property value. The buffer property
@@ -85,7 +85,7 @@ func (m *EncryptBufferPostRequestBody) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EncryptBufferPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *EncryptBufferPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetBuffer sets the buffer property value. The buffer property

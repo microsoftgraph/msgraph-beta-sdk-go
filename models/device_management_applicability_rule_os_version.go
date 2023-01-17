@@ -7,7 +7,7 @@ import (
 // DeviceManagementApplicabilityRuleOsVersion 
 type DeviceManagementApplicabilityRuleOsVersion struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Max OS version for Applicability Rule.
     maxOSVersion *string
     // Min OS version for Applicability Rule.
@@ -23,7 +23,7 @@ type DeviceManagementApplicabilityRuleOsVersion struct {
 func NewDeviceManagementApplicabilityRuleOsVersion()(*DeviceManagementApplicabilityRuleOsVersion) {
     m := &DeviceManagementApplicabilityRuleOsVersion{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceManagementApplicabilityRuleOsVersionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateDeviceManagementApplicabilityRuleOsVersionFromDiscriminatorValue(pars
     return NewDeviceManagementApplicabilityRuleOsVersion(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementApplicabilityRuleOsVersion) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceManagementApplicabilityRuleOsVersion) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -151,7 +151,7 @@ func (m *DeviceManagementApplicabilityRuleOsVersion) Serialize(writer i878a80d23
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementApplicabilityRuleOsVersion) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceManagementApplicabilityRuleOsVersion) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetMaxOSVersion sets the maxOSVersion property value. Max OS version for Applicability Rule.

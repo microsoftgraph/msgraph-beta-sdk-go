@@ -14,7 +14,7 @@ const (
 func (i ActionCapability) String() string {
     return []string{"enabled", "disabled", "unknownFutureValue"}[i]
 }
-func ParseActionCapability(v string) (interface{}, error) {
+func ParseActionCapability(v string) (any, error) {
     result := ENABLED_ACTIONCAPABILITY
     switch v {
         case "enabled":

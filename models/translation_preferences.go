@@ -7,7 +7,7 @@ import (
 // TranslationPreferences 
 type TranslationPreferences struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Translation override behavior for languages, if any.Returned by default.
     languageOverrides []TranslationLanguageOverrideable
     // The OdataType property
@@ -21,7 +21,7 @@ type TranslationPreferences struct {
 func NewTranslationPreferences()(*TranslationPreferences) {
     m := &TranslationPreferences{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTranslationPreferencesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateTranslationPreferencesFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewTranslationPreferences(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TranslationPreferences) GetAdditionalData()(map[string]interface{}) {
+func (m *TranslationPreferences) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -141,7 +141,7 @@ func (m *TranslationPreferences) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TranslationPreferences) SetAdditionalData(value map[string]interface{})() {
+func (m *TranslationPreferences) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetLanguageOverrides sets the languageOverrides property value. Translation override behavior for languages, if any.Returned by default.

@@ -14,7 +14,7 @@ const (
 func (i MeetingAudience) String() string {
     return []string{"everyone", "organization", "unknownFutureValue"}[i]
 }
-func ParseMeetingAudience(v string) (interface{}, error) {
+func ParseMeetingAudience(v string) (any, error) {
     result := EVERYONE_MEETINGAUDIENCE
     switch v {
         case "everyone":

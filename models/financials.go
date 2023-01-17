@@ -7,7 +7,7 @@ import (
 // Financials 
 type Financials struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The companies property
     companies []Companyable
     // The OdataType property
@@ -17,7 +17,7 @@ type Financials struct {
 func NewFinancials()(*Financials) {
     m := &Financials{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateFinancialsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateFinancialsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
     return NewFinancials(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Financials) GetAdditionalData()(map[string]interface{}) {
+func (m *Financials) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCompanies gets the companies property value. The companies property
@@ -92,7 +92,7 @@ func (m *Financials) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Financials) SetAdditionalData(value map[string]interface{})() {
+func (m *Financials) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCompanies sets the companies property value. The companies property

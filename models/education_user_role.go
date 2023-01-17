@@ -16,7 +16,7 @@ const (
 func (i EducationUserRole) String() string {
     return []string{"student", "teacher", "none", "unknownFutureValue", "faculty"}[i]
 }
-func ParseEducationUserRole(v string) (interface{}, error) {
+func ParseEducationUserRole(v string) (any, error) {
     result := STUDENT_EDUCATIONUSERROLE
     switch v {
         case "student":

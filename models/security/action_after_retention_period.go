@@ -16,7 +16,7 @@ const (
 func (i ActionAfterRetentionPeriod) String() string {
     return []string{"none", "delete", "startDispositionReview", "relabel", "unknownFutureValue"}[i]
 }
-func ParseActionAfterRetentionPeriod(v string) (interface{}, error) {
+func ParseActionAfterRetentionPeriod(v string) (any, error) {
     result := NONE_ACTIONAFTERRETENTIONPERIOD
     switch v {
         case "none":

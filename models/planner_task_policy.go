@@ -7,17 +7,17 @@ import (
 // PlannerTaskPolicy 
 type PlannerTaskPolicy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
-    // The rules property
+    // The rules that should be enforced on the tasks when they are being changed outside of the scenario, based on the role of the caller.
     rules []PlannerTaskRoleBasedRuleable
 }
 // NewPlannerTaskPolicy instantiates a new plannerTaskPolicy and sets the default values.
 func NewPlannerTaskPolicy()(*PlannerTaskPolicy) {
     m := &PlannerTaskPolicy{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePlannerTaskPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreatePlannerTaskPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewPlannerTaskPolicy(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PlannerTaskPolicy) GetAdditionalData()(map[string]interface{}) {
+func (m *PlannerTaskPolicy) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -61,7 +61,7 @@ func (m *PlannerTaskPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330
 func (m *PlannerTaskPolicy) GetOdataType()(*string) {
     return m.odataType
 }
-// GetRules gets the rules property value. The rules property
+// GetRules gets the rules property value. The rules that should be enforced on the tasks when they are being changed outside of the scenario, based on the role of the caller.
 func (m *PlannerTaskPolicy) GetRules()([]PlannerTaskRoleBasedRuleable) {
     return m.rules
 }
@@ -92,14 +92,14 @@ func (m *PlannerTaskPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PlannerTaskPolicy) SetAdditionalData(value map[string]interface{})() {
+func (m *PlannerTaskPolicy) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PlannerTaskPolicy) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetRules sets the rules property value. The rules property
+// SetRules sets the rules property value. The rules that should be enforced on the tasks when they are being changed outside of the scenario, based on the role of the caller.
 func (m *PlannerTaskPolicy) SetRules(value []PlannerTaskRoleBasedRuleable)() {
     m.rules = value
 }

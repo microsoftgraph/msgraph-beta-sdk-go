@@ -19,7 +19,7 @@ const (
 func (i WiredNetworkAuthenticationMethod) String() string {
     return []string{"certificate", "usernameAndPassword", "derivedCredential", "unknownFutureValue"}[i]
 }
-func ParseWiredNetworkAuthenticationMethod(v string) (interface{}, error) {
+func ParseWiredNetworkAuthenticationMethod(v string) (any, error) {
     result := CERTIFICATE_WIREDNETWORKAUTHENTICATIONMETHOD
     switch v {
         case "certificate":

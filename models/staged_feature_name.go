@@ -17,7 +17,7 @@ const (
 func (i StagedFeatureName) String() string {
     return []string{"passthroughAuthentication", "seamlessSso", "passwordHashSync", "emailAsAlternateId", "unknownFutureValue", "certificateBasedAuthentication"}[i]
 }
-func ParseStagedFeatureName(v string) (interface{}, error) {
+func ParseStagedFeatureName(v string) (any, error) {
     result := PASSTHROUGHAUTHENTICATION_STAGEDFEATURENAME
     switch v {
         case "passthroughAuthentication":

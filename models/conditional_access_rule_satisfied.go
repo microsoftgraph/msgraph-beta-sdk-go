@@ -7,7 +7,7 @@ import (
 // ConditionalAccessRuleSatisfied 
 type ConditionalAccessRuleSatisfied struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Refers to the conditional access policy conditions that are satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client, ipAddressSeenByAzureAD, ipAddressSeenByResourceProvider, unknownFutureValue, servicePrincipals, servicePrincipalRisk. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals, servicePrincipalRisk.
     conditionalAccessCondition *ConditionalAccessConditions
     // The OdataType property
@@ -19,7 +19,7 @@ type ConditionalAccessRuleSatisfied struct {
 func NewConditionalAccessRuleSatisfied()(*ConditionalAccessRuleSatisfied) {
     m := &ConditionalAccessRuleSatisfied{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateConditionalAccessRuleSatisfiedFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateConditionalAccessRuleSatisfiedFromDiscriminatorValue(parseNode i878a8
     return NewConditionalAccessRuleSatisfied(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessRuleSatisfied) GetAdditionalData()(map[string]interface{}) {
+func (m *ConditionalAccessRuleSatisfied) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetConditionalAccessCondition gets the conditionalAccessCondition property value. Refers to the conditional access policy conditions that are satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client, ipAddressSeenByAzureAD, ipAddressSeenByResourceProvider, unknownFutureValue, servicePrincipals, servicePrincipalRisk. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals, servicePrincipalRisk.
@@ -108,7 +108,7 @@ func (m *ConditionalAccessRuleSatisfied) Serialize(writer i878a80d2330e89d268963
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessRuleSatisfied) SetAdditionalData(value map[string]interface{})() {
+func (m *ConditionalAccessRuleSatisfied) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetConditionalAccessCondition sets the conditionalAccessCondition property value. Refers to the conditional access policy conditions that are satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client, ipAddressSeenByAzureAD, ipAddressSeenByResourceProvider, unknownFutureValue, servicePrincipals, servicePrincipalRisk. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals, servicePrincipalRisk.

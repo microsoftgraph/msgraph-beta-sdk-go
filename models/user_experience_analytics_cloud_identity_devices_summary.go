@@ -7,7 +7,7 @@ import (
 // UserExperienceAnalyticsCloudIdentityDevicesSummary the user experience analytics work from anywhere cloud identity devices summary.
 type UserExperienceAnalyticsCloudIdentityDevicesSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The count of devices that are not cloud identity.
     deviceWithoutCloudIdentityCount *int32
     // The OdataType property
@@ -17,7 +17,7 @@ type UserExperienceAnalyticsCloudIdentityDevicesSummary struct {
 func NewUserExperienceAnalyticsCloudIdentityDevicesSummary()(*UserExperienceAnalyticsCloudIdentityDevicesSummary) {
     m := &UserExperienceAnalyticsCloudIdentityDevicesSummary{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUserExperienceAnalyticsCloudIdentityDevicesSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateUserExperienceAnalyticsCloudIdentityDevicesSummaryFromDiscriminatorVa
     return NewUserExperienceAnalyticsCloudIdentityDevicesSummary(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) GetAdditionalData()(map[string]interface{}) {
+func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeviceWithoutCloudIdentityCount gets the deviceWithoutCloudIdentityCount property value. The count of devices that are not cloud identity.
@@ -84,7 +84,7 @@ func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) Serialize(writer i8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) SetAdditionalData(value map[string]interface{})() {
+func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeviceWithoutCloudIdentityCount sets the deviceWithoutCloudIdentityCount property value. The count of devices that are not cloud identity.

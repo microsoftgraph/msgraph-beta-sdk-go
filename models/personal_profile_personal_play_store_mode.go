@@ -17,7 +17,7 @@ const (
 func (i PersonalProfilePersonalPlayStoreMode) String() string {
     return []string{"notConfigured", "blockedApps", "allowedApps"}[i]
 }
-func ParsePersonalProfilePersonalPlayStoreMode(v string) (interface{}, error) {
+func ParsePersonalProfilePersonalPlayStoreMode(v string) (any, error) {
     result := NOTCONFIGURED_PERSONALPROFILEPERSONALPLAYSTOREMODE
     switch v {
         case "notConfigured":

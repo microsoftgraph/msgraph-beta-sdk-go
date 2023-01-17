@@ -9,7 +9,7 @@ type ActionStep struct {
     // The actionUrl property
     actionUrl ActionUrlable
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // The stepNumber property
@@ -21,7 +21,7 @@ type ActionStep struct {
 func NewActionStep()(*ActionStep) {
     m := &ActionStep{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateActionStepFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func (m *ActionStep) GetActionUrl()(ActionUrlable) {
     return m.actionUrl
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ActionStep) GetAdditionalData()(map[string]interface{}) {
+func (m *ActionStep) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -132,7 +132,7 @@ func (m *ActionStep) SetActionUrl(value ActionUrlable)() {
     m.actionUrl = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ActionStep) SetAdditionalData(value map[string]interface{})() {
+func (m *ActionStep) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

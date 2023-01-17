@@ -16,7 +16,7 @@ type BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder st
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilderGetQueryParameters get localizations from solutions
+// BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilderGetQueryParameters get a list of the plannerPlanConfigurationLocalization objects and their properties.
 type BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder
 func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder) Count()(*BusinessScenariosItemPlannerPlanConfigurationLocalizationsCountRequestBuilder) {
     return NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get get localizations from solutions
+// Get get a list of the plannerPlanConfigurationLocalization objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/plannerplanconfiguration-list-localizations?view=graph-rest-1.0
 func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder) Get(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationLocalizationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -84,7 +87,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilde
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePlannerPlanConfigurationLocalizationCollectionResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePlannerPlanConfigurationLocalizationCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -93,7 +96,10 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilde
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationLocalizationCollectionResponseable), nil
 }
-// Post create new navigation property to localizations for solutions
+// Post create a new plannerPlanConfigurationLocalization object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/plannerplanconfiguration-post-localizations?view=graph-rest-1.0
 func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationLocalizationable, requestConfiguration *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationLocalizationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -103,7 +109,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilde
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePlannerPlanConfigurationLocalizationFromDiscriminatorValue, errorMapping)
+    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePlannerPlanConfigurationLocalizationFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -112,7 +118,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilde
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationLocalizationable), nil
 }
-// ToGetRequestInformation get localizations from solutions
+// ToGetRequestInformation get a list of the plannerPlanConfigurationLocalization objects and their properties.
 func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -128,7 +134,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilde
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to localizations for solutions
+// ToPostRequestInformation create a new plannerPlanConfigurationLocalization object.
 func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationLocalizationable, requestConfiguration *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

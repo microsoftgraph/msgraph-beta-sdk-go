@@ -17,7 +17,7 @@ const (
 func (i DeviceAppManagementTaskPriority) String() string {
     return []string{"none", "high", "low"}[i]
 }
-func ParseDeviceAppManagementTaskPriority(v string) (interface{}, error) {
+func ParseDeviceAppManagementTaskPriority(v string) (any, error) {
     result := NONE_DEVICEAPPMANAGEMENTTASKPRIORITY
     switch v {
         case "none":

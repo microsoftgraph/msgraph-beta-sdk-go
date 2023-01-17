@@ -7,7 +7,7 @@ import (
 // BitLockerRecoveryOptions bitLocker Recovery Options.
 type BitLockerRecoveryOptions struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicates whether to block certificate-based data recovery agent.
     blockDataRecoveryAgent *bool
     // Indicates whether or not to enable BitLocker until recovery information is stored in AD DS.
@@ -29,7 +29,7 @@ type BitLockerRecoveryOptions struct {
 func NewBitLockerRecoveryOptions()(*BitLockerRecoveryOptions) {
     m := &BitLockerRecoveryOptions{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateBitLockerRecoveryOptionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,7 +37,7 @@ func CreateBitLockerRecoveryOptionsFromDiscriminatorValue(parseNode i878a80d2330
     return NewBitLockerRecoveryOptions(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BitLockerRecoveryOptions) GetAdditionalData()(map[string]interface{}) {
+func (m *BitLockerRecoveryOptions) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBlockDataRecoveryAgent gets the blockDataRecoveryAgent property value. Indicates whether to block certificate-based data recovery agent.
@@ -219,7 +219,7 @@ func (m *BitLockerRecoveryOptions) Serialize(writer i878a80d2330e89d26896388a3f4
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BitLockerRecoveryOptions) SetAdditionalData(value map[string]interface{})() {
+func (m *BitLockerRecoveryOptions) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetBlockDataRecoveryAgent sets the blockDataRecoveryAgent property value. Indicates whether to block certificate-based data recovery agent.

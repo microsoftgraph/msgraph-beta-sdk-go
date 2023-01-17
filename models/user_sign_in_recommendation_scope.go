@@ -14,7 +14,7 @@ const (
 func (i UserSignInRecommendationScope) String() string {
     return []string{"tenant", "application", "unknownFutureValue"}[i]
 }
-func ParseUserSignInRecommendationScope(v string) (interface{}, error) {
+func ParseUserSignInRecommendationScope(v string) (any, error) {
     result := TENANT_USERSIGNINRECOMMENDATIONSCOPE
     switch v {
         case "tenant":

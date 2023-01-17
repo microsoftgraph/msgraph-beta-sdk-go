@@ -8,7 +8,7 @@ import (
 // OsVersionCount count of devices with malware for each OS version
 type OsVersionCount struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Count of devices with malware for the OS version
     deviceCount *int32
     // The Timestamp of the last update for the device count in UTC
@@ -22,7 +22,7 @@ type OsVersionCount struct {
 func NewOsVersionCount()(*OsVersionCount) {
     m := &OsVersionCount{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateOsVersionCountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateOsVersionCountFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewOsVersionCount(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OsVersionCount) GetAdditionalData()(map[string]interface{}) {
+func (m *OsVersionCount) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeviceCount gets the deviceCount property value. Count of devices with malware for the OS version
@@ -129,7 +129,7 @@ func (m *OsVersionCount) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OsVersionCount) SetAdditionalData(value map[string]interface{})() {
+func (m *OsVersionCount) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeviceCount sets the deviceCount property value. Count of devices with malware for the OS version

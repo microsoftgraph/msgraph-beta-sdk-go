@@ -7,7 +7,7 @@ import (
 // CloudPcPartnerAgentInstallResult 
 type CloudPcPartnerAgentInstallResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The status of a partner agent installation. Possible values are: installed, installFailed, installing, uninstalling, uninstallFailed and licensed. Read-Only.
     installStatus *CloudPcPartnerAgentInstallStatus
     // Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent.  When 'FALSE', the agent is a Microsoft agent or is not known.  The default value is 'FALSE'.
@@ -23,7 +23,7 @@ type CloudPcPartnerAgentInstallResult struct {
 func NewCloudPcPartnerAgentInstallResult()(*CloudPcPartnerAgentInstallResult) {
     m := &CloudPcPartnerAgentInstallResult{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCloudPcPartnerAgentInstallResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateCloudPcPartnerAgentInstallResultFromDiscriminatorValue(parseNode i878
     return NewCloudPcPartnerAgentInstallResult(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CloudPcPartnerAgentInstallResult) GetAdditionalData()(map[string]interface{}) {
+func (m *CloudPcPartnerAgentInstallResult) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -152,7 +152,7 @@ func (m *CloudPcPartnerAgentInstallResult) Serialize(writer i878a80d2330e89d2689
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CloudPcPartnerAgentInstallResult) SetAdditionalData(value map[string]interface{})() {
+func (m *CloudPcPartnerAgentInstallResult) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetInstallStatus sets the installStatus property value. The status of a partner agent installation. Possible values are: installed, installFailed, installing, uninstalling, uninstallFailed and licensed. Read-Only.

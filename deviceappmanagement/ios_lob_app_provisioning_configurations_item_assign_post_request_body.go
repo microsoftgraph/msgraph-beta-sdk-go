@@ -8,7 +8,7 @@ import (
 // IosLobAppProvisioningConfigurationsItemAssignPostRequestBody 
 type IosLobAppProvisioningConfigurationsItemAssignPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The appProvisioningConfigurationGroupAssignments property
     appProvisioningConfigurationGroupAssignments []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppProvisioningConfigGroupAssignmentable
     // The iOSLobAppProvisioningConfigAssignments property
@@ -18,7 +18,7 @@ type IosLobAppProvisioningConfigurationsItemAssignPostRequestBody struct {
 func NewIosLobAppProvisioningConfigurationsItemAssignPostRequestBody()(*IosLobAppProvisioningConfigurationsItemAssignPostRequestBody) {
     m := &IosLobAppProvisioningConfigurationsItemAssignPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateIosLobAppProvisioningConfigurationsItemAssignPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateIosLobAppProvisioningConfigurationsItemAssignPostRequestBodyFromDiscr
     return NewIosLobAppProvisioningConfigurationsItemAssignPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IosLobAppProvisioningConfigurationsItemAssignPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *IosLobAppProvisioningConfigurationsItemAssignPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAppProvisioningConfigurationGroupAssignments gets the appProvisioningConfigurationGroupAssignments property value. The appProvisioningConfigurationGroupAssignments property
@@ -101,7 +101,7 @@ func (m *IosLobAppProvisioningConfigurationsItemAssignPostRequestBody) Serialize
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IosLobAppProvisioningConfigurationsItemAssignPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *IosLobAppProvisioningConfigurationsItemAssignPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAppProvisioningConfigurationGroupAssignments sets the appProvisioningConfigurationGroupAssignments property value. The appProvisioningConfigurationGroupAssignments property

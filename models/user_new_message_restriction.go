@@ -15,7 +15,7 @@ const (
 func (i UserNewMessageRestriction) String() string {
     return []string{"everyone", "everyoneExceptGuests", "moderators", "unknownFutureValue"}[i]
 }
-func ParseUserNewMessageRestriction(v string) (interface{}, error) {
+func ParseUserNewMessageRestriction(v string) (any, error) {
     result := EVERYONE_USERNEWMESSAGERESTRICTION
     switch v {
         case "everyone":

@@ -7,7 +7,7 @@ import (
 // DecryptBufferPostRequestBody 
 type DecryptBufferPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The encryptedBuffer property
     encryptedBuffer []byte
     // The publishingLicense property
@@ -17,7 +17,7 @@ type DecryptBufferPostRequestBody struct {
 func NewDecryptBufferPostRequestBody()(*DecryptBufferPostRequestBody) {
     m := &DecryptBufferPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDecryptBufferPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateDecryptBufferPostRequestBodyFromDiscriminatorValue(parseNode i878a80d
     return NewDecryptBufferPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DecryptBufferPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *DecryptBufferPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEncryptedBuffer gets the encryptedBuffer property value. The encryptedBuffer property
@@ -84,7 +84,7 @@ func (m *DecryptBufferPostRequestBody) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DecryptBufferPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *DecryptBufferPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEncryptedBuffer sets the encryptedBuffer property value. The encryptedBuffer property

@@ -7,7 +7,7 @@ import (
 // GetUserOwnedObjectsPostRequestBody 
 type GetUserOwnedObjectsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The type property
     type_escaped *string
     // The userId property
@@ -17,7 +17,7 @@ type GetUserOwnedObjectsPostRequestBody struct {
 func NewGetUserOwnedObjectsPostRequestBody()(*GetUserOwnedObjectsPostRequestBody) {
     m := &GetUserOwnedObjectsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateGetUserOwnedObjectsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateGetUserOwnedObjectsPostRequestBodyFromDiscriminatorValue(parseNode i8
     return NewGetUserOwnedObjectsPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *GetUserOwnedObjectsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *GetUserOwnedObjectsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -84,7 +84,7 @@ func (m *GetUserOwnedObjectsPostRequestBody) Serialize(writer i878a80d2330e89d26
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *GetUserOwnedObjectsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *GetUserOwnedObjectsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetType sets the type property value. The type property

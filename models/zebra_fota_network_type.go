@@ -21,7 +21,7 @@ const (
 func (i ZebraFotaNetworkType) String() string {
     return []string{"any", "wifi", "cellular", "wifiAndCellular", "unknownFutureValue"}[i]
 }
-func ParseZebraFotaNetworkType(v string) (interface{}, error) {
+func ParseZebraFotaNetworkType(v string) (any, error) {
     result := ANY_ZEBRAFOTANETWORKTYPE
     switch v {
         case "any":

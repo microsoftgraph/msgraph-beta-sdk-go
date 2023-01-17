@@ -19,7 +19,7 @@ const (
 func (i DriverApprovalStatus) String() string {
     return []string{"needsReview", "declined", "approved", "suspended"}[i]
 }
-func ParseDriverApprovalStatus(v string) (interface{}, error) {
+func ParseDriverApprovalStatus(v string) (any, error) {
     result := NEEDSREVIEW_DRIVERAPPROVALSTATUS
     switch v {
         case "needsReview":

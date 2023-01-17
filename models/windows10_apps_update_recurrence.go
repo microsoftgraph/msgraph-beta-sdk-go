@@ -19,7 +19,7 @@ const (
 func (i Windows10AppsUpdateRecurrence) String() string {
     return []string{"none", "daily", "weekly", "monthly"}[i]
 }
-func ParseWindows10AppsUpdateRecurrence(v string) (interface{}, error) {
+func ParseWindows10AppsUpdateRecurrence(v string) (any, error) {
     result := NONE_WINDOWS10APPSUPDATERECURRENCE
     switch v {
         case "none":

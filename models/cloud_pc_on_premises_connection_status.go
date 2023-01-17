@@ -17,7 +17,7 @@ const (
 func (i CloudPcOnPremisesConnectionStatus) String() string {
     return []string{"pending", "running", "passed", "failed", "warning", "unknownFutureValue"}[i]
 }
-func ParseCloudPcOnPremisesConnectionStatus(v string) (interface{}, error) {
+func ParseCloudPcOnPremisesConnectionStatus(v string) (any, error) {
     result := PENDING_CLOUDPCONPREMISESCONNECTIONSTATUS
     switch v {
         case "pending":

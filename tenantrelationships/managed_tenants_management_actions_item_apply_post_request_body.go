@@ -7,7 +7,7 @@ import (
 // ManagedTenantsManagementActionsItemApplyPostRequestBody 
 type ManagedTenantsManagementActionsItemApplyPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The excludeGroups property
     excludeGroups []string
     // The includeAllUsers property
@@ -25,7 +25,7 @@ type ManagedTenantsManagementActionsItemApplyPostRequestBody struct {
 func NewManagedTenantsManagementActionsItemApplyPostRequestBody()(*ManagedTenantsManagementActionsItemApplyPostRequestBody) {
     m := &ManagedTenantsManagementActionsItemApplyPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateManagedTenantsManagementActionsItemApplyPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateManagedTenantsManagementActionsItemApplyPostRequestBodyFromDiscrimina
     return NewManagedTenantsManagementActionsItemApplyPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedTenantsManagementActionsItemApplyPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ManagedTenantsManagementActionsItemApplyPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExcludeGroups gets the excludeGroups property value. The excludeGroups property
@@ -180,7 +180,7 @@ func (m *ManagedTenantsManagementActionsItemApplyPostRequestBody) Serialize(writ
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedTenantsManagementActionsItemApplyPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ManagedTenantsManagementActionsItemApplyPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetExcludeGroups sets the excludeGroups property value. The excludeGroups property

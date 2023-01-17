@@ -19,7 +19,7 @@ const (
 func (i JoinType) String() string {
     return []string{"unknown", "azureADJoined", "azureADRegistered", "hybridAzureADJoined"}[i]
 }
-func ParseJoinType(v string) (interface{}, error) {
+func ParseJoinType(v string) (any, error) {
     result := UNKNOWN_JOINTYPE
     switch v {
         case "unknown":

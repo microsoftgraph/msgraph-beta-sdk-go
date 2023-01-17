@@ -22,7 +22,7 @@ const (
 func (i EasServices) String() string {
     return []string{"none", "calendars", "contacts", "email", "notes", "reminders"}[i]
 }
-func ParseEasServices(v string) (interface{}, error) {
+func ParseEasServices(v string) (any, error) {
     result := NONE_EASSERVICES
     switch v {
         case "none":

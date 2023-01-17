@@ -8,7 +8,7 @@ import (
 // VerifiedCustomDomainCertificatesMetadata 
 type VerifiedCustomDomainCertificatesMetadata struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The expiry date of the custom domain certificate. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     expiryDate *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The issue date of the custom domain. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -26,7 +26,7 @@ type VerifiedCustomDomainCertificatesMetadata struct {
 func NewVerifiedCustomDomainCertificatesMetadata()(*VerifiedCustomDomainCertificatesMetadata) {
     m := &VerifiedCustomDomainCertificatesMetadata{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateVerifiedCustomDomainCertificatesMetadataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -34,7 +34,7 @@ func CreateVerifiedCustomDomainCertificatesMetadataFromDiscriminatorValue(parseN
     return NewVerifiedCustomDomainCertificatesMetadata(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VerifiedCustomDomainCertificatesMetadata) GetAdditionalData()(map[string]interface{}) {
+func (m *VerifiedCustomDomainCertificatesMetadata) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExpiryDate gets the expiryDate property value. The expiry date of the custom domain certificate. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -173,7 +173,7 @@ func (m *VerifiedCustomDomainCertificatesMetadata) Serialize(writer i878a80d2330
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VerifiedCustomDomainCertificatesMetadata) SetAdditionalData(value map[string]interface{})() {
+func (m *VerifiedCustomDomainCertificatesMetadata) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetExpiryDate sets the expiryDate property value. The expiry date of the custom domain certificate. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.

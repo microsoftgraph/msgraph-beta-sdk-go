@@ -17,7 +17,7 @@ const (
 func (i DirectoryDefinitionDiscoverabilities) String() string {
     return []string{"None", "AttributeNames", "AttributeDataTypes", "AttributeReadOnly", "ReferenceAttributes", "UnknownFutureValue"}[i]
 }
-func ParseDirectoryDefinitionDiscoverabilities(v string) (interface{}, error) {
+func ParseDirectoryDefinitionDiscoverabilities(v string) (any, error) {
     result := NONE_DIRECTORYDEFINITIONDISCOVERABILITIES
     switch v {
         case "None":

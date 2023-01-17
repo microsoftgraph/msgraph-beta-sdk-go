@@ -7,7 +7,7 @@ import (
 // AssignmentFilterStatusDetails represent status details for device and payload and all associated applied filters.
 type AssignmentFilterStatusDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Device properties used for filter evaluation during device check-in time.
     deviceProperties []KeyValuePairable
     // Evaluation result summaries for each filter associated to device and payload
@@ -25,7 +25,7 @@ type AssignmentFilterStatusDetails struct {
 func NewAssignmentFilterStatusDetails()(*AssignmentFilterStatusDetails) {
     m := &AssignmentFilterStatusDetails{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAssignmentFilterStatusDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateAssignmentFilterStatusDetailsFromDiscriminatorValue(parseNode i878a80
     return NewAssignmentFilterStatusDetails(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AssignmentFilterStatusDetails) GetAdditionalData()(map[string]interface{}) {
+func (m *AssignmentFilterStatusDetails) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeviceProperties gets the deviceProperties property value. Device properties used for filter evaluation during device check-in time.
@@ -188,7 +188,7 @@ func (m *AssignmentFilterStatusDetails) Serialize(writer i878a80d2330e89d2689638
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AssignmentFilterStatusDetails) SetAdditionalData(value map[string]interface{})() {
+func (m *AssignmentFilterStatusDetails) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeviceProperties sets the deviceProperties property value. Device properties used for filter evaluation during device check-in time.

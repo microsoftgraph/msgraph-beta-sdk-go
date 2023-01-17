@@ -7,7 +7,7 @@ import (
 // CloudPcDomainJoinConfiguration 
 type CloudPcDomainJoinConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // The Azure network connection ID that matches the virtual network IT admins want the provisioning policy to use when they create Cloud PCs. You can use this property in both domain join types: Azure AD joined or Hybrid Azure AD joined. If you enter an onPremisesConnectionId, leave regionName as empty.
@@ -23,7 +23,7 @@ type CloudPcDomainJoinConfiguration struct {
 func NewCloudPcDomainJoinConfiguration()(*CloudPcDomainJoinConfiguration) {
     m := &CloudPcDomainJoinConfiguration{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCloudPcDomainJoinConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateCloudPcDomainJoinConfigurationFromDiscriminatorValue(parseNode i878a8
     return NewCloudPcDomainJoinConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CloudPcDomainJoinConfiguration) GetAdditionalData()(map[string]interface{}) {
+func (m *CloudPcDomainJoinConfiguration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -152,7 +152,7 @@ func (m *CloudPcDomainJoinConfiguration) Serialize(writer i878a80d2330e89d268963
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CloudPcDomainJoinConfiguration) SetAdditionalData(value map[string]interface{})() {
+func (m *CloudPcDomainJoinConfiguration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

@@ -17,7 +17,7 @@ const (
 func (i CertificateValidityPeriodScale) String() string {
     return []string{"days", "months", "years"}[i]
 }
-func ParseCertificateValidityPeriodScale(v string) (interface{}, error) {
+func ParseCertificateValidityPeriodScale(v string) (any, error) {
     result := DAYS_CERTIFICATEVALIDITYPERIODSCALE
     switch v {
         case "days":

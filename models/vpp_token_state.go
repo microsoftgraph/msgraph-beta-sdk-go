@@ -23,7 +23,7 @@ const (
 func (i VppTokenState) String() string {
     return []string{"unknown", "valid", "expired", "invalid", "assignedToExternalMDM", "duplicateLocationId"}[i]
 }
-func ParseVppTokenState(v string) (interface{}, error) {
+func ParseVppTokenState(v string) (any, error) {
     result := UNKNOWN_VPPTOKENSTATE
     switch v {
         case "unknown":

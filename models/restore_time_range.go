@@ -15,7 +15,7 @@ const (
 func (i RestoreTimeRange) String() string {
     return []string{"before", "after", "beforeOrAfter", "unknownFutureValue"}[i]
 }
-func ParseRestoreTimeRange(v string) (interface{}, error) {
+func ParseRestoreTimeRange(v string) (any, error) {
     result := BEFORE_RESTORETIMERANGE
     switch v {
         case "before":

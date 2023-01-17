@@ -7,7 +7,7 @@ import (
 // ComanagementEligibleDevicesSummary 
 type ComanagementEligibleDevicesSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Count of devices already Co-Managed
     comanagedCount *int32
     // Count of devices eligible for Co-Management but not yet joined to Azure Active Directory
@@ -27,7 +27,7 @@ type ComanagementEligibleDevicesSummary struct {
 func NewComanagementEligibleDevicesSummary()(*ComanagementEligibleDevicesSummary) {
     m := &ComanagementEligibleDevicesSummary{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateComanagementEligibleDevicesSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateComanagementEligibleDevicesSummaryFromDiscriminatorValue(parseNode i8
     return NewComanagementEligibleDevicesSummary(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ComanagementEligibleDevicesSummary) GetAdditionalData()(map[string]interface{}) {
+func (m *ComanagementEligibleDevicesSummary) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetComanagedCount gets the comanagedCount property value. Count of devices already Co-Managed
@@ -194,7 +194,7 @@ func (m *ComanagementEligibleDevicesSummary) Serialize(writer i878a80d2330e89d26
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ComanagementEligibleDevicesSummary) SetAdditionalData(value map[string]interface{})() {
+func (m *ComanagementEligibleDevicesSummary) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetComanagedCount sets the comanagedCount property value. Count of devices already Co-Managed

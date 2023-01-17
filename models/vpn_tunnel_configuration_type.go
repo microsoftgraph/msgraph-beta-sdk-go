@@ -17,7 +17,7 @@ const (
 func (i VpnTunnelConfigurationType) String() string {
     return []string{"wifiAndCellular", "cellular", "wifi"}[i]
 }
-func ParseVpnTunnelConfigurationType(v string) (interface{}, error) {
+func ParseVpnTunnelConfigurationType(v string) (any, error) {
     result := WIFIANDCELLULAR_VPNTUNNELCONFIGURATIONTYPE
     switch v {
         case "wifiAndCellular":

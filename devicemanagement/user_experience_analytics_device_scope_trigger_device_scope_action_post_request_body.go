@@ -9,7 +9,7 @@ type UserExperienceAnalyticsDeviceScopeTriggerDeviceScopeActionPostRequestBody s
     // Trigger on the service to either START or STOP computing metrics data based on a device scope configuration.
     actionName *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The deviceScopeId property
     deviceScopeId *string
 }
@@ -17,7 +17,7 @@ type UserExperienceAnalyticsDeviceScopeTriggerDeviceScopeActionPostRequestBody s
 func NewUserExperienceAnalyticsDeviceScopeTriggerDeviceScopeActionPostRequestBody()(*UserExperienceAnalyticsDeviceScopeTriggerDeviceScopeActionPostRequestBody) {
     m := &UserExperienceAnalyticsDeviceScopeTriggerDeviceScopeActionPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUserExperienceAnalyticsDeviceScopeTriggerDeviceScopeActionPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func (m *UserExperienceAnalyticsDeviceScopeTriggerDeviceScopeActionPostRequestBo
     return m.actionName
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserExperienceAnalyticsDeviceScopeTriggerDeviceScopeActionPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *UserExperienceAnalyticsDeviceScopeTriggerDeviceScopeActionPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeviceScopeId gets the deviceScopeId property value. The deviceScopeId property
@@ -88,7 +88,7 @@ func (m *UserExperienceAnalyticsDeviceScopeTriggerDeviceScopeActionPostRequestBo
     m.actionName = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserExperienceAnalyticsDeviceScopeTriggerDeviceScopeActionPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *UserExperienceAnalyticsDeviceScopeTriggerDeviceScopeActionPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeviceScopeId sets the deviceScopeId property value. The deviceScopeId property

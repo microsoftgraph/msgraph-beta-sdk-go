@@ -13,7 +13,7 @@ const (
 func (i WatermarkLayout) String() string {
     return []string{"horizontal", "diagonal"}[i]
 }
-func ParseWatermarkLayout(v string) (interface{}, error) {
+func ParseWatermarkLayout(v string) (any, error) {
     result := HORIZONTAL_WATERMARKLAYOUT
     switch v {
         case "horizontal":

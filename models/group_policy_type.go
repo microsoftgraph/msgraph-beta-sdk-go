@@ -15,7 +15,7 @@ const (
 func (i GroupPolicyType) String() string {
     return []string{"admxBacked", "admxIngested"}[i]
 }
-func ParseGroupPolicyType(v string) (interface{}, error) {
+func ParseGroupPolicyType(v string) (any, error) {
     result := ADMXBACKED_GROUPPOLICYTYPE
     switch v {
         case "admxBacked":

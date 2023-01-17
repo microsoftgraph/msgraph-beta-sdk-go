@@ -8,7 +8,7 @@ import (
 // DevicesItemUpdateSoftwarePostRequestBody 
 type DevicesItemUpdateSoftwarePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The softwareType property
     softwareType *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkSoftwareType
     // The softwareVersion property
@@ -18,7 +18,7 @@ type DevicesItemUpdateSoftwarePostRequestBody struct {
 func NewDevicesItemUpdateSoftwarePostRequestBody()(*DevicesItemUpdateSoftwarePostRequestBody) {
     m := &DevicesItemUpdateSoftwarePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDevicesItemUpdateSoftwarePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateDevicesItemUpdateSoftwarePostRequestBodyFromDiscriminatorValue(parseN
     return NewDevicesItemUpdateSoftwarePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DevicesItemUpdateSoftwarePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *DevicesItemUpdateSoftwarePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -86,7 +86,7 @@ func (m *DevicesItemUpdateSoftwarePostRequestBody) Serialize(writer i878a80d2330
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DevicesItemUpdateSoftwarePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *DevicesItemUpdateSoftwarePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetSoftwareType sets the softwareType property value. The softwareType property

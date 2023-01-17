@@ -72,6 +72,8 @@ type OnlineMeeting struct {
     videoTeleconferenceId *string
     // The virtualAppointment property
     virtualAppointment VirtualAppointmentable
+    // The watermarkProtection property
+    watermarkProtection WatermarkProtectionValuesable
 }
 // NewOnlineMeeting instantiates a new onlineMeeting and sets the default values.
 func NewOnlineMeeting()(*OnlineMeeting) {
@@ -483,6 +485,16 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["watermarkProtection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateWatermarkProtectionValuesFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWatermarkProtection(val.(WatermarkProtectionValuesable))
+        }
+        return nil
+    }
     return res
 }
 // GetIsBroadcast gets the isBroadcast property value. Indicates whether this is a Teams live event.
@@ -552,6 +564,10 @@ func (m *OnlineMeeting) GetVideoTeleconferenceId()(*string) {
 // GetVirtualAppointment gets the virtualAppointment property value. The virtualAppointment property
 func (m *OnlineMeeting) GetVirtualAppointment()(VirtualAppointmentable) {
     return m.virtualAppointment
+}
+// GetWatermarkProtection gets the watermarkProtection property value. The watermarkProtection property
+func (m *OnlineMeeting) GetWatermarkProtection()(WatermarkProtectionValuesable) {
+    return m.watermarkProtection
 }
 // Serialize serializes information the current object
 func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -760,6 +776,12 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("watermarkProtection", m.GetWatermarkProtection())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAllowAttendeeToEnableCamera sets the allowAttendeeToEnableCamera property value. Indicates whether attendees can turn on their camera.
@@ -889,4 +911,8 @@ func (m *OnlineMeeting) SetVideoTeleconferenceId(value *string)() {
 // SetVirtualAppointment sets the virtualAppointment property value. The virtualAppointment property
 func (m *OnlineMeeting) SetVirtualAppointment(value VirtualAppointmentable)() {
     m.virtualAppointment = value
+}
+// SetWatermarkProtection sets the watermarkProtection property value. The watermarkProtection property
+func (m *OnlineMeeting) SetWatermarkProtection(value WatermarkProtectionValuesable)() {
+    m.watermarkProtection = value
 }

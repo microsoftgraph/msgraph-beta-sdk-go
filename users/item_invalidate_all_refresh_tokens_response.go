@@ -7,7 +7,7 @@ import (
 // ItemInvalidateAllRefreshTokensResponse 
 type ItemInvalidateAllRefreshTokensResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The value property
     value *bool
 }
@@ -15,7 +15,7 @@ type ItemInvalidateAllRefreshTokensResponse struct {
 func NewItemInvalidateAllRefreshTokensResponse()(*ItemInvalidateAllRefreshTokensResponse) {
     m := &ItemInvalidateAllRefreshTokensResponse{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemInvalidateAllRefreshTokensResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemInvalidateAllRefreshTokensResponseFromDiscriminatorValue(parseNod
     return NewItemInvalidateAllRefreshTokensResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemInvalidateAllRefreshTokensResponse) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemInvalidateAllRefreshTokensResponse) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ItemInvalidateAllRefreshTokensResponse) Serialize(writer i878a80d2330e8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemInvalidateAllRefreshTokensResponse) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemInvalidateAllRefreshTokensResponse) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetValue sets the value property value. The value property

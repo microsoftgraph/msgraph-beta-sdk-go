@@ -15,7 +15,7 @@ const (
 func (i DeviceManagementExchangeAccessRuleType) String() string {
     return []string{"family", "model"}[i]
 }
-func ParseDeviceManagementExchangeAccessRuleType(v string) (interface{}, error) {
+func ParseDeviceManagementExchangeAccessRuleType(v string) (any, error) {
     result := FAMILY_DEVICEMANAGEMENTEXCHANGEACCESSRULETYPE
     switch v {
         case "family":

@@ -7,7 +7,7 @@ import (
 // DeviceManagementConfigurationGroupSettingValueTemplate group Setting Value Template
 type DeviceManagementConfigurationGroupSettingValueTemplate struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Group setting value children
     children []DeviceManagementConfigurationSettingInstanceTemplateable
     // The OdataType property
@@ -19,7 +19,7 @@ type DeviceManagementConfigurationGroupSettingValueTemplate struct {
 func NewDeviceManagementConfigurationGroupSettingValueTemplate()(*DeviceManagementConfigurationGroupSettingValueTemplate) {
     m := &DeviceManagementConfigurationGroupSettingValueTemplate{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceManagementConfigurationGroupSettingValueTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateDeviceManagementConfigurationGroupSettingValueTemplateFromDiscriminat
     return NewDeviceManagementConfigurationGroupSettingValueTemplate(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementConfigurationGroupSettingValueTemplate) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceManagementConfigurationGroupSettingValueTemplate) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetChildren gets the children property value. Group setting value children
@@ -114,7 +114,7 @@ func (m *DeviceManagementConfigurationGroupSettingValueTemplate) Serialize(write
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementConfigurationGroupSettingValueTemplate) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceManagementConfigurationGroupSettingValueTemplate) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetChildren sets the children property value. Group setting value children

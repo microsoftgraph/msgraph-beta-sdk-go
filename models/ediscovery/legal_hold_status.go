@@ -15,7 +15,7 @@ const (
 func (i LegalHoldStatus) String() string {
     return []string{"Pending", "Error", "Success", "UnknownFutureValue"}[i]
 }
-func ParseLegalHoldStatus(v string) (interface{}, error) {
+func ParseLegalHoldStatus(v string) (any, error) {
     result := PENDING_LEGALHOLDSTATUS
     switch v {
         case "Pending":

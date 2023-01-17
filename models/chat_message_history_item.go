@@ -10,7 +10,7 @@ type ChatMessageHistoryItem struct {
     // The actions property
     actions *ChatMessageActions
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The date and time when the message was modified.
     modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The OdataType property
@@ -22,7 +22,7 @@ type ChatMessageHistoryItem struct {
 func NewChatMessageHistoryItem()(*ChatMessageHistoryItem) {
     m := &ChatMessageHistoryItem{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateChatMessageHistoryItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -34,7 +34,7 @@ func (m *ChatMessageHistoryItem) GetActions()(*ChatMessageActions) {
     return m.actions
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ChatMessageHistoryItem) GetAdditionalData()(map[string]interface{}) {
+func (m *ChatMessageHistoryItem) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -134,7 +134,7 @@ func (m *ChatMessageHistoryItem) SetActions(value *ChatMessageActions)() {
     m.actions = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ChatMessageHistoryItem) SetAdditionalData(value map[string]interface{})() {
+func (m *ChatMessageHistoryItem) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetModifiedDateTime sets the modifiedDateTime property value. The date and time when the message was modified.

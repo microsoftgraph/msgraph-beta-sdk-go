@@ -15,7 +15,7 @@ const (
 func (i PhysicalAddressType) String() string {
     return []string{"unknown", "home", "business", "other"}[i]
 }
-func ParsePhysicalAddressType(v string) (interface{}, error) {
+func ParsePhysicalAddressType(v string) (any, error) {
     result := UNKNOWN_PHYSICALADDRESSTYPE
     switch v {
         case "unknown":

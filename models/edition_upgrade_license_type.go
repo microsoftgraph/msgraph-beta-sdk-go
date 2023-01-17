@@ -17,7 +17,7 @@ const (
 func (i EditionUpgradeLicenseType) String() string {
     return []string{"productKey", "licenseFile", "notConfigured"}[i]
 }
-func ParseEditionUpgradeLicenseType(v string) (interface{}, error) {
+func ParseEditionUpgradeLicenseType(v string) (any, error) {
     result := PRODUCTKEY_EDITIONUPGRADELICENSETYPE
     switch v {
         case "productKey":

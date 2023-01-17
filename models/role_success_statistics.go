@@ -7,7 +7,7 @@ import (
 // RoleSuccessStatistics 
 type RoleSuccessStatistics struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // The permanentFail property
@@ -33,7 +33,7 @@ type RoleSuccessStatistics struct {
 func NewRoleSuccessStatistics()(*RoleSuccessStatistics) {
     m := &RoleSuccessStatistics{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRoleSuccessStatisticsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,7 +41,7 @@ func CreateRoleSuccessStatisticsFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewRoleSuccessStatistics(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RoleSuccessStatistics) GetAdditionalData()(map[string]interface{}) {
+func (m *RoleSuccessStatistics) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -260,7 +260,7 @@ func (m *RoleSuccessStatistics) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RoleSuccessStatistics) SetAdditionalData(value map[string]interface{})() {
+func (m *RoleSuccessStatistics) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

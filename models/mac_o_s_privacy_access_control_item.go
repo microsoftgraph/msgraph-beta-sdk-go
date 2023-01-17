@@ -9,7 +9,7 @@ type MacOSPrivacyAccessControlItem struct {
     // Possible values of a property
     accessibility *Enablement
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Possible values of a property
     addressBook *Enablement
     // Allow or deny the app or process to send a restricted Apple event to another app or process. You will need to know the identifier, identifier type, and code requirement of the receiving app or process. This collection can contain a maximum of 500 elements.
@@ -67,7 +67,7 @@ type MacOSPrivacyAccessControlItem struct {
 func NewMacOSPrivacyAccessControlItem()(*MacOSPrivacyAccessControlItem) {
     m := &MacOSPrivacyAccessControlItem{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMacOSPrivacyAccessControlItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -79,7 +79,7 @@ func (m *MacOSPrivacyAccessControlItem) GetAccessibility()(*Enablement) {
     return m.accessibility
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MacOSPrivacyAccessControlItem) GetAdditionalData()(map[string]interface{}) {
+func (m *MacOSPrivacyAccessControlItem) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAddressBook gets the addressBook property value. Possible values of a property
@@ -663,7 +663,7 @@ func (m *MacOSPrivacyAccessControlItem) SetAccessibility(value *Enablement)() {
     m.accessibility = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MacOSPrivacyAccessControlItem) SetAdditionalData(value map[string]interface{})() {
+func (m *MacOSPrivacyAccessControlItem) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAddressBook sets the addressBook property value. Possible values of a property

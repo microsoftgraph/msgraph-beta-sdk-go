@@ -19,7 +19,7 @@ const (
 func (i ManagedAppFlaggedReason) String() string {
     return []string{"none", "rootedDevice", "androidBootloaderUnlocked", "androidFactoryRomModified"}[i]
 }
-func ParseManagedAppFlaggedReason(v string) (interface{}, error) {
+func ParseManagedAppFlaggedReason(v string) (any, error) {
     result := NONE_MANAGEDAPPFLAGGEDREASON
     switch v {
         case "none":

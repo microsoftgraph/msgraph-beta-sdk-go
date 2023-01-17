@@ -15,7 +15,7 @@ const (
 func (i GroupPrivacy) String() string {
     return []string{"unspecified", "public", "private", "unknownFutureValue"}[i]
 }
-func ParseGroupPrivacy(v string) (interface{}, error) {
+func ParseGroupPrivacy(v string) (any, error) {
     result := UNSPECIFIED_GROUPPRIVACY
     switch v {
         case "unspecified":

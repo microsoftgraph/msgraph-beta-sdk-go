@@ -7,7 +7,7 @@ import (
 // BusinessScenarioGroupTarget 
 type BusinessScenarioGroupTarget struct {
     BusinessScenarioTaskTargetBase
-    // The groupId property
+    // The unique identifier for the group.
     groupId *string
 }
 // NewBusinessScenarioGroupTarget instantiates a new BusinessScenarioGroupTarget and sets the default values.
@@ -38,7 +38,7 @@ func (m *BusinessScenarioGroupTarget) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetGroupId gets the groupId property value. The groupId property
+// GetGroupId gets the groupId property value. The unique identifier for the group.
 func (m *BusinessScenarioGroupTarget) GetGroupId()(*string) {
     return m.groupId
 }
@@ -56,7 +56,7 @@ func (m *BusinessScenarioGroupTarget) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetGroupId sets the groupId property value. The groupId property
+// SetGroupId sets the groupId property value. The unique identifier for the group.
 func (m *BusinessScenarioGroupTarget) SetGroupId(value *string)() {
     m.groupId = value
 }

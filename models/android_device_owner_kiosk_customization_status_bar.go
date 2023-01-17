@@ -17,7 +17,7 @@ const (
 func (i AndroidDeviceOwnerKioskCustomizationStatusBar) String() string {
     return []string{"notConfigured", "notificationsAndSystemInfoEnabled", "systemInfoOnly"}[i]
 }
-func ParseAndroidDeviceOwnerKioskCustomizationStatusBar(v string) (interface{}, error) {
+func ParseAndroidDeviceOwnerKioskCustomizationStatusBar(v string) (any, error) {
     result := NOTCONFIGURED_ANDROIDDEVICEOWNERKIOSKCUSTOMIZATIONSTATUSBAR
     switch v {
         case "notConfigured":

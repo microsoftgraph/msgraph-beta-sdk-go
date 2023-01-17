@@ -15,7 +15,7 @@ const (
 func (i TimeCardState) String() string {
     return []string{"clockedIn", "onBreak", "clockedOut", "unknownFutureValue"}[i]
 }
-func ParseTimeCardState(v string) (interface{}, error) {
+func ParseTimeCardState(v string) (any, error) {
     result := CLOCKEDIN_TIMECARDSTATE
     switch v {
         case "clockedIn":

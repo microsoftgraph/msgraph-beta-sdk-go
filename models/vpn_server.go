@@ -7,7 +7,7 @@ import (
 // VpnServer vPN Server definition.
 type VpnServer struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Address (IP address, FQDN or URL)
     address *string
     // Description.
@@ -21,7 +21,7 @@ type VpnServer struct {
 func NewVpnServer()(*VpnServer) {
     m := &VpnServer{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateVpnServerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateVpnServerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
     return NewVpnServer(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VpnServer) GetAdditionalData()(map[string]interface{}) {
+func (m *VpnServer) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAddress gets the address property value. Address (IP address, FQDN or URL)
@@ -128,7 +128,7 @@ func (m *VpnServer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VpnServer) SetAdditionalData(value map[string]interface{})() {
+func (m *VpnServer) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAddress sets the address property value. Address (IP address, FQDN or URL)

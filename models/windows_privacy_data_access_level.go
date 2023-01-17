@@ -19,7 +19,7 @@ const (
 func (i WindowsPrivacyDataAccessLevel) String() string {
     return []string{"notConfigured", "forceAllow", "forceDeny", "userInControl"}[i]
 }
-func ParseWindowsPrivacyDataAccessLevel(v string) (interface{}, error) {
+func ParseWindowsPrivacyDataAccessLevel(v string) (any, error) {
     result := NOTCONFIGURED_WINDOWSPRIVACYDATAACCESSLEVEL
     switch v {
         case "notConfigured":

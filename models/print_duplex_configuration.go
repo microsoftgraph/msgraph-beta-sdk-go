@@ -14,7 +14,7 @@ const (
 func (i PrintDuplexConfiguration) String() string {
     return []string{"twoSidedLongEdge", "twoSidedShortEdge", "oneSided"}[i]
 }
-func ParsePrintDuplexConfiguration(v string) (interface{}, error) {
+func ParsePrintDuplexConfiguration(v string) (any, error) {
     result := TWOSIDEDLONGEDGE_PRINTDUPLEXCONFIGURATION
     switch v {
         case "twoSidedLongEdge":

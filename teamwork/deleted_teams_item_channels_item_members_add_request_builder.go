@@ -54,7 +54,7 @@ func (m *DeletedTeamsItemChannelsItemMembersAddRequestBuilder) Post(ctx context.
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, CreateDeletedTeamsItemChannelsItemMembersAddResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.requestAdapter.Send(ctx, requestInfo, CreateDeletedTeamsItemChannelsItemMembersAddResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }

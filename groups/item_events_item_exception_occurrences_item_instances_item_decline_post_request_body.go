@@ -8,7 +8,7 @@ import (
 // ItemEventsItemExceptionOccurrencesItemInstancesItemDeclinePostRequestBody 
 type ItemEventsItemExceptionOccurrencesItemInstancesItemDeclinePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The Comment property
     comment *string
     // The ProposedNewTime property
@@ -20,7 +20,7 @@ type ItemEventsItemExceptionOccurrencesItemInstancesItemDeclinePostRequestBody s
 func NewItemEventsItemExceptionOccurrencesItemInstancesItemDeclinePostRequestBody()(*ItemEventsItemExceptionOccurrencesItemInstancesItemDeclinePostRequestBody) {
     m := &ItemEventsItemExceptionOccurrencesItemInstancesItemDeclinePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemEventsItemExceptionOccurrencesItemInstancesItemDeclinePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,7 +28,7 @@ func CreateItemEventsItemExceptionOccurrencesItemInstancesItemDeclinePostRequest
     return NewItemEventsItemExceptionOccurrencesItemInstancesItemDeclinePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemEventsItemExceptionOccurrencesItemInstancesItemDeclinePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemEventsItemExceptionOccurrencesItemInstancesItemDeclinePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetComment gets the comment property value. The Comment property
@@ -107,7 +107,7 @@ func (m *ItemEventsItemExceptionOccurrencesItemInstancesItemDeclinePostRequestBo
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemEventsItemExceptionOccurrencesItemInstancesItemDeclinePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemEventsItemExceptionOccurrencesItemInstancesItemDeclinePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetComment sets the comment property value. The Comment property

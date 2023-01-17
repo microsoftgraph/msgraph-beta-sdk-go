@@ -33,7 +33,7 @@ type DelegatedAdminRelationship struct {
     // The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderBy.
     status *DelegatedAdminRelationshipStatus
 }
-// NewDelegatedAdminRelationship instantiates a new delegatedAdminRelationship and sets the default values.
+// NewDelegatedAdminRelationship instantiates a new DelegatedAdminRelationship and sets the default values.
 func NewDelegatedAdminRelationship()(*DelegatedAdminRelationship) {
     m := &DelegatedAdminRelationship{
         Entity: *NewEntity(),

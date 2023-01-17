@@ -7,7 +7,7 @@ import (
 // LoginPageTextVisibilitySettings 
 type LoginPageTextVisibilitySettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Option to hide the self-service password reset (SSPR) hyperlinks such as 'Can't access your account?', 'Forgot my password' and 'Reset it now' on the sign-in form.
     hideAccountResetCredentials *bool
     // Option to hide the self-service password reset (SSPR) 'Can't access your account?' hyperlink on the sign-in form.
@@ -27,7 +27,7 @@ type LoginPageTextVisibilitySettings struct {
 func NewLoginPageTextVisibilitySettings()(*LoginPageTextVisibilitySettings) {
     m := &LoginPageTextVisibilitySettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateLoginPageTextVisibilitySettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateLoginPageTextVisibilitySettingsFromDiscriminatorValue(parseNode i878a
     return NewLoginPageTextVisibilitySettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *LoginPageTextVisibilitySettings) GetAdditionalData()(map[string]interface{}) {
+func (m *LoginPageTextVisibilitySettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -194,7 +194,7 @@ func (m *LoginPageTextVisibilitySettings) Serialize(writer i878a80d2330e89d26896
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *LoginPageTextVisibilitySettings) SetAdditionalData(value map[string]interface{})() {
+func (m *LoginPageTextVisibilitySettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetHideAccountResetCredentials sets the hideAccountResetCredentials property value. Option to hide the self-service password reset (SSPR) hyperlinks such as 'Can't access your account?', 'Forgot my password' and 'Reset it now' on the sign-in form.

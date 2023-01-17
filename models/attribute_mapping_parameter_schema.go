@@ -7,7 +7,7 @@ import (
 // AttributeMappingParameterSchema 
 type AttributeMappingParameterSchema struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The given parameter can be provided multiple times (for example, multiple input strings in the Concatenate(string,string,...) function).
     allowMultipleOccurrences *bool
     // Parameter name.
@@ -23,7 +23,7 @@ type AttributeMappingParameterSchema struct {
 func NewAttributeMappingParameterSchema()(*AttributeMappingParameterSchema) {
     m := &AttributeMappingParameterSchema{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAttributeMappingParameterSchemaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateAttributeMappingParameterSchemaFromDiscriminatorValue(parseNode i878a
     return NewAttributeMappingParameterSchema(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AttributeMappingParameterSchema) GetAdditionalData()(map[string]interface{}) {
+func (m *AttributeMappingParameterSchema) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowMultipleOccurrences gets the allowMultipleOccurrences property value. The given parameter can be provided multiple times (for example, multiple input strings in the Concatenate(string,string,...) function).
@@ -151,7 +151,7 @@ func (m *AttributeMappingParameterSchema) Serialize(writer i878a80d2330e89d26896
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AttributeMappingParameterSchema) SetAdditionalData(value map[string]interface{})() {
+func (m *AttributeMappingParameterSchema) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowMultipleOccurrences sets the allowMultipleOccurrences property value. The given parameter can be provided multiple times (for example, multiple input strings in the Concatenate(string,string,...) function).

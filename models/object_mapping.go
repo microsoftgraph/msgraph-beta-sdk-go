@@ -7,7 +7,7 @@ import (
 // ObjectMapping 
 type ObjectMapping struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Attribute mappings define which attributes to map from the source object into the target object and how they should flow. A number of functions are available to support the transformation of the original source values.
     attributeMappings []AttributeMappingable
     // When true, this object mapping will be processed during synchronization. When false, this object mapping will be skipped.
@@ -31,7 +31,7 @@ type ObjectMapping struct {
 func NewObjectMapping()(*ObjectMapping) {
     m := &ObjectMapping{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateObjectMappingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ func CreateObjectMappingFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewObjectMapping(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ObjectMapping) GetAdditionalData()(map[string]interface{}) {
+func (m *ObjectMapping) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAttributeMappings gets the attributeMappings property value. Attribute mappings define which attributes to map from the source object into the target object and how they should flow. A number of functions are available to support the transformation of the original source values.
@@ -255,7 +255,7 @@ func (m *ObjectMapping) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ObjectMapping) SetAdditionalData(value map[string]interface{})() {
+func (m *ObjectMapping) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAttributeMappings sets the attributeMappings property value. Attribute mappings define which attributes to map from the source object into the target object and how they should flow. A number of functions are available to support the transformation of the original source values.

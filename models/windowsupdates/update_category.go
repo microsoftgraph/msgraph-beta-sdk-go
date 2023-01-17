@@ -14,7 +14,7 @@ const (
 func (i UpdateCategory) String() string {
     return []string{"feature", "quality", "unknownFutureValue"}[i]
 }
-func ParseUpdateCategory(v string) (interface{}, error) {
+func ParseUpdateCategory(v string) (any, error) {
     result := FEATURE_UPDATECATEGORY
     switch v {
         case "feature":

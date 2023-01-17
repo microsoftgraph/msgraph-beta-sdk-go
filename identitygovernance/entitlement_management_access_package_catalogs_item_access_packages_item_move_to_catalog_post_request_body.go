@@ -7,7 +7,7 @@ import (
 // EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemMoveToCatalogPostRequestBody 
 type EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemMoveToCatalogPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The catalogId property
     catalogId *string
 }
@@ -15,7 +15,7 @@ type EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemMoveToCatal
 func NewEntitlementManagementAccessPackageCatalogsItemAccessPackagesItemMoveToCatalogPostRequestBody()(*EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemMoveToCatalogPostRequestBody) {
     m := &EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemMoveToCatalogPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateEntitlementManagementAccessPackageCatalogsItemAccessPackagesItemMoveToCatalogPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateEntitlementManagementAccessPackageCatalogsItemAccessPackagesItemMoveT
     return NewEntitlementManagementAccessPackageCatalogsItemAccessPackagesItemMoveToCatalogPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemMoveToCatalogPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemMoveToCatalogPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCatalogId gets the catalogId property value. The catalogId property
@@ -62,7 +62,7 @@ func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemMoveToC
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemMoveToCatalogPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemMoveToCatalogPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCatalogId sets the catalogId property value. The catalogId property

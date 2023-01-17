@@ -7,7 +7,7 @@ import (
 // DeviceManagementConfigurationSettingDependedOnBy 
 type DeviceManagementConfigurationSettingDependedOnBy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Identifier of child setting that is dependent on the current setting
     dependedOnBy *string
     // The OdataType property
@@ -19,7 +19,7 @@ type DeviceManagementConfigurationSettingDependedOnBy struct {
 func NewDeviceManagementConfigurationSettingDependedOnBy()(*DeviceManagementConfigurationSettingDependedOnBy) {
     m := &DeviceManagementConfigurationSettingDependedOnBy{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceManagementConfigurationSettingDependedOnByFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateDeviceManagementConfigurationSettingDependedOnByFromDiscriminatorValu
     return NewDeviceManagementConfigurationSettingDependedOnBy(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementConfigurationSettingDependedOnBy) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceManagementConfigurationSettingDependedOnBy) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDependedOnBy gets the dependedOnBy property value. Identifier of child setting that is dependent on the current setting
@@ -106,7 +106,7 @@ func (m *DeviceManagementConfigurationSettingDependedOnBy) Serialize(writer i878
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementConfigurationSettingDependedOnBy) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceManagementConfigurationSettingDependedOnBy) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDependedOnBy sets the dependedOnBy property value. Identifier of child setting that is dependent on the current setting

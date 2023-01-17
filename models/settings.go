@@ -7,7 +7,7 @@ import (
 // Settings 
 type Settings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Specifies if the user's primary mailbox is hosted in the cloud and is enabled for Microsoft Graph.
     hasGraphMailbox *bool
     // Specifies if the user has a MyAnalytics license assigned.
@@ -21,7 +21,7 @@ type Settings struct {
 func NewSettings()(*Settings) {
     m := &Settings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
     return NewSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Settings) GetAdditionalData()(map[string]interface{}) {
+func (m *Settings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,7 +128,7 @@ func (m *Settings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Settings) SetAdditionalData(value map[string]interface{})() {
+func (m *Settings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetHasGraphMailbox sets the hasGraphMailbox property value. Specifies if the user's primary mailbox is hosted in the cloud and is enabled for Microsoft Graph.

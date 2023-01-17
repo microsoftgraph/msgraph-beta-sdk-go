@@ -7,7 +7,7 @@ import (
 // ImpactedResourcesItemDismissPostRequestBody 
 type ImpactedResourcesItemDismissPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The dismissReason property
     dismissReason *string
 }
@@ -15,7 +15,7 @@ type ImpactedResourcesItemDismissPostRequestBody struct {
 func NewImpactedResourcesItemDismissPostRequestBody()(*ImpactedResourcesItemDismissPostRequestBody) {
     m := &ImpactedResourcesItemDismissPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateImpactedResourcesItemDismissPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateImpactedResourcesItemDismissPostRequestBodyFromDiscriminatorValue(par
     return NewImpactedResourcesItemDismissPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ImpactedResourcesItemDismissPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ImpactedResourcesItemDismissPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDismissReason gets the dismissReason property value. The dismissReason property
@@ -62,7 +62,7 @@ func (m *ImpactedResourcesItemDismissPostRequestBody) Serialize(writer i878a80d2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ImpactedResourcesItemDismissPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ImpactedResourcesItemDismissPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDismissReason sets the dismissReason property value. The dismissReason property

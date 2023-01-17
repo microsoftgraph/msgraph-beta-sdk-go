@@ -7,7 +7,7 @@ import (
 // OfficeConfiguration 
 type OfficeConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // List of office Client configuration.
     clientConfigurations []OfficeClientConfigurationable
     // The OdataType property
@@ -21,7 +21,7 @@ type OfficeConfiguration struct {
 func NewOfficeConfiguration()(*OfficeConfiguration) {
     m := &OfficeConfiguration{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateOfficeConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateOfficeConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewOfficeConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OfficeConfiguration) GetAdditionalData()(map[string]interface{}) {
+func (m *OfficeConfiguration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetClientConfigurations gets the clientConfigurations property value. List of office Client configuration.
@@ -144,7 +144,7 @@ func (m *OfficeConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OfficeConfiguration) SetAdditionalData(value map[string]interface{})() {
+func (m *OfficeConfiguration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetClientConfigurations sets the clientConfigurations property value. List of office Client configuration.

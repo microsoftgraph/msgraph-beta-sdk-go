@@ -9,7 +9,7 @@ type RelatedContact struct {
     // Indicates whether the user has been consented to access student data.
     accessConsent *bool
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Name of the contact. Required.
     displayName *string
     // Email address of the contact.
@@ -27,7 +27,7 @@ type RelatedContact struct {
 func NewRelatedContact()(*RelatedContact) {
     m := &RelatedContact{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRelatedContactFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ func (m *RelatedContact) GetAccessConsent()(*bool) {
     return m.accessConsent
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RelatedContact) GetAdditionalData()(map[string]interface{}) {
+func (m *RelatedContact) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDisplayName gets the displayName property value. Name of the contact. Required.
@@ -199,7 +199,7 @@ func (m *RelatedContact) SetAccessConsent(value *bool)() {
     m.accessConsent = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RelatedContact) SetAdditionalData(value map[string]interface{})() {
+func (m *RelatedContact) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. Name of the contact. Required.

@@ -7,7 +7,7 @@ import (
 // OemWarranty oEM Warranty information for a given device
 type OemWarranty struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // List of additional warranty offers. This collection can contain a maximum of 100 elements.
     additionalWarranties []WarrantyOfferable
     // List of base warranty offers. This collection can contain a maximum of 100 elements.
@@ -23,7 +23,7 @@ type OemWarranty struct {
 func NewOemWarranty()(*OemWarranty) {
     m := &OemWarranty{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateOemWarrantyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateOemWarrantyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     return NewOemWarranty(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OemWarranty) GetAdditionalData()(map[string]interface{}) {
+func (m *OemWarranty) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAdditionalWarranties gets the additionalWarranties property value. List of additional warranty offers. This collection can contain a maximum of 100 elements.
@@ -166,7 +166,7 @@ func (m *OemWarranty) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OemWarranty) SetAdditionalData(value map[string]interface{})() {
+func (m *OemWarranty) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAdditionalWarranties sets the additionalWarranties property value. List of additional warranty offers. This collection can contain a maximum of 100 elements.

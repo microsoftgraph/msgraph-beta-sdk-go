@@ -29,7 +29,7 @@ const (
 func (i AndroidDeviceOwnerRequiredPasswordType) String() string {
     return []string{"deviceDefault", "required", "numeric", "numericComplex", "alphabetic", "alphanumeric", "alphanumericWithSymbols", "lowSecurityBiometric", "customPassword"}[i]
 }
-func ParseAndroidDeviceOwnerRequiredPasswordType(v string) (interface{}, error) {
+func ParseAndroidDeviceOwnerRequiredPasswordType(v string) (any, error) {
     result := DEVICEDEFAULT_ANDROIDDEVICEOWNERREQUIREDPASSWORDTYPE
     switch v {
         case "deviceDefault":

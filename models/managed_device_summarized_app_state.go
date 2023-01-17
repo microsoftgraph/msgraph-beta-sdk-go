@@ -7,7 +7,7 @@ import (
 // ManagedDeviceSummarizedAppState event representing a user's devices with failed or pending apps.
 type ManagedDeviceSummarizedAppState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // DeviceId of device represented by this object
     deviceId *string
     // The OdataType property
@@ -19,7 +19,7 @@ type ManagedDeviceSummarizedAppState struct {
 func NewManagedDeviceSummarizedAppState()(*ManagedDeviceSummarizedAppState) {
     m := &ManagedDeviceSummarizedAppState{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateManagedDeviceSummarizedAppStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateManagedDeviceSummarizedAppStateFromDiscriminatorValue(parseNode i878a
     return NewManagedDeviceSummarizedAppState(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedDeviceSummarizedAppState) GetAdditionalData()(map[string]interface{}) {
+func (m *ManagedDeviceSummarizedAppState) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeviceId gets the deviceId property value. DeviceId of device represented by this object
@@ -107,7 +107,7 @@ func (m *ManagedDeviceSummarizedAppState) Serialize(writer i878a80d2330e89d26896
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedDeviceSummarizedAppState) SetAdditionalData(value map[string]interface{})() {
+func (m *ManagedDeviceSummarizedAppState) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeviceId sets the deviceId property value. DeviceId of device represented by this object

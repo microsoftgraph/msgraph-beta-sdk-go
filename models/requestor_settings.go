@@ -9,7 +9,7 @@ type RequestorSettings struct {
     // Indicates whether new requests are accepted on this policy.
     acceptRequests *bool
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The users who are allowed to request on this policy, which can be singleUser, groupMembers, and connectedOrganizationMembers.
     allowedRequestors []UserSetable
     // The OdataType property
@@ -21,7 +21,7 @@ type RequestorSettings struct {
 func NewRequestorSettings()(*RequestorSettings) {
     m := &RequestorSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRequestorSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func (m *RequestorSettings) GetAcceptRequests()(*bool) {
     return m.acceptRequests
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RequestorSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *RequestorSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowedRequestors gets the allowedRequestors property value. The users who are allowed to request on this policy, which can be singleUser, groupMembers, and connectedOrganizationMembers.
@@ -140,7 +140,7 @@ func (m *RequestorSettings) SetAcceptRequests(value *bool)() {
     m.acceptRequests = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RequestorSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *RequestorSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowedRequestors sets the allowedRequestors property value. The users who are allowed to request on this policy, which can be singleUser, groupMembers, and connectedOrganizationMembers.

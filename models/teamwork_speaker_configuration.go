@@ -7,7 +7,7 @@ import (
 // TeamworkSpeakerConfiguration 
 type TeamworkSpeakerConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The defaultCommunicationSpeaker property
     defaultCommunicationSpeaker TeamworkPeripheralable
     // The defaultSpeaker property
@@ -25,7 +25,7 @@ type TeamworkSpeakerConfiguration struct {
 func NewTeamworkSpeakerConfiguration()(*TeamworkSpeakerConfiguration) {
     m := &TeamworkSpeakerConfiguration{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTeamworkSpeakerConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateTeamworkSpeakerConfigurationFromDiscriminatorValue(parseNode i878a80d
     return NewTeamworkSpeakerConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkSpeakerConfiguration) GetAdditionalData()(map[string]interface{}) {
+func (m *TeamworkSpeakerConfiguration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDefaultCommunicationSpeaker gets the defaultCommunicationSpeaker property value. The defaultCommunicationSpeaker property
@@ -180,7 +180,7 @@ func (m *TeamworkSpeakerConfiguration) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkSpeakerConfiguration) SetAdditionalData(value map[string]interface{})() {
+func (m *TeamworkSpeakerConfiguration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDefaultCommunicationSpeaker sets the defaultCommunicationSpeaker property value. The defaultCommunicationSpeaker property

@@ -7,7 +7,7 @@ import (
 // ItemCloudPCsItemRestorePostRequestBody 
 type ItemCloudPCsItemRestorePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The cloudPcSnapshotId property
     cloudPcSnapshotId *string
 }
@@ -15,7 +15,7 @@ type ItemCloudPCsItemRestorePostRequestBody struct {
 func NewItemCloudPCsItemRestorePostRequestBody()(*ItemCloudPCsItemRestorePostRequestBody) {
     m := &ItemCloudPCsItemRestorePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemCloudPCsItemRestorePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemCloudPCsItemRestorePostRequestBodyFromDiscriminatorValue(parseNod
     return NewItemCloudPCsItemRestorePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemCloudPCsItemRestorePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemCloudPCsItemRestorePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCloudPcSnapshotId gets the cloudPcSnapshotId property value. The cloudPcSnapshotId property
@@ -62,7 +62,7 @@ func (m *ItemCloudPCsItemRestorePostRequestBody) Serialize(writer i878a80d2330e8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemCloudPCsItemRestorePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemCloudPCsItemRestorePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCloudPcSnapshotId sets the cloudPcSnapshotId property value. The cloudPcSnapshotId property

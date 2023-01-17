@@ -17,7 +17,7 @@ const (
 func (i NetworkType) String() string {
     return []string{"intranet", "extranet", "namedNetwork", "trusted", "trustedNamedLocation", "unknownFutureValue"}[i]
 }
-func ParseNetworkType(v string) (interface{}, error) {
+func ParseNetworkType(v string) (any, error) {
     result := INTRANET_NETWORKTYPE
     switch v {
         case "intranet":

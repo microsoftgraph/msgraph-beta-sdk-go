@@ -13,7 +13,7 @@ const (
 func (i ContentFormat) String() string {
     return []string{"default", "email"}[i]
 }
-func ParseContentFormat(v string) (interface{}, error) {
+func ParseContentFormat(v string) (any, error) {
     result := DEFAULT_ESCAPED_CONTENTFORMAT
     switch v {
         case "default":

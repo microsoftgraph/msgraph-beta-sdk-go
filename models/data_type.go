@@ -41,7 +41,7 @@ const (
 func (i DataType) String() string {
     return []string{"none", "boolean", "int64", "double", "string", "dateTime", "version", "base64", "xml", "booleanArray", "int64Array", "doubleArray", "stringArray", "dateTimeArray", "versionArray"}[i]
 }
-func ParseDataType(v string) (interface{}, error) {
+func ParseDataType(v string) (any, error) {
     result := NONE_DATATYPE
     switch v {
         case "none":

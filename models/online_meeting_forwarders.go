@@ -14,7 +14,7 @@ const (
 func (i OnlineMeetingForwarders) String() string {
     return []string{"everyone", "organizer", "unknownFutureValue"}[i]
 }
-func ParseOnlineMeetingForwarders(v string) (interface{}, error) {
+func ParseOnlineMeetingForwarders(v string) (any, error) {
     result := EVERYONE_ONLINEMEETINGFORWARDERS
     switch v {
         case "everyone":

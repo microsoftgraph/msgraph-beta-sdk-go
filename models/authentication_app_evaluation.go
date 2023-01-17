@@ -14,7 +14,7 @@ const (
 func (i AuthenticationAppEvaluation) String() string {
     return []string{"success", "failure", "unknownFutureValue"}[i]
 }
-func ParseAuthenticationAppEvaluation(v string) (interface{}, error) {
+func ParseAuthenticationAppEvaluation(v string) (any, error) {
     result := SUCCESS_AUTHENTICATIONAPPEVALUATION
     switch v {
         case "success":

@@ -14,7 +14,7 @@ const (
 func (i OpenIdConnectResponseTypes) String() string {
     return []string{"code", "id_token", "token"}[i]
 }
-func ParseOpenIdConnectResponseTypes(v string) (interface{}, error) {
+func ParseOpenIdConnectResponseTypes(v string) (any, error) {
     result := CODE_OPENIDCONNECTRESPONSETYPES
     switch v {
         case "code":

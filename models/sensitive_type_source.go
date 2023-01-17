@@ -13,7 +13,7 @@ const (
 func (i SensitiveTypeSource) String() string {
     return []string{"outOfBox", "tenant"}[i]
 }
-func ParseSensitiveTypeSource(v string) (interface{}, error) {
+func ParseSensitiveTypeSource(v string) (any, error) {
     result := OUTOFBOX_SENSITIVETYPESOURCE
     switch v {
         case "outOfBox":

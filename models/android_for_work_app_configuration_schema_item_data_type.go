@@ -19,7 +19,7 @@ const (
 func (i AndroidForWorkAppConfigurationSchemaItemDataType) String() string {
     return []string{"bool", "integer", "string", "choice", "multiselect", "bundle", "bundleArray", "hidden"}[i]
 }
-func ParseAndroidForWorkAppConfigurationSchemaItemDataType(v string) (interface{}, error) {
+func ParseAndroidForWorkAppConfigurationSchemaItemDataType(v string) (any, error) {
     result := BOOL_ANDROIDFORWORKAPPCONFIGURATIONSCHEMAITEMDATATYPE
     switch v {
         case "bool":

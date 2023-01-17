@@ -8,7 +8,7 @@ import (
 // ConditionalAccessAuthenticationStrengthsPoliciesItemUpdateAllowedCombinationsPostRequestBody 
 type ConditionalAccessAuthenticationStrengthsPoliciesItemUpdateAllowedCombinationsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The allowedCombinations property
     allowedCombinations []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodModes
 }
@@ -16,7 +16,7 @@ type ConditionalAccessAuthenticationStrengthsPoliciesItemUpdateAllowedCombinatio
 func NewConditionalAccessAuthenticationStrengthsPoliciesItemUpdateAllowedCombinationsPostRequestBody()(*ConditionalAccessAuthenticationStrengthsPoliciesItemUpdateAllowedCombinationsPostRequestBody) {
     m := &ConditionalAccessAuthenticationStrengthsPoliciesItemUpdateAllowedCombinationsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateConditionalAccessAuthenticationStrengthsPoliciesItemUpdateAllowedCombinationsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateConditionalAccessAuthenticationStrengthsPoliciesItemUpdateAllowedComb
     return NewConditionalAccessAuthenticationStrengthsPoliciesItemUpdateAllowedCombinationsPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessAuthenticationStrengthsPoliciesItemUpdateAllowedCombinationsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ConditionalAccessAuthenticationStrengthsPoliciesItemUpdateAllowedCombinationsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowedCombinations gets the allowedCombinations property value. The allowedCombinations property
@@ -67,7 +67,7 @@ func (m *ConditionalAccessAuthenticationStrengthsPoliciesItemUpdateAllowedCombin
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessAuthenticationStrengthsPoliciesItemUpdateAllowedCombinationsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ConditionalAccessAuthenticationStrengthsPoliciesItemUpdateAllowedCombinationsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowedCombinations sets the allowedCombinations property value. The allowedCombinations property

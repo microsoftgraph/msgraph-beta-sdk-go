@@ -7,7 +7,7 @@ import (
 // ManagedDeviceMobileAppConfigurationSettingState managed Device Mobile App Configuration Setting State for a given device.
 type ManagedDeviceMobileAppConfigurationSettingState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Current value of setting on device
     currentValue *string
     // Error code for the setting
@@ -41,7 +41,7 @@ type ManagedDeviceMobileAppConfigurationSettingState struct {
 func NewManagedDeviceMobileAppConfigurationSettingState()(*ManagedDeviceMobileAppConfigurationSettingState) {
     m := &ManagedDeviceMobileAppConfigurationSettingState{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateManagedDeviceMobileAppConfigurationSettingStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -49,7 +49,7 @@ func CreateManagedDeviceMobileAppConfigurationSettingStateFromDiscriminatorValue
     return NewManagedDeviceMobileAppConfigurationSettingState(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedDeviceMobileAppConfigurationSettingState) GetAdditionalData()(map[string]interface{}) {
+func (m *ManagedDeviceMobileAppConfigurationSettingState) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCurrentValue gets the currentValue property value. Current value of setting on device
@@ -357,7 +357,7 @@ func (m *ManagedDeviceMobileAppConfigurationSettingState) Serialize(writer i878a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedDeviceMobileAppConfigurationSettingState) SetAdditionalData(value map[string]interface{})() {
+func (m *ManagedDeviceMobileAppConfigurationSettingState) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCurrentValue sets the currentValue property value. Current value of setting on device

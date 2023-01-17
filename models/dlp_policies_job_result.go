@@ -8,7 +8,7 @@ import (
 // DlpPoliciesJobResult 
 type DlpPoliciesJobResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The auditCorrelationId property
     auditCorrelationId *string
     // The evaluationDateTime property
@@ -22,7 +22,7 @@ type DlpPoliciesJobResult struct {
 func NewDlpPoliciesJobResult()(*DlpPoliciesJobResult) {
     m := &DlpPoliciesJobResult{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDlpPoliciesJobResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateDlpPoliciesJobResultFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewDlpPoliciesJobResult(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DlpPoliciesJobResult) GetAdditionalData()(map[string]interface{}) {
+func (m *DlpPoliciesJobResult) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAuditCorrelationId gets the auditCorrelationId property value. The auditCorrelationId property
@@ -137,7 +137,7 @@ func (m *DlpPoliciesJobResult) Serialize(writer i878a80d2330e89d26896388a3f487ee
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DlpPoliciesJobResult) SetAdditionalData(value map[string]interface{})() {
+func (m *DlpPoliciesJobResult) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAuditCorrelationId sets the auditCorrelationId property value. The auditCorrelationId property

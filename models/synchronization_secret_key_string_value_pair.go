@@ -7,7 +7,7 @@ import (
 // SynchronizationSecretKeyStringValuePair 
 type SynchronizationSecretKeyStringValuePair struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The key property
     key *SynchronizationSecret
     // The OdataType property
@@ -19,7 +19,7 @@ type SynchronizationSecretKeyStringValuePair struct {
 func NewSynchronizationSecretKeyStringValuePair()(*SynchronizationSecretKeyStringValuePair) {
     m := &SynchronizationSecretKeyStringValuePair{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSynchronizationSecretKeyStringValuePairFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateSynchronizationSecretKeyStringValuePairFromDiscriminatorValue(parseNo
     return NewSynchronizationSecretKeyStringValuePair(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SynchronizationSecretKeyStringValuePair) GetAdditionalData()(map[string]interface{}) {
+func (m *SynchronizationSecretKeyStringValuePair) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -107,7 +107,7 @@ func (m *SynchronizationSecretKeyStringValuePair) Serialize(writer i878a80d2330e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SynchronizationSecretKeyStringValuePair) SetAdditionalData(value map[string]interface{})() {
+func (m *SynchronizationSecretKeyStringValuePair) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetKey sets the key property value. The key property

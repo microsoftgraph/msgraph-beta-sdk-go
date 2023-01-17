@@ -7,7 +7,7 @@ import (
 // SignDigestPostRequestBody 
 type SignDigestPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The digest property
     digest []byte
 }
@@ -15,7 +15,7 @@ type SignDigestPostRequestBody struct {
 func NewSignDigestPostRequestBody()(*SignDigestPostRequestBody) {
     m := &SignDigestPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSignDigestPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateSignDigestPostRequestBodyFromDiscriminatorValue(parseNode i878a80d233
     return NewSignDigestPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SignDigestPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *SignDigestPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDigest gets the digest property value. The digest property
@@ -62,7 +62,7 @@ func (m *SignDigestPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SignDigestPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *SignDigestPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDigest sets the digest property value. The digest property

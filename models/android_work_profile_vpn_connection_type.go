@@ -31,7 +31,7 @@ const (
 func (i AndroidWorkProfileVpnConnectionType) String() string {
     return []string{"ciscoAnyConnect", "pulseSecure", "f5EdgeClient", "dellSonicWallMobileConnect", "checkPointCapsuleVpn", "citrix", "paloAltoGlobalProtect", "microsoftTunnel", "netMotionMobility", "microsoftProtect"}[i]
 }
-func ParseAndroidWorkProfileVpnConnectionType(v string) (interface{}, error) {
+func ParseAndroidWorkProfileVpnConnectionType(v string) (any, error) {
     result := CISCOANYCONNECT_ANDROIDWORKPROFILEVPNCONNECTIONTYPE
     switch v {
         case "ciscoAnyConnect":

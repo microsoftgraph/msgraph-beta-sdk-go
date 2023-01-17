@@ -41,7 +41,7 @@ const (
 func (i EndpointSecurityConfigurationProfileType) String() string {
     return []string{"unknown", "antivirus", "windowsSecurity", "bitLocker", "fileVault", "firewall", "firewallRules", "endpointDetectionAndResponse", "deviceControl", "appAndBrowserIsolation", "exploitProtection", "webProtection", "applicationControl", "attackSurfaceReductionRules", "accountProtection"}[i]
 }
-func ParseEndpointSecurityConfigurationProfileType(v string) (interface{}, error) {
+func ParseEndpointSecurityConfigurationProfileType(v string) (any, error) {
     result := UNKNOWN_ENDPOINTSECURITYCONFIGURATIONPROFILETYPE
     switch v {
         case "unknown":

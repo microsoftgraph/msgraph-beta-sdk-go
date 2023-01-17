@@ -18,7 +18,7 @@ const (
 func (i TeamworkSoftwareType) String() string {
     return []string{"adminAgent", "operatingSystem", "teamsClient", "firmware", "partnerAgent", "companyPortal", "unknownFutureValue"}[i]
 }
-func ParseTeamworkSoftwareType(v string) (interface{}, error) {
+func ParseTeamworkSoftwareType(v string) (any, error) {
     result := ADMINAGENT_TEAMWORKSOFTWARETYPE
     switch v {
         case "adminAgent":

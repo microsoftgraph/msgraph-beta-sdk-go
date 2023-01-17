@@ -7,7 +7,7 @@ import (
 // WindowsPackageInformation contains properties for the package information for a Windows line of business app.
 type WindowsPackageInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Contains properties for Windows architecture.
     applicableArchitecture *WindowsArchitecture
     // The Display Name.
@@ -29,7 +29,7 @@ type WindowsPackageInformation struct {
 func NewWindowsPackageInformation()(*WindowsPackageInformation) {
     m := &WindowsPackageInformation{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWindowsPackageInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,7 +37,7 @@ func CreateWindowsPackageInformationFromDiscriminatorValue(parseNode i878a80d233
     return NewWindowsPackageInformation(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsPackageInformation) GetAdditionalData()(map[string]interface{}) {
+func (m *WindowsPackageInformation) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApplicableArchitecture gets the applicableArchitecture property value. Contains properties for Windows architecture.
@@ -217,7 +217,7 @@ func (m *WindowsPackageInformation) Serialize(writer i878a80d2330e89d26896388a3f
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsPackageInformation) SetAdditionalData(value map[string]interface{})() {
+func (m *WindowsPackageInformation) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetApplicableArchitecture sets the applicableArchitecture property value. Contains properties for Windows architecture.

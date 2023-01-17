@@ -63,7 +63,7 @@ const (
 func (i WindowsDefenderProductStatus) String() string {
     return []string{"noStatus", "serviceNotRunning", "serviceStartedWithoutMalwareProtection", "pendingFullScanDueToThreatAction", "pendingRebootDueToThreatAction", "pendingManualStepsDueToThreatAction", "avSignaturesOutOfDate", "asSignaturesOutOfDate", "noQuickScanHappenedForSpecifiedPeriod", "noFullScanHappenedForSpecifiedPeriod", "systemInitiatedScanInProgress", "systemInitiatedCleanInProgress", "samplesPendingSubmission", "productRunningInEvaluationMode", "productRunningInNonGenuineMode", "productExpired", "offlineScanRequired", "serviceShutdownAsPartOfSystemShutdown", "threatRemediationFailedCritically", "threatRemediationFailedNonCritically", "noStatusFlagsSet", "platformOutOfDate", "platformUpdateInProgress", "platformAboutToBeOutdated", "signatureOrPlatformEndOfLifeIsPastOrIsImpending", "windowsSModeSignaturesInUseOnNonWin10SInstall"}[i]
 }
-func ParseWindowsDefenderProductStatus(v string) (interface{}, error) {
+func ParseWindowsDefenderProductStatus(v string) (any, error) {
     result := NOSTATUS_WINDOWSDEFENDERPRODUCTSTATUS
     switch v {
         case "noStatus":

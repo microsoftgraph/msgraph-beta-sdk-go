@@ -17,7 +17,7 @@ const (
 func (i MacOSSystemExtensionType) String() string {
     return []string{"driverExtensionsAllowed", "networkExtensionsAllowed", "endpointSecurityExtensionsAllowed"}[i]
 }
-func ParseMacOSSystemExtensionType(v string) (interface{}, error) {
+func ParseMacOSSystemExtensionType(v string) (any, error) {
     result := DRIVEREXTENSIONSALLOWED_MACOSSYSTEMEXTENSIONTYPE
     switch v {
         case "driverExtensionsAllowed":

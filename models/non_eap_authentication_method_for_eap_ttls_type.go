@@ -19,7 +19,7 @@ const (
 func (i NonEapAuthenticationMethodForEapTtlsType) String() string {
     return []string{"unencryptedPassword", "challengeHandshakeAuthenticationProtocol", "microsoftChap", "microsoftChapVersionTwo"}[i]
 }
-func ParseNonEapAuthenticationMethodForEapTtlsType(v string) (interface{}, error) {
+func ParseNonEapAuthenticationMethodForEapTtlsType(v string) (any, error) {
     result := UNENCRYPTEDPASSWORD_NONEAPAUTHENTICATIONMETHODFOREAPTTLSTYPE
     switch v {
         case "unencryptedPassword":

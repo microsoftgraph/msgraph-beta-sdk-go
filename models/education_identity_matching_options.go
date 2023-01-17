@@ -7,7 +7,7 @@ import (
 // EducationIdentityMatchingOptions 
 type EducationIdentityMatchingOptions struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The appliesTo property
     appliesTo *EducationUserRole
     // The OdataType property
@@ -23,7 +23,7 @@ type EducationIdentityMatchingOptions struct {
 func NewEducationIdentityMatchingOptions()(*EducationIdentityMatchingOptions) {
     m := &EducationIdentityMatchingOptions{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateEducationIdentityMatchingOptionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateEducationIdentityMatchingOptionsFromDiscriminatorValue(parseNode i878
     return NewEducationIdentityMatchingOptions(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EducationIdentityMatchingOptions) GetAdditionalData()(map[string]interface{}) {
+func (m *EducationIdentityMatchingOptions) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAppliesTo gets the appliesTo property value. The appliesTo property
@@ -151,7 +151,7 @@ func (m *EducationIdentityMatchingOptions) Serialize(writer i878a80d2330e89d2689
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EducationIdentityMatchingOptions) SetAdditionalData(value map[string]interface{})() {
+func (m *EducationIdentityMatchingOptions) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAppliesTo sets the appliesTo property value. The appliesTo property

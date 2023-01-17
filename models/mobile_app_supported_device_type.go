@@ -7,7 +7,7 @@ import (
 // MobileAppSupportedDeviceType device properties
 type MobileAppSupportedDeviceType struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Maximum OS version
     maximumOperatingSystemVersion *string
     // Minimum OS version
@@ -21,7 +21,7 @@ type MobileAppSupportedDeviceType struct {
 func NewMobileAppSupportedDeviceType()(*MobileAppSupportedDeviceType) {
     m := &MobileAppSupportedDeviceType{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMobileAppSupportedDeviceTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateMobileAppSupportedDeviceTypeFromDiscriminatorValue(parseNode i878a80d
     return NewMobileAppSupportedDeviceType(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MobileAppSupportedDeviceType) GetAdditionalData()(map[string]interface{}) {
+func (m *MobileAppSupportedDeviceType) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -129,7 +129,7 @@ func (m *MobileAppSupportedDeviceType) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MobileAppSupportedDeviceType) SetAdditionalData(value map[string]interface{})() {
+func (m *MobileAppSupportedDeviceType) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetMaximumOperatingSystemVersion sets the maximumOperatingSystemVersion property value. Maximum OS version

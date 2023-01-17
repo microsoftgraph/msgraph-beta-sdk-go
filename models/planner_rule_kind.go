@@ -15,7 +15,7 @@ const (
 func (i PlannerRuleKind) String() string {
     return []string{"taskRule", "bucketRule", "planRule", "unknownFutureValue"}[i]
 }
-func ParsePlannerRuleKind(v string) (interface{}, error) {
+func ParsePlannerRuleKind(v string) (any, error) {
     result := TASKRULE_PLANNERRULEKIND
     switch v {
         case "taskRule":

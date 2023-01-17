@@ -16,7 +16,7 @@ const (
 func (i ManagementProvider) String() string {
     return []string{"microsoft", "community", "indirectProvider", "self", "unknownFutureValue"}[i]
 }
-func ParseManagementProvider(v string) (interface{}, error) {
+func ParseManagementProvider(v string) (any, error) {
     result := MICROSOFT_MANAGEMENTPROVIDER
     switch v {
         case "microsoft":

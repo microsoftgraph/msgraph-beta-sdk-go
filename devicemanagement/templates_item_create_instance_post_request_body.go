@@ -8,7 +8,7 @@ import (
 // TemplatesItemCreateInstancePostRequestBody 
 type TemplatesItemCreateInstancePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The description property
     description *string
     // The displayName property
@@ -22,7 +22,7 @@ type TemplatesItemCreateInstancePostRequestBody struct {
 func NewTemplatesItemCreateInstancePostRequestBody()(*TemplatesItemCreateInstancePostRequestBody) {
     m := &TemplatesItemCreateInstancePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTemplatesItemCreateInstancePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateTemplatesItemCreateInstancePostRequestBodyFromDiscriminatorValue(pars
     return NewTemplatesItemCreateInstancePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TemplatesItemCreateInstancePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *TemplatesItemCreateInstancePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDescription gets the description property value. The description property
@@ -141,7 +141,7 @@ func (m *TemplatesItemCreateInstancePostRequestBody) Serialize(writer i878a80d23
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TemplatesItemCreateInstancePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *TemplatesItemCreateInstancePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDescription sets the description property value. The description property

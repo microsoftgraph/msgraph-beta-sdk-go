@@ -17,7 +17,7 @@ const (
 func (i KeySize) String() string {
     return []string{"size1024", "size2048", "size4096"}[i]
 }
-func ParseKeySize(v string) (interface{}, error) {
+func ParseKeySize(v string) (any, error) {
     result := SIZE1024_KEYSIZE
     switch v {
         case "size1024":

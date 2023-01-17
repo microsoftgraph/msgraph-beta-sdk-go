@@ -29,7 +29,7 @@ const (
 func (i SubjectNameFormat) String() string {
     return []string{"commonName", "commonNameIncludingEmail", "commonNameAsEmail", "custom", "commonNameAsIMEI", "commonNameAsSerialNumber", "commonNameAsAadDeviceId", "commonNameAsIntuneDeviceId", "commonNameAsDurableDeviceId"}[i]
 }
-func ParseSubjectNameFormat(v string) (interface{}, error) {
+func ParseSubjectNameFormat(v string) (any, error) {
     result := COMMONNAME_SUBJECTNAMEFORMAT
     switch v {
         case "commonName":

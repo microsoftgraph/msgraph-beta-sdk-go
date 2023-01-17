@@ -10,7 +10,7 @@ type BusinessFlowTemplate struct {
     // The name of the business flow template
     displayName *string
 }
-// NewBusinessFlowTemplate instantiates a new businessFlowTemplate and sets the default values.
+// NewBusinessFlowTemplate instantiates a new BusinessFlowTemplate and sets the default values.
 func NewBusinessFlowTemplate()(*BusinessFlowTemplate) {
     m := &BusinessFlowTemplate{
         Entity: *NewEntity(),

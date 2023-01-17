@@ -13,7 +13,7 @@ const (
 func (i ScopeOperatorType) String() string {
     return []string{"Binary", "Unary"}[i]
 }
-func ParseScopeOperatorType(v string) (interface{}, error) {
+func ParseScopeOperatorType(v string) (any, error) {
     result := BINARY_SCOPEOPERATORTYPE
     switch v {
         case "Binary":

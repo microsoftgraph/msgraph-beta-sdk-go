@@ -19,7 +19,7 @@ const (
 func (i VpnDeadPeerDetectionRate) String() string {
     return []string{"medium", "none", "low", "high"}[i]
 }
-func ParseVpnDeadPeerDetectionRate(v string) (interface{}, error) {
+func ParseVpnDeadPeerDetectionRate(v string) (any, error) {
     result := MEDIUM_VPNDEADPEERDETECTIONRATE
     switch v {
         case "medium":

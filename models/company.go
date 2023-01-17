@@ -86,7 +86,7 @@ type Company struct {
     // The vendors property
     vendors []Vendor_escapedable
 }
-// NewCompany instantiates a new Company and sets the default values.
+// NewCompany instantiates a new company and sets the default values.
 func NewCompany()(*Company) {
     m := &Company{
         Entity: *NewEntity(),

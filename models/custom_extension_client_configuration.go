@@ -7,7 +7,7 @@ import (
 // CustomExtensionClientConfiguration 
 type CustomExtensionClientConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // The max duration in milliseconds that Azure AD will wait for a response from the logic app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
@@ -17,7 +17,7 @@ type CustomExtensionClientConfiguration struct {
 func NewCustomExtensionClientConfiguration()(*CustomExtensionClientConfiguration) {
     m := &CustomExtensionClientConfiguration{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCustomExtensionClientConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateCustomExtensionClientConfigurationFromDiscriminatorValue(parseNode i8
     return NewCustomExtensionClientConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CustomExtensionClientConfiguration) GetAdditionalData()(map[string]interface{}) {
+func (m *CustomExtensionClientConfiguration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -84,7 +84,7 @@ func (m *CustomExtensionClientConfiguration) Serialize(writer i878a80d2330e89d26
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CustomExtensionClientConfiguration) SetAdditionalData(value map[string]interface{})() {
+func (m *CustomExtensionClientConfiguration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

@@ -7,7 +7,7 @@ import (
 // ConditionalAccessGuestsOrExternalUsers 
 type ConditionalAccessGuestsOrExternalUsers struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The tenant ids of the selected types of external users. It could be either all b2b tenant, or a collection of tenant ids. External tenants can be specified only when guestOrExternalUserTypes is not null or an empty string.
     externalTenants ConditionalAccessExternalTenantsable
     // The guestOrExternalUserTypes property
@@ -19,7 +19,7 @@ type ConditionalAccessGuestsOrExternalUsers struct {
 func NewConditionalAccessGuestsOrExternalUsers()(*ConditionalAccessGuestsOrExternalUsers) {
     m := &ConditionalAccessGuestsOrExternalUsers{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateConditionalAccessGuestsOrExternalUsersFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateConditionalAccessGuestsOrExternalUsersFromDiscriminatorValue(parseNod
     return NewConditionalAccessGuestsOrExternalUsers(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessGuestsOrExternalUsers) GetAdditionalData()(map[string]interface{}) {
+func (m *ConditionalAccessGuestsOrExternalUsers) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExternalTenants gets the externalTenants property value. The tenant ids of the selected types of external users. It could be either all b2b tenant, or a collection of tenant ids. External tenants can be specified only when guestOrExternalUserTypes is not null or an empty string.
@@ -107,7 +107,7 @@ func (m *ConditionalAccessGuestsOrExternalUsers) Serialize(writer i878a80d2330e8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessGuestsOrExternalUsers) SetAdditionalData(value map[string]interface{})() {
+func (m *ConditionalAccessGuestsOrExternalUsers) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetExternalTenants sets the externalTenants property value. The tenant ids of the selected types of external users. It could be either all b2b tenant, or a collection of tenant ids. External tenants can be specified only when guestOrExternalUserTypes is not null or an empty string.

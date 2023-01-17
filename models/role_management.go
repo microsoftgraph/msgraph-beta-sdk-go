@@ -7,7 +7,7 @@ import (
 // RoleManagement 
 type RoleManagement struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The cloudPC property
     cloudPC RbacApplicationMultipleable
     // The RbacApplication for Device Management
@@ -23,7 +23,7 @@ type RoleManagement struct {
 func NewRoleManagement()(*RoleManagement) {
     m := &RoleManagement{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRoleManagementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateRoleManagementFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewRoleManagement(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RoleManagement) GetAdditionalData()(map[string]interface{}) {
+func (m *RoleManagement) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCloudPC gets the cloudPC property value. The cloudPC property
@@ -150,7 +150,7 @@ func (m *RoleManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RoleManagement) SetAdditionalData(value map[string]interface{})() {
+func (m *RoleManagement) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCloudPC sets the cloudPC property value. The cloudPC property

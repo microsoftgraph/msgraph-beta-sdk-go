@@ -7,7 +7,7 @@ import (
 // AndroidManagedStoreAccountEnterpriseSettingsApproveAppsPostRequestBody 
 type AndroidManagedStoreAccountEnterpriseSettingsApproveAppsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The approveAllPermissions property
     approveAllPermissions *bool
     // The packageIds property
@@ -17,7 +17,7 @@ type AndroidManagedStoreAccountEnterpriseSettingsApproveAppsPostRequestBody stru
 func NewAndroidManagedStoreAccountEnterpriseSettingsApproveAppsPostRequestBody()(*AndroidManagedStoreAccountEnterpriseSettingsApproveAppsPostRequestBody) {
     m := &AndroidManagedStoreAccountEnterpriseSettingsApproveAppsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAndroidManagedStoreAccountEnterpriseSettingsApproveAppsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateAndroidManagedStoreAccountEnterpriseSettingsApproveAppsPostRequestBod
     return NewAndroidManagedStoreAccountEnterpriseSettingsApproveAppsPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AndroidManagedStoreAccountEnterpriseSettingsApproveAppsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *AndroidManagedStoreAccountEnterpriseSettingsApproveAppsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApproveAllPermissions gets the approveAllPermissions property value. The approveAllPermissions property
@@ -88,7 +88,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettingsApproveAppsPostRequestBody)
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AndroidManagedStoreAccountEnterpriseSettingsApproveAppsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *AndroidManagedStoreAccountEnterpriseSettingsApproveAppsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetApproveAllPermissions sets the approveAllPermissions property value. The approveAllPermissions property

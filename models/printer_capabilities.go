@@ -7,7 +7,7 @@ import (
 // PrinterCapabilities 
 type PrinterCapabilities struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // A list of supported bottom margins(in microns) for the printer.
     bottomMargins []int32
     // True if the printer supports collating when printing muliple copies of a multi-page document; false otherwise.
@@ -93,7 +93,7 @@ type PrinterCapabilities struct {
 func NewPrinterCapabilities()(*PrinterCapabilities) {
     m := &PrinterCapabilities{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePrinterCapabilitiesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -101,7 +101,7 @@ func CreatePrinterCapabilitiesFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewPrinterCapabilities(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PrinterCapabilities) GetAdditionalData()(map[string]interface{}) {
+func (m *PrinterCapabilities) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBottomMargins gets the bottomMargins property value. A list of supported bottom margins(in microns) for the printer.
@@ -1048,7 +1048,7 @@ func (m *PrinterCapabilities) Serialize(writer i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PrinterCapabilities) SetAdditionalData(value map[string]interface{})() {
+func (m *PrinterCapabilities) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetBottomMargins sets the bottomMargins property value. A list of supported bottom margins(in microns) for the printer.

@@ -13,7 +13,7 @@ const (
 func (i CloudPcSnapshotStatus) String() string {
     return []string{"ready", "unknownFutureValue"}[i]
 }
-func ParseCloudPcSnapshotStatus(v string) (interface{}, error) {
+func ParseCloudPcSnapshotStatus(v string) (any, error) {
     result := READY_CLOUDPCSNAPSHOTSTATUS
     switch v {
         case "ready":

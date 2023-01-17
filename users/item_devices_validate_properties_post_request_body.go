@@ -8,7 +8,7 @@ import (
 // ItemDevicesValidatePropertiesPostRequestBody 
 type ItemDevicesValidatePropertiesPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The displayName property
     displayName *string
     // The entityType property
@@ -22,7 +22,7 @@ type ItemDevicesValidatePropertiesPostRequestBody struct {
 func NewItemDevicesValidatePropertiesPostRequestBody()(*ItemDevicesValidatePropertiesPostRequestBody) {
     m := &ItemDevicesValidatePropertiesPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemDevicesValidatePropertiesPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateItemDevicesValidatePropertiesPostRequestBodyFromDiscriminatorValue(pa
     return NewItemDevicesValidatePropertiesPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemDevicesValidatePropertiesPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemDevicesValidatePropertiesPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDisplayName gets the displayName property value. The displayName property
@@ -129,7 +129,7 @@ func (m *ItemDevicesValidatePropertiesPostRequestBody) Serialize(writer i878a80d
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemDevicesValidatePropertiesPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemDevicesValidatePropertiesPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. The displayName property

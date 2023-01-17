@@ -17,7 +17,7 @@ const (
 func (i DeviceScopeOperator) String() string {
     return []string{"none", "equals", "unknownFutureValue"}[i]
 }
-func ParseDeviceScopeOperator(v string) (interface{}, error) {
+func ParseDeviceScopeOperator(v string) (any, error) {
     result := NONE_DEVICESCOPEOPERATOR
     switch v {
         case "none":

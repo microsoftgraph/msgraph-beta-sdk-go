@@ -8,7 +8,7 @@ import (
 // WindowsUpdatesUpdatableAssetsItemRemoveMembersPostRequestBody 
 type WindowsUpdatesUpdatableAssetsItemRemoveMembersPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The assets property
     assets []i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable
 }
@@ -16,7 +16,7 @@ type WindowsUpdatesUpdatableAssetsItemRemoveMembersPostRequestBody struct {
 func NewWindowsUpdatesUpdatableAssetsItemRemoveMembersPostRequestBody()(*WindowsUpdatesUpdatableAssetsItemRemoveMembersPostRequestBody) {
     m := &WindowsUpdatesUpdatableAssetsItemRemoveMembersPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWindowsUpdatesUpdatableAssetsItemRemoveMembersPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateWindowsUpdatesUpdatableAssetsItemRemoveMembersPostRequestBodyFromDisc
     return NewWindowsUpdatesUpdatableAssetsItemRemoveMembersPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsUpdatesUpdatableAssetsItemRemoveMembersPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *WindowsUpdatesUpdatableAssetsItemRemoveMembersPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAssets gets the assets property value. The assets property
@@ -71,7 +71,7 @@ func (m *WindowsUpdatesUpdatableAssetsItemRemoveMembersPostRequestBody) Serializ
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsUpdatesUpdatableAssetsItemRemoveMembersPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *WindowsUpdatesUpdatableAssetsItemRemoveMembersPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAssets sets the assets property value. The assets property

@@ -17,7 +17,7 @@ const (
 func (i ITunesPairingMode) String() string {
     return []string{"disallow", "allow", "requiresCertificate"}[i]
 }
-func ParseITunesPairingMode(v string) (interface{}, error) {
+func ParseITunesPairingMode(v string) (any, error) {
     result := DISALLOW_ITUNESPAIRINGMODE
     switch v {
         case "disallow":

@@ -27,7 +27,7 @@ const (
 func (i DeviceManagementConfigurationPlatforms) String() string {
     return []string{"none", "android", "iOS", "macOS", "windows10X", "windows10", "linux", "unknownFutureValue"}[i]
 }
-func ParseDeviceManagementConfigurationPlatforms(v string) (interface{}, error) {
+func ParseDeviceManagementConfigurationPlatforms(v string) (any, error) {
     result := NONE_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
     switch v {
         case "none":

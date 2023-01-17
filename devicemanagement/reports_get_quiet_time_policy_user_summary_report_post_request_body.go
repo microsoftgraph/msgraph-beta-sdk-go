@@ -7,7 +7,7 @@ import (
 // ReportsGetQuietTimePolicyUserSummaryReportPostRequestBody 
 type ReportsGetQuietTimePolicyUserSummaryReportPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The filter property
     filter *string
     // The groupBy property
@@ -31,7 +31,7 @@ type ReportsGetQuietTimePolicyUserSummaryReportPostRequestBody struct {
 func NewReportsGetQuietTimePolicyUserSummaryReportPostRequestBody()(*ReportsGetQuietTimePolicyUserSummaryReportPostRequestBody) {
     m := &ReportsGetQuietTimePolicyUserSummaryReportPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateReportsGetQuietTimePolicyUserSummaryReportPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ func CreateReportsGetQuietTimePolicyUserSummaryReportPostRequestBodyFromDiscrimi
     return NewReportsGetQuietTimePolicyUserSummaryReportPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ReportsGetQuietTimePolicyUserSummaryReportPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ReportsGetQuietTimePolicyUserSummaryReportPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -250,7 +250,7 @@ func (m *ReportsGetQuietTimePolicyUserSummaryReportPostRequestBody) Serialize(wr
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ReportsGetQuietTimePolicyUserSummaryReportPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ReportsGetQuietTimePolicyUserSummaryReportPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetFilter sets the filter property value. The filter property

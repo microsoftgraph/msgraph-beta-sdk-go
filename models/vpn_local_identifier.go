@@ -17,7 +17,7 @@ const (
 func (i VpnLocalIdentifier) String() string {
     return []string{"deviceFQDN", "empty", "clientCertificateSubjectName"}[i]
 }
-func ParseVpnLocalIdentifier(v string) (interface{}, error) {
+func ParseVpnLocalIdentifier(v string) (any, error) {
     result := DEVICEFQDN_VPNLOCALIDENTIFIER
     switch v {
         case "deviceFQDN":

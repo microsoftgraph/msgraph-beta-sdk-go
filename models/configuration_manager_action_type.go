@@ -25,7 +25,7 @@ const (
 func (i ConfigurationManagerActionType) String() string {
     return []string{"refreshMachinePolicy", "refreshUserPolicy", "wakeUpClient", "appEvaluation", "quickScan", "fullScan", "windowsDefenderUpdateSignatures"}[i]
 }
-func ParseConfigurationManagerActionType(v string) (interface{}, error) {
+func ParseConfigurationManagerActionType(v string) (any, error) {
     result := REFRESHMACHINEPOLICY_CONFIGURATIONMANAGERACTIONTYPE
     switch v {
         case "refreshMachinePolicy":

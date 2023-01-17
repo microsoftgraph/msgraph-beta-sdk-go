@@ -34,7 +34,7 @@ const (
 func (i CertificateIssuanceStates) String() string {
     return []string{"unknown", "challengeIssued", "challengeIssueFailed", "requestCreationFailed", "requestSubmitFailed", "challengeValidationSucceeded", "challengeValidationFailed", "issueFailed", "issuePending", "issued", "responseProcessingFailed", "responsePending", "enrollmentSucceeded", "enrollmentNotNeeded", "revoked", "removedFromCollection", "renewVerified", "installFailed", "installed", "deleteFailed", "deleted", "renewalRequested", "requested"}[i]
 }
-func ParseCertificateIssuanceStates(v string) (interface{}, error) {
+func ParseCertificateIssuanceStates(v string) (any, error) {
     result := UNKNOWN_CERTIFICATEISSUANCESTATES
     switch v {
         case "unknown":

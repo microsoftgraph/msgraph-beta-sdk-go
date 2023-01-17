@@ -19,7 +19,7 @@ const (
 func (i MacOSContentCachingPeerPolicy) String() string {
     return []string{"notConfigured", "peersInLocalNetwork", "peersWithSamePublicIpAddress", "peersInCustomLocalNetworks"}[i]
 }
-func ParseMacOSContentCachingPeerPolicy(v string) (interface{}, error) {
+func ParseMacOSContentCachingPeerPolicy(v string) (any, error) {
     result := NOTCONFIGURED_MACOSCONTENTCACHINGPEERPOLICY
     switch v {
         case "notConfigured":

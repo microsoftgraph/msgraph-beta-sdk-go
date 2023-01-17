@@ -23,7 +23,7 @@ const (
 func (i ChromeOSOnboardingStatus) String() string {
     return []string{"unknown", "inprogress", "onboarded", "failed", "offboarding", "unknownFutureValue"}[i]
 }
-func ParseChromeOSOnboardingStatus(v string) (interface{}, error) {
+func ParseChromeOSOnboardingStatus(v string) (any, error) {
     result := UNKNOWN_CHROMEOSONBOARDINGSTATUS
     switch v {
         case "unknown":

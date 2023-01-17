@@ -17,7 +17,7 @@ const (
 func (i DeviceScopeParameter) String() string {
     return []string{"none", "scopeTag", "unknownFutureValue"}[i]
 }
-func ParseDeviceScopeParameter(v string) (interface{}, error) {
+func ParseDeviceScopeParameter(v string) (any, error) {
     result := NONE_DEVICESCOPEPARAMETER
     switch v {
         case "none":

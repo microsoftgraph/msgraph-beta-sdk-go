@@ -14,7 +14,7 @@ const (
 func (i ContinuousAccessEvaluationMode) String() string {
     return []string{"strictEnforcement", "disabled", "unknownFutureValue"}[i]
 }
-func ParseContinuousAccessEvaluationMode(v string) (interface{}, error) {
+func ParseContinuousAccessEvaluationMode(v string) (any, error) {
     result := STRICTENFORCEMENT_CONTINUOUSACCESSEVALUATIONMODE
     switch v {
         case "strictEnforcement":

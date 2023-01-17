@@ -8,7 +8,7 @@ import (
 // ImportedDeviceIdentitiesImportDeviceIdentityListPostRequestBody 
 type ImportedDeviceIdentitiesImportDeviceIdentityListPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The importedDeviceIdentities property
     importedDeviceIdentities []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedDeviceIdentityable
     // The overwriteImportedDeviceIdentities property
@@ -18,7 +18,7 @@ type ImportedDeviceIdentitiesImportDeviceIdentityListPostRequestBody struct {
 func NewImportedDeviceIdentitiesImportDeviceIdentityListPostRequestBody()(*ImportedDeviceIdentitiesImportDeviceIdentityListPostRequestBody) {
     m := &ImportedDeviceIdentitiesImportDeviceIdentityListPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateImportedDeviceIdentitiesImportDeviceIdentityListPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateImportedDeviceIdentitiesImportDeviceIdentityListPostRequestBodyFromDi
     return NewImportedDeviceIdentitiesImportDeviceIdentityListPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ImportedDeviceIdentitiesImportDeviceIdentityListPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ImportedDeviceIdentitiesImportDeviceIdentityListPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -93,7 +93,7 @@ func (m *ImportedDeviceIdentitiesImportDeviceIdentityListPostRequestBody) Serial
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ImportedDeviceIdentitiesImportDeviceIdentityListPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ImportedDeviceIdentitiesImportDeviceIdentityListPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetImportedDeviceIdentities sets the importedDeviceIdentities property value. The importedDeviceIdentities property

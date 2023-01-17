@@ -15,7 +15,7 @@ const (
 func (i SensitivityLabelAssignmentMethod) String() string {
     return []string{"standard", "privileged", "auto", "unknownFutureValue"}[i]
 }
-func ParseSensitivityLabelAssignmentMethod(v string) (interface{}, error) {
+func ParseSensitivityLabelAssignmentMethod(v string) (any, error) {
     result := STANDARD_SENSITIVITYLABELASSIGNMENTMETHOD
     switch v {
         case "standard":

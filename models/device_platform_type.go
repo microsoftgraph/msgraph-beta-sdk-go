@@ -31,7 +31,7 @@ const (
 func (i DevicePlatformType) String() string {
     return []string{"android", "androidForWork", "iOS", "macOS", "windowsPhone81", "windows81AndLater", "windows10AndLater", "androidWorkProfile", "unknown", "androidAOSP"}[i]
 }
-func ParseDevicePlatformType(v string) (interface{}, error) {
+func ParseDevicePlatformType(v string) (any, error) {
     result := ANDROID_DEVICEPLATFORMTYPE
     switch v {
         case "android":

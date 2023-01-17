@@ -8,7 +8,7 @@ import (
 // ItemSecurityInformationProtectionSensitivityLabelsExtractContentLabelPostRequestBody 
 type ItemSecurityInformationProtectionSensitivityLabelsExtractContentLabelPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The contentInfo property
     contentInfo i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ContentInfoable
 }
@@ -16,7 +16,7 @@ type ItemSecurityInformationProtectionSensitivityLabelsExtractContentLabelPostRe
 func NewItemSecurityInformationProtectionSensitivityLabelsExtractContentLabelPostRequestBody()(*ItemSecurityInformationProtectionSensitivityLabelsExtractContentLabelPostRequestBody) {
     m := &ItemSecurityInformationProtectionSensitivityLabelsExtractContentLabelPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemSecurityInformationProtectionSensitivityLabelsExtractContentLabelPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateItemSecurityInformationProtectionSensitivityLabelsExtractContentLabel
     return NewItemSecurityInformationProtectionSensitivityLabelsExtractContentLabelPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemSecurityInformationProtectionSensitivityLabelsExtractContentLabelPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemSecurityInformationProtectionSensitivityLabelsExtractContentLabelPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContentInfo gets the contentInfo property value. The contentInfo property
@@ -63,7 +63,7 @@ func (m *ItemSecurityInformationProtectionSensitivityLabelsExtractContentLabelPo
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemSecurityInformationProtectionSensitivityLabelsExtractContentLabelPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemSecurityInformationProtectionSensitivityLabelsExtractContentLabelPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetContentInfo sets the contentInfo property value. The contentInfo property

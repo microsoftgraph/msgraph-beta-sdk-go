@@ -7,7 +7,7 @@ import (
 // ClassifyFilePostRequestBody 
 type ClassifyFilePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The file property
     file []byte
     // The sensitiveTypeIds property
@@ -17,7 +17,7 @@ type ClassifyFilePostRequestBody struct {
 func NewClassifyFilePostRequestBody()(*ClassifyFilePostRequestBody) {
     m := &ClassifyFilePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateClassifyFilePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateClassifyFilePostRequestBodyFromDiscriminatorValue(parseNode i878a80d2
     return NewClassifyFilePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ClassifyFilePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ClassifyFilePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,7 +88,7 @@ func (m *ClassifyFilePostRequestBody) Serialize(writer i878a80d2330e89d26896388a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ClassifyFilePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ClassifyFilePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetFile sets the file property value. The file property

@@ -19,7 +19,7 @@ const (
 func (i InternetExplorerMessageSetting) String() string {
     return []string{"notConfigured", "disabled", "enabled", "keepGoing"}[i]
 }
-func ParseInternetExplorerMessageSetting(v string) (interface{}, error) {
+func ParseInternetExplorerMessageSetting(v string) (any, error) {
     result := NOTCONFIGURED_INTERNETEXPLORERMESSAGESETTING
     switch v {
         case "notConfigured":

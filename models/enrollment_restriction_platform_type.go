@@ -6,26 +6,30 @@ import (
 type EnrollmentRestrictionPlatformType int
 
 const (
-    // Applies to all platforms
+    // Indicates that the enrollment configuration applies to all platforms
     ALLPLATFORMS_ENROLLMENTRESTRICTIONPLATFORMTYPE EnrollmentRestrictionPlatformType = iota
-    // iOS/iPadOS devices
+    // Indicates that the enrollment configuration applies only to iOS/iPadOS devices
     IOS_ENROLLMENTRESTRICTIONPLATFORMTYPE
-    // Windows devices
+    // Indicates that the enrollment configuration applies only to Windows devices
     WINDOWS_ENROLLMENTRESTRICTIONPLATFORMTYPE
-    // Windows Phone devices
+    // Indicates that the enrollment configuration applies only to Windows Phone devices
     WINDOWSPHONE_ENROLLMENTRESTRICTIONPLATFORMTYPE
-    // Android devices
+    // Indicates that the enrollment configuration applies only to Android devices
     ANDROID_ENROLLMENTRESTRICTIONPLATFORMTYPE
-    // Android for Work devices
+    // Indicates that the enrollment configuration applies only to Android for Work devices
     ANDROIDFORWORK_ENROLLMENTRESTRICTIONPLATFORMTYPE
-    // macOS devices
+    // Indicates that the enrollment configuration applies only to macOS devices
     MAC_ENROLLMENTRESTRICTIONPLATFORMTYPE
+    // Indicates that the enrollment configuration applies only to Linux devices
+    LINUX_ENROLLMENTRESTRICTIONPLATFORMTYPE
+    // Evolvable enumeration sentinel value. Do not use
+    UNKNOWNFUTUREVALUE_ENROLLMENTRESTRICTIONPLATFORMTYPE
 )
 
 func (i EnrollmentRestrictionPlatformType) String() string {
-    return []string{"allPlatforms", "ios", "windows", "windowsPhone", "android", "androidForWork", "mac"}[i]
+    return []string{"allPlatforms", "ios", "windows", "windowsPhone", "android", "androidForWork", "mac", "linux", "unknownFutureValue"}[i]
 }
-func ParseEnrollmentRestrictionPlatformType(v string) (interface{}, error) {
+func ParseEnrollmentRestrictionPlatformType(v string) (any, error) {
     result := ALLPLATFORMS_ENROLLMENTRESTRICTIONPLATFORMTYPE
     switch v {
         case "allPlatforms":
@@ -42,6 +46,10 @@ func ParseEnrollmentRestrictionPlatformType(v string) (interface{}, error) {
             result = ANDROIDFORWORK_ENROLLMENTRESTRICTIONPLATFORMTYPE
         case "mac":
             result = MAC_ENROLLMENTRESTRICTIONPLATFORMTYPE
+        case "linux":
+            result = LINUX_ENROLLMENTRESTRICTIONPLATFORMTYPE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_ENROLLMENTRESTRICTIONPLATFORMTYPE
         default:
             return 0, errors.New("Unknown EnrollmentRestrictionPlatformType value: " + v)
     }

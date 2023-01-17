@@ -15,7 +15,7 @@ const (
 func (i MacOSProcessIdentifierType) String() string {
     return []string{"bundleID", "path"}[i]
 }
-func ParseMacOSProcessIdentifierType(v string) (interface{}, error) {
+func ParseMacOSProcessIdentifierType(v string) (any, error) {
     result := BUNDLEID_MACOSPROCESSIDENTIFIERTYPE
     switch v {
         case "bundleID":

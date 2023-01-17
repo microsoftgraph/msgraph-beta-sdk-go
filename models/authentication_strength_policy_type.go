@@ -14,7 +14,7 @@ const (
 func (i AuthenticationStrengthPolicyType) String() string {
     return []string{"builtIn", "custom", "unknownFutureValue"}[i]
 }
-func ParseAuthenticationStrengthPolicyType(v string) (interface{}, error) {
+func ParseAuthenticationStrengthPolicyType(v string) (any, error) {
     result := BUILTIN_AUTHENTICATIONSTRENGTHPOLICYTYPE
     switch v {
         case "builtIn":

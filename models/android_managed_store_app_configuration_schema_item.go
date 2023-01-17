@@ -7,7 +7,7 @@ import (
 // AndroidManagedStoreAppConfigurationSchemaItem single configuration item inside an Android application's custom configuration schema.
 type AndroidManagedStoreAppConfigurationSchemaItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Data type for a configuration item inside an Android application's custom configuration schema
     dataType *AndroidManagedStoreAppConfigurationSchemaItemDataType
     // Default value for boolean type items, if specified by the app developer
@@ -37,7 +37,7 @@ type AndroidManagedStoreAppConfigurationSchemaItem struct {
 func NewAndroidManagedStoreAppConfigurationSchemaItem()(*AndroidManagedStoreAppConfigurationSchemaItem) {
     m := &AndroidManagedStoreAppConfigurationSchemaItem{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAndroidManagedStoreAppConfigurationSchemaItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +45,7 @@ func CreateAndroidManagedStoreAppConfigurationSchemaItemFromDiscriminatorValue(p
     return NewAndroidManagedStoreAppConfigurationSchemaItem(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetAdditionalData()(map[string]interface{}) {
+func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDataType gets the dataType property value. Data type for a configuration item inside an Android application's custom configuration schema
@@ -317,7 +317,7 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItem) Serialize(writer i878a80
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AndroidManagedStoreAppConfigurationSchemaItem) SetAdditionalData(value map[string]interface{})() {
+func (m *AndroidManagedStoreAppConfigurationSchemaItem) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDataType sets the dataType property value. Data type for a configuration item inside an Android application's custom configuration schema

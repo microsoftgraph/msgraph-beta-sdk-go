@@ -7,7 +7,7 @@ import (
 // AndroidDeviceOwnerUserFacingMessage represents a user-facing message with locale information as well as a default message to be used if the user's locale doesn't match with any of the localized messages
 type AndroidDeviceOwnerUserFacingMessage struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The default message displayed if the user's locale doesn't match with any of the localized messages
     defaultMessage *string
     // The list of <locale, message> pairs. This collection can contain a maximum of 500 elements.
@@ -19,7 +19,7 @@ type AndroidDeviceOwnerUserFacingMessage struct {
 func NewAndroidDeviceOwnerUserFacingMessage()(*AndroidDeviceOwnerUserFacingMessage) {
     m := &AndroidDeviceOwnerUserFacingMessage{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAndroidDeviceOwnerUserFacingMessageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateAndroidDeviceOwnerUserFacingMessageFromDiscriminatorValue(parseNode i
     return NewAndroidDeviceOwnerUserFacingMessage(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AndroidDeviceOwnerUserFacingMessage) GetAdditionalData()(map[string]interface{}) {
+func (m *AndroidDeviceOwnerUserFacingMessage) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDefaultMessage gets the defaultMessage property value. The default message displayed if the user's locale doesn't match with any of the localized messages
@@ -114,7 +114,7 @@ func (m *AndroidDeviceOwnerUserFacingMessage) Serialize(writer i878a80d2330e89d2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AndroidDeviceOwnerUserFacingMessage) SetAdditionalData(value map[string]interface{})() {
+func (m *AndroidDeviceOwnerUserFacingMessage) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDefaultMessage sets the defaultMessage property value. The default message displayed if the user's locale doesn't match with any of the localized messages

@@ -21,7 +21,7 @@ const (
 func (i RemediationState) String() string {
     return []string{"unknown", "skipped", "success", "remediationFailed", "scriptError"}[i]
 }
-func ParseRemediationState(v string) (interface{}, error) {
+func ParseRemediationState(v string) (any, error) {
     result := UNKNOWN_REMEDIATIONSTATE
     switch v {
         case "unknown":

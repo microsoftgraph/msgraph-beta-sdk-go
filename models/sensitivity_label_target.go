@@ -16,7 +16,7 @@ const (
 func (i SensitivityLabelTarget) String() string {
     return []string{"email", "site", "unifiedGroup", "unknownFutureValue", "teamwork"}[i]
 }
-func ParseSensitivityLabelTarget(v string) (interface{}, error) {
+func ParseSensitivityLabelTarget(v string) (any, error) {
     result := EMAIL_SENSITIVITYLABELTARGET
     switch v {
         case "email":

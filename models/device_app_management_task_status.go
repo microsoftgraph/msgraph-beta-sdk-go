@@ -21,7 +21,7 @@ const (
 func (i DeviceAppManagementTaskStatus) String() string {
     return []string{"unknown", "pending", "active", "completed", "rejected"}[i]
 }
-func ParseDeviceAppManagementTaskStatus(v string) (interface{}, error) {
+func ParseDeviceAppManagementTaskStatus(v string) (any, error) {
     result := UNKNOWN_DEVICEAPPMANAGEMENTTASKSTATUS
     switch v {
         case "unknown":

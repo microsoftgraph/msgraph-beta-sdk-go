@@ -20,7 +20,7 @@ const (
 func (i ComanagementEligibleType) String() string {
     return []string{"comanaged", "eligible", "eligibleButNotAzureAdJoined", "needsOsUpdate", "ineligible", "scheduledForEnrollment", "unknownFutureValue"}[i]
 }
-func ParseComanagementEligibleType(v string) (interface{}, error) {
+func ParseComanagementEligibleType(v string) (any, error) {
     result := COMANAGED_COMANAGEMENTELIGIBLETYPE
     switch v {
         case "comanaged":

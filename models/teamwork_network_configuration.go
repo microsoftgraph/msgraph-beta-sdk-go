@@ -7,7 +7,7 @@ import (
 // TeamworkNetworkConfiguration 
 type TeamworkNetworkConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The default gateway is the path used to pass information when the destination is unknown to the device.
     defaultGateway *string
     // The network domain of the device, for example, contoso.com.
@@ -33,7 +33,7 @@ type TeamworkNetworkConfiguration struct {
 func NewTeamworkNetworkConfiguration()(*TeamworkNetworkConfiguration) {
     m := &TeamworkNetworkConfiguration{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTeamworkNetworkConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,7 +41,7 @@ func CreateTeamworkNetworkConfigurationFromDiscriminatorValue(parseNode i878a80d
     return NewTeamworkNetworkConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkNetworkConfiguration) GetAdditionalData()(map[string]interface{}) {
+func (m *TeamworkNetworkConfiguration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDefaultGateway gets the defaultGateway property value. The default gateway is the path used to pass information when the destination is unknown to the device.
@@ -260,7 +260,7 @@ func (m *TeamworkNetworkConfiguration) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkNetworkConfiguration) SetAdditionalData(value map[string]interface{})() {
+func (m *TeamworkNetworkConfiguration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDefaultGateway sets the defaultGateway property value. The default gateway is the path used to pass information when the destination is unknown to the device.

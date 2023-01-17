@@ -16,7 +16,7 @@ type RetrieveRemoteHelpSessionResponse struct {
     // Sharer ACS User Id
     acsSharerUserId *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Android Device Name
     deviceName *string
     // The OdataType property
@@ -34,7 +34,7 @@ type RetrieveRemoteHelpSessionResponse struct {
 func NewRetrieveRemoteHelpSessionResponse()(*RetrieveRemoteHelpSessionResponse) {
     m := &RetrieveRemoteHelpSessionResponse{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRetrieveRemoteHelpSessionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -58,7 +58,7 @@ func (m *RetrieveRemoteHelpSessionResponse) GetAcsSharerUserId()(*string) {
     return m.acsSharerUserId
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RetrieveRemoteHelpSessionResponse) GetAdditionalData()(map[string]interface{}) {
+func (m *RetrieveRemoteHelpSessionResponse) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeviceName gets the deviceName property value. Android Device Name
@@ -277,7 +277,7 @@ func (m *RetrieveRemoteHelpSessionResponse) SetAcsSharerUserId(value *string)() 
     m.acsSharerUserId = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RetrieveRemoteHelpSessionResponse) SetAdditionalData(value map[string]interface{})() {
+func (m *RetrieveRemoteHelpSessionResponse) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeviceName sets the deviceName property value. Android Device Name

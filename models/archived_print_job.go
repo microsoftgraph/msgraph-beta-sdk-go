@@ -12,7 +12,7 @@ type ArchivedPrintJob struct {
     // The dateTimeOffset when the job was acquired by the printer, if any. Read-only.
     acquiredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The number of black and white pages that were printed. Read-only.
     blackAndWhitePageCount *int32
     // The number of color pages that were printed. Read-only.
@@ -44,7 +44,7 @@ type ArchivedPrintJob struct {
 func NewArchivedPrintJob()(*ArchivedPrintJob) {
     m := &ArchivedPrintJob{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateArchivedPrintJobFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -60,7 +60,7 @@ func (m *ArchivedPrintJob) GetAcquiredDateTime()(*i336074805fc853987abe6f7fe3ad9
     return m.acquiredDateTime
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ArchivedPrintJob) GetAdditionalData()(map[string]interface{}) {
+func (m *ArchivedPrintJob) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBlackAndWhitePageCount gets the blackAndWhitePageCount property value. The number of black and white pages that were printed. Read-only.
@@ -380,7 +380,7 @@ func (m *ArchivedPrintJob) SetAcquiredDateTime(value *i336074805fc853987abe6f7fe
     m.acquiredDateTime = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ArchivedPrintJob) SetAdditionalData(value map[string]interface{})() {
+func (m *ArchivedPrintJob) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetBlackAndWhitePageCount sets the blackAndWhitePageCount property value. The number of black and white pages that were printed. Read-only.

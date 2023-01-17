@@ -7,7 +7,7 @@ import (
 // DeviceManagementConstraint base entity for a constraint
 type DeviceManagementConstraint struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
 }
@@ -15,7 +15,7 @@ type DeviceManagementConstraint struct {
 func NewDeviceManagementConstraint()(*DeviceManagementConstraint) {
     m := &DeviceManagementConstraint{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceManagementConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -69,7 +69,7 @@ func CreateDeviceManagementConstraintFromDiscriminatorValue(parseNode i878a80d23
     return NewDeviceManagementConstraint(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementConstraint) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceManagementConstraint) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,7 +108,7 @@ func (m *DeviceManagementConstraint) Serialize(writer i878a80d2330e89d26896388a3
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementConstraint) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceManagementConstraint) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

@@ -19,7 +19,7 @@ const (
 func (i UserPurpose) String() string {
     return []string{"unknown", "user", "linked", "shared", "room", "equipment", "others", "unknownFutureValue"}[i]
 }
-func ParseUserPurpose(v string) (interface{}, error) {
+func ParseUserPurpose(v string) (any, error) {
     result := UNKNOWN_USERPURPOSE
     switch v {
         case "unknown":

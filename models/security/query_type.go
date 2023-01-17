@@ -14,7 +14,7 @@ const (
 func (i QueryType) String() string {
     return []string{"files", "messages", "unknownFutureValue"}[i]
 }
-func ParseQueryType(v string) (interface{}, error) {
+func ParseQueryType(v string) (any, error) {
     result := FILES_QUERYTYPE
     switch v {
         case "files":

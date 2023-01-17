@@ -7,7 +7,7 @@ import (
 // TenantAttachRBACState represents result of GetState API.
 type TenantAttachRBACState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicates whether the tenant is enabled for Tenant Attach with role management.  TRUE if enabled, FALSE if the Tenant Attach with rolemanagement is disabled.
     enabled *bool
     // The OdataType property
@@ -17,7 +17,7 @@ type TenantAttachRBACState struct {
 func NewTenantAttachRBACState()(*TenantAttachRBACState) {
     m := &TenantAttachRBACState{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTenantAttachRBACStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateTenantAttachRBACStateFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewTenantAttachRBACState(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TenantAttachRBACState) GetAdditionalData()(map[string]interface{}) {
+func (m *TenantAttachRBACState) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEnabled gets the enabled property value. Indicates whether the tenant is enabled for Tenant Attach with role management.  TRUE if enabled, FALSE if the Tenant Attach with rolemanagement is disabled.
@@ -84,7 +84,7 @@ func (m *TenantAttachRBACState) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TenantAttachRBACState) SetAdditionalData(value map[string]interface{})() {
+func (m *TenantAttachRBACState) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEnabled sets the enabled property value. Indicates whether the tenant is enabled for Tenant Attach with role management.  TRUE if enabled, FALSE if the Tenant Attach with rolemanagement is disabled.

@@ -15,7 +15,7 @@ const (
 func (i DeviceAndAppManagementAssignmentSource) String() string {
     return []string{"direct", "policySets"}[i]
 }
-func ParseDeviceAndAppManagementAssignmentSource(v string) (interface{}, error) {
+func ParseDeviceAndAppManagementAssignmentSource(v string) (any, error) {
     result := DIRECT_DEVICEANDAPPMANAGEMENTASSIGNMENTSOURCE
     switch v {
         case "direct":

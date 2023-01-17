@@ -15,7 +15,7 @@ const (
 func (i PrintColorConfiguration) String() string {
     return []string{"blackAndWhite", "grayscale", "color", "auto"}[i]
 }
-func ParsePrintColorConfiguration(v string) (interface{}, error) {
+func ParsePrintColorConfiguration(v string) (any, error) {
     result := BLACKANDWHITE_PRINTCOLORCONFIGURATION
     switch v {
         case "blackAndWhite":

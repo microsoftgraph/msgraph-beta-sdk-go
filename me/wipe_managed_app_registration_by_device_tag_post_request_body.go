@@ -7,7 +7,7 @@ import (
 // WipeManagedAppRegistrationByDeviceTagPostRequestBody 
 type WipeManagedAppRegistrationByDeviceTagPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The deviceTag property
     deviceTag *string
 }
@@ -15,7 +15,7 @@ type WipeManagedAppRegistrationByDeviceTagPostRequestBody struct {
 func NewWipeManagedAppRegistrationByDeviceTagPostRequestBody()(*WipeManagedAppRegistrationByDeviceTagPostRequestBody) {
     m := &WipeManagedAppRegistrationByDeviceTagPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWipeManagedAppRegistrationByDeviceTagPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateWipeManagedAppRegistrationByDeviceTagPostRequestBodyFromDiscriminator
     return NewWipeManagedAppRegistrationByDeviceTagPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WipeManagedAppRegistrationByDeviceTagPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *WipeManagedAppRegistrationByDeviceTagPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeviceTag gets the deviceTag property value. The deviceTag property
@@ -62,7 +62,7 @@ func (m *WipeManagedAppRegistrationByDeviceTagPostRequestBody) Serialize(writer 
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WipeManagedAppRegistrationByDeviceTagPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *WipeManagedAppRegistrationByDeviceTagPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeviceTag sets the deviceTag property value. The deviceTag property

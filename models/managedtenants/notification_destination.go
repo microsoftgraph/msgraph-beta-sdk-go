@@ -16,7 +16,7 @@ const (
 func (i NotificationDestination) String() string {
     return []string{"none", "api", "email", "sms", "unknownFutureValue"}[i]
 }
-func ParseNotificationDestination(v string) (interface{}, error) {
+func ParseNotificationDestination(v string) (any, error) {
     result := NONE_NOTIFICATIONDESTINATION
     switch v {
         case "none":

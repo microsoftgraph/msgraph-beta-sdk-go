@@ -7,7 +7,7 @@ import (
 // HardwareInformation hardware information of a given device.
 type HardwareInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The number of charge cycles the device’s current battery has gone through. Valid values 0 to 2147483647
     batteryChargeCycles *int32
     // The device’s current battery’s health percentage. Valid values 0 to 100
@@ -95,7 +95,7 @@ type HardwareInformation struct {
 func NewHardwareInformation()(*HardwareInformation) {
     m := &HardwareInformation{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateHardwareInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -103,7 +103,7 @@ func CreateHardwareInformationFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewHardwareInformation(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *HardwareInformation) GetAdditionalData()(map[string]interface{}) {
+func (m *HardwareInformation) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBatteryChargeCycles gets the batteryChargeCycles property value. The number of charge cycles the device’s current battery has gone through. Valid values 0 to 2147483647
@@ -958,7 +958,7 @@ func (m *HardwareInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *HardwareInformation) SetAdditionalData(value map[string]interface{})() {
+func (m *HardwareInformation) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetBatteryChargeCycles sets the batteryChargeCycles property value. The number of charge cycles the device’s current battery has gone through. Valid values 0 to 2147483647

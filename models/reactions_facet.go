@@ -7,7 +7,7 @@ import (
 // ReactionsFacet 
 type ReactionsFacet struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Count of comments.
     commentCount *int32
     // Count of likes.
@@ -21,7 +21,7 @@ type ReactionsFacet struct {
 func NewReactionsFacet()(*ReactionsFacet) {
     m := &ReactionsFacet{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateReactionsFacetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateReactionsFacetFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewReactionsFacet(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ReactionsFacet) GetAdditionalData()(map[string]interface{}) {
+func (m *ReactionsFacet) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCommentCount gets the commentCount property value. Count of comments.
@@ -128,7 +128,7 @@ func (m *ReactionsFacet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ReactionsFacet) SetAdditionalData(value map[string]interface{})() {
+func (m *ReactionsFacet) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCommentCount sets the commentCount property value. Count of comments.

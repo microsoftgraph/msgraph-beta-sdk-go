@@ -7,7 +7,7 @@ import (
 // AssignmentFilterValidationResult represents result of Validation API.
 type AssignmentFilterValidationResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicator to valid or invalid rule.
     isValidRule *bool
     // The OdataType property
@@ -17,7 +17,7 @@ type AssignmentFilterValidationResult struct {
 func NewAssignmentFilterValidationResult()(*AssignmentFilterValidationResult) {
     m := &AssignmentFilterValidationResult{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAssignmentFilterValidationResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateAssignmentFilterValidationResultFromDiscriminatorValue(parseNode i878
     return NewAssignmentFilterValidationResult(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AssignmentFilterValidationResult) GetAdditionalData()(map[string]interface{}) {
+func (m *AssignmentFilterValidationResult) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -84,7 +84,7 @@ func (m *AssignmentFilterValidationResult) Serialize(writer i878a80d2330e89d2689
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AssignmentFilterValidationResult) SetAdditionalData(value map[string]interface{})() {
+func (m *AssignmentFilterValidationResult) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIsValidRule sets the isValidRule property value. Indicator to valid or invalid rule.

@@ -7,7 +7,7 @@ import (
 // KeySetsItemUploadPkcs12PostRequestBody 
 type KeySetsItemUploadPkcs12PostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The key property
     key *string
     // The password property
@@ -17,7 +17,7 @@ type KeySetsItemUploadPkcs12PostRequestBody struct {
 func NewKeySetsItemUploadPkcs12PostRequestBody()(*KeySetsItemUploadPkcs12PostRequestBody) {
     m := &KeySetsItemUploadPkcs12PostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateKeySetsItemUploadPkcs12PostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateKeySetsItemUploadPkcs12PostRequestBodyFromDiscriminatorValue(parseNod
     return NewKeySetsItemUploadPkcs12PostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *KeySetsItemUploadPkcs12PostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *KeySetsItemUploadPkcs12PostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -84,7 +84,7 @@ func (m *KeySetsItemUploadPkcs12PostRequestBody) Serialize(writer i878a80d2330e8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *KeySetsItemUploadPkcs12PostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *KeySetsItemUploadPkcs12PostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetKey sets the key property value. The key property

@@ -19,7 +19,7 @@ const (
 func (i MicrosoftLauncherSearchBarPlacement) String() string {
     return []string{"notConfigured", "top", "bottom", "hide"}[i]
 }
-func ParseMicrosoftLauncherSearchBarPlacement(v string) (interface{}, error) {
+func ParseMicrosoftLauncherSearchBarPlacement(v string) (any, error) {
     result := NOTCONFIGURED_MICROSOFTLAUNCHERSEARCHBARPLACEMENT
     switch v {
         case "notConfigured":

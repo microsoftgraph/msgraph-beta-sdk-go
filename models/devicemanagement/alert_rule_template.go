@@ -15,7 +15,7 @@ const (
 func (i AlertRuleTemplate) String() string {
     return []string{"cloudPcProvisionScenario", "cloudPcImageUploadScenario", "cloudPcOnPremiseNetworkConnectionCheckScenario", "unknownFutureValue"}[i]
 }
-func ParseAlertRuleTemplate(v string) (interface{}, error) {
+func ParseAlertRuleTemplate(v string) (any, error) {
     result := CLOUDPCPROVISIONSCENARIO_ALERTRULETEMPLATE
     switch v {
         case "cloudPcProvisionScenario":

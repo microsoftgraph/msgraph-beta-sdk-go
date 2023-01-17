@@ -23,7 +23,7 @@ const (
 func (i UserExperienceAnalyticsAnomalyState) String() string {
     return []string{"new", "active", "disabled", "removed", "other", "unknownFutureValue"}[i]
 }
-func ParseUserExperienceAnalyticsAnomalyState(v string) (interface{}, error) {
+func ParseUserExperienceAnalyticsAnomalyState(v string) (any, error) {
     result := NEW_USEREXPERIENCEANALYTICSANOMALYSTATE
     switch v {
         case "new":

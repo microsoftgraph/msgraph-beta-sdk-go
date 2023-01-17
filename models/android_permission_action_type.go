@@ -14,7 +14,7 @@ const (
 func (i AndroidPermissionActionType) String() string {
     return []string{"prompt", "autoGrant", "autoDeny"}[i]
 }
-func ParseAndroidPermissionActionType(v string) (interface{}, error) {
+func ParseAndroidPermissionActionType(v string) (any, error) {
     result := PROMPT_ANDROIDPERMISSIONACTIONTYPE
     switch v {
         case "prompt":

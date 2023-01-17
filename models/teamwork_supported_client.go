@@ -17,7 +17,7 @@ const (
 func (i TeamworkSupportedClient) String() string {
     return []string{"unknown", "skypeDefaultAndTeams", "teamsDefaultAndSkype", "skypeOnly", "teamsOnly", "unknownFutureValue"}[i]
 }
-func ParseTeamworkSupportedClient(v string) (interface{}, error) {
+func ParseTeamworkSupportedClient(v string) (any, error) {
     result := UNKNOWN_TEAMWORKSUPPORTEDCLIENT
     switch v {
         case "unknown":

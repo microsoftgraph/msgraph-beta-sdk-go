@@ -17,7 +17,7 @@ const (
 func (i DiscoverySource) String() string {
     return []string{"unknown", "adminImport", "deviceEnrollmentProgram"}[i]
 }
-func ParseDiscoverySource(v string) (interface{}, error) {
+func ParseDiscoverySource(v string) (any, error) {
     result := UNKNOWN_DISCOVERYSOURCE
     switch v {
         case "unknown":

@@ -19,7 +19,7 @@ const (
 func (i PrintPresentationDirection) String() string {
     return []string{"clockwiseFromTopLeft", "counterClockwiseFromTopLeft", "counterClockwiseFromTopRight", "clockwiseFromTopRight", "counterClockwiseFromBottomLeft", "clockwiseFromBottomLeft", "counterClockwiseFromBottomRight", "clockwiseFromBottomRight"}[i]
 }
-func ParsePrintPresentationDirection(v string) (interface{}, error) {
+func ParsePrintPresentationDirection(v string) (any, error) {
     result := CLOCKWISEFROMTOPLEFT_PRINTPRESENTATIONDIRECTION
     switch v {
         case "clockwiseFromTopLeft":

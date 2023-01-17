@@ -8,7 +8,7 @@ import (
 // RetireScheduledManagedDevice managedDevices that are scheduled for retire
 type RetireScheduledManagedDevice struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The complianceState property
     complianceState *ComplianceStatus
     // Device Compliance PolicyId
@@ -38,7 +38,7 @@ type RetireScheduledManagedDevice struct {
 func NewRetireScheduledManagedDevice()(*RetireScheduledManagedDevice) {
     m := &RetireScheduledManagedDevice{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRetireScheduledManagedDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -46,7 +46,7 @@ func CreateRetireScheduledManagedDeviceFromDiscriminatorValue(parseNode i878a80d
     return NewRetireScheduledManagedDevice(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RetireScheduledManagedDevice) GetAdditionalData()(map[string]interface{}) {
+func (m *RetireScheduledManagedDevice) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetComplianceState gets the complianceState property value. The complianceState property
@@ -313,7 +313,7 @@ func (m *RetireScheduledManagedDevice) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RetireScheduledManagedDevice) SetAdditionalData(value map[string]interface{})() {
+func (m *RetireScheduledManagedDevice) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetComplianceState sets the complianceState property value. The complianceState property

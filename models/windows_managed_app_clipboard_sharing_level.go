@@ -15,7 +15,7 @@ const (
 func (i WindowsManagedAppClipboardSharingLevel) String() string {
     return []string{"anyDestinationAnySource", "none"}[i]
 }
-func ParseWindowsManagedAppClipboardSharingLevel(v string) (interface{}, error) {
+func ParseWindowsManagedAppClipboardSharingLevel(v string) (any, error) {
     result := ANYDESTINATIONANYSOURCE_WINDOWSMANAGEDAPPCLIPBOARDSHARINGLEVEL
     switch v {
         case "anyDestinationAnySource":

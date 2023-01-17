@@ -32,7 +32,7 @@ const (
 func (i CloudPcRegionGroup) String() string {
     return []string{"default", "australia", "canada", "usCentral", "usEast", "usWest", "france", "germany", "europeUnion", "unitedKingdom", "japan", "asia", "india", "southAmerica", "euap", "usGovernment", "usGovernmentDOD", "unknownFutureValue", "norway", "switzerland", "southKorea"}[i]
 }
-func ParseCloudPcRegionGroup(v string) (interface{}, error) {
+func ParseCloudPcRegionGroup(v string) (any, error) {
     result := DEFAULT_ESCAPED_CLOUDPCREGIONGROUP
     switch v {
         case "default":

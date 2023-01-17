@@ -21,7 +21,7 @@ const (
 func (i VppTokenActionFailureReason) String() string {
     return []string{"none", "appleFailure", "internalError", "expiredVppToken", "expiredApplePushNotificationCertificate"}[i]
 }
-func ParseVppTokenActionFailureReason(v string) (interface{}, error) {
+func ParseVppTokenActionFailureReason(v string) (any, error) {
     result := NONE_VPPTOKENACTIONFAILUREREASON
     switch v {
         case "none":

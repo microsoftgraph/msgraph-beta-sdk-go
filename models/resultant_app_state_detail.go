@@ -83,7 +83,7 @@ const (
 func (i ResultantAppStateDetail) String() string {
     return []string{"processorArchitectureNotApplicable", "minimumDiskSpaceNotMet", "minimumOsVersionNotMet", "minimumPhysicalMemoryNotMet", "minimumLogicalProcessorCountNotMet", "minimumCpuSpeedNotMet", "platformNotApplicable", "fileSystemRequirementNotMet", "registryRequirementNotMet", "powerShellScriptRequirementNotMet", "supersedingAppsNotApplicable", "noAdditionalDetails", "dependencyFailedToInstall", "dependencyWithRequirementsNotMet", "dependencyPendingReboot", "dependencyWithAutoInstallDisabled", "supersededAppUninstallFailed", "supersededAppUninstallPendingReboot", "removingSupersededApps", "iosAppStoreUpdateFailedToInstall", "vppAppHasUpdateAvailable", "userRejectedUpdate", "uninstallPendingReboot", "supersedingAppsDetected", "supersededAppsDetected", "seeInstallErrorCode", "autoInstallDisabled", "managedAppNoLongerPresent", "userRejectedInstall", "userIsNotLoggedIntoAppStore", "untargetedSupersedingAppsDetected", "appRemovedBySupersedence", "seeUninstallErrorCode", "pendingReboot", "installingDependencies", "contentDownloaded"}[i]
 }
-func ParseResultantAppStateDetail(v string) (interface{}, error) {
+func ParseResultantAppStateDetail(v string) (any, error) {
     result := PROCESSORARCHITECTURENOTAPPLICABLE_RESULTANTAPPSTATEDETAIL
     switch v {
         case "processorArchitectureNotApplicable":

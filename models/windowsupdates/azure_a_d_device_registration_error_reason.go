@@ -16,7 +16,7 @@ const (
 func (i AzureADDeviceRegistrationErrorReason) String() string {
     return []string{"invalidGlobalDeviceId", "invalidAzureADDeviceId", "missingTrustType", "invalidAzureADJoin", "unknownFutureValue"}[i]
 }
-func ParseAzureADDeviceRegistrationErrorReason(v string) (interface{}, error) {
+func ParseAzureADDeviceRegistrationErrorReason(v string) (any, error) {
     result := INVALIDGLOBALDEVICEID_AZUREADDEVICEREGISTRATIONERRORREASON
     switch v {
         case "invalidGlobalDeviceId":

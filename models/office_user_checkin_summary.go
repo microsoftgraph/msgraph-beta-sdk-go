@@ -7,7 +7,7 @@ import (
 // OfficeUserCheckinSummary 
 type OfficeUserCheckinSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Total failed user check ins for the last 3 months.
     failedUserCount *int32
     // The OdataType property
@@ -19,7 +19,7 @@ type OfficeUserCheckinSummary struct {
 func NewOfficeUserCheckinSummary()(*OfficeUserCheckinSummary) {
     m := &OfficeUserCheckinSummary{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateOfficeUserCheckinSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateOfficeUserCheckinSummaryFromDiscriminatorValue(parseNode i878a80d2330
     return NewOfficeUserCheckinSummary(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OfficeUserCheckinSummary) GetAdditionalData()(map[string]interface{}) {
+func (m *OfficeUserCheckinSummary) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFailedUserCount gets the failedUserCount property value. Total failed user check ins for the last 3 months.
@@ -106,7 +106,7 @@ func (m *OfficeUserCheckinSummary) Serialize(writer i878a80d2330e89d26896388a3f4
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OfficeUserCheckinSummary) SetAdditionalData(value map[string]interface{})() {
+func (m *OfficeUserCheckinSummary) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetFailedUserCount sets the failedUserCount property value. Total failed user check ins for the last 3 months.

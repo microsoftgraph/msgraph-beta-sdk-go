@@ -13,7 +13,7 @@ const (
 func (i ScopeOperatorMultiValuedComparisonType) String() string {
     return []string{"All", "Any"}[i]
 }
-func ParseScopeOperatorMultiValuedComparisonType(v string) (interface{}, error) {
+func ParseScopeOperatorMultiValuedComparisonType(v string) (any, error) {
     result := ALL_SCOPEOPERATORMULTIVALUEDCOMPARISONTYPE
     switch v {
         case "All":

@@ -7,7 +7,7 @@ import (
 // AssignmentFilterState represents result of GetState API.
 type AssignmentFilterState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicator to if AssignmentFilter is enabled or disabled.
     enabled *bool
     // The OdataType property
@@ -17,7 +17,7 @@ type AssignmentFilterState struct {
 func NewAssignmentFilterState()(*AssignmentFilterState) {
     m := &AssignmentFilterState{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAssignmentFilterStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateAssignmentFilterStateFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewAssignmentFilterState(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AssignmentFilterState) GetAdditionalData()(map[string]interface{}) {
+func (m *AssignmentFilterState) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEnabled gets the enabled property value. Indicator to if AssignmentFilter is enabled or disabled.
@@ -84,7 +84,7 @@ func (m *AssignmentFilterState) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AssignmentFilterState) SetAdditionalData(value map[string]interface{})() {
+func (m *AssignmentFilterState) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEnabled sets the enabled property value. Indicator to if AssignmentFilter is enabled or disabled.

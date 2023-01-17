@@ -15,7 +15,7 @@ const (
 func (i AndroidManagedStoreAccountEnrollmentTarget) String() string {
     return []string{"none", "all", "targeted", "targetedAsEnrollmentRestrictions"}[i]
 }
-func ParseAndroidManagedStoreAccountEnrollmentTarget(v string) (interface{}, error) {
+func ParseAndroidManagedStoreAccountEnrollmentTarget(v string) (any, error) {
     result := NONE_ANDROIDMANAGEDSTOREACCOUNTENROLLMENTTARGET
     switch v {
         case "none":

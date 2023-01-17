@@ -13,7 +13,7 @@ const (
 func (i OutlierContainerType) String() string {
     return []string{"group", "unknownFutureValue"}[i]
 }
-func ParseOutlierContainerType(v string) (interface{}, error) {
+func ParseOutlierContainerType(v string) (any, error) {
     result := GROUP_OUTLIERCONTAINERTYPE
     switch v {
         case "group":

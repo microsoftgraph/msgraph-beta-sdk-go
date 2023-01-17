@@ -25,7 +25,7 @@ const (
 func (i LocalSecurityOptionsAdministratorElevationPromptBehaviorType) String() string {
     return []string{"notConfigured", "elevateWithoutPrompting", "promptForCredentialsOnTheSecureDesktop", "promptForConsentOnTheSecureDesktop", "promptForCredentials", "promptForConsent", "promptForConsentForNonWindowsBinaries"}[i]
 }
-func ParseLocalSecurityOptionsAdministratorElevationPromptBehaviorType(v string) (interface{}, error) {
+func ParseLocalSecurityOptionsAdministratorElevationPromptBehaviorType(v string) (any, error) {
     result := NOTCONFIGURED_LOCALSECURITYOPTIONSADMINISTRATORELEVATIONPROMPTBEHAVIORTYPE
     switch v {
         case "notConfigured":

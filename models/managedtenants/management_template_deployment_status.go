@@ -17,7 +17,7 @@ const (
 func (i ManagementTemplateDeploymentStatus) String() string {
     return []string{"unknown", "inProgress", "completed", "failed", "ineligible", "unknownFutureValue"}[i]
 }
-func ParseManagementTemplateDeploymentStatus(v string) (interface{}, error) {
+func ParseManagementTemplateDeploymentStatus(v string) (any, error) {
     result := UNKNOWN_MANAGEMENTTEMPLATEDEPLOYMENTSTATUS
     switch v {
         case "unknown":

@@ -7,7 +7,7 @@ import (
 // GetAssignmentFiltersStatusDetailsPostRequestBody 
 type GetAssignmentFiltersStatusDetailsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The assignmentFilterIds property
     assignmentFilterIds []string
     // The managedDeviceId property
@@ -25,7 +25,7 @@ type GetAssignmentFiltersStatusDetailsPostRequestBody struct {
 func NewGetAssignmentFiltersStatusDetailsPostRequestBody()(*GetAssignmentFiltersStatusDetailsPostRequestBody) {
     m := &GetAssignmentFiltersStatusDetailsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateGetAssignmentFiltersStatusDetailsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateGetAssignmentFiltersStatusDetailsPostRequestBodyFromDiscriminatorValu
     return NewGetAssignmentFiltersStatusDetailsPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *GetAssignmentFiltersStatusDetailsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *GetAssignmentFiltersStatusDetailsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAssignmentFilterIds gets the assignmentFilterIds property value. The assignmentFilterIds property
@@ -176,7 +176,7 @@ func (m *GetAssignmentFiltersStatusDetailsPostRequestBody) Serialize(writer i878
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *GetAssignmentFiltersStatusDetailsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *GetAssignmentFiltersStatusDetailsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAssignmentFilterIds sets the assignmentFilterIds property value. The assignmentFilterIds property

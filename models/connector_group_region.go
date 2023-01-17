@@ -17,7 +17,7 @@ const (
 func (i ConnectorGroupRegion) String() string {
     return []string{"nam", "eur", "aus", "asia", "ind", "unknownFutureValue"}[i]
 }
-func ParseConnectorGroupRegion(v string) (interface{}, error) {
+func ParseConnectorGroupRegion(v string) (any, error) {
     result := NAM_CONNECTORGROUPREGION
     switch v {
         case "nam":

@@ -8,7 +8,7 @@ import (
 // DiscoveredSensitiveType 
 type DiscoveredSensitiveType struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The classificationAttributes property
     classificationAttributes []ClassificationAttributeable
     // The confidence property
@@ -24,7 +24,7 @@ type DiscoveredSensitiveType struct {
 func NewDiscoveredSensitiveType()(*DiscoveredSensitiveType) {
     m := &DiscoveredSensitiveType{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDiscoveredSensitiveTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,7 +32,7 @@ func CreateDiscoveredSensitiveTypeFromDiscriminatorValue(parseNode i878a80d2330e
     return NewDiscoveredSensitiveType(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DiscoveredSensitiveType) GetAdditionalData()(map[string]interface{}) {
+func (m *DiscoveredSensitiveType) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetClassificationAttributes gets the classificationAttributes property value. The classificationAttributes property
@@ -159,7 +159,7 @@ func (m *DiscoveredSensitiveType) Serialize(writer i878a80d2330e89d26896388a3f48
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DiscoveredSensitiveType) SetAdditionalData(value map[string]interface{})() {
+func (m *DiscoveredSensitiveType) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetClassificationAttributes sets the classificationAttributes property value. The classificationAttributes property

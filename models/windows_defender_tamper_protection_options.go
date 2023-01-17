@@ -17,7 +17,7 @@ const (
 func (i WindowsDefenderTamperProtectionOptions) String() string {
     return []string{"notConfigured", "enable", "disable"}[i]
 }
-func ParseWindowsDefenderTamperProtectionOptions(v string) (interface{}, error) {
+func ParseWindowsDefenderTamperProtectionOptions(v string) (any, error) {
     result := NOTCONFIGURED_WINDOWSDEFENDERTAMPERPROTECTIONOPTIONS
     switch v {
         case "notConfigured":

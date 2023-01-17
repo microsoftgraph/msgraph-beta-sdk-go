@@ -9,7 +9,7 @@ type DeviceManagementExchangeAccessRule struct {
     // Access Level in Exchange.
     accessLevel *DeviceManagementExchangeAccessLevel
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Device Class which will be impacted by this rule.
     deviceClass DeviceManagementExchangeDeviceClassable
     // The OdataType property
@@ -19,7 +19,7 @@ type DeviceManagementExchangeAccessRule struct {
 func NewDeviceManagementExchangeAccessRule()(*DeviceManagementExchangeAccessRule) {
     m := &DeviceManagementExchangeAccessRule{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceManagementExchangeAccessRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func (m *DeviceManagementExchangeAccessRule) GetAccessLevel()(*DeviceManagementE
     return m.accessLevel
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementExchangeAccessRule) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceManagementExchangeAccessRule) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeviceClass gets the deviceClass property value. Device Class which will be impacted by this rule.
@@ -111,7 +111,7 @@ func (m *DeviceManagementExchangeAccessRule) SetAccessLevel(value *DeviceManagem
     m.accessLevel = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementExchangeAccessRule) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceManagementExchangeAccessRule) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeviceClass sets the deviceClass property value. Device Class which will be impacted by this rule.

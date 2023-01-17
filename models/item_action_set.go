@@ -7,7 +7,7 @@ import (
 // ItemActionSet 
 type ItemActionSet struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // A comment was added to the item.
     comment CommentActionable
     // An item was created.
@@ -35,7 +35,7 @@ type ItemActionSet struct {
 func NewItemActionSet()(*ItemActionSet) {
     m := &ItemActionSet{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemActionSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,7 +43,7 @@ func CreateItemActionSetFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewItemActionSet(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemActionSet) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemActionSet) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetComment gets the comment property value. A comment was added to the item.
@@ -282,7 +282,7 @@ func (m *ItemActionSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemActionSet) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemActionSet) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetComment sets the comment property value. A comment was added to the item.

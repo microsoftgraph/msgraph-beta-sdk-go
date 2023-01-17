@@ -19,7 +19,7 @@ const (
 func (i ErrorCode) String() string {
     return []string{"noError", "unauthorized", "notFound", "deleted"}[i]
 }
-func ParseErrorCode(v string) (interface{}, error) {
+func ParseErrorCode(v string) (any, error) {
     result := NOERROR_ERRORCODE
     switch v {
         case "noError":

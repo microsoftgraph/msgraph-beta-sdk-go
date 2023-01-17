@@ -15,7 +15,7 @@ const (
 func (i SignInAssistantOptions) String() string {
     return []string{"notConfigured", "disabled"}[i]
 }
-func ParseSignInAssistantOptions(v string) (interface{}, error) {
+func ParseSignInAssistantOptions(v string) (any, error) {
     result := NOTCONFIGURED_SIGNINASSISTANTOPTIONS
     switch v {
         case "notConfigured":

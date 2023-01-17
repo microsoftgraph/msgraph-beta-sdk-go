@@ -25,7 +25,7 @@ const (
 func (i PerfectForwardSecrecyGroup) String() string {
     return []string{"pfs1", "pfs2", "pfs2048", "ecp256", "ecp384", "pfsMM", "pfs24"}[i]
 }
-func ParsePerfectForwardSecrecyGroup(v string) (interface{}, error) {
+func ParsePerfectForwardSecrecyGroup(v string) (any, error) {
     result := PFS1_PERFECTFORWARDSECRECYGROUP
     switch v {
         case "pfs1":

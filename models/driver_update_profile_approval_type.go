@@ -15,7 +15,7 @@ const (
 func (i DriverUpdateProfileApprovalType) String() string {
     return []string{"manual", "automatic"}[i]
 }
-func ParseDriverUpdateProfileApprovalType(v string) (interface{}, error) {
+func ParseDriverUpdateProfileApprovalType(v string) (any, error) {
     result := MANUAL_DRIVERUPDATEPROFILEAPPROVALTYPE
     switch v {
         case "manual":

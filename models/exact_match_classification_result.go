@@ -7,7 +7,7 @@ import (
 // ExactMatchClassificationResult 
 type ExactMatchClassificationResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The classification property
     classification []ExactMatchDetectedSensitiveContentable
     // The errors property
@@ -19,7 +19,7 @@ type ExactMatchClassificationResult struct {
 func NewExactMatchClassificationResult()(*ExactMatchClassificationResult) {
     m := &ExactMatchClassificationResult{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateExactMatchClassificationResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateExactMatchClassificationResultFromDiscriminatorValue(parseNode i878a8
     return NewExactMatchClassificationResult(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ExactMatchClassificationResult) GetAdditionalData()(map[string]interface{}) {
+func (m *ExactMatchClassificationResult) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetClassification gets the classification property value. The classification property
@@ -122,7 +122,7 @@ func (m *ExactMatchClassificationResult) Serialize(writer i878a80d2330e89d268963
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ExactMatchClassificationResult) SetAdditionalData(value map[string]interface{})() {
+func (m *ExactMatchClassificationResult) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetClassification sets the classification property value. The classification property

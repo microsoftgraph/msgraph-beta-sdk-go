@@ -7,7 +7,7 @@ import (
 // SuggestedEnrollmentLimit the suggestedEnrollmentLimit resource represents the suggested enrollment limit when given an enrollment type.
 type SuggestedEnrollmentLimit struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // The suggested enrollment limit within a day
@@ -17,7 +17,7 @@ type SuggestedEnrollmentLimit struct {
 func NewSuggestedEnrollmentLimit()(*SuggestedEnrollmentLimit) {
     m := &SuggestedEnrollmentLimit{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSuggestedEnrollmentLimitFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateSuggestedEnrollmentLimitFromDiscriminatorValue(parseNode i878a80d2330
     return NewSuggestedEnrollmentLimit(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SuggestedEnrollmentLimit) GetAdditionalData()(map[string]interface{}) {
+func (m *SuggestedEnrollmentLimit) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -84,7 +84,7 @@ func (m *SuggestedEnrollmentLimit) Serialize(writer i878a80d2330e89d26896388a3f4
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SuggestedEnrollmentLimit) SetAdditionalData(value map[string]interface{})() {
+func (m *SuggestedEnrollmentLimit) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

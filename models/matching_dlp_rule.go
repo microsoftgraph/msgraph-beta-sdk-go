@@ -9,7 +9,7 @@ type MatchingDlpRule struct {
     // The actions property
     actions []DlpActionInfoable
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The isMostRestrictive property
     isMostRestrictive *bool
     // The OdataType property
@@ -31,7 +31,7 @@ type MatchingDlpRule struct {
 func NewMatchingDlpRule()(*MatchingDlpRule) {
     m := &MatchingDlpRule{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMatchingDlpRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,7 +43,7 @@ func (m *MatchingDlpRule) GetActions()([]DlpActionInfoable) {
     return m.actions
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MatchingDlpRule) GetAdditionalData()(map[string]interface{}) {
+func (m *MatchingDlpRule) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -251,7 +251,7 @@ func (m *MatchingDlpRule) SetActions(value []DlpActionInfoable)() {
     m.actions = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MatchingDlpRule) SetAdditionalData(value map[string]interface{})() {
+func (m *MatchingDlpRule) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIsMostRestrictive sets the isMostRestrictive property value. The isMostRestrictive property

@@ -15,7 +15,7 @@ const (
 func (i PageLayoutType) String() string {
     return []string{"microsoftReserved", "article", "home", "unknownFutureValue"}[i]
 }
-func ParsePageLayoutType(v string) (interface{}, error) {
+func ParsePageLayoutType(v string) (any, error) {
     result := MICROSOFTRESERVED_PAGELAYOUTTYPE
     switch v {
         case "microsoftReserved":

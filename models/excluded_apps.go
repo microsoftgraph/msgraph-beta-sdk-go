@@ -9,7 +9,7 @@ type ExcludedApps struct {
     // The value for if MS Office Access should be excluded or not.
     access *bool
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The value for if Microsoft Search as default should be excluded or not.
     bing *bool
     // The value for if MS Office Excel should be excluded or not.
@@ -45,7 +45,7 @@ type ExcludedApps struct {
 func NewExcludedApps()(*ExcludedApps) {
     m := &ExcludedApps{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateExcludedAppsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,7 +57,7 @@ func (m *ExcludedApps) GetAccess()(*bool) {
     return m.access
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ExcludedApps) GetAdditionalData()(map[string]interface{}) {
+func (m *ExcludedApps) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBing gets the bing property value. The value for if Microsoft Search as default should be excluded or not.
@@ -396,7 +396,7 @@ func (m *ExcludedApps) SetAccess(value *bool)() {
     m.access = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ExcludedApps) SetAdditionalData(value map[string]interface{})() {
+func (m *ExcludedApps) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetBing sets the bing property value. The value for if Microsoft Search as default should be excluded or not.

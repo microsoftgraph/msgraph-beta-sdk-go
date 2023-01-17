@@ -7,7 +7,7 @@ import (
 // AdministrativeUnitsItemCheckMemberGroupsPostRequestBody 
 type AdministrativeUnitsItemCheckMemberGroupsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The groupIds property
     groupIds []string
 }
@@ -15,7 +15,7 @@ type AdministrativeUnitsItemCheckMemberGroupsPostRequestBody struct {
 func NewAdministrativeUnitsItemCheckMemberGroupsPostRequestBody()(*AdministrativeUnitsItemCheckMemberGroupsPostRequestBody) {
     m := &AdministrativeUnitsItemCheckMemberGroupsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAdministrativeUnitsItemCheckMemberGroupsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateAdministrativeUnitsItemCheckMemberGroupsPostRequestBodyFromDiscrimina
     return NewAdministrativeUnitsItemCheckMemberGroupsPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AdministrativeUnitsItemCheckMemberGroupsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *AdministrativeUnitsItemCheckMemberGroupsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -66,7 +66,7 @@ func (m *AdministrativeUnitsItemCheckMemberGroupsPostRequestBody) Serialize(writ
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AdministrativeUnitsItemCheckMemberGroupsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *AdministrativeUnitsItemCheckMemberGroupsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetGroupIds sets the groupIds property value. The groupIds property

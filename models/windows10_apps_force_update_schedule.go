@@ -8,7 +8,7 @@ import (
 // Windows10AppsForceUpdateSchedule windows 10 force update schedule for Apps
 type Windows10AppsForceUpdateSchedule struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // Possible values for App update on Windows10 recurrence.
@@ -22,7 +22,7 @@ type Windows10AppsForceUpdateSchedule struct {
 func NewWindows10AppsForceUpdateSchedule()(*Windows10AppsForceUpdateSchedule) {
     m := &Windows10AppsForceUpdateSchedule{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWindows10AppsForceUpdateScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateWindows10AppsForceUpdateScheduleFromDiscriminatorValue(parseNode i878
     return NewWindows10AppsForceUpdateSchedule(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Windows10AppsForceUpdateSchedule) GetAdditionalData()(map[string]interface{}) {
+func (m *Windows10AppsForceUpdateSchedule) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -130,7 +130,7 @@ func (m *Windows10AppsForceUpdateSchedule) Serialize(writer i878a80d2330e89d2689
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Windows10AppsForceUpdateSchedule) SetAdditionalData(value map[string]interface{})() {
+func (m *Windows10AppsForceUpdateSchedule) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

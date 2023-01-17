@@ -15,7 +15,7 @@ const (
 func (i MobileAppRelationshipType) String() string {
     return []string{"child", "parent"}[i]
 }
-func ParseMobileAppRelationshipType(v string) (interface{}, error) {
+func ParseMobileAppRelationshipType(v string) (any, error) {
     result := CHILD_MOBILEAPPRELATIONSHIPTYPE
     switch v {
         case "child":

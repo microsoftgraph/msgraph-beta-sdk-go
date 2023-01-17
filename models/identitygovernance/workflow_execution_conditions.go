@@ -7,7 +7,7 @@ import (
 // WorkflowExecutionConditions 
 type WorkflowExecutionConditions struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
 }
@@ -15,7 +15,7 @@ type WorkflowExecutionConditions struct {
 func NewWorkflowExecutionConditions()(*WorkflowExecutionConditions) {
     m := &WorkflowExecutionConditions{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWorkflowExecutionConditionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,7 +43,7 @@ func CreateWorkflowExecutionConditionsFromDiscriminatorValue(parseNode i878a80d2
     return NewWorkflowExecutionConditions(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WorkflowExecutionConditions) GetAdditionalData()(map[string]interface{}) {
+func (m *WorkflowExecutionConditions) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -82,7 +82,7 @@ func (m *WorkflowExecutionConditions) Serialize(writer i878a80d2330e89d26896388a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WorkflowExecutionConditions) SetAdditionalData(value map[string]interface{})() {
+func (m *WorkflowExecutionConditions) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

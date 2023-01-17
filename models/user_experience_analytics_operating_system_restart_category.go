@@ -29,7 +29,7 @@ const (
 func (i UserExperienceAnalyticsOperatingSystemRestartCategory) String() string {
     return []string{"unknown", "restartWithUpdate", "restartWithoutUpdate", "blueScreen", "shutdownWithUpdate", "shutdownWithoutUpdate", "longPowerButtonPress", "bootError", "update"}[i]
 }
-func ParseUserExperienceAnalyticsOperatingSystemRestartCategory(v string) (interface{}, error) {
+func ParseUserExperienceAnalyticsOperatingSystemRestartCategory(v string) (any, error) {
     result := UNKNOWN_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
     switch v {
         case "unknown":

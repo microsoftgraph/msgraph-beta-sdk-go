@@ -22,7 +22,7 @@ const (
 func (i UsageAuthMethod) String() string {
     return []string{"email", "mobileSMS", "mobileCall", "officePhone", "securityQuestion", "appNotification", "appCode", "alternateMobileCall", "fido", "appPassword", "unknownFutureValue"}[i]
 }
-func ParseUsageAuthMethod(v string) (interface{}, error) {
+func ParseUsageAuthMethod(v string) (any, error) {
     result := EMAIL_USAGEAUTHMETHOD
     switch v {
         case "email":

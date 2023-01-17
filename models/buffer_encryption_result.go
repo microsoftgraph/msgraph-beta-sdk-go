@@ -7,7 +7,7 @@ import (
 // BufferEncryptionResult 
 type BufferEncryptionResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The encryptedBuffer property
     encryptedBuffer []byte
     // The OdataType property
@@ -19,7 +19,7 @@ type BufferEncryptionResult struct {
 func NewBufferEncryptionResult()(*BufferEncryptionResult) {
     m := &BufferEncryptionResult{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateBufferEncryptionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateBufferEncryptionResultFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewBufferEncryptionResult(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BufferEncryptionResult) GetAdditionalData()(map[string]interface{}) {
+func (m *BufferEncryptionResult) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEncryptedBuffer gets the encryptedBuffer property value. The encryptedBuffer property
@@ -106,7 +106,7 @@ func (m *BufferEncryptionResult) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BufferEncryptionResult) SetAdditionalData(value map[string]interface{})() {
+func (m *BufferEncryptionResult) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEncryptedBuffer sets the encryptedBuffer property value. The encryptedBuffer property

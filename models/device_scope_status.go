@@ -21,7 +21,7 @@ const (
 func (i DeviceScopeStatus) String() string {
     return []string{"none", "computing", "insufficientData", "completed", "unknownFutureValue"}[i]
 }
-func ParseDeviceScopeStatus(v string) (interface{}, error) {
+func ParseDeviceScopeStatus(v string) (any, error) {
     result := NONE_DEVICESCOPESTATUS
     switch v {
         case "none":

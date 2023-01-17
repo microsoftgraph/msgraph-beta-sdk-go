@@ -8,7 +8,7 @@ import (
 // EducationSynchronizationCustomization 
 type EducationSynchronizationCustomization struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicates whether the display name of the resource can be overwritten by the sync.
     allowDisplayNameUpdate *bool
     // Indicates whether synchronization of the parent entity is deferred to a later date.
@@ -24,7 +24,7 @@ type EducationSynchronizationCustomization struct {
 func NewEducationSynchronizationCustomization()(*EducationSynchronizationCustomization) {
     m := &EducationSynchronizationCustomization{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateEducationSynchronizationCustomizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,7 +32,7 @@ func CreateEducationSynchronizationCustomizationFromDiscriminatorValue(parseNode
     return NewEducationSynchronizationCustomization(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EducationSynchronizationCustomization) GetAdditionalData()(map[string]interface{}) {
+func (m *EducationSynchronizationCustomization) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowDisplayNameUpdate gets the allowDisplayNameUpdate property value. Indicates whether the display name of the resource can be overwritten by the sync.
@@ -155,7 +155,7 @@ func (m *EducationSynchronizationCustomization) Serialize(writer i878a80d2330e89
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EducationSynchronizationCustomization) SetAdditionalData(value map[string]interface{})() {
+func (m *EducationSynchronizationCustomization) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowDisplayNameUpdate sets the allowDisplayNameUpdate property value. Indicates whether the display name of the resource can be overwritten by the sync.

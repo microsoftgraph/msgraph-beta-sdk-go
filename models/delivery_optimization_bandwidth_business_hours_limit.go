@@ -7,7 +7,7 @@ import (
 // DeliveryOptimizationBandwidthBusinessHoursLimit bandwidth business hours and percentages type
 type DeliveryOptimizationBandwidthBusinessHoursLimit struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Specifies the beginning of business hours using a 24-hour clock (0-23). Valid values 0 to 23
     bandwidthBeginBusinessHours *int32
     // Specifies the end of business hours using a 24-hour clock (0-23). Valid values 0 to 23
@@ -23,7 +23,7 @@ type DeliveryOptimizationBandwidthBusinessHoursLimit struct {
 func NewDeliveryOptimizationBandwidthBusinessHoursLimit()(*DeliveryOptimizationBandwidthBusinessHoursLimit) {
     m := &DeliveryOptimizationBandwidthBusinessHoursLimit{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeliveryOptimizationBandwidthBusinessHoursLimitFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateDeliveryOptimizationBandwidthBusinessHoursLimitFromDiscriminatorValue
     return NewDeliveryOptimizationBandwidthBusinessHoursLimit(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) GetAdditionalData()(map[string]interface{}) {
+func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBandwidthBeginBusinessHours gets the bandwidthBeginBusinessHours property value. Specifies the beginning of business hours using a 24-hour clock (0-23). Valid values 0 to 23
@@ -150,7 +150,7 @@ func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) Serialize(writer i878a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) SetAdditionalData(value map[string]interface{})() {
+func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetBandwidthBeginBusinessHours sets the bandwidthBeginBusinessHours property value. Specifies the beginning of business hours using a 24-hour clock (0-23). Valid values 0 to 23

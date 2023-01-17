@@ -7,7 +7,7 @@ import (
 // AuthenticationStrength 
 type AuthenticationStrength struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Identifier of the authentication strength.
     authenticationStrengthId *string
     // The name of the authentication strength.
@@ -19,7 +19,7 @@ type AuthenticationStrength struct {
 func NewAuthenticationStrength()(*AuthenticationStrength) {
     m := &AuthenticationStrength{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAuthenticationStrengthFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateAuthenticationStrengthFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewAuthenticationStrength(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuthenticationStrength) GetAdditionalData()(map[string]interface{}) {
+func (m *AuthenticationStrength) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAuthenticationStrengthId gets the authenticationStrengthId property value. Identifier of the authentication strength.
@@ -106,7 +106,7 @@ func (m *AuthenticationStrength) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuthenticationStrength) SetAdditionalData(value map[string]interface{})() {
+func (m *AuthenticationStrength) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAuthenticationStrengthId sets the authenticationStrengthId property value. Identifier of the authentication strength.

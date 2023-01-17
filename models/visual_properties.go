@@ -7,7 +7,7 @@ import (
 // VisualProperties 
 type VisualProperties struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The body of a visual user notification. Body is optional.
     body *string
     // The OdataType property
@@ -19,7 +19,7 @@ type VisualProperties struct {
 func NewVisualProperties()(*VisualProperties) {
     m := &VisualProperties{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateVisualPropertiesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateVisualPropertiesFromDiscriminatorValue(parseNode i878a80d2330e89d2689
     return NewVisualProperties(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VisualProperties) GetAdditionalData()(map[string]interface{}) {
+func (m *VisualProperties) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBody gets the body property value. The body of a visual user notification. Body is optional.
@@ -106,7 +106,7 @@ func (m *VisualProperties) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VisualProperties) SetAdditionalData(value map[string]interface{})() {
+func (m *VisualProperties) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetBody sets the body property value. The body of a visual user notification. Body is optional.

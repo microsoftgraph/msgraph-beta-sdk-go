@@ -16,7 +16,7 @@ const (
 func (i TiAction) String() string {
     return []string{"unknown", "allow", "block", "alert", "unknownFutureValue"}[i]
 }
-func ParseTiAction(v string) (interface{}, error) {
+func ParseTiAction(v string) (any, error) {
     result := UNKNOWN_TIACTION
     switch v {
         case "unknown":

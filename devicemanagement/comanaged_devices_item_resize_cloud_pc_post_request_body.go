@@ -7,7 +7,7 @@ import (
 // ComanagedDevicesItemResizeCloudPcPostRequestBody 
 type ComanagedDevicesItemResizeCloudPcPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The targetServicePlanId property
     targetServicePlanId *string
 }
@@ -15,7 +15,7 @@ type ComanagedDevicesItemResizeCloudPcPostRequestBody struct {
 func NewComanagedDevicesItemResizeCloudPcPostRequestBody()(*ComanagedDevicesItemResizeCloudPcPostRequestBody) {
     m := &ComanagedDevicesItemResizeCloudPcPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateComanagedDevicesItemResizeCloudPcPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateComanagedDevicesItemResizeCloudPcPostRequestBodyFromDiscriminatorValu
     return NewComanagedDevicesItemResizeCloudPcPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ComanagedDevicesItemResizeCloudPcPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ComanagedDevicesItemResizeCloudPcPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ComanagedDevicesItemResizeCloudPcPostRequestBody) Serialize(writer i878
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ComanagedDevicesItemResizeCloudPcPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ComanagedDevicesItemResizeCloudPcPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetTargetServicePlanId sets the targetServicePlanId property value. The targetServicePlanId property

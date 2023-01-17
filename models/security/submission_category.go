@@ -16,7 +16,7 @@ const (
 func (i SubmissionCategory) String() string {
     return []string{"notJunk", "spam", "phishing", "malware", "unknownFutureValue"}[i]
 }
-func ParseSubmissionCategory(v string) (interface{}, error) {
+func ParseSubmissionCategory(v string) (any, error) {
     result := NOTJUNK_SUBMISSIONCATEGORY
     switch v {
         case "notJunk":

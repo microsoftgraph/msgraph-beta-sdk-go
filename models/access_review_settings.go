@@ -11,7 +11,7 @@ type AccessReviewSettings struct {
     // The number of days of user activities to show to reviewers.
     activityDurationInDays *int32
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicates whether the auto-apply capability, to automatically change the target object access resource, is enabled.  If not enabled, a user must, after the review completes, apply the access review.
     autoApplyReviewResultsEnabled *bool
     // Indicates whether a decision should be set if the reviewer did not supply one. For use when auto-apply is enabled. If you don't want to have a review decision recorded unless the reviewer makes an explicit choice, set it to false.
@@ -33,7 +33,7 @@ type AccessReviewSettings struct {
 func NewAccessReviewSettings()(*AccessReviewSettings) {
     m := &AccessReviewSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAccessReviewSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -67,7 +67,7 @@ func (m *AccessReviewSettings) GetActivityDurationInDays()(*int32) {
     return m.activityDurationInDays
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessReviewSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *AccessReviewSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAutoApplyReviewResultsEnabled gets the autoApplyReviewResultsEnabled property value. Indicates whether the auto-apply capability, to automatically change the target object access resource, is enabled.  If not enabled, a user must, after the review completes, apply the access review.
@@ -286,7 +286,7 @@ func (m *AccessReviewSettings) SetActivityDurationInDays(value *int32)() {
     m.activityDurationInDays = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessReviewSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *AccessReviewSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAutoApplyReviewResultsEnabled sets the autoApplyReviewResultsEnabled property value. Indicates whether the auto-apply capability, to automatically change the target object access resource, is enabled.  If not enabled, a user must, after the review completes, apply the access review.

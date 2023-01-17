@@ -19,7 +19,7 @@ const (
 func (i AndroidUsernameSource) String() string {
     return []string{"username", "userPrincipalName", "samAccountName", "primarySmtpAddress"}[i]
 }
-func ParseAndroidUsernameSource(v string) (interface{}, error) {
+func ParseAndroidUsernameSource(v string) (any, error) {
     result := USERNAME_ANDROIDUSERNAMESOURCE
     switch v {
         case "username":

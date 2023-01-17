@@ -7,7 +7,7 @@ import (
 // AttributeMappingSource 
 type AttributeMappingSource struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The expression property
     expression *string
     // The name property
@@ -23,7 +23,7 @@ type AttributeMappingSource struct {
 func NewAttributeMappingSource()(*AttributeMappingSource) {
     m := &AttributeMappingSource{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAttributeMappingSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateAttributeMappingSourceFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewAttributeMappingSource(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AttributeMappingSource) GetAdditionalData()(map[string]interface{}) {
+func (m *AttributeMappingSource) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExpression gets the expression property value. The expression property
@@ -159,7 +159,7 @@ func (m *AttributeMappingSource) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AttributeMappingSource) SetAdditionalData(value map[string]interface{})() {
+func (m *AttributeMappingSource) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetExpression sets the expression property value. The expression property

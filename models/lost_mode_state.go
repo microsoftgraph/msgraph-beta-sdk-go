@@ -15,7 +15,7 @@ const (
 func (i LostModeState) String() string {
     return []string{"disabled", "enabled"}[i]
 }
-func ParseLostModeState(v string) (interface{}, error) {
+func ParseLostModeState(v string) (any, error) {
     result := DISABLED_LOSTMODESTATE
     switch v {
         case "disabled":
