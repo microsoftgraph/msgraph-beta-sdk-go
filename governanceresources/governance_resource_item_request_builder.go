@@ -23,7 +23,7 @@ type GovernanceResourceItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// GovernanceResourceItemRequestBuilderGetQueryParameters get entity from governanceResources by key
+// GovernanceResourceItemRequestBuilderGetQueryParameters get entity from governanceResources by key (id)
 type GovernanceResourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -65,7 +65,7 @@ func NewGovernanceResourceItemRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewGovernanceResourceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from governanceResources
+// Delete delete entity from governanceResources by key (id)
 func (m *GovernanceResourceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *GovernanceResourceItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,7 +81,7 @@ func (m *GovernanceResourceItemRequestBuilder) Delete(ctx context.Context, reque
     }
     return nil
 }
-// Get get entity from governanceResources by key
+// Get get entity from governanceResources by key (id)
 func (m *GovernanceResourceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *GovernanceResourceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -104,7 +104,7 @@ func (m *GovernanceResourceItemRequestBuilder) Get(ctx context.Context, requestC
 func (m *GovernanceResourceItemRequestBuilder) Parent()(*ItemParentRequestBuilder) {
     return NewItemParentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Patch update entity in governanceResources
+// Patch update entity in governanceResources by key (id)
 func (m *GovernanceResourceItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable, requestConfiguration *GovernanceResourceItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -183,7 +183,7 @@ func (m *GovernanceResourceItemRequestBuilder) RoleSettingsById(id string)(*Item
     }
     return NewItemRoleSettingsGovernanceRoleSettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ToDeleteRequestInformation delete entity from governanceResources
+// ToDeleteRequestInformation delete entity from governanceResources by key (id)
 func (m *GovernanceResourceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *GovernanceResourceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -195,7 +195,7 @@ func (m *GovernanceResourceItemRequestBuilder) ToDeleteRequestInformation(ctx co
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from governanceResources by key
+// ToGetRequestInformation get entity from governanceResources by key (id)
 func (m *GovernanceResourceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GovernanceResourceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -211,7 +211,7 @@ func (m *GovernanceResourceItemRequestBuilder) ToGetRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in governanceResources
+// ToPatchRequestInformation update entity in governanceResources by key (id)
 func (m *GovernanceResourceItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable, requestConfiguration *GovernanceResourceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

@@ -8,6 +8,7 @@ import (
 type CrossTenantAccessPolicyConfigurationDefaultable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAutomaticUserConsentSettings()(InboundOutboundPolicyConfigurationable)
     GetB2bCollaborationInbound()(CrossTenantAccessPolicyB2BSettingable)
     GetB2bCollaborationOutbound()(CrossTenantAccessPolicyB2BSettingable)
     GetB2bDirectConnectInbound()(CrossTenantAccessPolicyB2BSettingable)
@@ -15,6 +16,7 @@ type CrossTenantAccessPolicyConfigurationDefaultable interface {
     GetInboundTrust()(CrossTenantAccessPolicyInboundTrustable)
     GetIsServiceDefault()(*bool)
     GetTenantRestrictions()(CrossTenantAccessPolicyTenantRestrictionsable)
+    SetAutomaticUserConsentSettings(value InboundOutboundPolicyConfigurationable)()
     SetB2bCollaborationInbound(value CrossTenantAccessPolicyB2BSettingable)()
     SetB2bCollaborationOutbound(value CrossTenantAccessPolicyB2BSettingable)()
     SetB2bDirectConnectInbound(value CrossTenantAccessPolicyB2BSettingable)()

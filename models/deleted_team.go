@@ -10,7 +10,7 @@ type DeletedTeam struct {
     // The channels those are either shared with this deleted team or created in this deleted team.
     channels []Channelable
 }
-// NewDeletedTeam instantiates a new deletedTeam and sets the default values.
+// NewDeletedTeam instantiates a new DeletedTeam and sets the default values.
 func NewDeletedTeam()(*DeletedTeam) {
     m := &DeletedTeam{
         Entity: *NewEntity(),

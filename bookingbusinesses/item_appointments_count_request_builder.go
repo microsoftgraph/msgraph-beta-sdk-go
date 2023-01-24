@@ -15,18 +15,27 @@ type ItemAppointmentsCountRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// ItemAppointmentsCountRequestBuilderGetQueryParameters get the number of the resource
+type ItemAppointmentsCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+}
 // ItemAppointmentsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemAppointmentsCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *ItemAppointmentsCountRequestBuilderGetQueryParameters
 }
 // NewItemAppointmentsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemAppointmentsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAppointmentsCountRequestBuilder) {
     m := &ItemAppointmentsCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/appointments/$count";
+    m.urlTemplate = "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/appointments/$count{?%24search,%24filter}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,6 +77,9 @@ func (m *ItemAppointmentsCountRequestBuilder) ToGetRequestInformation(ctx contex
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

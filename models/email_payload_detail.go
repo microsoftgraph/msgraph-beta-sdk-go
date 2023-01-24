@@ -7,13 +7,13 @@ import (
 // EmailPayloadDetail 
 type EmailPayloadDetail struct {
     PayloadDetail
-    // The fromEmail property
+    // Email address of the user.
     fromEmail *string
-    // The fromName property
+    // Display name of the user.
     fromName *string
-    // The isExternalSender property
+    // Indicates whether the sender is not from the user's organization.
     isExternalSender *bool
-    // The subject property
+    // The subject of the email address sent to the user.
     subject *string
 }
 // NewEmailPayloadDetail instantiates a new EmailPayloadDetail and sets the default values.
@@ -74,19 +74,19 @@ func (m *EmailPayloadDetail) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetFromEmail gets the fromEmail property value. The fromEmail property
+// GetFromEmail gets the fromEmail property value. Email address of the user.
 func (m *EmailPayloadDetail) GetFromEmail()(*string) {
     return m.fromEmail
 }
-// GetFromName gets the fromName property value. The fromName property
+// GetFromName gets the fromName property value. Display name of the user.
 func (m *EmailPayloadDetail) GetFromName()(*string) {
     return m.fromName
 }
-// GetIsExternalSender gets the isExternalSender property value. The isExternalSender property
+// GetIsExternalSender gets the isExternalSender property value. Indicates whether the sender is not from the user's organization.
 func (m *EmailPayloadDetail) GetIsExternalSender()(*bool) {
     return m.isExternalSender
 }
-// GetSubject gets the subject property value. The subject property
+// GetSubject gets the subject property value. The subject of the email address sent to the user.
 func (m *EmailPayloadDetail) GetSubject()(*string) {
     return m.subject
 }
@@ -122,19 +122,19 @@ func (m *EmailPayloadDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetFromEmail sets the fromEmail property value. The fromEmail property
+// SetFromEmail sets the fromEmail property value. Email address of the user.
 func (m *EmailPayloadDetail) SetFromEmail(value *string)() {
     m.fromEmail = value
 }
-// SetFromName sets the fromName property value. The fromName property
+// SetFromName sets the fromName property value. Display name of the user.
 func (m *EmailPayloadDetail) SetFromName(value *string)() {
     m.fromName = value
 }
-// SetIsExternalSender sets the isExternalSender property value. The isExternalSender property
+// SetIsExternalSender sets the isExternalSender property value. Indicates whether the sender is not from the user's organization.
 func (m *EmailPayloadDetail) SetIsExternalSender(value *bool)() {
     m.isExternalSender = value
 }
-// SetSubject sets the subject property value. The subject property
+// SetSubject sets the subject property value. The subject of the email address sent to the user.
 func (m *EmailPayloadDetail) SetSubject(value *string)() {
     m.subject = value
 }

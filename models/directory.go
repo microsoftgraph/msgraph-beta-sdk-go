@@ -20,7 +20,7 @@ type Directory struct {
     // Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
     federationConfigurations []IdentityProviderBaseable
     // The impactedResources property
-    impactedResources []RecommendationResourceable
+    impactedResources []ImpactedResourceable
     // The inboundSharedUserProfiles property
     inboundSharedUserProfiles []InboundSharedUserProfileable
     // A container for on-premises directory synchronization functionalities that are available for the organization.
@@ -155,14 +155,14 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         return nil
     }
     res["impactedResources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateRecommendationResourceFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(CreateImpactedResourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]RecommendationResourceable, len(val))
+            res := make([]ImpactedResourceable, len(val))
             for i, v := range val {
-                res[i] = v.(RecommendationResourceable)
+                res[i] = v.(ImpactedResourceable)
             }
             m.SetImpactedResources(res)
         }
@@ -241,7 +241,7 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetImpactedResources gets the impactedResources property value. The impactedResources property
-func (m *Directory) GetImpactedResources()([]RecommendationResourceable) {
+func (m *Directory) GetImpactedResources()([]ImpactedResourceable) {
     return m.impactedResources
 }
 // GetInboundSharedUserProfiles gets the inboundSharedUserProfiles property value. The inboundSharedUserProfiles property
@@ -417,7 +417,7 @@ func (m *Directory) SetFederationConfigurations(value []IdentityProviderBaseable
     m.federationConfigurations = value
 }
 // SetImpactedResources sets the impactedResources property value. The impactedResources property
-func (m *Directory) SetImpactedResources(value []RecommendationResourceable)() {
+func (m *Directory) SetImpactedResources(value []ImpactedResourceable)() {
     m.impactedResources = value
 }
 // SetInboundSharedUserProfiles sets the inboundSharedUserProfiles property value. The inboundSharedUserProfiles property

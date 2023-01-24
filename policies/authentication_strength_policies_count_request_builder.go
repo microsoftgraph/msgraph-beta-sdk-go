@@ -15,18 +15,27 @@ type AuthenticationStrengthPoliciesCountRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// AuthenticationStrengthPoliciesCountRequestBuilderGetQueryParameters get the number of the resource
+type AuthenticationStrengthPoliciesCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+}
 // AuthenticationStrengthPoliciesCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AuthenticationStrengthPoliciesCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *AuthenticationStrengthPoliciesCountRequestBuilderGetQueryParameters
 }
 // NewAuthenticationStrengthPoliciesCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewAuthenticationStrengthPoliciesCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthenticationStrengthPoliciesCountRequestBuilder) {
     m := &AuthenticationStrengthPoliciesCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/policies/authenticationStrengthPolicies/$count";
+    m.urlTemplate = "{+baseurl}/policies/authenticationStrengthPolicies/$count{?%24search,%24filter}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,6 +77,9 @@ func (m *AuthenticationStrengthPoliciesCountRequestBuilder) ToGetRequestInformat
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

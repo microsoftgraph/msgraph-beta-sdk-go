@@ -7,22 +7,22 @@ type SectionEmphasisType int
 
 const (
     NONE_SECTIONEMPHASISTYPE SectionEmphasisType = iota
-    NETURAL_SECTIONEMPHASISTYPE
+    NEUTRAL_SECTIONEMPHASISTYPE
     SOFT_SECTIONEMPHASISTYPE
     STRONG_SECTIONEMPHASISTYPE
     UNKNOWNFUTUREVALUE_SECTIONEMPHASISTYPE
 )
 
 func (i SectionEmphasisType) String() string {
-    return []string{"none", "netural", "soft", "strong", "unknownFutureValue"}[i]
+    return []string{"none", "neutral", "soft", "strong", "unknownFutureValue"}[i]
 }
 func ParseSectionEmphasisType(v string) (any, error) {
     result := NONE_SECTIONEMPHASISTYPE
     switch v {
         case "none":
             result = NONE_SECTIONEMPHASISTYPE
-        case "netural":
-            result = NETURAL_SECTIONEMPHASISTYPE
+        case "neutral":
+            result = NEUTRAL_SECTIONEMPHASISTYPE
         case "soft":
             result = SOFT_SECTIONEMPHASISTYPE
         case "strong":

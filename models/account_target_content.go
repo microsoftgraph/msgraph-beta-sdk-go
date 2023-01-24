@@ -10,7 +10,7 @@ type AccountTargetContent struct {
     additionalData map[string]any
     // The OdataType property
     odataType *string
-    // The type property
+    // The type of account target content. Possible values are: unknown,includeAll, addressBook,  unknownFutureValue.
     type_escaped *AccountTargetContentType
 }
 // NewAccountTargetContent instantiates a new accountTargetContent and sets the default values.
@@ -77,7 +77,7 @@ func (m *AccountTargetContent) GetFieldDeserializers()(map[string]func(i878a80d2
 func (m *AccountTargetContent) GetOdataType()(*string) {
     return m.odataType
 }
-// GetType gets the type property value. The type property
+// GetType gets the type property value. The type of account target content. Possible values are: unknown,includeAll, addressBook,  unknownFutureValue.
 func (m *AccountTargetContent) GetType()(*AccountTargetContentType) {
     return m.type_escaped
 }
@@ -112,7 +112,7 @@ func (m *AccountTargetContent) SetAdditionalData(value map[string]any)() {
 func (m *AccountTargetContent) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetType sets the type property value. The type property
+// SetType sets the type property value. The type of account target content. Possible values are: unknown,includeAll, addressBook,  unknownFutureValue.
 func (m *AccountTargetContent) SetType(value *AccountTargetContentType)() {
     m.type_escaped = value
 }

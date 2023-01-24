@@ -157,6 +157,10 @@ func (m *ItemSitesSiteItemRequestBuilder) GetApplicableContentTypesForListWithLi
 func (m *ItemSitesSiteItemRequestBuilder) GetByPathWithPath(path *string)(*ItemSitesItemGetByPathWithPathRequestBuilder) {
     return NewItemSitesItemGetByPathWithPathRequestBuilderInternal(m.pathParameters, m.requestAdapter, path);
 }
+// InformationProtection provides operations to manage the informationProtection property of the microsoft.graph.site entity.
+func (m *ItemSitesSiteItemRequestBuilder) InformationProtection()(*ItemSitesItemInformationProtectionRequestBuilder) {
+    return NewItemSitesItemInformationProtectionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Items provides operations to manage the items property of the microsoft.graph.site entity.
 func (m *ItemSitesSiteItemRequestBuilder) Items()(*ItemSitesItemItemsRequestBuilder) {
     return NewItemSitesItemItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);

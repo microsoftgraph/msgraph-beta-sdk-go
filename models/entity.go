@@ -1208,6 +1208,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewIdentityUserFlowAttribute(), nil
                     case "#microsoft.graph.identityUserFlowAttributeAssignment":
                         return NewIdentityUserFlowAttributeAssignment(), nil
+                    case "#microsoft.graph.impactedResource":
+                        return NewImpactedResource(), nil
                     case "#microsoft.graph.importedAppleDeviceIdentity":
                         return NewImportedAppleDeviceIdentity(), nil
                     case "#microsoft.graph.importedAppleDeviceIdentityResult":
@@ -1922,8 +1924,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewRbacApplicationMultiple(), nil
                     case "#microsoft.graph.recommendation":
                         return NewRecommendation(), nil
-                    case "#microsoft.graph.recommendationResource":
-                        return NewRecommendationResource(), nil
+                    case "#microsoft.graph.recommendationBase":
+                        return NewRecommendationBase(), nil
                     case "#microsoft.graph.recordOperation":
                         return NewRecordOperation(), nil
                     case "#microsoft.graph.referenceAttachment":
@@ -2106,6 +2108,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewSocialIdentityProvider(), nil
                     case "#microsoft.graph.softwareOathAuthenticationMethod":
                         return NewSoftwareOathAuthenticationMethod(), nil
+                    case "#microsoft.graph.softwareOathAuthenticationMethodConfiguration":
+                        return NewSoftwareOathAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.softwareUpdateStatusSummary":
                         return NewSoftwareUpdateStatusSummary(), nil
                     case "#microsoft.graph.standardWebPart":
@@ -2452,6 +2456,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewVirtualAppointment(), nil
                     case "#microsoft.graph.virtualEndpoint":
                         return NewVirtualEndpoint(), nil
+                    case "#microsoft.graph.voiceAuthenticationMethodConfiguration":
+                        return NewVoiceAuthenticationMethodConfiguration(), nil
+                    case "#microsoft.graph.voiceAuthenticationMethodTarget":
+                        return NewVoiceAuthenticationMethodTarget(), nil
                     case "#microsoft.graph.vpnConfiguration":
                         return NewVpnConfiguration(), nil
                     case "#microsoft.graph.vppToken":

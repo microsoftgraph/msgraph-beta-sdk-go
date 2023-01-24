@@ -23,7 +23,7 @@ type PrivilegedOperationEventItemRequestBuilderDeleteRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PrivilegedOperationEventItemRequestBuilderGetQueryParameters get entity from privilegedOperationEvents by key
+// PrivilegedOperationEventItemRequestBuilderGetQueryParameters get entity from privilegedOperationEvents by key (id)
 type PrivilegedOperationEventItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -65,7 +65,7 @@ func NewPrivilegedOperationEventItemRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedOperationEventItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from privilegedOperationEvents
+// Delete delete entity from privilegedOperationEvents by key (id)
 func (m *PrivilegedOperationEventItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *PrivilegedOperationEventItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,7 +81,7 @@ func (m *PrivilegedOperationEventItemRequestBuilder) Delete(ctx context.Context,
     }
     return nil
 }
-// Get get entity from privilegedOperationEvents by key
+// Get get entity from privilegedOperationEvents by key (id)
 func (m *PrivilegedOperationEventItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedOperationEventItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedOperationEventable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,7 +100,7 @@ func (m *PrivilegedOperationEventItemRequestBuilder) Get(ctx context.Context, re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedOperationEventable), nil
 }
-// Patch update entity in privilegedOperationEvents
+// Patch update entity in privilegedOperationEvents by key (id)
 func (m *PrivilegedOperationEventItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedOperationEventable, requestConfiguration *PrivilegedOperationEventItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedOperationEventable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +119,7 @@ func (m *PrivilegedOperationEventItemRequestBuilder) Patch(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedOperationEventable), nil
 }
-// ToDeleteRequestInformation delete entity from privilegedOperationEvents
+// ToDeleteRequestInformation delete entity from privilegedOperationEvents by key (id)
 func (m *PrivilegedOperationEventItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PrivilegedOperationEventItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,7 +131,7 @@ func (m *PrivilegedOperationEventItemRequestBuilder) ToDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from privilegedOperationEvents by key
+// ToGetRequestInformation get entity from privilegedOperationEvents by key (id)
 func (m *PrivilegedOperationEventItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedOperationEventItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,7 +147,7 @@ func (m *PrivilegedOperationEventItemRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in privilegedOperationEvents
+// ToPatchRequestInformation update entity in privilegedOperationEvents by key (id)
 func (m *PrivilegedOperationEventItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedOperationEventable, requestConfiguration *PrivilegedOperationEventItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

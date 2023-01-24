@@ -65,7 +65,7 @@ func NewPrivilegedApprovalItemRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedApprovalItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from privilegedApproval
+// Delete delete entity from privilegedApproval by key (id)
 func (m *PrivilegedApprovalItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *PrivilegedApprovalItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -133,7 +133,7 @@ func (m *PrivilegedApprovalItemRequestBuilder) Request()(*ItemRequestRequestBuil
 func (m *PrivilegedApprovalItemRequestBuilder) RoleInfo()(*ItemRoleInfoRequestBuilder) {
     return NewItemRoleInfoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ToDeleteRequestInformation delete entity from privilegedApproval
+// ToDeleteRequestInformation delete entity from privilegedApproval by key (id)
 func (m *PrivilegedApprovalItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PrivilegedApprovalItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

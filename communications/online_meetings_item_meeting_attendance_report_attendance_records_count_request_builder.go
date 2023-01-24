@@ -15,18 +15,27 @@ type OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsCountRequestBuild
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsCountRequestBuilderGetQueryParameters get the number of the resource
+type OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+}
 // OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsCountRequestBuilderGetQueryParameters
 }
 // NewOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsCountRequestBuilder) {
     m := &OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/communications/onlineMeetings/{onlineMeeting%2Did}/meetingAttendanceReport/attendanceRecords/$count";
+    m.urlTemplate = "{+baseurl}/communications/onlineMeetings/{onlineMeeting%2Did}/meetingAttendanceReport/attendanceRecords/$count{?%24search,%24filter}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,6 +77,9 @@ func (m *OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsCountRequestB
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

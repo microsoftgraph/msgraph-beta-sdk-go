@@ -23,7 +23,7 @@ type ProgramItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ProgramItemRequestBuilderGetQueryParameters get entity from programs by key
+// ProgramItemRequestBuilderGetQueryParameters get entity from programs by key (id)
 type ProgramItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -99,7 +99,7 @@ func (m *ProgramItemRequestBuilder) Delete(ctx context.Context, requestConfigura
     }
     return nil
 }
-// Get get entity from programs by key
+// Get get entity from programs by key (id)
 func (m *ProgramItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ProgramItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Programable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -152,7 +152,7 @@ func (m *ProgramItemRequestBuilder) ToDeleteRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from programs by key
+// ToGetRequestInformation get entity from programs by key (id)
 func (m *ProgramItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ProgramItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

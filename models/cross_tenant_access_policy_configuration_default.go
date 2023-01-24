@@ -7,6 +7,8 @@ import (
 // CrossTenantAccessPolicyConfigurationDefault 
 type CrossTenantAccessPolicyConfigurationDefault struct {
     Entity
+    // Determines the default configuration for automatic user consent settings. inboundAllowed and outboundAllowed will always be false and cannot be updated in the default configuration. Read only.
+    automaticUserConsentSettings InboundOutboundPolicyConfigurationable
     // Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
     b2bCollaborationInbound CrossTenantAccessPolicyB2BSettingable
     // Defines your default configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B collaboration.
@@ -33,6 +35,10 @@ func NewCrossTenantAccessPolicyConfigurationDefault()(*CrossTenantAccessPolicyCo
 func CreateCrossTenantAccessPolicyConfigurationDefaultFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCrossTenantAccessPolicyConfigurationDefault(), nil
 }
+// GetAutomaticUserConsentSettings gets the automaticUserConsentSettings property value. Determines the default configuration for automatic user consent settings. inboundAllowed and outboundAllowed will always be false and cannot be updated in the default configuration. Read only.
+func (m *CrossTenantAccessPolicyConfigurationDefault) GetAutomaticUserConsentSettings()(InboundOutboundPolicyConfigurationable) {
+    return m.automaticUserConsentSettings
+}
 // GetB2bCollaborationInbound gets the b2bCollaborationInbound property value. Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
 func (m *CrossTenantAccessPolicyConfigurationDefault) GetB2bCollaborationInbound()(CrossTenantAccessPolicyB2BSettingable) {
     return m.b2bCollaborationInbound
@@ -52,6 +58,16 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) GetB2bDirectConnectOutboun
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CrossTenantAccessPolicyConfigurationDefault) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["automaticUserConsentSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateInboundOutboundPolicyConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAutomaticUserConsentSettings(val.(InboundOutboundPolicyConfigurationable))
+        }
+        return nil
+    }
     res["b2bCollaborationInbound"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCrossTenantAccessPolicyB2BSettingFromDiscriminatorValue)
         if err != nil {
@@ -143,6 +159,12 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) Serialize(writer i878a80d2
         return err
     }
     {
+        err = writer.WriteObjectValue("automaticUserConsentSettings", m.GetAutomaticUserConsentSettings())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("b2bCollaborationInbound", m.GetB2bCollaborationInbound())
         if err != nil {
             return err
@@ -185,6 +207,10 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) Serialize(writer i878a80d2
         }
     }
     return nil
+}
+// SetAutomaticUserConsentSettings sets the automaticUserConsentSettings property value. Determines the default configuration for automatic user consent settings. inboundAllowed and outboundAllowed will always be false and cannot be updated in the default configuration. Read only.
+func (m *CrossTenantAccessPolicyConfigurationDefault) SetAutomaticUserConsentSettings(value InboundOutboundPolicyConfigurationable)() {
+    m.automaticUserConsentSettings = value
 }
 // SetB2bCollaborationInbound sets the b2bCollaborationInbound property value. Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
 func (m *CrossTenantAccessPolicyConfigurationDefault) SetB2bCollaborationInbound(value CrossTenantAccessPolicyB2BSettingable)() {

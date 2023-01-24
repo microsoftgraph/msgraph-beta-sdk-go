@@ -24,11 +24,11 @@ type Simulation struct {
     description *string
     // Display name of the attack simulation and training campaign. Supports $filter and $orderby.
     displayName *string
-    // The durationInDays property
+    // Simulation duration in days.
     durationInDays *int32
-    // The excludedAccountTarget property
+    // Users excluded from the simulation.
     excludedAccountTarget AccountTargetContentable
-    // The includedAccountTarget property
+    // Users targeted in the simulation.
     includedAccountTarget AccountTargetContentable
     // Flag that represents if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
     isAutomated *bool
@@ -38,7 +38,7 @@ type Simulation struct {
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Date and time of the launch/start of the attack simulation and training campaign. Supports $filter and $orderby.
     launchDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The payload property
+    // The payload associated with a simulation during its creation.
     payload Payloadable
     // Method of delivery of the phishing payload used in the attack simulation and training campaign. Possible values are: unknown, sms, email, teams, unknownFutureValue.
     payloadDeliveryPlatform *PayloadDeliveryPlatform
@@ -90,11 +90,11 @@ func (m *Simulation) GetDescription()(*string) {
 func (m *Simulation) GetDisplayName()(*string) {
     return m.displayName
 }
-// GetDurationInDays gets the durationInDays property value. The durationInDays property
+// GetDurationInDays gets the durationInDays property value. Simulation duration in days.
 func (m *Simulation) GetDurationInDays()(*int32) {
     return m.durationInDays
 }
-// GetExcludedAccountTarget gets the excludedAccountTarget property value. The excludedAccountTarget property
+// GetExcludedAccountTarget gets the excludedAccountTarget property value. Users excluded from the simulation.
 func (m *Simulation) GetExcludedAccountTarget()(AccountTargetContentable) {
     return m.excludedAccountTarget
 }
@@ -293,7 +293,7 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetIncludedAccountTarget gets the includedAccountTarget property value. The includedAccountTarget property
+// GetIncludedAccountTarget gets the includedAccountTarget property value. Users targeted in the simulation.
 func (m *Simulation) GetIncludedAccountTarget()(AccountTargetContentable) {
     return m.includedAccountTarget
 }
@@ -313,7 +313,7 @@ func (m *Simulation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a
 func (m *Simulation) GetLaunchDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.launchDateTime
 }
-// GetPayload gets the payload property value. The payload property
+// GetPayload gets the payload property value. The payload associated with a simulation during its creation.
 func (m *Simulation) GetPayload()(Payloadable) {
     return m.payload
 }
@@ -487,15 +487,15 @@ func (m *Simulation) SetDescription(value *string)() {
 func (m *Simulation) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetDurationInDays sets the durationInDays property value. The durationInDays property
+// SetDurationInDays sets the durationInDays property value. Simulation duration in days.
 func (m *Simulation) SetDurationInDays(value *int32)() {
     m.durationInDays = value
 }
-// SetExcludedAccountTarget sets the excludedAccountTarget property value. The excludedAccountTarget property
+// SetExcludedAccountTarget sets the excludedAccountTarget property value. Users excluded from the simulation.
 func (m *Simulation) SetExcludedAccountTarget(value AccountTargetContentable)() {
     m.excludedAccountTarget = value
 }
-// SetIncludedAccountTarget sets the includedAccountTarget property value. The includedAccountTarget property
+// SetIncludedAccountTarget sets the includedAccountTarget property value. Users targeted in the simulation.
 func (m *Simulation) SetIncludedAccountTarget(value AccountTargetContentable)() {
     m.includedAccountTarget = value
 }
@@ -515,7 +515,7 @@ func (m *Simulation) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3a
 func (m *Simulation) SetLaunchDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.launchDateTime = value
 }
-// SetPayload sets the payload property value. The payload property
+// SetPayload sets the payload property value. The payload associated with a simulation during its creation.
 func (m *Simulation) SetPayload(value Payloadable)() {
     m.payload = value
 }

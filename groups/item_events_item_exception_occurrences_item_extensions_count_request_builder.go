@@ -15,18 +15,25 @@ type ItemEventsItemExceptionOccurrencesItemExtensionsCountRequestBuilder struct 
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// ItemEventsItemExceptionOccurrencesItemExtensionsCountRequestBuilderGetQueryParameters get the number of the resource
+type ItemEventsItemExceptionOccurrencesItemExtensionsCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+}
 // ItemEventsItemExceptionOccurrencesItemExtensionsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemEventsItemExceptionOccurrencesItemExtensionsCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *ItemEventsItemExceptionOccurrencesItemExtensionsCountRequestBuilderGetQueryParameters
 }
 // NewItemEventsItemExceptionOccurrencesItemExtensionsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemEventsItemExceptionOccurrencesItemExtensionsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEventsItemExceptionOccurrencesItemExtensionsCountRequestBuilder) {
     m := &ItemEventsItemExceptionOccurrencesItemExtensionsCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/events/{event%2Did}/exceptionOccurrences/{event%2Did1}/extensions/$count";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/events/{event%2Did}/exceptionOccurrences/{event%2Did1}/extensions/$count{?%24filter}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,6 +75,9 @@ func (m *ItemEventsItemExceptionOccurrencesItemExtensionsCountRequestBuilder) To
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

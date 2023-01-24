@@ -20,7 +20,7 @@ type PrivilegedAccess struct {
     // A collection of role settings for the provider.
     roleSettings []GovernanceRoleSettingable
 }
-// NewPrivilegedAccess instantiates a new privilegedAccess and sets the default values.
+// NewPrivilegedAccess instantiates a new PrivilegedAccess and sets the default values.
 func NewPrivilegedAccess()(*PrivilegedAccess) {
     m := &PrivilegedAccess{
         Entity: *NewEntity(),

@@ -15,18 +15,27 @@ type ItemDevicesItemExtensionsCountRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// ItemDevicesItemExtensionsCountRequestBuilderGetQueryParameters get the number of the resource
+type ItemDevicesItemExtensionsCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+}
 // ItemDevicesItemExtensionsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemDevicesItemExtensionsCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *ItemDevicesItemExtensionsCountRequestBuilderGetQueryParameters
 }
 // NewItemDevicesItemExtensionsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemDevicesItemExtensionsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDevicesItemExtensionsCountRequestBuilder) {
     m := &ItemDevicesItemExtensionsCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/devices/{device%2Did}/extensions/$count";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/devices/{device%2Did}/extensions/$count{?%24search,%24filter}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,6 +77,9 @@ func (m *ItemDevicesItemExtensionsCountRequestBuilder) ToGetRequestInformation(c
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

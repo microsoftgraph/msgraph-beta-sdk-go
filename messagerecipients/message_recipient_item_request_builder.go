@@ -23,7 +23,7 @@ type MessageRecipientItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// MessageRecipientItemRequestBuilderGetQueryParameters get entity from messageRecipients by key
+// MessageRecipientItemRequestBuilderGetQueryParameters get entity from messageRecipients by key (id)
 type MessageRecipientItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -65,7 +65,7 @@ func NewMessageRecipientItemRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewMessageRecipientItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from messageRecipients
+// Delete delete entity from messageRecipients by key (id)
 func (m *MessageRecipientItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MessageRecipientItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,7 +96,7 @@ func (m *MessageRecipientItemRequestBuilder) EventsById(id string)(*ItemEventsMe
     }
     return NewItemEventsMessageEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get get entity from messageRecipients by key
+// Get get entity from messageRecipients by key (id)
 func (m *MessageRecipientItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MessageRecipientItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageRecipientable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +115,7 @@ func (m *MessageRecipientItemRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageRecipientable), nil
 }
-// Patch update entity in messageRecipients
+// Patch update entity in messageRecipients by key (id)
 func (m *MessageRecipientItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageRecipientable, requestConfiguration *MessageRecipientItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageRecipientable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -134,7 +134,7 @@ func (m *MessageRecipientItemRequestBuilder) Patch(ctx context.Context, body ie2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageRecipientable), nil
 }
-// ToDeleteRequestInformation delete entity from messageRecipients
+// ToDeleteRequestInformation delete entity from messageRecipients by key (id)
 func (m *MessageRecipientItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MessageRecipientItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -146,7 +146,7 @@ func (m *MessageRecipientItemRequestBuilder) ToDeleteRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from messageRecipients by key
+// ToGetRequestInformation get entity from messageRecipients by key (id)
 func (m *MessageRecipientItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MessageRecipientItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -162,7 +162,7 @@ func (m *MessageRecipientItemRequestBuilder) ToGetRequestInformation(ctx context
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in messageRecipients
+// ToPatchRequestInformation update entity in messageRecipients by key (id)
 func (m *MessageRecipientItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageRecipientable, requestConfiguration *MessageRecipientItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

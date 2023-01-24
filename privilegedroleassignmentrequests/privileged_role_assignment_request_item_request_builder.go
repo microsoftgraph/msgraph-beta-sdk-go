@@ -23,7 +23,7 @@ type PrivilegedRoleAssignmentRequestItemRequestBuilderDeleteRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PrivilegedRoleAssignmentRequestItemRequestBuilderGetQueryParameters get entity from privilegedRoleAssignmentRequests by key
+// PrivilegedRoleAssignmentRequestItemRequestBuilderGetQueryParameters get entity from privilegedRoleAssignmentRequests by key (id)
 type PrivilegedRoleAssignmentRequestItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -69,7 +69,7 @@ func NewPrivilegedRoleAssignmentRequestItemRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedRoleAssignmentRequestItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from privilegedRoleAssignmentRequests
+// Delete delete entity from privilegedRoleAssignmentRequests by key (id)
 func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *PrivilegedRoleAssignmentRequestItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -85,7 +85,7 @@ func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) Delete(ctx context.C
     }
     return nil
 }
-// Get get entity from privilegedRoleAssignmentRequests by key
+// Get get entity from privilegedRoleAssignmentRequests by key (id)
 func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedRoleAssignmentRequestItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -104,7 +104,7 @@ func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) Get(ctx context.Cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable), nil
 }
-// Patch update entity in privilegedRoleAssignmentRequests
+// Patch update entity in privilegedRoleAssignmentRequests by key (id)
 func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable, requestConfiguration *PrivilegedRoleAssignmentRequestItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -127,7 +127,7 @@ func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) Patch(ctx context.Co
 func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) RoleInfo()(*ItemRoleInfoRequestBuilder) {
     return NewItemRoleInfoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ToDeleteRequestInformation delete entity from privilegedRoleAssignmentRequests
+// ToDeleteRequestInformation delete entity from privilegedRoleAssignmentRequests by key (id)
 func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PrivilegedRoleAssignmentRequestItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,7 +139,7 @@ func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) ToDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from privilegedRoleAssignmentRequests by key
+// ToGetRequestInformation get entity from privilegedRoleAssignmentRequests by key (id)
 func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedRoleAssignmentRequestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -155,7 +155,7 @@ func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) ToGetRequestInformat
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in privilegedRoleAssignmentRequests
+// ToPatchRequestInformation update entity in privilegedRoleAssignmentRequests by key (id)
 func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable, requestConfiguration *PrivilegedRoleAssignmentRequestItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

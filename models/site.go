@@ -23,6 +23,8 @@ type Site struct {
     drives []Driveable
     // The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
     externalColumns []ColumnDefinitionable
+    // The informationProtection property
+    informationProtection InformationProtectionable
     // Used to address any item contained in this site. This collection cannot be enumerated.
     items []BaseItemable
     // The collection of lists under this site.
@@ -46,7 +48,7 @@ type Site struct {
     // The collection of the sub-sites under this site.
     sites []Siteable
 }
-// NewSite instantiates a new Site and sets the default values.
+// NewSite instantiates a new site and sets the default values.
 func NewSite()(*Site) {
     m := &Site{
         BaseItem: *NewBaseItem(),
@@ -190,6 +192,16 @@ func (m *Site) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["informationProtection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateInformationProtectionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetInformationProtection(val.(InformationProtectionable))
+        }
+        return nil
+    }
     res["items"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateBaseItemFromDiscriminatorValue)
         if err != nil {
@@ -326,6 +338,10 @@ func (m *Site) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     }
     return res
 }
+// GetInformationProtection gets the informationProtection property value. The informationProtection property
+func (m *Site) GetInformationProtection()(InformationProtectionable) {
+    return m.informationProtection
+}
 // GetItems gets the items property value. Used to address any item contained in this site. This collection cannot be enumerated.
 func (m *Site) GetItems()([]BaseItemable) {
     return m.items
@@ -436,6 +452,12 @@ func (m *Site) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("externalColumns", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("informationProtection", m.GetInformationProtection())
         if err != nil {
             return err
         }
@@ -563,6 +585,10 @@ func (m *Site) SetDrives(value []Driveable)() {
 // SetExternalColumns sets the externalColumns property value. The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
 func (m *Site) SetExternalColumns(value []ColumnDefinitionable)() {
     m.externalColumns = value
+}
+// SetInformationProtection sets the informationProtection property value. The informationProtection property
+func (m *Site) SetInformationProtection(value InformationProtectionable)() {
+    m.informationProtection = value
 }
 // SetItems sets the items property value. Used to address any item contained in this site. This collection cannot be enumerated.
 func (m *Site) SetItems(value []BaseItemable)() {

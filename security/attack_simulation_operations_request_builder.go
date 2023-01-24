@@ -16,7 +16,7 @@ type AttackSimulationOperationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AttackSimulationOperationsRequestBuilderGetQueryParameters get operations from security
+// AttackSimulationOperationsRequestBuilderGetQueryParameters represents an attack simulation training operation.
 type AttackSimulationOperationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewAttackSimulationOperationsRequestBuilder(rawUrl string, requestAdapter i
 func (m *AttackSimulationOperationsRequestBuilder) Count()(*AttackSimulationOperationsCountRequestBuilder) {
     return NewAttackSimulationOperationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get get operations from security
+// Get represents an attack simulation training operation.
 func (m *AttackSimulationOperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationOperationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttackSimulationOperationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *AttackSimulationOperationsRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttackSimulationOperationable), nil
 }
-// ToGetRequestInformation get operations from security
+// ToGetRequestInformation represents an attack simulation training operation.
 func (m *AttackSimulationOperationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationOperationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

@@ -160,6 +160,10 @@ func (m *SiteItemRequestBuilder) GetApplicableContentTypesForListWithListId(list
 func (m *SiteItemRequestBuilder) GetByPathWithPath(path *string)(*ItemGetByPathWithPathRequestBuilder) {
     return NewItemGetByPathWithPathRequestBuilderInternal(m.pathParameters, m.requestAdapter, path);
 }
+// InformationProtection provides operations to manage the informationProtection property of the microsoft.graph.site entity.
+func (m *SiteItemRequestBuilder) InformationProtection()(*ItemInformationProtectionRequestBuilder) {
+    return NewItemInformationProtectionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Items provides operations to manage the items property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) Items()(*ItemItemsRequestBuilder) {
     return NewItemItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -224,7 +228,7 @@ func (m *SiteItemRequestBuilder) PagesById(id string)(*ItemPagesSitePageItemRequ
     }
     return NewItemPagesSitePageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch update entity in sites
+// Patch update entity in sites by key (id)
 func (m *SiteItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable, requestConfiguration *SiteItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -293,7 +297,7 @@ func (m *SiteItemRequestBuilder) ToGetRequestInformation(ctx context.Context, re
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in sites
+// ToPatchRequestInformation update entity in sites by key (id)
 func (m *SiteItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable, requestConfiguration *SiteItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

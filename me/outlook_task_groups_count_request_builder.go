@@ -15,18 +15,25 @@ type OutlookTaskGroupsCountRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// OutlookTaskGroupsCountRequestBuilderGetQueryParameters get the number of the resource
+type OutlookTaskGroupsCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+}
 // OutlookTaskGroupsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type OutlookTaskGroupsCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *OutlookTaskGroupsCountRequestBuilderGetQueryParameters
 }
 // NewOutlookTaskGroupsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewOutlookTaskGroupsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OutlookTaskGroupsCountRequestBuilder) {
     m := &OutlookTaskGroupsCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/outlook/taskGroups/$count";
+    m.urlTemplate = "{+baseurl}/me/outlook/taskGroups/$count{?%24filter}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,6 +75,9 @@ func (m *OutlookTaskGroupsCountRequestBuilder) ToGetRequestInformation(ctx conte
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

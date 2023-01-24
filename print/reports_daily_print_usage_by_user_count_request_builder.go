@@ -15,18 +15,27 @@ type ReportsDailyPrintUsageByUserCountRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// ReportsDailyPrintUsageByUserCountRequestBuilderGetQueryParameters get the number of the resource
+type ReportsDailyPrintUsageByUserCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+}
 // ReportsDailyPrintUsageByUserCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ReportsDailyPrintUsageByUserCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *ReportsDailyPrintUsageByUserCountRequestBuilderGetQueryParameters
 }
 // NewReportsDailyPrintUsageByUserCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewReportsDailyPrintUsageByUserCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsDailyPrintUsageByUserCountRequestBuilder) {
     m := &ReportsDailyPrintUsageByUserCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/print/reports/dailyPrintUsageByUser/$count";
+    m.urlTemplate = "{+baseurl}/print/reports/dailyPrintUsageByUser/$count{?%24search,%24filter}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,6 +77,9 @@ func (m *ReportsDailyPrintUsageByUserCountRequestBuilder) ToGetRequestInformatio
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

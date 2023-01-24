@@ -15,18 +15,27 @@ type B2cUserFlowsItemUserAttributeAssignmentsCountRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// B2cUserFlowsItemUserAttributeAssignmentsCountRequestBuilderGetQueryParameters get the number of the resource
+type B2cUserFlowsItemUserAttributeAssignmentsCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+}
 // B2cUserFlowsItemUserAttributeAssignmentsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type B2cUserFlowsItemUserAttributeAssignmentsCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *B2cUserFlowsItemUserAttributeAssignmentsCountRequestBuilderGetQueryParameters
 }
 // NewB2cUserFlowsItemUserAttributeAssignmentsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewB2cUserFlowsItemUserAttributeAssignmentsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2cUserFlowsItemUserAttributeAssignmentsCountRequestBuilder) {
     m := &B2cUserFlowsItemUserAttributeAssignmentsCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}/userAttributeAssignments/$count";
+    m.urlTemplate = "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}/userAttributeAssignments/$count{?%24search,%24filter}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,6 +77,9 @@ func (m *B2cUserFlowsItemUserAttributeAssignmentsCountRequestBuilder) ToGetReque
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

@@ -8,15 +8,15 @@ import (
 // LongRunningOperation 
 type LongRunningOperation struct {
     Entity
-    // The createdDateTime property
+    // The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The lastActionDateTime property
+    // The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The resourceLocation property
+    // URI of the resource that the operation is performed on.
     resourceLocation *string
-    // The status property
+    // The status of the operation. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue.
     status *LongRunningOperationStatus
-    // The statusDetail property
+    // Details about the status of the operation.
     statusDetail *string
 }
 // NewLongRunningOperation instantiates a new longRunningOperation and sets the default values.
@@ -50,7 +50,7 @@ func CreateLongRunningOperationFromDiscriminatorValue(parseNode i878a80d2330e89d
     }
     return NewLongRunningOperation(), nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *LongRunningOperation) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.createdDateTime
 }
@@ -109,19 +109,19 @@ func (m *LongRunningOperation) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetLastActionDateTime gets the lastActionDateTime property value. The lastActionDateTime property
+// GetLastActionDateTime gets the lastActionDateTime property value. The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *LongRunningOperation) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastActionDateTime
 }
-// GetResourceLocation gets the resourceLocation property value. The resourceLocation property
+// GetResourceLocation gets the resourceLocation property value. URI of the resource that the operation is performed on.
 func (m *LongRunningOperation) GetResourceLocation()(*string) {
     return m.resourceLocation
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. The status of the operation. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue.
 func (m *LongRunningOperation) GetStatus()(*LongRunningOperationStatus) {
     return m.status
 }
-// GetStatusDetail gets the statusDetail property value. The statusDetail property
+// GetStatusDetail gets the statusDetail property value. Details about the status of the operation.
 func (m *LongRunningOperation) GetStatusDetail()(*string) {
     return m.statusDetail
 }
@@ -164,23 +164,23 @@ func (m *LongRunningOperation) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *LongRunningOperation) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// SetLastActionDateTime sets the lastActionDateTime property value. The lastActionDateTime property
+// SetLastActionDateTime sets the lastActionDateTime property value. The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *LongRunningOperation) SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastActionDateTime = value
 }
-// SetResourceLocation sets the resourceLocation property value. The resourceLocation property
+// SetResourceLocation sets the resourceLocation property value. URI of the resource that the operation is performed on.
 func (m *LongRunningOperation) SetResourceLocation(value *string)() {
     m.resourceLocation = value
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. The status of the operation. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue.
 func (m *LongRunningOperation) SetStatus(value *LongRunningOperationStatus)() {
     m.status = value
 }
-// SetStatusDetail sets the statusDetail property value. The statusDetail property
+// SetStatusDetail sets the statusDetail property value. Details about the status of the operation.
 func (m *LongRunningOperation) SetStatusDetail(value *string)() {
     m.statusDetail = value
 }

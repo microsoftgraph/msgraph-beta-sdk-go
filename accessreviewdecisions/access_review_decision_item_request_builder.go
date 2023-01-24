@@ -23,7 +23,7 @@ type AccessReviewDecisionItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AccessReviewDecisionItemRequestBuilderGetQueryParameters get entity from accessReviewDecisions by key
+// AccessReviewDecisionItemRequestBuilderGetQueryParameters get entity from accessReviewDecisions by key (id)
 type AccessReviewDecisionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -65,7 +65,7 @@ func NewAccessReviewDecisionItemRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewAccessReviewDecisionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from accessReviewDecisions
+// Delete delete entity from accessReviewDecisions by key (id)
 func (m *AccessReviewDecisionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AccessReviewDecisionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,7 +81,7 @@ func (m *AccessReviewDecisionItemRequestBuilder) Delete(ctx context.Context, req
     }
     return nil
 }
-// Get get entity from accessReviewDecisions by key
+// Get get entity from accessReviewDecisions by key (id)
 func (m *AccessReviewDecisionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AccessReviewDecisionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewDecisionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,7 +100,7 @@ func (m *AccessReviewDecisionItemRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewDecisionable), nil
 }
-// Patch update entity in accessReviewDecisions
+// Patch update entity in accessReviewDecisions by key (id)
 func (m *AccessReviewDecisionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewDecisionable, requestConfiguration *AccessReviewDecisionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewDecisionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +119,7 @@ func (m *AccessReviewDecisionItemRequestBuilder) Patch(ctx context.Context, body
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewDecisionable), nil
 }
-// ToDeleteRequestInformation delete entity from accessReviewDecisions
+// ToDeleteRequestInformation delete entity from accessReviewDecisions by key (id)
 func (m *AccessReviewDecisionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AccessReviewDecisionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,7 +131,7 @@ func (m *AccessReviewDecisionItemRequestBuilder) ToDeleteRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from accessReviewDecisions by key
+// ToGetRequestInformation get entity from accessReviewDecisions by key (id)
 func (m *AccessReviewDecisionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AccessReviewDecisionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,7 +147,7 @@ func (m *AccessReviewDecisionItemRequestBuilder) ToGetRequestInformation(ctx con
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in accessReviewDecisions
+// ToPatchRequestInformation update entity in accessReviewDecisions by key (id)
 func (m *AccessReviewDecisionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewDecisionable, requestConfiguration *AccessReviewDecisionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

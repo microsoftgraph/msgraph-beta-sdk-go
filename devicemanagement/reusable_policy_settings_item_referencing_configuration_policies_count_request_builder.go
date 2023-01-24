@@ -15,18 +15,27 @@ type ReusablePolicySettingsItemReferencingConfigurationPoliciesCountRequestBuild
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// ReusablePolicySettingsItemReferencingConfigurationPoliciesCountRequestBuilderGetQueryParameters get the number of the resource
+type ReusablePolicySettingsItemReferencingConfigurationPoliciesCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+}
 // ReusablePolicySettingsItemReferencingConfigurationPoliciesCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ReusablePolicySettingsItemReferencingConfigurationPoliciesCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *ReusablePolicySettingsItemReferencingConfigurationPoliciesCountRequestBuilderGetQueryParameters
 }
 // NewReusablePolicySettingsItemReferencingConfigurationPoliciesCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewReusablePolicySettingsItemReferencingConfigurationPoliciesCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReusablePolicySettingsItemReferencingConfigurationPoliciesCountRequestBuilder) {
     m := &ReusablePolicySettingsItemReferencingConfigurationPoliciesCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/reusablePolicySettings/{deviceManagementReusablePolicySetting%2Did}/referencingConfigurationPolicies/$count";
+    m.urlTemplate = "{+baseurl}/deviceManagement/reusablePolicySettings/{deviceManagementReusablePolicySetting%2Did}/referencingConfigurationPolicies/$count{?%24search,%24filter}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,6 +77,9 @@ func (m *ReusablePolicySettingsItemReferencingConfigurationPoliciesCountRequestB
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

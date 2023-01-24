@@ -15,18 +15,27 @@ type SensitivityLabelsItemSublabelsCountRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// SensitivityLabelsItemSublabelsCountRequestBuilderGetQueryParameters get the number of the resource
+type SensitivityLabelsItemSublabelsCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+}
 // SensitivityLabelsItemSublabelsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SensitivityLabelsItemSublabelsCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *SensitivityLabelsItemSublabelsCountRequestBuilderGetQueryParameters
 }
 // NewSensitivityLabelsItemSublabelsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewSensitivityLabelsItemSublabelsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SensitivityLabelsItemSublabelsCountRequestBuilder) {
     m := &SensitivityLabelsItemSublabelsCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/dataClassification/sensitivityLabels/{sensitivityLabel%2Did}/sublabels/$count";
+    m.urlTemplate = "{+baseurl}/dataClassification/sensitivityLabels/{sensitivityLabel%2Did}/sublabels/$count{?%24search,%24filter}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,6 +77,9 @@ func (m *SensitivityLabelsItemSublabelsCountRequestBuilder) ToGetRequestInformat
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

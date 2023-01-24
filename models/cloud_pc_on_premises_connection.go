@@ -39,7 +39,7 @@ type CloudPcOnPremisesConnection struct {
     type_escaped *CloudPcOnPremisesConnectionType
     // The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.
     virtualNetworkId *string
-    // The virtualNetworkLocation property
+    // Indicates resource location of the virtual target network. Read-only, computed value.
     virtualNetworkLocation *string
 }
 // NewCloudPcOnPremisesConnection instantiates a new CloudPcOnPremisesConnection and sets the default values.
@@ -292,7 +292,7 @@ func (m *CloudPcOnPremisesConnection) GetType()(*CloudPcOnPremisesConnectionType
 func (m *CloudPcOnPremisesConnection) GetVirtualNetworkId()(*string) {
     return m.virtualNetworkId
 }
-// GetVirtualNetworkLocation gets the virtualNetworkLocation property value. The virtualNetworkLocation property
+// GetVirtualNetworkLocation gets the virtualNetworkLocation property value. Indicates resource location of the virtual target network. Read-only, computed value.
 func (m *CloudPcOnPremisesConnection) GetVirtualNetworkLocation()(*string) {
     return m.virtualNetworkLocation
 }
@@ -473,7 +473,7 @@ func (m *CloudPcOnPremisesConnection) SetType(value *CloudPcOnPremisesConnection
 func (m *CloudPcOnPremisesConnection) SetVirtualNetworkId(value *string)() {
     m.virtualNetworkId = value
 }
-// SetVirtualNetworkLocation sets the virtualNetworkLocation property value. The virtualNetworkLocation property
+// SetVirtualNetworkLocation sets the virtualNetworkLocation property value. Indicates resource location of the virtual target network. Read-only, computed value.
 func (m *CloudPcOnPremisesConnection) SetVirtualNetworkLocation(value *string)() {
     m.virtualNetworkLocation = value
 }

@@ -23,7 +23,7 @@ type AttackSimulationOperationsAttackSimulationOperationItemRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AttackSimulationOperationsAttackSimulationOperationItemRequestBuilderGetQueryParameters get operations from security
+// AttackSimulationOperationsAttackSimulationOperationItemRequestBuilderGetQueryParameters represents an attack simulation training operation.
 type AttackSimulationOperationsAttackSimulationOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -81,7 +81,7 @@ func (m *AttackSimulationOperationsAttackSimulationOperationItemRequestBuilder) 
     }
     return nil
 }
-// Get get operations from security
+// Get represents an attack simulation training operation.
 func (m *AttackSimulationOperationsAttackSimulationOperationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationOperationsAttackSimulationOperationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttackSimulationOperationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -131,7 +131,7 @@ func (m *AttackSimulationOperationsAttackSimulationOperationItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get operations from security
+// ToGetRequestInformation represents an attack simulation training operation.
 func (m *AttackSimulationOperationsAttackSimulationOperationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationOperationsAttackSimulationOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

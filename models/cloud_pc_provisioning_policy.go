@@ -42,7 +42,7 @@ type CloudPcProvisioningPolicy struct {
     // Specific Windows settings to configure while creating Cloud PCs for this provisioning policy.
     windowsSettings CloudPcWindowsSettingsable
 }
-// NewCloudPcProvisioningPolicy instantiates a new cloudPcProvisioningPolicy and sets the default values.
+// NewCloudPcProvisioningPolicy instantiates a new CloudPcProvisioningPolicy and sets the default values.
 func NewCloudPcProvisioningPolicy()(*CloudPcProvisioningPolicy) {
     m := &CloudPcProvisioningPolicy{
         Entity: *NewEntity(),

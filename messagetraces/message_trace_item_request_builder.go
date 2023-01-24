@@ -23,7 +23,7 @@ type MessageTraceItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// MessageTraceItemRequestBuilderGetQueryParameters get entity from messageTraces by key
+// MessageTraceItemRequestBuilderGetQueryParameters get entity from messageTraces by key (id)
 type MessageTraceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -65,7 +65,7 @@ func NewMessageTraceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewMessageTraceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from messageTraces
+// Delete delete entity from messageTraces by key (id)
 func (m *MessageTraceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MessageTraceItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,7 +81,7 @@ func (m *MessageTraceItemRequestBuilder) Delete(ctx context.Context, requestConf
     }
     return nil
 }
-// Get get entity from messageTraces by key
+// Get get entity from messageTraces by key (id)
 func (m *MessageTraceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MessageTraceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageTraceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,7 +100,7 @@ func (m *MessageTraceItemRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageTraceable), nil
 }
-// Patch update entity in messageTraces
+// Patch update entity in messageTraces by key (id)
 func (m *MessageTraceItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageTraceable, requestConfiguration *MessageTraceItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageTraceable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -134,7 +134,7 @@ func (m *MessageTraceItemRequestBuilder) RecipientsById(id string)(*ItemRecipien
     }
     return NewItemRecipientsMessageRecipientItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ToDeleteRequestInformation delete entity from messageTraces
+// ToDeleteRequestInformation delete entity from messageTraces by key (id)
 func (m *MessageTraceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MessageTraceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -146,7 +146,7 @@ func (m *MessageTraceItemRequestBuilder) ToDeleteRequestInformation(ctx context.
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from messageTraces by key
+// ToGetRequestInformation get entity from messageTraces by key (id)
 func (m *MessageTraceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MessageTraceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -162,7 +162,7 @@ func (m *MessageTraceItemRequestBuilder) ToGetRequestInformation(ctx context.Con
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in messageTraces
+// ToPatchRequestInformation update entity in messageTraces by key (id)
 func (m *MessageTraceItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageTraceable, requestConfiguration *MessageTraceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

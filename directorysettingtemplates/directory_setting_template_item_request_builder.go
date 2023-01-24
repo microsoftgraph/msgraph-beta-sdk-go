@@ -73,7 +73,7 @@ func NewDirectorySettingTemplateItemRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewDirectorySettingTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from directorySettingTemplates
+// Delete delete entity from directorySettingTemplates by key (id)
 func (m *DirectorySettingTemplateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DirectorySettingTemplateItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +119,7 @@ func (m *DirectorySettingTemplateItemRequestBuilder) GetMemberGroups()(*ItemGetM
 func (m *DirectorySettingTemplateItemRequestBuilder) GetMemberObjects()(*ItemGetMemberObjectsRequestBuilder) {
     return NewItemGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Patch update entity in directorySettingTemplates
+// Patch update entity in directorySettingTemplates by key (id)
 func (m *DirectorySettingTemplateItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateable, requestConfiguration *DirectorySettingTemplateItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -142,7 +142,7 @@ func (m *DirectorySettingTemplateItemRequestBuilder) Patch(ctx context.Context, 
 func (m *DirectorySettingTemplateItemRequestBuilder) Restore()(*ItemRestoreRequestBuilder) {
     return NewItemRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ToDeleteRequestInformation delete entity from directorySettingTemplates
+// ToDeleteRequestInformation delete entity from directorySettingTemplates by key (id)
 func (m *DirectorySettingTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DirectorySettingTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -170,7 +170,7 @@ func (m *DirectorySettingTemplateItemRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in directorySettingTemplates
+// ToPatchRequestInformation update entity in directorySettingTemplates by key (id)
 func (m *DirectorySettingTemplateItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateable, requestConfiguration *DirectorySettingTemplateItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

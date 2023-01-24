@@ -8,11 +8,11 @@ import (
 type KeyValuePair struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // Name for this key-value pair
+    // Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
     name *string
     // The OdataType property
     odataType *string
-    // Value for this key-value pair
+    // Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
     value *string
 }
 // NewKeyValuePair instantiates a new keyValuePair and sets the default values.
@@ -65,7 +65,7 @@ func (m *KeyValuePair) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetName gets the name property value. Name for this key-value pair
+// GetName gets the name property value. Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
 func (m *KeyValuePair) GetName()(*string) {
     return m.name
 }
@@ -73,7 +73,7 @@ func (m *KeyValuePair) GetName()(*string) {
 func (m *KeyValuePair) GetOdataType()(*string) {
     return m.odataType
 }
-// GetValue gets the value property value. Value for this key-value pair
+// GetValue gets the value property value. Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
 func (m *KeyValuePair) GetValue()(*string) {
     return m.value
 }
@@ -109,7 +109,7 @@ func (m *KeyValuePair) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 func (m *KeyValuePair) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetName sets the name property value. Name for this key-value pair
+// SetName sets the name property value. Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
 func (m *KeyValuePair) SetName(value *string)() {
     m.name = value
 }
@@ -117,7 +117,7 @@ func (m *KeyValuePair) SetName(value *string)() {
 func (m *KeyValuePair) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetValue sets the value property value. Value for this key-value pair
+// SetValue sets the value property value. Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
 func (m *KeyValuePair) SetValue(value *string)() {
     m.value = value
 }
