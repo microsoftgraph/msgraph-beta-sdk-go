@@ -7,7 +7,7 @@ import (
 // AddressBookAccountTargetContent 
 type AddressBookAccountTargetContent struct {
     AccountTargetContent
-    // The accountTargetEmails property
+    // List of user emails targeted for an attack simulation training campaign.
     accountTargetEmails []string
 }
 // NewAddressBookAccountTargetContent instantiates a new AddressBookAccountTargetContent and sets the default values.
@@ -23,7 +23,7 @@ func NewAddressBookAccountTargetContent()(*AddressBookAccountTargetContent) {
 func CreateAddressBookAccountTargetContentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAddressBookAccountTargetContent(), nil
 }
-// GetAccountTargetEmails gets the accountTargetEmails property value. The accountTargetEmails property
+// GetAccountTargetEmails gets the accountTargetEmails property value. List of user emails targeted for an attack simulation training campaign.
 func (m *AddressBookAccountTargetContent) GetAccountTargetEmails()([]string) {
     return m.accountTargetEmails
 }
@@ -60,7 +60,7 @@ func (m *AddressBookAccountTargetContent) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetAccountTargetEmails sets the accountTargetEmails property value. The accountTargetEmails property
+// SetAccountTargetEmails sets the accountTargetEmails property value. List of user emails targeted for an attack simulation training campaign.
 func (m *AddressBookAccountTargetContent) SetAccountTargetEmails(value []string)() {
     m.accountTargetEmails = value
 }

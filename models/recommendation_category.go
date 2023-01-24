@@ -6,32 +6,23 @@ import (
 type RecommendationCategory int
 
 const (
-    USAGEANDCOMPLIANCE_RECOMMENDATIONCATEGORY RecommendationCategory = iota
-    SECURITY_RECOMMENDATIONCATEGORY
+    IDENTITYBESTPRACTICE_RECOMMENDATIONCATEGORY RecommendationCategory = iota
+    IDENTITYSECURESCORE_RECOMMENDATIONCATEGORY
     UNKNOWNFUTUREVALUE_RECOMMENDATIONCATEGORY
-    PRODUCTIVITY_RECOMMENDATIONCATEGORY
-    HEALTH_RECOMMENDATIONCATEGORY
-    CONFIGURATION_RECOMMENDATIONCATEGORY
 )
 
 func (i RecommendationCategory) String() string {
-    return []string{"usageAndCompliance", "security", "unknownFutureValue", "productivity", "health", "configuration"}[i]
+    return []string{"identityBestPractice", "identitySecureScore", "unknownFutureValue"}[i]
 }
 func ParseRecommendationCategory(v string) (any, error) {
-    result := USAGEANDCOMPLIANCE_RECOMMENDATIONCATEGORY
+    result := IDENTITYBESTPRACTICE_RECOMMENDATIONCATEGORY
     switch v {
-        case "usageAndCompliance":
-            result = USAGEANDCOMPLIANCE_RECOMMENDATIONCATEGORY
-        case "security":
-            result = SECURITY_RECOMMENDATIONCATEGORY
+        case "identityBestPractice":
+            result = IDENTITYBESTPRACTICE_RECOMMENDATIONCATEGORY
+        case "identitySecureScore":
+            result = IDENTITYSECURESCORE_RECOMMENDATIONCATEGORY
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_RECOMMENDATIONCATEGORY
-        case "productivity":
-            result = PRODUCTIVITY_RECOMMENDATIONCATEGORY
-        case "health":
-            result = HEALTH_RECOMMENDATIONCATEGORY
-        case "configuration":
-            result = CONFIGURATION_RECOMMENDATIONCATEGORY
         default:
             return 0, errors.New("Unknown RecommendationCategory value: " + v)
     }

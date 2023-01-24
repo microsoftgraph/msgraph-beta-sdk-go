@@ -10,7 +10,7 @@ type TeamTemplate struct {
     // The definitions property
     definitions []TeamTemplateDefinitionable
 }
-// NewTeamTemplate instantiates a new teamTemplate and sets the default values.
+// NewTeamTemplate instantiates a new TeamTemplate and sets the default values.
 func NewTeamTemplate()(*TeamTemplate) {
     m := &TeamTemplate{
         Entity: *NewEntity(),

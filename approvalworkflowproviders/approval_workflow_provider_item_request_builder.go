@@ -23,7 +23,7 @@ type ApprovalWorkflowProviderItemRequestBuilderDeleteRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ApprovalWorkflowProviderItemRequestBuilderGetQueryParameters get entity from approvalWorkflowProviders by key
+// ApprovalWorkflowProviderItemRequestBuilderGetQueryParameters get entity from approvalWorkflowProviders by key (id)
 type ApprovalWorkflowProviderItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -95,7 +95,7 @@ func NewApprovalWorkflowProviderItemRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewApprovalWorkflowProviderItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from approvalWorkflowProviders
+// Delete delete entity from approvalWorkflowProviders by key (id)
 func (m *ApprovalWorkflowProviderItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ApprovalWorkflowProviderItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -111,7 +111,7 @@ func (m *ApprovalWorkflowProviderItemRequestBuilder) Delete(ctx context.Context,
     }
     return nil
 }
-// Get get entity from approvalWorkflowProviders by key
+// Get get entity from approvalWorkflowProviders by key (id)
 func (m *ApprovalWorkflowProviderItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ApprovalWorkflowProviderItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalWorkflowProviderable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -130,7 +130,7 @@ func (m *ApprovalWorkflowProviderItemRequestBuilder) Get(ctx context.Context, re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalWorkflowProviderable), nil
 }
-// Patch update entity in approvalWorkflowProviders
+// Patch update entity in approvalWorkflowProviders by key (id)
 func (m *ApprovalWorkflowProviderItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalWorkflowProviderable, requestConfiguration *ApprovalWorkflowProviderItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalWorkflowProviderable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -164,7 +164,7 @@ func (m *ApprovalWorkflowProviderItemRequestBuilder) PolicyTemplatesById(id stri
     }
     return NewItemPolicyTemplatesGovernancePolicyTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ToDeleteRequestInformation delete entity from approvalWorkflowProviders
+// ToDeleteRequestInformation delete entity from approvalWorkflowProviders by key (id)
 func (m *ApprovalWorkflowProviderItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ApprovalWorkflowProviderItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -176,7 +176,7 @@ func (m *ApprovalWorkflowProviderItemRequestBuilder) ToDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from approvalWorkflowProviders by key
+// ToGetRequestInformation get entity from approvalWorkflowProviders by key (id)
 func (m *ApprovalWorkflowProviderItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ApprovalWorkflowProviderItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -192,7 +192,7 @@ func (m *ApprovalWorkflowProviderItemRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in approvalWorkflowProviders
+// ToPatchRequestInformation update entity in approvalWorkflowProviders by key (id)
 func (m *ApprovalWorkflowProviderItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalWorkflowProviderable, requestConfiguration *ApprovalWorkflowProviderItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

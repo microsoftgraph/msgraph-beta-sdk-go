@@ -11,7 +11,6 @@ import (
     i09893664b20e7c846b2bc7aaaf1cd7f554ed3d2c00ac11336bea4c3c3d859e09 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement"
     i0b4892b2f92a31e44541567b8065e8e7760cb336e17d7dacb9120a865d5b0a37 "github.com/microsoftgraph/msgraph-beta-sdk-go/devices"
     i0b9d70018d3c267f9f34a818ce43cc889d06d87749a70e1ad1d45eead0c735e0 "github.com/microsoftgraph/msgraph-beta-sdk-go/filteroperators"
-    i0c8acb61c4c4d82e7ac6f352bd7cdb24dcd0de64d904e31cf17ca8c6b1d44202 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks"
     i0d38f6e6ea6126fff7bb7a5c3c2d82fe471d00233209e2b6b2ce6ccb21ce50f5 "github.com/microsoftgraph/msgraph-beta-sdk-go/onpremisespublishingprofiles"
     i0f747ff1f24810ff51160697ed4229c9ca192f7b84644311b88fa3b475cc340d "github.com/microsoftgraph/msgraph-beta-sdk-go/datapolicyoperations"
     i14752cfec59ab915e7c63922270765abf65744437d9135c191cef3986f08c3bb "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceroleassignments"
@@ -1447,19 +1446,4 @@ func (m *GraphBaseServiceClient) UsersById(id string)(*icd01c84a90833c55ac2309fd
         urlTplParams["user%2Did"] = id
     }
     return icd01c84a90833c55ac2309fd7034cb1962c60f59eb1ee2b2cf7b04c708402b6a.NewUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// Workbooks provides operations to manage the collection of driveItem entities.
-func (m *GraphBaseServiceClient) Workbooks()(*i0c8acb61c4c4d82e7ac6f352bd7cdb24dcd0de64d904e31cf17ca8c6b1d44202.WorkbooksRequestBuilder) {
-    return i0c8acb61c4c4d82e7ac6f352bd7cdb24dcd0de64d904e31cf17ca8c6b1d44202.NewWorkbooksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// WorkbooksById provides operations to manage the collection of driveItem entities.
-func (m *GraphBaseServiceClient) WorkbooksById(id string)(*i0c8acb61c4c4d82e7ac6f352bd7cdb24dcd0de64d904e31cf17ca8c6b1d44202.DriveItemItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["driveItem%2Did"] = id
-    }
-    return i0c8acb61c4c4d82e7ac6f352bd7cdb24dcd0de64d904e31cf17ca8c6b1d44202.NewDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

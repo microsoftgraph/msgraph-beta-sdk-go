@@ -80,7 +80,7 @@ func NewPrivilegedRoleItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedRoleItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from privilegedRoles
+// Delete delete entity from privilegedRoles by key (id)
 func (m *PrivilegedRoleItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *PrivilegedRoleItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -118,7 +118,7 @@ func (m *PrivilegedRoleItemRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleable), nil
 }
-// Patch update entity in privilegedRoles
+// Patch update entity in privilegedRoles by key (id)
 func (m *PrivilegedRoleItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleable, requestConfiguration *PrivilegedRoleItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -153,7 +153,7 @@ func (m *PrivilegedRoleItemRequestBuilder) Settings()(*ItemSettingsRequestBuilde
 func (m *PrivilegedRoleItemRequestBuilder) Summary()(*ItemSummaryRequestBuilder) {
     return NewItemSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ToDeleteRequestInformation delete entity from privilegedRoles
+// ToDeleteRequestInformation delete entity from privilegedRoles by key (id)
 func (m *PrivilegedRoleItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PrivilegedRoleItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -181,7 +181,7 @@ func (m *PrivilegedRoleItemRequestBuilder) ToGetRequestInformation(ctx context.C
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in privilegedRoles
+// ToPatchRequestInformation update entity in privilegedRoles by key (id)
 func (m *PrivilegedRoleItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleable, requestConfiguration *PrivilegedRoleItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

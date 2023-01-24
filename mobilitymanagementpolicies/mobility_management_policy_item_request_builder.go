@@ -23,7 +23,7 @@ type MobilityManagementPolicyItemRequestBuilderDeleteRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// MobilityManagementPolicyItemRequestBuilderGetQueryParameters get entity from mobilityManagementPolicies by key
+// MobilityManagementPolicyItemRequestBuilderGetQueryParameters get entity from mobilityManagementPolicies by key (id)
 type MobilityManagementPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -65,7 +65,7 @@ func NewMobilityManagementPolicyItemRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewMobilityManagementPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from mobilityManagementPolicies
+// Delete delete entity from mobilityManagementPolicies by key (id)
 func (m *MobilityManagementPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MobilityManagementPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,7 +81,7 @@ func (m *MobilityManagementPolicyItemRequestBuilder) Delete(ctx context.Context,
     }
     return nil
 }
-// Get get entity from mobilityManagementPolicies by key
+// Get get entity from mobilityManagementPolicies by key (id)
 func (m *MobilityManagementPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MobilityManagementPolicyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +115,7 @@ func (m *MobilityManagementPolicyItemRequestBuilder) IncludedGroupsById(id strin
     }
     return NewItemIncludedGroupsGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch update entity in mobilityManagementPolicies
+// Patch update entity in mobilityManagementPolicies by key (id)
 func (m *MobilityManagementPolicyItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, requestConfiguration *MobilityManagementPolicyItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -134,7 +134,7 @@ func (m *MobilityManagementPolicyItemRequestBuilder) Patch(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable), nil
 }
-// ToDeleteRequestInformation delete entity from mobilityManagementPolicies
+// ToDeleteRequestInformation delete entity from mobilityManagementPolicies by key (id)
 func (m *MobilityManagementPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MobilityManagementPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -146,7 +146,7 @@ func (m *MobilityManagementPolicyItemRequestBuilder) ToDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from mobilityManagementPolicies by key
+// ToGetRequestInformation get entity from mobilityManagementPolicies by key (id)
 func (m *MobilityManagementPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobilityManagementPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -162,7 +162,7 @@ func (m *MobilityManagementPolicyItemRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in mobilityManagementPolicies
+// ToPatchRequestInformation update entity in mobilityManagementPolicies by key (id)
 func (m *MobilityManagementPolicyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, requestConfiguration *MobilityManagementPolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

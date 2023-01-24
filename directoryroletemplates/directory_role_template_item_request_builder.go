@@ -73,7 +73,7 @@ func NewDirectoryRoleTemplateItemRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryRoleTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from directoryRoleTemplates
+// Delete delete entity from directoryRoleTemplates by key (id)
 func (m *DirectoryRoleTemplateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DirectoryRoleTemplateItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +119,7 @@ func (m *DirectoryRoleTemplateItemRequestBuilder) GetMemberGroups()(*ItemGetMemb
 func (m *DirectoryRoleTemplateItemRequestBuilder) GetMemberObjects()(*ItemGetMemberObjectsRequestBuilder) {
     return NewItemGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Patch update entity in directoryRoleTemplates
+// Patch update entity in directoryRoleTemplates by key (id)
 func (m *DirectoryRoleTemplateItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleTemplateable, requestConfiguration *DirectoryRoleTemplateItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleTemplateable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -142,7 +142,7 @@ func (m *DirectoryRoleTemplateItemRequestBuilder) Patch(ctx context.Context, bod
 func (m *DirectoryRoleTemplateItemRequestBuilder) Restore()(*ItemRestoreRequestBuilder) {
     return NewItemRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ToDeleteRequestInformation delete entity from directoryRoleTemplates
+// ToDeleteRequestInformation delete entity from directoryRoleTemplates by key (id)
 func (m *DirectoryRoleTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DirectoryRoleTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -170,7 +170,7 @@ func (m *DirectoryRoleTemplateItemRequestBuilder) ToGetRequestInformation(ctx co
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in directoryRoleTemplates
+// ToPatchRequestInformation update entity in directoryRoleTemplates by key (id)
 func (m *DirectoryRoleTemplateItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleTemplateable, requestConfiguration *DirectoryRoleTemplateItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

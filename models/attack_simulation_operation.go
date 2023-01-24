@@ -7,11 +7,11 @@ import (
 // AttackSimulationOperation 
 type AttackSimulationOperation struct {
     LongRunningOperation
-    // The percentageCompleted property
+    // Percentage of completion of the respective operation.
     percentageCompleted *int32
-    // The tenantId property
+    // Tenant identifier.
     tenantId *string
-    // The type property
+    // The attack simulation operation type. Possible values are: createSimulation, updateSimulation, unknownFutureValue.
     type_escaped *AttackSimulationOperationType
 }
 // NewAttackSimulationOperation instantiates a new AttackSimulationOperation and sets the default values.
@@ -60,15 +60,15 @@ func (m *AttackSimulationOperation) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetPercentageCompleted gets the percentageCompleted property value. The percentageCompleted property
+// GetPercentageCompleted gets the percentageCompleted property value. Percentage of completion of the respective operation.
 func (m *AttackSimulationOperation) GetPercentageCompleted()(*int32) {
     return m.percentageCompleted
 }
-// GetTenantId gets the tenantId property value. The tenantId property
+// GetTenantId gets the tenantId property value. Tenant identifier.
 func (m *AttackSimulationOperation) GetTenantId()(*string) {
     return m.tenantId
 }
-// GetType gets the type property value. The type property
+// GetType gets the type property value. The attack simulation operation type. Possible values are: createSimulation, updateSimulation, unknownFutureValue.
 func (m *AttackSimulationOperation) GetType()(*AttackSimulationOperationType) {
     return m.type_escaped
 }
@@ -99,15 +99,15 @@ func (m *AttackSimulationOperation) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetPercentageCompleted sets the percentageCompleted property value. The percentageCompleted property
+// SetPercentageCompleted sets the percentageCompleted property value. Percentage of completion of the respective operation.
 func (m *AttackSimulationOperation) SetPercentageCompleted(value *int32)() {
     m.percentageCompleted = value
 }
-// SetTenantId sets the tenantId property value. The tenantId property
+// SetTenantId sets the tenantId property value. Tenant identifier.
 func (m *AttackSimulationOperation) SetTenantId(value *string)() {
     m.tenantId = value
 }
-// SetType sets the type property value. The type property
+// SetType sets the type property value. The attack simulation operation type. Possible values are: createSimulation, updateSimulation, unknownFutureValue.
 func (m *AttackSimulationOperation) SetType(value *AttackSimulationOperationType)() {
     m.type_escaped = value
 }

@@ -23,7 +23,7 @@ type TeamTemplateDefinitionItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TeamTemplateDefinitionItemRequestBuilderGetQueryParameters get entity from teamTemplateDefinition by key
+// TeamTemplateDefinitionItemRequestBuilderGetQueryParameters get entity from teamTemplateDefinition by key (id)
 type TeamTemplateDefinitionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -65,7 +65,7 @@ func NewTeamTemplateDefinitionItemRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewTeamTemplateDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from teamTemplateDefinition
+// Delete delete entity from teamTemplateDefinition by key (id)
 func (m *TeamTemplateDefinitionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TeamTemplateDefinitionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,7 +81,7 @@ func (m *TeamTemplateDefinitionItemRequestBuilder) Delete(ctx context.Context, r
     }
     return nil
 }
-// Get get entity from teamTemplateDefinition by key
+// Get get entity from teamTemplateDefinition by key (id)
 func (m *TeamTemplateDefinitionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamTemplateDefinitionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamTemplateDefinitionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,7 +100,7 @@ func (m *TeamTemplateDefinitionItemRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamTemplateDefinitionable), nil
 }
-// Patch update entity in teamTemplateDefinition
+// Patch update entity in teamTemplateDefinition by key (id)
 func (m *TeamTemplateDefinitionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamTemplateDefinitionable, requestConfiguration *TeamTemplateDefinitionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamTemplateDefinitionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -123,7 +123,7 @@ func (m *TeamTemplateDefinitionItemRequestBuilder) Patch(ctx context.Context, bo
 func (m *TeamTemplateDefinitionItemRequestBuilder) TeamDefinition()(*ItemTeamDefinitionRequestBuilder) {
     return NewItemTeamDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ToDeleteRequestInformation delete entity from teamTemplateDefinition
+// ToDeleteRequestInformation delete entity from teamTemplateDefinition by key (id)
 func (m *TeamTemplateDefinitionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TeamTemplateDefinitionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -135,7 +135,7 @@ func (m *TeamTemplateDefinitionItemRequestBuilder) ToDeleteRequestInformation(ct
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from teamTemplateDefinition by key
+// ToGetRequestInformation get entity from teamTemplateDefinition by key (id)
 func (m *TeamTemplateDefinitionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplateDefinitionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -151,7 +151,7 @@ func (m *TeamTemplateDefinitionItemRequestBuilder) ToGetRequestInformation(ctx c
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in teamTemplateDefinition
+// ToPatchRequestInformation update entity in teamTemplateDefinition by key (id)
 func (m *TeamTemplateDefinitionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamTemplateDefinitionable, requestConfiguration *TeamTemplateDefinitionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

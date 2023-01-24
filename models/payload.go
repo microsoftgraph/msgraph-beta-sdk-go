@@ -8,49 +8,49 @@ import (
 // Payload 
 type Payload struct {
     Entity
-    // The brand property
+    // The branch of a payload. Possible values are: unknown, other, americanExpress, capitalOne, dhl, docuSign, dropbox, facebook, firstAmerican, microsoft, netflix, scotiabank, stewartTitle, tesco, wellsFargo, syrinxCloud, adobe, teams, zoom, unknownFutureValue.
     brand *PayloadBrand
-    // The complexity property
+    // The complexity of a payload.Possible values are: unknown, low, medium, high, unknownFutureValue
     complexity *PayloadComplexity
-    // The createdBy property
+    // Identity of the user who created the attack simulation and training campaign payload.
     createdBy EmailIdentityable
-    // The createdDateTime property
+    // Date and time when the attack simulation and training campaign payload.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The description property
+    // Description of the attack simulation and training campaign payload.
     description *string
-    // The detail property
+    // Additional details about the payload.
     detail PayloadDetailable
-    // The displayName property
+    // Display name of the attack simulation and training campaign payload. Supports $filter and $orderby.
     displayName *string
-    // The industry property
+    // Industry of a payload. Possible values are: unknown, other, banking, businessServices, consumerServices, education, energy, construction, consulting, financialServices, government, hospitality, insurance, legal, courierServices, IT, healthcare, manufacturing, retail, telecom, realEstate, unknownFutureValue.
     industry *PayloadIndustry
-    // The isAutomated property
+    // Indicates whether the attack simulation and training campaign payload was created from an automation flow. Supports $filter and $orderby.
     isAutomated *bool
-    // The isControversial property
+    // Indicates whether the payload is controversial.
     isControversial *bool
-    // The isCurrentEvent property
+    // Indicates whether the payload is from any recent event.
     isCurrentEvent *bool
-    // The language property
+    // Payload language.
     language *string
-    // The lastModifiedBy property
+    // Identity of the user who most recently modified the attack simulation and training campaign payload.
     lastModifiedBy EmailIdentityable
-    // The lastModifiedDateTime property
+    // Date and time when the attack simulation and training campaign payload was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The payloadTags property
+    // Free text tags for a payload.
     payloadTags []string
-    // The platform property
+    // The payload delivery platform for a simulation. Possible values are: unknown, sms, email, teams, unknownFutureValue.
     platform *PayloadDeliveryPlatform
-    // The predictedCompromiseRate property
+    // Predicted probability for a payload to phish a targeted user.
     predictedCompromiseRate *float64
-    // The simulationAttackType property
+    // Attack type of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, social, cloud, endpoint, unknownFutureValue.
     simulationAttackType *SimulationAttackType
     // The source property
     source *SimulationContentSource
-    // The status property
+    // Simulation content status. Supports $filter and $orderby. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue. Inherited from simulation.
     status *SimulationContentStatus
-    // The technique property
+    // The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue. For more information on the types of social engineering attack techniques, see simulations.
     technique *SimulationAttackTechnique
-    // The theme property
+    // The theme of a payload. Possible values are: unknown, other, accountActivation, accountVerification, billing, cleanUpMail, controversial, documentReceived, expense, incomingMessages, invoice, itemReceived, loginAlert, mailReceived, password, payment, payroll, personalizedOffer, quarantine, remoteWork, reviewMessage, securityUpdate, serviceSuspended, signatureRequired, upgradeMailboxStorage, verifyMailbox, voicemail, advertisement, employeeEngagement, unknownFutureValue.
     theme *PayloadTheme
 }
 // NewPayload instantiates a new payload and sets the default values.
@@ -64,31 +64,31 @@ func NewPayload()(*Payload) {
 func CreatePayloadFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPayload(), nil
 }
-// GetBrand gets the brand property value. The brand property
+// GetBrand gets the brand property value. The branch of a payload. Possible values are: unknown, other, americanExpress, capitalOne, dhl, docuSign, dropbox, facebook, firstAmerican, microsoft, netflix, scotiabank, stewartTitle, tesco, wellsFargo, syrinxCloud, adobe, teams, zoom, unknownFutureValue.
 func (m *Payload) GetBrand()(*PayloadBrand) {
     return m.brand
 }
-// GetComplexity gets the complexity property value. The complexity property
+// GetComplexity gets the complexity property value. The complexity of a payload.Possible values are: unknown, low, medium, high, unknownFutureValue
 func (m *Payload) GetComplexity()(*PayloadComplexity) {
     return m.complexity
 }
-// GetCreatedBy gets the createdBy property value. The createdBy property
+// GetCreatedBy gets the createdBy property value. Identity of the user who created the attack simulation and training campaign payload.
 func (m *Payload) GetCreatedBy()(EmailIdentityable) {
     return m.createdBy
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. Date and time when the attack simulation and training campaign payload.
 func (m *Payload) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.createdDateTime
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. Description of the attack simulation and training campaign payload.
 func (m *Payload) GetDescription()(*string) {
     return m.description
 }
-// GetDetail gets the detail property value. The detail property
+// GetDetail gets the detail property value. Additional details about the payload.
 func (m *Payload) GetDetail()(PayloadDetailable) {
     return m.detail
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Display name of the attack simulation and training campaign payload. Supports $filter and $orderby.
 func (m *Payload) GetDisplayName()(*string) {
     return m.displayName
 }
@@ -321,47 +321,47 @@ func (m *Payload) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     }
     return res
 }
-// GetIndustry gets the industry property value. The industry property
+// GetIndustry gets the industry property value. Industry of a payload. Possible values are: unknown, other, banking, businessServices, consumerServices, education, energy, construction, consulting, financialServices, government, hospitality, insurance, legal, courierServices, IT, healthcare, manufacturing, retail, telecom, realEstate, unknownFutureValue.
 func (m *Payload) GetIndustry()(*PayloadIndustry) {
     return m.industry
 }
-// GetIsAutomated gets the isAutomated property value. The isAutomated property
+// GetIsAutomated gets the isAutomated property value. Indicates whether the attack simulation and training campaign payload was created from an automation flow. Supports $filter and $orderby.
 func (m *Payload) GetIsAutomated()(*bool) {
     return m.isAutomated
 }
-// GetIsControversial gets the isControversial property value. The isControversial property
+// GetIsControversial gets the isControversial property value. Indicates whether the payload is controversial.
 func (m *Payload) GetIsControversial()(*bool) {
     return m.isControversial
 }
-// GetIsCurrentEvent gets the isCurrentEvent property value. The isCurrentEvent property
+// GetIsCurrentEvent gets the isCurrentEvent property value. Indicates whether the payload is from any recent event.
 func (m *Payload) GetIsCurrentEvent()(*bool) {
     return m.isCurrentEvent
 }
-// GetLanguage gets the language property value. The language property
+// GetLanguage gets the language property value. Payload language.
 func (m *Payload) GetLanguage()(*string) {
     return m.language
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user who most recently modified the attack simulation and training campaign payload.
 func (m *Payload) GetLastModifiedBy()(EmailIdentityable) {
     return m.lastModifiedBy
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time when the attack simulation and training campaign payload was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *Payload) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastModifiedDateTime
 }
-// GetPayloadTags gets the payloadTags property value. The payloadTags property
+// GetPayloadTags gets the payloadTags property value. Free text tags for a payload.
 func (m *Payload) GetPayloadTags()([]string) {
     return m.payloadTags
 }
-// GetPlatform gets the platform property value. The platform property
+// GetPlatform gets the platform property value. The payload delivery platform for a simulation. Possible values are: unknown, sms, email, teams, unknownFutureValue.
 func (m *Payload) GetPlatform()(*PayloadDeliveryPlatform) {
     return m.platform
 }
-// GetPredictedCompromiseRate gets the predictedCompromiseRate property value. The predictedCompromiseRate property
+// GetPredictedCompromiseRate gets the predictedCompromiseRate property value. Predicted probability for a payload to phish a targeted user.
 func (m *Payload) GetPredictedCompromiseRate()(*float64) {
     return m.predictedCompromiseRate
 }
-// GetSimulationAttackType gets the simulationAttackType property value. The simulationAttackType property
+// GetSimulationAttackType gets the simulationAttackType property value. Attack type of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, social, cloud, endpoint, unknownFutureValue.
 func (m *Payload) GetSimulationAttackType()(*SimulationAttackType) {
     return m.simulationAttackType
 }
@@ -369,15 +369,15 @@ func (m *Payload) GetSimulationAttackType()(*SimulationAttackType) {
 func (m *Payload) GetSource()(*SimulationContentSource) {
     return m.source
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. Simulation content status. Supports $filter and $orderby. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue. Inherited from simulation.
 func (m *Payload) GetStatus()(*SimulationContentStatus) {
     return m.status
 }
-// GetTechnique gets the technique property value. The technique property
+// GetTechnique gets the technique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue. For more information on the types of social engineering attack techniques, see simulations.
 func (m *Payload) GetTechnique()(*SimulationAttackTechnique) {
     return m.technique
 }
-// GetTheme gets the theme property value. The theme property
+// GetTheme gets the theme property value. The theme of a payload. Possible values are: unknown, other, accountActivation, accountVerification, billing, cleanUpMail, controversial, documentReceived, expense, incomingMessages, invoice, itemReceived, loginAlert, mailReceived, password, payment, payroll, personalizedOffer, quarantine, remoteWork, reviewMessage, securityUpdate, serviceSuspended, signatureRequired, upgradeMailboxStorage, verifyMailbox, voicemail, advertisement, employeeEngagement, unknownFutureValue.
 func (m *Payload) GetTheme()(*PayloadTheme) {
     return m.theme
 }
@@ -530,75 +530,75 @@ func (m *Payload) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     }
     return nil
 }
-// SetBrand sets the brand property value. The brand property
+// SetBrand sets the brand property value. The branch of a payload. Possible values are: unknown, other, americanExpress, capitalOne, dhl, docuSign, dropbox, facebook, firstAmerican, microsoft, netflix, scotiabank, stewartTitle, tesco, wellsFargo, syrinxCloud, adobe, teams, zoom, unknownFutureValue.
 func (m *Payload) SetBrand(value *PayloadBrand)() {
     m.brand = value
 }
-// SetComplexity sets the complexity property value. The complexity property
+// SetComplexity sets the complexity property value. The complexity of a payload.Possible values are: unknown, low, medium, high, unknownFutureValue
 func (m *Payload) SetComplexity(value *PayloadComplexity)() {
     m.complexity = value
 }
-// SetCreatedBy sets the createdBy property value. The createdBy property
+// SetCreatedBy sets the createdBy property value. Identity of the user who created the attack simulation and training campaign payload.
 func (m *Payload) SetCreatedBy(value EmailIdentityable)() {
     m.createdBy = value
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. Date and time when the attack simulation and training campaign payload.
 func (m *Payload) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. Description of the attack simulation and training campaign payload.
 func (m *Payload) SetDescription(value *string)() {
     m.description = value
 }
-// SetDetail sets the detail property value. The detail property
+// SetDetail sets the detail property value. Additional details about the payload.
 func (m *Payload) SetDetail(value PayloadDetailable)() {
     m.detail = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Display name of the attack simulation and training campaign payload. Supports $filter and $orderby.
 func (m *Payload) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetIndustry sets the industry property value. The industry property
+// SetIndustry sets the industry property value. Industry of a payload. Possible values are: unknown, other, banking, businessServices, consumerServices, education, energy, construction, consulting, financialServices, government, hospitality, insurance, legal, courierServices, IT, healthcare, manufacturing, retail, telecom, realEstate, unknownFutureValue.
 func (m *Payload) SetIndustry(value *PayloadIndustry)() {
     m.industry = value
 }
-// SetIsAutomated sets the isAutomated property value. The isAutomated property
+// SetIsAutomated sets the isAutomated property value. Indicates whether the attack simulation and training campaign payload was created from an automation flow. Supports $filter and $orderby.
 func (m *Payload) SetIsAutomated(value *bool)() {
     m.isAutomated = value
 }
-// SetIsControversial sets the isControversial property value. The isControversial property
+// SetIsControversial sets the isControversial property value. Indicates whether the payload is controversial.
 func (m *Payload) SetIsControversial(value *bool)() {
     m.isControversial = value
 }
-// SetIsCurrentEvent sets the isCurrentEvent property value. The isCurrentEvent property
+// SetIsCurrentEvent sets the isCurrentEvent property value. Indicates whether the payload is from any recent event.
 func (m *Payload) SetIsCurrentEvent(value *bool)() {
     m.isCurrentEvent = value
 }
-// SetLanguage sets the language property value. The language property
+// SetLanguage sets the language property value. Payload language.
 func (m *Payload) SetLanguage(value *string)() {
     m.language = value
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+// SetLastModifiedBy sets the lastModifiedBy property value. Identity of the user who most recently modified the attack simulation and training campaign payload.
 func (m *Payload) SetLastModifiedBy(value EmailIdentityable)() {
     m.lastModifiedBy = value
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Date and time when the attack simulation and training campaign payload was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *Payload) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// SetPayloadTags sets the payloadTags property value. The payloadTags property
+// SetPayloadTags sets the payloadTags property value. Free text tags for a payload.
 func (m *Payload) SetPayloadTags(value []string)() {
     m.payloadTags = value
 }
-// SetPlatform sets the platform property value. The platform property
+// SetPlatform sets the platform property value. The payload delivery platform for a simulation. Possible values are: unknown, sms, email, teams, unknownFutureValue.
 func (m *Payload) SetPlatform(value *PayloadDeliveryPlatform)() {
     m.platform = value
 }
-// SetPredictedCompromiseRate sets the predictedCompromiseRate property value. The predictedCompromiseRate property
+// SetPredictedCompromiseRate sets the predictedCompromiseRate property value. Predicted probability for a payload to phish a targeted user.
 func (m *Payload) SetPredictedCompromiseRate(value *float64)() {
     m.predictedCompromiseRate = value
 }
-// SetSimulationAttackType sets the simulationAttackType property value. The simulationAttackType property
+// SetSimulationAttackType sets the simulationAttackType property value. Attack type of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, social, cloud, endpoint, unknownFutureValue.
 func (m *Payload) SetSimulationAttackType(value *SimulationAttackType)() {
     m.simulationAttackType = value
 }
@@ -606,15 +606,15 @@ func (m *Payload) SetSimulationAttackType(value *SimulationAttackType)() {
 func (m *Payload) SetSource(value *SimulationContentSource)() {
     m.source = value
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. Simulation content status. Supports $filter and $orderby. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue. Inherited from simulation.
 func (m *Payload) SetStatus(value *SimulationContentStatus)() {
     m.status = value
 }
-// SetTechnique sets the technique property value. The technique property
+// SetTechnique sets the technique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue. For more information on the types of social engineering attack techniques, see simulations.
 func (m *Payload) SetTechnique(value *SimulationAttackTechnique)() {
     m.technique = value
 }
-// SetTheme sets the theme property value. The theme property
+// SetTheme sets the theme property value. The theme of a payload. Possible values are: unknown, other, accountActivation, accountVerification, billing, cleanUpMail, controversial, documentReceived, expense, incomingMessages, invoice, itemReceived, loginAlert, mailReceived, password, payment, payroll, personalizedOffer, quarantine, remoteWork, reviewMessage, securityUpdate, serviceSuspended, signatureRequired, upgradeMailboxStorage, verifyMailbox, voicemail, advertisement, employeeEngagement, unknownFutureValue.
 func (m *Payload) SetTheme(value *PayloadTheme)() {
     m.theme = value
 }

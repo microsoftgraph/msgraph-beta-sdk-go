@@ -15,18 +15,27 @@ type LifecycleWorkflowsWorkflowTemplatesItemTasksItemTaskProcessingResultsCountR
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// LifecycleWorkflowsWorkflowTemplatesItemTasksItemTaskProcessingResultsCountRequestBuilderGetQueryParameters get the number of the resource
+type LifecycleWorkflowsWorkflowTemplatesItemTasksItemTaskProcessingResultsCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+}
 // LifecycleWorkflowsWorkflowTemplatesItemTasksItemTaskProcessingResultsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type LifecycleWorkflowsWorkflowTemplatesItemTasksItemTaskProcessingResultsCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *LifecycleWorkflowsWorkflowTemplatesItemTasksItemTaskProcessingResultsCountRequestBuilderGetQueryParameters
 }
 // NewLifecycleWorkflowsWorkflowTemplatesItemTasksItemTaskProcessingResultsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewLifecycleWorkflowsWorkflowTemplatesItemTasksItemTaskProcessingResultsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsWorkflowTemplatesItemTasksItemTaskProcessingResultsCountRequestBuilder) {
     m := &LifecycleWorkflowsWorkflowTemplatesItemTasksItemTaskProcessingResultsCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identityGovernance/lifecycleWorkflows/workflowTemplates/{workflowTemplate%2Did}/tasks/{task%2Did}/taskProcessingResults/$count";
+    m.urlTemplate = "{+baseurl}/identityGovernance/lifecycleWorkflows/workflowTemplates/{workflowTemplate%2Did}/tasks/{task%2Did}/taskProcessingResults/$count{?%24search,%24filter}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,6 +77,9 @@ func (m *LifecycleWorkflowsWorkflowTemplatesItemTasksItemTaskProcessingResultsCo
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

@@ -20,7 +20,7 @@ type CloudPcServicePlan struct {
     // The number of vCPUs. Read-only.
     vCpuCount *int32
 }
-// NewCloudPcServicePlan instantiates a new CloudPcServicePlan and sets the default values.
+// NewCloudPcServicePlan instantiates a new cloudPcServicePlan and sets the default values.
 func NewCloudPcServicePlan()(*CloudPcServicePlan) {
     m := &CloudPcServicePlan{
         Entity: *NewEntity(),

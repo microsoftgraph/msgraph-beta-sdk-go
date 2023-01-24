@@ -8,19 +8,19 @@ import (
 type PayloadCoachmark struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The coachmarkLocation property
+    // The coachmark location.
     coachmarkLocation CoachmarkLocationable
-    // The description property
+    // The description about the coachmark.
     description *string
-    // The indicator property
+    // The coachmark indicator.
     indicator *string
-    // The isValid property
+    // Indicates whether the coachmark is valid or not.
     isValid *bool
-    // The language property
+    // The coachmark language.
     language *string
     // The OdataType property
     odataType *string
-    // The order property
+    // The coachmark order.
     order *string
 }
 // NewPayloadCoachmark instantiates a new payloadCoachmark and sets the default values.
@@ -38,11 +38,11 @@ func CreatePayloadCoachmarkFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 func (m *PayloadCoachmark) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetCoachmarkLocation gets the coachmarkLocation property value. The coachmarkLocation property
+// GetCoachmarkLocation gets the coachmarkLocation property value. The coachmark location.
 func (m *PayloadCoachmark) GetCoachmarkLocation()(CoachmarkLocationable) {
     return m.coachmarkLocation
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. The description about the coachmark.
 func (m *PayloadCoachmark) GetDescription()(*string) {
     return m.description
 }
@@ -121,15 +121,15 @@ func (m *PayloadCoachmark) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetIndicator gets the indicator property value. The indicator property
+// GetIndicator gets the indicator property value. The coachmark indicator.
 func (m *PayloadCoachmark) GetIndicator()(*string) {
     return m.indicator
 }
-// GetIsValid gets the isValid property value. The isValid property
+// GetIsValid gets the isValid property value. Indicates whether the coachmark is valid or not.
 func (m *PayloadCoachmark) GetIsValid()(*bool) {
     return m.isValid
 }
-// GetLanguage gets the language property value. The language property
+// GetLanguage gets the language property value. The coachmark language.
 func (m *PayloadCoachmark) GetLanguage()(*string) {
     return m.language
 }
@@ -137,7 +137,7 @@ func (m *PayloadCoachmark) GetLanguage()(*string) {
 func (m *PayloadCoachmark) GetOdataType()(*string) {
     return m.odataType
 }
-// GetOrder gets the order property value. The order property
+// GetOrder gets the order property value. The coachmark order.
 func (m *PayloadCoachmark) GetOrder()(*string) {
     return m.order
 }
@@ -197,23 +197,23 @@ func (m *PayloadCoachmark) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 func (m *PayloadCoachmark) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetCoachmarkLocation sets the coachmarkLocation property value. The coachmarkLocation property
+// SetCoachmarkLocation sets the coachmarkLocation property value. The coachmark location.
 func (m *PayloadCoachmark) SetCoachmarkLocation(value CoachmarkLocationable)() {
     m.coachmarkLocation = value
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. The description about the coachmark.
 func (m *PayloadCoachmark) SetDescription(value *string)() {
     m.description = value
 }
-// SetIndicator sets the indicator property value. The indicator property
+// SetIndicator sets the indicator property value. The coachmark indicator.
 func (m *PayloadCoachmark) SetIndicator(value *string)() {
     m.indicator = value
 }
-// SetIsValid sets the isValid property value. The isValid property
+// SetIsValid sets the isValid property value. Indicates whether the coachmark is valid or not.
 func (m *PayloadCoachmark) SetIsValid(value *bool)() {
     m.isValid = value
 }
-// SetLanguage sets the language property value. The language property
+// SetLanguage sets the language property value. The coachmark language.
 func (m *PayloadCoachmark) SetLanguage(value *string)() {
     m.language = value
 }
@@ -221,7 +221,7 @@ func (m *PayloadCoachmark) SetLanguage(value *string)() {
 func (m *PayloadCoachmark) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetOrder sets the order property value. The order property
+// SetOrder sets the order property value. The coachmark order.
 func (m *PayloadCoachmark) SetOrder(value *string)() {
     m.order = value
 }

@@ -65,7 +65,7 @@ func NewRiskyUserItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewRiskyUserItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from riskyUsers
+// Delete delete entity from riskyUsers by key (id)
 func (m *RiskyUserItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *RiskyUserItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -118,7 +118,7 @@ func (m *RiskyUserItemRequestBuilder) HistoryById(id string)(*ItemHistoryRiskyUs
     }
     return NewItemHistoryRiskyUserHistoryItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch update entity in riskyUsers
+// Patch update entity in riskyUsers by key (id)
 func (m *RiskyUserItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyUserable, requestConfiguration *RiskyUserItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyUserable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -137,7 +137,7 @@ func (m *RiskyUserItemRequestBuilder) Patch(ctx context.Context, body ie233ee762
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyUserable), nil
 }
-// ToDeleteRequestInformation delete entity from riskyUsers
+// ToDeleteRequestInformation delete entity from riskyUsers by key (id)
 func (m *RiskyUserItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *RiskyUserItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -165,7 +165,7 @@ func (m *RiskyUserItemRequestBuilder) ToGetRequestInformation(ctx context.Contex
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in riskyUsers
+// ToPatchRequestInformation update entity in riskyUsers by key (id)
 func (m *RiskyUserItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyUserable, requestConfiguration *RiskyUserItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

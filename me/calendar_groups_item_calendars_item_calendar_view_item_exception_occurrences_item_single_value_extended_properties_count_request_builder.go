@@ -15,18 +15,27 @@ type CalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesItemSing
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// CalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesItemSingleValueExtendedPropertiesCountRequestBuilderGetQueryParameters get the number of the resource
+type CalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesItemSingleValueExtendedPropertiesCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+}
 // CalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesItemSingleValueExtendedPropertiesCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesItemSingleValueExtendedPropertiesCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *CalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesItemSingleValueExtendedPropertiesCountRequestBuilderGetQueryParameters
 }
 // NewCalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesItemSingleValueExtendedPropertiesCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewCalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesItemSingleValueExtendedPropertiesCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesItemSingleValueExtendedPropertiesCountRequestBuilder) {
     m := &CalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesItemSingleValueExtendedPropertiesCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/calendarView/{event%2Did}/exceptionOccurrences/{event%2Did1}/singleValueExtendedProperties/$count";
+    m.urlTemplate = "{+baseurl}/me/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/calendarView/{event%2Did}/exceptionOccurrences/{event%2Did1}/singleValueExtendedProperties/$count{?%24search,%24filter}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,6 +77,9 @@ func (m *CalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesItem
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

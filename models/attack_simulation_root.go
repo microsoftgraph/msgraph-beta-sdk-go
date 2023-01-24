@@ -7,9 +7,9 @@ import (
 // AttackSimulationRoot 
 type AttackSimulationRoot struct {
     Entity
-    // The operations property
+    // Represents an attack simulation training operation.
     operations []AttackSimulationOperationable
-    // The payloads property
+    // Represents an attack simulation training campaign payload in a tenant.
     payloads []Payloadable
     // Represents simulation automation created to run on a tenant.
     simulationAutomations []SimulationAutomationable
@@ -88,11 +88,11 @@ func (m *AttackSimulationRoot) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetOperations gets the operations property value. The operations property
+// GetOperations gets the operations property value. Represents an attack simulation training operation.
 func (m *AttackSimulationRoot) GetOperations()([]AttackSimulationOperationable) {
     return m.operations
 }
-// GetPayloads gets the payloads property value. The payloads property
+// GetPayloads gets the payloads property value. Represents an attack simulation training campaign payload in a tenant.
 func (m *AttackSimulationRoot) GetPayloads()([]Payloadable) {
     return m.payloads
 }
@@ -152,11 +152,11 @@ func (m *AttackSimulationRoot) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetOperations sets the operations property value. The operations property
+// SetOperations sets the operations property value. Represents an attack simulation training operation.
 func (m *AttackSimulationRoot) SetOperations(value []AttackSimulationOperationable)() {
     m.operations = value
 }
-// SetPayloads sets the payloads property value. The payloads property
+// SetPayloads sets the payloads property value. Represents an attack simulation training campaign payload in a tenant.
 func (m *AttackSimulationRoot) SetPayloads(value []Payloadable)() {
     m.payloads = value
 }

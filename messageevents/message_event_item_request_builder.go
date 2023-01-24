@@ -23,7 +23,7 @@ type MessageEventItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// MessageEventItemRequestBuilderGetQueryParameters get entity from messageEvents by key
+// MessageEventItemRequestBuilderGetQueryParameters get entity from messageEvents by key (id)
 type MessageEventItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -65,7 +65,7 @@ func NewMessageEventItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewMessageEventItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from messageEvents
+// Delete delete entity from messageEvents by key (id)
 func (m *MessageEventItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MessageEventItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,7 +81,7 @@ func (m *MessageEventItemRequestBuilder) Delete(ctx context.Context, requestConf
     }
     return nil
 }
-// Get get entity from messageEvents by key
+// Get get entity from messageEvents by key (id)
 func (m *MessageEventItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MessageEventItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageEventable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,7 +100,7 @@ func (m *MessageEventItemRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageEventable), nil
 }
-// Patch update entity in messageEvents
+// Patch update entity in messageEvents by key (id)
 func (m *MessageEventItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageEventable, requestConfiguration *MessageEventItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageEventable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +119,7 @@ func (m *MessageEventItemRequestBuilder) Patch(ctx context.Context, body ie233ee
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageEventable), nil
 }
-// ToDeleteRequestInformation delete entity from messageEvents
+// ToDeleteRequestInformation delete entity from messageEvents by key (id)
 func (m *MessageEventItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MessageEventItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,7 +131,7 @@ func (m *MessageEventItemRequestBuilder) ToDeleteRequestInformation(ctx context.
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from messageEvents by key
+// ToGetRequestInformation get entity from messageEvents by key (id)
 func (m *MessageEventItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MessageEventItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,7 +147,7 @@ func (m *MessageEventItemRequestBuilder) ToGetRequestInformation(ctx context.Con
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in messageEvents
+// ToPatchRequestInformation update entity in messageEvents by key (id)
 func (m *MessageEventItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageEventable, requestConfiguration *MessageEventItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

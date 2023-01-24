@@ -23,7 +23,7 @@ type AttributeMappingFunctionSchemaItemRequestBuilderDeleteRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AttributeMappingFunctionSchemaItemRequestBuilderGetQueryParameters get entity from functions by key
+// AttributeMappingFunctionSchemaItemRequestBuilderGetQueryParameters get entity from functions by key (id)
 type AttributeMappingFunctionSchemaItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -65,7 +65,7 @@ func NewAttributeMappingFunctionSchemaItemRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewAttributeMappingFunctionSchemaItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from functions
+// Delete delete entity from functions by key (id)
 func (m *AttributeMappingFunctionSchemaItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AttributeMappingFunctionSchemaItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,7 +81,7 @@ func (m *AttributeMappingFunctionSchemaItemRequestBuilder) Delete(ctx context.Co
     }
     return nil
 }
-// Get get entity from functions by key
+// Get get entity from functions by key (id)
 func (m *AttributeMappingFunctionSchemaItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AttributeMappingFunctionSchemaItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttributeMappingFunctionSchemaable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,7 +100,7 @@ func (m *AttributeMappingFunctionSchemaItemRequestBuilder) Get(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttributeMappingFunctionSchemaable), nil
 }
-// Patch update entity in functions
+// Patch update entity in functions by key (id)
 func (m *AttributeMappingFunctionSchemaItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttributeMappingFunctionSchemaable, requestConfiguration *AttributeMappingFunctionSchemaItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttributeMappingFunctionSchemaable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +119,7 @@ func (m *AttributeMappingFunctionSchemaItemRequestBuilder) Patch(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttributeMappingFunctionSchemaable), nil
 }
-// ToDeleteRequestInformation delete entity from functions
+// ToDeleteRequestInformation delete entity from functions by key (id)
 func (m *AttributeMappingFunctionSchemaItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AttributeMappingFunctionSchemaItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,7 +131,7 @@ func (m *AttributeMappingFunctionSchemaItemRequestBuilder) ToDeleteRequestInform
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from functions by key
+// ToGetRequestInformation get entity from functions by key (id)
 func (m *AttributeMappingFunctionSchemaItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttributeMappingFunctionSchemaItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,7 +147,7 @@ func (m *AttributeMappingFunctionSchemaItemRequestBuilder) ToGetRequestInformati
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in functions
+// ToPatchRequestInformation update entity in functions by key (id)
 func (m *AttributeMappingFunctionSchemaItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttributeMappingFunctionSchemaable, requestConfiguration *AttributeMappingFunctionSchemaItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

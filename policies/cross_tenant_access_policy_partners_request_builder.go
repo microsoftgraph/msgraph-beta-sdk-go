@@ -16,7 +16,7 @@ type CrossTenantAccessPolicyPartnersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// CrossTenantAccessPolicyPartnersRequestBuilderGetQueryParameters get a list of all partner configurations within a cross-tenant access policy.
+// CrossTenantAccessPolicyPartnersRequestBuilderGetQueryParameters get a list of all partner configurations within a cross-tenant access policy. You can also use the `$expand` parameter to list the user synchronization policy for all partner configurations.
 type CrossTenantAccessPolicyPartnersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewCrossTenantAccessPolicyPartnersRequestBuilder(rawUrl string, requestAdap
 func (m *CrossTenantAccessPolicyPartnersRequestBuilder) Count()(*CrossTenantAccessPolicyPartnersCountRequestBuilder) {
     return NewCrossTenantAccessPolicyPartnersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get get a list of all partner configurations within a cross-tenant access policy.
+// Get get a list of all partner configurations within a cross-tenant access policy. You can also use the `$expand` parameter to list the user synchronization policy for all partner configurations.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/crosstenantaccesspolicy-list-partners?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *CrossTenantAccessPolicyPartnersRequestBuilder) Post(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantAccessPolicyConfigurationPartnerable), nil
 }
-// ToGetRequestInformation get a list of all partner configurations within a cross-tenant access policy.
+// ToGetRequestInformation get a list of all partner configurations within a cross-tenant access policy. You can also use the `$expand` parameter to list the user synchronization policy for all partner configurations.
 func (m *CrossTenantAccessPolicyPartnersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CrossTenantAccessPolicyPartnersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

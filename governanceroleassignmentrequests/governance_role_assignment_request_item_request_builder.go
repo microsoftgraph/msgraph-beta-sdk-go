@@ -23,7 +23,7 @@ type GovernanceRoleAssignmentRequestItemRequestBuilderDeleteRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// GovernanceRoleAssignmentRequestItemRequestBuilderGetQueryParameters get entity from governanceRoleAssignmentRequests by key
+// GovernanceRoleAssignmentRequestItemRequestBuilderGetQueryParameters get entity from governanceRoleAssignmentRequests by key (id)
 type GovernanceRoleAssignmentRequestItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -69,7 +69,7 @@ func NewGovernanceRoleAssignmentRequestItemRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewGovernanceRoleAssignmentRequestItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from governanceRoleAssignmentRequests
+// Delete delete entity from governanceRoleAssignmentRequests by key (id)
 func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *GovernanceRoleAssignmentRequestItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -85,7 +85,7 @@ func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) Delete(ctx context.C
     }
     return nil
 }
-// Get get entity from governanceRoleAssignmentRequests by key
+// Get get entity from governanceRoleAssignmentRequests by key (id)
 func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) Get(ctx context.Context, requestConfiguration *GovernanceRoleAssignmentRequestItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentRequestable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -104,7 +104,7 @@ func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) Get(ctx context.Cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentRequestable), nil
 }
-// Patch update entity in governanceRoleAssignmentRequests
+// Patch update entity in governanceRoleAssignmentRequests by key (id)
 func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentRequestable, requestConfiguration *GovernanceRoleAssignmentRequestItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentRequestable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -135,7 +135,7 @@ func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) RoleDefinition()(*It
 func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) Subject()(*ItemSubjectRequestBuilder) {
     return NewItemSubjectRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ToDeleteRequestInformation delete entity from governanceRoleAssignmentRequests
+// ToDeleteRequestInformation delete entity from governanceRoleAssignmentRequests by key (id)
 func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *GovernanceRoleAssignmentRequestItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,7 +147,7 @@ func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) ToDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from governanceRoleAssignmentRequests by key
+// ToGetRequestInformation get entity from governanceRoleAssignmentRequests by key (id)
 func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GovernanceRoleAssignmentRequestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -163,7 +163,7 @@ func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) ToGetRequestInformat
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in governanceRoleAssignmentRequests
+// ToPatchRequestInformation update entity in governanceRoleAssignmentRequests by key (id)
 func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentRequestable, requestConfiguration *GovernanceRoleAssignmentRequestItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

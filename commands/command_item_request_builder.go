@@ -23,7 +23,7 @@ type CommandItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CommandItemRequestBuilderGetQueryParameters get entity from commands by key
+// CommandItemRequestBuilderGetQueryParameters get entity from commands by key (id)
 type CommandItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -65,7 +65,7 @@ func NewCommandItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewCommandItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from commands
+// Delete delete entity from commands by key (id)
 func (m *CommandItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CommandItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,7 +81,7 @@ func (m *CommandItemRequestBuilder) Delete(ctx context.Context, requestConfigura
     }
     return nil
 }
-// Get get entity from commands by key
+// Get get entity from commands by key (id)
 func (m *CommandItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CommandItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Commandable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,7 +100,7 @@ func (m *CommandItemRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Commandable), nil
 }
-// Patch update entity in commands
+// Patch update entity in commands by key (id)
 func (m *CommandItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Commandable, requestConfiguration *CommandItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Commandable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -123,7 +123,7 @@ func (m *CommandItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e2
 func (m *CommandItemRequestBuilder) Responsepayload()(*ItemResponsepayloadRequestBuilder) {
     return NewItemResponsepayloadRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ToDeleteRequestInformation delete entity from commands
+// ToDeleteRequestInformation delete entity from commands by key (id)
 func (m *CommandItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CommandItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -135,7 +135,7 @@ func (m *CommandItemRequestBuilder) ToDeleteRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from commands by key
+// ToGetRequestInformation get entity from commands by key (id)
 func (m *CommandItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CommandItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -151,7 +151,7 @@ func (m *CommandItemRequestBuilder) ToGetRequestInformation(ctx context.Context,
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in commands
+// ToPatchRequestInformation update entity in commands by key (id)
 func (m *CommandItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Commandable, requestConfiguration *CommandItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

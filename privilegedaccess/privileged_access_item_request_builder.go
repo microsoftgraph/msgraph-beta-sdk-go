@@ -23,7 +23,7 @@ type PrivilegedAccessItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PrivilegedAccessItemRequestBuilderGetQueryParameters get entity from privilegedAccess by key
+// PrivilegedAccessItemRequestBuilderGetQueryParameters get entity from privilegedAccess by key (id)
 type PrivilegedAccessItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -65,7 +65,7 @@ func NewPrivilegedAccessItemRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedAccessItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from privilegedAccess
+// Delete delete entity from privilegedAccess by key (id)
 func (m *PrivilegedAccessItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *PrivilegedAccessItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,7 +81,7 @@ func (m *PrivilegedAccessItemRequestBuilder) Delete(ctx context.Context, request
     }
     return nil
 }
-// Get get entity from privilegedAccess by key
+// Get get entity from privilegedAccess by key (id)
 func (m *PrivilegedAccessItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedAccessItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,7 +100,7 @@ func (m *PrivilegedAccessItemRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessable), nil
 }
-// Patch update entity in privilegedAccess
+// Patch update entity in privilegedAccess by key (id)
 func (m *PrivilegedAccessItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessable, requestConfiguration *PrivilegedAccessItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -194,7 +194,7 @@ func (m *PrivilegedAccessItemRequestBuilder) RoleSettingsById(id string)(*ItemRo
     }
     return NewItemRoleSettingsGovernanceRoleSettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ToDeleteRequestInformation delete entity from privilegedAccess
+// ToDeleteRequestInformation delete entity from privilegedAccess by key (id)
 func (m *PrivilegedAccessItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -206,7 +206,7 @@ func (m *PrivilegedAccessItemRequestBuilder) ToDeleteRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from privilegedAccess by key
+// ToGetRequestInformation get entity from privilegedAccess by key (id)
 func (m *PrivilegedAccessItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -222,7 +222,7 @@ func (m *PrivilegedAccessItemRequestBuilder) ToGetRequestInformation(ctx context
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in privilegedAccess
+// ToPatchRequestInformation update entity in privilegedAccess by key (id)
 func (m *PrivilegedAccessItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessable, requestConfiguration *PrivilegedAccessItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

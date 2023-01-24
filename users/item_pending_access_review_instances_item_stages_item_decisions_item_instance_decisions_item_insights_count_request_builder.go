@@ -15,18 +15,27 @@ type ItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceDecision
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// ItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilderGetQueryParameters get the number of the resource
+type ItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+}
 // ItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *ItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilderGetQueryParameters
 }
 // NewItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilder) {
     m := &ItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/pendingAccessReviewInstances/{accessReviewInstance%2Did}/stages/{accessReviewStage%2Did}/decisions/{accessReviewInstanceDecisionItem%2Did}/instance/decisions/{accessReviewInstanceDecisionItem%2Did1}/insights/$count";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/pendingAccessReviewInstances/{accessReviewInstance%2Did}/stages/{accessReviewStage%2Did}/decisions/{accessReviewInstanceDecisionItem%2Did}/instance/decisions/{accessReviewInstanceDecisionItem%2Did1}/insights/$count{?%24search,%24filter}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,6 +77,9 @@ func (m *ItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceDeci
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

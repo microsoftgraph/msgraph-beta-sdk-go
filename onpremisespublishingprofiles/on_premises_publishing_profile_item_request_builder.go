@@ -23,7 +23,7 @@ type OnPremisesPublishingProfileItemRequestBuilderDeleteRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// OnPremisesPublishingProfileItemRequestBuilderGetQueryParameters get entity from onPremisesPublishingProfiles by key
+// OnPremisesPublishingProfileItemRequestBuilderGetQueryParameters get entity from onPremisesPublishingProfiles by key (id)
 type OnPremisesPublishingProfileItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -125,7 +125,7 @@ func NewOnPremisesPublishingProfileItemRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewOnPremisesPublishingProfileItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from onPremisesPublishingProfiles
+// Delete delete entity from onPremisesPublishingProfiles by key (id)
 func (m *OnPremisesPublishingProfileItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *OnPremisesPublishingProfileItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -141,7 +141,7 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) Delete(ctx context.Conte
     }
     return nil
 }
-// Get get entity from onPremisesPublishingProfiles by key
+// Get get entity from onPremisesPublishingProfiles by key (id)
 func (m *OnPremisesPublishingProfileItemRequestBuilder) Get(ctx context.Context, requestConfiguration *OnPremisesPublishingProfileItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesPublishingProfileable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -160,7 +160,7 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) Get(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesPublishingProfileable), nil
 }
-// Patch update entity in onPremisesPublishingProfiles
+// Patch update entity in onPremisesPublishingProfiles by key (id)
 func (m *OnPremisesPublishingProfileItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesPublishingProfileable, requestConfiguration *OnPremisesPublishingProfileItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesPublishingProfileable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -194,7 +194,7 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) PublishedResourcesById(i
     }
     return NewItemPublishedResourcesPublishedResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ToDeleteRequestInformation delete entity from onPremisesPublishingProfiles
+// ToDeleteRequestInformation delete entity from onPremisesPublishingProfiles by key (id)
 func (m *OnPremisesPublishingProfileItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *OnPremisesPublishingProfileItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -206,7 +206,7 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) ToDeleteRequestInformati
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from onPremisesPublishingProfiles by key
+// ToGetRequestInformation get entity from onPremisesPublishingProfiles by key (id)
 func (m *OnPremisesPublishingProfileItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnPremisesPublishingProfileItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -222,7 +222,7 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) ToGetRequestInformation(
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in onPremisesPublishingProfiles
+// ToPatchRequestInformation update entity in onPremisesPublishingProfiles by key (id)
 func (m *OnPremisesPublishingProfileItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesPublishingProfileable, requestConfiguration *OnPremisesPublishingProfileItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

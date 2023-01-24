@@ -27,7 +27,7 @@ type ImpactedResourcesItemReactivateRequestBuilderPostRequestConfiguration struc
 func NewImpactedResourcesItemReactivateRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ImpactedResourcesItemReactivateRequestBuilder) {
     m := &ImpactedResourcesItemReactivateRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/directory/impactedResources/{recommendationResource%2Did}/microsoft.graph.reactivate";
+    m.urlTemplate = "{+baseurl}/directory/impactedResources/{impactedResource%2Did}/microsoft.graph.reactivate";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -43,7 +43,7 @@ func NewImpactedResourcesItemReactivateRequestBuilder(rawUrl string, requestAdap
     return NewImpactedResourcesItemReactivateRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action reactivate
-func (m *ImpactedResourcesItemReactivateRequestBuilder) Post(ctx context.Context, requestConfiguration *ImpactedResourcesItemReactivateRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RecommendationResourceable, error) {
+func (m *ImpactedResourcesItemReactivateRequestBuilder) Post(ctx context.Context, requestConfiguration *ImpactedResourcesItemReactivateRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImpactedResourceable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -52,14 +52,14 @@ func (m *ImpactedResourcesItemReactivateRequestBuilder) Post(ctx context.Context
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateRecommendationResourceFromDiscriminatorValue, errorMapping)
+    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateImpactedResourceFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RecommendationResourceable), nil
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImpactedResourceable), nil
 }
 // ToPostRequestInformation invoke action reactivate
 func (m *ImpactedResourcesItemReactivateRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ImpactedResourcesItemReactivateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

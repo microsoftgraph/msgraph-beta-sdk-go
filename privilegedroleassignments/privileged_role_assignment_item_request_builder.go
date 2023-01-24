@@ -114,7 +114,7 @@ func (m *PrivilegedRoleAssignmentItemRequestBuilder) MakeEligible()(*ItemMakeEli
 func (m *PrivilegedRoleAssignmentItemRequestBuilder) MakePermanent()(*ItemMakePermanentRequestBuilder) {
     return NewItemMakePermanentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Patch update entity in privilegedRoleAssignments
+// Patch update entity in privilegedRoleAssignments by key (id)
 func (m *PrivilegedRoleAssignmentItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, requestConfiguration *PrivilegedRoleAssignmentItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -165,7 +165,7 @@ func (m *PrivilegedRoleAssignmentItemRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in privilegedRoleAssignments
+// ToPatchRequestInformation update entity in privilegedRoleAssignments by key (id)
 func (m *PrivilegedRoleAssignmentItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, requestConfiguration *PrivilegedRoleAssignmentItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

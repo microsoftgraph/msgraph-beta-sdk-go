@@ -23,7 +23,7 @@ type RiskDetectionItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RiskDetectionItemRequestBuilderGetQueryParameters get entity from riskDetections by key
+// RiskDetectionItemRequestBuilderGetQueryParameters get entity from riskDetections by key (id)
 type RiskDetectionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -65,7 +65,7 @@ func NewRiskDetectionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewRiskDetectionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from riskDetections
+// Delete delete entity from riskDetections by key (id)
 func (m *RiskDetectionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *RiskDetectionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,7 +81,7 @@ func (m *RiskDetectionItemRequestBuilder) Delete(ctx context.Context, requestCon
     }
     return nil
 }
-// Get get entity from riskDetections by key
+// Get get entity from riskDetections by key (id)
 func (m *RiskDetectionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RiskDetectionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskDetectionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,7 +100,7 @@ func (m *RiskDetectionItemRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskDetectionable), nil
 }
-// Patch update entity in riskDetections
+// Patch update entity in riskDetections by key (id)
 func (m *RiskDetectionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskDetectionable, requestConfiguration *RiskDetectionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskDetectionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +119,7 @@ func (m *RiskDetectionItemRequestBuilder) Patch(ctx context.Context, body ie233e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskDetectionable), nil
 }
-// ToDeleteRequestInformation delete entity from riskDetections
+// ToDeleteRequestInformation delete entity from riskDetections by key (id)
 func (m *RiskDetectionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *RiskDetectionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,7 +131,7 @@ func (m *RiskDetectionItemRequestBuilder) ToDeleteRequestInformation(ctx context
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from riskDetections by key
+// ToGetRequestInformation get entity from riskDetections by key (id)
 func (m *RiskDetectionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RiskDetectionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,7 +147,7 @@ func (m *RiskDetectionItemRequestBuilder) ToGetRequestInformation(ctx context.Co
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in riskDetections
+// ToPatchRequestInformation update entity in riskDetections by key (id)
 func (m *RiskDetectionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskDetectionable, requestConfiguration *RiskDetectionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

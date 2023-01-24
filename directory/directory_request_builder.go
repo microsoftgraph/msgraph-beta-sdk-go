@@ -172,15 +172,15 @@ func (m *DirectoryRequestBuilder) ImpactedResources()(*ImpactedResourcesRequestB
     return NewImpactedResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ImpactedResourcesById provides operations to manage the impactedResources property of the microsoft.graph.directory entity.
-func (m *DirectoryRequestBuilder) ImpactedResourcesById(id string)(*ImpactedResourcesRecommendationResourceItemRequestBuilder) {
+func (m *DirectoryRequestBuilder) ImpactedResourcesById(id string)(*ImpactedResourcesImpactedResourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["recommendationResource%2Did"] = id
+        urlTplParams["impactedResource%2Did"] = id
     }
-    return NewImpactedResourcesRecommendationResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewImpactedResourcesImpactedResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // InboundSharedUserProfiles provides operations to manage the inboundSharedUserProfiles property of the microsoft.graph.directory entity.
 func (m *DirectoryRequestBuilder) InboundSharedUserProfiles()(*InboundSharedUserProfilesRequestBuilder) {

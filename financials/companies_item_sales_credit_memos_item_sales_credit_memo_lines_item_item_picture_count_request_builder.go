@@ -15,18 +15,27 @@ type CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemPictureCountRe
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemPictureCountRequestBuilderGetQueryParameters get the number of the resource
+type CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemPictureCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+}
 // CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemPictureCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemPictureCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemPictureCountRequestBuilderGetQueryParameters
 }
 // NewCompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemPictureCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewCompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemPictureCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemPictureCountRequestBuilder) {
     m := &CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemPictureCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesCreditMemos/{salesCreditMemo%2Did}/salesCreditMemoLines/{salesCreditMemoLine%2Did}/item/picture/$count";
+    m.urlTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesCreditMemos/{salesCreditMemo%2Did}/salesCreditMemoLines/{salesCreditMemoLine%2Did}/item/picture/$count{?%24search,%24filter}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,6 +77,9 @@ func (m *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemPictureCou
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

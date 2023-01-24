@@ -31,7 +31,7 @@ type PrivilegedApproval struct {
     // The userId property
     userId *string
 }
-// NewPrivilegedApproval instantiates a new privilegedApproval and sets the default values.
+// NewPrivilegedApproval instantiates a new PrivilegedApproval and sets the default values.
 func NewPrivilegedApproval()(*PrivilegedApproval) {
     m := &PrivilegedApproval{
         Entity: *NewEntity(),

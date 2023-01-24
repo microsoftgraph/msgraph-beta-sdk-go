@@ -8,13 +8,13 @@ import (
 type CoachmarkLocation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The length property
+    // Length of coachmark.
     length *int32
     // The OdataType property
     odataType *string
-    // The offset property
+    // Offset of coachmark.
     offset *int32
-    // The type property
+    // Type of coachmark location. The possible values are: unknown, fromEmail, subject, externalTag, displayName, messageBody, unknownFutureValue.
     type_escaped *CoachmarkLocationType
 }
 // NewCoachmarkLocation instantiates a new coachmarkLocation and sets the default values.
@@ -77,7 +77,7 @@ func (m *CoachmarkLocation) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetLength gets the length property value. The length property
+// GetLength gets the length property value. Length of coachmark.
 func (m *CoachmarkLocation) GetLength()(*int32) {
     return m.length
 }
@@ -85,11 +85,11 @@ func (m *CoachmarkLocation) GetLength()(*int32) {
 func (m *CoachmarkLocation) GetOdataType()(*string) {
     return m.odataType
 }
-// GetOffset gets the offset property value. The offset property
+// GetOffset gets the offset property value. Offset of coachmark.
 func (m *CoachmarkLocation) GetOffset()(*int32) {
     return m.offset
 }
-// GetType gets the type property value. The type property
+// GetType gets the type property value. Type of coachmark location. The possible values are: unknown, fromEmail, subject, externalTag, displayName, messageBody, unknownFutureValue.
 func (m *CoachmarkLocation) GetType()(*CoachmarkLocationType) {
     return m.type_escaped
 }
@@ -132,7 +132,7 @@ func (m *CoachmarkLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 func (m *CoachmarkLocation) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetLength sets the length property value. The length property
+// SetLength sets the length property value. Length of coachmark.
 func (m *CoachmarkLocation) SetLength(value *int32)() {
     m.length = value
 }
@@ -140,11 +140,11 @@ func (m *CoachmarkLocation) SetLength(value *int32)() {
 func (m *CoachmarkLocation) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetOffset sets the offset property value. The offset property
+// SetOffset sets the offset property value. Offset of coachmark.
 func (m *CoachmarkLocation) SetOffset(value *int32)() {
     m.offset = value
 }
-// SetType sets the type property value. The type property
+// SetType sets the type property value. Type of coachmark location. The possible values are: unknown, fromEmail, subject, externalTag, displayName, messageBody, unknownFutureValue.
 func (m *CoachmarkLocation) SetType(value *CoachmarkLocationType)() {
     m.type_escaped = value
 }

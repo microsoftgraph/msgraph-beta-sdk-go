@@ -8,13 +8,13 @@ import (
 type PayloadDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The coachmarks property
+    // Payload coachmark details.
     coachmarks []PayloadCoachmarkable
-    // The content property
+    // Payload content details.
     content *string
     // The OdataType property
     odataType *string
-    // The phishingUrl property
+    // The phishing URL used to target a user.
     phishingUrl *string
 }
 // NewPayloadDetail instantiates a new payloadDetail and sets the default values.
@@ -50,11 +50,11 @@ func CreatePayloadDetailFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 func (m *PayloadDetail) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetCoachmarks gets the coachmarks property value. The coachmarks property
+// GetCoachmarks gets the coachmarks property value. Payload coachmark details.
 func (m *PayloadDetail) GetCoachmarks()([]PayloadCoachmarkable) {
     return m.coachmarks
 }
-// GetContent gets the content property value. The content property
+// GetContent gets the content property value. Payload content details.
 func (m *PayloadDetail) GetContent()(*string) {
     return m.content
 }
@@ -111,7 +111,7 @@ func (m *PayloadDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 func (m *PayloadDetail) GetOdataType()(*string) {
     return m.odataType
 }
-// GetPhishingUrl gets the phishingUrl property value. The phishingUrl property
+// GetPhishingUrl gets the phishingUrl property value. The phishing URL used to target a user.
 func (m *PayloadDetail) GetPhishingUrl()(*string) {
     return m.phishingUrl
 }
@@ -157,11 +157,11 @@ func (m *PayloadDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 func (m *PayloadDetail) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetCoachmarks sets the coachmarks property value. The coachmarks property
+// SetCoachmarks sets the coachmarks property value. Payload coachmark details.
 func (m *PayloadDetail) SetCoachmarks(value []PayloadCoachmarkable)() {
     m.coachmarks = value
 }
-// SetContent sets the content property value. The content property
+// SetContent sets the content property value. Payload content details.
 func (m *PayloadDetail) SetContent(value *string)() {
     m.content = value
 }
@@ -169,7 +169,7 @@ func (m *PayloadDetail) SetContent(value *string)() {
 func (m *PayloadDetail) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetPhishingUrl sets the phishingUrl property value. The phishingUrl property
+// SetPhishingUrl sets the phishingUrl property value. The phishing URL used to target a user.
 func (m *PayloadDetail) SetPhishingUrl(value *string)() {
     m.phishingUrl = value
 }

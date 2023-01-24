@@ -15,18 +15,27 @@ type PlannerRecentPlansCountRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// PlannerRecentPlansCountRequestBuilderGetQueryParameters get the number of the resource
+type PlannerRecentPlansCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+}
 // PlannerRecentPlansCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PlannerRecentPlansCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *PlannerRecentPlansCountRequestBuilderGetQueryParameters
 }
 // NewPlannerRecentPlansCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewPlannerRecentPlansCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PlannerRecentPlansCountRequestBuilder) {
     m := &PlannerRecentPlansCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/planner/recentPlans/$count";
+    m.urlTemplate = "{+baseurl}/me/planner/recentPlans/$count{?%24search,%24filter}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,6 +77,9 @@ func (m *PlannerRecentPlansCountRequestBuilder) ToGetRequestInformation(ctx cont
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

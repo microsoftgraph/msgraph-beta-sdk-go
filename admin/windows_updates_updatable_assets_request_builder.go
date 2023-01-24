@@ -16,7 +16,7 @@ type WindowsUpdatesUpdatableAssetsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// WindowsUpdatesUpdatableAssetsRequestBuilderGetQueryParameters get a list of azureADDevice objects and their properties. This operation filters on the fully qualified resource type, `microsoft.graph.windowsUpdates.azureADDevice`, which inherits from updatableAsset.
+// WindowsUpdatesUpdatableAssetsRequestBuilderGetQueryParameters get a list of updatableAssetGroup objects and their properties. This operation filters on the fully qualified resource type, `microsoft.graph.windowsUpdates.updatableAssetGroup`, which inherits from updatableAsset.
 type WindowsUpdatesUpdatableAssetsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -82,10 +82,10 @@ func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) EnrollAssets()(*WindowsUpd
 func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) EnrollAssetsById()(*WindowsUpdatesUpdatableAssetsEnrollAssetsByIdRequestBuilder) {
     return NewWindowsUpdatesUpdatableAssetsEnrollAssetsByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get get a list of azureADDevice objects and their properties. This operation filters on the fully qualified resource type, `microsoft.graph.windowsUpdates.azureADDevice`, which inherits from updatableAsset.
+// Get get a list of updatableAssetGroup objects and their properties. This operation filters on the fully qualified resource type, `microsoft.graph.windowsUpdates.updatableAssetGroup`, which inherits from updatableAsset.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/windowsupdates-updates-list-updatableassets-azureaddevice?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/windowsupdates-updates-list-updatableassets-updatableassetgroup?view=graph-rest-1.0
 func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatableAssetsRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -126,7 +126,7 @@ func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) Post(ctx context.Context, 
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable), nil
 }
-// ToGetRequestInformation get a list of azureADDevice objects and their properties. This operation filters on the fully qualified resource type, `microsoft.graph.windowsUpdates.azureADDevice`, which inherits from updatableAsset.
+// ToGetRequestInformation get a list of updatableAssetGroup objects and their properties. This operation filters on the fully qualified resource type, `microsoft.graph.windowsUpdates.updatableAssetGroup`, which inherits from updatableAsset.
 func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatableAssetsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
