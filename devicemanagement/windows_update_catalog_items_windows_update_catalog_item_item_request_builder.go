@@ -47,7 +47,7 @@ type WindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilderPatchReq
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewWindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilderInternal instantiates a new WindowsUpdateCatalogItemItemRequestBuilder and sets the default values.
-func NewWindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilder) {
+func NewWindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, windowsUpdateCatalogItemId *string)(*WindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilder) {
     m := &WindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/windowsUpdateCatalogItems/{windowsUpdateCatalogItem%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewWindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilderInter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if windowsUpdateCatalogItemId != nil {
+        urlTplParams["windowsUpdateCatalogItem%2Did"] = *windowsUpdateCatalogItemId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilder instantiates a new WindowsUpdateCatalogItemItemRequestBuilder and sets the default values.
 func NewWindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewWindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewWindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property windowsUpdateCatalogItems for deviceManagement
 func (m *WindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *WindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *WindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilder) To
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

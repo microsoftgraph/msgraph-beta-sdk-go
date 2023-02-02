@@ -19,7 +19,7 @@ type PayloadTypes struct {
 func NewPayloadTypes()(*PayloadTypes) {
     m := &PayloadTypes{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePayloadTypesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

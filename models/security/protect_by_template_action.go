@@ -15,8 +15,8 @@ func NewProtectByTemplateAction()(*ProtectByTemplateAction) {
     m := &ProtectByTemplateAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
     }
-    odataTypeValue := "#microsoft.graph.security.protectByTemplateAction";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.security.protectByTemplateAction"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateProtectByTemplateActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

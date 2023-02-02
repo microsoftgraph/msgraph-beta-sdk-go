@@ -48,7 +48,7 @@ type VirtualEndpointRequestBuilderPatchRequestConfiguration struct {
 }
 // AuditEvents provides operations to manage the auditEvents property of the microsoft.graph.virtualEndpoint entity.
 func (m *VirtualEndpointRequestBuilder) AuditEvents()(*VirtualEndpointAuditEventsRequestBuilder) {
-    return NewVirtualEndpointAuditEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointAuditEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AuditEventsById provides operations to manage the auditEvents property of the microsoft.graph.virtualEndpoint entity.
 func (m *VirtualEndpointRequestBuilder) AuditEventsById(id string)(*VirtualEndpointAuditEventsCloudPcAuditEventItemRequestBuilder) {
@@ -56,14 +56,12 @@ func (m *VirtualEndpointRequestBuilder) AuditEventsById(id string)(*VirtualEndpo
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["cloudPcAuditEvent%2Did"] = id
-    }
-    return NewVirtualEndpointAuditEventsCloudPcAuditEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewVirtualEndpointAuditEventsCloudPcAuditEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // CloudPCs provides operations to manage the cloudPCs property of the microsoft.graph.virtualEndpoint entity.
 func (m *VirtualEndpointRequestBuilder) CloudPCs()(*VirtualEndpointCloudPCsRequestBuilder) {
-    return NewVirtualEndpointCloudPCsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointCloudPCsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CloudPCsById provides operations to manage the cloudPCs property of the microsoft.graph.virtualEndpoint entity.
 func (m *VirtualEndpointRequestBuilder) CloudPCsById(id string)(*VirtualEndpointCloudPCsCloudPCItemRequestBuilder) {
@@ -71,10 +69,8 @@ func (m *VirtualEndpointRequestBuilder) CloudPCsById(id string)(*VirtualEndpoint
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["cloudPC%2Did"] = id
-    }
-    return NewVirtualEndpointCloudPCsCloudPCItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewVirtualEndpointCloudPCsCloudPCItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewVirtualEndpointRequestBuilderInternal instantiates a new VirtualEndpointRequestBuilder and sets the default values.
 func NewVirtualEndpointRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointRequestBuilder) {
@@ -85,8 +81,8 @@ func NewVirtualEndpointRequestBuilderInternal(pathParameters map[string]string, 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewVirtualEndpointRequestBuilder instantiates a new VirtualEndpointRequestBuilder and sets the default values.
@@ -97,7 +93,7 @@ func NewVirtualEndpointRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 }
 // CrossCloudGovernmentOrganizationMapping provides operations to manage the crossCloudGovernmentOrganizationMapping property of the microsoft.graph.virtualEndpoint entity.
 func (m *VirtualEndpointRequestBuilder) CrossCloudGovernmentOrganizationMapping()(*VirtualEndpointCrossCloudGovernmentOrganizationMappingRequestBuilder) {
-    return NewVirtualEndpointCrossCloudGovernmentOrganizationMappingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointCrossCloudGovernmentOrganizationMappingRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property virtualEndpoint for deviceManagement
 func (m *VirtualEndpointRequestBuilder) Delete(ctx context.Context, requestConfiguration *VirtualEndpointRequestBuilderDeleteRequestConfiguration)(error) {
@@ -117,7 +113,7 @@ func (m *VirtualEndpointRequestBuilder) Delete(ctx context.Context, requestConfi
 }
 // DeviceImages provides operations to manage the deviceImages property of the microsoft.graph.virtualEndpoint entity.
 func (m *VirtualEndpointRequestBuilder) DeviceImages()(*VirtualEndpointDeviceImagesRequestBuilder) {
-    return NewVirtualEndpointDeviceImagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointDeviceImagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeviceImagesById provides operations to manage the deviceImages property of the microsoft.graph.virtualEndpoint entity.
 func (m *VirtualEndpointRequestBuilder) DeviceImagesById(id string)(*VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) {
@@ -125,14 +121,12 @@ func (m *VirtualEndpointRequestBuilder) DeviceImagesById(id string)(*VirtualEndp
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["cloudPcDeviceImage%2Did"] = id
-    }
-    return NewVirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewVirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ExternalPartnerSettings provides operations to manage the externalPartnerSettings property of the microsoft.graph.virtualEndpoint entity.
 func (m *VirtualEndpointRequestBuilder) ExternalPartnerSettings()(*VirtualEndpointExternalPartnerSettingsRequestBuilder) {
-    return NewVirtualEndpointExternalPartnerSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointExternalPartnerSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ExternalPartnerSettingsById provides operations to manage the externalPartnerSettings property of the microsoft.graph.virtualEndpoint entity.
 func (m *VirtualEndpointRequestBuilder) ExternalPartnerSettingsById(id string)(*VirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilder) {
@@ -140,14 +134,12 @@ func (m *VirtualEndpointRequestBuilder) ExternalPartnerSettingsById(id string)(*
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["cloudPcExternalPartnerSetting%2Did"] = id
-    }
-    return NewVirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewVirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // GalleryImages provides operations to manage the galleryImages property of the microsoft.graph.virtualEndpoint entity.
 func (m *VirtualEndpointRequestBuilder) GalleryImages()(*VirtualEndpointGalleryImagesRequestBuilder) {
-    return NewVirtualEndpointGalleryImagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointGalleryImagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GalleryImagesById provides operations to manage the galleryImages property of the microsoft.graph.virtualEndpoint entity.
 func (m *VirtualEndpointRequestBuilder) GalleryImagesById(id string)(*VirtualEndpointGalleryImagesCloudPcGalleryImageItemRequestBuilder) {
@@ -155,10 +147,8 @@ func (m *VirtualEndpointRequestBuilder) GalleryImagesById(id string)(*VirtualEnd
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["cloudPcGalleryImage%2Did"] = id
-    }
-    return NewVirtualEndpointGalleryImagesCloudPcGalleryImageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewVirtualEndpointGalleryImagesCloudPcGalleryImageItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Get get virtualEndpoint from deviceManagement
 func (m *VirtualEndpointRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEndpointable, error) {
@@ -179,13 +169,13 @@ func (m *VirtualEndpointRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEndpointable), nil
 }
-// GetEffectivePermissions provides operations to call the getEffectivePermissions method.
-func (m *VirtualEndpointRequestBuilder) GetEffectivePermissions()(*VirtualEndpointGetEffectivePermissionsRequestBuilder) {
-    return NewVirtualEndpointGetEffectivePermissionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetEffectivePermissions provides operations to call the getEffectivePermissions method.
+func (m *VirtualEndpointRequestBuilder) MicrosoftGraphGetEffectivePermissions()(*VirtualEndpointMicrosoftGraphGetEffectivePermissionsGetEffectivePermissionsRequestBuilder) {
+    return NewVirtualEndpointMicrosoftGraphGetEffectivePermissionsGetEffectivePermissionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // OnPremisesConnections provides operations to manage the onPremisesConnections property of the microsoft.graph.virtualEndpoint entity.
 func (m *VirtualEndpointRequestBuilder) OnPremisesConnections()(*VirtualEndpointOnPremisesConnectionsRequestBuilder) {
-    return NewVirtualEndpointOnPremisesConnectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointOnPremisesConnectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // OnPremisesConnectionsById provides operations to manage the onPremisesConnections property of the microsoft.graph.virtualEndpoint entity.
 func (m *VirtualEndpointRequestBuilder) OnPremisesConnectionsById(id string)(*VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilder) {
@@ -193,14 +183,12 @@ func (m *VirtualEndpointRequestBuilder) OnPremisesConnectionsById(id string)(*Vi
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["cloudPcOnPremisesConnection%2Did"] = id
-    }
-    return NewVirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewVirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // OrganizationSettings provides operations to manage the organizationSettings property of the microsoft.graph.virtualEndpoint entity.
 func (m *VirtualEndpointRequestBuilder) OrganizationSettings()(*VirtualEndpointOrganizationSettingsRequestBuilder) {
-    return NewVirtualEndpointOrganizationSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointOrganizationSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property virtualEndpoint in deviceManagement
 func (m *VirtualEndpointRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEndpointable, requestConfiguration *VirtualEndpointRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEndpointable, error) {
@@ -223,7 +211,7 @@ func (m *VirtualEndpointRequestBuilder) Patch(ctx context.Context, body ie233ee7
 }
 // ProvisioningPolicies provides operations to manage the provisioningPolicies property of the microsoft.graph.virtualEndpoint entity.
 func (m *VirtualEndpointRequestBuilder) ProvisioningPolicies()(*VirtualEndpointProvisioningPoliciesRequestBuilder) {
-    return NewVirtualEndpointProvisioningPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointProvisioningPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ProvisioningPoliciesById provides operations to manage the provisioningPolicies property of the microsoft.graph.virtualEndpoint entity.
 func (m *VirtualEndpointRequestBuilder) ProvisioningPoliciesById(id string)(*VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuilder) {
@@ -231,18 +219,16 @@ func (m *VirtualEndpointRequestBuilder) ProvisioningPoliciesById(id string)(*Vir
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["cloudPcProvisioningPolicy%2Did"] = id
-    }
-    return NewVirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewVirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Reports provides operations to manage the reports property of the microsoft.graph.virtualEndpoint entity.
 func (m *VirtualEndpointRequestBuilder) Reports()(*VirtualEndpointReportsRequestBuilder) {
-    return NewVirtualEndpointReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ServicePlans provides operations to manage the servicePlans property of the microsoft.graph.virtualEndpoint entity.
 func (m *VirtualEndpointRequestBuilder) ServicePlans()(*VirtualEndpointServicePlansRequestBuilder) {
-    return NewVirtualEndpointServicePlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointServicePlansRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ServicePlansById provides operations to manage the servicePlans property of the microsoft.graph.virtualEndpoint entity.
 func (m *VirtualEndpointRequestBuilder) ServicePlansById(id string)(*VirtualEndpointServicePlansCloudPcServicePlanItemRequestBuilder) {
@@ -250,14 +236,12 @@ func (m *VirtualEndpointRequestBuilder) ServicePlansById(id string)(*VirtualEndp
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["cloudPcServicePlan%2Did"] = id
-    }
-    return NewVirtualEndpointServicePlansCloudPcServicePlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewVirtualEndpointServicePlansCloudPcServicePlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // SharedUseServicePlans provides operations to manage the sharedUseServicePlans property of the microsoft.graph.virtualEndpoint entity.
 func (m *VirtualEndpointRequestBuilder) SharedUseServicePlans()(*VirtualEndpointSharedUseServicePlansRequestBuilder) {
-    return NewVirtualEndpointSharedUseServicePlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointSharedUseServicePlansRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SharedUseServicePlansById provides operations to manage the sharedUseServicePlans property of the microsoft.graph.virtualEndpoint entity.
 func (m *VirtualEndpointRequestBuilder) SharedUseServicePlansById(id string)(*VirtualEndpointSharedUseServicePlansCloudPcSharedUseServicePlanItemRequestBuilder) {
@@ -265,14 +249,12 @@ func (m *VirtualEndpointRequestBuilder) SharedUseServicePlansById(id string)(*Vi
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["cloudPcSharedUseServicePlan%2Did"] = id
-    }
-    return NewVirtualEndpointSharedUseServicePlansCloudPcSharedUseServicePlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewVirtualEndpointSharedUseServicePlansCloudPcSharedUseServicePlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Snapshots provides operations to manage the snapshots property of the microsoft.graph.virtualEndpoint entity.
 func (m *VirtualEndpointRequestBuilder) Snapshots()(*VirtualEndpointSnapshotsRequestBuilder) {
-    return NewVirtualEndpointSnapshotsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointSnapshotsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SnapshotsById provides operations to manage the snapshots property of the microsoft.graph.virtualEndpoint entity.
 func (m *VirtualEndpointRequestBuilder) SnapshotsById(id string)(*VirtualEndpointSnapshotsCloudPcSnapshotItemRequestBuilder) {
@@ -280,14 +262,12 @@ func (m *VirtualEndpointRequestBuilder) SnapshotsById(id string)(*VirtualEndpoin
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["cloudPcSnapshot%2Did"] = id
-    }
-    return NewVirtualEndpointSnapshotsCloudPcSnapshotItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewVirtualEndpointSnapshotsCloudPcSnapshotItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // SupportedRegions provides operations to manage the supportedRegions property of the microsoft.graph.virtualEndpoint entity.
 func (m *VirtualEndpointRequestBuilder) SupportedRegions()(*VirtualEndpointSupportedRegionsRequestBuilder) {
-    return NewVirtualEndpointSupportedRegionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointSupportedRegionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SupportedRegionsById provides operations to manage the supportedRegions property of the microsoft.graph.virtualEndpoint entity.
 func (m *VirtualEndpointRequestBuilder) SupportedRegionsById(id string)(*VirtualEndpointSupportedRegionsCloudPcSupportedRegionItemRequestBuilder) {
@@ -295,10 +275,8 @@ func (m *VirtualEndpointRequestBuilder) SupportedRegionsById(id string)(*Virtual
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["cloudPcSupportedRegion%2Did"] = id
-    }
-    return NewVirtualEndpointSupportedRegionsCloudPcSupportedRegionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewVirtualEndpointSupportedRegionsCloudPcSupportedRegionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property virtualEndpoint for deviceManagement
 func (m *VirtualEndpointRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -335,7 +313,10 @@ func (m *VirtualEndpointRequestBuilder) ToPatchRequestInformation(ctx context.Co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -344,7 +325,7 @@ func (m *VirtualEndpointRequestBuilder) ToPatchRequestInformation(ctx context.Co
 }
 // UserSettings provides operations to manage the userSettings property of the microsoft.graph.virtualEndpoint entity.
 func (m *VirtualEndpointRequestBuilder) UserSettings()(*VirtualEndpointUserSettingsRequestBuilder) {
-    return NewVirtualEndpointUserSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointUserSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserSettingsById provides operations to manage the userSettings property of the microsoft.graph.virtualEndpoint entity.
 func (m *VirtualEndpointRequestBuilder) UserSettingsById(id string)(*VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder) {
@@ -352,8 +333,6 @@ func (m *VirtualEndpointRequestBuilder) UserSettingsById(id string)(*VirtualEndp
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["cloudPcUserSetting%2Did"] = id
-    }
-    return NewVirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewVirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }

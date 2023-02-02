@@ -47,7 +47,7 @@ type InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilderPatc
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewInboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilderInternal instantiates a new InboundSharedUserProfileUserItemRequestBuilder and sets the default values.
-func NewInboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilder) {
+func NewInboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, inboundSharedUserProfileUserId *string)(*InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilder) {
     m := &InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/directory/inboundSharedUserProfiles/{inboundSharedUserProfile%2DuserId}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewInboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilderI
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if inboundSharedUserProfileUserId != nil {
+        urlTplParams["inboundSharedUserProfile%2DuserId"] = *inboundSharedUserProfileUserId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewInboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilder instantiates a new InboundSharedUserProfileUserItemRequestBuilder and sets the default values.
 func NewInboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewInboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewInboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property inboundSharedUserProfiles for directory
 func (m *InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -80,10 +83,6 @@ func (m *InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilder
         return err
     }
     return nil
-}
-// ExportPersonalData provides operations to call the exportPersonalData method.
-func (m *InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilder) ExportPersonalData()(*InboundSharedUserProfilesItemExportPersonalDataRequestBuilder) {
-    return NewInboundSharedUserProfilesItemExportPersonalDataRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get inboundSharedUserProfiles from directory
 func (m *InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilder) Get(ctx context.Context, requestConfiguration *InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InboundSharedUserProfileable, error) {
@@ -104,6 +103,14 @@ func (m *InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilder
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InboundSharedUserProfileable), nil
 }
+// MicrosoftGraphExportPersonalData provides operations to call the exportPersonalData method.
+func (m *InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilder) MicrosoftGraphExportPersonalData()(*InboundSharedUserProfilesItemMicrosoftGraphExportPersonalDataExportPersonalDataRequestBuilder) {
+    return NewInboundSharedUserProfilesItemMicrosoftGraphExportPersonalDataExportPersonalDataRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRemovePersonalData provides operations to call the removePersonalData method.
+func (m *InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilder) MicrosoftGraphRemovePersonalData()(*InboundSharedUserProfilesItemMicrosoftGraphRemovePersonalDataRemovePersonalDataRequestBuilder) {
+    return NewInboundSharedUserProfilesItemMicrosoftGraphRemovePersonalDataRemovePersonalDataRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property inboundSharedUserProfiles in directory
 func (m *InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InboundSharedUserProfileable, requestConfiguration *InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InboundSharedUserProfileable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -122,10 +129,6 @@ func (m *InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilder
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InboundSharedUserProfileable), nil
-}
-// RemovePersonalData provides operations to call the removePersonalData method.
-func (m *InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilder) RemovePersonalData()(*InboundSharedUserProfilesItemRemovePersonalDataRequestBuilder) {
-    return NewInboundSharedUserProfilesItemRemovePersonalDataRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property inboundSharedUserProfiles for directory
 func (m *InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -162,7 +165,10 @@ func (m *InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilder
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

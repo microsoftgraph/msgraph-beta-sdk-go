@@ -47,7 +47,7 @@ type ManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemReque
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilderInternal instantiates a new DeviceLogCollectionResponseItemRequestBuilder and sets the default values.
-func NewManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilder) {
+func NewManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, deviceLogCollectionResponseId *string)(*ManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilder) {
     m := &ManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/managedDevices/{managedDevice%2Did}/logCollectionRequests/{deviceLogCollectionResponse%2Did}{?%24select,%24expand}";
@@ -55,19 +55,18 @@ func NewManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRe
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if deviceLogCollectionResponseId != nil {
+        urlTplParams["deviceLogCollectionResponse%2Did"] = *deviceLogCollectionResponseId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilder instantiates a new DeviceLogCollectionResponseItemRequestBuilder and sets the default values.
 func NewManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilderInternal(urlParams, requestAdapter)
-}
-// CreateDownloadUrl provides operations to call the createDownloadUrl method.
-func (m *ManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilder) CreateDownloadUrl()(*ManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilder) {
-    return NewManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property logCollectionRequests for me
 func (m *ManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -103,6 +102,10 @@ func (m *ManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemR
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceLogCollectionResponseable), nil
+}
+// MicrosoftGraphCreateDownloadUrl provides operations to call the createDownloadUrl method.
+func (m *ManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilder) MicrosoftGraphCreateDownloadUrl()(*ManagedDevicesItemLogCollectionRequestsItemMicrosoftGraphCreateDownloadUrlCreateDownloadUrlRequestBuilder) {
+    return NewManagedDevicesItemLogCollectionRequestsItemMicrosoftGraphCreateDownloadUrlCreateDownloadUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property logCollectionRequests in me
 func (m *ManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceLogCollectionResponseable, requestConfiguration *ManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceLogCollectionResponseable, error) {
@@ -158,7 +161,10 @@ func (m *ManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemR
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

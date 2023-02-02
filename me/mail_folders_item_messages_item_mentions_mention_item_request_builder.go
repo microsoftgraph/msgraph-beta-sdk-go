@@ -40,7 +40,7 @@ type MailFoldersItemMessagesItemMentionsMentionItemRequestBuilderGetRequestConfi
     QueryParameters *MailFoldersItemMessagesItemMentionsMentionItemRequestBuilderGetQueryParameters
 }
 // NewMailFoldersItemMessagesItemMentionsMentionItemRequestBuilderInternal instantiates a new MentionItemRequestBuilder and sets the default values.
-func NewMailFoldersItemMessagesItemMentionsMentionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MailFoldersItemMessagesItemMentionsMentionItemRequestBuilder) {
+func NewMailFoldersItemMessagesItemMentionsMentionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, mentionId *string)(*MailFoldersItemMessagesItemMentionsMentionItemRequestBuilder) {
     m := &MailFoldersItemMessagesItemMentionsMentionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/mailFolders/{mailFolder%2Did}/messages/{message%2Did}/mentions/{mention%2Did}{?%24select,%24expand}";
@@ -48,15 +48,18 @@ func NewMailFoldersItemMessagesItemMentionsMentionItemRequestBuilderInternal(pat
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if mentionId != nil {
+        urlTplParams["mention%2Did"] = *mentionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMailFoldersItemMessagesItemMentionsMentionItemRequestBuilder instantiates a new MentionItemRequestBuilder and sets the default values.
 func NewMailFoldersItemMessagesItemMentionsMentionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MailFoldersItemMessagesItemMentionsMentionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewMailFoldersItemMessagesItemMentionsMentionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewMailFoldersItemMessagesItemMentionsMentionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property mentions for me
 func (m *MailFoldersItemMessagesItemMentionsMentionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MailFoldersItemMessagesItemMentionsMentionItemRequestBuilderDeleteRequestConfiguration)(error) {

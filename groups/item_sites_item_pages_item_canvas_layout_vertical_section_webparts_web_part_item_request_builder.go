@@ -47,7 +47,7 @@ type ItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsWebPartItemRequest
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsWebPartItemRequestBuilderInternal instantiates a new WebPartItemRequestBuilder and sets the default values.
-func NewItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsWebPartItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsWebPartItemRequestBuilder) {
+func NewItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsWebPartItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, webPartId *string)(*ItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsWebPartItemRequestBuilder) {
     m := &ItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsWebPartItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/pages/{sitePage%2Did}/canvasLayout/verticalSection/webparts/{webPart%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsWebPartItemRequ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if webPartId != nil {
+        urlTplParams["webPart%2Did"] = *webPartId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsWebPartItemRequestBuilder instantiates a new WebPartItemRequestBuilder and sets the default values.
 func NewItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsWebPartItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsWebPartItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsWebPartItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsWebPartItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property webparts for groups
 func (m *ItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsWebPartItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsWebPartItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -100,9 +103,9 @@ func (m *ItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsWebPartItemReq
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebPartable), nil
 }
-// GetPositionOfWebPart provides operations to call the getPositionOfWebPart method.
-func (m *ItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsWebPartItemRequestBuilder) GetPositionOfWebPart()(*ItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsItemGetPositionOfWebPartRequestBuilder) {
-    return NewItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsItemGetPositionOfWebPartRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetPositionOfWebPart provides operations to call the getPositionOfWebPart method.
+func (m *ItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsWebPartItemRequestBuilder) MicrosoftGraphGetPositionOfWebPart()(*ItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsItemMicrosoftGraphGetPositionOfWebPartGetPositionOfWebPartRequestBuilder) {
+    return NewItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsItemMicrosoftGraphGetPositionOfWebPartGetPositionOfWebPartRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property webparts in groups
 func (m *ItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsWebPartItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebPartable, requestConfiguration *ItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsWebPartItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebPartable, error) {
@@ -158,7 +161,10 @@ func (m *ItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsWebPartItemReq
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

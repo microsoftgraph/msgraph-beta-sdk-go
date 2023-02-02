@@ -47,7 +47,7 @@ type ItemPagesItemWebPartsWebPartItemRequestBuilderPatchRequestConfiguration str
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemPagesItemWebPartsWebPartItemRequestBuilderInternal instantiates a new WebPartItemRequestBuilder and sets the default values.
-func NewItemPagesItemWebPartsWebPartItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPagesItemWebPartsWebPartItemRequestBuilder) {
+func NewItemPagesItemWebPartsWebPartItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, webPartId *string)(*ItemPagesItemWebPartsWebPartItemRequestBuilder) {
     m := &ItemPagesItemWebPartsWebPartItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/sites/{site%2Did}/pages/{sitePage%2Did}/webParts/{webPart%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemPagesItemWebPartsWebPartItemRequestBuilderInternal(pathParameters ma
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if webPartId != nil {
+        urlTplParams["webPart%2Did"] = *webPartId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemPagesItemWebPartsWebPartItemRequestBuilder instantiates a new WebPartItemRequestBuilder and sets the default values.
 func NewItemPagesItemWebPartsWebPartItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPagesItemWebPartsWebPartItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemPagesItemWebPartsWebPartItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemPagesItemWebPartsWebPartItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property webParts for sites
 func (m *ItemPagesItemWebPartsWebPartItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemPagesItemWebPartsWebPartItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -100,9 +103,9 @@ func (m *ItemPagesItemWebPartsWebPartItemRequestBuilder) Get(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebPartable), nil
 }
-// GetPositionOfWebPart provides operations to call the getPositionOfWebPart method.
-func (m *ItemPagesItemWebPartsWebPartItemRequestBuilder) GetPositionOfWebPart()(*ItemPagesItemWebPartsItemGetPositionOfWebPartRequestBuilder) {
-    return NewItemPagesItemWebPartsItemGetPositionOfWebPartRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetPositionOfWebPart provides operations to call the getPositionOfWebPart method.
+func (m *ItemPagesItemWebPartsWebPartItemRequestBuilder) MicrosoftGraphGetPositionOfWebPart()(*ItemPagesItemWebPartsItemMicrosoftGraphGetPositionOfWebPartGetPositionOfWebPartRequestBuilder) {
+    return NewItemPagesItemWebPartsItemMicrosoftGraphGetPositionOfWebPartGetPositionOfWebPartRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property webParts in sites
 func (m *ItemPagesItemWebPartsWebPartItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebPartable, requestConfiguration *ItemPagesItemWebPartsWebPartItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebPartable, error) {
@@ -158,7 +161,10 @@ func (m *ItemPagesItemWebPartsWebPartItemRequestBuilder) ToPatchRequestInformati
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

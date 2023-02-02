@@ -19,7 +19,7 @@ type AdminConsent struct {
 func NewAdminConsent()(*AdminConsent) {
     m := &AdminConsent{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAdminConsentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

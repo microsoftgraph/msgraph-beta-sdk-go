@@ -47,7 +47,7 @@ type DeviceManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceAct
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewDeviceManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilderInternal instantiates a new UnifiedRbacResourceActionItemRequestBuilder and sets the default values.
-func NewDeviceManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder) {
+func NewDeviceManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, unifiedRbacResourceActionId *string)(*DeviceManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder) {
     m := &DeviceManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/roleManagement/deviceManagement/resourceNamespaces/{unifiedRbacResourceNamespace%2Did}/resourceActions/{unifiedRbacResourceAction%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewDeviceManagementResourceNamespacesItemResourceActionsUnifiedRbacResource
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if unifiedRbacResourceActionId != nil {
+        urlTplParams["unifiedRbacResourceAction%2Did"] = *unifiedRbacResourceActionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder instantiates a new UnifiedRbacResourceActionItemRequestBuilder and sets the default values.
 func NewDeviceManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewDeviceManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewDeviceManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property resourceActions for roleManagement
 func (m *DeviceManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DeviceManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -121,7 +124,7 @@ func (m *DeviceManagementResourceNamespacesItemResourceActionsUnifiedRbacResourc
 }
 // ResourceScope provides operations to manage the resourceScope property of the microsoft.graph.unifiedRbacResourceAction entity.
 func (m *DeviceManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder) ResourceScope()(*DeviceManagementResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilder) {
-    return NewDeviceManagementResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceManagementResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property resourceActions for roleManagement
 func (m *DeviceManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DeviceManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +161,10 @@ func (m *DeviceManagementResourceNamespacesItemResourceActionsUnifiedRbacResourc
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

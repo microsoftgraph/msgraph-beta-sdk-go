@@ -19,7 +19,7 @@ type MicrosoftManagedDesktop struct {
 func NewMicrosoftManagedDesktop()(*MicrosoftManagedDesktop) {
     m := &MicrosoftManagedDesktop{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMicrosoftManagedDesktopFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -47,7 +47,7 @@ type ItemInstancesItemMyDecisionsAccessReviewDecisionItemRequestBuilderPatchRequ
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemInstancesItemMyDecisionsAccessReviewDecisionItemRequestBuilderInternal instantiates a new AccessReviewDecisionItemRequestBuilder and sets the default values.
-func NewItemInstancesItemMyDecisionsAccessReviewDecisionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInstancesItemMyDecisionsAccessReviewDecisionItemRequestBuilder) {
+func NewItemInstancesItemMyDecisionsAccessReviewDecisionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, accessReviewDecisionId *string)(*ItemInstancesItemMyDecisionsAccessReviewDecisionItemRequestBuilder) {
     m := &ItemInstancesItemMyDecisionsAccessReviewDecisionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/accessReviews/{accessReview%2Did}/instances/{accessReview%2Did1}/myDecisions/{accessReviewDecision%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemInstancesItemMyDecisionsAccessReviewDecisionItemRequestBuilderIntern
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if accessReviewDecisionId != nil {
+        urlTplParams["accessReviewDecision%2Did"] = *accessReviewDecisionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemInstancesItemMyDecisionsAccessReviewDecisionItemRequestBuilder instantiates a new AccessReviewDecisionItemRequestBuilder and sets the default values.
 func NewItemInstancesItemMyDecisionsAccessReviewDecisionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInstancesItemMyDecisionsAccessReviewDecisionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemInstancesItemMyDecisionsAccessReviewDecisionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemInstancesItemMyDecisionsAccessReviewDecisionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property myDecisions for accessReviews
 func (m *ItemInstancesItemMyDecisionsAccessReviewDecisionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemInstancesItemMyDecisionsAccessReviewDecisionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemInstancesItemMyDecisionsAccessReviewDecisionItemRequestBuilder) ToP
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

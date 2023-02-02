@@ -15,8 +15,8 @@ func NewWindowsPhone81StoreApp()(*WindowsPhone81StoreApp) {
     m := &WindowsPhone81StoreApp{
         MobileApp: *NewMobileApp(),
     }
-    odataTypeValue := "#microsoft.graph.windowsPhone81StoreApp";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsPhone81StoreApp"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsPhone81StoreAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

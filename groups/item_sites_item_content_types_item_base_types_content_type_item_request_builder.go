@@ -33,7 +33,7 @@ type ItemSitesItemContentTypesItemBaseTypesContentTypeItemRequestBuilderGetReque
     QueryParameters *ItemSitesItemContentTypesItemBaseTypesContentTypeItemRequestBuilderGetQueryParameters
 }
 // NewItemSitesItemContentTypesItemBaseTypesContentTypeItemRequestBuilderInternal instantiates a new ContentTypeItemRequestBuilder and sets the default values.
-func NewItemSitesItemContentTypesItemBaseTypesContentTypeItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemContentTypesItemBaseTypesContentTypeItemRequestBuilder) {
+func NewItemSitesItemContentTypesItemBaseTypesContentTypeItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, contentTypeId1 *string)(*ItemSitesItemContentTypesItemBaseTypesContentTypeItemRequestBuilder) {
     m := &ItemSitesItemContentTypesItemBaseTypesContentTypeItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/contentTypes/{contentType%2Did}/baseTypes/{contentType%2Did1}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewItemSitesItemContentTypesItemBaseTypesContentTypeItemRequestBuilderInter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if contentTypeId1 != nil {
+        urlTplParams["contentType%2Did1"] = *contentTypeId1
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemContentTypesItemBaseTypesContentTypeItemRequestBuilder instantiates a new ContentTypeItemRequestBuilder and sets the default values.
 func NewItemSitesItemContentTypesItemBaseTypesContentTypeItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemContentTypesItemBaseTypesContentTypeItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemSitesItemContentTypesItemBaseTypesContentTypeItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemSitesItemContentTypesItemBaseTypesContentTypeItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get the collection of content types that are ancestors of this content type.
 func (m *ItemSitesItemContentTypesItemBaseTypesContentTypeItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemContentTypesItemBaseTypesContentTypeItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentTypeable, error) {

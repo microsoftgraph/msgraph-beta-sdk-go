@@ -53,8 +53,8 @@ func NewCloudPCRoleAssignmentsItemPrincipalsRequestBuilderInternal(pathParameter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCloudPCRoleAssignmentsItemPrincipalsRequestBuilder instantiates a new PrincipalsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewCloudPCRoleAssignmentsItemPrincipalsRequestBuilder(rawUrl string, reques
 }
 // Count provides operations to count the resources in the collection.
 func (m *CloudPCRoleAssignmentsItemPrincipalsRequestBuilder) Count()(*CloudPCRoleAssignmentsItemPrincipalsCountRequestBuilder) {
-    return NewCloudPCRoleAssignmentsItemPrincipalsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCloudPCRoleAssignmentsItemPrincipalsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
 func (m *CloudPCRoleAssignmentsItemPrincipalsRequestBuilder) Get(ctx context.Context, requestConfiguration *CloudPCRoleAssignmentsItemPrincipalsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {

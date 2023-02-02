@@ -25,8 +25,8 @@ func NewGroupPolicyPresentationLongDecimalTextBox()(*GroupPolicyPresentationLong
     m := &GroupPolicyPresentationLongDecimalTextBox{
         GroupPolicyUploadedPresentation: *NewGroupPolicyUploadedPresentation(),
     }
-    odataTypeValue := "#microsoft.graph.groupPolicyPresentationLongDecimalTextBox";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.groupPolicyPresentationLongDecimalTextBox"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateGroupPolicyPresentationLongDecimalTextBoxFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

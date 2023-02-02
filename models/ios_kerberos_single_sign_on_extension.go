@@ -59,8 +59,8 @@ func NewIosKerberosSingleSignOnExtension()(*IosKerberosSingleSignOnExtension) {
     m := &IosKerberosSingleSignOnExtension{
         IosSingleSignOnExtension: *NewIosSingleSignOnExtension(),
     }
-    odataTypeValue := "#microsoft.graph.iosKerberosSingleSignOnExtension";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.iosKerberosSingleSignOnExtension"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateIosKerberosSingleSignOnExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

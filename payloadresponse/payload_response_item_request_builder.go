@@ -23,7 +23,7 @@ type PayloadResponseItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PayloadResponseItemRequestBuilderGetQueryParameters get entity from payloadResponse by key (id)
+// PayloadResponseItemRequestBuilderGetQueryParameters get entity from payloadResponse by key
 type PayloadResponseItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -47,7 +47,7 @@ type PayloadResponseItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewPayloadResponseItemRequestBuilderInternal instantiates a new PayloadResponseItemRequestBuilder and sets the default values.
-func NewPayloadResponseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PayloadResponseItemRequestBuilder) {
+func NewPayloadResponseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, payloadResponseId *string)(*PayloadResponseItemRequestBuilder) {
     m := &PayloadResponseItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/payloadResponse/{payloadResponse%2Did}{?%24select,%24expand}";
@@ -55,17 +55,20 @@ func NewPayloadResponseItemRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if payloadResponseId != nil {
+        urlTplParams["payloadResponse%2Did"] = *payloadResponseId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPayloadResponseItemRequestBuilder instantiates a new PayloadResponseItemRequestBuilder and sets the default values.
 func NewPayloadResponseItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PayloadResponseItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewPayloadResponseItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewPayloadResponseItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Delete delete entity from payloadResponse by key (id)
+// Delete delete entity from payloadResponse
 func (m *PayloadResponseItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *PayloadResponseItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,7 +84,7 @@ func (m *PayloadResponseItemRequestBuilder) Delete(ctx context.Context, requestC
     }
     return nil
 }
-// Get get entity from payloadResponse by key (id)
+// Get get entity from payloadResponse by key
 func (m *PayloadResponseItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PayloadResponseItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PayloadResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,7 +103,7 @@ func (m *PayloadResponseItemRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PayloadResponseable), nil
 }
-// Patch update entity in payloadResponse by key (id)
+// Patch update entity in payloadResponse
 func (m *PayloadResponseItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PayloadResponseable, requestConfiguration *PayloadResponseItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PayloadResponseable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +122,7 @@ func (m *PayloadResponseItemRequestBuilder) Patch(ctx context.Context, body ie23
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PayloadResponseable), nil
 }
-// ToDeleteRequestInformation delete entity from payloadResponse by key (id)
+// ToDeleteRequestInformation delete entity from payloadResponse
 func (m *PayloadResponseItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PayloadResponseItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,7 +134,7 @@ func (m *PayloadResponseItemRequestBuilder) ToDeleteRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from payloadResponse by key (id)
+// ToGetRequestInformation get entity from payloadResponse by key
 func (m *PayloadResponseItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PayloadResponseItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,14 +150,17 @@ func (m *PayloadResponseItemRequestBuilder) ToGetRequestInformation(ctx context.
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in payloadResponse by key (id)
+// ToPatchRequestInformation update entity in payloadResponse
 func (m *PayloadResponseItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PayloadResponseable, requestConfiguration *PayloadResponseItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

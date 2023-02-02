@@ -55,8 +55,8 @@ func NewItemSecurityInformationProtectionRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSecurityInformationProtectionRequestBuilder instantiates a new InformationProtectionRequestBuilder and sets the default values.
@@ -102,7 +102,7 @@ func (m *ItemSecurityInformationProtectionRequestBuilder) Get(ctx context.Contex
 }
 // LabelPolicySettings provides operations to manage the labelPolicySettings property of the microsoft.graph.security.informationProtection entity.
 func (m *ItemSecurityInformationProtectionRequestBuilder) LabelPolicySettings()(*ItemSecurityInformationProtectionLabelPolicySettingsRequestBuilder) {
-    return NewItemSecurityInformationProtectionLabelPolicySettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSecurityInformationProtectionLabelPolicySettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property informationProtection in users
 func (m *ItemSecurityInformationProtectionRequestBuilder) Patch(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.InformationProtectionable, requestConfiguration *ItemSecurityInformationProtectionRequestBuilderPatchRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.InformationProtectionable, error) {
@@ -125,7 +125,7 @@ func (m *ItemSecurityInformationProtectionRequestBuilder) Patch(ctx context.Cont
 }
 // SensitivityLabels provides operations to manage the sensitivityLabels property of the microsoft.graph.security.informationProtection entity.
 func (m *ItemSecurityInformationProtectionRequestBuilder) SensitivityLabels()(*ItemSecurityInformationProtectionSensitivityLabelsRequestBuilder) {
-    return NewItemSecurityInformationProtectionSensitivityLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSecurityInformationProtectionSensitivityLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SensitivityLabelsById provides operations to manage the sensitivityLabels property of the microsoft.graph.security.informationProtection entity.
 func (m *ItemSecurityInformationProtectionRequestBuilder) SensitivityLabelsById(id string)(*ItemSecurityInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder) {
@@ -133,10 +133,8 @@ func (m *ItemSecurityInformationProtectionRequestBuilder) SensitivityLabelsById(
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["sensitivityLabel%2Did"] = id
-    }
-    return NewItemSecurityInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemSecurityInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property informationProtection for users
 func (m *ItemSecurityInformationProtectionRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSecurityInformationProtectionRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -173,7 +171,10 @@ func (m *ItemSecurityInformationProtectionRequestBuilder) ToPatchRequestInformat
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -14,7 +14,7 @@ type ItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder struct {
     urlTemplate string
 }
 // NewItemAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal instantiates a new AppManagementPolicyItemRequestBuilder and sets the default values.
-func NewItemAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder) {
+func NewItemAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, appManagementPolicyId *string)(*ItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder) {
     m := &ItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/applications/{application%2Did}/appManagementPolicies/{appManagementPolicy%2Did}";
@@ -22,17 +22,20 @@ func NewItemAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal(p
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if appManagementPolicyId != nil {
+        urlTplParams["appManagementPolicy%2Did"] = *appManagementPolicyId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder instantiates a new AppManagementPolicyItemRequestBuilder and sets the default values.
 func NewItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Ref provides operations to manage the collection of application entities.
 func (m *ItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder) Ref()(*ItemAppManagementPoliciesItemRefRequestBuilder) {
-    return NewItemAppManagementPoliciesItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemAppManagementPoliciesItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

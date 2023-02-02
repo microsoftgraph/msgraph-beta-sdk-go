@@ -47,7 +47,7 @@ type MonitoringAlertRulesAlertRuleItemRequestBuilderPatchRequestConfiguration st
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewMonitoringAlertRulesAlertRuleItemRequestBuilderInternal instantiates a new AlertRuleItemRequestBuilder and sets the default values.
-func NewMonitoringAlertRulesAlertRuleItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MonitoringAlertRulesAlertRuleItemRequestBuilder) {
+func NewMonitoringAlertRulesAlertRuleItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, alertRuleId *string)(*MonitoringAlertRulesAlertRuleItemRequestBuilder) {
     m := &MonitoringAlertRulesAlertRuleItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/monitoring/alertRules/{alertRule%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewMonitoringAlertRulesAlertRuleItemRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if alertRuleId != nil {
+        urlTplParams["alertRule%2Did"] = *alertRuleId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMonitoringAlertRulesAlertRuleItemRequestBuilder instantiates a new AlertRuleItemRequestBuilder and sets the default values.
 func NewMonitoringAlertRulesAlertRuleItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MonitoringAlertRulesAlertRuleItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewMonitoringAlertRulesAlertRuleItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewMonitoringAlertRulesAlertRuleItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property alertRules for deviceManagement
 func (m *MonitoringAlertRulesAlertRuleItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MonitoringAlertRulesAlertRuleItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *MonitoringAlertRulesAlertRuleItemRequestBuilder) ToPatchRequestInformat
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

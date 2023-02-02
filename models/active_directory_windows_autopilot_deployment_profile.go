@@ -17,8 +17,8 @@ func NewActiveDirectoryWindowsAutopilotDeploymentProfile()(*ActiveDirectoryWindo
     m := &ActiveDirectoryWindowsAutopilotDeploymentProfile{
         WindowsAutopilotDeploymentProfile: *NewWindowsAutopilotDeploymentProfile(),
     }
-    odataTypeValue := "#microsoft.graph.activeDirectoryWindowsAutopilotDeploymentProfile";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.activeDirectoryWindowsAutopilotDeploymentProfile"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateActiveDirectoryWindowsAutopilotDeploymentProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -47,7 +47,7 @@ type ItemProfileInterestsPersonInterestItemRequestBuilderPatchRequestConfigurati
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemProfileInterestsPersonInterestItemRequestBuilderInternal instantiates a new PersonInterestItemRequestBuilder and sets the default values.
-func NewItemProfileInterestsPersonInterestItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfileInterestsPersonInterestItemRequestBuilder) {
+func NewItemProfileInterestsPersonInterestItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, personInterestId *string)(*ItemProfileInterestsPersonInterestItemRequestBuilder) {
     m := &ItemProfileInterestsPersonInterestItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/profile/interests/{personInterest%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemProfileInterestsPersonInterestItemRequestBuilderInternal(pathParamet
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if personInterestId != nil {
+        urlTplParams["personInterest%2Did"] = *personInterestId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemProfileInterestsPersonInterestItemRequestBuilder instantiates a new PersonInterestItemRequestBuilder and sets the default values.
 func NewItemProfileInterestsPersonInterestItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfileInterestsPersonInterestItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemProfileInterestsPersonInterestItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemProfileInterestsPersonInterestItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property interests for users
 func (m *ItemProfileInterestsPersonInterestItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileInterestsPersonInterestItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemProfileInterestsPersonInterestItemRequestBuilder) ToPatchRequestInf
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

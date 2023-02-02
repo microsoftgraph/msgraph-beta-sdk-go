@@ -47,7 +47,7 @@ type ItemCustomQuestionsBookingCustomQuestionItemRequestBuilderPatchRequestConfi
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemCustomQuestionsBookingCustomQuestionItemRequestBuilderInternal instantiates a new BookingCustomQuestionItemRequestBuilder and sets the default values.
-func NewItemCustomQuestionsBookingCustomQuestionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCustomQuestionsBookingCustomQuestionItemRequestBuilder) {
+func NewItemCustomQuestionsBookingCustomQuestionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, bookingCustomQuestionId *string)(*ItemCustomQuestionsBookingCustomQuestionItemRequestBuilder) {
     m := &ItemCustomQuestionsBookingCustomQuestionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/customQuestions/{bookingCustomQuestion%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemCustomQuestionsBookingCustomQuestionItemRequestBuilderInternal(pathP
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if bookingCustomQuestionId != nil {
+        urlTplParams["bookingCustomQuestion%2Did"] = *bookingCustomQuestionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemCustomQuestionsBookingCustomQuestionItemRequestBuilder instantiates a new BookingCustomQuestionItemRequestBuilder and sets the default values.
 func NewItemCustomQuestionsBookingCustomQuestionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCustomQuestionsBookingCustomQuestionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemCustomQuestionsBookingCustomQuestionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemCustomQuestionsBookingCustomQuestionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property customQuestions for bookingBusinesses
 func (m *ItemCustomQuestionsBookingCustomQuestionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemCustomQuestionsBookingCustomQuestionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemCustomQuestionsBookingCustomQuestionItemRequestBuilder) ToPatchRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

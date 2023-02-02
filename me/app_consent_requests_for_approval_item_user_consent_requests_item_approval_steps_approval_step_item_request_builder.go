@@ -47,7 +47,7 @@ type AppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalStepsApprov
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewAppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilderInternal instantiates a new ApprovalStepItemRequestBuilder and sets the default values.
-func NewAppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilder) {
+func NewAppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, approvalStepId *string)(*AppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilder) {
     m := &AppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/appConsentRequestsForApproval/{appConsentRequest%2Did}/userConsentRequests/{userConsentRequest%2Did}/approval/steps/{approvalStep%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewAppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalStepsApp
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if approvalStepId != nil {
+        urlTplParams["approvalStep%2Did"] = *approvalStepId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilder instantiates a new ApprovalStepItemRequestBuilder and sets the default values.
 func NewAppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property steps for me
 func (m *AppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *AppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalStepsAp
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

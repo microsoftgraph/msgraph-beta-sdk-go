@@ -47,7 +47,7 @@ type ItemProgramControlsProgramControlItemRequestBuilderPatchRequestConfiguratio
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemProgramControlsProgramControlItemRequestBuilderInternal instantiates a new ProgramControlItemRequestBuilder and sets the default values.
-func NewItemProgramControlsProgramControlItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProgramControlsProgramControlItemRequestBuilder) {
+func NewItemProgramControlsProgramControlItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, programControlId1 *string)(*ItemProgramControlsProgramControlItemRequestBuilder) {
     m := &ItemProgramControlsProgramControlItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/programControls/{programControl%2Did}/program/controls/{programControl%2Did1}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemProgramControlsProgramControlItemRequestBuilderInternal(pathParamete
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if programControlId1 != nil {
+        urlTplParams["programControl%2Did1"] = *programControlId1
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemProgramControlsProgramControlItemRequestBuilder instantiates a new ProgramControlItemRequestBuilder and sets the default values.
 func NewItemProgramControlsProgramControlItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProgramControlsProgramControlItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemProgramControlsProgramControlItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemProgramControlsProgramControlItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property controls for programControls
 func (m *ItemProgramControlsProgramControlItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProgramControlsProgramControlItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemProgramControlsProgramControlItemRequestBuilder) ToPatchRequestInfo
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

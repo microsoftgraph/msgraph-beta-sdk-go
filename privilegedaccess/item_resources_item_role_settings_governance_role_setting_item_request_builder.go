@@ -47,7 +47,7 @@ type ItemResourcesItemRoleSettingsGovernanceRoleSettingItemRequestBuilderPatchRe
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemResourcesItemRoleSettingsGovernanceRoleSettingItemRequestBuilderInternal instantiates a new GovernanceRoleSettingItemRequestBuilder and sets the default values.
-func NewItemResourcesItemRoleSettingsGovernanceRoleSettingItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemResourcesItemRoleSettingsGovernanceRoleSettingItemRequestBuilder) {
+func NewItemResourcesItemRoleSettingsGovernanceRoleSettingItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, governanceRoleSettingId *string)(*ItemResourcesItemRoleSettingsGovernanceRoleSettingItemRequestBuilder) {
     m := &ItemResourcesItemRoleSettingsGovernanceRoleSettingItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}/resources/{governanceResource%2Did}/roleSettings/{governanceRoleSetting%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemResourcesItemRoleSettingsGovernanceRoleSettingItemRequestBuilderInte
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if governanceRoleSettingId != nil {
+        urlTplParams["governanceRoleSetting%2Did"] = *governanceRoleSettingId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemResourcesItemRoleSettingsGovernanceRoleSettingItemRequestBuilder instantiates a new GovernanceRoleSettingItemRequestBuilder and sets the default values.
 func NewItemResourcesItemRoleSettingsGovernanceRoleSettingItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemResourcesItemRoleSettingsGovernanceRoleSettingItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemResourcesItemRoleSettingsGovernanceRoleSettingItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemResourcesItemRoleSettingsGovernanceRoleSettingItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property roleSettings for privilegedAccess
 func (m *ItemResourcesItemRoleSettingsGovernanceRoleSettingItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemResourcesItemRoleSettingsGovernanceRoleSettingItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -121,11 +124,11 @@ func (m *ItemResourcesItemRoleSettingsGovernanceRoleSettingItemRequestBuilder) P
 }
 // Resource provides operations to manage the resource property of the microsoft.graph.governanceRoleSetting entity.
 func (m *ItemResourcesItemRoleSettingsGovernanceRoleSettingItemRequestBuilder) Resource()(*ItemResourcesItemRoleSettingsItemResourceRequestBuilder) {
-    return NewItemResourcesItemRoleSettingsItemResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemResourcesItemRoleSettingsItemResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RoleDefinition provides operations to manage the roleDefinition property of the microsoft.graph.governanceRoleSetting entity.
 func (m *ItemResourcesItemRoleSettingsGovernanceRoleSettingItemRequestBuilder) RoleDefinition()(*ItemResourcesItemRoleSettingsItemRoleDefinitionRequestBuilder) {
-    return NewItemResourcesItemRoleSettingsItemRoleDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemResourcesItemRoleSettingsItemRoleDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property roleSettings for privilegedAccess
 func (m *ItemResourcesItemRoleSettingsGovernanceRoleSettingItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemResourcesItemRoleSettingsGovernanceRoleSettingItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -162,7 +165,10 @@ func (m *ItemResourcesItemRoleSettingsGovernanceRoleSettingItemRequestBuilder) T
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

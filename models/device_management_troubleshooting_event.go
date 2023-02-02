@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementTroubleshootingEvent event representing an general failure.
+// DeviceManagementTroubleshootingEvent 
 type DeviceManagementTroubleshootingEvent struct {
     Entity
     // A set of string key and string value pairs which provides additional information on the Troubleshooting event
@@ -19,7 +19,7 @@ type DeviceManagementTroubleshootingEvent struct {
     // Object containing detailed information about the error and its remediation.
     troubleshootingErrorDetails DeviceManagementTroubleshootingErrorDetailsable
 }
-// NewDeviceManagementTroubleshootingEvent instantiates a new deviceManagementTroubleshootingEvent and sets the default values.
+// NewDeviceManagementTroubleshootingEvent instantiates a new DeviceManagementTroubleshootingEvent and sets the default values.
 func NewDeviceManagementTroubleshootingEvent()(*DeviceManagementTroubleshootingEvent) {
     m := &DeviceManagementTroubleshootingEvent{
         Entity: *NewEntity(),

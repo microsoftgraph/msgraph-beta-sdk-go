@@ -47,7 +47,7 @@ type ExactMatchUploadAgentsExactMatchUploadAgentItemRequestBuilderPatchRequestCo
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewExactMatchUploadAgentsExactMatchUploadAgentItemRequestBuilderInternal instantiates a new ExactMatchUploadAgentItemRequestBuilder and sets the default values.
-func NewExactMatchUploadAgentsExactMatchUploadAgentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExactMatchUploadAgentsExactMatchUploadAgentItemRequestBuilder) {
+func NewExactMatchUploadAgentsExactMatchUploadAgentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, exactMatchUploadAgentId *string)(*ExactMatchUploadAgentsExactMatchUploadAgentItemRequestBuilder) {
     m := &ExactMatchUploadAgentsExactMatchUploadAgentItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/dataClassification/exactMatchUploadAgents/{exactMatchUploadAgent%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewExactMatchUploadAgentsExactMatchUploadAgentItemRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if exactMatchUploadAgentId != nil {
+        urlTplParams["exactMatchUploadAgent%2Did"] = *exactMatchUploadAgentId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewExactMatchUploadAgentsExactMatchUploadAgentItemRequestBuilder instantiates a new ExactMatchUploadAgentItemRequestBuilder and sets the default values.
 func NewExactMatchUploadAgentsExactMatchUploadAgentItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExactMatchUploadAgentsExactMatchUploadAgentItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewExactMatchUploadAgentsExactMatchUploadAgentItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewExactMatchUploadAgentsExactMatchUploadAgentItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property exactMatchUploadAgents for dataClassification
 func (m *ExactMatchUploadAgentsExactMatchUploadAgentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ExactMatchUploadAgentsExactMatchUploadAgentItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ExactMatchUploadAgentsExactMatchUploadAgentItemRequestBuilder) ToPatchR
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

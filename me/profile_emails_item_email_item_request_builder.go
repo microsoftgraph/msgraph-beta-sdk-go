@@ -47,7 +47,7 @@ type ProfileEmailsItemEmailItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewProfileEmailsItemEmailItemRequestBuilderInternal instantiates a new ItemEmailItemRequestBuilder and sets the default values.
-func NewProfileEmailsItemEmailItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ProfileEmailsItemEmailItemRequestBuilder) {
+func NewProfileEmailsItemEmailItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, itemEmailId *string)(*ProfileEmailsItemEmailItemRequestBuilder) {
     m := &ProfileEmailsItemEmailItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/profile/emails/{itemEmail%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewProfileEmailsItemEmailItemRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if itemEmailId != nil {
+        urlTplParams["itemEmail%2Did"] = *itemEmailId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewProfileEmailsItemEmailItemRequestBuilder instantiates a new ItemEmailItemRequestBuilder and sets the default values.
 func NewProfileEmailsItemEmailItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ProfileEmailsItemEmailItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewProfileEmailsItemEmailItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewProfileEmailsItemEmailItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property emails for me
 func (m *ProfileEmailsItemEmailItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ProfileEmailsItemEmailItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ProfileEmailsItemEmailItemRequestBuilder) ToPatchRequestInformation(ctx
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

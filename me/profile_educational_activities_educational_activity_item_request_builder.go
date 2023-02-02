@@ -47,7 +47,7 @@ type ProfileEducationalActivitiesEducationalActivityItemRequestBuilderPatchReque
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewProfileEducationalActivitiesEducationalActivityItemRequestBuilderInternal instantiates a new EducationalActivityItemRequestBuilder and sets the default values.
-func NewProfileEducationalActivitiesEducationalActivityItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ProfileEducationalActivitiesEducationalActivityItemRequestBuilder) {
+func NewProfileEducationalActivitiesEducationalActivityItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, educationalActivityId *string)(*ProfileEducationalActivitiesEducationalActivityItemRequestBuilder) {
     m := &ProfileEducationalActivitiesEducationalActivityItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/profile/educationalActivities/{educationalActivity%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewProfileEducationalActivitiesEducationalActivityItemRequestBuilderInterna
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if educationalActivityId != nil {
+        urlTplParams["educationalActivity%2Did"] = *educationalActivityId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewProfileEducationalActivitiesEducationalActivityItemRequestBuilder instantiates a new EducationalActivityItemRequestBuilder and sets the default values.
 func NewProfileEducationalActivitiesEducationalActivityItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ProfileEducationalActivitiesEducationalActivityItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewProfileEducationalActivitiesEducationalActivityItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewProfileEducationalActivitiesEducationalActivityItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property educationalActivities for me
 func (m *ProfileEducationalActivitiesEducationalActivityItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ProfileEducationalActivitiesEducationalActivityItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ProfileEducationalActivitiesEducationalActivityItemRequestBuilder) ToPa
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

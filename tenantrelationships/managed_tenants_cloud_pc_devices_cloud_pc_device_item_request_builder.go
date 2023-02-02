@@ -47,7 +47,7 @@ type ManagedTenantsCloudPcDevicesCloudPcDeviceItemRequestBuilderPatchRequestConf
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewManagedTenantsCloudPcDevicesCloudPcDeviceItemRequestBuilderInternal instantiates a new CloudPcDeviceItemRequestBuilder and sets the default values.
-func NewManagedTenantsCloudPcDevicesCloudPcDeviceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsCloudPcDevicesCloudPcDeviceItemRequestBuilder) {
+func NewManagedTenantsCloudPcDevicesCloudPcDeviceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, cloudPcDeviceId *string)(*ManagedTenantsCloudPcDevicesCloudPcDeviceItemRequestBuilder) {
     m := &ManagedTenantsCloudPcDevicesCloudPcDeviceItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/cloudPcDevices/{cloudPcDevice%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewManagedTenantsCloudPcDevicesCloudPcDeviceItemRequestBuilderInternal(path
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if cloudPcDeviceId != nil {
+        urlTplParams["cloudPcDevice%2Did"] = *cloudPcDeviceId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedTenantsCloudPcDevicesCloudPcDeviceItemRequestBuilder instantiates a new CloudPcDeviceItemRequestBuilder and sets the default values.
 func NewManagedTenantsCloudPcDevicesCloudPcDeviceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsCloudPcDevicesCloudPcDeviceItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewManagedTenantsCloudPcDevicesCloudPcDeviceItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewManagedTenantsCloudPcDevicesCloudPcDeviceItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property cloudPcDevices for tenantRelationships
 func (m *ManagedTenantsCloudPcDevicesCloudPcDeviceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedTenantsCloudPcDevicesCloudPcDeviceItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ManagedTenantsCloudPcDevicesCloudPcDeviceItemRequestBuilder) ToPatchReq
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

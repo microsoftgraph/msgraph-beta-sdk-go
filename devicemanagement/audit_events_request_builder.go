@@ -60,8 +60,8 @@ func NewAuditEventsRequestBuilderInternal(pathParameters map[string]string, requ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAuditEventsRequestBuilder instantiates a new AuditEventsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewAuditEventsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 }
 // Count provides operations to count the resources in the collection.
 func (m *AuditEventsRequestBuilder) Count()(*AuditEventsCountRequestBuilder) {
-    return NewAuditEventsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAuditEventsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the Audit Events
 func (m *AuditEventsRequestBuilder) Get(ctx context.Context, requestConfiguration *AuditEventsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuditEventCollectionResponseable, error) {
@@ -93,13 +93,13 @@ func (m *AuditEventsRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuditEventCollectionResponseable), nil
 }
-// GetAuditActivityTypesWithCategory provides operations to call the getAuditActivityTypes method.
-func (m *AuditEventsRequestBuilder) GetAuditActivityTypesWithCategory(category *string)(*AuditEventsGetAuditActivityTypesWithCategoryRequestBuilder) {
-    return NewAuditEventsGetAuditActivityTypesWithCategoryRequestBuilderInternal(m.pathParameters, m.requestAdapter, category);
+// MicrosoftGraphGetAuditActivityTypesWithCategory provides operations to call the getAuditActivityTypes method.
+func (m *AuditEventsRequestBuilder) MicrosoftGraphGetAuditActivityTypesWithCategory(category *string)(*AuditEventsMicrosoftGraphGetAuditActivityTypesWithCategoryGetAuditActivityTypesWithCategoryRequestBuilder) {
+    return NewAuditEventsMicrosoftGraphGetAuditActivityTypesWithCategoryGetAuditActivityTypesWithCategoryRequestBuilderInternal(m.pathParameters, m.requestAdapter, category)
 }
-// GetAuditCategories provides operations to call the getAuditCategories method.
-func (m *AuditEventsRequestBuilder) GetAuditCategories()(*AuditEventsGetAuditCategoriesRequestBuilder) {
-    return NewAuditEventsGetAuditCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetAuditCategories provides operations to call the getAuditCategories method.
+func (m *AuditEventsRequestBuilder) MicrosoftGraphGetAuditCategories()(*AuditEventsMicrosoftGraphGetAuditCategoriesGetAuditCategoriesRequestBuilder) {
+    return NewAuditEventsMicrosoftGraphGetAuditCategoriesGetAuditCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to auditEvents for deviceManagement
 func (m *AuditEventsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuditEventable, requestConfiguration *AuditEventsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuditEventable, error) {
@@ -143,7 +143,10 @@ func (m *AuditEventsRequestBuilder) ToPostRequestInformation(ctx context.Context
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

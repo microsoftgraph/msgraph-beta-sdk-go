@@ -27,7 +27,7 @@ type CompanyDetail struct {
 func NewCompanyDetail()(*CompanyDetail) {
     m := &CompanyDetail{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCompanyDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

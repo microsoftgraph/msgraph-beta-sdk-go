@@ -47,7 +47,7 @@ type DeviceComplianceScriptsItemDeviceRunStatesDeviceComplianceScriptDeviceState
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewDeviceComplianceScriptsItemDeviceRunStatesDeviceComplianceScriptDeviceStateItemRequestBuilderInternal instantiates a new DeviceComplianceScriptDeviceStateItemRequestBuilder and sets the default values.
-func NewDeviceComplianceScriptsItemDeviceRunStatesDeviceComplianceScriptDeviceStateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceComplianceScriptsItemDeviceRunStatesDeviceComplianceScriptDeviceStateItemRequestBuilder) {
+func NewDeviceComplianceScriptsItemDeviceRunStatesDeviceComplianceScriptDeviceStateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, deviceComplianceScriptDeviceStateId *string)(*DeviceComplianceScriptsItemDeviceRunStatesDeviceComplianceScriptDeviceStateItemRequestBuilder) {
     m := &DeviceComplianceScriptsItemDeviceRunStatesDeviceComplianceScriptDeviceStateItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/deviceComplianceScripts/{deviceComplianceScript%2Did}/deviceRunStates/{deviceComplianceScriptDeviceState%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewDeviceComplianceScriptsItemDeviceRunStatesDeviceComplianceScriptDeviceSt
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if deviceComplianceScriptDeviceStateId != nil {
+        urlTplParams["deviceComplianceScriptDeviceState%2Did"] = *deviceComplianceScriptDeviceStateId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceComplianceScriptsItemDeviceRunStatesDeviceComplianceScriptDeviceStateItemRequestBuilder instantiates a new DeviceComplianceScriptDeviceStateItemRequestBuilder and sets the default values.
 func NewDeviceComplianceScriptsItemDeviceRunStatesDeviceComplianceScriptDeviceStateItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceComplianceScriptsItemDeviceRunStatesDeviceComplianceScriptDeviceStateItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewDeviceComplianceScriptsItemDeviceRunStatesDeviceComplianceScriptDeviceStateItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewDeviceComplianceScriptsItemDeviceRunStatesDeviceComplianceScriptDeviceStateItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property deviceRunStates for deviceManagement
 func (m *DeviceComplianceScriptsItemDeviceRunStatesDeviceComplianceScriptDeviceStateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DeviceComplianceScriptsItemDeviceRunStatesDeviceComplianceScriptDeviceStateItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -102,7 +105,7 @@ func (m *DeviceComplianceScriptsItemDeviceRunStatesDeviceComplianceScriptDeviceS
 }
 // ManagedDevice provides operations to manage the managedDevice property of the microsoft.graph.deviceComplianceScriptDeviceState entity.
 func (m *DeviceComplianceScriptsItemDeviceRunStatesDeviceComplianceScriptDeviceStateItemRequestBuilder) ManagedDevice()(*DeviceComplianceScriptsItemDeviceRunStatesItemManagedDeviceRequestBuilder) {
-    return NewDeviceComplianceScriptsItemDeviceRunStatesItemManagedDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceComplianceScriptsItemDeviceRunStatesItemManagedDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property deviceRunStates in deviceManagement
 func (m *DeviceComplianceScriptsItemDeviceRunStatesDeviceComplianceScriptDeviceStateItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScriptDeviceStateable, requestConfiguration *DeviceComplianceScriptsItemDeviceRunStatesDeviceComplianceScriptDeviceStateItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScriptDeviceStateable, error) {
@@ -158,7 +161,10 @@ func (m *DeviceComplianceScriptsItemDeviceRunStatesDeviceComplianceScriptDeviceS
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

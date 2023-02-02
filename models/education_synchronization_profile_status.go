@@ -19,7 +19,7 @@ type EducationSynchronizationProfileStatus struct {
     // Status message for the synchronization stage of the current profile.
     statusMessage *string
 }
-// NewEducationSynchronizationProfileStatus instantiates a new educationSynchronizationProfileStatus and sets the default values.
+// NewEducationSynchronizationProfileStatus instantiates a new EducationSynchronizationProfileStatus and sets the default values.
 func NewEducationSynchronizationProfileStatus()(*EducationSynchronizationProfileStatus) {
     m := &EducationSynchronizationProfileStatus{
         Entity: *NewEntity(),

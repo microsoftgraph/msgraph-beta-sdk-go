@@ -17,8 +17,8 @@ func NewWindowsKioskAzureADUser()(*WindowsKioskAzureADUser) {
     m := &WindowsKioskAzureADUser{
         WindowsKioskUser: *NewWindowsKioskUser(),
     }
-    odataTypeValue := "#microsoft.graph.windowsKioskAzureADUser";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsKioskAzureADUser"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsKioskAzureADUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

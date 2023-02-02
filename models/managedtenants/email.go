@@ -17,7 +17,7 @@ type Email struct {
 func NewEmail()(*Email) {
     m := &Email{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateEmailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

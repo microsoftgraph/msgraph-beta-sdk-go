@@ -47,7 +47,7 @@ type VirtualEndpointServicePlansCloudPcServicePlanItemRequestBuilderPatchRequest
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewVirtualEndpointServicePlansCloudPcServicePlanItemRequestBuilderInternal instantiates a new CloudPcServicePlanItemRequestBuilder and sets the default values.
-func NewVirtualEndpointServicePlansCloudPcServicePlanItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointServicePlansCloudPcServicePlanItemRequestBuilder) {
+func NewVirtualEndpointServicePlansCloudPcServicePlanItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, cloudPcServicePlanId *string)(*VirtualEndpointServicePlansCloudPcServicePlanItemRequestBuilder) {
     m := &VirtualEndpointServicePlansCloudPcServicePlanItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/servicePlans/{cloudPcServicePlan%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewVirtualEndpointServicePlansCloudPcServicePlanItemRequestBuilderInternal(
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if cloudPcServicePlanId != nil {
+        urlTplParams["cloudPcServicePlan%2Did"] = *cloudPcServicePlanId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewVirtualEndpointServicePlansCloudPcServicePlanItemRequestBuilder instantiates a new CloudPcServicePlanItemRequestBuilder and sets the default values.
 func NewVirtualEndpointServicePlansCloudPcServicePlanItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointServicePlansCloudPcServicePlanItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewVirtualEndpointServicePlansCloudPcServicePlanItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewVirtualEndpointServicePlansCloudPcServicePlanItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property servicePlans for deviceManagement
 func (m *VirtualEndpointServicePlansCloudPcServicePlanItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *VirtualEndpointServicePlansCloudPcServicePlanItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *VirtualEndpointServicePlansCloudPcServicePlanItemRequestBuilder) ToPatc
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

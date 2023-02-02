@@ -13,8 +13,8 @@ func NewWindowsAutopilotDeploymentProfilePolicySetItem()(*WindowsAutopilotDeploy
     m := &WindowsAutopilotDeploymentProfilePolicySetItem{
         PolicySetItem: *NewPolicySetItem(),
     }
-    odataTypeValue := "#microsoft.graph.windowsAutopilotDeploymentProfilePolicySetItem";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsAutopilotDeploymentProfilePolicySetItem"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsAutopilotDeploymentProfilePolicySetItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

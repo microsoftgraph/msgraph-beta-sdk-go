@@ -47,7 +47,7 @@ type TriggersRetentionEventsRetentionEventItemRequestBuilderPatchRequestConfigur
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewTriggersRetentionEventsRetentionEventItemRequestBuilderInternal instantiates a new RetentionEventItemRequestBuilder and sets the default values.
-func NewTriggersRetentionEventsRetentionEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TriggersRetentionEventsRetentionEventItemRequestBuilder) {
+func NewTriggersRetentionEventsRetentionEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, retentionEventId *string)(*TriggersRetentionEventsRetentionEventItemRequestBuilder) {
     m := &TriggersRetentionEventsRetentionEventItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/security/triggers/retentionEvents/{retentionEvent%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewTriggersRetentionEventsRetentionEventItemRequestBuilderInternal(pathPara
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if retentionEventId != nil {
+        urlTplParams["retentionEvent%2Did"] = *retentionEventId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTriggersRetentionEventsRetentionEventItemRequestBuilder instantiates a new RetentionEventItemRequestBuilder and sets the default values.
 func NewTriggersRetentionEventsRetentionEventItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TriggersRetentionEventsRetentionEventItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewTriggersRetentionEventsRetentionEventItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewTriggersRetentionEventsRetentionEventItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property retentionEvents for security
 func (m *TriggersRetentionEventsRetentionEventItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TriggersRetentionEventsRetentionEventItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -121,7 +124,7 @@ func (m *TriggersRetentionEventsRetentionEventItemRequestBuilder) Patch(ctx cont
 }
 // RetentionEventType provides operations to manage the retentionEventType property of the microsoft.graph.security.retentionEvent entity.
 func (m *TriggersRetentionEventsRetentionEventItemRequestBuilder) RetentionEventType()(*TriggersRetentionEventsItemRetentionEventTypeRequestBuilder) {
-    return NewTriggersRetentionEventsItemRetentionEventTypeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTriggersRetentionEventsItemRetentionEventTypeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property retentionEvents for security
 func (m *TriggersRetentionEventsRetentionEventItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TriggersRetentionEventsRetentionEventItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +161,10 @@ func (m *TriggersRetentionEventsRetentionEventItemRequestBuilder) ToPatchRequest
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

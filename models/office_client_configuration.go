@@ -24,7 +24,7 @@ type OfficeClientConfiguration struct {
     // Preference settings JSON string in binary format, these values can be overridden by the user.
     userPreferencePayload []byte
 }
-// NewOfficeClientConfiguration instantiates a new officeClientConfiguration and sets the default values.
+// NewOfficeClientConfiguration instantiates a new OfficeClientConfiguration and sets the default values.
 func NewOfficeClientConfiguration()(*OfficeClientConfiguration) {
     m := &OfficeClientConfiguration{
         Entity: *NewEntity(),

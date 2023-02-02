@@ -60,8 +60,8 @@ func NewItemApprovalsRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemApprovalsRequestBuilder instantiates a new ApprovalsRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewItemApprovalsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemApprovalsRequestBuilder) Count()(*ItemApprovalsCountRequestBuilder) {
-    return NewItemApprovalsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *ItemApprovalsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*ItemApprovalsFilterByCurrentUserWithOnRequestBuilder) {
-    return NewItemApprovalsFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
+    return NewItemApprovalsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get approvals from users
 func (m *ItemApprovalsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemApprovalsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalCollectionResponseable, error) {
@@ -96,6 +92,10 @@ func (m *ItemApprovalsRequestBuilder) Get(ctx context.Context, requestConfigurat
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalCollectionResponseable), nil
+}
+// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *ItemApprovalsRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*ItemApprovalsMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnRequestBuilder) {
+    return NewItemApprovalsMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Post create new navigation property to approvals for users
 func (m *ItemApprovalsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Approvalable, requestConfiguration *ItemApprovalsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Approvalable, error) {
@@ -139,7 +139,10 @@ func (m *ItemApprovalsRequestBuilder) ToPostRequestInformation(ctx context.Conte
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

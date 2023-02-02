@@ -33,7 +33,7 @@ type LifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilderGetReq
     QueryParameters *LifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilderGetQueryParameters
 }
 // NewLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilderInternal instantiates a new WorkflowTemplateItemRequestBuilder and sets the default values.
-func NewLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilder) {
+func NewLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, workflowTemplateId *string)(*LifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilder) {
     m := &LifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/identityGovernance/lifecycleWorkflows/workflowTemplates/{workflowTemplate%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilderInt
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if workflowTemplateId != nil {
+        urlTplParams["workflowTemplate%2Did"] = *workflowTemplateId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilder instantiates a new WorkflowTemplateItemRequestBuilder and sets the default values.
 func NewLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get the workflow templates in the lifecycle workflow instance.
 func (m *LifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.WorkflowTemplateable, error) {
@@ -72,7 +75,7 @@ func (m *LifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilder) 
 }
 // Tasks provides operations to manage the tasks property of the microsoft.graph.identityGovernance.workflowTemplate entity.
 func (m *LifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilder) Tasks()(*LifecycleWorkflowsWorkflowTemplatesItemTasksRequestBuilder) {
-    return NewLifecycleWorkflowsWorkflowTemplatesItemTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewLifecycleWorkflowsWorkflowTemplatesItemTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TasksById provides operations to manage the tasks property of the microsoft.graph.identityGovernance.workflowTemplate entity.
 func (m *LifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilder) TasksById(id string)(*LifecycleWorkflowsWorkflowTemplatesItemTasksTaskItemRequestBuilder) {
@@ -80,10 +83,8 @@ func (m *LifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilder) 
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["task%2Did"] = id
-    }
-    return NewLifecycleWorkflowsWorkflowTemplatesItemTasksTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewLifecycleWorkflowsWorkflowTemplatesItemTasksTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToGetRequestInformation the workflow templates in the lifecycle workflow instance.
 func (m *LifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

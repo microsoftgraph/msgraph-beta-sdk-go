@@ -47,7 +47,7 @@ type ManagedTenantsCloudPcsOverviewCloudPcOverviewTenantItemRequestBuilderPatchR
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewManagedTenantsCloudPcsOverviewCloudPcOverviewTenantItemRequestBuilderInternal instantiates a new CloudPcOverviewTenantItemRequestBuilder and sets the default values.
-func NewManagedTenantsCloudPcsOverviewCloudPcOverviewTenantItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsCloudPcsOverviewCloudPcOverviewTenantItemRequestBuilder) {
+func NewManagedTenantsCloudPcsOverviewCloudPcOverviewTenantItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, cloudPcOverviewTenantId *string)(*ManagedTenantsCloudPcsOverviewCloudPcOverviewTenantItemRequestBuilder) {
     m := &ManagedTenantsCloudPcsOverviewCloudPcOverviewTenantItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/cloudPcsOverview/{cloudPcOverview%2DtenantId}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewManagedTenantsCloudPcsOverviewCloudPcOverviewTenantItemRequestBuilderInt
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if cloudPcOverviewTenantId != nil {
+        urlTplParams["cloudPcOverview%2DtenantId"] = *cloudPcOverviewTenantId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedTenantsCloudPcsOverviewCloudPcOverviewTenantItemRequestBuilder instantiates a new CloudPcOverviewTenantItemRequestBuilder and sets the default values.
 func NewManagedTenantsCloudPcsOverviewCloudPcOverviewTenantItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsCloudPcsOverviewCloudPcOverviewTenantItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewManagedTenantsCloudPcsOverviewCloudPcOverviewTenantItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewManagedTenantsCloudPcsOverviewCloudPcOverviewTenantItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property cloudPcsOverview for tenantRelationships
 func (m *ManagedTenantsCloudPcsOverviewCloudPcOverviewTenantItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedTenantsCloudPcsOverviewCloudPcOverviewTenantItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ManagedTenantsCloudPcsOverviewCloudPcOverviewTenantItemRequestBuilder) 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

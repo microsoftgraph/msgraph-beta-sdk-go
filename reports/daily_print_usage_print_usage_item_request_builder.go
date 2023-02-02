@@ -47,7 +47,7 @@ type DailyPrintUsagePrintUsageItemRequestBuilderPatchRequestConfiguration struct
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewDailyPrintUsagePrintUsageItemRequestBuilderInternal instantiates a new PrintUsageItemRequestBuilder and sets the default values.
-func NewDailyPrintUsagePrintUsageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DailyPrintUsagePrintUsageItemRequestBuilder) {
+func NewDailyPrintUsagePrintUsageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, printUsageId *string)(*DailyPrintUsagePrintUsageItemRequestBuilder) {
     m := &DailyPrintUsagePrintUsageItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/reports/dailyPrintUsage/{printUsage%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewDailyPrintUsagePrintUsageItemRequestBuilderInternal(pathParameters map[s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if printUsageId != nil {
+        urlTplParams["printUsage%2Did"] = *printUsageId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDailyPrintUsagePrintUsageItemRequestBuilder instantiates a new PrintUsageItemRequestBuilder and sets the default values.
 func NewDailyPrintUsagePrintUsageItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DailyPrintUsagePrintUsageItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewDailyPrintUsagePrintUsageItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewDailyPrintUsagePrintUsageItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property dailyPrintUsage for reports
 func (m *DailyPrintUsagePrintUsageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DailyPrintUsagePrintUsageItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *DailyPrintUsagePrintUsageItemRequestBuilder) ToPatchRequestInformation(
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

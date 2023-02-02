@@ -48,7 +48,7 @@ type GroupPolicyDefinitionsItemNextVersionDefinitionRequestBuilderPatchRequestCo
 }
 // Category provides operations to manage the category property of the microsoft.graph.groupPolicyDefinition entity.
 func (m *GroupPolicyDefinitionsItemNextVersionDefinitionRequestBuilder) Category()(*GroupPolicyDefinitionsItemNextVersionDefinitionCategoryRequestBuilder) {
-    return NewGroupPolicyDefinitionsItemNextVersionDefinitionCategoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyDefinitionsItemNextVersionDefinitionCategoryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewGroupPolicyDefinitionsItemNextVersionDefinitionRequestBuilderInternal instantiates a new NextVersionDefinitionRequestBuilder and sets the default values.
 func NewGroupPolicyDefinitionsItemNextVersionDefinitionRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyDefinitionsItemNextVersionDefinitionRequestBuilder) {
@@ -59,8 +59,8 @@ func NewGroupPolicyDefinitionsItemNextVersionDefinitionRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGroupPolicyDefinitionsItemNextVersionDefinitionRequestBuilder instantiates a new NextVersionDefinitionRequestBuilder and sets the default values.
@@ -71,7 +71,7 @@ func NewGroupPolicyDefinitionsItemNextVersionDefinitionRequestBuilder(rawUrl str
 }
 // DefinitionFile provides operations to manage the definitionFile property of the microsoft.graph.groupPolicyDefinition entity.
 func (m *GroupPolicyDefinitionsItemNextVersionDefinitionRequestBuilder) DefinitionFile()(*GroupPolicyDefinitionsItemNextVersionDefinitionDefinitionFileRequestBuilder) {
-    return NewGroupPolicyDefinitionsItemNextVersionDefinitionDefinitionFileRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyDefinitionsItemNextVersionDefinitionDefinitionFileRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property nextVersionDefinition for deviceManagement
 func (m *GroupPolicyDefinitionsItemNextVersionDefinitionRequestBuilder) Delete(ctx context.Context, requestConfiguration *GroupPolicyDefinitionsItemNextVersionDefinitionRequestBuilderDeleteRequestConfiguration)(error) {
@@ -129,7 +129,7 @@ func (m *GroupPolicyDefinitionsItemNextVersionDefinitionRequestBuilder) Patch(ct
 }
 // Presentations provides operations to manage the presentations property of the microsoft.graph.groupPolicyDefinition entity.
 func (m *GroupPolicyDefinitionsItemNextVersionDefinitionRequestBuilder) Presentations()(*GroupPolicyDefinitionsItemNextVersionDefinitionPresentationsRequestBuilder) {
-    return NewGroupPolicyDefinitionsItemNextVersionDefinitionPresentationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyDefinitionsItemNextVersionDefinitionPresentationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PresentationsById provides operations to manage the presentations property of the microsoft.graph.groupPolicyDefinition entity.
 func (m *GroupPolicyDefinitionsItemNextVersionDefinitionRequestBuilder) PresentationsById(id string)(*GroupPolicyDefinitionsItemNextVersionDefinitionPresentationsGroupPolicyPresentationItemRequestBuilder) {
@@ -137,14 +137,12 @@ func (m *GroupPolicyDefinitionsItemNextVersionDefinitionRequestBuilder) Presenta
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["groupPolicyPresentation%2Did"] = id
-    }
-    return NewGroupPolicyDefinitionsItemNextVersionDefinitionPresentationsGroupPolicyPresentationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewGroupPolicyDefinitionsItemNextVersionDefinitionPresentationsGroupPolicyPresentationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // PreviousVersionDefinition provides operations to manage the previousVersionDefinition property of the microsoft.graph.groupPolicyDefinition entity.
 func (m *GroupPolicyDefinitionsItemNextVersionDefinitionRequestBuilder) PreviousVersionDefinition()(*GroupPolicyDefinitionsItemNextVersionDefinitionPreviousVersionDefinitionRequestBuilder) {
-    return NewGroupPolicyDefinitionsItemNextVersionDefinitionPreviousVersionDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyDefinitionsItemNextVersionDefinitionPreviousVersionDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property nextVersionDefinition for deviceManagement
 func (m *GroupPolicyDefinitionsItemNextVersionDefinitionRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *GroupPolicyDefinitionsItemNextVersionDefinitionRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -181,7 +179,10 @@ func (m *GroupPolicyDefinitionsItemNextVersionDefinitionRequestBuilder) ToPatchR
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

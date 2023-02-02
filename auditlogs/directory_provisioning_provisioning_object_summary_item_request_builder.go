@@ -47,7 +47,7 @@ type DirectoryProvisioningProvisioningObjectSummaryItemRequestBuilderPatchReques
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewDirectoryProvisioningProvisioningObjectSummaryItemRequestBuilderInternal instantiates a new ProvisioningObjectSummaryItemRequestBuilder and sets the default values.
-func NewDirectoryProvisioningProvisioningObjectSummaryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryProvisioningProvisioningObjectSummaryItemRequestBuilder) {
+func NewDirectoryProvisioningProvisioningObjectSummaryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, provisioningObjectSummaryId *string)(*DirectoryProvisioningProvisioningObjectSummaryItemRequestBuilder) {
     m := &DirectoryProvisioningProvisioningObjectSummaryItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/auditLogs/directoryProvisioning/{provisioningObjectSummary%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewDirectoryProvisioningProvisioningObjectSummaryItemRequestBuilderInternal
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if provisioningObjectSummaryId != nil {
+        urlTplParams["provisioningObjectSummary%2Did"] = *provisioningObjectSummaryId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDirectoryProvisioningProvisioningObjectSummaryItemRequestBuilder instantiates a new ProvisioningObjectSummaryItemRequestBuilder and sets the default values.
 func NewDirectoryProvisioningProvisioningObjectSummaryItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryProvisioningProvisioningObjectSummaryItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewDirectoryProvisioningProvisioningObjectSummaryItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewDirectoryProvisioningProvisioningObjectSummaryItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property directoryProvisioning for auditLogs
 func (m *DirectoryProvisioningProvisioningObjectSummaryItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DirectoryProvisioningProvisioningObjectSummaryItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *DirectoryProvisioningProvisioningObjectSummaryItemRequestBuilder) ToPat
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

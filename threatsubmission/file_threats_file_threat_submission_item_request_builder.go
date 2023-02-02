@@ -47,7 +47,7 @@ type FileThreatsFileThreatSubmissionItemRequestBuilderPatchRequestConfiguration 
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewFileThreatsFileThreatSubmissionItemRequestBuilderInternal instantiates a new FileThreatSubmissionItemRequestBuilder and sets the default values.
-func NewFileThreatsFileThreatSubmissionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FileThreatsFileThreatSubmissionItemRequestBuilder) {
+func NewFileThreatsFileThreatSubmissionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, fileThreatSubmissionId *string)(*FileThreatsFileThreatSubmissionItemRequestBuilder) {
     m := &FileThreatsFileThreatSubmissionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/threatSubmission/fileThreats/{fileThreatSubmission%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewFileThreatsFileThreatSubmissionItemRequestBuilderInternal(pathParameters
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if fileThreatSubmissionId != nil {
+        urlTplParams["fileThreatSubmission%2Did"] = *fileThreatSubmissionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewFileThreatsFileThreatSubmissionItemRequestBuilder instantiates a new FileThreatSubmissionItemRequestBuilder and sets the default values.
 func NewFileThreatsFileThreatSubmissionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FileThreatsFileThreatSubmissionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewFileThreatsFileThreatSubmissionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewFileThreatsFileThreatSubmissionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property fileThreats for threatSubmission
 func (m *FileThreatsFileThreatSubmissionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *FileThreatsFileThreatSubmissionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *FileThreatsFileThreatSubmissionItemRequestBuilder) ToPatchRequestInform
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

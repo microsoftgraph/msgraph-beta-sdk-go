@@ -60,8 +60,8 @@ func NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignment
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesRequestBuilder instantiates a new AccessPackageAssignmentResourceRolesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignment
 }
 // Count provides operations to count the resources in the collection.
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesRequestBuilder) Count()(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesCountRequestBuilder) {
-    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the resource roles delivered to the target user for this assignment. Read-only. Nullable.
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleCollectionResponseable, error) {
@@ -93,9 +93,9 @@ func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmen
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleCollectionResponseable), nil
 }
-// My provides operations to call the My method.
-func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesRequestBuilder) My()(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesMyRequestBuilder) {
-    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesMyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphMy provides operations to call the My method.
+func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesRequestBuilder) MicrosoftGraphMy()(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesMicrosoftGraphMyMyRequestBuilder) {
+    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesMicrosoftGraphMyMyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to accessPackageAssignmentResourceRoles for identityGovernance
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleable, requestConfiguration *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleable, error) {
@@ -139,7 +139,10 @@ func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmen
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

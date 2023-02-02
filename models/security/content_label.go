@@ -22,7 +22,7 @@ type ContentLabel struct {
 func NewContentLabel()(*ContentLabel) {
     m := &ContentLabel{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateContentLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

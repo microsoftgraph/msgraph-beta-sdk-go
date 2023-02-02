@@ -17,7 +17,7 @@ type UserPrint struct {
 func NewUserPrint()(*UserPrint) {
     m := &UserPrint{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateUserPrintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

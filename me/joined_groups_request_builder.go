@@ -49,8 +49,8 @@ func NewJoinedGroupsRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewJoinedGroupsRequestBuilder instantiates a new JoinedGroupsRequestBuilder and sets the default values.
@@ -58,14 +58,6 @@ func NewJoinedGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewJoinedGroupsRequestBuilderInternal(urlParams, requestAdapter)
-}
-// Delta provides operations to call the delta method.
-func (m *JoinedGroupsRequestBuilder) Delta()(*JoinedGroupsDeltaRequestBuilder) {
-    return NewJoinedGroupsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// EvaluateDynamicMembership provides operations to call the evaluateDynamicMembership method.
-func (m *JoinedGroupsRequestBuilder) EvaluateDynamicMembership()(*JoinedGroupsEvaluateDynamicMembershipRequestBuilder) {
-    return NewJoinedGroupsEvaluateDynamicMembershipRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get joinedGroups from me
 func (m *JoinedGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *JoinedGroupsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable, error) {
@@ -86,13 +78,25 @@ func (m *JoinedGroupsRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable), nil
 }
-// GetByIds provides operations to call the getByIds method.
-func (m *JoinedGroupsRequestBuilder) GetByIds()(*JoinedGroupsGetByIdsRequestBuilder) {
-    return NewJoinedGroupsGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphDelta provides operations to call the delta method.
+func (m *JoinedGroupsRequestBuilder) MicrosoftGraphDelta()(*JoinedGroupsMicrosoftGraphDeltaDeltaRequestBuilder) {
+    return NewJoinedGroupsMicrosoftGraphDeltaDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
-func (m *JoinedGroupsRequestBuilder) GetUserOwnedObjects()(*JoinedGroupsGetUserOwnedObjectsRequestBuilder) {
-    return NewJoinedGroupsGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphEvaluateDynamicMembership provides operations to call the evaluateDynamicMembership method.
+func (m *JoinedGroupsRequestBuilder) MicrosoftGraphEvaluateDynamicMembership()(*JoinedGroupsMicrosoftGraphEvaluateDynamicMembershipEvaluateDynamicMembershipRequestBuilder) {
+    return NewJoinedGroupsMicrosoftGraphEvaluateDynamicMembershipEvaluateDynamicMembershipRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphGetByIds provides operations to call the getByIds method.
+func (m *JoinedGroupsRequestBuilder) MicrosoftGraphGetByIds()(*JoinedGroupsMicrosoftGraphGetByIdsGetByIdsRequestBuilder) {
+    return NewJoinedGroupsMicrosoftGraphGetByIdsGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphGetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
+func (m *JoinedGroupsRequestBuilder) MicrosoftGraphGetUserOwnedObjects()(*JoinedGroupsMicrosoftGraphGetUserOwnedObjectsGetUserOwnedObjectsRequestBuilder) {
+    return NewJoinedGroupsMicrosoftGraphGetUserOwnedObjectsGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphValidateProperties provides operations to call the validateProperties method.
+func (m *JoinedGroupsRequestBuilder) MicrosoftGraphValidateProperties()(*JoinedGroupsMicrosoftGraphValidatePropertiesValidatePropertiesRequestBuilder) {
+    return NewJoinedGroupsMicrosoftGraphValidatePropertiesValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation get joinedGroups from me
 func (m *JoinedGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *JoinedGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -109,8 +113,4 @@ func (m *JoinedGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// ValidateProperties provides operations to call the validateProperties method.
-func (m *JoinedGroupsRequestBuilder) ValidateProperties()(*JoinedGroupsValidatePropertiesRequestBuilder) {
-    return NewJoinedGroupsValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

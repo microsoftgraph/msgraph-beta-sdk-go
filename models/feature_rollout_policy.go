@@ -20,7 +20,7 @@ type FeatureRolloutPolicy struct {
     // Indicates whether the feature rollout is enabled.
     isEnabled *bool
 }
-// NewFeatureRolloutPolicy instantiates a new featureRolloutPolicy and sets the default values.
+// NewFeatureRolloutPolicy instantiates a new FeatureRolloutPolicy and sets the default values.
 func NewFeatureRolloutPolicy()(*FeatureRolloutPolicy) {
     m := &FeatureRolloutPolicy{
         Entity: *NewEntity(),

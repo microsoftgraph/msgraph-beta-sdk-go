@@ -23,7 +23,7 @@ type PasswordSingleSignOnField struct {
 func NewPasswordSingleSignOnField()(*PasswordSingleSignOnField) {
     m := &PasswordSingleSignOnField{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePasswordSingleSignOnFieldFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

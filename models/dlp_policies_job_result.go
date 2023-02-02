@@ -22,7 +22,7 @@ type DlpPoliciesJobResult struct {
 func NewDlpPoliciesJobResult()(*DlpPoliciesJobResult) {
     m := &DlpPoliciesJobResult{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDlpPoliciesJobResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

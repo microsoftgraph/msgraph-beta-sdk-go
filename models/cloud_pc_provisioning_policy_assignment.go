@@ -10,7 +10,7 @@ type CloudPcProvisioningPolicyAssignment struct {
     // The assignment target for the provisioning policy. Currently, the only target supported for this policy is a user group. For details, see cloudPcManagementGroupAssignmentTarget.
     target CloudPcManagementAssignmentTargetable
 }
-// NewCloudPcProvisioningPolicyAssignment instantiates a new cloudPcProvisioningPolicyAssignment and sets the default values.
+// NewCloudPcProvisioningPolicyAssignment instantiates a new CloudPcProvisioningPolicyAssignment and sets the default values.
 func NewCloudPcProvisioningPolicyAssignment()(*CloudPcProvisioningPolicyAssignment) {
     m := &CloudPcProvisioningPolicyAssignment{
         Entity: *NewEntity(),

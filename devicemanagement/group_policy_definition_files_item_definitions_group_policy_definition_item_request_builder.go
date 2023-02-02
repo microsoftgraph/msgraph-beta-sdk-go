@@ -33,7 +33,7 @@ type GroupPolicyDefinitionFilesItemDefinitionsGroupPolicyDefinitionItemRequestBu
     QueryParameters *GroupPolicyDefinitionFilesItemDefinitionsGroupPolicyDefinitionItemRequestBuilderGetQueryParameters
 }
 // NewGroupPolicyDefinitionFilesItemDefinitionsGroupPolicyDefinitionItemRequestBuilderInternal instantiates a new GroupPolicyDefinitionItemRequestBuilder and sets the default values.
-func NewGroupPolicyDefinitionFilesItemDefinitionsGroupPolicyDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyDefinitionFilesItemDefinitionsGroupPolicyDefinitionItemRequestBuilder) {
+func NewGroupPolicyDefinitionFilesItemDefinitionsGroupPolicyDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, groupPolicyDefinitionId *string)(*GroupPolicyDefinitionFilesItemDefinitionsGroupPolicyDefinitionItemRequestBuilder) {
     m := &GroupPolicyDefinitionFilesItemDefinitionsGroupPolicyDefinitionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/groupPolicyDefinitionFiles/{groupPolicyDefinitionFile%2Did}/definitions/{groupPolicyDefinition%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewGroupPolicyDefinitionFilesItemDefinitionsGroupPolicyDefinitionItemReques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if groupPolicyDefinitionId != nil {
+        urlTplParams["groupPolicyDefinition%2Did"] = *groupPolicyDefinitionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGroupPolicyDefinitionFilesItemDefinitionsGroupPolicyDefinitionItemRequestBuilder instantiates a new GroupPolicyDefinitionItemRequestBuilder and sets the default values.
 func NewGroupPolicyDefinitionFilesItemDefinitionsGroupPolicyDefinitionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyDefinitionFilesItemDefinitionsGroupPolicyDefinitionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewGroupPolicyDefinitionFilesItemDefinitionsGroupPolicyDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewGroupPolicyDefinitionFilesItemDefinitionsGroupPolicyDefinitionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get the group policy definitions associated with the file.
 func (m *GroupPolicyDefinitionFilesItemDefinitionsGroupPolicyDefinitionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *GroupPolicyDefinitionFilesItemDefinitionsGroupPolicyDefinitionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyDefinitionable, error) {

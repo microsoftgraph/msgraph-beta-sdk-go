@@ -47,7 +47,7 @@ type ItemProfileAwardsPersonAwardItemRequestBuilderPatchRequestConfiguration str
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemProfileAwardsPersonAwardItemRequestBuilderInternal instantiates a new PersonAwardItemRequestBuilder and sets the default values.
-func NewItemProfileAwardsPersonAwardItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfileAwardsPersonAwardItemRequestBuilder) {
+func NewItemProfileAwardsPersonAwardItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, personAwardId *string)(*ItemProfileAwardsPersonAwardItemRequestBuilder) {
     m := &ItemProfileAwardsPersonAwardItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/profile/awards/{personAward%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemProfileAwardsPersonAwardItemRequestBuilderInternal(pathParameters ma
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if personAwardId != nil {
+        urlTplParams["personAward%2Did"] = *personAwardId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemProfileAwardsPersonAwardItemRequestBuilder instantiates a new PersonAwardItemRequestBuilder and sets the default values.
 func NewItemProfileAwardsPersonAwardItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfileAwardsPersonAwardItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemProfileAwardsPersonAwardItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemProfileAwardsPersonAwardItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property awards for users
 func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileAwardsPersonAwardItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) ToPatchRequestInformati
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

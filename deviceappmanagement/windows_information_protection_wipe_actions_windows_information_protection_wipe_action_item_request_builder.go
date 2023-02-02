@@ -47,7 +47,7 @@ type WindowsInformationProtectionWipeActionsWindowsInformationProtectionWipeActi
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewWindowsInformationProtectionWipeActionsWindowsInformationProtectionWipeActionItemRequestBuilderInternal instantiates a new WindowsInformationProtectionWipeActionItemRequestBuilder and sets the default values.
-func NewWindowsInformationProtectionWipeActionsWindowsInformationProtectionWipeActionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsInformationProtectionWipeActionsWindowsInformationProtectionWipeActionItemRequestBuilder) {
+func NewWindowsInformationProtectionWipeActionsWindowsInformationProtectionWipeActionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, windowsInformationProtectionWipeActionId *string)(*WindowsInformationProtectionWipeActionsWindowsInformationProtectionWipeActionItemRequestBuilder) {
     m := &WindowsInformationProtectionWipeActionsWindowsInformationProtectionWipeActionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceAppManagement/windowsInformationProtectionWipeActions/{windowsInformationProtectionWipeAction%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewWindowsInformationProtectionWipeActionsWindowsInformationProtectionWipeA
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if windowsInformationProtectionWipeActionId != nil {
+        urlTplParams["windowsInformationProtectionWipeAction%2Did"] = *windowsInformationProtectionWipeActionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsInformationProtectionWipeActionsWindowsInformationProtectionWipeActionItemRequestBuilder instantiates a new WindowsInformationProtectionWipeActionItemRequestBuilder and sets the default values.
 func NewWindowsInformationProtectionWipeActionsWindowsInformationProtectionWipeActionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsInformationProtectionWipeActionsWindowsInformationProtectionWipeActionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewWindowsInformationProtectionWipeActionsWindowsInformationProtectionWipeActionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewWindowsInformationProtectionWipeActionsWindowsInformationProtectionWipeActionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property windowsInformationProtectionWipeActions for deviceAppManagement
 func (m *WindowsInformationProtectionWipeActionsWindowsInformationProtectionWipeActionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *WindowsInformationProtectionWipeActionsWindowsInformationProtectionWipeActionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *WindowsInformationProtectionWipeActionsWindowsInformationProtectionWipe
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

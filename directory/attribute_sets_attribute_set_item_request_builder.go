@@ -47,7 +47,7 @@ type AttributeSetsAttributeSetItemRequestBuilderPatchRequestConfiguration struct
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewAttributeSetsAttributeSetItemRequestBuilderInternal instantiates a new AttributeSetItemRequestBuilder and sets the default values.
-func NewAttributeSetsAttributeSetItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AttributeSetsAttributeSetItemRequestBuilder) {
+func NewAttributeSetsAttributeSetItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, attributeSetId *string)(*AttributeSetsAttributeSetItemRequestBuilder) {
     m := &AttributeSetsAttributeSetItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/directory/attributeSets/{attributeSet%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewAttributeSetsAttributeSetItemRequestBuilderInternal(pathParameters map[s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if attributeSetId != nil {
+        urlTplParams["attributeSet%2Did"] = *attributeSetId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAttributeSetsAttributeSetItemRequestBuilder instantiates a new AttributeSetItemRequestBuilder and sets the default values.
 func NewAttributeSetsAttributeSetItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AttributeSetsAttributeSetItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAttributeSetsAttributeSetItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAttributeSetsAttributeSetItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property attributeSets for directory
 func (m *AttributeSetsAttributeSetItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AttributeSetsAttributeSetItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *AttributeSetsAttributeSetItemRequestBuilder) ToPatchRequestInformation(
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

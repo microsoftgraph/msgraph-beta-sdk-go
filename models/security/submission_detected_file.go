@@ -19,7 +19,7 @@ type SubmissionDetectedFile struct {
 func NewSubmissionDetectedFile()(*SubmissionDetectedFile) {
     m := &SubmissionDetectedFile{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSubmissionDetectedFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -35,7 +35,7 @@ type IdentityContainer struct {
 func NewIdentityContainer()(*IdentityContainer) {
     m := &IdentityContainer{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateIdentityContainerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

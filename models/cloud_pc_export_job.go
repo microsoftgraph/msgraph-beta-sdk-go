@@ -18,7 +18,7 @@ type CloudPcExportJob struct {
     filter *string
     // The format of the exported report.
     format *string
-    // The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, unknownFutureValue.
+    // The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, sharedUseLicenseUsageReport, sharedUseLicenseUsageRealTimeReport, or unknownFutureValue.
     reportName *CloudPcReportName
     // The date and time when the export job was requested.
     requestDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -145,7 +145,7 @@ func (m *CloudPcExportJob) GetFilter()(*string) {
 func (m *CloudPcExportJob) GetFormat()(*string) {
     return m.format
 }
-// GetReportName gets the reportName property value. The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, unknownFutureValue.
+// GetReportName gets the reportName property value. The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, sharedUseLicenseUsageReport, sharedUseLicenseUsageRealTimeReport, or unknownFutureValue.
 func (m *CloudPcExportJob) GetReportName()(*CloudPcReportName) {
     return m.reportName
 }
@@ -235,7 +235,7 @@ func (m *CloudPcExportJob) SetFilter(value *string)() {
 func (m *CloudPcExportJob) SetFormat(value *string)() {
     m.format = value
 }
-// SetReportName sets the reportName property value. The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, unknownFutureValue.
+// SetReportName sets the reportName property value. The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, sharedUseLicenseUsageReport, sharedUseLicenseUsageRealTimeReport, or unknownFutureValue.
 func (m *CloudPcExportJob) SetReportName(value *CloudPcReportName)() {
     m.reportName = value
 }

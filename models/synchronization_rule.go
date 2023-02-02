@@ -31,7 +31,7 @@ type SynchronizationRule struct {
 func NewSynchronizationRule()(*SynchronizationRule) {
     m := &SynchronizationRule{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSynchronizationRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

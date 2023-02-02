@@ -47,7 +47,7 @@ type CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemPicturePicture
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemPicturePictureItemRequestBuilderInternal instantiates a new PictureItemRequestBuilder and sets the default values.
-func NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemPicturePictureItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemPicturePictureItemRequestBuilder) {
+func NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemPicturePictureItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, pictureId *string)(*CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemPicturePictureItemRequestBuilder) {
     m := &CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemPicturePictureItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/financials/companies/{company%2Did}/purchaseInvoices/{purchaseInvoice%2Did}/purchaseInvoiceLines/{purchaseInvoiceLine%2Did}/item/picture/{picture%2Did}{?%24select,%24expand}";
@@ -55,19 +55,22 @@ func NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemPicturePict
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if pictureId != nil {
+        urlTplParams["picture%2Did"] = *pictureId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemPicturePictureItemRequestBuilder instantiates a new PictureItemRequestBuilder and sets the default values.
 func NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemPicturePictureItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemPicturePictureItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemPicturePictureItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemPicturePictureItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Content provides operations to manage the media for the financials entity.
 func (m *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemPicturePictureItemRequestBuilder) Content()(*CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemPictureItemContentRequestBuilder) {
-    return NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemPictureItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemPictureItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property picture for financials
 func (m *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemPicturePictureItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemPicturePictureItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -158,7 +161,10 @@ func (m *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemPicturePic
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

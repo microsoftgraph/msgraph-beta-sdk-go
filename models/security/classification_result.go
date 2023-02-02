@@ -21,7 +21,7 @@ type ClassificationResult struct {
 func NewClassificationResult()(*ClassificationResult) {
     m := &ClassificationResult{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateClassificationResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

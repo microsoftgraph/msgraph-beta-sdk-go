@@ -47,7 +47,7 @@ type ItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestB
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilderInternal instantiates a new InformationProtectionLabelItemRequestBuilder and sets the default values.
-func NewItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder) {
+func NewItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, informationProtectionLabelId *string)(*ItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder) {
     m := &ItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/informationProtection/policy/labels/{informationProtectionLabel%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemInformationProtectionPolicyLabelsInformationProtectionLabelItemReque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if informationProtectionLabelId != nil {
+        urlTplParams["informationProtectionLabel%2Did"] = *informationProtectionLabelId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder instantiates a new InformationProtectionLabelItemRequestBuilder and sets the default values.
 func NewItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property labels for users
 func (m *ItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

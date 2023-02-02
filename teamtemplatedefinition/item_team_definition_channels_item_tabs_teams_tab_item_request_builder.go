@@ -47,7 +47,7 @@ type ItemTeamDefinitionChannelsItemTabsTeamsTabItemRequestBuilderPatchRequestCon
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemTeamDefinitionChannelsItemTabsTeamsTabItemRequestBuilderInternal instantiates a new TeamsTabItemRequestBuilder and sets the default values.
-func NewItemTeamDefinitionChannelsItemTabsTeamsTabItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionChannelsItemTabsTeamsTabItemRequestBuilder) {
+func NewItemTeamDefinitionChannelsItemTabsTeamsTabItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, teamsTabId *string)(*ItemTeamDefinitionChannelsItemTabsTeamsTabItemRequestBuilder) {
     m := &ItemTeamDefinitionChannelsItemTabsTeamsTabItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/channels/{channel%2Did}/tabs/{teamsTab%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemTeamDefinitionChannelsItemTabsTeamsTabItemRequestBuilderInternal(pat
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if teamsTabId != nil {
+        urlTplParams["teamsTab%2Did"] = *teamsTabId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTeamDefinitionChannelsItemTabsTeamsTabItemRequestBuilder instantiates a new TeamsTabItemRequestBuilder and sets the default values.
 func NewItemTeamDefinitionChannelsItemTabsTeamsTabItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionChannelsItemTabsTeamsTabItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemTeamDefinitionChannelsItemTabsTeamsTabItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemTeamDefinitionChannelsItemTabsTeamsTabItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property tabs for teamTemplateDefinition
 func (m *ItemTeamDefinitionChannelsItemTabsTeamsTabItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsItemTabsTeamsTabItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -121,7 +124,7 @@ func (m *ItemTeamDefinitionChannelsItemTabsTeamsTabItemRequestBuilder) Patch(ctx
 }
 // TeamsApp provides operations to manage the teamsApp property of the microsoft.graph.teamsTab entity.
 func (m *ItemTeamDefinitionChannelsItemTabsTeamsTabItemRequestBuilder) TeamsApp()(*ItemTeamDefinitionChannelsItemTabsItemTeamsAppRequestBuilder) {
-    return NewItemTeamDefinitionChannelsItemTabsItemTeamsAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTeamDefinitionChannelsItemTabsItemTeamsAppRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property tabs for teamTemplateDefinition
 func (m *ItemTeamDefinitionChannelsItemTabsTeamsTabItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsItemTabsTeamsTabItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +161,10 @@ func (m *ItemTeamDefinitionChannelsItemTabsTeamsTabItemRequestBuilder) ToPatchRe
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

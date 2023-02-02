@@ -19,6 +19,8 @@ type CloudPcProvisioningPolicy struct {
     displayName *string
     // Specifies how Cloud PCs will join Azure Active Directory.
     domainJoinConfiguration CloudPcDomainJoinConfigurationable
+    // The domainJoinConfigurations property
+    domainJoinConfigurations []CloudPcDomainJoinConfigurationable
     // The enableSingleSignOn property
     enableSingleSignOn *bool
     // The number of hours to wait before reprovisioning/deprovisioning happens. Read-only.
@@ -76,6 +78,10 @@ func (m *CloudPcProvisioningPolicy) GetDisplayName()(*string) {
 // GetDomainJoinConfiguration gets the domainJoinConfiguration property value. Specifies how Cloud PCs will join Azure Active Directory.
 func (m *CloudPcProvisioningPolicy) GetDomainJoinConfiguration()(CloudPcDomainJoinConfigurationable) {
     return m.domainJoinConfiguration
+}
+// GetDomainJoinConfigurations gets the domainJoinConfigurations property value. The domainJoinConfigurations property
+func (m *CloudPcProvisioningPolicy) GetDomainJoinConfigurations()([]CloudPcDomainJoinConfigurationable) {
+    return m.domainJoinConfigurations
 }
 // GetEnableSingleSignOn gets the enableSingleSignOn property value. The enableSingleSignOn property
 func (m *CloudPcProvisioningPolicy) GetEnableSingleSignOn()(*bool) {
@@ -145,6 +151,20 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(i878
         }
         if val != nil {
             m.SetDomainJoinConfiguration(val.(CloudPcDomainJoinConfigurationable))
+        }
+        return nil
+    }
+    res["domainJoinConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCloudPcDomainJoinConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CloudPcDomainJoinConfigurationable, len(val))
+            for i, v := range val {
+                res[i] = v.(CloudPcDomainJoinConfigurationable)
+            }
+            m.SetDomainJoinConfigurations(res)
         }
         return nil
     }
@@ -346,6 +366,16 @@ func (m *CloudPcProvisioningPolicy) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    if m.GetDomainJoinConfigurations() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDomainJoinConfigurations()))
+        for i, v := range m.GetDomainJoinConfigurations() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("domainJoinConfigurations", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteBoolValue("enableSingleSignOn", m.GetEnableSingleSignOn())
         if err != nil {
@@ -440,6 +470,10 @@ func (m *CloudPcProvisioningPolicy) SetDisplayName(value *string)() {
 // SetDomainJoinConfiguration sets the domainJoinConfiguration property value. Specifies how Cloud PCs will join Azure Active Directory.
 func (m *CloudPcProvisioningPolicy) SetDomainJoinConfiguration(value CloudPcDomainJoinConfigurationable)() {
     m.domainJoinConfiguration = value
+}
+// SetDomainJoinConfigurations sets the domainJoinConfigurations property value. The domainJoinConfigurations property
+func (m *CloudPcProvisioningPolicy) SetDomainJoinConfigurations(value []CloudPcDomainJoinConfigurationable)() {
+    m.domainJoinConfigurations = value
 }
 // SetEnableSingleSignOn sets the enableSingleSignOn property value. The enableSingleSignOn property
 func (m *CloudPcProvisioningPolicy) SetEnableSingleSignOn(value *bool)() {

@@ -33,7 +33,7 @@ type ItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilderGetRequest
     QueryParameters *ItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilderGetQueryParameters
 }
 // NewItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilderInternal instantiates a new PrivilegedRoleAssignmentItemRequestBuilder and sets the default values.
-func NewItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilder) {
+func NewItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, privilegedRoleAssignmentId1 *string)(*ItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilder) {
     m := &ItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/privilegedRoleAssignments/{privilegedRoleAssignment%2Did}/roleInfo/assignments/{privilegedRoleAssignment%2Did1}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilderInterna
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if privilegedRoleAssignmentId1 != nil {
+        urlTplParams["privilegedRoleAssignment%2Did1"] = *privilegedRoleAssignmentId1
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilder instantiates a new PrivilegedRoleAssignmentItemRequestBuilder and sets the default values.
 func NewItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get the assignments for this role. Read-only. Nullable.
 func (m *ItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, error) {

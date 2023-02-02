@@ -44,7 +44,7 @@ type SynchronizationTaskExecution struct {
 func NewSynchronizationTaskExecution()(*SynchronizationTaskExecution) {
     m := &SynchronizationTaskExecution{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSynchronizationTaskExecutionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

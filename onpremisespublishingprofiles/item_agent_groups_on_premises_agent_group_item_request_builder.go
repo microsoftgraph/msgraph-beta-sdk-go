@@ -48,7 +48,7 @@ type ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderPatchRequestConfigurat
 }
 // Agents provides operations to manage the agents property of the microsoft.graph.onPremisesAgentGroup entity.
 func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) Agents()(*ItemAgentGroupsItemAgentsRequestBuilder) {
-    return NewItemAgentGroupsItemAgentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemAgentGroupsItemAgentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AgentsById provides operations to manage the agents property of the microsoft.graph.onPremisesAgentGroup entity.
 func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) AgentsById(id string)(*ItemAgentGroupsItemAgentsOnPremisesAgentItemRequestBuilder) {
@@ -56,13 +56,11 @@ func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) AgentsById(id st
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["onPremisesAgent%2Did"] = id
-    }
-    return NewItemAgentGroupsItemAgentsOnPremisesAgentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemAgentGroupsItemAgentsOnPremisesAgentItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderInternal instantiates a new OnPremisesAgentGroupItemRequestBuilder and sets the default values.
-func NewItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) {
+func NewItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, onPremisesAgentGroupId *string)(*ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) {
     m := &ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/agentGroups/{onPremisesAgentGroup%2Did}{?%24select,%24expand}";
@@ -70,15 +68,18 @@ func NewItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderInternal(pathParame
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if onPremisesAgentGroupId != nil {
+        urlTplParams["onPremisesAgentGroup%2Did"] = *onPremisesAgentGroupId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder instantiates a new OnPremisesAgentGroupItemRequestBuilder and sets the default values.
 func NewItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property agentGroups for onPremisesPublishingProfiles
 func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -136,7 +137,7 @@ func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) Patch(ctx contex
 }
 // PublishedResources provides operations to manage the publishedResources property of the microsoft.graph.onPremisesAgentGroup entity.
 func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) PublishedResources()(*ItemAgentGroupsItemPublishedResourcesRequestBuilder) {
-    return NewItemAgentGroupsItemPublishedResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemAgentGroupsItemPublishedResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PublishedResourcesById provides operations to manage the publishedResources property of the microsoft.graph.onPremisesAgentGroup entity.
 func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) PublishedResourcesById(id string)(*ItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilder) {
@@ -144,10 +145,8 @@ func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) PublishedResourc
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["publishedResource%2Did"] = id
-    }
-    return NewItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property agentGroups for onPremisesPublishingProfiles
 func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -184,7 +183,10 @@ func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) ToPatchRequestIn
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

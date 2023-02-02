@@ -47,7 +47,7 @@ type WindowsUpdatesCatalogEntriesCatalogEntryItemRequestBuilderPatchRequestConfi
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewWindowsUpdatesCatalogEntriesCatalogEntryItemRequestBuilderInternal instantiates a new CatalogEntryItemRequestBuilder and sets the default values.
-func NewWindowsUpdatesCatalogEntriesCatalogEntryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesCatalogEntriesCatalogEntryItemRequestBuilder) {
+func NewWindowsUpdatesCatalogEntriesCatalogEntryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, catalogEntryId *string)(*WindowsUpdatesCatalogEntriesCatalogEntryItemRequestBuilder) {
     m := &WindowsUpdatesCatalogEntriesCatalogEntryItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/admin/windows/updates/catalog/entries/{catalogEntry%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewWindowsUpdatesCatalogEntriesCatalogEntryItemRequestBuilderInternal(pathP
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if catalogEntryId != nil {
+        urlTplParams["catalogEntry%2Did"] = *catalogEntryId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsUpdatesCatalogEntriesCatalogEntryItemRequestBuilder instantiates a new CatalogEntryItemRequestBuilder and sets the default values.
 func NewWindowsUpdatesCatalogEntriesCatalogEntryItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesCatalogEntriesCatalogEntryItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewWindowsUpdatesCatalogEntriesCatalogEntryItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewWindowsUpdatesCatalogEntriesCatalogEntryItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property entries for admin
 func (m *WindowsUpdatesCatalogEntriesCatalogEntryItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *WindowsUpdatesCatalogEntriesCatalogEntryItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *WindowsUpdatesCatalogEntriesCatalogEntryItemRequestBuilder) ToPatchRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

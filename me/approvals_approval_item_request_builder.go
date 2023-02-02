@@ -47,7 +47,7 @@ type ApprovalsApprovalItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewApprovalsApprovalItemRequestBuilderInternal instantiates a new ApprovalItemRequestBuilder and sets the default values.
-func NewApprovalsApprovalItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApprovalsApprovalItemRequestBuilder) {
+func NewApprovalsApprovalItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, approvalId *string)(*ApprovalsApprovalItemRequestBuilder) {
     m := &ApprovalsApprovalItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/approvals/{approval%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewApprovalsApprovalItemRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if approvalId != nil {
+        urlTplParams["approval%2Did"] = *approvalId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewApprovalsApprovalItemRequestBuilder instantiates a new ApprovalItemRequestBuilder and sets the default values.
 func NewApprovalsApprovalItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApprovalsApprovalItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewApprovalsApprovalItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewApprovalsApprovalItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property approvals for me
 func (m *ApprovalsApprovalItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ApprovalsApprovalItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -121,7 +124,7 @@ func (m *ApprovalsApprovalItemRequestBuilder) Patch(ctx context.Context, body ie
 }
 // Steps provides operations to manage the steps property of the microsoft.graph.approval entity.
 func (m *ApprovalsApprovalItemRequestBuilder) Steps()(*ApprovalsItemStepsRequestBuilder) {
-    return NewApprovalsItemStepsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewApprovalsItemStepsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // StepsById provides operations to manage the steps property of the microsoft.graph.approval entity.
 func (m *ApprovalsApprovalItemRequestBuilder) StepsById(id string)(*ApprovalsItemStepsApprovalStepItemRequestBuilder) {
@@ -129,10 +132,8 @@ func (m *ApprovalsApprovalItemRequestBuilder) StepsById(id string)(*ApprovalsIte
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["approvalStep%2Did"] = id
-    }
-    return NewApprovalsItemStepsApprovalStepItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewApprovalsItemStepsApprovalStepItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property approvals for me
 func (m *ApprovalsApprovalItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ApprovalsApprovalItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +170,10 @@ func (m *ApprovalsApprovalItemRequestBuilder) ToPatchRequestInformation(ctx cont
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

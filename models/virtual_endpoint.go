@@ -38,7 +38,7 @@ type VirtualEndpoint struct {
     // Cloud PC user settings.
     userSettings []CloudPcUserSettingable
 }
-// NewVirtualEndpoint instantiates a new virtualEndpoint and sets the default values.
+// NewVirtualEndpoint instantiates a new VirtualEndpoint and sets the default values.
 func NewVirtualEndpoint()(*VirtualEndpoint) {
     m := &VirtualEndpoint{
         Entity: *NewEntity(),

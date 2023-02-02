@@ -47,7 +47,7 @@ type DeviceShellScriptsItemAssignmentsDeviceManagementScriptAssignmentItemReques
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewDeviceShellScriptsItemAssignmentsDeviceManagementScriptAssignmentItemRequestBuilderInternal instantiates a new DeviceManagementScriptAssignmentItemRequestBuilder and sets the default values.
-func NewDeviceShellScriptsItemAssignmentsDeviceManagementScriptAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceShellScriptsItemAssignmentsDeviceManagementScriptAssignmentItemRequestBuilder) {
+func NewDeviceShellScriptsItemAssignmentsDeviceManagementScriptAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, deviceManagementScriptAssignmentId *string)(*DeviceShellScriptsItemAssignmentsDeviceManagementScriptAssignmentItemRequestBuilder) {
     m := &DeviceShellScriptsItemAssignmentsDeviceManagementScriptAssignmentItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/deviceShellScripts/{deviceShellScript%2Did}/assignments/{deviceManagementScriptAssignment%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewDeviceShellScriptsItemAssignmentsDeviceManagementScriptAssignmentItemReq
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if deviceManagementScriptAssignmentId != nil {
+        urlTplParams["deviceManagementScriptAssignment%2Did"] = *deviceManagementScriptAssignmentId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceShellScriptsItemAssignmentsDeviceManagementScriptAssignmentItemRequestBuilder instantiates a new DeviceManagementScriptAssignmentItemRequestBuilder and sets the default values.
 func NewDeviceShellScriptsItemAssignmentsDeviceManagementScriptAssignmentItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceShellScriptsItemAssignmentsDeviceManagementScriptAssignmentItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewDeviceShellScriptsItemAssignmentsDeviceManagementScriptAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewDeviceShellScriptsItemAssignmentsDeviceManagementScriptAssignmentItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property assignments for deviceManagement
 func (m *DeviceShellScriptsItemAssignmentsDeviceManagementScriptAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DeviceShellScriptsItemAssignmentsDeviceManagementScriptAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *DeviceShellScriptsItemAssignmentsDeviceManagementScriptAssignmentItemRe
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

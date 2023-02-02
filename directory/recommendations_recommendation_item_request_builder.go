@@ -46,12 +46,8 @@ type RecommendationsRecommendationItemRequestBuilderPatchRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Complete provides operations to call the complete method.
-func (m *RecommendationsRecommendationItemRequestBuilder) Complete()(*RecommendationsItemCompleteRequestBuilder) {
-    return NewRecommendationsItemCompleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewRecommendationsRecommendationItemRequestBuilderInternal instantiates a new RecommendationItemRequestBuilder and sets the default values.
-func NewRecommendationsRecommendationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RecommendationsRecommendationItemRequestBuilder) {
+func NewRecommendationsRecommendationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, recommendationId *string)(*RecommendationsRecommendationItemRequestBuilder) {
     m := &RecommendationsRecommendationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/directory/recommendations/{recommendation%2Did}{?%24select,%24expand}";
@@ -59,15 +55,18 @@ func NewRecommendationsRecommendationItemRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if recommendationId != nil {
+        urlTplParams["recommendation%2Did"] = *recommendationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewRecommendationsRecommendationItemRequestBuilder instantiates a new RecommendationItemRequestBuilder and sets the default values.
 func NewRecommendationsRecommendationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RecommendationsRecommendationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewRecommendationsRecommendationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewRecommendationsRecommendationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property recommendations for directory
 func (m *RecommendationsRecommendationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *RecommendationsRecommendationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -84,10 +83,6 @@ func (m *RecommendationsRecommendationItemRequestBuilder) Delete(ctx context.Con
         return err
     }
     return nil
-}
-// Dismiss provides operations to call the dismiss method.
-func (m *RecommendationsRecommendationItemRequestBuilder) Dismiss()(*RecommendationsItemDismissRequestBuilder) {
-    return NewRecommendationsItemDismissRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get recommendations from directory
 func (m *RecommendationsRecommendationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RecommendationsRecommendationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Recommendationable, error) {
@@ -108,6 +103,22 @@ func (m *RecommendationsRecommendationItemRequestBuilder) Get(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Recommendationable), nil
 }
+// MicrosoftGraphComplete provides operations to call the complete method.
+func (m *RecommendationsRecommendationItemRequestBuilder) MicrosoftGraphComplete()(*RecommendationsItemMicrosoftGraphCompleteCompleteRequestBuilder) {
+    return NewRecommendationsItemMicrosoftGraphCompleteCompleteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphDismiss provides operations to call the dismiss method.
+func (m *RecommendationsRecommendationItemRequestBuilder) MicrosoftGraphDismiss()(*RecommendationsItemMicrosoftGraphDismissDismissRequestBuilder) {
+    return NewRecommendationsItemMicrosoftGraphDismissDismissRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphPostpone provides operations to call the postpone method.
+func (m *RecommendationsRecommendationItemRequestBuilder) MicrosoftGraphPostpone()(*RecommendationsItemMicrosoftGraphPostponePostponeRequestBuilder) {
+    return NewRecommendationsItemMicrosoftGraphPostponePostponeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphReactivate provides operations to call the reactivate method.
+func (m *RecommendationsRecommendationItemRequestBuilder) MicrosoftGraphReactivate()(*RecommendationsItemMicrosoftGraphReactivateReactivateRequestBuilder) {
+    return NewRecommendationsItemMicrosoftGraphReactivateReactivateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property recommendations in directory
 func (m *RecommendationsRecommendationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Recommendationable, requestConfiguration *RecommendationsRecommendationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Recommendationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -126,14 +137,6 @@ func (m *RecommendationsRecommendationItemRequestBuilder) Patch(ctx context.Cont
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Recommendationable), nil
-}
-// Postpone provides operations to call the postpone method.
-func (m *RecommendationsRecommendationItemRequestBuilder) Postpone()(*RecommendationsItemPostponeRequestBuilder) {
-    return NewRecommendationsItemPostponeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Reactivate provides operations to call the reactivate method.
-func (m *RecommendationsRecommendationItemRequestBuilder) Reactivate()(*RecommendationsItemReactivateRequestBuilder) {
-    return NewRecommendationsItemReactivateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property recommendations for directory
 func (m *RecommendationsRecommendationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *RecommendationsRecommendationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -170,7 +173,10 @@ func (m *RecommendationsRecommendationItemRequestBuilder) ToPatchRequestInformat
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

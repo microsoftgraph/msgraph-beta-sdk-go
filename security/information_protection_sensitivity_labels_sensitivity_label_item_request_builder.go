@@ -47,7 +47,7 @@ type InformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderPat
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderInternal instantiates a new SensitivityLabelItemRequestBuilder and sets the default values.
-func NewInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder) {
+func NewInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, sensitivityLabelId *string)(*InformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder) {
     m := &InformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/security/informationProtection/sensitivityLabels/{sensitivityLabel%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if sensitivityLabelId != nil {
+        urlTplParams["sensitivityLabel%2Did"] = *sensitivityLabelId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder instantiates a new SensitivityLabelItemRequestBuilder and sets the default values.
 func NewInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property sensitivityLabels for security
 func (m *InformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *InformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -102,7 +105,7 @@ func (m *InformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilde
 }
 // Parent provides operations to manage the parent property of the microsoft.graph.security.sensitivityLabel entity.
 func (m *InformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder) Parent()(*InformationProtectionSensitivityLabelsItemParentRequestBuilder) {
-    return NewInformationProtectionSensitivityLabelsItemParentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewInformationProtectionSensitivityLabelsItemParentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property sensitivityLabels in security
 func (m *InformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder) Patch(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable, requestConfiguration *InformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderPatchRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable, error) {
@@ -158,7 +161,10 @@ func (m *InformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilde
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

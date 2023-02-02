@@ -48,7 +48,7 @@ type AnalyticsRequestBuilderPatchRequestConfiguration struct {
 }
 // ActivityStatistics provides operations to manage the activityStatistics property of the microsoft.graph.userAnalytics entity.
 func (m *AnalyticsRequestBuilder) ActivityStatistics()(*AnalyticsActivityStatisticsRequestBuilder) {
-    return NewAnalyticsActivityStatisticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAnalyticsActivityStatisticsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ActivityStatisticsById provides operations to manage the activityStatistics property of the microsoft.graph.userAnalytics entity.
 func (m *AnalyticsRequestBuilder) ActivityStatisticsById(id string)(*AnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder) {
@@ -56,10 +56,8 @@ func (m *AnalyticsRequestBuilder) ActivityStatisticsById(id string)(*AnalyticsAc
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["activityStatistics%2Did"] = id
-    }
-    return NewAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewAnalyticsRequestBuilderInternal instantiates a new AnalyticsRequestBuilder and sets the default values.
 func NewAnalyticsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AnalyticsRequestBuilder) {
@@ -70,8 +68,8 @@ func NewAnalyticsRequestBuilderInternal(pathParameters map[string]string, reques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAnalyticsRequestBuilder instantiates a new AnalyticsRequestBuilder and sets the default values.
@@ -169,7 +167,10 @@ func (m *AnalyticsRequestBuilder) ToPatchRequestInformation(ctx context.Context,
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

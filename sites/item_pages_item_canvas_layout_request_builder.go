@@ -55,8 +55,8 @@ func NewItemPagesItemCanvasLayoutRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemPagesItemCanvasLayoutRequestBuilder instantiates a new CanvasLayoutRequestBuilder and sets the default values.
@@ -102,7 +102,7 @@ func (m *ItemPagesItemCanvasLayoutRequestBuilder) Get(ctx context.Context, reque
 }
 // HorizontalSections provides operations to manage the horizontalSections property of the microsoft.graph.canvasLayout entity.
 func (m *ItemPagesItemCanvasLayoutRequestBuilder) HorizontalSections()(*ItemPagesItemCanvasLayoutHorizontalSectionsRequestBuilder) {
-    return NewItemPagesItemCanvasLayoutHorizontalSectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemPagesItemCanvasLayoutHorizontalSectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // HorizontalSectionsById provides operations to manage the horizontalSections property of the microsoft.graph.canvasLayout entity.
 func (m *ItemPagesItemCanvasLayoutRequestBuilder) HorizontalSectionsById(id string)(*ItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilder) {
@@ -110,10 +110,8 @@ func (m *ItemPagesItemCanvasLayoutRequestBuilder) HorizontalSectionsById(id stri
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["horizontalSection%2Did"] = id
-    }
-    return NewItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Patch update the navigation property canvasLayout in sites
 func (m *ItemPagesItemCanvasLayoutRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CanvasLayoutable, requestConfiguration *ItemPagesItemCanvasLayoutRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CanvasLayoutable, error) {
@@ -169,7 +167,10 @@ func (m *ItemPagesItemCanvasLayoutRequestBuilder) ToPatchRequestInformation(ctx 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -178,5 +179,5 @@ func (m *ItemPagesItemCanvasLayoutRequestBuilder) ToPatchRequestInformation(ctx 
 }
 // VerticalSection provides operations to manage the verticalSection property of the microsoft.graph.canvasLayout entity.
 func (m *ItemPagesItemCanvasLayoutRequestBuilder) VerticalSection()(*ItemPagesItemCanvasLayoutVerticalSectionRequestBuilder) {
-    return NewItemPagesItemCanvasLayoutVerticalSectionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemPagesItemCanvasLayoutVerticalSectionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

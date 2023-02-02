@@ -47,7 +47,7 @@ type ItemProfileEmailsItemEmailItemRequestBuilderPatchRequestConfiguration struc
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemProfileEmailsItemEmailItemRequestBuilderInternal instantiates a new ItemEmailItemRequestBuilder and sets the default values.
-func NewItemProfileEmailsItemEmailItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfileEmailsItemEmailItemRequestBuilder) {
+func NewItemProfileEmailsItemEmailItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, itemEmailId *string)(*ItemProfileEmailsItemEmailItemRequestBuilder) {
     m := &ItemProfileEmailsItemEmailItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/profile/emails/{itemEmail%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemProfileEmailsItemEmailItemRequestBuilderInternal(pathParameters map[
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if itemEmailId != nil {
+        urlTplParams["itemEmail%2Did"] = *itemEmailId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemProfileEmailsItemEmailItemRequestBuilder instantiates a new ItemEmailItemRequestBuilder and sets the default values.
 func NewItemProfileEmailsItemEmailItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfileEmailsItemEmailItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemProfileEmailsItemEmailItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemProfileEmailsItemEmailItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property emails for users
 func (m *ItemProfileEmailsItemEmailItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileEmailsItemEmailItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemProfileEmailsItemEmailItemRequestBuilder) ToPatchRequestInformation
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

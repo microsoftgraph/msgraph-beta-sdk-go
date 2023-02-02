@@ -47,7 +47,7 @@ type DeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilderPatchReque
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewDeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilderInternal instantiates a new DeviceAppManagementTaskItemRequestBuilder and sets the default values.
-func NewDeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilder) {
+func NewDeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, deviceAppManagementTaskId *string)(*DeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilder) {
     m := &DeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceAppManagement/deviceAppManagementTasks/{deviceAppManagementTask%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewDeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilderInterna
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if deviceAppManagementTaskId != nil {
+        urlTplParams["deviceAppManagementTask%2Did"] = *deviceAppManagementTaskId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilder instantiates a new DeviceAppManagementTaskItemRequestBuilder and sets the default values.
 func NewDeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewDeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewDeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property deviceAppManagementTasks for deviceAppManagement
 func (m *DeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -99,6 +102,10 @@ func (m *DeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilder) Get(
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAppManagementTaskable), nil
+}
+// MicrosoftGraphUpdateStatus provides operations to call the updateStatus method.
+func (m *DeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilder) MicrosoftGraphUpdateStatus()(*DeviceAppManagementTasksItemMicrosoftGraphUpdateStatusUpdateStatusRequestBuilder) {
+    return NewDeviceAppManagementTasksItemMicrosoftGraphUpdateStatusUpdateStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property deviceAppManagementTasks in deviceAppManagement
 func (m *DeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAppManagementTaskable, requestConfiguration *DeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAppManagementTaskable, error) {
@@ -154,14 +161,13 @@ func (m *DeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilder) ToPa
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// UpdateStatus provides operations to call the updateStatus method.
-func (m *DeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilder) UpdateStatus()(*DeviceAppManagementTasksItemUpdateStatusRequestBuilder) {
-    return NewDeviceAppManagementTasksItemUpdateStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

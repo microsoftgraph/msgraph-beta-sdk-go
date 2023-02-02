@@ -47,7 +47,7 @@ type ManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequestBui
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequestBuilderInternal instantiates a new SecurityBaselineStateItemRequestBuilder and sets the default values.
-func NewManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequestBuilder) {
+func NewManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, securityBaselineStateId *string)(*ManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequestBuilder) {
     m := &ManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/securityBaselineStates/{securityBaselineState%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequest
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if securityBaselineStateId != nil {
+        urlTplParams["securityBaselineState%2Did"] = *securityBaselineStateId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequestBuilder instantiates a new SecurityBaselineStateItemRequestBuilder and sets the default values.
 func NewManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property securityBaselineStates for deviceManagement
 func (m *ManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -121,7 +124,7 @@ func (m *ManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemReques
 }
 // SettingStates provides operations to manage the settingStates property of the microsoft.graph.securityBaselineState entity.
 func (m *ManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequestBuilder) SettingStates()(*ManagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilder) {
-    return NewManagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SettingStatesById provides operations to manage the settingStates property of the microsoft.graph.securityBaselineState entity.
 func (m *ManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequestBuilder) SettingStatesById(id string)(*ManagedDevicesItemSecurityBaselineStatesItemSettingStatesSecurityBaselineSettingStateItemRequestBuilder) {
@@ -129,10 +132,8 @@ func (m *ManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemReques
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["securityBaselineSettingState%2Did"] = id
-    }
-    return NewManagedDevicesItemSecurityBaselineStatesItemSettingStatesSecurityBaselineSettingStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewManagedDevicesItemSecurityBaselineStatesItemSettingStatesSecurityBaselineSettingStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property securityBaselineStates for deviceManagement
 func (m *ManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +170,10 @@ func (m *ManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemReques
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

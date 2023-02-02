@@ -47,7 +47,7 @@ type EvaluateDlpPoliciesJobsJobResponseBaseItemRequestBuilderPatchRequestConfigu
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewEvaluateDlpPoliciesJobsJobResponseBaseItemRequestBuilderInternal instantiates a new JobResponseBaseItemRequestBuilder and sets the default values.
-func NewEvaluateDlpPoliciesJobsJobResponseBaseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EvaluateDlpPoliciesJobsJobResponseBaseItemRequestBuilder) {
+func NewEvaluateDlpPoliciesJobsJobResponseBaseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, jobResponseBaseId *string)(*EvaluateDlpPoliciesJobsJobResponseBaseItemRequestBuilder) {
     m := &EvaluateDlpPoliciesJobsJobResponseBaseItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/dataClassification/evaluateDlpPoliciesJobs/{jobResponseBase%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewEvaluateDlpPoliciesJobsJobResponseBaseItemRequestBuilderInternal(pathPar
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if jobResponseBaseId != nil {
+        urlTplParams["jobResponseBase%2Did"] = *jobResponseBaseId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEvaluateDlpPoliciesJobsJobResponseBaseItemRequestBuilder instantiates a new JobResponseBaseItemRequestBuilder and sets the default values.
 func NewEvaluateDlpPoliciesJobsJobResponseBaseItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EvaluateDlpPoliciesJobsJobResponseBaseItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewEvaluateDlpPoliciesJobsJobResponseBaseItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewEvaluateDlpPoliciesJobsJobResponseBaseItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property evaluateDlpPoliciesJobs for dataClassification
 func (m *EvaluateDlpPoliciesJobsJobResponseBaseItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EvaluateDlpPoliciesJobsJobResponseBaseItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *EvaluateDlpPoliciesJobsJobResponseBaseItemRequestBuilder) ToPatchReques
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

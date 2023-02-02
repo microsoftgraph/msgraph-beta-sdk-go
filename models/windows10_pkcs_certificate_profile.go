@@ -31,8 +31,8 @@ func NewWindows10PkcsCertificateProfile()(*Windows10PkcsCertificateProfile) {
     m := &Windows10PkcsCertificateProfile{
         Windows10CertificateProfileBase: *NewWindows10CertificateProfileBase(),
     }
-    odataTypeValue := "#microsoft.graph.windows10PkcsCertificateProfile";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windows10PkcsCertificateProfile"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindows10PkcsCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -48,7 +48,7 @@ type EntitlementManagementAccessPackageAssignmentsItemAccessPackageRequestBuilde
 }
 // AccessPackageAssignmentPolicies provides operations to manage the accessPackageAssignmentPolicies property of the microsoft.graph.accessPackage entity.
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageRequestBuilder) AccessPackageAssignmentPolicies()(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageAccessPackageAssignmentPoliciesRequestBuilder) {
-    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAccessPackageAssignmentPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAccessPackageAssignmentPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AccessPackageAssignmentPoliciesById provides operations to manage the accessPackageAssignmentPolicies property of the microsoft.graph.accessPackage entity.
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageRequestBuilder) AccessPackageAssignmentPoliciesById(id string)(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageAccessPackageAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) {
@@ -56,18 +56,16 @@ func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageRequestBu
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["accessPackageAssignmentPolicy%2Did"] = id
-    }
-    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAccessPackageAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAccessPackageAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // AccessPackageCatalog provides operations to manage the accessPackageCatalog property of the microsoft.graph.accessPackage entity.
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageRequestBuilder) AccessPackageCatalog()(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageAccessPackageCatalogRequestBuilder) {
-    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAccessPackageCatalogRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAccessPackageCatalogRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AccessPackageResourceRoleScopes provides operations to manage the accessPackageResourceRoleScopes property of the microsoft.graph.accessPackage entity.
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageRequestBuilder) AccessPackageResourceRoleScopes()(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageAccessPackageResourceRoleScopesRequestBuilder) {
-    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAccessPackageResourceRoleScopesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAccessPackageResourceRoleScopesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AccessPackageResourceRoleScopesById provides operations to manage the accessPackageResourceRoleScopes property of the microsoft.graph.accessPackage entity.
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageRequestBuilder) AccessPackageResourceRoleScopesById(id string)(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageAccessPackageResourceRoleScopesAccessPackageResourceRoleScopeItemRequestBuilder) {
@@ -75,14 +73,12 @@ func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageRequestBu
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["accessPackageResourceRoleScope%2Did"] = id
-    }
-    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAccessPackageResourceRoleScopesAccessPackageResourceRoleScopeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAccessPackageResourceRoleScopesAccessPackageResourceRoleScopeItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // AccessPackagesIncompatibleWith provides operations to manage the accessPackagesIncompatibleWith property of the microsoft.graph.accessPackage entity.
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageRequestBuilder) AccessPackagesIncompatibleWith()(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageAccessPackagesIncompatibleWithRequestBuilder) {
-    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAccessPackagesIncompatibleWithRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAccessPackagesIncompatibleWithRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AccessPackagesIncompatibleWithById provides operations to manage the accessPackagesIncompatibleWith property of the microsoft.graph.accessPackage entity.
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageRequestBuilder) AccessPackagesIncompatibleWithById(id string)(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageAccessPackagesIncompatibleWithAccessPackageItemRequestBuilder) {
@@ -90,10 +86,8 @@ func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageRequestBu
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["accessPackage%2Did"] = id
-    }
-    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAccessPackagesIncompatibleWithAccessPackageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAccessPackagesIncompatibleWithAccessPackageItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageRequestBuilderInternal instantiates a new AccessPackageRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageRequestBuilder) {
@@ -104,8 +98,8 @@ func NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageRequestBui
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageRequestBuilder instantiates a new AccessPackageRequestBuilder and sets the default values.
@@ -149,13 +143,9 @@ func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageRequestBu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageable), nil
 }
-// GetApplicablePolicyRequirements provides operations to call the getApplicablePolicyRequirements method.
-func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageRequestBuilder) GetApplicablePolicyRequirements()(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageGetApplicablePolicyRequirementsRequestBuilder) {
-    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageGetApplicablePolicyRequirementsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // IncompatibleAccessPackages provides operations to manage the incompatibleAccessPackages property of the microsoft.graph.accessPackage entity.
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageRequestBuilder) IncompatibleAccessPackages()(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleAccessPackagesRequestBuilder) {
-    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleAccessPackagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleAccessPackagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // IncompatibleAccessPackagesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignments.item.accessPackage.incompatibleAccessPackages.item collection
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageRequestBuilder) IncompatibleAccessPackagesById(id string)(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleAccessPackagesAccessPackageItemRequestBuilder) {
@@ -163,14 +153,12 @@ func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageRequestBu
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["accessPackage%2Did"] = id
-    }
-    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleAccessPackagesAccessPackageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleAccessPackagesAccessPackageItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // IncompatibleGroups provides operations to manage the incompatibleGroups property of the microsoft.graph.accessPackage entity.
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageRequestBuilder) IncompatibleGroups()(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleGroupsRequestBuilder) {
-    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // IncompatibleGroupsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignments.item.accessPackage.incompatibleGroups.item collection
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageRequestBuilder) IncompatibleGroupsById(id string)(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleGroupsGroupItemRequestBuilder) {
@@ -178,14 +166,16 @@ func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageRequestBu
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["group%2Did"] = id
-    }
-    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleGroupsGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleGroupsGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
-// MoveToCatalog provides operations to call the moveToCatalog method.
-func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageRequestBuilder) MoveToCatalog()(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageMoveToCatalogRequestBuilder) {
-    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageMoveToCatalogRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetApplicablePolicyRequirements provides operations to call the getApplicablePolicyRequirements method.
+func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageRequestBuilder) MicrosoftGraphGetApplicablePolicyRequirements()(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageMicrosoftGraphGetApplicablePolicyRequirementsGetApplicablePolicyRequirementsRequestBuilder) {
+    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageMicrosoftGraphGetApplicablePolicyRequirementsGetApplicablePolicyRequirementsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphMoveToCatalog provides operations to call the moveToCatalog method.
+func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageRequestBuilder) MicrosoftGraphMoveToCatalog()(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageMicrosoftGraphMoveToCatalogMoveToCatalogRequestBuilder) {
+    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageMicrosoftGraphMoveToCatalogMoveToCatalogRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property accessPackage in identityGovernance
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageable, requestConfiguration *EntitlementManagementAccessPackageAssignmentsItemAccessPackageRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageable, error) {
@@ -241,7 +231,10 @@ func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageRequestBu
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

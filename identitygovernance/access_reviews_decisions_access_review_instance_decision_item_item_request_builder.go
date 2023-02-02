@@ -47,7 +47,7 @@ type AccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilderPat
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewAccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilderInternal instantiates a new AccessReviewInstanceDecisionItemItemRequestBuilder and sets the default values.
-func NewAccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder) {
+func NewAccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, accessReviewInstanceDecisionItemId *string)(*AccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder) {
     m := &AccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/identityGovernance/accessReviews/decisions/{accessReviewInstanceDecisionItem%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewAccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if accessReviewInstanceDecisionItemId != nil {
+        urlTplParams["accessReviewInstanceDecisionItem%2Did"] = *accessReviewInstanceDecisionItemId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder instantiates a new AccessReviewInstanceDecisionItemItemRequestBuilder and sets the default values.
 func NewAccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property decisions for identityGovernance
 func (m *AccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -102,7 +105,7 @@ func (m *AccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilde
 }
 // Insights provides operations to manage the insights property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
 func (m *AccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder) Insights()(*AccessReviewsDecisionsItemInsightsRequestBuilder) {
-    return NewAccessReviewsDecisionsItemInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAccessReviewsDecisionsItemInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // InsightsById provides operations to manage the insights property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
 func (m *AccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder) InsightsById(id string)(*AccessReviewsDecisionsItemInsightsGovernanceInsightItemRequestBuilder) {
@@ -110,14 +113,12 @@ func (m *AccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilde
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["governanceInsight%2Did"] = id
-    }
-    return NewAccessReviewsDecisionsItemInsightsGovernanceInsightItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewAccessReviewsDecisionsItemInsightsGovernanceInsightItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Instance provides operations to manage the instance property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
 func (m *AccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder) Instance()(*AccessReviewsDecisionsItemInstanceRequestBuilder) {
-    return NewAccessReviewsDecisionsItemInstanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAccessReviewsDecisionsItemInstanceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property decisions in identityGovernance
 func (m *AccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemable, requestConfiguration *AccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemable, error) {
@@ -173,7 +174,10 @@ func (m *AccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilde
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

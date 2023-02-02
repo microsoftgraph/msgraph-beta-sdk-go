@@ -47,7 +47,7 @@ type ProfileAddressesItemAddressItemRequestBuilderPatchRequestConfiguration stru
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewProfileAddressesItemAddressItemRequestBuilderInternal instantiates a new ItemAddressItemRequestBuilder and sets the default values.
-func NewProfileAddressesItemAddressItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ProfileAddressesItemAddressItemRequestBuilder) {
+func NewProfileAddressesItemAddressItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, itemAddressId *string)(*ProfileAddressesItemAddressItemRequestBuilder) {
     m := &ProfileAddressesItemAddressItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/profile/addresses/{itemAddress%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewProfileAddressesItemAddressItemRequestBuilderInternal(pathParameters map
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if itemAddressId != nil {
+        urlTplParams["itemAddress%2Did"] = *itemAddressId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewProfileAddressesItemAddressItemRequestBuilder instantiates a new ItemAddressItemRequestBuilder and sets the default values.
 func NewProfileAddressesItemAddressItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ProfileAddressesItemAddressItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewProfileAddressesItemAddressItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewProfileAddressesItemAddressItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property addresses for me
 func (m *ProfileAddressesItemAddressItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ProfileAddressesItemAddressItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ProfileAddressesItemAddressItemRequestBuilder) ToPatchRequestInformatio
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

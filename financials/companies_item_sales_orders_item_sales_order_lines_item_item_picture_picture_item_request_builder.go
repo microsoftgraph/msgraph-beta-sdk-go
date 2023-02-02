@@ -47,7 +47,7 @@ type CompaniesItemSalesOrdersItemSalesOrderLinesItemItemPicturePictureItemReques
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewCompaniesItemSalesOrdersItemSalesOrderLinesItemItemPicturePictureItemRequestBuilderInternal instantiates a new PictureItemRequestBuilder and sets the default values.
-func NewCompaniesItemSalesOrdersItemSalesOrderLinesItemItemPicturePictureItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesOrdersItemSalesOrderLinesItemItemPicturePictureItemRequestBuilder) {
+func NewCompaniesItemSalesOrdersItemSalesOrderLinesItemItemPicturePictureItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, pictureId *string)(*CompaniesItemSalesOrdersItemSalesOrderLinesItemItemPicturePictureItemRequestBuilder) {
     m := &CompaniesItemSalesOrdersItemSalesOrderLinesItemItemPicturePictureItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesOrders/{salesOrder%2Did}/salesOrderLines/{salesOrderLine%2Did}/item/picture/{picture%2Did}{?%24select,%24expand}";
@@ -55,19 +55,22 @@ func NewCompaniesItemSalesOrdersItemSalesOrderLinesItemItemPicturePictureItemReq
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if pictureId != nil {
+        urlTplParams["picture%2Did"] = *pictureId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemSalesOrdersItemSalesOrderLinesItemItemPicturePictureItemRequestBuilder instantiates a new PictureItemRequestBuilder and sets the default values.
 func NewCompaniesItemSalesOrdersItemSalesOrderLinesItemItemPicturePictureItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesOrdersItemSalesOrderLinesItemItemPicturePictureItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCompaniesItemSalesOrdersItemSalesOrderLinesItemItemPicturePictureItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCompaniesItemSalesOrdersItemSalesOrderLinesItemItemPicturePictureItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Content provides operations to manage the media for the financials entity.
 func (m *CompaniesItemSalesOrdersItemSalesOrderLinesItemItemPicturePictureItemRequestBuilder) Content()(*CompaniesItemSalesOrdersItemSalesOrderLinesItemItemPictureItemContentRequestBuilder) {
-    return NewCompaniesItemSalesOrdersItemSalesOrderLinesItemItemPictureItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesOrdersItemSalesOrderLinesItemItemPictureItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property picture for financials
 func (m *CompaniesItemSalesOrdersItemSalesOrderLinesItemItemPicturePictureItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CompaniesItemSalesOrdersItemSalesOrderLinesItemItemPicturePictureItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -158,7 +161,10 @@ func (m *CompaniesItemSalesOrdersItemSalesOrderLinesItemItemPicturePictureItemRe
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

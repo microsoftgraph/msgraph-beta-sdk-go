@@ -33,7 +33,7 @@ type CompaniesItemDimensionValuesDimensionValueItemRequestBuilderGetRequestConfi
     QueryParameters *CompaniesItemDimensionValuesDimensionValueItemRequestBuilderGetQueryParameters
 }
 // NewCompaniesItemDimensionValuesDimensionValueItemRequestBuilderInternal instantiates a new DimensionValueItemRequestBuilder and sets the default values.
-func NewCompaniesItemDimensionValuesDimensionValueItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemDimensionValuesDimensionValueItemRequestBuilder) {
+func NewCompaniesItemDimensionValuesDimensionValueItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, dimensionValueId *string)(*CompaniesItemDimensionValuesDimensionValueItemRequestBuilder) {
     m := &CompaniesItemDimensionValuesDimensionValueItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/financials/companies/{company%2Did}/dimensionValues/{dimensionValue%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewCompaniesItemDimensionValuesDimensionValueItemRequestBuilderInternal(pat
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if dimensionValueId != nil {
+        urlTplParams["dimensionValue%2Did"] = *dimensionValueId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemDimensionValuesDimensionValueItemRequestBuilder instantiates a new DimensionValueItemRequestBuilder and sets the default values.
 func NewCompaniesItemDimensionValuesDimensionValueItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemDimensionValuesDimensionValueItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCompaniesItemDimensionValuesDimensionValueItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCompaniesItemDimensionValuesDimensionValueItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get get dimensionValues from financials
 func (m *CompaniesItemDimensionValuesDimensionValueItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemDimensionValuesDimensionValueItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DimensionValueable, error) {

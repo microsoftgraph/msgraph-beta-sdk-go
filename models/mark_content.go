@@ -19,8 +19,8 @@ func NewMarkContent()(*MarkContent) {
     m := &MarkContent{
         LabelActionBase: *NewLabelActionBase(),
     }
-    odataTypeValue := "#microsoft.graph.markContent";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.markContent"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMarkContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

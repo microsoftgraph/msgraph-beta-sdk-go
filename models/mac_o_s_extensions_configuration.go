@@ -27,8 +27,8 @@ func NewMacOSExtensionsConfiguration()(*MacOSExtensionsConfiguration) {
     m := &MacOSExtensionsConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.macOSExtensionsConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.macOSExtensionsConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMacOSExtensionsConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

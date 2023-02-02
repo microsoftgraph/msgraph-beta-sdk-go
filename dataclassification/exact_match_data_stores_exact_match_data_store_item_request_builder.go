@@ -47,7 +47,7 @@ type ExactMatchDataStoresExactMatchDataStoreItemRequestBuilderPatchRequestConfig
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewExactMatchDataStoresExactMatchDataStoreItemRequestBuilderInternal instantiates a new ExactMatchDataStoreItemRequestBuilder and sets the default values.
-func NewExactMatchDataStoresExactMatchDataStoreItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) {
+func NewExactMatchDataStoresExactMatchDataStoreItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, exactMatchDataStoreId *string)(*ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) {
     m := &ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/dataClassification/exactMatchDataStores/{exactMatchDataStore%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewExactMatchDataStoresExactMatchDataStoreItemRequestBuilderInternal(pathPa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if exactMatchDataStoreId != nil {
+        urlTplParams["exactMatchDataStore%2Did"] = *exactMatchDataStoreId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewExactMatchDataStoresExactMatchDataStoreItemRequestBuilder instantiates a new ExactMatchDataStoreItemRequestBuilder and sets the default values.
 func NewExactMatchDataStoresExactMatchDataStoreItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewExactMatchDataStoresExactMatchDataStoreItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewExactMatchDataStoresExactMatchDataStoreItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property exactMatchDataStores for dataClassification
 func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -100,9 +103,9 @@ func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) Get(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchDataStoreable), nil
 }
-// Lookup provides operations to call the lookup method.
-func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) Lookup()(*ExactMatchDataStoresItemLookupRequestBuilder) {
-    return NewExactMatchDataStoresItemLookupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphLookup provides operations to call the lookup method.
+func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) MicrosoftGraphLookup()(*ExactMatchDataStoresItemMicrosoftGraphLookupLookupRequestBuilder) {
+    return NewExactMatchDataStoresItemMicrosoftGraphLookupLookupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property exactMatchDataStores in dataClassification
 func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchDataStoreable, requestConfiguration *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchDataStoreable, error) {
@@ -125,7 +128,7 @@ func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) Patch(ctx co
 }
 // Sessions provides operations to manage the sessions property of the microsoft.graph.exactMatchDataStore entity.
 func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) Sessions()(*ExactMatchDataStoresItemSessionsRequestBuilder) {
-    return NewExactMatchDataStoresItemSessionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewExactMatchDataStoresItemSessionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SessionsById provides operations to manage the sessions property of the microsoft.graph.exactMatchDataStore entity.
 func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) SessionsById(id string)(*ExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilder) {
@@ -133,10 +136,8 @@ func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) SessionsById
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["exactMatchSession%2Did"] = id
-    }
-    return NewExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property exactMatchDataStores for dataClassification
 func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -173,7 +174,10 @@ func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) ToPatchReque
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

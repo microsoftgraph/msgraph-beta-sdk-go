@@ -47,7 +47,7 @@ type AppConsentRequestsForApprovalAppConsentRequestItemRequestBuilderPatchReques
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewAppConsentRequestsForApprovalAppConsentRequestItemRequestBuilderInternal instantiates a new AppConsentRequestItemRequestBuilder and sets the default values.
-func NewAppConsentRequestsForApprovalAppConsentRequestItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppConsentRequestsForApprovalAppConsentRequestItemRequestBuilder) {
+func NewAppConsentRequestsForApprovalAppConsentRequestItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, appConsentRequestId *string)(*AppConsentRequestsForApprovalAppConsentRequestItemRequestBuilder) {
     m := &AppConsentRequestsForApprovalAppConsentRequestItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/appConsentRequestsForApproval/{appConsentRequest%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewAppConsentRequestsForApprovalAppConsentRequestItemRequestBuilderInternal
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if appConsentRequestId != nil {
+        urlTplParams["appConsentRequest%2Did"] = *appConsentRequestId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAppConsentRequestsForApprovalAppConsentRequestItemRequestBuilder instantiates a new AppConsentRequestItemRequestBuilder and sets the default values.
 func NewAppConsentRequestsForApprovalAppConsentRequestItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppConsentRequestsForApprovalAppConsentRequestItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAppConsentRequestsForApprovalAppConsentRequestItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAppConsentRequestsForApprovalAppConsentRequestItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property appConsentRequestsForApproval for me
 func (m *AppConsentRequestsForApprovalAppConsentRequestItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AppConsentRequestsForApprovalAppConsentRequestItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *AppConsentRequestsForApprovalAppConsentRequestItemRequestBuilder) ToPat
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -163,7 +169,7 @@ func (m *AppConsentRequestsForApprovalAppConsentRequestItemRequestBuilder) ToPat
 }
 // UserConsentRequests provides operations to manage the userConsentRequests property of the microsoft.graph.appConsentRequest entity.
 func (m *AppConsentRequestsForApprovalAppConsentRequestItemRequestBuilder) UserConsentRequests()(*AppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder) {
-    return NewAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserConsentRequestsById provides operations to manage the userConsentRequests property of the microsoft.graph.appConsentRequest entity.
 func (m *AppConsentRequestsForApprovalAppConsentRequestItemRequestBuilder) UserConsentRequestsById(id string)(*AppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder) {
@@ -171,8 +177,6 @@ func (m *AppConsentRequestsForApprovalAppConsentRequestItemRequestBuilder) UserC
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["userConsentRequest%2Did"] = id
-    }
-    return NewAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }

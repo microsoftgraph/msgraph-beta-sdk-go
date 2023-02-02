@@ -47,7 +47,7 @@ type MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilderPatchRequestConfig
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewMicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilderInternal instantiates a new MicrosoftTunnelSiteItemRequestBuilder and sets the default values.
-func NewMicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) {
+func NewMicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, microsoftTunnelSiteId *string)(*MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) {
     m := &MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/microsoftTunnelSites/{microsoftTunnelSite%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewMicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilderInternal(pathPa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if microsoftTunnelSiteId != nil {
+        urlTplParams["microsoftTunnelSite%2Did"] = *microsoftTunnelSiteId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder instantiates a new MicrosoftTunnelSiteItemRequestBuilder and sets the default values.
 func NewMicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewMicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewMicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property microsoftTunnelSites for deviceManagement
 func (m *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -100,13 +103,17 @@ func (m *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) Get(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelSiteable), nil
 }
+// MicrosoftGraphRequestUpgrade provides operations to call the requestUpgrade method.
+func (m *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) MicrosoftGraphRequestUpgrade()(*MicrosoftTunnelSitesItemMicrosoftGraphRequestUpgradeRequestUpgradeRequestBuilder) {
+    return NewMicrosoftTunnelSitesItemMicrosoftGraphRequestUpgradeRequestUpgradeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // MicrosoftTunnelConfiguration provides operations to manage the microsoftTunnelConfiguration property of the microsoft.graph.microsoftTunnelSite entity.
 func (m *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) MicrosoftTunnelConfiguration()(*MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder) {
-    return NewMicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MicrosoftTunnelServers provides operations to manage the microsoftTunnelServers property of the microsoft.graph.microsoftTunnelSite entity.
 func (m *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) MicrosoftTunnelServers()(*MicrosoftTunnelSitesItemMicrosoftTunnelServersRequestBuilder) {
-    return NewMicrosoftTunnelSitesItemMicrosoftTunnelServersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMicrosoftTunnelSitesItemMicrosoftTunnelServersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MicrosoftTunnelServersById provides operations to manage the microsoftTunnelServers property of the microsoft.graph.microsoftTunnelSite entity.
 func (m *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) MicrosoftTunnelServersById(id string)(*MicrosoftTunnelSitesItemMicrosoftTunnelServersMicrosoftTunnelServerItemRequestBuilder) {
@@ -114,10 +121,8 @@ func (m *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) MicrosoftTun
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["microsoftTunnelServer%2Did"] = id
-    }
-    return NewMicrosoftTunnelSitesItemMicrosoftTunnelServersMicrosoftTunnelServerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewMicrosoftTunnelSitesItemMicrosoftTunnelServersMicrosoftTunnelServerItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Patch update the navigation property microsoftTunnelSites in deviceManagement
 func (m *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelSiteable, requestConfiguration *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelSiteable, error) {
@@ -137,10 +142,6 @@ func (m *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) Patch(ctx co
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelSiteable), nil
-}
-// RequestUpgrade provides operations to call the requestUpgrade method.
-func (m *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) RequestUpgrade()(*MicrosoftTunnelSitesItemRequestUpgradeRequestBuilder) {
-    return NewMicrosoftTunnelSitesItemRequestUpgradeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property microsoftTunnelSites for deviceManagement
 func (m *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -177,7 +178,10 @@ func (m *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) ToPatchReque
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

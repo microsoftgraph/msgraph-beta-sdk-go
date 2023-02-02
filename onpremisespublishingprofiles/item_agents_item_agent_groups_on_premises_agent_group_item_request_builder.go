@@ -14,7 +14,7 @@ type ItemAgentsItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder struct {
     urlTemplate string
 }
 // NewItemAgentsItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderInternal instantiates a new OnPremisesAgentGroupItemRequestBuilder and sets the default values.
-func NewItemAgentsItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAgentsItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) {
+func NewItemAgentsItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, onPremisesAgentGroupId *string)(*ItemAgentsItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) {
     m := &ItemAgentsItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/agents/{onPremisesAgent%2Did}/agentGroups/{onPremisesAgentGroup%2Did}";
@@ -22,17 +22,20 @@ func NewItemAgentsItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderInternal(
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if onPremisesAgentGroupId != nil {
+        urlTplParams["onPremisesAgentGroup%2Did"] = *onPremisesAgentGroupId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemAgentsItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder instantiates a new OnPremisesAgentGroupItemRequestBuilder and sets the default values.
 func NewItemAgentsItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAgentsItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemAgentsItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemAgentsItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Ref provides operations to manage the collection of onPremisesPublishingProfile entities.
 func (m *ItemAgentsItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) Ref()(*ItemAgentsItemAgentGroupsItemRefRequestBuilder) {
-    return NewItemAgentsItemAgentGroupsItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemAgentsItemAgentGroupsItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

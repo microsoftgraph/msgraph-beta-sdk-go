@@ -47,7 +47,7 @@ type EntitlementManagementRoleAssignmentApprovalsApprovalItemRequestBuilderPatch
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewEntitlementManagementRoleAssignmentApprovalsApprovalItemRequestBuilderInternal instantiates a new ApprovalItemRequestBuilder and sets the default values.
-func NewEntitlementManagementRoleAssignmentApprovalsApprovalItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementRoleAssignmentApprovalsApprovalItemRequestBuilder) {
+func NewEntitlementManagementRoleAssignmentApprovalsApprovalItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, approvalId *string)(*EntitlementManagementRoleAssignmentApprovalsApprovalItemRequestBuilder) {
     m := &EntitlementManagementRoleAssignmentApprovalsApprovalItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/roleManagement/entitlementManagement/roleAssignmentApprovals/{approval%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewEntitlementManagementRoleAssignmentApprovalsApprovalItemRequestBuilderIn
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if approvalId != nil {
+        urlTplParams["approval%2Did"] = *approvalId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementRoleAssignmentApprovalsApprovalItemRequestBuilder instantiates a new ApprovalItemRequestBuilder and sets the default values.
 func NewEntitlementManagementRoleAssignmentApprovalsApprovalItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementRoleAssignmentApprovalsApprovalItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewEntitlementManagementRoleAssignmentApprovalsApprovalItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewEntitlementManagementRoleAssignmentApprovalsApprovalItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property roleAssignmentApprovals for roleManagement
 func (m *EntitlementManagementRoleAssignmentApprovalsApprovalItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EntitlementManagementRoleAssignmentApprovalsApprovalItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -121,7 +124,7 @@ func (m *EntitlementManagementRoleAssignmentApprovalsApprovalItemRequestBuilder)
 }
 // Steps provides operations to manage the steps property of the microsoft.graph.approval entity.
 func (m *EntitlementManagementRoleAssignmentApprovalsApprovalItemRequestBuilder) Steps()(*EntitlementManagementRoleAssignmentApprovalsItemStepsRequestBuilder) {
-    return NewEntitlementManagementRoleAssignmentApprovalsItemStepsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementRoleAssignmentApprovalsItemStepsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // StepsById provides operations to manage the steps property of the microsoft.graph.approval entity.
 func (m *EntitlementManagementRoleAssignmentApprovalsApprovalItemRequestBuilder) StepsById(id string)(*EntitlementManagementRoleAssignmentApprovalsItemStepsApprovalStepItemRequestBuilder) {
@@ -129,10 +132,8 @@ func (m *EntitlementManagementRoleAssignmentApprovalsApprovalItemRequestBuilder)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["approvalStep%2Did"] = id
-    }
-    return NewEntitlementManagementRoleAssignmentApprovalsItemStepsApprovalStepItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewEntitlementManagementRoleAssignmentApprovalsItemStepsApprovalStepItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property roleAssignmentApprovals for roleManagement
 func (m *EntitlementManagementRoleAssignmentApprovalsApprovalItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementRoleAssignmentApprovalsApprovalItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +170,10 @@ func (m *EntitlementManagementRoleAssignmentApprovalsApprovalItemRequestBuilder)
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

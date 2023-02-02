@@ -47,7 +47,7 @@ type ComanagementEligibleDevicesComanagementEligibleDeviceItemRequestBuilderPatc
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewComanagementEligibleDevicesComanagementEligibleDeviceItemRequestBuilderInternal instantiates a new ComanagementEligibleDeviceItemRequestBuilder and sets the default values.
-func NewComanagementEligibleDevicesComanagementEligibleDeviceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ComanagementEligibleDevicesComanagementEligibleDeviceItemRequestBuilder) {
+func NewComanagementEligibleDevicesComanagementEligibleDeviceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, comanagementEligibleDeviceId *string)(*ComanagementEligibleDevicesComanagementEligibleDeviceItemRequestBuilder) {
     m := &ComanagementEligibleDevicesComanagementEligibleDeviceItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/comanagementEligibleDevices/{comanagementEligibleDevice%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewComanagementEligibleDevicesComanagementEligibleDeviceItemRequestBuilderI
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if comanagementEligibleDeviceId != nil {
+        urlTplParams["comanagementEligibleDevice%2Did"] = *comanagementEligibleDeviceId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewComanagementEligibleDevicesComanagementEligibleDeviceItemRequestBuilder instantiates a new ComanagementEligibleDeviceItemRequestBuilder and sets the default values.
 func NewComanagementEligibleDevicesComanagementEligibleDeviceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ComanagementEligibleDevicesComanagementEligibleDeviceItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewComanagementEligibleDevicesComanagementEligibleDeviceItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewComanagementEligibleDevicesComanagementEligibleDeviceItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property comanagementEligibleDevices for deviceManagement
 func (m *ComanagementEligibleDevicesComanagementEligibleDeviceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ComanagementEligibleDevicesComanagementEligibleDeviceItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ComanagementEligibleDevicesComanagementEligibleDeviceItemRequestBuilder
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

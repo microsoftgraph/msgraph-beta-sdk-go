@@ -47,7 +47,7 @@ type EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderPat
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewEdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderInternal instantiates a new SiteSourceItemRequestBuilder and sets the default values.
-func NewEdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilder) {
+func NewEdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, siteSourceId *string)(*EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilder) {
     m := &EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/custodians/{custodian%2Did}/siteSources/{siteSource%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewEdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilder
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if siteSourceId != nil {
+        urlTplParams["siteSource%2Did"] = *siteSourceId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilder instantiates a new SiteSourceItemRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewEdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewEdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property siteSources for compliance
 func (m *EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -121,7 +124,7 @@ func (m *EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilde
 }
 // Site provides operations to manage the site property of the microsoft.graph.ediscovery.siteSource entity.
 func (m *EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilder) Site()(*EdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property siteSources for compliance
 func (m *EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +161,10 @@ func (m *EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilde
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

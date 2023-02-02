@@ -33,7 +33,7 @@ type AgreementAcceptancesAgreementAcceptanceItemRequestBuilderGetRequestConfigur
     QueryParameters *AgreementAcceptancesAgreementAcceptanceItemRequestBuilderGetQueryParameters
 }
 // NewAgreementAcceptancesAgreementAcceptanceItemRequestBuilderInternal instantiates a new AgreementAcceptanceItemRequestBuilder and sets the default values.
-func NewAgreementAcceptancesAgreementAcceptanceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AgreementAcceptancesAgreementAcceptanceItemRequestBuilder) {
+func NewAgreementAcceptancesAgreementAcceptanceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, agreementAcceptanceId *string)(*AgreementAcceptancesAgreementAcceptanceItemRequestBuilder) {
     m := &AgreementAcceptancesAgreementAcceptanceItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/agreementAcceptances/{agreementAcceptance%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewAgreementAcceptancesAgreementAcceptanceItemRequestBuilderInternal(pathPa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if agreementAcceptanceId != nil {
+        urlTplParams["agreementAcceptance%2Did"] = *agreementAcceptanceId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAgreementAcceptancesAgreementAcceptanceItemRequestBuilder instantiates a new AgreementAcceptanceItemRequestBuilder and sets the default values.
 func NewAgreementAcceptancesAgreementAcceptanceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AgreementAcceptancesAgreementAcceptanceItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAgreementAcceptancesAgreementAcceptanceItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAgreementAcceptancesAgreementAcceptanceItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get the user's terms of use acceptance statuses. Read-only. Nullable.
 func (m *AgreementAcceptancesAgreementAcceptanceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AgreementAcceptancesAgreementAcceptanceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementAcceptanceable, error) {

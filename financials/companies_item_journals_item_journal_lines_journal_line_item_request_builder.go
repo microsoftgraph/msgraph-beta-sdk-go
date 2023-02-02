@@ -48,10 +48,10 @@ type CompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilderPatchRequ
 }
 // Account provides operations to manage the account property of the microsoft.graph.journalLine entity.
 func (m *CompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilder) Account()(*CompaniesItemJournalsItemJournalLinesItemAccountRequestBuilder) {
-    return NewCompaniesItemJournalsItemJournalLinesItemAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemJournalsItemJournalLinesItemAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewCompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilderInternal instantiates a new JournalLineItemRequestBuilder and sets the default values.
-func NewCompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilder) {
+func NewCompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, journalLineId *string)(*CompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilder) {
     m := &CompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/financials/companies/{company%2Did}/journals/{journal%2Did}/journalLines/{journalLine%2Did}{?%24select,%24expand}";
@@ -59,15 +59,18 @@ func NewCompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilderIntern
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if journalLineId != nil {
+        urlTplParams["journalLine%2Did"] = *journalLineId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilder instantiates a new JournalLineItemRequestBuilder and sets the default values.
 func NewCompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property journalLines for financials
 func (m *CompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -158,7 +161,10 @@ func (m *CompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilder) ToP
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

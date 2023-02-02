@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsAppHealthDevicePerformanceDetails the user experience analytics device performance entity contains device performance details.
+// UserExperienceAnalyticsAppHealthDevicePerformanceDetails 
 type UserExperienceAnalyticsAppHealthDevicePerformanceDetails struct {
     Entity
     // The friendly name of the application for which the event occurred.
@@ -23,7 +23,7 @@ type UserExperienceAnalyticsAppHealthDevicePerformanceDetails struct {
     // The type of the event.
     eventType *string
 }
-// NewUserExperienceAnalyticsAppHealthDevicePerformanceDetails instantiates a new userExperienceAnalyticsAppHealthDevicePerformanceDetails and sets the default values.
+// NewUserExperienceAnalyticsAppHealthDevicePerformanceDetails instantiates a new UserExperienceAnalyticsAppHealthDevicePerformanceDetails and sets the default values.
 func NewUserExperienceAnalyticsAppHealthDevicePerformanceDetails()(*UserExperienceAnalyticsAppHealthDevicePerformanceDetails) {
     m := &UserExperienceAnalyticsAppHealthDevicePerformanceDetails{
         Entity: *NewEntity(),

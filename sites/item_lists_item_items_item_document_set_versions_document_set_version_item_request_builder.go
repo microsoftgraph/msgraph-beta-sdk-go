@@ -47,7 +47,7 @@ type ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuild
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderInternal instantiates a new DocumentSetVersionItemRequestBuilder and sets the default values.
-func NewItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder) {
+func NewItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, documentSetVersionId *string)(*ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder) {
     m := &ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/items/{listItem%2Did}/documentSetVersions/{documentSetVersion%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBu
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if documentSetVersionId != nil {
+        urlTplParams["documentSetVersion%2Did"] = *documentSetVersionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder instantiates a new DocumentSetVersionItemRequestBuilder and sets the default values.
 func NewItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property documentSetVersions for sites
 func (m *ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -100,6 +103,10 @@ func (m *ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestB
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DocumentSetVersionable), nil
 }
+// MicrosoftGraphRestore provides operations to call the restore method.
+func (m *ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder) MicrosoftGraphRestore()(*ItemListsItemItemsItemDocumentSetVersionsItemMicrosoftGraphRestoreRestoreRequestBuilder) {
+    return NewItemListsItemItemsItemDocumentSetVersionsItemMicrosoftGraphRestoreRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property documentSetVersions in sites
 func (m *ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DocumentSetVersionable, requestConfiguration *ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DocumentSetVersionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -118,10 +125,6 @@ func (m *ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestB
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DocumentSetVersionable), nil
-}
-// Restore provides operations to call the restore method.
-func (m *ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder) Restore()(*ItemListsItemItemsItemDocumentSetVersionsItemRestoreRequestBuilder) {
-    return NewItemListsItemItemsItemDocumentSetVersionsItemRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property documentSetVersions for sites
 func (m *ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +161,10 @@ func (m *ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestB
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

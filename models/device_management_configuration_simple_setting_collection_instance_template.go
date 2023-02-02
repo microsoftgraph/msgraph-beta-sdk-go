@@ -17,8 +17,8 @@ func NewDeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate()(*
     m := &DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate{
         DeviceManagementConfigurationSettingInstanceTemplate: *NewDeviceManagementConfigurationSettingInstanceTemplate(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationSimpleSettingCollectionInstanceTemplate";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationSimpleSettingCollectionInstanceTemplate"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementConfigurationSimpleSettingCollectionInstanceTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

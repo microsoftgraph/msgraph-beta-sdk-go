@@ -23,7 +23,7 @@ type UserRegistrationMethodSummary struct {
 func NewUserRegistrationMethodSummary()(*UserRegistrationMethodSummary) {
     m := &UserRegistrationMethodSummary{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateUserRegistrationMethodSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

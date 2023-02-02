@@ -54,6 +54,8 @@ type PlannerTask struct {
     priority *int32
     // Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
     progressTaskBoardFormat PlannerProgressTaskBoardTaskFormatable
+    // The recurrence property
+    recurrence PlannerTaskRecurrenceable
     // Number of external references that exist on the task.
     referenceCount *int32
     // Date and time at which the task starts. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -387,6 +389,16 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["recurrence"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePlannerTaskRecurrenceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRecurrence(val.(PlannerTaskRecurrenceable))
+        }
+        return nil
+    }
     res["referenceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -446,6 +458,10 @@ func (m *PlannerTask) GetPriority()(*int32) {
 // GetProgressTaskBoardFormat gets the progressTaskBoardFormat property value. Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
 func (m *PlannerTask) GetProgressTaskBoardFormat()(PlannerProgressTaskBoardTaskFormatable) {
     return m.progressTaskBoardFormat
+}
+// GetRecurrence gets the recurrence property value. The recurrence property
+func (m *PlannerTask) GetRecurrence()(PlannerTaskRecurrenceable) {
+    return m.recurrence
 }
 // GetReferenceCount gets the referenceCount property value. Number of external references that exist on the task.
 func (m *PlannerTask) GetReferenceCount()(*int32) {
@@ -605,6 +621,12 @@ func (m *PlannerTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteObjectValue("recurrence", m.GetRecurrence())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("referenceCount", m.GetReferenceCount())
         if err != nil {
             return err
@@ -715,6 +737,10 @@ func (m *PlannerTask) SetPriority(value *int32)() {
 // SetProgressTaskBoardFormat sets the progressTaskBoardFormat property value. Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
 func (m *PlannerTask) SetProgressTaskBoardFormat(value PlannerProgressTaskBoardTaskFormatable)() {
     m.progressTaskBoardFormat = value
+}
+// SetRecurrence sets the recurrence property value. The recurrence property
+func (m *PlannerTask) SetRecurrence(value PlannerTaskRecurrenceable)() {
+    m.recurrence = value
 }
 // SetReferenceCount sets the referenceCount property value. Number of external references that exist on the task.
 func (m *PlannerTask) SetReferenceCount(value *int32)() {

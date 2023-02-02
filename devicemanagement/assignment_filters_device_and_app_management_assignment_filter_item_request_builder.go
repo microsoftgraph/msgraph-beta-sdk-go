@@ -47,7 +47,7 @@ type AssignmentFiltersDeviceAndAppManagementAssignmentFilterItemRequestBuilderPa
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewAssignmentFiltersDeviceAndAppManagementAssignmentFilterItemRequestBuilderInternal instantiates a new DeviceAndAppManagementAssignmentFilterItemRequestBuilder and sets the default values.
-func NewAssignmentFiltersDeviceAndAppManagementAssignmentFilterItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AssignmentFiltersDeviceAndAppManagementAssignmentFilterItemRequestBuilder) {
+func NewAssignmentFiltersDeviceAndAppManagementAssignmentFilterItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, deviceAndAppManagementAssignmentFilterId *string)(*AssignmentFiltersDeviceAndAppManagementAssignmentFilterItemRequestBuilder) {
     m := &AssignmentFiltersDeviceAndAppManagementAssignmentFilterItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/assignmentFilters/{deviceAndAppManagementAssignmentFilter%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewAssignmentFiltersDeviceAndAppManagementAssignmentFilterItemRequestBuilde
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if deviceAndAppManagementAssignmentFilterId != nil {
+        urlTplParams["deviceAndAppManagementAssignmentFilter%2Did"] = *deviceAndAppManagementAssignmentFilterId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAssignmentFiltersDeviceAndAppManagementAssignmentFilterItemRequestBuilder instantiates a new DeviceAndAppManagementAssignmentFilterItemRequestBuilder and sets the default values.
 func NewAssignmentFiltersDeviceAndAppManagementAssignmentFilterItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AssignmentFiltersDeviceAndAppManagementAssignmentFilterItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAssignmentFiltersDeviceAndAppManagementAssignmentFilterItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAssignmentFiltersDeviceAndAppManagementAssignmentFilterItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property assignmentFilters for deviceManagement
 func (m *AssignmentFiltersDeviceAndAppManagementAssignmentFilterItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AssignmentFiltersDeviceAndAppManagementAssignmentFilterItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -100,9 +103,9 @@ func (m *AssignmentFiltersDeviceAndAppManagementAssignmentFilterItemRequestBuild
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAndAppManagementAssignmentFilterable), nil
 }
-// GetSupportedProperties provides operations to call the getSupportedProperties method.
-func (m *AssignmentFiltersDeviceAndAppManagementAssignmentFilterItemRequestBuilder) GetSupportedProperties()(*AssignmentFiltersItemGetSupportedPropertiesRequestBuilder) {
-    return NewAssignmentFiltersItemGetSupportedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetSupportedProperties provides operations to call the getSupportedProperties method.
+func (m *AssignmentFiltersDeviceAndAppManagementAssignmentFilterItemRequestBuilder) MicrosoftGraphGetSupportedProperties()(*AssignmentFiltersItemMicrosoftGraphGetSupportedPropertiesGetSupportedPropertiesRequestBuilder) {
+    return NewAssignmentFiltersItemMicrosoftGraphGetSupportedPropertiesGetSupportedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property assignmentFilters in deviceManagement
 func (m *AssignmentFiltersDeviceAndAppManagementAssignmentFilterItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAndAppManagementAssignmentFilterable, requestConfiguration *AssignmentFiltersDeviceAndAppManagementAssignmentFilterItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAndAppManagementAssignmentFilterable, error) {
@@ -158,7 +161,10 @@ func (m *AssignmentFiltersDeviceAndAppManagementAssignmentFilterItemRequestBuild
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

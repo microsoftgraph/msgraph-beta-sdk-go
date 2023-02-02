@@ -23,7 +23,7 @@ type TimeCardBreak struct {
 func NewTimeCardBreak()(*TimeCardBreak) {
     m := &TimeCardBreak{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTimeCardBreakFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

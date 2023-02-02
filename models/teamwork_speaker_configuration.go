@@ -25,7 +25,7 @@ type TeamworkSpeakerConfiguration struct {
 func NewTeamworkSpeakerConfiguration()(*TeamworkSpeakerConfiguration) {
     m := &TeamworkSpeakerConfiguration{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTeamworkSpeakerConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

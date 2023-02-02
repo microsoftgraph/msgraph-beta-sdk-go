@@ -25,7 +25,7 @@ type OathTokenMetadata struct {
 func NewOathTokenMetadata()(*OathTokenMetadata) {
     m := &OathTokenMetadata{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateOathTokenMetadataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

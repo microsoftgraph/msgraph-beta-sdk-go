@@ -55,8 +55,8 @@ func NewWindowsUpdatesDeploymentsItemAudienceRequestBuilderInternal(pathParamete
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsUpdatesDeploymentsItemAudienceRequestBuilder instantiates a new AudienceRequestBuilder and sets the default values.
@@ -83,7 +83,7 @@ func (m *WindowsUpdatesDeploymentsItemAudienceRequestBuilder) Delete(ctx context
 }
 // Exclusions provides operations to manage the exclusions property of the microsoft.graph.windowsUpdates.deploymentAudience entity.
 func (m *WindowsUpdatesDeploymentsItemAudienceRequestBuilder) Exclusions()(*WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ExclusionsById provides operations to manage the exclusions property of the microsoft.graph.windowsUpdates.deploymentAudience entity.
 func (m *WindowsUpdatesDeploymentsItemAudienceRequestBuilder) ExclusionsById(id string)(*WindowsUpdatesDeploymentsItemAudienceExclusionsUpdatableAssetItemRequestBuilder) {
@@ -91,10 +91,8 @@ func (m *WindowsUpdatesDeploymentsItemAudienceRequestBuilder) ExclusionsById(id 
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["updatableAsset%2Did"] = id
-    }
-    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsUpdatableAssetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsUpdatableAssetItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Get specifies the audience to which content is deployed.
 func (m *WindowsUpdatesDeploymentsItemAudienceRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentsItemAudienceRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentAudienceable, error) {
@@ -117,7 +115,7 @@ func (m *WindowsUpdatesDeploymentsItemAudienceRequestBuilder) Get(ctx context.Co
 }
 // Members provides operations to manage the members property of the microsoft.graph.windowsUpdates.deploymentAudience entity.
 func (m *WindowsUpdatesDeploymentsItemAudienceRequestBuilder) Members()(*WindowsUpdatesDeploymentsItemAudienceMembersRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsItemAudienceMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsUpdatesDeploymentsItemAudienceMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MembersById provides operations to manage the members property of the microsoft.graph.windowsUpdates.deploymentAudience entity.
 func (m *WindowsUpdatesDeploymentsItemAudienceRequestBuilder) MembersById(id string)(*WindowsUpdatesDeploymentsItemAudienceMembersUpdatableAssetItemRequestBuilder) {
@@ -125,10 +123,16 @@ func (m *WindowsUpdatesDeploymentsItemAudienceRequestBuilder) MembersById(id str
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["updatableAsset%2Did"] = id
-    }
-    return NewWindowsUpdatesDeploymentsItemAudienceMembersUpdatableAssetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewWindowsUpdatesDeploymentsItemAudienceMembersUpdatableAssetItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
+}
+// MicrosoftGraphWindowsUpdatesUpdateAudience provides operations to call the updateAudience method.
+func (m *WindowsUpdatesDeploymentsItemAudienceRequestBuilder) MicrosoftGraphWindowsUpdatesUpdateAudience()(*WindowsUpdatesDeploymentsItemAudienceMicrosoftGraphWindowsUpdatesUpdateAudienceUpdateAudienceRequestBuilder) {
+    return NewWindowsUpdatesDeploymentsItemAudienceMicrosoftGraphWindowsUpdatesUpdateAudienceUpdateAudienceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphWindowsUpdatesUpdateAudienceById provides operations to call the updateAudienceById method.
+func (m *WindowsUpdatesDeploymentsItemAudienceRequestBuilder) MicrosoftGraphWindowsUpdatesUpdateAudienceById()(*WindowsUpdatesDeploymentsItemAudienceMicrosoftGraphWindowsUpdatesUpdateAudienceByIdUpdateAudienceByIdRequestBuilder) {
+    return NewWindowsUpdatesDeploymentsItemAudienceMicrosoftGraphWindowsUpdatesUpdateAudienceByIdUpdateAudienceByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property audience in admin
 func (m *WindowsUpdatesDeploymentsItemAudienceRequestBuilder) Patch(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentAudienceable, requestConfiguration *WindowsUpdatesDeploymentsItemAudienceRequestBuilderPatchRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentAudienceable, error) {
@@ -184,18 +188,13 @@ func (m *WindowsUpdatesDeploymentsItemAudienceRequestBuilder) ToPatchRequestInfo
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// UpdateAudience provides operations to call the updateAudience method.
-func (m *WindowsUpdatesDeploymentsItemAudienceRequestBuilder) UpdateAudience()(*WindowsUpdatesDeploymentsItemAudienceUpdateAudienceRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsItemAudienceUpdateAudienceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// UpdateAudienceById provides operations to call the updateAudienceById method.
-func (m *WindowsUpdatesDeploymentsItemAudienceRequestBuilder) UpdateAudienceById()(*WindowsUpdatesDeploymentsItemAudienceUpdateAudienceByIdRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsItemAudienceUpdateAudienceByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

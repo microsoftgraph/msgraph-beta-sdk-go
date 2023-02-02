@@ -15,8 +15,8 @@ func NewDeviceHealthScriptStringParameter()(*DeviceHealthScriptStringParameter) 
     m := &DeviceHealthScriptStringParameter{
         DeviceHealthScriptParameter: *NewDeviceHealthScriptParameter(),
     }
-    odataTypeValue := "#microsoft.graph.deviceHealthScriptStringParameter";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceHealthScriptStringParameter"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceHealthScriptStringParameterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -23,7 +23,7 @@ type OnPremisesApplicationSegment struct {
 func NewOnPremisesApplicationSegment()(*OnPremisesApplicationSegment) {
     m := &OnPremisesApplicationSegment{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateOnPremisesApplicationSegmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

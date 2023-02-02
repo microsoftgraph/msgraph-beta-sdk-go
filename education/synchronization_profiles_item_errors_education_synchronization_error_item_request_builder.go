@@ -47,7 +47,7 @@ type SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBu
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewSynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilderInternal instantiates a new EducationSynchronizationErrorItemRequestBuilder and sets the default values.
-func NewSynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilder) {
+func NewSynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, educationSynchronizationErrorId *string)(*SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilder) {
     m := &SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/education/synchronizationProfiles/{educationSynchronizationProfile%2Did}/errors/{educationSynchronizationError%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewSynchronizationProfilesItemErrorsEducationSynchronizationErrorItemReques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if educationSynchronizationErrorId != nil {
+        urlTplParams["educationSynchronizationError%2Did"] = *educationSynchronizationErrorId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewSynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilder instantiates a new EducationSynchronizationErrorItemRequestBuilder and sets the default values.
 func NewSynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewSynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewSynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property errors for education
 func (m *SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemReque
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -46,12 +46,8 @@ type GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AddLanguageFiles provides operations to call the addLanguageFiles method.
-func (m *GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilder) AddLanguageFiles()(*GroupPolicyUploadedDefinitionFilesItemAddLanguageFilesRequestBuilder) {
-    return NewGroupPolicyUploadedDefinitionFilesItemAddLanguageFilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewGroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilderInternal instantiates a new GroupPolicyUploadedDefinitionFileItemRequestBuilder and sets the default values.
-func NewGroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilder) {
+func NewGroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, groupPolicyUploadedDefinitionFileId *string)(*GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilder) {
     m := &GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/groupPolicyUploadedDefinitionFiles/{groupPolicyUploadedDefinitionFile%2Did}{?%24select,%24expand}";
@@ -59,15 +55,18 @@ func NewGroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemR
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if groupPolicyUploadedDefinitionFileId != nil {
+        urlTplParams["groupPolicyUploadedDefinitionFile%2Did"] = *groupPolicyUploadedDefinitionFileId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilder instantiates a new GroupPolicyUploadedDefinitionFileItemRequestBuilder and sets the default values.
 func NewGroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewGroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewGroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property groupPolicyUploadedDefinitionFiles for deviceManagement
 func (m *GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -106,7 +105,7 @@ func (m *GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItem
 }
 // GroupPolicyOperations provides operations to manage the groupPolicyOperations property of the microsoft.graph.groupPolicyUploadedDefinitionFile entity.
 func (m *GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilder) GroupPolicyOperations()(*GroupPolicyUploadedDefinitionFilesItemGroupPolicyOperationsRequestBuilder) {
-    return NewGroupPolicyUploadedDefinitionFilesItemGroupPolicyOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyUploadedDefinitionFilesItemGroupPolicyOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GroupPolicyOperationsById provides operations to manage the groupPolicyOperations property of the microsoft.graph.groupPolicyUploadedDefinitionFile entity.
 func (m *GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilder) GroupPolicyOperationsById(id string)(*GroupPolicyUploadedDefinitionFilesItemGroupPolicyOperationsGroupPolicyOperationItemRequestBuilder) {
@@ -114,10 +113,28 @@ func (m *GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItem
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["groupPolicyOperation%2Did"] = id
-    }
-    return NewGroupPolicyUploadedDefinitionFilesItemGroupPolicyOperationsGroupPolicyOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewGroupPolicyUploadedDefinitionFilesItemGroupPolicyOperationsGroupPolicyOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
+}
+// MicrosoftGraphAddLanguageFiles provides operations to call the addLanguageFiles method.
+func (m *GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilder) MicrosoftGraphAddLanguageFiles()(*GroupPolicyUploadedDefinitionFilesItemMicrosoftGraphAddLanguageFilesAddLanguageFilesRequestBuilder) {
+    return NewGroupPolicyUploadedDefinitionFilesItemMicrosoftGraphAddLanguageFilesAddLanguageFilesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRemove provides operations to call the remove method.
+func (m *GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilder) MicrosoftGraphRemove()(*GroupPolicyUploadedDefinitionFilesItemMicrosoftGraphRemoveRemoveRequestBuilder) {
+    return NewGroupPolicyUploadedDefinitionFilesItemMicrosoftGraphRemoveRemoveRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRemoveLanguageFiles provides operations to call the removeLanguageFiles method.
+func (m *GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilder) MicrosoftGraphRemoveLanguageFiles()(*GroupPolicyUploadedDefinitionFilesItemMicrosoftGraphRemoveLanguageFilesRemoveLanguageFilesRequestBuilder) {
+    return NewGroupPolicyUploadedDefinitionFilesItemMicrosoftGraphRemoveLanguageFilesRemoveLanguageFilesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUpdateLanguageFiles provides operations to call the updateLanguageFiles method.
+func (m *GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilder) MicrosoftGraphUpdateLanguageFiles()(*GroupPolicyUploadedDefinitionFilesItemMicrosoftGraphUpdateLanguageFilesUpdateLanguageFilesRequestBuilder) {
+    return NewGroupPolicyUploadedDefinitionFilesItemMicrosoftGraphUpdateLanguageFilesUpdateLanguageFilesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUploadNewVersion provides operations to call the uploadNewVersion method.
+func (m *GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilder) MicrosoftGraphUploadNewVersion()(*GroupPolicyUploadedDefinitionFilesItemMicrosoftGraphUploadNewVersionUploadNewVersionRequestBuilder) {
+    return NewGroupPolicyUploadedDefinitionFilesItemMicrosoftGraphUploadNewVersionUploadNewVersionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property groupPolicyUploadedDefinitionFiles in deviceManagement
 func (m *GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyUploadedDefinitionFileable, requestConfiguration *GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyUploadedDefinitionFileable, error) {
@@ -137,14 +154,6 @@ func (m *GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItem
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyUploadedDefinitionFileable), nil
-}
-// Remove provides operations to call the remove method.
-func (m *GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilder) Remove()(*GroupPolicyUploadedDefinitionFilesItemRemoveRequestBuilder) {
-    return NewGroupPolicyUploadedDefinitionFilesItemRemoveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// RemoveLanguageFiles provides operations to call the removeLanguageFiles method.
-func (m *GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilder) RemoveLanguageFiles()(*GroupPolicyUploadedDefinitionFilesItemRemoveLanguageFilesRequestBuilder) {
-    return NewGroupPolicyUploadedDefinitionFilesItemRemoveLanguageFilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property groupPolicyUploadedDefinitionFiles for deviceManagement
 func (m *GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -181,18 +190,13 @@ func (m *GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItem
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// UpdateLanguageFiles provides operations to call the updateLanguageFiles method.
-func (m *GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilder) UpdateLanguageFiles()(*GroupPolicyUploadedDefinitionFilesItemUpdateLanguageFilesRequestBuilder) {
-    return NewGroupPolicyUploadedDefinitionFilesItemUpdateLanguageFilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// UploadNewVersion provides operations to call the uploadNewVersion method.
-func (m *GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilder) UploadNewVersion()(*GroupPolicyUploadedDefinitionFilesItemUploadNewVersionRequestBuilder) {
-    return NewGroupPolicyUploadedDefinitionFilesItemUploadNewVersionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

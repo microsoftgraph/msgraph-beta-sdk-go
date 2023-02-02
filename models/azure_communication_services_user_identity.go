@@ -15,8 +15,8 @@ func NewAzureCommunicationServicesUserIdentity()(*AzureCommunicationServicesUser
     m := &AzureCommunicationServicesUserIdentity{
         Identity: *NewIdentity(),
     }
-    odataTypeValue := "#microsoft.graph.azureCommunicationServicesUserIdentity";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.azureCommunicationServicesUserIdentity"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAzureCommunicationServicesUserIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

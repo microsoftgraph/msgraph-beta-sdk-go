@@ -17,7 +17,7 @@ type AppCatalogs struct {
 func NewAppCatalogs()(*AppCatalogs) {
     m := &AppCatalogs{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAppCatalogsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

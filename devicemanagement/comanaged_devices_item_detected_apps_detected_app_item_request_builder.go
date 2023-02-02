@@ -33,7 +33,7 @@ type ComanagedDevicesItemDetectedAppsDetectedAppItemRequestBuilderGetRequestConf
     QueryParameters *ComanagedDevicesItemDetectedAppsDetectedAppItemRequestBuilderGetQueryParameters
 }
 // NewComanagedDevicesItemDetectedAppsDetectedAppItemRequestBuilderInternal instantiates a new DetectedAppItemRequestBuilder and sets the default values.
-func NewComanagedDevicesItemDetectedAppsDetectedAppItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ComanagedDevicesItemDetectedAppsDetectedAppItemRequestBuilder) {
+func NewComanagedDevicesItemDetectedAppsDetectedAppItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, detectedAppId *string)(*ComanagedDevicesItemDetectedAppsDetectedAppItemRequestBuilder) {
     m := &ComanagedDevicesItemDetectedAppsDetectedAppItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/detectedApps/{detectedApp%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewComanagedDevicesItemDetectedAppsDetectedAppItemRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if detectedAppId != nil {
+        urlTplParams["detectedApp%2Did"] = *detectedAppId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewComanagedDevicesItemDetectedAppsDetectedAppItemRequestBuilder instantiates a new DetectedAppItemRequestBuilder and sets the default values.
 func NewComanagedDevicesItemDetectedAppsDetectedAppItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ComanagedDevicesItemDetectedAppsDetectedAppItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewComanagedDevicesItemDetectedAppsDetectedAppItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewComanagedDevicesItemDetectedAppsDetectedAppItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get all applications currently installed on the device
 func (m *ComanagedDevicesItemDetectedAppsDetectedAppItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ComanagedDevicesItemDetectedAppsDetectedAppItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DetectedAppable, error) {

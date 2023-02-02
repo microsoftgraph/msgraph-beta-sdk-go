@@ -33,7 +33,7 @@ type ItemTeamIncomingChannelsChannelItemRequestBuilderGetRequestConfiguration st
     QueryParameters *ItemTeamIncomingChannelsChannelItemRequestBuilderGetQueryParameters
 }
 // NewItemTeamIncomingChannelsChannelItemRequestBuilderInternal instantiates a new ChannelItemRequestBuilder and sets the default values.
-func NewItemTeamIncomingChannelsChannelItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamIncomingChannelsChannelItemRequestBuilder) {
+func NewItemTeamIncomingChannelsChannelItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, channelId *string)(*ItemTeamIncomingChannelsChannelItemRequestBuilder) {
     m := &ItemTeamIncomingChannelsChannelItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/team/incomingChannels/{channel%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewItemTeamIncomingChannelsChannelItemRequestBuilderInternal(pathParameters
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if channelId != nil {
+        urlTplParams["channel%2Did"] = *channelId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTeamIncomingChannelsChannelItemRequestBuilder instantiates a new ChannelItemRequestBuilder and sets the default values.
 func NewItemTeamIncomingChannelsChannelItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamIncomingChannelsChannelItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemTeamIncomingChannelsChannelItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemTeamIncomingChannelsChannelItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get list of channels shared with the team.
 func (m *ItemTeamIncomingChannelsChannelItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamIncomingChannelsChannelItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable, error) {

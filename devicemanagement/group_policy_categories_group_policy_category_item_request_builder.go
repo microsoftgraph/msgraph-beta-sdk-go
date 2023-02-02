@@ -48,7 +48,7 @@ type GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilderPatchRequestConfi
 }
 // Children provides operations to manage the children property of the microsoft.graph.groupPolicyCategory entity.
 func (m *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) Children()(*GroupPolicyCategoriesItemChildrenRequestBuilder) {
-    return NewGroupPolicyCategoriesItemChildrenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyCategoriesItemChildrenRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ChildrenById provides operations to manage the children property of the microsoft.graph.groupPolicyCategory entity.
 func (m *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) ChildrenById(id string)(*GroupPolicyCategoriesItemChildrenGroupPolicyCategoryItemRequestBuilder) {
@@ -56,13 +56,11 @@ func (m *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) ChildrenByI
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["groupPolicyCategory%2Did1"] = id
-    }
-    return NewGroupPolicyCategoriesItemChildrenGroupPolicyCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewGroupPolicyCategoriesItemChildrenGroupPolicyCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewGroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilderInternal instantiates a new GroupPolicyCategoryItemRequestBuilder and sets the default values.
-func NewGroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) {
+func NewGroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, groupPolicyCategoryId *string)(*GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) {
     m := &GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/groupPolicyCategories/{groupPolicyCategory%2Did}{?%24select,%24expand}";
@@ -70,23 +68,26 @@ func NewGroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilderInternal(pathP
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if groupPolicyCategoryId != nil {
+        urlTplParams["groupPolicyCategory%2Did"] = *groupPolicyCategoryId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder instantiates a new GroupPolicyCategoryItemRequestBuilder and sets the default values.
 func NewGroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewGroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewGroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // DefinitionFile provides operations to manage the definitionFile property of the microsoft.graph.groupPolicyCategory entity.
 func (m *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) DefinitionFile()(*GroupPolicyCategoriesItemDefinitionFileRequestBuilder) {
-    return NewGroupPolicyCategoriesItemDefinitionFileRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyCategoriesItemDefinitionFileRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Definitions provides operations to manage the definitions property of the microsoft.graph.groupPolicyCategory entity.
 func (m *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) Definitions()(*GroupPolicyCategoriesItemDefinitionsRequestBuilder) {
-    return NewGroupPolicyCategoriesItemDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyCategoriesItemDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DefinitionsById provides operations to manage the definitions property of the microsoft.graph.groupPolicyCategory entity.
 func (m *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) DefinitionsById(id string)(*GroupPolicyCategoriesItemDefinitionsGroupPolicyDefinitionItemRequestBuilder) {
@@ -94,10 +95,8 @@ func (m *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) Definitions
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["groupPolicyDefinition%2Did"] = id
-    }
-    return NewGroupPolicyCategoriesItemDefinitionsGroupPolicyDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewGroupPolicyCategoriesItemDefinitionsGroupPolicyDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Delete delete navigation property groupPolicyCategories for deviceManagement
 func (m *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -136,7 +135,7 @@ func (m *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) Get(ctx con
 }
 // Parent provides operations to manage the parent property of the microsoft.graph.groupPolicyCategory entity.
 func (m *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) Parent()(*GroupPolicyCategoriesItemParentRequestBuilder) {
-    return NewGroupPolicyCategoriesItemParentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyCategoriesItemParentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property groupPolicyCategories in deviceManagement
 func (m *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyCategoryable, requestConfiguration *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyCategoryable, error) {
@@ -192,7 +191,10 @@ func (m *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) ToPatchRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

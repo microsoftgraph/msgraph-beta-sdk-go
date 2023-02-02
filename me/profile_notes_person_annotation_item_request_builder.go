@@ -47,7 +47,7 @@ type ProfileNotesPersonAnnotationItemRequestBuilderPatchRequestConfiguration str
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewProfileNotesPersonAnnotationItemRequestBuilderInternal instantiates a new PersonAnnotationItemRequestBuilder and sets the default values.
-func NewProfileNotesPersonAnnotationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ProfileNotesPersonAnnotationItemRequestBuilder) {
+func NewProfileNotesPersonAnnotationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, personAnnotationId *string)(*ProfileNotesPersonAnnotationItemRequestBuilder) {
     m := &ProfileNotesPersonAnnotationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/profile/notes/{personAnnotation%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewProfileNotesPersonAnnotationItemRequestBuilderInternal(pathParameters ma
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if personAnnotationId != nil {
+        urlTplParams["personAnnotation%2Did"] = *personAnnotationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewProfileNotesPersonAnnotationItemRequestBuilder instantiates a new PersonAnnotationItemRequestBuilder and sets the default values.
 func NewProfileNotesPersonAnnotationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ProfileNotesPersonAnnotationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewProfileNotesPersonAnnotationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewProfileNotesPersonAnnotationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property notes for me
 func (m *ProfileNotesPersonAnnotationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ProfileNotesPersonAnnotationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ProfileNotesPersonAnnotationItemRequestBuilder) ToPatchRequestInformati
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

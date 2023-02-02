@@ -47,7 +47,7 @@ type CartToClassAssociationsCartToClassAssociationItemRequestBuilderPatchRequest
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewCartToClassAssociationsCartToClassAssociationItemRequestBuilderInternal instantiates a new CartToClassAssociationItemRequestBuilder and sets the default values.
-func NewCartToClassAssociationsCartToClassAssociationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CartToClassAssociationsCartToClassAssociationItemRequestBuilder) {
+func NewCartToClassAssociationsCartToClassAssociationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, cartToClassAssociationId *string)(*CartToClassAssociationsCartToClassAssociationItemRequestBuilder) {
     m := &CartToClassAssociationsCartToClassAssociationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/cartToClassAssociations/{cartToClassAssociation%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewCartToClassAssociationsCartToClassAssociationItemRequestBuilderInternal(
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if cartToClassAssociationId != nil {
+        urlTplParams["cartToClassAssociation%2Did"] = *cartToClassAssociationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCartToClassAssociationsCartToClassAssociationItemRequestBuilder instantiates a new CartToClassAssociationItemRequestBuilder and sets the default values.
 func NewCartToClassAssociationsCartToClassAssociationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CartToClassAssociationsCartToClassAssociationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCartToClassAssociationsCartToClassAssociationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCartToClassAssociationsCartToClassAssociationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property cartToClassAssociations for deviceManagement
 func (m *CartToClassAssociationsCartToClassAssociationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CartToClassAssociationsCartToClassAssociationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *CartToClassAssociationsCartToClassAssociationItemRequestBuilder) ToPatc
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

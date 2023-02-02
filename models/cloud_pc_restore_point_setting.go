@@ -19,7 +19,7 @@ type CloudPcRestorePointSetting struct {
 func NewCloudPcRestorePointSetting()(*CloudPcRestorePointSetting) {
     m := &CloudPcRestorePointSetting{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCloudPcRestorePointSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

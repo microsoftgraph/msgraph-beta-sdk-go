@@ -47,7 +47,7 @@ type VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderPatchRequest
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewVirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderInternal instantiates a new CloudPcDeviceImageItemRequestBuilder and sets the default values.
-func NewVirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) {
+func NewVirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, cloudPcDeviceImageId *string)(*VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) {
     m := &VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/deviceImages/{cloudPcDeviceImage%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewVirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderInternal(
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if cloudPcDeviceImageId != nil {
+        urlTplParams["cloudPcDeviceImage%2Did"] = *cloudPcDeviceImageId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewVirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder instantiates a new CloudPcDeviceImageItemRequestBuilder and sets the default values.
 func NewVirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewVirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewVirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property deviceImages for deviceManagement
 func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -100,6 +103,10 @@ func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) Get(ct
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageable), nil
 }
+// MicrosoftGraphReupload provides operations to call the reupload method.
+func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) MicrosoftGraphReupload()(*VirtualEndpointDeviceImagesItemMicrosoftGraphReuploadReuploadRequestBuilder) {
+    return NewVirtualEndpointDeviceImagesItemMicrosoftGraphReuploadReuploadRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property deviceImages in deviceManagement
 func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageable, requestConfiguration *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -118,10 +125,6 @@ func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) Patch(
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageable), nil
-}
-// Reupload provides operations to call the reupload method.
-func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) Reupload()(*VirtualEndpointDeviceImagesItemReuploadRequestBuilder) {
-    return NewVirtualEndpointDeviceImagesItemReuploadRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property deviceImages for deviceManagement
 func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +161,10 @@ func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) ToPatc
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -47,7 +47,7 @@ type WindowsFeatureUpdateProfilesItemAssignmentsWindowsFeatureUpdateProfileAssig
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewWindowsFeatureUpdateProfilesItemAssignmentsWindowsFeatureUpdateProfileAssignmentItemRequestBuilderInternal instantiates a new WindowsFeatureUpdateProfileAssignmentItemRequestBuilder and sets the default values.
-func NewWindowsFeatureUpdateProfilesItemAssignmentsWindowsFeatureUpdateProfileAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsFeatureUpdateProfilesItemAssignmentsWindowsFeatureUpdateProfileAssignmentItemRequestBuilder) {
+func NewWindowsFeatureUpdateProfilesItemAssignmentsWindowsFeatureUpdateProfileAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, windowsFeatureUpdateProfileAssignmentId *string)(*WindowsFeatureUpdateProfilesItemAssignmentsWindowsFeatureUpdateProfileAssignmentItemRequestBuilder) {
     m := &WindowsFeatureUpdateProfilesItemAssignmentsWindowsFeatureUpdateProfileAssignmentItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/windowsFeatureUpdateProfiles/{windowsFeatureUpdateProfile%2Did}/assignments/{windowsFeatureUpdateProfileAssignment%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewWindowsFeatureUpdateProfilesItemAssignmentsWindowsFeatureUpdateProfileAs
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if windowsFeatureUpdateProfileAssignmentId != nil {
+        urlTplParams["windowsFeatureUpdateProfileAssignment%2Did"] = *windowsFeatureUpdateProfileAssignmentId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsFeatureUpdateProfilesItemAssignmentsWindowsFeatureUpdateProfileAssignmentItemRequestBuilder instantiates a new WindowsFeatureUpdateProfileAssignmentItemRequestBuilder and sets the default values.
 func NewWindowsFeatureUpdateProfilesItemAssignmentsWindowsFeatureUpdateProfileAssignmentItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsFeatureUpdateProfilesItemAssignmentsWindowsFeatureUpdateProfileAssignmentItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewWindowsFeatureUpdateProfilesItemAssignmentsWindowsFeatureUpdateProfileAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewWindowsFeatureUpdateProfilesItemAssignmentsWindowsFeatureUpdateProfileAssignmentItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property assignments for deviceManagement
 func (m *WindowsFeatureUpdateProfilesItemAssignmentsWindowsFeatureUpdateProfileAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *WindowsFeatureUpdateProfilesItemAssignmentsWindowsFeatureUpdateProfileAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *WindowsFeatureUpdateProfilesItemAssignmentsWindowsFeatureUpdateProfileA
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

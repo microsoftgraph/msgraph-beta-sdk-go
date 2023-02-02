@@ -47,7 +47,7 @@ type ProfilePositionsWorkPositionItemRequestBuilderPatchRequestConfiguration str
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewProfilePositionsWorkPositionItemRequestBuilderInternal instantiates a new WorkPositionItemRequestBuilder and sets the default values.
-func NewProfilePositionsWorkPositionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ProfilePositionsWorkPositionItemRequestBuilder) {
+func NewProfilePositionsWorkPositionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, workPositionId *string)(*ProfilePositionsWorkPositionItemRequestBuilder) {
     m := &ProfilePositionsWorkPositionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/profile/positions/{workPosition%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewProfilePositionsWorkPositionItemRequestBuilderInternal(pathParameters ma
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if workPositionId != nil {
+        urlTplParams["workPosition%2Did"] = *workPositionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewProfilePositionsWorkPositionItemRequestBuilder instantiates a new WorkPositionItemRequestBuilder and sets the default values.
 func NewProfilePositionsWorkPositionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ProfilePositionsWorkPositionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewProfilePositionsWorkPositionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewProfilePositionsWorkPositionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property positions for me
 func (m *ProfilePositionsWorkPositionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ProfilePositionsWorkPositionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ProfilePositionsWorkPositionItemRequestBuilder) ToPatchRequestInformati
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

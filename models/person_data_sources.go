@@ -17,7 +17,7 @@ type PersonDataSources struct {
 func NewPersonDataSources()(*PersonDataSources) {
     m := &PersonDataSources{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePersonDataSourcesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

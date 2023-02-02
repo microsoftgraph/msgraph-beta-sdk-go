@@ -18,8 +18,8 @@ func NewTriggerAndScopeBasedConditions()(*TriggerAndScopeBasedConditions) {
     m := &TriggerAndScopeBasedConditions{
         WorkflowExecutionConditions: *NewWorkflowExecutionConditions(),
     }
-    odataTypeValue := "#microsoft.graph.identityGovernance.triggerAndScopeBasedConditions";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.identityGovernance.triggerAndScopeBasedConditions"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateTriggerAndScopeBasedConditionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

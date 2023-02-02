@@ -47,7 +47,7 @@ type ProviderTenantSettingsProviderTenantSettingItemRequestBuilderPatchRequestCo
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewProviderTenantSettingsProviderTenantSettingItemRequestBuilderInternal instantiates a new ProviderTenantSettingItemRequestBuilder and sets the default values.
-func NewProviderTenantSettingsProviderTenantSettingItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ProviderTenantSettingsProviderTenantSettingItemRequestBuilder) {
+func NewProviderTenantSettingsProviderTenantSettingItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, providerTenantSettingId *string)(*ProviderTenantSettingsProviderTenantSettingItemRequestBuilder) {
     m := &ProviderTenantSettingsProviderTenantSettingItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/security/providerTenantSettings/{providerTenantSetting%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewProviderTenantSettingsProviderTenantSettingItemRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if providerTenantSettingId != nil {
+        urlTplParams["providerTenantSetting%2Did"] = *providerTenantSettingId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewProviderTenantSettingsProviderTenantSettingItemRequestBuilder instantiates a new ProviderTenantSettingItemRequestBuilder and sets the default values.
 func NewProviderTenantSettingsProviderTenantSettingItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ProviderTenantSettingsProviderTenantSettingItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewProviderTenantSettingsProviderTenantSettingItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewProviderTenantSettingsProviderTenantSettingItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property providerTenantSettings for security
 func (m *ProviderTenantSettingsProviderTenantSettingItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ProviderTenantSettingsProviderTenantSettingItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ProviderTenantSettingsProviderTenantSettingItemRequestBuilder) ToPatchR
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

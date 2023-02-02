@@ -19,8 +19,8 @@ func NewMobileAppDependency()(*MobileAppDependency) {
     m := &MobileAppDependency{
         MobileAppRelationship: *NewMobileAppRelationship(),
     }
-    odataTypeValue := "#microsoft.graph.mobileAppDependency";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.mobileAppDependency"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMobileAppDependencyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

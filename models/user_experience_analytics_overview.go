@@ -10,7 +10,7 @@ type UserExperienceAnalyticsOverview struct {
     // The user experience analytics insights.
     insights []UserExperienceAnalyticsInsightable
 }
-// NewUserExperienceAnalyticsOverview instantiates a new userExperienceAnalyticsOverview and sets the default values.
+// NewUserExperienceAnalyticsOverview instantiates a new UserExperienceAnalyticsOverview and sets the default values.
 func NewUserExperienceAnalyticsOverview()(*UserExperienceAnalyticsOverview) {
     m := &UserExperienceAnalyticsOverview{
         Entity: *NewEntity(),

@@ -55,8 +55,8 @@ func NewItemSitesItemPagesItemCanvasLayoutVerticalSectionRequestBuilderInternal(
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemPagesItemCanvasLayoutVerticalSectionRequestBuilder instantiates a new VerticalSectionRequestBuilder and sets the default values.
@@ -157,7 +157,10 @@ func (m *ItemSitesItemPagesItemCanvasLayoutVerticalSectionRequestBuilder) ToPatc
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -166,7 +169,7 @@ func (m *ItemSitesItemPagesItemCanvasLayoutVerticalSectionRequestBuilder) ToPatc
 }
 // Webparts provides operations to manage the webparts property of the microsoft.graph.verticalSection entity.
 func (m *ItemSitesItemPagesItemCanvasLayoutVerticalSectionRequestBuilder) Webparts()(*ItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsRequestBuilder) {
-    return NewItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // WebpartsById provides operations to manage the webparts property of the microsoft.graph.verticalSection entity.
 func (m *ItemSitesItemPagesItemCanvasLayoutVerticalSectionRequestBuilder) WebpartsById(id string)(*ItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsWebPartItemRequestBuilder) {
@@ -174,8 +177,6 @@ func (m *ItemSitesItemPagesItemCanvasLayoutVerticalSectionRequestBuilder) Webpar
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["webPart%2Did"] = id
-    }
-    return NewItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsWebPartItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemSitesItemPagesItemCanvasLayoutVerticalSectionWebpartsWebPartItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }

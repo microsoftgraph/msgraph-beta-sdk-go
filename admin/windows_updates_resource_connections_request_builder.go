@@ -7,7 +7,7 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
-// WindowsUpdatesResourceConnectionsRequestBuilder provides operations to manage the resourceConnections property of the microsoft.graph.windowsUpdates.updates entity.
+// WindowsUpdatesResourceConnectionsRequestBuilder provides operations to manage the resourceConnections property of the microsoft.graph.adminWindowsUpdates entity.
 type WindowsUpdatesResourceConnectionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string
@@ -60,8 +60,8 @@ func NewWindowsUpdatesResourceConnectionsRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsUpdatesResourceConnectionsRequestBuilder instantiates a new ResourceConnectionsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewWindowsUpdatesResourceConnectionsRequestBuilder(rawUrl string, requestAd
 }
 // Count provides operations to count the resources in the collection.
 func (m *WindowsUpdatesResourceConnectionsRequestBuilder) Count()(*WindowsUpdatesResourceConnectionsCountRequestBuilder) {
-    return NewWindowsUpdatesResourceConnectionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsUpdatesResourceConnectionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of the resourceConnection objects and their properties.
 // [Find more info here]
@@ -141,7 +141,10 @@ func (m *WindowsUpdatesResourceConnectionsRequestBuilder) ToPostRequestInformati
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

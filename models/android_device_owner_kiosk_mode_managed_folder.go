@@ -21,7 +21,7 @@ type AndroidDeviceOwnerKioskModeManagedFolder struct {
 func NewAndroidDeviceOwnerKioskModeManagedFolder()(*AndroidDeviceOwnerKioskModeManagedFolder) {
     m := &AndroidDeviceOwnerKioskModeManagedFolder{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAndroidDeviceOwnerKioskModeManagedFolderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

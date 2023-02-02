@@ -47,7 +47,7 @@ type ItemPolicyTemplatesGovernancePolicyTemplateItemRequestBuilderPatchRequestCo
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemPolicyTemplatesGovernancePolicyTemplateItemRequestBuilderInternal instantiates a new GovernancePolicyTemplateItemRequestBuilder and sets the default values.
-func NewItemPolicyTemplatesGovernancePolicyTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPolicyTemplatesGovernancePolicyTemplateItemRequestBuilder) {
+func NewItemPolicyTemplatesGovernancePolicyTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, governancePolicyTemplateId *string)(*ItemPolicyTemplatesGovernancePolicyTemplateItemRequestBuilder) {
     m := &ItemPolicyTemplatesGovernancePolicyTemplateItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/approvalWorkflowProviders/{approvalWorkflowProvider%2Did}/policyTemplates/{governancePolicyTemplate%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemPolicyTemplatesGovernancePolicyTemplateItemRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if governancePolicyTemplateId != nil {
+        urlTplParams["governancePolicyTemplate%2Did"] = *governancePolicyTemplateId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemPolicyTemplatesGovernancePolicyTemplateItemRequestBuilder instantiates a new GovernancePolicyTemplateItemRequestBuilder and sets the default values.
 func NewItemPolicyTemplatesGovernancePolicyTemplateItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPolicyTemplatesGovernancePolicyTemplateItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemPolicyTemplatesGovernancePolicyTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemPolicyTemplatesGovernancePolicyTemplateItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property policyTemplates for approvalWorkflowProviders
 func (m *ItemPolicyTemplatesGovernancePolicyTemplateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemPolicyTemplatesGovernancePolicyTemplateItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemPolicyTemplatesGovernancePolicyTemplateItemRequestBuilder) ToPatchR
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

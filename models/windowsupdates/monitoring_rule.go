@@ -21,7 +21,7 @@ type MonitoringRule struct {
 func NewMonitoringRule()(*MonitoringRule) {
     m := &MonitoringRule{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMonitoringRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

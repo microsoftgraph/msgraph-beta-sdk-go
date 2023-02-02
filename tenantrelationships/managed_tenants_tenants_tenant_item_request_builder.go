@@ -47,7 +47,7 @@ type ManagedTenantsTenantsTenantItemRequestBuilderPatchRequestConfiguration stru
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewManagedTenantsTenantsTenantItemRequestBuilderInternal instantiates a new TenantItemRequestBuilder and sets the default values.
-func NewManagedTenantsTenantsTenantItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsTenantsTenantItemRequestBuilder) {
+func NewManagedTenantsTenantsTenantItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, tenantId *string)(*ManagedTenantsTenantsTenantItemRequestBuilder) {
     m := &ManagedTenantsTenantsTenantItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/tenants/{tenant%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewManagedTenantsTenantsTenantItemRequestBuilderInternal(pathParameters map
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if tenantId != nil {
+        urlTplParams["tenant%2Did"] = *tenantId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedTenantsTenantsTenantItemRequestBuilder instantiates a new TenantItemRequestBuilder and sets the default values.
 func NewManagedTenantsTenantsTenantItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsTenantsTenantItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewManagedTenantsTenantsTenantItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewManagedTenantsTenantsTenantItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property tenants for tenantRelationships
 func (m *ManagedTenantsTenantsTenantItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedTenantsTenantsTenantItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -100,9 +103,13 @@ func (m *ManagedTenantsTenantsTenantItemRequestBuilder) Get(ctx context.Context,
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.Tenantable), nil
 }
-// OffboardTenant provides operations to call the offboardTenant method.
-func (m *ManagedTenantsTenantsTenantItemRequestBuilder) OffboardTenant()(*ManagedTenantsTenantsItemOffboardTenantRequestBuilder) {
-    return NewManagedTenantsTenantsItemOffboardTenantRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphManagedTenantsOffboardTenant provides operations to call the offboardTenant method.
+func (m *ManagedTenantsTenantsTenantItemRequestBuilder) MicrosoftGraphManagedTenantsOffboardTenant()(*ManagedTenantsTenantsItemMicrosoftGraphManagedTenantsOffboardTenantOffboardTenantRequestBuilder) {
+    return NewManagedTenantsTenantsItemMicrosoftGraphManagedTenantsOffboardTenantOffboardTenantRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphManagedTenantsResetTenantOnboardingStatus provides operations to call the resetTenantOnboardingStatus method.
+func (m *ManagedTenantsTenantsTenantItemRequestBuilder) MicrosoftGraphManagedTenantsResetTenantOnboardingStatus()(*ManagedTenantsTenantsItemMicrosoftGraphManagedTenantsResetTenantOnboardingStatusResetTenantOnboardingStatusRequestBuilder) {
+    return NewManagedTenantsTenantsItemMicrosoftGraphManagedTenantsResetTenantOnboardingStatusResetTenantOnboardingStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property tenants in tenantRelationships
 func (m *ManagedTenantsTenantsTenantItemRequestBuilder) Patch(ctx context.Context, body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.Tenantable, requestConfiguration *ManagedTenantsTenantsTenantItemRequestBuilderPatchRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.Tenantable, error) {
@@ -122,10 +129,6 @@ func (m *ManagedTenantsTenantsTenantItemRequestBuilder) Patch(ctx context.Contex
         return nil, nil
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.Tenantable), nil
-}
-// ResetTenantOnboardingStatus provides operations to call the resetTenantOnboardingStatus method.
-func (m *ManagedTenantsTenantsTenantItemRequestBuilder) ResetTenantOnboardingStatus()(*ManagedTenantsTenantsItemResetTenantOnboardingStatusRequestBuilder) {
-    return NewManagedTenantsTenantsItemResetTenantOnboardingStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property tenants for tenantRelationships
 func (m *ManagedTenantsTenantsTenantItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsTenantsTenantItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -162,7 +165,10 @@ func (m *ManagedTenantsTenantsTenantItemRequestBuilder) ToPatchRequestInformatio
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

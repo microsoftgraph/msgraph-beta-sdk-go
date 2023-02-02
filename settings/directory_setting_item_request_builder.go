@@ -47,7 +47,7 @@ type DirectorySettingItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewDirectorySettingItemRequestBuilderInternal instantiates a new DirectorySettingItemRequestBuilder and sets the default values.
-func NewDirectorySettingItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectorySettingItemRequestBuilder) {
+func NewDirectorySettingItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, directorySettingId *string)(*DirectorySettingItemRequestBuilder) {
     m := &DirectorySettingItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/settings/{directorySetting%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewDirectorySettingItemRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if directorySettingId != nil {
+        urlTplParams["directorySetting%2Did"] = *directorySettingId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDirectorySettingItemRequestBuilder instantiates a new DirectorySettingItemRequestBuilder and sets the default values.
 func NewDirectorySettingItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectorySettingItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewDirectorySettingItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewDirectorySettingItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete a directory setting.
 // [Find more info here]
@@ -163,7 +166,10 @@ func (m *DirectorySettingItemRequestBuilder) ToPatchRequestInformation(ctx conte
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

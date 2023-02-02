@@ -47,7 +47,7 @@ type ChatsItemOperationsTeamsAsyncOperationItemRequestBuilderPatchRequestConfigu
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewChatsItemOperationsTeamsAsyncOperationItemRequestBuilderInternal instantiates a new TeamsAsyncOperationItemRequestBuilder and sets the default values.
-func NewChatsItemOperationsTeamsAsyncOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ChatsItemOperationsTeamsAsyncOperationItemRequestBuilder) {
+func NewChatsItemOperationsTeamsAsyncOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, teamsAsyncOperationId *string)(*ChatsItemOperationsTeamsAsyncOperationItemRequestBuilder) {
     m := &ChatsItemOperationsTeamsAsyncOperationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/chats/{chat%2Did}/operations/{teamsAsyncOperation%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewChatsItemOperationsTeamsAsyncOperationItemRequestBuilderInternal(pathPar
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if teamsAsyncOperationId != nil {
+        urlTplParams["teamsAsyncOperation%2Did"] = *teamsAsyncOperationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewChatsItemOperationsTeamsAsyncOperationItemRequestBuilder instantiates a new TeamsAsyncOperationItemRequestBuilder and sets the default values.
 func NewChatsItemOperationsTeamsAsyncOperationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ChatsItemOperationsTeamsAsyncOperationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewChatsItemOperationsTeamsAsyncOperationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewChatsItemOperationsTeamsAsyncOperationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property operations for me
 func (m *ChatsItemOperationsTeamsAsyncOperationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ChatsItemOperationsTeamsAsyncOperationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ChatsItemOperationsTeamsAsyncOperationItemRequestBuilder) ToPatchReques
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -25,8 +25,8 @@ func NewWin32LobAppFileSystemDetection()(*Win32LobAppFileSystemDetection) {
     m := &Win32LobAppFileSystemDetection{
         Win32LobAppDetection: *NewWin32LobAppDetection(),
     }
-    odataTypeValue := "#microsoft.graph.win32LobAppFileSystemDetection";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.win32LobAppFileSystemDetection"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWin32LobAppFileSystemDetectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

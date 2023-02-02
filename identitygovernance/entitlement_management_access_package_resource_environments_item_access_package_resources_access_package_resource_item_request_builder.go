@@ -33,7 +33,7 @@ type EntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageReso
     QueryParameters *EntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageResourcesAccessPackageResourceItemRequestBuilderGetQueryParameters
 }
 // NewEntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageResourcesAccessPackageResourceItemRequestBuilderInternal instantiates a new AccessPackageResourceItemRequestBuilder and sets the default values.
-func NewEntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageResourcesAccessPackageResourceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageResourcesAccessPackageResourceItemRequestBuilder) {
+func NewEntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageResourcesAccessPackageResourceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, accessPackageResourceId *string)(*EntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageResourcesAccessPackageResourceItemRequestBuilder) {
     m := &EntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageResourcesAccessPackageResourceItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageResourceEnvironments/{accessPackageResourceEnvironment%2Did}/accessPackageResources/{accessPackageResource%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewEntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageR
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if accessPackageResourceId != nil {
+        urlTplParams["accessPackageResource%2Did"] = *accessPackageResourceId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageResourcesAccessPackageResourceItemRequestBuilder instantiates a new AccessPackageResourceItemRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageResourcesAccessPackageResourceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageResourcesAccessPackageResourceItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewEntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageResourcesAccessPackageResourceItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewEntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageResourcesAccessPackageResourceItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get read-only. Required.
 func (m *EntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageResourcesAccessPackageResourceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageResourcesAccessPackageResourceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceable, error) {

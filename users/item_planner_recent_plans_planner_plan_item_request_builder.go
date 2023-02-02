@@ -33,7 +33,7 @@ type ItemPlannerRecentPlansPlannerPlanItemRequestBuilderGetRequestConfiguration 
     QueryParameters *ItemPlannerRecentPlansPlannerPlanItemRequestBuilderGetQueryParameters
 }
 // NewItemPlannerRecentPlansPlannerPlanItemRequestBuilderInternal instantiates a new PlannerPlanItemRequestBuilder and sets the default values.
-func NewItemPlannerRecentPlansPlannerPlanItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPlannerRecentPlansPlannerPlanItemRequestBuilder) {
+func NewItemPlannerRecentPlansPlannerPlanItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, plannerPlanId *string)(*ItemPlannerRecentPlansPlannerPlanItemRequestBuilder) {
     m := &ItemPlannerRecentPlansPlannerPlanItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/planner/recentPlans/{plannerPlan%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewItemPlannerRecentPlansPlannerPlanItemRequestBuilderInternal(pathParamete
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if plannerPlanId != nil {
+        urlTplParams["plannerPlan%2Did"] = *plannerPlanId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemPlannerRecentPlansPlannerPlanItemRequestBuilder instantiates a new PlannerPlanItemRequestBuilder and sets the default values.
 func NewItemPlannerRecentPlansPlannerPlanItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPlannerRecentPlansPlannerPlanItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemPlannerRecentPlansPlannerPlanItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemPlannerRecentPlansPlannerPlanItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
 func (m *ItemPlannerRecentPlansPlannerPlanItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPlannerRecentPlansPlannerPlanItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanable, error) {

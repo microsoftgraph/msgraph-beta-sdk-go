@@ -13,8 +13,8 @@ func NewAndroidDeviceOwnerKioskModeFolderItem()(*AndroidDeviceOwnerKioskModeFold
     m := &AndroidDeviceOwnerKioskModeFolderItem{
         AndroidDeviceOwnerKioskModeHomeScreenItem: *NewAndroidDeviceOwnerKioskModeHomeScreenItem(),
     }
-    odataTypeValue := "#microsoft.graph.androidDeviceOwnerKioskModeFolderItem";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidDeviceOwnerKioskModeFolderItem"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidDeviceOwnerKioskModeFolderItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -12,7 +12,7 @@ type CloudPC struct {
     aadDeviceId *string
     // The connectivity health check result of a Cloud PC, including the updated timestamp and whether the Cloud PC is able to be connected or not.
     connectivityResult CloudPcConnectivityResultable
-    // The diskEncryptionState property
+    // The disk encryption applied to the Cloud PC. Possible values: notAvailable, notEncrypted, encryptedUsingPlatformManagedKey, encryptedUsingCustomerManagedKey, and unknownFutureValue.
     diskEncryptionState *CloudPcDiskEncryptionState
     // The display name of the Cloud PC.
     displayName *string
@@ -57,7 +57,7 @@ type CloudPC struct {
     // The user principal name (UPN) of the user assigned to the Cloud PC.
     userPrincipalName *string
 }
-// NewCloudPC instantiates a new cloudPC and sets the default values.
+// NewCloudPC instantiates a new CloudPC and sets the default values.
 func NewCloudPC()(*CloudPC) {
     m := &CloudPC{
         Entity: *NewEntity(),
@@ -76,7 +76,7 @@ func (m *CloudPC) GetAadDeviceId()(*string) {
 func (m *CloudPC) GetConnectivityResult()(CloudPcConnectivityResultable) {
     return m.connectivityResult
 }
-// GetDiskEncryptionState gets the diskEncryptionState property value. The diskEncryptionState property
+// GetDiskEncryptionState gets the diskEncryptionState property value. The disk encryption applied to the Cloud PC. Possible values: notAvailable, notEncrypted, encryptedUsingPlatformManagedKey, encryptedUsingCustomerManagedKey, and unknownFutureValue.
 func (m *CloudPC) GetDiskEncryptionState()(*CloudPcDiskEncryptionState) {
     return m.diskEncryptionState
 }
@@ -583,7 +583,7 @@ func (m *CloudPC) SetAadDeviceId(value *string)() {
 func (m *CloudPC) SetConnectivityResult(value CloudPcConnectivityResultable)() {
     m.connectivityResult = value
 }
-// SetDiskEncryptionState sets the diskEncryptionState property value. The diskEncryptionState property
+// SetDiskEncryptionState sets the diskEncryptionState property value. The disk encryption applied to the Cloud PC. Possible values: notAvailable, notEncrypted, encryptedUsingPlatformManagedKey, encryptedUsingCustomerManagedKey, and unknownFutureValue.
 func (m *CloudPC) SetDiskEncryptionState(value *CloudPcDiskEncryptionState)() {
     m.diskEncryptionState = value
 }

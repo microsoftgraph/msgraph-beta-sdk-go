@@ -33,7 +33,7 @@ type ItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilderGetRequest
     QueryParameters *ItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilderGetQueryParameters
 }
 // NewItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilderInternal instantiates a new OAuth2PermissionGrantItemRequestBuilder and sets the default values.
-func NewItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilder) {
+func NewItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, oAuth2PermissionGrantId *string)(*ItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilder) {
     m := &ItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/oauth2PermissionGrants/{oAuth2PermissionGrant%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilderInterna
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if oAuth2PermissionGrantId != nil {
+        urlTplParams["oAuth2PermissionGrant%2Did"] = *oAuth2PermissionGrantId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilder instantiates a new OAuth2PermissionGrantItemRequestBuilder and sets the default values.
 func NewItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
 func (m *ItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OAuth2PermissionGrantable, error) {

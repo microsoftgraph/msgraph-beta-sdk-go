@@ -47,7 +47,7 @@ type MacOSSoftwareUpdateAccountSummariesItemCategorySummariesItemUpdateStateSumm
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewMacOSSoftwareUpdateAccountSummariesItemCategorySummariesItemUpdateStateSummariesMacOSSoftwareUpdateStateSummaryItemRequestBuilderInternal instantiates a new MacOSSoftwareUpdateStateSummaryItemRequestBuilder and sets the default values.
-func NewMacOSSoftwareUpdateAccountSummariesItemCategorySummariesItemUpdateStateSummariesMacOSSoftwareUpdateStateSummaryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MacOSSoftwareUpdateAccountSummariesItemCategorySummariesItemUpdateStateSummariesMacOSSoftwareUpdateStateSummaryItemRequestBuilder) {
+func NewMacOSSoftwareUpdateAccountSummariesItemCategorySummariesItemUpdateStateSummariesMacOSSoftwareUpdateStateSummaryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, macOSSoftwareUpdateStateSummaryId *string)(*MacOSSoftwareUpdateAccountSummariesItemCategorySummariesItemUpdateStateSummariesMacOSSoftwareUpdateStateSummaryItemRequestBuilder) {
     m := &MacOSSoftwareUpdateAccountSummariesItemCategorySummariesItemUpdateStateSummariesMacOSSoftwareUpdateStateSummaryItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/macOSSoftwareUpdateAccountSummaries/{macOSSoftwareUpdateAccountSummary%2Did}/categorySummaries/{macOSSoftwareUpdateCategorySummary%2Did}/updateStateSummaries/{macOSSoftwareUpdateStateSummary%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewMacOSSoftwareUpdateAccountSummariesItemCategorySummariesItemUpdateStateS
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if macOSSoftwareUpdateStateSummaryId != nil {
+        urlTplParams["macOSSoftwareUpdateStateSummary%2Did"] = *macOSSoftwareUpdateStateSummaryId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMacOSSoftwareUpdateAccountSummariesItemCategorySummariesItemUpdateStateSummariesMacOSSoftwareUpdateStateSummaryItemRequestBuilder instantiates a new MacOSSoftwareUpdateStateSummaryItemRequestBuilder and sets the default values.
 func NewMacOSSoftwareUpdateAccountSummariesItemCategorySummariesItemUpdateStateSummariesMacOSSoftwareUpdateStateSummaryItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MacOSSoftwareUpdateAccountSummariesItemCategorySummariesItemUpdateStateSummariesMacOSSoftwareUpdateStateSummaryItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewMacOSSoftwareUpdateAccountSummariesItemCategorySummariesItemUpdateStateSummariesMacOSSoftwareUpdateStateSummaryItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewMacOSSoftwareUpdateAccountSummariesItemCategorySummariesItemUpdateStateSummariesMacOSSoftwareUpdateStateSummaryItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property updateStateSummaries for deviceManagement
 func (m *MacOSSoftwareUpdateAccountSummariesItemCategorySummariesItemUpdateStateSummariesMacOSSoftwareUpdateStateSummaryItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MacOSSoftwareUpdateAccountSummariesItemCategorySummariesItemUpdateStateSummariesMacOSSoftwareUpdateStateSummaryItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *MacOSSoftwareUpdateAccountSummariesItemCategorySummariesItemUpdateState
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

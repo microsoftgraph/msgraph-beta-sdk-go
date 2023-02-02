@@ -33,7 +33,7 @@ type ItemSitesItemContentTypesItemColumnPositionsColumnDefinitionItemRequestBuil
     QueryParameters *ItemSitesItemContentTypesItemColumnPositionsColumnDefinitionItemRequestBuilderGetQueryParameters
 }
 // NewItemSitesItemContentTypesItemColumnPositionsColumnDefinitionItemRequestBuilderInternal instantiates a new ColumnDefinitionItemRequestBuilder and sets the default values.
-func NewItemSitesItemContentTypesItemColumnPositionsColumnDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemContentTypesItemColumnPositionsColumnDefinitionItemRequestBuilder) {
+func NewItemSitesItemContentTypesItemColumnPositionsColumnDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, columnDefinitionId *string)(*ItemSitesItemContentTypesItemColumnPositionsColumnDefinitionItemRequestBuilder) {
     m := &ItemSitesItemContentTypesItemColumnPositionsColumnDefinitionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/contentTypes/{contentType%2Did}/columnPositions/{columnDefinition%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewItemSitesItemContentTypesItemColumnPositionsColumnDefinitionItemRequestB
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if columnDefinitionId != nil {
+        urlTplParams["columnDefinition%2Did"] = *columnDefinitionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemContentTypesItemColumnPositionsColumnDefinitionItemRequestBuilder instantiates a new ColumnDefinitionItemRequestBuilder and sets the default values.
 func NewItemSitesItemContentTypesItemColumnPositionsColumnDefinitionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemContentTypesItemColumnPositionsColumnDefinitionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemSitesItemContentTypesItemColumnPositionsColumnDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemSitesItemContentTypesItemColumnPositionsColumnDefinitionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get column order information in a content type.
 func (m *ItemSitesItemContentTypesItemColumnPositionsColumnDefinitionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemContentTypesItemColumnPositionsColumnDefinitionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionable, error) {

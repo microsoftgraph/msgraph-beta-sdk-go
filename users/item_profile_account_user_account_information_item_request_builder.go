@@ -47,7 +47,7 @@ type ItemProfileAccountUserAccountInformationItemRequestBuilderPatchRequestConfi
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemProfileAccountUserAccountInformationItemRequestBuilderInternal instantiates a new UserAccountInformationItemRequestBuilder and sets the default values.
-func NewItemProfileAccountUserAccountInformationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfileAccountUserAccountInformationItemRequestBuilder) {
+func NewItemProfileAccountUserAccountInformationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, userAccountInformationId *string)(*ItemProfileAccountUserAccountInformationItemRequestBuilder) {
     m := &ItemProfileAccountUserAccountInformationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/profile/account/{userAccountInformation%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemProfileAccountUserAccountInformationItemRequestBuilderInternal(pathP
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if userAccountInformationId != nil {
+        urlTplParams["userAccountInformation%2Did"] = *userAccountInformationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemProfileAccountUserAccountInformationItemRequestBuilder instantiates a new UserAccountInformationItemRequestBuilder and sets the default values.
 func NewItemProfileAccountUserAccountInformationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfileAccountUserAccountInformationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemProfileAccountUserAccountInformationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemProfileAccountUserAccountInformationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property account for users
 func (m *ItemProfileAccountUserAccountInformationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileAccountUserAccountInformationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemProfileAccountUserAccountInformationItemRequestBuilder) ToPatchRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

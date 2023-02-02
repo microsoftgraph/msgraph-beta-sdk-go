@@ -47,7 +47,7 @@ type ManagedAppPoliciesManagedAppPolicyItemRequestBuilderPatchRequestConfigurati
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewManagedAppPoliciesManagedAppPolicyItemRequestBuilderInternal instantiates a new ManagedAppPolicyItemRequestBuilder and sets the default values.
-func NewManagedAppPoliciesManagedAppPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedAppPoliciesManagedAppPolicyItemRequestBuilder) {
+func NewManagedAppPoliciesManagedAppPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, managedAppPolicyId *string)(*ManagedAppPoliciesManagedAppPolicyItemRequestBuilder) {
     m := &ManagedAppPoliciesManagedAppPolicyItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceAppManagement/managedAppPolicies/{managedAppPolicy%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewManagedAppPoliciesManagedAppPolicyItemRequestBuilderInternal(pathParamet
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if managedAppPolicyId != nil {
+        urlTplParams["managedAppPolicy%2Did"] = *managedAppPolicyId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedAppPoliciesManagedAppPolicyItemRequestBuilder instantiates a new ManagedAppPolicyItemRequestBuilder and sets the default values.
 func NewManagedAppPoliciesManagedAppPolicyItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedAppPoliciesManagedAppPolicyItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewManagedAppPoliciesManagedAppPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewManagedAppPoliciesManagedAppPolicyItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property managedAppPolicies for deviceAppManagement
 func (m *ManagedAppPoliciesManagedAppPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedAppPoliciesManagedAppPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -100,6 +103,10 @@ func (m *ManagedAppPoliciesManagedAppPolicyItemRequestBuilder) Get(ctx context.C
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppPolicyable), nil
 }
+// MicrosoftGraphTargetApps provides operations to call the targetApps method.
+func (m *ManagedAppPoliciesManagedAppPolicyItemRequestBuilder) MicrosoftGraphTargetApps()(*ManagedAppPoliciesItemMicrosoftGraphTargetAppsTargetAppsRequestBuilder) {
+    return NewManagedAppPoliciesItemMicrosoftGraphTargetAppsTargetAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property managedAppPolicies in deviceAppManagement
 func (m *ManagedAppPoliciesManagedAppPolicyItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppPolicyable, requestConfiguration *ManagedAppPoliciesManagedAppPolicyItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -118,10 +125,6 @@ func (m *ManagedAppPoliciesManagedAppPolicyItemRequestBuilder) Patch(ctx context
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppPolicyable), nil
-}
-// TargetApps provides operations to call the targetApps method.
-func (m *ManagedAppPoliciesManagedAppPolicyItemRequestBuilder) TargetApps()(*ManagedAppPoliciesItemTargetAppsRequestBuilder) {
-    return NewManagedAppPoliciesItemTargetAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property managedAppPolicies for deviceAppManagement
 func (m *ManagedAppPoliciesManagedAppPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ManagedAppPoliciesManagedAppPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +161,10 @@ func (m *ManagedAppPoliciesManagedAppPolicyItemRequestBuilder) ToPatchRequestInf
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -39,7 +39,7 @@ type EducationSubmission struct {
     // The deep link URL for the given submission.
     webUrl *string
 }
-// NewEducationSubmission instantiates a new educationSubmission and sets the default values.
+// NewEducationSubmission instantiates a new EducationSubmission and sets the default values.
 func NewEducationSubmission()(*EducationSubmission) {
     m := &EducationSubmission{
         Entity: *NewEntity(),

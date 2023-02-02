@@ -47,7 +47,7 @@ type UserPfxCertificatesUserPFXCertificateItemRequestBuilderPatchRequestConfigur
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewUserPfxCertificatesUserPFXCertificateItemRequestBuilderInternal instantiates a new UserPFXCertificateItemRequestBuilder and sets the default values.
-func NewUserPfxCertificatesUserPFXCertificateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserPfxCertificatesUserPFXCertificateItemRequestBuilder) {
+func NewUserPfxCertificatesUserPFXCertificateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, userPFXCertificateId *string)(*UserPfxCertificatesUserPFXCertificateItemRequestBuilder) {
     m := &UserPfxCertificatesUserPFXCertificateItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/userPfxCertificates/{userPFXCertificate%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewUserPfxCertificatesUserPFXCertificateItemRequestBuilderInternal(pathPara
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if userPFXCertificateId != nil {
+        urlTplParams["userPFXCertificate%2Did"] = *userPFXCertificateId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewUserPfxCertificatesUserPFXCertificateItemRequestBuilder instantiates a new UserPFXCertificateItemRequestBuilder and sets the default values.
 func NewUserPfxCertificatesUserPFXCertificateItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserPfxCertificatesUserPFXCertificateItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewUserPfxCertificatesUserPFXCertificateItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewUserPfxCertificatesUserPFXCertificateItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property userPfxCertificates for deviceManagement
 func (m *UserPfxCertificatesUserPFXCertificateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *UserPfxCertificatesUserPFXCertificateItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *UserPfxCertificatesUserPFXCertificateItemRequestBuilder) ToPatchRequest
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

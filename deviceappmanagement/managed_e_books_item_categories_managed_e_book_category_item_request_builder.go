@@ -33,7 +33,7 @@ type ManagedEBooksItemCategoriesManagedEBookCategoryItemRequestBuilderGetRequest
     QueryParameters *ManagedEBooksItemCategoriesManagedEBookCategoryItemRequestBuilderGetQueryParameters
 }
 // NewManagedEBooksItemCategoriesManagedEBookCategoryItemRequestBuilderInternal instantiates a new ManagedEBookCategoryItemRequestBuilder and sets the default values.
-func NewManagedEBooksItemCategoriesManagedEBookCategoryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedEBooksItemCategoriesManagedEBookCategoryItemRequestBuilder) {
+func NewManagedEBooksItemCategoriesManagedEBookCategoryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, managedEBookCategoryId *string)(*ManagedEBooksItemCategoriesManagedEBookCategoryItemRequestBuilder) {
     m := &ManagedEBooksItemCategoriesManagedEBookCategoryItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceAppManagement/managedEBooks/{managedEBook%2Did}/categories/{managedEBookCategory%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewManagedEBooksItemCategoriesManagedEBookCategoryItemRequestBuilderInterna
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if managedEBookCategoryId != nil {
+        urlTplParams["managedEBookCategory%2Did"] = *managedEBookCategoryId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedEBooksItemCategoriesManagedEBookCategoryItemRequestBuilder instantiates a new ManagedEBookCategoryItemRequestBuilder and sets the default values.
 func NewManagedEBooksItemCategoriesManagedEBookCategoryItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedEBooksItemCategoriesManagedEBookCategoryItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewManagedEBooksItemCategoriesManagedEBookCategoryItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewManagedEBooksItemCategoriesManagedEBookCategoryItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get the list of categories for this eBook.
 func (m *ManagedEBooksItemCategoriesManagedEBookCategoryItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedEBooksItemCategoriesManagedEBookCategoryItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedEBookCategoryable, error) {

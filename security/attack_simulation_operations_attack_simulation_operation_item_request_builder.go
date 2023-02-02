@@ -47,7 +47,7 @@ type AttackSimulationOperationsAttackSimulationOperationItemRequestBuilderPatchR
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewAttackSimulationOperationsAttackSimulationOperationItemRequestBuilderInternal instantiates a new AttackSimulationOperationItemRequestBuilder and sets the default values.
-func NewAttackSimulationOperationsAttackSimulationOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AttackSimulationOperationsAttackSimulationOperationItemRequestBuilder) {
+func NewAttackSimulationOperationsAttackSimulationOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, attackSimulationOperationId *string)(*AttackSimulationOperationsAttackSimulationOperationItemRequestBuilder) {
     m := &AttackSimulationOperationsAttackSimulationOperationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/security/attackSimulation/operations/{attackSimulationOperation%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewAttackSimulationOperationsAttackSimulationOperationItemRequestBuilderInt
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if attackSimulationOperationId != nil {
+        urlTplParams["attackSimulationOperation%2Did"] = *attackSimulationOperationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAttackSimulationOperationsAttackSimulationOperationItemRequestBuilder instantiates a new AttackSimulationOperationItemRequestBuilder and sets the default values.
 func NewAttackSimulationOperationsAttackSimulationOperationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AttackSimulationOperationsAttackSimulationOperationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAttackSimulationOperationsAttackSimulationOperationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAttackSimulationOperationsAttackSimulationOperationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property operations for security
 func (m *AttackSimulationOperationsAttackSimulationOperationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AttackSimulationOperationsAttackSimulationOperationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *AttackSimulationOperationsAttackSimulationOperationItemRequestBuilder) 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -45,7 +45,7 @@ type ItemTeamDefinitionScheduleTimesOffTimeOffItemRequestBuilderPatchRequestConf
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemTeamDefinitionScheduleTimesOffTimeOffItemRequestBuilderInternal instantiates a new TimeOffItemRequestBuilder and sets the default values.
-func NewItemTeamDefinitionScheduleTimesOffTimeOffItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionScheduleTimesOffTimeOffItemRequestBuilder) {
+func NewItemTeamDefinitionScheduleTimesOffTimeOffItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, timeOffId *string)(*ItemTeamDefinitionScheduleTimesOffTimeOffItemRequestBuilder) {
     m := &ItemTeamDefinitionScheduleTimesOffTimeOffItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/schedule/timesOff/{timeOff%2Did}{?%24select}";
@@ -53,15 +53,18 @@ func NewItemTeamDefinitionScheduleTimesOffTimeOffItemRequestBuilderInternal(path
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if timeOffId != nil {
+        urlTplParams["timeOff%2Did"] = *timeOffId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTeamDefinitionScheduleTimesOffTimeOffItemRequestBuilder instantiates a new TimeOffItemRequestBuilder and sets the default values.
 func NewItemTeamDefinitionScheduleTimesOffTimeOffItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionScheduleTimesOffTimeOffItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemTeamDefinitionScheduleTimesOffTimeOffItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemTeamDefinitionScheduleTimesOffTimeOffItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property timesOff for teamTemplateDefinition
 func (m *ItemTeamDefinitionScheduleTimesOffTimeOffItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleTimesOffTimeOffItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -152,7 +155,10 @@ func (m *ItemTeamDefinitionScheduleTimesOffTimeOffItemRequestBuilder) ToPatchReq
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -55,8 +55,8 @@ func NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemRequestBuil
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemRequestBuilder instantiates a new ItemRequestBuilder and sets the default values.
@@ -102,7 +102,7 @@ func (m *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemRequestBui
 }
 // ItemCategory provides operations to manage the itemCategory property of the microsoft.graph.item entity.
 func (m *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemRequestBuilder) ItemCategory()(*CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemItemCategoryRequestBuilder) {
-    return NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemItemCategoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemItemCategoryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property item in financials
 func (m *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Itemable, requestConfiguration *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Itemable, error) {
@@ -125,7 +125,7 @@ func (m *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemRequestBui
 }
 // Picture provides operations to manage the picture property of the microsoft.graph.item entity.
 func (m *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemRequestBuilder) Picture()(*CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemPictureRequestBuilder) {
-    return NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PictureById provides operations to manage the picture property of the microsoft.graph.item entity.
 func (m *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemRequestBuilder) PictureById(id string)(*CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemPicturePictureItemRequestBuilder) {
@@ -133,10 +133,8 @@ func (m *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemRequestBui
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["picture%2Did"] = id
-    }
-    return NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemPicturePictureItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemPicturePictureItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property item for financials
 func (m *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -173,7 +171,10 @@ func (m *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemRequestBui
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

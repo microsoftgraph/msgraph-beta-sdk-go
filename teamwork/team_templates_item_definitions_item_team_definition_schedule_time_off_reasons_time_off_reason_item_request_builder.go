@@ -45,7 +45,7 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsTimeOff
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilderInternal instantiates a new TimeOffReasonItemRequestBuilder and sets the default values.
-func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilder) {
+func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, timeOffReasonId *string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilder) {
     m := &TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/schedule/timeOffReasons/{timeOffReason%2Did}{?%24select}";
@@ -53,15 +53,18 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsTime
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if timeOffReasonId != nil {
+        urlTplParams["timeOffReason%2Did"] = *timeOffReasonId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilder instantiates a new TimeOffReasonItemRequestBuilder and sets the default values.
 func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property timeOffReasons for teamwork
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -152,7 +155,10 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsTim
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

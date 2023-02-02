@@ -47,7 +47,7 @@ type ProfileLanguagesLanguageProficiencyItemRequestBuilderPatchRequestConfigurat
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewProfileLanguagesLanguageProficiencyItemRequestBuilderInternal instantiates a new LanguageProficiencyItemRequestBuilder and sets the default values.
-func NewProfileLanguagesLanguageProficiencyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ProfileLanguagesLanguageProficiencyItemRequestBuilder) {
+func NewProfileLanguagesLanguageProficiencyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, languageProficiencyId *string)(*ProfileLanguagesLanguageProficiencyItemRequestBuilder) {
     m := &ProfileLanguagesLanguageProficiencyItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/profile/languages/{languageProficiency%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewProfileLanguagesLanguageProficiencyItemRequestBuilderInternal(pathParame
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if languageProficiencyId != nil {
+        urlTplParams["languageProficiency%2Did"] = *languageProficiencyId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewProfileLanguagesLanguageProficiencyItemRequestBuilder instantiates a new LanguageProficiencyItemRequestBuilder and sets the default values.
 func NewProfileLanguagesLanguageProficiencyItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ProfileLanguagesLanguageProficiencyItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewProfileLanguagesLanguageProficiencyItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewProfileLanguagesLanguageProficiencyItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property languages for me
 func (m *ProfileLanguagesLanguageProficiencyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ProfileLanguagesLanguageProficiencyItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ProfileLanguagesLanguageProficiencyItemRequestBuilder) ToPatchRequestIn
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

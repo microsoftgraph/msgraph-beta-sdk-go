@@ -21,7 +21,7 @@ type ConfigurationManagerClientInformation struct {
 func NewConfigurationManagerClientInformation()(*ConfigurationManagerClientInformation) {
     m := &ConfigurationManagerClientInformation{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateConfigurationManagerClientInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

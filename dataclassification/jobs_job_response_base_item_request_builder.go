@@ -47,7 +47,7 @@ type JobsJobResponseBaseItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewJobsJobResponseBaseItemRequestBuilderInternal instantiates a new JobResponseBaseItemRequestBuilder and sets the default values.
-func NewJobsJobResponseBaseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*JobsJobResponseBaseItemRequestBuilder) {
+func NewJobsJobResponseBaseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, jobResponseBaseId *string)(*JobsJobResponseBaseItemRequestBuilder) {
     m := &JobsJobResponseBaseItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/dataClassification/jobs/{jobResponseBase%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewJobsJobResponseBaseItemRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if jobResponseBaseId != nil {
+        urlTplParams["jobResponseBase%2Did"] = *jobResponseBaseId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewJobsJobResponseBaseItemRequestBuilder instantiates a new JobResponseBaseItemRequestBuilder and sets the default values.
 func NewJobsJobResponseBaseItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*JobsJobResponseBaseItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewJobsJobResponseBaseItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewJobsJobResponseBaseItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property jobs for dataClassification
 func (m *JobsJobResponseBaseItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *JobsJobResponseBaseItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *JobsJobResponseBaseItemRequestBuilder) ToPatchRequestInformation(ctx co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -47,7 +47,7 @@ type ComplianceSettingsDeviceManagementConfigurationSettingDefinitionItemRequest
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewComplianceSettingsDeviceManagementConfigurationSettingDefinitionItemRequestBuilderInternal instantiates a new DeviceManagementConfigurationSettingDefinitionItemRequestBuilder and sets the default values.
-func NewComplianceSettingsDeviceManagementConfigurationSettingDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ComplianceSettingsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder) {
+func NewComplianceSettingsDeviceManagementConfigurationSettingDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, deviceManagementConfigurationSettingDefinitionId *string)(*ComplianceSettingsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder) {
     m := &ComplianceSettingsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/complianceSettings/{deviceManagementConfigurationSettingDefinition%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewComplianceSettingsDeviceManagementConfigurationSettingDefinitionItemRequ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if deviceManagementConfigurationSettingDefinitionId != nil {
+        urlTplParams["deviceManagementConfigurationSettingDefinition%2Did"] = *deviceManagementConfigurationSettingDefinitionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewComplianceSettingsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder instantiates a new DeviceManagementConfigurationSettingDefinitionItemRequestBuilder and sets the default values.
 func NewComplianceSettingsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ComplianceSettingsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewComplianceSettingsDeviceManagementConfigurationSettingDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewComplianceSettingsDeviceManagementConfigurationSettingDefinitionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property complianceSettings for deviceManagement
 func (m *ComplianceSettingsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ComplianceSettingsDeviceManagementConfigurationSettingDefinitionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ComplianceSettingsDeviceManagementConfigurationSettingDefinitionItemReq
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

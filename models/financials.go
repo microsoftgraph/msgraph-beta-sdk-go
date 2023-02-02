@@ -17,7 +17,7 @@ type Financials struct {
 func NewFinancials()(*Financials) {
     m := &Financials{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateFinancialsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

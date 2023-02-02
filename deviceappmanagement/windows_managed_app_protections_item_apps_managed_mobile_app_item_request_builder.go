@@ -47,7 +47,7 @@ type WindowsManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderPatch
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewWindowsManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderInternal instantiates a new ManagedMobileAppItemRequestBuilder and sets the default values.
-func NewWindowsManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) {
+func NewWindowsManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, managedMobileAppId *string)(*WindowsManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) {
     m := &WindowsManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceAppManagement/windowsManagedAppProtections/{windowsManagedAppProtection%2Did}/apps/{managedMobileApp%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewWindowsManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderIn
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if managedMobileAppId != nil {
+        urlTplParams["managedMobileApp%2Did"] = *managedMobileAppId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder instantiates a new ManagedMobileAppItemRequestBuilder and sets the default values.
 func NewWindowsManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewWindowsManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewWindowsManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property apps for deviceAppManagement
 func (m *WindowsManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *WindowsManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *WindowsManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder)
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

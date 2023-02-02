@@ -15,7 +15,7 @@ type RestoreAction struct {
 func NewRestoreAction()(*RestoreAction) {
     m := &RestoreAction{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateRestoreActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

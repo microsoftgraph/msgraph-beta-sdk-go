@@ -47,7 +47,7 @@ type ConfigurationPolicyTemplatesItemSettingTemplatesItemSettingDefinitionsDevic
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewConfigurationPolicyTemplatesItemSettingTemplatesItemSettingDefinitionsDeviceManagementConfigurationSettingDefinitionItemRequestBuilderInternal instantiates a new DeviceManagementConfigurationSettingDefinitionItemRequestBuilder and sets the default values.
-func NewConfigurationPolicyTemplatesItemSettingTemplatesItemSettingDefinitionsDeviceManagementConfigurationSettingDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConfigurationPolicyTemplatesItemSettingTemplatesItemSettingDefinitionsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder) {
+func NewConfigurationPolicyTemplatesItemSettingTemplatesItemSettingDefinitionsDeviceManagementConfigurationSettingDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, deviceManagementConfigurationSettingDefinitionId *string)(*ConfigurationPolicyTemplatesItemSettingTemplatesItemSettingDefinitionsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder) {
     m := &ConfigurationPolicyTemplatesItemSettingTemplatesItemSettingDefinitionsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/configurationPolicyTemplates/{deviceManagementConfigurationPolicyTemplate%2Did}/settingTemplates/{deviceManagementConfigurationSettingTemplate%2Did}/settingDefinitions/{deviceManagementConfigurationSettingDefinition%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewConfigurationPolicyTemplatesItemSettingTemplatesItemSettingDefinitionsDe
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if deviceManagementConfigurationSettingDefinitionId != nil {
+        urlTplParams["deviceManagementConfigurationSettingDefinition%2Did"] = *deviceManagementConfigurationSettingDefinitionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewConfigurationPolicyTemplatesItemSettingTemplatesItemSettingDefinitionsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder instantiates a new DeviceManagementConfigurationSettingDefinitionItemRequestBuilder and sets the default values.
 func NewConfigurationPolicyTemplatesItemSettingTemplatesItemSettingDefinitionsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConfigurationPolicyTemplatesItemSettingTemplatesItemSettingDefinitionsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewConfigurationPolicyTemplatesItemSettingTemplatesItemSettingDefinitionsDeviceManagementConfigurationSettingDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewConfigurationPolicyTemplatesItemSettingTemplatesItemSettingDefinitionsDeviceManagementConfigurationSettingDefinitionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property settingDefinitions for deviceManagement
 func (m *ConfigurationPolicyTemplatesItemSettingTemplatesItemSettingDefinitionsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConfigurationPolicyTemplatesItemSettingTemplatesItemSettingDefinitionsDeviceManagementConfigurationSettingDefinitionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ConfigurationPolicyTemplatesItemSettingTemplatesItemSettingDefinitionsD
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

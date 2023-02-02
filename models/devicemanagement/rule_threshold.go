@@ -21,7 +21,7 @@ type RuleThreshold struct {
 func NewRuleThreshold()(*RuleThreshold) {
     m := &RuleThreshold{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateRuleThresholdFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

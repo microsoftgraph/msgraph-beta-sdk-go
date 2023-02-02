@@ -13,8 +13,8 @@ func NewDeviceCompliancePolicyPolicySetItem()(*DeviceCompliancePolicyPolicySetIt
     m := &DeviceCompliancePolicyPolicySetItem{
         PolicySetItem: *NewPolicySetItem(),
     }
-    odataTypeValue := "#microsoft.graph.deviceCompliancePolicyPolicySetItem";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceCompliancePolicyPolicySetItem"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceCompliancePolicyPolicySetItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

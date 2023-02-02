@@ -47,7 +47,7 @@ type EvaluateLabelJobsJobResponseBaseItemRequestBuilderPatchRequestConfiguration
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewEvaluateLabelJobsJobResponseBaseItemRequestBuilderInternal instantiates a new JobResponseBaseItemRequestBuilder and sets the default values.
-func NewEvaluateLabelJobsJobResponseBaseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EvaluateLabelJobsJobResponseBaseItemRequestBuilder) {
+func NewEvaluateLabelJobsJobResponseBaseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, jobResponseBaseId *string)(*EvaluateLabelJobsJobResponseBaseItemRequestBuilder) {
     m := &EvaluateLabelJobsJobResponseBaseItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/dataClassification/evaluateLabelJobs/{jobResponseBase%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewEvaluateLabelJobsJobResponseBaseItemRequestBuilderInternal(pathParameter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if jobResponseBaseId != nil {
+        urlTplParams["jobResponseBase%2Did"] = *jobResponseBaseId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEvaluateLabelJobsJobResponseBaseItemRequestBuilder instantiates a new JobResponseBaseItemRequestBuilder and sets the default values.
 func NewEvaluateLabelJobsJobResponseBaseItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EvaluateLabelJobsJobResponseBaseItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewEvaluateLabelJobsJobResponseBaseItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewEvaluateLabelJobsJobResponseBaseItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property evaluateLabelJobs for dataClassification
 func (m *EvaluateLabelJobsJobResponseBaseItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EvaluateLabelJobsJobResponseBaseItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *EvaluateLabelJobsJobResponseBaseItemRequestBuilder) ToPatchRequestInfor
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

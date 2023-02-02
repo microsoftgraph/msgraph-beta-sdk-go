@@ -19,7 +19,7 @@ type EvaluateLabelJobResultGroup struct {
 func NewEvaluateLabelJobResultGroup()(*EvaluateLabelJobResultGroup) {
     m := &EvaluateLabelJobResultGroup{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateEvaluateLabelJobResultGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -21,7 +21,7 @@ type EducationSynchronizationError struct {
     // The identifier of this error entry.
     reportableIdentifier *string
 }
-// NewEducationSynchronizationError instantiates a new educationSynchronizationError and sets the default values.
+// NewEducationSynchronizationError instantiates a new EducationSynchronizationError and sets the default values.
 func NewEducationSynchronizationError()(*EducationSynchronizationError) {
     m := &EducationSynchronizationError{
         Entity: *NewEntity(),

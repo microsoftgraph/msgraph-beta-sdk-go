@@ -33,7 +33,7 @@ type AppRoleAssignedResourcesServicePrincipalItemRequestBuilderGetRequestConfigu
     QueryParameters *AppRoleAssignedResourcesServicePrincipalItemRequestBuilderGetQueryParameters
 }
 // NewAppRoleAssignedResourcesServicePrincipalItemRequestBuilderInternal instantiates a new ServicePrincipalItemRequestBuilder and sets the default values.
-func NewAppRoleAssignedResourcesServicePrincipalItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppRoleAssignedResourcesServicePrincipalItemRequestBuilder) {
+func NewAppRoleAssignedResourcesServicePrincipalItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, servicePrincipalId *string)(*AppRoleAssignedResourcesServicePrincipalItemRequestBuilder) {
     m := &AppRoleAssignedResourcesServicePrincipalItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/appRoleAssignedResources/{servicePrincipal%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewAppRoleAssignedResourcesServicePrincipalItemRequestBuilderInternal(pathP
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if servicePrincipalId != nil {
+        urlTplParams["servicePrincipal%2Did"] = *servicePrincipalId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAppRoleAssignedResourcesServicePrincipalItemRequestBuilder instantiates a new ServicePrincipalItemRequestBuilder and sets the default values.
 func NewAppRoleAssignedResourcesServicePrincipalItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppRoleAssignedResourcesServicePrincipalItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAppRoleAssignedResourcesServicePrincipalItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAppRoleAssignedResourcesServicePrincipalItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get get appRoleAssignedResources from me
 func (m *AppRoleAssignedResourcesServicePrincipalItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AppRoleAssignedResourcesServicePrincipalItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalable, error) {

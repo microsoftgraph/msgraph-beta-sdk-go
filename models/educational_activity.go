@@ -23,8 +23,8 @@ func NewEducationalActivity()(*EducationalActivity) {
     m := &EducationalActivity{
         ItemFacet: *NewItemFacet(),
     }
-    odataTypeValue := "#microsoft.graph.educationalActivity";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.educationalActivity"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEducationalActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

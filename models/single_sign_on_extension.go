@@ -15,7 +15,7 @@ type SingleSignOnExtension struct {
 func NewSingleSignOnExtension()(*SingleSignOnExtension) {
     m := &SingleSignOnExtension{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSingleSignOnExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -23,7 +23,7 @@ type PrivilegedSignupStatusItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PrivilegedSignupStatusItemRequestBuilderGetQueryParameters get entity from privilegedSignupStatus by key (id)
+// PrivilegedSignupStatusItemRequestBuilderGetQueryParameters get entity from privilegedSignupStatus by key
 type PrivilegedSignupStatusItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -47,7 +47,7 @@ type PrivilegedSignupStatusItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewPrivilegedSignupStatusItemRequestBuilderInternal instantiates a new PrivilegedSignupStatusItemRequestBuilder and sets the default values.
-func NewPrivilegedSignupStatusItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrivilegedSignupStatusItemRequestBuilder) {
+func NewPrivilegedSignupStatusItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, privilegedSignupStatusId *string)(*PrivilegedSignupStatusItemRequestBuilder) {
     m := &PrivilegedSignupStatusItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/privilegedSignupStatus/{privilegedSignupStatus%2Did}{?%24select,%24expand}";
@@ -55,17 +55,20 @@ func NewPrivilegedSignupStatusItemRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if privilegedSignupStatusId != nil {
+        urlTplParams["privilegedSignupStatus%2Did"] = *privilegedSignupStatusId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPrivilegedSignupStatusItemRequestBuilder instantiates a new PrivilegedSignupStatusItemRequestBuilder and sets the default values.
 func NewPrivilegedSignupStatusItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrivilegedSignupStatusItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewPrivilegedSignupStatusItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewPrivilegedSignupStatusItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Delete delete entity from privilegedSignupStatus by key (id)
+// Delete delete entity from privilegedSignupStatus
 func (m *PrivilegedSignupStatusItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *PrivilegedSignupStatusItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,7 +84,7 @@ func (m *PrivilegedSignupStatusItemRequestBuilder) Delete(ctx context.Context, r
     }
     return nil
 }
-// Get get entity from privilegedSignupStatus by key (id)
+// Get get entity from privilegedSignupStatus by key
 func (m *PrivilegedSignupStatusItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedSignupStatusItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedSignupStatusable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,7 +103,7 @@ func (m *PrivilegedSignupStatusItemRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedSignupStatusable), nil
 }
-// Patch update entity in privilegedSignupStatus by key (id)
+// Patch update entity in privilegedSignupStatus
 func (m *PrivilegedSignupStatusItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedSignupStatusable, requestConfiguration *PrivilegedSignupStatusItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedSignupStatusable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +122,7 @@ func (m *PrivilegedSignupStatusItemRequestBuilder) Patch(ctx context.Context, bo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedSignupStatusable), nil
 }
-// ToDeleteRequestInformation delete entity from privilegedSignupStatus by key (id)
+// ToDeleteRequestInformation delete entity from privilegedSignupStatus
 func (m *PrivilegedSignupStatusItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PrivilegedSignupStatusItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,7 +134,7 @@ func (m *PrivilegedSignupStatusItemRequestBuilder) ToDeleteRequestInformation(ct
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from privilegedSignupStatus by key (id)
+// ToGetRequestInformation get entity from privilegedSignupStatus by key
 func (m *PrivilegedSignupStatusItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedSignupStatusItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,14 +150,17 @@ func (m *PrivilegedSignupStatusItemRequestBuilder) ToGetRequestInformation(ctx c
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in privilegedSignupStatus by key (id)
+// ToPatchRequestInformation update entity in privilegedSignupStatus
 func (m *PrivilegedSignupStatusItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedSignupStatusable, requestConfiguration *PrivilegedSignupStatusItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

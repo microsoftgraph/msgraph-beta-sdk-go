@@ -15,8 +15,8 @@ func NewFido2CombinationConfiguration()(*Fido2CombinationConfiguration) {
     m := &Fido2CombinationConfiguration{
         AuthenticationCombinationConfiguration: *NewAuthenticationCombinationConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.fido2CombinationConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.fido2CombinationConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateFido2CombinationConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

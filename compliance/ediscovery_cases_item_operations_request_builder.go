@@ -51,10 +51,6 @@ type EdiscoveryCasesItemOperationsRequestBuilderPostRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CaseExportOperation casts the previous resource to caseExportOperation.
-func (m *EdiscoveryCasesItemOperationsRequestBuilder) CaseExportOperation()(*EdiscoveryCasesItemOperationsCaseExportOperationRequestBuilder) {
-    return NewEdiscoveryCasesItemOperationsCaseExportOperationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewEdiscoveryCasesItemOperationsRequestBuilderInternal instantiates a new OperationsRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemOperationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemOperationsRequestBuilder) {
     m := &EdiscoveryCasesItemOperationsRequestBuilder{
@@ -64,8 +60,8 @@ func NewEdiscoveryCasesItemOperationsRequestBuilderInternal(pathParameters map[s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEdiscoveryCasesItemOperationsRequestBuilder instantiates a new OperationsRequestBuilder and sets the default values.
@@ -76,7 +72,7 @@ func NewEdiscoveryCasesItemOperationsRequestBuilder(rawUrl string, requestAdapte
 }
 // Count provides operations to count the resources in the collection.
 func (m *EdiscoveryCasesItemOperationsRequestBuilder) Count()(*EdiscoveryCasesItemOperationsCountRequestBuilder) {
-    return NewEdiscoveryCasesItemOperationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesItemOperationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get returns a list of case operation objects for this case. Nullable.
 func (m *EdiscoveryCasesItemOperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemOperationsRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseOperationCollectionResponseable, error) {
@@ -96,6 +92,10 @@ func (m *EdiscoveryCasesItemOperationsRequestBuilder) Get(ctx context.Context, r
         return nil, nil
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseOperationCollectionResponseable), nil
+}
+// MicrosoftGraphEdiscoveryCaseExportOperation casts the previous resource to caseExportOperation.
+func (m *EdiscoveryCasesItemOperationsRequestBuilder) MicrosoftGraphEdiscoveryCaseExportOperation()(*EdiscoveryCasesItemOperationsMicrosoftGraphEdiscoveryCaseExportOperationCaseExportOperationRequestBuilder) {
+    return NewEdiscoveryCasesItemOperationsMicrosoftGraphEdiscoveryCaseExportOperationCaseExportOperationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to operations for compliance
 func (m *EdiscoveryCasesItemOperationsRequestBuilder) Post(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseOperationable, requestConfiguration *EdiscoveryCasesItemOperationsRequestBuilderPostRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseOperationable, error) {
@@ -139,7 +139,10 @@ func (m *EdiscoveryCasesItemOperationsRequestBuilder) ToPostRequestInformation(c
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -41,7 +41,7 @@ type OfficeConfigurationRequestBuilderPatchRequestConfiguration struct {
 }
 // ClientConfigurations provides operations to manage the clientConfigurations property of the microsoft.graph.officeConfiguration entity.
 func (m *OfficeConfigurationRequestBuilder) ClientConfigurations()(*ClientConfigurationsRequestBuilder) {
-    return NewClientConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewClientConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ClientConfigurationsById provides operations to manage the clientConfigurations property of the microsoft.graph.officeConfiguration entity.
 func (m *OfficeConfigurationRequestBuilder) ClientConfigurationsById(id string)(*ClientConfigurationsOfficeClientConfigurationItemRequestBuilder) {
@@ -49,10 +49,8 @@ func (m *OfficeConfigurationRequestBuilder) ClientConfigurationsById(id string)(
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["officeClientConfiguration%2Did"] = id
-    }
-    return NewClientConfigurationsOfficeClientConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewClientConfigurationsOfficeClientConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewOfficeConfigurationRequestBuilderInternal instantiates a new OfficeConfigurationRequestBuilder and sets the default values.
 func NewOfficeConfigurationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OfficeConfigurationRequestBuilder) {
@@ -63,8 +61,8 @@ func NewOfficeConfigurationRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewOfficeConfigurationRequestBuilder instantiates a new OfficeConfigurationRequestBuilder and sets the default values.
@@ -134,7 +132,10 @@ func (m *OfficeConfigurationRequestBuilder) ToPatchRequestInformation(ctx contex
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

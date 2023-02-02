@@ -69,7 +69,7 @@ type PolicyRoot struct {
 func NewPolicyRoot()(*PolicyRoot) {
     m := &PolicyRoot{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePolicyRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

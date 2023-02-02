@@ -47,7 +47,7 @@ type RostersPlannerRosterItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewRostersPlannerRosterItemRequestBuilderInternal instantiates a new PlannerRosterItemRequestBuilder and sets the default values.
-func NewRostersPlannerRosterItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RostersPlannerRosterItemRequestBuilder) {
+func NewRostersPlannerRosterItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, plannerRosterId *string)(*RostersPlannerRosterItemRequestBuilder) {
     m := &RostersPlannerRosterItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/planner/rosters/{plannerRoster%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewRostersPlannerRosterItemRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if plannerRosterId != nil {
+        urlTplParams["plannerRoster%2Did"] = *plannerRosterId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewRostersPlannerRosterItemRequestBuilder instantiates a new PlannerRosterItemRequestBuilder and sets the default values.
 func NewRostersPlannerRosterItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RostersPlannerRosterItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewRostersPlannerRosterItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewRostersPlannerRosterItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property rosters for planner
 func (m *RostersPlannerRosterItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *RostersPlannerRosterItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -102,7 +105,7 @@ func (m *RostersPlannerRosterItemRequestBuilder) Get(ctx context.Context, reques
 }
 // Members provides operations to manage the members property of the microsoft.graph.plannerRoster entity.
 func (m *RostersPlannerRosterItemRequestBuilder) Members()(*RostersItemMembersRequestBuilder) {
-    return NewRostersItemMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewRostersItemMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MembersById provides operations to manage the members property of the microsoft.graph.plannerRoster entity.
 func (m *RostersPlannerRosterItemRequestBuilder) MembersById(id string)(*RostersItemMembersPlannerRosterMemberItemRequestBuilder) {
@@ -110,10 +113,8 @@ func (m *RostersPlannerRosterItemRequestBuilder) MembersById(id string)(*Rosters
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["plannerRosterMember%2Did"] = id
-    }
-    return NewRostersItemMembersPlannerRosterMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewRostersItemMembersPlannerRosterMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Patch update the navigation property rosters in planner
 func (m *RostersPlannerRosterItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterable, requestConfiguration *RostersPlannerRosterItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterable, error) {
@@ -136,7 +137,7 @@ func (m *RostersPlannerRosterItemRequestBuilder) Patch(ctx context.Context, body
 }
 // Plans provides operations to manage the plans property of the microsoft.graph.plannerRoster entity.
 func (m *RostersPlannerRosterItemRequestBuilder) Plans()(*RostersItemPlansRequestBuilder) {
-    return NewRostersItemPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewRostersItemPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PlansById provides operations to manage the plans property of the microsoft.graph.plannerRoster entity.
 func (m *RostersPlannerRosterItemRequestBuilder) PlansById(id string)(*RostersItemPlansPlannerPlanItemRequestBuilder) {
@@ -144,10 +145,8 @@ func (m *RostersPlannerRosterItemRequestBuilder) PlansById(id string)(*RostersIt
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["plannerPlan%2Did"] = id
-    }
-    return NewRostersItemPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewRostersItemPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property rosters for planner
 func (m *RostersPlannerRosterItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *RostersPlannerRosterItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -184,7 +183,10 @@ func (m *RostersPlannerRosterItemRequestBuilder) ToPatchRequestInformation(ctx c
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

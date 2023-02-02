@@ -46,16 +46,8 @@ type DirectorySettingTemplateItemRequestBuilderPatchRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CheckMemberGroups provides operations to call the checkMemberGroups method.
-func (m *DirectorySettingTemplateItemRequestBuilder) CheckMemberGroups()(*ItemCheckMemberGroupsRequestBuilder) {
-    return NewItemCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// CheckMemberObjects provides operations to call the checkMemberObjects method.
-func (m *DirectorySettingTemplateItemRequestBuilder) CheckMemberObjects()(*ItemCheckMemberObjectsRequestBuilder) {
-    return NewItemCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewDirectorySettingTemplateItemRequestBuilderInternal instantiates a new DirectorySettingTemplateItemRequestBuilder and sets the default values.
-func NewDirectorySettingTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectorySettingTemplateItemRequestBuilder) {
+func NewDirectorySettingTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, directorySettingTemplateId *string)(*DirectorySettingTemplateItemRequestBuilder) {
     m := &DirectorySettingTemplateItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/directorySettingTemplates/{directorySettingTemplate%2Did}{?%24select,%24expand}";
@@ -63,17 +55,20 @@ func NewDirectorySettingTemplateItemRequestBuilderInternal(pathParameters map[st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if directorySettingTemplateId != nil {
+        urlTplParams["directorySettingTemplate%2Did"] = *directorySettingTemplateId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDirectorySettingTemplateItemRequestBuilder instantiates a new DirectorySettingTemplateItemRequestBuilder and sets the default values.
 func NewDirectorySettingTemplateItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectorySettingTemplateItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewDirectorySettingTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewDirectorySettingTemplateItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Delete delete entity from directorySettingTemplates by key (id)
+// Delete delete entity from directorySettingTemplates
 func (m *DirectorySettingTemplateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DirectorySettingTemplateItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -111,15 +106,27 @@ func (m *DirectorySettingTemplateItemRequestBuilder) Get(ctx context.Context, re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateable), nil
 }
-// GetMemberGroups provides operations to call the getMemberGroups method.
-func (m *DirectorySettingTemplateItemRequestBuilder) GetMemberGroups()(*ItemGetMemberGroupsRequestBuilder) {
-    return NewItemGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphCheckMemberGroups provides operations to call the checkMemberGroups method.
+func (m *DirectorySettingTemplateItemRequestBuilder) MicrosoftGraphCheckMemberGroups()(*ItemMicrosoftGraphCheckMemberGroupsCheckMemberGroupsRequestBuilder) {
+    return NewItemMicrosoftGraphCheckMemberGroupsCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetMemberObjects provides operations to call the getMemberObjects method.
-func (m *DirectorySettingTemplateItemRequestBuilder) GetMemberObjects()(*ItemGetMemberObjectsRequestBuilder) {
-    return NewItemGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphCheckMemberObjects provides operations to call the checkMemberObjects method.
+func (m *DirectorySettingTemplateItemRequestBuilder) MicrosoftGraphCheckMemberObjects()(*ItemMicrosoftGraphCheckMemberObjectsCheckMemberObjectsRequestBuilder) {
+    return NewItemMicrosoftGraphCheckMemberObjectsCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// Patch update entity in directorySettingTemplates by key (id)
+// MicrosoftGraphGetMemberGroups provides operations to call the getMemberGroups method.
+func (m *DirectorySettingTemplateItemRequestBuilder) MicrosoftGraphGetMemberGroups()(*ItemMicrosoftGraphGetMemberGroupsGetMemberGroupsRequestBuilder) {
+    return NewItemMicrosoftGraphGetMemberGroupsGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphGetMemberObjects provides operations to call the getMemberObjects method.
+func (m *DirectorySettingTemplateItemRequestBuilder) MicrosoftGraphGetMemberObjects()(*ItemMicrosoftGraphGetMemberObjectsGetMemberObjectsRequestBuilder) {
+    return NewItemMicrosoftGraphGetMemberObjectsGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRestore provides operations to call the restore method.
+func (m *DirectorySettingTemplateItemRequestBuilder) MicrosoftGraphRestore()(*ItemMicrosoftGraphRestoreRestoreRequestBuilder) {
+    return NewItemMicrosoftGraphRestoreRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// Patch update entity in directorySettingTemplates
 func (m *DirectorySettingTemplateItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateable, requestConfiguration *DirectorySettingTemplateItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -138,11 +145,7 @@ func (m *DirectorySettingTemplateItemRequestBuilder) Patch(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateable), nil
 }
-// Restore provides operations to call the restore method.
-func (m *DirectorySettingTemplateItemRequestBuilder) Restore()(*ItemRestoreRequestBuilder) {
-    return NewItemRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ToDeleteRequestInformation delete entity from directorySettingTemplates by key (id)
+// ToDeleteRequestInformation delete entity from directorySettingTemplates
 func (m *DirectorySettingTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DirectorySettingTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -170,14 +173,17 @@ func (m *DirectorySettingTemplateItemRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in directorySettingTemplates by key (id)
+// ToPatchRequestInformation update entity in directorySettingTemplates
 func (m *DirectorySettingTemplateItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateable, requestConfiguration *DirectorySettingTemplateItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

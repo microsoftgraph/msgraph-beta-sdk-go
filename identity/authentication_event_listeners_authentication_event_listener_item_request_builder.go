@@ -47,7 +47,7 @@ type AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderPa
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewAuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderInternal instantiates a new AuthenticationEventListenerItemRequestBuilder and sets the default values.
-func NewAuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilder) {
+func NewAuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, authenticationEventListenerId *string)(*AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilder) {
     m := &AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/identity/authenticationEventListeners/{authenticationEventListener%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewAuthenticationEventListenersAuthenticationEventListenerItemRequestBuilde
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if authenticationEventListenerId != nil {
+        urlTplParams["authenticationEventListener%2Did"] = *authenticationEventListenerId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAuthenticationEventListenersAuthenticationEventListenerItemRequestBuilder instantiates a new AuthenticationEventListenerItemRequestBuilder and sets the default values.
 func NewAuthenticationEventListenersAuthenticationEventListenerItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property authenticationEventListeners for identity
 func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuild
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

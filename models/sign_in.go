@@ -14,7 +14,7 @@ type SignIn struct {
     appId *string
     // A list of conditional access policies that are triggered by the corresponding sign-in activity.
     appliedConditionalAccessPolicies []AppliedConditionalAccessPolicyable
-    // The appliedEventListeners property
+    // Detailed information about the listeners, such as Azure Logic Apps and Azure Functions, that were triggered by the corresponding events in the sign-in event.
     appliedEventListeners []AppliedAuthenticationEventListenerable
     // Provides details about the app and device used during an Azure AD authentication step.
     authenticationAppDeviceDetails AuthenticationAppDeviceDetailsable
@@ -158,7 +158,7 @@ func (m *SignIn) GetAppId()(*string) {
 func (m *SignIn) GetAppliedConditionalAccessPolicies()([]AppliedConditionalAccessPolicyable) {
     return m.appliedConditionalAccessPolicies
 }
-// GetAppliedEventListeners gets the appliedEventListeners property value. The appliedEventListeners property
+// GetAppliedEventListeners gets the appliedEventListeners property value. Detailed information about the listeners, such as Azure Logic Apps and Azure Functions, that were triggered by the corresponding events in the sign-in event.
 func (m *SignIn) GetAppliedEventListeners()([]AppliedAuthenticationEventListenerable) {
     return m.appliedEventListeners
 }
@@ -707,7 +707,7 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
             for i, v := range val {
                 res[i] = *(v.(*string))
             }
-            m.SetRiskEventTypes_v2(res)
+            m.SetRiskEventTypesV2(res)
         }
         return nil
     }
@@ -997,8 +997,8 @@ func (m *SignIn) GetResourceTenantId()(*string) {
 func (m *SignIn) GetRiskDetail()(*RiskDetail) {
     return m.riskDetail
 }
-// GetRiskEventTypes_v2 gets the riskEventTypes_v2 property value. The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).
-func (m *SignIn) GetRiskEventTypes_v2()([]string) {
+// GetRiskEventTypesV2 gets the riskEventTypes_v2 property value. The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).
+func (m *SignIn) GetRiskEventTypesV2()([]string) {
     return m.riskEventTypes_v2
 }
 // GetRiskLevelAggregated gets the riskLevelAggregated property value. The aggregated risk level. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
@@ -1377,8 +1377,8 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
             return err
         }
     }
-    if m.GetRiskEventTypes_v2() != nil {
-        err = writer.WriteCollectionOfStringValues("riskEventTypes_v2", m.GetRiskEventTypes_v2())
+    if m.GetRiskEventTypesV2() != nil {
+        err = writer.WriteCollectionOfStringValues("riskEventTypes_v2", m.GetRiskEventTypesV2())
         if err != nil {
             return err
         }
@@ -1527,7 +1527,7 @@ func (m *SignIn) SetAppId(value *string)() {
 func (m *SignIn) SetAppliedConditionalAccessPolicies(value []AppliedConditionalAccessPolicyable)() {
     m.appliedConditionalAccessPolicies = value
 }
-// SetAppliedEventListeners sets the appliedEventListeners property value. The appliedEventListeners property
+// SetAppliedEventListeners sets the appliedEventListeners property value. Detailed information about the listeners, such as Azure Logic Apps and Azure Functions, that were triggered by the corresponding events in the sign-in event.
 func (m *SignIn) SetAppliedEventListeners(value []AppliedAuthenticationEventListenerable)() {
     m.appliedEventListeners = value
 }
@@ -1683,8 +1683,8 @@ func (m *SignIn) SetResourceTenantId(value *string)() {
 func (m *SignIn) SetRiskDetail(value *RiskDetail)() {
     m.riskDetail = value
 }
-// SetRiskEventTypes_v2 sets the riskEventTypes_v2 property value. The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).
-func (m *SignIn) SetRiskEventTypes_v2(value []string)() {
+// SetRiskEventTypesV2 sets the riskEventTypes_v2 property value. The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).
+func (m *SignIn) SetRiskEventTypesV2(value []string)() {
     m.riskEventTypes_v2 = value
 }
 // SetRiskLevelAggregated sets the riskLevelAggregated property value. The aggregated risk level. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.

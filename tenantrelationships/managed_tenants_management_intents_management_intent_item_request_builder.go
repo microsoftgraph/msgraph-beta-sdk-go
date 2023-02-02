@@ -47,7 +47,7 @@ type ManagedTenantsManagementIntentsManagementIntentItemRequestBuilderPatchReque
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewManagedTenantsManagementIntentsManagementIntentItemRequestBuilderInternal instantiates a new ManagementIntentItemRequestBuilder and sets the default values.
-func NewManagedTenantsManagementIntentsManagementIntentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagementIntentsManagementIntentItemRequestBuilder) {
+func NewManagedTenantsManagementIntentsManagementIntentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, managementIntentId *string)(*ManagedTenantsManagementIntentsManagementIntentItemRequestBuilder) {
     m := &ManagedTenantsManagementIntentsManagementIntentItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementIntents/{managementIntent%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewManagedTenantsManagementIntentsManagementIntentItemRequestBuilderInterna
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if managementIntentId != nil {
+        urlTplParams["managementIntent%2Did"] = *managementIntentId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedTenantsManagementIntentsManagementIntentItemRequestBuilder instantiates a new ManagementIntentItemRequestBuilder and sets the default values.
 func NewManagedTenantsManagementIntentsManagementIntentItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagementIntentsManagementIntentItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewManagedTenantsManagementIntentsManagementIntentItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewManagedTenantsManagementIntentsManagementIntentItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property managementIntents for tenantRelationships
 func (m *ManagedTenantsManagementIntentsManagementIntentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedTenantsManagementIntentsManagementIntentItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ManagedTenantsManagementIntentsManagementIntentItemRequestBuilder) ToPa
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

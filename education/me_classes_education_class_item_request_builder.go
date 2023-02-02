@@ -33,7 +33,7 @@ type MeClassesEducationClassItemRequestBuilderGetRequestConfiguration struct {
     QueryParameters *MeClassesEducationClassItemRequestBuilderGetQueryParameters
 }
 // NewMeClassesEducationClassItemRequestBuilderInternal instantiates a new EducationClassItemRequestBuilder and sets the default values.
-func NewMeClassesEducationClassItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MeClassesEducationClassItemRequestBuilder) {
+func NewMeClassesEducationClassItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, educationClassId *string)(*MeClassesEducationClassItemRequestBuilder) {
     m := &MeClassesEducationClassItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/education/me/classes/{educationClass%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewMeClassesEducationClassItemRequestBuilderInternal(pathParameters map[str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if educationClassId != nil {
+        urlTplParams["educationClass%2Did"] = *educationClassId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMeClassesEducationClassItemRequestBuilder instantiates a new EducationClassItemRequestBuilder and sets the default values.
 func NewMeClassesEducationClassItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MeClassesEducationClassItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewMeClassesEducationClassItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewMeClassesEducationClassItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get classes to which the user belongs. Nullable.
 func (m *MeClassesEducationClassItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MeClassesEducationClassItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationClassable, error) {

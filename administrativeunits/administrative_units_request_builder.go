@@ -60,8 +60,8 @@ func NewAdministrativeUnitsRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAdministrativeUnitsRequestBuilder instantiates a new AdministrativeUnitsRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewAdministrativeUnitsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 }
 // Count provides operations to count the resources in the collection.
 func (m *AdministrativeUnitsRequestBuilder) Count()(*CountRequestBuilder) {
-    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Delta provides operations to call the delta method.
-func (m *AdministrativeUnitsRequestBuilder) Delta()(*DeltaRequestBuilder) {
-    return NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of administrativeUnit objects.
 // [Find more info here]
@@ -100,13 +96,21 @@ func (m *AdministrativeUnitsRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitCollectionResponseable), nil
 }
-// GetByIds provides operations to call the getByIds method.
-func (m *AdministrativeUnitsRequestBuilder) GetByIds()(*GetByIdsRequestBuilder) {
-    return NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphDelta provides operations to call the delta method.
+func (m *AdministrativeUnitsRequestBuilder) MicrosoftGraphDelta()(*MicrosoftGraphDeltaDeltaRequestBuilder) {
+    return NewMicrosoftGraphDeltaDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
-func (m *AdministrativeUnitsRequestBuilder) GetUserOwnedObjects()(*GetUserOwnedObjectsRequestBuilder) {
-    return NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetByIds provides operations to call the getByIds method.
+func (m *AdministrativeUnitsRequestBuilder) MicrosoftGraphGetByIds()(*MicrosoftGraphGetByIdsGetByIdsRequestBuilder) {
+    return NewMicrosoftGraphGetByIdsGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphGetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
+func (m *AdministrativeUnitsRequestBuilder) MicrosoftGraphGetUserOwnedObjects()(*MicrosoftGraphGetUserOwnedObjectsGetUserOwnedObjectsRequestBuilder) {
+    return NewMicrosoftGraphGetUserOwnedObjectsGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphValidateProperties provides operations to call the validateProperties method.
+func (m *AdministrativeUnitsRequestBuilder) MicrosoftGraphValidateProperties()(*MicrosoftGraphValidatePropertiesValidatePropertiesRequestBuilder) {
+    return NewMicrosoftGraphValidatePropertiesValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post use this API to create a new administrativeUnit.
 // [Find more info here]
@@ -153,14 +157,13 @@ func (m *AdministrativeUnitsRequestBuilder) ToPostRequestInformation(ctx context
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// ValidateProperties provides operations to call the validateProperties method.
-func (m *AdministrativeUnitsRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
-    return NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

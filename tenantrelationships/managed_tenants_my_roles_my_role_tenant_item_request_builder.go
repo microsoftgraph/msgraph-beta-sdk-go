@@ -47,7 +47,7 @@ type ManagedTenantsMyRolesMyRoleTenantItemRequestBuilderPatchRequestConfiguratio
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewManagedTenantsMyRolesMyRoleTenantItemRequestBuilderInternal instantiates a new MyRoleTenantItemRequestBuilder and sets the default values.
-func NewManagedTenantsMyRolesMyRoleTenantItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsMyRolesMyRoleTenantItemRequestBuilder) {
+func NewManagedTenantsMyRolesMyRoleTenantItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, myRoleTenantId *string)(*ManagedTenantsMyRolesMyRoleTenantItemRequestBuilder) {
     m := &ManagedTenantsMyRolesMyRoleTenantItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/myRoles/{myRole%2DtenantId}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewManagedTenantsMyRolesMyRoleTenantItemRequestBuilderInternal(pathParamete
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if myRoleTenantId != nil {
+        urlTplParams["myRole%2DtenantId"] = *myRoleTenantId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedTenantsMyRolesMyRoleTenantItemRequestBuilder instantiates a new MyRoleTenantItemRequestBuilder and sets the default values.
 func NewManagedTenantsMyRolesMyRoleTenantItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsMyRolesMyRoleTenantItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewManagedTenantsMyRolesMyRoleTenantItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewManagedTenantsMyRolesMyRoleTenantItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property myRoles for tenantRelationships
 func (m *ManagedTenantsMyRolesMyRoleTenantItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedTenantsMyRolesMyRoleTenantItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ManagedTenantsMyRolesMyRoleTenantItemRequestBuilder) ToPatchRequestInfo
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

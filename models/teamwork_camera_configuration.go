@@ -21,7 +21,7 @@ type TeamworkCameraConfiguration struct {
 func NewTeamworkCameraConfiguration()(*TeamworkCameraConfiguration) {
     m := &TeamworkCameraConfiguration{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTeamworkCameraConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

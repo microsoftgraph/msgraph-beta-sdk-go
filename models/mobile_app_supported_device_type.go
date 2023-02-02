@@ -21,7 +21,7 @@ type MobileAppSupportedDeviceType struct {
 func NewMobileAppSupportedDeviceType()(*MobileAppSupportedDeviceType) {
     m := &MobileAppSupportedDeviceType{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMobileAppSupportedDeviceTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

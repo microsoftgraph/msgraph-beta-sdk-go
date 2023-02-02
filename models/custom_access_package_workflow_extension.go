@@ -18,8 +18,8 @@ func NewCustomAccessPackageWorkflowExtension()(*CustomAccessPackageWorkflowExten
     m := &CustomAccessPackageWorkflowExtension{
         CustomCalloutExtension: *NewCustomCalloutExtension(),
     }
-    odataTypeValue := "#microsoft.graph.customAccessPackageWorkflowExtension";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.customAccessPackageWorkflowExtension"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateCustomAccessPackageWorkflowExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

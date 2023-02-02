@@ -47,7 +47,7 @@ type IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilde
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewIntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilderInternal instantiates a new DeviceManagementIntentSettingCategoryItemRequestBuilder and sets the default values.
-func NewIntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilder) {
+func NewIntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, deviceManagementIntentSettingCategoryId *string)(*IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilder) {
     m := &IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/intents/{deviceManagementIntent%2Did}/categories/{deviceManagementIntentSettingCategory%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewIntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBui
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if deviceManagementIntentSettingCategoryId != nil {
+        urlTplParams["deviceManagementIntentSettingCategory%2Did"] = *deviceManagementIntentSettingCategoryId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewIntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilder instantiates a new DeviceManagementIntentSettingCategoryItemRequestBuilder and sets the default values.
 func NewIntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewIntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewIntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property categories for deviceManagement
 func (m *IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -121,7 +124,7 @@ func (m *IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBu
 }
 // Settings provides operations to manage the settings property of the microsoft.graph.deviceManagementIntentSettingCategory entity.
 func (m *IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilder) Settings()(*IntentsItemCategoriesItemSettingsRequestBuilder) {
-    return NewIntentsItemCategoriesItemSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIntentsItemCategoriesItemSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SettingsById provides operations to manage the settings property of the microsoft.graph.deviceManagementIntentSettingCategory entity.
 func (m *IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilder) SettingsById(id string)(*IntentsItemCategoriesItemSettingsDeviceManagementSettingInstanceItemRequestBuilder) {
@@ -129,10 +132,8 @@ func (m *IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBu
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["deviceManagementSettingInstance%2Did"] = id
-    }
-    return NewIntentsItemCategoriesItemSettingsDeviceManagementSettingInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewIntentsItemCategoriesItemSettingsDeviceManagementSettingInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property categories for deviceManagement
 func (m *IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +170,10 @@ func (m *IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBu
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -24,7 +24,7 @@ type DisplayTemplate struct {
 func NewDisplayTemplate()(*DisplayTemplate) {
     m := &DisplayTemplate{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDisplayTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

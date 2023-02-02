@@ -21,7 +21,7 @@ type CustomQuestionAnswer struct {
 func NewCustomQuestionAnswer()(*CustomQuestionAnswer) {
     m := &CustomQuestionAnswer{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCustomQuestionAnswerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -19,8 +19,8 @@ func NewWindowsKioskDesktopApp()(*WindowsKioskDesktopApp) {
     m := &WindowsKioskDesktopApp{
         WindowsKioskAppBase: *NewWindowsKioskAppBase(),
     }
-    odataTypeValue := "#microsoft.graph.windowsKioskDesktopApp";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsKioskDesktopApp"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsKioskDesktopAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

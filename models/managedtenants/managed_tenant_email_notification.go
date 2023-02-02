@@ -26,7 +26,7 @@ type ManagedTenantEmailNotification struct {
     // The subject property
     subject *string
 }
-// NewManagedTenantEmailNotification instantiates a new managedTenantEmailNotification and sets the default values.
+// NewManagedTenantEmailNotification instantiates a new ManagedTenantEmailNotification and sets the default values.
 func NewManagedTenantEmailNotification()(*ManagedTenantEmailNotification) {
     m := &ManagedTenantEmailNotification{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

@@ -48,10 +48,10 @@ type EntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilderPatchReq
 }
 // ConnectedOrganization provides operations to manage the connectedOrganization property of the microsoft.graph.accessPackageSubject entity.
 func (m *EntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilder) ConnectedOrganization()(*EntitlementManagementSubjectsItemConnectedOrganizationRequestBuilder) {
-    return NewEntitlementManagementSubjectsItemConnectedOrganizationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementSubjectsItemConnectedOrganizationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewEntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilderInternal instantiates a new AccessPackageSubjectItemRequestBuilder and sets the default values.
-func NewEntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilder) {
+func NewEntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, accessPackageSubjectId *string)(*EntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilder) {
     m := &EntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/subjects/{accessPackageSubject%2Did}{?%24select,%24expand}";
@@ -59,15 +59,18 @@ func NewEntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilderInter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if accessPackageSubjectId != nil {
+        urlTplParams["accessPackageSubject%2Did"] = *accessPackageSubjectId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilder instantiates a new AccessPackageSubjectItemRequestBuilder and sets the default values.
 func NewEntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewEntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewEntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property subjects for identityGovernance
 func (m *EntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -158,7 +161,10 @@ func (m *EntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilder) To
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

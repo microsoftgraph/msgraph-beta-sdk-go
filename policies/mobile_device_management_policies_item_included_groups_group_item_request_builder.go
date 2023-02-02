@@ -14,7 +14,7 @@ type MobileDeviceManagementPoliciesItemIncludedGroupsGroupItemRequestBuilder str
     urlTemplate string
 }
 // NewMobileDeviceManagementPoliciesItemIncludedGroupsGroupItemRequestBuilderInternal instantiates a new GroupItemRequestBuilder and sets the default values.
-func NewMobileDeviceManagementPoliciesItemIncludedGroupsGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileDeviceManagementPoliciesItemIncludedGroupsGroupItemRequestBuilder) {
+func NewMobileDeviceManagementPoliciesItemIncludedGroupsGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, groupId *string)(*MobileDeviceManagementPoliciesItemIncludedGroupsGroupItemRequestBuilder) {
     m := &MobileDeviceManagementPoliciesItemIncludedGroupsGroupItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/policies/mobileDeviceManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups/{group%2Did}";
@@ -22,17 +22,20 @@ func NewMobileDeviceManagementPoliciesItemIncludedGroupsGroupItemRequestBuilderI
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if groupId != nil {
+        urlTplParams["group%2Did"] = *groupId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMobileDeviceManagementPoliciesItemIncludedGroupsGroupItemRequestBuilder instantiates a new GroupItemRequestBuilder and sets the default values.
 func NewMobileDeviceManagementPoliciesItemIncludedGroupsGroupItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileDeviceManagementPoliciesItemIncludedGroupsGroupItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewMobileDeviceManagementPoliciesItemIncludedGroupsGroupItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewMobileDeviceManagementPoliciesItemIncludedGroupsGroupItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Ref provides operations to manage the collection of policyRoot entities.
 func (m *MobileDeviceManagementPoliciesItemIncludedGroupsGroupItemRequestBuilder) Ref()(*MobileDeviceManagementPoliciesItemIncludedGroupsItemRefRequestBuilder) {
-    return NewMobileDeviceManagementPoliciesItemIncludedGroupsItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMobileDeviceManagementPoliciesItemIncludedGroupsItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

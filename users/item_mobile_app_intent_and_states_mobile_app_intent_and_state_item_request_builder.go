@@ -47,7 +47,7 @@ type ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilderPatchR
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilderInternal instantiates a new MobileAppIntentAndStateItemRequestBuilder and sets the default values.
-func NewItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilder) {
+func NewItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, mobileAppIntentAndStateId *string)(*ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilder) {
     m := &ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/mobileAppIntentAndStates/{mobileAppIntentAndState%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilderInt
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if mobileAppIntentAndStateId != nil {
+        urlTplParams["mobileAppIntentAndState%2Did"] = *mobileAppIntentAndStateId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilder instantiates a new MobileAppIntentAndStateItemRequestBuilder and sets the default values.
 func NewItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property mobileAppIntentAndStates for users
 func (m *ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilder) 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

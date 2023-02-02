@@ -23,7 +23,7 @@ type HasPayloadLinkResultItem struct {
 func NewHasPayloadLinkResultItem()(*HasPayloadLinkResultItem) {
     m := &HasPayloadLinkResultItem{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateHasPayloadLinkResultItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

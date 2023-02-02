@@ -25,7 +25,7 @@ type NetworkInterface struct {
 func NewNetworkInterface()(*NetworkInterface) {
     m := &NetworkInterface{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateNetworkInterfaceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

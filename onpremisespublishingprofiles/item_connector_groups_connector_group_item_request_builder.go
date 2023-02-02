@@ -48,7 +48,7 @@ type ItemConnectorGroupsConnectorGroupItemRequestBuilderPatchRequestConfiguratio
 }
 // Applications provides operations to manage the applications property of the microsoft.graph.connectorGroup entity.
 func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) Applications()(*ItemConnectorGroupsItemApplicationsRequestBuilder) {
-    return NewItemConnectorGroupsItemApplicationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemConnectorGroupsItemApplicationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ApplicationsById provides operations to manage the applications property of the microsoft.graph.connectorGroup entity.
 func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) ApplicationsById(id string)(*ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder) {
@@ -56,13 +56,11 @@ func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) ApplicationsById(i
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["application%2Did"] = id
-    }
-    return NewItemConnectorGroupsItemApplicationsApplicationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemConnectorGroupsItemApplicationsApplicationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewItemConnectorGroupsConnectorGroupItemRequestBuilderInternal instantiates a new ConnectorGroupItemRequestBuilder and sets the default values.
-func NewItemConnectorGroupsConnectorGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConnectorGroupsConnectorGroupItemRequestBuilder) {
+func NewItemConnectorGroupsConnectorGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, connectorGroupId *string)(*ItemConnectorGroupsConnectorGroupItemRequestBuilder) {
     m := &ItemConnectorGroupsConnectorGroupItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectorGroups/{connectorGroup%2Did}{?%24select,%24expand}";
@@ -70,15 +68,18 @@ func NewItemConnectorGroupsConnectorGroupItemRequestBuilderInternal(pathParamete
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if connectorGroupId != nil {
+        urlTplParams["connectorGroup%2Did"] = *connectorGroupId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemConnectorGroupsConnectorGroupItemRequestBuilder instantiates a new ConnectorGroupItemRequestBuilder and sets the default values.
 func NewItemConnectorGroupsConnectorGroupItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConnectorGroupsConnectorGroupItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemConnectorGroupsConnectorGroupItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemConnectorGroupsConnectorGroupItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property connectorGroups for onPremisesPublishingProfiles
 func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemConnectorGroupsConnectorGroupItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -117,7 +118,7 @@ func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) Get(ctx context.Co
 }
 // Members provides operations to manage the members property of the microsoft.graph.connectorGroup entity.
 func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) Members()(*ItemConnectorGroupsItemMembersRequestBuilder) {
-    return NewItemConnectorGroupsItemMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemConnectorGroupsItemMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MembersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.connectorGroups.item.members.item collection
 func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) MembersById(id string)(*ItemConnectorGroupsItemMembersConnectorItemRequestBuilder) {
@@ -125,10 +126,8 @@ func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) MembersById(id str
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["connector%2Did"] = id
-    }
-    return NewItemConnectorGroupsItemMembersConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemConnectorGroupsItemMembersConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Patch update the navigation property connectorGroups in onPremisesPublishingProfiles
 func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectorGroupable, requestConfiguration *ItemConnectorGroupsConnectorGroupItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectorGroupable, error) {
@@ -184,7 +183,10 @@ func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) ToPatchRequestInfo
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

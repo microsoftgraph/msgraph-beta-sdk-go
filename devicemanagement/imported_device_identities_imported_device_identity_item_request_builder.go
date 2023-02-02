@@ -47,7 +47,7 @@ type ImportedDeviceIdentitiesImportedDeviceIdentityItemRequestBuilderPatchReques
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewImportedDeviceIdentitiesImportedDeviceIdentityItemRequestBuilderInternal instantiates a new ImportedDeviceIdentityItemRequestBuilder and sets the default values.
-func NewImportedDeviceIdentitiesImportedDeviceIdentityItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ImportedDeviceIdentitiesImportedDeviceIdentityItemRequestBuilder) {
+func NewImportedDeviceIdentitiesImportedDeviceIdentityItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, importedDeviceIdentityId *string)(*ImportedDeviceIdentitiesImportedDeviceIdentityItemRequestBuilder) {
     m := &ImportedDeviceIdentitiesImportedDeviceIdentityItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/importedDeviceIdentities/{importedDeviceIdentity%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewImportedDeviceIdentitiesImportedDeviceIdentityItemRequestBuilderInternal
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if importedDeviceIdentityId != nil {
+        urlTplParams["importedDeviceIdentity%2Did"] = *importedDeviceIdentityId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewImportedDeviceIdentitiesImportedDeviceIdentityItemRequestBuilder instantiates a new ImportedDeviceIdentityItemRequestBuilder and sets the default values.
 func NewImportedDeviceIdentitiesImportedDeviceIdentityItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ImportedDeviceIdentitiesImportedDeviceIdentityItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewImportedDeviceIdentitiesImportedDeviceIdentityItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewImportedDeviceIdentitiesImportedDeviceIdentityItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property importedDeviceIdentities for deviceManagement
 func (m *ImportedDeviceIdentitiesImportedDeviceIdentityItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ImportedDeviceIdentitiesImportedDeviceIdentityItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ImportedDeviceIdentitiesImportedDeviceIdentityItemRequestBuilder) ToPat
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -11,7 +11,7 @@ type PlannerBucket struct {
     creationSource PlannerBucketCreationable
     // Name of the bucket.
     name *string
-    // Hint used to order items of this type in a list view. The format is defined as outlined here.
+    // Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
     orderHint *string
     // Plan ID to which the bucket belongs.
     planId *string
@@ -96,7 +96,7 @@ func (m *PlannerBucket) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 func (m *PlannerBucket) GetName()(*string) {
     return m.name
 }
-// GetOrderHint gets the orderHint property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
+// GetOrderHint gets the orderHint property value. Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
 func (m *PlannerBucket) GetOrderHint()(*string) {
     return m.orderHint
 }
@@ -158,7 +158,7 @@ func (m *PlannerBucket) SetCreationSource(value PlannerBucketCreationable)() {
 func (m *PlannerBucket) SetName(value *string)() {
     m.name = value
 }
-// SetOrderHint sets the orderHint property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
+// SetOrderHint sets the orderHint property value. Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
 func (m *PlannerBucket) SetOrderHint(value *string)() {
     m.orderHint = value
 }

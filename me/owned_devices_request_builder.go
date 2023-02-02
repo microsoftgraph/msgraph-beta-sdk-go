@@ -53,8 +53,8 @@ func NewOwnedDevicesRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewOwnedDevicesRequestBuilder instantiates a new OwnedDevicesRequestBuilder and sets the default values.
@@ -65,15 +65,7 @@ func NewOwnedDevicesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 }
 // Count provides operations to count the resources in the collection.
 func (m *OwnedDevicesRequestBuilder) Count()(*OwnedDevicesCountRequestBuilder) {
-    return NewOwnedDevicesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Device casts the previous resource to device.
-func (m *OwnedDevicesRequestBuilder) Device()(*OwnedDevicesDeviceRequestBuilder) {
-    return NewOwnedDevicesDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Endpoint casts the previous resource to endpoint.
-func (m *OwnedDevicesRequestBuilder) Endpoint()(*OwnedDevicesEndpointRequestBuilder) {
-    return NewOwnedDevicesEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewOwnedDevicesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get devices that are owned by the user. Read-only. Nullable. Supports $expand.
 // [Find more info here]
@@ -96,6 +88,14 @@ func (m *OwnedDevicesRequestBuilder) Get(ctx context.Context, requestConfigurati
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
+}
+// MicrosoftGraphDevice casts the previous resource to device.
+func (m *OwnedDevicesRequestBuilder) MicrosoftGraphDevice()(*OwnedDevicesMicrosoftGraphDeviceDeviceRequestBuilder) {
+    return NewOwnedDevicesMicrosoftGraphDeviceDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphEndpoint casts the previous resource to endpoint.
+func (m *OwnedDevicesRequestBuilder) MicrosoftGraphEndpoint()(*OwnedDevicesMicrosoftGraphEndpointEndpointRequestBuilder) {
+    return NewOwnedDevicesMicrosoftGraphEndpointEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation devices that are owned by the user. Read-only. Nullable. Supports $expand.
 func (m *OwnedDevicesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OwnedDevicesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

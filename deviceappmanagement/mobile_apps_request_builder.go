@@ -60,8 +60,8 @@ func NewMobileAppsRequestBuilderInternal(pathParameters map[string]string, reque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMobileAppsRequestBuilder instantiates a new MobileAppsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewMobileAppsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 }
 // Count provides operations to count the resources in the collection.
 func (m *MobileAppsRequestBuilder) Count()(*MobileAppsCountRequestBuilder) {
-    return NewMobileAppsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMobileAppsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the mobile apps.
 func (m *MobileAppsRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppCollectionResponseable, error) {
@@ -93,25 +93,29 @@ func (m *MobileAppsRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppCollectionResponseable), nil
 }
-// GetMobileAppCountWithStatus provides operations to call the getMobileAppCount method.
-func (m *MobileAppsRequestBuilder) GetMobileAppCountWithStatus(status *string)(*MobileAppsGetMobileAppCountWithStatusRequestBuilder) {
-    return NewMobileAppsGetMobileAppCountWithStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter, status);
+// MicrosoftGraphGetMobileAppCountWithStatus provides operations to call the getMobileAppCount method.
+func (m *MobileAppsRequestBuilder) MicrosoftGraphGetMobileAppCountWithStatus(status *string)(*MobileAppsMicrosoftGraphGetMobileAppCountWithStatusGetMobileAppCountWithStatusRequestBuilder) {
+    return NewMobileAppsMicrosoftGraphGetMobileAppCountWithStatusGetMobileAppCountWithStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter, status)
 }
-// GetTopMobileAppsWithStatusWithCount provides operations to call the getTopMobileApps method.
-func (m *MobileAppsRequestBuilder) GetTopMobileAppsWithStatusWithCount(count *int64, status *string)(*MobileAppsGetTopMobileAppsWithStatusWithCountRequestBuilder) {
-    return NewMobileAppsGetTopMobileAppsWithStatusWithCountRequestBuilderInternal(m.pathParameters, m.requestAdapter, count, status);
+// MicrosoftGraphGetTopMobileAppsWithStatusWithCount provides operations to call the getTopMobileApps method.
+func (m *MobileAppsRequestBuilder) MicrosoftGraphGetTopMobileAppsWithStatusWithCount(count *int64, status *string)(*MobileAppsMicrosoftGraphGetTopMobileAppsWithStatusWithCountGetTopMobileAppsWithStatusWithCountRequestBuilder) {
+    return NewMobileAppsMicrosoftGraphGetTopMobileAppsWithStatusWithCountGetTopMobileAppsWithStatusWithCountRequestBuilderInternal(m.pathParameters, m.requestAdapter, count, status)
 }
-// HasPayloadLinks provides operations to call the hasPayloadLinks method.
-func (m *MobileAppsRequestBuilder) HasPayloadLinks()(*MobileAppsHasPayloadLinksRequestBuilder) {
-    return NewMobileAppsHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphHasPayloadLinks provides operations to call the hasPayloadLinks method.
+func (m *MobileAppsRequestBuilder) MicrosoftGraphHasPayloadLinks()(*MobileAppsMicrosoftGraphHasPayloadLinksHasPayloadLinksRequestBuilder) {
+    return NewMobileAppsMicrosoftGraphHasPayloadLinksHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// ManagedMobileLobApp casts the previous resource to managedMobileLobApp.
-func (m *MobileAppsRequestBuilder) ManagedMobileLobApp()(*MobileAppsManagedMobileLobAppRequestBuilder) {
-    return NewMobileAppsManagedMobileLobAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphManagedMobileLobApp casts the previous resource to managedMobileLobApp.
+func (m *MobileAppsRequestBuilder) MicrosoftGraphManagedMobileLobApp()(*MobileAppsMicrosoftGraphManagedMobileLobAppManagedMobileLobAppRequestBuilder) {
+    return NewMobileAppsMicrosoftGraphManagedMobileLobAppManagedMobileLobAppRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MobileLobApp casts the previous resource to mobileLobApp.
-func (m *MobileAppsRequestBuilder) MobileLobApp()(*MobileAppsMobileLobAppRequestBuilder) {
-    return NewMobileAppsMobileLobAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphMobileLobApp casts the previous resource to mobileLobApp.
+func (m *MobileAppsRequestBuilder) MicrosoftGraphMobileLobApp()(*MobileAppsMicrosoftGraphMobileLobAppMobileLobAppRequestBuilder) {
+    return NewMobileAppsMicrosoftGraphMobileLobAppMobileLobAppRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphValidateXml provides operations to call the validateXml method.
+func (m *MobileAppsRequestBuilder) MicrosoftGraphValidateXml()(*MobileAppsMicrosoftGraphValidateXmlValidateXmlRequestBuilder) {
+    return NewMobileAppsMicrosoftGraphValidateXmlValidateXmlRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to mobileApps for deviceAppManagement
 func (m *MobileAppsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppable, requestConfiguration *MobileAppsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppable, error) {
@@ -155,14 +159,13 @@ func (m *MobileAppsRequestBuilder) ToPostRequestInformation(ctx context.Context,
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// ValidateXml provides operations to call the validateXml method.
-func (m *MobileAppsRequestBuilder) ValidateXml()(*MobileAppsValidateXmlRequestBuilder) {
-    return NewMobileAppsValidateXmlRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

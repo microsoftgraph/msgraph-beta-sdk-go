@@ -47,7 +47,7 @@ type ItemBusinessFlowsBusinessFlowItemRequestBuilderPatchRequestConfiguration st
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemBusinessFlowsBusinessFlowItemRequestBuilderInternal instantiates a new BusinessFlowItemRequestBuilder and sets the default values.
-func NewItemBusinessFlowsBusinessFlowItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemBusinessFlowsBusinessFlowItemRequestBuilder) {
+func NewItemBusinessFlowsBusinessFlowItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, businessFlowId *string)(*ItemBusinessFlowsBusinessFlowItemRequestBuilder) {
     m := &ItemBusinessFlowsBusinessFlowItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/approvalWorkflowProviders/{approvalWorkflowProvider%2Did}/businessFlows/{businessFlow%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemBusinessFlowsBusinessFlowItemRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if businessFlowId != nil {
+        urlTplParams["businessFlow%2Did"] = *businessFlowId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemBusinessFlowsBusinessFlowItemRequestBuilder instantiates a new BusinessFlowItemRequestBuilder and sets the default values.
 func NewItemBusinessFlowsBusinessFlowItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemBusinessFlowsBusinessFlowItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemBusinessFlowsBusinessFlowItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemBusinessFlowsBusinessFlowItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property businessFlows for approvalWorkflowProviders
 func (m *ItemBusinessFlowsBusinessFlowItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemBusinessFlowsBusinessFlowItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -100,6 +103,10 @@ func (m *ItemBusinessFlowsBusinessFlowItemRequestBuilder) Get(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowable), nil
 }
+// MicrosoftGraphRecordDecisions provides operations to call the recordDecisions method.
+func (m *ItemBusinessFlowsBusinessFlowItemRequestBuilder) MicrosoftGraphRecordDecisions()(*ItemBusinessFlowsItemMicrosoftGraphRecordDecisionsRecordDecisionsRequestBuilder) {
+    return NewItemBusinessFlowsItemMicrosoftGraphRecordDecisionsRecordDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property businessFlows in approvalWorkflowProviders
 func (m *ItemBusinessFlowsBusinessFlowItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowable, requestConfiguration *ItemBusinessFlowsBusinessFlowItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -118,10 +125,6 @@ func (m *ItemBusinessFlowsBusinessFlowItemRequestBuilder) Patch(ctx context.Cont
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowable), nil
-}
-// RecordDecisions provides operations to call the recordDecisions method.
-func (m *ItemBusinessFlowsBusinessFlowItemRequestBuilder) RecordDecisions()(*ItemBusinessFlowsItemRecordDecisionsRequestBuilder) {
-    return NewItemBusinessFlowsItemRecordDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property businessFlows for approvalWorkflowProviders
 func (m *ItemBusinessFlowsBusinessFlowItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemBusinessFlowsBusinessFlowItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +161,10 @@ func (m *ItemBusinessFlowsBusinessFlowItemRequestBuilder) ToPatchRequestInformat
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -40,7 +40,7 @@ type ItemThreadsItemPostsItemMentionsMentionItemRequestBuilderGetRequestConfigur
     QueryParameters *ItemThreadsItemPostsItemMentionsMentionItemRequestBuilderGetQueryParameters
 }
 // NewItemThreadsItemPostsItemMentionsMentionItemRequestBuilderInternal instantiates a new MentionItemRequestBuilder and sets the default values.
-func NewItemThreadsItemPostsItemMentionsMentionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemThreadsItemPostsItemMentionsMentionItemRequestBuilder) {
+func NewItemThreadsItemPostsItemMentionsMentionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, mentionId *string)(*ItemThreadsItemPostsItemMentionsMentionItemRequestBuilder) {
     m := &ItemThreadsItemPostsItemMentionsMentionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/mentions/{mention%2Did}{?%24select,%24expand}";
@@ -48,15 +48,18 @@ func NewItemThreadsItemPostsItemMentionsMentionItemRequestBuilderInternal(pathPa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if mentionId != nil {
+        urlTplParams["mention%2Did"] = *mentionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemThreadsItemPostsItemMentionsMentionItemRequestBuilder instantiates a new MentionItemRequestBuilder and sets the default values.
 func NewItemThreadsItemPostsItemMentionsMentionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemThreadsItemPostsItemMentionsMentionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemThreadsItemPostsItemMentionsMentionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemThreadsItemPostsItemMentionsMentionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property mentions for groups
 func (m *ItemThreadsItemPostsItemMentionsMentionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemThreadsItemPostsItemMentionsMentionItemRequestBuilderDeleteRequestConfiguration)(error) {

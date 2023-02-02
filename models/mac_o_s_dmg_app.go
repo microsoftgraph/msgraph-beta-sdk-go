@@ -23,8 +23,8 @@ func NewMacOSDmgApp()(*MacOSDmgApp) {
     m := &MacOSDmgApp{
         MobileLobApp: *NewMobileLobApp(),
     }
-    odataTypeValue := "#microsoft.graph.macOSDmgApp";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.macOSDmgApp"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMacOSDmgAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

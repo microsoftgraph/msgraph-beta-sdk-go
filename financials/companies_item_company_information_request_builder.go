@@ -53,8 +53,8 @@ func NewCompaniesItemCompanyInformationRequestBuilderInternal(pathParameters map
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemCompanyInformationRequestBuilder instantiates a new CompanyInformationRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewCompaniesItemCompanyInformationRequestBuilder(rawUrl string, requestAdap
 }
 // Count provides operations to count the resources in the collection.
 func (m *CompaniesItemCompanyInformationRequestBuilder) Count()(*CompaniesItemCompanyInformationCountRequestBuilder) {
-    return NewCompaniesItemCompanyInformationCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemCompanyInformationCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get companyInformation from financials
 func (m *CompaniesItemCompanyInformationRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemCompanyInformationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CompanyInformationCollectionResponseable, error) {

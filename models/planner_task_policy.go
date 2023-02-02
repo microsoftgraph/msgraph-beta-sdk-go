@@ -17,7 +17,7 @@ type PlannerTaskPolicy struct {
 func NewPlannerTaskPolicy()(*PlannerTaskPolicy) {
     m := &PlannerTaskPolicy{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePlannerTaskPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -14,7 +14,7 @@ type ItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder struct {
     urlTemplate string
 }
 // NewItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilderInternal instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
-func NewItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder) {
+func NewItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, directoryObjectId *string)(*ItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder) {
     m := &ItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/devices/{device%2Did}/registeredOwners/{directoryObject%2Did}";
@@ -22,29 +22,32 @@ func NewItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilderInternal
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if directoryObjectId != nil {
+        urlTplParams["directoryObject%2Did"] = *directoryObjectId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
 func NewItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Endpoint casts the previous resource to endpoint.
-func (m *ItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder) Endpoint()(*ItemDevicesItemRegisteredOwnersItemEndpointRequestBuilder) {
-    return NewItemDevicesItemRegisteredOwnersItemEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphEndpoint casts the previous resource to endpoint.
+func (m *ItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder) MicrosoftGraphEndpoint()(*ItemDevicesItemRegisteredOwnersItemMicrosoftGraphEndpointEndpointRequestBuilder) {
+    return NewItemDevicesItemRegisteredOwnersItemMicrosoftGraphEndpointEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *ItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder) MicrosoftGraphServicePrincipal()(*ItemDevicesItemRegisteredOwnersItemMicrosoftGraphServicePrincipalServicePrincipalRequestBuilder) {
+    return NewItemDevicesItemRegisteredOwnersItemMicrosoftGraphServicePrincipalServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUser casts the previous resource to user.
+func (m *ItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder) MicrosoftGraphUser()(*ItemDevicesItemRegisteredOwnersItemMicrosoftGraphUserUserRequestBuilder) {
+    return NewItemDevicesItemRegisteredOwnersItemMicrosoftGraphUserUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Ref provides operations to manage the collection of user entities.
 func (m *ItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder) Ref()(*ItemDevicesItemRegisteredOwnersItemRefRequestBuilder) {
-    return NewItemDevicesItemRegisteredOwnersItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ServicePrincipal casts the previous resource to servicePrincipal.
-func (m *ItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder) ServicePrincipal()(*ItemDevicesItemRegisteredOwnersItemServicePrincipalRequestBuilder) {
-    return NewItemDevicesItemRegisteredOwnersItemServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// User casts the previous resource to user.
-func (m *ItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder) User()(*ItemDevicesItemRegisteredOwnersItemUserRequestBuilder) {
-    return NewItemDevicesItemRegisteredOwnersItemUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemDevicesItemRegisteredOwnersItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

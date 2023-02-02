@@ -47,7 +47,7 @@ type ItemCommandsCommandItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemCommandsCommandItemRequestBuilderInternal instantiates a new CommandItemRequestBuilder and sets the default values.
-func NewItemCommandsCommandItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCommandsCommandItemRequestBuilder) {
+func NewItemCommandsCommandItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, commandId *string)(*ItemCommandsCommandItemRequestBuilder) {
     m := &ItemCommandsCommandItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/devices/{device%2Did}/commands/{command%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemCommandsCommandItemRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if commandId != nil {
+        urlTplParams["command%2Did"] = *commandId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemCommandsCommandItemRequestBuilder instantiates a new CommandItemRequestBuilder and sets the default values.
 func NewItemCommandsCommandItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCommandsCommandItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemCommandsCommandItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemCommandsCommandItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property commands for devices
 func (m *ItemCommandsCommandItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemCommandsCommandItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -121,7 +124,7 @@ func (m *ItemCommandsCommandItemRequestBuilder) Patch(ctx context.Context, body 
 }
 // Responsepayload provides operations to manage the responsepayload property of the microsoft.graph.command entity.
 func (m *ItemCommandsCommandItemRequestBuilder) Responsepayload()(*ItemCommandsItemResponsepayloadRequestBuilder) {
-    return NewItemCommandsItemResponsepayloadRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCommandsItemResponsepayloadRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property commands for devices
 func (m *ItemCommandsCommandItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemCommandsCommandItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +161,10 @@ func (m *ItemCommandsCommandItemRequestBuilder) ToPatchRequestInformation(ctx co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

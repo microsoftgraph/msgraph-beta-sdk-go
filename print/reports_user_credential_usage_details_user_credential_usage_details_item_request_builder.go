@@ -47,7 +47,7 @@ type ReportsUserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuild
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewReportsUserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilderInternal instantiates a new UserCredentialUsageDetailsItemRequestBuilder and sets the default values.
-func NewReportsUserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsUserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder) {
+func NewReportsUserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, userCredentialUsageDetailsId *string)(*ReportsUserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder) {
     m := &ReportsUserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/print/reports/userCredentialUsageDetails/{userCredentialUsageDetails%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewReportsUserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBu
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if userCredentialUsageDetailsId != nil {
+        urlTplParams["userCredentialUsageDetails%2Did"] = *userCredentialUsageDetailsId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewReportsUserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder instantiates a new UserCredentialUsageDetailsItemRequestBuilder and sets the default values.
 func NewReportsUserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsUserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewReportsUserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewReportsUserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property userCredentialUsageDetails for print
 func (m *ReportsUserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ReportsUserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ReportsUserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestB
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

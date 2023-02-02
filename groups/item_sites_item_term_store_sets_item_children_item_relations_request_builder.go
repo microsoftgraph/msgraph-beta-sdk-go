@@ -60,8 +60,8 @@ func NewItemSitesItemTermStoreSetsItemChildrenItemRelationsRequestBuilderInterna
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemTermStoreSetsItemChildrenItemRelationsRequestBuilder instantiates a new RelationsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemSitesItemTermStoreSetsItemChildrenItemRelationsRequestBuilder(rawUrl
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemSitesItemTermStoreSetsItemChildrenItemRelationsRequestBuilder) Count()(*ItemSitesItemTermStoreSetsItemChildrenItemRelationsCountRequestBuilder) {
-    return NewItemSitesItemTermStoreSetsItemChildrenItemRelationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemTermStoreSetsItemChildrenItemRelationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get to indicate which terms are related to the current term as either pinned or reused.
 func (m *ItemSitesItemTermStoreSetsItemChildrenItemRelationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemTermStoreSetsItemChildrenItemRelationsRequestBuilderGetRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.RelationCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *ItemSitesItemTermStoreSetsItemChildrenItemRelationsRequestBuilder) ToPo
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

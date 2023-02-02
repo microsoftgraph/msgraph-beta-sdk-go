@@ -33,7 +33,7 @@ type RegisteredDevicesDirectoryObjectItemRequestBuilderGetRequestConfiguration s
     QueryParameters *RegisteredDevicesDirectoryObjectItemRequestBuilderGetQueryParameters
 }
 // NewRegisteredDevicesDirectoryObjectItemRequestBuilderInternal instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
-func NewRegisteredDevicesDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RegisteredDevicesDirectoryObjectItemRequestBuilder) {
+func NewRegisteredDevicesDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, directoryObjectId *string)(*RegisteredDevicesDirectoryObjectItemRequestBuilder) {
     m := &RegisteredDevicesDirectoryObjectItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/registeredDevices/{directoryObject%2Did}{?%24select,%24expand}";
@@ -41,23 +41,18 @@ func NewRegisteredDevicesDirectoryObjectItemRequestBuilderInternal(pathParameter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if directoryObjectId != nil {
+        urlTplParams["directoryObject%2Did"] = *directoryObjectId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewRegisteredDevicesDirectoryObjectItemRequestBuilder instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
 func NewRegisteredDevicesDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RegisteredDevicesDirectoryObjectItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewRegisteredDevicesDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
-}
-// Device casts the previous resource to device.
-func (m *RegisteredDevicesDirectoryObjectItemRequestBuilder) Device()(*RegisteredDevicesItemDeviceRequestBuilder) {
-    return NewRegisteredDevicesItemDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Endpoint casts the previous resource to endpoint.
-func (m *RegisteredDevicesDirectoryObjectItemRequestBuilder) Endpoint()(*RegisteredDevicesItemEndpointRequestBuilder) {
-    return NewRegisteredDevicesItemEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewRegisteredDevicesDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get devices that are registered for the user. Read-only. Nullable. Supports $expand.
 func (m *RegisteredDevicesDirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RegisteredDevicesDirectoryObjectItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
@@ -77,6 +72,14 @@ func (m *RegisteredDevicesDirectoryObjectItemRequestBuilder) Get(ctx context.Con
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
+}
+// MicrosoftGraphDevice casts the previous resource to device.
+func (m *RegisteredDevicesDirectoryObjectItemRequestBuilder) MicrosoftGraphDevice()(*RegisteredDevicesItemMicrosoftGraphDeviceDeviceRequestBuilder) {
+    return NewRegisteredDevicesItemMicrosoftGraphDeviceDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphEndpoint casts the previous resource to endpoint.
+func (m *RegisteredDevicesDirectoryObjectItemRequestBuilder) MicrosoftGraphEndpoint()(*RegisteredDevicesItemMicrosoftGraphEndpointEndpointRequestBuilder) {
+    return NewRegisteredDevicesItemMicrosoftGraphEndpointEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation devices that are registered for the user. Read-only. Nullable. Supports $expand.
 func (m *RegisteredDevicesDirectoryObjectItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RegisteredDevicesDirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -33,7 +33,7 @@ type MobileAppsItemCategoriesMobileAppCategoryItemRequestBuilderGetRequestConfig
     QueryParameters *MobileAppsItemCategoriesMobileAppCategoryItemRequestBuilderGetQueryParameters
 }
 // NewMobileAppsItemCategoriesMobileAppCategoryItemRequestBuilderInternal instantiates a new MobileAppCategoryItemRequestBuilder and sets the default values.
-func NewMobileAppsItemCategoriesMobileAppCategoryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemCategoriesMobileAppCategoryItemRequestBuilder) {
+func NewMobileAppsItemCategoriesMobileAppCategoryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, mobileAppCategoryId *string)(*MobileAppsItemCategoriesMobileAppCategoryItemRequestBuilder) {
     m := &MobileAppsItemCategoriesMobileAppCategoryItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/categories/{mobileAppCategory%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewMobileAppsItemCategoriesMobileAppCategoryItemRequestBuilderInternal(path
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if mobileAppCategoryId != nil {
+        urlTplParams["mobileAppCategory%2Did"] = *mobileAppCategoryId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMobileAppsItemCategoriesMobileAppCategoryItemRequestBuilder instantiates a new MobileAppCategoryItemRequestBuilder and sets the default values.
 func NewMobileAppsItemCategoriesMobileAppCategoryItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemCategoriesMobileAppCategoryItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewMobileAppsItemCategoriesMobileAppCategoryItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewMobileAppsItemCategoriesMobileAppCategoryItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get the list of categories for this app.
 func (m *MobileAppsItemCategoriesMobileAppCategoryItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemCategoriesMobileAppCategoryItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppCategoryable, error) {

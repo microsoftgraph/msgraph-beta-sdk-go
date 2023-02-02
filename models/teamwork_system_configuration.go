@@ -39,7 +39,7 @@ type TeamworkSystemConfiguration struct {
 func NewTeamworkSystemConfiguration()(*TeamworkSystemConfiguration) {
     m := &TeamworkSystemConfiguration{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTeamworkSystemConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

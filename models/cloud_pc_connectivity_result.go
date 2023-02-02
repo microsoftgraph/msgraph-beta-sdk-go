@@ -22,7 +22,7 @@ type CloudPcConnectivityResult struct {
 func NewCloudPcConnectivityResult()(*CloudPcConnectivityResult) {
     m := &CloudPcConnectivityResult{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCloudPcConnectivityResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

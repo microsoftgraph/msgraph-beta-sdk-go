@@ -47,7 +47,7 @@ type ManagedTenantsWindowsProtectionStatesWindowsProtectionStateItemRequestBuild
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewManagedTenantsWindowsProtectionStatesWindowsProtectionStateItemRequestBuilderInternal instantiates a new WindowsProtectionStateItemRequestBuilder and sets the default values.
-func NewManagedTenantsWindowsProtectionStatesWindowsProtectionStateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsWindowsProtectionStatesWindowsProtectionStateItemRequestBuilder) {
+func NewManagedTenantsWindowsProtectionStatesWindowsProtectionStateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, windowsProtectionStateId *string)(*ManagedTenantsWindowsProtectionStatesWindowsProtectionStateItemRequestBuilder) {
     m := &ManagedTenantsWindowsProtectionStatesWindowsProtectionStateItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/windowsProtectionStates/{windowsProtectionState%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewManagedTenantsWindowsProtectionStatesWindowsProtectionStateItemRequestBu
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if windowsProtectionStateId != nil {
+        urlTplParams["windowsProtectionState%2Did"] = *windowsProtectionStateId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedTenantsWindowsProtectionStatesWindowsProtectionStateItemRequestBuilder instantiates a new WindowsProtectionStateItemRequestBuilder and sets the default values.
 func NewManagedTenantsWindowsProtectionStatesWindowsProtectionStateItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsWindowsProtectionStatesWindowsProtectionStateItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewManagedTenantsWindowsProtectionStatesWindowsProtectionStateItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewManagedTenantsWindowsProtectionStatesWindowsProtectionStateItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property windowsProtectionStates for tenantRelationships
 func (m *ManagedTenantsWindowsProtectionStatesWindowsProtectionStateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedTenantsWindowsProtectionStatesWindowsProtectionStateItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ManagedTenantsWindowsProtectionStatesWindowsProtectionStateItemRequestB
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

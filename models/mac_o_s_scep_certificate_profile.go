@@ -37,8 +37,8 @@ func NewMacOSScepCertificateProfile()(*MacOSScepCertificateProfile) {
     m := &MacOSScepCertificateProfile{
         MacOSCertificateProfileBase: *NewMacOSCertificateProfileBase(),
     }
-    odataTypeValue := "#microsoft.graph.macOSScepCertificateProfile";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.macOSScepCertificateProfile"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMacOSScepCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

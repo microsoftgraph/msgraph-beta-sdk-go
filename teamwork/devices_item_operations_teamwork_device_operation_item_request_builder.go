@@ -47,7 +47,7 @@ type DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderPatchRequestC
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewDevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderInternal instantiates a new TeamworkDeviceOperationItemRequestBuilder and sets the default values.
-func NewDevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilder) {
+func NewDevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, teamworkDeviceOperationId *string)(*DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilder) {
     m := &DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/teamwork/devices/{teamworkDevice%2Did}/operations/{teamworkDeviceOperation%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewDevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderInternal(p
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if teamworkDeviceOperationId != nil {
+        urlTplParams["teamworkDeviceOperation%2Did"] = *teamworkDeviceOperationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDevicesItemOperationsTeamworkDeviceOperationItemRequestBuilder instantiates a new TeamworkDeviceOperationItemRequestBuilder and sets the default values.
 func NewDevicesItemOperationsTeamworkDeviceOperationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewDevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewDevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property operations for teamwork
 func (m *DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilder) ToPatch
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

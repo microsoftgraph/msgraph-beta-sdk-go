@@ -47,7 +47,7 @@ type VirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequ
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewVirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilderInternal instantiates a new CloudPcExternalPartnerSettingItemRequestBuilder and sets the default values.
-func NewVirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilder) {
+func NewVirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, cloudPcExternalPartnerSettingId *string)(*VirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilder) {
     m := &VirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/externalPartnerSettings/{cloudPcExternalPartnerSetting%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewVirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemR
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if cloudPcExternalPartnerSettingId != nil {
+        urlTplParams["cloudPcExternalPartnerSetting%2Did"] = *cloudPcExternalPartnerSettingId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewVirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilder instantiates a new CloudPcExternalPartnerSettingItemRequestBuilder and sets the default values.
 func NewVirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewVirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewVirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property externalPartnerSettings for deviceManagement
 func (m *VirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *VirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *VirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItem
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

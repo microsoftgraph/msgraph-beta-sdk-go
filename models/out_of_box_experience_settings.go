@@ -27,7 +27,7 @@ type OutOfBoxExperienceSettings struct {
 func NewOutOfBoxExperienceSettings()(*OutOfBoxExperienceSettings) {
     m := &OutOfBoxExperienceSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateOutOfBoxExperienceSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

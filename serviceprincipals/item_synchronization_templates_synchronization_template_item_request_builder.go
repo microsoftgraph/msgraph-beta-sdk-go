@@ -47,7 +47,7 @@ type ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilderPatchR
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilderInternal instantiates a new SynchronizationTemplateItemRequestBuilder and sets the default values.
-func NewItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) {
+func NewItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, synchronizationTemplateId *string)(*ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) {
     m := &ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/synchronization/templates/{synchronizationTemplate%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilderInt
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if synchronizationTemplateId != nil {
+        urlTplParams["synchronizationTemplate%2Did"] = *synchronizationTemplateId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder instantiates a new SynchronizationTemplateItemRequestBuilder and sets the default values.
 func NewItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property templates for servicePrincipals
 func (m *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -121,7 +124,7 @@ func (m *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) 
 }
 // Schema provides operations to manage the schema property of the microsoft.graph.synchronizationTemplate entity.
 func (m *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) Schema()(*ItemSynchronizationTemplatesItemSchemaRequestBuilder) {
-    return NewItemSynchronizationTemplatesItemSchemaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSynchronizationTemplatesItemSchemaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property templates for servicePrincipals
 func (m *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +161,10 @@ func (m *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

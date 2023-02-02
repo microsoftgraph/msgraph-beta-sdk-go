@@ -33,7 +33,7 @@ type CompaniesItemAgedAccountsReceivableAgedAccountsReceivableItemRequestBuilder
     QueryParameters *CompaniesItemAgedAccountsReceivableAgedAccountsReceivableItemRequestBuilderGetQueryParameters
 }
 // NewCompaniesItemAgedAccountsReceivableAgedAccountsReceivableItemRequestBuilderInternal instantiates a new AgedAccountsReceivableItemRequestBuilder and sets the default values.
-func NewCompaniesItemAgedAccountsReceivableAgedAccountsReceivableItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemAgedAccountsReceivableAgedAccountsReceivableItemRequestBuilder) {
+func NewCompaniesItemAgedAccountsReceivableAgedAccountsReceivableItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, agedAccountsReceivableId *string)(*CompaniesItemAgedAccountsReceivableAgedAccountsReceivableItemRequestBuilder) {
     m := &CompaniesItemAgedAccountsReceivableAgedAccountsReceivableItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/financials/companies/{company%2Did}/agedAccountsReceivable/{agedAccountsReceivable%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewCompaniesItemAgedAccountsReceivableAgedAccountsReceivableItemRequestBuil
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if agedAccountsReceivableId != nil {
+        urlTplParams["agedAccountsReceivable%2Did"] = *agedAccountsReceivableId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemAgedAccountsReceivableAgedAccountsReceivableItemRequestBuilder instantiates a new AgedAccountsReceivableItemRequestBuilder and sets the default values.
 func NewCompaniesItemAgedAccountsReceivableAgedAccountsReceivableItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemAgedAccountsReceivableAgedAccountsReceivableItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCompaniesItemAgedAccountsReceivableAgedAccountsReceivableItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCompaniesItemAgedAccountsReceivableAgedAccountsReceivableItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get get agedAccountsReceivable from financials
 func (m *CompaniesItemAgedAccountsReceivableAgedAccountsReceivableItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemAgedAccountsReceivableAgedAccountsReceivableItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgedAccountsReceivableable, error) {

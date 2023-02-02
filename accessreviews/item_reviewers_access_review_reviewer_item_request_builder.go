@@ -47,7 +47,7 @@ type ItemReviewersAccessReviewReviewerItemRequestBuilderPatchRequestConfiguratio
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemReviewersAccessReviewReviewerItemRequestBuilderInternal instantiates a new AccessReviewReviewerItemRequestBuilder and sets the default values.
-func NewItemReviewersAccessReviewReviewerItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemReviewersAccessReviewReviewerItemRequestBuilder) {
+func NewItemReviewersAccessReviewReviewerItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, accessReviewReviewerId *string)(*ItemReviewersAccessReviewReviewerItemRequestBuilder) {
     m := &ItemReviewersAccessReviewReviewerItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/accessReviews/{accessReview%2Did}/reviewers/{accessReviewReviewer%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemReviewersAccessReviewReviewerItemRequestBuilderInternal(pathParamete
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if accessReviewReviewerId != nil {
+        urlTplParams["accessReviewReviewer%2Did"] = *accessReviewReviewerId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemReviewersAccessReviewReviewerItemRequestBuilder instantiates a new AccessReviewReviewerItemRequestBuilder and sets the default values.
 func NewItemReviewersAccessReviewReviewerItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemReviewersAccessReviewReviewerItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemReviewersAccessReviewReviewerItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemReviewersAccessReviewReviewerItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property reviewers for accessReviews
 func (m *ItemReviewersAccessReviewReviewerItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemReviewersAccessReviewReviewerItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemReviewersAccessReviewReviewerItemRequestBuilder) ToPatchRequestInfo
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

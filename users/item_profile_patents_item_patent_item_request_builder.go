@@ -47,7 +47,7 @@ type ItemProfilePatentsItemPatentItemRequestBuilderPatchRequestConfiguration str
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemProfilePatentsItemPatentItemRequestBuilderInternal instantiates a new ItemPatentItemRequestBuilder and sets the default values.
-func NewItemProfilePatentsItemPatentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfilePatentsItemPatentItemRequestBuilder) {
+func NewItemProfilePatentsItemPatentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, itemPatentId *string)(*ItemProfilePatentsItemPatentItemRequestBuilder) {
     m := &ItemProfilePatentsItemPatentItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/profile/patents/{itemPatent%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemProfilePatentsItemPatentItemRequestBuilderInternal(pathParameters ma
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if itemPatentId != nil {
+        urlTplParams["itemPatent%2Did"] = *itemPatentId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemProfilePatentsItemPatentItemRequestBuilder instantiates a new ItemPatentItemRequestBuilder and sets the default values.
 func NewItemProfilePatentsItemPatentItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfilePatentsItemPatentItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemProfilePatentsItemPatentItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemProfilePatentsItemPatentItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property patents for users
 func (m *ItemProfilePatentsItemPatentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfilePatentsItemPatentItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemProfilePatentsItemPatentItemRequestBuilder) ToPatchRequestInformati
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

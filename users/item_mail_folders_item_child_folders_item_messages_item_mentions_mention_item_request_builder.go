@@ -40,7 +40,7 @@ type ItemMailFoldersItemChildFoldersItemMessagesItemMentionsMentionItemRequestBu
     QueryParameters *ItemMailFoldersItemChildFoldersItemMessagesItemMentionsMentionItemRequestBuilderGetQueryParameters
 }
 // NewItemMailFoldersItemChildFoldersItemMessagesItemMentionsMentionItemRequestBuilderInternal instantiates a new MentionItemRequestBuilder and sets the default values.
-func NewItemMailFoldersItemChildFoldersItemMessagesItemMentionsMentionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMailFoldersItemChildFoldersItemMessagesItemMentionsMentionItemRequestBuilder) {
+func NewItemMailFoldersItemChildFoldersItemMessagesItemMentionsMentionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, mentionId *string)(*ItemMailFoldersItemChildFoldersItemMessagesItemMentionsMentionItemRequestBuilder) {
     m := &ItemMailFoldersItemChildFoldersItemMessagesItemMentionsMentionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}/messages/{message%2Did}/mentions/{mention%2Did}{?%24select,%24expand}";
@@ -48,15 +48,18 @@ func NewItemMailFoldersItemChildFoldersItemMessagesItemMentionsMentionItemReques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if mentionId != nil {
+        urlTplParams["mention%2Did"] = *mentionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemMailFoldersItemChildFoldersItemMessagesItemMentionsMentionItemRequestBuilder instantiates a new MentionItemRequestBuilder and sets the default values.
 func NewItemMailFoldersItemChildFoldersItemMessagesItemMentionsMentionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMailFoldersItemChildFoldersItemMessagesItemMentionsMentionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemMailFoldersItemChildFoldersItemMessagesItemMentionsMentionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemMailFoldersItemChildFoldersItemMessagesItemMentionsMentionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property mentions for users
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemMentionsMentionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesItemMentionsMentionItemRequestBuilderDeleteRequestConfiguration)(error) {

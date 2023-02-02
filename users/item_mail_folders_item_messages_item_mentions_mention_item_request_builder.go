@@ -40,7 +40,7 @@ type ItemMailFoldersItemMessagesItemMentionsMentionItemRequestBuilderGetRequestC
     QueryParameters *ItemMailFoldersItemMessagesItemMentionsMentionItemRequestBuilderGetQueryParameters
 }
 // NewItemMailFoldersItemMessagesItemMentionsMentionItemRequestBuilderInternal instantiates a new MentionItemRequestBuilder and sets the default values.
-func NewItemMailFoldersItemMessagesItemMentionsMentionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMailFoldersItemMessagesItemMentionsMentionItemRequestBuilder) {
+func NewItemMailFoldersItemMessagesItemMentionsMentionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, mentionId *string)(*ItemMailFoldersItemMessagesItemMentionsMentionItemRequestBuilder) {
     m := &ItemMailFoldersItemMessagesItemMentionsMentionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/messages/{message%2Did}/mentions/{mention%2Did}{?%24select,%24expand}";
@@ -48,15 +48,18 @@ func NewItemMailFoldersItemMessagesItemMentionsMentionItemRequestBuilderInternal
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if mentionId != nil {
+        urlTplParams["mention%2Did"] = *mentionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemMailFoldersItemMessagesItemMentionsMentionItemRequestBuilder instantiates a new MentionItemRequestBuilder and sets the default values.
 func NewItemMailFoldersItemMessagesItemMentionsMentionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMailFoldersItemMessagesItemMentionsMentionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemMailFoldersItemMessagesItemMentionsMentionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemMailFoldersItemMessagesItemMentionsMentionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property mentions for users
 func (m *ItemMailFoldersItemMessagesItemMentionsMentionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemMailFoldersItemMessagesItemMentionsMentionItemRequestBuilderDeleteRequestConfiguration)(error) {

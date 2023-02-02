@@ -47,7 +47,7 @@ type CloudPCResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRe
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewCloudPCResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilderInternal instantiates a new UnifiedRbacResourceActionItemRequestBuilder and sets the default values.
-func NewCloudPCResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CloudPCResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder) {
+func NewCloudPCResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, unifiedRbacResourceActionId *string)(*CloudPCResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder) {
     m := &CloudPCResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/roleManagement/cloudPC/resourceNamespaces/{unifiedRbacResourceNamespace%2Did}/resourceActions/{unifiedRbacResourceAction%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewCloudPCResourceNamespacesItemResourceActionsUnifiedRbacResourceActionIte
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if unifiedRbacResourceActionId != nil {
+        urlTplParams["unifiedRbacResourceAction%2Did"] = *unifiedRbacResourceActionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCloudPCResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder instantiates a new UnifiedRbacResourceActionItemRequestBuilder and sets the default values.
 func NewCloudPCResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CloudPCResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCloudPCResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCloudPCResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property resourceActions for roleManagement
 func (m *CloudPCResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CloudPCResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -121,7 +124,7 @@ func (m *CloudPCResourceNamespacesItemResourceActionsUnifiedRbacResourceActionIt
 }
 // ResourceScope provides operations to manage the resourceScope property of the microsoft.graph.unifiedRbacResourceAction entity.
 func (m *CloudPCResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder) ResourceScope()(*CloudPCResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilder) {
-    return NewCloudPCResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCloudPCResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property resourceActions for roleManagement
 func (m *CloudPCResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CloudPCResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +161,10 @@ func (m *CloudPCResourceNamespacesItemResourceActionsUnifiedRbacResourceActionIt
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

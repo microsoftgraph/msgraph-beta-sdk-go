@@ -14,8 +14,8 @@ func NewCustomTaskExtensionCallbackConfiguration()(*CustomTaskExtensionCallbackC
     m := &CustomTaskExtensionCallbackConfiguration{
         CustomExtensionCallbackConfiguration: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewCustomExtensionCallbackConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.identityGovernance.customTaskExtensionCallbackConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.identityGovernance.customTaskExtensionCallbackConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateCustomTaskExtensionCallbackConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

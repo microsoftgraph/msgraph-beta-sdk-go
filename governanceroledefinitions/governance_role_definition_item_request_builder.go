@@ -23,7 +23,7 @@ type GovernanceRoleDefinitionItemRequestBuilderDeleteRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// GovernanceRoleDefinitionItemRequestBuilderGetQueryParameters get entity from governanceRoleDefinitions by key (id)
+// GovernanceRoleDefinitionItemRequestBuilderGetQueryParameters get entity from governanceRoleDefinitions by key
 type GovernanceRoleDefinitionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -47,7 +47,7 @@ type GovernanceRoleDefinitionItemRequestBuilderPatchRequestConfiguration struct 
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewGovernanceRoleDefinitionItemRequestBuilderInternal instantiates a new GovernanceRoleDefinitionItemRequestBuilder and sets the default values.
-func NewGovernanceRoleDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GovernanceRoleDefinitionItemRequestBuilder) {
+func NewGovernanceRoleDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, governanceRoleDefinitionId *string)(*GovernanceRoleDefinitionItemRequestBuilder) {
     m := &GovernanceRoleDefinitionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/governanceRoleDefinitions/{governanceRoleDefinition%2Did}{?%24select,%24expand}";
@@ -55,17 +55,20 @@ func NewGovernanceRoleDefinitionItemRequestBuilderInternal(pathParameters map[st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if governanceRoleDefinitionId != nil {
+        urlTplParams["governanceRoleDefinition%2Did"] = *governanceRoleDefinitionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGovernanceRoleDefinitionItemRequestBuilder instantiates a new GovernanceRoleDefinitionItemRequestBuilder and sets the default values.
 func NewGovernanceRoleDefinitionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GovernanceRoleDefinitionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewGovernanceRoleDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewGovernanceRoleDefinitionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Delete delete entity from governanceRoleDefinitions by key (id)
+// Delete delete entity from governanceRoleDefinitions
 func (m *GovernanceRoleDefinitionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *GovernanceRoleDefinitionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,7 +84,7 @@ func (m *GovernanceRoleDefinitionItemRequestBuilder) Delete(ctx context.Context,
     }
     return nil
 }
-// Get get entity from governanceRoleDefinitions by key (id)
+// Get get entity from governanceRoleDefinitions by key
 func (m *GovernanceRoleDefinitionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *GovernanceRoleDefinitionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,7 +103,7 @@ func (m *GovernanceRoleDefinitionItemRequestBuilder) Get(ctx context.Context, re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionable), nil
 }
-// Patch update entity in governanceRoleDefinitions by key (id)
+// Patch update entity in governanceRoleDefinitions
 func (m *GovernanceRoleDefinitionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionable, requestConfiguration *GovernanceRoleDefinitionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,13 +124,13 @@ func (m *GovernanceRoleDefinitionItemRequestBuilder) Patch(ctx context.Context, 
 }
 // Resource provides operations to manage the resource property of the microsoft.graph.governanceRoleDefinition entity.
 func (m *GovernanceRoleDefinitionItemRequestBuilder) Resource()(*ItemResourceRequestBuilder) {
-    return NewItemResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RoleSetting provides operations to manage the roleSetting property of the microsoft.graph.governanceRoleDefinition entity.
 func (m *GovernanceRoleDefinitionItemRequestBuilder) RoleSetting()(*ItemRoleSettingRequestBuilder) {
-    return NewItemRoleSettingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRoleSettingRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// ToDeleteRequestInformation delete entity from governanceRoleDefinitions by key (id)
+// ToDeleteRequestInformation delete entity from governanceRoleDefinitions
 func (m *GovernanceRoleDefinitionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *GovernanceRoleDefinitionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,7 +142,7 @@ func (m *GovernanceRoleDefinitionItemRequestBuilder) ToDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from governanceRoleDefinitions by key (id)
+// ToGetRequestInformation get entity from governanceRoleDefinitions by key
 func (m *GovernanceRoleDefinitionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GovernanceRoleDefinitionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -155,14 +158,17 @@ func (m *GovernanceRoleDefinitionItemRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in governanceRoleDefinitions by key (id)
+// ToPatchRequestInformation update entity in governanceRoleDefinitions
 func (m *GovernanceRoleDefinitionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionable, requestConfiguration *GovernanceRoleDefinitionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -47,7 +47,7 @@ type IpSecurityProfilesIpSecurityProfileItemRequestBuilderPatchRequestConfigurat
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewIpSecurityProfilesIpSecurityProfileItemRequestBuilderInternal instantiates a new IpSecurityProfileItemRequestBuilder and sets the default values.
-func NewIpSecurityProfilesIpSecurityProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IpSecurityProfilesIpSecurityProfileItemRequestBuilder) {
+func NewIpSecurityProfilesIpSecurityProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, ipSecurityProfileId *string)(*IpSecurityProfilesIpSecurityProfileItemRequestBuilder) {
     m := &IpSecurityProfilesIpSecurityProfileItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/security/ipSecurityProfiles/{ipSecurityProfile%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewIpSecurityProfilesIpSecurityProfileItemRequestBuilderInternal(pathParame
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if ipSecurityProfileId != nil {
+        urlTplParams["ipSecurityProfile%2Did"] = *ipSecurityProfileId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewIpSecurityProfilesIpSecurityProfileItemRequestBuilder instantiates a new IpSecurityProfileItemRequestBuilder and sets the default values.
 func NewIpSecurityProfilesIpSecurityProfileItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IpSecurityProfilesIpSecurityProfileItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewIpSecurityProfilesIpSecurityProfileItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewIpSecurityProfilesIpSecurityProfileItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property ipSecurityProfiles for security
 func (m *IpSecurityProfilesIpSecurityProfileItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *IpSecurityProfilesIpSecurityProfileItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *IpSecurityProfilesIpSecurityProfileItemRequestBuilder) ToPatchRequestIn
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

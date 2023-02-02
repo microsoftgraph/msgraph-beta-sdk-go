@@ -21,7 +21,7 @@ type SynchronizationJobSubject struct {
 func NewSynchronizationJobSubject()(*SynchronizationJobSubject) {
     m := &SynchronizationJobSubject{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSynchronizationJobSubjectFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

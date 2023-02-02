@@ -60,8 +60,8 @@ func NewTemplatesItemMigratableToRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTemplatesItemMigratableToRequestBuilder instantiates a new MigratableToRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewTemplatesItemMigratableToRequestBuilder(rawUrl string, requestAdapter i2
 }
 // Count provides operations to count the resources in the collection.
 func (m *TemplatesItemMigratableToRequestBuilder) Count()(*TemplatesItemMigratableToCountRequestBuilder) {
-    return NewTemplatesItemMigratableToCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTemplatesItemMigratableToCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get collection of templates this template can migrate to
 func (m *TemplatesItemMigratableToRequestBuilder) Get(ctx context.Context, requestConfiguration *TemplatesItemMigratableToRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementTemplateCollectionResponseable, error) {
@@ -93,9 +93,9 @@ func (m *TemplatesItemMigratableToRequestBuilder) Get(ctx context.Context, reque
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementTemplateCollectionResponseable), nil
 }
-// ImportOffice365DeviceConfigurationPolicies provides operations to call the importOffice365DeviceConfigurationPolicies method.
-func (m *TemplatesItemMigratableToRequestBuilder) ImportOffice365DeviceConfigurationPolicies()(*TemplatesItemMigratableToImportOffice365DeviceConfigurationPoliciesRequestBuilder) {
-    return NewTemplatesItemMigratableToImportOffice365DeviceConfigurationPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphImportOffice365DeviceConfigurationPolicies provides operations to call the importOffice365DeviceConfigurationPolicies method.
+func (m *TemplatesItemMigratableToRequestBuilder) MicrosoftGraphImportOffice365DeviceConfigurationPolicies()(*TemplatesItemMigratableToMicrosoftGraphImportOffice365DeviceConfigurationPoliciesImportOffice365DeviceConfigurationPoliciesRequestBuilder) {
+    return NewTemplatesItemMigratableToMicrosoftGraphImportOffice365DeviceConfigurationPoliciesImportOffice365DeviceConfigurationPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to migratableTo for deviceManagement
 func (m *TemplatesItemMigratableToRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementTemplateable, requestConfiguration *TemplatesItemMigratableToRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementTemplateable, error) {
@@ -139,7 +139,10 @@ func (m *TemplatesItemMigratableToRequestBuilder) ToPostRequestInformation(ctx c
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

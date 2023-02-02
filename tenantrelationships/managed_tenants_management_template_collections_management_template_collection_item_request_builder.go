@@ -47,7 +47,7 @@ type ManagedTenantsManagementTemplateCollectionsManagementTemplateCollectionItem
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewManagedTenantsManagementTemplateCollectionsManagementTemplateCollectionItemRequestBuilderInternal instantiates a new ManagementTemplateCollectionItemRequestBuilder and sets the default values.
-func NewManagedTenantsManagementTemplateCollectionsManagementTemplateCollectionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagementTemplateCollectionsManagementTemplateCollectionItemRequestBuilder) {
+func NewManagedTenantsManagementTemplateCollectionsManagementTemplateCollectionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, managementTemplateCollectionId *string)(*ManagedTenantsManagementTemplateCollectionsManagementTemplateCollectionItemRequestBuilder) {
     m := &ManagedTenantsManagementTemplateCollectionsManagementTemplateCollectionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementTemplateCollections/{managementTemplateCollection%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewManagedTenantsManagementTemplateCollectionsManagementTemplateCollectionI
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if managementTemplateCollectionId != nil {
+        urlTplParams["managementTemplateCollection%2Did"] = *managementTemplateCollectionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedTenantsManagementTemplateCollectionsManagementTemplateCollectionItemRequestBuilder instantiates a new ManagementTemplateCollectionItemRequestBuilder and sets the default values.
 func NewManagedTenantsManagementTemplateCollectionsManagementTemplateCollectionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagementTemplateCollectionsManagementTemplateCollectionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewManagedTenantsManagementTemplateCollectionsManagementTemplateCollectionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewManagedTenantsManagementTemplateCollectionsManagementTemplateCollectionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property managementTemplateCollections for tenantRelationships
 func (m *ManagedTenantsManagementTemplateCollectionsManagementTemplateCollectionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedTenantsManagementTemplateCollectionsManagementTemplateCollectionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -102,7 +105,7 @@ func (m *ManagedTenantsManagementTemplateCollectionsManagementTemplateCollection
 }
 // ManagementTemplates provides operations to manage the managementTemplates property of the microsoft.graph.managedTenants.managementTemplateCollection entity.
 func (m *ManagedTenantsManagementTemplateCollectionsManagementTemplateCollectionItemRequestBuilder) ManagementTemplates()(*ManagedTenantsManagementTemplateCollectionsItemManagementTemplatesRequestBuilder) {
-    return NewManagedTenantsManagementTemplateCollectionsItemManagementTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedTenantsManagementTemplateCollectionsItemManagementTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ManagementTemplatesById provides operations to manage the managementTemplates property of the microsoft.graph.managedTenants.managementTemplateCollection entity.
 func (m *ManagedTenantsManagementTemplateCollectionsManagementTemplateCollectionItemRequestBuilder) ManagementTemplatesById(id string)(*ManagedTenantsManagementTemplateCollectionsItemManagementTemplatesManagementTemplateItemRequestBuilder) {
@@ -110,10 +113,8 @@ func (m *ManagedTenantsManagementTemplateCollectionsManagementTemplateCollection
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["managementTemplate%2Did"] = id
-    }
-    return NewManagedTenantsManagementTemplateCollectionsItemManagementTemplatesManagementTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewManagedTenantsManagementTemplateCollectionsItemManagementTemplatesManagementTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Patch update the navigation property managementTemplateCollections in tenantRelationships
 func (m *ManagedTenantsManagementTemplateCollectionsManagementTemplateCollectionItemRequestBuilder) Patch(ctx context.Context, body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateCollectionable, requestConfiguration *ManagedTenantsManagementTemplateCollectionsManagementTemplateCollectionItemRequestBuilderPatchRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateCollectionable, error) {
@@ -169,7 +170,10 @@ func (m *ManagedTenantsManagementTemplateCollectionsManagementTemplateCollection
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -17,7 +17,7 @@ type AccountTargetContent struct {
 func NewAccountTargetContent()(*AccountTargetContent) {
     m := &AccountTargetContent{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAccountTargetContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

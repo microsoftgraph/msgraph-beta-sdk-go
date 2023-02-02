@@ -21,7 +21,7 @@ type DeviceManagementUserRightsLocalUserOrGroup struct {
 func NewDeviceManagementUserRightsLocalUserOrGroup()(*DeviceManagementUserRightsLocalUserOrGroup) {
     m := &DeviceManagementUserRightsLocalUserOrGroup{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceManagementUserRightsLocalUserOrGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

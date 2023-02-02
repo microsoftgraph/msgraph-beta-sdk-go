@@ -40,7 +40,7 @@ type ItemMessagesItemMentionsMentionItemRequestBuilderGetRequestConfiguration st
     QueryParameters *ItemMessagesItemMentionsMentionItemRequestBuilderGetQueryParameters
 }
 // NewItemMessagesItemMentionsMentionItemRequestBuilderInternal instantiates a new MentionItemRequestBuilder and sets the default values.
-func NewItemMessagesItemMentionsMentionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMessagesItemMentionsMentionItemRequestBuilder) {
+func NewItemMessagesItemMentionsMentionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, mentionId *string)(*ItemMessagesItemMentionsMentionItemRequestBuilder) {
     m := &ItemMessagesItemMentionsMentionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/messages/{message%2Did}/mentions/{mention%2Did}{?%24select,%24expand}";
@@ -48,15 +48,18 @@ func NewItemMessagesItemMentionsMentionItemRequestBuilderInternal(pathParameters
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if mentionId != nil {
+        urlTplParams["mention%2Did"] = *mentionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemMessagesItemMentionsMentionItemRequestBuilder instantiates a new MentionItemRequestBuilder and sets the default values.
 func NewItemMessagesItemMentionsMentionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMessagesItemMentionsMentionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemMessagesItemMentionsMentionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemMessagesItemMentionsMentionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property mentions for users
 func (m *ItemMessagesItemMentionsMentionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemMessagesItemMentionsMentionItemRequestBuilderDeleteRequestConfiguration)(error) {

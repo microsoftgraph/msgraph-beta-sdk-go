@@ -40,7 +40,7 @@ type ItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuilderG
     QueryParameters *ItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuilderGetQueryParameters
 }
 // NewItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuilderInternal instantiates a new AttachmentItemRequestBuilder and sets the default values.
-func NewItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuilder) {
+func NewItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, attachmentId *string)(*ItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuilder) {
     m := &ItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/outlook/taskFolders/{outlookTaskFolder%2Did}/tasks/{outlookTask%2Did}/attachments/{attachment%2Did}{?%24select,%24expand}";
@@ -48,15 +48,18 @@ func NewItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuild
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if attachmentId != nil {
+        urlTplParams["attachment%2Did"] = *attachmentId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuilder instantiates a new AttachmentItemRequestBuilder and sets the default values.
 func NewItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property attachments for users
 func (m *ItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuilderDeleteRequestConfiguration)(error) {

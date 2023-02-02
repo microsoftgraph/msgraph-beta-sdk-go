@@ -47,7 +47,7 @@ type ManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemReques
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRequestBuilderInternal instantiates a new TenantDetailedInformationItemRequestBuilder and sets the default values.
-func NewManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRequestBuilder) {
+func NewManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, tenantDetailedInformationId *string)(*ManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRequestBuilder) {
     m := &ManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/tenantsDetailedInformation/{tenantDetailedInformation%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemReq
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if tenantDetailedInformationId != nil {
+        urlTplParams["tenantDetailedInformation%2Did"] = *tenantDetailedInformationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRequestBuilder instantiates a new TenantDetailedInformationItemRequestBuilder and sets the default values.
 func NewManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property tenantsDetailedInformation for tenantRelationships
 func (m *ManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRe
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

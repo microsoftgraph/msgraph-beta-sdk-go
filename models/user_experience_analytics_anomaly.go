@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsAnomaly the user experience analytics anomaly entity contains anomaly details.
+// UserExperienceAnalyticsAnomaly 
 type UserExperienceAnalyticsAnomaly struct {
     Entity
     // Indicates the first occurrence date and time for the anomaly.
@@ -35,7 +35,7 @@ type UserExperienceAnalyticsAnomaly struct {
     // Indicates the state of the anomaly. Eg: anomaly severity can be new, active, disabled, removed or other.
     state *UserExperienceAnalyticsAnomalyState
 }
-// NewUserExperienceAnalyticsAnomaly instantiates a new userExperienceAnalyticsAnomaly and sets the default values.
+// NewUserExperienceAnalyticsAnomaly instantiates a new UserExperienceAnalyticsAnomaly and sets the default values.
 func NewUserExperienceAnalyticsAnomaly()(*UserExperienceAnalyticsAnomaly) {
     m := &UserExperienceAnalyticsAnomaly{
         Entity: *NewEntity(),

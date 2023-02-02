@@ -48,10 +48,10 @@ type ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestI
 }
 // Approval provides operations to manage the approval property of the microsoft.graph.userConsentRequest entity.
 func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder) Approval()(*ItemAppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalRequestBuilder) {
-    return NewItemAppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemAppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderInternal instantiates a new UserConsentRequestItemRequestBuilder and sets the default values.
-func NewItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder) {
+func NewItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, userConsentRequestId *string)(*ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder) {
     m := &ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/appConsentRequestsForApproval/{appConsentRequest%2Did}/userConsentRequests/{userConsentRequest%2Did}{?%24select,%24expand}";
@@ -59,15 +59,18 @@ func NewItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentReque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if userConsentRequestId != nil {
+        urlTplParams["userConsentRequest%2Did"] = *userConsentRequestId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder instantiates a new UserConsentRequestItemRequestBuilder and sets the default values.
 func NewItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property userConsentRequests for users
 func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -158,7 +161,10 @@ func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

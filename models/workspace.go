@@ -31,8 +31,8 @@ func NewWorkspace()(*Workspace) {
     m := &Workspace{
         Place: *NewPlace(),
     }
-    odataTypeValue := "#microsoft.graph.workspace";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.workspace"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWorkspaceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

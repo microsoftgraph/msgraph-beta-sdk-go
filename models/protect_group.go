@@ -19,8 +19,8 @@ func NewProtectGroup()(*ProtectGroup) {
     m := &ProtectGroup{
         LabelActionBase: *NewLabelActionBase(),
     }
-    odataTypeValue := "#microsoft.graph.protectGroup";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.protectGroup"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateProtectGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

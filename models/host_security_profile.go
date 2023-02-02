@@ -45,7 +45,7 @@ type HostSecurityProfile struct {
     // The vendorInformation property
     vendorInformation SecurityVendorInformationable
 }
-// NewHostSecurityProfile instantiates a new hostSecurityProfile and sets the default values.
+// NewHostSecurityProfile instantiates a new HostSecurityProfile and sets the default values.
 func NewHostSecurityProfile()(*HostSecurityProfile) {
     m := &HostSecurityProfile{
         Entity: *NewEntity(),

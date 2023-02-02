@@ -23,8 +23,8 @@ func NewWindowsKioskWin32App()(*WindowsKioskWin32App) {
     m := &WindowsKioskWin32App{
         WindowsKioskAppBase: *NewWindowsKioskAppBase(),
     }
-    odataTypeValue := "#microsoft.graph.windowsKioskWin32App";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsKioskWin32App"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsKioskWin32AppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

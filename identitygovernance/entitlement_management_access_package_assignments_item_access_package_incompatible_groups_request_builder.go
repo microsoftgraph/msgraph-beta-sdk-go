@@ -53,8 +53,8 @@ func NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatib
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleGroupsRequestBuilder instantiates a new IncompatibleGroupsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatib
 }
 // Count provides operations to count the resources in the collection.
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleGroupsRequestBuilder) Count()(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleGroupsCountRequestBuilder) {
-    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleGroupsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleGroupsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of the group objects that have been marked as incompatible on an accessPackage.  
 // [Find more info here]
@@ -91,7 +91,7 @@ func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompati
 }
 // Ref provides operations to manage the collection of identityGovernance entities.
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleGroupsRequestBuilder) Ref()(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleGroupsRefRequestBuilder) {
-    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleGroupsRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleGroupsRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation retrieve a list of the group objects that have been marked as incompatible on an accessPackage.  
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

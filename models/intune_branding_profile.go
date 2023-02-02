@@ -30,6 +30,8 @@ type IntuneBrandingProfile struct {
     customPrivacyMessage *string
     // Applies to telemetry sent from all clients to the Intune service. When disabled, all proactive troubleshooting and issue warnings within the client are turned off, and telemetry settings appear inactive or hidden to the device user.
     disableClientTelemetry *bool
+    // Boolean that indicates if Device Category Selection will be shown in Company Portal
+    disableDeviceCategorySelection *bool
     // Company/organization name that is displayed to end users
     displayName *string
     // Options available for enrollment flow customization
@@ -129,6 +131,10 @@ func (m *IntuneBrandingProfile) GetCustomPrivacyMessage()(*string) {
 // GetDisableClientTelemetry gets the disableClientTelemetry property value. Applies to telemetry sent from all clients to the Intune service. When disabled, all proactive troubleshooting and issue warnings within the client are turned off, and telemetry settings appear inactive or hidden to the device user.
 func (m *IntuneBrandingProfile) GetDisableClientTelemetry()(*bool) {
     return m.disableClientTelemetry
+}
+// GetDisableDeviceCategorySelection gets the disableDeviceCategorySelection property value. Boolean that indicates if Device Category Selection will be shown in Company Portal
+func (m *IntuneBrandingProfile) GetDisableDeviceCategorySelection()(*bool) {
+    return m.disableDeviceCategorySelection
 }
 // GetDisplayName gets the displayName property value. Company/organization name that is displayed to end users
 func (m *IntuneBrandingProfile) GetDisplayName()(*string) {
@@ -256,6 +262,16 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(i878a80d
         }
         if val != nil {
             m.SetDisableClientTelemetry(val)
+        }
+        return nil
+    }
+    res["disableDeviceCategorySelection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDisableDeviceCategorySelection(val)
         }
         return nil
     }
@@ -646,6 +662,12 @@ func (m *IntuneBrandingProfile) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
+        err = writer.WriteBoolValue("disableDeviceCategorySelection", m.GetDisableDeviceCategorySelection())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
         if err != nil {
             return err
@@ -823,6 +845,10 @@ func (m *IntuneBrandingProfile) SetCustomPrivacyMessage(value *string)() {
 // SetDisableClientTelemetry sets the disableClientTelemetry property value. Applies to telemetry sent from all clients to the Intune service. When disabled, all proactive troubleshooting and issue warnings within the client are turned off, and telemetry settings appear inactive or hidden to the device user.
 func (m *IntuneBrandingProfile) SetDisableClientTelemetry(value *bool)() {
     m.disableClientTelemetry = value
+}
+// SetDisableDeviceCategorySelection sets the disableDeviceCategorySelection property value. Boolean that indicates if Device Category Selection will be shown in Company Portal
+func (m *IntuneBrandingProfile) SetDisableDeviceCategorySelection(value *bool)() {
+    m.disableDeviceCategorySelection = value
 }
 // SetDisplayName sets the displayName property value. Company/organization name that is displayed to end users
 func (m *IntuneBrandingProfile) SetDisplayName(value *string)() {

@@ -47,7 +47,7 @@ type AlertRecordsAlertRecordItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewAlertRecordsAlertRecordItemRequestBuilderInternal instantiates a new AlertRecordItemRequestBuilder and sets the default values.
-func NewAlertRecordsAlertRecordItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AlertRecordsAlertRecordItemRequestBuilder) {
+func NewAlertRecordsAlertRecordItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, alertRecordId *string)(*AlertRecordsAlertRecordItemRequestBuilder) {
     m := &AlertRecordsAlertRecordItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/monitoring/alertRecords/{alertRecord%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewAlertRecordsAlertRecordItemRequestBuilderInternal(pathParameters map[str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if alertRecordId != nil {
+        urlTplParams["alertRecord%2Did"] = *alertRecordId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAlertRecordsAlertRecordItemRequestBuilder instantiates a new AlertRecordItemRequestBuilder and sets the default values.
 func NewAlertRecordsAlertRecordItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AlertRecordsAlertRecordItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAlertRecordsAlertRecordItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAlertRecordsAlertRecordItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property alertRecords for monitoring
 func (m *AlertRecordsAlertRecordItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AlertRecordsAlertRecordItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -100,6 +103,10 @@ func (m *AlertRecordsAlertRecordItemRequestBuilder) Get(ctx context.Context, req
     }
     return res.(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRecordable), nil
 }
+// MicrosoftGraphDeviceManagementSetPortalNotificationAsSent provides operations to call the setPortalNotificationAsSent method.
+func (m *AlertRecordsAlertRecordItemRequestBuilder) MicrosoftGraphDeviceManagementSetPortalNotificationAsSent()(*AlertRecordsItemMicrosoftGraphDeviceManagementSetPortalNotificationAsSentSetPortalNotificationAsSentRequestBuilder) {
+    return NewAlertRecordsItemMicrosoftGraphDeviceManagementSetPortalNotificationAsSentSetPortalNotificationAsSentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property alertRecords in monitoring
 func (m *AlertRecordsAlertRecordItemRequestBuilder) Patch(ctx context.Context, body i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRecordable, requestConfiguration *AlertRecordsAlertRecordItemRequestBuilderPatchRequestConfiguration)(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRecordable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -118,10 +125,6 @@ func (m *AlertRecordsAlertRecordItemRequestBuilder) Patch(ctx context.Context, b
         return nil, nil
     }
     return res.(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRecordable), nil
-}
-// SetPortalNotificationAsSent provides operations to call the setPortalNotificationAsSent method.
-func (m *AlertRecordsAlertRecordItemRequestBuilder) SetPortalNotificationAsSent()(*AlertRecordsItemSetPortalNotificationAsSentRequestBuilder) {
-    return NewAlertRecordsItemSetPortalNotificationAsSentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property alertRecords for monitoring
 func (m *AlertRecordsAlertRecordItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AlertRecordsAlertRecordItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +161,10 @@ func (m *AlertRecordsAlertRecordItemRequestBuilder) ToPatchRequestInformation(ct
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

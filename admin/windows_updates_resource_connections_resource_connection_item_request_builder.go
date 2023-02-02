@@ -7,7 +7,7 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
-// WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder provides operations to manage the resourceConnections property of the microsoft.graph.windowsUpdates.updates entity.
+// WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder provides operations to manage the resourceConnections property of the microsoft.graph.adminWindowsUpdates entity.
 type WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string
@@ -23,7 +23,7 @@ type WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderGetQueryParameters service connections to external resources such as analytics workspaces.
+// WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderGetQueryParameters get resourceConnections from admin
 type WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -47,7 +47,7 @@ type WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderPatchR
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewWindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderInternal instantiates a new ResourceConnectionItemRequestBuilder and sets the default values.
-func NewWindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) {
+func NewWindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, resourceConnectionId *string)(*WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) {
     m := &WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/admin/windows/updates/resourceConnections/{resourceConnection%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewWindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderInt
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if resourceConnectionId != nil {
+        urlTplParams["resourceConnection%2Did"] = *resourceConnectionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder instantiates a new ResourceConnectionItemRequestBuilder and sets the default values.
 func NewWindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewWindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewWindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property resourceConnections for admin
 func (m *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -81,7 +84,7 @@ func (m *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) 
     }
     return nil
 }
-// Get service connections to external resources such as analytics workspaces.
+// Get get resourceConnections from admin
 func (m *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ResourceConnectionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -131,7 +134,7 @@ func (m *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation service connections to external resources such as analytics workspaces.
+// ToGetRequestInformation get resourceConnections from admin
 func (m *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -154,7 +157,10 @@ func (m *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

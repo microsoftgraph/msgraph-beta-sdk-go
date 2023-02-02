@@ -47,7 +47,7 @@ type CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderPatchRequestCo
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewCloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderInternal instantiates a new AppScopeItemRequestBuilder and sets the default values.
-func NewCloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder) {
+func NewCloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, appScopeId *string)(*CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder) {
     m := &CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/roleManagement/cloudPC/roleAssignments/{unifiedRoleAssignmentMultiple%2Did}/appScopes/{appScope%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewCloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if appScopeId != nil {
+        urlTplParams["appScope%2Did"] = *appScopeId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder instantiates a new AppScopeItemRequestBuilder and sets the default values.
 func NewCloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property appScopes for roleManagement
 func (m *CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder) ToPatchR
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

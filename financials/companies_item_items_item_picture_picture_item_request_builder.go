@@ -47,7 +47,7 @@ type CompaniesItemItemsItemPicturePictureItemRequestBuilderPatchRequestConfigura
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewCompaniesItemItemsItemPicturePictureItemRequestBuilderInternal instantiates a new PictureItemRequestBuilder and sets the default values.
-func NewCompaniesItemItemsItemPicturePictureItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemItemsItemPicturePictureItemRequestBuilder) {
+func NewCompaniesItemItemsItemPicturePictureItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, pictureId *string)(*CompaniesItemItemsItemPicturePictureItemRequestBuilder) {
     m := &CompaniesItemItemsItemPicturePictureItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/financials/companies/{company%2Did}/items/{item%2Did}/picture/{picture%2Did}{?%24select,%24expand}";
@@ -55,19 +55,22 @@ func NewCompaniesItemItemsItemPicturePictureItemRequestBuilderInternal(pathParam
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if pictureId != nil {
+        urlTplParams["picture%2Did"] = *pictureId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemItemsItemPicturePictureItemRequestBuilder instantiates a new PictureItemRequestBuilder and sets the default values.
 func NewCompaniesItemItemsItemPicturePictureItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemItemsItemPicturePictureItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCompaniesItemItemsItemPicturePictureItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCompaniesItemItemsItemPicturePictureItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Content provides operations to manage the media for the financials entity.
 func (m *CompaniesItemItemsItemPicturePictureItemRequestBuilder) Content()(*CompaniesItemItemsItemPictureItemContentRequestBuilder) {
-    return NewCompaniesItemItemsItemPictureItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemItemsItemPictureItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property picture for financials
 func (m *CompaniesItemItemsItemPicturePictureItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CompaniesItemItemsItemPicturePictureItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -158,7 +161,10 @@ func (m *CompaniesItemItemsItemPicturePictureItemRequestBuilder) ToPatchRequestI
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

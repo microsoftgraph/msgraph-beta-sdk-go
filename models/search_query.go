@@ -21,7 +21,7 @@ type SearchQuery struct {
 func NewSearchQuery()(*SearchQuery) {
     m := &SearchQuery{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSearchQueryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -51,7 +51,7 @@ func (m *SearchQuery) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
             return err
         }
         if val != nil {
-            m.SetQuery_string(val.(SearchQueryStringable))
+            m.SetQueryString(val.(SearchQueryStringable))
         }
         return nil
     }
@@ -81,13 +81,9 @@ func (m *SearchQuery) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 func (m *SearchQuery) GetOdataType()(*string) {
     return m.odataType
 }
-// GetQuery_string gets the query_string property value. The query_string property
-func (m *SearchQuery) GetQuery_string()(SearchQueryStringable) {
+// GetQueryString gets the query_string property value. The query_string property
+func (m *SearchQuery) GetQueryString()(SearchQueryStringable) {
     return m.query_string
-}
-// GetQueryString gets the queryString property value. The search query containing the search terms. Required.
-func (m *SearchQuery) GetQueryString()(*string) {
-    return m.queryString
 }
 // GetQueryTemplate gets the queryTemplate property value. Provides a way to decorate the query string. Supports both KQL and query variables. Optional.
 func (m *SearchQuery) GetQueryTemplate()(*string) {
@@ -114,7 +110,7 @@ func (m *SearchQuery) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
-        err := writer.WriteObjectValue("query_string", m.GetQuery_string())
+        err := writer.WriteObjectValue("query_string", m.GetQueryString())
         if err != nil {
             return err
         }
@@ -135,13 +131,9 @@ func (m *SearchQuery) SetAdditionalData(value map[string]any)() {
 func (m *SearchQuery) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetQuery_string sets the query_string property value. The query_string property
-func (m *SearchQuery) SetQuery_string(value SearchQueryStringable)() {
+// SetQueryString sets the query_string property value. The query_string property
+func (m *SearchQuery) SetQueryString(value SearchQueryStringable)() {
     m.query_string = value
-}
-// SetQueryString sets the queryString property value. The search query containing the search terms. Required.
-func (m *SearchQuery) SetQueryString(value *string)() {
-    m.queryString = value
 }
 // SetQueryTemplate sets the queryTemplate property value. Provides a way to decorate the query string. Supports both KQL and query variables. Optional.
 func (m *SearchQuery) SetQueryTemplate(value *string)() {

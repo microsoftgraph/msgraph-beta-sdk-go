@@ -21,7 +21,7 @@ type TeamworkPeripheralHealth struct {
 func NewTeamworkPeripheralHealth()(*TeamworkPeripheralHealth) {
     m := &TeamworkPeripheralHealth{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTeamworkPeripheralHealthFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

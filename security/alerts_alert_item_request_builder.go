@@ -40,7 +40,7 @@ type AlertsAlertItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewAlertsAlertItemRequestBuilderInternal instantiates a new AlertItemRequestBuilder and sets the default values.
-func NewAlertsAlertItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AlertsAlertItemRequestBuilder) {
+func NewAlertsAlertItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, alertId *string)(*AlertsAlertItemRequestBuilder) {
     m := &AlertsAlertItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/security/alerts/{alert%2Did}{?%24select,%24expand}";
@@ -48,15 +48,18 @@ func NewAlertsAlertItemRequestBuilderInternal(pathParameters map[string]string, 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if alertId != nil {
+        urlTplParams["alert%2Did"] = *alertId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAlertsAlertItemRequestBuilder instantiates a new AlertItemRequestBuilder and sets the default values.
 func NewAlertsAlertItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AlertsAlertItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAlertsAlertItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAlertsAlertItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get notifications for suspicious or potential security issues in a customer’s tenant.
 func (m *AlertsAlertItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AlertsAlertItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Alertable, error) {
@@ -119,7 +122,10 @@ func (m *AlertsAlertItemRequestBuilder) ToPatchRequestInformation(ctx context.Co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

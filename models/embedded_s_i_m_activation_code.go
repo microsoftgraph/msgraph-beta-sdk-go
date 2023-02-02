@@ -21,7 +21,7 @@ type EmbeddedSIMActivationCode struct {
 func NewEmbeddedSIMActivationCode()(*EmbeddedSIMActivationCode) {
     m := &EmbeddedSIMActivationCode{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateEmbeddedSIMActivationCodeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

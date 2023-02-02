@@ -53,8 +53,8 @@ func NewItemAgentsItemAgentGroupsRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemAgentsItemAgentGroupsRequestBuilder instantiates a new AgentGroupsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemAgentsItemAgentGroupsRequestBuilder(rawUrl string, requestAdapter i2
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemAgentsItemAgentGroupsRequestBuilder) Count()(*ItemAgentsItemAgentGroupsCountRequestBuilder) {
-    return NewItemAgentsItemAgentGroupsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemAgentsItemAgentGroupsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
 func (m *ItemAgentsItemAgentGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAgentsItemAgentGroupsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupCollectionResponseable, error) {
@@ -88,7 +88,7 @@ func (m *ItemAgentsItemAgentGroupsRequestBuilder) Get(ctx context.Context, reque
 }
 // Ref provides operations to manage the collection of onPremisesPublishingProfile entities.
 func (m *ItemAgentsItemAgentGroupsRequestBuilder) Ref()(*ItemAgentsItemAgentGroupsRefRequestBuilder) {
-    return NewItemAgentsItemAgentGroupsRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemAgentsItemAgentGroupsRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation list of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
 func (m *ItemAgentsItemAgentGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAgentsItemAgentGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

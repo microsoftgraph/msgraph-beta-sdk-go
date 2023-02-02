@@ -33,7 +33,7 @@ type ItemSitesItemDrivesDriveItemRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemSitesItemDrivesDriveItemRequestBuilderGetQueryParameters
 }
 // NewItemSitesItemDrivesDriveItemRequestBuilderInternal instantiates a new DriveItemRequestBuilder and sets the default values.
-func NewItemSitesItemDrivesDriveItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemDrivesDriveItemRequestBuilder) {
+func NewItemSitesItemDrivesDriveItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, driveId *string)(*ItemSitesItemDrivesDriveItemRequestBuilder) {
     m := &ItemSitesItemDrivesDriveItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/drives/{drive%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewItemSitesItemDrivesDriveItemRequestBuilderInternal(pathParameters map[st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if driveId != nil {
+        urlTplParams["drive%2Did"] = *driveId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemDrivesDriveItemRequestBuilder instantiates a new DriveItemRequestBuilder and sets the default values.
 func NewItemSitesItemDrivesDriveItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemDrivesDriveItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemSitesItemDrivesDriveItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemSitesItemDrivesDriveItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get the collection of drives (document libraries) under this site.
 func (m *ItemSitesItemDrivesDriveItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemDrivesDriveItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Driveable, error) {

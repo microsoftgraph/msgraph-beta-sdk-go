@@ -22,12 +22,8 @@ type DeviceManagementPartner struct {
     partnerState *DeviceManagementPartnerTenantState
     // Partner Single tenant App id
     singleTenantAppId *string
-    // DateTime in UTC when PartnerDevices will be marked as NonCompliant. This will become obselete soon.
-    whenPartnerDevicesWillBeMarkedAsNonCompliant *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // DateTime in UTC when PartnerDevices will be marked as NonCompliant
     whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // DateTime in UTC when PartnerDevices will be removed. This will become obselete soon.
-    whenPartnerDevicesWillBeRemoved *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // DateTime in UTC when PartnerDevices will be removed
     whenPartnerDevicesWillBeRemovedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
@@ -123,16 +119,6 @@ func (m *DeviceManagementPartner) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
-    res["whenPartnerDevicesWillBeMarkedAsNonCompliant"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWhenPartnerDevicesWillBeMarkedAsNonCompliant(val)
-        }
-        return nil
-    }
     res["whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -140,16 +126,6 @@ func (m *DeviceManagementPartner) GetFieldDeserializers()(map[string]func(i878a8
         }
         if val != nil {
             m.SetWhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime(val)
-        }
-        return nil
-    }
-    res["whenPartnerDevicesWillBeRemoved"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWhenPartnerDevicesWillBeRemoved(val)
         }
         return nil
     }
@@ -189,17 +165,9 @@ func (m *DeviceManagementPartner) GetPartnerState()(*DeviceManagementPartnerTena
 func (m *DeviceManagementPartner) GetSingleTenantAppId()(*string) {
     return m.singleTenantAppId
 }
-// GetWhenPartnerDevicesWillBeMarkedAsNonCompliant gets the whenPartnerDevicesWillBeMarkedAsNonCompliant property value. DateTime in UTC when PartnerDevices will be marked as NonCompliant. This will become obselete soon.
-func (m *DeviceManagementPartner) GetWhenPartnerDevicesWillBeMarkedAsNonCompliant()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.whenPartnerDevicesWillBeMarkedAsNonCompliant
-}
 // GetWhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime gets the whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime property value. DateTime in UTC when PartnerDevices will be marked as NonCompliant
 func (m *DeviceManagementPartner) GetWhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime
-}
-// GetWhenPartnerDevicesWillBeRemoved gets the whenPartnerDevicesWillBeRemoved property value. DateTime in UTC when PartnerDevices will be removed. This will become obselete soon.
-func (m *DeviceManagementPartner) GetWhenPartnerDevicesWillBeRemoved()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.whenPartnerDevicesWillBeRemoved
 }
 // GetWhenPartnerDevicesWillBeRemovedDateTime gets the whenPartnerDevicesWillBeRemovedDateTime property value. DateTime in UTC when PartnerDevices will be removed
 func (m *DeviceManagementPartner) GetWhenPartnerDevicesWillBeRemovedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -260,19 +228,7 @@ func (m *DeviceManagementPartner) Serialize(writer i878a80d2330e89d26896388a3f48
         }
     }
     {
-        err = writer.WriteTimeValue("whenPartnerDevicesWillBeMarkedAsNonCompliant", m.GetWhenPartnerDevicesWillBeMarkedAsNonCompliant())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteTimeValue("whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime", m.GetWhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("whenPartnerDevicesWillBeRemoved", m.GetWhenPartnerDevicesWillBeRemoved())
         if err != nil {
             return err
         }
@@ -313,17 +269,9 @@ func (m *DeviceManagementPartner) SetPartnerState(value *DeviceManagementPartner
 func (m *DeviceManagementPartner) SetSingleTenantAppId(value *string)() {
     m.singleTenantAppId = value
 }
-// SetWhenPartnerDevicesWillBeMarkedAsNonCompliant sets the whenPartnerDevicesWillBeMarkedAsNonCompliant property value. DateTime in UTC when PartnerDevices will be marked as NonCompliant. This will become obselete soon.
-func (m *DeviceManagementPartner) SetWhenPartnerDevicesWillBeMarkedAsNonCompliant(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.whenPartnerDevicesWillBeMarkedAsNonCompliant = value
-}
 // SetWhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime sets the whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime property value. DateTime in UTC when PartnerDevices will be marked as NonCompliant
 func (m *DeviceManagementPartner) SetWhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime = value
-}
-// SetWhenPartnerDevicesWillBeRemoved sets the whenPartnerDevicesWillBeRemoved property value. DateTime in UTC when PartnerDevices will be removed. This will become obselete soon.
-func (m *DeviceManagementPartner) SetWhenPartnerDevicesWillBeRemoved(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.whenPartnerDevicesWillBeRemoved = value
 }
 // SetWhenPartnerDevicesWillBeRemovedDateTime sets the whenPartnerDevicesWillBeRemovedDateTime property value. DateTime in UTC when PartnerDevices will be removed
 func (m *DeviceManagementPartner) SetWhenPartnerDevicesWillBeRemovedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {

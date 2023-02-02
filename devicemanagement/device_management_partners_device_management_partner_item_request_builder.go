@@ -47,7 +47,7 @@ type DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilderPatchReque
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewDeviceManagementPartnersDeviceManagementPartnerItemRequestBuilderInternal instantiates a new DeviceManagementPartnerItemRequestBuilder and sets the default values.
-func NewDeviceManagementPartnersDeviceManagementPartnerItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) {
+func NewDeviceManagementPartnersDeviceManagementPartnerItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, deviceManagementPartnerId *string)(*DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) {
     m := &DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/deviceManagementPartners/{deviceManagementPartner%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewDeviceManagementPartnersDeviceManagementPartnerItemRequestBuilderInterna
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if deviceManagementPartnerId != nil {
+        urlTplParams["deviceManagementPartner%2Did"] = *deviceManagementPartnerId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder instantiates a new DeviceManagementPartnerItemRequestBuilder and sets the default values.
 func NewDeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewDeviceManagementPartnersDeviceManagementPartnerItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewDeviceManagementPartnersDeviceManagementPartnerItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property deviceManagementPartners for deviceManagement
 func (m *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -100,6 +103,10 @@ func (m *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) Get(
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementPartnerable), nil
 }
+// MicrosoftGraphTerminate provides operations to call the terminate method.
+func (m *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) MicrosoftGraphTerminate()(*DeviceManagementPartnersItemMicrosoftGraphTerminateTerminateRequestBuilder) {
+    return NewDeviceManagementPartnersItemMicrosoftGraphTerminateTerminateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property deviceManagementPartners in deviceManagement
 func (m *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementPartnerable, requestConfiguration *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementPartnerable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -118,10 +125,6 @@ func (m *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) Patc
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementPartnerable), nil
-}
-// Terminate provides operations to call the terminate method.
-func (m *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) Terminate()(*DeviceManagementPartnersItemTerminateRequestBuilder) {
-    return NewDeviceManagementPartnersItemTerminateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property deviceManagementPartners for deviceManagement
 func (m *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +161,10 @@ func (m *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) ToPa
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

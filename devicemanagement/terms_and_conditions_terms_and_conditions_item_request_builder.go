@@ -48,7 +48,7 @@ type TermsAndConditionsTermsAndConditionsItemRequestBuilderPatchRequestConfigura
 }
 // AcceptanceStatuses provides operations to manage the acceptanceStatuses property of the microsoft.graph.termsAndConditions entity.
 func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) AcceptanceStatuses()(*TermsAndConditionsItemAcceptanceStatusesRequestBuilder) {
-    return NewTermsAndConditionsItemAcceptanceStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTermsAndConditionsItemAcceptanceStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AcceptanceStatusesById provides operations to manage the acceptanceStatuses property of the microsoft.graph.termsAndConditions entity.
 func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) AcceptanceStatusesById(id string)(*TermsAndConditionsItemAcceptanceStatusesTermsAndConditionsAcceptanceStatusItemRequestBuilder) {
@@ -56,14 +56,12 @@ func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) AcceptanceStatu
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["termsAndConditionsAcceptanceStatus%2Did"] = id
-    }
-    return NewTermsAndConditionsItemAcceptanceStatusesTermsAndConditionsAcceptanceStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewTermsAndConditionsItemAcceptanceStatusesTermsAndConditionsAcceptanceStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Assignments provides operations to manage the assignments property of the microsoft.graph.termsAndConditions entity.
 func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) Assignments()(*TermsAndConditionsItemAssignmentsRequestBuilder) {
-    return NewTermsAndConditionsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTermsAndConditionsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.termsAndConditions entity.
 func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) AssignmentsById(id string)(*TermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemRequestBuilder) {
@@ -71,13 +69,11 @@ func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) AssignmentsById
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["termsAndConditionsAssignment%2Did"] = id
-    }
-    return NewTermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewTermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewTermsAndConditionsTermsAndConditionsItemRequestBuilderInternal instantiates a new TermsAndConditionsItemRequestBuilder and sets the default values.
-func NewTermsAndConditionsTermsAndConditionsItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TermsAndConditionsTermsAndConditionsItemRequestBuilder) {
+func NewTermsAndConditionsTermsAndConditionsItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, termsAndConditionsId *string)(*TermsAndConditionsTermsAndConditionsItemRequestBuilder) {
     m := &TermsAndConditionsTermsAndConditionsItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/termsAndConditions/{termsAndConditions%2Did}{?%24select,%24expand}";
@@ -85,15 +81,18 @@ func NewTermsAndConditionsTermsAndConditionsItemRequestBuilderInternal(pathParam
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if termsAndConditionsId != nil {
+        urlTplParams["termsAndConditions%2Did"] = *termsAndConditionsId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTermsAndConditionsTermsAndConditionsItemRequestBuilder instantiates a new TermsAndConditionsItemRequestBuilder and sets the default values.
 func NewTermsAndConditionsTermsAndConditionsItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TermsAndConditionsTermsAndConditionsItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewTermsAndConditionsTermsAndConditionsItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewTermsAndConditionsTermsAndConditionsItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property termsAndConditions for deviceManagement
 func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TermsAndConditionsTermsAndConditionsItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -132,7 +131,7 @@ func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) Get(ctx context
 }
 // GroupAssignments provides operations to manage the groupAssignments property of the microsoft.graph.termsAndConditions entity.
 func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) GroupAssignments()(*TermsAndConditionsItemGroupAssignmentsRequestBuilder) {
-    return NewTermsAndConditionsItemGroupAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTermsAndConditionsItemGroupAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GroupAssignmentsById provides operations to manage the groupAssignments property of the microsoft.graph.termsAndConditions entity.
 func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) GroupAssignmentsById(id string)(*TermsAndConditionsItemGroupAssignmentsTermsAndConditionsGroupAssignmentItemRequestBuilder) {
@@ -140,10 +139,8 @@ func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) GroupAssignment
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["termsAndConditionsGroupAssignment%2Did"] = id
-    }
-    return NewTermsAndConditionsItemGroupAssignmentsTermsAndConditionsGroupAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewTermsAndConditionsItemGroupAssignmentsTermsAndConditionsGroupAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Patch update the navigation property termsAndConditions in deviceManagement
 func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TermsAndConditionsable, requestConfiguration *TermsAndConditionsTermsAndConditionsItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TermsAndConditionsable, error) {
@@ -199,7 +196,10 @@ func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) ToPatchRequestI
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

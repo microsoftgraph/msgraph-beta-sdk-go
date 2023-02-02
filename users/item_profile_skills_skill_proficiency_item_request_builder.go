@@ -47,7 +47,7 @@ type ItemProfileSkillsSkillProficiencyItemRequestBuilderPatchRequestConfiguratio
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemProfileSkillsSkillProficiencyItemRequestBuilderInternal instantiates a new SkillProficiencyItemRequestBuilder and sets the default values.
-func NewItemProfileSkillsSkillProficiencyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfileSkillsSkillProficiencyItemRequestBuilder) {
+func NewItemProfileSkillsSkillProficiencyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, skillProficiencyId *string)(*ItemProfileSkillsSkillProficiencyItemRequestBuilder) {
     m := &ItemProfileSkillsSkillProficiencyItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/profile/skills/{skillProficiency%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemProfileSkillsSkillProficiencyItemRequestBuilderInternal(pathParamete
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if skillProficiencyId != nil {
+        urlTplParams["skillProficiency%2Did"] = *skillProficiencyId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemProfileSkillsSkillProficiencyItemRequestBuilder instantiates a new SkillProficiencyItemRequestBuilder and sets the default values.
 func NewItemProfileSkillsSkillProficiencyItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfileSkillsSkillProficiencyItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemProfileSkillsSkillProficiencyItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemProfileSkillsSkillProficiencyItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property skills for users
 func (m *ItemProfileSkillsSkillProficiencyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileSkillsSkillProficiencyItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemProfileSkillsSkillProficiencyItemRequestBuilder) ToPatchRequestInfo
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

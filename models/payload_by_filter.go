@@ -23,7 +23,7 @@ type PayloadByFilter struct {
 func NewPayloadByFilter()(*PayloadByFilter) {
     m := &PayloadByFilter{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePayloadByFilterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

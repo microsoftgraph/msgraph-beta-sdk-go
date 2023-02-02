@@ -47,7 +47,7 @@ type ConnectionsItemItemsItemActivitiesExternalActivityItemRequestBuilderPatchRe
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewConnectionsItemItemsItemActivitiesExternalActivityItemRequestBuilderInternal instantiates a new ExternalActivityItemRequestBuilder and sets the default values.
-func NewConnectionsItemItemsItemActivitiesExternalActivityItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectionsItemItemsItemActivitiesExternalActivityItemRequestBuilder) {
+func NewConnectionsItemItemsItemActivitiesExternalActivityItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, externalActivityId *string)(*ConnectionsItemItemsItemActivitiesExternalActivityItemRequestBuilder) {
     m := &ConnectionsItemItemsItemActivitiesExternalActivityItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/external/connections/{externalConnection%2Did}/items/{externalItem%2Did}/activities/{externalActivity%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewConnectionsItemItemsItemActivitiesExternalActivityItemRequestBuilderInte
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if externalActivityId != nil {
+        urlTplParams["externalActivity%2Did"] = *externalActivityId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewConnectionsItemItemsItemActivitiesExternalActivityItemRequestBuilder instantiates a new ExternalActivityItemRequestBuilder and sets the default values.
 func NewConnectionsItemItemsItemActivitiesExternalActivityItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectionsItemItemsItemActivitiesExternalActivityItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewConnectionsItemItemsItemActivitiesExternalActivityItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewConnectionsItemItemsItemActivitiesExternalActivityItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property activities for external
 func (m *ConnectionsItemItemsItemActivitiesExternalActivityItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConnectionsItemItemsItemActivitiesExternalActivityItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -121,7 +124,7 @@ func (m *ConnectionsItemItemsItemActivitiesExternalActivityItemRequestBuilder) P
 }
 // PerformedBy provides operations to manage the performedBy property of the microsoft.graph.externalConnectors.externalActivity entity.
 func (m *ConnectionsItemItemsItemActivitiesExternalActivityItemRequestBuilder) PerformedBy()(*ConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilder) {
-    return NewConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property activities for external
 func (m *ConnectionsItemItemsItemActivitiesExternalActivityItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConnectionsItemItemsItemActivitiesExternalActivityItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +161,10 @@ func (m *ConnectionsItemItemsItemActivitiesExternalActivityItemRequestBuilder) T
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

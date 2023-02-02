@@ -33,7 +33,7 @@ type LifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsTaskProcessingR
     QueryParameters *LifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsTaskProcessingResultItemRequestBuilderGetQueryParameters
 }
 // NewLifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsTaskProcessingResultItemRequestBuilderInternal instantiates a new TaskProcessingResultItemRequestBuilder and sets the default values.
-func NewLifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsTaskProcessingResultItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsTaskProcessingResultItemRequestBuilder) {
+func NewLifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsTaskProcessingResultItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, taskProcessingResultId *string)(*LifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsTaskProcessingResultItemRequestBuilder) {
     m := &LifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsTaskProcessingResultItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/identityGovernance/lifecycleWorkflows/workflows/{workflow%2Did}/runs/{run%2Did}/taskProcessingResults/{taskProcessingResult%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewLifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsTaskProcessi
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if taskProcessingResultId != nil {
+        urlTplParams["taskProcessingResult%2Did"] = *taskProcessingResultId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewLifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsTaskProcessingResultItemRequestBuilder instantiates a new TaskProcessingResultItemRequestBuilder and sets the default values.
 func NewLifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsTaskProcessingResultItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsTaskProcessingResultItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewLifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsTaskProcessingResultItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewLifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsTaskProcessingResultItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get the related taskProcessingResults.
 func (m *LifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsTaskProcessingResultItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsTaskProcessingResultItemRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.TaskProcessingResultable, error) {
@@ -70,17 +73,17 @@ func (m *LifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsTaskProcess
     }
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.TaskProcessingResultable), nil
 }
-// Resume provides operations to call the resume method.
-func (m *LifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsTaskProcessingResultItemRequestBuilder) Resume()(*LifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsItemResumeRequestBuilder) {
-    return NewLifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsItemResumeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphIdentityGovernanceResume provides operations to call the resume method.
+func (m *LifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsTaskProcessingResultItemRequestBuilder) MicrosoftGraphIdentityGovernanceResume()(*LifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsItemMicrosoftGraphIdentityGovernanceResumeResumeRequestBuilder) {
+    return NewLifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsItemMicrosoftGraphIdentityGovernanceResumeResumeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Subject provides operations to manage the subject property of the microsoft.graph.identityGovernance.taskProcessingResult entity.
 func (m *LifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsTaskProcessingResultItemRequestBuilder) Subject()(*LifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsItemSubjectRequestBuilder) {
-    return NewLifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsItemSubjectRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewLifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsItemSubjectRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Task provides operations to manage the task property of the microsoft.graph.identityGovernance.taskProcessingResult entity.
 func (m *LifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsTaskProcessingResultItemRequestBuilder) Task()(*LifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsItemTaskRequestBuilder) {
-    return NewLifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsItemTaskRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewLifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsItemTaskRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation the related taskProcessingResults.
 func (m *LifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsTaskProcessingResultItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsTaskProcessingResultItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -25,8 +25,8 @@ func NewAddWatermarkAction()(*AddWatermarkAction) {
     m := &AddWatermarkAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
     }
-    odataTypeValue := "#microsoft.graph.security.addWatermarkAction";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.security.addWatermarkAction"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAddWatermarkActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

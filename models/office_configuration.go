@@ -21,7 +21,7 @@ type OfficeConfiguration struct {
 func NewOfficeConfiguration()(*OfficeConfiguration) {
     m := &OfficeConfiguration{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateOfficeConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

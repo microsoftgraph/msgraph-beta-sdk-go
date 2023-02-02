@@ -21,7 +21,7 @@ type RelatedPerson struct {
 func NewRelatedPerson()(*RelatedPerson) {
     m := &RelatedPerson{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateRelatedPersonFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

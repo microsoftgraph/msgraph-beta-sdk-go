@@ -33,7 +33,7 @@ type CompaniesItemAccountsAccountItemRequestBuilderGetRequestConfiguration struc
     QueryParameters *CompaniesItemAccountsAccountItemRequestBuilderGetQueryParameters
 }
 // NewCompaniesItemAccountsAccountItemRequestBuilderInternal instantiates a new AccountItemRequestBuilder and sets the default values.
-func NewCompaniesItemAccountsAccountItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemAccountsAccountItemRequestBuilder) {
+func NewCompaniesItemAccountsAccountItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, accountId *string)(*CompaniesItemAccountsAccountItemRequestBuilder) {
     m := &CompaniesItemAccountsAccountItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/financials/companies/{company%2Did}/accounts/{account%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewCompaniesItemAccountsAccountItemRequestBuilderInternal(pathParameters ma
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if accountId != nil {
+        urlTplParams["account%2Did"] = *accountId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemAccountsAccountItemRequestBuilder instantiates a new AccountItemRequestBuilder and sets the default values.
 func NewCompaniesItemAccountsAccountItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemAccountsAccountItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCompaniesItemAccountsAccountItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCompaniesItemAccountsAccountItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get get accounts from financials
 func (m *CompaniesItemAccountsAccountItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemAccountsAccountItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Accountable, error) {

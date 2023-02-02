@@ -19,7 +19,7 @@ type ManagedDeviceModelsAndManufacturers struct {
 func NewManagedDeviceModelsAndManufacturers()(*ManagedDeviceModelsAndManufacturers) {
     m := &ManagedDeviceModelsAndManufacturers{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateManagedDeviceModelsAndManufacturersFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -60,8 +60,8 @@ func NewDataLossPreventionPoliciesRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDataLossPreventionPoliciesRequestBuilder instantiates a new DataLossPreventionPoliciesRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewDataLossPreventionPoliciesRequestBuilder(rawUrl string, requestAdapter i
 }
 // Count provides operations to count the resources in the collection.
 func (m *DataLossPreventionPoliciesRequestBuilder) Count()(*DataLossPreventionPoliciesCountRequestBuilder) {
-    return NewDataLossPreventionPoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Evaluate provides operations to call the evaluate method.
-func (m *DataLossPreventionPoliciesRequestBuilder) Evaluate()(*DataLossPreventionPoliciesEvaluateRequestBuilder) {
-    return NewDataLossPreventionPoliciesEvaluateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDataLossPreventionPoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get dataLossPreventionPolicies from informationProtection
 func (m *DataLossPreventionPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *DataLossPreventionPoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyCollectionResponseable, error) {
@@ -96,6 +92,10 @@ func (m *DataLossPreventionPoliciesRequestBuilder) Get(ctx context.Context, requ
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyCollectionResponseable), nil
+}
+// MicrosoftGraphEvaluate provides operations to call the evaluate method.
+func (m *DataLossPreventionPoliciesRequestBuilder) MicrosoftGraphEvaluate()(*DataLossPreventionPoliciesMicrosoftGraphEvaluateEvaluateRequestBuilder) {
+    return NewDataLossPreventionPoliciesMicrosoftGraphEvaluateEvaluateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to dataLossPreventionPolicies for informationProtection
 func (m *DataLossPreventionPoliciesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyable, requestConfiguration *DataLossPreventionPoliciesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyable, error) {
@@ -139,7 +139,10 @@ func (m *DataLossPreventionPoliciesRequestBuilder) ToPostRequestInformation(ctx 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -33,7 +33,7 @@ type ItemItemsItemActivitiesItemActivityOLDItemRequestBuilderGetRequestConfigura
     QueryParameters *ItemItemsItemActivitiesItemActivityOLDItemRequestBuilderGetQueryParameters
 }
 // NewItemItemsItemActivitiesItemActivityOLDItemRequestBuilderInternal instantiates a new ItemActivityOLDItemRequestBuilder and sets the default values.
-func NewItemItemsItemActivitiesItemActivityOLDItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemActivitiesItemActivityOLDItemRequestBuilder) {
+func NewItemItemsItemActivitiesItemActivityOLDItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, itemActivityOLDId *string)(*ItemItemsItemActivitiesItemActivityOLDItemRequestBuilder) {
     m := &ItemItemsItemActivitiesItemActivityOLDItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/activities/{itemActivityOLD%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewItemItemsItemActivitiesItemActivityOLDItemRequestBuilderInternal(pathPar
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if itemActivityOLDId != nil {
+        urlTplParams["itemActivityOLD%2Did"] = *itemActivityOLDId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemItemsItemActivitiesItemActivityOLDItemRequestBuilder instantiates a new ItemActivityOLDItemRequestBuilder and sets the default values.
 func NewItemItemsItemActivitiesItemActivityOLDItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemActivitiesItemActivityOLDItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemItemsItemActivitiesItemActivityOLDItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemItemsItemActivitiesItemActivityOLDItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get the list of recent activities that took place on this item.
 func (m *ItemItemsItemActivitiesItemActivityOLDItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemActivitiesItemActivityOLDItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityOLDable, error) {

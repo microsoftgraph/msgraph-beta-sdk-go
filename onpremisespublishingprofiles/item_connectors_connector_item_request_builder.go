@@ -47,7 +47,7 @@ type ItemConnectorsConnectorItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemConnectorsConnectorItemRequestBuilderInternal instantiates a new ConnectorItemRequestBuilder and sets the default values.
-func NewItemConnectorsConnectorItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConnectorsConnectorItemRequestBuilder) {
+func NewItemConnectorsConnectorItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, connectorId *string)(*ItemConnectorsConnectorItemRequestBuilder) {
     m := &ItemConnectorsConnectorItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectors/{connector%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemConnectorsConnectorItemRequestBuilderInternal(pathParameters map[str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if connectorId != nil {
+        urlTplParams["connector%2Did"] = *connectorId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemConnectorsConnectorItemRequestBuilder instantiates a new ConnectorItemRequestBuilder and sets the default values.
 func NewItemConnectorsConnectorItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConnectorsConnectorItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemConnectorsConnectorItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemConnectorsConnectorItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property connectors for onPremisesPublishingProfiles
 func (m *ItemConnectorsConnectorItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemConnectorsConnectorItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -102,7 +105,7 @@ func (m *ItemConnectorsConnectorItemRequestBuilder) Get(ctx context.Context, req
 }
 // MemberOf provides operations to manage the memberOf property of the microsoft.graph.connector entity.
 func (m *ItemConnectorsConnectorItemRequestBuilder) MemberOf()(*ItemConnectorsItemMemberOfRequestBuilder) {
-    return NewItemConnectorsItemMemberOfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemConnectorsItemMemberOfRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MemberOfById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.connectors.item.memberOf.item collection
 func (m *ItemConnectorsConnectorItemRequestBuilder) MemberOfById(id string)(*ItemConnectorsItemMemberOfConnectorGroupItemRequestBuilder) {
@@ -110,10 +113,8 @@ func (m *ItemConnectorsConnectorItemRequestBuilder) MemberOfById(id string)(*Ite
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["connectorGroup%2Did"] = id
-    }
-    return NewItemConnectorsItemMemberOfConnectorGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemConnectorsItemMemberOfConnectorGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Patch update the navigation property connectors in onPremisesPublishingProfiles
 func (m *ItemConnectorsConnectorItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Connectorable, requestConfiguration *ItemConnectorsConnectorItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Connectorable, error) {
@@ -169,7 +170,10 @@ func (m *ItemConnectorsConnectorItemRequestBuilder) ToPatchRequestInformation(ct
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

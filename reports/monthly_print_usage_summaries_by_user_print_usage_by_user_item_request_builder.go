@@ -47,7 +47,7 @@ type MonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderPatchRequ
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewMonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderInternal instantiates a new PrintUsageByUserItemRequestBuilder and sets the default values.
-func NewMonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder) {
+func NewMonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, printUsageByUserId *string)(*MonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder) {
     m := &MonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/reports/monthlyPrintUsageSummariesByUser/{printUsageByUser%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewMonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderIntern
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if printUsageByUserId != nil {
+        urlTplParams["printUsageByUser%2Did"] = *printUsageByUserId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder instantiates a new PrintUsageByUserItemRequestBuilder and sets the default values.
 func NewMonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewMonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewMonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property monthlyPrintUsageSummariesByUser for reports
 func (m *MonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *MonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder) ToP
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

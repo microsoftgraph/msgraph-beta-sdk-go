@@ -47,7 +47,7 @@ type NdesConnectorsNdesConnectorItemRequestBuilderPatchRequestConfiguration stru
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewNdesConnectorsNdesConnectorItemRequestBuilderInternal instantiates a new NdesConnectorItemRequestBuilder and sets the default values.
-func NewNdesConnectorsNdesConnectorItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*NdesConnectorsNdesConnectorItemRequestBuilder) {
+func NewNdesConnectorsNdesConnectorItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, ndesConnectorId *string)(*NdesConnectorsNdesConnectorItemRequestBuilder) {
     m := &NdesConnectorsNdesConnectorItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/ndesConnectors/{ndesConnector%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewNdesConnectorsNdesConnectorItemRequestBuilderInternal(pathParameters map
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if ndesConnectorId != nil {
+        urlTplParams["ndesConnector%2Did"] = *ndesConnectorId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewNdesConnectorsNdesConnectorItemRequestBuilder instantiates a new NdesConnectorItemRequestBuilder and sets the default values.
 func NewNdesConnectorsNdesConnectorItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*NdesConnectorsNdesConnectorItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewNdesConnectorsNdesConnectorItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewNdesConnectorsNdesConnectorItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property ndesConnectors for deviceManagement
 func (m *NdesConnectorsNdesConnectorItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *NdesConnectorsNdesConnectorItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *NdesConnectorsNdesConnectorItemRequestBuilder) ToPatchRequestInformatio
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

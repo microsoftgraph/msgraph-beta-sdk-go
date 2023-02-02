@@ -46,12 +46,8 @@ type EdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilderPat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ApplyTags provides operations to call the applyTags method.
-func (m *EdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilder) ApplyTags()(*EdiscoveryCasesItemReviewSetsItemQueriesItemApplyTagsRequestBuilder) {
-    return NewEdiscoveryCasesItemReviewSetsItemQueriesItemApplyTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewEdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilderInternal instantiates a new ReviewSetQueryItemRequestBuilder and sets the default values.
-func NewEdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilder) {
+func NewEdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, reviewSetQueryId *string)(*EdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilder) {
     m := &EdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/reviewSets/{reviewSet%2Did}/queries/{reviewSetQuery%2Did}{?%24select,%24expand}";
@@ -59,15 +55,18 @@ func NewEdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilder
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if reviewSetQueryId != nil {
+        urlTplParams["reviewSetQuery%2Did"] = *reviewSetQueryId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilder instantiates a new ReviewSetQueryItemRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewEdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewEdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property queries for compliance
 func (m *EdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -103,6 +102,10 @@ func (m *EdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilde
         return nil, nil
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetQueryable), nil
+}
+// MicrosoftGraphEdiscoveryApplyTags provides operations to call the applyTags method.
+func (m *EdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilder) MicrosoftGraphEdiscoveryApplyTags()(*EdiscoveryCasesItemReviewSetsItemQueriesItemMicrosoftGraphEdiscoveryApplyTagsApplyTagsRequestBuilder) {
+    return NewEdiscoveryCasesItemReviewSetsItemQueriesItemMicrosoftGraphEdiscoveryApplyTagsApplyTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property queries in compliance
 func (m *EdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilder) Patch(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetQueryable, requestConfiguration *EdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilderPatchRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetQueryable, error) {
@@ -158,7 +161,10 @@ func (m *EdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilde
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

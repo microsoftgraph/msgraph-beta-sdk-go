@@ -17,7 +17,7 @@ type EmployeeExperience struct {
 func NewEmployeeExperience()(*EmployeeExperience) {
     m := &EmployeeExperience{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateEmployeeExperienceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -47,7 +47,7 @@ type AcronymsAcronymItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewAcronymsAcronymItemRequestBuilderInternal instantiates a new AcronymItemRequestBuilder and sets the default values.
-func NewAcronymsAcronymItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AcronymsAcronymItemRequestBuilder) {
+func NewAcronymsAcronymItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, acronymId *string)(*AcronymsAcronymItemRequestBuilder) {
     m := &AcronymsAcronymItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/search/acronyms/{acronym%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewAcronymsAcronymItemRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if acronymId != nil {
+        urlTplParams["acronym%2Did"] = *acronymId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAcronymsAcronymItemRequestBuilder instantiates a new AcronymItemRequestBuilder and sets the default values.
 func NewAcronymsAcronymItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AcronymsAcronymItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAcronymsAcronymItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAcronymsAcronymItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property acronyms for search
 func (m *AcronymsAcronymItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AcronymsAcronymItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *AcronymsAcronymItemRequestBuilder) ToPatchRequestInformation(ctx contex
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

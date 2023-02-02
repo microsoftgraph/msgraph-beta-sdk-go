@@ -47,7 +47,7 @@ type CompaniesItemEmployeesEmployeeItemRequestBuilderPatchRequestConfiguration s
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewCompaniesItemEmployeesEmployeeItemRequestBuilderInternal instantiates a new EmployeeItemRequestBuilder and sets the default values.
-func NewCompaniesItemEmployeesEmployeeItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemEmployeesEmployeeItemRequestBuilder) {
+func NewCompaniesItemEmployeesEmployeeItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, employeeId *string)(*CompaniesItemEmployeesEmployeeItemRequestBuilder) {
     m := &CompaniesItemEmployeesEmployeeItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/financials/companies/{company%2Did}/employees/{employee%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewCompaniesItemEmployeesEmployeeItemRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if employeeId != nil {
+        urlTplParams["employee%2Did"] = *employeeId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemEmployeesEmployeeItemRequestBuilder instantiates a new EmployeeItemRequestBuilder and sets the default values.
 func NewCompaniesItemEmployeesEmployeeItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemEmployeesEmployeeItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCompaniesItemEmployeesEmployeeItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCompaniesItemEmployeesEmployeeItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property employees for financials
 func (m *CompaniesItemEmployeesEmployeeItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CompaniesItemEmployeesEmployeeItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -121,7 +124,7 @@ func (m *CompaniesItemEmployeesEmployeeItemRequestBuilder) Patch(ctx context.Con
 }
 // Picture provides operations to manage the picture property of the microsoft.graph.employee entity.
 func (m *CompaniesItemEmployeesEmployeeItemRequestBuilder) Picture()(*CompaniesItemEmployeesItemPictureRequestBuilder) {
-    return NewCompaniesItemEmployeesItemPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemEmployeesItemPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PictureById provides operations to manage the picture property of the microsoft.graph.employee entity.
 func (m *CompaniesItemEmployeesEmployeeItemRequestBuilder) PictureById(id string)(*CompaniesItemEmployeesItemPicturePictureItemRequestBuilder) {
@@ -129,10 +132,8 @@ func (m *CompaniesItemEmployeesEmployeeItemRequestBuilder) PictureById(id string
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["picture%2Did"] = id
-    }
-    return NewCompaniesItemEmployeesItemPicturePictureItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewCompaniesItemEmployeesItemPicturePictureItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property employees for financials
 func (m *CompaniesItemEmployeesEmployeeItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemEmployeesEmployeeItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +170,10 @@ func (m *CompaniesItemEmployeesEmployeeItemRequestBuilder) ToPatchRequestInforma
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

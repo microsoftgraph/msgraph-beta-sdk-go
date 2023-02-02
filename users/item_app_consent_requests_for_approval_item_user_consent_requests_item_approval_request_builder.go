@@ -55,8 +55,8 @@ func NewItemAppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalRequ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemAppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalRequestBuilder instantiates a new ApprovalRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalReq
 }
 // Steps provides operations to manage the steps property of the microsoft.graph.approval entity.
 func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalRequestBuilder) Steps()(*ItemAppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalStepsRequestBuilder) {
-    return NewItemAppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalStepsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemAppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalStepsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // StepsById provides operations to manage the steps property of the microsoft.graph.approval entity.
 func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalRequestBuilder) StepsById(id string)(*ItemAppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilder) {
@@ -129,10 +129,8 @@ func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalReq
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["approvalStep%2Did"] = id
-    }
-    return NewItemAppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemAppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property approval for users
 func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemAppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +167,10 @@ func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalReq
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -19,7 +19,7 @@ type DeviceManagementEnumValue struct {
 func NewDeviceManagementEnumValue()(*DeviceManagementEnumValue) {
     m := &DeviceManagementEnumValue{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceManagementEnumValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

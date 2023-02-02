@@ -47,7 +47,7 @@ type PendingAccessReviewInstancesItemContactedReviewersAccessReviewReviewerItemR
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewPendingAccessReviewInstancesItemContactedReviewersAccessReviewReviewerItemRequestBuilderInternal instantiates a new AccessReviewReviewerItemRequestBuilder and sets the default values.
-func NewPendingAccessReviewInstancesItemContactedReviewersAccessReviewReviewerItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PendingAccessReviewInstancesItemContactedReviewersAccessReviewReviewerItemRequestBuilder) {
+func NewPendingAccessReviewInstancesItemContactedReviewersAccessReviewReviewerItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, accessReviewReviewerId *string)(*PendingAccessReviewInstancesItemContactedReviewersAccessReviewReviewerItemRequestBuilder) {
     m := &PendingAccessReviewInstancesItemContactedReviewersAccessReviewReviewerItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/pendingAccessReviewInstances/{accessReviewInstance%2Did}/contactedReviewers/{accessReviewReviewer%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewPendingAccessReviewInstancesItemContactedReviewersAccessReviewReviewerIt
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if accessReviewReviewerId != nil {
+        urlTplParams["accessReviewReviewer%2Did"] = *accessReviewReviewerId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPendingAccessReviewInstancesItemContactedReviewersAccessReviewReviewerItemRequestBuilder instantiates a new AccessReviewReviewerItemRequestBuilder and sets the default values.
 func NewPendingAccessReviewInstancesItemContactedReviewersAccessReviewReviewerItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PendingAccessReviewInstancesItemContactedReviewersAccessReviewReviewerItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewPendingAccessReviewInstancesItemContactedReviewersAccessReviewReviewerItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewPendingAccessReviewInstancesItemContactedReviewersAccessReviewReviewerItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property contactedReviewers for me
 func (m *PendingAccessReviewInstancesItemContactedReviewersAccessReviewReviewerItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *PendingAccessReviewInstancesItemContactedReviewersAccessReviewReviewerItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *PendingAccessReviewInstancesItemContactedReviewersAccessReviewReviewerI
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

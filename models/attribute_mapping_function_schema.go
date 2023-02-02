@@ -10,7 +10,7 @@ type AttributeMappingFunctionSchema struct {
     // Collection of function parameters.
     parameters []AttributeMappingParameterSchemaable
 }
-// NewAttributeMappingFunctionSchema instantiates a new attributeMappingFunctionSchema and sets the default values.
+// NewAttributeMappingFunctionSchema instantiates a new AttributeMappingFunctionSchema and sets the default values.
 func NewAttributeMappingFunctionSchema()(*AttributeMappingFunctionSchema) {
     m := &AttributeMappingFunctionSchema{
         Entity: *NewEntity(),

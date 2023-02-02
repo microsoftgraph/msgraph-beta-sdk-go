@@ -46,14 +46,6 @@ type PresenceRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ClearPresence provides operations to call the clearPresence method.
-func (m *PresenceRequestBuilder) ClearPresence()(*PresenceClearPresenceRequestBuilder) {
-    return NewPresenceClearPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ClearUserPreferredPresence provides operations to call the clearUserPreferredPresence method.
-func (m *PresenceRequestBuilder) ClearUserPreferredPresence()(*PresenceClearUserPreferredPresenceRequestBuilder) {
-    return NewPresenceClearUserPreferredPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewPresenceRequestBuilderInternal instantiates a new PresenceRequestBuilder and sets the default values.
 func NewPresenceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PresenceRequestBuilder) {
     m := &PresenceRequestBuilder{
@@ -63,8 +55,8 @@ func NewPresenceRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPresenceRequestBuilder instantiates a new PresenceRequestBuilder and sets the default values.
@@ -111,6 +103,26 @@ func (m *PresenceRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Presenceable), nil
 }
+// MicrosoftGraphClearPresence provides operations to call the clearPresence method.
+func (m *PresenceRequestBuilder) MicrosoftGraphClearPresence()(*PresenceMicrosoftGraphClearPresenceClearPresenceRequestBuilder) {
+    return NewPresenceMicrosoftGraphClearPresenceClearPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphClearUserPreferredPresence provides operations to call the clearUserPreferredPresence method.
+func (m *PresenceRequestBuilder) MicrosoftGraphClearUserPreferredPresence()(*PresenceMicrosoftGraphClearUserPreferredPresenceClearUserPreferredPresenceRequestBuilder) {
+    return NewPresenceMicrosoftGraphClearUserPreferredPresenceClearUserPreferredPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphSetPresence provides operations to call the setPresence method.
+func (m *PresenceRequestBuilder) MicrosoftGraphSetPresence()(*PresenceMicrosoftGraphSetPresenceSetPresenceRequestBuilder) {
+    return NewPresenceMicrosoftGraphSetPresenceSetPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphSetStatusMessage provides operations to call the setStatusMessage method.
+func (m *PresenceRequestBuilder) MicrosoftGraphSetStatusMessage()(*PresenceMicrosoftGraphSetStatusMessageSetStatusMessageRequestBuilder) {
+    return NewPresenceMicrosoftGraphSetStatusMessageSetStatusMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphSetUserPreferredPresence provides operations to call the setUserPreferredPresence method.
+func (m *PresenceRequestBuilder) MicrosoftGraphSetUserPreferredPresence()(*PresenceMicrosoftGraphSetUserPreferredPresenceSetUserPreferredPresenceRequestBuilder) {
+    return NewPresenceMicrosoftGraphSetUserPreferredPresenceSetUserPreferredPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property presence in me
 func (m *PresenceRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Presenceable, requestConfiguration *PresenceRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Presenceable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -129,18 +141,6 @@ func (m *PresenceRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Presenceable), nil
-}
-// SetPresence provides operations to call the setPresence method.
-func (m *PresenceRequestBuilder) SetPresence()(*PresenceSetPresenceRequestBuilder) {
-    return NewPresenceSetPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// SetStatusMessage provides operations to call the setStatusMessage method.
-func (m *PresenceRequestBuilder) SetStatusMessage()(*PresenceSetStatusMessageRequestBuilder) {
-    return NewPresenceSetStatusMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// SetUserPreferredPresence provides operations to call the setUserPreferredPresence method.
-func (m *PresenceRequestBuilder) SetUserPreferredPresence()(*PresenceSetUserPreferredPresenceRequestBuilder) {
-    return NewPresenceSetUserPreferredPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property presence for me
 func (m *PresenceRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PresenceRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -177,7 +177,10 @@ func (m *PresenceRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

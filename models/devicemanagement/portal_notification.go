@@ -31,7 +31,7 @@ type PortalNotification struct {
 func NewPortalNotification()(*PortalNotification) {
     m := &PortalNotification{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePortalNotificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

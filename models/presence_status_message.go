@@ -22,7 +22,7 @@ type PresenceStatusMessage struct {
 func NewPresenceStatusMessage()(*PresenceStatusMessage) {
     m := &PresenceStatusMessage{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePresenceStatusMessageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -33,7 +33,7 @@ type LifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilderGetRequest
     QueryParameters *LifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilderGetQueryParameters
 }
 // NewLifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilderInternal instantiates a new TaskDefinitionItemRequestBuilder and sets the default values.
-func NewLifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilder) {
+func NewLifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, taskDefinitionId *string)(*LifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilder) {
     m := &LifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/identityGovernance/lifecycleWorkflows/taskDefinitions/{taskDefinition%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewLifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilderInterna
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if taskDefinitionId != nil {
+        urlTplParams["taskDefinition%2Did"] = *taskDefinitionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewLifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilder instantiates a new TaskDefinitionItemRequestBuilder and sets the default values.
 func NewLifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewLifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewLifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get the definition of tasks within the lifecycle workflows instance.
 func (m *LifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.TaskDefinitionable, error) {

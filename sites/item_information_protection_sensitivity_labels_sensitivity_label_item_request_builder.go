@@ -47,7 +47,7 @@ type ItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilde
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderInternal instantiates a new SensitivityLabelItemRequestBuilder and sets the default values.
-func NewItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder) {
+func NewItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, sensitivityLabelId *string)(*ItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder) {
     m := &ItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/sites/{site%2Did}/informationProtection/sensitivityLabels/{sensitivityLabel%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBui
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if sensitivityLabelId != nil {
+        urlTplParams["sensitivityLabel%2Did"] = *sensitivityLabelId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder instantiates a new SensitivityLabelItemRequestBuilder and sets the default values.
 func NewItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property sensitivityLabels for sites
 func (m *ItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -121,7 +124,7 @@ func (m *ItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBu
 }
 // Sublabels provides operations to manage the sublabels property of the microsoft.graph.sensitivityLabel entity.
 func (m *ItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder) Sublabels()(*ItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilder) {
-    return NewItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SublabelsById provides operations to manage the sublabels property of the microsoft.graph.sensitivityLabel entity.
 func (m *ItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder) SublabelsById(id string)(*ItemInformationProtectionSensitivityLabelsItemSublabelsSensitivityLabelItemRequestBuilder) {
@@ -129,10 +132,8 @@ func (m *ItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBu
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["sensitivityLabel%2Did1"] = id
-    }
-    return NewItemInformationProtectionSensitivityLabelsItemSublabelsSensitivityLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemInformationProtectionSensitivityLabelsItemSublabelsSensitivityLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property sensitivityLabels for sites
 func (m *ItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +170,10 @@ func (m *ItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBu
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

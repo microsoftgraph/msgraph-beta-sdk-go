@@ -23,7 +23,7 @@ type ExactDataMatchStoreColumn struct {
 func NewExactDataMatchStoreColumn()(*ExactDataMatchStoreColumn) {
     m := &ExactDataMatchStoreColumn{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateExactDataMatchStoreColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

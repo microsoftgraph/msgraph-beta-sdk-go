@@ -33,7 +33,7 @@ type EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilderGetRequestConfigur
     QueryParameters *EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilderGetQueryParameters
 }
 // NewEdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilderInternal instantiates a new TagItemRequestBuilder and sets the default values.
-func NewEdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder) {
+func NewEdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, tagId1 *string)(*EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder) {
     m := &EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/tags/{tag%2Did}/childTags/{tag%2Did1}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewEdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilderInternal(pathPa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if tagId1 != nil {
+        urlTplParams["tag%2Did1"] = *tagId1
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder instantiates a new TagItemRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewEdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewEdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get returns the tags that are a child of a tag.
 func (m *EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Tagable, error) {

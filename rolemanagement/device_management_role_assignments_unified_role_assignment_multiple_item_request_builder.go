@@ -48,7 +48,7 @@ type DeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuil
 }
 // AppScopes provides operations to manage the appScopes property of the microsoft.graph.unifiedRoleAssignmentMultiple entity.
 func (m *DeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder) AppScopes()(*DeviceManagementRoleAssignmentsItemAppScopesRequestBuilder) {
-    return NewDeviceManagementRoleAssignmentsItemAppScopesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceManagementRoleAssignmentsItemAppScopesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AppScopesById provides operations to manage the appScopes property of the microsoft.graph.unifiedRoleAssignmentMultiple entity.
 func (m *DeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder) AppScopesById(id string)(*DeviceManagementRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder) {
@@ -56,13 +56,11 @@ func (m *DeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequest
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["appScope%2Did"] = id
-    }
-    return NewDeviceManagementRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewDeviceManagementRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewDeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilderInternal instantiates a new UnifiedRoleAssignmentMultipleItemRequestBuilder and sets the default values.
-func NewDeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder) {
+func NewDeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, unifiedRoleAssignmentMultipleId *string)(*DeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder) {
     m := &DeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple%2Did}{?%24select,%24expand}";
@@ -70,15 +68,18 @@ func NewDeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestB
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if unifiedRoleAssignmentMultipleId != nil {
+        urlTplParams["unifiedRoleAssignmentMultiple%2Did"] = *unifiedRoleAssignmentMultipleId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder instantiates a new UnifiedRoleAssignmentMultipleItemRequestBuilder and sets the default values.
 func NewDeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewDeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewDeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property roleAssignments for roleManagement
 func (m *DeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -98,7 +99,7 @@ func (m *DeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequest
 }
 // DirectoryScopes provides operations to manage the directoryScopes property of the microsoft.graph.unifiedRoleAssignmentMultiple entity.
 func (m *DeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder) DirectoryScopes()(*DeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilder) {
-    return NewDeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DirectoryScopesById provides operations to manage the directoryScopes property of the microsoft.graph.unifiedRoleAssignmentMultiple entity.
 func (m *DeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder) DirectoryScopesById(id string)(*DeviceManagementRoleAssignmentsItemDirectoryScopesDirectoryObjectItemRequestBuilder) {
@@ -106,10 +107,8 @@ func (m *DeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequest
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["directoryObject%2Did"] = id
-    }
-    return NewDeviceManagementRoleAssignmentsItemDirectoryScopesDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewDeviceManagementRoleAssignmentsItemDirectoryScopesDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Get get roleAssignments from roleManagement
 func (m *DeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentMultipleable, error) {
@@ -151,7 +150,7 @@ func (m *DeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequest
 }
 // Principals provides operations to manage the principals property of the microsoft.graph.unifiedRoleAssignmentMultiple entity.
 func (m *DeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder) Principals()(*DeviceManagementRoleAssignmentsItemPrincipalsRequestBuilder) {
-    return NewDeviceManagementRoleAssignmentsItemPrincipalsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceManagementRoleAssignmentsItemPrincipalsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PrincipalsById provides operations to manage the principals property of the microsoft.graph.unifiedRoleAssignmentMultiple entity.
 func (m *DeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder) PrincipalsById(id string)(*DeviceManagementRoleAssignmentsItemPrincipalsDirectoryObjectItemRequestBuilder) {
@@ -159,14 +158,12 @@ func (m *DeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequest
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["directoryObject%2Did"] = id
-    }
-    return NewDeviceManagementRoleAssignmentsItemPrincipalsDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewDeviceManagementRoleAssignmentsItemPrincipalsDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // RoleDefinition provides operations to manage the roleDefinition property of the microsoft.graph.unifiedRoleAssignmentMultiple entity.
 func (m *DeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder) RoleDefinition()(*DeviceManagementRoleAssignmentsItemRoleDefinitionRequestBuilder) {
-    return NewDeviceManagementRoleAssignmentsItemRoleDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceManagementRoleAssignmentsItemRoleDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property roleAssignments for roleManagement
 func (m *DeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -203,7 +200,10 @@ func (m *DeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequest
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

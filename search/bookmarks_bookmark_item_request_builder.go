@@ -47,7 +47,7 @@ type BookmarksBookmarkItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewBookmarksBookmarkItemRequestBuilderInternal instantiates a new BookmarkItemRequestBuilder and sets the default values.
-func NewBookmarksBookmarkItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BookmarksBookmarkItemRequestBuilder) {
+func NewBookmarksBookmarkItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, bookmarkId *string)(*BookmarksBookmarkItemRequestBuilder) {
     m := &BookmarksBookmarkItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/search/bookmarks/{bookmark%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewBookmarksBookmarkItemRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if bookmarkId != nil {
+        urlTplParams["bookmark%2Did"] = *bookmarkId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewBookmarksBookmarkItemRequestBuilder instantiates a new BookmarkItemRequestBuilder and sets the default values.
 func NewBookmarksBookmarkItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BookmarksBookmarkItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewBookmarksBookmarkItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewBookmarksBookmarkItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property bookmarks for search
 func (m *BookmarksBookmarkItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BookmarksBookmarkItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *BookmarksBookmarkItemRequestBuilder) ToPatchRequestInformation(ctx cont
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -34,7 +34,7 @@ type MailFolder struct {
     // The well-known folder name for the folder. The possible values are listed above. This property is only set for default folders created by Outlook. For other folders, this property is null.
     wellKnownName *string
 }
-// NewMailFolder instantiates a new mailFolder and sets the default values.
+// NewMailFolder instantiates a new MailFolder and sets the default values.
 func NewMailFolder()(*MailFolder) {
     m := &MailFolder{
         Entity: *NewEntity(),

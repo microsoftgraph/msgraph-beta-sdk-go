@@ -48,7 +48,7 @@ type ItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuil
 }
 // Columns provides operations to manage the columns property of the microsoft.graph.horizontalSection entity.
 func (m *ItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilder) Columns()(*ItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsRequestBuilder) {
-    return NewItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ColumnsById provides operations to manage the columns property of the microsoft.graph.horizontalSection entity.
 func (m *ItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilder) ColumnsById(id string)(*ItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsHorizontalSectionColumnItemRequestBuilder) {
@@ -56,13 +56,11 @@ func (m *ItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequest
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["horizontalSectionColumn%2Did"] = id
-    }
-    return NewItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsHorizontalSectionColumnItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsHorizontalSectionColumnItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilderInternal instantiates a new HorizontalSectionItemRequestBuilder and sets the default values.
-func NewItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilder) {
+func NewItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, horizontalSectionId *string)(*ItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilder) {
     m := &ItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/sites/{site%2Did}/pages/{sitePage%2Did}/canvasLayout/horizontalSections/{horizontalSection%2Did}{?%24select,%24expand}";
@@ -70,15 +68,18 @@ func NewItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestB
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if horizontalSectionId != nil {
+        urlTplParams["horizontalSection%2Did"] = *horizontalSectionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilder instantiates a new HorizontalSectionItemRequestBuilder and sets the default values.
 func NewItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property horizontalSections for sites
 func (m *ItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -169,7 +170,10 @@ func (m *ItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequest
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

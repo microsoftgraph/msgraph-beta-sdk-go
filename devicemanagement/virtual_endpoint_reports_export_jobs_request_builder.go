@@ -60,8 +60,8 @@ func NewVirtualEndpointReportsExportJobsRequestBuilderInternal(pathParameters ma
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewVirtualEndpointReportsExportJobsRequestBuilder instantiates a new ExportJobsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewVirtualEndpointReportsExportJobsRequestBuilder(rawUrl string, requestAda
 }
 // Count provides operations to count the resources in the collection.
 func (m *VirtualEndpointReportsExportJobsRequestBuilder) Count()(*VirtualEndpointReportsExportJobsCountRequestBuilder) {
-    return NewVirtualEndpointReportsExportJobsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointReportsExportJobsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the export jobs created for downloading reports.
 func (m *VirtualEndpointReportsExportJobsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointReportsExportJobsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExportJobCollectionResponseable, error) {
@@ -93,7 +93,7 @@ func (m *VirtualEndpointReportsExportJobsRequestBuilder) Get(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExportJobCollectionResponseable), nil
 }
-// Post create a new cloudPcExportJob object.
+// Post create a new cloudPcExportJob resource to initiate downloading the entire or specified portion of a report. Use the GET cloudPcExportJob operation to verify the **exportJobStatus** property of the **cloudPcExportJob** resource. When the property becomes `completed`, the report has finished downloading in the location specified by the **exportUrl** property. 
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/cloudpcreports-post-exportjobs?view=graph-rest-1.0
@@ -131,14 +131,17 @@ func (m *VirtualEndpointReportsExportJobsRequestBuilder) ToGetRequestInformation
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new cloudPcExportJob object.
+// ToPostRequestInformation create a new cloudPcExportJob resource to initiate downloading the entire or specified portion of a report. Use the GET cloudPcExportJob operation to verify the **exportJobStatus** property of the **cloudPcExportJob** resource. When the property becomes `completed`, the report has finished downloading in the location specified by the **exportUrl** property. 
 func (m *VirtualEndpointReportsExportJobsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExportJobable, requestConfiguration *VirtualEndpointReportsExportJobsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

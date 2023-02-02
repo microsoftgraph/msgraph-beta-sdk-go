@@ -47,7 +47,7 @@ type ItemProfileProjectsProjectParticipationItemRequestBuilderPatchRequestConfig
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemProfileProjectsProjectParticipationItemRequestBuilderInternal instantiates a new ProjectParticipationItemRequestBuilder and sets the default values.
-func NewItemProfileProjectsProjectParticipationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfileProjectsProjectParticipationItemRequestBuilder) {
+func NewItemProfileProjectsProjectParticipationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, projectParticipationId *string)(*ItemProfileProjectsProjectParticipationItemRequestBuilder) {
     m := &ItemProfileProjectsProjectParticipationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/profile/projects/{projectParticipation%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemProfileProjectsProjectParticipationItemRequestBuilderInternal(pathPa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if projectParticipationId != nil {
+        urlTplParams["projectParticipation%2Did"] = *projectParticipationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemProfileProjectsProjectParticipationItemRequestBuilder instantiates a new ProjectParticipationItemRequestBuilder and sets the default values.
 func NewItemProfileProjectsProjectParticipationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfileProjectsProjectParticipationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemProfileProjectsProjectParticipationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemProfileProjectsProjectParticipationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property projects for users
 func (m *ItemProfileProjectsProjectParticipationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileProjectsProjectParticipationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemProfileProjectsProjectParticipationItemRequestBuilder) ToPatchReque
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

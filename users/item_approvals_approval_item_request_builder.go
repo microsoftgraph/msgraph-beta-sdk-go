@@ -47,7 +47,7 @@ type ItemApprovalsApprovalItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemApprovalsApprovalItemRequestBuilderInternal instantiates a new ApprovalItemRequestBuilder and sets the default values.
-func NewItemApprovalsApprovalItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemApprovalsApprovalItemRequestBuilder) {
+func NewItemApprovalsApprovalItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, approvalId *string)(*ItemApprovalsApprovalItemRequestBuilder) {
     m := &ItemApprovalsApprovalItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/approvals/{approval%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemApprovalsApprovalItemRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if approvalId != nil {
+        urlTplParams["approval%2Did"] = *approvalId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemApprovalsApprovalItemRequestBuilder instantiates a new ApprovalItemRequestBuilder and sets the default values.
 func NewItemApprovalsApprovalItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemApprovalsApprovalItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemApprovalsApprovalItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemApprovalsApprovalItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property approvals for users
 func (m *ItemApprovalsApprovalItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemApprovalsApprovalItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -121,7 +124,7 @@ func (m *ItemApprovalsApprovalItemRequestBuilder) Patch(ctx context.Context, bod
 }
 // Steps provides operations to manage the steps property of the microsoft.graph.approval entity.
 func (m *ItemApprovalsApprovalItemRequestBuilder) Steps()(*ItemApprovalsItemStepsRequestBuilder) {
-    return NewItemApprovalsItemStepsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemApprovalsItemStepsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // StepsById provides operations to manage the steps property of the microsoft.graph.approval entity.
 func (m *ItemApprovalsApprovalItemRequestBuilder) StepsById(id string)(*ItemApprovalsItemStepsApprovalStepItemRequestBuilder) {
@@ -129,10 +132,8 @@ func (m *ItemApprovalsApprovalItemRequestBuilder) StepsById(id string)(*ItemAppr
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["approvalStep%2Did"] = id
-    }
-    return NewItemApprovalsItemStepsApprovalStepItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemApprovalsItemStepsApprovalStepItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property approvals for users
 func (m *ItemApprovalsApprovalItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemApprovalsApprovalItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +170,10 @@ func (m *ItemApprovalsApprovalItemRequestBuilder) ToPatchRequestInformation(ctx 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

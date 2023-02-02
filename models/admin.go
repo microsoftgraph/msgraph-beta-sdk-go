@@ -16,12 +16,14 @@ type Admin struct {
     reportSettings AdminReportSettingsable
     // A container for service communications resources. Read-only.
     serviceAnnouncement ServiceAnnouncementable
+    // A container for all Windows Update for Business deployment service functionality. Read-only.
+    windows AdminWindowsable
 }
 // NewAdmin instantiates a new Admin and sets the default values.
 func NewAdmin()(*Admin) {
     m := &Admin{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAdminFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -79,6 +81,16 @@ func (m *Admin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["windows"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAdminWindowsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWindows(val.(AdminWindowsable))
+        }
+        return nil
+    }
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -92,6 +104,10 @@ func (m *Admin) GetReportSettings()(AdminReportSettingsable) {
 // GetServiceAnnouncement gets the serviceAnnouncement property value. A container for service communications resources. Read-only.
 func (m *Admin) GetServiceAnnouncement()(ServiceAnnouncementable) {
     return m.serviceAnnouncement
+}
+// GetWindows gets the windows property value. A container for all Windows Update for Business deployment service functionality. Read-only.
+func (m *Admin) GetWindows()(AdminWindowsable) {
+    return m.windows
 }
 // Serialize serializes information the current object
 func (m *Admin) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -115,6 +131,12 @@ func (m *Admin) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     }
     {
         err := writer.WriteObjectValue("serviceAnnouncement", m.GetServiceAnnouncement())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("windows", m.GetWindows())
         if err != nil {
             return err
         }
@@ -146,4 +168,8 @@ func (m *Admin) SetReportSettings(value AdminReportSettingsable)() {
 // SetServiceAnnouncement sets the serviceAnnouncement property value. A container for service communications resources. Read-only.
 func (m *Admin) SetServiceAnnouncement(value ServiceAnnouncementable)() {
     m.serviceAnnouncement = value
+}
+// SetWindows sets the windows property value. A container for all Windows Update for Business deployment service functionality. Read-only.
+func (m *Admin) SetWindows(value AdminWindowsable)() {
+    m.windows = value
 }

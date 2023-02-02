@@ -22,7 +22,7 @@ type ItemActivityTimeSet struct {
 func NewItemActivityTimeSet()(*ItemActivityTimeSet) {
     m := &ItemActivityTimeSet{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateItemActivityTimeSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

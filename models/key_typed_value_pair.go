@@ -17,7 +17,7 @@ type KeyTypedValuePair struct {
 func NewKeyTypedValuePair()(*KeyTypedValuePair) {
     m := &KeyTypedValuePair{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateKeyTypedValuePairFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -13,7 +13,7 @@ type CloudPcUserSettingAssignment struct {
     // The assignment target for the user setting. Currently, the only target supported for this user setting is a user group. For details, see cloudPcManagementGroupAssignmentTarget.
     target CloudPcManagementAssignmentTargetable
 }
-// NewCloudPcUserSettingAssignment instantiates a new cloudPcUserSettingAssignment and sets the default values.
+// NewCloudPcUserSettingAssignment instantiates a new CloudPcUserSettingAssignment and sets the default values.
 func NewCloudPcUserSettingAssignment()(*CloudPcUserSettingAssignment) {
     m := &CloudPcUserSettingAssignment{
         Entity: *NewEntity(),

@@ -51,14 +51,6 @@ type EntitlementManagementAccessPackageAssignmentsRequestBuilderPostRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AdditionalAccess provides operations to call the additionalAccess method.
-func (m *EntitlementManagementAccessPackageAssignmentsRequestBuilder) AdditionalAccess()(*EntitlementManagementAccessPackageAssignmentsAdditionalAccessRequestBuilder) {
-    return NewEntitlementManagementAccessPackageAssignmentsAdditionalAccessRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageId provides operations to call the additionalAccess method.
-func (m *EntitlementManagementAccessPackageAssignmentsRequestBuilder) AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageId(accessPackageId *string, incompatibleAccessPackageId *string)(*EntitlementManagementAccessPackageAssignmentsAdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder) {
-    return NewEntitlementManagementAccessPackageAssignmentsAdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, accessPackageId, incompatibleAccessPackageId);
-}
 // NewEntitlementManagementAccessPackageAssignmentsRequestBuilderInternal instantiates a new AccessPackageAssignmentsRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageAssignmentsRequestBuilder) {
     m := &EntitlementManagementAccessPackageAssignmentsRequestBuilder{
@@ -68,8 +60,8 @@ func NewEntitlementManagementAccessPackageAssignmentsRequestBuilderInternal(path
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementAccessPackageAssignmentsRequestBuilder instantiates a new AccessPackageAssignmentsRequestBuilder and sets the default values.
@@ -80,11 +72,7 @@ func NewEntitlementManagementAccessPackageAssignmentsRequestBuilder(rawUrl strin
 }
 // Count provides operations to count the resources in the collection.
 func (m *EntitlementManagementAccessPackageAssignmentsRequestBuilder) Count()(*EntitlementManagementAccessPackageAssignmentsCountRequestBuilder) {
-    return NewEntitlementManagementAccessPackageAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *EntitlementManagementAccessPackageAssignmentsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*EntitlementManagementAccessPackageAssignmentsFilterByCurrentUserWithOnRequestBuilder) {
-    return NewEntitlementManagementAccessPackageAssignmentsFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
+    return NewEntitlementManagementAccessPackageAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get in Azure AD entitlement management, retrieve a list of accessPackageAssignment objects. For directory-wide administrators, the resulting list includes all the assignments, current and well as expired, that the caller has access to read, across all catalogs and access packages.  If the caller is on behalf of a delegated user who is assigned only to catalog-specific delegated administrative roles, the request must supply a filter to indicate a specific access package, such as: `$filter=accessPackage/id eq 'a914b616-e04e-476b-aa37-91038f0b165b'`.
 // [Find more info here]
@@ -107,6 +95,18 @@ func (m *EntitlementManagementAccessPackageAssignmentsRequestBuilder) Get(ctx co
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentCollectionResponseable), nil
+}
+// MicrosoftGraphAdditionalAccess provides operations to call the additionalAccess method.
+func (m *EntitlementManagementAccessPackageAssignmentsRequestBuilder) MicrosoftGraphAdditionalAccess()(*EntitlementManagementAccessPackageAssignmentsMicrosoftGraphAdditionalAccessAdditionalAccessRequestBuilder) {
+    return NewEntitlementManagementAccessPackageAssignmentsMicrosoftGraphAdditionalAccessAdditionalAccessRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphAdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageId provides operations to call the additionalAccess method.
+func (m *EntitlementManagementAccessPackageAssignmentsRequestBuilder) MicrosoftGraphAdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageId(accessPackageId *string, incompatibleAccessPackageId *string)(*EntitlementManagementAccessPackageAssignmentsMicrosoftGraphAdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdAdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder) {
+    return NewEntitlementManagementAccessPackageAssignmentsMicrosoftGraphAdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdAdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, accessPackageId, incompatibleAccessPackageId)
+}
+// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *EntitlementManagementAccessPackageAssignmentsRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*EntitlementManagementAccessPackageAssignmentsMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnRequestBuilder) {
+    return NewEntitlementManagementAccessPackageAssignmentsMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Post create new navigation property to accessPackageAssignments for identityGovernance
 func (m *EntitlementManagementAccessPackageAssignmentsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentable, requestConfiguration *EntitlementManagementAccessPackageAssignmentsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentable, error) {
@@ -150,7 +150,10 @@ func (m *EntitlementManagementAccessPackageAssignmentsRequestBuilder) ToPostRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

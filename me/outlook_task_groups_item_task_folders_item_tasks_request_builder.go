@@ -56,8 +56,8 @@ func NewOutlookTaskGroupsItemTaskFoldersItemTasksRequestBuilderInternal(pathPara
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewOutlookTaskGroupsItemTaskFoldersItemTasksRequestBuilder instantiates a new TasksRequestBuilder and sets the default values.
@@ -68,7 +68,7 @@ func NewOutlookTaskGroupsItemTaskFoldersItemTasksRequestBuilder(rawUrl string, r
 }
 // Count provides operations to count the resources in the collection.
 func (m *OutlookTaskGroupsItemTaskFoldersItemTasksRequestBuilder) Count()(*OutlookTaskGroupsItemTaskFoldersItemTasksCountRequestBuilder) {
-    return NewOutlookTaskGroupsItemTaskFoldersItemTasksCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewOutlookTaskGroupsItemTaskFoldersItemTasksCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get all the Outlook tasks in the specified folder. By default, this operation (and the POST, PATCH, and complete task operations) returnsdate-related properties in UTC.  You can use a `Prefer: outlook.timezone` request header to have all the date-related properties in the response represented in a time zonedifferent than UTC. See an example for getting a single task. You can apply the header similarly to get multiple tasks. If there is more than one task group, and you want to get all the tasks in a specific task group, firstget all the task folders in that task group,and then get the tasks in each of these task folders.
 // [Find more info here]
@@ -134,7 +134,10 @@ func (m *OutlookTaskGroupsItemTaskFoldersItemTasksRequestBuilder) ToPostRequestI
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

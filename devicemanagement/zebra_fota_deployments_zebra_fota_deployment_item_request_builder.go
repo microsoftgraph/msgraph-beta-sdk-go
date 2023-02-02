@@ -46,12 +46,8 @@ type ZebraFotaDeploymentsZebraFotaDeploymentItemRequestBuilderPatchRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Cancel provides operations to call the cancel method.
-func (m *ZebraFotaDeploymentsZebraFotaDeploymentItemRequestBuilder) Cancel()(*ZebraFotaDeploymentsItemCancelRequestBuilder) {
-    return NewZebraFotaDeploymentsItemCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewZebraFotaDeploymentsZebraFotaDeploymentItemRequestBuilderInternal instantiates a new ZebraFotaDeploymentItemRequestBuilder and sets the default values.
-func NewZebraFotaDeploymentsZebraFotaDeploymentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ZebraFotaDeploymentsZebraFotaDeploymentItemRequestBuilder) {
+func NewZebraFotaDeploymentsZebraFotaDeploymentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, zebraFotaDeploymentId *string)(*ZebraFotaDeploymentsZebraFotaDeploymentItemRequestBuilder) {
     m := &ZebraFotaDeploymentsZebraFotaDeploymentItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/zebraFotaDeployments/{zebraFotaDeployment%2Did}{?%24select,%24expand}";
@@ -59,15 +55,18 @@ func NewZebraFotaDeploymentsZebraFotaDeploymentItemRequestBuilderInternal(pathPa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if zebraFotaDeploymentId != nil {
+        urlTplParams["zebraFotaDeployment%2Did"] = *zebraFotaDeploymentId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewZebraFotaDeploymentsZebraFotaDeploymentItemRequestBuilder instantiates a new ZebraFotaDeploymentItemRequestBuilder and sets the default values.
 func NewZebraFotaDeploymentsZebraFotaDeploymentItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ZebraFotaDeploymentsZebraFotaDeploymentItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewZebraFotaDeploymentsZebraFotaDeploymentItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewZebraFotaDeploymentsZebraFotaDeploymentItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property zebraFotaDeployments for deviceManagement
 func (m *ZebraFotaDeploymentsZebraFotaDeploymentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ZebraFotaDeploymentsZebraFotaDeploymentItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -103,6 +102,10 @@ func (m *ZebraFotaDeploymentsZebraFotaDeploymentItemRequestBuilder) Get(ctx cont
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ZebraFotaDeploymentable), nil
+}
+// MicrosoftGraphCancel provides operations to call the cancel method.
+func (m *ZebraFotaDeploymentsZebraFotaDeploymentItemRequestBuilder) MicrosoftGraphCancel()(*ZebraFotaDeploymentsItemMicrosoftGraphCancelCancelRequestBuilder) {
+    return NewZebraFotaDeploymentsItemMicrosoftGraphCancelCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property zebraFotaDeployments in deviceManagement
 func (m *ZebraFotaDeploymentsZebraFotaDeploymentItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ZebraFotaDeploymentable, requestConfiguration *ZebraFotaDeploymentsZebraFotaDeploymentItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ZebraFotaDeploymentable, error) {
@@ -158,7 +161,10 @@ func (m *ZebraFotaDeploymentsZebraFotaDeploymentItemRequestBuilder) ToPatchReque
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -53,8 +53,8 @@ func NewItemWindowsInformationProtectionDeviceRegistrationsRequestBuilderInterna
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemWindowsInformationProtectionDeviceRegistrationsRequestBuilder instantiates a new WindowsInformationProtectionDeviceRegistrationsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemWindowsInformationProtectionDeviceRegistrationsRequestBuilder(rawUrl
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemWindowsInformationProtectionDeviceRegistrationsRequestBuilder) Count()(*ItemWindowsInformationProtectionDeviceRegistrationsCountRequestBuilder) {
-    return NewItemWindowsInformationProtectionDeviceRegistrationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemWindowsInformationProtectionDeviceRegistrationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get zero or more WIP device registrations that belong to the user.
 func (m *ItemWindowsInformationProtectionDeviceRegistrationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemWindowsInformationProtectionDeviceRegistrationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionDeviceRegistrationCollectionResponseable, error) {

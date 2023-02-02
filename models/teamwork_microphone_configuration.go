@@ -21,7 +21,7 @@ type TeamworkMicrophoneConfiguration struct {
 func NewTeamworkMicrophoneConfiguration()(*TeamworkMicrophoneConfiguration) {
     m := &TeamworkMicrophoneConfiguration{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTeamworkMicrophoneConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

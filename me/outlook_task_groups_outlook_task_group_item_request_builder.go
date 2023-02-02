@@ -45,7 +45,7 @@ type OutlookTaskGroupsOutlookTaskGroupItemRequestBuilderPatchRequestConfiguratio
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderInternal instantiates a new OutlookTaskGroupItemRequestBuilder and sets the default values.
-func NewOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) {
+func NewOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, outlookTaskGroupId *string)(*OutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) {
     m := &OutlookTaskGroupsOutlookTaskGroupItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/outlook/taskGroups/{outlookTaskGroup%2Did}{?%24select}";
@@ -53,15 +53,18 @@ func NewOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderInternal(pathParamete
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if outlookTaskGroupId != nil {
+        urlTplParams["outlookTaskGroup%2Did"] = *outlookTaskGroupId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewOutlookTaskGroupsOutlookTaskGroupItemRequestBuilder instantiates a new OutlookTaskGroupItemRequestBuilder and sets the default values.
 func NewOutlookTaskGroupsOutlookTaskGroupItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property taskGroups for me
 func (m *OutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *OutlookTaskGroupsOutlookTaskGroupItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -119,7 +122,7 @@ func (m *OutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) Patch(ctx context.
 }
 // TaskFolders provides operations to manage the taskFolders property of the microsoft.graph.outlookTaskGroup entity.
 func (m *OutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) TaskFolders()(*OutlookTaskGroupsItemTaskFoldersRequestBuilder) {
-    return NewOutlookTaskGroupsItemTaskFoldersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewOutlookTaskGroupsItemTaskFoldersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TaskFoldersById provides operations to manage the taskFolders property of the microsoft.graph.outlookTaskGroup entity.
 func (m *OutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) TaskFoldersById(id string)(*OutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilder) {
@@ -127,10 +130,8 @@ func (m *OutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) TaskFoldersById(id
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["outlookTaskFolder%2Did"] = id
-    }
-    return NewOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property taskGroups for me
 func (m *OutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *OutlookTaskGroupsOutlookTaskGroupItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -167,7 +168,10 @@ func (m *OutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) ToPatchRequestInfo
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

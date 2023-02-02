@@ -47,7 +47,7 @@ type ClassifyTextJobsJobResponseBaseItemRequestBuilderPatchRequestConfiguration 
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewClassifyTextJobsJobResponseBaseItemRequestBuilderInternal instantiates a new JobResponseBaseItemRequestBuilder and sets the default values.
-func NewClassifyTextJobsJobResponseBaseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassifyTextJobsJobResponseBaseItemRequestBuilder) {
+func NewClassifyTextJobsJobResponseBaseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, jobResponseBaseId *string)(*ClassifyTextJobsJobResponseBaseItemRequestBuilder) {
     m := &ClassifyTextJobsJobResponseBaseItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/dataClassification/classifyTextJobs/{jobResponseBase%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewClassifyTextJobsJobResponseBaseItemRequestBuilderInternal(pathParameters
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if jobResponseBaseId != nil {
+        urlTplParams["jobResponseBase%2Did"] = *jobResponseBaseId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewClassifyTextJobsJobResponseBaseItemRequestBuilder instantiates a new JobResponseBaseItemRequestBuilder and sets the default values.
 func NewClassifyTextJobsJobResponseBaseItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassifyTextJobsJobResponseBaseItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewClassifyTextJobsJobResponseBaseItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewClassifyTextJobsJobResponseBaseItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property classifyTextJobs for dataClassification
 func (m *ClassifyTextJobsJobResponseBaseItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ClassifyTextJobsJobResponseBaseItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ClassifyTextJobsJobResponseBaseItemRequestBuilder) ToPatchRequestInform
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

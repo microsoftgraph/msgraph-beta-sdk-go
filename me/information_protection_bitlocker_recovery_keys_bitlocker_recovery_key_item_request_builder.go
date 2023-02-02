@@ -33,7 +33,7 @@ type InformationProtectionBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBu
     QueryParameters *InformationProtectionBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilderGetQueryParameters
 }
 // NewInformationProtectionBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilderInternal instantiates a new BitlockerRecoveryKeyItemRequestBuilder and sets the default values.
-func NewInformationProtectionBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InformationProtectionBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilder) {
+func NewInformationProtectionBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, bitlockerRecoveryKeyId *string)(*InformationProtectionBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilder) {
     m := &InformationProtectionBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/informationProtection/bitlocker/recoveryKeys/{bitlockerRecoveryKey%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewInformationProtectionBitlockerRecoveryKeysBitlockerRecoveryKeyItemReques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if bitlockerRecoveryKeyId != nil {
+        urlTplParams["bitlockerRecoveryKey%2Did"] = *bitlockerRecoveryKeyId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewInformationProtectionBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilder instantiates a new BitlockerRecoveryKeyItemRequestBuilder and sets the default values.
 func NewInformationProtectionBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InformationProtectionBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewInformationProtectionBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewInformationProtectionBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get the recovery keys associated with the bitlocker entity.
 func (m *InformationProtectionBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *InformationProtectionBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BitlockerRecoveryKeyable, error) {

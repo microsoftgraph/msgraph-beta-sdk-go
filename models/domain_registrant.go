@@ -23,7 +23,7 @@ type DomainRegistrant struct {
 func NewDomainRegistrant()(*DomainRegistrant) {
     m := &DomainRegistrant{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDomainRegistrantFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -24,7 +24,7 @@ type IosAvailableUpdateVersion struct {
 func NewIosAvailableUpdateVersion()(*IosAvailableUpdateVersion) {
     m := &IosAvailableUpdateVersion{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateIosAvailableUpdateVersionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

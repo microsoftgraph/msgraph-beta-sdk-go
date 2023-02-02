@@ -48,10 +48,10 @@ type MobileAppsItemDeviceStatusesMobileAppInstallStatusItemRequestBuilderPatchRe
 }
 // App provides operations to manage the app property of the microsoft.graph.mobileAppInstallStatus entity.
 func (m *MobileAppsItemDeviceStatusesMobileAppInstallStatusItemRequestBuilder) App()(*MobileAppsItemDeviceStatusesItemAppRequestBuilder) {
-    return NewMobileAppsItemDeviceStatusesItemAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMobileAppsItemDeviceStatusesItemAppRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewMobileAppsItemDeviceStatusesMobileAppInstallStatusItemRequestBuilderInternal instantiates a new MobileAppInstallStatusItemRequestBuilder and sets the default values.
-func NewMobileAppsItemDeviceStatusesMobileAppInstallStatusItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemDeviceStatusesMobileAppInstallStatusItemRequestBuilder) {
+func NewMobileAppsItemDeviceStatusesMobileAppInstallStatusItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, mobileAppInstallStatusId *string)(*MobileAppsItemDeviceStatusesMobileAppInstallStatusItemRequestBuilder) {
     m := &MobileAppsItemDeviceStatusesMobileAppInstallStatusItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/deviceStatuses/{mobileAppInstallStatus%2Did}{?%24select,%24expand}";
@@ -59,15 +59,18 @@ func NewMobileAppsItemDeviceStatusesMobileAppInstallStatusItemRequestBuilderInte
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if mobileAppInstallStatusId != nil {
+        urlTplParams["mobileAppInstallStatus%2Did"] = *mobileAppInstallStatusId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMobileAppsItemDeviceStatusesMobileAppInstallStatusItemRequestBuilder instantiates a new MobileAppInstallStatusItemRequestBuilder and sets the default values.
 func NewMobileAppsItemDeviceStatusesMobileAppInstallStatusItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemDeviceStatusesMobileAppInstallStatusItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewMobileAppsItemDeviceStatusesMobileAppInstallStatusItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewMobileAppsItemDeviceStatusesMobileAppInstallStatusItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property deviceStatuses for deviceAppManagement
 func (m *MobileAppsItemDeviceStatusesMobileAppInstallStatusItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MobileAppsItemDeviceStatusesMobileAppInstallStatusItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -158,7 +161,10 @@ func (m *MobileAppsItemDeviceStatusesMobileAppInstallStatusItemRequestBuilder) T
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

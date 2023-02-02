@@ -48,8 +48,8 @@ func NewTrustFrameworkRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTrustFrameworkRequestBuilder instantiates a new TrustFrameworkRequestBuilder and sets the default values.
@@ -79,7 +79,7 @@ func (m *TrustFrameworkRequestBuilder) Get(ctx context.Context, requestConfigura
 }
 // KeySets provides operations to manage the keySets property of the microsoft.graph.trustFramework entity.
 func (m *TrustFrameworkRequestBuilder) KeySets()(*KeySetsRequestBuilder) {
-    return NewKeySetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewKeySetsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // KeySetsById provides operations to manage the keySets property of the microsoft.graph.trustFramework entity.
 func (m *TrustFrameworkRequestBuilder) KeySetsById(id string)(*KeySetsTrustFrameworkKeySetItemRequestBuilder) {
@@ -87,10 +87,8 @@ func (m *TrustFrameworkRequestBuilder) KeySetsById(id string)(*KeySetsTrustFrame
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["trustFrameworkKeySet%2Did"] = id
-    }
-    return NewKeySetsTrustFrameworkKeySetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewKeySetsTrustFrameworkKeySetItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Patch update trustFramework
 func (m *TrustFrameworkRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkable, requestConfiguration *TrustFrameworkRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkable, error) {
@@ -113,7 +111,7 @@ func (m *TrustFrameworkRequestBuilder) Patch(ctx context.Context, body ie233ee76
 }
 // Policies provides operations to manage the policies property of the microsoft.graph.trustFramework entity.
 func (m *TrustFrameworkRequestBuilder) Policies()(*PoliciesRequestBuilder) {
-    return NewPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PoliciesById provides operations to manage the policies property of the microsoft.graph.trustFramework entity.
 func (m *TrustFrameworkRequestBuilder) PoliciesById(id string)(*PoliciesTrustFrameworkPolicyItemRequestBuilder) {
@@ -121,10 +119,8 @@ func (m *TrustFrameworkRequestBuilder) PoliciesById(id string)(*PoliciesTrustFra
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["trustFrameworkPolicy%2Did"] = id
-    }
-    return NewPoliciesTrustFrameworkPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewPoliciesTrustFrameworkPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToGetRequestInformation get trustFramework
 func (m *TrustFrameworkRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TrustFrameworkRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -149,7 +145,10 @@ func (m *TrustFrameworkRequestBuilder) ToPatchRequestInformation(ctx context.Con
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

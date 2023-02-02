@@ -33,7 +33,7 @@ type ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilderGetRequestC
     QueryParameters *ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilderGetQueryParameters
 }
 // NewItemConnectorGroupsItemApplicationsApplicationItemRequestBuilderInternal instantiates a new ApplicationItemRequestBuilder and sets the default values.
-func NewItemConnectorGroupsItemApplicationsApplicationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder) {
+func NewItemConnectorGroupsItemApplicationsApplicationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, applicationId *string)(*ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder) {
     m := &ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectorGroups/{connectorGroup%2Did}/applications/{application%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewItemConnectorGroupsItemApplicationsApplicationItemRequestBuilderInternal
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if applicationId != nil {
+        urlTplParams["application%2Did"] = *applicationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder instantiates a new ApplicationItemRequestBuilder and sets the default values.
 func NewItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemConnectorGroupsItemApplicationsApplicationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemConnectorGroupsItemApplicationsApplicationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get get applications from onPremisesPublishingProfiles
 func (m *ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Applicationable, error) {
@@ -72,7 +75,7 @@ func (m *ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder) Get(c
 }
 // Logo provides operations to manage the media for the onPremisesPublishingProfile entity.
 func (m *ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder) Logo()(*ItemConnectorGroupsItemApplicationsItemLogoRequestBuilder) {
-    return NewItemConnectorGroupsItemApplicationsItemLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemConnectorGroupsItemApplicationsItemLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation get applications from onPremisesPublishingProfiles
 func (m *ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

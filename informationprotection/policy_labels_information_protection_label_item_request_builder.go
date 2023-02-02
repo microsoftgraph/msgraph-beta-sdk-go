@@ -47,7 +47,7 @@ type PolicyLabelsInformationProtectionLabelItemRequestBuilderPatchRequestConfigu
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewPolicyLabelsInformationProtectionLabelItemRequestBuilderInternal instantiates a new InformationProtectionLabelItemRequestBuilder and sets the default values.
-func NewPolicyLabelsInformationProtectionLabelItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PolicyLabelsInformationProtectionLabelItemRequestBuilder) {
+func NewPolicyLabelsInformationProtectionLabelItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, informationProtectionLabelId *string)(*PolicyLabelsInformationProtectionLabelItemRequestBuilder) {
     m := &PolicyLabelsInformationProtectionLabelItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/informationProtection/policy/labels/{informationProtectionLabel%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewPolicyLabelsInformationProtectionLabelItemRequestBuilderInternal(pathPar
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if informationProtectionLabelId != nil {
+        urlTplParams["informationProtectionLabel%2Did"] = *informationProtectionLabelId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPolicyLabelsInformationProtectionLabelItemRequestBuilder instantiates a new InformationProtectionLabelItemRequestBuilder and sets the default values.
 func NewPolicyLabelsInformationProtectionLabelItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PolicyLabelsInformationProtectionLabelItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewPolicyLabelsInformationProtectionLabelItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewPolicyLabelsInformationProtectionLabelItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property labels for informationProtection
 func (m *PolicyLabelsInformationProtectionLabelItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *PolicyLabelsInformationProtectionLabelItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *PolicyLabelsInformationProtectionLabelItemRequestBuilder) ToPatchReques
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

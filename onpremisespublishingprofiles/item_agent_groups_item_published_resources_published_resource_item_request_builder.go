@@ -48,7 +48,7 @@ type ItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilderPat
 }
 // AgentGroups provides operations to manage the agentGroups property of the microsoft.graph.publishedResource entity.
 func (m *ItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilder) AgentGroups()(*ItemAgentGroupsItemPublishedResourcesItemAgentGroupsRequestBuilder) {
-    return NewItemAgentGroupsItemPublishedResourcesItemAgentGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemAgentGroupsItemPublishedResourcesItemAgentGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AgentGroupsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.agentGroups.item.publishedResources.item.agentGroups.item collection
 func (m *ItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilder) AgentGroupsById(id string)(*ItemAgentGroupsItemPublishedResourcesItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) {
@@ -56,13 +56,11 @@ func (m *ItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilde
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["onPremisesAgentGroup%2Did1"] = id
-    }
-    return NewItemAgentGroupsItemPublishedResourcesItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemAgentGroupsItemPublishedResourcesItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilderInternal instantiates a new PublishedResourceItemRequestBuilder and sets the default values.
-func NewItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilder) {
+func NewItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, publishedResourceId *string)(*ItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilder) {
     m := &ItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/agentGroups/{onPremisesAgentGroup%2Did}/publishedResources/{publishedResource%2Did}{?%24select,%24expand}";
@@ -70,15 +68,18 @@ func NewItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilder
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if publishedResourceId != nil {
+        urlTplParams["publishedResource%2Did"] = *publishedResourceId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilder instantiates a new PublishedResourceItemRequestBuilder and sets the default values.
 func NewItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property publishedResources for onPremisesPublishingProfiles
 func (m *ItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -169,7 +170,10 @@ func (m *ItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilde
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

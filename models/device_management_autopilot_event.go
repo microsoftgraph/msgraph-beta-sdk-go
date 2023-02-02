@@ -10,7 +10,7 @@ type DeviceManagementAutopilotEvent struct {
     Entity
     // Time spent in user ESP.
     accountSetupDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
-    // The accountSetupStatus property
+    // Deployment states for Autopilot devices
     accountSetupStatus *WindowsAutopilotDeploymentState
     // Autopilot deployment duration including enrollment.
     deploymentDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
@@ -18,7 +18,7 @@ type DeviceManagementAutopilotEvent struct {
     deploymentEndDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Deployment start time.
     deploymentStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The deploymentState property
+    // Deployment states for Autopilot devices
     deploymentState *WindowsAutopilotDeploymentState
     // Total deployment duration from enrollment to Desktop screen.
     deploymentTotalDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
@@ -32,7 +32,7 @@ type DeviceManagementAutopilotEvent struct {
     deviceSerialNumber *string
     // Time spent in device ESP.
     deviceSetupDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
-    // The deviceSetupStatus property
+    // Deployment states for Autopilot devices
     deviceSetupStatus *WindowsAutopilotDeploymentState
     // Enrollment failure details.
     enrollmentFailureDetails *string
@@ -78,7 +78,7 @@ func CreateDeviceManagementAutopilotEventFromDiscriminatorValue(parseNode i878a8
 func (m *DeviceManagementAutopilotEvent) GetAccountSetupDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     return m.accountSetupDuration
 }
-// GetAccountSetupStatus gets the accountSetupStatus property value. The accountSetupStatus property
+// GetAccountSetupStatus gets the accountSetupStatus property value. Deployment states for Autopilot devices
 func (m *DeviceManagementAutopilotEvent) GetAccountSetupStatus()(*WindowsAutopilotDeploymentState) {
     return m.accountSetupStatus
 }
@@ -94,7 +94,7 @@ func (m *DeviceManagementAutopilotEvent) GetDeploymentEndDateTime()(*i336074805f
 func (m *DeviceManagementAutopilotEvent) GetDeploymentStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.deploymentStartDateTime
 }
-// GetDeploymentState gets the deploymentState property value. The deploymentState property
+// GetDeploymentState gets the deploymentState property value. Deployment states for Autopilot devices
 func (m *DeviceManagementAutopilotEvent) GetDeploymentState()(*WindowsAutopilotDeploymentState) {
     return m.deploymentState
 }
@@ -122,7 +122,7 @@ func (m *DeviceManagementAutopilotEvent) GetDeviceSerialNumber()(*string) {
 func (m *DeviceManagementAutopilotEvent) GetDeviceSetupDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     return m.deviceSetupDuration
 }
-// GetDeviceSetupStatus gets the deviceSetupStatus property value. The deviceSetupStatus property
+// GetDeviceSetupStatus gets the deviceSetupStatus property value. Deployment states for Autopilot devices
 func (m *DeviceManagementAutopilotEvent) GetDeviceSetupStatus()(*WindowsAutopilotDeploymentState) {
     return m.deviceSetupStatus
 }
@@ -644,7 +644,7 @@ func (m *DeviceManagementAutopilotEvent) Serialize(writer i878a80d2330e89d268963
 func (m *DeviceManagementAutopilotEvent) SetAccountSetupDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     m.accountSetupDuration = value
 }
-// SetAccountSetupStatus sets the accountSetupStatus property value. The accountSetupStatus property
+// SetAccountSetupStatus sets the accountSetupStatus property value. Deployment states for Autopilot devices
 func (m *DeviceManagementAutopilotEvent) SetAccountSetupStatus(value *WindowsAutopilotDeploymentState)() {
     m.accountSetupStatus = value
 }
@@ -660,7 +660,7 @@ func (m *DeviceManagementAutopilotEvent) SetDeploymentEndDateTime(value *i336074
 func (m *DeviceManagementAutopilotEvent) SetDeploymentStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.deploymentStartDateTime = value
 }
-// SetDeploymentState sets the deploymentState property value. The deploymentState property
+// SetDeploymentState sets the deploymentState property value. Deployment states for Autopilot devices
 func (m *DeviceManagementAutopilotEvent) SetDeploymentState(value *WindowsAutopilotDeploymentState)() {
     m.deploymentState = value
 }
@@ -688,7 +688,7 @@ func (m *DeviceManagementAutopilotEvent) SetDeviceSerialNumber(value *string)() 
 func (m *DeviceManagementAutopilotEvent) SetDeviceSetupDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     m.deviceSetupDuration = value
 }
-// SetDeviceSetupStatus sets the deviceSetupStatus property value. The deviceSetupStatus property
+// SetDeviceSetupStatus sets the deviceSetupStatus property value. Deployment states for Autopilot devices
 func (m *DeviceManagementAutopilotEvent) SetDeviceSetupStatus(value *WindowsAutopilotDeploymentState)() {
     m.deviceSetupStatus = value
 }

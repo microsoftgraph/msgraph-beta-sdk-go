@@ -33,7 +33,7 @@ type JoinedTeamsTeamItemRequestBuilderGetRequestConfiguration struct {
     QueryParameters *JoinedTeamsTeamItemRequestBuilderGetQueryParameters
 }
 // NewJoinedTeamsTeamItemRequestBuilderInternal instantiates a new TeamItemRequestBuilder and sets the default values.
-func NewJoinedTeamsTeamItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*JoinedTeamsTeamItemRequestBuilder) {
+func NewJoinedTeamsTeamItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, teamId *string)(*JoinedTeamsTeamItemRequestBuilder) {
     m := &JoinedTeamsTeamItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/joinedTeams/{team%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewJoinedTeamsTeamItemRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if teamId != nil {
+        urlTplParams["team%2Did"] = *teamId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewJoinedTeamsTeamItemRequestBuilder instantiates a new TeamItemRequestBuilder and sets the default values.
 func NewJoinedTeamsTeamItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*JoinedTeamsTeamItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewJoinedTeamsTeamItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewJoinedTeamsTeamItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get the Microsoft Teams teams that the user is a member of. Read-only. Nullable.
 func (m *JoinedTeamsTeamItemRequestBuilder) Get(ctx context.Context, requestConfiguration *JoinedTeamsTeamItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamable, error) {

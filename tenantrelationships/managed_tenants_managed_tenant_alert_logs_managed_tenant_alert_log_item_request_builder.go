@@ -48,10 +48,10 @@ type ManagedTenantsManagedTenantAlertLogsManagedTenantAlertLogItemRequestBuilder
 }
 // Alert provides operations to manage the alert property of the microsoft.graph.managedTenants.managedTenantAlertLog entity.
 func (m *ManagedTenantsManagedTenantAlertLogsManagedTenantAlertLogItemRequestBuilder) Alert()(*ManagedTenantsManagedTenantAlertLogsItemAlertRequestBuilder) {
-    return NewManagedTenantsManagedTenantAlertLogsItemAlertRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedTenantsManagedTenantAlertLogsItemAlertRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewManagedTenantsManagedTenantAlertLogsManagedTenantAlertLogItemRequestBuilderInternal instantiates a new ManagedTenantAlertLogItemRequestBuilder and sets the default values.
-func NewManagedTenantsManagedTenantAlertLogsManagedTenantAlertLogItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagedTenantAlertLogsManagedTenantAlertLogItemRequestBuilder) {
+func NewManagedTenantsManagedTenantAlertLogsManagedTenantAlertLogItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, managedTenantAlertLogId *string)(*ManagedTenantsManagedTenantAlertLogsManagedTenantAlertLogItemRequestBuilder) {
     m := &ManagedTenantsManagedTenantAlertLogsManagedTenantAlertLogItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/managedTenantAlertLogs/{managedTenantAlertLog%2Did}{?%24select,%24expand}";
@@ -59,15 +59,18 @@ func NewManagedTenantsManagedTenantAlertLogsManagedTenantAlertLogItemRequestBuil
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if managedTenantAlertLogId != nil {
+        urlTplParams["managedTenantAlertLog%2Did"] = *managedTenantAlertLogId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedTenantsManagedTenantAlertLogsManagedTenantAlertLogItemRequestBuilder instantiates a new ManagedTenantAlertLogItemRequestBuilder and sets the default values.
 func NewManagedTenantsManagedTenantAlertLogsManagedTenantAlertLogItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagedTenantAlertLogsManagedTenantAlertLogItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewManagedTenantsManagedTenantAlertLogsManagedTenantAlertLogItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewManagedTenantsManagedTenantAlertLogsManagedTenantAlertLogItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property managedTenantAlertLogs for tenantRelationships
 func (m *ManagedTenantsManagedTenantAlertLogsManagedTenantAlertLogItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedTenantsManagedTenantAlertLogsManagedTenantAlertLogItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -158,7 +161,10 @@ func (m *ManagedTenantsManagedTenantAlertLogsManagedTenantAlertLogItemRequestBui
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

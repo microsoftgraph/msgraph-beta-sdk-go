@@ -47,7 +47,7 @@ type UserExperienceAnalyticsDeviceScopesUserExperienceAnalyticsDeviceScopeItemRe
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewUserExperienceAnalyticsDeviceScopesUserExperienceAnalyticsDeviceScopeItemRequestBuilderInternal instantiates a new UserExperienceAnalyticsDeviceScopeItemRequestBuilder and sets the default values.
-func NewUserExperienceAnalyticsDeviceScopesUserExperienceAnalyticsDeviceScopeItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserExperienceAnalyticsDeviceScopesUserExperienceAnalyticsDeviceScopeItemRequestBuilder) {
+func NewUserExperienceAnalyticsDeviceScopesUserExperienceAnalyticsDeviceScopeItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, userExperienceAnalyticsDeviceScopeId *string)(*UserExperienceAnalyticsDeviceScopesUserExperienceAnalyticsDeviceScopeItemRequestBuilder) {
     m := &UserExperienceAnalyticsDeviceScopesUserExperienceAnalyticsDeviceScopeItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsDeviceScopes/{userExperienceAnalyticsDeviceScope%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewUserExperienceAnalyticsDeviceScopesUserExperienceAnalyticsDeviceScopeIte
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if userExperienceAnalyticsDeviceScopeId != nil {
+        urlTplParams["userExperienceAnalyticsDeviceScope%2Did"] = *userExperienceAnalyticsDeviceScopeId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewUserExperienceAnalyticsDeviceScopesUserExperienceAnalyticsDeviceScopeItemRequestBuilder instantiates a new UserExperienceAnalyticsDeviceScopeItemRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsDeviceScopesUserExperienceAnalyticsDeviceScopeItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserExperienceAnalyticsDeviceScopesUserExperienceAnalyticsDeviceScopeItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewUserExperienceAnalyticsDeviceScopesUserExperienceAnalyticsDeviceScopeItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewUserExperienceAnalyticsDeviceScopesUserExperienceAnalyticsDeviceScopeItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property userExperienceAnalyticsDeviceScopes for deviceManagement
 func (m *UserExperienceAnalyticsDeviceScopesUserExperienceAnalyticsDeviceScopeItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *UserExperienceAnalyticsDeviceScopesUserExperienceAnalyticsDeviceScopeItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -99,6 +102,10 @@ func (m *UserExperienceAnalyticsDeviceScopesUserExperienceAnalyticsDeviceScopeIt
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceScopeable), nil
+}
+// MicrosoftGraphTriggerDeviceScopeAction provides operations to call the triggerDeviceScopeAction method.
+func (m *UserExperienceAnalyticsDeviceScopesUserExperienceAnalyticsDeviceScopeItemRequestBuilder) MicrosoftGraphTriggerDeviceScopeAction()(*UserExperienceAnalyticsDeviceScopesItemMicrosoftGraphTriggerDeviceScopeActionTriggerDeviceScopeActionRequestBuilder) {
+    return NewUserExperienceAnalyticsDeviceScopesItemMicrosoftGraphTriggerDeviceScopeActionTriggerDeviceScopeActionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property userExperienceAnalyticsDeviceScopes in deviceManagement
 func (m *UserExperienceAnalyticsDeviceScopesUserExperienceAnalyticsDeviceScopeItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceScopeable, requestConfiguration *UserExperienceAnalyticsDeviceScopesUserExperienceAnalyticsDeviceScopeItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceScopeable, error) {
@@ -154,14 +161,13 @@ func (m *UserExperienceAnalyticsDeviceScopesUserExperienceAnalyticsDeviceScopeIt
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// TriggerDeviceScopeAction provides operations to call the triggerDeviceScopeAction method.
-func (m *UserExperienceAnalyticsDeviceScopesUserExperienceAnalyticsDeviceScopeItemRequestBuilder) TriggerDeviceScopeAction()(*UserExperienceAnalyticsDeviceScopesItemTriggerDeviceScopeActionRequestBuilder) {
-    return NewUserExperienceAnalyticsDeviceScopesItemTriggerDeviceScopeActionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

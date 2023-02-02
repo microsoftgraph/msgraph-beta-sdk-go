@@ -47,7 +47,7 @@ type HostSecurityProfilesHostSecurityProfileItemRequestBuilderPatchRequestConfig
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewHostSecurityProfilesHostSecurityProfileItemRequestBuilderInternal instantiates a new HostSecurityProfileItemRequestBuilder and sets the default values.
-func NewHostSecurityProfilesHostSecurityProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*HostSecurityProfilesHostSecurityProfileItemRequestBuilder) {
+func NewHostSecurityProfilesHostSecurityProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, hostSecurityProfileId *string)(*HostSecurityProfilesHostSecurityProfileItemRequestBuilder) {
     m := &HostSecurityProfilesHostSecurityProfileItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/security/hostSecurityProfiles/{hostSecurityProfile%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewHostSecurityProfilesHostSecurityProfileItemRequestBuilderInternal(pathPa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if hostSecurityProfileId != nil {
+        urlTplParams["hostSecurityProfile%2Did"] = *hostSecurityProfileId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewHostSecurityProfilesHostSecurityProfileItemRequestBuilder instantiates a new HostSecurityProfileItemRequestBuilder and sets the default values.
 func NewHostSecurityProfilesHostSecurityProfileItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*HostSecurityProfilesHostSecurityProfileItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewHostSecurityProfilesHostSecurityProfileItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewHostSecurityProfilesHostSecurityProfileItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property hostSecurityProfiles for security
 func (m *HostSecurityProfilesHostSecurityProfileItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *HostSecurityProfilesHostSecurityProfileItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *HostSecurityProfilesHostSecurityProfileItemRequestBuilder) ToPatchReque
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

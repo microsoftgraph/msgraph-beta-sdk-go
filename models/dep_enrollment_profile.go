@@ -43,7 +43,7 @@ type DepEnrollmentProfile struct {
     sharedIPadMaximumUserCount *int32
     // Indicates if siri setup pane is disabled
     siriDisabled *bool
-    // Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/en-us/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
+    // Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
     supervisedModeEnabled *bool
     // Support department information
     supportDepartment *string
@@ -61,8 +61,8 @@ func NewDepEnrollmentProfile()(*DepEnrollmentProfile) {
     m := &DepEnrollmentProfile{
         EnrollmentProfile: *NewEnrollmentProfile(),
     }
-    odataTypeValue := "#microsoft.graph.depEnrollmentProfile";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.depEnrollmentProfile"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDepEnrollmentProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -390,7 +390,7 @@ func (m *DepEnrollmentProfile) GetSharedIPadMaximumUserCount()(*int32) {
 func (m *DepEnrollmentProfile) GetSiriDisabled()(*bool) {
     return m.siriDisabled
 }
-// GetSupervisedModeEnabled gets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/en-us/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
+// GetSupervisedModeEnabled gets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
 func (m *DepEnrollmentProfile) GetSupervisedModeEnabled()(*bool) {
     return m.supervisedModeEnabled
 }
@@ -643,7 +643,7 @@ func (m *DepEnrollmentProfile) SetSharedIPadMaximumUserCount(value *int32)() {
 func (m *DepEnrollmentProfile) SetSiriDisabled(value *bool)() {
     m.siriDisabled = value
 }
-// SetSupervisedModeEnabled sets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/en-us/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
+// SetSupervisedModeEnabled sets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
 func (m *DepEnrollmentProfile) SetSupervisedModeEnabled(value *bool)() {
     m.supervisedModeEnabled = value
 }

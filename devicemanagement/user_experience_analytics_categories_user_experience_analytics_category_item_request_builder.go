@@ -47,7 +47,7 @@ type UserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemRequest
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewUserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemRequestBuilderInternal instantiates a new UserExperienceAnalyticsCategoryItemRequestBuilder and sets the default values.
-func NewUserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemRequestBuilder) {
+func NewUserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, userExperienceAnalyticsCategoryId *string)(*UserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemRequestBuilder) {
     m := &UserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsCategories/{userExperienceAnalyticsCategory%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewUserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemRequ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if userExperienceAnalyticsCategoryId != nil {
+        urlTplParams["userExperienceAnalyticsCategory%2Did"] = *userExperienceAnalyticsCategoryId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewUserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemRequestBuilder instantiates a new UserExperienceAnalyticsCategoryItemRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewUserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewUserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property userExperienceAnalyticsCategories for deviceManagement
 func (m *UserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *UserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -102,7 +105,7 @@ func (m *UserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemReq
 }
 // MetricValues provides operations to manage the metricValues property of the microsoft.graph.userExperienceAnalyticsCategory entity.
 func (m *UserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemRequestBuilder) MetricValues()(*UserExperienceAnalyticsCategoriesItemMetricValuesRequestBuilder) {
-    return NewUserExperienceAnalyticsCategoriesItemMetricValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsCategoriesItemMetricValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MetricValuesById provides operations to manage the metricValues property of the microsoft.graph.userExperienceAnalyticsCategory entity.
 func (m *UserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemRequestBuilder) MetricValuesById(id string)(*UserExperienceAnalyticsCategoriesItemMetricValuesUserExperienceAnalyticsMetricItemRequestBuilder) {
@@ -110,10 +113,8 @@ func (m *UserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemReq
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["userExperienceAnalyticsMetric%2Did"] = id
-    }
-    return NewUserExperienceAnalyticsCategoriesItemMetricValuesUserExperienceAnalyticsMetricItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewUserExperienceAnalyticsCategoriesItemMetricValuesUserExperienceAnalyticsMetricItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Patch update the navigation property userExperienceAnalyticsCategories in deviceManagement
 func (m *UserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable, requestConfiguration *UserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable, error) {
@@ -169,7 +170,10 @@ func (m *UserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemReq
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

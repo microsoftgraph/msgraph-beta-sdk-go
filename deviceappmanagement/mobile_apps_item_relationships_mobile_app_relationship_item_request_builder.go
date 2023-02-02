@@ -47,7 +47,7 @@ type MobileAppsItemRelationshipsMobileAppRelationshipItemRequestBuilderPatchRequ
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewMobileAppsItemRelationshipsMobileAppRelationshipItemRequestBuilderInternal instantiates a new MobileAppRelationshipItemRequestBuilder and sets the default values.
-func NewMobileAppsItemRelationshipsMobileAppRelationshipItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemRelationshipsMobileAppRelationshipItemRequestBuilder) {
+func NewMobileAppsItemRelationshipsMobileAppRelationshipItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, mobileAppRelationshipId *string)(*MobileAppsItemRelationshipsMobileAppRelationshipItemRequestBuilder) {
     m := &MobileAppsItemRelationshipsMobileAppRelationshipItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/relationships/{mobileAppRelationship%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewMobileAppsItemRelationshipsMobileAppRelationshipItemRequestBuilderIntern
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if mobileAppRelationshipId != nil {
+        urlTplParams["mobileAppRelationship%2Did"] = *mobileAppRelationshipId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMobileAppsItemRelationshipsMobileAppRelationshipItemRequestBuilder instantiates a new MobileAppRelationshipItemRequestBuilder and sets the default values.
 func NewMobileAppsItemRelationshipsMobileAppRelationshipItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemRelationshipsMobileAppRelationshipItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewMobileAppsItemRelationshipsMobileAppRelationshipItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewMobileAppsItemRelationshipsMobileAppRelationshipItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property relationships for deviceAppManagement
 func (m *MobileAppsItemRelationshipsMobileAppRelationshipItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MobileAppsItemRelationshipsMobileAppRelationshipItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *MobileAppsItemRelationshipsMobileAppRelationshipItemRequestBuilder) ToP
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

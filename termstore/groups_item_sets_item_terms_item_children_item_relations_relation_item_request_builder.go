@@ -47,7 +47,7 @@ type GroupsItemSetsItemTermsItemChildrenItemRelationsRelationItemRequestBuilderP
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewGroupsItemSetsItemTermsItemChildrenItemRelationsRelationItemRequestBuilderInternal instantiates a new RelationItemRequestBuilder and sets the default values.
-func NewGroupsItemSetsItemTermsItemChildrenItemRelationsRelationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupsItemSetsItemTermsItemChildrenItemRelationsRelationItemRequestBuilder) {
+func NewGroupsItemSetsItemTermsItemChildrenItemRelationsRelationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, relationId *string)(*GroupsItemSetsItemTermsItemChildrenItemRelationsRelationItemRequestBuilder) {
     m := &GroupsItemSetsItemTermsItemChildrenItemRelationsRelationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/termStore/groups/{group%2Did}/sets/{set%2Did}/terms/{term%2Did}/children/{term%2Did1}/relations/{relation%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewGroupsItemSetsItemTermsItemChildrenItemRelationsRelationItemRequestBuild
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if relationId != nil {
+        urlTplParams["relation%2Did"] = *relationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGroupsItemSetsItemTermsItemChildrenItemRelationsRelationItemRequestBuilder instantiates a new RelationItemRequestBuilder and sets the default values.
 func NewGroupsItemSetsItemTermsItemChildrenItemRelationsRelationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupsItemSetsItemTermsItemChildrenItemRelationsRelationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewGroupsItemSetsItemTermsItemChildrenItemRelationsRelationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewGroupsItemSetsItemTermsItemChildrenItemRelationsRelationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property relations for termStore
 func (m *GroupsItemSetsItemTermsItemChildrenItemRelationsRelationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *GroupsItemSetsItemTermsItemChildrenItemRelationsRelationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -83,7 +86,7 @@ func (m *GroupsItemSetsItemTermsItemChildrenItemRelationsRelationItemRequestBuil
 }
 // FromTerm provides operations to manage the fromTerm property of the microsoft.graph.termStore.relation entity.
 func (m *GroupsItemSetsItemTermsItemChildrenItemRelationsRelationItemRequestBuilder) FromTerm()(*GroupsItemSetsItemTermsItemChildrenItemRelationsItemFromTermRequestBuilder) {
-    return NewGroupsItemSetsItemTermsItemChildrenItemRelationsItemFromTermRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupsItemSetsItemTermsItemChildrenItemRelationsItemFromTermRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get to indicate which terms are related to the current term as either pinned or reused.
 func (m *GroupsItemSetsItemTermsItemChildrenItemRelationsRelationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *GroupsItemSetsItemTermsItemChildrenItemRelationsRelationItemRequestBuilderGetRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Relationable, error) {
@@ -125,7 +128,7 @@ func (m *GroupsItemSetsItemTermsItemChildrenItemRelationsRelationItemRequestBuil
 }
 // Set provides operations to manage the set property of the microsoft.graph.termStore.relation entity.
 func (m *GroupsItemSetsItemTermsItemChildrenItemRelationsRelationItemRequestBuilder) Set()(*GroupsItemSetsItemTermsItemChildrenItemRelationsItemSetRequestBuilder) {
-    return NewGroupsItemSetsItemTermsItemChildrenItemRelationsItemSetRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupsItemSetsItemTermsItemChildrenItemRelationsItemSetRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property relations for termStore
 func (m *GroupsItemSetsItemTermsItemChildrenItemRelationsRelationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *GroupsItemSetsItemTermsItemChildrenItemRelationsRelationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -162,7 +165,10 @@ func (m *GroupsItemSetsItemTermsItemChildrenItemRelationsRelationItemRequestBuil
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -171,5 +177,5 @@ func (m *GroupsItemSetsItemTermsItemChildrenItemRelationsRelationItemRequestBuil
 }
 // ToTerm provides operations to manage the toTerm property of the microsoft.graph.termStore.relation entity.
 func (m *GroupsItemSetsItemTermsItemChildrenItemRelationsRelationItemRequestBuilder) ToTerm()(*GroupsItemSetsItemTermsItemChildrenItemRelationsItemToTermRequestBuilder) {
-    return NewGroupsItemSetsItemTermsItemChildrenItemRelationsItemToTermRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupsItemSetsItemTermsItemChildrenItemRelationsItemToTermRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

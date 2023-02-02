@@ -7,7 +7,7 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
-// WindowsUpdatesUpdatableAssetsRequestBuilder provides operations to manage the updatableAssets property of the microsoft.graph.windowsUpdates.updates entity.
+// WindowsUpdatesUpdatableAssetsRequestBuilder provides operations to manage the updatableAssets property of the microsoft.graph.adminWindowsUpdates entity.
 type WindowsUpdatesUpdatableAssetsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string
@@ -60,8 +60,8 @@ func NewWindowsUpdatesUpdatableAssetsRequestBuilderInternal(pathParameters map[s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsUpdatesUpdatableAssetsRequestBuilder instantiates a new UpdatableAssetsRequestBuilder and sets the default values.
@@ -72,15 +72,7 @@ func NewWindowsUpdatesUpdatableAssetsRequestBuilder(rawUrl string, requestAdapte
 }
 // Count provides operations to count the resources in the collection.
 func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) Count()(*WindowsUpdatesUpdatableAssetsCountRequestBuilder) {
-    return NewWindowsUpdatesUpdatableAssetsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// EnrollAssets provides operations to call the enrollAssets method.
-func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) EnrollAssets()(*WindowsUpdatesUpdatableAssetsEnrollAssetsRequestBuilder) {
-    return NewWindowsUpdatesUpdatableAssetsEnrollAssetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// EnrollAssetsById provides operations to call the enrollAssetsById method.
-func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) EnrollAssetsById()(*WindowsUpdatesUpdatableAssetsEnrollAssetsByIdRequestBuilder) {
-    return NewWindowsUpdatesUpdatableAssetsEnrollAssetsByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsUpdatesUpdatableAssetsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of updatableAssetGroup objects and their properties. This operation filters on the fully qualified resource type, `microsoft.graph.windowsUpdates.updatableAssetGroup`, which inherits from updatableAsset.
 // [Find more info here]
@@ -103,6 +95,22 @@ func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) Get(ctx context.Context, r
         return nil, nil
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetCollectionResponseable), nil
+}
+// MicrosoftGraphWindowsUpdatesEnrollAssets provides operations to call the enrollAssets method.
+func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) MicrosoftGraphWindowsUpdatesEnrollAssets()(*WindowsUpdatesUpdatableAssetsMicrosoftGraphWindowsUpdatesEnrollAssetsEnrollAssetsRequestBuilder) {
+    return NewWindowsUpdatesUpdatableAssetsMicrosoftGraphWindowsUpdatesEnrollAssetsEnrollAssetsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphWindowsUpdatesEnrollAssetsById provides operations to call the enrollAssetsById method.
+func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) MicrosoftGraphWindowsUpdatesEnrollAssetsById()(*WindowsUpdatesUpdatableAssetsMicrosoftGraphWindowsUpdatesEnrollAssetsByIdEnrollAssetsByIdRequestBuilder) {
+    return NewWindowsUpdatesUpdatableAssetsMicrosoftGraphWindowsUpdatesEnrollAssetsByIdEnrollAssetsByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphWindowsUpdatesUnenrollAssets provides operations to call the unenrollAssets method.
+func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) MicrosoftGraphWindowsUpdatesUnenrollAssets()(*WindowsUpdatesUpdatableAssetsMicrosoftGraphWindowsUpdatesUnenrollAssetsUnenrollAssetsRequestBuilder) {
+    return NewWindowsUpdatesUpdatableAssetsMicrosoftGraphWindowsUpdatesUnenrollAssetsUnenrollAssetsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphWindowsUpdatesUnenrollAssetsById provides operations to call the unenrollAssetsById method.
+func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) MicrosoftGraphWindowsUpdatesUnenrollAssetsById()(*WindowsUpdatesUpdatableAssetsMicrosoftGraphWindowsUpdatesUnenrollAssetsByIdUnenrollAssetsByIdRequestBuilder) {
+    return NewWindowsUpdatesUpdatableAssetsMicrosoftGraphWindowsUpdatesUnenrollAssetsByIdUnenrollAssetsByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create a new updatableAssetGroup object. The **updatableAssetGroup** resource inherits from updatableAsset.
 // [Find more info here]
@@ -149,18 +157,13 @@ func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) ToPostRequestInformation(c
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// UnenrollAssets provides operations to call the unenrollAssets method.
-func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) UnenrollAssets()(*WindowsUpdatesUpdatableAssetsUnenrollAssetsRequestBuilder) {
-    return NewWindowsUpdatesUpdatableAssetsUnenrollAssetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// UnenrollAssetsById provides operations to call the unenrollAssetsById method.
-func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) UnenrollAssetsById()(*WindowsUpdatesUpdatableAssetsUnenrollAssetsByIdRequestBuilder) {
-    return NewWindowsUpdatesUpdatableAssetsUnenrollAssetsByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

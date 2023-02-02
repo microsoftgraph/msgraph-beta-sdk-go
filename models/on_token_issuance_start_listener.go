@@ -15,8 +15,8 @@ func NewOnTokenIssuanceStartListener()(*OnTokenIssuanceStartListener) {
     m := &OnTokenIssuanceStartListener{
         AuthenticationEventListener: *NewAuthenticationEventListener(),
     }
-    odataTypeValue := "#microsoft.graph.onTokenIssuanceStartListener";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.onTokenIssuanceStartListener"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateOnTokenIssuanceStartListenerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

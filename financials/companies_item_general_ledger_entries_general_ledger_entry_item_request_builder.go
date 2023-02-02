@@ -34,10 +34,10 @@ type CompaniesItemGeneralLedgerEntriesGeneralLedgerEntryItemRequestBuilderGetReq
 }
 // Account provides operations to manage the account property of the microsoft.graph.generalLedgerEntry entity.
 func (m *CompaniesItemGeneralLedgerEntriesGeneralLedgerEntryItemRequestBuilder) Account()(*CompaniesItemGeneralLedgerEntriesItemAccountRequestBuilder) {
-    return NewCompaniesItemGeneralLedgerEntriesItemAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemGeneralLedgerEntriesItemAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewCompaniesItemGeneralLedgerEntriesGeneralLedgerEntryItemRequestBuilderInternal instantiates a new GeneralLedgerEntryItemRequestBuilder and sets the default values.
-func NewCompaniesItemGeneralLedgerEntriesGeneralLedgerEntryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemGeneralLedgerEntriesGeneralLedgerEntryItemRequestBuilder) {
+func NewCompaniesItemGeneralLedgerEntriesGeneralLedgerEntryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, generalLedgerEntryId *string)(*CompaniesItemGeneralLedgerEntriesGeneralLedgerEntryItemRequestBuilder) {
     m := &CompaniesItemGeneralLedgerEntriesGeneralLedgerEntryItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/financials/companies/{company%2Did}/generalLedgerEntries/{generalLedgerEntry%2Did}{?%24select,%24expand}";
@@ -45,15 +45,18 @@ func NewCompaniesItemGeneralLedgerEntriesGeneralLedgerEntryItemRequestBuilderInt
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if generalLedgerEntryId != nil {
+        urlTplParams["generalLedgerEntry%2Did"] = *generalLedgerEntryId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemGeneralLedgerEntriesGeneralLedgerEntryItemRequestBuilder instantiates a new GeneralLedgerEntryItemRequestBuilder and sets the default values.
 func NewCompaniesItemGeneralLedgerEntriesGeneralLedgerEntryItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemGeneralLedgerEntriesGeneralLedgerEntryItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCompaniesItemGeneralLedgerEntriesGeneralLedgerEntryItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCompaniesItemGeneralLedgerEntriesGeneralLedgerEntryItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get get generalLedgerEntries from financials
 func (m *CompaniesItemGeneralLedgerEntriesGeneralLedgerEntryItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemGeneralLedgerEntriesGeneralLedgerEntryItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GeneralLedgerEntryable, error) {

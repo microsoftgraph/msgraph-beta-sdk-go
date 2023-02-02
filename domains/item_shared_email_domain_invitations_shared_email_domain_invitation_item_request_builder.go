@@ -47,7 +47,7 @@ type ItemSharedEmailDomainInvitationsSharedEmailDomainInvitationItemRequestBuild
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemSharedEmailDomainInvitationsSharedEmailDomainInvitationItemRequestBuilderInternal instantiates a new SharedEmailDomainInvitationItemRequestBuilder and sets the default values.
-func NewItemSharedEmailDomainInvitationsSharedEmailDomainInvitationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSharedEmailDomainInvitationsSharedEmailDomainInvitationItemRequestBuilder) {
+func NewItemSharedEmailDomainInvitationsSharedEmailDomainInvitationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, sharedEmailDomainInvitationId *string)(*ItemSharedEmailDomainInvitationsSharedEmailDomainInvitationItemRequestBuilder) {
     m := &ItemSharedEmailDomainInvitationsSharedEmailDomainInvitationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/domains/{domain%2Did}/sharedEmailDomainInvitations/{sharedEmailDomainInvitation%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemSharedEmailDomainInvitationsSharedEmailDomainInvitationItemRequestBu
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if sharedEmailDomainInvitationId != nil {
+        urlTplParams["sharedEmailDomainInvitation%2Did"] = *sharedEmailDomainInvitationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSharedEmailDomainInvitationsSharedEmailDomainInvitationItemRequestBuilder instantiates a new SharedEmailDomainInvitationItemRequestBuilder and sets the default values.
 func NewItemSharedEmailDomainInvitationsSharedEmailDomainInvitationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSharedEmailDomainInvitationsSharedEmailDomainInvitationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemSharedEmailDomainInvitationsSharedEmailDomainInvitationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemSharedEmailDomainInvitationsSharedEmailDomainInvitationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property sharedEmailDomainInvitations for domains
 func (m *ItemSharedEmailDomainInvitationsSharedEmailDomainInvitationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSharedEmailDomainInvitationsSharedEmailDomainInvitationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemSharedEmailDomainInvitationsSharedEmailDomainInvitationItemRequestB
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

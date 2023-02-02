@@ -22,7 +22,7 @@ type Windows10AppsForceUpdateSchedule struct {
 func NewWindows10AppsForceUpdateSchedule()(*Windows10AppsForceUpdateSchedule) {
     m := &Windows10AppsForceUpdateSchedule{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWindows10AppsForceUpdateScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

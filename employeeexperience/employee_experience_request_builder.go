@@ -48,8 +48,8 @@ func NewEmployeeExperienceRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEmployeeExperienceRequestBuilder instantiates a new EmployeeExperienceRequestBuilder and sets the default values.
@@ -79,7 +79,7 @@ func (m *EmployeeExperienceRequestBuilder) Get(ctx context.Context, requestConfi
 }
 // LearningProviders provides operations to manage the learningProviders property of the microsoft.graph.employeeExperience entity.
 func (m *EmployeeExperienceRequestBuilder) LearningProviders()(*LearningProvidersRequestBuilder) {
-    return NewLearningProvidersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewLearningProvidersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // LearningProvidersById provides operations to manage the learningProviders property of the microsoft.graph.employeeExperience entity.
 func (m *EmployeeExperienceRequestBuilder) LearningProvidersById(id string)(*LearningProvidersLearningProviderItemRequestBuilder) {
@@ -87,10 +87,8 @@ func (m *EmployeeExperienceRequestBuilder) LearningProvidersById(id string)(*Lea
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["learningProvider%2Did"] = id
-    }
-    return NewLearningProvidersLearningProviderItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewLearningProvidersLearningProviderItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Patch update employeeExperience
 func (m *EmployeeExperienceRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmployeeExperienceable, requestConfiguration *EmployeeExperienceRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmployeeExperienceable, error) {
@@ -134,7 +132,10 @@ func (m *EmployeeExperienceRequestBuilder) ToPatchRequestInformation(ctx context
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -46,13 +46,9 @@ type VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilderPatchRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Assign provides operations to call the assign method.
-func (m *VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder) Assign()(*VirtualEndpointUserSettingsItemAssignRequestBuilder) {
-    return NewVirtualEndpointUserSettingsItemAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Assignments provides operations to manage the assignments property of the microsoft.graph.cloudPcUserSetting entity.
 func (m *VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder) Assignments()(*VirtualEndpointUserSettingsItemAssignmentsRequestBuilder) {
-    return NewVirtualEndpointUserSettingsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointUserSettingsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.cloudPcUserSetting entity.
 func (m *VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder) AssignmentsById(id string)(*VirtualEndpointUserSettingsItemAssignmentsCloudPcUserSettingAssignmentItemRequestBuilder) {
@@ -60,13 +56,11 @@ func (m *VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder) Assign
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["cloudPcUserSettingAssignment%2Did"] = id
-    }
-    return NewVirtualEndpointUserSettingsItemAssignmentsCloudPcUserSettingAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewVirtualEndpointUserSettingsItemAssignmentsCloudPcUserSettingAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewVirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilderInternal instantiates a new CloudPcUserSettingItemRequestBuilder and sets the default values.
-func NewVirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder) {
+func NewVirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, cloudPcUserSettingId *string)(*VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder) {
     m := &VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/userSettings/{cloudPcUserSetting%2Did}{?%24select,%24expand}";
@@ -74,15 +68,18 @@ func NewVirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilderInternal(
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if cloudPcUserSettingId != nil {
+        urlTplParams["cloudPcUserSetting%2Did"] = *cloudPcUserSettingId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewVirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder instantiates a new CloudPcUserSettingItemRequestBuilder and sets the default values.
 func NewVirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewVirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewVirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property userSettings for deviceManagement
 func (m *VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -118,6 +115,10 @@ func (m *VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder) Get(ct
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcUserSettingable), nil
+}
+// MicrosoftGraphAssign provides operations to call the assign method.
+func (m *VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder) MicrosoftGraphAssign()(*VirtualEndpointUserSettingsItemMicrosoftGraphAssignAssignRequestBuilder) {
+    return NewVirtualEndpointUserSettingsItemMicrosoftGraphAssignAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property userSettings in deviceManagement
 func (m *VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcUserSettingable, requestConfiguration *VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcUserSettingable, error) {
@@ -173,7 +174,10 @@ func (m *VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder) ToPatc
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

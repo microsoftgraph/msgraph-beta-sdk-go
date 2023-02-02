@@ -46,13 +46,9 @@ type DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilderPatchRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Assign provides operations to call the assign method.
-func (m *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) Assign()(*DeviceComplianceScriptsItemAssignRequestBuilder) {
-    return NewDeviceComplianceScriptsItemAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Assignments provides operations to manage the assignments property of the microsoft.graph.deviceComplianceScript entity.
 func (m *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) Assignments()(*DeviceComplianceScriptsItemAssignmentsRequestBuilder) {
-    return NewDeviceComplianceScriptsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceComplianceScriptsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.deviceComplianceScript entity.
 func (m *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) AssignmentsById(id string)(*DeviceComplianceScriptsItemAssignmentsDeviceHealthScriptAssignmentItemRequestBuilder) {
@@ -60,13 +56,11 @@ func (m *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) Assign
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["deviceHealthScriptAssignment%2Did"] = id
-    }
-    return NewDeviceComplianceScriptsItemAssignmentsDeviceHealthScriptAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewDeviceComplianceScriptsItemAssignmentsDeviceHealthScriptAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewDeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilderInternal instantiates a new DeviceComplianceScriptItemRequestBuilder and sets the default values.
-func NewDeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) {
+func NewDeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, deviceComplianceScriptId *string)(*DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) {
     m := &DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/deviceComplianceScripts/{deviceComplianceScript%2Did}{?%24select,%24expand}";
@@ -74,15 +68,18 @@ func NewDeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilderInternal(
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if deviceComplianceScriptId != nil {
+        urlTplParams["deviceComplianceScript%2Did"] = *deviceComplianceScriptId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder instantiates a new DeviceComplianceScriptItemRequestBuilder and sets the default values.
 func NewDeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewDeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewDeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property deviceComplianceScripts for deviceManagement
 func (m *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -102,7 +99,7 @@ func (m *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) Delete
 }
 // DeviceRunStates provides operations to manage the deviceRunStates property of the microsoft.graph.deviceComplianceScript entity.
 func (m *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) DeviceRunStates()(*DeviceComplianceScriptsItemDeviceRunStatesRequestBuilder) {
-    return NewDeviceComplianceScriptsItemDeviceRunStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceComplianceScriptsItemDeviceRunStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeviceRunStatesById provides operations to manage the deviceRunStates property of the microsoft.graph.deviceComplianceScript entity.
 func (m *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) DeviceRunStatesById(id string)(*DeviceComplianceScriptsItemDeviceRunStatesDeviceComplianceScriptDeviceStateItemRequestBuilder) {
@@ -110,10 +107,8 @@ func (m *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) Device
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["deviceComplianceScriptDeviceState%2Did"] = id
-    }
-    return NewDeviceComplianceScriptsItemDeviceRunStatesDeviceComplianceScriptDeviceStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewDeviceComplianceScriptsItemDeviceRunStatesDeviceComplianceScriptDeviceStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Get the list of device compliance scripts associated with the tenant.
 func (m *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScriptable, error) {
@@ -133,6 +128,10 @@ func (m *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) Get(ct
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScriptable), nil
+}
+// MicrosoftGraphAssign provides operations to call the assign method.
+func (m *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) MicrosoftGraphAssign()(*DeviceComplianceScriptsItemMicrosoftGraphAssignAssignRequestBuilder) {
+    return NewDeviceComplianceScriptsItemMicrosoftGraphAssignAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property deviceComplianceScripts in deviceManagement
 func (m *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScriptable, requestConfiguration *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScriptable, error) {
@@ -155,7 +154,7 @@ func (m *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) Patch(
 }
 // RunSummary provides operations to manage the runSummary property of the microsoft.graph.deviceComplianceScript entity.
 func (m *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) RunSummary()(*DeviceComplianceScriptsItemRunSummaryRequestBuilder) {
-    return NewDeviceComplianceScriptsItemRunSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceComplianceScriptsItemRunSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property deviceComplianceScripts for deviceManagement
 func (m *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -192,7 +191,10 @@ func (m *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) ToPatc
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

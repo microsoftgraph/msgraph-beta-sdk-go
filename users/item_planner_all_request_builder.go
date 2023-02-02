@@ -60,8 +60,8 @@ func NewItemPlannerAllRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemPlannerAllRequestBuilder instantiates a new AllRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewItemPlannerAllRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemPlannerAllRequestBuilder) Count()(*ItemPlannerAllCountRequestBuilder) {
-    return NewItemPlannerAllCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Delta provides operations to call the delta method.
-func (m *ItemPlannerAllRequestBuilder) Delta()(*ItemPlannerAllDeltaRequestBuilder) {
-    return NewItemPlannerAllDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemPlannerAllCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get all from users
 func (m *ItemPlannerAllRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPlannerAllRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerDeltaCollectionResponseable, error) {
@@ -96,6 +92,10 @@ func (m *ItemPlannerAllRequestBuilder) Get(ctx context.Context, requestConfigura
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerDeltaCollectionResponseable), nil
+}
+// MicrosoftGraphDelta provides operations to call the delta method.
+func (m *ItemPlannerAllRequestBuilder) MicrosoftGraphDelta()(*ItemPlannerAllMicrosoftGraphDeltaDeltaRequestBuilder) {
+    return NewItemPlannerAllMicrosoftGraphDeltaDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to all for users
 func (m *ItemPlannerAllRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerDeltaable, requestConfiguration *ItemPlannerAllRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerDeltaable, error) {
@@ -139,7 +139,10 @@ func (m *ItemPlannerAllRequestBuilder) ToPostRequestInformation(ctx context.Cont
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

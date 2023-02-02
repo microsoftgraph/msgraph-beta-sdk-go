@@ -55,8 +55,8 @@ func NewItemSitesItemInformationProtectionPolicyRequestBuilderInternal(pathParam
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemInformationProtectionPolicyRequestBuilder instantiates a new PolicyRequestBuilder and sets the default values.
@@ -102,7 +102,7 @@ func (m *ItemSitesItemInformationProtectionPolicyRequestBuilder) Get(ctx context
 }
 // Labels provides operations to manage the labels property of the microsoft.graph.informationProtectionPolicy entity.
 func (m *ItemSitesItemInformationProtectionPolicyRequestBuilder) Labels()(*ItemSitesItemInformationProtectionPolicyLabelsRequestBuilder) {
-    return NewItemSitesItemInformationProtectionPolicyLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemInformationProtectionPolicyLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // LabelsById provides operations to manage the labels property of the microsoft.graph.informationProtectionPolicy entity.
 func (m *ItemSitesItemInformationProtectionPolicyRequestBuilder) LabelsById(id string)(*ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder) {
@@ -110,10 +110,8 @@ func (m *ItemSitesItemInformationProtectionPolicyRequestBuilder) LabelsById(id s
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["informationProtectionLabel%2Did"] = id
-    }
-    return NewItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Patch update the navigation property policy in groups
 func (m *ItemSitesItemInformationProtectionPolicyRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionPolicyable, requestConfiguration *ItemSitesItemInformationProtectionPolicyRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionPolicyable, error) {
@@ -169,7 +167,10 @@ func (m *ItemSitesItemInformationProtectionPolicyRequestBuilder) ToPatchRequestI
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

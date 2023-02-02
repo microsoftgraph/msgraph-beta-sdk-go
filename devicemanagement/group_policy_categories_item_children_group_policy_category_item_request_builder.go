@@ -33,7 +33,7 @@ type GroupPolicyCategoriesItemChildrenGroupPolicyCategoryItemRequestBuilderGetRe
     QueryParameters *GroupPolicyCategoriesItemChildrenGroupPolicyCategoryItemRequestBuilderGetQueryParameters
 }
 // NewGroupPolicyCategoriesItemChildrenGroupPolicyCategoryItemRequestBuilderInternal instantiates a new GroupPolicyCategoryItemRequestBuilder and sets the default values.
-func NewGroupPolicyCategoriesItemChildrenGroupPolicyCategoryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyCategoriesItemChildrenGroupPolicyCategoryItemRequestBuilder) {
+func NewGroupPolicyCategoriesItemChildrenGroupPolicyCategoryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, groupPolicyCategoryId1 *string)(*GroupPolicyCategoriesItemChildrenGroupPolicyCategoryItemRequestBuilder) {
     m := &GroupPolicyCategoriesItemChildrenGroupPolicyCategoryItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/groupPolicyCategories/{groupPolicyCategory%2Did}/children/{groupPolicyCategory%2Did1}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewGroupPolicyCategoriesItemChildrenGroupPolicyCategoryItemRequestBuilderIn
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if groupPolicyCategoryId1 != nil {
+        urlTplParams["groupPolicyCategory%2Did1"] = *groupPolicyCategoryId1
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGroupPolicyCategoriesItemChildrenGroupPolicyCategoryItemRequestBuilder instantiates a new GroupPolicyCategoryItemRequestBuilder and sets the default values.
 func NewGroupPolicyCategoriesItemChildrenGroupPolicyCategoryItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyCategoriesItemChildrenGroupPolicyCategoryItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewGroupPolicyCategoriesItemChildrenGroupPolicyCategoryItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewGroupPolicyCategoriesItemChildrenGroupPolicyCategoryItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get the children categories
 func (m *GroupPolicyCategoriesItemChildrenGroupPolicyCategoryItemRequestBuilder) Get(ctx context.Context, requestConfiguration *GroupPolicyCategoriesItemChildrenGroupPolicyCategoryItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyCategoryable, error) {

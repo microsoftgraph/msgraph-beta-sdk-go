@@ -23,7 +23,7 @@ type BulkManagedDeviceActionResult struct {
 func NewBulkManagedDeviceActionResult()(*BulkManagedDeviceActionResult) {
     m := &BulkManagedDeviceActionResult{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateBulkManagedDeviceActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

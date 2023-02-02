@@ -40,7 +40,7 @@ type ItemThreadsItemPostsItemInReplyToMentionsMentionItemRequestBuilderGetReques
     QueryParameters *ItemThreadsItemPostsItemInReplyToMentionsMentionItemRequestBuilderGetQueryParameters
 }
 // NewItemThreadsItemPostsItemInReplyToMentionsMentionItemRequestBuilderInternal instantiates a new MentionItemRequestBuilder and sets the default values.
-func NewItemThreadsItemPostsItemInReplyToMentionsMentionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemThreadsItemPostsItemInReplyToMentionsMentionItemRequestBuilder) {
+func NewItemThreadsItemPostsItemInReplyToMentionsMentionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, mentionId *string)(*ItemThreadsItemPostsItemInReplyToMentionsMentionItemRequestBuilder) {
     m := &ItemThreadsItemPostsItemInReplyToMentionsMentionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/inReplyTo/mentions/{mention%2Did}{?%24select,%24expand}";
@@ -48,15 +48,18 @@ func NewItemThreadsItemPostsItemInReplyToMentionsMentionItemRequestBuilderIntern
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if mentionId != nil {
+        urlTplParams["mention%2Did"] = *mentionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemThreadsItemPostsItemInReplyToMentionsMentionItemRequestBuilder instantiates a new MentionItemRequestBuilder and sets the default values.
 func NewItemThreadsItemPostsItemInReplyToMentionsMentionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemThreadsItemPostsItemInReplyToMentionsMentionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemThreadsItemPostsItemInReplyToMentionsMentionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemThreadsItemPostsItemInReplyToMentionsMentionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property mentions for groups
 func (m *ItemThreadsItemPostsItemInReplyToMentionsMentionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemThreadsItemPostsItemInReplyToMentionsMentionItemRequestBuilderDeleteRequestConfiguration)(error) {

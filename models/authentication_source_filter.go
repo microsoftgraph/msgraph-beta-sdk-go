@@ -17,7 +17,7 @@ type AuthenticationSourceFilter struct {
 func NewAuthenticationSourceFilter()(*AuthenticationSourceFilter) {
     m := &AuthenticationSourceFilter{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAuthenticationSourceFilterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

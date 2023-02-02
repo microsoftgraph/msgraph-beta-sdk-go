@@ -15,8 +15,8 @@ func NewOnTokenIssuanceStartCustomExtension()(*OnTokenIssuanceStartCustomExtensi
     m := &OnTokenIssuanceStartCustomExtension{
         CustomAuthenticationExtension: *NewCustomAuthenticationExtension(),
     }
-    odataTypeValue := "#microsoft.graph.onTokenIssuanceStartCustomExtension";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.onTokenIssuanceStartCustomExtension"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateOnTokenIssuanceStartCustomExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

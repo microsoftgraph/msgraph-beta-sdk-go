@@ -47,7 +47,7 @@ type EnterpriseCodeSigningCertificatesEnterpriseCodeSigningCertificateItemReques
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewEnterpriseCodeSigningCertificatesEnterpriseCodeSigningCertificateItemRequestBuilderInternal instantiates a new EnterpriseCodeSigningCertificateItemRequestBuilder and sets the default values.
-func NewEnterpriseCodeSigningCertificatesEnterpriseCodeSigningCertificateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EnterpriseCodeSigningCertificatesEnterpriseCodeSigningCertificateItemRequestBuilder) {
+func NewEnterpriseCodeSigningCertificatesEnterpriseCodeSigningCertificateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, enterpriseCodeSigningCertificateId *string)(*EnterpriseCodeSigningCertificatesEnterpriseCodeSigningCertificateItemRequestBuilder) {
     m := &EnterpriseCodeSigningCertificatesEnterpriseCodeSigningCertificateItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceAppManagement/enterpriseCodeSigningCertificates/{enterpriseCodeSigningCertificate%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewEnterpriseCodeSigningCertificatesEnterpriseCodeSigningCertificateItemReq
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if enterpriseCodeSigningCertificateId != nil {
+        urlTplParams["enterpriseCodeSigningCertificate%2Did"] = *enterpriseCodeSigningCertificateId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEnterpriseCodeSigningCertificatesEnterpriseCodeSigningCertificateItemRequestBuilder instantiates a new EnterpriseCodeSigningCertificateItemRequestBuilder and sets the default values.
 func NewEnterpriseCodeSigningCertificatesEnterpriseCodeSigningCertificateItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EnterpriseCodeSigningCertificatesEnterpriseCodeSigningCertificateItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewEnterpriseCodeSigningCertificatesEnterpriseCodeSigningCertificateItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewEnterpriseCodeSigningCertificatesEnterpriseCodeSigningCertificateItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property enterpriseCodeSigningCertificates for deviceAppManagement
 func (m *EnterpriseCodeSigningCertificatesEnterpriseCodeSigningCertificateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EnterpriseCodeSigningCertificatesEnterpriseCodeSigningCertificateItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *EnterpriseCodeSigningCertificatesEnterpriseCodeSigningCertificateItemRe
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

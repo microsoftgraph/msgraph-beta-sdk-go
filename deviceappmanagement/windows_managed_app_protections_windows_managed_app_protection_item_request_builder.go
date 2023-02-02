@@ -48,7 +48,7 @@ type WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilderPa
 }
 // Apps provides operations to manage the apps property of the microsoft.graph.windowsManagedAppProtection entity.
 func (m *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder) Apps()(*WindowsManagedAppProtectionsItemAppsRequestBuilder) {
-    return NewWindowsManagedAppProtectionsItemAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsManagedAppProtectionsItemAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AppsById provides operations to manage the apps property of the microsoft.graph.windowsManagedAppProtection entity.
 func (m *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder) AppsById(id string)(*WindowsManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) {
@@ -56,18 +56,12 @@ func (m *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuild
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["managedMobileApp%2Did"] = id
-    }
-    return NewWindowsManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// Assign provides operations to call the assign method.
-func (m *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder) Assign()(*WindowsManagedAppProtectionsItemAssignRequestBuilder) {
-    return NewWindowsManagedAppProtectionsItemAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    idPtr := &id
+    return NewWindowsManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Assignments provides operations to manage the assignments property of the microsoft.graph.windowsManagedAppProtection entity.
 func (m *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder) Assignments()(*WindowsManagedAppProtectionsItemAssignmentsRequestBuilder) {
-    return NewWindowsManagedAppProtectionsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsManagedAppProtectionsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.windowsManagedAppProtection entity.
 func (m *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder) AssignmentsById(id string)(*WindowsManagedAppProtectionsItemAssignmentsTargetedManagedAppPolicyAssignmentItemRequestBuilder) {
@@ -75,13 +69,11 @@ func (m *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuild
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["targetedManagedAppPolicyAssignment%2Did"] = id
-    }
-    return NewWindowsManagedAppProtectionsItemAssignmentsTargetedManagedAppPolicyAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewWindowsManagedAppProtectionsItemAssignmentsTargetedManagedAppPolicyAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewWindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilderInternal instantiates a new WindowsManagedAppProtectionItemRequestBuilder and sets the default values.
-func NewWindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder) {
+func NewWindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, windowsManagedAppProtectionId *string)(*WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder) {
     m := &WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceAppManagement/windowsManagedAppProtections/{windowsManagedAppProtection%2Did}{?%24select,%24expand}";
@@ -89,15 +81,18 @@ func NewWindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilde
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if windowsManagedAppProtectionId != nil {
+        urlTplParams["windowsManagedAppProtection%2Did"] = *windowsManagedAppProtectionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder instantiates a new WindowsManagedAppProtectionItemRequestBuilder and sets the default values.
 func NewWindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewWindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewWindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property windowsManagedAppProtections for deviceAppManagement
 func (m *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -134,6 +129,14 @@ func (m *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuild
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsManagedAppProtectionable), nil
 }
+// MicrosoftGraphAssign provides operations to call the assign method.
+func (m *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder) MicrosoftGraphAssign()(*WindowsManagedAppProtectionsItemMicrosoftGraphAssignAssignRequestBuilder) {
+    return NewWindowsManagedAppProtectionsItemMicrosoftGraphAssignAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphTargetApps provides operations to call the targetApps method.
+func (m *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder) MicrosoftGraphTargetApps()(*WindowsManagedAppProtectionsItemMicrosoftGraphTargetAppsTargetAppsRequestBuilder) {
+    return NewWindowsManagedAppProtectionsItemMicrosoftGraphTargetAppsTargetAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property windowsManagedAppProtections in deviceAppManagement
 func (m *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsManagedAppProtectionable, requestConfiguration *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsManagedAppProtectionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -152,10 +155,6 @@ func (m *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuild
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsManagedAppProtectionable), nil
-}
-// TargetApps provides operations to call the targetApps method.
-func (m *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder) TargetApps()(*WindowsManagedAppProtectionsItemTargetAppsRequestBuilder) {
-    return NewWindowsManagedAppProtectionsItemTargetAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property windowsManagedAppProtections for deviceAppManagement
 func (m *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -192,7 +191,10 @@ func (m *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuild
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

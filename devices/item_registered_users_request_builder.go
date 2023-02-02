@@ -53,8 +53,8 @@ func NewItemRegisteredUsersRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemRegisteredUsersRequestBuilder instantiates a new RegisteredUsersRequestBuilder and sets the default values.
@@ -65,11 +65,7 @@ func NewItemRegisteredUsersRequestBuilder(rawUrl string, requestAdapter i2ae4187
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemRegisteredUsersRequestBuilder) Count()(*ItemRegisteredUsersCountRequestBuilder) {
-    return NewItemRegisteredUsersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Endpoint casts the previous resource to endpoint.
-func (m *ItemRegisteredUsersRequestBuilder) Endpoint()(*ItemRegisteredUsersEndpointRequestBuilder) {
-    return NewItemRegisteredUsersEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRegisteredUsersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
 // [Find more info here]
@@ -93,9 +89,17 @@ func (m *ItemRegisteredUsersRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
-// ServicePrincipal casts the previous resource to servicePrincipal.
-func (m *ItemRegisteredUsersRequestBuilder) ServicePrincipal()(*ItemRegisteredUsersServicePrincipalRequestBuilder) {
-    return NewItemRegisteredUsersServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphEndpoint casts the previous resource to endpoint.
+func (m *ItemRegisteredUsersRequestBuilder) MicrosoftGraphEndpoint()(*ItemRegisteredUsersMicrosoftGraphEndpointEndpointRequestBuilder) {
+    return NewItemRegisteredUsersMicrosoftGraphEndpointEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *ItemRegisteredUsersRequestBuilder) MicrosoftGraphServicePrincipal()(*ItemRegisteredUsersMicrosoftGraphServicePrincipalServicePrincipalRequestBuilder) {
+    return NewItemRegisteredUsersMicrosoftGraphServicePrincipalServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUser casts the previous resource to user.
+func (m *ItemRegisteredUsersRequestBuilder) MicrosoftGraphUser()(*ItemRegisteredUsersMicrosoftGraphUserUserRequestBuilder) {
+    return NewItemRegisteredUsersMicrosoftGraphUserUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
 func (m *ItemRegisteredUsersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRegisteredUsersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -112,8 +116,4 @@ func (m *ItemRegisteredUsersRequestBuilder) ToGetRequestInformation(ctx context.
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// User casts the previous resource to user.
-func (m *ItemRegisteredUsersRequestBuilder) User()(*ItemRegisteredUsersUserRequestBuilder) {
-    return NewItemRegisteredUsersUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

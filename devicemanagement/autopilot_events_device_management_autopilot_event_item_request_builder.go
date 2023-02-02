@@ -47,7 +47,7 @@ type AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilderPatchRequest
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewAutopilotEventsDeviceManagementAutopilotEventItemRequestBuilderInternal instantiates a new DeviceManagementAutopilotEventItemRequestBuilder and sets the default values.
-func NewAutopilotEventsDeviceManagementAutopilotEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) {
+func NewAutopilotEventsDeviceManagementAutopilotEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, deviceManagementAutopilotEventId *string)(*AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) {
     m := &AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/autopilotEvents/{deviceManagementAutopilotEvent%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewAutopilotEventsDeviceManagementAutopilotEventItemRequestBuilderInternal(
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if deviceManagementAutopilotEventId != nil {
+        urlTplParams["deviceManagementAutopilotEvent%2Did"] = *deviceManagementAutopilotEventId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder instantiates a new DeviceManagementAutopilotEventItemRequestBuilder and sets the default values.
 func NewAutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAutopilotEventsDeviceManagementAutopilotEventItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAutopilotEventsDeviceManagementAutopilotEventItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property autopilotEvents for deviceManagement
 func (m *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -121,7 +124,7 @@ func (m *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) Patch(
 }
 // PolicyStatusDetails provides operations to manage the policyStatusDetails property of the microsoft.graph.deviceManagementAutopilotEvent entity.
 func (m *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) PolicyStatusDetails()(*AutopilotEventsItemPolicyStatusDetailsRequestBuilder) {
-    return NewAutopilotEventsItemPolicyStatusDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAutopilotEventsItemPolicyStatusDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PolicyStatusDetailsById provides operations to manage the policyStatusDetails property of the microsoft.graph.deviceManagementAutopilotEvent entity.
 func (m *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) PolicyStatusDetailsById(id string)(*AutopilotEventsItemPolicyStatusDetailsDeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder) {
@@ -129,10 +132,8 @@ func (m *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) Policy
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["deviceManagementAutopilotPolicyStatusDetail%2Did"] = id
-    }
-    return NewAutopilotEventsItemPolicyStatusDetailsDeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewAutopilotEventsItemPolicyStatusDetailsDeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property autopilotEvents for deviceManagement
 func (m *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +170,10 @@ func (m *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) ToPatc
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

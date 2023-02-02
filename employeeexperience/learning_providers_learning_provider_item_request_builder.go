@@ -47,7 +47,7 @@ type LearningProvidersLearningProviderItemRequestBuilderPatchRequestConfiguratio
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewLearningProvidersLearningProviderItemRequestBuilderInternal instantiates a new LearningProviderItemRequestBuilder and sets the default values.
-func NewLearningProvidersLearningProviderItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LearningProvidersLearningProviderItemRequestBuilder) {
+func NewLearningProvidersLearningProviderItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, learningProviderId *string)(*LearningProvidersLearningProviderItemRequestBuilder) {
     m := &LearningProvidersLearningProviderItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/employeeExperience/learningProviders/{learningProvider%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewLearningProvidersLearningProviderItemRequestBuilderInternal(pathParamete
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if learningProviderId != nil {
+        urlTplParams["learningProvider%2Did"] = *learningProviderId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewLearningProvidersLearningProviderItemRequestBuilder instantiates a new LearningProviderItemRequestBuilder and sets the default values.
 func NewLearningProvidersLearningProviderItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LearningProvidersLearningProviderItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewLearningProvidersLearningProviderItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewLearningProvidersLearningProviderItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property learningProviders for employeeExperience
 func (m *LearningProvidersLearningProviderItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *LearningProvidersLearningProviderItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -102,7 +105,7 @@ func (m *LearningProvidersLearningProviderItemRequestBuilder) Get(ctx context.Co
 }
 // LearningContents provides operations to manage the learningContents property of the microsoft.graph.learningProvider entity.
 func (m *LearningProvidersLearningProviderItemRequestBuilder) LearningContents()(*LearningProvidersItemLearningContentsRequestBuilder) {
-    return NewLearningProvidersItemLearningContentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewLearningProvidersItemLearningContentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // LearningContentsById provides operations to manage the learningContents property of the microsoft.graph.learningProvider entity.
 func (m *LearningProvidersLearningProviderItemRequestBuilder) LearningContentsById(id string)(*LearningProvidersItemLearningContentsLearningContentItemRequestBuilder) {
@@ -110,10 +113,8 @@ func (m *LearningProvidersLearningProviderItemRequestBuilder) LearningContentsBy
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["learningContent%2Did"] = id
-    }
-    return NewLearningProvidersItemLearningContentsLearningContentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewLearningProvidersItemLearningContentsLearningContentItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Patch update the navigation property learningProviders in employeeExperience
 func (m *LearningProvidersLearningProviderItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningProviderable, requestConfiguration *LearningProvidersLearningProviderItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningProviderable, error) {
@@ -169,7 +170,10 @@ func (m *LearningProvidersLearningProviderItemRequestBuilder) ToPatchRequestInfo
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

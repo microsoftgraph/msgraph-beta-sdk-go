@@ -16,7 +16,7 @@ type EducationOrganization struct {
     // The externalSourceDetail property
     externalSourceDetail *string
 }
-// NewEducationOrganization instantiates a new educationOrganization and sets the default values.
+// NewEducationOrganization instantiates a new EducationOrganization and sets the default values.
 func NewEducationOrganization()(*EducationOrganization) {
     m := &EducationOrganization{
         Entity: *NewEntity(),

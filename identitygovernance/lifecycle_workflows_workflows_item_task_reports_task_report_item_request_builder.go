@@ -33,7 +33,7 @@ type LifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilderGetRe
     QueryParameters *LifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilderGetQueryParameters
 }
 // NewLifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilderInternal instantiates a new TaskReportItemRequestBuilder and sets the default values.
-func NewLifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilder) {
+func NewLifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, taskReportId *string)(*LifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilder) {
     m := &LifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/identityGovernance/lifecycleWorkflows/workflows/{workflow%2Did}/taskReports/{taskReport%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewLifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilderIn
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if taskReportId != nil {
+        urlTplParams["taskReport%2Did"] = *taskReportId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewLifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilder instantiates a new TaskReportItemRequestBuilder and sets the default values.
 func NewLifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewLifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewLifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get represents the aggregation of task execution data for tasks within a workflow object.
 func (m *LifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.TaskReportable, error) {
@@ -72,15 +75,15 @@ func (m *LifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilder)
 }
 // Task provides operations to manage the task property of the microsoft.graph.identityGovernance.taskReport entity.
 func (m *LifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilder) Task()(*LifecycleWorkflowsWorkflowsItemTaskReportsItemTaskRequestBuilder) {
-    return NewLifecycleWorkflowsWorkflowsItemTaskReportsItemTaskRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewLifecycleWorkflowsWorkflowsItemTaskReportsItemTaskRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TaskDefinition provides operations to manage the taskDefinition property of the microsoft.graph.identityGovernance.taskReport entity.
 func (m *LifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilder) TaskDefinition()(*LifecycleWorkflowsWorkflowsItemTaskReportsItemTaskDefinitionRequestBuilder) {
-    return NewLifecycleWorkflowsWorkflowsItemTaskReportsItemTaskDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewLifecycleWorkflowsWorkflowsItemTaskReportsItemTaskDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TaskProcessingResults provides operations to manage the taskProcessingResults property of the microsoft.graph.identityGovernance.taskReport entity.
 func (m *LifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilder) TaskProcessingResults()(*LifecycleWorkflowsWorkflowsItemTaskReportsItemTaskProcessingResultsRequestBuilder) {
-    return NewLifecycleWorkflowsWorkflowsItemTaskReportsItemTaskProcessingResultsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewLifecycleWorkflowsWorkflowsItemTaskReportsItemTaskProcessingResultsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TaskProcessingResultsById provides operations to manage the taskProcessingResults property of the microsoft.graph.identityGovernance.taskReport entity.
 func (m *LifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilder) TaskProcessingResultsById(id string)(*LifecycleWorkflowsWorkflowsItemTaskReportsItemTaskProcessingResultsTaskProcessingResultItemRequestBuilder) {
@@ -88,10 +91,8 @@ func (m *LifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilder)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["taskProcessingResult%2Did"] = id
-    }
-    return NewLifecycleWorkflowsWorkflowsItemTaskReportsItemTaskProcessingResultsTaskProcessingResultItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewLifecycleWorkflowsWorkflowsItemTaskReportsItemTaskProcessingResultsTaskProcessingResultItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToGetRequestInformation represents the aggregation of task execution data for tasks within a workflow object.
 func (m *LifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

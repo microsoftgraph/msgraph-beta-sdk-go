@@ -47,7 +47,7 @@ type ProfileAnniversariesPersonAnnualEventItemRequestBuilderPatchRequestConfigur
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewProfileAnniversariesPersonAnnualEventItemRequestBuilderInternal instantiates a new PersonAnnualEventItemRequestBuilder and sets the default values.
-func NewProfileAnniversariesPersonAnnualEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ProfileAnniversariesPersonAnnualEventItemRequestBuilder) {
+func NewProfileAnniversariesPersonAnnualEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, personAnnualEventId *string)(*ProfileAnniversariesPersonAnnualEventItemRequestBuilder) {
     m := &ProfileAnniversariesPersonAnnualEventItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/profile/anniversaries/{personAnnualEvent%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewProfileAnniversariesPersonAnnualEventItemRequestBuilderInternal(pathPara
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if personAnnualEventId != nil {
+        urlTplParams["personAnnualEvent%2Did"] = *personAnnualEventId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewProfileAnniversariesPersonAnnualEventItemRequestBuilder instantiates a new PersonAnnualEventItemRequestBuilder and sets the default values.
 func NewProfileAnniversariesPersonAnnualEventItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ProfileAnniversariesPersonAnnualEventItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewProfileAnniversariesPersonAnnualEventItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewProfileAnniversariesPersonAnnualEventItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property anniversaries for me
 func (m *ProfileAnniversariesPersonAnnualEventItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ProfileAnniversariesPersonAnnualEventItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ProfileAnniversariesPersonAnnualEventItemRequestBuilder) ToPatchRequest
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

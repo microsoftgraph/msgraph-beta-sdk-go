@@ -19,7 +19,7 @@ type DeviceManagementUserRightsSetting struct {
 func NewDeviceManagementUserRightsSetting()(*DeviceManagementUserRightsSetting) {
     m := &DeviceManagementUserRightsSetting{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceManagementUserRightsSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

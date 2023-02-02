@@ -60,8 +60,8 @@ func NewGroupsItemSetsItemTermsRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGroupsItemSetsItemTermsRequestBuilder instantiates a new TermsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewGroupsItemSetsItemTermsRequestBuilder(rawUrl string, requestAdapter i2ae
 }
 // Count provides operations to count the resources in the collection.
 func (m *GroupsItemSetsItemTermsRequestBuilder) Count()(*GroupsItemSetsItemTermsCountRequestBuilder) {
-    return NewGroupsItemSetsItemTermsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupsItemSetsItemTermsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get all the terms under the set.
 func (m *GroupsItemSetsItemTermsRequestBuilder) Get(ctx context.Context, requestConfiguration *GroupsItemSetsItemTermsRequestBuilderGetRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.TermCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *GroupsItemSetsItemTermsRequestBuilder) ToPostRequestInformation(ctx con
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

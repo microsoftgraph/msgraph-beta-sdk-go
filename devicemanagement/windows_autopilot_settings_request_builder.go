@@ -55,8 +55,8 @@ func NewWindowsAutopilotSettingsRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsAutopilotSettingsRequestBuilder instantiates a new WindowsAutopilotSettingsRequestBuilder and sets the default values.
@@ -100,6 +100,10 @@ func (m *WindowsAutopilotSettingsRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotSettingsable), nil
 }
+// MicrosoftGraphSync provides operations to call the sync method.
+func (m *WindowsAutopilotSettingsRequestBuilder) MicrosoftGraphSync()(*WindowsAutopilotSettingsMicrosoftGraphSyncSyncRequestBuilder) {
+    return NewWindowsAutopilotSettingsMicrosoftGraphSyncSyncRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property windowsAutopilotSettings in deviceManagement
 func (m *WindowsAutopilotSettingsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotSettingsable, requestConfiguration *WindowsAutopilotSettingsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotSettingsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -118,10 +122,6 @@ func (m *WindowsAutopilotSettingsRequestBuilder) Patch(ctx context.Context, body
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotSettingsable), nil
-}
-// Sync provides operations to call the sync method.
-func (m *WindowsAutopilotSettingsRequestBuilder) Sync()(*WindowsAutopilotSettingsSyncRequestBuilder) {
-    return NewWindowsAutopilotSettingsSyncRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property windowsAutopilotSettings for deviceManagement
 func (m *WindowsAutopilotSettingsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *WindowsAutopilotSettingsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +158,10 @@ func (m *WindowsAutopilotSettingsRequestBuilder) ToPatchRequestInformation(ctx c
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

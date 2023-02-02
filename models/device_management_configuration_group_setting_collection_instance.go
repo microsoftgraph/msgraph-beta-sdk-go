@@ -15,8 +15,8 @@ func NewDeviceManagementConfigurationGroupSettingCollectionInstance()(*DeviceMan
     m := &DeviceManagementConfigurationGroupSettingCollectionInstance{
         DeviceManagementConfigurationSettingInstance: *NewDeviceManagementConfigurationSettingInstance(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationGroupSettingCollectionInstance";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationGroupSettingCollectionInstance"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementConfigurationGroupSettingCollectionInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

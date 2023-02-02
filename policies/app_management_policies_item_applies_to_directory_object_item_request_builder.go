@@ -33,7 +33,7 @@ type AppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilderGetReque
     QueryParameters *AppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilderGetQueryParameters
 }
 // NewAppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilderInternal instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
-func NewAppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) {
+func NewAppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, directoryObjectId *string)(*AppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) {
     m := &AppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/policies/appManagementPolicies/{appManagementPolicy%2Did}/appliesTo/{directoryObject%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewAppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilderInter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if directoryObjectId != nil {
+        urlTplParams["directoryObject%2Did"] = *directoryObjectId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilder instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
 func NewAppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get get appliesTo from policies
 func (m *AppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {

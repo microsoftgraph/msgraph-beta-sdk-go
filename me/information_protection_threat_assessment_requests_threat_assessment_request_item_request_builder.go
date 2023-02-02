@@ -47,7 +47,7 @@ type InformationProtectionThreatAssessmentRequestsThreatAssessmentRequestItemReq
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewInformationProtectionThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilderInternal instantiates a new ThreatAssessmentRequestItemRequestBuilder and sets the default values.
-func NewInformationProtectionThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InformationProtectionThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilder) {
+func NewInformationProtectionThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, threatAssessmentRequestId *string)(*InformationProtectionThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilder) {
     m := &InformationProtectionThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/informationProtection/threatAssessmentRequests/{threatAssessmentRequest%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewInformationProtectionThreatAssessmentRequestsThreatAssessmentRequestItem
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if threatAssessmentRequestId != nil {
+        urlTplParams["threatAssessmentRequest%2Did"] = *threatAssessmentRequestId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewInformationProtectionThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilder instantiates a new ThreatAssessmentRequestItemRequestBuilder and sets the default values.
 func NewInformationProtectionThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InformationProtectionThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewInformationProtectionThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewInformationProtectionThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property threatAssessmentRequests for me
 func (m *InformationProtectionThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *InformationProtectionThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -121,7 +124,7 @@ func (m *InformationProtectionThreatAssessmentRequestsThreatAssessmentRequestIte
 }
 // Results provides operations to manage the results property of the microsoft.graph.threatAssessmentRequest entity.
 func (m *InformationProtectionThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilder) Results()(*InformationProtectionThreatAssessmentRequestsItemResultsRequestBuilder) {
-    return NewInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ResultsById provides operations to manage the results property of the microsoft.graph.threatAssessmentRequest entity.
 func (m *InformationProtectionThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilder) ResultsById(id string)(*InformationProtectionThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilder) {
@@ -129,10 +132,8 @@ func (m *InformationProtectionThreatAssessmentRequestsThreatAssessmentRequestIte
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["threatAssessmentResult%2Did"] = id
-    }
-    return NewInformationProtectionThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewInformationProtectionThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property threatAssessmentRequests for me
 func (m *InformationProtectionThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *InformationProtectionThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +170,10 @@ func (m *InformationProtectionThreatAssessmentRequestsThreatAssessmentRequestIte
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

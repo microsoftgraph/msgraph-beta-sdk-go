@@ -19,7 +19,7 @@ type NetworkLocationDetail struct {
 func NewNetworkLocationDetail()(*NetworkLocationDetail) {
     m := &NetworkLocationDetail{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateNetworkLocationDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

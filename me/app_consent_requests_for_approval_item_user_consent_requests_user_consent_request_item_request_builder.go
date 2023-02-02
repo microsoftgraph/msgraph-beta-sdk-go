@@ -48,10 +48,10 @@ type AppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemR
 }
 // Approval provides operations to manage the approval property of the microsoft.graph.userConsentRequest entity.
 func (m *AppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder) Approval()(*AppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalRequestBuilder) {
-    return NewAppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAppConsentRequestsForApprovalItemUserConsentRequestsItemApprovalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderInternal instantiates a new UserConsentRequestItemRequestBuilder and sets the default values.
-func NewAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder) {
+func NewAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, userConsentRequestId *string)(*AppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder) {
     m := &AppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/appConsentRequestsForApproval/{appConsentRequest%2Did}/userConsentRequests/{userConsentRequest%2Did}{?%24select,%24expand}";
@@ -59,15 +59,18 @@ func NewAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestIt
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if userConsentRequestId != nil {
+        urlTplParams["userConsentRequest%2Did"] = *userConsentRequestId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder instantiates a new UserConsentRequestItemRequestBuilder and sets the default values.
 func NewAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property userConsentRequests for me
 func (m *AppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -158,7 +161,10 @@ func (m *AppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestI
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

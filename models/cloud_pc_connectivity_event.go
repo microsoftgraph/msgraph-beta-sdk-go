@@ -26,7 +26,7 @@ type CloudPcConnectivityEvent struct {
 func NewCloudPcConnectivityEvent()(*CloudPcConnectivityEvent) {
     m := &CloudPcConnectivityEvent{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCloudPcConnectivityEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

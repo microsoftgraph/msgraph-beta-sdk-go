@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsDevicePerformance the user experience analytics device performance entity contains device boot performance details.
+// UserExperienceAnalyticsDevicePerformance 
 type UserExperienceAnalyticsDevicePerformance struct {
     Entity
     // Average (mean) number of Blue Screens per device in the last 30 days. Valid values 0 to 9999999
@@ -48,7 +48,7 @@ type UserExperienceAnalyticsDevicePerformance struct {
     // The user experience analytics device startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
     startupPerformanceScore *float64
 }
-// NewUserExperienceAnalyticsDevicePerformance instantiates a new userExperienceAnalyticsDevicePerformance and sets the default values.
+// NewUserExperienceAnalyticsDevicePerformance instantiates a new UserExperienceAnalyticsDevicePerformance and sets the default values.
 func NewUserExperienceAnalyticsDevicePerformance()(*UserExperienceAnalyticsDevicePerformance) {
     m := &UserExperienceAnalyticsDevicePerformance{
         Entity: *NewEntity(),

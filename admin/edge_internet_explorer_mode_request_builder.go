@@ -55,8 +55,8 @@ func NewEdgeInternetExplorerModeRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEdgeInternetExplorerModeRequestBuilder instantiates a new InternetExplorerModeRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *EdgeInternetExplorerModeRequestBuilder) Patch(ctx context.Context, body
 }
 // SiteLists provides operations to manage the siteLists property of the microsoft.graph.internetExplorerMode entity.
 func (m *EdgeInternetExplorerModeRequestBuilder) SiteLists()(*EdgeInternetExplorerModeSiteListsRequestBuilder) {
-    return NewEdgeInternetExplorerModeSiteListsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdgeInternetExplorerModeSiteListsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SiteListsById provides operations to manage the siteLists property of the microsoft.graph.internetExplorerMode entity.
 func (m *EdgeInternetExplorerModeRequestBuilder) SiteListsById(id string)(*EdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilder) {
@@ -129,10 +129,8 @@ func (m *EdgeInternetExplorerModeRequestBuilder) SiteListsById(id string)(*EdgeI
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["browserSiteList%2Did"] = id
-    }
-    return NewEdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewEdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property internetExplorerMode for admin
 func (m *EdgeInternetExplorerModeRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EdgeInternetExplorerModeRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +167,10 @@ func (m *EdgeInternetExplorerModeRequestBuilder) ToPatchRequestInformation(ctx c
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

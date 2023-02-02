@@ -33,7 +33,7 @@ type ItemTransitiveReportsDirectoryObjectItemRequestBuilderGetRequestConfigurati
     QueryParameters *ItemTransitiveReportsDirectoryObjectItemRequestBuilderGetQueryParameters
 }
 // NewItemTransitiveReportsDirectoryObjectItemRequestBuilderInternal instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
-func NewItemTransitiveReportsDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTransitiveReportsDirectoryObjectItemRequestBuilder) {
+func NewItemTransitiveReportsDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, directoryObjectId *string)(*ItemTransitiveReportsDirectoryObjectItemRequestBuilder) {
     m := &ItemTransitiveReportsDirectoryObjectItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/transitiveReports/{directoryObject%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewItemTransitiveReportsDirectoryObjectItemRequestBuilderInternal(pathParam
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if directoryObjectId != nil {
+        urlTplParams["directoryObject%2Did"] = *directoryObjectId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTransitiveReportsDirectoryObjectItemRequestBuilder instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
 func NewItemTransitiveReportsDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTransitiveReportsDirectoryObjectItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemTransitiveReportsDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemTransitiveReportsDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get the transitive reports for a user. Read-only.
 func (m *ItemTransitiveReportsDirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTransitiveReportsDirectoryObjectItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {

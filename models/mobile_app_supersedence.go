@@ -19,8 +19,8 @@ func NewMobileAppSupersedence()(*MobileAppSupersedence) {
     m := &MobileAppSupersedence{
         MobileAppRelationship: *NewMobileAppRelationship(),
     }
-    odataTypeValue := "#microsoft.graph.mobileAppSupersedence";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.mobileAppSupersedence"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMobileAppSupersedenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -47,7 +47,7 @@ type TeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilderPatchRe
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewTeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilderInternal instantiates a new TeamTemplateDefinitionItemRequestBuilder and sets the default values.
-func NewTeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilder) {
+func NewTeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, teamTemplateDefinitionId *string)(*TeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilder) {
     m := &TeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewTeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilderInte
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if teamTemplateDefinitionId != nil {
+        urlTplParams["teamTemplateDefinition%2Did"] = *teamTemplateDefinitionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilder instantiates a new TeamTemplateDefinitionItemRequestBuilder and sets the default values.
 func NewTeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewTeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewTeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property definitions for teamwork
 func (m *TeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -121,7 +124,7 @@ func (m *TeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilder) P
 }
 // TeamDefinition provides operations to manage the teamDefinition property of the microsoft.graph.teamTemplateDefinition entity.
 func (m *TeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilder) TeamDefinition()(*TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) {
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property definitions for teamwork
 func (m *TeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +161,10 @@ func (m *TeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilder) T
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

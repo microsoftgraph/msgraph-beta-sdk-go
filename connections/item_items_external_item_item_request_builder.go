@@ -48,7 +48,7 @@ type ItemItemsExternalItemItemRequestBuilderPatchRequestConfiguration struct {
 }
 // Activities provides operations to manage the activities property of the microsoft.graph.externalConnectors.externalItem entity.
 func (m *ItemItemsExternalItemItemRequestBuilder) Activities()(*ItemItemsItemActivitiesRequestBuilder) {
-    return NewItemItemsItemActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemItemsItemActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ActivitiesById provides operations to manage the activities property of the microsoft.graph.externalConnectors.externalItem entity.
 func (m *ItemItemsExternalItemItemRequestBuilder) ActivitiesById(id string)(*ItemItemsItemActivitiesExternalActivityItemRequestBuilder) {
@@ -56,17 +56,11 @@ func (m *ItemItemsExternalItemItemRequestBuilder) ActivitiesById(id string)(*Ite
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["externalActivity%2Did"] = id
-    }
-    return NewItemItemsItemActivitiesExternalActivityItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// AddActivities provides operations to call the addActivities method.
-func (m *ItemItemsExternalItemItemRequestBuilder) AddActivities()(*ItemItemsItemAddActivitiesRequestBuilder) {
-    return NewItemItemsItemAddActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    idPtr := &id
+    return NewItemItemsItemActivitiesExternalActivityItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewItemItemsExternalItemItemRequestBuilderInternal instantiates a new ExternalItemItemRequestBuilder and sets the default values.
-func NewItemItemsExternalItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsExternalItemItemRequestBuilder) {
+func NewItemItemsExternalItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, externalItemId *string)(*ItemItemsExternalItemItemRequestBuilder) {
     m := &ItemItemsExternalItemItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/connections/{externalConnection%2Did}/items/{externalItem%2Did}{?%24select,%24expand}";
@@ -74,15 +68,18 @@ func NewItemItemsExternalItemItemRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if externalItemId != nil {
+        urlTplParams["externalItem%2Did"] = *externalItemId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemItemsExternalItemItemRequestBuilder instantiates a new ExternalItemItemRequestBuilder and sets the default values.
 func NewItemItemsExternalItemItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsExternalItemItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemItemsExternalItemItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemItemsExternalItemItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property items for connections
 func (m *ItemItemsExternalItemItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemItemsExternalItemItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -118,6 +115,10 @@ func (m *ItemItemsExternalItemItemRequestBuilder) Get(ctx context.Context, reque
         return nil, nil
     }
     return res.(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalItemable), nil
+}
+// MicrosoftGraphExternalConnectorsAddActivities provides operations to call the addActivities method.
+func (m *ItemItemsExternalItemItemRequestBuilder) MicrosoftGraphExternalConnectorsAddActivities()(*ItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesRequestBuilder) {
+    return NewItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property items in connections
 func (m *ItemItemsExternalItemItemRequestBuilder) Patch(ctx context.Context, body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalItemable, requestConfiguration *ItemItemsExternalItemItemRequestBuilderPatchRequestConfiguration)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalItemable, error) {
@@ -173,7 +174,10 @@ func (m *ItemItemsExternalItemItemRequestBuilder) ToPatchRequestInformation(ctx 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

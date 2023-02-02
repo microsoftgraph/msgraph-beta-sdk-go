@@ -23,7 +23,7 @@ type ActivityStatisticsItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ActivityStatisticsItemRequestBuilderGetQueryParameters get entity from activitystatistics by key (id)
+// ActivityStatisticsItemRequestBuilderGetQueryParameters get entity from activitystatistics by key
 type ActivityStatisticsItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -47,7 +47,7 @@ type ActivityStatisticsItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewActivityStatisticsItemRequestBuilderInternal instantiates a new ActivityStatisticsItemRequestBuilder and sets the default values.
-func NewActivityStatisticsItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ActivityStatisticsItemRequestBuilder) {
+func NewActivityStatisticsItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, activityStatisticsId *string)(*ActivityStatisticsItemRequestBuilder) {
     m := &ActivityStatisticsItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/activitystatistics/{activityStatistics%2Did}{?%24select,%24expand}";
@@ -55,17 +55,20 @@ func NewActivityStatisticsItemRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if activityStatisticsId != nil {
+        urlTplParams["activityStatistics%2Did"] = *activityStatisticsId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewActivityStatisticsItemRequestBuilder instantiates a new ActivityStatisticsItemRequestBuilder and sets the default values.
 func NewActivityStatisticsItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ActivityStatisticsItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewActivityStatisticsItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewActivityStatisticsItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Delete delete entity from activitystatistics by key (id)
+// Delete delete entity from activitystatistics
 func (m *ActivityStatisticsItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ActivityStatisticsItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,7 +84,7 @@ func (m *ActivityStatisticsItemRequestBuilder) Delete(ctx context.Context, reque
     }
     return nil
 }
-// Get get entity from activitystatistics by key (id)
+// Get get entity from activitystatistics by key
 func (m *ActivityStatisticsItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ActivityStatisticsItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,7 +103,7 @@ func (m *ActivityStatisticsItemRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsable), nil
 }
-// Patch update entity in activitystatistics by key (id)
+// Patch update entity in activitystatistics
 func (m *ActivityStatisticsItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsable, requestConfiguration *ActivityStatisticsItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +122,7 @@ func (m *ActivityStatisticsItemRequestBuilder) Patch(ctx context.Context, body i
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsable), nil
 }
-// ToDeleteRequestInformation delete entity from activitystatistics by key (id)
+// ToDeleteRequestInformation delete entity from activitystatistics
 func (m *ActivityStatisticsItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ActivityStatisticsItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,7 +134,7 @@ func (m *ActivityStatisticsItemRequestBuilder) ToDeleteRequestInformation(ctx co
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from activitystatistics by key (id)
+// ToGetRequestInformation get entity from activitystatistics by key
 func (m *ActivityStatisticsItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ActivityStatisticsItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,14 +150,17 @@ func (m *ActivityStatisticsItemRequestBuilder) ToGetRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in activitystatistics by key (id)
+// ToPatchRequestInformation update entity in activitystatistics
 func (m *ActivityStatisticsItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsable, requestConfiguration *ActivityStatisticsItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

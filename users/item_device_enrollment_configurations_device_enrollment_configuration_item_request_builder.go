@@ -46,13 +46,9 @@ type ItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestB
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Assign provides operations to call the assign method.
-func (m *ItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder) Assign()(*ItemDeviceEnrollmentConfigurationsItemAssignRequestBuilder) {
-    return NewItemDeviceEnrollmentConfigurationsItemAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Assignments provides operations to manage the assignments property of the microsoft.graph.deviceEnrollmentConfiguration entity.
 func (m *ItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder) Assignments()(*ItemDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder) {
-    return NewItemDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.deviceEnrollmentConfiguration entity.
 func (m *ItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder) AssignmentsById(id string)(*ItemDeviceEnrollmentConfigurationsItemAssignmentsEnrollmentConfigurationAssignmentItemRequestBuilder) {
@@ -60,13 +56,11 @@ func (m *ItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequ
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["enrollmentConfigurationAssignment%2Did"] = id
-    }
-    return NewItemDeviceEnrollmentConfigurationsItemAssignmentsEnrollmentConfigurationAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemDeviceEnrollmentConfigurationsItemAssignmentsEnrollmentConfigurationAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilderInternal instantiates a new DeviceEnrollmentConfigurationItemRequestBuilder and sets the default values.
-func NewItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder) {
+func NewItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, deviceEnrollmentConfigurationId *string)(*ItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder) {
     m := &ItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration%2Did}{?%24select,%24expand}";
@@ -74,15 +68,18 @@ func NewItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemReque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if deviceEnrollmentConfigurationId != nil {
+        urlTplParams["deviceEnrollmentConfiguration%2Did"] = *deviceEnrollmentConfigurationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder instantiates a new DeviceEnrollmentConfigurationItemRequestBuilder and sets the default values.
 func NewItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property deviceEnrollmentConfigurations for users
 func (m *ItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -119,6 +116,14 @@ func (m *ItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable), nil
 }
+// MicrosoftGraphAssign provides operations to call the assign method.
+func (m *ItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder) MicrosoftGraphAssign()(*ItemDeviceEnrollmentConfigurationsItemMicrosoftGraphAssignAssignRequestBuilder) {
+    return NewItemDeviceEnrollmentConfigurationsItemMicrosoftGraphAssignAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphSetPriority provides operations to call the setPriority method.
+func (m *ItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder) MicrosoftGraphSetPriority()(*ItemDeviceEnrollmentConfigurationsItemMicrosoftGraphSetPrioritySetPriorityRequestBuilder) {
+    return NewItemDeviceEnrollmentConfigurationsItemMicrosoftGraphSetPrioritySetPriorityRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property deviceEnrollmentConfigurations in users
 func (m *ItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable, requestConfiguration *ItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -137,10 +142,6 @@ func (m *ItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequ
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable), nil
-}
-// SetPriority provides operations to call the setPriority method.
-func (m *ItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder) SetPriority()(*ItemDeviceEnrollmentConfigurationsItemSetPriorityRequestBuilder) {
-    return NewItemDeviceEnrollmentConfigurationsItemSetPriorityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property deviceEnrollmentConfigurations for users
 func (m *ItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -177,7 +178,10 @@ func (m *ItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

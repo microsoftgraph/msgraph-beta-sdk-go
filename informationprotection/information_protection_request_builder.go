@@ -41,7 +41,7 @@ type InformationProtectionRequestBuilderPatchRequestConfiguration struct {
 }
 // Bitlocker provides operations to manage the bitlocker property of the microsoft.graph.informationProtection entity.
 func (m *InformationProtectionRequestBuilder) Bitlocker()(*BitlockerRequestBuilder) {
-    return NewBitlockerRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewBitlockerRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewInformationProtectionRequestBuilderInternal instantiates a new InformationProtectionRequestBuilder and sets the default values.
 func NewInformationProtectionRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InformationProtectionRequestBuilder) {
@@ -52,8 +52,8 @@ func NewInformationProtectionRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewInformationProtectionRequestBuilder instantiates a new InformationProtectionRequestBuilder and sets the default values.
@@ -64,7 +64,7 @@ func NewInformationProtectionRequestBuilder(rawUrl string, requestAdapter i2ae41
 }
 // DataLossPreventionPolicies provides operations to manage the dataLossPreventionPolicies property of the microsoft.graph.informationProtection entity.
 func (m *InformationProtectionRequestBuilder) DataLossPreventionPolicies()(*DataLossPreventionPoliciesRequestBuilder) {
-    return NewDataLossPreventionPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDataLossPreventionPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DataLossPreventionPoliciesById provides operations to manage the dataLossPreventionPolicies property of the microsoft.graph.informationProtection entity.
 func (m *InformationProtectionRequestBuilder) DataLossPreventionPoliciesById(id string)(*DataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder) {
@@ -72,18 +72,8 @@ func (m *InformationProtectionRequestBuilder) DataLossPreventionPoliciesById(id 
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["dataLossPreventionPolicy%2Did"] = id
-    }
-    return NewDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// DecryptBuffer provides operations to call the decryptBuffer method.
-func (m *InformationProtectionRequestBuilder) DecryptBuffer()(*DecryptBufferRequestBuilder) {
-    return NewDecryptBufferRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// EncryptBuffer provides operations to call the encryptBuffer method.
-func (m *InformationProtectionRequestBuilder) EncryptBuffer()(*EncryptBufferRequestBuilder) {
-    return NewEncryptBufferRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    idPtr := &id
+    return NewDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Get get informationProtection
 func (m *InformationProtectionRequestBuilder) Get(ctx context.Context, requestConfiguration *InformationProtectionRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionable, error) {
@@ -103,6 +93,22 @@ func (m *InformationProtectionRequestBuilder) Get(ctx context.Context, requestCo
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionable), nil
+}
+// MicrosoftGraphDecryptBuffer provides operations to call the decryptBuffer method.
+func (m *InformationProtectionRequestBuilder) MicrosoftGraphDecryptBuffer()(*MicrosoftGraphDecryptBufferDecryptBufferRequestBuilder) {
+    return NewMicrosoftGraphDecryptBufferDecryptBufferRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphEncryptBuffer provides operations to call the encryptBuffer method.
+func (m *InformationProtectionRequestBuilder) MicrosoftGraphEncryptBuffer()(*MicrosoftGraphEncryptBufferEncryptBufferRequestBuilder) {
+    return NewMicrosoftGraphEncryptBufferEncryptBufferRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphSignDigest provides operations to call the signDigest method.
+func (m *InformationProtectionRequestBuilder) MicrosoftGraphSignDigest()(*MicrosoftGraphSignDigestSignDigestRequestBuilder) {
+    return NewMicrosoftGraphSignDigestSignDigestRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphVerifySignature provides operations to call the verifySignature method.
+func (m *InformationProtectionRequestBuilder) MicrosoftGraphVerifySignature()(*MicrosoftGraphVerifySignatureVerifySignatureRequestBuilder) {
+    return NewMicrosoftGraphVerifySignatureVerifySignatureRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update informationProtection
 func (m *InformationProtectionRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionable, requestConfiguration *InformationProtectionRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionable, error) {
@@ -125,11 +131,11 @@ func (m *InformationProtectionRequestBuilder) Patch(ctx context.Context, body ie
 }
 // Policy provides operations to manage the policy property of the microsoft.graph.informationProtection entity.
 func (m *InformationProtectionRequestBuilder) Policy()(*PolicyRequestBuilder) {
-    return NewPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SensitivityLabels provides operations to manage the sensitivityLabels property of the microsoft.graph.informationProtection entity.
 func (m *InformationProtectionRequestBuilder) SensitivityLabels()(*SensitivityLabelsRequestBuilder) {
-    return NewSensitivityLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSensitivityLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SensitivityLabelsById provides operations to manage the sensitivityLabels property of the microsoft.graph.informationProtection entity.
 func (m *InformationProtectionRequestBuilder) SensitivityLabelsById(id string)(*SensitivityLabelsSensitivityLabelItemRequestBuilder) {
@@ -137,22 +143,16 @@ func (m *InformationProtectionRequestBuilder) SensitivityLabelsById(id string)(*
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["sensitivityLabel%2Did"] = id
-    }
-    return NewSensitivityLabelsSensitivityLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewSensitivityLabelsSensitivityLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // SensitivityPolicySettings provides operations to manage the sensitivityPolicySettings property of the microsoft.graph.informationProtection entity.
 func (m *InformationProtectionRequestBuilder) SensitivityPolicySettings()(*SensitivityPolicySettingsRequestBuilder) {
-    return NewSensitivityPolicySettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// SignDigest provides operations to call the signDigest method.
-func (m *InformationProtectionRequestBuilder) SignDigest()(*SignDigestRequestBuilder) {
-    return NewSignDigestRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSensitivityPolicySettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ThreatAssessmentRequests provides operations to manage the threatAssessmentRequests property of the microsoft.graph.informationProtection entity.
 func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequests()(*ThreatAssessmentRequestsRequestBuilder) {
-    return NewThreatAssessmentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewThreatAssessmentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ThreatAssessmentRequestsById provides operations to manage the threatAssessmentRequests property of the microsoft.graph.informationProtection entity.
 func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequestsById(id string)(*ThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilder) {
@@ -160,10 +160,8 @@ func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequestsById(id st
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["threatAssessmentRequest%2Did"] = id
-    }
-    return NewThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToGetRequestInformation get informationProtection
 func (m *InformationProtectionRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *InformationProtectionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -188,14 +186,13 @@ func (m *InformationProtectionRequestBuilder) ToPatchRequestInformation(ctx cont
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// VerifySignature provides operations to call the verifySignature method.
-func (m *InformationProtectionRequestBuilder) VerifySignature()(*VerifySignatureRequestBuilder) {
-    return NewVerifySignatureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -47,7 +47,7 @@ type SensitiveTypesSensitiveTypeItemRequestBuilderPatchRequestConfiguration stru
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewSensitiveTypesSensitiveTypeItemRequestBuilderInternal instantiates a new SensitiveTypeItemRequestBuilder and sets the default values.
-func NewSensitiveTypesSensitiveTypeItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SensitiveTypesSensitiveTypeItemRequestBuilder) {
+func NewSensitiveTypesSensitiveTypeItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, sensitiveTypeId *string)(*SensitiveTypesSensitiveTypeItemRequestBuilder) {
     m := &SensitiveTypesSensitiveTypeItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/dataClassification/sensitiveTypes/{sensitiveType%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewSensitiveTypesSensitiveTypeItemRequestBuilderInternal(pathParameters map
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if sensitiveTypeId != nil {
+        urlTplParams["sensitiveType%2Did"] = *sensitiveTypeId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewSensitiveTypesSensitiveTypeItemRequestBuilder instantiates a new SensitiveTypeItemRequestBuilder and sets the default values.
 func NewSensitiveTypesSensitiveTypeItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SensitiveTypesSensitiveTypeItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewSensitiveTypesSensitiveTypeItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewSensitiveTypesSensitiveTypeItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property sensitiveTypes for dataClassification
 func (m *SensitiveTypesSensitiveTypeItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *SensitiveTypesSensitiveTypeItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *SensitiveTypesSensitiveTypeItemRequestBuilder) ToPatchRequestInformatio
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

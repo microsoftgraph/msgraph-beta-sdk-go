@@ -47,7 +47,7 @@ type ItemServicesBookingServiceItemRequestBuilderPatchRequestConfiguration struc
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemServicesBookingServiceItemRequestBuilderInternal instantiates a new BookingServiceItemRequestBuilder and sets the default values.
-func NewItemServicesBookingServiceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemServicesBookingServiceItemRequestBuilder) {
+func NewItemServicesBookingServiceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, bookingServiceId *string)(*ItemServicesBookingServiceItemRequestBuilder) {
     m := &ItemServicesBookingServiceItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/services/{bookingService%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemServicesBookingServiceItemRequestBuilderInternal(pathParameters map[
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if bookingServiceId != nil {
+        urlTplParams["bookingService%2Did"] = *bookingServiceId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemServicesBookingServiceItemRequestBuilder instantiates a new BookingServiceItemRequestBuilder and sets the default values.
 func NewItemServicesBookingServiceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemServicesBookingServiceItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemServicesBookingServiceItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemServicesBookingServiceItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property services for bookingBusinesses
 func (m *ItemServicesBookingServiceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemServicesBookingServiceItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemServicesBookingServiceItemRequestBuilder) ToPatchRequestInformation
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

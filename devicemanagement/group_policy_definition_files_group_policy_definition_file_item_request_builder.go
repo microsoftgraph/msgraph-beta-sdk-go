@@ -47,7 +47,7 @@ type GroupPolicyDefinitionFilesGroupPolicyDefinitionFileItemRequestBuilderPatchR
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewGroupPolicyDefinitionFilesGroupPolicyDefinitionFileItemRequestBuilderInternal instantiates a new GroupPolicyDefinitionFileItemRequestBuilder and sets the default values.
-func NewGroupPolicyDefinitionFilesGroupPolicyDefinitionFileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyDefinitionFilesGroupPolicyDefinitionFileItemRequestBuilder) {
+func NewGroupPolicyDefinitionFilesGroupPolicyDefinitionFileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, groupPolicyDefinitionFileId *string)(*GroupPolicyDefinitionFilesGroupPolicyDefinitionFileItemRequestBuilder) {
     m := &GroupPolicyDefinitionFilesGroupPolicyDefinitionFileItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/groupPolicyDefinitionFiles/{groupPolicyDefinitionFile%2Did}{?%24select,%24expand}";
@@ -55,19 +55,22 @@ func NewGroupPolicyDefinitionFilesGroupPolicyDefinitionFileItemRequestBuilderInt
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if groupPolicyDefinitionFileId != nil {
+        urlTplParams["groupPolicyDefinitionFile%2Did"] = *groupPolicyDefinitionFileId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGroupPolicyDefinitionFilesGroupPolicyDefinitionFileItemRequestBuilder instantiates a new GroupPolicyDefinitionFileItemRequestBuilder and sets the default values.
 func NewGroupPolicyDefinitionFilesGroupPolicyDefinitionFileItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyDefinitionFilesGroupPolicyDefinitionFileItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewGroupPolicyDefinitionFilesGroupPolicyDefinitionFileItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewGroupPolicyDefinitionFilesGroupPolicyDefinitionFileItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Definitions provides operations to manage the definitions property of the microsoft.graph.groupPolicyDefinitionFile entity.
 func (m *GroupPolicyDefinitionFilesGroupPolicyDefinitionFileItemRequestBuilder) Definitions()(*GroupPolicyDefinitionFilesItemDefinitionsRequestBuilder) {
-    return NewGroupPolicyDefinitionFilesItemDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyDefinitionFilesItemDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DefinitionsById provides operations to manage the definitions property of the microsoft.graph.groupPolicyDefinitionFile entity.
 func (m *GroupPolicyDefinitionFilesGroupPolicyDefinitionFileItemRequestBuilder) DefinitionsById(id string)(*GroupPolicyDefinitionFilesItemDefinitionsGroupPolicyDefinitionItemRequestBuilder) {
@@ -75,10 +78,8 @@ func (m *GroupPolicyDefinitionFilesGroupPolicyDefinitionFileItemRequestBuilder) 
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["groupPolicyDefinition%2Did"] = id
-    }
-    return NewGroupPolicyDefinitionFilesItemDefinitionsGroupPolicyDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewGroupPolicyDefinitionFilesItemDefinitionsGroupPolicyDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Delete delete navigation property groupPolicyDefinitionFiles for deviceManagement
 func (m *GroupPolicyDefinitionFilesGroupPolicyDefinitionFileItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *GroupPolicyDefinitionFilesGroupPolicyDefinitionFileItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -169,7 +170,10 @@ func (m *GroupPolicyDefinitionFilesGroupPolicyDefinitionFileItemRequestBuilder) 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

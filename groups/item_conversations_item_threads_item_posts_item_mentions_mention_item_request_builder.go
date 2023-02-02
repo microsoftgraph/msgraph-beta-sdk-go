@@ -40,7 +40,7 @@ type ItemConversationsItemThreadsItemPostsItemMentionsMentionItemRequestBuilderG
     QueryParameters *ItemConversationsItemThreadsItemPostsItemMentionsMentionItemRequestBuilderGetQueryParameters
 }
 // NewItemConversationsItemThreadsItemPostsItemMentionsMentionItemRequestBuilderInternal instantiates a new MentionItemRequestBuilder and sets the default values.
-func NewItemConversationsItemThreadsItemPostsItemMentionsMentionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConversationsItemThreadsItemPostsItemMentionsMentionItemRequestBuilder) {
+func NewItemConversationsItemThreadsItemPostsItemMentionsMentionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, mentionId *string)(*ItemConversationsItemThreadsItemPostsItemMentionsMentionItemRequestBuilder) {
     m := &ItemConversationsItemThreadsItemPostsItemMentionsMentionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/mentions/{mention%2Did}{?%24select,%24expand}";
@@ -48,15 +48,18 @@ func NewItemConversationsItemThreadsItemPostsItemMentionsMentionItemRequestBuild
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if mentionId != nil {
+        urlTplParams["mention%2Did"] = *mentionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemConversationsItemThreadsItemPostsItemMentionsMentionItemRequestBuilder instantiates a new MentionItemRequestBuilder and sets the default values.
 func NewItemConversationsItemThreadsItemPostsItemMentionsMentionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConversationsItemThreadsItemPostsItemMentionsMentionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemConversationsItemThreadsItemPostsItemMentionsMentionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemConversationsItemThreadsItemPostsItemMentionsMentionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property mentions for groups
 func (m *ItemConversationsItemThreadsItemPostsItemMentionsMentionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemConversationsItemThreadsItemPostsItemMentionsMentionItemRequestBuilderDeleteRequestConfiguration)(error) {

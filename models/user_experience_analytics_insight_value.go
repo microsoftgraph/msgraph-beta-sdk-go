@@ -15,7 +15,7 @@ type UserExperienceAnalyticsInsightValue struct {
 func NewUserExperienceAnalyticsInsightValue()(*UserExperienceAnalyticsInsightValue) {
     m := &UserExperienceAnalyticsInsightValue{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateUserExperienceAnalyticsInsightValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

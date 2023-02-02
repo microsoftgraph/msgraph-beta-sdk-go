@@ -10,9 +10,9 @@ type AppLogCollectionDownloadDetails struct {
     additionalData map[string]any
     // The appLogDecryptionAlgorithm property
     appLogDecryptionAlgorithm *AppLogDecryptionAlgorithm
-    // DecryptionKey as string
+    // Decryption key that used to decrypt the log.
     decryptionKey *string
-    // Download SAS Url for completed AppLogUploadRequest
+    // Download SAS (Shared Access Signature) Url for completed app log request.
     downloadUrl *string
     // The OdataType property
     odataType *string
@@ -21,7 +21,7 @@ type AppLogCollectionDownloadDetails struct {
 func NewAppLogCollectionDownloadDetails()(*AppLogCollectionDownloadDetails) {
     m := &AppLogCollectionDownloadDetails{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAppLogCollectionDownloadDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,11 +36,11 @@ func (m *AppLogCollectionDownloadDetails) GetAdditionalData()(map[string]any) {
 func (m *AppLogCollectionDownloadDetails) GetAppLogDecryptionAlgorithm()(*AppLogDecryptionAlgorithm) {
     return m.appLogDecryptionAlgorithm
 }
-// GetDecryptionKey gets the decryptionKey property value. DecryptionKey as string
+// GetDecryptionKey gets the decryptionKey property value. Decryption key that used to decrypt the log.
 func (m *AppLogCollectionDownloadDetails) GetDecryptionKey()(*string) {
     return m.decryptionKey
 }
-// GetDownloadUrl gets the downloadUrl property value. Download SAS Url for completed AppLogUploadRequest
+// GetDownloadUrl gets the downloadUrl property value. Download SAS (Shared Access Signature) Url for completed app log request.
 func (m *AppLogCollectionDownloadDetails) GetDownloadUrl()(*string) {
     return m.downloadUrl
 }
@@ -136,11 +136,11 @@ func (m *AppLogCollectionDownloadDetails) SetAdditionalData(value map[string]any
 func (m *AppLogCollectionDownloadDetails) SetAppLogDecryptionAlgorithm(value *AppLogDecryptionAlgorithm)() {
     m.appLogDecryptionAlgorithm = value
 }
-// SetDecryptionKey sets the decryptionKey property value. DecryptionKey as string
+// SetDecryptionKey sets the decryptionKey property value. Decryption key that used to decrypt the log.
 func (m *AppLogCollectionDownloadDetails) SetDecryptionKey(value *string)() {
     m.decryptionKey = value
 }
-// SetDownloadUrl sets the downloadUrl property value. Download SAS Url for completed AppLogUploadRequest
+// SetDownloadUrl sets the downloadUrl property value. Download SAS (Shared Access Signature) Url for completed app log request.
 func (m *AppLogCollectionDownloadDetails) SetDownloadUrl(value *string)() {
     m.downloadUrl = value
 }

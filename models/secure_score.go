@@ -29,7 +29,7 @@ type SecureScore struct {
     // The vendorInformation property
     vendorInformation SecurityVendorInformationable
 }
-// NewSecureScore instantiates a new secureScore and sets the default values.
+// NewSecureScore instantiates a new SecureScore and sets the default values.
 func NewSecureScore()(*SecureScore) {
     m := &SecureScore{
         Entity: *NewEntity(),

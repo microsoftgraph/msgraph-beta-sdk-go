@@ -27,7 +27,7 @@ type EducationRubric struct {
     // The collection of qualities making up this rubric.
     qualities []RubricQualityable
 }
-// NewEducationRubric instantiates a new educationRubric and sets the default values.
+// NewEducationRubric instantiates a new EducationRubric and sets the default values.
 func NewEducationRubric()(*EducationRubric) {
     m := &EducationRubric{
         Entity: *NewEntity(),

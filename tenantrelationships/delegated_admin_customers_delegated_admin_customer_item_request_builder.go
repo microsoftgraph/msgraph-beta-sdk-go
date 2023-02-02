@@ -47,7 +47,7 @@ type DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilderPatchRequest
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewDelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilderInternal instantiates a new DelegatedAdminCustomerItemRequestBuilder and sets the default values.
-func NewDelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilder) {
+func NewDelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, delegatedAdminCustomerId *string)(*DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilder) {
     m := &DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/tenantRelationships/delegatedAdminCustomers/{delegatedAdminCustomer%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewDelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilderInternal(
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if delegatedAdminCustomerId != nil {
+        urlTplParams["delegatedAdminCustomer%2Did"] = *delegatedAdminCustomerId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilder instantiates a new DelegatedAdminCustomerItemRequestBuilder and sets the default values.
 func NewDelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewDelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewDelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property delegatedAdminCustomers for tenantRelationships
 func (m *DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -121,7 +124,7 @@ func (m *DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilder) Patch(
 }
 // ServiceManagementDetails provides operations to manage the serviceManagementDetails property of the microsoft.graph.delegatedAdminCustomer entity.
 func (m *DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilder) ServiceManagementDetails()(*DelegatedAdminCustomersItemServiceManagementDetailsRequestBuilder) {
-    return NewDelegatedAdminCustomersItemServiceManagementDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDelegatedAdminCustomersItemServiceManagementDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ServiceManagementDetailsById provides operations to manage the serviceManagementDetails property of the microsoft.graph.delegatedAdminCustomer entity.
 func (m *DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilder) ServiceManagementDetailsById(id string)(*DelegatedAdminCustomersItemServiceManagementDetailsDelegatedAdminServiceManagementDetailItemRequestBuilder) {
@@ -129,10 +132,8 @@ func (m *DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilder) Servic
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["delegatedAdminServiceManagementDetail%2Did"] = id
-    }
-    return NewDelegatedAdminCustomersItemServiceManagementDetailsDelegatedAdminServiceManagementDetailItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewDelegatedAdminCustomersItemServiceManagementDetailsDelegatedAdminServiceManagementDetailItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property delegatedAdminCustomers for tenantRelationships
 func (m *DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +170,10 @@ func (m *DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilder) ToPatc
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

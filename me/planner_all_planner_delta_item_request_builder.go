@@ -47,7 +47,7 @@ type PlannerAllPlannerDeltaItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewPlannerAllPlannerDeltaItemRequestBuilderInternal instantiates a new PlannerDeltaItemRequestBuilder and sets the default values.
-func NewPlannerAllPlannerDeltaItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PlannerAllPlannerDeltaItemRequestBuilder) {
+func NewPlannerAllPlannerDeltaItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, plannerDeltaId *string)(*PlannerAllPlannerDeltaItemRequestBuilder) {
     m := &PlannerAllPlannerDeltaItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/planner/all/{plannerDelta%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewPlannerAllPlannerDeltaItemRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if plannerDeltaId != nil {
+        urlTplParams["plannerDelta%2Did"] = *plannerDeltaId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPlannerAllPlannerDeltaItemRequestBuilder instantiates a new PlannerDeltaItemRequestBuilder and sets the default values.
 func NewPlannerAllPlannerDeltaItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PlannerAllPlannerDeltaItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewPlannerAllPlannerDeltaItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewPlannerAllPlannerDeltaItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property all for me
 func (m *PlannerAllPlannerDeltaItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *PlannerAllPlannerDeltaItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *PlannerAllPlannerDeltaItemRequestBuilder) ToPatchRequestInformation(ctx
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -47,7 +47,7 @@ type ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestB
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilderInternal instantiates a new DirectoryDefinitionItemRequestBuilder and sets the default values.
-func NewItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilder) {
+func NewItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, directoryDefinitionId *string)(*ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilder) {
     m := &ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/applications/{application%2Did}/synchronization/jobs/{synchronizationJob%2Did}/schema/directories/{directoryDefinition%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemReque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if directoryDefinitionId != nil {
+        urlTplParams["directoryDefinition%2Did"] = *directoryDefinitionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilder instantiates a new DirectoryDefinitionItemRequestBuilder and sets the default values.
 func NewItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property directories for applications
 func (m *ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -80,10 +83,6 @@ func (m *ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequ
         return err
     }
     return nil
-}
-// Discover provides operations to call the discover method.
-func (m *ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilder) Discover()(*ItemSynchronizationJobsItemSchemaDirectoriesItemDiscoverRequestBuilder) {
-    return NewItemSynchronizationJobsItemSchemaDirectoriesItemDiscoverRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get contains the collection of directories and all of their objects.
 func (m *ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryDefinitionable, error) {
@@ -103,6 +102,10 @@ func (m *ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequ
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryDefinitionable), nil
+}
+// MicrosoftGraphDiscover provides operations to call the discover method.
+func (m *ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilder) MicrosoftGraphDiscover()(*ItemSynchronizationJobsItemSchemaDirectoriesItemMicrosoftGraphDiscoverDiscoverRequestBuilder) {
+    return NewItemSynchronizationJobsItemSchemaDirectoriesItemMicrosoftGraphDiscoverDiscoverRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property directories in applications
 func (m *ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryDefinitionable, requestConfiguration *ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryDefinitionable, error) {
@@ -158,7 +161,10 @@ func (m *ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

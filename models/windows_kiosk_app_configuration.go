@@ -15,7 +15,7 @@ type WindowsKioskAppConfiguration struct {
 func NewWindowsKioskAppConfiguration()(*WindowsKioskAppConfiguration) {
     m := &WindowsKioskAppConfiguration{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWindowsKioskAppConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

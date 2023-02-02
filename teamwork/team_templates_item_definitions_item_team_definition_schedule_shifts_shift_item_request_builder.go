@@ -45,7 +45,7 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsShiftItemReques
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsShiftItemRequestBuilderInternal instantiates a new ShiftItemRequestBuilder and sets the default values.
-func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsShiftItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsShiftItemRequestBuilder) {
+func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsShiftItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, shiftId *string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsShiftItemRequestBuilder) {
     m := &TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsShiftItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/schedule/shifts/{shift%2Did}{?%24select}";
@@ -53,15 +53,18 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsShiftItemReq
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if shiftId != nil {
+        urlTplParams["shift%2Did"] = *shiftId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsShiftItemRequestBuilder instantiates a new ShiftItemRequestBuilder and sets the default values.
 func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsShiftItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsShiftItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsShiftItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsShiftItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property shifts for teamwork
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsShiftItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsShiftItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -152,7 +155,10 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsShiftItemRe
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

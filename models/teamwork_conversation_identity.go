@@ -15,8 +15,8 @@ func NewTeamworkConversationIdentity()(*TeamworkConversationIdentity) {
     m := &TeamworkConversationIdentity{
         Identity: *NewIdentity(),
     }
-    odataTypeValue := "#microsoft.graph.teamworkConversationIdentity";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.teamworkConversationIdentity"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateTeamworkConversationIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

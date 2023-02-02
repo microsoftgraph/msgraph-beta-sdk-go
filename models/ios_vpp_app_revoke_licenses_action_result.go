@@ -34,7 +34,7 @@ type IosVppAppRevokeLicensesActionResult struct {
 func NewIosVppAppRevokeLicensesActionResult()(*IosVppAppRevokeLicensesActionResult) {
     m := &IosVppAppRevokeLicensesActionResult{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateIosVppAppRevokeLicensesActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

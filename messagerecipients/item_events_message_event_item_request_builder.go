@@ -47,7 +47,7 @@ type ItemEventsMessageEventItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemEventsMessageEventItemRequestBuilderInternal instantiates a new MessageEventItemRequestBuilder and sets the default values.
-func NewItemEventsMessageEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEventsMessageEventItemRequestBuilder) {
+func NewItemEventsMessageEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, messageEventId *string)(*ItemEventsMessageEventItemRequestBuilder) {
     m := &ItemEventsMessageEventItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/messageRecipients/{messageRecipient%2Did}/events/{messageEvent%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemEventsMessageEventItemRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if messageEventId != nil {
+        urlTplParams["messageEvent%2Did"] = *messageEventId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemEventsMessageEventItemRequestBuilder instantiates a new MessageEventItemRequestBuilder and sets the default values.
 func NewItemEventsMessageEventItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEventsMessageEventItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemEventsMessageEventItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemEventsMessageEventItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property events for messageRecipients
 func (m *ItemEventsMessageEventItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemEventsMessageEventItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemEventsMessageEventItemRequestBuilder) ToPatchRequestInformation(ctx
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

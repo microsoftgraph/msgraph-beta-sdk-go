@@ -47,7 +47,7 @@ type AuthorizationPolicyItemDefaultUserRoleOverridesDefaultUserRoleOverrideItemR
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewAuthorizationPolicyItemDefaultUserRoleOverridesDefaultUserRoleOverrideItemRequestBuilderInternal instantiates a new DefaultUserRoleOverrideItemRequestBuilder and sets the default values.
-func NewAuthorizationPolicyItemDefaultUserRoleOverridesDefaultUserRoleOverrideItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthorizationPolicyItemDefaultUserRoleOverridesDefaultUserRoleOverrideItemRequestBuilder) {
+func NewAuthorizationPolicyItemDefaultUserRoleOverridesDefaultUserRoleOverrideItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, defaultUserRoleOverrideId *string)(*AuthorizationPolicyItemDefaultUserRoleOverridesDefaultUserRoleOverrideItemRequestBuilder) {
     m := &AuthorizationPolicyItemDefaultUserRoleOverridesDefaultUserRoleOverrideItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/policies/authorizationPolicy/{authorizationPolicy%2Did}/defaultUserRoleOverrides/{defaultUserRoleOverride%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewAuthorizationPolicyItemDefaultUserRoleOverridesDefaultUserRoleOverrideIt
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if defaultUserRoleOverrideId != nil {
+        urlTplParams["defaultUserRoleOverride%2Did"] = *defaultUserRoleOverrideId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAuthorizationPolicyItemDefaultUserRoleOverridesDefaultUserRoleOverrideItemRequestBuilder instantiates a new DefaultUserRoleOverrideItemRequestBuilder and sets the default values.
 func NewAuthorizationPolicyItemDefaultUserRoleOverridesDefaultUserRoleOverrideItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthorizationPolicyItemDefaultUserRoleOverridesDefaultUserRoleOverrideItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAuthorizationPolicyItemDefaultUserRoleOverridesDefaultUserRoleOverrideItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAuthorizationPolicyItemDefaultUserRoleOverridesDefaultUserRoleOverrideItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property defaultUserRoleOverrides for policies
 func (m *AuthorizationPolicyItemDefaultUserRoleOverridesDefaultUserRoleOverrideItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AuthorizationPolicyItemDefaultUserRoleOverridesDefaultUserRoleOverrideItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *AuthorizationPolicyItemDefaultUserRoleOverridesDefaultUserRoleOverrideI
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

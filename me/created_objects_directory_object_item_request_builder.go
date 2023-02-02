@@ -33,7 +33,7 @@ type CreatedObjectsDirectoryObjectItemRequestBuilderGetRequestConfiguration stru
     QueryParameters *CreatedObjectsDirectoryObjectItemRequestBuilderGetQueryParameters
 }
 // NewCreatedObjectsDirectoryObjectItemRequestBuilderInternal instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
-func NewCreatedObjectsDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CreatedObjectsDirectoryObjectItemRequestBuilder) {
+func NewCreatedObjectsDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, directoryObjectId *string)(*CreatedObjectsDirectoryObjectItemRequestBuilder) {
     m := &CreatedObjectsDirectoryObjectItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/createdObjects/{directoryObject%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewCreatedObjectsDirectoryObjectItemRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if directoryObjectId != nil {
+        urlTplParams["directoryObject%2Did"] = *directoryObjectId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCreatedObjectsDirectoryObjectItemRequestBuilder instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
 func NewCreatedObjectsDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CreatedObjectsDirectoryObjectItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCreatedObjectsDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCreatedObjectsDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get directory objects that were created by the user. Read-only. Nullable.
 func (m *CreatedObjectsDirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CreatedObjectsDirectoryObjectItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
@@ -70,9 +73,9 @@ func (m *CreatedObjectsDirectoryObjectItemRequestBuilder) Get(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
 }
-// ServicePrincipal casts the previous resource to servicePrincipal.
-func (m *CreatedObjectsDirectoryObjectItemRequestBuilder) ServicePrincipal()(*CreatedObjectsItemServicePrincipalRequestBuilder) {
-    return NewCreatedObjectsItemServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *CreatedObjectsDirectoryObjectItemRequestBuilder) MicrosoftGraphServicePrincipal()(*CreatedObjectsItemMicrosoftGraphServicePrincipalServicePrincipalRequestBuilder) {
+    return NewCreatedObjectsItemMicrosoftGraphServicePrincipalServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation directory objects that were created by the user. Read-only. Nullable.
 func (m *CreatedObjectsDirectoryObjectItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CreatedObjectsDirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -15,8 +15,8 @@ func NewWindowsPhone81AppXBundle()(*WindowsPhone81AppXBundle) {
     m := &WindowsPhone81AppXBundle{
         WindowsPhone81AppX: *NewWindowsPhone81AppX(),
     }
-    odataTypeValue := "#microsoft.graph.windowsPhone81AppXBundle";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsPhone81AppXBundle"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsPhone81AppXBundleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

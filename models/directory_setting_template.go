@@ -19,8 +19,8 @@ func NewDirectorySettingTemplate()(*DirectorySettingTemplate) {
     m := &DirectorySettingTemplate{
         DirectoryObject: *NewDirectoryObject(),
     }
-    odataTypeValue := "#microsoft.graph.directorySettingTemplate";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.directorySettingTemplate"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDirectorySettingTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

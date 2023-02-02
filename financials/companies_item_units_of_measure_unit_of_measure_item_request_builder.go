@@ -47,7 +47,7 @@ type CompaniesItemUnitsOfMeasureUnitOfMeasureItemRequestBuilderPatchRequestConfi
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewCompaniesItemUnitsOfMeasureUnitOfMeasureItemRequestBuilderInternal instantiates a new UnitOfMeasureItemRequestBuilder and sets the default values.
-func NewCompaniesItemUnitsOfMeasureUnitOfMeasureItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemUnitsOfMeasureUnitOfMeasureItemRequestBuilder) {
+func NewCompaniesItemUnitsOfMeasureUnitOfMeasureItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, unitOfMeasureId *string)(*CompaniesItemUnitsOfMeasureUnitOfMeasureItemRequestBuilder) {
     m := &CompaniesItemUnitsOfMeasureUnitOfMeasureItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/financials/companies/{company%2Did}/unitsOfMeasure/{unitOfMeasure%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewCompaniesItemUnitsOfMeasureUnitOfMeasureItemRequestBuilderInternal(pathP
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if unitOfMeasureId != nil {
+        urlTplParams["unitOfMeasure%2Did"] = *unitOfMeasureId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemUnitsOfMeasureUnitOfMeasureItemRequestBuilder instantiates a new UnitOfMeasureItemRequestBuilder and sets the default values.
 func NewCompaniesItemUnitsOfMeasureUnitOfMeasureItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemUnitsOfMeasureUnitOfMeasureItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCompaniesItemUnitsOfMeasureUnitOfMeasureItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCompaniesItemUnitsOfMeasureUnitOfMeasureItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property unitsOfMeasure for financials
 func (m *CompaniesItemUnitsOfMeasureUnitOfMeasureItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CompaniesItemUnitsOfMeasureUnitOfMeasureItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *CompaniesItemUnitsOfMeasureUnitOfMeasureItemRequestBuilder) ToPatchRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

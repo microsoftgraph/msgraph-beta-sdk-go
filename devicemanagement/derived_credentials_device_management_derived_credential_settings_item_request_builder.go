@@ -47,7 +47,7 @@ type DerivedCredentialsDeviceManagementDerivedCredentialSettingsItemRequestBuild
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewDerivedCredentialsDeviceManagementDerivedCredentialSettingsItemRequestBuilderInternal instantiates a new DeviceManagementDerivedCredentialSettingsItemRequestBuilder and sets the default values.
-func NewDerivedCredentialsDeviceManagementDerivedCredentialSettingsItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DerivedCredentialsDeviceManagementDerivedCredentialSettingsItemRequestBuilder) {
+func NewDerivedCredentialsDeviceManagementDerivedCredentialSettingsItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, deviceManagementDerivedCredentialSettingsId *string)(*DerivedCredentialsDeviceManagementDerivedCredentialSettingsItemRequestBuilder) {
     m := &DerivedCredentialsDeviceManagementDerivedCredentialSettingsItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/derivedCredentials/{deviceManagementDerivedCredentialSettings%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewDerivedCredentialsDeviceManagementDerivedCredentialSettingsItemRequestBu
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if deviceManagementDerivedCredentialSettingsId != nil {
+        urlTplParams["deviceManagementDerivedCredentialSettings%2Did"] = *deviceManagementDerivedCredentialSettingsId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDerivedCredentialsDeviceManagementDerivedCredentialSettingsItemRequestBuilder instantiates a new DeviceManagementDerivedCredentialSettingsItemRequestBuilder and sets the default values.
 func NewDerivedCredentialsDeviceManagementDerivedCredentialSettingsItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DerivedCredentialsDeviceManagementDerivedCredentialSettingsItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewDerivedCredentialsDeviceManagementDerivedCredentialSettingsItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewDerivedCredentialsDeviceManagementDerivedCredentialSettingsItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property derivedCredentials for deviceManagement
 func (m *DerivedCredentialsDeviceManagementDerivedCredentialSettingsItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DerivedCredentialsDeviceManagementDerivedCredentialSettingsItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *DerivedCredentialsDeviceManagementDerivedCredentialSettingsItemRequestB
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -41,8 +41,8 @@ func NewUserExperienceAnalyticsBaselinesItemRebootAnalyticsMetricsRequestBuilder
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewUserExperienceAnalyticsBaselinesItemRebootAnalyticsMetricsRequestBuilder instantiates a new RebootAnalyticsMetricsRequestBuilder and sets the default values.

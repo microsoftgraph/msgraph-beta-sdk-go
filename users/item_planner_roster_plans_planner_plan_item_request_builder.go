@@ -33,7 +33,7 @@ type ItemPlannerRosterPlansPlannerPlanItemRequestBuilderGetRequestConfiguration 
     QueryParameters *ItemPlannerRosterPlansPlannerPlanItemRequestBuilderGetQueryParameters
 }
 // NewItemPlannerRosterPlansPlannerPlanItemRequestBuilderInternal instantiates a new PlannerPlanItemRequestBuilder and sets the default values.
-func NewItemPlannerRosterPlansPlannerPlanItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPlannerRosterPlansPlannerPlanItemRequestBuilder) {
+func NewItemPlannerRosterPlansPlannerPlanItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, plannerPlanId *string)(*ItemPlannerRosterPlansPlannerPlanItemRequestBuilder) {
     m := &ItemPlannerRosterPlansPlannerPlanItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/planner/rosterPlans/{plannerPlan%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewItemPlannerRosterPlansPlannerPlanItemRequestBuilderInternal(pathParamete
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if plannerPlanId != nil {
+        urlTplParams["plannerPlan%2Did"] = *plannerPlanId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemPlannerRosterPlansPlannerPlanItemRequestBuilder instantiates a new PlannerPlanItemRequestBuilder and sets the default values.
 func NewItemPlannerRosterPlansPlannerPlanItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPlannerRosterPlansPlannerPlanItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemPlannerRosterPlansPlannerPlanItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemPlannerRosterPlansPlannerPlanItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
 func (m *ItemPlannerRosterPlansPlannerPlanItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPlannerRosterPlansPlannerPlanItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanable, error) {

@@ -47,7 +47,7 @@ type LabelsRetentionLabelsRetentionLabelItemRequestBuilderPatchRequestConfigurat
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewLabelsRetentionLabelsRetentionLabelItemRequestBuilderInternal instantiates a new RetentionLabelItemRequestBuilder and sets the default values.
-func NewLabelsRetentionLabelsRetentionLabelItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LabelsRetentionLabelsRetentionLabelItemRequestBuilder) {
+func NewLabelsRetentionLabelsRetentionLabelItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, retentionLabelId *string)(*LabelsRetentionLabelsRetentionLabelItemRequestBuilder) {
     m := &LabelsRetentionLabelsRetentionLabelItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewLabelsRetentionLabelsRetentionLabelItemRequestBuilderInternal(pathParame
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if retentionLabelId != nil {
+        urlTplParams["retentionLabel%2Did"] = *retentionLabelId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewLabelsRetentionLabelsRetentionLabelItemRequestBuilder instantiates a new RetentionLabelItemRequestBuilder and sets the default values.
 func NewLabelsRetentionLabelsRetentionLabelItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LabelsRetentionLabelsRetentionLabelItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewLabelsRetentionLabelsRetentionLabelItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewLabelsRetentionLabelsRetentionLabelItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property retentionLabels for security
 func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *LabelsRetentionLabelsRetentionLabelItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -83,7 +86,7 @@ func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) Delete(ctx conte
 }
 // DispositionReviewStages provides operations to manage the dispositionReviewStages property of the microsoft.graph.security.retentionLabel entity.
 func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) DispositionReviewStages()(*LabelsRetentionLabelsItemDispositionReviewStagesRequestBuilder) {
-    return NewLabelsRetentionLabelsItemDispositionReviewStagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewLabelsRetentionLabelsItemDispositionReviewStagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DispositionReviewStagesById provides operations to manage the dispositionReviewStages property of the microsoft.graph.security.retentionLabel entity.
 func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) DispositionReviewStagesById(id string)(*LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder) {
@@ -91,10 +94,8 @@ func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) DispositionRevie
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["dispositionReviewStage%2Did"] = id
-    }
-    return NewLabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewLabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Get get retentionLabels from security
 func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LabelsRetentionLabelsRetentionLabelItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionLabelable, error) {
@@ -136,7 +137,7 @@ func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) Patch(ctx contex
 }
 // RetentionEventType provides operations to manage the retentionEventType property of the microsoft.graph.security.retentionLabel entity.
 func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) RetentionEventType()(*LabelsRetentionLabelsItemRetentionEventTypeRequestBuilder) {
-    return NewLabelsRetentionLabelsItemRetentionEventTypeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewLabelsRetentionLabelsItemRetentionEventTypeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property retentionLabels for security
 func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *LabelsRetentionLabelsRetentionLabelItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -173,7 +174,10 @@ func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) ToPatchRequestIn
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -48,7 +48,7 @@ type AppManagementPoliciesAppManagementPolicyItemRequestBuilderPatchRequestConfi
 }
 // AppliesTo provides operations to manage the appliesTo property of the microsoft.graph.appManagementPolicy entity.
 func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) AppliesTo()(*AppManagementPoliciesItemAppliesToRequestBuilder) {
-    return NewAppManagementPoliciesItemAppliesToRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAppManagementPoliciesItemAppliesToRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AppliesToById provides operations to manage the appliesTo property of the microsoft.graph.appManagementPolicy entity.
 func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) AppliesToById(id string)(*AppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) {
@@ -56,13 +56,11 @@ func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) AppliesToBy
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["directoryObject%2Did"] = id
-    }
-    return NewAppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewAppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal instantiates a new AppManagementPolicyItemRequestBuilder and sets the default values.
-func NewAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppManagementPoliciesAppManagementPolicyItemRequestBuilder) {
+func NewAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, appManagementPolicyId *string)(*AppManagementPoliciesAppManagementPolicyItemRequestBuilder) {
     m := &AppManagementPoliciesAppManagementPolicyItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/policies/appManagementPolicies/{appManagementPolicy%2Did}{?%24select,%24expand}";
@@ -70,15 +68,18 @@ func NewAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal(pathP
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if appManagementPolicyId != nil {
+        urlTplParams["appManagementPolicy%2Did"] = *appManagementPolicyId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAppManagementPoliciesAppManagementPolicyItemRequestBuilder instantiates a new AppManagementPolicyItemRequestBuilder and sets the default values.
 func NewAppManagementPoliciesAppManagementPolicyItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppManagementPoliciesAppManagementPolicyItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property appManagementPolicies for policies
 func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AppManagementPoliciesAppManagementPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -169,7 +170,10 @@ func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) ToPatchRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

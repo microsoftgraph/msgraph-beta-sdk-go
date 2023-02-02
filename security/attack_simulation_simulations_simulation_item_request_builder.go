@@ -47,7 +47,7 @@ type AttackSimulationSimulationsSimulationItemRequestBuilderPatchRequestConfigur
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewAttackSimulationSimulationsSimulationItemRequestBuilderInternal instantiates a new SimulationItemRequestBuilder and sets the default values.
-func NewAttackSimulationSimulationsSimulationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AttackSimulationSimulationsSimulationItemRequestBuilder) {
+func NewAttackSimulationSimulationsSimulationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, simulationId *string)(*AttackSimulationSimulationsSimulationItemRequestBuilder) {
     m := &AttackSimulationSimulationsSimulationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/security/attackSimulation/simulations/{simulation%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewAttackSimulationSimulationsSimulationItemRequestBuilderInternal(pathPara
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if simulationId != nil {
+        urlTplParams["simulation%2Did"] = *simulationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAttackSimulationSimulationsSimulationItemRequestBuilder instantiates a new SimulationItemRequestBuilder and sets the default values.
 func NewAttackSimulationSimulationsSimulationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AttackSimulationSimulationsSimulationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAttackSimulationSimulationsSimulationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAttackSimulationSimulationsSimulationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property simulations for security
 func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AttackSimulationSimulationsSimulationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -121,7 +124,7 @@ func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) Patch(ctx cont
 }
 // Payload provides operations to manage the payload property of the microsoft.graph.simulation entity.
 func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) Payload()(*AttackSimulationSimulationsItemPayloadRequestBuilder) {
-    return NewAttackSimulationSimulationsItemPayloadRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAttackSimulationSimulationsItemPayloadRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property simulations for security
 func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationSimulationsSimulationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +161,10 @@ func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) ToPatchRequest
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

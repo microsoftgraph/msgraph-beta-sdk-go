@@ -23,7 +23,7 @@ type Notification struct {
     // Target policy object handles notification delivery policy for endpoint types that should be targeted (Windows, iOS, Android and WebPush) for the given user.
     targetPolicy TargetPolicyEndpointsable
 }
-// NewNotification instantiates a new notification and sets the default values.
+// NewNotification instantiates a new Notification and sets the default values.
 func NewNotification()(*Notification) {
     m := &Notification{
         Entity: *NewEntity(),

@@ -47,7 +47,7 @@ type ProfileCertificationsPersonCertificationItemRequestBuilderPatchRequestConfi
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewProfileCertificationsPersonCertificationItemRequestBuilderInternal instantiates a new PersonCertificationItemRequestBuilder and sets the default values.
-func NewProfileCertificationsPersonCertificationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ProfileCertificationsPersonCertificationItemRequestBuilder) {
+func NewProfileCertificationsPersonCertificationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, personCertificationId *string)(*ProfileCertificationsPersonCertificationItemRequestBuilder) {
     m := &ProfileCertificationsPersonCertificationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/profile/certifications/{personCertification%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewProfileCertificationsPersonCertificationItemRequestBuilderInternal(pathP
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if personCertificationId != nil {
+        urlTplParams["personCertification%2Did"] = *personCertificationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewProfileCertificationsPersonCertificationItemRequestBuilder instantiates a new PersonCertificationItemRequestBuilder and sets the default values.
 func NewProfileCertificationsPersonCertificationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ProfileCertificationsPersonCertificationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewProfileCertificationsPersonCertificationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewProfileCertificationsPersonCertificationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property certifications for me
 func (m *ProfileCertificationsPersonCertificationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ProfileCertificationsPersonCertificationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ProfileCertificationsPersonCertificationItemRequestBuilder) ToPatchRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

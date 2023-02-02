@@ -60,8 +60,8 @@ func NewAccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsRequestBuild
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsRequestBuilder instantiates a new DecisionsRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewAccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsRequestBuild
 }
 // Count provides operations to count the resources in the collection.
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsRequestBuilder) Count()(*AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsCountRequestBuilder) {
-    return NewAccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsFilterByCurrentUserWithOnRequestBuilder) {
-    return NewAccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
+    return NewAccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the decisions from a stage in a multi-stage access review. The decisions in an accessReviewStage object are represented by an accessReviewInstanceDecisionItem object.
 // [Find more info here]
@@ -100,6 +96,14 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsRequestBuil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemCollectionResponseable), nil
 }
+// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnRequestBuilder) {
+    return NewAccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
+}
+// MicrosoftGraphRecordAllDecisions provides operations to call the recordAllDecisions method.
+func (m *AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsRequestBuilder) MicrosoftGraphRecordAllDecisions()(*AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsMicrosoftGraphRecordAllDecisionsRecordAllDecisionsRequestBuilder) {
+    return NewAccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsMicrosoftGraphRecordAllDecisionsRecordAllDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Post create new navigation property to decisions for identityGovernance
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemable, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
@@ -118,10 +122,6 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsRequestBuil
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemable), nil
-}
-// RecordAllDecisions provides operations to call the recordAllDecisions method.
-func (m *AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsRequestBuilder) RecordAllDecisions()(*AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsRecordAllDecisionsRequestBuilder) {
-    return NewAccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsRecordAllDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToGetRequestInformation get the decisions from a stage in a multi-stage access review. The decisions in an accessReviewStage object are represented by an accessReviewInstanceDecisionItem object.
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -146,7 +146,10 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsRequestBuil
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

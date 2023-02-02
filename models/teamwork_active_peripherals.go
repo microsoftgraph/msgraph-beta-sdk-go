@@ -25,7 +25,7 @@ type TeamworkActivePeripherals struct {
 func NewTeamworkActivePeripherals()(*TeamworkActivePeripherals) {
     m := &TeamworkActivePeripherals{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTeamworkActivePeripheralsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

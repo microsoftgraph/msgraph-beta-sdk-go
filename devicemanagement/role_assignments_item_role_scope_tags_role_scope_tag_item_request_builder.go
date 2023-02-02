@@ -33,7 +33,7 @@ type RoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilderGetRequestCon
     QueryParameters *RoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilderGetQueryParameters
 }
 // NewRoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilderInternal instantiates a new RoleScopeTagItemRequestBuilder and sets the default values.
-func NewRoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilder) {
+func NewRoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, roleScopeTagId *string)(*RoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilder) {
     m := &RoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/roleAssignments/{deviceAndAppManagementRoleAssignment%2Did}/roleScopeTags/{roleScopeTag%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewRoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilderInternal(p
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if roleScopeTagId != nil {
+        urlTplParams["roleScopeTag%2Did"] = *roleScopeTagId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewRoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilder instantiates a new RoleScopeTagItemRequestBuilder and sets the default values.
 func NewRoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewRoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewRoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get the set of Role Scope Tags defined on the Role Assignment.
 func (m *RoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RoleScopeTagable, error) {

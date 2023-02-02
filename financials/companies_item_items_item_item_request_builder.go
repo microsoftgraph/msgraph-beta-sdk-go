@@ -47,7 +47,7 @@ type CompaniesItemItemsItemItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewCompaniesItemItemsItemItemRequestBuilderInternal instantiates a new ItemItemRequestBuilder and sets the default values.
-func NewCompaniesItemItemsItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemItemsItemItemRequestBuilder) {
+func NewCompaniesItemItemsItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, itemId *string)(*CompaniesItemItemsItemItemRequestBuilder) {
     m := &CompaniesItemItemsItemItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/financials/companies/{company%2Did}/items/{item%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewCompaniesItemItemsItemItemRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if itemId != nil {
+        urlTplParams["item%2Did"] = *itemId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemItemsItemItemRequestBuilder instantiates a new ItemItemRequestBuilder and sets the default values.
 func NewCompaniesItemItemsItemItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemItemsItemItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCompaniesItemItemsItemItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCompaniesItemItemsItemItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property items for financials
 func (m *CompaniesItemItemsItemItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CompaniesItemItemsItemItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -102,7 +105,7 @@ func (m *CompaniesItemItemsItemItemRequestBuilder) Get(ctx context.Context, requ
 }
 // ItemCategory provides operations to manage the itemCategory property of the microsoft.graph.item entity.
 func (m *CompaniesItemItemsItemItemRequestBuilder) ItemCategory()(*CompaniesItemItemsItemItemCategoryRequestBuilder) {
-    return NewCompaniesItemItemsItemItemCategoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemItemsItemItemCategoryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property items in financials
 func (m *CompaniesItemItemsItemItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Itemable, requestConfiguration *CompaniesItemItemsItemItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Itemable, error) {
@@ -125,7 +128,7 @@ func (m *CompaniesItemItemsItemItemRequestBuilder) Patch(ctx context.Context, bo
 }
 // Picture provides operations to manage the picture property of the microsoft.graph.item entity.
 func (m *CompaniesItemItemsItemItemRequestBuilder) Picture()(*CompaniesItemItemsItemPictureRequestBuilder) {
-    return NewCompaniesItemItemsItemPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemItemsItemPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PictureById provides operations to manage the picture property of the microsoft.graph.item entity.
 func (m *CompaniesItemItemsItemItemRequestBuilder) PictureById(id string)(*CompaniesItemItemsItemPicturePictureItemRequestBuilder) {
@@ -133,10 +136,8 @@ func (m *CompaniesItemItemsItemItemRequestBuilder) PictureById(id string)(*Compa
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["picture%2Did"] = id
-    }
-    return NewCompaniesItemItemsItemPicturePictureItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewCompaniesItemItemsItemPicturePictureItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property items for financials
 func (m *CompaniesItemItemsItemItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemItemsItemItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -173,7 +174,10 @@ func (m *CompaniesItemItemsItemItemRequestBuilder) ToPatchRequestInformation(ctx
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

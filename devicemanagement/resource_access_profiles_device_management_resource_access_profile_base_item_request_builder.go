@@ -46,13 +46,9 @@ type ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestB
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Assign provides operations to call the assign method.
-func (m *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder) Assign()(*ResourceAccessProfilesItemAssignRequestBuilder) {
-    return NewResourceAccessProfilesItemAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Assignments provides operations to manage the assignments property of the microsoft.graph.deviceManagementResourceAccessProfileBase entity.
 func (m *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder) Assignments()(*ResourceAccessProfilesItemAssignmentsRequestBuilder) {
-    return NewResourceAccessProfilesItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewResourceAccessProfilesItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.deviceManagementResourceAccessProfileBase entity.
 func (m *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder) AssignmentsById(id string)(*ResourceAccessProfilesItemAssignmentsDeviceManagementResourceAccessProfileAssignmentItemRequestBuilder) {
@@ -60,13 +56,11 @@ func (m *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequ
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["deviceManagementResourceAccessProfileAssignment%2Did"] = id
-    }
-    return NewResourceAccessProfilesItemAssignmentsDeviceManagementResourceAccessProfileAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewResourceAccessProfilesItemAssignmentsDeviceManagementResourceAccessProfileAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilderInternal instantiates a new DeviceManagementResourceAccessProfileBaseItemRequestBuilder and sets the default values.
-func NewResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder) {
+func NewResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, deviceManagementResourceAccessProfileBaseId *string)(*ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder) {
     m := &ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/resourceAccessProfiles/{deviceManagementResourceAccessProfileBase%2Did}{?%24select,%24expand}";
@@ -74,15 +68,18 @@ func NewResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemReque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if deviceManagementResourceAccessProfileBaseId != nil {
+        urlTplParams["deviceManagementResourceAccessProfileBase%2Did"] = *deviceManagementResourceAccessProfileBaseId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder instantiates a new DeviceManagementResourceAccessProfileBaseItemRequestBuilder and sets the default values.
 func NewResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property resourceAccessProfiles for deviceManagement
 func (m *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -118,6 +115,10 @@ func (m *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequ
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementResourceAccessProfileBaseable), nil
+}
+// MicrosoftGraphAssign provides operations to call the assign method.
+func (m *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder) MicrosoftGraphAssign()(*ResourceAccessProfilesItemMicrosoftGraphAssignAssignRequestBuilder) {
+    return NewResourceAccessProfilesItemMicrosoftGraphAssignAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property resourceAccessProfiles in deviceManagement
 func (m *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementResourceAccessProfileBaseable, requestConfiguration *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementResourceAccessProfileBaseable, error) {
@@ -173,7 +174,10 @@ func (m *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

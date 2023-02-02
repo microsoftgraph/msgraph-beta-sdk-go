@@ -17,7 +17,7 @@ type AlertLogContent struct {
 func NewAlertLogContent()(*AlertLogContent) {
     m := &AlertLogContent{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAlertLogContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

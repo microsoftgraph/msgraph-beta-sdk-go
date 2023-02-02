@@ -17,8 +17,8 @@ func NewStandardWebPart()(*StandardWebPart) {
     m := &StandardWebPart{
         WebPart: *NewWebPart(),
     }
-    odataTypeValue := "#microsoft.graph.standardWebPart";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.standardWebPart"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateStandardWebPartFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

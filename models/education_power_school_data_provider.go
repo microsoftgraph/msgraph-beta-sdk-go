@@ -27,8 +27,8 @@ func NewEducationPowerSchoolDataProvider()(*EducationPowerSchoolDataProvider) {
     m := &EducationPowerSchoolDataProvider{
         EducationSynchronizationDataProvider: *NewEducationSynchronizationDataProvider(),
     }
-    odataTypeValue := "#microsoft.graph.educationPowerSchoolDataProvider";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.educationPowerSchoolDataProvider"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEducationPowerSchoolDataProviderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

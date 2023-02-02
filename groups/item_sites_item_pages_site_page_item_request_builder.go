@@ -48,10 +48,10 @@ type ItemSitesItemPagesSitePageItemRequestBuilderPatchRequestConfiguration struc
 }
 // CanvasLayout provides operations to manage the canvasLayout property of the microsoft.graph.sitePage entity.
 func (m *ItemSitesItemPagesSitePageItemRequestBuilder) CanvasLayout()(*ItemSitesItemPagesItemCanvasLayoutRequestBuilder) {
-    return NewItemSitesItemPagesItemCanvasLayoutRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemPagesItemCanvasLayoutRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewItemSitesItemPagesSitePageItemRequestBuilderInternal instantiates a new SitePageItemRequestBuilder and sets the default values.
-func NewItemSitesItemPagesSitePageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemPagesSitePageItemRequestBuilder) {
+func NewItemSitesItemPagesSitePageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, sitePageId *string)(*ItemSitesItemPagesSitePageItemRequestBuilder) {
     m := &ItemSitesItemPagesSitePageItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/pages/{sitePage%2Did}{?%24select,%24expand}";
@@ -59,15 +59,18 @@ func NewItemSitesItemPagesSitePageItemRequestBuilderInternal(pathParameters map[
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if sitePageId != nil {
+        urlTplParams["sitePage%2Did"] = *sitePageId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemPagesSitePageItemRequestBuilder instantiates a new SitePageItemRequestBuilder and sets the default values.
 func NewItemSitesItemPagesSitePageItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemPagesSitePageItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemSitesItemPagesSitePageItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemSitesItemPagesSitePageItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property pages for groups
 func (m *ItemSitesItemPagesSitePageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSitesItemPagesSitePageItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -104,9 +107,13 @@ func (m *ItemSitesItemPagesSitePageItemRequestBuilder) Get(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SitePageable), nil
 }
-// GetWebPartsByPosition provides operations to call the getWebPartsByPosition method.
-func (m *ItemSitesItemPagesSitePageItemRequestBuilder) GetWebPartsByPosition()(*ItemSitesItemPagesItemGetWebPartsByPositionRequestBuilder) {
-    return NewItemSitesItemPagesItemGetWebPartsByPositionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetWebPartsByPosition provides operations to call the getWebPartsByPosition method.
+func (m *ItemSitesItemPagesSitePageItemRequestBuilder) MicrosoftGraphGetWebPartsByPosition()(*ItemSitesItemPagesItemMicrosoftGraphGetWebPartsByPositionGetWebPartsByPositionRequestBuilder) {
+    return NewItemSitesItemPagesItemMicrosoftGraphGetWebPartsByPositionGetWebPartsByPositionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphPublish provides operations to call the publish method.
+func (m *ItemSitesItemPagesSitePageItemRequestBuilder) MicrosoftGraphPublish()(*ItemSitesItemPagesItemMicrosoftGraphPublishPublishRequestBuilder) {
+    return NewItemSitesItemPagesItemMicrosoftGraphPublishPublishRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property pages in groups
 func (m *ItemSitesItemPagesSitePageItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SitePageable, requestConfiguration *ItemSitesItemPagesSitePageItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SitePageable, error) {
@@ -126,10 +133,6 @@ func (m *ItemSitesItemPagesSitePageItemRequestBuilder) Patch(ctx context.Context
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SitePageable), nil
-}
-// Publish provides operations to call the publish method.
-func (m *ItemSitesItemPagesSitePageItemRequestBuilder) Publish()(*ItemSitesItemPagesItemPublishRequestBuilder) {
-    return NewItemSitesItemPagesItemPublishRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property pages for groups
 func (m *ItemSitesItemPagesSitePageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemPagesSitePageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -166,7 +169,10 @@ func (m *ItemSitesItemPagesSitePageItemRequestBuilder) ToPatchRequestInformation
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -175,7 +181,7 @@ func (m *ItemSitesItemPagesSitePageItemRequestBuilder) ToPatchRequestInformation
 }
 // WebParts provides operations to manage the webParts property of the microsoft.graph.sitePage entity.
 func (m *ItemSitesItemPagesSitePageItemRequestBuilder) WebParts()(*ItemSitesItemPagesItemWebPartsRequestBuilder) {
-    return NewItemSitesItemPagesItemWebPartsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemPagesItemWebPartsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // WebPartsById provides operations to manage the webParts property of the microsoft.graph.sitePage entity.
 func (m *ItemSitesItemPagesSitePageItemRequestBuilder) WebPartsById(id string)(*ItemSitesItemPagesItemWebPartsWebPartItemRequestBuilder) {
@@ -183,8 +189,6 @@ func (m *ItemSitesItemPagesSitePageItemRequestBuilder) WebPartsById(id string)(*
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["webPart%2Did"] = id
-    }
-    return NewItemSitesItemPagesItemWebPartsWebPartItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemSitesItemPagesItemWebPartsWebPartItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }

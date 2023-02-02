@@ -35,7 +35,7 @@ type GovernanceRoleAssignmentRequest struct {
     // Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.
     type_escaped *string
 }
-// NewGovernanceRoleAssignmentRequest instantiates a new governanceRoleAssignmentRequest and sets the default values.
+// NewGovernanceRoleAssignmentRequest instantiates a new GovernanceRoleAssignmentRequest and sets the default values.
 func NewGovernanceRoleAssignmentRequest()(*GovernanceRoleAssignmentRequest) {
     m := &GovernanceRoleAssignmentRequest{
         Entity: *NewEntity(),

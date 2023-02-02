@@ -47,7 +47,7 @@ type ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilderPatchReq
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilderInternal instantiates a new ActivityStatisticsItemRequestBuilder and sets the default values.
-func NewItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder) {
+func NewItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, activityStatisticsId *string)(*ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder) {
     m := &ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/analytics/activityStatistics/{activityStatistics%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilderInter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if activityStatisticsId != nil {
+        urlTplParams["activityStatistics%2Did"] = *activityStatisticsId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder instantiates a new ActivityStatisticsItemRequestBuilder and sets the default values.
 func NewItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property activityStatistics for users
 func (m *ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder) To
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

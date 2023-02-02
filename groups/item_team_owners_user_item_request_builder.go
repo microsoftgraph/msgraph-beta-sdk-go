@@ -33,7 +33,7 @@ type ItemTeamOwnersUserItemRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemTeamOwnersUserItemRequestBuilderGetQueryParameters
 }
 // NewItemTeamOwnersUserItemRequestBuilderInternal instantiates a new UserItemRequestBuilder and sets the default values.
-func NewItemTeamOwnersUserItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamOwnersUserItemRequestBuilder) {
+func NewItemTeamOwnersUserItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, userId *string)(*ItemTeamOwnersUserItemRequestBuilder) {
     m := &ItemTeamOwnersUserItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/team/owners/{user%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewItemTeamOwnersUserItemRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if userId != nil {
+        urlTplParams["user%2Did"] = *userId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTeamOwnersUserItemRequestBuilder instantiates a new UserItemRequestBuilder and sets the default values.
 func NewItemTeamOwnersUserItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamOwnersUserItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemTeamOwnersUserItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemTeamOwnersUserItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get the list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
 func (m *ItemTeamOwnersUserItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamOwnersUserItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {

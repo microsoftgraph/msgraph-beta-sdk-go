@@ -19,7 +19,7 @@ type AccessPackageAnswerChoice struct {
 func NewAccessPackageAnswerChoice()(*AccessPackageAnswerChoice) {
     m := &AccessPackageAnswerChoice{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAccessPackageAnswerChoiceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

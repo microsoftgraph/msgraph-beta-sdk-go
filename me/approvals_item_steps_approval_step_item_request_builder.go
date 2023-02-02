@@ -47,7 +47,7 @@ type ApprovalsItemStepsApprovalStepItemRequestBuilderPatchRequestConfiguration s
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewApprovalsItemStepsApprovalStepItemRequestBuilderInternal instantiates a new ApprovalStepItemRequestBuilder and sets the default values.
-func NewApprovalsItemStepsApprovalStepItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApprovalsItemStepsApprovalStepItemRequestBuilder) {
+func NewApprovalsItemStepsApprovalStepItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, approvalStepId *string)(*ApprovalsItemStepsApprovalStepItemRequestBuilder) {
     m := &ApprovalsItemStepsApprovalStepItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/approvals/{approval%2Did}/steps/{approvalStep%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewApprovalsItemStepsApprovalStepItemRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if approvalStepId != nil {
+        urlTplParams["approvalStep%2Did"] = *approvalStepId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewApprovalsItemStepsApprovalStepItemRequestBuilder instantiates a new ApprovalStepItemRequestBuilder and sets the default values.
 func NewApprovalsItemStepsApprovalStepItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApprovalsItemStepsApprovalStepItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewApprovalsItemStepsApprovalStepItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewApprovalsItemStepsApprovalStepItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property steps for me
 func (m *ApprovalsItemStepsApprovalStepItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ApprovalsItemStepsApprovalStepItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ApprovalsItemStepsApprovalStepItemRequestBuilder) ToPatchRequestInforma
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

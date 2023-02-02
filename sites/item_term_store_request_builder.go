@@ -55,8 +55,8 @@ func NewItemTermStoreRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTermStoreRequestBuilder instantiates a new TermStoreRequestBuilder and sets the default values.
@@ -105,7 +105,7 @@ func (m *ItemTermStoreRequestBuilder) Get(ctx context.Context, requestConfigurat
 }
 // Groups provides operations to manage the groups property of the microsoft.graph.termStore.store entity.
 func (m *ItemTermStoreRequestBuilder) Groups()(*ItemTermStoreGroupsRequestBuilder) {
-    return NewItemTermStoreGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTermStoreGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GroupsById provides operations to manage the groups property of the microsoft.graph.termStore.store entity.
 func (m *ItemTermStoreRequestBuilder) GroupsById(id string)(*ItemTermStoreGroupsGroupItemRequestBuilder) {
@@ -113,10 +113,8 @@ func (m *ItemTermStoreRequestBuilder) GroupsById(id string)(*ItemTermStoreGroups
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["group%2Did"] = id
-    }
-    return NewItemTermStoreGroupsGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemTermStoreGroupsGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Patch update the navigation property termStore in sites
 func (m *ItemTermStoreRequestBuilder) Patch(ctx context.Context, body i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Storeable, requestConfiguration *ItemTermStoreRequestBuilderPatchRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Storeable, error) {
@@ -139,7 +137,7 @@ func (m *ItemTermStoreRequestBuilder) Patch(ctx context.Context, body i45fc41673
 }
 // Sets provides operations to manage the sets property of the microsoft.graph.termStore.store entity.
 func (m *ItemTermStoreRequestBuilder) Sets()(*ItemTermStoreSetsRequestBuilder) {
-    return NewItemTermStoreSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTermStoreSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SetsById provides operations to manage the sets property of the microsoft.graph.termStore.store entity.
 func (m *ItemTermStoreRequestBuilder) SetsById(id string)(*ItemTermStoreSetsSetItemRequestBuilder) {
@@ -147,10 +145,8 @@ func (m *ItemTermStoreRequestBuilder) SetsById(id string)(*ItemTermStoreSetsSetI
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["set%2Did"] = id
-    }
-    return NewItemTermStoreSetsSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemTermStoreSetsSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property termStore for sites
 func (m *ItemTermStoreRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTermStoreRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -187,7 +183,10 @@ func (m *ItemTermStoreRequestBuilder) ToPatchRequestInformation(ctx context.Cont
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

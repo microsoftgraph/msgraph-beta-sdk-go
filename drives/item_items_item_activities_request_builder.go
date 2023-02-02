@@ -53,8 +53,8 @@ func NewItemItemsItemActivitiesRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemItemsItemActivitiesRequestBuilder instantiates a new ActivitiesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemItemsItemActivitiesRequestBuilder(rawUrl string, requestAdapter i2ae
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemItemsItemActivitiesRequestBuilder) Count()(*ItemItemsItemActivitiesCountRequestBuilder) {
-    return NewItemItemsItemActivitiesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemItemsItemActivitiesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the list of recent activities that took place on this item.
 func (m *ItemItemsItemActivitiesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemActivitiesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityOLDCollectionResponseable, error) {

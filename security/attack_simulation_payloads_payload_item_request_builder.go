@@ -47,7 +47,7 @@ type AttackSimulationPayloadsPayloadItemRequestBuilderPatchRequestConfiguration 
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewAttackSimulationPayloadsPayloadItemRequestBuilderInternal instantiates a new PayloadItemRequestBuilder and sets the default values.
-func NewAttackSimulationPayloadsPayloadItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AttackSimulationPayloadsPayloadItemRequestBuilder) {
+func NewAttackSimulationPayloadsPayloadItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, payloadId *string)(*AttackSimulationPayloadsPayloadItemRequestBuilder) {
     m := &AttackSimulationPayloadsPayloadItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/security/attackSimulation/payloads/{payload%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewAttackSimulationPayloadsPayloadItemRequestBuilderInternal(pathParameters
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if payloadId != nil {
+        urlTplParams["payload%2Did"] = *payloadId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAttackSimulationPayloadsPayloadItemRequestBuilder instantiates a new PayloadItemRequestBuilder and sets the default values.
 func NewAttackSimulationPayloadsPayloadItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AttackSimulationPayloadsPayloadItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAttackSimulationPayloadsPayloadItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAttackSimulationPayloadsPayloadItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property payloads for security
 func (m *AttackSimulationPayloadsPayloadItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AttackSimulationPayloadsPayloadItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *AttackSimulationPayloadsPayloadItemRequestBuilder) ToPatchRequestInform
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

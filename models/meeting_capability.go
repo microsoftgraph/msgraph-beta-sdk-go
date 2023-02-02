@@ -21,7 +21,7 @@ type MeetingCapability struct {
 func NewMeetingCapability()(*MeetingCapability) {
     m := &MeetingCapability{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMeetingCapabilityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

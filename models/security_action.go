@@ -37,7 +37,7 @@ type SecurityAction struct {
     // Complex Type containing details about the Security product/service vendor, provider, and sub-provider (for example, vendor=Microsoft; provider=Windows Defender ATP; sub-provider=AppLocker).
     vendorInformation SecurityVendorInformationable
 }
-// NewSecurityAction instantiates a new securityAction and sets the default values.
+// NewSecurityAction instantiates a new SecurityAction and sets the default values.
 func NewSecurityAction()(*SecurityAction) {
     m := &SecurityAction{
         Entity: *NewEntity(),

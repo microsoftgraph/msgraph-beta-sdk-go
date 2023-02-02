@@ -47,7 +47,7 @@ type DeviceConfigurationConflictSummaryDeviceConfigurationConflictSummaryItemReq
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewDeviceConfigurationConflictSummaryDeviceConfigurationConflictSummaryItemRequestBuilderInternal instantiates a new DeviceConfigurationConflictSummaryItemRequestBuilder and sets the default values.
-func NewDeviceConfigurationConflictSummaryDeviceConfigurationConflictSummaryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceConfigurationConflictSummaryDeviceConfigurationConflictSummaryItemRequestBuilder) {
+func NewDeviceConfigurationConflictSummaryDeviceConfigurationConflictSummaryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, deviceConfigurationConflictSummaryId *string)(*DeviceConfigurationConflictSummaryDeviceConfigurationConflictSummaryItemRequestBuilder) {
     m := &DeviceConfigurationConflictSummaryDeviceConfigurationConflictSummaryItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/deviceConfigurationConflictSummary/{deviceConfigurationConflictSummary%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewDeviceConfigurationConflictSummaryDeviceConfigurationConflictSummaryItem
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if deviceConfigurationConflictSummaryId != nil {
+        urlTplParams["deviceConfigurationConflictSummary%2Did"] = *deviceConfigurationConflictSummaryId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceConfigurationConflictSummaryDeviceConfigurationConflictSummaryItemRequestBuilder instantiates a new DeviceConfigurationConflictSummaryItemRequestBuilder and sets the default values.
 func NewDeviceConfigurationConflictSummaryDeviceConfigurationConflictSummaryItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceConfigurationConflictSummaryDeviceConfigurationConflictSummaryItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewDeviceConfigurationConflictSummaryDeviceConfigurationConflictSummaryItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewDeviceConfigurationConflictSummaryDeviceConfigurationConflictSummaryItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property deviceConfigurationConflictSummary for deviceManagement
 func (m *DeviceConfigurationConflictSummaryDeviceConfigurationConflictSummaryItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DeviceConfigurationConflictSummaryDeviceConfigurationConflictSummaryItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *DeviceConfigurationConflictSummaryDeviceConfigurationConflictSummaryIte
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

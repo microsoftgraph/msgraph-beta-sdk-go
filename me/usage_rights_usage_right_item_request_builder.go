@@ -47,7 +47,7 @@ type UsageRightsUsageRightItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewUsageRightsUsageRightItemRequestBuilderInternal instantiates a new UsageRightItemRequestBuilder and sets the default values.
-func NewUsageRightsUsageRightItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UsageRightsUsageRightItemRequestBuilder) {
+func NewUsageRightsUsageRightItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, usageRightId *string)(*UsageRightsUsageRightItemRequestBuilder) {
     m := &UsageRightsUsageRightItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/usageRights/{usageRight%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewUsageRightsUsageRightItemRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if usageRightId != nil {
+        urlTplParams["usageRight%2Did"] = *usageRightId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewUsageRightsUsageRightItemRequestBuilder instantiates a new UsageRightItemRequestBuilder and sets the default values.
 func NewUsageRightsUsageRightItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UsageRightsUsageRightItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewUsageRightsUsageRightItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewUsageRightsUsageRightItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property usageRights for me
 func (m *UsageRightsUsageRightItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *UsageRightsUsageRightItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *UsageRightsUsageRightItemRequestBuilder) ToPatchRequestInformation(ctx 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

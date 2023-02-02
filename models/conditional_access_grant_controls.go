@@ -25,7 +25,7 @@ type ConditionalAccessGrantControls struct {
 func NewConditionalAccessGrantControls()(*ConditionalAccessGrantControls) {
     m := &ConditionalAccessGrantControls{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateConditionalAccessGrantControlsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

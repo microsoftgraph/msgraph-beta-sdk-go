@@ -14,7 +14,7 @@ type RiskyUserHistoryItem struct {
     // The ID of the user.
     userId *string
 }
-// NewRiskyUserHistoryItem instantiates a new riskyUserHistoryItem and sets the default values.
+// NewRiskyUserHistoryItem instantiates a new RiskyUserHistoryItem and sets the default values.
 func NewRiskyUserHistoryItem()(*RiskyUserHistoryItem) {
     m := &RiskyUserHistoryItem{
         RiskyUser: *NewRiskyUser(),

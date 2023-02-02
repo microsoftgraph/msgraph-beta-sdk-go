@@ -48,14 +48,14 @@ type DevicesTeamworkDeviceItemRequestBuilderPatchRequestConfiguration struct {
 }
 // Activity provides operations to manage the activity property of the microsoft.graph.teamworkDevice entity.
 func (m *DevicesTeamworkDeviceItemRequestBuilder) Activity()(*DevicesItemActivityRequestBuilder) {
-    return NewDevicesItemActivityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDevicesItemActivityRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Configuration provides operations to manage the configuration property of the microsoft.graph.teamworkDevice entity.
 func (m *DevicesTeamworkDeviceItemRequestBuilder) Configuration()(*DevicesItemConfigurationRequestBuilder) {
-    return NewDevicesItemConfigurationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDevicesItemConfigurationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewDevicesTeamworkDeviceItemRequestBuilderInternal instantiates a new TeamworkDeviceItemRequestBuilder and sets the default values.
-func NewDevicesTeamworkDeviceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DevicesTeamworkDeviceItemRequestBuilder) {
+func NewDevicesTeamworkDeviceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, teamworkDeviceId *string)(*DevicesTeamworkDeviceItemRequestBuilder) {
     m := &DevicesTeamworkDeviceItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/teamwork/devices/{teamworkDevice%2Did}{?%24select,%24expand}";
@@ -63,15 +63,18 @@ func NewDevicesTeamworkDeviceItemRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if teamworkDeviceId != nil {
+        urlTplParams["teamworkDevice%2Did"] = *teamworkDeviceId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDevicesTeamworkDeviceItemRequestBuilder instantiates a new TeamworkDeviceItemRequestBuilder and sets the default values.
 func NewDevicesTeamworkDeviceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DevicesTeamworkDeviceItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewDevicesTeamworkDeviceItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewDevicesTeamworkDeviceItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property devices for teamwork
 func (m *DevicesTeamworkDeviceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DevicesTeamworkDeviceItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -110,11 +113,23 @@ func (m *DevicesTeamworkDeviceItemRequestBuilder) Get(ctx context.Context, reque
 }
 // Health provides operations to manage the health property of the microsoft.graph.teamworkDevice entity.
 func (m *DevicesTeamworkDeviceItemRequestBuilder) Health()(*DevicesItemHealthRequestBuilder) {
-    return NewDevicesItemHealthRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDevicesItemHealthRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRestart provides operations to call the restart method.
+func (m *DevicesTeamworkDeviceItemRequestBuilder) MicrosoftGraphRestart()(*DevicesItemMicrosoftGraphRestartRestartRequestBuilder) {
+    return NewDevicesItemMicrosoftGraphRestartRestartRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRunDiagnostics provides operations to call the runDiagnostics method.
+func (m *DevicesTeamworkDeviceItemRequestBuilder) MicrosoftGraphRunDiagnostics()(*DevicesItemMicrosoftGraphRunDiagnosticsRunDiagnosticsRequestBuilder) {
+    return NewDevicesItemMicrosoftGraphRunDiagnosticsRunDiagnosticsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUpdateSoftware provides operations to call the updateSoftware method.
+func (m *DevicesTeamworkDeviceItemRequestBuilder) MicrosoftGraphUpdateSoftware()(*DevicesItemMicrosoftGraphUpdateSoftwareUpdateSoftwareRequestBuilder) {
+    return NewDevicesItemMicrosoftGraphUpdateSoftwareUpdateSoftwareRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Operations provides operations to manage the operations property of the microsoft.graph.teamworkDevice entity.
 func (m *DevicesTeamworkDeviceItemRequestBuilder) Operations()(*DevicesItemOperationsRequestBuilder) {
-    return NewDevicesItemOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDevicesItemOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // OperationsById provides operations to manage the operations property of the microsoft.graph.teamworkDevice entity.
 func (m *DevicesTeamworkDeviceItemRequestBuilder) OperationsById(id string)(*DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilder) {
@@ -122,10 +137,8 @@ func (m *DevicesTeamworkDeviceItemRequestBuilder) OperationsById(id string)(*Dev
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["teamworkDeviceOperation%2Did"] = id
-    }
-    return NewDevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewDevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Patch update the navigation property devices in teamwork
 func (m *DevicesTeamworkDeviceItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkDeviceable, requestConfiguration *DevicesTeamworkDeviceItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkDeviceable, error) {
@@ -145,14 +158,6 @@ func (m *DevicesTeamworkDeviceItemRequestBuilder) Patch(ctx context.Context, bod
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkDeviceable), nil
-}
-// Restart provides operations to call the restart method.
-func (m *DevicesTeamworkDeviceItemRequestBuilder) Restart()(*DevicesItemRestartRequestBuilder) {
-    return NewDevicesItemRestartRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// RunDiagnostics provides operations to call the runDiagnostics method.
-func (m *DevicesTeamworkDeviceItemRequestBuilder) RunDiagnostics()(*DevicesItemRunDiagnosticsRequestBuilder) {
-    return NewDevicesItemRunDiagnosticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property devices for teamwork
 func (m *DevicesTeamworkDeviceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DevicesTeamworkDeviceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -189,14 +194,13 @@ func (m *DevicesTeamworkDeviceItemRequestBuilder) ToPatchRequestInformation(ctx 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// UpdateSoftware provides operations to call the updateSoftware method.
-func (m *DevicesTeamworkDeviceItemRequestBuilder) UpdateSoftware()(*DevicesItemUpdateSoftwareRequestBuilder) {
-    return NewDevicesItemUpdateSoftwareRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

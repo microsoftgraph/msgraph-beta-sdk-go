@@ -47,7 +47,7 @@ type ItemProfilePhonesItemPhoneItemRequestBuilderPatchRequestConfiguration struc
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemProfilePhonesItemPhoneItemRequestBuilderInternal instantiates a new ItemPhoneItemRequestBuilder and sets the default values.
-func NewItemProfilePhonesItemPhoneItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfilePhonesItemPhoneItemRequestBuilder) {
+func NewItemProfilePhonesItemPhoneItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, itemPhoneId *string)(*ItemProfilePhonesItemPhoneItemRequestBuilder) {
     m := &ItemProfilePhonesItemPhoneItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/profile/phones/{itemPhone%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemProfilePhonesItemPhoneItemRequestBuilderInternal(pathParameters map[
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if itemPhoneId != nil {
+        urlTplParams["itemPhone%2Did"] = *itemPhoneId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemProfilePhonesItemPhoneItemRequestBuilder instantiates a new ItemPhoneItemRequestBuilder and sets the default values.
 func NewItemProfilePhonesItemPhoneItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfilePhonesItemPhoneItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemProfilePhonesItemPhoneItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemProfilePhonesItemPhoneItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property phones for users
 func (m *ItemProfilePhonesItemPhoneItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfilePhonesItemPhoneItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemProfilePhonesItemPhoneItemRequestBuilder) ToPatchRequestInformation
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

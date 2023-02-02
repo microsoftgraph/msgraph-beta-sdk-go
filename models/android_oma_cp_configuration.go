@@ -15,8 +15,8 @@ func NewAndroidOmaCpConfiguration()(*AndroidOmaCpConfiguration) {
     m := &AndroidOmaCpConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.androidOmaCpConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidOmaCpConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidOmaCpConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

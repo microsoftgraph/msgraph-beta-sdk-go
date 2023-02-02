@@ -41,10 +41,10 @@ type CompaniesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilderPatchReques
 }
 // Account provides operations to manage the account property of the microsoft.graph.salesInvoiceLine entity.
 func (m *CompaniesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilder) Account()(*CompaniesItemSalesInvoiceLinesItemAccountRequestBuilder) {
-    return NewCompaniesItemSalesInvoiceLinesItemAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesInvoiceLinesItemAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewCompaniesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilderInternal instantiates a new SalesInvoiceLineItemRequestBuilder and sets the default values.
-func NewCompaniesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilder) {
+func NewCompaniesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, salesInvoiceLineId *string)(*CompaniesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilder) {
     m := &CompaniesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesInvoiceLines/{salesInvoiceLine%2Did}{?%24select,%24expand}";
@@ -52,15 +52,18 @@ func NewCompaniesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilderInternal
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if salesInvoiceLineId != nil {
+        urlTplParams["salesInvoiceLine%2Did"] = *salesInvoiceLineId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilder instantiates a new SalesInvoiceLineItemRequestBuilder and sets the default values.
 func NewCompaniesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCompaniesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCompaniesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get get salesInvoiceLines from financials
 func (m *CompaniesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesInvoiceLineable, error) {
@@ -83,7 +86,7 @@ func (m *CompaniesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilder) Get(c
 }
 // Item provides operations to manage the item property of the microsoft.graph.salesInvoiceLine entity.
 func (m *CompaniesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilder) Item()(*CompaniesItemSalesInvoiceLinesItemItemRequestBuilder) {
-    return NewCompaniesItemSalesInvoiceLinesItemItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesInvoiceLinesItemItemRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property salesInvoiceLines in financials
 func (m *CompaniesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesInvoiceLineable, requestConfiguration *CompaniesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesInvoiceLineable, error) {
@@ -127,7 +130,10 @@ func (m *CompaniesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilder) ToPat
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

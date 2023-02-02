@@ -47,7 +47,7 @@ type ItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilderPatch
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilderInternal instantiates a new ProfileCardPropertyItemRequestBuilder and sets the default values.
-func NewItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilder) {
+func NewItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, profileCardPropertyId *string)(*ItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilder) {
     m := &ItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/organization/{organization%2Did}/settings/profileCardProperties/{profileCardProperty%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilderIn
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if profileCardPropertyId != nil {
+        urlTplParams["profileCardProperty%2Did"] = *profileCardPropertyId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilder instantiates a new ProfileCardPropertyItemRequestBuilder and sets the default values.
 func NewItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property profileCardProperties for organization
 func (m *ItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilder)
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

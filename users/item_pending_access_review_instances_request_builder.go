@@ -60,8 +60,8 @@ func NewItemPendingAccessReviewInstancesRequestBuilderInternal(pathParameters ma
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemPendingAccessReviewInstancesRequestBuilder instantiates a new PendingAccessReviewInstancesRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewItemPendingAccessReviewInstancesRequestBuilder(rawUrl string, requestAda
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemPendingAccessReviewInstancesRequestBuilder) Count()(*ItemPendingAccessReviewInstancesCountRequestBuilder) {
-    return NewItemPendingAccessReviewInstancesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *ItemPendingAccessReviewInstancesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*ItemPendingAccessReviewInstancesFilterByCurrentUserWithOnRequestBuilder) {
-    return NewItemPendingAccessReviewInstancesFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
+    return NewItemPendingAccessReviewInstancesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve the accessReviewInstance objects pending approval by the calling user. A list of zero or more accessReviewInstance objects are returned, of which the calling user is an assigned reviewer.
 // [Find more info here]
@@ -99,6 +95,10 @@ func (m *ItemPendingAccessReviewInstancesRequestBuilder) Get(ctx context.Context
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceCollectionResponseable), nil
+}
+// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *ItemPendingAccessReviewInstancesRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*ItemPendingAccessReviewInstancesMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnRequestBuilder) {
+    return NewItemPendingAccessReviewInstancesMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Post create new navigation property to pendingAccessReviewInstances for users
 func (m *ItemPendingAccessReviewInstancesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceable, requestConfiguration *ItemPendingAccessReviewInstancesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceable, error) {
@@ -142,7 +142,10 @@ func (m *ItemPendingAccessReviewInstancesRequestBuilder) ToPostRequestInformatio
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

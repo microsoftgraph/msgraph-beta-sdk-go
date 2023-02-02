@@ -39,7 +39,7 @@ type AttributeDefinition struct {
 func NewAttributeDefinition()(*AttributeDefinition) {
     m := &AttributeDefinition{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAttributeDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

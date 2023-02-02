@@ -87,7 +87,7 @@ type Alert struct {
     // Threat intelligence pertaining to one or more vulnerabilities related to this alert.
     vulnerabilityStates []VulnerabilityStateable
 }
-// NewAlert instantiates a new alert and sets the default values.
+// NewAlert instantiates a new Alert and sets the default values.
 func NewAlert()(*Alert) {
     m := &Alert{
         Entity: *NewEntity(),

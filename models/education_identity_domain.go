@@ -19,7 +19,7 @@ type EducationIdentityDomain struct {
 func NewEducationIdentityDomain()(*EducationIdentityDomain) {
     m := &EducationIdentityDomain{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateEducationIdentityDomainFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

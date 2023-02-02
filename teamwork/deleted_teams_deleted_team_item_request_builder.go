@@ -48,7 +48,7 @@ type DeletedTeamsDeletedTeamItemRequestBuilderPatchRequestConfiguration struct {
 }
 // Channels provides operations to manage the channels property of the microsoft.graph.deletedTeam entity.
 func (m *DeletedTeamsDeletedTeamItemRequestBuilder) Channels()(*DeletedTeamsItemChannelsRequestBuilder) {
-    return NewDeletedTeamsItemChannelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeletedTeamsItemChannelsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ChannelsById provides operations to manage the channels property of the microsoft.graph.deletedTeam entity.
 func (m *DeletedTeamsDeletedTeamItemRequestBuilder) ChannelsById(id string)(*DeletedTeamsItemChannelsChannelItemRequestBuilder) {
@@ -56,13 +56,11 @@ func (m *DeletedTeamsDeletedTeamItemRequestBuilder) ChannelsById(id string)(*Del
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["channel%2Did"] = id
-    }
-    return NewDeletedTeamsItemChannelsChannelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewDeletedTeamsItemChannelsChannelItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewDeletedTeamsDeletedTeamItemRequestBuilderInternal instantiates a new DeletedTeamItemRequestBuilder and sets the default values.
-func NewDeletedTeamsDeletedTeamItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedTeamsDeletedTeamItemRequestBuilder) {
+func NewDeletedTeamsDeletedTeamItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, deletedTeamId *string)(*DeletedTeamsDeletedTeamItemRequestBuilder) {
     m := &DeletedTeamsDeletedTeamItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/teamwork/deletedTeams/{deletedTeam%2Did}{?%24select,%24expand}";
@@ -70,15 +68,18 @@ func NewDeletedTeamsDeletedTeamItemRequestBuilderInternal(pathParameters map[str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if deletedTeamId != nil {
+        urlTplParams["deletedTeam%2Did"] = *deletedTeamId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeletedTeamsDeletedTeamItemRequestBuilder instantiates a new DeletedTeamItemRequestBuilder and sets the default values.
 func NewDeletedTeamsDeletedTeamItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedTeamsDeletedTeamItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewDeletedTeamsDeletedTeamItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewDeletedTeamsDeletedTeamItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property deletedTeams for teamwork
 func (m *DeletedTeamsDeletedTeamItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DeletedTeamsDeletedTeamItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -169,7 +170,10 @@ func (m *DeletedTeamsDeletedTeamItemRequestBuilder) ToPatchRequestInformation(ct
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -15,8 +15,8 @@ func NewWindowsKioskLocalUser()(*WindowsKioskLocalUser) {
     m := &WindowsKioskLocalUser{
         WindowsKioskUser: *NewWindowsKioskUser(),
     }
-    odataTypeValue := "#microsoft.graph.windowsKioskLocalUser";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsKioskLocalUser"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsKioskLocalUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

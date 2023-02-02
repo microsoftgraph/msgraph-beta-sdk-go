@@ -47,7 +47,7 @@ type ProfileWebsitesPersonWebsiteItemRequestBuilderPatchRequestConfiguration str
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewProfileWebsitesPersonWebsiteItemRequestBuilderInternal instantiates a new PersonWebsiteItemRequestBuilder and sets the default values.
-func NewProfileWebsitesPersonWebsiteItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ProfileWebsitesPersonWebsiteItemRequestBuilder) {
+func NewProfileWebsitesPersonWebsiteItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, personWebsiteId *string)(*ProfileWebsitesPersonWebsiteItemRequestBuilder) {
     m := &ProfileWebsitesPersonWebsiteItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/profile/websites/{personWebsite%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewProfileWebsitesPersonWebsiteItemRequestBuilderInternal(pathParameters ma
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if personWebsiteId != nil {
+        urlTplParams["personWebsite%2Did"] = *personWebsiteId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewProfileWebsitesPersonWebsiteItemRequestBuilder instantiates a new PersonWebsiteItemRequestBuilder and sets the default values.
 func NewProfileWebsitesPersonWebsiteItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ProfileWebsitesPersonWebsiteItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewProfileWebsitesPersonWebsiteItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewProfileWebsitesPersonWebsiteItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property websites for me
 func (m *ProfileWebsitesPersonWebsiteItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ProfileWebsitesPersonWebsiteItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ProfileWebsitesPersonWebsiteItemRequestBuilder) ToPatchRequestInformati
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

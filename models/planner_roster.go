@@ -12,7 +12,7 @@ type PlannerRoster struct {
     // Retrieves the plans contained by the plannerRoster.
     plans []PlannerPlanable
 }
-// NewPlannerRoster instantiates a new plannerRoster and sets the default values.
+// NewPlannerRoster instantiates a new PlannerRoster and sets the default values.
 func NewPlannerRoster()(*PlannerRoster) {
     m := &PlannerRoster{
         Entity: *NewEntity(),

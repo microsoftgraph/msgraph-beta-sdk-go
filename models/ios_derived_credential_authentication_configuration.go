@@ -15,8 +15,8 @@ func NewIosDerivedCredentialAuthenticationConfiguration()(*IosDerivedCredentialA
     m := &IosDerivedCredentialAuthenticationConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.iosDerivedCredentialAuthenticationConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.iosDerivedCredentialAuthenticationConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateIosDerivedCredentialAuthenticationConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

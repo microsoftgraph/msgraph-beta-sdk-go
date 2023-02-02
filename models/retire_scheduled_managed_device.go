@@ -38,7 +38,7 @@ type RetireScheduledManagedDevice struct {
 func NewRetireScheduledManagedDevice()(*RetireScheduledManagedDevice) {
     m := &RetireScheduledManagedDevice{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateRetireScheduledManagedDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

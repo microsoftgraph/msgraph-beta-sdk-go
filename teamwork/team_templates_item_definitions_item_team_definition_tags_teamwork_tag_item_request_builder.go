@@ -47,7 +47,7 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionTagsTeamworkTagItemRequestBui
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewTeamTemplatesItemDefinitionsItemTeamDefinitionTagsTeamworkTagItemRequestBuilderInternal instantiates a new TeamworkTagItemRequestBuilder and sets the default values.
-func NewTeamTemplatesItemDefinitionsItemTeamDefinitionTagsTeamworkTagItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesItemDefinitionsItemTeamDefinitionTagsTeamworkTagItemRequestBuilder) {
+func NewTeamTemplatesItemDefinitionsItemTeamDefinitionTagsTeamworkTagItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, teamworkTagId *string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionTagsTeamworkTagItemRequestBuilder) {
     m := &TeamTemplatesItemDefinitionsItemTeamDefinitionTagsTeamworkTagItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/tags/{teamworkTag%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionTagsTeamworkTagItemRequest
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if teamworkTagId != nil {
+        urlTplParams["teamworkTag%2Did"] = *teamworkTagId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTeamTemplatesItemDefinitionsItemTeamDefinitionTagsTeamworkTagItemRequestBuilder instantiates a new TeamworkTagItemRequestBuilder and sets the default values.
 func NewTeamTemplatesItemDefinitionsItemTeamDefinitionTagsTeamworkTagItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesItemDefinitionsItemTeamDefinitionTagsTeamworkTagItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionTagsTeamworkTagItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionTagsTeamworkTagItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property tags for teamwork
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsTeamworkTagItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsTeamworkTagItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -102,7 +105,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsTeamworkTagItemReques
 }
 // Members provides operations to manage the members property of the microsoft.graph.teamworkTag entity.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsTeamworkTagItemRequestBuilder) Members()(*TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersRequestBuilder) {
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MembersById provides operations to manage the members property of the microsoft.graph.teamworkTag entity.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsTeamworkTagItemRequestBuilder) MembersById(id string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilder) {
@@ -110,10 +113,8 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsTeamworkTagItemReques
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["teamworkTagMember%2Did"] = id
-    }
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Patch update the navigation property tags in teamwork
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsTeamworkTagItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsTeamworkTagItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagable, error) {
@@ -169,7 +170,10 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsTeamworkTagItemReques
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

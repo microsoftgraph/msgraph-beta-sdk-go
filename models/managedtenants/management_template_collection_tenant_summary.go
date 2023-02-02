@@ -42,7 +42,7 @@ type ManagementTemplateCollectionTenantSummary struct {
     // The tenantId property
     tenantId *string
 }
-// NewManagementTemplateCollectionTenantSummary instantiates a new managementTemplateCollectionTenantSummary and sets the default values.
+// NewManagementTemplateCollectionTenantSummary instantiates a new ManagementTemplateCollectionTenantSummary and sets the default values.
 func NewManagementTemplateCollectionTenantSummary()(*ManagementTemplateCollectionTenantSummary) {
     m := &ManagementTemplateCollectionTenantSummary{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

@@ -47,7 +47,7 @@ type GroupPolicyObjectFilesGroupPolicyObjectFileItemRequestBuilderPatchRequestCo
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewGroupPolicyObjectFilesGroupPolicyObjectFileItemRequestBuilderInternal instantiates a new GroupPolicyObjectFileItemRequestBuilder and sets the default values.
-func NewGroupPolicyObjectFilesGroupPolicyObjectFileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyObjectFilesGroupPolicyObjectFileItemRequestBuilder) {
+func NewGroupPolicyObjectFilesGroupPolicyObjectFileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, groupPolicyObjectFileId *string)(*GroupPolicyObjectFilesGroupPolicyObjectFileItemRequestBuilder) {
     m := &GroupPolicyObjectFilesGroupPolicyObjectFileItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/groupPolicyObjectFiles/{groupPolicyObjectFile%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewGroupPolicyObjectFilesGroupPolicyObjectFileItemRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if groupPolicyObjectFileId != nil {
+        urlTplParams["groupPolicyObjectFile%2Did"] = *groupPolicyObjectFileId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGroupPolicyObjectFilesGroupPolicyObjectFileItemRequestBuilder instantiates a new GroupPolicyObjectFileItemRequestBuilder and sets the default values.
 func NewGroupPolicyObjectFilesGroupPolicyObjectFileItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyObjectFilesGroupPolicyObjectFileItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewGroupPolicyObjectFilesGroupPolicyObjectFileItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewGroupPolicyObjectFilesGroupPolicyObjectFileItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property groupPolicyObjectFiles for deviceManagement
 func (m *GroupPolicyObjectFilesGroupPolicyObjectFileItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *GroupPolicyObjectFilesGroupPolicyObjectFileItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *GroupPolicyObjectFilesGroupPolicyObjectFileItemRequestBuilder) ToPatchR
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

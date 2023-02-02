@@ -31,7 +31,7 @@ type PeoplePersonItemRequestBuilderGetRequestConfiguration struct {
     QueryParameters *PeoplePersonItemRequestBuilderGetQueryParameters
 }
 // NewPeoplePersonItemRequestBuilderInternal instantiates a new PersonItemRequestBuilder and sets the default values.
-func NewPeoplePersonItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PeoplePersonItemRequestBuilder) {
+func NewPeoplePersonItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, personId *string)(*PeoplePersonItemRequestBuilder) {
     m := &PeoplePersonItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/people/{person%2Did}{?%24select}";
@@ -39,15 +39,18 @@ func NewPeoplePersonItemRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if personId != nil {
+        urlTplParams["person%2Did"] = *personId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPeoplePersonItemRequestBuilder instantiates a new PersonItemRequestBuilder and sets the default values.
 func NewPeoplePersonItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PeoplePersonItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewPeoplePersonItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewPeoplePersonItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.
 func (m *PeoplePersonItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PeoplePersonItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Personable, error) {

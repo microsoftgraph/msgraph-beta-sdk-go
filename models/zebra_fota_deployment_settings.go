@@ -48,7 +48,7 @@ type ZebraFotaDeploymentSettings struct {
 func NewZebraFotaDeploymentSettings()(*ZebraFotaDeploymentSettings) {
     m := &ZebraFotaDeploymentSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateZebraFotaDeploymentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

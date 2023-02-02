@@ -47,7 +47,7 @@ type ItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration struct
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemPermissionsPermissionItemRequestBuilderInternal instantiates a new PermissionItemRequestBuilder and sets the default values.
-func NewItemPermissionsPermissionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPermissionsPermissionItemRequestBuilder) {
+func NewItemPermissionsPermissionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, permissionId *string)(*ItemPermissionsPermissionItemRequestBuilder) {
     m := &ItemPermissionsPermissionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/sites/{site%2Did}/permissions/{permission%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemPermissionsPermissionItemRequestBuilderInternal(pathParameters map[s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if permissionId != nil {
+        urlTplParams["permission%2Did"] = *permissionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemPermissionsPermissionItemRequestBuilder instantiates a new PermissionItemRequestBuilder and sets the default values.
 func NewItemPermissionsPermissionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPermissionsPermissionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemPermissionsPermissionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemPermissionsPermissionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property permissions for sites
 func (m *ItemPermissionsPermissionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -100,9 +103,13 @@ func (m *ItemPermissionsPermissionItemRequestBuilder) Get(ctx context.Context, r
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable), nil
 }
-// Grant provides operations to call the grant method.
-func (m *ItemPermissionsPermissionItemRequestBuilder) Grant()(*ItemPermissionsItemGrantRequestBuilder) {
-    return NewItemPermissionsItemGrantRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGrant provides operations to call the grant method.
+func (m *ItemPermissionsPermissionItemRequestBuilder) MicrosoftGraphGrant()(*ItemPermissionsItemMicrosoftGraphGrantGrantRequestBuilder) {
+    return NewItemPermissionsItemMicrosoftGraphGrantGrantRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRevokeGrants provides operations to call the revokeGrants method.
+func (m *ItemPermissionsPermissionItemRequestBuilder) MicrosoftGraphRevokeGrants()(*ItemPermissionsItemMicrosoftGraphRevokeGrantsRevokeGrantsRequestBuilder) {
+    return NewItemPermissionsItemMicrosoftGraphRevokeGrantsRevokeGrantsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property permissions in sites
 func (m *ItemPermissionsPermissionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable, requestConfiguration *ItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable, error) {
@@ -122,10 +129,6 @@ func (m *ItemPermissionsPermissionItemRequestBuilder) Patch(ctx context.Context,
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable), nil
-}
-// RevokeGrants provides operations to call the revokeGrants method.
-func (m *ItemPermissionsPermissionItemRequestBuilder) RevokeGrants()(*ItemPermissionsItemRevokeGrantsRequestBuilder) {
-    return NewItemPermissionsItemRevokeGrantsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property permissions for sites
 func (m *ItemPermissionsPermissionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -162,7 +165,10 @@ func (m *ItemPermissionsPermissionItemRequestBuilder) ToPatchRequestInformation(
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

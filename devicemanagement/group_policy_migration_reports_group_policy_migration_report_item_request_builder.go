@@ -47,7 +47,7 @@ type GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilderPatc
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewGroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilderInternal instantiates a new GroupPolicyMigrationReportItemRequestBuilder and sets the default values.
-func NewGroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder) {
+func NewGroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, groupPolicyMigrationReportId *string)(*GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder) {
     m := &GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/groupPolicyMigrationReports/{groupPolicyMigrationReport%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewGroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilderI
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if groupPolicyMigrationReportId != nil {
+        urlTplParams["groupPolicyMigrationReport%2Did"] = *groupPolicyMigrationReportId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder instantiates a new GroupPolicyMigrationReportItemRequestBuilder and sets the default values.
 func NewGroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewGroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewGroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property groupPolicyMigrationReports for deviceManagement
 func (m *GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -102,7 +105,7 @@ func (m *GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder
 }
 // GroupPolicySettingMappings provides operations to manage the groupPolicySettingMappings property of the microsoft.graph.groupPolicyMigrationReport entity.
 func (m *GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder) GroupPolicySettingMappings()(*GroupPolicyMigrationReportsItemGroupPolicySettingMappingsRequestBuilder) {
-    return NewGroupPolicyMigrationReportsItemGroupPolicySettingMappingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyMigrationReportsItemGroupPolicySettingMappingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GroupPolicySettingMappingsById provides operations to manage the groupPolicySettingMappings property of the microsoft.graph.groupPolicyMigrationReport entity.
 func (m *GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder) GroupPolicySettingMappingsById(id string)(*GroupPolicyMigrationReportsItemGroupPolicySettingMappingsGroupPolicySettingMappingItemRequestBuilder) {
@@ -110,10 +113,12 @@ func (m *GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["groupPolicySettingMapping%2Did"] = id
-    }
-    return NewGroupPolicyMigrationReportsItemGroupPolicySettingMappingsGroupPolicySettingMappingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewGroupPolicyMigrationReportsItemGroupPolicySettingMappingsGroupPolicySettingMappingItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
+}
+// MicrosoftGraphUpdateScopeTags provides operations to call the updateScopeTags method.
+func (m *GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder) MicrosoftGraphUpdateScopeTags()(*GroupPolicyMigrationReportsItemMicrosoftGraphUpdateScopeTagsUpdateScopeTagsRequestBuilder) {
+    return NewGroupPolicyMigrationReportsItemMicrosoftGraphUpdateScopeTagsUpdateScopeTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property groupPolicyMigrationReports in deviceManagement
 func (m *GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyMigrationReportable, requestConfiguration *GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyMigrationReportable, error) {
@@ -169,7 +174,10 @@ func (m *GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -178,7 +186,7 @@ func (m *GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder
 }
 // UnsupportedGroupPolicyExtensions provides operations to manage the unsupportedGroupPolicyExtensions property of the microsoft.graph.groupPolicyMigrationReport entity.
 func (m *GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder) UnsupportedGroupPolicyExtensions()(*GroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsRequestBuilder) {
-    return NewGroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UnsupportedGroupPolicyExtensionsById provides operations to manage the unsupportedGroupPolicyExtensions property of the microsoft.graph.groupPolicyMigrationReport entity.
 func (m *GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder) UnsupportedGroupPolicyExtensionsById(id string)(*GroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsUnsupportedGroupPolicyExtensionItemRequestBuilder) {
@@ -186,12 +194,6 @@ func (m *GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["unsupportedGroupPolicyExtension%2Did"] = id
-    }
-    return NewGroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsUnsupportedGroupPolicyExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// UpdateScopeTags provides operations to call the updateScopeTags method.
-func (m *GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder) UpdateScopeTags()(*GroupPolicyMigrationReportsItemUpdateScopeTagsRequestBuilder) {
-    return NewGroupPolicyMigrationReportsItemUpdateScopeTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    idPtr := &id
+    return NewGroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsUnsupportedGroupPolicyExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }

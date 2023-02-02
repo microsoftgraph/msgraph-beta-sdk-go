@@ -47,7 +47,7 @@ type ItemResourcesItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilderP
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemResourcesItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilderInternal instantiates a new GovernanceRoleAssignmentItemRequestBuilder and sets the default values.
-func NewItemResourcesItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemResourcesItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilder) {
+func NewItemResourcesItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, governanceRoleAssignmentId *string)(*ItemResourcesItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilder) {
     m := &ItemResourcesItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}/resources/{governanceResource%2Did}/roleAssignments/{governanceRoleAssignment%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemResourcesItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuild
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if governanceRoleAssignmentId != nil {
+        urlTplParams["governanceRoleAssignment%2Did"] = *governanceRoleAssignmentId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemResourcesItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilder instantiates a new GovernanceRoleAssignmentItemRequestBuilder and sets the default values.
 func NewItemResourcesItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemResourcesItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemResourcesItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemResourcesItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property roleAssignments for privilegedAccess
 func (m *ItemResourcesItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemResourcesItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -102,7 +105,7 @@ func (m *ItemResourcesItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuil
 }
 // LinkedEligibleRoleAssignment provides operations to manage the linkedEligibleRoleAssignment property of the microsoft.graph.governanceRoleAssignment entity.
 func (m *ItemResourcesItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilder) LinkedEligibleRoleAssignment()(*ItemResourcesItemRoleAssignmentsItemLinkedEligibleRoleAssignmentRequestBuilder) {
-    return NewItemResourcesItemRoleAssignmentsItemLinkedEligibleRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemResourcesItemRoleAssignmentsItemLinkedEligibleRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property roleAssignments in privilegedAccess
 func (m *ItemResourcesItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentable, requestConfiguration *ItemResourcesItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentable, error) {
@@ -125,15 +128,15 @@ func (m *ItemResourcesItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuil
 }
 // Resource provides operations to manage the resource property of the microsoft.graph.governanceRoleAssignment entity.
 func (m *ItemResourcesItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilder) Resource()(*ItemResourcesItemRoleAssignmentsItemResourceRequestBuilder) {
-    return NewItemResourcesItemRoleAssignmentsItemResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemResourcesItemRoleAssignmentsItemResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RoleDefinition provides operations to manage the roleDefinition property of the microsoft.graph.governanceRoleAssignment entity.
 func (m *ItemResourcesItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilder) RoleDefinition()(*ItemResourcesItemRoleAssignmentsItemRoleDefinitionRequestBuilder) {
-    return NewItemResourcesItemRoleAssignmentsItemRoleDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemResourcesItemRoleAssignmentsItemRoleDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Subject provides operations to manage the subject property of the microsoft.graph.governanceRoleAssignment entity.
 func (m *ItemResourcesItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilder) Subject()(*ItemResourcesItemRoleAssignmentsItemSubjectRequestBuilder) {
-    return NewItemResourcesItemRoleAssignmentsItemSubjectRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemResourcesItemRoleAssignmentsItemSubjectRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property roleAssignments for privilegedAccess
 func (m *ItemResourcesItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemResourcesItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -170,7 +173,10 @@ func (m *ItemResourcesItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuil
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -46,13 +46,9 @@ type GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilderPatchReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Assign provides operations to call the assign method.
-func (m *GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) Assign()(*GroupPolicyConfigurationsItemAssignRequestBuilder) {
-    return NewGroupPolicyConfigurationsItemAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Assignments provides operations to manage the assignments property of the microsoft.graph.groupPolicyConfiguration entity.
 func (m *GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) Assignments()(*GroupPolicyConfigurationsItemAssignmentsRequestBuilder) {
-    return NewGroupPolicyConfigurationsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyConfigurationsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.groupPolicyConfiguration entity.
 func (m *GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) AssignmentsById(id string)(*GroupPolicyConfigurationsItemAssignmentsGroupPolicyConfigurationAssignmentItemRequestBuilder) {
@@ -60,13 +56,11 @@ func (m *GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) As
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["groupPolicyConfigurationAssignment%2Did"] = id
-    }
-    return NewGroupPolicyConfigurationsItemAssignmentsGroupPolicyConfigurationAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewGroupPolicyConfigurationsItemAssignmentsGroupPolicyConfigurationAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewGroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilderInternal instantiates a new GroupPolicyConfigurationItemRequestBuilder and sets the default values.
-func NewGroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) {
+func NewGroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, groupPolicyConfigurationId *string)(*GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) {
     m := &GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/groupPolicyConfigurations/{groupPolicyConfiguration%2Did}{?%24select,%24expand}";
@@ -74,19 +68,22 @@ func NewGroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilderInter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if groupPolicyConfigurationId != nil {
+        urlTplParams["groupPolicyConfiguration%2Did"] = *groupPolicyConfigurationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder instantiates a new GroupPolicyConfigurationItemRequestBuilder and sets the default values.
 func NewGroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewGroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewGroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // DefinitionValues provides operations to manage the definitionValues property of the microsoft.graph.groupPolicyConfiguration entity.
 func (m *GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) DefinitionValues()(*GroupPolicyConfigurationsItemDefinitionValuesRequestBuilder) {
-    return NewGroupPolicyConfigurationsItemDefinitionValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyConfigurationsItemDefinitionValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DefinitionValuesById provides operations to manage the definitionValues property of the microsoft.graph.groupPolicyConfiguration entity.
 func (m *GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) DefinitionValuesById(id string)(*GroupPolicyConfigurationsItemDefinitionValuesGroupPolicyDefinitionValueItemRequestBuilder) {
@@ -94,10 +91,8 @@ func (m *GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) De
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["groupPolicyDefinitionValue%2Did"] = id
-    }
-    return NewGroupPolicyConfigurationsItemDefinitionValuesGroupPolicyDefinitionValueItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewGroupPolicyConfigurationsItemDefinitionValuesGroupPolicyDefinitionValueItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Delete delete navigation property groupPolicyConfigurations for deviceManagement
 func (m *GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -133,6 +128,14 @@ func (m *GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) Ge
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyConfigurationable), nil
+}
+// MicrosoftGraphAssign provides operations to call the assign method.
+func (m *GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) MicrosoftGraphAssign()(*GroupPolicyConfigurationsItemMicrosoftGraphAssignAssignRequestBuilder) {
+    return NewGroupPolicyConfigurationsItemMicrosoftGraphAssignAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUpdateDefinitionValues provides operations to call the updateDefinitionValues method.
+func (m *GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) MicrosoftGraphUpdateDefinitionValues()(*GroupPolicyConfigurationsItemMicrosoftGraphUpdateDefinitionValuesUpdateDefinitionValuesRequestBuilder) {
+    return NewGroupPolicyConfigurationsItemMicrosoftGraphUpdateDefinitionValuesUpdateDefinitionValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property groupPolicyConfigurations in deviceManagement
 func (m *GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyConfigurationable, requestConfiguration *GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyConfigurationable, error) {
@@ -188,14 +191,13 @@ func (m *GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) To
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// UpdateDefinitionValues provides operations to call the updateDefinitionValues method.
-func (m *GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) UpdateDefinitionValues()(*GroupPolicyConfigurationsItemUpdateDefinitionValuesRequestBuilder) {
-    return NewGroupPolicyConfigurationsItemUpdateDefinitionValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

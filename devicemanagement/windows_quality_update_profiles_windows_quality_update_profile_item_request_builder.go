@@ -46,13 +46,9 @@ type WindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuilderPa
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Assign provides operations to call the assign method.
-func (m *WindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuilder) Assign()(*WindowsQualityUpdateProfilesItemAssignRequestBuilder) {
-    return NewWindowsQualityUpdateProfilesItemAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Assignments provides operations to manage the assignments property of the microsoft.graph.windowsQualityUpdateProfile entity.
 func (m *WindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuilder) Assignments()(*WindowsQualityUpdateProfilesItemAssignmentsRequestBuilder) {
-    return NewWindowsQualityUpdateProfilesItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsQualityUpdateProfilesItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.windowsQualityUpdateProfile entity.
 func (m *WindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuilder) AssignmentsById(id string)(*WindowsQualityUpdateProfilesItemAssignmentsWindowsQualityUpdateProfileAssignmentItemRequestBuilder) {
@@ -60,13 +56,11 @@ func (m *WindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuild
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["windowsQualityUpdateProfileAssignment%2Did"] = id
-    }
-    return NewWindowsQualityUpdateProfilesItemAssignmentsWindowsQualityUpdateProfileAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewWindowsQualityUpdateProfilesItemAssignmentsWindowsQualityUpdateProfileAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewWindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuilderInternal instantiates a new WindowsQualityUpdateProfileItemRequestBuilder and sets the default values.
-func NewWindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuilder) {
+func NewWindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, windowsQualityUpdateProfileId *string)(*WindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuilder) {
     m := &WindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/windowsQualityUpdateProfiles/{windowsQualityUpdateProfile%2Did}{?%24select,%24expand}";
@@ -74,15 +68,18 @@ func NewWindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuilde
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if windowsQualityUpdateProfileId != nil {
+        urlTplParams["windowsQualityUpdateProfile%2Did"] = *windowsQualityUpdateProfileId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuilder instantiates a new WindowsQualityUpdateProfileItemRequestBuilder and sets the default values.
 func NewWindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewWindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewWindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property windowsQualityUpdateProfiles for deviceManagement
 func (m *WindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *WindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -118,6 +115,10 @@ func (m *WindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuild
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsQualityUpdateProfileable), nil
+}
+// MicrosoftGraphAssign provides operations to call the assign method.
+func (m *WindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuilder) MicrosoftGraphAssign()(*WindowsQualityUpdateProfilesItemMicrosoftGraphAssignAssignRequestBuilder) {
+    return NewWindowsQualityUpdateProfilesItemMicrosoftGraphAssignAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property windowsQualityUpdateProfiles in deviceManagement
 func (m *WindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsQualityUpdateProfileable, requestConfiguration *WindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsQualityUpdateProfileable, error) {
@@ -173,7 +174,10 @@ func (m *WindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuild
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

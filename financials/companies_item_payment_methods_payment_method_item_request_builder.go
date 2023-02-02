@@ -47,7 +47,7 @@ type CompaniesItemPaymentMethodsPaymentMethodItemRequestBuilderPatchRequestConfi
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewCompaniesItemPaymentMethodsPaymentMethodItemRequestBuilderInternal instantiates a new PaymentMethodItemRequestBuilder and sets the default values.
-func NewCompaniesItemPaymentMethodsPaymentMethodItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemPaymentMethodsPaymentMethodItemRequestBuilder) {
+func NewCompaniesItemPaymentMethodsPaymentMethodItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, paymentMethodId *string)(*CompaniesItemPaymentMethodsPaymentMethodItemRequestBuilder) {
     m := &CompaniesItemPaymentMethodsPaymentMethodItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/financials/companies/{company%2Did}/paymentMethods/{paymentMethod%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewCompaniesItemPaymentMethodsPaymentMethodItemRequestBuilderInternal(pathP
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if paymentMethodId != nil {
+        urlTplParams["paymentMethod%2Did"] = *paymentMethodId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemPaymentMethodsPaymentMethodItemRequestBuilder instantiates a new PaymentMethodItemRequestBuilder and sets the default values.
 func NewCompaniesItemPaymentMethodsPaymentMethodItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemPaymentMethodsPaymentMethodItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCompaniesItemPaymentMethodsPaymentMethodItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCompaniesItemPaymentMethodsPaymentMethodItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property paymentMethods for financials
 func (m *CompaniesItemPaymentMethodsPaymentMethodItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CompaniesItemPaymentMethodsPaymentMethodItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *CompaniesItemPaymentMethodsPaymentMethodItemRequestBuilder) ToPatchRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

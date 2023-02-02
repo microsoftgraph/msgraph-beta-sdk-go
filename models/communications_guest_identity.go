@@ -13,8 +13,8 @@ func NewCommunicationsGuestIdentity()(*CommunicationsGuestIdentity) {
     m := &CommunicationsGuestIdentity{
         Identity: *NewIdentity(),
     }
-    odataTypeValue := "#microsoft.graph.communicationsGuestIdentity";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.communicationsGuestIdentity"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateCommunicationsGuestIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

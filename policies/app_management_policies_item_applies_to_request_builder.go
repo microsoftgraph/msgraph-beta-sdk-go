@@ -53,8 +53,8 @@ func NewAppManagementPoliciesItemAppliesToRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAppManagementPoliciesItemAppliesToRequestBuilder instantiates a new AppliesToRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewAppManagementPoliciesItemAppliesToRequestBuilder(rawUrl string, requestA
 }
 // Count provides operations to count the resources in the collection.
 func (m *AppManagementPoliciesItemAppliesToRequestBuilder) Count()(*AppManagementPoliciesItemAppliesToCountRequestBuilder) {
-    return NewAppManagementPoliciesItemAppliesToCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAppManagementPoliciesItemAppliesToCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list application and service principal objects assigned an appManagementPolicy policy object.
 // [Find more info here]

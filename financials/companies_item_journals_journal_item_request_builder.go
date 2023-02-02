@@ -48,10 +48,10 @@ type CompaniesItemJournalsJournalItemRequestBuilderPatchRequestConfiguration str
 }
 // Account provides operations to manage the account property of the microsoft.graph.journal entity.
 func (m *CompaniesItemJournalsJournalItemRequestBuilder) Account()(*CompaniesItemJournalsItemAccountRequestBuilder) {
-    return NewCompaniesItemJournalsItemAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemJournalsItemAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewCompaniesItemJournalsJournalItemRequestBuilderInternal instantiates a new JournalItemRequestBuilder and sets the default values.
-func NewCompaniesItemJournalsJournalItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemJournalsJournalItemRequestBuilder) {
+func NewCompaniesItemJournalsJournalItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, journalId *string)(*CompaniesItemJournalsJournalItemRequestBuilder) {
     m := &CompaniesItemJournalsJournalItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/financials/companies/{company%2Did}/journals/{journal%2Did}{?%24select,%24expand}";
@@ -59,15 +59,18 @@ func NewCompaniesItemJournalsJournalItemRequestBuilderInternal(pathParameters ma
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if journalId != nil {
+        urlTplParams["journal%2Did"] = *journalId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemJournalsJournalItemRequestBuilder instantiates a new JournalItemRequestBuilder and sets the default values.
 func NewCompaniesItemJournalsJournalItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemJournalsJournalItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCompaniesItemJournalsJournalItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCompaniesItemJournalsJournalItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property journals for financials
 func (m *CompaniesItemJournalsJournalItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CompaniesItemJournalsJournalItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -106,7 +109,7 @@ func (m *CompaniesItemJournalsJournalItemRequestBuilder) Get(ctx context.Context
 }
 // JournalLines provides operations to manage the journalLines property of the microsoft.graph.journal entity.
 func (m *CompaniesItemJournalsJournalItemRequestBuilder) JournalLines()(*CompaniesItemJournalsItemJournalLinesRequestBuilder) {
-    return NewCompaniesItemJournalsItemJournalLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemJournalsItemJournalLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // JournalLinesById provides operations to manage the journalLines property of the microsoft.graph.journal entity.
 func (m *CompaniesItemJournalsJournalItemRequestBuilder) JournalLinesById(id string)(*CompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilder) {
@@ -114,10 +117,12 @@ func (m *CompaniesItemJournalsJournalItemRequestBuilder) JournalLinesById(id str
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["journalLine%2Did"] = id
-    }
-    return NewCompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewCompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
+}
+// MicrosoftGraphPost provides operations to call the post method.
+func (m *CompaniesItemJournalsJournalItemRequestBuilder) MicrosoftGraphPost()(*CompaniesItemJournalsItemMicrosoftGraphPostPostRequestBuilder) {
+    return NewCompaniesItemJournalsItemMicrosoftGraphPostPostRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property journals in financials
 func (m *CompaniesItemJournalsJournalItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Journalable, requestConfiguration *CompaniesItemJournalsJournalItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Journalable, error) {
@@ -137,10 +142,6 @@ func (m *CompaniesItemJournalsJournalItemRequestBuilder) Patch(ctx context.Conte
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Journalable), nil
-}
-// Post provides operations to call the post method.
-func (m *CompaniesItemJournalsJournalItemRequestBuilder) Post()(*CompaniesItemJournalsItemPostRequestBuilder) {
-    return NewCompaniesItemJournalsItemPostRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property journals for financials
 func (m *CompaniesItemJournalsJournalItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemJournalsJournalItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -177,7 +178,10 @@ func (m *CompaniesItemJournalsJournalItemRequestBuilder) ToPatchRequestInformati
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

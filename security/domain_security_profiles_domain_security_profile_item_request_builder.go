@@ -47,7 +47,7 @@ type DomainSecurityProfilesDomainSecurityProfileItemRequestBuilderPatchRequestCo
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewDomainSecurityProfilesDomainSecurityProfileItemRequestBuilderInternal instantiates a new DomainSecurityProfileItemRequestBuilder and sets the default values.
-func NewDomainSecurityProfilesDomainSecurityProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DomainSecurityProfilesDomainSecurityProfileItemRequestBuilder) {
+func NewDomainSecurityProfilesDomainSecurityProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, domainSecurityProfileId *string)(*DomainSecurityProfilesDomainSecurityProfileItemRequestBuilder) {
     m := &DomainSecurityProfilesDomainSecurityProfileItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/security/domainSecurityProfiles/{domainSecurityProfile%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewDomainSecurityProfilesDomainSecurityProfileItemRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if domainSecurityProfileId != nil {
+        urlTplParams["domainSecurityProfile%2Did"] = *domainSecurityProfileId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDomainSecurityProfilesDomainSecurityProfileItemRequestBuilder instantiates a new DomainSecurityProfileItemRequestBuilder and sets the default values.
 func NewDomainSecurityProfilesDomainSecurityProfileItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DomainSecurityProfilesDomainSecurityProfileItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewDomainSecurityProfilesDomainSecurityProfileItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewDomainSecurityProfilesDomainSecurityProfileItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property domainSecurityProfiles for security
 func (m *DomainSecurityProfilesDomainSecurityProfileItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DomainSecurityProfilesDomainSecurityProfileItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *DomainSecurityProfilesDomainSecurityProfileItemRequestBuilder) ToPatchR
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

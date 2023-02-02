@@ -33,7 +33,7 @@ type CompaniesItemDimensionsDimensionItemRequestBuilderGetRequestConfiguration s
     QueryParameters *CompaniesItemDimensionsDimensionItemRequestBuilderGetQueryParameters
 }
 // NewCompaniesItemDimensionsDimensionItemRequestBuilderInternal instantiates a new DimensionItemRequestBuilder and sets the default values.
-func NewCompaniesItemDimensionsDimensionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemDimensionsDimensionItemRequestBuilder) {
+func NewCompaniesItemDimensionsDimensionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, dimensionId *string)(*CompaniesItemDimensionsDimensionItemRequestBuilder) {
     m := &CompaniesItemDimensionsDimensionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/financials/companies/{company%2Did}/dimensions/{dimension%2Did}{?%24select,%24expand}";
@@ -41,19 +41,22 @@ func NewCompaniesItemDimensionsDimensionItemRequestBuilderInternal(pathParameter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if dimensionId != nil {
+        urlTplParams["dimension%2Did"] = *dimensionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemDimensionsDimensionItemRequestBuilder instantiates a new DimensionItemRequestBuilder and sets the default values.
 func NewCompaniesItemDimensionsDimensionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemDimensionsDimensionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCompaniesItemDimensionsDimensionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCompaniesItemDimensionsDimensionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // DimensionValues provides operations to manage the dimensionValues property of the microsoft.graph.dimension entity.
 func (m *CompaniesItemDimensionsDimensionItemRequestBuilder) DimensionValues()(*CompaniesItemDimensionsItemDimensionValuesRequestBuilder) {
-    return NewCompaniesItemDimensionsItemDimensionValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemDimensionsItemDimensionValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DimensionValuesById provides operations to manage the dimensionValues property of the microsoft.graph.dimension entity.
 func (m *CompaniesItemDimensionsDimensionItemRequestBuilder) DimensionValuesById(id string)(*CompaniesItemDimensionsItemDimensionValuesDimensionValueItemRequestBuilder) {
@@ -61,10 +64,8 @@ func (m *CompaniesItemDimensionsDimensionItemRequestBuilder) DimensionValuesById
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["dimensionValue%2Did"] = id
-    }
-    return NewCompaniesItemDimensionsItemDimensionValuesDimensionValueItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewCompaniesItemDimensionsItemDimensionValuesDimensionValueItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Get get dimensions from financials
 func (m *CompaniesItemDimensionsDimensionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemDimensionsDimensionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Dimensionable, error) {

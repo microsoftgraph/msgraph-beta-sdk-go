@@ -32,8 +32,8 @@ func NewEmailThreatSubmission()(*EmailThreatSubmission) {
     m := &EmailThreatSubmission{
         ThreatSubmission: *NewThreatSubmission(),
     }
-    odataTypeValue := "#microsoft.graph.security.emailThreatSubmission";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.security.emailThreatSubmission"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEmailThreatSubmissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

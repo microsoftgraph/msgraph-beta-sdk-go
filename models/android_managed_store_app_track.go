@@ -19,7 +19,7 @@ type AndroidManagedStoreAppTrack struct {
 func NewAndroidManagedStoreAppTrack()(*AndroidManagedStoreAppTrack) {
     m := &AndroidManagedStoreAppTrack{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAndroidManagedStoreAppTrackFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

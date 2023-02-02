@@ -15,8 +15,8 @@ func NewDeviceManagementSettingFileConstraint()(*DeviceManagementSettingFileCons
     m := &DeviceManagementSettingFileConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementSettingFileConstraint";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementSettingFileConstraint"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementSettingFileConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

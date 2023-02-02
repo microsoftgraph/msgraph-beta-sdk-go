@@ -46,12 +46,8 @@ type SecurityActionsSecurityActionItemRequestBuilderPatchRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CancelSecurityAction provides operations to call the cancelSecurityAction method.
-func (m *SecurityActionsSecurityActionItemRequestBuilder) CancelSecurityAction()(*SecurityActionsItemCancelSecurityActionRequestBuilder) {
-    return NewSecurityActionsItemCancelSecurityActionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewSecurityActionsSecurityActionItemRequestBuilderInternal instantiates a new SecurityActionItemRequestBuilder and sets the default values.
-func NewSecurityActionsSecurityActionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SecurityActionsSecurityActionItemRequestBuilder) {
+func NewSecurityActionsSecurityActionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, securityActionId *string)(*SecurityActionsSecurityActionItemRequestBuilder) {
     m := &SecurityActionsSecurityActionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/security/securityActions/{securityAction%2Did}{?%24select,%24expand}";
@@ -59,15 +55,18 @@ func NewSecurityActionsSecurityActionItemRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if securityActionId != nil {
+        urlTplParams["securityAction%2Did"] = *securityActionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewSecurityActionsSecurityActionItemRequestBuilder instantiates a new SecurityActionItemRequestBuilder and sets the default values.
 func NewSecurityActionsSecurityActionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SecurityActionsSecurityActionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewSecurityActionsSecurityActionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewSecurityActionsSecurityActionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property securityActions for security
 func (m *SecurityActionsSecurityActionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *SecurityActionsSecurityActionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -103,6 +102,10 @@ func (m *SecurityActionsSecurityActionItemRequestBuilder) Get(ctx context.Contex
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityActionable), nil
+}
+// MicrosoftGraphCancelSecurityAction provides operations to call the cancelSecurityAction method.
+func (m *SecurityActionsSecurityActionItemRequestBuilder) MicrosoftGraphCancelSecurityAction()(*SecurityActionsItemMicrosoftGraphCancelSecurityActionCancelSecurityActionRequestBuilder) {
+    return NewSecurityActionsItemMicrosoftGraphCancelSecurityActionCancelSecurityActionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property securityActions in security
 func (m *SecurityActionsSecurityActionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityActionable, requestConfiguration *SecurityActionsSecurityActionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityActionable, error) {
@@ -158,7 +161,10 @@ func (m *SecurityActionsSecurityActionItemRequestBuilder) ToPatchRequestInformat
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

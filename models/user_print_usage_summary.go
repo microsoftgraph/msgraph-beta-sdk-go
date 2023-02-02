@@ -25,7 +25,7 @@ type UserPrintUsageSummary struct {
 func NewUserPrintUsageSummary()(*UserPrintUsageSummary) {
     m := &UserPrintUsageSummary{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateUserPrintUsageSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

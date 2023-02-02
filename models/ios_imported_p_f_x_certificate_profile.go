@@ -17,8 +17,8 @@ func NewIosImportedPFXCertificateProfile()(*IosImportedPFXCertificateProfile) {
     m := &IosImportedPFXCertificateProfile{
         IosCertificateProfile: *NewIosCertificateProfile(),
     }
-    odataTypeValue := "#microsoft.graph.iosImportedPFXCertificateProfile";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.iosImportedPFXCertificateProfile"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateIosImportedPFXCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -19,7 +19,7 @@ type Win32LobAppRequirement struct {
 func NewWin32LobAppRequirement()(*Win32LobAppRequirement) {
     m := &Win32LobAppRequirement{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWin32LobAppRequirementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

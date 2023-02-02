@@ -47,7 +47,7 @@ type AuthorizationPolicyAuthorizationPolicyItemRequestBuilderPatchRequestConfigu
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewAuthorizationPolicyAuthorizationPolicyItemRequestBuilderInternal instantiates a new AuthorizationPolicyItemRequestBuilder and sets the default values.
-func NewAuthorizationPolicyAuthorizationPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthorizationPolicyAuthorizationPolicyItemRequestBuilder) {
+func NewAuthorizationPolicyAuthorizationPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, authorizationPolicyId *string)(*AuthorizationPolicyAuthorizationPolicyItemRequestBuilder) {
     m := &AuthorizationPolicyAuthorizationPolicyItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/policies/authorizationPolicy/{authorizationPolicy%2Did}{?%24select,%24expand}";
@@ -55,19 +55,22 @@ func NewAuthorizationPolicyAuthorizationPolicyItemRequestBuilderInternal(pathPar
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if authorizationPolicyId != nil {
+        urlTplParams["authorizationPolicy%2Did"] = *authorizationPolicyId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAuthorizationPolicyAuthorizationPolicyItemRequestBuilder instantiates a new AuthorizationPolicyItemRequestBuilder and sets the default values.
 func NewAuthorizationPolicyAuthorizationPolicyItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthorizationPolicyAuthorizationPolicyItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAuthorizationPolicyAuthorizationPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAuthorizationPolicyAuthorizationPolicyItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // DefaultUserRoleOverrides provides operations to manage the defaultUserRoleOverrides property of the microsoft.graph.authorizationPolicy entity.
 func (m *AuthorizationPolicyAuthorizationPolicyItemRequestBuilder) DefaultUserRoleOverrides()(*AuthorizationPolicyItemDefaultUserRoleOverridesRequestBuilder) {
-    return NewAuthorizationPolicyItemDefaultUserRoleOverridesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAuthorizationPolicyItemDefaultUserRoleOverridesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DefaultUserRoleOverridesById provides operations to manage the defaultUserRoleOverrides property of the microsoft.graph.authorizationPolicy entity.
 func (m *AuthorizationPolicyAuthorizationPolicyItemRequestBuilder) DefaultUserRoleOverridesById(id string)(*AuthorizationPolicyItemDefaultUserRoleOverridesDefaultUserRoleOverrideItemRequestBuilder) {
@@ -75,10 +78,8 @@ func (m *AuthorizationPolicyAuthorizationPolicyItemRequestBuilder) DefaultUserRo
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["defaultUserRoleOverride%2Did"] = id
-    }
-    return NewAuthorizationPolicyItemDefaultUserRoleOverridesDefaultUserRoleOverrideItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewAuthorizationPolicyItemDefaultUserRoleOverridesDefaultUserRoleOverrideItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Delete delete navigation property authorizationPolicy for policies
 func (m *AuthorizationPolicyAuthorizationPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AuthorizationPolicyAuthorizationPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -169,7 +170,10 @@ func (m *AuthorizationPolicyAuthorizationPolicyItemRequestBuilder) ToPatchReques
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

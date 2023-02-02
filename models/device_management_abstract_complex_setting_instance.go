@@ -17,8 +17,8 @@ func NewDeviceManagementAbstractComplexSettingInstance()(*DeviceManagementAbstra
     m := &DeviceManagementAbstractComplexSettingInstance{
         DeviceManagementSettingInstance: *NewDeviceManagementSettingInstance(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementAbstractComplexSettingInstance";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementAbstractComplexSettingInstance"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementAbstractComplexSettingInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

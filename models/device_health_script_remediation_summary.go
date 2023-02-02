@@ -19,7 +19,7 @@ type DeviceHealthScriptRemediationSummary struct {
 func NewDeviceHealthScriptRemediationSummary()(*DeviceHealthScriptRemediationSummary) {
     m := &DeviceHealthScriptRemediationSummary{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceHealthScriptRemediationSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

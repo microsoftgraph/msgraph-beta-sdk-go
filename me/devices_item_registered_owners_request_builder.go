@@ -53,8 +53,8 @@ func NewDevicesItemRegisteredOwnersRequestBuilderInternal(pathParameters map[str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDevicesItemRegisteredOwnersRequestBuilder instantiates a new RegisteredOwnersRequestBuilder and sets the default values.
@@ -65,11 +65,7 @@ func NewDevicesItemRegisteredOwnersRequestBuilder(rawUrl string, requestAdapter 
 }
 // Count provides operations to count the resources in the collection.
 func (m *DevicesItemRegisteredOwnersRequestBuilder) Count()(*DevicesItemRegisteredOwnersCountRequestBuilder) {
-    return NewDevicesItemRegisteredOwnersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Endpoint casts the previous resource to endpoint.
-func (m *DevicesItemRegisteredOwnersRequestBuilder) Endpoint()(*DevicesItemRegisteredOwnersEndpointRequestBuilder) {
-    return NewDevicesItemRegisteredOwnersEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDevicesItemRegisteredOwnersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.
 // [Find more info here]
@@ -93,13 +89,21 @@ func (m *DevicesItemRegisteredOwnersRequestBuilder) Get(ctx context.Context, req
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
+// MicrosoftGraphEndpoint casts the previous resource to endpoint.
+func (m *DevicesItemRegisteredOwnersRequestBuilder) MicrosoftGraphEndpoint()(*DevicesItemRegisteredOwnersMicrosoftGraphEndpointEndpointRequestBuilder) {
+    return NewDevicesItemRegisteredOwnersMicrosoftGraphEndpointEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *DevicesItemRegisteredOwnersRequestBuilder) MicrosoftGraphServicePrincipal()(*DevicesItemRegisteredOwnersMicrosoftGraphServicePrincipalServicePrincipalRequestBuilder) {
+    return NewDevicesItemRegisteredOwnersMicrosoftGraphServicePrincipalServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUser casts the previous resource to user.
+func (m *DevicesItemRegisteredOwnersRequestBuilder) MicrosoftGraphUser()(*DevicesItemRegisteredOwnersMicrosoftGraphUserUserRequestBuilder) {
+    return NewDevicesItemRegisteredOwnersMicrosoftGraphUserUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Ref provides operations to manage the collection of user entities.
 func (m *DevicesItemRegisteredOwnersRequestBuilder) Ref()(*DevicesItemRegisteredOwnersRefRequestBuilder) {
-    return NewDevicesItemRegisteredOwnersRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ServicePrincipal casts the previous resource to servicePrincipal.
-func (m *DevicesItemRegisteredOwnersRequestBuilder) ServicePrincipal()(*DevicesItemRegisteredOwnersServicePrincipalRequestBuilder) {
-    return NewDevicesItemRegisteredOwnersServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDevicesItemRegisteredOwnersRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation the user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.
 func (m *DevicesItemRegisteredOwnersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DevicesItemRegisteredOwnersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -116,8 +120,4 @@ func (m *DevicesItemRegisteredOwnersRequestBuilder) ToGetRequestInformation(ctx 
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// User casts the previous resource to user.
-func (m *DevicesItemRegisteredOwnersRequestBuilder) User()(*DevicesItemRegisteredOwnersUserRequestBuilder) {
-    return NewDevicesItemRegisteredOwnersUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

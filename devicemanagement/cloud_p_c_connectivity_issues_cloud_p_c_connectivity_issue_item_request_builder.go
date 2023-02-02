@@ -47,7 +47,7 @@ type CloudPCConnectivityIssuesCloudPCConnectivityIssueItemRequestBuilderPatchReq
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewCloudPCConnectivityIssuesCloudPCConnectivityIssueItemRequestBuilderInternal instantiates a new CloudPCConnectivityIssueItemRequestBuilder and sets the default values.
-func NewCloudPCConnectivityIssuesCloudPCConnectivityIssueItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CloudPCConnectivityIssuesCloudPCConnectivityIssueItemRequestBuilder) {
+func NewCloudPCConnectivityIssuesCloudPCConnectivityIssueItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, cloudPCConnectivityIssueId *string)(*CloudPCConnectivityIssuesCloudPCConnectivityIssueItemRequestBuilder) {
     m := &CloudPCConnectivityIssuesCloudPCConnectivityIssueItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/cloudPCConnectivityIssues/{cloudPCConnectivityIssue%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewCloudPCConnectivityIssuesCloudPCConnectivityIssueItemRequestBuilderInter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if cloudPCConnectivityIssueId != nil {
+        urlTplParams["cloudPCConnectivityIssue%2Did"] = *cloudPCConnectivityIssueId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCloudPCConnectivityIssuesCloudPCConnectivityIssueItemRequestBuilder instantiates a new CloudPCConnectivityIssueItemRequestBuilder and sets the default values.
 func NewCloudPCConnectivityIssuesCloudPCConnectivityIssueItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CloudPCConnectivityIssuesCloudPCConnectivityIssueItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCloudPCConnectivityIssuesCloudPCConnectivityIssueItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCloudPCConnectivityIssuesCloudPCConnectivityIssueItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property cloudPCConnectivityIssues for deviceManagement
 func (m *CloudPCConnectivityIssuesCloudPCConnectivityIssueItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CloudPCConnectivityIssuesCloudPCConnectivityIssueItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *CloudPCConnectivityIssuesCloudPCConnectivityIssueItemRequestBuilder) To
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

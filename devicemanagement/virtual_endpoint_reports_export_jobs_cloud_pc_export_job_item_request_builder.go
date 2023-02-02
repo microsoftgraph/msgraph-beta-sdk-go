@@ -47,7 +47,7 @@ type VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilderPatchRequ
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewVirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilderInternal instantiates a new CloudPcExportJobItemRequestBuilder and sets the default values.
-func NewVirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilder) {
+func NewVirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, cloudPcExportJobId *string)(*VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilder) {
     m := &VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/reports/exportJobs/{cloudPcExportJob%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewVirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilderIntern
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if cloudPcExportJobId != nil {
+        urlTplParams["cloudPcExportJob%2Did"] = *cloudPcExportJobId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewVirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilder instantiates a new CloudPcExportJobItemRequestBuilder and sets the default values.
 func NewVirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewVirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewVirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property exportJobs for deviceManagement
 func (m *VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilder) ToP
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

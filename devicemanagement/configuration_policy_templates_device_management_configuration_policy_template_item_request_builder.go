@@ -47,7 +47,7 @@ type ConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplateItem
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplateItemRequestBuilderInternal instantiates a new DeviceManagementConfigurationPolicyTemplateItemRequestBuilder and sets the default values.
-func NewConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplateItemRequestBuilder) {
+func NewConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, deviceManagementConfigurationPolicyTemplateId *string)(*ConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplateItemRequestBuilder) {
     m := &ConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplateItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/configurationPolicyTemplates/{deviceManagementConfigurationPolicyTemplate%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplateI
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if deviceManagementConfigurationPolicyTemplateId != nil {
+        urlTplParams["deviceManagementConfigurationPolicyTemplate%2Did"] = *deviceManagementConfigurationPolicyTemplateId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplateItemRequestBuilder instantiates a new DeviceManagementConfigurationPolicyTemplateItemRequestBuilder and sets the default values.
 func NewConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplateItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplateItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplateItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property configurationPolicyTemplates for deviceManagement
 func (m *ConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplateItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -121,7 +124,7 @@ func (m *ConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplate
 }
 // SettingTemplates provides operations to manage the settingTemplates property of the microsoft.graph.deviceManagementConfigurationPolicyTemplate entity.
 func (m *ConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplateItemRequestBuilder) SettingTemplates()(*ConfigurationPolicyTemplatesItemSettingTemplatesRequestBuilder) {
-    return NewConfigurationPolicyTemplatesItemSettingTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewConfigurationPolicyTemplatesItemSettingTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SettingTemplatesById provides operations to manage the settingTemplates property of the microsoft.graph.deviceManagementConfigurationPolicyTemplate entity.
 func (m *ConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplateItemRequestBuilder) SettingTemplatesById(id string)(*ConfigurationPolicyTemplatesItemSettingTemplatesDeviceManagementConfigurationSettingTemplateItemRequestBuilder) {
@@ -129,10 +132,8 @@ func (m *ConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplate
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["deviceManagementConfigurationSettingTemplate%2Did"] = id
-    }
-    return NewConfigurationPolicyTemplatesItemSettingTemplatesDeviceManagementConfigurationSettingTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewConfigurationPolicyTemplatesItemSettingTemplatesDeviceManagementConfigurationSettingTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property configurationPolicyTemplates for deviceManagement
 func (m *ConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +170,10 @@ func (m *ConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

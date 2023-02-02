@@ -33,7 +33,7 @@ type RostersItemPlansPlannerPlanItemRequestBuilderGetRequestConfiguration struct
     QueryParameters *RostersItemPlansPlannerPlanItemRequestBuilderGetQueryParameters
 }
 // NewRostersItemPlansPlannerPlanItemRequestBuilderInternal instantiates a new PlannerPlanItemRequestBuilder and sets the default values.
-func NewRostersItemPlansPlannerPlanItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RostersItemPlansPlannerPlanItemRequestBuilder) {
+func NewRostersItemPlansPlannerPlanItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, plannerPlanId *string)(*RostersItemPlansPlannerPlanItemRequestBuilder) {
     m := &RostersItemPlansPlannerPlanItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/planner/rosters/{plannerRoster%2Did}/plans/{plannerPlan%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewRostersItemPlansPlannerPlanItemRequestBuilderInternal(pathParameters map
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if plannerPlanId != nil {
+        urlTplParams["plannerPlan%2Did"] = *plannerPlanId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewRostersItemPlansPlannerPlanItemRequestBuilder instantiates a new PlannerPlanItemRequestBuilder and sets the default values.
 func NewRostersItemPlansPlannerPlanItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RostersItemPlansPlannerPlanItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewRostersItemPlansPlannerPlanItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewRostersItemPlansPlannerPlanItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get retrieves the plans contained by the plannerRoster.
 func (m *RostersItemPlansPlannerPlanItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RostersItemPlansPlannerPlanItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanable, error) {

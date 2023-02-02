@@ -47,7 +47,7 @@ type AuthenticationMethodsUserRegistrationDetailsUserRegistrationDetailsItemRequ
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewAuthenticationMethodsUserRegistrationDetailsUserRegistrationDetailsItemRequestBuilderInternal instantiates a new UserRegistrationDetailsItemRequestBuilder and sets the default values.
-func NewAuthenticationMethodsUserRegistrationDetailsUserRegistrationDetailsItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthenticationMethodsUserRegistrationDetailsUserRegistrationDetailsItemRequestBuilder) {
+func NewAuthenticationMethodsUserRegistrationDetailsUserRegistrationDetailsItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, userRegistrationDetailsId *string)(*AuthenticationMethodsUserRegistrationDetailsUserRegistrationDetailsItemRequestBuilder) {
     m := &AuthenticationMethodsUserRegistrationDetailsUserRegistrationDetailsItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/reports/authenticationMethods/userRegistrationDetails/{userRegistrationDetails%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewAuthenticationMethodsUserRegistrationDetailsUserRegistrationDetailsItemR
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if userRegistrationDetailsId != nil {
+        urlTplParams["userRegistrationDetails%2Did"] = *userRegistrationDetailsId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAuthenticationMethodsUserRegistrationDetailsUserRegistrationDetailsItemRequestBuilder instantiates a new UserRegistrationDetailsItemRequestBuilder and sets the default values.
 func NewAuthenticationMethodsUserRegistrationDetailsUserRegistrationDetailsItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthenticationMethodsUserRegistrationDetailsUserRegistrationDetailsItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAuthenticationMethodsUserRegistrationDetailsUserRegistrationDetailsItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAuthenticationMethodsUserRegistrationDetailsUserRegistrationDetailsItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property userRegistrationDetails for reports
 func (m *AuthenticationMethodsUserRegistrationDetailsUserRegistrationDetailsItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AuthenticationMethodsUserRegistrationDetailsUserRegistrationDetailsItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *AuthenticationMethodsUserRegistrationDetailsUserRegistrationDetailsItem
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

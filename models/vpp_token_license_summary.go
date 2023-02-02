@@ -25,7 +25,7 @@ type VppTokenLicenseSummary struct {
 func NewVppTokenLicenseSummary()(*VppTokenLicenseSummary) {
     m := &VppTokenLicenseSummary{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateVppTokenLicenseSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

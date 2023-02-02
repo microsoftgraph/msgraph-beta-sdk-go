@@ -102,13 +102,13 @@ type Application struct {
     // Specifies settings for apps running Microsoft Windows and published in the Microsoft Store or Xbox games store.
     windows WindowsApplicationable
 }
-// NewApplication instantiates a new application and sets the default values.
+// NewApplication instantiates a new Application and sets the default values.
 func NewApplication()(*Application) {
     m := &Application{
         DirectoryObject: *NewDirectoryObject(),
     }
-    odataTypeValue := "#microsoft.graph.application";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.application"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

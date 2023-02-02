@@ -19,7 +19,7 @@ type MacOSIncludedApp struct {
 func NewMacOSIncludedApp()(*MacOSIncludedApp) {
     m := &MacOSIncludedApp{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMacOSIncludedAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

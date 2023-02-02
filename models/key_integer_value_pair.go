@@ -15,8 +15,8 @@ func NewKeyIntegerValuePair()(*KeyIntegerValuePair) {
     m := &KeyIntegerValuePair{
         KeyTypedValuePair: *NewKeyTypedValuePair(),
     }
-    odataTypeValue := "#microsoft.graph.keyIntegerValuePair";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.keyIntegerValuePair"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateKeyIntegerValuePairFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

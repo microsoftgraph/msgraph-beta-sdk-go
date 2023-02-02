@@ -47,7 +47,7 @@ type OnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilderPatchRequestCo
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewOnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilderInternal instantiates a new CallTranscriptItemRequestBuilder and sets the default values.
-func NewOnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilder) {
+func NewOnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, callTranscriptId *string)(*OnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilder) {
     m := &OnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/communications/onlineMeetings/{onlineMeeting%2Did}/transcripts/{callTranscript%2Did}{?%24select,%24expand}";
@@ -55,19 +55,22 @@ func NewOnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if callTranscriptId != nil {
+        urlTplParams["callTranscript%2Did"] = *callTranscriptId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewOnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilder instantiates a new CallTranscriptItemRequestBuilder and sets the default values.
 func NewOnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewOnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewOnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Content provides operations to manage the media for the cloudCommunications entity.
 func (m *OnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilder) Content()(*OnlineMeetingsItemTranscriptsItemContentRequestBuilder) {
-    return NewOnlineMeetingsItemTranscriptsItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewOnlineMeetingsItemTranscriptsItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property transcripts for communications
 func (m *OnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *OnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -158,7 +161,10 @@ func (m *OnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilder) ToPatchR
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

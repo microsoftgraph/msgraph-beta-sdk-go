@@ -60,8 +60,8 @@ func NewUsersItemAssignmentsItemCategoriesRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewUsersItemAssignmentsItemCategoriesRequestBuilder instantiates a new CategoriesRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewUsersItemAssignmentsItemCategoriesRequestBuilder(rawUrl string, requestA
 }
 // Count provides operations to count the resources in the collection.
 func (m *UsersItemAssignmentsItemCategoriesRequestBuilder) Count()(*UsersItemAssignmentsItemCategoriesCountRequestBuilder) {
-    return NewUsersItemAssignmentsItemCategoriesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Delta provides operations to call the delta method.
-func (m *UsersItemAssignmentsItemCategoriesRequestBuilder) Delta()(*UsersItemAssignmentsItemCategoriesDeltaRequestBuilder) {
-    return NewUsersItemAssignmentsItemCategoriesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUsersItemAssignmentsItemCategoriesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
 // [Find more info here]
@@ -100,6 +96,10 @@ func (m *UsersItemAssignmentsItemCategoriesRequestBuilder) Get(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationCategoryCollectionResponseable), nil
 }
+// MicrosoftGraphDelta provides operations to call the delta method.
+func (m *UsersItemAssignmentsItemCategoriesRequestBuilder) MicrosoftGraphDelta()(*UsersItemAssignmentsItemCategoriesMicrosoftGraphDeltaDeltaRequestBuilder) {
+    return NewUsersItemAssignmentsItemCategoriesMicrosoftGraphDeltaDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Post create new navigation property to categories for education
 func (m *UsersItemAssignmentsItemCategoriesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationCategoryable, requestConfiguration *UsersItemAssignmentsItemCategoriesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationCategoryable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
@@ -121,7 +121,7 @@ func (m *UsersItemAssignmentsItemCategoriesRequestBuilder) Post(ctx context.Cont
 }
 // Ref provides operations to manage the collection of educationRoot entities.
 func (m *UsersItemAssignmentsItemCategoriesRequestBuilder) Ref()(*UsersItemAssignmentsItemCategoriesRefRequestBuilder) {
-    return NewUsersItemAssignmentsItemCategoriesRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUsersItemAssignmentsItemCategoriesRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation list all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
 func (m *UsersItemAssignmentsItemCategoriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemCategoriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -146,7 +146,10 @@ func (m *UsersItemAssignmentsItemCategoriesRequestBuilder) ToPostRequestInformat
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

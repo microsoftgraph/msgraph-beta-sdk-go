@@ -1,0 +1,74 @@
+package compliance
+
+import (
+    "context"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+)
+
+// EdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryActivateActivateRequestBuilder provides operations to call the activate method.
+type EdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryActivateActivateRequestBuilder struct {
+    // Path parameters for the request
+    pathParameters map[string]string
+    // The request adapter to use to execute the requests.
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
+    // Url template to use to build the URL for the current request builder
+    urlTemplate string
+}
+// EdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryActivateActivateRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type EdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryActivateActivateRequestBuilderPostRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// NewEdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryActivateActivateRequestBuilderInternal instantiates a new ActivateRequestBuilder and sets the default values.
+func NewEdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryActivateActivateRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryActivateActivateRequestBuilder) {
+    m := &EdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryActivateActivateRequestBuilder{
+    }
+    m.urlTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/custodians/{custodian%2Did}/microsoft.graph.ediscovery.activate";
+    urlTplParams := make(map[string]string)
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
+    return m
+}
+// NewEdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryActivateActivateRequestBuilder instantiates a new ActivateRequestBuilder and sets the default values.
+func NewEdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryActivateActivateRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryActivateActivateRequestBuilder) {
+    urlParams := make(map[string]string)
+    urlParams["request-raw-url"] = rawUrl
+    return NewEdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryActivateActivateRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Post activate a custodian that has been released from a case to make them part of the case again. For details, see Manage custodians in an Advanced eDiscovery case.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-custodian-activate?view=graph-rest-1.0
+func (m *EdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryActivateActivateRequestBuilder) Post(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryActivateActivateRequestBuilderPostRequestConfiguration)(error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    if err != nil {
+        return err
+    }
+    return nil
+}
+// ToPostRequestInformation activate a custodian that has been released from a case to make them part of the case again. For details, see Manage custodians in an Advanced eDiscovery case.
+func (m *EdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryActivateActivateRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryActivateActivateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
+}

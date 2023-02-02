@@ -46,12 +46,8 @@ type DataSharingConsentsDataSharingConsentItemRequestBuilderPatchRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConsentToDataSharing provides operations to call the consentToDataSharing method.
-func (m *DataSharingConsentsDataSharingConsentItemRequestBuilder) ConsentToDataSharing()(*DataSharingConsentsItemConsentToDataSharingRequestBuilder) {
-    return NewDataSharingConsentsItemConsentToDataSharingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewDataSharingConsentsDataSharingConsentItemRequestBuilderInternal instantiates a new DataSharingConsentItemRequestBuilder and sets the default values.
-func NewDataSharingConsentsDataSharingConsentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DataSharingConsentsDataSharingConsentItemRequestBuilder) {
+func NewDataSharingConsentsDataSharingConsentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, dataSharingConsentId *string)(*DataSharingConsentsDataSharingConsentItemRequestBuilder) {
     m := &DataSharingConsentsDataSharingConsentItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/dataSharingConsents/{dataSharingConsent%2Did}{?%24select,%24expand}";
@@ -59,15 +55,18 @@ func NewDataSharingConsentsDataSharingConsentItemRequestBuilderInternal(pathPara
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if dataSharingConsentId != nil {
+        urlTplParams["dataSharingConsent%2Did"] = *dataSharingConsentId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDataSharingConsentsDataSharingConsentItemRequestBuilder instantiates a new DataSharingConsentItemRequestBuilder and sets the default values.
 func NewDataSharingConsentsDataSharingConsentItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DataSharingConsentsDataSharingConsentItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewDataSharingConsentsDataSharingConsentItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewDataSharingConsentsDataSharingConsentItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property dataSharingConsents for deviceManagement
 func (m *DataSharingConsentsDataSharingConsentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DataSharingConsentsDataSharingConsentItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -103,6 +102,10 @@ func (m *DataSharingConsentsDataSharingConsentItemRequestBuilder) Get(ctx contex
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataSharingConsentable), nil
+}
+// MicrosoftGraphConsentToDataSharing provides operations to call the consentToDataSharing method.
+func (m *DataSharingConsentsDataSharingConsentItemRequestBuilder) MicrosoftGraphConsentToDataSharing()(*DataSharingConsentsItemMicrosoftGraphConsentToDataSharingConsentToDataSharingRequestBuilder) {
+    return NewDataSharingConsentsItemMicrosoftGraphConsentToDataSharingConsentToDataSharingRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property dataSharingConsents in deviceManagement
 func (m *DataSharingConsentsDataSharingConsentItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataSharingConsentable, requestConfiguration *DataSharingConsentsDataSharingConsentItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataSharingConsentable, error) {
@@ -158,7 +161,10 @@ func (m *DataSharingConsentsDataSharingConsentItemRequestBuilder) ToPatchRequest
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

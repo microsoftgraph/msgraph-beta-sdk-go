@@ -25,8 +25,8 @@ func NewReferenceAttachment()(*ReferenceAttachment) {
     m := &ReferenceAttachment{
         Attachment: *NewAttachment(),
     }
-    odataTypeValue := "#microsoft.graph.referenceAttachment";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.referenceAttachment"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateReferenceAttachmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

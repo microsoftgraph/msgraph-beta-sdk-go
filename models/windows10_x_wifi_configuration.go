@@ -20,8 +20,8 @@ func NewWindows10XWifiConfiguration()(*Windows10XWifiConfiguration) {
     m := &Windows10XWifiConfiguration{
         DeviceManagementResourceAccessProfileBase: *NewDeviceManagementResourceAccessProfileBase(),
     }
-    odataTypeValue := "#microsoft.graph.windows10XWifiConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windows10XWifiConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindows10XWifiConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

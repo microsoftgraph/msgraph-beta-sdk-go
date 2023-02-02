@@ -17,8 +17,8 @@ func NewAzureADDevice()(*AzureADDevice) {
     m := &AzureADDevice{
         UpdatableAsset: *NewUpdatableAsset(),
     }
-    odataTypeValue := "#microsoft.graph.windowsUpdates.azureADDevice";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsUpdates.azureADDevice"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAzureADDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

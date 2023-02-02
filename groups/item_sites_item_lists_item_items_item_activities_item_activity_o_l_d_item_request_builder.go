@@ -47,7 +47,7 @@ type ItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilderP
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilderInternal instantiates a new ItemActivityOLDItemRequestBuilder and sets the default values.
-func NewItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilder) {
+func NewItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, itemActivityOLDId *string)(*ItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilder) {
     m := &ItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/items/{listItem%2Did}/activities/{itemActivityOLD%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuild
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if itemActivityOLDId != nil {
+        urlTplParams["itemActivityOLD%2Did"] = *itemActivityOLDId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilder instantiates a new ItemActivityOLDItemRequestBuilder and sets the default values.
 func NewItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property activities for groups
 func (m *ItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -83,7 +86,7 @@ func (m *ItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuil
 }
 // DriveItem provides operations to manage the driveItem property of the microsoft.graph.itemActivityOLD entity.
 func (m *ItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilder) DriveItem()(*ItemSitesItemListsItemItemsItemActivitiesItemDriveItemRequestBuilder) {
-    return NewItemSitesItemListsItemItemsItemActivitiesItemDriveItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemListsItemItemsItemActivitiesItemDriveItemRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the list of recent activities that took place on this item.
 func (m *ItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityOLDable, error) {
@@ -106,7 +109,7 @@ func (m *ItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuil
 }
 // ListItem provides operations to manage the listItem property of the microsoft.graph.itemActivityOLD entity.
 func (m *ItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilder) ListItem()(*ItemSitesItemListsItemItemsItemActivitiesItemListItemRequestBuilder) {
-    return NewItemSitesItemListsItemItemsItemActivitiesItemListItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemListsItemItemsItemActivitiesItemListItemRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property activities in groups
 func (m *ItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityOLDable, requestConfiguration *ItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityOLDable, error) {
@@ -162,7 +165,10 @@ func (m *ItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuil
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

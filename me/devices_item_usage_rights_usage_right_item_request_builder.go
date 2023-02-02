@@ -47,7 +47,7 @@ type DevicesItemUsageRightsUsageRightItemRequestBuilderPatchRequestConfiguration
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewDevicesItemUsageRightsUsageRightItemRequestBuilderInternal instantiates a new UsageRightItemRequestBuilder and sets the default values.
-func NewDevicesItemUsageRightsUsageRightItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DevicesItemUsageRightsUsageRightItemRequestBuilder) {
+func NewDevicesItemUsageRightsUsageRightItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, usageRightId *string)(*DevicesItemUsageRightsUsageRightItemRequestBuilder) {
     m := &DevicesItemUsageRightsUsageRightItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/devices/{device%2Did}/usageRights/{usageRight%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewDevicesItemUsageRightsUsageRightItemRequestBuilderInternal(pathParameter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if usageRightId != nil {
+        urlTplParams["usageRight%2Did"] = *usageRightId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDevicesItemUsageRightsUsageRightItemRequestBuilder instantiates a new UsageRightItemRequestBuilder and sets the default values.
 func NewDevicesItemUsageRightsUsageRightItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DevicesItemUsageRightsUsageRightItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewDevicesItemUsageRightsUsageRightItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewDevicesItemUsageRightsUsageRightItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property usageRights for me
 func (m *DevicesItemUsageRightsUsageRightItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DevicesItemUsageRightsUsageRightItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *DevicesItemUsageRightsUsageRightItemRequestBuilder) ToPatchRequestInfor
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

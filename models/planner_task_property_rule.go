@@ -41,8 +41,8 @@ func NewPlannerTaskPropertyRule()(*PlannerTaskPropertyRule) {
     m := &PlannerTaskPropertyRule{
         PlannerPropertyRule: *NewPlannerPropertyRule(),
     }
-    odataTypeValue := "#microsoft.graph.plannerTaskPropertyRule";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.plannerTaskPropertyRule"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreatePlannerTaskPropertyRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

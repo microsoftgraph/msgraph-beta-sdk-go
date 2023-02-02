@@ -23,7 +23,7 @@ type WebPartPosition struct {
 func NewWebPartPosition()(*WebPartPosition) {
     m := &WebPartPosition{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWebPartPositionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

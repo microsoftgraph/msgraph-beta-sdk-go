@@ -60,7 +60,7 @@ type WindowsProtectionState struct {
     // The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
     tenantId *string
 }
-// NewWindowsProtectionState instantiates a new windowsProtectionState and sets the default values.
+// NewWindowsProtectionState instantiates a new WindowsProtectionState and sets the default values.
 func NewWindowsProtectionState()(*WindowsProtectionState) {
     m := &WindowsProtectionState{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

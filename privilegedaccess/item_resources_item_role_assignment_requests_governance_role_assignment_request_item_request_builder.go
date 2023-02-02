@@ -46,12 +46,8 @@ type ItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Cancel provides operations to call the cancel method.
-func (m *ItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilder) Cancel()(*ItemResourcesItemRoleAssignmentRequestsItemCancelRequestBuilder) {
-    return NewItemResourcesItemRoleAssignmentRequestsItemCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilderInternal instantiates a new GovernanceRoleAssignmentRequestItemRequestBuilder and sets the default values.
-func NewItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilder) {
+func NewItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, governanceRoleAssignmentRequestId *string)(*ItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilder) {
     m := &ItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}/resources/{governanceResource%2Did}/roleAssignmentRequests/{governanceRoleAssignmentRequest%2Did}{?%24select,%24expand}";
@@ -59,15 +55,18 @@ func NewItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestIt
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if governanceRoleAssignmentRequestId != nil {
+        urlTplParams["governanceRoleAssignmentRequest%2Did"] = *governanceRoleAssignmentRequestId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilder instantiates a new GovernanceRoleAssignmentRequestItemRequestBuilder and sets the default values.
 func NewItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property roleAssignmentRequests for privilegedAccess
 func (m *ItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -104,6 +103,14 @@ func (m *ItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestI
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentRequestable), nil
 }
+// MicrosoftGraphCancel provides operations to call the cancel method.
+func (m *ItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilder) MicrosoftGraphCancel()(*ItemResourcesItemRoleAssignmentRequestsItemMicrosoftGraphCancelCancelRequestBuilder) {
+    return NewItemResourcesItemRoleAssignmentRequestsItemMicrosoftGraphCancelCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUpdateRequest provides operations to call the updateRequest method.
+func (m *ItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilder) MicrosoftGraphUpdateRequest()(*ItemResourcesItemRoleAssignmentRequestsItemMicrosoftGraphUpdateRequestUpdateRequestRequestBuilder) {
+    return NewItemResourcesItemRoleAssignmentRequestsItemMicrosoftGraphUpdateRequestUpdateRequestRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property roleAssignmentRequests in privilegedAccess
 func (m *ItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentRequestable, requestConfiguration *ItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentRequestable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -125,15 +132,15 @@ func (m *ItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestI
 }
 // Resource provides operations to manage the resource property of the microsoft.graph.governanceRoleAssignmentRequest entity.
 func (m *ItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilder) Resource()(*ItemResourcesItemRoleAssignmentRequestsItemResourceRequestBuilder) {
-    return NewItemResourcesItemRoleAssignmentRequestsItemResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemResourcesItemRoleAssignmentRequestsItemResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RoleDefinition provides operations to manage the roleDefinition property of the microsoft.graph.governanceRoleAssignmentRequest entity.
 func (m *ItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilder) RoleDefinition()(*ItemResourcesItemRoleAssignmentRequestsItemRoleDefinitionRequestBuilder) {
-    return NewItemResourcesItemRoleAssignmentRequestsItemRoleDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemResourcesItemRoleAssignmentRequestsItemRoleDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Subject provides operations to manage the subject property of the microsoft.graph.governanceRoleAssignmentRequest entity.
 func (m *ItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilder) Subject()(*ItemResourcesItemRoleAssignmentRequestsItemSubjectRequestBuilder) {
-    return NewItemResourcesItemRoleAssignmentRequestsItemSubjectRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemResourcesItemRoleAssignmentRequestsItemSubjectRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property roleAssignmentRequests for privilegedAccess
 func (m *ItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -170,14 +177,13 @@ func (m *ItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestI
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// UpdateRequest provides operations to call the updateRequest method.
-func (m *ItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilder) UpdateRequest()(*ItemResourcesItemRoleAssignmentRequestsItemUpdateRequestRequestBuilder) {
-    return NewItemResourcesItemRoleAssignmentRequestsItemUpdateRequestRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

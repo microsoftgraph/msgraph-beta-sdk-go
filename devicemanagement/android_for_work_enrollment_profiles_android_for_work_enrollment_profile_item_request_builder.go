@@ -47,7 +47,7 @@ type AndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestB
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewAndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilderInternal instantiates a new AndroidForWorkEnrollmentProfileItemRequestBuilder and sets the default values.
-func NewAndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilder) {
+func NewAndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, androidForWorkEnrollmentProfileId *string)(*AndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilder) {
     m := &AndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/androidForWorkEnrollmentProfiles/{androidForWorkEnrollmentProfile%2Did}{?%24select,%24expand}";
@@ -55,19 +55,18 @@ func NewAndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemReque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if androidForWorkEnrollmentProfileId != nil {
+        urlTplParams["androidForWorkEnrollmentProfile%2Did"] = *androidForWorkEnrollmentProfileId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilder instantiates a new AndroidForWorkEnrollmentProfileItemRequestBuilder and sets the default values.
 func NewAndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilderInternal(urlParams, requestAdapter)
-}
-// CreateToken provides operations to call the createToken method.
-func (m *AndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilder) CreateToken()(*AndroidForWorkEnrollmentProfilesItemCreateTokenRequestBuilder) {
-    return NewAndroidForWorkEnrollmentProfilesItemCreateTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property androidForWorkEnrollmentProfiles for deviceManagement
 func (m *AndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -104,6 +103,14 @@ func (m *AndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkEnrollmentProfileable), nil
 }
+// MicrosoftGraphCreateToken provides operations to call the createToken method.
+func (m *AndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilder) MicrosoftGraphCreateToken()(*AndroidForWorkEnrollmentProfilesItemMicrosoftGraphCreateTokenCreateTokenRequestBuilder) {
+    return NewAndroidForWorkEnrollmentProfilesItemMicrosoftGraphCreateTokenCreateTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRevokeToken provides operations to call the revokeToken method.
+func (m *AndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilder) MicrosoftGraphRevokeToken()(*AndroidForWorkEnrollmentProfilesItemMicrosoftGraphRevokeTokenRevokeTokenRequestBuilder) {
+    return NewAndroidForWorkEnrollmentProfilesItemMicrosoftGraphRevokeTokenRevokeTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property androidForWorkEnrollmentProfiles in deviceManagement
 func (m *AndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkEnrollmentProfileable, requestConfiguration *AndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkEnrollmentProfileable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -122,10 +129,6 @@ func (m *AndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequ
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkEnrollmentProfileable), nil
-}
-// RevokeToken provides operations to call the revokeToken method.
-func (m *AndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilder) RevokeToken()(*AndroidForWorkEnrollmentProfilesItemRevokeTokenRequestBuilder) {
-    return NewAndroidForWorkEnrollmentProfilesItemRevokeTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property androidForWorkEnrollmentProfiles for deviceManagement
 func (m *AndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -162,7 +165,10 @@ func (m *AndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

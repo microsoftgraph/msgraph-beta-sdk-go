@@ -33,7 +33,7 @@ type PlannerFavoritePlansPlannerPlanItemRequestBuilderGetRequestConfiguration st
     QueryParameters *PlannerFavoritePlansPlannerPlanItemRequestBuilderGetQueryParameters
 }
 // NewPlannerFavoritePlansPlannerPlanItemRequestBuilderInternal instantiates a new PlannerPlanItemRequestBuilder and sets the default values.
-func NewPlannerFavoritePlansPlannerPlanItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PlannerFavoritePlansPlannerPlanItemRequestBuilder) {
+func NewPlannerFavoritePlansPlannerPlanItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, plannerPlanId *string)(*PlannerFavoritePlansPlannerPlanItemRequestBuilder) {
     m := &PlannerFavoritePlansPlannerPlanItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/planner/favoritePlans/{plannerPlan%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewPlannerFavoritePlansPlannerPlanItemRequestBuilderInternal(pathParameters
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if plannerPlanId != nil {
+        urlTplParams["plannerPlan%2Did"] = *plannerPlanId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPlannerFavoritePlansPlannerPlanItemRequestBuilder instantiates a new PlannerPlanItemRequestBuilder and sets the default values.
 func NewPlannerFavoritePlansPlannerPlanItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PlannerFavoritePlansPlannerPlanItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewPlannerFavoritePlansPlannerPlanItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewPlannerFavoritePlansPlannerPlanItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
 func (m *PlannerFavoritePlansPlannerPlanItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PlannerFavoritePlansPlannerPlanItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanable, error) {

@@ -47,7 +47,7 @@ type VirtualEndpointGalleryImagesCloudPcGalleryImageItemRequestBuilderPatchReque
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewVirtualEndpointGalleryImagesCloudPcGalleryImageItemRequestBuilderInternal instantiates a new CloudPcGalleryImageItemRequestBuilder and sets the default values.
-func NewVirtualEndpointGalleryImagesCloudPcGalleryImageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointGalleryImagesCloudPcGalleryImageItemRequestBuilder) {
+func NewVirtualEndpointGalleryImagesCloudPcGalleryImageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, cloudPcGalleryImageId *string)(*VirtualEndpointGalleryImagesCloudPcGalleryImageItemRequestBuilder) {
     m := &VirtualEndpointGalleryImagesCloudPcGalleryImageItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/galleryImages/{cloudPcGalleryImage%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewVirtualEndpointGalleryImagesCloudPcGalleryImageItemRequestBuilderInterna
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if cloudPcGalleryImageId != nil {
+        urlTplParams["cloudPcGalleryImage%2Did"] = *cloudPcGalleryImageId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewVirtualEndpointGalleryImagesCloudPcGalleryImageItemRequestBuilder instantiates a new CloudPcGalleryImageItemRequestBuilder and sets the default values.
 func NewVirtualEndpointGalleryImagesCloudPcGalleryImageItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointGalleryImagesCloudPcGalleryImageItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewVirtualEndpointGalleryImagesCloudPcGalleryImageItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewVirtualEndpointGalleryImagesCloudPcGalleryImageItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property galleryImages for deviceManagement
 func (m *VirtualEndpointGalleryImagesCloudPcGalleryImageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *VirtualEndpointGalleryImagesCloudPcGalleryImageItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *VirtualEndpointGalleryImagesCloudPcGalleryImageItemRequestBuilder) ToPa
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

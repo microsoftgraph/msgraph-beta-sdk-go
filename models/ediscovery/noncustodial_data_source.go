@@ -17,8 +17,8 @@ func NewNoncustodialDataSource()(*NoncustodialDataSource) {
     m := &NoncustodialDataSource{
         DataSourceContainer: *NewDataSourceContainer(),
     }
-    odataTypeValue := "#microsoft.graph.ediscovery.noncustodialDataSource";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.ediscovery.noncustodialDataSource"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateNoncustodialDataSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

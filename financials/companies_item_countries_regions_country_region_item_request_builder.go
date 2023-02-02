@@ -47,7 +47,7 @@ type CompaniesItemCountriesRegionsCountryRegionItemRequestBuilderPatchRequestCon
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewCompaniesItemCountriesRegionsCountryRegionItemRequestBuilderInternal instantiates a new CountryRegionItemRequestBuilder and sets the default values.
-func NewCompaniesItemCountriesRegionsCountryRegionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemCountriesRegionsCountryRegionItemRequestBuilder) {
+func NewCompaniesItemCountriesRegionsCountryRegionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, countryRegionId *string)(*CompaniesItemCountriesRegionsCountryRegionItemRequestBuilder) {
     m := &CompaniesItemCountriesRegionsCountryRegionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/financials/companies/{company%2Did}/countriesRegions/{countryRegion%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewCompaniesItemCountriesRegionsCountryRegionItemRequestBuilderInternal(pat
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if countryRegionId != nil {
+        urlTplParams["countryRegion%2Did"] = *countryRegionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemCountriesRegionsCountryRegionItemRequestBuilder instantiates a new CountryRegionItemRequestBuilder and sets the default values.
 func NewCompaniesItemCountriesRegionsCountryRegionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemCountriesRegionsCountryRegionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCompaniesItemCountriesRegionsCountryRegionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCompaniesItemCountriesRegionsCountryRegionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property countriesRegions for financials
 func (m *CompaniesItemCountriesRegionsCountryRegionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CompaniesItemCountriesRegionsCountryRegionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *CompaniesItemCountriesRegionsCountryRegionItemRequestBuilder) ToPatchRe
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

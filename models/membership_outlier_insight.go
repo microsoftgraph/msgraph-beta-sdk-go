@@ -25,8 +25,8 @@ func NewMembershipOutlierInsight()(*MembershipOutlierInsight) {
     m := &MembershipOutlierInsight{
         GovernanceInsight: *NewGovernanceInsight(),
     }
-    odataTypeValue := "#microsoft.graph.membershipOutlierInsight";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.membershipOutlierInsight"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMembershipOutlierInsightFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

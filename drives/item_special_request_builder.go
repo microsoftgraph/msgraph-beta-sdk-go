@@ -53,8 +53,8 @@ func NewItemSpecialRequestBuilderInternal(pathParameters map[string]string, requ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSpecialRequestBuilder instantiates a new SpecialRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemSpecialRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemSpecialRequestBuilder) Count()(*ItemSpecialCountRequestBuilder) {
-    return NewItemSpecialCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSpecialCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get collection of common folders available in OneDrive. Read-only. Nullable.
 func (m *ItemSpecialRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSpecialRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemCollectionResponseable, error) {

@@ -47,7 +47,7 @@ type TeamTemplatesTeamTemplateItemRequestBuilderPatchRequestConfiguration struct
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewTeamTemplatesTeamTemplateItemRequestBuilderInternal instantiates a new TeamTemplateItemRequestBuilder and sets the default values.
-func NewTeamTemplatesTeamTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesTeamTemplateItemRequestBuilder) {
+func NewTeamTemplatesTeamTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, teamTemplateId *string)(*TeamTemplatesTeamTemplateItemRequestBuilder) {
     m := &TeamTemplatesTeamTemplateItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}{?%24select,%24expand}";
@@ -55,19 +55,22 @@ func NewTeamTemplatesTeamTemplateItemRequestBuilderInternal(pathParameters map[s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if teamTemplateId != nil {
+        urlTplParams["teamTemplate%2Did"] = *teamTemplateId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTeamTemplatesTeamTemplateItemRequestBuilder instantiates a new TeamTemplateItemRequestBuilder and sets the default values.
 func NewTeamTemplatesTeamTemplateItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesTeamTemplateItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewTeamTemplatesTeamTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewTeamTemplatesTeamTemplateItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Definitions provides operations to manage the definitions property of the microsoft.graph.teamTemplate entity.
 func (m *TeamTemplatesTeamTemplateItemRequestBuilder) Definitions()(*TeamTemplatesItemDefinitionsRequestBuilder) {
-    return NewTeamTemplatesItemDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTeamTemplatesItemDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DefinitionsById provides operations to manage the definitions property of the microsoft.graph.teamTemplate entity.
 func (m *TeamTemplatesTeamTemplateItemRequestBuilder) DefinitionsById(id string)(*TeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilder) {
@@ -75,10 +78,8 @@ func (m *TeamTemplatesTeamTemplateItemRequestBuilder) DefinitionsById(id string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["teamTemplateDefinition%2Did"] = id
-    }
-    return NewTeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewTeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Delete delete navigation property teamTemplates for teamwork
 func (m *TeamTemplatesTeamTemplateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TeamTemplatesTeamTemplateItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -169,7 +170,10 @@ func (m *TeamTemplatesTeamTemplateItemRequestBuilder) ToPatchRequestInformation(
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

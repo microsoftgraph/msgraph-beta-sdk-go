@@ -47,7 +47,7 @@ type ItemItemsItemPermissionsPermissionItemRequestBuilderPatchRequestConfigurati
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemItemsItemPermissionsPermissionItemRequestBuilderInternal instantiates a new PermissionItemRequestBuilder and sets the default values.
-func NewItemItemsItemPermissionsPermissionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemPermissionsPermissionItemRequestBuilder) {
+func NewItemItemsItemPermissionsPermissionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, permissionId *string)(*ItemItemsItemPermissionsPermissionItemRequestBuilder) {
     m := &ItemItemsItemPermissionsPermissionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/permissions/{permission%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemItemsItemPermissionsPermissionItemRequestBuilderInternal(pathParamet
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if permissionId != nil {
+        urlTplParams["permission%2Did"] = *permissionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemItemsItemPermissionsPermissionItemRequestBuilder instantiates a new PermissionItemRequestBuilder and sets the default values.
 func NewItemItemsItemPermissionsPermissionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemPermissionsPermissionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemItemsItemPermissionsPermissionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemItemsItemPermissionsPermissionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property permissions for drives
 func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemItemsItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -100,9 +103,13 @@ func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) Get(ctx context.C
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable), nil
 }
-// Grant provides operations to call the grant method.
-func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) Grant()(*ItemItemsItemPermissionsItemGrantRequestBuilder) {
-    return NewItemItemsItemPermissionsItemGrantRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGrant provides operations to call the grant method.
+func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) MicrosoftGraphGrant()(*ItemItemsItemPermissionsItemMicrosoftGraphGrantGrantRequestBuilder) {
+    return NewItemItemsItemPermissionsItemMicrosoftGraphGrantGrantRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRevokeGrants provides operations to call the revokeGrants method.
+func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) MicrosoftGraphRevokeGrants()(*ItemItemsItemPermissionsItemMicrosoftGraphRevokeGrantsRevokeGrantsRequestBuilder) {
+    return NewItemItemsItemPermissionsItemMicrosoftGraphRevokeGrantsRevokeGrantsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property permissions in drives
 func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable, requestConfiguration *ItemItemsItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable, error) {
@@ -122,10 +129,6 @@ func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) Patch(ctx context
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable), nil
-}
-// RevokeGrants provides operations to call the revokeGrants method.
-func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) RevokeGrants()(*ItemItemsItemPermissionsItemRevokeGrantsRequestBuilder) {
-    return NewItemItemsItemPermissionsItemRevokeGrantsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property permissions for drives
 func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -162,7 +165,10 @@ func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) ToPatchRequestInf
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

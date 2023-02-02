@@ -47,7 +47,7 @@ type DeviceManagementRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderPatch
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewDeviceManagementRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderInternal instantiates a new AppScopeItemRequestBuilder and sets the default values.
-func NewDeviceManagementRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceManagementRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder) {
+func NewDeviceManagementRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, appScopeId *string)(*DeviceManagementRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder) {
     m := &DeviceManagementRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple%2Did}/appScopes/{appScope%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewDeviceManagementRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderIn
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if appScopeId != nil {
+        urlTplParams["appScope%2Did"] = *appScopeId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceManagementRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder instantiates a new AppScopeItemRequestBuilder and sets the default values.
 func NewDeviceManagementRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceManagementRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewDeviceManagementRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewDeviceManagementRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property appScopes for roleManagement
 func (m *DeviceManagementRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DeviceManagementRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *DeviceManagementRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder)
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -47,7 +47,7 @@ type ItemPlannerAllPlannerDeltaItemRequestBuilderPatchRequestConfiguration struc
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemPlannerAllPlannerDeltaItemRequestBuilderInternal instantiates a new PlannerDeltaItemRequestBuilder and sets the default values.
-func NewItemPlannerAllPlannerDeltaItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPlannerAllPlannerDeltaItemRequestBuilder) {
+func NewItemPlannerAllPlannerDeltaItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, plannerDeltaId *string)(*ItemPlannerAllPlannerDeltaItemRequestBuilder) {
     m := &ItemPlannerAllPlannerDeltaItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/planner/all/{plannerDelta%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemPlannerAllPlannerDeltaItemRequestBuilderInternal(pathParameters map[
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if plannerDeltaId != nil {
+        urlTplParams["plannerDelta%2Did"] = *plannerDeltaId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemPlannerAllPlannerDeltaItemRequestBuilder instantiates a new PlannerDeltaItemRequestBuilder and sets the default values.
 func NewItemPlannerAllPlannerDeltaItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPlannerAllPlannerDeltaItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemPlannerAllPlannerDeltaItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemPlannerAllPlannerDeltaItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property all for users
 func (m *ItemPlannerAllPlannerDeltaItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemPlannerAllPlannerDeltaItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemPlannerAllPlannerDeltaItemRequestBuilder) ToPatchRequestInformation
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

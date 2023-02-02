@@ -47,7 +47,7 @@ type InformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItem
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilderInternal instantiates a new DataLossPreventionPolicyItemRequestBuilder and sets the default values.
-func NewInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder) {
+func NewInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, dataLossPreventionPolicyId *string)(*InformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder) {
     m := &InformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/informationProtection/dataLossPreventionPolicies/{dataLossPreventionPolicy%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyI
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if dataLossPreventionPolicyId != nil {
+        urlTplParams["dataLossPreventionPolicy%2Did"] = *dataLossPreventionPolicyId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder instantiates a new DataLossPreventionPolicyItemRequestBuilder and sets the default values.
 func NewInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property dataLossPreventionPolicies for me
 func (m *InformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *InformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *InformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicy
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

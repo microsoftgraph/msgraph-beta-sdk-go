@@ -17,7 +17,7 @@ type DecisionItemPrincipalResourceMembership struct {
 func NewDecisionItemPrincipalResourceMembership()(*DecisionItemPrincipalResourceMembership) {
     m := &DecisionItemPrincipalResourceMembership{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDecisionItemPrincipalResourceMembershipFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

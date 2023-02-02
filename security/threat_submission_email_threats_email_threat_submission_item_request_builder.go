@@ -47,7 +47,7 @@ type ThreatSubmissionEmailThreatsEmailThreatSubmissionItemRequestBuilderPatchReq
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewThreatSubmissionEmailThreatsEmailThreatSubmissionItemRequestBuilderInternal instantiates a new EmailThreatSubmissionItemRequestBuilder and sets the default values.
-func NewThreatSubmissionEmailThreatsEmailThreatSubmissionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatSubmissionEmailThreatsEmailThreatSubmissionItemRequestBuilder) {
+func NewThreatSubmissionEmailThreatsEmailThreatSubmissionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, emailThreatSubmissionId *string)(*ThreatSubmissionEmailThreatsEmailThreatSubmissionItemRequestBuilder) {
     m := &ThreatSubmissionEmailThreatsEmailThreatSubmissionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/security/threatSubmission/emailThreats/{emailThreatSubmission%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewThreatSubmissionEmailThreatsEmailThreatSubmissionItemRequestBuilderInter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if emailThreatSubmissionId != nil {
+        urlTplParams["emailThreatSubmission%2Did"] = *emailThreatSubmissionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewThreatSubmissionEmailThreatsEmailThreatSubmissionItemRequestBuilder instantiates a new EmailThreatSubmissionItemRequestBuilder and sets the default values.
 func NewThreatSubmissionEmailThreatsEmailThreatSubmissionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatSubmissionEmailThreatsEmailThreatSubmissionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewThreatSubmissionEmailThreatsEmailThreatSubmissionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewThreatSubmissionEmailThreatsEmailThreatSubmissionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property emailThreats for security
 func (m *ThreatSubmissionEmailThreatsEmailThreatSubmissionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ThreatSubmissionEmailThreatsEmailThreatSubmissionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ThreatSubmissionEmailThreatsEmailThreatSubmissionItemRequestBuilder) To
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

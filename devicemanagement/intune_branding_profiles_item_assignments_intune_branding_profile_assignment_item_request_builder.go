@@ -47,7 +47,7 @@ type IntuneBrandingProfilesItemAssignmentsIntuneBrandingProfileAssignmentItemReq
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewIntuneBrandingProfilesItemAssignmentsIntuneBrandingProfileAssignmentItemRequestBuilderInternal instantiates a new IntuneBrandingProfileAssignmentItemRequestBuilder and sets the default values.
-func NewIntuneBrandingProfilesItemAssignmentsIntuneBrandingProfileAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IntuneBrandingProfilesItemAssignmentsIntuneBrandingProfileAssignmentItemRequestBuilder) {
+func NewIntuneBrandingProfilesItemAssignmentsIntuneBrandingProfileAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, intuneBrandingProfileAssignmentId *string)(*IntuneBrandingProfilesItemAssignmentsIntuneBrandingProfileAssignmentItemRequestBuilder) {
     m := &IntuneBrandingProfilesItemAssignmentsIntuneBrandingProfileAssignmentItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/intuneBrandingProfiles/{intuneBrandingProfile%2Did}/assignments/{intuneBrandingProfileAssignment%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewIntuneBrandingProfilesItemAssignmentsIntuneBrandingProfileAssignmentItem
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if intuneBrandingProfileAssignmentId != nil {
+        urlTplParams["intuneBrandingProfileAssignment%2Did"] = *intuneBrandingProfileAssignmentId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewIntuneBrandingProfilesItemAssignmentsIntuneBrandingProfileAssignmentItemRequestBuilder instantiates a new IntuneBrandingProfileAssignmentItemRequestBuilder and sets the default values.
 func NewIntuneBrandingProfilesItemAssignmentsIntuneBrandingProfileAssignmentItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IntuneBrandingProfilesItemAssignmentsIntuneBrandingProfileAssignmentItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewIntuneBrandingProfilesItemAssignmentsIntuneBrandingProfileAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewIntuneBrandingProfilesItemAssignmentsIntuneBrandingProfileAssignmentItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property assignments for deviceManagement
 func (m *IntuneBrandingProfilesItemAssignmentsIntuneBrandingProfileAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *IntuneBrandingProfilesItemAssignmentsIntuneBrandingProfileAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *IntuneBrandingProfilesItemAssignmentsIntuneBrandingProfileAssignmentIte
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

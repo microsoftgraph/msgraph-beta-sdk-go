@@ -19,8 +19,8 @@ func NewPersonAnnualEvent()(*PersonAnnualEvent) {
     m := &PersonAnnualEvent{
         ItemFacet: *NewItemFacet(),
     }
-    odataTypeValue := "#microsoft.graph.personAnnualEvent";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.personAnnualEvent"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreatePersonAnnualEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

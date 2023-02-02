@@ -60,8 +60,8 @@ func NewLabelsRetentionLabelsItemDispositionReviewStagesRequestBuilderInternal(p
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewLabelsRetentionLabelsItemDispositionReviewStagesRequestBuilder instantiates a new DispositionReviewStagesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewLabelsRetentionLabelsItemDispositionReviewStagesRequestBuilder(rawUrl st
 }
 // Count provides operations to count the resources in the collection.
 func (m *LabelsRetentionLabelsItemDispositionReviewStagesRequestBuilder) Count()(*LabelsRetentionLabelsItemDispositionReviewStagesCountRequestBuilder) {
-    return NewLabelsRetentionLabelsItemDispositionReviewStagesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewLabelsRetentionLabelsItemDispositionReviewStagesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get review stages during which reviewers are notified to determine whether a document must be deleted or retained.
 func (m *LabelsRetentionLabelsItemDispositionReviewStagesRequestBuilder) Get(ctx context.Context, requestConfiguration *LabelsRetentionLabelsItemDispositionReviewStagesRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DispositionReviewStageCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *LabelsRetentionLabelsItemDispositionReviewStagesRequestBuilder) ToPostR
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

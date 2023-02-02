@@ -47,7 +47,7 @@ type CompaniesItemItemCategoriesItemCategoryItemRequestBuilderPatchRequestConfig
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewCompaniesItemItemCategoriesItemCategoryItemRequestBuilderInternal instantiates a new ItemCategoryItemRequestBuilder and sets the default values.
-func NewCompaniesItemItemCategoriesItemCategoryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemItemCategoriesItemCategoryItemRequestBuilder) {
+func NewCompaniesItemItemCategoriesItemCategoryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, itemCategoryId *string)(*CompaniesItemItemCategoriesItemCategoryItemRequestBuilder) {
     m := &CompaniesItemItemCategoriesItemCategoryItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/financials/companies/{company%2Did}/itemCategories/{itemCategory%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewCompaniesItemItemCategoriesItemCategoryItemRequestBuilderInternal(pathPa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if itemCategoryId != nil {
+        urlTplParams["itemCategory%2Did"] = *itemCategoryId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemItemCategoriesItemCategoryItemRequestBuilder instantiates a new ItemCategoryItemRequestBuilder and sets the default values.
 func NewCompaniesItemItemCategoriesItemCategoryItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemItemCategoriesItemCategoryItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCompaniesItemItemCategoriesItemCategoryItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCompaniesItemItemCategoriesItemCategoryItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property itemCategories for financials
 func (m *CompaniesItemItemCategoriesItemCategoryItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CompaniesItemItemCategoriesItemCategoryItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *CompaniesItemItemCategoriesItemCategoryItemRequestBuilder) ToPatchReque
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -17,7 +17,7 @@ type ManagedDeviceCleanupSettings struct {
 func NewManagedDeviceCleanupSettings()(*ManagedDeviceCleanupSettings) {
     m := &ManagedDeviceCleanupSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateManagedDeviceCleanupSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

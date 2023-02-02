@@ -21,7 +21,7 @@ type DeviceManagementConfigurationSettingInstanceTemplate struct {
 func NewDeviceManagementConfigurationSettingInstanceTemplate()(*DeviceManagementConfigurationSettingInstanceTemplate) {
     m := &DeviceManagementConfigurationSettingInstanceTemplate{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceManagementConfigurationSettingInstanceTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

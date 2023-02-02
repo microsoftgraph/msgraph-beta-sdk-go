@@ -33,7 +33,7 @@ type ItemDomainNameReferencesDirectoryObjectItemRequestBuilderGetRequestConfigur
     QueryParameters *ItemDomainNameReferencesDirectoryObjectItemRequestBuilderGetQueryParameters
 }
 // NewItemDomainNameReferencesDirectoryObjectItemRequestBuilderInternal instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
-func NewItemDomainNameReferencesDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDomainNameReferencesDirectoryObjectItemRequestBuilder) {
+func NewItemDomainNameReferencesDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, directoryObjectId *string)(*ItemDomainNameReferencesDirectoryObjectItemRequestBuilder) {
     m := &ItemDomainNameReferencesDirectoryObjectItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/domains/{domain%2Did}/domainNameReferences/{directoryObject%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewItemDomainNameReferencesDirectoryObjectItemRequestBuilderInternal(pathPa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if directoryObjectId != nil {
+        urlTplParams["directoryObject%2Did"] = *directoryObjectId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemDomainNameReferencesDirectoryObjectItemRequestBuilder instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
 func NewItemDomainNameReferencesDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDomainNameReferencesDirectoryObjectItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemDomainNameReferencesDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemDomainNameReferencesDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get the objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
 func (m *ItemDomainNameReferencesDirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemDomainNameReferencesDirectoryObjectItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {

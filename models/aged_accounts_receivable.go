@@ -28,7 +28,7 @@ type AgedAccountsReceivable struct {
     // The periodLengthFilter property
     periodLengthFilter *string
 }
-// NewAgedAccountsReceivable instantiates a new agedAccountsReceivable and sets the default values.
+// NewAgedAccountsReceivable instantiates a new AgedAccountsReceivable and sets the default values.
 func NewAgedAccountsReceivable()(*AgedAccountsReceivable) {
     m := &AgedAccountsReceivable{
         Entity: *NewEntity(),

@@ -47,7 +47,7 @@ type GroupPolicyDefinitionsItemNextVersionDefinitionPresentationsGroupPolicyPres
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewGroupPolicyDefinitionsItemNextVersionDefinitionPresentationsGroupPolicyPresentationItemRequestBuilderInternal instantiates a new GroupPolicyPresentationItemRequestBuilder and sets the default values.
-func NewGroupPolicyDefinitionsItemNextVersionDefinitionPresentationsGroupPolicyPresentationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyDefinitionsItemNextVersionDefinitionPresentationsGroupPolicyPresentationItemRequestBuilder) {
+func NewGroupPolicyDefinitionsItemNextVersionDefinitionPresentationsGroupPolicyPresentationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, groupPolicyPresentationId *string)(*GroupPolicyDefinitionsItemNextVersionDefinitionPresentationsGroupPolicyPresentationItemRequestBuilder) {
     m := &GroupPolicyDefinitionsItemNextVersionDefinitionPresentationsGroupPolicyPresentationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition%2Did}/nextVersionDefinition/presentations/{groupPolicyPresentation%2Did}{?%24select,%24expand}";
@@ -55,19 +55,22 @@ func NewGroupPolicyDefinitionsItemNextVersionDefinitionPresentationsGroupPolicyP
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if groupPolicyPresentationId != nil {
+        urlTplParams["groupPolicyPresentation%2Did"] = *groupPolicyPresentationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGroupPolicyDefinitionsItemNextVersionDefinitionPresentationsGroupPolicyPresentationItemRequestBuilder instantiates a new GroupPolicyPresentationItemRequestBuilder and sets the default values.
 func NewGroupPolicyDefinitionsItemNextVersionDefinitionPresentationsGroupPolicyPresentationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyDefinitionsItemNextVersionDefinitionPresentationsGroupPolicyPresentationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewGroupPolicyDefinitionsItemNextVersionDefinitionPresentationsGroupPolicyPresentationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewGroupPolicyDefinitionsItemNextVersionDefinitionPresentationsGroupPolicyPresentationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Definition provides operations to manage the definition property of the microsoft.graph.groupPolicyPresentation entity.
 func (m *GroupPolicyDefinitionsItemNextVersionDefinitionPresentationsGroupPolicyPresentationItemRequestBuilder) Definition()(*GroupPolicyDefinitionsItemNextVersionDefinitionPresentationsItemDefinitionRequestBuilder) {
-    return NewGroupPolicyDefinitionsItemNextVersionDefinitionPresentationsItemDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyDefinitionsItemNextVersionDefinitionPresentationsItemDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property presentations for deviceManagement
 func (m *GroupPolicyDefinitionsItemNextVersionDefinitionPresentationsGroupPolicyPresentationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *GroupPolicyDefinitionsItemNextVersionDefinitionPresentationsGroupPolicyPresentationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -158,7 +161,10 @@ func (m *GroupPolicyDefinitionsItemNextVersionDefinitionPresentationsGroupPolicy
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -53,8 +53,8 @@ func NewAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilderInt
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilder instantiates a new PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilder(ra
 }
 // Count provides operations to count the resources in the collection.
 func (m *AuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) Count()(*AuthenticationPasswordlessMicrosoftAuthenticatorMethodsCountRequestBuilder) {
-    return NewAuthenticationPasswordlessMicrosoftAuthenticatorMethodsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAuthenticationPasswordlessMicrosoftAuthenticatorMethodsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of a user's Microsoft Authenticator Passwordless Phone Sign-in method objects and their properties.
 // [Find more info here]

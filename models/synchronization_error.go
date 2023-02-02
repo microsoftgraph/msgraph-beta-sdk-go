@@ -21,7 +21,7 @@ type SynchronizationError struct {
 func NewSynchronizationError()(*SynchronizationError) {
     m := &SynchronizationError{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSynchronizationErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

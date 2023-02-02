@@ -19,7 +19,7 @@ type ReferencedObject struct {
 func NewReferencedObject()(*ReferencedObject) {
     m := &ReferencedObject{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateReferencedObjectFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

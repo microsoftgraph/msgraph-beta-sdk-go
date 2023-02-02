@@ -21,7 +21,7 @@ type BulkDriverActionResult struct {
 func NewBulkDriverActionResult()(*BulkDriverActionResult) {
     m := &BulkDriverActionResult{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateBulkDriverActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

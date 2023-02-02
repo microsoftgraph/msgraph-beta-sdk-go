@@ -46,16 +46,8 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCardItem
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ClockOut provides operations to call the clockOut method.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) ClockOut()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsItemClockOutRequestBuilder) {
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsItemClockOutRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Confirm provides operations to call the confirm method.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) Confirm()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsItemConfirmRequestBuilder) {
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsItemConfirmRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilderInternal instantiates a new TimeCardItemRequestBuilder and sets the default values.
-func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) {
+func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, timeCardId *string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) {
     m := &TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/schedule/timeCards/{timeCard%2Did}{?%24select,%24expand}";
@@ -63,15 +55,18 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCardI
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if timeCardId != nil {
+        urlTplParams["timeCard%2Did"] = *timeCardId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder instantiates a new TimeCardItemRequestBuilder and sets the default values.
 func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property timeCards for teamwork
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -88,10 +83,6 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCard
         return err
     }
     return nil
-}
-// EndBreak provides operations to call the endBreak method.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) EndBreak()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsItemEndBreakRequestBuilder) {
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsItemEndBreakRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get timeCards from teamwork
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
@@ -112,6 +103,22 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCard
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable), nil
 }
+// MicrosoftGraphClockOut provides operations to call the clockOut method.
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) MicrosoftGraphClockOut()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsItemMicrosoftGraphClockOutClockOutRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsItemMicrosoftGraphClockOutClockOutRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphConfirm provides operations to call the confirm method.
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) MicrosoftGraphConfirm()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsItemMicrosoftGraphConfirmConfirmRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsItemMicrosoftGraphConfirmConfirmRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphEndBreak provides operations to call the endBreak method.
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) MicrosoftGraphEndBreak()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsItemMicrosoftGraphEndBreakEndBreakRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsItemMicrosoftGraphEndBreakEndBreakRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphStartBreak provides operations to call the startBreak method.
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) MicrosoftGraphStartBreak()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsItemMicrosoftGraphStartBreakStartBreakRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsItemMicrosoftGraphStartBreakStartBreakRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property timeCards in teamwork
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -130,10 +137,6 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCard
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable), nil
-}
-// StartBreak provides operations to call the startBreak method.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) StartBreak()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsItemStartBreakRequestBuilder) {
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsItemStartBreakRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property timeCards for teamwork
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -170,7 +173,10 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsTimeCard
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

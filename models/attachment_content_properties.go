@@ -15,8 +15,8 @@ func NewAttachmentContentProperties()(*AttachmentContentProperties) {
     m := &AttachmentContentProperties{
         ContentProperties: *NewContentProperties(),
     }
-    odataTypeValue := "#microsoft.graph.attachmentContentProperties";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.attachmentContentProperties"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAttachmentContentPropertiesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

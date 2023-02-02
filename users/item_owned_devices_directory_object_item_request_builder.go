@@ -33,7 +33,7 @@ type ItemOwnedDevicesDirectoryObjectItemRequestBuilderGetRequestConfiguration st
     QueryParameters *ItemOwnedDevicesDirectoryObjectItemRequestBuilderGetQueryParameters
 }
 // NewItemOwnedDevicesDirectoryObjectItemRequestBuilderInternal instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
-func NewItemOwnedDevicesDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOwnedDevicesDirectoryObjectItemRequestBuilder) {
+func NewItemOwnedDevicesDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, directoryObjectId *string)(*ItemOwnedDevicesDirectoryObjectItemRequestBuilder) {
     m := &ItemOwnedDevicesDirectoryObjectItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/ownedDevices/{directoryObject%2Did}{?%24select,%24expand}";
@@ -41,23 +41,18 @@ func NewItemOwnedDevicesDirectoryObjectItemRequestBuilderInternal(pathParameters
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if directoryObjectId != nil {
+        urlTplParams["directoryObject%2Did"] = *directoryObjectId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemOwnedDevicesDirectoryObjectItemRequestBuilder instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
 func NewItemOwnedDevicesDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOwnedDevicesDirectoryObjectItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemOwnedDevicesDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
-}
-// Device casts the previous resource to device.
-func (m *ItemOwnedDevicesDirectoryObjectItemRequestBuilder) Device()(*ItemOwnedDevicesItemDeviceRequestBuilder) {
-    return NewItemOwnedDevicesItemDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Endpoint casts the previous resource to endpoint.
-func (m *ItemOwnedDevicesDirectoryObjectItemRequestBuilder) Endpoint()(*ItemOwnedDevicesItemEndpointRequestBuilder) {
-    return NewItemOwnedDevicesItemEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOwnedDevicesDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get devices that are owned by the user. Read-only. Nullable. Supports $expand.
 func (m *ItemOwnedDevicesDirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOwnedDevicesDirectoryObjectItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
@@ -77,6 +72,14 @@ func (m *ItemOwnedDevicesDirectoryObjectItemRequestBuilder) Get(ctx context.Cont
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
+}
+// MicrosoftGraphDevice casts the previous resource to device.
+func (m *ItemOwnedDevicesDirectoryObjectItemRequestBuilder) MicrosoftGraphDevice()(*ItemOwnedDevicesItemMicrosoftGraphDeviceDeviceRequestBuilder) {
+    return NewItemOwnedDevicesItemMicrosoftGraphDeviceDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphEndpoint casts the previous resource to endpoint.
+func (m *ItemOwnedDevicesDirectoryObjectItemRequestBuilder) MicrosoftGraphEndpoint()(*ItemOwnedDevicesItemMicrosoftGraphEndpointEndpointRequestBuilder) {
+    return NewItemOwnedDevicesItemMicrosoftGraphEndpointEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation devices that are owned by the user. Read-only. Nullable. Supports $expand.
 func (m *ItemOwnedDevicesDirectoryObjectItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOwnedDevicesDirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -46,12 +46,8 @@ type ItemAppointmentsBookingAppointmentItemRequestBuilderPatchRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Cancel provides operations to call the cancel method.
-func (m *ItemAppointmentsBookingAppointmentItemRequestBuilder) Cancel()(*ItemAppointmentsItemCancelRequestBuilder) {
-    return NewItemAppointmentsItemCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewItemAppointmentsBookingAppointmentItemRequestBuilderInternal instantiates a new BookingAppointmentItemRequestBuilder and sets the default values.
-func NewItemAppointmentsBookingAppointmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAppointmentsBookingAppointmentItemRequestBuilder) {
+func NewItemAppointmentsBookingAppointmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, bookingAppointmentId *string)(*ItemAppointmentsBookingAppointmentItemRequestBuilder) {
     m := &ItemAppointmentsBookingAppointmentItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/appointments/{bookingAppointment%2Did}{?%24select,%24expand}";
@@ -59,15 +55,18 @@ func NewItemAppointmentsBookingAppointmentItemRequestBuilderInternal(pathParamet
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if bookingAppointmentId != nil {
+        urlTplParams["bookingAppointment%2Did"] = *bookingAppointmentId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemAppointmentsBookingAppointmentItemRequestBuilder instantiates a new BookingAppointmentItemRequestBuilder and sets the default values.
 func NewItemAppointmentsBookingAppointmentItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAppointmentsBookingAppointmentItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemAppointmentsBookingAppointmentItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemAppointmentsBookingAppointmentItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property appointments for bookingBusinesses
 func (m *ItemAppointmentsBookingAppointmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemAppointmentsBookingAppointmentItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -103,6 +102,10 @@ func (m *ItemAppointmentsBookingAppointmentItemRequestBuilder) Get(ctx context.C
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingAppointmentable), nil
+}
+// MicrosoftGraphCancel provides operations to call the cancel method.
+func (m *ItemAppointmentsBookingAppointmentItemRequestBuilder) MicrosoftGraphCancel()(*ItemAppointmentsItemMicrosoftGraphCancelCancelRequestBuilder) {
+    return NewItemAppointmentsItemMicrosoftGraphCancelCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property appointments in bookingBusinesses
 func (m *ItemAppointmentsBookingAppointmentItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingAppointmentable, requestConfiguration *ItemAppointmentsBookingAppointmentItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingAppointmentable, error) {
@@ -158,7 +161,10 @@ func (m *ItemAppointmentsBookingAppointmentItemRequestBuilder) ToPatchRequestInf
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

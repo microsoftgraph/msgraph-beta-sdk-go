@@ -13,8 +13,8 @@ func NewCustomAuthenticationExtension()(*CustomAuthenticationExtension) {
     m := &CustomAuthenticationExtension{
         CustomCalloutExtension: *NewCustomCalloutExtension(),
     }
-    odataTypeValue := "#microsoft.graph.customAuthenticationExtension";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.customAuthenticationExtension"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateCustomAuthenticationExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

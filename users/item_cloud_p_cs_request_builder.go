@@ -60,8 +60,8 @@ func NewItemCloudPCsRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemCloudPCsRequestBuilder instantiates a new CloudPCsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemCloudPCsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemCloudPCsRequestBuilder) Count()(*ItemCloudPCsCountRequestBuilder) {
-    return NewItemCloudPCsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCloudPCsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list the cloudPC devices that are attributed to the signed-in user. 
 // [Find more info here]
@@ -138,7 +138,10 @@ func (m *ItemCloudPCsRequestBuilder) ToPostRequestInformation(ctx context.Contex
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

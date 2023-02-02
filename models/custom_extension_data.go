@@ -15,7 +15,7 @@ type CustomExtensionData struct {
 func NewCustomExtensionData()(*CustomExtensionData) {
     m := &CustomExtensionData{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCustomExtensionDataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

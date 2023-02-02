@@ -60,8 +60,8 @@ func NewEdiscoveryCasesItemSourceCollectionsItemAdditionalSourcesRequestBuilderI
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEdiscoveryCasesItemSourceCollectionsItemAdditionalSourcesRequestBuilder instantiates a new AdditionalSourcesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewEdiscoveryCasesItemSourceCollectionsItemAdditionalSourcesRequestBuilder(
 }
 // Count provides operations to count the resources in the collection.
 func (m *EdiscoveryCasesItemSourceCollectionsItemAdditionalSourcesRequestBuilder) Count()(*EdiscoveryCasesItemSourceCollectionsItemAdditionalSourcesCountRequestBuilder) {
-    return NewEdiscoveryCasesItemSourceCollectionsItemAdditionalSourcesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesItemSourceCollectionsItemAdditionalSourcesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of additional dataSource objects associated with a source collection.
 // [Find more info here]
@@ -138,7 +138,10 @@ func (m *EdiscoveryCasesItemSourceCollectionsItemAdditionalSourcesRequestBuilder
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

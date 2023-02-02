@@ -47,7 +47,7 @@ type ConfigurationCategoriesDeviceManagementConfigurationCategoryItemRequestBuil
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewConfigurationCategoriesDeviceManagementConfigurationCategoryItemRequestBuilderInternal instantiates a new DeviceManagementConfigurationCategoryItemRequestBuilder and sets the default values.
-func NewConfigurationCategoriesDeviceManagementConfigurationCategoryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConfigurationCategoriesDeviceManagementConfigurationCategoryItemRequestBuilder) {
+func NewConfigurationCategoriesDeviceManagementConfigurationCategoryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, deviceManagementConfigurationCategoryId *string)(*ConfigurationCategoriesDeviceManagementConfigurationCategoryItemRequestBuilder) {
     m := &ConfigurationCategoriesDeviceManagementConfigurationCategoryItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/configurationCategories/{deviceManagementConfigurationCategory%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewConfigurationCategoriesDeviceManagementConfigurationCategoryItemRequestB
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if deviceManagementConfigurationCategoryId != nil {
+        urlTplParams["deviceManagementConfigurationCategory%2Did"] = *deviceManagementConfigurationCategoryId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewConfigurationCategoriesDeviceManagementConfigurationCategoryItemRequestBuilder instantiates a new DeviceManagementConfigurationCategoryItemRequestBuilder and sets the default values.
 func NewConfigurationCategoriesDeviceManagementConfigurationCategoryItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConfigurationCategoriesDeviceManagementConfigurationCategoryItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewConfigurationCategoriesDeviceManagementConfigurationCategoryItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewConfigurationCategoriesDeviceManagementConfigurationCategoryItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property configurationCategories for deviceManagement
 func (m *ConfigurationCategoriesDeviceManagementConfigurationCategoryItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConfigurationCategoriesDeviceManagementConfigurationCategoryItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ConfigurationCategoriesDeviceManagementConfigurationCategoryItemRequest
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

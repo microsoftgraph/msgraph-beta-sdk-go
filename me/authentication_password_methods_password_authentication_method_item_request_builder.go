@@ -33,7 +33,7 @@ type AuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilder
     QueryParameters *AuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilderGetQueryParameters
 }
 // NewAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilderInternal instantiates a new PasswordAuthenticationMethodItemRequestBuilder and sets the default values.
-func NewAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilder) {
+func NewAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, passwordAuthenticationMethodId *string)(*AuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilder) {
     m := &AuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/authentication/passwordMethods/{passwordAuthenticationMethod%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuil
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if passwordAuthenticationMethodId != nil {
+        urlTplParams["passwordAuthenticationMethod%2Did"] = *passwordAuthenticationMethodId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilder instantiates a new PasswordAuthenticationMethodItemRequestBuilder and sets the default values.
 func NewAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get represents the details of the password authentication method registered to a user for authentication.
 func (m *AuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordAuthenticationMethodable, error) {

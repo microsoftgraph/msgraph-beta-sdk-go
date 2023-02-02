@@ -19,7 +19,7 @@ type ConditionalAccessRuleSatisfied struct {
 func NewConditionalAccessRuleSatisfied()(*ConditionalAccessRuleSatisfied) {
     m := &ConditionalAccessRuleSatisfied{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateConditionalAccessRuleSatisfiedFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

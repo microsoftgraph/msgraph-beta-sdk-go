@@ -47,7 +47,7 @@ type ReportsDailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderPatc
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewReportsDailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderInternal instantiates a new PrintUsageByUserItemRequestBuilder and sets the default values.
-func NewReportsDailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsDailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder) {
+func NewReportsDailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, printUsageByUserId *string)(*ReportsDailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder) {
     m := &ReportsDailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/print/reports/dailyPrintUsageSummariesByUser/{printUsageByUser%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewReportsDailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderI
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if printUsageByUserId != nil {
+        urlTplParams["printUsageByUser%2Did"] = *printUsageByUserId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewReportsDailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder instantiates a new PrintUsageByUserItemRequestBuilder and sets the default values.
 func NewReportsDailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsDailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewReportsDailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewReportsDailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property dailyPrintUsageSummariesByUser for print
 func (m *ReportsDailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ReportsDailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ReportsDailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

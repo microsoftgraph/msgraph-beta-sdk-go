@@ -39,17 +39,9 @@ type DataClassificationRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ClassifyExactMatches provides operations to call the classifyExactMatches method.
-func (m *DataClassificationRequestBuilder) ClassifyExactMatches()(*ClassifyExactMatchesRequestBuilder) {
-    return NewClassifyExactMatchesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ClassifyFile provides operations to call the classifyFile method.
-func (m *DataClassificationRequestBuilder) ClassifyFile()(*ClassifyFileRequestBuilder) {
-    return NewClassifyFileRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // ClassifyFileJobs provides operations to manage the classifyFileJobs property of the microsoft.graph.dataClassificationService entity.
 func (m *DataClassificationRequestBuilder) ClassifyFileJobs()(*ClassifyFileJobsRequestBuilder) {
-    return NewClassifyFileJobsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewClassifyFileJobsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ClassifyFileJobsById provides operations to manage the classifyFileJobs property of the microsoft.graph.dataClassificationService entity.
 func (m *DataClassificationRequestBuilder) ClassifyFileJobsById(id string)(*ClassifyFileJobsJobResponseBaseItemRequestBuilder) {
@@ -57,14 +49,12 @@ func (m *DataClassificationRequestBuilder) ClassifyFileJobsById(id string)(*Clas
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["jobResponseBase%2Did"] = id
-    }
-    return NewClassifyFileJobsJobResponseBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewClassifyFileJobsJobResponseBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ClassifyTextJobs provides operations to manage the classifyTextJobs property of the microsoft.graph.dataClassificationService entity.
 func (m *DataClassificationRequestBuilder) ClassifyTextJobs()(*ClassifyTextJobsRequestBuilder) {
-    return NewClassifyTextJobsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewClassifyTextJobsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ClassifyTextJobsById provides operations to manage the classifyTextJobs property of the microsoft.graph.dataClassificationService entity.
 func (m *DataClassificationRequestBuilder) ClassifyTextJobsById(id string)(*ClassifyTextJobsJobResponseBaseItemRequestBuilder) {
@@ -72,10 +62,8 @@ func (m *DataClassificationRequestBuilder) ClassifyTextJobsById(id string)(*Clas
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["jobResponseBase%2Did"] = id
-    }
-    return NewClassifyTextJobsJobResponseBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewClassifyTextJobsJobResponseBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewDataClassificationRequestBuilderInternal instantiates a new DataClassificationRequestBuilder and sets the default values.
 func NewDataClassificationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DataClassificationRequestBuilder) {
@@ -86,8 +74,8 @@ func NewDataClassificationRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDataClassificationRequestBuilder instantiates a new DataClassificationRequestBuilder and sets the default values.
@@ -98,7 +86,7 @@ func NewDataClassificationRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 }
 // EvaluateDlpPoliciesJobs provides operations to manage the evaluateDlpPoliciesJobs property of the microsoft.graph.dataClassificationService entity.
 func (m *DataClassificationRequestBuilder) EvaluateDlpPoliciesJobs()(*EvaluateDlpPoliciesJobsRequestBuilder) {
-    return NewEvaluateDlpPoliciesJobsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEvaluateDlpPoliciesJobsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // EvaluateDlpPoliciesJobsById provides operations to manage the evaluateDlpPoliciesJobs property of the microsoft.graph.dataClassificationService entity.
 func (m *DataClassificationRequestBuilder) EvaluateDlpPoliciesJobsById(id string)(*EvaluateDlpPoliciesJobsJobResponseBaseItemRequestBuilder) {
@@ -106,14 +94,12 @@ func (m *DataClassificationRequestBuilder) EvaluateDlpPoliciesJobsById(id string
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["jobResponseBase%2Did"] = id
-    }
-    return NewEvaluateDlpPoliciesJobsJobResponseBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewEvaluateDlpPoliciesJobsJobResponseBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // EvaluateLabelJobs provides operations to manage the evaluateLabelJobs property of the microsoft.graph.dataClassificationService entity.
 func (m *DataClassificationRequestBuilder) EvaluateLabelJobs()(*EvaluateLabelJobsRequestBuilder) {
-    return NewEvaluateLabelJobsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEvaluateLabelJobsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // EvaluateLabelJobsById provides operations to manage the evaluateLabelJobs property of the microsoft.graph.dataClassificationService entity.
 func (m *DataClassificationRequestBuilder) EvaluateLabelJobsById(id string)(*EvaluateLabelJobsJobResponseBaseItemRequestBuilder) {
@@ -121,14 +107,12 @@ func (m *DataClassificationRequestBuilder) EvaluateLabelJobsById(id string)(*Eva
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["jobResponseBase%2Did"] = id
-    }
-    return NewEvaluateLabelJobsJobResponseBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewEvaluateLabelJobsJobResponseBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ExactMatchDataStores provides operations to manage the exactMatchDataStores property of the microsoft.graph.dataClassificationService entity.
 func (m *DataClassificationRequestBuilder) ExactMatchDataStores()(*ExactMatchDataStoresRequestBuilder) {
-    return NewExactMatchDataStoresRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewExactMatchDataStoresRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ExactMatchDataStoresById provides operations to manage the exactMatchDataStores property of the microsoft.graph.dataClassificationService entity.
 func (m *DataClassificationRequestBuilder) ExactMatchDataStoresById(id string)(*ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) {
@@ -136,14 +120,12 @@ func (m *DataClassificationRequestBuilder) ExactMatchDataStoresById(id string)(*
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["exactMatchDataStore%2Did"] = id
-    }
-    return NewExactMatchDataStoresExactMatchDataStoreItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewExactMatchDataStoresExactMatchDataStoreItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ExactMatchUploadAgents provides operations to manage the exactMatchUploadAgents property of the microsoft.graph.dataClassificationService entity.
 func (m *DataClassificationRequestBuilder) ExactMatchUploadAgents()(*ExactMatchUploadAgentsRequestBuilder) {
-    return NewExactMatchUploadAgentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewExactMatchUploadAgentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ExactMatchUploadAgentsById provides operations to manage the exactMatchUploadAgents property of the microsoft.graph.dataClassificationService entity.
 func (m *DataClassificationRequestBuilder) ExactMatchUploadAgentsById(id string)(*ExactMatchUploadAgentsExactMatchUploadAgentItemRequestBuilder) {
@@ -151,10 +133,8 @@ func (m *DataClassificationRequestBuilder) ExactMatchUploadAgentsById(id string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["exactMatchUploadAgent%2Did"] = id
-    }
-    return NewExactMatchUploadAgentsExactMatchUploadAgentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewExactMatchUploadAgentsExactMatchUploadAgentItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Get get dataClassification
 func (m *DataClassificationRequestBuilder) Get(ctx context.Context, requestConfiguration *DataClassificationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataClassificationServiceable, error) {
@@ -177,7 +157,7 @@ func (m *DataClassificationRequestBuilder) Get(ctx context.Context, requestConfi
 }
 // Jobs provides operations to manage the jobs property of the microsoft.graph.dataClassificationService entity.
 func (m *DataClassificationRequestBuilder) Jobs()(*JobsRequestBuilder) {
-    return NewJobsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewJobsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // JobsById provides operations to manage the jobs property of the microsoft.graph.dataClassificationService entity.
 func (m *DataClassificationRequestBuilder) JobsById(id string)(*JobsJobResponseBaseItemRequestBuilder) {
@@ -185,10 +165,16 @@ func (m *DataClassificationRequestBuilder) JobsById(id string)(*JobsJobResponseB
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["jobResponseBase%2Did"] = id
-    }
-    return NewJobsJobResponseBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewJobsJobResponseBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
+}
+// MicrosoftGraphClassifyExactMatches provides operations to call the classifyExactMatches method.
+func (m *DataClassificationRequestBuilder) MicrosoftGraphClassifyExactMatches()(*MicrosoftGraphClassifyExactMatchesClassifyExactMatchesRequestBuilder) {
+    return NewMicrosoftGraphClassifyExactMatchesClassifyExactMatchesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphClassifyFile provides operations to call the classifyFile method.
+func (m *DataClassificationRequestBuilder) MicrosoftGraphClassifyFile()(*MicrosoftGraphClassifyFileClassifyFileRequestBuilder) {
+    return NewMicrosoftGraphClassifyFileClassifyFileRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update dataClassification
 func (m *DataClassificationRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataClassificationServiceable, requestConfiguration *DataClassificationRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataClassificationServiceable, error) {
@@ -211,7 +197,7 @@ func (m *DataClassificationRequestBuilder) Patch(ctx context.Context, body ie233
 }
 // SensitiveTypes provides operations to manage the sensitiveTypes property of the microsoft.graph.dataClassificationService entity.
 func (m *DataClassificationRequestBuilder) SensitiveTypes()(*SensitiveTypesRequestBuilder) {
-    return NewSensitiveTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSensitiveTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SensitiveTypesById provides operations to manage the sensitiveTypes property of the microsoft.graph.dataClassificationService entity.
 func (m *DataClassificationRequestBuilder) SensitiveTypesById(id string)(*SensitiveTypesSensitiveTypeItemRequestBuilder) {
@@ -219,14 +205,12 @@ func (m *DataClassificationRequestBuilder) SensitiveTypesById(id string)(*Sensit
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["sensitiveType%2Did"] = id
-    }
-    return NewSensitiveTypesSensitiveTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewSensitiveTypesSensitiveTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // SensitivityLabels provides operations to manage the sensitivityLabels property of the microsoft.graph.dataClassificationService entity.
 func (m *DataClassificationRequestBuilder) SensitivityLabels()(*SensitivityLabelsRequestBuilder) {
-    return NewSensitivityLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSensitivityLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SensitivityLabelsById provides operations to manage the sensitivityLabels property of the microsoft.graph.dataClassificationService entity.
 func (m *DataClassificationRequestBuilder) SensitivityLabelsById(id string)(*SensitivityLabelsSensitivityLabelItemRequestBuilder) {
@@ -234,10 +218,8 @@ func (m *DataClassificationRequestBuilder) SensitivityLabelsById(id string)(*Sen
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["sensitivityLabel%2Did"] = id
-    }
-    return NewSensitivityLabelsSensitivityLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewSensitivityLabelsSensitivityLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToGetRequestInformation get dataClassification
 func (m *DataClassificationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DataClassificationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -262,7 +244,10 @@ func (m *DataClassificationRequestBuilder) ToPatchRequestInformation(ctx context
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

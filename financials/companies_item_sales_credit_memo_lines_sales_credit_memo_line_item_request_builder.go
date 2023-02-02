@@ -41,10 +41,10 @@ type CompaniesItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilderPatch
 }
 // Account provides operations to manage the account property of the microsoft.graph.salesCreditMemoLine entity.
 func (m *CompaniesItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilder) Account()(*CompaniesItemSalesCreditMemoLinesItemAccountRequestBuilder) {
-    return NewCompaniesItemSalesCreditMemoLinesItemAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesCreditMemoLinesItemAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewCompaniesItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilderInternal instantiates a new SalesCreditMemoLineItemRequestBuilder and sets the default values.
-func NewCompaniesItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilder) {
+func NewCompaniesItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, salesCreditMemoLineId *string)(*CompaniesItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilder) {
     m := &CompaniesItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesCreditMemoLines/{salesCreditMemoLine%2Did}{?%24select,%24expand}";
@@ -52,15 +52,18 @@ func NewCompaniesItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilderIn
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if salesCreditMemoLineId != nil {
+        urlTplParams["salesCreditMemoLine%2Did"] = *salesCreditMemoLineId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilder instantiates a new SalesCreditMemoLineItemRequestBuilder and sets the default values.
 func NewCompaniesItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCompaniesItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCompaniesItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get get salesCreditMemoLines from financials
 func (m *CompaniesItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesCreditMemoLineable, error) {
@@ -83,7 +86,7 @@ func (m *CompaniesItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilder)
 }
 // Item provides operations to manage the item property of the microsoft.graph.salesCreditMemoLine entity.
 func (m *CompaniesItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilder) Item()(*CompaniesItemSalesCreditMemoLinesItemItemRequestBuilder) {
-    return NewCompaniesItemSalesCreditMemoLinesItemItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesCreditMemoLinesItemItemRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property salesCreditMemoLines in financials
 func (m *CompaniesItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesCreditMemoLineable, requestConfiguration *CompaniesItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesCreditMemoLineable, error) {
@@ -127,7 +130,10 @@ func (m *CompaniesItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilder)
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

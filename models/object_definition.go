@@ -23,7 +23,7 @@ type ObjectDefinition struct {
 func NewObjectDefinition()(*ObjectDefinition) {
     m := &ObjectDefinition{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateObjectDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

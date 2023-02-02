@@ -47,7 +47,7 @@ type IntentsItemAssignmentsDeviceManagementIntentAssignmentItemRequestBuilderPat
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewIntentsItemAssignmentsDeviceManagementIntentAssignmentItemRequestBuilderInternal instantiates a new DeviceManagementIntentAssignmentItemRequestBuilder and sets the default values.
-func NewIntentsItemAssignmentsDeviceManagementIntentAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IntentsItemAssignmentsDeviceManagementIntentAssignmentItemRequestBuilder) {
+func NewIntentsItemAssignmentsDeviceManagementIntentAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, deviceManagementIntentAssignmentId *string)(*IntentsItemAssignmentsDeviceManagementIntentAssignmentItemRequestBuilder) {
     m := &IntentsItemAssignmentsDeviceManagementIntentAssignmentItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/intents/{deviceManagementIntent%2Did}/assignments/{deviceManagementIntentAssignment%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewIntentsItemAssignmentsDeviceManagementIntentAssignmentItemRequestBuilder
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if deviceManagementIntentAssignmentId != nil {
+        urlTplParams["deviceManagementIntentAssignment%2Did"] = *deviceManagementIntentAssignmentId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewIntentsItemAssignmentsDeviceManagementIntentAssignmentItemRequestBuilder instantiates a new DeviceManagementIntentAssignmentItemRequestBuilder and sets the default values.
 func NewIntentsItemAssignmentsDeviceManagementIntentAssignmentItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IntentsItemAssignmentsDeviceManagementIntentAssignmentItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewIntentsItemAssignmentsDeviceManagementIntentAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewIntentsItemAssignmentsDeviceManagementIntentAssignmentItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property assignments for deviceManagement
 func (m *IntentsItemAssignmentsDeviceManagementIntentAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *IntentsItemAssignmentsDeviceManagementIntentAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *IntentsItemAssignmentsDeviceManagementIntentAssignmentItemRequestBuilde
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

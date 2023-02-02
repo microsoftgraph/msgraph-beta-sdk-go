@@ -33,7 +33,7 @@ type ItemSitesSiteItemRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemSitesSiteItemRequestBuilderGetQueryParameters
 }
 // NewItemSitesSiteItemRequestBuilderInternal instantiates a new SiteItemRequestBuilder and sets the default values.
-func NewItemSitesSiteItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesSiteItemRequestBuilder) {
+func NewItemSitesSiteItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, siteId1 *string)(*ItemSitesSiteItemRequestBuilder) {
     m := &ItemSitesSiteItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/sites/{site%2Did}/sites/{site%2Did1}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewItemSitesSiteItemRequestBuilderInternal(pathParameters map[string]string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if siteId1 != nil {
+        urlTplParams["site%2Did1"] = *siteId1
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesSiteItemRequestBuilder instantiates a new SiteItemRequestBuilder and sets the default values.
 func NewItemSitesSiteItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesSiteItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemSitesSiteItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemSitesSiteItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get the collection of the sub-sites under this site.
 func (m *ItemSitesSiteItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesSiteItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable, error) {

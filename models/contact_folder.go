@@ -22,7 +22,7 @@ type ContactFolder struct {
     // The name of the folder if the folder is a recognized folder. Currently contacts is the only recognized contacts folder.
     wellKnownName *string
 }
-// NewContactFolder instantiates a new contactFolder and sets the default values.
+// NewContactFolder instantiates a new ContactFolder and sets the default values.
 func NewContactFolder()(*ContactFolder) {
     m := &ContactFolder{
         Entity: *NewEntity(),

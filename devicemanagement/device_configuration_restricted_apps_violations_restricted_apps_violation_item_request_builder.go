@@ -47,7 +47,7 @@ type DeviceConfigurationRestrictedAppsViolationsRestrictedAppsViolationItemReque
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewDeviceConfigurationRestrictedAppsViolationsRestrictedAppsViolationItemRequestBuilderInternal instantiates a new RestrictedAppsViolationItemRequestBuilder and sets the default values.
-func NewDeviceConfigurationRestrictedAppsViolationsRestrictedAppsViolationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceConfigurationRestrictedAppsViolationsRestrictedAppsViolationItemRequestBuilder) {
+func NewDeviceConfigurationRestrictedAppsViolationsRestrictedAppsViolationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, restrictedAppsViolationId *string)(*DeviceConfigurationRestrictedAppsViolationsRestrictedAppsViolationItemRequestBuilder) {
     m := &DeviceConfigurationRestrictedAppsViolationsRestrictedAppsViolationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/deviceConfigurationRestrictedAppsViolations/{restrictedAppsViolation%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewDeviceConfigurationRestrictedAppsViolationsRestrictedAppsViolationItemRe
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if restrictedAppsViolationId != nil {
+        urlTplParams["restrictedAppsViolation%2Did"] = *restrictedAppsViolationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceConfigurationRestrictedAppsViolationsRestrictedAppsViolationItemRequestBuilder instantiates a new RestrictedAppsViolationItemRequestBuilder and sets the default values.
 func NewDeviceConfigurationRestrictedAppsViolationsRestrictedAppsViolationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceConfigurationRestrictedAppsViolationsRestrictedAppsViolationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewDeviceConfigurationRestrictedAppsViolationsRestrictedAppsViolationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewDeviceConfigurationRestrictedAppsViolationsRestrictedAppsViolationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property deviceConfigurationRestrictedAppsViolations for deviceManagement
 func (m *DeviceConfigurationRestrictedAppsViolationsRestrictedAppsViolationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DeviceConfigurationRestrictedAppsViolationsRestrictedAppsViolationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *DeviceConfigurationRestrictedAppsViolationsRestrictedAppsViolationItemR
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

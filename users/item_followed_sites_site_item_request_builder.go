@@ -33,7 +33,7 @@ type ItemFollowedSitesSiteItemRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemFollowedSitesSiteItemRequestBuilderGetQueryParameters
 }
 // NewItemFollowedSitesSiteItemRequestBuilderInternal instantiates a new SiteItemRequestBuilder and sets the default values.
-func NewItemFollowedSitesSiteItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemFollowedSitesSiteItemRequestBuilder) {
+func NewItemFollowedSitesSiteItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, siteId *string)(*ItemFollowedSitesSiteItemRequestBuilder) {
     m := &ItemFollowedSitesSiteItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/followedSites/{site%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewItemFollowedSitesSiteItemRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if siteId != nil {
+        urlTplParams["site%2Did"] = *siteId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemFollowedSitesSiteItemRequestBuilder instantiates a new SiteItemRequestBuilder and sets the default values.
 func NewItemFollowedSitesSiteItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemFollowedSitesSiteItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemFollowedSitesSiteItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemFollowedSitesSiteItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get get followedSites from users
 func (m *ItemFollowedSitesSiteItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemFollowedSitesSiteItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable, error) {

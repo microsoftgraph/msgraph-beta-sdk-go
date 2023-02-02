@@ -14,7 +14,7 @@ type PrinterSharesItemAllowedUsersUserItemRequestBuilder struct {
     urlTemplate string
 }
 // NewPrinterSharesItemAllowedUsersUserItemRequestBuilderInternal instantiates a new UserItemRequestBuilder and sets the default values.
-func NewPrinterSharesItemAllowedUsersUserItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrinterSharesItemAllowedUsersUserItemRequestBuilder) {
+func NewPrinterSharesItemAllowedUsersUserItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, userId *string)(*PrinterSharesItemAllowedUsersUserItemRequestBuilder) {
     m := &PrinterSharesItemAllowedUsersUserItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/print/printerShares/{printerShare%2Did}/allowedUsers/{user%2Did}";
@@ -22,17 +22,20 @@ func NewPrinterSharesItemAllowedUsersUserItemRequestBuilderInternal(pathParamete
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if userId != nil {
+        urlTplParams["user%2Did"] = *userId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPrinterSharesItemAllowedUsersUserItemRequestBuilder instantiates a new UserItemRequestBuilder and sets the default values.
 func NewPrinterSharesItemAllowedUsersUserItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrinterSharesItemAllowedUsersUserItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewPrinterSharesItemAllowedUsersUserItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewPrinterSharesItemAllowedUsersUserItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Ref provides operations to manage the collection of print entities.
 func (m *PrinterSharesItemAllowedUsersUserItemRequestBuilder) Ref()(*PrinterSharesItemAllowedUsersItemRefRequestBuilder) {
-    return NewPrinterSharesItemAllowedUsersItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPrinterSharesItemAllowedUsersItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

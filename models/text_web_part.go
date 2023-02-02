@@ -15,8 +15,8 @@ func NewTextWebPart()(*TextWebPart) {
     m := &TextWebPart{
         WebPart: *NewWebPart(),
     }
-    odataTypeValue := "#microsoft.graph.textWebPart";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.textWebPart"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateTextWebPartFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

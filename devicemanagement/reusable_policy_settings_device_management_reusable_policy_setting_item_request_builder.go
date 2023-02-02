@@ -46,12 +46,8 @@ type ReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBuild
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Clone provides operations to call the clone method.
-func (m *ReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBuilder) Clone()(*ReusablePolicySettingsItemCloneRequestBuilder) {
-    return NewReusablePolicySettingsItemCloneRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBuilderInternal instantiates a new DeviceManagementReusablePolicySettingItemRequestBuilder and sets the default values.
-func NewReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBuilder) {
+func NewReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, deviceManagementReusablePolicySettingId *string)(*ReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBuilder) {
     m := &ReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/reusablePolicySettings/{deviceManagementReusablePolicySetting%2Did}{?%24select,%24expand}";
@@ -59,15 +55,18 @@ func NewReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBu
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if deviceManagementReusablePolicySettingId != nil {
+        urlTplParams["deviceManagementReusablePolicySetting%2Did"] = *deviceManagementReusablePolicySettingId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBuilder instantiates a new DeviceManagementReusablePolicySettingItemRequestBuilder and sets the default values.
 func NewReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property reusablePolicySettings for deviceManagement
 func (m *ReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -104,6 +103,10 @@ func (m *ReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestB
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReusablePolicySettingable), nil
 }
+// MicrosoftGraphClone provides operations to call the clone method.
+func (m *ReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBuilder) MicrosoftGraphClone()(*ReusablePolicySettingsItemMicrosoftGraphCloneCloneRequestBuilder) {
+    return NewReusablePolicySettingsItemMicrosoftGraphCloneCloneRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property reusablePolicySettings in deviceManagement
 func (m *ReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReusablePolicySettingable, requestConfiguration *ReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReusablePolicySettingable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -125,7 +128,7 @@ func (m *ReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestB
 }
 // ReferencingConfigurationPolicies provides operations to manage the referencingConfigurationPolicies property of the microsoft.graph.deviceManagementReusablePolicySetting entity.
 func (m *ReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBuilder) ReferencingConfigurationPolicies()(*ReusablePolicySettingsItemReferencingConfigurationPoliciesRequestBuilder) {
-    return NewReusablePolicySettingsItemReferencingConfigurationPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewReusablePolicySettingsItemReferencingConfigurationPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ReferencingConfigurationPoliciesById provides operations to manage the referencingConfigurationPolicies property of the microsoft.graph.deviceManagementReusablePolicySetting entity.
 func (m *ReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBuilder) ReferencingConfigurationPoliciesById(id string)(*ReusablePolicySettingsItemReferencingConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) {
@@ -133,10 +136,8 @@ func (m *ReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestB
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["deviceManagementConfigurationPolicy%2Did"] = id
-    }
-    return NewReusablePolicySettingsItemReferencingConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewReusablePolicySettingsItemReferencingConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property reusablePolicySettings for deviceManagement
 func (m *ReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -173,7 +174,10 @@ func (m *ReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestB
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

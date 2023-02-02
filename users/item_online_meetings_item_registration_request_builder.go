@@ -55,8 +55,8 @@ func NewItemOnlineMeetingsItemRegistrationRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemOnlineMeetingsItemRegistrationRequestBuilder instantiates a new RegistrationRequestBuilder and sets the default values.
@@ -67,7 +67,7 @@ func NewItemOnlineMeetingsItemRegistrationRequestBuilder(rawUrl string, requestA
 }
 // CustomQuestions provides operations to manage the customQuestions property of the microsoft.graph.meetingRegistration entity.
 func (m *ItemOnlineMeetingsItemRegistrationRequestBuilder) CustomQuestions()(*ItemOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder) {
-    return NewItemOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CustomQuestionsById provides operations to manage the customQuestions property of the microsoft.graph.meetingRegistration entity.
 func (m *ItemOnlineMeetingsItemRegistrationRequestBuilder) CustomQuestionsById(id string)(*ItemOnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilder) {
@@ -75,10 +75,8 @@ func (m *ItemOnlineMeetingsItemRegistrationRequestBuilder) CustomQuestionsById(i
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["meetingRegistrationQuestion%2Did"] = id
-    }
-    return NewItemOnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemOnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Delete disable and delete the externalMeetingRegistration of an onlineMeeting.
 // [Find more info here]
@@ -178,7 +176,10 @@ func (m *ItemOnlineMeetingsItemRegistrationRequestBuilder) ToPatchRequestInforma
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

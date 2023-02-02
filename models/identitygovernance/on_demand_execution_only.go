@@ -13,8 +13,8 @@ func NewOnDemandExecutionOnly()(*OnDemandExecutionOnly) {
     m := &OnDemandExecutionOnly{
         WorkflowExecutionConditions: *NewWorkflowExecutionConditions(),
     }
-    odataTypeValue := "#microsoft.graph.identityGovernance.onDemandExecutionOnly";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.identityGovernance.onDemandExecutionOnly"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateOnDemandExecutionOnlyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

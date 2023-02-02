@@ -47,7 +47,7 @@ type ProfilePublicationsItemPublicationItemRequestBuilderPatchRequestConfigurati
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewProfilePublicationsItemPublicationItemRequestBuilderInternal instantiates a new ItemPublicationItemRequestBuilder and sets the default values.
-func NewProfilePublicationsItemPublicationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ProfilePublicationsItemPublicationItemRequestBuilder) {
+func NewProfilePublicationsItemPublicationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, itemPublicationId *string)(*ProfilePublicationsItemPublicationItemRequestBuilder) {
     m := &ProfilePublicationsItemPublicationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/profile/publications/{itemPublication%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewProfilePublicationsItemPublicationItemRequestBuilderInternal(pathParamet
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if itemPublicationId != nil {
+        urlTplParams["itemPublication%2Did"] = *itemPublicationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewProfilePublicationsItemPublicationItemRequestBuilder instantiates a new ItemPublicationItemRequestBuilder and sets the default values.
 func NewProfilePublicationsItemPublicationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ProfilePublicationsItemPublicationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewProfilePublicationsItemPublicationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewProfilePublicationsItemPublicationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property publications for me
 func (m *ProfilePublicationsItemPublicationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ProfilePublicationsItemPublicationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ProfilePublicationsItemPublicationItemRequestBuilder) ToPatchRequestInf
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

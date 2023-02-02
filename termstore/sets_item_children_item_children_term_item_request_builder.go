@@ -47,7 +47,7 @@ type SetsItemChildrenItemChildrenTermItemRequestBuilderPatchRequestConfiguration
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewSetsItemChildrenItemChildrenTermItemRequestBuilderInternal instantiates a new TermItemRequestBuilder and sets the default values.
-func NewSetsItemChildrenItemChildrenTermItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SetsItemChildrenItemChildrenTermItemRequestBuilder) {
+func NewSetsItemChildrenItemChildrenTermItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, termId1 *string)(*SetsItemChildrenItemChildrenTermItemRequestBuilder) {
     m := &SetsItemChildrenItemChildrenTermItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/termStore/sets/{set%2Did}/children/{term%2Did}/children/{term%2Did1}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewSetsItemChildrenItemChildrenTermItemRequestBuilderInternal(pathParameter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if termId1 != nil {
+        urlTplParams["term%2Did1"] = *termId1
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewSetsItemChildrenItemChildrenTermItemRequestBuilder instantiates a new TermItemRequestBuilder and sets the default values.
 func NewSetsItemChildrenItemChildrenTermItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SetsItemChildrenItemChildrenTermItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewSetsItemChildrenItemChildrenTermItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewSetsItemChildrenItemChildrenTermItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property children for termStore
 func (m *SetsItemChildrenItemChildrenTermItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *SetsItemChildrenItemChildrenTermItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -121,7 +124,7 @@ func (m *SetsItemChildrenItemChildrenTermItemRequestBuilder) Patch(ctx context.C
 }
 // Relations provides operations to manage the relations property of the microsoft.graph.termStore.term entity.
 func (m *SetsItemChildrenItemChildrenTermItemRequestBuilder) Relations()(*SetsItemChildrenItemChildrenItemRelationsRequestBuilder) {
-    return NewSetsItemChildrenItemChildrenItemRelationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSetsItemChildrenItemChildrenItemRelationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RelationsById provides operations to manage the relations property of the microsoft.graph.termStore.term entity.
 func (m *SetsItemChildrenItemChildrenTermItemRequestBuilder) RelationsById(id string)(*SetsItemChildrenItemChildrenItemRelationsRelationItemRequestBuilder) {
@@ -129,14 +132,12 @@ func (m *SetsItemChildrenItemChildrenTermItemRequestBuilder) RelationsById(id st
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["relation%2Did"] = id
-    }
-    return NewSetsItemChildrenItemChildrenItemRelationsRelationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewSetsItemChildrenItemChildrenItemRelationsRelationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Set provides operations to manage the set property of the microsoft.graph.termStore.term entity.
 func (m *SetsItemChildrenItemChildrenTermItemRequestBuilder) Set()(*SetsItemChildrenItemChildrenItemSetRequestBuilder) {
-    return NewSetsItemChildrenItemChildrenItemSetRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSetsItemChildrenItemChildrenItemSetRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property children for termStore
 func (m *SetsItemChildrenItemChildrenTermItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SetsItemChildrenItemChildrenTermItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -173,7 +174,10 @@ func (m *SetsItemChildrenItemChildrenTermItemRequestBuilder) ToPatchRequestInfor
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -37,7 +37,7 @@ type CloudPcAuditActor struct {
 func NewCloudPcAuditActor()(*CloudPcAuditActor) {
     m := &CloudPcAuditActor{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCloudPcAuditActorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -56,8 +56,8 @@ func NewCalendarsItemCalendarPermissionsRequestBuilderInternal(pathParameters ma
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCalendarsItemCalendarPermissionsRequestBuilder instantiates a new CalendarPermissionsRequestBuilder and sets the default values.
@@ -68,7 +68,7 @@ func NewCalendarsItemCalendarPermissionsRequestBuilder(rawUrl string, requestAda
 }
 // Count provides operations to count the resources in the collection.
 func (m *CalendarsItemCalendarPermissionsRequestBuilder) Count()(*CalendarsItemCalendarPermissionsCountRequestBuilder) {
-    return NewCalendarsItemCalendarPermissionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCalendarsItemCalendarPermissionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the permissions of the users with whom the calendar is shared.
 func (m *CalendarsItemCalendarPermissionsRequestBuilder) Get(ctx context.Context, requestConfiguration *CalendarsItemCalendarPermissionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarPermissionCollectionResponseable, error) {
@@ -134,7 +134,10 @@ func (m *CalendarsItemCalendarPermissionsRequestBuilder) ToPostRequestInformatio
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

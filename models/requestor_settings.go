@@ -21,7 +21,7 @@ type RequestorSettings struct {
 func NewRequestorSettings()(*RequestorSettings) {
     m := &RequestorSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateRequestorSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

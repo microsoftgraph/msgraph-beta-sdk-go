@@ -21,7 +21,7 @@ type CloudPcStatusDetails struct {
 func NewCloudPcStatusDetails()(*CloudPcStatusDetails) {
     m := &CloudPcStatusDetails{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCloudPcStatusDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

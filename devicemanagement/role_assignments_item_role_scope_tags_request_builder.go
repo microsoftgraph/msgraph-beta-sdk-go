@@ -53,8 +53,8 @@ func NewRoleAssignmentsItemRoleScopeTagsRequestBuilderInternal(pathParameters ma
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewRoleAssignmentsItemRoleScopeTagsRequestBuilder instantiates a new RoleScopeTagsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewRoleAssignmentsItemRoleScopeTagsRequestBuilder(rawUrl string, requestAda
 }
 // Count provides operations to count the resources in the collection.
 func (m *RoleAssignmentsItemRoleScopeTagsRequestBuilder) Count()(*RoleAssignmentsItemRoleScopeTagsCountRequestBuilder) {
-    return NewRoleAssignmentsItemRoleScopeTagsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewRoleAssignmentsItemRoleScopeTagsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the set of Role Scope Tags defined on the Role Assignment.
 func (m *RoleAssignmentsItemRoleScopeTagsRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleAssignmentsItemRoleScopeTagsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RoleScopeTagCollectionResponseable, error) {

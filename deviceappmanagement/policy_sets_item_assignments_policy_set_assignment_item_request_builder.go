@@ -47,7 +47,7 @@ type PolicySetsItemAssignmentsPolicySetAssignmentItemRequestBuilderPatchRequestC
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewPolicySetsItemAssignmentsPolicySetAssignmentItemRequestBuilderInternal instantiates a new PolicySetAssignmentItemRequestBuilder and sets the default values.
-func NewPolicySetsItemAssignmentsPolicySetAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PolicySetsItemAssignmentsPolicySetAssignmentItemRequestBuilder) {
+func NewPolicySetsItemAssignmentsPolicySetAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, policySetAssignmentId *string)(*PolicySetsItemAssignmentsPolicySetAssignmentItemRequestBuilder) {
     m := &PolicySetsItemAssignmentsPolicySetAssignmentItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceAppManagement/policySets/{policySet%2Did}/assignments/{policySetAssignment%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewPolicySetsItemAssignmentsPolicySetAssignmentItemRequestBuilderInternal(p
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if policySetAssignmentId != nil {
+        urlTplParams["policySetAssignment%2Did"] = *policySetAssignmentId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPolicySetsItemAssignmentsPolicySetAssignmentItemRequestBuilder instantiates a new PolicySetAssignmentItemRequestBuilder and sets the default values.
 func NewPolicySetsItemAssignmentsPolicySetAssignmentItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PolicySetsItemAssignmentsPolicySetAssignmentItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewPolicySetsItemAssignmentsPolicySetAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewPolicySetsItemAssignmentsPolicySetAssignmentItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property assignments for deviceAppManagement
 func (m *PolicySetsItemAssignmentsPolicySetAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *PolicySetsItemAssignmentsPolicySetAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *PolicySetsItemAssignmentsPolicySetAssignmentItemRequestBuilder) ToPatch
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

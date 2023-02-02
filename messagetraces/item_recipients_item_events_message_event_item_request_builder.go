@@ -47,7 +47,7 @@ type ItemRecipientsItemEventsMessageEventItemRequestBuilderPatchRequestConfigura
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemRecipientsItemEventsMessageEventItemRequestBuilderInternal instantiates a new MessageEventItemRequestBuilder and sets the default values.
-func NewItemRecipientsItemEventsMessageEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRecipientsItemEventsMessageEventItemRequestBuilder) {
+func NewItemRecipientsItemEventsMessageEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, messageEventId *string)(*ItemRecipientsItemEventsMessageEventItemRequestBuilder) {
     m := &ItemRecipientsItemEventsMessageEventItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/messageTraces/{messageTrace%2Did}/recipients/{messageRecipient%2Did}/events/{messageEvent%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemRecipientsItemEventsMessageEventItemRequestBuilderInternal(pathParam
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if messageEventId != nil {
+        urlTplParams["messageEvent%2Did"] = *messageEventId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemRecipientsItemEventsMessageEventItemRequestBuilder instantiates a new MessageEventItemRequestBuilder and sets the default values.
 func NewItemRecipientsItemEventsMessageEventItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRecipientsItemEventsMessageEventItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemRecipientsItemEventsMessageEventItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemRecipientsItemEventsMessageEventItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property events for messageTraces
 func (m *ItemRecipientsItemEventsMessageEventItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemRecipientsItemEventsMessageEventItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemRecipientsItemEventsMessageEventItemRequestBuilder) ToPatchRequestI
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

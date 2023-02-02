@@ -24,7 +24,7 @@ type ClassificationInnerError struct {
 func NewClassificationInnerError()(*ClassificationInnerError) {
     m := &ClassificationInnerError{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateClassificationInnerErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

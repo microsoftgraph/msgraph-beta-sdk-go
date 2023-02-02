@@ -47,7 +47,7 @@ type LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemR
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewLabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilderInternal instantiates a new DispositionReviewStageItemRequestBuilder and sets the default values.
-func NewLabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder) {
+func NewLabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, dispositionReviewStageId *string)(*LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder) {
     m := &LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/dispositionReviewStages/{dispositionReviewStage%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewLabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageIt
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if dispositionReviewStageId != nil {
+        urlTplParams["dispositionReviewStage%2Did"] = *dispositionReviewStageId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewLabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder instantiates a new DispositionReviewStageItemRequestBuilder and sets the default values.
 func NewLabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewLabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewLabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property dispositionReviewStages for security
 func (m *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageI
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

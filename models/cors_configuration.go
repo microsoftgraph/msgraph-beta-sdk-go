@@ -25,7 +25,7 @@ type CorsConfiguration struct {
 func NewCorsConfiguration()(*CorsConfiguration) {
     m := &CorsConfiguration{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCorsConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

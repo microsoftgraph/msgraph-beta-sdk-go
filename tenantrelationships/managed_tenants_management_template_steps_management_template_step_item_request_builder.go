@@ -48,10 +48,10 @@ type ManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestBuild
 }
 // AcceptedVersion provides operations to manage the acceptedVersion property of the microsoft.graph.managedTenants.managementTemplateStep entity.
 func (m *ManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestBuilder) AcceptedVersion()(*ManagedTenantsManagementTemplateStepsItemAcceptedVersionRequestBuilder) {
-    return NewManagedTenantsManagementTemplateStepsItemAcceptedVersionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedTenantsManagementTemplateStepsItemAcceptedVersionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestBuilderInternal instantiates a new ManagementTemplateStepItemRequestBuilder and sets the default values.
-func NewManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestBuilder) {
+func NewManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, managementTemplateStepId *string)(*ManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestBuilder) {
     m := &ManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementTemplateSteps/{managementTemplateStep%2Did}{?%24select,%24expand}";
@@ -59,15 +59,18 @@ func NewManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestBu
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if managementTemplateStepId != nil {
+        urlTplParams["managementTemplateStep%2Did"] = *managementTemplateStepId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestBuilder instantiates a new ManagementTemplateStepItemRequestBuilder and sets the default values.
 func NewManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property managementTemplateSteps for tenantRelationships
 func (m *ManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -106,7 +109,7 @@ func (m *ManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestB
 }
 // ManagementTemplate provides operations to manage the managementTemplate property of the microsoft.graph.managedTenants.managementTemplateStep entity.
 func (m *ManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestBuilder) ManagementTemplate()(*ManagedTenantsManagementTemplateStepsItemManagementTemplateRequestBuilder) {
-    return NewManagedTenantsManagementTemplateStepsItemManagementTemplateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedTenantsManagementTemplateStepsItemManagementTemplateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property managementTemplateSteps in tenantRelationships
 func (m *ManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestBuilder) Patch(ctx context.Context, body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepable, requestConfiguration *ManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestBuilderPatchRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepable, error) {
@@ -162,7 +165,10 @@ func (m *ManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestB
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -171,7 +177,7 @@ func (m *ManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestB
 }
 // Versions provides operations to manage the versions property of the microsoft.graph.managedTenants.managementTemplateStep entity.
 func (m *ManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestBuilder) Versions()(*ManagedTenantsManagementTemplateStepsItemVersionsRequestBuilder) {
-    return NewManagedTenantsManagementTemplateStepsItemVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedTenantsManagementTemplateStepsItemVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // VersionsById provides operations to manage the versions property of the microsoft.graph.managedTenants.managementTemplateStep entity.
 func (m *ManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestBuilder) VersionsById(id string)(*ManagedTenantsManagementTemplateStepsItemVersionsManagementTemplateStepVersionItemRequestBuilder) {
@@ -179,8 +185,6 @@ func (m *ManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestB
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["managementTemplateStepVersion%2Did"] = id
-    }
-    return NewManagedTenantsManagementTemplateStepsItemVersionsManagementTemplateStepVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewManagedTenantsManagementTemplateStepsItemVersionsManagementTemplateStepVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }

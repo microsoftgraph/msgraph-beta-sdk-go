@@ -29,8 +29,8 @@ func NewPrivilegedAccessGroupAssignmentSchedule()(*PrivilegedAccessGroupAssignme
     m := &PrivilegedAccessGroupAssignmentSchedule{
         PrivilegedAccessSchedule: *NewPrivilegedAccessSchedule(),
     }
-    odataTypeValue := "#microsoft.graph.privilegedAccessGroupAssignmentSchedule";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.privilegedAccessGroupAssignmentSchedule"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreatePrivilegedAccessGroupAssignmentScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

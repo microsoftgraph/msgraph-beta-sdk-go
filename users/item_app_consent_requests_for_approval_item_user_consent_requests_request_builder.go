@@ -60,8 +60,8 @@ func NewItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilderIn
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder instantiates a new UserConsentRequestsRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder(r
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder) Count()(*ItemAppConsentRequestsForApprovalItemUserConsentRequestsCountRequestBuilder) {
-    return NewItemAppConsentRequestsForApprovalItemUserConsentRequestsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*ItemAppConsentRequestsForApprovalItemUserConsentRequestsFilterByCurrentUserWithOnRequestBuilder) {
-    return NewItemAppConsentRequestsForApprovalItemUserConsentRequestsFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
+    return NewItemAppConsentRequestsForApprovalItemUserConsentRequestsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a collection of userConsentRequest objects and their properties.
 // [Find more info here]
@@ -99,6 +95,10 @@ func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder)
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConsentRequestCollectionResponseable), nil
+}
+// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*ItemAppConsentRequestsForApprovalItemUserConsentRequestsMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnRequestBuilder) {
+    return NewItemAppConsentRequestsForApprovalItemUserConsentRequestsMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Post create new navigation property to userConsentRequests for users
 func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConsentRequestable, requestConfiguration *ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConsentRequestable, error) {
@@ -142,7 +142,10 @@ func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder)
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

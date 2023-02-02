@@ -47,7 +47,7 @@ type OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilde
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewOutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilderInternal instantiates a new TenantReferenceTenantItemRequestBuilder and sets the default values.
-func NewOutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilder) {
+func NewOutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, tenantReferenceTenantId *string)(*OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilder) {
     m := &OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/directory/outboundSharedUserProfiles/{outboundSharedUserProfile%2DuserId}/tenants/{tenantReference%2DtenantId}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewOutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBui
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if tenantReferenceTenantId != nil {
+        urlTplParams["tenantReference%2DtenantId"] = *tenantReferenceTenantId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewOutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilder instantiates a new TenantReferenceTenantItemRequestBuilder and sets the default values.
 func NewOutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewOutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewOutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property tenants for directory
 func (m *OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -100,6 +103,10 @@ func (m *OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantReferenceable), nil
 }
+// MicrosoftGraphRemovePersonalData provides operations to call the removePersonalData method.
+func (m *OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilder) MicrosoftGraphRemovePersonalData()(*OutboundSharedUserProfilesItemTenantsItemMicrosoftGraphRemovePersonalDataRemovePersonalDataRequestBuilder) {
+    return NewOutboundSharedUserProfilesItemTenantsItemMicrosoftGraphRemovePersonalDataRemovePersonalDataRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property tenants in directory
 func (m *OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantReferenceable, requestConfiguration *OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantReferenceable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -118,10 +125,6 @@ func (m *OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBu
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantReferenceable), nil
-}
-// RemovePersonalData provides operations to call the removePersonalData method.
-func (m *OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilder) RemovePersonalData()(*OutboundSharedUserProfilesItemTenantsItemRemovePersonalDataRequestBuilder) {
-    return NewOutboundSharedUserProfilesItemTenantsItemRemovePersonalDataRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property tenants for directory
 func (m *OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +161,10 @@ func (m *OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBu
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -51,8 +51,8 @@ func NewCalendarCalendarViewItemExceptionOccurrencesRequestBuilderInternal(pathP
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCalendarCalendarViewItemExceptionOccurrencesRequestBuilder instantiates a new ExceptionOccurrencesRequestBuilder and sets the default values.
@@ -63,11 +63,7 @@ func NewCalendarCalendarViewItemExceptionOccurrencesRequestBuilder(rawUrl string
 }
 // Count provides operations to count the resources in the collection.
 func (m *CalendarCalendarViewItemExceptionOccurrencesRequestBuilder) Count()(*CalendarCalendarViewItemExceptionOccurrencesCountRequestBuilder) {
-    return NewCalendarCalendarViewItemExceptionOccurrencesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Delta provides operations to call the delta method.
-func (m *CalendarCalendarViewItemExceptionOccurrencesRequestBuilder) Delta()(*CalendarCalendarViewItemExceptionOccurrencesDeltaRequestBuilder) {
-    return NewCalendarCalendarViewItemExceptionOccurrencesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCalendarCalendarViewItemExceptionOccurrencesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get exceptionOccurrences from me
 func (m *CalendarCalendarViewItemExceptionOccurrencesRequestBuilder) Get(ctx context.Context, requestConfiguration *CalendarCalendarViewItemExceptionOccurrencesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EventCollectionResponseable, error) {
@@ -87,6 +83,10 @@ func (m *CalendarCalendarViewItemExceptionOccurrencesRequestBuilder) Get(ctx con
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EventCollectionResponseable), nil
+}
+// MicrosoftGraphDelta provides operations to call the delta method.
+func (m *CalendarCalendarViewItemExceptionOccurrencesRequestBuilder) MicrosoftGraphDelta()(*CalendarCalendarViewItemExceptionOccurrencesMicrosoftGraphDeltaDeltaRequestBuilder) {
+    return NewCalendarCalendarViewItemExceptionOccurrencesMicrosoftGraphDeltaDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation get exceptionOccurrences from me
 func (m *CalendarCalendarViewItemExceptionOccurrencesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CalendarCalendarViewItemExceptionOccurrencesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

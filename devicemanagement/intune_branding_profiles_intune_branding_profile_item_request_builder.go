@@ -46,13 +46,9 @@ type IntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilderPatchRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Assign provides operations to call the assign method.
-func (m *IntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilder) Assign()(*IntuneBrandingProfilesItemAssignRequestBuilder) {
-    return NewIntuneBrandingProfilesItemAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Assignments provides operations to manage the assignments property of the microsoft.graph.intuneBrandingProfile entity.
 func (m *IntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilder) Assignments()(*IntuneBrandingProfilesItemAssignmentsRequestBuilder) {
-    return NewIntuneBrandingProfilesItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIntuneBrandingProfilesItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.intuneBrandingProfile entity.
 func (m *IntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilder) AssignmentsById(id string)(*IntuneBrandingProfilesItemAssignmentsIntuneBrandingProfileAssignmentItemRequestBuilder) {
@@ -60,13 +56,11 @@ func (m *IntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilder) Assignme
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["intuneBrandingProfileAssignment%2Did"] = id
-    }
-    return NewIntuneBrandingProfilesItemAssignmentsIntuneBrandingProfileAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewIntuneBrandingProfilesItemAssignmentsIntuneBrandingProfileAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewIntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilderInternal instantiates a new IntuneBrandingProfileItemRequestBuilder and sets the default values.
-func NewIntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilder) {
+func NewIntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, intuneBrandingProfileId *string)(*IntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilder) {
     m := &IntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/intuneBrandingProfiles/{intuneBrandingProfile%2Did}{?%24select,%24expand}";
@@ -74,15 +68,18 @@ func NewIntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if intuneBrandingProfileId != nil {
+        urlTplParams["intuneBrandingProfile%2Did"] = *intuneBrandingProfileId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewIntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilder instantiates a new IntuneBrandingProfileItemRequestBuilder and sets the default values.
 func NewIntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewIntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewIntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property intuneBrandingProfiles for deviceManagement
 func (m *IntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *IntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -118,6 +115,10 @@ func (m *IntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilder) Get(ctx 
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IntuneBrandingProfileable), nil
+}
+// MicrosoftGraphAssign provides operations to call the assign method.
+func (m *IntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilder) MicrosoftGraphAssign()(*IntuneBrandingProfilesItemMicrosoftGraphAssignAssignRequestBuilder) {
+    return NewIntuneBrandingProfilesItemMicrosoftGraphAssignAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property intuneBrandingProfiles in deviceManagement
 func (m *IntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IntuneBrandingProfileable, requestConfiguration *IntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IntuneBrandingProfileable, error) {
@@ -173,7 +174,10 @@ func (m *IntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilder) ToPatchR
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

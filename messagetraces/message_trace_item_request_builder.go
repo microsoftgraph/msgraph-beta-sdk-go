@@ -23,7 +23,7 @@ type MessageTraceItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// MessageTraceItemRequestBuilderGetQueryParameters get entity from messageTraces by key (id)
+// MessageTraceItemRequestBuilderGetQueryParameters get entity from messageTraces by key
 type MessageTraceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -47,7 +47,7 @@ type MessageTraceItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewMessageTraceItemRequestBuilderInternal instantiates a new MessageTraceItemRequestBuilder and sets the default values.
-func NewMessageTraceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MessageTraceItemRequestBuilder) {
+func NewMessageTraceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, messageTraceId *string)(*MessageTraceItemRequestBuilder) {
     m := &MessageTraceItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/messageTraces/{messageTrace%2Did}{?%24select,%24expand}";
@@ -55,17 +55,20 @@ func NewMessageTraceItemRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if messageTraceId != nil {
+        urlTplParams["messageTrace%2Did"] = *messageTraceId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMessageTraceItemRequestBuilder instantiates a new MessageTraceItemRequestBuilder and sets the default values.
 func NewMessageTraceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MessageTraceItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewMessageTraceItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewMessageTraceItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Delete delete entity from messageTraces by key (id)
+// Delete delete entity from messageTraces
 func (m *MessageTraceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MessageTraceItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,7 +84,7 @@ func (m *MessageTraceItemRequestBuilder) Delete(ctx context.Context, requestConf
     }
     return nil
 }
-// Get get entity from messageTraces by key (id)
+// Get get entity from messageTraces by key
 func (m *MessageTraceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MessageTraceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageTraceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,7 +103,7 @@ func (m *MessageTraceItemRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageTraceable), nil
 }
-// Patch update entity in messageTraces by key (id)
+// Patch update entity in messageTraces
 func (m *MessageTraceItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageTraceable, requestConfiguration *MessageTraceItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageTraceable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +124,7 @@ func (m *MessageTraceItemRequestBuilder) Patch(ctx context.Context, body ie233ee
 }
 // Recipients provides operations to manage the recipients property of the microsoft.graph.messageTrace entity.
 func (m *MessageTraceItemRequestBuilder) Recipients()(*ItemRecipientsRequestBuilder) {
-    return NewItemRecipientsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRecipientsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RecipientsById provides operations to manage the recipients property of the microsoft.graph.messageTrace entity.
 func (m *MessageTraceItemRequestBuilder) RecipientsById(id string)(*ItemRecipientsMessageRecipientItemRequestBuilder) {
@@ -129,12 +132,10 @@ func (m *MessageTraceItemRequestBuilder) RecipientsById(id string)(*ItemRecipien
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["messageRecipient%2Did"] = id
-    }
-    return NewItemRecipientsMessageRecipientItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemRecipientsMessageRecipientItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
-// ToDeleteRequestInformation delete entity from messageTraces by key (id)
+// ToDeleteRequestInformation delete entity from messageTraces
 func (m *MessageTraceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MessageTraceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -146,7 +147,7 @@ func (m *MessageTraceItemRequestBuilder) ToDeleteRequestInformation(ctx context.
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from messageTraces by key (id)
+// ToGetRequestInformation get entity from messageTraces by key
 func (m *MessageTraceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MessageTraceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -162,14 +163,17 @@ func (m *MessageTraceItemRequestBuilder) ToGetRequestInformation(ctx context.Con
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in messageTraces by key (id)
+// ToPatchRequestInformation update entity in messageTraces
 func (m *MessageTraceItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageTraceable, requestConfiguration *MessageTraceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

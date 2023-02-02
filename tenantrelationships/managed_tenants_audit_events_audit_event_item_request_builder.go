@@ -47,7 +47,7 @@ type ManagedTenantsAuditEventsAuditEventItemRequestBuilderPatchRequestConfigurat
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewManagedTenantsAuditEventsAuditEventItemRequestBuilderInternal instantiates a new AuditEventItemRequestBuilder and sets the default values.
-func NewManagedTenantsAuditEventsAuditEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsAuditEventsAuditEventItemRequestBuilder) {
+func NewManagedTenantsAuditEventsAuditEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, auditEventId *string)(*ManagedTenantsAuditEventsAuditEventItemRequestBuilder) {
     m := &ManagedTenantsAuditEventsAuditEventItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/auditEvents/{auditEvent%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewManagedTenantsAuditEventsAuditEventItemRequestBuilderInternal(pathParame
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if auditEventId != nil {
+        urlTplParams["auditEvent%2Did"] = *auditEventId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedTenantsAuditEventsAuditEventItemRequestBuilder instantiates a new AuditEventItemRequestBuilder and sets the default values.
 func NewManagedTenantsAuditEventsAuditEventItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsAuditEventsAuditEventItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewManagedTenantsAuditEventsAuditEventItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewManagedTenantsAuditEventsAuditEventItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property auditEvents for tenantRelationships
 func (m *ManagedTenantsAuditEventsAuditEventItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedTenantsAuditEventsAuditEventItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ManagedTenantsAuditEventsAuditEventItemRequestBuilder) ToPatchRequestIn
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

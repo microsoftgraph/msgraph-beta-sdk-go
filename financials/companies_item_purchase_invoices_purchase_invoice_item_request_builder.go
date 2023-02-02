@@ -40,7 +40,7 @@ type CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilderPatchRequestC
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewCompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilderInternal instantiates a new PurchaseInvoiceItemRequestBuilder and sets the default values.
-func NewCompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilder) {
+func NewCompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, purchaseInvoiceId *string)(*CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilder) {
     m := &CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/financials/companies/{company%2Did}/purchaseInvoices/{purchaseInvoice%2Did}{?%24select,%24expand}";
@@ -48,19 +48,22 @@ func NewCompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilderInternal(p
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if purchaseInvoiceId != nil {
+        urlTplParams["purchaseInvoice%2Did"] = *purchaseInvoiceId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilder instantiates a new PurchaseInvoiceItemRequestBuilder and sets the default values.
 func NewCompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Currency provides operations to manage the currency property of the microsoft.graph.purchaseInvoice entity.
 func (m *CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilder) Currency()(*CompaniesItemPurchaseInvoicesItemCurrencyRequestBuilder) {
-    return NewCompaniesItemPurchaseInvoicesItemCurrencyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemPurchaseInvoicesItemCurrencyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get purchaseInvoices from financials
 func (m *CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceable, error) {
@@ -81,6 +84,10 @@ func (m *CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilder) Get(ctx
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceable), nil
 }
+// MicrosoftGraphPost provides operations to call the post method.
+func (m *CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilder) MicrosoftGraphPost()(*CompaniesItemPurchaseInvoicesItemMicrosoftGraphPostPostRequestBuilder) {
+    return NewCompaniesItemPurchaseInvoicesItemMicrosoftGraphPostPostRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property purchaseInvoices in financials
 func (m *CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceable, requestConfiguration *CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -100,13 +107,9 @@ func (m *CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilder) Patch(c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceable), nil
 }
-// Post provides operations to call the post method.
-func (m *CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilder) Post()(*CompaniesItemPurchaseInvoicesItemPostRequestBuilder) {
-    return NewCompaniesItemPurchaseInvoicesItemPostRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // PurchaseInvoiceLines provides operations to manage the purchaseInvoiceLines property of the microsoft.graph.purchaseInvoice entity.
 func (m *CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilder) PurchaseInvoiceLines()(*CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilder) {
-    return NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PurchaseInvoiceLinesById provides operations to manage the purchaseInvoiceLines property of the microsoft.graph.purchaseInvoice entity.
 func (m *CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilder) PurchaseInvoiceLinesById(id string)(*CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesPurchaseInvoiceLineItemRequestBuilder) {
@@ -114,10 +117,8 @@ func (m *CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilder) Purchas
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["purchaseInvoiceLine%2Did"] = id
-    }
-    return NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesPurchaseInvoiceLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesPurchaseInvoiceLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToGetRequestInformation get purchaseInvoices from financials
 func (m *CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -142,7 +143,10 @@ func (m *CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilder) ToPatch
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -151,5 +155,5 @@ func (m *CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilder) ToPatch
 }
 // Vendor_escaped provides operations to manage the vendor property of the microsoft.graph.purchaseInvoice entity.
 func (m *CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilder) Vendor_escaped()(*CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) {
-    return NewCompaniesItemPurchaseInvoicesItemVendorRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemPurchaseInvoicesItemVendorRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

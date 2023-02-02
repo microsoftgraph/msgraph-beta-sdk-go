@@ -26,8 +26,8 @@ func NewCustodian()(*Custodian) {
     m := &Custodian{
         DataSourceContainer: *NewDataSourceContainer(),
     }
-    odataTypeValue := "#microsoft.graph.ediscovery.custodian";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.ediscovery.custodian"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateCustodianFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

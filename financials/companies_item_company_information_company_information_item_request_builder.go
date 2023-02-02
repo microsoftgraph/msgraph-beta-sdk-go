@@ -40,7 +40,7 @@ type CompaniesItemCompanyInformationCompanyInformationItemRequestBuilderPatchReq
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewCompaniesItemCompanyInformationCompanyInformationItemRequestBuilderInternal instantiates a new CompanyInformationItemRequestBuilder and sets the default values.
-func NewCompaniesItemCompanyInformationCompanyInformationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemCompanyInformationCompanyInformationItemRequestBuilder) {
+func NewCompaniesItemCompanyInformationCompanyInformationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, companyInformationId *string)(*CompaniesItemCompanyInformationCompanyInformationItemRequestBuilder) {
     m := &CompaniesItemCompanyInformationCompanyInformationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/financials/companies/{company%2Did}/companyInformation/{companyInformation%2Did}{?%24select,%24expand}";
@@ -48,15 +48,18 @@ func NewCompaniesItemCompanyInformationCompanyInformationItemRequestBuilderInter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if companyInformationId != nil {
+        urlTplParams["companyInformation%2Did"] = *companyInformationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemCompanyInformationCompanyInformationItemRequestBuilder instantiates a new CompanyInformationItemRequestBuilder and sets the default values.
 func NewCompaniesItemCompanyInformationCompanyInformationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemCompanyInformationCompanyInformationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCompaniesItemCompanyInformationCompanyInformationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCompaniesItemCompanyInformationCompanyInformationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get get companyInformation from financials
 func (m *CompaniesItemCompanyInformationCompanyInformationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemCompanyInformationCompanyInformationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CompanyInformationable, error) {
@@ -98,7 +101,7 @@ func (m *CompaniesItemCompanyInformationCompanyInformationItemRequestBuilder) Pa
 }
 // Picture provides operations to manage the media for the financials entity.
 func (m *CompaniesItemCompanyInformationCompanyInformationItemRequestBuilder) Picture()(*CompaniesItemCompanyInformationItemPictureRequestBuilder) {
-    return NewCompaniesItemCompanyInformationItemPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemCompanyInformationItemPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation get companyInformation from financials
 func (m *CompaniesItemCompanyInformationCompanyInformationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemCompanyInformationCompanyInformationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -123,7 +126,10 @@ func (m *CompaniesItemCompanyInformationCompanyInformationItemRequestBuilder) To
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

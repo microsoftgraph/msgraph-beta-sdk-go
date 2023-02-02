@@ -23,7 +23,7 @@ type PrivateLinkDetails struct {
 func NewPrivateLinkDetails()(*PrivateLinkDetails) {
     m := &PrivateLinkDetails{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePrivateLinkDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

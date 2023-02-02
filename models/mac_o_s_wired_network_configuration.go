@@ -33,8 +33,8 @@ func NewMacOSWiredNetworkConfiguration()(*MacOSWiredNetworkConfiguration) {
     m := &MacOSWiredNetworkConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.macOSWiredNetworkConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.macOSWiredNetworkConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMacOSWiredNetworkConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

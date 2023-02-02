@@ -22,7 +22,7 @@ type DeviceKey struct {
 func NewDeviceKey()(*DeviceKey) {
     m := &DeviceKey{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceKeyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

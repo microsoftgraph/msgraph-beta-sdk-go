@@ -21,8 +21,8 @@ func NewWin32LobAppFileSystemRequirement()(*Win32LobAppFileSystemRequirement) {
     m := &Win32LobAppFileSystemRequirement{
         Win32LobAppRequirement: *NewWin32LobAppRequirement(),
     }
-    odataTypeValue := "#microsoft.graph.win32LobAppFileSystemRequirement";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.win32LobAppFileSystemRequirement"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWin32LobAppFileSystemRequirementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

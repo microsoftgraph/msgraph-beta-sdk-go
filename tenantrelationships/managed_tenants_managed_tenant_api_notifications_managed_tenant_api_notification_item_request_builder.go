@@ -48,10 +48,10 @@ type ManagedTenantsManagedTenantApiNotificationsManagedTenantApiNotificationItem
 }
 // Alert provides operations to manage the alert property of the microsoft.graph.managedTenants.managedTenantApiNotification entity.
 func (m *ManagedTenantsManagedTenantApiNotificationsManagedTenantApiNotificationItemRequestBuilder) Alert()(*ManagedTenantsManagedTenantApiNotificationsItemAlertRequestBuilder) {
-    return NewManagedTenantsManagedTenantApiNotificationsItemAlertRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedTenantsManagedTenantApiNotificationsItemAlertRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewManagedTenantsManagedTenantApiNotificationsManagedTenantApiNotificationItemRequestBuilderInternal instantiates a new ManagedTenantApiNotificationItemRequestBuilder and sets the default values.
-func NewManagedTenantsManagedTenantApiNotificationsManagedTenantApiNotificationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagedTenantApiNotificationsManagedTenantApiNotificationItemRequestBuilder) {
+func NewManagedTenantsManagedTenantApiNotificationsManagedTenantApiNotificationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, managedTenantApiNotificationId *string)(*ManagedTenantsManagedTenantApiNotificationsManagedTenantApiNotificationItemRequestBuilder) {
     m := &ManagedTenantsManagedTenantApiNotificationsManagedTenantApiNotificationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/managedTenantApiNotifications/{managedTenantApiNotification%2Did}{?%24select,%24expand}";
@@ -59,15 +59,18 @@ func NewManagedTenantsManagedTenantApiNotificationsManagedTenantApiNotificationI
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if managedTenantApiNotificationId != nil {
+        urlTplParams["managedTenantApiNotification%2Did"] = *managedTenantApiNotificationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedTenantsManagedTenantApiNotificationsManagedTenantApiNotificationItemRequestBuilder instantiates a new ManagedTenantApiNotificationItemRequestBuilder and sets the default values.
 func NewManagedTenantsManagedTenantApiNotificationsManagedTenantApiNotificationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagedTenantApiNotificationsManagedTenantApiNotificationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewManagedTenantsManagedTenantApiNotificationsManagedTenantApiNotificationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewManagedTenantsManagedTenantApiNotificationsManagedTenantApiNotificationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property managedTenantApiNotifications for tenantRelationships
 func (m *ManagedTenantsManagedTenantApiNotificationsManagedTenantApiNotificationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedTenantsManagedTenantApiNotificationsManagedTenantApiNotificationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -158,7 +161,10 @@ func (m *ManagedTenantsManagedTenantApiNotificationsManagedTenantApiNotification
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

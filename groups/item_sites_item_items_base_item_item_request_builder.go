@@ -33,7 +33,7 @@ type ItemSitesItemItemsBaseItemItemRequestBuilderGetRequestConfiguration struct 
     QueryParameters *ItemSitesItemItemsBaseItemItemRequestBuilderGetQueryParameters
 }
 // NewItemSitesItemItemsBaseItemItemRequestBuilderInternal instantiates a new BaseItemItemRequestBuilder and sets the default values.
-func NewItemSitesItemItemsBaseItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemItemsBaseItemItemRequestBuilder) {
+func NewItemSitesItemItemsBaseItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, baseItemId *string)(*ItemSitesItemItemsBaseItemItemRequestBuilder) {
     m := &ItemSitesItemItemsBaseItemItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/items/{baseItem%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewItemSitesItemItemsBaseItemItemRequestBuilderInternal(pathParameters map[
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if baseItemId != nil {
+        urlTplParams["baseItem%2Did"] = *baseItemId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemItemsBaseItemItemRequestBuilder instantiates a new BaseItemItemRequestBuilder and sets the default values.
 func NewItemSitesItemItemsBaseItemItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemItemsBaseItemItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemSitesItemItemsBaseItemItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemSitesItemItemsBaseItemItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get used to address any item contained in this site. This collection cannot be enumerated.
 func (m *ItemSitesItemItemsBaseItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemItemsBaseItemItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseItemable, error) {

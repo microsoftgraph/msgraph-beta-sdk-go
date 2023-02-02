@@ -47,7 +47,7 @@ type ServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBu
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilderInternal instantiates a new ServiceHealthIssueItemRequestBuilder and sets the default values.
-func NewServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilder) {
+func NewServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, serviceHealthIssueId *string)(*ServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilder) {
     m := &ServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/admin/serviceAnnouncement/healthOverviews/{serviceHealth%2Did}/issues/{serviceHealthIssue%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemReques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if serviceHealthIssueId != nil {
+        urlTplParams["serviceHealthIssue%2Did"] = *serviceHealthIssueId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilder instantiates a new ServiceHealthIssueItemRequestBuilder and sets the default values.
 func NewServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property issues for admin
 func (m *ServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -100,9 +103,9 @@ func (m *ServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemReque
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceHealthIssueable), nil
 }
-// IncidentReport provides operations to call the incidentReport method.
-func (m *ServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilder) IncidentReport()(*ServiceAnnouncementHealthOverviewsItemIssuesItemIncidentReportRequestBuilder) {
-    return NewServiceAnnouncementHealthOverviewsItemIssuesItemIncidentReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphIncidentReport provides operations to call the incidentReport method.
+func (m *ServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilder) MicrosoftGraphIncidentReport()(*ServiceAnnouncementHealthOverviewsItemIssuesItemMicrosoftGraphIncidentReportIncidentReportRequestBuilder) {
+    return NewServiceAnnouncementHealthOverviewsItemIssuesItemMicrosoftGraphIncidentReportIncidentReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property issues in admin
 func (m *ServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceHealthIssueable, requestConfiguration *ServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceHealthIssueable, error) {
@@ -158,7 +161,10 @@ func (m *ServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemReque
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -14,7 +14,7 @@ type ItemConnectorsItemMemberOfConnectorGroupItemRequestBuilder struct {
     urlTemplate string
 }
 // NewItemConnectorsItemMemberOfConnectorGroupItemRequestBuilderInternal instantiates a new ConnectorGroupItemRequestBuilder and sets the default values.
-func NewItemConnectorsItemMemberOfConnectorGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConnectorsItemMemberOfConnectorGroupItemRequestBuilder) {
+func NewItemConnectorsItemMemberOfConnectorGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, connectorGroupId *string)(*ItemConnectorsItemMemberOfConnectorGroupItemRequestBuilder) {
     m := &ItemConnectorsItemMemberOfConnectorGroupItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectors/{connector%2Did}/memberOf/{connectorGroup%2Did}";
@@ -22,17 +22,20 @@ func NewItemConnectorsItemMemberOfConnectorGroupItemRequestBuilderInternal(pathP
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if connectorGroupId != nil {
+        urlTplParams["connectorGroup%2Did"] = *connectorGroupId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemConnectorsItemMemberOfConnectorGroupItemRequestBuilder instantiates a new ConnectorGroupItemRequestBuilder and sets the default values.
 func NewItemConnectorsItemMemberOfConnectorGroupItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConnectorsItemMemberOfConnectorGroupItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemConnectorsItemMemberOfConnectorGroupItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemConnectorsItemMemberOfConnectorGroupItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Ref provides operations to manage the collection of onPremisesPublishingProfile entities.
 func (m *ItemConnectorsItemMemberOfConnectorGroupItemRequestBuilder) Ref()(*ItemConnectorsItemMemberOfItemRefRequestBuilder) {
-    return NewItemConnectorsItemMemberOfItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemConnectorsItemMemberOfItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

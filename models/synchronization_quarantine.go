@@ -28,7 +28,7 @@ type SynchronizationQuarantine struct {
 func NewSynchronizationQuarantine()(*SynchronizationQuarantine) {
     m := &SynchronizationQuarantine{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSynchronizationQuarantineFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -29,7 +29,7 @@ type UserSecurityProfile struct {
     // The vendorInformation property
     vendorInformation SecurityVendorInformationable
 }
-// NewUserSecurityProfile instantiates a new userSecurityProfile and sets the default values.
+// NewUserSecurityProfile instantiates a new UserSecurityProfile and sets the default values.
 func NewUserSecurityProfile()(*UserSecurityProfile) {
     m := &UserSecurityProfile{
         Entity: *NewEntity(),

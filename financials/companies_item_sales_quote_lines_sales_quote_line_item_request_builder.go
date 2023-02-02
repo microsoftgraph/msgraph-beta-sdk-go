@@ -41,10 +41,10 @@ type CompaniesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilderPatchRequestCon
 }
 // Account provides operations to manage the account property of the microsoft.graph.salesQuoteLine entity.
 func (m *CompaniesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilder) Account()(*CompaniesItemSalesQuoteLinesItemAccountRequestBuilder) {
-    return NewCompaniesItemSalesQuoteLinesItemAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesQuoteLinesItemAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewCompaniesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilderInternal instantiates a new SalesQuoteLineItemRequestBuilder and sets the default values.
-func NewCompaniesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilder) {
+func NewCompaniesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, salesQuoteLineId *string)(*CompaniesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilder) {
     m := &CompaniesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesQuoteLines/{salesQuoteLine%2Did}{?%24select,%24expand}";
@@ -52,15 +52,18 @@ func NewCompaniesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilderInternal(pat
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if salesQuoteLineId != nil {
+        urlTplParams["salesQuoteLine%2Did"] = *salesQuoteLineId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilder instantiates a new SalesQuoteLineItemRequestBuilder and sets the default values.
 func NewCompaniesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCompaniesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCompaniesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get get salesQuoteLines from financials
 func (m *CompaniesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesQuoteLineable, error) {
@@ -83,7 +86,7 @@ func (m *CompaniesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilder) Get(ctx c
 }
 // Item provides operations to manage the item property of the microsoft.graph.salesQuoteLine entity.
 func (m *CompaniesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilder) Item()(*CompaniesItemSalesQuoteLinesItemItemRequestBuilder) {
-    return NewCompaniesItemSalesQuoteLinesItemItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesQuoteLinesItemItemRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property salesQuoteLines in financials
 func (m *CompaniesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesQuoteLineable, requestConfiguration *CompaniesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesQuoteLineable, error) {
@@ -127,7 +130,10 @@ func (m *CompaniesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilder) ToPatchRe
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

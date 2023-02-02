@@ -47,7 +47,7 @@ type AuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilderPatchR
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilderInternal instantiates a new PhoneAuthenticationMethodItemRequestBuilder and sets the default values.
-func NewAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) {
+func NewAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, phoneAuthenticationMethodId *string)(*AuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) {
     m := &AuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/authentication/phoneMethods/{phoneAuthenticationMethod%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilderInt
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if phoneAuthenticationMethodId != nil {
+        urlTplParams["phoneAuthenticationMethod%2Did"] = *phoneAuthenticationMethodId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder instantiates a new PhoneAuthenticationMethodItemRequestBuilder and sets the default values.
 func NewAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property phoneMethods for me
 func (m *AuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *AuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

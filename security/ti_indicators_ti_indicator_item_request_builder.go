@@ -47,7 +47,7 @@ type TiIndicatorsTiIndicatorItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewTiIndicatorsTiIndicatorItemRequestBuilderInternal instantiates a new TiIndicatorItemRequestBuilder and sets the default values.
-func NewTiIndicatorsTiIndicatorItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TiIndicatorsTiIndicatorItemRequestBuilder) {
+func NewTiIndicatorsTiIndicatorItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, tiIndicatorId *string)(*TiIndicatorsTiIndicatorItemRequestBuilder) {
     m := &TiIndicatorsTiIndicatorItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/security/tiIndicators/{tiIndicator%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewTiIndicatorsTiIndicatorItemRequestBuilderInternal(pathParameters map[str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if tiIndicatorId != nil {
+        urlTplParams["tiIndicator%2Did"] = *tiIndicatorId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTiIndicatorsTiIndicatorItemRequestBuilder instantiates a new TiIndicatorItemRequestBuilder and sets the default values.
 func NewTiIndicatorsTiIndicatorItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TiIndicatorsTiIndicatorItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewTiIndicatorsTiIndicatorItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewTiIndicatorsTiIndicatorItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property tiIndicators for security
 func (m *TiIndicatorsTiIndicatorItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TiIndicatorsTiIndicatorItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *TiIndicatorsTiIndicatorItemRequestBuilder) ToPatchRequestInformation(ct
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

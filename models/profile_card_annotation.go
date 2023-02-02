@@ -19,7 +19,7 @@ type ProfileCardAnnotation struct {
 func NewProfileCardAnnotation()(*ProfileCardAnnotation) {
     m := &ProfileCardAnnotation{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateProfileCardAnnotationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

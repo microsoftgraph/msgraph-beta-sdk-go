@@ -47,7 +47,7 @@ type ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationI
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilderInternal instantiates a new DeviceManagementCachedReportConfigurationItemRequestBuilder and sets the default values.
-func NewReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilder) {
+func NewReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, deviceManagementCachedReportConfigurationId *string)(*ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilder) {
     m := &ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/reports/cachedReportConfigurations/{deviceManagementCachedReportConfiguration%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurati
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if deviceManagementCachedReportConfigurationId != nil {
+        urlTplParams["deviceManagementCachedReportConfiguration%2Did"] = *deviceManagementCachedReportConfigurationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilder instantiates a new DeviceManagementCachedReportConfigurationItemRequestBuilder and sets the default values.
 func NewReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property cachedReportConfigurations for deviceManagement
 func (m *ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurat
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

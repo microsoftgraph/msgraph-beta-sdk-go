@@ -47,7 +47,7 @@ type EntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequ
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewEntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderInternal instantiates a new UnifiedRbacResourceNamespaceItemRequestBuilder and sets the default values.
-func NewEntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) {
+func NewEntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, unifiedRbacResourceNamespaceId *string)(*EntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) {
     m := &EntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/roleManagement/entitlementManagement/resourceNamespaces/{unifiedRbacResourceNamespace%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewEntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItemR
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if unifiedRbacResourceNamespaceId != nil {
+        urlTplParams["unifiedRbacResourceNamespace%2Did"] = *unifiedRbacResourceNamespaceId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder instantiates a new UnifiedRbacResourceNamespaceItemRequestBuilder and sets the default values.
 func NewEntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewEntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewEntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property resourceNamespaces for roleManagement
 func (m *EntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -100,9 +103,9 @@ func (m *EntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItem
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceable), nil
 }
-// ImportResourceActions provides operations to call the importResourceActions method.
-func (m *EntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) ImportResourceActions()(*EntitlementManagementResourceNamespacesItemImportResourceActionsRequestBuilder) {
-    return NewEntitlementManagementResourceNamespacesItemImportResourceActionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphImportResourceActions provides operations to call the importResourceActions method.
+func (m *EntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) MicrosoftGraphImportResourceActions()(*EntitlementManagementResourceNamespacesItemMicrosoftGraphImportResourceActionsImportResourceActionsRequestBuilder) {
+    return NewEntitlementManagementResourceNamespacesItemMicrosoftGraphImportResourceActionsImportResourceActionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property resourceNamespaces in roleManagement
 func (m *EntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceable, requestConfiguration *EntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceable, error) {
@@ -125,7 +128,7 @@ func (m *EntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItem
 }
 // ResourceActions provides operations to manage the resourceActions property of the microsoft.graph.unifiedRbacResourceNamespace entity.
 func (m *EntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) ResourceActions()(*EntitlementManagementResourceNamespacesItemResourceActionsRequestBuilder) {
-    return NewEntitlementManagementResourceNamespacesItemResourceActionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementResourceNamespacesItemResourceActionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ResourceActionsById provides operations to manage the resourceActions property of the microsoft.graph.unifiedRbacResourceNamespace entity.
 func (m *EntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) ResourceActionsById(id string)(*EntitlementManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder) {
@@ -133,10 +136,8 @@ func (m *EntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItem
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["unifiedRbacResourceAction%2Did"] = id
-    }
-    return NewEntitlementManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewEntitlementManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property resourceNamespaces for roleManagement
 func (m *EntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -173,7 +174,10 @@ func (m *EntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItem
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

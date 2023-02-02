@@ -27,8 +27,8 @@ func NewAospDeviceOwnerWiFiConfiguration()(*AospDeviceOwnerWiFiConfiguration) {
     m := &AospDeviceOwnerWiFiConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.aospDeviceOwnerWiFiConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.aospDeviceOwnerWiFiConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAospDeviceOwnerWiFiConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

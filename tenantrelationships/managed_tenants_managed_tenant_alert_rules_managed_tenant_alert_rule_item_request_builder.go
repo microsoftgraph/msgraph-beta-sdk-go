@@ -48,7 +48,7 @@ type ManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuild
 }
 // Alerts provides operations to manage the alerts property of the microsoft.graph.managedTenants.managedTenantAlertRule entity.
 func (m *ManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuilder) Alerts()(*ManagedTenantsManagedTenantAlertRulesItemAlertsRequestBuilder) {
-    return NewManagedTenantsManagedTenantAlertRulesItemAlertsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedTenantsManagedTenantAlertRulesItemAlertsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AlertsById provides operations to manage the alerts property of the microsoft.graph.managedTenants.managedTenantAlertRule entity.
 func (m *ManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuilder) AlertsById(id string)(*ManagedTenantsManagedTenantAlertRulesItemAlertsManagedTenantAlertItemRequestBuilder) {
@@ -56,13 +56,11 @@ func (m *ManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestB
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["managedTenantAlert%2Did"] = id
-    }
-    return NewManagedTenantsManagedTenantAlertRulesItemAlertsManagedTenantAlertItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewManagedTenantsManagedTenantAlertRulesItemAlertsManagedTenantAlertItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuilderInternal instantiates a new ManagedTenantAlertRuleItemRequestBuilder and sets the default values.
-func NewManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuilder) {
+func NewManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, managedTenantAlertRuleId *string)(*ManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuilder) {
     m := &ManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/managedTenantAlertRules/{managedTenantAlertRule%2Did}{?%24select,%24expand}";
@@ -70,15 +68,18 @@ func NewManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBu
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if managedTenantAlertRuleId != nil {
+        urlTplParams["managedTenantAlertRule%2Did"] = *managedTenantAlertRuleId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuilder instantiates a new ManagedTenantAlertRuleItemRequestBuilder and sets the default values.
 func NewManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property managedTenantAlertRules for tenantRelationships
 func (m *ManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -136,7 +137,7 @@ func (m *ManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestB
 }
 // RuleDefinition provides operations to manage the ruleDefinition property of the microsoft.graph.managedTenants.managedTenantAlertRule entity.
 func (m *ManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuilder) RuleDefinition()(*ManagedTenantsManagedTenantAlertRulesItemRuleDefinitionRequestBuilder) {
-    return NewManagedTenantsManagedTenantAlertRulesItemRuleDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedTenantsManagedTenantAlertRulesItemRuleDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property managedTenantAlertRules for tenantRelationships
 func (m *ManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -173,7 +174,10 @@ func (m *ManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestB
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

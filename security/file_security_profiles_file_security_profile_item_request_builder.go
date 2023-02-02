@@ -47,7 +47,7 @@ type FileSecurityProfilesFileSecurityProfileItemRequestBuilderPatchRequestConfig
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewFileSecurityProfilesFileSecurityProfileItemRequestBuilderInternal instantiates a new FileSecurityProfileItemRequestBuilder and sets the default values.
-func NewFileSecurityProfilesFileSecurityProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FileSecurityProfilesFileSecurityProfileItemRequestBuilder) {
+func NewFileSecurityProfilesFileSecurityProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, fileSecurityProfileId *string)(*FileSecurityProfilesFileSecurityProfileItemRequestBuilder) {
     m := &FileSecurityProfilesFileSecurityProfileItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/security/fileSecurityProfiles/{fileSecurityProfile%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewFileSecurityProfilesFileSecurityProfileItemRequestBuilderInternal(pathPa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if fileSecurityProfileId != nil {
+        urlTplParams["fileSecurityProfile%2Did"] = *fileSecurityProfileId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewFileSecurityProfilesFileSecurityProfileItemRequestBuilder instantiates a new FileSecurityProfileItemRequestBuilder and sets the default values.
 func NewFileSecurityProfilesFileSecurityProfileItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FileSecurityProfilesFileSecurityProfileItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewFileSecurityProfilesFileSecurityProfileItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewFileSecurityProfilesFileSecurityProfileItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property fileSecurityProfiles for security
 func (m *FileSecurityProfilesFileSecurityProfileItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *FileSecurityProfilesFileSecurityProfileItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *FileSecurityProfilesFileSecurityProfileItemRequestBuilder) ToPatchReque
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

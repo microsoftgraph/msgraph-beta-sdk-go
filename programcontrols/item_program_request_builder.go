@@ -55,8 +55,8 @@ func NewItemProgramRequestBuilderInternal(pathParameters map[string]string, requ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemProgramRequestBuilder instantiates a new ProgramRequestBuilder and sets the default values.
@@ -67,7 +67,7 @@ func NewItemProgramRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 }
 // Controls provides operations to manage the controls property of the microsoft.graph.program entity.
 func (m *ItemProgramRequestBuilder) Controls()(*ItemProgramControlsRequestBuilder) {
-    return NewItemProgramControlsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemProgramControlsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ControlsById provides operations to manage the controls property of the microsoft.graph.program entity.
 func (m *ItemProgramRequestBuilder) ControlsById(id string)(*ItemProgramControlsProgramControlItemRequestBuilder) {
@@ -75,10 +75,8 @@ func (m *ItemProgramRequestBuilder) ControlsById(id string)(*ItemProgramControls
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["programControl%2Did1"] = id
-    }
-    return NewItemProgramControlsProgramControlItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemProgramControlsProgramControlItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Delete delete navigation property program for programControls
 func (m *ItemProgramRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProgramRequestBuilderDeleteRequestConfiguration)(error) {
@@ -169,7 +167,10 @@ func (m *ItemProgramRequestBuilder) ToPatchRequestInformation(ctx context.Contex
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

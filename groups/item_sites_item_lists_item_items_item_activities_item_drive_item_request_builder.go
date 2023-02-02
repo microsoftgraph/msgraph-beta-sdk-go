@@ -41,8 +41,8 @@ func NewItemSitesItemListsItemItemsItemActivitiesItemDriveItemRequestBuilderInte
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemListsItemItemsItemActivitiesItemDriveItemRequestBuilder instantiates a new DriveItemRequestBuilder and sets the default values.
@@ -53,7 +53,7 @@ func NewItemSitesItemListsItemItemsItemActivitiesItemDriveItemRequestBuilder(raw
 }
 // Content provides operations to manage the media for the group entity.
 func (m *ItemSitesItemListsItemItemsItemActivitiesItemDriveItemRequestBuilder) Content()(*ItemSitesItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilder) {
-    return NewItemSitesItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get driveItem from groups
 func (m *ItemSitesItemListsItemItemsItemActivitiesItemDriveItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemListsItemItemsItemActivitiesItemDriveItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {

@@ -12,14 +12,14 @@ type OnPremisesPublishingSingleSignOn struct {
     kerberosSignOnSettings KerberosSignOnSettingsable
     // The OdataType property
     odataType *string
-    // The preferred single-sign on mode for the application. Possible values are: none, onPremisesKerberos, aadHeaderBased,pingHeaderBased.
+    // The preferred single-sign on mode for the application. Possible values are: none, onPremisesKerberos, aadHeaderBased,pingHeaderBased, oAuthToken.
     singleSignOnMode *SingleSignOnMode
 }
 // NewOnPremisesPublishingSingleSignOn instantiates a new onPremisesPublishingSingleSignOn and sets the default values.
 func NewOnPremisesPublishingSingleSignOn()(*OnPremisesPublishingSingleSignOn) {
     m := &OnPremisesPublishingSingleSignOn{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateOnPremisesPublishingSingleSignOnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -73,7 +73,7 @@ func (m *OnPremisesPublishingSingleSignOn) GetKerberosSignOnSettings()(KerberosS
 func (m *OnPremisesPublishingSingleSignOn) GetOdataType()(*string) {
     return m.odataType
 }
-// GetSingleSignOnMode gets the singleSignOnMode property value. The preferred single-sign on mode for the application. Possible values are: none, onPremisesKerberos, aadHeaderBased,pingHeaderBased.
+// GetSingleSignOnMode gets the singleSignOnMode property value. The preferred single-sign on mode for the application. Possible values are: none, onPremisesKerberos, aadHeaderBased,pingHeaderBased, oAuthToken.
 func (m *OnPremisesPublishingSingleSignOn) GetSingleSignOnMode()(*SingleSignOnMode) {
     return m.singleSignOnMode
 }
@@ -118,7 +118,7 @@ func (m *OnPremisesPublishingSingleSignOn) SetKerberosSignOnSettings(value Kerbe
 func (m *OnPremisesPublishingSingleSignOn) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetSingleSignOnMode sets the singleSignOnMode property value. The preferred single-sign on mode for the application. Possible values are: none, onPremisesKerberos, aadHeaderBased,pingHeaderBased.
+// SetSingleSignOnMode sets the singleSignOnMode property value. The preferred single-sign on mode for the application. Possible values are: none, onPremisesKerberos, aadHeaderBased,pingHeaderBased, oAuthToken.
 func (m *OnPremisesPublishingSingleSignOn) SetSingleSignOnMode(value *SingleSignOnMode)() {
     m.singleSignOnMode = value
 }

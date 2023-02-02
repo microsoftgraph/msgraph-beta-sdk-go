@@ -47,7 +47,7 @@ type RemoteActionAuditsRemoteActionAuditItemRequestBuilderPatchRequestConfigurat
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewRemoteActionAuditsRemoteActionAuditItemRequestBuilderInternal instantiates a new RemoteActionAuditItemRequestBuilder and sets the default values.
-func NewRemoteActionAuditsRemoteActionAuditItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RemoteActionAuditsRemoteActionAuditItemRequestBuilder) {
+func NewRemoteActionAuditsRemoteActionAuditItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, remoteActionAuditId *string)(*RemoteActionAuditsRemoteActionAuditItemRequestBuilder) {
     m := &RemoteActionAuditsRemoteActionAuditItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/remoteActionAudits/{remoteActionAudit%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewRemoteActionAuditsRemoteActionAuditItemRequestBuilderInternal(pathParame
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if remoteActionAuditId != nil {
+        urlTplParams["remoteActionAudit%2Did"] = *remoteActionAuditId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewRemoteActionAuditsRemoteActionAuditItemRequestBuilder instantiates a new RemoteActionAuditItemRequestBuilder and sets the default values.
 func NewRemoteActionAuditsRemoteActionAuditItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RemoteActionAuditsRemoteActionAuditItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewRemoteActionAuditsRemoteActionAuditItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewRemoteActionAuditsRemoteActionAuditItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property remoteActionAudits for deviceManagement
 func (m *RemoteActionAuditsRemoteActionAuditItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *RemoteActionAuditsRemoteActionAuditItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *RemoteActionAuditsRemoteActionAuditItemRequestBuilder) ToPatchRequestIn
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

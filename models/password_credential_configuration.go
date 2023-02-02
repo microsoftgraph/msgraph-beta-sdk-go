@@ -22,7 +22,7 @@ type PasswordCredentialConfiguration struct {
 func NewPasswordCredentialConfiguration()(*PasswordCredentialConfiguration) {
     m := &PasswordCredentialConfiguration{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePasswordCredentialConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

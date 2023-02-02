@@ -15,8 +15,8 @@ func NewRemoveContentFooterAction()(*RemoveContentFooterAction) {
     m := &RemoveContentFooterAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
     }
-    odataTypeValue := "#microsoft.graph.removeContentFooterAction";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.removeContentFooterAction"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateRemoveContentFooterActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

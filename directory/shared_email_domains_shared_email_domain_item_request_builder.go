@@ -47,7 +47,7 @@ type SharedEmailDomainsSharedEmailDomainItemRequestBuilderPatchRequestConfigurat
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewSharedEmailDomainsSharedEmailDomainItemRequestBuilderInternal instantiates a new SharedEmailDomainItemRequestBuilder and sets the default values.
-func NewSharedEmailDomainsSharedEmailDomainItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharedEmailDomainsSharedEmailDomainItemRequestBuilder) {
+func NewSharedEmailDomainsSharedEmailDomainItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, sharedEmailDomainId *string)(*SharedEmailDomainsSharedEmailDomainItemRequestBuilder) {
     m := &SharedEmailDomainsSharedEmailDomainItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/directory/sharedEmailDomains/{sharedEmailDomain%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewSharedEmailDomainsSharedEmailDomainItemRequestBuilderInternal(pathParame
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if sharedEmailDomainId != nil {
+        urlTplParams["sharedEmailDomain%2Did"] = *sharedEmailDomainId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewSharedEmailDomainsSharedEmailDomainItemRequestBuilder instantiates a new SharedEmailDomainItemRequestBuilder and sets the default values.
 func NewSharedEmailDomainsSharedEmailDomainItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharedEmailDomainsSharedEmailDomainItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewSharedEmailDomainsSharedEmailDomainItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewSharedEmailDomainsSharedEmailDomainItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property sharedEmailDomains for directory
 func (m *SharedEmailDomainsSharedEmailDomainItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *SharedEmailDomainsSharedEmailDomainItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *SharedEmailDomainsSharedEmailDomainItemRequestBuilder) ToPatchRequestIn
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
