@@ -41,8 +41,8 @@ func NewManagedTenantsManagedTenantEmailNotificationsItemAlertRequestBuilderInte
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedTenantsManagedTenantEmailNotificationsItemAlertRequestBuilder instantiates a new AlertRequestBuilder and sets the default values.

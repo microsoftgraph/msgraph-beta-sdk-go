@@ -17,7 +17,7 @@ type DeviceAndAppManagementData struct {
 func NewDeviceAndAppManagementData()(*DeviceAndAppManagementData) {
     m := &DeviceAndAppManagementData{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceAndAppManagementDataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

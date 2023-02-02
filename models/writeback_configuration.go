@@ -17,7 +17,7 @@ type WritebackConfiguration struct {
 func NewWritebackConfiguration()(*WritebackConfiguration) {
     m := &WritebackConfiguration{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWritebackConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

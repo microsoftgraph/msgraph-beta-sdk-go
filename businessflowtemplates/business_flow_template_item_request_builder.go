@@ -23,7 +23,7 @@ type BusinessFlowTemplateItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BusinessFlowTemplateItemRequestBuilderGetQueryParameters get entity from businessFlowTemplates by key (id)
+// BusinessFlowTemplateItemRequestBuilderGetQueryParameters get entity from businessFlowTemplates by key
 type BusinessFlowTemplateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -55,8 +55,8 @@ func NewBusinessFlowTemplateItemRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewBusinessFlowTemplateItemRequestBuilder instantiates a new BusinessFlowTemplateItemRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewBusinessFlowTemplateItemRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewBusinessFlowTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from businessFlowTemplates by key (id)
+// Delete delete entity from businessFlowTemplates
 func (m *BusinessFlowTemplateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BusinessFlowTemplateItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,7 +81,7 @@ func (m *BusinessFlowTemplateItemRequestBuilder) Delete(ctx context.Context, req
     }
     return nil
 }
-// Get get entity from businessFlowTemplates by key (id)
+// Get get entity from businessFlowTemplates by key
 func (m *BusinessFlowTemplateItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BusinessFlowTemplateItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowTemplateable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,7 +100,7 @@ func (m *BusinessFlowTemplateItemRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowTemplateable), nil
 }
-// Patch update entity in businessFlowTemplates by key (id)
+// Patch update entity in businessFlowTemplates
 func (m *BusinessFlowTemplateItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowTemplateable, requestConfiguration *BusinessFlowTemplateItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowTemplateable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +119,7 @@ func (m *BusinessFlowTemplateItemRequestBuilder) Patch(ctx context.Context, body
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowTemplateable), nil
 }
-// ToDeleteRequestInformation delete entity from businessFlowTemplates by key (id)
+// ToDeleteRequestInformation delete entity from businessFlowTemplates
 func (m *BusinessFlowTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BusinessFlowTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,7 +131,7 @@ func (m *BusinessFlowTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from businessFlowTemplates by key (id)
+// ToGetRequestInformation get entity from businessFlowTemplates by key
 func (m *BusinessFlowTemplateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessFlowTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,14 +147,17 @@ func (m *BusinessFlowTemplateItemRequestBuilder) ToGetRequestInformation(ctx con
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in businessFlowTemplates by key (id)
+// ToPatchRequestInformation update entity in businessFlowTemplates
 func (m *BusinessFlowTemplateItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowTemplateable, requestConfiguration *BusinessFlowTemplateItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -29,8 +29,8 @@ func NewNote()(*Note) {
     m := &Note{
         OutlookItem: *NewOutlookItem(),
     }
-    odataTypeValue := "#microsoft.graph.note";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.note"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateNoteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

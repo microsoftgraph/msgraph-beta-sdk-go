@@ -15,8 +15,8 @@ func NewProgramResource()(*ProgramResource) {
     m := &ProgramResource{
         Identity: *NewIdentity(),
     }
-    odataTypeValue := "#microsoft.graph.programResource";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.programResource"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateProgramResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

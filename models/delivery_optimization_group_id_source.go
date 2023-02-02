@@ -15,7 +15,7 @@ type DeliveryOptimizationGroupIdSource struct {
 func NewDeliveryOptimizationGroupIdSource()(*DeliveryOptimizationGroupIdSource) {
     m := &DeliveryOptimizationGroupIdSource{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeliveryOptimizationGroupIdSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

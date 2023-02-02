@@ -55,8 +55,8 @@ func NewCompaniesItemSalesQuotesItemSalesQuoteLinesItemItemRequestBuilderInterna
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemSalesQuotesItemSalesQuoteLinesItemItemRequestBuilder instantiates a new ItemRequestBuilder and sets the default values.
@@ -102,7 +102,7 @@ func (m *CompaniesItemSalesQuotesItemSalesQuoteLinesItemItemRequestBuilder) Get(
 }
 // ItemCategory provides operations to manage the itemCategory property of the microsoft.graph.item entity.
 func (m *CompaniesItemSalesQuotesItemSalesQuoteLinesItemItemRequestBuilder) ItemCategory()(*CompaniesItemSalesQuotesItemSalesQuoteLinesItemItemItemCategoryRequestBuilder) {
-    return NewCompaniesItemSalesQuotesItemSalesQuoteLinesItemItemItemCategoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesQuotesItemSalesQuoteLinesItemItemItemCategoryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property item in financials
 func (m *CompaniesItemSalesQuotesItemSalesQuoteLinesItemItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Itemable, requestConfiguration *CompaniesItemSalesQuotesItemSalesQuoteLinesItemItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Itemable, error) {
@@ -125,7 +125,7 @@ func (m *CompaniesItemSalesQuotesItemSalesQuoteLinesItemItemRequestBuilder) Patc
 }
 // Picture provides operations to manage the picture property of the microsoft.graph.item entity.
 func (m *CompaniesItemSalesQuotesItemSalesQuoteLinesItemItemRequestBuilder) Picture()(*CompaniesItemSalesQuotesItemSalesQuoteLinesItemItemPictureRequestBuilder) {
-    return NewCompaniesItemSalesQuotesItemSalesQuoteLinesItemItemPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesQuotesItemSalesQuoteLinesItemItemPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PictureById provides operations to manage the picture property of the microsoft.graph.item entity.
 func (m *CompaniesItemSalesQuotesItemSalesQuoteLinesItemItemRequestBuilder) PictureById(id string)(*CompaniesItemSalesQuotesItemSalesQuoteLinesItemItemPicturePictureItemRequestBuilder) {
@@ -136,7 +136,7 @@ func (m *CompaniesItemSalesQuotesItemSalesQuoteLinesItemItemRequestBuilder) Pict
     if id != "" {
         urlTplParams["picture%2Did"] = id
     }
-    return NewCompaniesItemSalesQuotesItemSalesQuoteLinesItemItemPicturePictureItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemSalesQuotesItemSalesQuoteLinesItemItemPicturePictureItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property item for financials
 func (m *CompaniesItemSalesQuotesItemSalesQuoteLinesItemItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemSalesQuotesItemSalesQuoteLinesItemItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -173,7 +173,10 @@ func (m *CompaniesItemSalesQuotesItemSalesQuoteLinesItemItemRequestBuilder) ToPa
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

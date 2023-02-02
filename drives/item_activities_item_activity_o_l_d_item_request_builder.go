@@ -55,8 +55,8 @@ func NewItemActivitiesItemActivityOLDItemRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemActivitiesItemActivityOLDItemRequestBuilder instantiates a new ItemActivityOLDItemRequestBuilder and sets the default values.
@@ -83,7 +83,7 @@ func (m *ItemActivitiesItemActivityOLDItemRequestBuilder) Delete(ctx context.Con
 }
 // DriveItem provides operations to manage the driveItem property of the microsoft.graph.itemActivityOLD entity.
 func (m *ItemActivitiesItemActivityOLDItemRequestBuilder) DriveItem()(*ItemActivitiesItemDriveItemRequestBuilder) {
-    return NewItemActivitiesItemDriveItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemActivitiesItemDriveItemRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the list of recent activities that took place under this drive.
 func (m *ItemActivitiesItemActivityOLDItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemActivitiesItemActivityOLDItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityOLDable, error) {
@@ -106,7 +106,7 @@ func (m *ItemActivitiesItemActivityOLDItemRequestBuilder) Get(ctx context.Contex
 }
 // ListItem provides operations to manage the listItem property of the microsoft.graph.itemActivityOLD entity.
 func (m *ItemActivitiesItemActivityOLDItemRequestBuilder) ListItem()(*ItemActivitiesItemListItemRequestBuilder) {
-    return NewItemActivitiesItemListItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemActivitiesItemListItemRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property activities in drives
 func (m *ItemActivitiesItemActivityOLDItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityOLDable, requestConfiguration *ItemActivitiesItemActivityOLDItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityOLDable, error) {
@@ -162,7 +162,10 @@ func (m *ItemActivitiesItemActivityOLDItemRequestBuilder) ToPatchRequestInformat
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

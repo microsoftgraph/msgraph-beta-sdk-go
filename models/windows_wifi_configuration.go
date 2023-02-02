@@ -39,8 +39,8 @@ func NewWindowsWifiConfiguration()(*WindowsWifiConfiguration) {
     m := &WindowsWifiConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.windowsWifiConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsWifiConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsWifiConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -15,7 +15,7 @@ type SubjectRightsRequestSiteLocation struct {
 func NewSubjectRightsRequestSiteLocation()(*SubjectRightsRequestSiteLocation) {
     m := &SubjectRightsRequestSiteLocation{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSubjectRightsRequestSiteLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

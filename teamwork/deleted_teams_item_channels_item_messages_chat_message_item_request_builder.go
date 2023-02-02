@@ -55,8 +55,8 @@ func NewDeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilderInterna
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder instantiates a new ChatMessageItemRequestBuilder and sets the default values.
@@ -102,7 +102,7 @@ func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) Get(
 }
 // HostedContents provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
 func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) HostedContents()(*DeletedTeamsItemChannelsItemMessagesItemHostedContentsRequestBuilder) {
-    return NewDeletedTeamsItemChannelsItemMessagesItemHostedContentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeletedTeamsItemChannelsItemMessagesItemHostedContentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // HostedContentsById provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
 func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) HostedContentsById(id string)(*DeletedTeamsItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilder) {
@@ -113,7 +113,23 @@ func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) Host
     if id != "" {
         urlTplParams["chatMessageHostedContent%2Did"] = id
     }
-    return NewDeletedTeamsItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeletedTeamsItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+// MicrosoftGraphSetReaction provides operations to call the setReaction method.
+func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) MicrosoftGraphSetReaction()(*DeletedTeamsItemChannelsItemMessagesItemMicrosoftGraphSetReactionSetReactionRequestBuilder) {
+    return NewDeletedTeamsItemChannelsItemMessagesItemMicrosoftGraphSetReactionSetReactionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphSoftDelete provides operations to call the softDelete method.
+func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) MicrosoftGraphSoftDelete()(*DeletedTeamsItemChannelsItemMessagesItemMicrosoftGraphSoftDeleteSoftDeleteRequestBuilder) {
+    return NewDeletedTeamsItemChannelsItemMessagesItemMicrosoftGraphSoftDeleteSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUndoSoftDelete provides operations to call the undoSoftDelete method.
+func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) MicrosoftGraphUndoSoftDelete()(*DeletedTeamsItemChannelsItemMessagesItemMicrosoftGraphUndoSoftDeleteUndoSoftDeleteRequestBuilder) {
+    return NewDeletedTeamsItemChannelsItemMessagesItemMicrosoftGraphUndoSoftDeleteUndoSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUnsetReaction provides operations to call the unsetReaction method.
+func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) MicrosoftGraphUnsetReaction()(*DeletedTeamsItemChannelsItemMessagesItemMicrosoftGraphUnsetReactionUnsetReactionRequestBuilder) {
+    return NewDeletedTeamsItemChannelsItemMessagesItemMicrosoftGraphUnsetReactionUnsetReactionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property messages in teamwork
 func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, requestConfiguration *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, error) {
@@ -136,7 +152,7 @@ func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) Patc
 }
 // Replies provides operations to manage the replies property of the microsoft.graph.chatMessage entity.
 func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) Replies()(*DeletedTeamsItemChannelsItemMessagesItemRepliesRequestBuilder) {
-    return NewDeletedTeamsItemChannelsItemMessagesItemRepliesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeletedTeamsItemChannelsItemMessagesItemRepliesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RepliesById provides operations to manage the replies property of the microsoft.graph.chatMessage entity.
 func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) RepliesById(id string)(*DeletedTeamsItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) {
@@ -147,15 +163,7 @@ func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) Repl
     if id != "" {
         urlTplParams["chatMessage%2Did1"] = id
     }
-    return NewDeletedTeamsItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// SetReaction provides operations to call the setReaction method.
-func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) SetReaction()(*DeletedTeamsItemChannelsItemMessagesItemSetReactionRequestBuilder) {
-    return NewDeletedTeamsItemChannelsItemMessagesItemSetReactionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// SoftDelete provides operations to call the softDelete method.
-func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) SoftDelete()(*DeletedTeamsItemChannelsItemMessagesItemSoftDeleteRequestBuilder) {
-    return NewDeletedTeamsItemChannelsItemMessagesItemSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeletedTeamsItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property messages for teamwork
 func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -192,18 +200,13 @@ func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) ToPa
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// UndoSoftDelete provides operations to call the undoSoftDelete method.
-func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) UndoSoftDelete()(*DeletedTeamsItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilder) {
-    return NewDeletedTeamsItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// UnsetReaction provides operations to call the unsetReaction method.
-func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) UnsetReaction()(*DeletedTeamsItemChannelsItemMessagesItemUnsetReactionRequestBuilder) {
-    return NewDeletedTeamsItemChannelsItemMessagesItemUnsetReactionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

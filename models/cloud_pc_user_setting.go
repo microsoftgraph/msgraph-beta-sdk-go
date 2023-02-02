@@ -23,7 +23,7 @@ type CloudPcUserSetting struct {
     // Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal.
     selfServiceEnabled *bool
 }
-// NewCloudPcUserSetting instantiates a new CloudPcUserSetting and sets the default values.
+// NewCloudPcUserSetting instantiates a new cloudPcUserSetting and sets the default values.
 func NewCloudPcUserSetting()(*CloudPcUserSetting) {
     m := &CloudPcUserSetting{
         Entity: *NewEntity(),

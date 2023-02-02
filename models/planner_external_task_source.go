@@ -27,8 +27,8 @@ func NewPlannerExternalTaskSource()(*PlannerExternalTaskSource) {
     m := &PlannerExternalTaskSource{
         PlannerTaskCreation: *NewPlannerTaskCreation(),
     }
-    odataTypeValue := "#microsoft.graph.plannerExternalTaskSource";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.plannerExternalTaskSource"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreatePlannerExternalTaskSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -27,7 +27,7 @@ type WebPartData struct {
 func NewWebPartData()(*WebPartData) {
     m := &WebPartData{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWebPartDataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

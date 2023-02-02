@@ -56,8 +56,8 @@ func NewContactFoldersRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewContactFoldersRequestBuilder instantiates a new ContactFoldersRequestBuilder and sets the default values.
@@ -68,11 +68,7 @@ func NewContactFoldersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 }
 // Count provides operations to count the resources in the collection.
 func (m *ContactFoldersRequestBuilder) Count()(*ContactFoldersCountRequestBuilder) {
-    return NewContactFoldersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Delta provides operations to call the delta method.
-func (m *ContactFoldersRequestBuilder) Delta()(*ContactFoldersDeltaRequestBuilder) {
-    return NewContactFoldersDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewContactFoldersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get all the contact folders in the signed-in user's mailbox.
 // [Find more info here]
@@ -95,6 +91,10 @@ func (m *ContactFoldersRequestBuilder) Get(ctx context.Context, requestConfigura
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderCollectionResponseable), nil
+}
+// MicrosoftGraphDelta provides operations to call the delta method.
+func (m *ContactFoldersRequestBuilder) MicrosoftGraphDelta()(*ContactFoldersMicrosoftGraphDeltaDeltaRequestBuilder) {
+    return NewContactFoldersMicrosoftGraphDeltaDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create a new contactFolder under the user's default contacts folder. You can also create a new contactfolder as a child of any specified contact folder.
 // [Find more info here]
@@ -141,7 +141,10 @@ func (m *ContactFoldersRequestBuilder) ToPostRequestInformation(ctx context.Cont
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

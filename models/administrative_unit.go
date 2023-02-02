@@ -27,8 +27,8 @@ func NewAdministrativeUnit()(*AdministrativeUnit) {
     m := &AdministrativeUnit{
         DirectoryObject: *NewDirectoryObject(),
     }
-    odataTypeValue := "#microsoft.graph.administrativeUnit";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.administrativeUnit"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAdministrativeUnitFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

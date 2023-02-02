@@ -25,7 +25,7 @@ type ManagementActionDeploymentStatus struct {
 func NewManagementActionDeploymentStatus()(*ManagementActionDeploymentStatus) {
     m := &ManagementActionDeploymentStatus{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateManagementActionDeploymentStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

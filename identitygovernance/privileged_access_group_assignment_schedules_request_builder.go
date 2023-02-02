@@ -60,8 +60,8 @@ func NewPrivilegedAccessGroupAssignmentSchedulesRequestBuilderInternal(pathParam
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPrivilegedAccessGroupAssignmentSchedulesRequestBuilder instantiates a new AssignmentSchedulesRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewPrivilegedAccessGroupAssignmentSchedulesRequestBuilder(rawUrl string, re
 }
 // Count provides operations to count the resources in the collection.
 func (m *PrivilegedAccessGroupAssignmentSchedulesRequestBuilder) Count()(*PrivilegedAccessGroupAssignmentSchedulesCountRequestBuilder) {
-    return NewPrivilegedAccessGroupAssignmentSchedulesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *PrivilegedAccessGroupAssignmentSchedulesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*PrivilegedAccessGroupAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilder) {
-    return NewPrivilegedAccessGroupAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
+    return NewPrivilegedAccessGroupAssignmentSchedulesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get assignmentSchedules from identityGovernance
 func (m *PrivilegedAccessGroupAssignmentSchedulesRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedAccessGroupAssignmentSchedulesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupAssignmentScheduleCollectionResponseable, error) {
@@ -96,6 +92,10 @@ func (m *PrivilegedAccessGroupAssignmentSchedulesRequestBuilder) Get(ctx context
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupAssignmentScheduleCollectionResponseable), nil
+}
+// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *PrivilegedAccessGroupAssignmentSchedulesRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*PrivilegedAccessGroupAssignmentSchedulesMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnRequestBuilder) {
+    return NewPrivilegedAccessGroupAssignmentSchedulesMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Post create new navigation property to assignmentSchedules for identityGovernance
 func (m *PrivilegedAccessGroupAssignmentSchedulesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupAssignmentScheduleable, requestConfiguration *PrivilegedAccessGroupAssignmentSchedulesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupAssignmentScheduleable, error) {
@@ -139,7 +139,10 @@ func (m *PrivilegedAccessGroupAssignmentSchedulesRequestBuilder) ToPostRequestIn
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

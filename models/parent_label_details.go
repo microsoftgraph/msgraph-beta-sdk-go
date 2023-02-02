@@ -31,7 +31,7 @@ type ParentLabelDetails struct {
 func NewParentLabelDetails()(*ParentLabelDetails) {
     m := &ParentLabelDetails{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateParentLabelDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

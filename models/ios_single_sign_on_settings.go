@@ -25,7 +25,7 @@ type IosSingleSignOnSettings struct {
 func NewIosSingleSignOnSettings()(*IosSingleSignOnSettings) {
     m := &IosSingleSignOnSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateIosSingleSignOnSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

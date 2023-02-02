@@ -33,8 +33,8 @@ func NewWindowsKioskConfiguration()(*WindowsKioskConfiguration) {
     m := &WindowsKioskConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.windowsKioskConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsKioskConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsKioskConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

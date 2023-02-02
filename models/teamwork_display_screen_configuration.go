@@ -25,7 +25,7 @@ type TeamworkDisplayScreenConfiguration struct {
 func NewTeamworkDisplayScreenConfiguration()(*TeamworkDisplayScreenConfiguration) {
     m := &TeamworkDisplayScreenConfiguration{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTeamworkDisplayScreenConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

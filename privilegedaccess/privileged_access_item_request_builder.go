@@ -23,7 +23,7 @@ type PrivilegedAccessItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PrivilegedAccessItemRequestBuilderGetQueryParameters get entity from privilegedAccess by key (id)
+// PrivilegedAccessItemRequestBuilderGetQueryParameters get entity from privilegedAccess by key
 type PrivilegedAccessItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -55,8 +55,8 @@ func NewPrivilegedAccessItemRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPrivilegedAccessItemRequestBuilder instantiates a new PrivilegedAccessItemRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewPrivilegedAccessItemRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedAccessItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from privilegedAccess by key (id)
+// Delete delete entity from privilegedAccess
 func (m *PrivilegedAccessItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *PrivilegedAccessItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,7 +81,7 @@ func (m *PrivilegedAccessItemRequestBuilder) Delete(ctx context.Context, request
     }
     return nil
 }
-// Get get entity from privilegedAccess by key (id)
+// Get get entity from privilegedAccess by key
 func (m *PrivilegedAccessItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedAccessItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,7 +100,7 @@ func (m *PrivilegedAccessItemRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessable), nil
 }
-// Patch update entity in privilegedAccess by key (id)
+// Patch update entity in privilegedAccess
 func (m *PrivilegedAccessItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessable, requestConfiguration *PrivilegedAccessItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +121,7 @@ func (m *PrivilegedAccessItemRequestBuilder) Patch(ctx context.Context, body ie2
 }
 // Resources provides operations to manage the resources property of the microsoft.graph.privilegedAccess entity.
 func (m *PrivilegedAccessItemRequestBuilder) Resources()(*ItemResourcesRequestBuilder) {
-    return NewItemResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ResourcesById provides operations to manage the resources property of the microsoft.graph.privilegedAccess entity.
 func (m *PrivilegedAccessItemRequestBuilder) ResourcesById(id string)(*ItemResourcesGovernanceResourceItemRequestBuilder) {
@@ -132,11 +132,11 @@ func (m *PrivilegedAccessItemRequestBuilder) ResourcesById(id string)(*ItemResou
     if id != "" {
         urlTplParams["governanceResource%2Did"] = id
     }
-    return NewItemResourcesGovernanceResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemResourcesGovernanceResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // RoleAssignmentRequests provides operations to manage the roleAssignmentRequests property of the microsoft.graph.privilegedAccess entity.
 func (m *PrivilegedAccessItemRequestBuilder) RoleAssignmentRequests()(*ItemRoleAssignmentRequestsRequestBuilder) {
-    return NewItemRoleAssignmentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRoleAssignmentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RoleAssignmentRequestsById provides operations to manage the roleAssignmentRequests property of the microsoft.graph.privilegedAccess entity.
 func (m *PrivilegedAccessItemRequestBuilder) RoleAssignmentRequestsById(id string)(*ItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilder) {
@@ -147,11 +147,11 @@ func (m *PrivilegedAccessItemRequestBuilder) RoleAssignmentRequestsById(id strin
     if id != "" {
         urlTplParams["governanceRoleAssignmentRequest%2Did"] = id
     }
-    return NewItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // RoleAssignments provides operations to manage the roleAssignments property of the microsoft.graph.privilegedAccess entity.
 func (m *PrivilegedAccessItemRequestBuilder) RoleAssignments()(*ItemRoleAssignmentsRequestBuilder) {
-    return NewItemRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RoleAssignmentsById provides operations to manage the roleAssignments property of the microsoft.graph.privilegedAccess entity.
 func (m *PrivilegedAccessItemRequestBuilder) RoleAssignmentsById(id string)(*ItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilder) {
@@ -162,11 +162,11 @@ func (m *PrivilegedAccessItemRequestBuilder) RoleAssignmentsById(id string)(*Ite
     if id != "" {
         urlTplParams["governanceRoleAssignment%2Did"] = id
     }
-    return NewItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // RoleDefinitions provides operations to manage the roleDefinitions property of the microsoft.graph.privilegedAccess entity.
 func (m *PrivilegedAccessItemRequestBuilder) RoleDefinitions()(*ItemRoleDefinitionsRequestBuilder) {
-    return NewItemRoleDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRoleDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RoleDefinitionsById provides operations to manage the roleDefinitions property of the microsoft.graph.privilegedAccess entity.
 func (m *PrivilegedAccessItemRequestBuilder) RoleDefinitionsById(id string)(*ItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilder) {
@@ -177,11 +177,11 @@ func (m *PrivilegedAccessItemRequestBuilder) RoleDefinitionsById(id string)(*Ite
     if id != "" {
         urlTplParams["governanceRoleDefinition%2Did"] = id
     }
-    return NewItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // RoleSettings provides operations to manage the roleSettings property of the microsoft.graph.privilegedAccess entity.
 func (m *PrivilegedAccessItemRequestBuilder) RoleSettings()(*ItemRoleSettingsRequestBuilder) {
-    return NewItemRoleSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRoleSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RoleSettingsById provides operations to manage the roleSettings property of the microsoft.graph.privilegedAccess entity.
 func (m *PrivilegedAccessItemRequestBuilder) RoleSettingsById(id string)(*ItemRoleSettingsGovernanceRoleSettingItemRequestBuilder) {
@@ -192,9 +192,9 @@ func (m *PrivilegedAccessItemRequestBuilder) RoleSettingsById(id string)(*ItemRo
     if id != "" {
         urlTplParams["governanceRoleSetting%2Did"] = id
     }
-    return NewItemRoleSettingsGovernanceRoleSettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemRoleSettingsGovernanceRoleSettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
-// ToDeleteRequestInformation delete entity from privilegedAccess by key (id)
+// ToDeleteRequestInformation delete entity from privilegedAccess
 func (m *PrivilegedAccessItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -206,7 +206,7 @@ func (m *PrivilegedAccessItemRequestBuilder) ToDeleteRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from privilegedAccess by key (id)
+// ToGetRequestInformation get entity from privilegedAccess by key
 func (m *PrivilegedAccessItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -222,14 +222,17 @@ func (m *PrivilegedAccessItemRequestBuilder) ToGetRequestInformation(ctx context
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in privilegedAccess by key (id)
+// ToPatchRequestInformation update entity in privilegedAccess
 func (m *PrivilegedAccessItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessable, requestConfiguration *PrivilegedAccessItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

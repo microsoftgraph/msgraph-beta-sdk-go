@@ -31,8 +31,8 @@ func NewAospDeviceOwnerCompliancePolicy()(*AospDeviceOwnerCompliancePolicy) {
     m := &AospDeviceOwnerCompliancePolicy{
         DeviceCompliancePolicy: *NewDeviceCompliancePolicy(),
     }
-    odataTypeValue := "#microsoft.graph.aospDeviceOwnerCompliancePolicy";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.aospDeviceOwnerCompliancePolicy"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAospDeviceOwnerCompliancePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

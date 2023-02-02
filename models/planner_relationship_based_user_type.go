@@ -15,8 +15,8 @@ func NewPlannerRelationshipBasedUserType()(*PlannerRelationshipBasedUserType) {
     m := &PlannerRelationshipBasedUserType{
         PlannerTaskConfigurationRoleBase: *NewPlannerTaskConfigurationRoleBase(),
     }
-    odataTypeValue := "#microsoft.graph.plannerRelationshipBasedUserType";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.plannerRelationshipBasedUserType"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreatePlannerRelationshipBasedUserTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

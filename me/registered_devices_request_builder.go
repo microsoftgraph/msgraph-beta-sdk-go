@@ -53,8 +53,8 @@ func NewRegisteredDevicesRequestBuilderInternal(pathParameters map[string]string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewRegisteredDevicesRequestBuilder instantiates a new RegisteredDevicesRequestBuilder and sets the default values.
@@ -65,15 +65,7 @@ func NewRegisteredDevicesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 }
 // Count provides operations to count the resources in the collection.
 func (m *RegisteredDevicesRequestBuilder) Count()(*RegisteredDevicesCountRequestBuilder) {
-    return NewRegisteredDevicesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Device casts the previous resource to device.
-func (m *RegisteredDevicesRequestBuilder) Device()(*RegisteredDevicesDeviceRequestBuilder) {
-    return NewRegisteredDevicesDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Endpoint casts the previous resource to endpoint.
-func (m *RegisteredDevicesRequestBuilder) Endpoint()(*RegisteredDevicesEndpointRequestBuilder) {
-    return NewRegisteredDevicesEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewRegisteredDevicesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get devices that are registered for the user. Read-only. Nullable. Supports $expand.
 // [Find more info here]
@@ -96,6 +88,14 @@ func (m *RegisteredDevicesRequestBuilder) Get(ctx context.Context, requestConfig
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
+}
+// MicrosoftGraphDevice casts the previous resource to device.
+func (m *RegisteredDevicesRequestBuilder) MicrosoftGraphDevice()(*RegisteredDevicesMicrosoftGraphDeviceDeviceRequestBuilder) {
+    return NewRegisteredDevicesMicrosoftGraphDeviceDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphEndpoint casts the previous resource to endpoint.
+func (m *RegisteredDevicesRequestBuilder) MicrosoftGraphEndpoint()(*RegisteredDevicesMicrosoftGraphEndpointEndpointRequestBuilder) {
+    return NewRegisteredDevicesMicrosoftGraphEndpointEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation devices that are registered for the user. Read-only. Nullable. Supports $expand.
 func (m *RegisteredDevicesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RegisteredDevicesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

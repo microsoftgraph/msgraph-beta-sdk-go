@@ -22,7 +22,7 @@ type ConfigurationManagerClientHealthState struct {
 func NewConfigurationManagerClientHealthState()(*ConfigurationManagerClientHealthState) {
     m := &ConfigurationManagerClientHealthState{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateConfigurationManagerClientHealthStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

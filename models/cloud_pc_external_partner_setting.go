@@ -19,7 +19,7 @@ type CloudPcExternalPartnerSetting struct {
     // Status details message.
     statusDetails *string
 }
-// NewCloudPcExternalPartnerSetting instantiates a new CloudPcExternalPartnerSetting and sets the default values.
+// NewCloudPcExternalPartnerSetting instantiates a new cloudPcExternalPartnerSetting and sets the default values.
 func NewCloudPcExternalPartnerSetting()(*CloudPcExternalPartnerSetting) {
     m := &CloudPcExternalPartnerSetting{
         Entity: *NewEntity(),

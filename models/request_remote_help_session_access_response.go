@@ -21,7 +21,7 @@ type RequestRemoteHelpSessionAccessResponse struct {
 func NewRequestRemoteHelpSessionAccessResponse()(*RequestRemoteHelpSessionAccessResponse) {
     m := &RequestRemoteHelpSessionAccessResponse{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateRequestRemoteHelpSessionAccessResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

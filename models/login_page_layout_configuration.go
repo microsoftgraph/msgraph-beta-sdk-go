@@ -21,7 +21,7 @@ type LoginPageLayoutConfiguration struct {
 func NewLoginPageLayoutConfiguration()(*LoginPageLayoutConfiguration) {
     m := &LoginPageLayoutConfiguration{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateLoginPageLayoutConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

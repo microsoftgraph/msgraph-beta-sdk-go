@@ -23,8 +23,8 @@ func NewPersonWebsite()(*PersonWebsite) {
     m := &PersonWebsite{
         ItemFacet: *NewItemFacet(),
     }
-    odataTypeValue := "#microsoft.graph.personWebsite";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.personWebsite"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreatePersonWebsiteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

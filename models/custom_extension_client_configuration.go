@@ -17,7 +17,7 @@ type CustomExtensionClientConfiguration struct {
 func NewCustomExtensionClientConfiguration()(*CustomExtensionClientConfiguration) {
     m := &CustomExtensionClientConfiguration{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCustomExtensionClientConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

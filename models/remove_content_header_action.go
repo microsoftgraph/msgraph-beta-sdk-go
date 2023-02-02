@@ -15,8 +15,8 @@ func NewRemoveContentHeaderAction()(*RemoveContentHeaderAction) {
     m := &RemoveContentHeaderAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
     }
-    odataTypeValue := "#microsoft.graph.removeContentHeaderAction";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.removeContentHeaderAction"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateRemoveContentHeaderActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -19,7 +19,7 @@ type ResponsiblePolicy struct {
 func NewResponsiblePolicy()(*ResponsiblePolicy) {
     m := &ResponsiblePolicy{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateResponsiblePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

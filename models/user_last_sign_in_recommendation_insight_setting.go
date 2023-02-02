@@ -17,8 +17,8 @@ func NewUserLastSignInRecommendationInsightSetting()(*UserLastSignInRecommendati
     m := &UserLastSignInRecommendationInsightSetting{
         AccessReviewRecommendationInsightSetting: *NewAccessReviewRecommendationInsightSetting(),
     }
-    odataTypeValue := "#microsoft.graph.userLastSignInRecommendationInsightSetting";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.userLastSignInRecommendationInsightSetting"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateUserLastSignInRecommendationInsightSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

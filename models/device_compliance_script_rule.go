@@ -27,7 +27,7 @@ type DeviceComplianceScriptRule struct {
 func NewDeviceComplianceScriptRule()(*DeviceComplianceScriptRule) {
     m := &DeviceComplianceScriptRule{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceComplianceScriptRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

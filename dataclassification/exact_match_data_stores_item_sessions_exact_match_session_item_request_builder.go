@@ -46,14 +46,6 @@ type ExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilderPatchReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Cancel provides operations to call the cancel method.
-func (m *ExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilder) Cancel()(*ExactMatchDataStoresItemSessionsItemCancelRequestBuilder) {
-    return NewExactMatchDataStoresItemSessionsItemCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Commit provides operations to call the commit method.
-func (m *ExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilder) Commit()(*ExactMatchDataStoresItemSessionsItemCommitRequestBuilder) {
-    return NewExactMatchDataStoresItemSessionsItemCommitRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilderInternal instantiates a new ExactMatchSessionItemRequestBuilder and sets the default values.
 func NewExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilder) {
     m := &ExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilder{
@@ -63,8 +55,8 @@ func NewExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilderInter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilder instantiates a new ExactMatchSessionItemRequestBuilder and sets the default values.
@@ -108,6 +100,18 @@ func (m *ExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilder) Ge
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchSessionable), nil
 }
+// MicrosoftGraphCancel provides operations to call the cancel method.
+func (m *ExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilder) MicrosoftGraphCancel()(*ExactMatchDataStoresItemSessionsItemMicrosoftGraphCancelCancelRequestBuilder) {
+    return NewExactMatchDataStoresItemSessionsItemMicrosoftGraphCancelCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphCommit provides operations to call the commit method.
+func (m *ExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilder) MicrosoftGraphCommit()(*ExactMatchDataStoresItemSessionsItemMicrosoftGraphCommitCommitRequestBuilder) {
+    return NewExactMatchDataStoresItemSessionsItemMicrosoftGraphCommitCommitRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRenew provides operations to call the renew method.
+func (m *ExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilder) MicrosoftGraphRenew()(*ExactMatchDataStoresItemSessionsItemMicrosoftGraphRenewRenewRequestBuilder) {
+    return NewExactMatchDataStoresItemSessionsItemMicrosoftGraphRenewRenewRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property sessions in dataClassification
 func (m *ExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchSessionable, requestConfiguration *ExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchSessionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -126,10 +130,6 @@ func (m *ExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilder) Pa
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchSessionable), nil
-}
-// Renew provides operations to call the renew method.
-func (m *ExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilder) Renew()(*ExactMatchDataStoresItemSessionsItemRenewRequestBuilder) {
-    return NewExactMatchDataStoresItemSessionsItemRenewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property sessions for dataClassification
 func (m *ExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -166,7 +166,10 @@ func (m *ExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilder) To
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -175,5 +178,5 @@ func (m *ExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilder) To
 }
 // UploadAgent provides operations to manage the uploadAgent property of the microsoft.graph.exactMatchSession entity.
 func (m *ExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilder) UploadAgent()(*ExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilder) {
-    return NewExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

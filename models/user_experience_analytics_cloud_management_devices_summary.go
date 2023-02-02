@@ -21,7 +21,7 @@ type UserExperienceAnalyticsCloudManagementDevicesSummary struct {
 func NewUserExperienceAnalyticsCloudManagementDevicesSummary()(*UserExperienceAnalyticsCloudManagementDevicesSummary) {
     m := &UserExperienceAnalyticsCloudManagementDevicesSummary{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateUserExperienceAnalyticsCloudManagementDevicesSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

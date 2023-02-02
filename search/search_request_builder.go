@@ -41,7 +41,7 @@ type SearchRequestBuilderPatchRequestConfiguration struct {
 }
 // Acronyms provides operations to manage the acronyms property of the microsoft.graph.searchEntity entity.
 func (m *SearchRequestBuilder) Acronyms()(*AcronymsRequestBuilder) {
-    return NewAcronymsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAcronymsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AcronymsById provides operations to manage the acronyms property of the microsoft.graph.searchEntity entity.
 func (m *SearchRequestBuilder) AcronymsById(id string)(*AcronymsAcronymItemRequestBuilder) {
@@ -52,11 +52,11 @@ func (m *SearchRequestBuilder) AcronymsById(id string)(*AcronymsAcronymItemReque
     if id != "" {
         urlTplParams["acronym%2Did"] = id
     }
-    return NewAcronymsAcronymItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAcronymsAcronymItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Bookmarks provides operations to manage the bookmarks property of the microsoft.graph.searchEntity entity.
 func (m *SearchRequestBuilder) Bookmarks()(*BookmarksRequestBuilder) {
-    return NewBookmarksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewBookmarksRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // BookmarksById provides operations to manage the bookmarks property of the microsoft.graph.searchEntity entity.
 func (m *SearchRequestBuilder) BookmarksById(id string)(*BookmarksBookmarkItemRequestBuilder) {
@@ -67,7 +67,7 @@ func (m *SearchRequestBuilder) BookmarksById(id string)(*BookmarksBookmarkItemRe
     if id != "" {
         urlTplParams["bookmark%2Did"] = id
     }
-    return NewBookmarksBookmarkItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewBookmarksBookmarkItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewSearchRequestBuilderInternal instantiates a new SearchRequestBuilder and sets the default values.
 func NewSearchRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SearchRequestBuilder) {
@@ -78,8 +78,8 @@ func NewSearchRequestBuilderInternal(pathParameters map[string]string, requestAd
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewSearchRequestBuilder instantiates a new SearchRequestBuilder and sets the default values.
@@ -107,6 +107,10 @@ func (m *SearchRequestBuilder) Get(ctx context.Context, requestConfiguration *Se
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SearchEntityable), nil
 }
+// MicrosoftGraphQuery provides operations to call the query method.
+func (m *SearchRequestBuilder) MicrosoftGraphQuery()(*MicrosoftGraphQueryQueryRequestBuilder) {
+    return NewMicrosoftGraphQueryQueryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update search
 func (m *SearchRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SearchEntityable, requestConfiguration *SearchRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SearchEntityable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -128,7 +132,7 @@ func (m *SearchRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba
 }
 // Qnas provides operations to manage the qnas property of the microsoft.graph.searchEntity entity.
 func (m *SearchRequestBuilder) Qnas()(*QnasRequestBuilder) {
-    return NewQnasRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewQnasRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // QnasById provides operations to manage the qnas property of the microsoft.graph.searchEntity entity.
 func (m *SearchRequestBuilder) QnasById(id string)(*QnasQnaItemRequestBuilder) {
@@ -139,11 +143,7 @@ func (m *SearchRequestBuilder) QnasById(id string)(*QnasQnaItemRequestBuilder) {
     if id != "" {
         urlTplParams["qna%2Did"] = id
     }
-    return NewQnasQnaItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// Query provides operations to call the query method.
-func (m *SearchRequestBuilder) Query()(*QueryRequestBuilder) {
-    return NewQueryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewQnasQnaItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToGetRequestInformation get search
 func (m *SearchRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SearchRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -168,7 +168,10 @@ func (m *SearchRequestBuilder) ToPatchRequestInformation(ctx context.Context, bo
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

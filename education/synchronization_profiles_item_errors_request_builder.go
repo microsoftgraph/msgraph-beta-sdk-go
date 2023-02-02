@@ -60,8 +60,8 @@ func NewSynchronizationProfilesItemErrorsRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewSynchronizationProfilesItemErrorsRequestBuilder instantiates a new ErrorsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewSynchronizationProfilesItemErrorsRequestBuilder(rawUrl string, requestAd
 }
 // Count provides operations to count the resources in the collection.
 func (m *SynchronizationProfilesItemErrorsRequestBuilder) Count()(*SynchronizationProfilesItemErrorsCountRequestBuilder) {
-    return NewSynchronizationProfilesItemErrorsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSynchronizationProfilesItemErrorsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant.
 // [Find more info here]
@@ -138,7 +138,10 @@ func (m *SynchronizationProfilesItemErrorsRequestBuilder) ToPostRequestInformati
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

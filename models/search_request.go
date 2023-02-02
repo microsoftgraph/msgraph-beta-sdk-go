@@ -49,7 +49,7 @@ type SearchRequest struct {
 func NewSearchRequest()(*SearchRequest) {
     m := &SearchRequest{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSearchRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -285,7 +285,7 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
             for i, v := range val {
                 res[i] = *(v.(*string))
             }
-            m.SetStored_fields(res)
+            m.SetStoredFields(res)
         }
         return nil
     }
@@ -341,8 +341,8 @@ func (m *SearchRequest) GetSize()(*int32) {
 func (m *SearchRequest) GetSortProperties()([]SortPropertyable) {
     return m.sortProperties
 }
-// GetStored_fields gets the stored_fields property value. The stored_fields property
-func (m *SearchRequest) GetStored_fields()([]string) {
+// GetStoredFields gets the stored_fields property value. The stored_fields property
+func (m *SearchRequest) GetStoredFields()([]string) {
     return m.stored_fields
 }
 // GetTrimDuplicates gets the trimDuplicates property value. Indicates whether to trim away the duplicate SharePoint files from search results. Default value is false. Optional.
@@ -459,8 +459,8 @@ func (m *SearchRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
-    if m.GetStored_fields() != nil {
-        err := writer.WriteCollectionOfStringValues("stored_fields", m.GetStored_fields())
+    if m.GetStoredFields() != nil {
+        err := writer.WriteCollectionOfStringValues("stored_fields", m.GetStoredFields())
         if err != nil {
             return err
         }
@@ -547,8 +547,8 @@ func (m *SearchRequest) SetSize(value *int32)() {
 func (m *SearchRequest) SetSortProperties(value []SortPropertyable)() {
     m.sortProperties = value
 }
-// SetStored_fields sets the stored_fields property value. The stored_fields property
-func (m *SearchRequest) SetStored_fields(value []string)() {
+// SetStoredFields sets the stored_fields property value. The stored_fields property
+func (m *SearchRequest) SetStoredFields(value []string)() {
     m.stored_fields = value
 }
 // SetTrimDuplicates sets the trimDuplicates property value. Indicates whether to trim away the duplicate SharePoint files from search results. Default value is false. Optional.

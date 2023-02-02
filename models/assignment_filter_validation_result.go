@@ -17,7 +17,7 @@ type AssignmentFilterValidationResult struct {
 func NewAssignmentFilterValidationResult()(*AssignmentFilterValidationResult) {
     m := &AssignmentFilterValidationResult{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAssignmentFilterValidationResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

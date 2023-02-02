@@ -60,8 +60,8 @@ func NewItemGroupLifecyclePoliciesRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemGroupLifecyclePoliciesRequestBuilder instantiates a new GroupLifecyclePoliciesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemGroupLifecyclePoliciesRequestBuilder(rawUrl string, requestAdapter i
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemGroupLifecyclePoliciesRequestBuilder) Count()(*ItemGroupLifecyclePoliciesCountRequestBuilder) {
-    return NewItemGroupLifecyclePoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemGroupLifecyclePoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieves a list of groupLifecyclePolicy objects to which a group belongs.
 // [Find more info here]
@@ -96,6 +96,10 @@ func (m *ItemGroupLifecyclePoliciesRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupLifecyclePolicyCollectionResponseable), nil
 }
+// MicrosoftGraphRenewGroup provides operations to call the renewGroup method.
+func (m *ItemGroupLifecyclePoliciesRequestBuilder) MicrosoftGraphRenewGroup()(*ItemGroupLifecyclePoliciesMicrosoftGraphRenewGroupRenewGroupRequestBuilder) {
+    return NewItemGroupLifecyclePoliciesMicrosoftGraphRenewGroupRenewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Post create new navigation property to groupLifecyclePolicies for groups
 func (m *ItemGroupLifecyclePoliciesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupLifecyclePolicyable, requestConfiguration *ItemGroupLifecyclePoliciesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupLifecyclePolicyable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
@@ -114,10 +118,6 @@ func (m *ItemGroupLifecyclePoliciesRequestBuilder) Post(ctx context.Context, bod
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupLifecyclePolicyable), nil
-}
-// RenewGroup provides operations to call the renewGroup method.
-func (m *ItemGroupLifecyclePoliciesRequestBuilder) RenewGroup()(*ItemGroupLifecyclePoliciesRenewGroupRequestBuilder) {
-    return NewItemGroupLifecyclePoliciesRenewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToGetRequestInformation retrieves a list of groupLifecyclePolicy objects to which a group belongs.
 func (m *ItemGroupLifecyclePoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGroupLifecyclePoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -142,7 +142,10 @@ func (m *ItemGroupLifecyclePoliciesRequestBuilder) ToPostRequestInformation(ctx 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

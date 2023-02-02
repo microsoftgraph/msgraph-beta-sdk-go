@@ -41,8 +41,8 @@ func NewDepOnboardingSettingsItemDefaultMacOsEnrollmentProfileRequestBuilderInte
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDepOnboardingSettingsItemDefaultMacOsEnrollmentProfileRequestBuilder instantiates a new DefaultMacOsEnrollmentProfileRequestBuilder and sets the default values.

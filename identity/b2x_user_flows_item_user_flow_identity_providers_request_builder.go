@@ -53,8 +53,8 @@ func NewB2xUserFlowsItemUserFlowIdentityProvidersRequestBuilderInternal(pathPara
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewB2xUserFlowsItemUserFlowIdentityProvidersRequestBuilder instantiates a new UserFlowIdentityProvidersRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewB2xUserFlowsItemUserFlowIdentityProvidersRequestBuilder(rawUrl string, r
 }
 // Count provides operations to count the resources in the collection.
 func (m *B2xUserFlowsItemUserFlowIdentityProvidersRequestBuilder) Count()(*B2xUserFlowsItemUserFlowIdentityProvidersCountRequestBuilder) {
-    return NewB2xUserFlowsItemUserFlowIdentityProvidersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewB2xUserFlowsItemUserFlowIdentityProvidersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get userFlowIdentityProviders from identity
 func (m *B2xUserFlowsItemUserFlowIdentityProvidersRequestBuilder) Get(ctx context.Context, requestConfiguration *B2xUserFlowsItemUserFlowIdentityProvidersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderBaseCollectionResponseable, error) {
@@ -88,7 +88,7 @@ func (m *B2xUserFlowsItemUserFlowIdentityProvidersRequestBuilder) Get(ctx contex
 }
 // Ref provides operations to manage the collection of identityContainer entities.
 func (m *B2xUserFlowsItemUserFlowIdentityProvidersRequestBuilder) Ref()(*B2xUserFlowsItemUserFlowIdentityProvidersRefRequestBuilder) {
-    return NewB2xUserFlowsItemUserFlowIdentityProvidersRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewB2xUserFlowsItemUserFlowIdentityProvidersRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation get userFlowIdentityProviders from identity
 func (m *B2xUserFlowsItemUserFlowIdentityProvidersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2xUserFlowsItemUserFlowIdentityProvidersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

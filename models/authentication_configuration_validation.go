@@ -19,7 +19,7 @@ type AuthenticationConfigurationValidation struct {
 func NewAuthenticationConfigurationValidation()(*AuthenticationConfigurationValidation) {
     m := &AuthenticationConfigurationValidation{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAuthenticationConfigurationValidationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

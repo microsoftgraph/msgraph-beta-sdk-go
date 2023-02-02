@@ -29,7 +29,7 @@ type AttributeMapping struct {
 func NewAttributeMapping()(*AttributeMapping) {
     m := &AttributeMapping{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAttributeMappingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

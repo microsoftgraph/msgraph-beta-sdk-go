@@ -27,7 +27,7 @@ type ComanagementEligibleDevicesSummary struct {
 func NewComanagementEligibleDevicesSummary()(*ComanagementEligibleDevicesSummary) {
     m := &ComanagementEligibleDevicesSummary{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateComanagementEligibleDevicesSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

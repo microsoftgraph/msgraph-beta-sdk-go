@@ -23,8 +23,8 @@ func NewPersonResponsibility()(*PersonResponsibility) {
     m := &PersonResponsibility{
         ItemFacet: *NewItemFacet(),
     }
-    odataTypeValue := "#microsoft.graph.personResponsibility";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.personResponsibility"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreatePersonResponsibilityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

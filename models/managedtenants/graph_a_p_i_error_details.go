@@ -19,7 +19,7 @@ type GraphAPIErrorDetails struct {
 func NewGraphAPIErrorDetails()(*GraphAPIErrorDetails) {
     m := &GraphAPIErrorDetails{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateGraphAPIErrorDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

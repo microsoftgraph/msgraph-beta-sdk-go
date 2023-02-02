@@ -25,8 +25,8 @@ func NewAndroidManagedStoreAppConfiguration()(*AndroidManagedStoreAppConfigurati
     m := &AndroidManagedStoreAppConfiguration{
         ManagedDeviceMobileAppConfiguration: *NewManagedDeviceMobileAppConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.androidManagedStoreAppConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidManagedStoreAppConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidManagedStoreAppConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -15,7 +15,7 @@ type SubjectRightsRequestMailboxLocation struct {
 func NewSubjectRightsRequestMailboxLocation()(*SubjectRightsRequestMailboxLocation) {
     m := &SubjectRightsRequestMailboxLocation{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSubjectRightsRequestMailboxLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

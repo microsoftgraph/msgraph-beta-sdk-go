@@ -44,7 +44,7 @@ type Organization struct {
     onPremisesLastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; Nullable. null if this object has never been synced from an on-premises directory (default).
     onPremisesSyncEnabled *bool
-    // The partnerTenantType property
+    // The type of partnership this tenant has with Microsoft. The possible values are: microsoftSupport, syndicatePartner, breadthPartner, breadthPartnerDelegatedAdmin, resellerPartnerDelegatedAdmin, valueAddedResellerPartnerDelegatedAdmin, unknownFutureValue. Nullable. For more information about the possible types, see partnerTenantType values.
     partnerTenantType *PartnerTenantType
     // Postal code of the address for the organization.
     postalCode *string
@@ -74,8 +74,8 @@ func NewOrganization()(*Organization) {
     m := &Organization{
         DirectoryObject: *NewDirectoryObject(),
     }
-    odataTypeValue := "#microsoft.graph.organization";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.organization"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateOrganizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -499,7 +499,7 @@ func (m *Organization) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7
 func (m *Organization) GetOnPremisesSyncEnabled()(*bool) {
     return m.onPremisesSyncEnabled
 }
-// GetPartnerTenantType gets the partnerTenantType property value. The partnerTenantType property
+// GetPartnerTenantType gets the partnerTenantType property value. The type of partnership this tenant has with Microsoft. The possible values are: microsoftSupport, syndicatePartner, breadthPartner, breadthPartnerDelegatedAdmin, resellerPartnerDelegatedAdmin, valueAddedResellerPartnerDelegatedAdmin, unknownFutureValue. Nullable. For more information about the possible types, see partnerTenantType values.
 func (m *Organization) GetPartnerTenantType()(*PartnerTenantType) {
     return m.partnerTenantType
 }
@@ -829,7 +829,7 @@ func (m *Organization) SetOnPremisesLastSyncDateTime(value *i336074805fc853987ab
 func (m *Organization) SetOnPremisesSyncEnabled(value *bool)() {
     m.onPremisesSyncEnabled = value
 }
-// SetPartnerTenantType sets the partnerTenantType property value. The partnerTenantType property
+// SetPartnerTenantType sets the partnerTenantType property value. The type of partnership this tenant has with Microsoft. The possible values are: microsoftSupport, syndicatePartner, breadthPartner, breadthPartnerDelegatedAdmin, resellerPartnerDelegatedAdmin, valueAddedResellerPartnerDelegatedAdmin, unknownFutureValue. Nullable. For more information about the possible types, see partnerTenantType values.
 func (m *Organization) SetPartnerTenantType(value *PartnerTenantType)() {
     m.partnerTenantType = value
 }

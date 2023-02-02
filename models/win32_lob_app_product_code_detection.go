@@ -19,8 +19,8 @@ func NewWin32LobAppProductCodeDetection()(*Win32LobAppProductCodeDetection) {
     m := &Win32LobAppProductCodeDetection{
         Win32LobAppDetection: *NewWin32LobAppDetection(),
     }
-    odataTypeValue := "#microsoft.graph.win32LobAppProductCodeDetection";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.win32LobAppProductCodeDetection"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWin32LobAppProductCodeDetectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

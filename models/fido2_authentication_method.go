@@ -16,8 +16,6 @@ type Fido2AuthenticationMethod struct {
     attestationLevel *AttestationLevel
     // The timestamp when this key was registered to the user.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The creationDateTime property
-    creationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The display name of the key as given by the user.
     displayName *string
     // The manufacturer-assigned model of the FIDO2 security key.
@@ -28,8 +26,8 @@ func NewFido2AuthenticationMethod()(*Fido2AuthenticationMethod) {
     m := &Fido2AuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),
     }
-    odataTypeValue := "#microsoft.graph.fido2AuthenticationMethod";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.fido2AuthenticationMethod"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateFido2AuthenticationMethodFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -51,10 +49,6 @@ func (m *Fido2AuthenticationMethod) GetAttestationLevel()(*AttestationLevel) {
 // GetCreatedDateTime gets the createdDateTime property value. The timestamp when this key was registered to the user.
 func (m *Fido2AuthenticationMethod) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.createdDateTime
-}
-// GetCreationDateTime gets the creationDateTime property value. The creationDateTime property
-func (m *Fido2AuthenticationMethod) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.creationDateTime
 }
 // GetDisplayName gets the displayName property value. The display name of the key as given by the user.
 func (m *Fido2AuthenticationMethod) GetDisplayName()(*string) {
@@ -104,16 +98,6 @@ func (m *Fido2AuthenticationMethod) GetFieldDeserializers()(map[string]func(i878
         }
         if val != nil {
             m.SetCreatedDateTime(val)
-        }
-        return nil
-    }
-    res["creationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCreationDateTime(val)
         }
         return nil
     }
@@ -175,12 +159,6 @@ func (m *Fido2AuthenticationMethod) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
-        err = writer.WriteTimeValue("creationDateTime", m.GetCreationDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
         if err != nil {
             return err
@@ -209,10 +187,6 @@ func (m *Fido2AuthenticationMethod) SetAttestationLevel(value *AttestationLevel)
 // SetCreatedDateTime sets the createdDateTime property value. The timestamp when this key was registered to the user.
 func (m *Fido2AuthenticationMethod) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
-}
-// SetCreationDateTime sets the creationDateTime property value. The creationDateTime property
-func (m *Fido2AuthenticationMethod) SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.creationDateTime = value
 }
 // SetDisplayName sets the displayName property value. The display name of the key as given by the user.
 func (m *Fido2AuthenticationMethod) SetDisplayName(value *string)() {

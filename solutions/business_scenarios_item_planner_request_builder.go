@@ -55,8 +55,8 @@ func NewBusinessScenariosItemPlannerRequestBuilderInternal(pathParameters map[st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewBusinessScenariosItemPlannerRequestBuilder instantiates a new PlannerRequestBuilder and sets the default values.
@@ -103,9 +103,9 @@ func (m *BusinessScenariosItemPlannerRequestBuilder) Get(ctx context.Context, re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioPlannerable), nil
 }
-// GetPlan provides operations to call the getPlan method.
-func (m *BusinessScenariosItemPlannerRequestBuilder) GetPlan()(*BusinessScenariosItemPlannerGetPlanRequestBuilder) {
-    return NewBusinessScenariosItemPlannerGetPlanRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetPlan provides operations to call the getPlan method.
+func (m *BusinessScenariosItemPlannerRequestBuilder) MicrosoftGraphGetPlan()(*BusinessScenariosItemPlannerMicrosoftGraphGetPlanGetPlanRequestBuilder) {
+    return NewBusinessScenariosItemPlannerMicrosoftGraphGetPlanGetPlanRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property planner in solutions
 func (m *BusinessScenariosItemPlannerRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioPlannerable, requestConfiguration *BusinessScenariosItemPlannerRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioPlannerable, error) {
@@ -128,15 +128,15 @@ func (m *BusinessScenariosItemPlannerRequestBuilder) Patch(ctx context.Context, 
 }
 // PlanConfiguration provides operations to manage the planConfiguration property of the microsoft.graph.businessScenarioPlanner entity.
 func (m *BusinessScenariosItemPlannerRequestBuilder) PlanConfiguration()(*BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) {
-    return NewBusinessScenariosItemPlannerPlanConfigurationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewBusinessScenariosItemPlannerPlanConfigurationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TaskConfiguration provides operations to manage the taskConfiguration property of the microsoft.graph.businessScenarioPlanner entity.
 func (m *BusinessScenariosItemPlannerRequestBuilder) TaskConfiguration()(*BusinessScenariosItemPlannerTaskConfigurationRequestBuilder) {
-    return NewBusinessScenariosItemPlannerTaskConfigurationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewBusinessScenariosItemPlannerTaskConfigurationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Tasks provides operations to manage the tasks property of the microsoft.graph.businessScenarioPlanner entity.
 func (m *BusinessScenariosItemPlannerRequestBuilder) Tasks()(*BusinessScenariosItemPlannerTasksRequestBuilder) {
-    return NewBusinessScenariosItemPlannerTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewBusinessScenariosItemPlannerTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TasksById provides operations to manage the tasks property of the microsoft.graph.businessScenarioPlanner entity.
 func (m *BusinessScenariosItemPlannerRequestBuilder) TasksById(id string)(*BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder) {
@@ -147,7 +147,7 @@ func (m *BusinessScenariosItemPlannerRequestBuilder) TasksById(id string)(*Busin
     if id != "" {
         urlTplParams["businessScenarioTask%2Did"] = id
     }
-    return NewBusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewBusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property planner for solutions
 func (m *BusinessScenariosItemPlannerRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -184,7 +184,10 @@ func (m *BusinessScenariosItemPlannerRequestBuilder) ToPatchRequestInformation(c
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

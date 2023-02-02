@@ -14,7 +14,7 @@ type MessageRecipient struct {
     // The recipientEmail property
     recipientEmail *string
 }
-// NewMessageRecipient instantiates a new MessageRecipient and sets the default values.
+// NewMessageRecipient instantiates a new messageRecipient and sets the default values.
 func NewMessageRecipient()(*MessageRecipient) {
     m := &MessageRecipient{
         Entity: *NewEntity(),

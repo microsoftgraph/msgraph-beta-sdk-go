@@ -18,7 +18,7 @@ type PrintJob struct {
     createdBy UserIdentityable
     // The DateTimeOffset when the job was created. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The displayName property
+    // The name of the print job.
     displayName *string
     // The documents property
     documents []PrintDocumentable
@@ -66,7 +66,7 @@ func (m *PrintJob) GetCreatedBy()(UserIdentityable) {
 func (m *PrintJob) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.createdDateTime
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The name of the print job.
 func (m *PrintJob) GetDisplayName()(*string) {
     return m.displayName
 }
@@ -355,7 +355,7 @@ func (m *PrintJob) SetCreatedBy(value UserIdentityable)() {
 func (m *PrintJob) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The name of the print job.
 func (m *PrintJob) SetDisplayName(value *string)() {
     m.displayName = value
 }

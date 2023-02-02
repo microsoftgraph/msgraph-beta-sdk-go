@@ -12,13 +12,13 @@ type NoncustodialDataSource struct {
     // User source or SharePoint site data source as non-custodial data source.
     dataSource DataSourceable
 }
-// NewNoncustodialDataSource instantiates a new noncustodialDataSource and sets the default values.
+// NewNoncustodialDataSource instantiates a new NoncustodialDataSource and sets the default values.
 func NewNoncustodialDataSource()(*NoncustodialDataSource) {
     m := &NoncustodialDataSource{
         DataSourceContainer: *NewDataSourceContainer(),
     }
-    odataTypeValue := "#microsoft.graph.ediscovery.noncustodialDataSource";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.ediscovery.noncustodialDataSource"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateNoncustodialDataSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

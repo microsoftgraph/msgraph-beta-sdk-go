@@ -22,7 +22,7 @@ type CloudPcOnPremisesConnectionStatusDetails struct {
 func NewCloudPcOnPremisesConnectionStatusDetails()(*CloudPcOnPremisesConnectionStatusDetails) {
     m := &CloudPcOnPremisesConnectionStatusDetails{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCloudPcOnPremisesConnectionStatusDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -23,7 +23,7 @@ type AccessReviewRecurrenceSettings struct {
 func NewAccessReviewRecurrenceSettings()(*AccessReviewRecurrenceSettings) {
     m := &AccessReviewRecurrenceSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAccessReviewRecurrenceSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

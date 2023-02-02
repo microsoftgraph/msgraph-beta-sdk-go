@@ -55,8 +55,8 @@ func NewMobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilder
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilder instantiates a new MobilityManagementPolicyItemRequestBuilder and sets the default values.
@@ -102,7 +102,7 @@ func (m *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilde
 }
 // IncludedGroups provides operations to manage the includedGroups property of the microsoft.graph.mobilityManagementPolicy entity.
 func (m *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilder) IncludedGroups()(*MobileDeviceManagementPoliciesItemIncludedGroupsRequestBuilder) {
-    return NewMobileDeviceManagementPoliciesItemIncludedGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMobileDeviceManagementPoliciesItemIncludedGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // IncludedGroupsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.mobileDeviceManagementPolicies.item.includedGroups.item collection
 func (m *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilder) IncludedGroupsById(id string)(*MobileDeviceManagementPoliciesItemIncludedGroupsGroupItemRequestBuilder) {
@@ -113,7 +113,7 @@ func (m *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilde
     if id != "" {
         urlTplParams["group%2Did"] = id
     }
-    return NewMobileDeviceManagementPoliciesItemIncludedGroupsGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMobileDeviceManagementPoliciesItemIncludedGroupsGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch update the navigation property mobileDeviceManagementPolicies in policies
 func (m *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, requestConfiguration *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, error) {
@@ -169,7 +169,10 @@ func (m *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilde
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

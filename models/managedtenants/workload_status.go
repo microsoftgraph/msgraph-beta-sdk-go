@@ -24,7 +24,7 @@ type WorkloadStatus struct {
 func NewWorkloadStatus()(*WorkloadStatus) {
     m := &WorkloadStatus{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWorkloadStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

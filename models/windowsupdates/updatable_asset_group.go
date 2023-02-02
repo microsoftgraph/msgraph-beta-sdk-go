@@ -15,8 +15,8 @@ func NewUpdatableAssetGroup()(*UpdatableAssetGroup) {
     m := &UpdatableAssetGroup{
         UpdatableAsset: *NewUpdatableAsset(),
     }
-    odataTypeValue := "#microsoft.graph.windowsUpdates.updatableAssetGroup";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsUpdates.updatableAssetGroup"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateUpdatableAssetGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

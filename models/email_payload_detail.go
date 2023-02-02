@@ -21,8 +21,8 @@ func NewEmailPayloadDetail()(*EmailPayloadDetail) {
     m := &EmailPayloadDetail{
         PayloadDetail: *NewPayloadDetail(),
     }
-    odataTypeValue := "#microsoft.graph.emailPayloadDetail";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.emailPayloadDetail"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEmailPayloadDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -29,8 +29,8 @@ func NewCommunicationsIdentitySet()(*CommunicationsIdentitySet) {
     m := &CommunicationsIdentitySet{
         IdentitySet: *NewIdentitySet(),
     }
-    odataTypeValue := "#microsoft.graph.communicationsIdentitySet";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.communicationsIdentitySet"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateCommunicationsIdentitySetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -60,8 +60,8 @@ func NewItemDevicesRequestBuilderInternal(pathParameters map[string]string, requ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemDevicesRequestBuilder instantiates a new DevicesRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewItemDevicesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemDevicesRequestBuilder) Count()(*ItemDevicesCountRequestBuilder) {
-    return NewItemDevicesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Delta provides operations to call the delta method.
-func (m *ItemDevicesRequestBuilder) Delta()(*ItemDevicesDeltaRequestBuilder) {
-    return NewItemDevicesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemDevicesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get devices from users
 func (m *ItemDevicesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemDevicesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCollectionResponseable, error) {
@@ -97,13 +93,21 @@ func (m *ItemDevicesRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCollectionResponseable), nil
 }
-// GetByIds provides operations to call the getByIds method.
-func (m *ItemDevicesRequestBuilder) GetByIds()(*ItemDevicesGetByIdsRequestBuilder) {
-    return NewItemDevicesGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphDelta provides operations to call the delta method.
+func (m *ItemDevicesRequestBuilder) MicrosoftGraphDelta()(*ItemDevicesMicrosoftGraphDeltaDeltaRequestBuilder) {
+    return NewItemDevicesMicrosoftGraphDeltaDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
-func (m *ItemDevicesRequestBuilder) GetUserOwnedObjects()(*ItemDevicesGetUserOwnedObjectsRequestBuilder) {
-    return NewItemDevicesGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetByIds provides operations to call the getByIds method.
+func (m *ItemDevicesRequestBuilder) MicrosoftGraphGetByIds()(*ItemDevicesMicrosoftGraphGetByIdsGetByIdsRequestBuilder) {
+    return NewItemDevicesMicrosoftGraphGetByIdsGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphGetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
+func (m *ItemDevicesRequestBuilder) MicrosoftGraphGetUserOwnedObjects()(*ItemDevicesMicrosoftGraphGetUserOwnedObjectsGetUserOwnedObjectsRequestBuilder) {
+    return NewItemDevicesMicrosoftGraphGetUserOwnedObjectsGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphValidateProperties provides operations to call the validateProperties method.
+func (m *ItemDevicesRequestBuilder) MicrosoftGraphValidateProperties()(*ItemDevicesMicrosoftGraphValidatePropertiesValidatePropertiesRequestBuilder) {
+    return NewItemDevicesMicrosoftGraphValidatePropertiesValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to devices for users
 func (m *ItemDevicesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, requestConfiguration *ItemDevicesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, error) {
@@ -147,14 +151,13 @@ func (m *ItemDevicesRequestBuilder) ToPostRequestInformation(ctx context.Context
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// ValidateProperties provides operations to call the validateProperties method.
-func (m *ItemDevicesRequestBuilder) ValidateProperties()(*ItemDevicesValidatePropertiesRequestBuilder) {
-    return NewItemDevicesValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -60,8 +60,8 @@ func NewDirectoryRoleAssignmentApprovalsRequestBuilderInternal(pathParameters ma
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDirectoryRoleAssignmentApprovalsRequestBuilder instantiates a new RoleAssignmentApprovalsRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewDirectoryRoleAssignmentApprovalsRequestBuilder(rawUrl string, requestAda
 }
 // Count provides operations to count the resources in the collection.
 func (m *DirectoryRoleAssignmentApprovalsRequestBuilder) Count()(*DirectoryRoleAssignmentApprovalsCountRequestBuilder) {
-    return NewDirectoryRoleAssignmentApprovalsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *DirectoryRoleAssignmentApprovalsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*DirectoryRoleAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilder) {
-    return NewDirectoryRoleAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
+    return NewDirectoryRoleAssignmentApprovalsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get roleAssignmentApprovals from roleManagement
 func (m *DirectoryRoleAssignmentApprovalsRequestBuilder) Get(ctx context.Context, requestConfiguration *DirectoryRoleAssignmentApprovalsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalCollectionResponseable, error) {
@@ -96,6 +92,10 @@ func (m *DirectoryRoleAssignmentApprovalsRequestBuilder) Get(ctx context.Context
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalCollectionResponseable), nil
+}
+// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *DirectoryRoleAssignmentApprovalsRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*DirectoryRoleAssignmentApprovalsMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnRequestBuilder) {
+    return NewDirectoryRoleAssignmentApprovalsMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Post create new navigation property to roleAssignmentApprovals for roleManagement
 func (m *DirectoryRoleAssignmentApprovalsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Approvalable, requestConfiguration *DirectoryRoleAssignmentApprovalsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Approvalable, error) {
@@ -139,7 +139,10 @@ func (m *DirectoryRoleAssignmentApprovalsRequestBuilder) ToPostRequestInformatio
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

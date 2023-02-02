@@ -60,8 +60,8 @@ func NewProfileAccountRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewProfileAccountRequestBuilder instantiates a new AccountRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewProfileAccountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 }
 // Count provides operations to count the resources in the collection.
 func (m *ProfileAccountRequestBuilder) Count()(*ProfileAccountCountRequestBuilder) {
-    return NewProfileAccountCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewProfileAccountCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieves properties related to the user's accounts from the profile.
 // [Find more info here]
@@ -141,7 +141,10 @@ func (m *ProfileAccountRequestBuilder) ToPostRequestInformation(ctx context.Cont
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

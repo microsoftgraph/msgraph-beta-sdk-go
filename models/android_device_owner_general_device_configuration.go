@@ -141,6 +141,10 @@ type AndroidDeviceOwnerGeneralDeviceConfiguration struct {
     kioskModeWifiAllowedSsids []string
     // Whether or not to allow a user to configure Wi-Fi settings in Kiosk Mode.
     kioskModeWiFiConfigurationEnabled *bool
+    // Indicates whether or not LocateDevice for devices with lost mode (COBO, COPE) is enabled.
+    locateDeviceLostModeEnabled *bool
+    // Indicates whether or not LocateDevice for userless (COSU) devices is disabled.
+    locateDeviceUserlessDisabled *bool
     // Indicates whether or not to block unmuting the microphone on the device.
     microphoneForceMute *bool
     // Indicates whether or not to you want configure Microsoft Launcher.
@@ -281,8 +285,8 @@ func NewAndroidDeviceOwnerGeneralDeviceConfiguration()(*AndroidDeviceOwnerGenera
     m := &AndroidDeviceOwnerGeneralDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidDeviceOwnerGeneralDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -1067,6 +1071,26 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         }
         if val != nil {
             m.SetKioskModeWiFiConfigurationEnabled(val)
+        }
+        return nil
+    }
+    res["locateDeviceLostModeEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLocateDeviceLostModeEnabled(val)
+        }
+        return nil
+    }
+    res["locateDeviceUserlessDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLocateDeviceUserlessDisabled(val)
         }
         return nil
     }
@@ -1942,6 +1966,14 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeWifiAllowedSs
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeWiFiConfigurationEnabled()(*bool) {
     return m.kioskModeWiFiConfigurationEnabled
 }
+// GetLocateDeviceLostModeEnabled gets the locateDeviceLostModeEnabled property value. Indicates whether or not LocateDevice for devices with lost mode (COBO, COPE) is enabled.
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetLocateDeviceLostModeEnabled()(*bool) {
+    return m.locateDeviceLostModeEnabled
+}
+// GetLocateDeviceUserlessDisabled gets the locateDeviceUserlessDisabled property value. Indicates whether or not LocateDevice for userless (COSU) devices is disabled.
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetLocateDeviceUserlessDisabled()(*bool) {
+    return m.locateDeviceUserlessDisabled
+}
 // GetMicrophoneForceMute gets the microphoneForceMute property value. Indicates whether or not to block unmuting the microphone on the device.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrophoneForceMute()(*bool) {
     return m.microphoneForceMute
@@ -2647,6 +2679,18 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) Serialize(writer i878a80d
         }
     }
     {
+        err = writer.WriteBoolValue("locateDeviceLostModeEnabled", m.GetLocateDeviceLostModeEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("locateDeviceUserlessDisabled", m.GetLocateDeviceUserlessDisabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("microphoneForceMute", m.GetMicrophoneForceMute())
         if err != nil {
             return err
@@ -3334,6 +3378,14 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeWifiAllowedSs
 // SetKioskModeWiFiConfigurationEnabled sets the kioskModeWiFiConfigurationEnabled property value. Whether or not to allow a user to configure Wi-Fi settings in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeWiFiConfigurationEnabled(value *bool)() {
     m.kioskModeWiFiConfigurationEnabled = value
+}
+// SetLocateDeviceLostModeEnabled sets the locateDeviceLostModeEnabled property value. Indicates whether or not LocateDevice for devices with lost mode (COBO, COPE) is enabled.
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetLocateDeviceLostModeEnabled(value *bool)() {
+    m.locateDeviceLostModeEnabled = value
+}
+// SetLocateDeviceUserlessDisabled sets the locateDeviceUserlessDisabled property value. Indicates whether or not LocateDevice for userless (COSU) devices is disabled.
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetLocateDeviceUserlessDisabled(value *bool)() {
+    m.locateDeviceUserlessDisabled = value
 }
 // SetMicrophoneForceMute sets the microphoneForceMute property value. Indicates whether or not to block unmuting the microphone on the device.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetMicrophoneForceMute(value *bool)() {

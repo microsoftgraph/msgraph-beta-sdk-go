@@ -55,8 +55,8 @@ func NewCompaniesItemVendorsVendorItemRequestBuilderInternal(pathParameters map[
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemVendorsVendorItemRequestBuilder instantiates a new VendorItemRequestBuilder and sets the default values.
@@ -67,7 +67,7 @@ func NewCompaniesItemVendorsVendorItemRequestBuilder(rawUrl string, requestAdapt
 }
 // Currency provides operations to manage the currency property of the microsoft.graph.vendor entity.
 func (m *CompaniesItemVendorsVendorItemRequestBuilder) Currency()(*CompaniesItemVendorsItemCurrencyRequestBuilder) {
-    return NewCompaniesItemVendorsItemCurrencyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemVendorsItemCurrencyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property vendors for financials
 func (m *CompaniesItemVendorsVendorItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CompaniesItemVendorsVendorItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -125,15 +125,15 @@ func (m *CompaniesItemVendorsVendorItemRequestBuilder) Patch(ctx context.Context
 }
 // PaymentMethod provides operations to manage the paymentMethod property of the microsoft.graph.vendor entity.
 func (m *CompaniesItemVendorsVendorItemRequestBuilder) PaymentMethod()(*CompaniesItemVendorsItemPaymentMethodRequestBuilder) {
-    return NewCompaniesItemVendorsItemPaymentMethodRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemVendorsItemPaymentMethodRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PaymentTerm provides operations to manage the paymentTerm property of the microsoft.graph.vendor entity.
 func (m *CompaniesItemVendorsVendorItemRequestBuilder) PaymentTerm()(*CompaniesItemVendorsItemPaymentTermRequestBuilder) {
-    return NewCompaniesItemVendorsItemPaymentTermRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemVendorsItemPaymentTermRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Picture provides operations to manage the picture property of the microsoft.graph.vendor entity.
 func (m *CompaniesItemVendorsVendorItemRequestBuilder) Picture()(*CompaniesItemVendorsItemPictureRequestBuilder) {
-    return NewCompaniesItemVendorsItemPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemVendorsItemPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PictureById provides operations to manage the picture property of the microsoft.graph.vendor entity.
 func (m *CompaniesItemVendorsVendorItemRequestBuilder) PictureById(id string)(*CompaniesItemVendorsItemPicturePictureItemRequestBuilder) {
@@ -144,7 +144,7 @@ func (m *CompaniesItemVendorsVendorItemRequestBuilder) PictureById(id string)(*C
     if id != "" {
         urlTplParams["picture%2Did"] = id
     }
-    return NewCompaniesItemVendorsItemPicturePictureItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemVendorsItemPicturePictureItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property vendors for financials
 func (m *CompaniesItemVendorsVendorItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemVendorsVendorItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -181,7 +181,10 @@ func (m *CompaniesItemVendorsVendorItemRequestBuilder) ToPatchRequestInformation
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

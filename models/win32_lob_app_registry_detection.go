@@ -25,8 +25,8 @@ func NewWin32LobAppRegistryDetection()(*Win32LobAppRegistryDetection) {
     m := &Win32LobAppRegistryDetection{
         Win32LobAppDetection: *NewWin32LobAppDetection(),
     }
-    odataTypeValue := "#microsoft.graph.win32LobAppRegistryDetection";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.win32LobAppRegistryDetection"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWin32LobAppRegistryDetectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

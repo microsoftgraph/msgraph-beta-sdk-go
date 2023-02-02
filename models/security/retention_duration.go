@@ -15,7 +15,7 @@ type RetentionDuration struct {
 func NewRetentionDuration()(*RetentionDuration) {
     m := &RetentionDuration{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateRetentionDurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

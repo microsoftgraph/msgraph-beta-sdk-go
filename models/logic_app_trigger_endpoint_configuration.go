@@ -19,8 +19,8 @@ func NewLogicAppTriggerEndpointConfiguration()(*LogicAppTriggerEndpointConfigura
     m := &LogicAppTriggerEndpointConfiguration{
         CustomExtensionEndpointConfiguration: *NewCustomExtensionEndpointConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.logicAppTriggerEndpointConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.logicAppTriggerEndpointConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateLogicAppTriggerEndpointConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

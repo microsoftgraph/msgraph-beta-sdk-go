@@ -60,8 +60,8 @@ func NewComplianceManagementPartnersRequestBuilderInternal(pathParameters map[st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewComplianceManagementPartnersRequestBuilder instantiates a new ComplianceManagementPartnersRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewComplianceManagementPartnersRequestBuilder(rawUrl string, requestAdapter
 }
 // Count provides operations to count the resources in the collection.
 func (m *ComplianceManagementPartnersRequestBuilder) Count()(*ComplianceManagementPartnersCountRequestBuilder) {
-    return NewComplianceManagementPartnersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewComplianceManagementPartnersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the list of Compliance Management Partners configured by the tenant.
 func (m *ComplianceManagementPartnersRequestBuilder) Get(ctx context.Context, requestConfiguration *ComplianceManagementPartnersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ComplianceManagementPartnerCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *ComplianceManagementPartnersRequestBuilder) ToPostRequestInformation(ct
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

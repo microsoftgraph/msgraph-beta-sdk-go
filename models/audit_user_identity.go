@@ -17,8 +17,8 @@ func NewAuditUserIdentity()(*AuditUserIdentity) {
     m := &AuditUserIdentity{
         UserIdentity: *NewUserIdentity(),
     }
-    odataTypeValue := "#microsoft.graph.auditUserIdentity";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.auditUserIdentity"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAuditUserIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -22,7 +22,7 @@ type SubmissionAdminReview struct {
 func NewSubmissionAdminReview()(*SubmissionAdminReview) {
     m := &SubmissionAdminReview{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSubmissionAdminReviewFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

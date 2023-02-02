@@ -19,7 +19,7 @@ type AuthenticationStrengthUsage struct {
 func NewAuthenticationStrengthUsage()(*AuthenticationStrengthUsage) {
     m := &AuthenticationStrengthUsage{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAuthenticationStrengthUsageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

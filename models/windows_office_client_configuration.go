@@ -13,8 +13,8 @@ func NewWindowsOfficeClientConfiguration()(*WindowsOfficeClientConfiguration) {
     m := &WindowsOfficeClientConfiguration{
         OfficeClientConfiguration: *NewOfficeClientConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.windowsOfficeClientConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsOfficeClientConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsOfficeClientConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -15,8 +15,8 @@ func NewFeatureUpdateCatalogEntry()(*FeatureUpdateCatalogEntry) {
     m := &FeatureUpdateCatalogEntry{
         SoftwareUpdateCatalogEntry: *NewSoftwareUpdateCatalogEntry(),
     }
-    odataTypeValue := "#microsoft.graph.windowsUpdates.featureUpdateCatalogEntry";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsUpdates.featureUpdateCatalogEntry"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateFeatureUpdateCatalogEntryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

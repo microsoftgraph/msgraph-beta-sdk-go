@@ -23,8 +23,8 @@ func NewIosCertificateProfileBase()(*IosCertificateProfileBase) {
     m := &IosCertificateProfileBase{
         IosCertificateProfile: *NewIosCertificateProfile(),
     }
-    odataTypeValue := "#microsoft.graph.iosCertificateProfileBase";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.iosCertificateProfileBase"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateIosCertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -48,7 +48,7 @@ type PlannerRequestBuilderPatchRequestConfiguration struct {
 }
 // All provides operations to manage the all property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) All()(*PlannerAllRequestBuilder) {
-    return NewPlannerAllRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPlannerAllRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AllById provides operations to manage the all property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) AllById(id string)(*PlannerAllPlannerDeltaItemRequestBuilder) {
@@ -59,7 +59,7 @@ func (m *PlannerRequestBuilder) AllById(id string)(*PlannerAllPlannerDeltaItemRe
     if id != "" {
         urlTplParams["plannerDelta%2Did"] = id
     }
-    return NewPlannerAllPlannerDeltaItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlannerAllPlannerDeltaItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewPlannerRequestBuilderInternal instantiates a new PlannerRequestBuilder and sets the default values.
 func NewPlannerRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PlannerRequestBuilder) {
@@ -70,8 +70,8 @@ func NewPlannerRequestBuilderInternal(pathParameters map[string]string, requestA
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPlannerRequestBuilder instantiates a new PlannerRequestBuilder and sets the default values.
@@ -98,7 +98,7 @@ func (m *PlannerRequestBuilder) Delete(ctx context.Context, requestConfiguration
 }
 // FavoritePlans provides operations to manage the favoritePlans property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) FavoritePlans()(*PlannerFavoritePlansRequestBuilder) {
-    return NewPlannerFavoritePlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPlannerFavoritePlansRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // FavoritePlansById provides operations to manage the favoritePlans property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) FavoritePlansById(id string)(*PlannerFavoritePlansPlannerPlanItemRequestBuilder) {
@@ -109,7 +109,7 @@ func (m *PlannerRequestBuilder) FavoritePlansById(id string)(*PlannerFavoritePla
     if id != "" {
         urlTplParams["plannerPlan%2Did"] = id
     }
-    return NewPlannerFavoritePlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlannerFavoritePlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Get retrieve the properties and relationships of a plannerUser object. The returned properties include the user's favorite plans and recently viewed plans. 
 // [Find more info here]
@@ -133,7 +133,7 @@ func (m *PlannerRequestBuilder) Get(ctx context.Context, requestConfiguration *P
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerUserable), nil
 }
-// Patch update the properties of a plannerUser object. You can use this operation to add or remove plans from a user's favorite plans list, and to indicate which plans the user has recently viewed.
+// Patch update the navigation property planner in me
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/planneruser-update?view=graph-rest-1.0
@@ -157,7 +157,7 @@ func (m *PlannerRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4b
 }
 // Plans provides operations to manage the plans property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) Plans()(*PlannerPlansRequestBuilder) {
-    return NewPlannerPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPlannerPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PlansById provides operations to manage the plans property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) PlansById(id string)(*PlannerPlansPlannerPlanItemRequestBuilder) {
@@ -168,11 +168,11 @@ func (m *PlannerRequestBuilder) PlansById(id string)(*PlannerPlansPlannerPlanIte
     if id != "" {
         urlTplParams["plannerPlan%2Did"] = id
     }
-    return NewPlannerPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlannerPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // RecentPlans provides operations to manage the recentPlans property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) RecentPlans()(*PlannerRecentPlansRequestBuilder) {
-    return NewPlannerRecentPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPlannerRecentPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RecentPlansById provides operations to manage the recentPlans property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) RecentPlansById(id string)(*PlannerRecentPlansPlannerPlanItemRequestBuilder) {
@@ -183,11 +183,11 @@ func (m *PlannerRequestBuilder) RecentPlansById(id string)(*PlannerRecentPlansPl
     if id != "" {
         urlTplParams["plannerPlan%2Did"] = id
     }
-    return NewPlannerRecentPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlannerRecentPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // RosterPlans provides operations to manage the rosterPlans property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) RosterPlans()(*PlannerRosterPlansRequestBuilder) {
-    return NewPlannerRosterPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPlannerRosterPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RosterPlansById provides operations to manage the rosterPlans property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) RosterPlansById(id string)(*PlannerRosterPlansPlannerPlanItemRequestBuilder) {
@@ -198,11 +198,11 @@ func (m *PlannerRequestBuilder) RosterPlansById(id string)(*PlannerRosterPlansPl
     if id != "" {
         urlTplParams["plannerPlan%2Did"] = id
     }
-    return NewPlannerRosterPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlannerRosterPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Tasks provides operations to manage the tasks property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) Tasks()(*PlannerTasksRequestBuilder) {
-    return NewPlannerTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPlannerTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TasksById provides operations to manage the tasks property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) TasksById(id string)(*PlannerTasksPlannerTaskItemRequestBuilder) {
@@ -213,7 +213,7 @@ func (m *PlannerRequestBuilder) TasksById(id string)(*PlannerTasksPlannerTaskIte
     if id != "" {
         urlTplParams["plannerTask%2Did"] = id
     }
-    return NewPlannerTasksPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlannerTasksPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property planner for me
 func (m *PlannerRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PlannerRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -243,14 +243,17 @@ func (m *PlannerRequestBuilder) ToGetRequestInformation(ctx context.Context, req
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a plannerUser object. You can use this operation to add or remove plans from a user's favorite plans list, and to indicate which plans the user has recently viewed.
+// ToPatchRequestInformation update the navigation property planner in me
 func (m *PlannerRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerUserable, requestConfiguration *PlannerRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

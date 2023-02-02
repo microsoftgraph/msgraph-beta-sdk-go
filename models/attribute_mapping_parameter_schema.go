@@ -23,7 +23,7 @@ type AttributeMappingParameterSchema struct {
 func NewAttributeMappingParameterSchema()(*AttributeMappingParameterSchema) {
     m := &AttributeMappingParameterSchema{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAttributeMappingParameterSchemaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

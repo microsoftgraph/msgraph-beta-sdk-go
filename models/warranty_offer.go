@@ -24,7 +24,7 @@ type WarrantyOffer struct {
 func NewWarrantyOffer()(*WarrantyOffer) {
     m := &WarrantyOffer{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWarrantyOfferFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

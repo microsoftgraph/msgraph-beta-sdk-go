@@ -19,8 +19,8 @@ func NewAppManagementPolicy()(*AppManagementPolicy) {
     m := &AppManagementPolicy{
         PolicyBase: *NewPolicyBase(),
     }
-    odataTypeValue := "#microsoft.graph.appManagementPolicy";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.appManagementPolicy"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAppManagementPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

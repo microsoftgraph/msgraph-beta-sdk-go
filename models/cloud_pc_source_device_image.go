@@ -23,7 +23,7 @@ type CloudPcSourceDeviceImage struct {
 func NewCloudPcSourceDeviceImage()(*CloudPcSourceDeviceImage) {
     m := &CloudPcSourceDeviceImage{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCloudPcSourceDeviceImageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

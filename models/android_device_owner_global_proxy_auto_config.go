@@ -15,8 +15,8 @@ func NewAndroidDeviceOwnerGlobalProxyAutoConfig()(*AndroidDeviceOwnerGlobalProxy
     m := &AndroidDeviceOwnerGlobalProxyAutoConfig{
         AndroidDeviceOwnerGlobalProxy: *NewAndroidDeviceOwnerGlobalProxy(),
     }
-    odataTypeValue := "#microsoft.graph.androidDeviceOwnerGlobalProxyAutoConfig";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidDeviceOwnerGlobalProxyAutoConfig"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidDeviceOwnerGlobalProxyAutoConfigFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

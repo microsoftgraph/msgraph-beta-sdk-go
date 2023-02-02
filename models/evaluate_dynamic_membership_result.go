@@ -21,7 +21,7 @@ type EvaluateDynamicMembershipResult struct {
 func NewEvaluateDynamicMembershipResult()(*EvaluateDynamicMembershipResult) {
     m := &EvaluateDynamicMembershipResult{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateEvaluateDynamicMembershipResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

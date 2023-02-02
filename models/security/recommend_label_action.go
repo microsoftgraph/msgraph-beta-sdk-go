@@ -21,8 +21,8 @@ func NewRecommendLabelAction()(*RecommendLabelAction) {
     m := &RecommendLabelAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
     }
-    odataTypeValue := "#microsoft.graph.security.recommendLabelAction";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.security.recommendLabelAction"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateRecommendLabelActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

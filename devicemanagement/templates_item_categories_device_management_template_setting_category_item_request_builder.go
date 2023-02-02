@@ -55,8 +55,8 @@ func NewTemplatesItemCategoriesDeviceManagementTemplateSettingCategoryItemReques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTemplatesItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilder instantiates a new DeviceManagementTemplateSettingCategoryItemRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *TemplatesItemCategoriesDeviceManagementTemplateSettingCategoryItemReque
 }
 // RecommendedSettings provides operations to manage the recommendedSettings property of the microsoft.graph.deviceManagementTemplateSettingCategory entity.
 func (m *TemplatesItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilder) RecommendedSettings()(*TemplatesItemCategoriesItemRecommendedSettingsRequestBuilder) {
-    return NewTemplatesItemCategoriesItemRecommendedSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTemplatesItemCategoriesItemRecommendedSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RecommendedSettingsById provides operations to manage the recommendedSettings property of the microsoft.graph.deviceManagementTemplateSettingCategory entity.
 func (m *TemplatesItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilder) RecommendedSettingsById(id string)(*TemplatesItemCategoriesItemRecommendedSettingsDeviceManagementSettingInstanceItemRequestBuilder) {
@@ -132,7 +132,7 @@ func (m *TemplatesItemCategoriesDeviceManagementTemplateSettingCategoryItemReque
     if id != "" {
         urlTplParams["deviceManagementSettingInstance%2Did"] = id
     }
-    return NewTemplatesItemCategoriesItemRecommendedSettingsDeviceManagementSettingInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTemplatesItemCategoriesItemRecommendedSettingsDeviceManagementSettingInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property categories for deviceManagement
 func (m *TemplatesItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TemplatesItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +169,10 @@ func (m *TemplatesItemCategoriesDeviceManagementTemplateSettingCategoryItemReque
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

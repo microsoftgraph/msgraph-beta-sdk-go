@@ -60,8 +60,8 @@ func NewVirtualEndpointSnapshotsRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewVirtualEndpointSnapshotsRequestBuilder instantiates a new SnapshotsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewVirtualEndpointSnapshotsRequestBuilder(rawUrl string, requestAdapter i2a
 }
 // Count provides operations to count the resources in the collection.
 func (m *VirtualEndpointSnapshotsRequestBuilder) Count()(*VirtualEndpointSnapshotsCountRequestBuilder) {
-    return NewVirtualEndpointSnapshotsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointSnapshotsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of cloudPcSnapshot objects and their properties.
 // [Find more info here]
@@ -96,13 +96,13 @@ func (m *VirtualEndpointSnapshotsRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSnapshotCollectionResponseable), nil
 }
-// GetStorageAccountsWithSubscriptionId provides operations to call the getStorageAccounts method.
-func (m *VirtualEndpointSnapshotsRequestBuilder) GetStorageAccountsWithSubscriptionId(subscriptionId *string)(*VirtualEndpointSnapshotsGetStorageAccountsWithSubscriptionIdRequestBuilder) {
-    return NewVirtualEndpointSnapshotsGetStorageAccountsWithSubscriptionIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, subscriptionId);
+// MicrosoftGraphGetStorageAccountsWithSubscriptionId provides operations to call the getStorageAccounts method.
+func (m *VirtualEndpointSnapshotsRequestBuilder) MicrosoftGraphGetStorageAccountsWithSubscriptionId(subscriptionId *string)(*VirtualEndpointSnapshotsMicrosoftGraphGetStorageAccountsWithSubscriptionIdGetStorageAccountsWithSubscriptionIdRequestBuilder) {
+    return NewVirtualEndpointSnapshotsMicrosoftGraphGetStorageAccountsWithSubscriptionIdGetStorageAccountsWithSubscriptionIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, subscriptionId)
 }
-// GetSubscriptions provides operations to call the getSubscriptions method.
-func (m *VirtualEndpointSnapshotsRequestBuilder) GetSubscriptions()(*VirtualEndpointSnapshotsGetSubscriptionsRequestBuilder) {
-    return NewVirtualEndpointSnapshotsGetSubscriptionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetSubscriptions provides operations to call the getSubscriptions method.
+func (m *VirtualEndpointSnapshotsRequestBuilder) MicrosoftGraphGetSubscriptions()(*VirtualEndpointSnapshotsMicrosoftGraphGetSubscriptionsGetSubscriptionsRequestBuilder) {
+    return NewVirtualEndpointSnapshotsMicrosoftGraphGetSubscriptionsGetSubscriptionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to snapshots for deviceManagement
 func (m *VirtualEndpointSnapshotsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSnapshotable, requestConfiguration *VirtualEndpointSnapshotsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSnapshotable, error) {
@@ -146,7 +146,10 @@ func (m *VirtualEndpointSnapshotsRequestBuilder) ToPostRequestInformation(ctx co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

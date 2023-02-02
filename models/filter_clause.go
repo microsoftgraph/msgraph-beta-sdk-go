@@ -21,7 +21,7 @@ type FilterClause struct {
 func NewFilterClause()(*FilterClause) {
     m := &FilterClause{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateFilterClauseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

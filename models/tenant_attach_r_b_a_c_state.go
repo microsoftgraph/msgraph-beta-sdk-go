@@ -17,7 +17,7 @@ type TenantAttachRBACState struct {
 func NewTenantAttachRBACState()(*TenantAttachRBACState) {
     m := &TenantAttachRBACState{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTenantAttachRBACStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

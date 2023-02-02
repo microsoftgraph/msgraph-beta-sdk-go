@@ -23,7 +23,7 @@ type ClassifcationErrorBase struct {
 func NewClassifcationErrorBase()(*ClassifcationErrorBase) {
     m := &ClassifcationErrorBase{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateClassifcationErrorBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

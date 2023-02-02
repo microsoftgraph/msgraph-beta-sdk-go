@@ -41,8 +41,8 @@ func NewInformationProtectionBitlockerRequestBuilderInternal(pathParameters map[
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewInformationProtectionBitlockerRequestBuilder instantiates a new BitlockerRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func (m *InformationProtectionBitlockerRequestBuilder) Get(ctx context.Context, 
 }
 // RecoveryKeys provides operations to manage the recoveryKeys property of the microsoft.graph.bitlocker entity.
 func (m *InformationProtectionBitlockerRequestBuilder) RecoveryKeys()(*InformationProtectionBitlockerRecoveryKeysRequestBuilder) {
-    return NewInformationProtectionBitlockerRecoveryKeysRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewInformationProtectionBitlockerRecoveryKeysRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RecoveryKeysById provides operations to manage the recoveryKeys property of the microsoft.graph.bitlocker entity.
 func (m *InformationProtectionBitlockerRequestBuilder) RecoveryKeysById(id string)(*InformationProtectionBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilder) {
@@ -83,7 +83,7 @@ func (m *InformationProtectionBitlockerRequestBuilder) RecoveryKeysById(id strin
     if id != "" {
         urlTplParams["bitlockerRecoveryKey%2Did"] = id
     }
-    return NewInformationProtectionBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewInformationProtectionBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToGetRequestInformation get bitlocker from me
 func (m *InformationProtectionBitlockerRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *InformationProtectionBitlockerRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -55,8 +55,8 @@ func NewInformationProtectionPolicyRequestBuilderInternal(pathParameters map[str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewInformationProtectionPolicyRequestBuilder instantiates a new PolicyRequestBuilder and sets the default values.
@@ -102,7 +102,7 @@ func (m *InformationProtectionPolicyRequestBuilder) Get(ctx context.Context, req
 }
 // Labels provides operations to manage the labels property of the microsoft.graph.informationProtectionPolicy entity.
 func (m *InformationProtectionPolicyRequestBuilder) Labels()(*InformationProtectionPolicyLabelsRequestBuilder) {
-    return NewInformationProtectionPolicyLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewInformationProtectionPolicyLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // LabelsById provides operations to manage the labels property of the microsoft.graph.informationProtectionPolicy entity.
 func (m *InformationProtectionPolicyRequestBuilder) LabelsById(id string)(*InformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder) {
@@ -113,7 +113,7 @@ func (m *InformationProtectionPolicyRequestBuilder) LabelsById(id string)(*Infor
     if id != "" {
         urlTplParams["informationProtectionLabel%2Did"] = id
     }
-    return NewInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch update the navigation property policy in me
 func (m *InformationProtectionPolicyRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionPolicyable, requestConfiguration *InformationProtectionPolicyRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionPolicyable, error) {
@@ -169,7 +169,10 @@ func (m *InformationProtectionPolicyRequestBuilder) ToPatchRequestInformation(ct
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

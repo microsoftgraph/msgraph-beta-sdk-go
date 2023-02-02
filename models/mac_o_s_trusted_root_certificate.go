@@ -17,8 +17,8 @@ func NewMacOSTrustedRootCertificate()(*MacOSTrustedRootCertificate) {
     m := &MacOSTrustedRootCertificate{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.macOSTrustedRootCertificate";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.macOSTrustedRootCertificate"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMacOSTrustedRootCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

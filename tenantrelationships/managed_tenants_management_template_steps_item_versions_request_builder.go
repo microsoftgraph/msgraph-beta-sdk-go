@@ -53,8 +53,8 @@ func NewManagedTenantsManagementTemplateStepsItemVersionsRequestBuilderInternal(
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedTenantsManagementTemplateStepsItemVersionsRequestBuilder instantiates a new VersionsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewManagedTenantsManagementTemplateStepsItemVersionsRequestBuilder(rawUrl s
 }
 // Count provides operations to count the resources in the collection.
 func (m *ManagedTenantsManagementTemplateStepsItemVersionsRequestBuilder) Count()(*ManagedTenantsManagementTemplateStepsItemVersionsCountRequestBuilder) {
-    return NewManagedTenantsManagementTemplateStepsItemVersionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedTenantsManagementTemplateStepsItemVersionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get versions from tenantRelationships
 func (m *ManagedTenantsManagementTemplateStepsItemVersionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsManagementTemplateStepsItemVersionsRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepVersionCollectionResponseable, error) {

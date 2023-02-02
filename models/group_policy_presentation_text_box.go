@@ -19,8 +19,8 @@ func NewGroupPolicyPresentationTextBox()(*GroupPolicyPresentationTextBox) {
     m := &GroupPolicyPresentationTextBox{
         GroupPolicyUploadedPresentation: *NewGroupPolicyUploadedPresentation(),
     }
-    odataTypeValue := "#microsoft.graph.groupPolicyPresentationTextBox";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.groupPolicyPresentationTextBox"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateGroupPolicyPresentationTextBoxFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

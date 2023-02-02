@@ -25,7 +25,7 @@ type BusinessScenarioProperties struct {
 func NewBusinessScenarioProperties()(*BusinessScenarioProperties) {
     m := &BusinessScenarioProperties{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateBusinessScenarioPropertiesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -21,7 +21,7 @@ type CoachmarkLocation struct {
 func NewCoachmarkLocation()(*CoachmarkLocation) {
     m := &CoachmarkLocation{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCoachmarkLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

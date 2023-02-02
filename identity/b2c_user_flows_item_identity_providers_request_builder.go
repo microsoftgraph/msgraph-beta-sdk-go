@@ -53,8 +53,8 @@ func NewB2cUserFlowsItemIdentityProvidersRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewB2cUserFlowsItemIdentityProvidersRequestBuilder instantiates a new IdentityProvidersRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewB2cUserFlowsItemIdentityProvidersRequestBuilder(rawUrl string, requestAd
 }
 // Count provides operations to count the resources in the collection.
 func (m *B2cUserFlowsItemIdentityProvidersRequestBuilder) Count()(*B2cUserFlowsItemIdentityProvidersCountRequestBuilder) {
-    return NewB2cUserFlowsItemIdentityProvidersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewB2cUserFlowsItemIdentityProvidersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the identity providers in a b2cIdentityUserFlow object.
 // [Find more info here]
@@ -91,7 +91,7 @@ func (m *B2cUserFlowsItemIdentityProvidersRequestBuilder) Get(ctx context.Contex
 }
 // Ref provides operations to manage the collection of identityContainer entities.
 func (m *B2cUserFlowsItemIdentityProvidersRequestBuilder) Ref()(*B2cUserFlowsItemIdentityProvidersRefRequestBuilder) {
-    return NewB2cUserFlowsItemIdentityProvidersRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewB2cUserFlowsItemIdentityProvidersRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation get the identity providers in a b2cIdentityUserFlow object.
 func (m *B2cUserFlowsItemIdentityProvidersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2cUserFlowsItemIdentityProvidersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

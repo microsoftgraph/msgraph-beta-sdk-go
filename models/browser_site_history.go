@@ -30,7 +30,7 @@ type BrowserSiteHistory struct {
 func NewBrowserSiteHistory()(*BrowserSiteHistory) {
     m := &BrowserSiteHistory{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateBrowserSiteHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

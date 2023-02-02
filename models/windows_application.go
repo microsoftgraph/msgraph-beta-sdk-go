@@ -19,7 +19,7 @@ type WindowsApplication struct {
 func NewWindowsApplication()(*WindowsApplication) {
     m := &WindowsApplication{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWindowsApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

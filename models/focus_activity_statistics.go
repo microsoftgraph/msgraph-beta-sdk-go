@@ -13,8 +13,8 @@ func NewFocusActivityStatistics()(*FocusActivityStatistics) {
     m := &FocusActivityStatistics{
         ActivityStatistics: *NewActivityStatistics(),
     }
-    odataTypeValue := "#microsoft.graph.focusActivityStatistics";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.focusActivityStatistics"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateFocusActivityStatisticsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

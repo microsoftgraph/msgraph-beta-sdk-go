@@ -55,8 +55,8 @@ func NewCompaniesItemPurchaseInvoicesItemVendorRequestBuilderInternal(pathParame
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemPurchaseInvoicesItemVendorRequestBuilder instantiates a new VendorRequestBuilder and sets the default values.
@@ -67,7 +67,7 @@ func NewCompaniesItemPurchaseInvoicesItemVendorRequestBuilder(rawUrl string, req
 }
 // Currency provides operations to manage the currency property of the microsoft.graph.vendor entity.
 func (m *CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) Currency()(*CompaniesItemPurchaseInvoicesItemVendorCurrencyRequestBuilder) {
-    return NewCompaniesItemPurchaseInvoicesItemVendorCurrencyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemPurchaseInvoicesItemVendorCurrencyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property vendor for financials
 func (m *CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) Delete(ctx context.Context, requestConfiguration *CompaniesItemPurchaseInvoicesItemVendorRequestBuilderDeleteRequestConfiguration)(error) {
@@ -125,15 +125,15 @@ func (m *CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) Patch(ctx contex
 }
 // PaymentMethod provides operations to manage the paymentMethod property of the microsoft.graph.vendor entity.
 func (m *CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) PaymentMethod()(*CompaniesItemPurchaseInvoicesItemVendorPaymentMethodRequestBuilder) {
-    return NewCompaniesItemPurchaseInvoicesItemVendorPaymentMethodRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemPurchaseInvoicesItemVendorPaymentMethodRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PaymentTerm provides operations to manage the paymentTerm property of the microsoft.graph.vendor entity.
 func (m *CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) PaymentTerm()(*CompaniesItemPurchaseInvoicesItemVendorPaymentTermRequestBuilder) {
-    return NewCompaniesItemPurchaseInvoicesItemVendorPaymentTermRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemPurchaseInvoicesItemVendorPaymentTermRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Picture provides operations to manage the picture property of the microsoft.graph.vendor entity.
 func (m *CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) Picture()(*CompaniesItemPurchaseInvoicesItemVendorPictureRequestBuilder) {
-    return NewCompaniesItemPurchaseInvoicesItemVendorPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemPurchaseInvoicesItemVendorPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PictureById provides operations to manage the picture property of the microsoft.graph.vendor entity.
 func (m *CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) PictureById(id string)(*CompaniesItemPurchaseInvoicesItemVendorPicturePictureItemRequestBuilder) {
@@ -144,7 +144,7 @@ func (m *CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) PictureById(id s
     if id != "" {
         urlTplParams["picture%2Did"] = id
     }
-    return NewCompaniesItemPurchaseInvoicesItemVendorPicturePictureItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemPurchaseInvoicesItemVendorPicturePictureItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property vendor for financials
 func (m *CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemPurchaseInvoicesItemVendorRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -181,7 +181,10 @@ func (m *CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) ToPatchRequestIn
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

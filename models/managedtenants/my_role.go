@@ -19,7 +19,7 @@ type MyRole struct {
 func NewMyRole()(*MyRole) {
     m := &MyRole{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMyRoleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

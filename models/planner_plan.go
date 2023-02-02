@@ -24,6 +24,8 @@ type PlannerPlan struct {
     details PlannerPlanDetailsable
     // The owner property
     owner *string
+    // The sharedWithContainers property
+    sharedWithContainers []PlannerSharedWithContainerable
     // Collection of tasks in the plan. Read-only. Nullable.
     tasks []PlannerTaskable
     // Required. Title of the plan.
@@ -155,6 +157,20 @@ func (m *PlannerPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["sharedWithContainers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePlannerSharedWithContainerFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PlannerSharedWithContainerable, len(val))
+            for i, v := range val {
+                res[i] = v.(PlannerSharedWithContainerable)
+            }
+            m.SetSharedWithContainers(res)
+        }
+        return nil
+    }
     res["tasks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePlannerTaskFromDiscriminatorValue)
         if err != nil {
@@ -184,6 +200,10 @@ func (m *PlannerPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 // GetOwner gets the owner property value. The owner property
 func (m *PlannerPlan) GetOwner()(*string) {
     return m.owner
+}
+// GetSharedWithContainers gets the sharedWithContainers property value. The sharedWithContainers property
+func (m *PlannerPlan) GetSharedWithContainers()([]PlannerSharedWithContainerable) {
+    return m.sharedWithContainers
 }
 // GetTasks gets the tasks property value. Collection of tasks in the plan. Read-only. Nullable.
 func (m *PlannerPlan) GetTasks()([]PlannerTaskable) {
@@ -251,6 +271,16 @@ func (m *PlannerPlan) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    if m.GetSharedWithContainers() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSharedWithContainers()))
+        for i, v := range m.GetSharedWithContainers() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("sharedWithContainers", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetTasks() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTasks()))
         for i, v := range m.GetTasks() {
@@ -300,6 +330,10 @@ func (m *PlannerPlan) SetDetails(value PlannerPlanDetailsable)() {
 // SetOwner sets the owner property value. The owner property
 func (m *PlannerPlan) SetOwner(value *string)() {
     m.owner = value
+}
+// SetSharedWithContainers sets the sharedWithContainers property value. The sharedWithContainers property
+func (m *PlannerPlan) SetSharedWithContainers(value []PlannerSharedWithContainerable)() {
+    m.sharedWithContainers = value
 }
 // SetTasks sets the tasks property value. Collection of tasks in the plan. Read-only. Nullable.
 func (m *PlannerPlan) SetTasks(value []PlannerTaskable)() {

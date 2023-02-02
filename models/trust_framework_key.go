@@ -47,7 +47,7 @@ type TrustFrameworkKey struct {
 func NewTrustFrameworkKey()(*TrustFrameworkKey) {
     m := &TrustFrameworkKey{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTrustFrameworkKeyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

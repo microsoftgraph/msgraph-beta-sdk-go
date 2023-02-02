@@ -21,7 +21,7 @@ type ManagementIntentInfo struct {
 func NewManagementIntentInfo()(*ManagementIntentInfo) {
     m := &ManagementIntentInfo{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateManagementIntentInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

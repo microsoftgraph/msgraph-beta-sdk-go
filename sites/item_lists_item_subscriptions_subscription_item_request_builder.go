@@ -55,8 +55,8 @@ func NewItemListsItemSubscriptionsSubscriptionItemRequestBuilderInternal(pathPar
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemListsItemSubscriptionsSubscriptionItemRequestBuilder instantiates a new SubscriptionItemRequestBuilder and sets the default values.
@@ -100,6 +100,10 @@ func (m *ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) Get(ctx conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Subscriptionable), nil
 }
+// MicrosoftGraphReauthorize provides operations to call the reauthorize method.
+func (m *ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) MicrosoftGraphReauthorize()(*ItemListsItemSubscriptionsItemMicrosoftGraphReauthorizeReauthorizeRequestBuilder) {
+    return NewItemListsItemSubscriptionsItemMicrosoftGraphReauthorizeReauthorizeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property subscriptions in sites
 func (m *ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Subscriptionable, requestConfiguration *ItemListsItemSubscriptionsSubscriptionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Subscriptionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -118,10 +122,6 @@ func (m *ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) Patch(ctx con
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Subscriptionable), nil
-}
-// Reauthorize provides operations to call the reauthorize method.
-func (m *ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) Reauthorize()(*ItemListsItemSubscriptionsItemReauthorizeRequestBuilder) {
-    return NewItemListsItemSubscriptionsItemReauthorizeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property subscriptions for sites
 func (m *ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemListsItemSubscriptionsSubscriptionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +158,10 @@ func (m *ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) ToPatchReques
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

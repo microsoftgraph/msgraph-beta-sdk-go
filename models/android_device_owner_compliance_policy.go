@@ -57,8 +57,8 @@ func NewAndroidDeviceOwnerCompliancePolicy()(*AndroidDeviceOwnerCompliancePolicy
     m := &AndroidDeviceOwnerCompliancePolicy{
         DeviceCompliancePolicy: *NewDeviceCompliancePolicy(),
     }
-    odataTypeValue := "#microsoft.graph.androidDeviceOwnerCompliancePolicy";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidDeviceOwnerCompliancePolicy"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidDeviceOwnerCompliancePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

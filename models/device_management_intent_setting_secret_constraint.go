@@ -13,8 +13,8 @@ func NewDeviceManagementIntentSettingSecretConstraint()(*DeviceManagementIntentS
     m := &DeviceManagementIntentSettingSecretConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementIntentSettingSecretConstraint";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementIntentSettingSecretConstraint"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementIntentSettingSecretConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

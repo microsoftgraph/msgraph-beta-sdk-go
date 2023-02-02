@@ -23,8 +23,8 @@ func NewAndroidForWorkApp()(*AndroidForWorkApp) {
     m := &AndroidForWorkApp{
         MobileApp: *NewMobileApp(),
     }
-    odataTypeValue := "#microsoft.graph.androidForWorkApp";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidForWorkApp"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidForWorkAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

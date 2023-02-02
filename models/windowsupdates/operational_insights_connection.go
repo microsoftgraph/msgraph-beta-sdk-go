@@ -19,8 +19,8 @@ func NewOperationalInsightsConnection()(*OperationalInsightsConnection) {
     m := &OperationalInsightsConnection{
         ResourceConnection: *NewResourceConnection(),
     }
-    odataTypeValue := "#microsoft.graph.windowsUpdates.operationalInsightsConnection";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsUpdates.operationalInsightsConnection"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateOperationalInsightsConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

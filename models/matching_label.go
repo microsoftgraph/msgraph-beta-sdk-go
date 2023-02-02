@@ -35,7 +35,7 @@ type MatchingLabel struct {
 func NewMatchingLabel()(*MatchingLabel) {
     m := &MatchingLabel{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMatchingLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

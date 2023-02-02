@@ -19,7 +19,7 @@ type MatchLocation struct {
 func NewMatchLocation()(*MatchLocation) {
     m := &MatchLocation{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMatchLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

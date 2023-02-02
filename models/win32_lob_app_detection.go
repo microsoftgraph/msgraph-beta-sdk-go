@@ -15,7 +15,7 @@ type Win32LobAppDetection struct {
 func NewWin32LobAppDetection()(*Win32LobAppDetection) {
     m := &Win32LobAppDetection{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWin32LobAppDetectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -60,8 +60,8 @@ func NewManagedTenantsTenantGroupsRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedTenantsTenantGroupsRequestBuilder instantiates a new TenantGroupsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewManagedTenantsTenantGroupsRequestBuilder(rawUrl string, requestAdapter i
 }
 // Count provides operations to count the resources in the collection.
 func (m *ManagedTenantsTenantGroupsRequestBuilder) Count()(*ManagedTenantsTenantGroupsCountRequestBuilder) {
-    return NewManagedTenantsTenantGroupsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedTenantsTenantGroupsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of the tenantGroup objects and their properties.
 // [Find more info here]
@@ -96,6 +96,10 @@ func (m *ManagedTenantsTenantGroupsRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupCollectionResponseable), nil
 }
+// MicrosoftGraphManagedTenantsTenantSearch provides operations to call the tenantSearch method.
+func (m *ManagedTenantsTenantGroupsRequestBuilder) MicrosoftGraphManagedTenantsTenantSearch()(*ManagedTenantsTenantGroupsMicrosoftGraphManagedTenantsTenantSearchTenantSearchRequestBuilder) {
+    return NewManagedTenantsTenantGroupsMicrosoftGraphManagedTenantsTenantSearchTenantSearchRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Post create new navigation property to tenantGroups for tenantRelationships
 func (m *ManagedTenantsTenantGroupsRequestBuilder) Post(ctx context.Context, body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable, requestConfiguration *ManagedTenantsTenantGroupsRequestBuilderPostRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
@@ -114,10 +118,6 @@ func (m *ManagedTenantsTenantGroupsRequestBuilder) Post(ctx context.Context, bod
         return nil, nil
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable), nil
-}
-// TenantSearch provides operations to call the tenantSearch method.
-func (m *ManagedTenantsTenantGroupsRequestBuilder) TenantSearch()(*ManagedTenantsTenantGroupsTenantSearchRequestBuilder) {
-    return NewManagedTenantsTenantGroupsTenantSearchRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToGetRequestInformation get a list of the tenantGroup objects and their properties.
 func (m *ManagedTenantsTenantGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsTenantGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -142,7 +142,10 @@ func (m *ManagedTenantsTenantGroupsRequestBuilder) ToPostRequestInformation(ctx 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

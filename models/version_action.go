@@ -17,7 +17,7 @@ type VersionAction struct {
 func NewVersionAction()(*VersionAction) {
     m := &VersionAction{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateVersionActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

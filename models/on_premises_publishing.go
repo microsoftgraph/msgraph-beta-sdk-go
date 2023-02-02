@@ -38,9 +38,9 @@ type OnPremisesPublishing struct {
     isTranslateLinksInBodyEnabled *bool
     // The OdataType property
     odataType *string
-    // Represents the application segment collection for an on-premises wildcard application.
+    // The onPremisesApplicationSegments property
     onPremisesApplicationSegments []OnPremisesApplicationSegmentable
-    // The segmentsConfiguration property
+    // Represents the collection of application segments for an on-premises wildcard application that's published through Azure AD Application Proxy.
     segmentsConfiguration SegmentConfigurationable
     // Represents the single sign-on configuration for the on-premises application.
     singleSignOnSettings OnPremisesPublishingSingleSignOnable
@@ -57,7 +57,7 @@ type OnPremisesPublishing struct {
 func NewOnPremisesPublishing()(*OnPremisesPublishing) {
     m := &OnPremisesPublishing{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateOnPremisesPublishingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -357,11 +357,11 @@ func (m *OnPremisesPublishing) GetIsTranslateLinksInBodyEnabled()(*bool) {
 func (m *OnPremisesPublishing) GetOdataType()(*string) {
     return m.odataType
 }
-// GetOnPremisesApplicationSegments gets the onPremisesApplicationSegments property value. Represents the application segment collection for an on-premises wildcard application.
+// GetOnPremisesApplicationSegments gets the onPremisesApplicationSegments property value. The onPremisesApplicationSegments property
 func (m *OnPremisesPublishing) GetOnPremisesApplicationSegments()([]OnPremisesApplicationSegmentable) {
     return m.onPremisesApplicationSegments
 }
-// GetSegmentsConfiguration gets the segmentsConfiguration property value. The segmentsConfiguration property
+// GetSegmentsConfiguration gets the segmentsConfiguration property value. Represents the collection of application segments for an on-premises wildcard application that's published through Azure AD Application Proxy.
 func (m *OnPremisesPublishing) GetSegmentsConfiguration()(SegmentConfigurationable) {
     return m.segmentsConfiguration
 }
@@ -596,11 +596,11 @@ func (m *OnPremisesPublishing) SetIsTranslateLinksInBodyEnabled(value *bool)() {
 func (m *OnPremisesPublishing) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetOnPremisesApplicationSegments sets the onPremisesApplicationSegments property value. Represents the application segment collection for an on-premises wildcard application.
+// SetOnPremisesApplicationSegments sets the onPremisesApplicationSegments property value. The onPremisesApplicationSegments property
 func (m *OnPremisesPublishing) SetOnPremisesApplicationSegments(value []OnPremisesApplicationSegmentable)() {
     m.onPremisesApplicationSegments = value
 }
-// SetSegmentsConfiguration sets the segmentsConfiguration property value. The segmentsConfiguration property
+// SetSegmentsConfiguration sets the segmentsConfiguration property value. Represents the collection of application segments for an on-premises wildcard application that's published through Azure AD Application Proxy.
 func (m *OnPremisesPublishing) SetSegmentsConfiguration(value SegmentConfigurationable)() {
     m.segmentsConfiguration = value
 }

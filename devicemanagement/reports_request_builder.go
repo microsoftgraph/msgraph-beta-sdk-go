@@ -48,7 +48,7 @@ type ReportsRequestBuilderPatchRequestConfiguration struct {
 }
 // CachedReportConfigurations provides operations to manage the cachedReportConfigurations property of the microsoft.graph.deviceManagementReports entity.
 func (m *ReportsRequestBuilder) CachedReportConfigurations()(*ReportsCachedReportConfigurationsRequestBuilder) {
-    return NewReportsCachedReportConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewReportsCachedReportConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CachedReportConfigurationsById provides operations to manage the cachedReportConfigurations property of the microsoft.graph.deviceManagementReports entity.
 func (m *ReportsRequestBuilder) CachedReportConfigurationsById(id string)(*ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilder) {
@@ -59,7 +59,7 @@ func (m *ReportsRequestBuilder) CachedReportConfigurationsById(id string)(*Repor
     if id != "" {
         urlTplParams["deviceManagementCachedReportConfiguration%2Did"] = id
     }
-    return NewReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewReportsRequestBuilderInternal instantiates a new ReportsRequestBuilder and sets the default values.
 func NewReportsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsRequestBuilder) {
@@ -70,8 +70,8 @@ func NewReportsRequestBuilderInternal(pathParameters map[string]string, requestA
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewReportsRequestBuilder instantiates a new ReportsRequestBuilder and sets the default values.
@@ -98,7 +98,7 @@ func (m *ReportsRequestBuilder) Delete(ctx context.Context, requestConfiguration
 }
 // ExportJobs provides operations to manage the exportJobs property of the microsoft.graph.deviceManagementReports entity.
 func (m *ReportsRequestBuilder) ExportJobs()(*ReportsExportJobsRequestBuilder) {
-    return NewReportsExportJobsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewReportsExportJobsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ExportJobsById provides operations to manage the exportJobs property of the microsoft.graph.deviceManagementReports entity.
 func (m *ReportsRequestBuilder) ExportJobsById(id string)(*ReportsExportJobsDeviceManagementExportJobItemRequestBuilder) {
@@ -109,7 +109,7 @@ func (m *ReportsRequestBuilder) ExportJobsById(id string)(*ReportsExportJobsDevi
     if id != "" {
         urlTplParams["deviceManagementExportJob%2Did"] = id
     }
-    return NewReportsExportJobsDeviceManagementExportJobItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewReportsExportJobsDeviceManagementExportJobItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Get reports singleton
 func (m *ReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *ReportsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReportsable, error) {
@@ -130,245 +130,245 @@ func (m *ReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *R
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReportsable), nil
 }
-// GetActiveMalwareReport provides operations to call the getActiveMalwareReport method.
-func (m *ReportsRequestBuilder) GetActiveMalwareReport()(*ReportsGetActiveMalwareReportRequestBuilder) {
-    return NewReportsGetActiveMalwareReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetActiveMalwareReport provides operations to call the getActiveMalwareReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetActiveMalwareReport()(*ReportsMicrosoftGraphGetActiveMalwareReportGetActiveMalwareReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetActiveMalwareReportGetActiveMalwareReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetActiveMalwareSummaryReport provides operations to call the getActiveMalwareSummaryReport method.
-func (m *ReportsRequestBuilder) GetActiveMalwareSummaryReport()(*ReportsGetActiveMalwareSummaryReportRequestBuilder) {
-    return NewReportsGetActiveMalwareSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetActiveMalwareSummaryReport provides operations to call the getActiveMalwareSummaryReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetActiveMalwareSummaryReport()(*ReportsMicrosoftGraphGetActiveMalwareSummaryReportGetActiveMalwareSummaryReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetActiveMalwareSummaryReportGetActiveMalwareSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetAllCertificatesReport provides operations to call the getAllCertificatesReport method.
-func (m *ReportsRequestBuilder) GetAllCertificatesReport()(*ReportsGetAllCertificatesReportRequestBuilder) {
-    return NewReportsGetAllCertificatesReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetAllCertificatesReport provides operations to call the getAllCertificatesReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetAllCertificatesReport()(*ReportsMicrosoftGraphGetAllCertificatesReportGetAllCertificatesReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetAllCertificatesReportGetAllCertificatesReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetAppsInstallSummaryReport provides operations to call the getAppsInstallSummaryReport method.
-func (m *ReportsRequestBuilder) GetAppsInstallSummaryReport()(*ReportsGetAppsInstallSummaryReportRequestBuilder) {
-    return NewReportsGetAppsInstallSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetAppsInstallSummaryReport provides operations to call the getAppsInstallSummaryReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetAppsInstallSummaryReport()(*ReportsMicrosoftGraphGetAppsInstallSummaryReportGetAppsInstallSummaryReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetAppsInstallSummaryReportGetAppsInstallSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetAppStatusOverviewReport provides operations to call the getAppStatusOverviewReport method.
-func (m *ReportsRequestBuilder) GetAppStatusOverviewReport()(*ReportsGetAppStatusOverviewReportRequestBuilder) {
-    return NewReportsGetAppStatusOverviewReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetAppStatusOverviewReport provides operations to call the getAppStatusOverviewReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetAppStatusOverviewReport()(*ReportsMicrosoftGraphGetAppStatusOverviewReportGetAppStatusOverviewReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetAppStatusOverviewReportGetAppStatusOverviewReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetCachedReport provides operations to call the getCachedReport method.
-func (m *ReportsRequestBuilder) GetCachedReport()(*ReportsGetCachedReportRequestBuilder) {
-    return NewReportsGetCachedReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetCachedReport provides operations to call the getCachedReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetCachedReport()(*ReportsMicrosoftGraphGetCachedReportGetCachedReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetCachedReportGetCachedReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetCertificatesReport provides operations to call the getCertificatesReport method.
-func (m *ReportsRequestBuilder) GetCertificatesReport()(*ReportsGetCertificatesReportRequestBuilder) {
-    return NewReportsGetCertificatesReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetCertificatesReport provides operations to call the getCertificatesReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetCertificatesReport()(*ReportsMicrosoftGraphGetCertificatesReportGetCertificatesReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetCertificatesReportGetCertificatesReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetCompliancePoliciesReportForDevice provides operations to call the getCompliancePoliciesReportForDevice method.
-func (m *ReportsRequestBuilder) GetCompliancePoliciesReportForDevice()(*ReportsGetCompliancePoliciesReportForDeviceRequestBuilder) {
-    return NewReportsGetCompliancePoliciesReportForDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetCompliancePoliciesReportForDevice provides operations to call the getCompliancePoliciesReportForDevice method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetCompliancePoliciesReportForDevice()(*ReportsMicrosoftGraphGetCompliancePoliciesReportForDeviceGetCompliancePoliciesReportForDeviceRequestBuilder) {
+    return NewReportsMicrosoftGraphGetCompliancePoliciesReportForDeviceGetCompliancePoliciesReportForDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetCompliancePolicyDevicesReport provides operations to call the getCompliancePolicyDevicesReport method.
-func (m *ReportsRequestBuilder) GetCompliancePolicyDevicesReport()(*ReportsGetCompliancePolicyDevicesReportRequestBuilder) {
-    return NewReportsGetCompliancePolicyDevicesReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetCompliancePolicyDevicesReport provides operations to call the getCompliancePolicyDevicesReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetCompliancePolicyDevicesReport()(*ReportsMicrosoftGraphGetCompliancePolicyDevicesReportGetCompliancePolicyDevicesReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetCompliancePolicyDevicesReportGetCompliancePolicyDevicesReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetCompliancePolicyDeviceSummaryReport provides operations to call the getCompliancePolicyDeviceSummaryReport method.
-func (m *ReportsRequestBuilder) GetCompliancePolicyDeviceSummaryReport()(*ReportsGetCompliancePolicyDeviceSummaryReportRequestBuilder) {
-    return NewReportsGetCompliancePolicyDeviceSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetCompliancePolicyDeviceSummaryReport provides operations to call the getCompliancePolicyDeviceSummaryReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetCompliancePolicyDeviceSummaryReport()(*ReportsMicrosoftGraphGetCompliancePolicyDeviceSummaryReportGetCompliancePolicyDeviceSummaryReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetCompliancePolicyDeviceSummaryReportGetCompliancePolicyDeviceSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetCompliancePolicyNonComplianceReport provides operations to call the getCompliancePolicyNonComplianceReport method.
-func (m *ReportsRequestBuilder) GetCompliancePolicyNonComplianceReport()(*ReportsGetCompliancePolicyNonComplianceReportRequestBuilder) {
-    return NewReportsGetCompliancePolicyNonComplianceReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetCompliancePolicyNonComplianceReport provides operations to call the getCompliancePolicyNonComplianceReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetCompliancePolicyNonComplianceReport()(*ReportsMicrosoftGraphGetCompliancePolicyNonComplianceReportGetCompliancePolicyNonComplianceReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetCompliancePolicyNonComplianceReportGetCompliancePolicyNonComplianceReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetCompliancePolicyNonComplianceSummaryReport provides operations to call the getCompliancePolicyNonComplianceSummaryReport method.
-func (m *ReportsRequestBuilder) GetCompliancePolicyNonComplianceSummaryReport()(*ReportsGetCompliancePolicyNonComplianceSummaryReportRequestBuilder) {
-    return NewReportsGetCompliancePolicyNonComplianceSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetCompliancePolicyNonComplianceSummaryReport provides operations to call the getCompliancePolicyNonComplianceSummaryReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetCompliancePolicyNonComplianceSummaryReport()(*ReportsMicrosoftGraphGetCompliancePolicyNonComplianceSummaryReportGetCompliancePolicyNonComplianceSummaryReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetCompliancePolicyNonComplianceSummaryReportGetCompliancePolicyNonComplianceSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetComplianceSettingDetailsReport provides operations to call the getComplianceSettingDetailsReport method.
-func (m *ReportsRequestBuilder) GetComplianceSettingDetailsReport()(*ReportsGetComplianceSettingDetailsReportRequestBuilder) {
-    return NewReportsGetComplianceSettingDetailsReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetComplianceSettingDetailsReport provides operations to call the getComplianceSettingDetailsReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetComplianceSettingDetailsReport()(*ReportsMicrosoftGraphGetComplianceSettingDetailsReportGetComplianceSettingDetailsReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetComplianceSettingDetailsReportGetComplianceSettingDetailsReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetComplianceSettingNonComplianceReport provides operations to call the getComplianceSettingNonComplianceReport method.
-func (m *ReportsRequestBuilder) GetComplianceSettingNonComplianceReport()(*ReportsGetComplianceSettingNonComplianceReportRequestBuilder) {
-    return NewReportsGetComplianceSettingNonComplianceReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetComplianceSettingNonComplianceReport provides operations to call the getComplianceSettingNonComplianceReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetComplianceSettingNonComplianceReport()(*ReportsMicrosoftGraphGetComplianceSettingNonComplianceReportGetComplianceSettingNonComplianceReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetComplianceSettingNonComplianceReportGetComplianceSettingNonComplianceReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetComplianceSettingsReport provides operations to call the getComplianceSettingsReport method.
-func (m *ReportsRequestBuilder) GetComplianceSettingsReport()(*ReportsGetComplianceSettingsReportRequestBuilder) {
-    return NewReportsGetComplianceSettingsReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetComplianceSettingsReport provides operations to call the getComplianceSettingsReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetComplianceSettingsReport()(*ReportsMicrosoftGraphGetComplianceSettingsReportGetComplianceSettingsReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetComplianceSettingsReportGetComplianceSettingsReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetConfigManagerDevicePolicyStatusReport provides operations to call the getConfigManagerDevicePolicyStatusReport method.
-func (m *ReportsRequestBuilder) GetConfigManagerDevicePolicyStatusReport()(*ReportsGetConfigManagerDevicePolicyStatusReportRequestBuilder) {
-    return NewReportsGetConfigManagerDevicePolicyStatusReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetConfigManagerDevicePolicyStatusReport provides operations to call the getConfigManagerDevicePolicyStatusReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetConfigManagerDevicePolicyStatusReport()(*ReportsMicrosoftGraphGetConfigManagerDevicePolicyStatusReportGetConfigManagerDevicePolicyStatusReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetConfigManagerDevicePolicyStatusReportGetConfigManagerDevicePolicyStatusReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetConfigurationPoliciesReportForDevice provides operations to call the getConfigurationPoliciesReportForDevice method.
-func (m *ReportsRequestBuilder) GetConfigurationPoliciesReportForDevice()(*ReportsGetConfigurationPoliciesReportForDeviceRequestBuilder) {
-    return NewReportsGetConfigurationPoliciesReportForDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetConfigurationPoliciesReportForDevice provides operations to call the getConfigurationPoliciesReportForDevice method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetConfigurationPoliciesReportForDevice()(*ReportsMicrosoftGraphGetConfigurationPoliciesReportForDeviceGetConfigurationPoliciesReportForDeviceRequestBuilder) {
+    return NewReportsMicrosoftGraphGetConfigurationPoliciesReportForDeviceGetConfigurationPoliciesReportForDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetConfigurationPolicyDevicesReport provides operations to call the getConfigurationPolicyDevicesReport method.
-func (m *ReportsRequestBuilder) GetConfigurationPolicyDevicesReport()(*ReportsGetConfigurationPolicyDevicesReportRequestBuilder) {
-    return NewReportsGetConfigurationPolicyDevicesReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetConfigurationPolicyDevicesReport provides operations to call the getConfigurationPolicyDevicesReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetConfigurationPolicyDevicesReport()(*ReportsMicrosoftGraphGetConfigurationPolicyDevicesReportGetConfigurationPolicyDevicesReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetConfigurationPolicyDevicesReportGetConfigurationPolicyDevicesReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetConfigurationPolicyDeviceSummaryReport provides operations to call the getConfigurationPolicyDeviceSummaryReport method.
-func (m *ReportsRequestBuilder) GetConfigurationPolicyDeviceSummaryReport()(*ReportsGetConfigurationPolicyDeviceSummaryReportRequestBuilder) {
-    return NewReportsGetConfigurationPolicyDeviceSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetConfigurationPolicyDeviceSummaryReport provides operations to call the getConfigurationPolicyDeviceSummaryReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetConfigurationPolicyDeviceSummaryReport()(*ReportsMicrosoftGraphGetConfigurationPolicyDeviceSummaryReportGetConfigurationPolicyDeviceSummaryReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetConfigurationPolicyDeviceSummaryReportGetConfigurationPolicyDeviceSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetConfigurationPolicyNonComplianceReport provides operations to call the getConfigurationPolicyNonComplianceReport method.
-func (m *ReportsRequestBuilder) GetConfigurationPolicyNonComplianceReport()(*ReportsGetConfigurationPolicyNonComplianceReportRequestBuilder) {
-    return NewReportsGetConfigurationPolicyNonComplianceReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetConfigurationPolicyNonComplianceReport provides operations to call the getConfigurationPolicyNonComplianceReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetConfigurationPolicyNonComplianceReport()(*ReportsMicrosoftGraphGetConfigurationPolicyNonComplianceReportGetConfigurationPolicyNonComplianceReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetConfigurationPolicyNonComplianceReportGetConfigurationPolicyNonComplianceReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetConfigurationPolicyNonComplianceSummaryReport provides operations to call the getConfigurationPolicyNonComplianceSummaryReport method.
-func (m *ReportsRequestBuilder) GetConfigurationPolicyNonComplianceSummaryReport()(*ReportsGetConfigurationPolicyNonComplianceSummaryReportRequestBuilder) {
-    return NewReportsGetConfigurationPolicyNonComplianceSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetConfigurationPolicyNonComplianceSummaryReport provides operations to call the getConfigurationPolicyNonComplianceSummaryReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetConfigurationPolicyNonComplianceSummaryReport()(*ReportsMicrosoftGraphGetConfigurationPolicyNonComplianceSummaryReportGetConfigurationPolicyNonComplianceSummaryReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetConfigurationPolicyNonComplianceSummaryReportGetConfigurationPolicyNonComplianceSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetConfigurationPolicySettingsDeviceSummaryReport provides operations to call the getConfigurationPolicySettingsDeviceSummaryReport method.
-func (m *ReportsRequestBuilder) GetConfigurationPolicySettingsDeviceSummaryReport()(*ReportsGetConfigurationPolicySettingsDeviceSummaryReportRequestBuilder) {
-    return NewReportsGetConfigurationPolicySettingsDeviceSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetConfigurationPolicySettingsDeviceSummaryReport provides operations to call the getConfigurationPolicySettingsDeviceSummaryReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetConfigurationPolicySettingsDeviceSummaryReport()(*ReportsMicrosoftGraphGetConfigurationPolicySettingsDeviceSummaryReportGetConfigurationPolicySettingsDeviceSummaryReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetConfigurationPolicySettingsDeviceSummaryReportGetConfigurationPolicySettingsDeviceSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetConfigurationSettingDetailsReport provides operations to call the getConfigurationSettingDetailsReport method.
-func (m *ReportsRequestBuilder) GetConfigurationSettingDetailsReport()(*ReportsGetConfigurationSettingDetailsReportRequestBuilder) {
-    return NewReportsGetConfigurationSettingDetailsReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetConfigurationSettingDetailsReport provides operations to call the getConfigurationSettingDetailsReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetConfigurationSettingDetailsReport()(*ReportsMicrosoftGraphGetConfigurationSettingDetailsReportGetConfigurationSettingDetailsReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetConfigurationSettingDetailsReportGetConfigurationSettingDetailsReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetConfigurationSettingNonComplianceReport provides operations to call the getConfigurationSettingNonComplianceReport method.
-func (m *ReportsRequestBuilder) GetConfigurationSettingNonComplianceReport()(*ReportsGetConfigurationSettingNonComplianceReportRequestBuilder) {
-    return NewReportsGetConfigurationSettingNonComplianceReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetConfigurationSettingNonComplianceReport provides operations to call the getConfigurationSettingNonComplianceReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetConfigurationSettingNonComplianceReport()(*ReportsMicrosoftGraphGetConfigurationSettingNonComplianceReportGetConfigurationSettingNonComplianceReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetConfigurationSettingNonComplianceReportGetConfigurationSettingNonComplianceReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetConfigurationSettingsReport provides operations to call the getConfigurationSettingsReport method.
-func (m *ReportsRequestBuilder) GetConfigurationSettingsReport()(*ReportsGetConfigurationSettingsReportRequestBuilder) {
-    return NewReportsGetConfigurationSettingsReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetConfigurationSettingsReport provides operations to call the getConfigurationSettingsReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetConfigurationSettingsReport()(*ReportsMicrosoftGraphGetConfigurationSettingsReportGetConfigurationSettingsReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetConfigurationSettingsReportGetConfigurationSettingsReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetDeviceConfigurationPolicySettingsSummaryReport provides operations to call the getDeviceConfigurationPolicySettingsSummaryReport method.
-func (m *ReportsRequestBuilder) GetDeviceConfigurationPolicySettingsSummaryReport()(*ReportsGetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder) {
-    return NewReportsGetDeviceConfigurationPolicySettingsSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetDeviceConfigurationPolicySettingsSummaryReport provides operations to call the getDeviceConfigurationPolicySettingsSummaryReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetDeviceConfigurationPolicySettingsSummaryReport()(*ReportsMicrosoftGraphGetDeviceConfigurationPolicySettingsSummaryReportGetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetDeviceConfigurationPolicySettingsSummaryReportGetDeviceConfigurationPolicySettingsSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetDeviceConfigurationPolicyStatusSummary provides operations to call the getDeviceConfigurationPolicyStatusSummary method.
-func (m *ReportsRequestBuilder) GetDeviceConfigurationPolicyStatusSummary()(*ReportsGetDeviceConfigurationPolicyStatusSummaryRequestBuilder) {
-    return NewReportsGetDeviceConfigurationPolicyStatusSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetDeviceConfigurationPolicyStatusSummary provides operations to call the getDeviceConfigurationPolicyStatusSummary method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetDeviceConfigurationPolicyStatusSummary()(*ReportsMicrosoftGraphGetDeviceConfigurationPolicyStatusSummaryGetDeviceConfigurationPolicyStatusSummaryRequestBuilder) {
+    return NewReportsMicrosoftGraphGetDeviceConfigurationPolicyStatusSummaryGetDeviceConfigurationPolicyStatusSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetDeviceInstallStatusReport provides operations to call the getDeviceInstallStatusReport method.
-func (m *ReportsRequestBuilder) GetDeviceInstallStatusReport()(*ReportsGetDeviceInstallStatusReportRequestBuilder) {
-    return NewReportsGetDeviceInstallStatusReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetDeviceInstallStatusReport provides operations to call the getDeviceInstallStatusReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetDeviceInstallStatusReport()(*ReportsMicrosoftGraphGetDeviceInstallStatusReportGetDeviceInstallStatusReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetDeviceInstallStatusReportGetDeviceInstallStatusReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetDeviceManagementIntentPerSettingContributingProfiles provides operations to call the getDeviceManagementIntentPerSettingContributingProfiles method.
-func (m *ReportsRequestBuilder) GetDeviceManagementIntentPerSettingContributingProfiles()(*ReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder) {
-    return NewReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetDeviceManagementIntentPerSettingContributingProfiles provides operations to call the getDeviceManagementIntentPerSettingContributingProfiles method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetDeviceManagementIntentPerSettingContributingProfiles()(*ReportsMicrosoftGraphGetDeviceManagementIntentPerSettingContributingProfilesGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder) {
+    return NewReportsMicrosoftGraphGetDeviceManagementIntentPerSettingContributingProfilesGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetDeviceManagementIntentSettingsReport provides operations to call the getDeviceManagementIntentSettingsReport method.
-func (m *ReportsRequestBuilder) GetDeviceManagementIntentSettingsReport()(*ReportsGetDeviceManagementIntentSettingsReportRequestBuilder) {
-    return NewReportsGetDeviceManagementIntentSettingsReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetDeviceManagementIntentSettingsReport provides operations to call the getDeviceManagementIntentSettingsReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetDeviceManagementIntentSettingsReport()(*ReportsMicrosoftGraphGetDeviceManagementIntentSettingsReportGetDeviceManagementIntentSettingsReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetDeviceManagementIntentSettingsReportGetDeviceManagementIntentSettingsReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetDeviceNonComplianceReport provides operations to call the getDeviceNonComplianceReport method.
-func (m *ReportsRequestBuilder) GetDeviceNonComplianceReport()(*ReportsGetDeviceNonComplianceReportRequestBuilder) {
-    return NewReportsGetDeviceNonComplianceReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetDeviceNonComplianceReport provides operations to call the getDeviceNonComplianceReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetDeviceNonComplianceReport()(*ReportsMicrosoftGraphGetDeviceNonComplianceReportGetDeviceNonComplianceReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetDeviceNonComplianceReportGetDeviceNonComplianceReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetDevicesWithoutCompliancePolicyReport provides operations to call the getDevicesWithoutCompliancePolicyReport method.
-func (m *ReportsRequestBuilder) GetDevicesWithoutCompliancePolicyReport()(*ReportsGetDevicesWithoutCompliancePolicyReportRequestBuilder) {
-    return NewReportsGetDevicesWithoutCompliancePolicyReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetDevicesWithoutCompliancePolicyReport provides operations to call the getDevicesWithoutCompliancePolicyReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetDevicesWithoutCompliancePolicyReport()(*ReportsMicrosoftGraphGetDevicesWithoutCompliancePolicyReportGetDevicesWithoutCompliancePolicyReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetDevicesWithoutCompliancePolicyReportGetDevicesWithoutCompliancePolicyReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetEncryptionReportForDevices provides operations to call the getEncryptionReportForDevices method.
-func (m *ReportsRequestBuilder) GetEncryptionReportForDevices()(*ReportsGetEncryptionReportForDevicesRequestBuilder) {
-    return NewReportsGetEncryptionReportForDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetEncryptionReportForDevices provides operations to call the getEncryptionReportForDevices method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetEncryptionReportForDevices()(*ReportsMicrosoftGraphGetEncryptionReportForDevicesGetEncryptionReportForDevicesRequestBuilder) {
+    return NewReportsMicrosoftGraphGetEncryptionReportForDevicesGetEncryptionReportForDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetEnrollmentConfigurationPoliciesByDevice provides operations to call the getEnrollmentConfigurationPoliciesByDevice method.
-func (m *ReportsRequestBuilder) GetEnrollmentConfigurationPoliciesByDevice()(*ReportsGetEnrollmentConfigurationPoliciesByDeviceRequestBuilder) {
-    return NewReportsGetEnrollmentConfigurationPoliciesByDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetEnrollmentConfigurationPoliciesByDevice provides operations to call the getEnrollmentConfigurationPoliciesByDevice method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetEnrollmentConfigurationPoliciesByDevice()(*ReportsMicrosoftGraphGetEnrollmentConfigurationPoliciesByDeviceGetEnrollmentConfigurationPoliciesByDeviceRequestBuilder) {
+    return NewReportsMicrosoftGraphGetEnrollmentConfigurationPoliciesByDeviceGetEnrollmentConfigurationPoliciesByDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetFailedMobileAppsReport provides operations to call the getFailedMobileAppsReport method.
-func (m *ReportsRequestBuilder) GetFailedMobileAppsReport()(*ReportsGetFailedMobileAppsReportRequestBuilder) {
-    return NewReportsGetFailedMobileAppsReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetFailedMobileAppsReport provides operations to call the getFailedMobileAppsReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetFailedMobileAppsReport()(*ReportsMicrosoftGraphGetFailedMobileAppsReportGetFailedMobileAppsReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetFailedMobileAppsReportGetFailedMobileAppsReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetFailedMobileAppsSummaryReport provides operations to call the getFailedMobileAppsSummaryReport method.
-func (m *ReportsRequestBuilder) GetFailedMobileAppsSummaryReport()(*ReportsGetFailedMobileAppsSummaryReportRequestBuilder) {
-    return NewReportsGetFailedMobileAppsSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetFailedMobileAppsSummaryReport provides operations to call the getFailedMobileAppsSummaryReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetFailedMobileAppsSummaryReport()(*ReportsMicrosoftGraphGetFailedMobileAppsSummaryReportGetFailedMobileAppsSummaryReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetFailedMobileAppsSummaryReportGetFailedMobileAppsSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetGroupPolicySettingsDeviceSettingsReport provides operations to call the getGroupPolicySettingsDeviceSettingsReport method.
-func (m *ReportsRequestBuilder) GetGroupPolicySettingsDeviceSettingsReport()(*ReportsGetGroupPolicySettingsDeviceSettingsReportRequestBuilder) {
-    return NewReportsGetGroupPolicySettingsDeviceSettingsReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetGroupPolicySettingsDeviceSettingsReport provides operations to call the getGroupPolicySettingsDeviceSettingsReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetGroupPolicySettingsDeviceSettingsReport()(*ReportsMicrosoftGraphGetGroupPolicySettingsDeviceSettingsReportGetGroupPolicySettingsDeviceSettingsReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetGroupPolicySettingsDeviceSettingsReportGetGroupPolicySettingsDeviceSettingsReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetHistoricalReport provides operations to call the getHistoricalReport method.
-func (m *ReportsRequestBuilder) GetHistoricalReport()(*ReportsGetHistoricalReportRequestBuilder) {
-    return NewReportsGetHistoricalReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetHistoricalReport provides operations to call the getHistoricalReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetHistoricalReport()(*ReportsMicrosoftGraphGetHistoricalReportGetHistoricalReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetHistoricalReportGetHistoricalReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetMalwareSummaryReport provides operations to call the getMalwareSummaryReport method.
-func (m *ReportsRequestBuilder) GetMalwareSummaryReport()(*ReportsGetMalwareSummaryReportRequestBuilder) {
-    return NewReportsGetMalwareSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetMalwareSummaryReport provides operations to call the getMalwareSummaryReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetMalwareSummaryReport()(*ReportsMicrosoftGraphGetMalwareSummaryReportGetMalwareSummaryReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetMalwareSummaryReportGetMalwareSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetMobileApplicationManagementAppConfigurationReport provides operations to call the getMobileApplicationManagementAppConfigurationReport method.
-func (m *ReportsRequestBuilder) GetMobileApplicationManagementAppConfigurationReport()(*ReportsGetMobileApplicationManagementAppConfigurationReportRequestBuilder) {
-    return NewReportsGetMobileApplicationManagementAppConfigurationReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetMobileApplicationManagementAppConfigurationReport provides operations to call the getMobileApplicationManagementAppConfigurationReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetMobileApplicationManagementAppConfigurationReport()(*ReportsMicrosoftGraphGetMobileApplicationManagementAppConfigurationReportGetMobileApplicationManagementAppConfigurationReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetMobileApplicationManagementAppConfigurationReportGetMobileApplicationManagementAppConfigurationReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetMobileApplicationManagementAppRegistrationSummaryReport provides operations to call the getMobileApplicationManagementAppRegistrationSummaryReport method.
-func (m *ReportsRequestBuilder) GetMobileApplicationManagementAppRegistrationSummaryReport()(*ReportsGetMobileApplicationManagementAppRegistrationSummaryReportRequestBuilder) {
-    return NewReportsGetMobileApplicationManagementAppRegistrationSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetMobileApplicationManagementAppRegistrationSummaryReport provides operations to call the getMobileApplicationManagementAppRegistrationSummaryReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetMobileApplicationManagementAppRegistrationSummaryReport()(*ReportsMicrosoftGraphGetMobileApplicationManagementAppRegistrationSummaryReportGetMobileApplicationManagementAppRegistrationSummaryReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetMobileApplicationManagementAppRegistrationSummaryReportGetMobileApplicationManagementAppRegistrationSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetNoncompliantDevicesAndSettingsReport provides operations to call the getNoncompliantDevicesAndSettingsReport method.
-func (m *ReportsRequestBuilder) GetNoncompliantDevicesAndSettingsReport()(*ReportsGetNoncompliantDevicesAndSettingsReportRequestBuilder) {
-    return NewReportsGetNoncompliantDevicesAndSettingsReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetNoncompliantDevicesAndSettingsReport provides operations to call the getNoncompliantDevicesAndSettingsReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetNoncompliantDevicesAndSettingsReport()(*ReportsMicrosoftGraphGetNoncompliantDevicesAndSettingsReportGetNoncompliantDevicesAndSettingsReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetNoncompliantDevicesAndSettingsReportGetNoncompliantDevicesAndSettingsReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetPolicyNonComplianceMetadata provides operations to call the getPolicyNonComplianceMetadata method.
-func (m *ReportsRequestBuilder) GetPolicyNonComplianceMetadata()(*ReportsGetPolicyNonComplianceMetadataRequestBuilder) {
-    return NewReportsGetPolicyNonComplianceMetadataRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetPolicyNonComplianceMetadata provides operations to call the getPolicyNonComplianceMetadata method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetPolicyNonComplianceMetadata()(*ReportsMicrosoftGraphGetPolicyNonComplianceMetadataGetPolicyNonComplianceMetadataRequestBuilder) {
+    return NewReportsMicrosoftGraphGetPolicyNonComplianceMetadataGetPolicyNonComplianceMetadataRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetPolicyNonComplianceReport provides operations to call the getPolicyNonComplianceReport method.
-func (m *ReportsRequestBuilder) GetPolicyNonComplianceReport()(*ReportsGetPolicyNonComplianceReportRequestBuilder) {
-    return NewReportsGetPolicyNonComplianceReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetPolicyNonComplianceReport provides operations to call the getPolicyNonComplianceReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetPolicyNonComplianceReport()(*ReportsMicrosoftGraphGetPolicyNonComplianceReportGetPolicyNonComplianceReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetPolicyNonComplianceReportGetPolicyNonComplianceReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetPolicyNonComplianceSummaryReport provides operations to call the getPolicyNonComplianceSummaryReport method.
-func (m *ReportsRequestBuilder) GetPolicyNonComplianceSummaryReport()(*ReportsGetPolicyNonComplianceSummaryReportRequestBuilder) {
-    return NewReportsGetPolicyNonComplianceSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetPolicyNonComplianceSummaryReport provides operations to call the getPolicyNonComplianceSummaryReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetPolicyNonComplianceSummaryReport()(*ReportsMicrosoftGraphGetPolicyNonComplianceSummaryReportGetPolicyNonComplianceSummaryReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetPolicyNonComplianceSummaryReportGetPolicyNonComplianceSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetQuietTimePolicyUsersReport provides operations to call the getQuietTimePolicyUsersReport method.
-func (m *ReportsRequestBuilder) GetQuietTimePolicyUsersReport()(*ReportsGetQuietTimePolicyUsersReportRequestBuilder) {
-    return NewReportsGetQuietTimePolicyUsersReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetQuietTimePolicyUsersReport provides operations to call the getQuietTimePolicyUsersReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetQuietTimePolicyUsersReport()(*ReportsMicrosoftGraphGetQuietTimePolicyUsersReportGetQuietTimePolicyUsersReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetQuietTimePolicyUsersReportGetQuietTimePolicyUsersReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetQuietTimePolicyUserSummaryReport provides operations to call the getQuietTimePolicyUserSummaryReport method.
-func (m *ReportsRequestBuilder) GetQuietTimePolicyUserSummaryReport()(*ReportsGetQuietTimePolicyUserSummaryReportRequestBuilder) {
-    return NewReportsGetQuietTimePolicyUserSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetQuietTimePolicyUserSummaryReport provides operations to call the getQuietTimePolicyUserSummaryReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetQuietTimePolicyUserSummaryReport()(*ReportsMicrosoftGraphGetQuietTimePolicyUserSummaryReportGetQuietTimePolicyUserSummaryReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetQuietTimePolicyUserSummaryReportGetQuietTimePolicyUserSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetRelatedAppsStatusReport provides operations to call the getRelatedAppsStatusReport method.
-func (m *ReportsRequestBuilder) GetRelatedAppsStatusReport()(*ReportsGetRelatedAppsStatusReportRequestBuilder) {
-    return NewReportsGetRelatedAppsStatusReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetRelatedAppsStatusReport provides operations to call the getRelatedAppsStatusReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetRelatedAppsStatusReport()(*ReportsMicrosoftGraphGetRelatedAppsStatusReportGetRelatedAppsStatusReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetRelatedAppsStatusReportGetRelatedAppsStatusReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetRemoteAssistanceSessionsReport provides operations to call the getRemoteAssistanceSessionsReport method.
-func (m *ReportsRequestBuilder) GetRemoteAssistanceSessionsReport()(*ReportsGetRemoteAssistanceSessionsReportRequestBuilder) {
-    return NewReportsGetRemoteAssistanceSessionsReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetRemoteAssistanceSessionsReport provides operations to call the getRemoteAssistanceSessionsReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetRemoteAssistanceSessionsReport()(*ReportsMicrosoftGraphGetRemoteAssistanceSessionsReportGetRemoteAssistanceSessionsReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetRemoteAssistanceSessionsReportGetRemoteAssistanceSessionsReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetReportFilters provides operations to call the getReportFilters method.
-func (m *ReportsRequestBuilder) GetReportFilters()(*ReportsGetReportFiltersRequestBuilder) {
-    return NewReportsGetReportFiltersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetReportFilters provides operations to call the getReportFilters method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetReportFilters()(*ReportsMicrosoftGraphGetReportFiltersGetReportFiltersRequestBuilder) {
+    return NewReportsMicrosoftGraphGetReportFiltersGetReportFiltersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetSettingNonComplianceReport provides operations to call the getSettingNonComplianceReport method.
-func (m *ReportsRequestBuilder) GetSettingNonComplianceReport()(*ReportsGetSettingNonComplianceReportRequestBuilder) {
-    return NewReportsGetSettingNonComplianceReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetSettingNonComplianceReport provides operations to call the getSettingNonComplianceReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetSettingNonComplianceReport()(*ReportsMicrosoftGraphGetSettingNonComplianceReportGetSettingNonComplianceReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetSettingNonComplianceReportGetSettingNonComplianceReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetUnhealthyDefenderAgentsReport provides operations to call the getUnhealthyDefenderAgentsReport method.
-func (m *ReportsRequestBuilder) GetUnhealthyDefenderAgentsReport()(*ReportsGetUnhealthyDefenderAgentsReportRequestBuilder) {
-    return NewReportsGetUnhealthyDefenderAgentsReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetUnhealthyDefenderAgentsReport provides operations to call the getUnhealthyDefenderAgentsReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetUnhealthyDefenderAgentsReport()(*ReportsMicrosoftGraphGetUnhealthyDefenderAgentsReportGetUnhealthyDefenderAgentsReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetUnhealthyDefenderAgentsReportGetUnhealthyDefenderAgentsReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetUnhealthyFirewallReport provides operations to call the getUnhealthyFirewallReport method.
-func (m *ReportsRequestBuilder) GetUnhealthyFirewallReport()(*ReportsGetUnhealthyFirewallReportRequestBuilder) {
-    return NewReportsGetUnhealthyFirewallReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetUnhealthyFirewallReport provides operations to call the getUnhealthyFirewallReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetUnhealthyFirewallReport()(*ReportsMicrosoftGraphGetUnhealthyFirewallReportGetUnhealthyFirewallReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetUnhealthyFirewallReportGetUnhealthyFirewallReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetUnhealthyFirewallSummaryReport provides operations to call the getUnhealthyFirewallSummaryReport method.
-func (m *ReportsRequestBuilder) GetUnhealthyFirewallSummaryReport()(*ReportsGetUnhealthyFirewallSummaryReportRequestBuilder) {
-    return NewReportsGetUnhealthyFirewallSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetUnhealthyFirewallSummaryReport provides operations to call the getUnhealthyFirewallSummaryReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetUnhealthyFirewallSummaryReport()(*ReportsMicrosoftGraphGetUnhealthyFirewallSummaryReportGetUnhealthyFirewallSummaryReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetUnhealthyFirewallSummaryReportGetUnhealthyFirewallSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetUserInstallStatusReport provides operations to call the getUserInstallStatusReport method.
-func (m *ReportsRequestBuilder) GetUserInstallStatusReport()(*ReportsGetUserInstallStatusReportRequestBuilder) {
-    return NewReportsGetUserInstallStatusReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetUserInstallStatusReport provides operations to call the getUserInstallStatusReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetUserInstallStatusReport()(*ReportsMicrosoftGraphGetUserInstallStatusReportGetUserInstallStatusReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetUserInstallStatusReportGetUserInstallStatusReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReport provides operations to call the getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport method.
-func (m *ReportsRequestBuilder) GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReport()(*ReportsGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) {
-    return NewReportsGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReport provides operations to call the getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReport()(*ReportsMicrosoftGraphGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetWindowsQualityUpdateAlertSummaryReport provides operations to call the getWindowsQualityUpdateAlertSummaryReport method.
-func (m *ReportsRequestBuilder) GetWindowsQualityUpdateAlertSummaryReport()(*ReportsGetWindowsQualityUpdateAlertSummaryReportRequestBuilder) {
-    return NewReportsGetWindowsQualityUpdateAlertSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetWindowsQualityUpdateAlertSummaryReport provides operations to call the getWindowsQualityUpdateAlertSummaryReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetWindowsQualityUpdateAlertSummaryReport()(*ReportsMicrosoftGraphGetWindowsQualityUpdateAlertSummaryReportGetWindowsQualityUpdateAlertSummaryReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetWindowsQualityUpdateAlertSummaryReportGetWindowsQualityUpdateAlertSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetWindowsUpdateAlertsPerPolicyPerDeviceReport provides operations to call the getWindowsUpdateAlertsPerPolicyPerDeviceReport method.
-func (m *ReportsRequestBuilder) GetWindowsUpdateAlertsPerPolicyPerDeviceReport()(*ReportsGetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) {
-    return NewReportsGetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetWindowsUpdateAlertsPerPolicyPerDeviceReport provides operations to call the getWindowsUpdateAlertsPerPolicyPerDeviceReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetWindowsUpdateAlertsPerPolicyPerDeviceReport()(*ReportsMicrosoftGraphGetWindowsUpdateAlertsPerPolicyPerDeviceReportGetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetWindowsUpdateAlertsPerPolicyPerDeviceReportGetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetWindowsUpdateAlertSummaryReport provides operations to call the getWindowsUpdateAlertSummaryReport method.
-func (m *ReportsRequestBuilder) GetWindowsUpdateAlertSummaryReport()(*ReportsGetWindowsUpdateAlertSummaryReportRequestBuilder) {
-    return NewReportsGetWindowsUpdateAlertSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetWindowsUpdateAlertSummaryReport provides operations to call the getWindowsUpdateAlertSummaryReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetWindowsUpdateAlertSummaryReport()(*ReportsMicrosoftGraphGetWindowsUpdateAlertSummaryReportGetWindowsUpdateAlertSummaryReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetWindowsUpdateAlertSummaryReportGetWindowsUpdateAlertSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetZebraFotaDeploymentReport provides operations to call the getZebraFotaDeploymentReport method.
-func (m *ReportsRequestBuilder) GetZebraFotaDeploymentReport()(*ReportsGetZebraFotaDeploymentReportRequestBuilder) {
-    return NewReportsGetZebraFotaDeploymentReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetZebraFotaDeploymentReport provides operations to call the getZebraFotaDeploymentReport method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetZebraFotaDeploymentReport()(*ReportsMicrosoftGraphGetZebraFotaDeploymentReportGetZebraFotaDeploymentReportRequestBuilder) {
+    return NewReportsMicrosoftGraphGetZebraFotaDeploymentReportGetZebraFotaDeploymentReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property reports in deviceManagement
 func (m *ReportsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReportsable, requestConfiguration *ReportsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReportsable, error) {
@@ -424,7 +424,10 @@ func (m *ReportsRequestBuilder) ToPatchRequestInformation(ctx context.Context, b
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

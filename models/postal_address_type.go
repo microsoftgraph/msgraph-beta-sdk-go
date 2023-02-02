@@ -25,7 +25,7 @@ type PostalAddressType struct {
 func NewPostalAddressType()(*PostalAddressType) {
     m := &PostalAddressType{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePostalAddressTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

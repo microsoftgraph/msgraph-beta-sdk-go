@@ -48,7 +48,7 @@ type ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderPatchRequest
 }
 // AppliedPolicies provides operations to manage the appliedPolicies property of the microsoft.graph.managedAppRegistration entity.
 func (m *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) AppliedPolicies()(*ManagedAppRegistrationsItemAppliedPoliciesRequestBuilder) {
-    return NewManagedAppRegistrationsItemAppliedPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedAppRegistrationsItemAppliedPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AppliedPoliciesById provides operations to manage the appliedPolicies property of the microsoft.graph.managedAppRegistration entity.
 func (m *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) AppliedPoliciesById(id string)(*ManagedAppRegistrationsItemAppliedPoliciesManagedAppPolicyItemRequestBuilder) {
@@ -59,7 +59,7 @@ func (m *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) Applie
     if id != "" {
         urlTplParams["managedAppPolicy%2Did"] = id
     }
-    return NewManagedAppRegistrationsItemAppliedPoliciesManagedAppPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagedAppRegistrationsItemAppliedPoliciesManagedAppPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderInternal instantiates a new ManagedAppRegistrationItemRequestBuilder and sets the default values.
 func NewManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) {
@@ -70,8 +70,8 @@ func NewManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderInternal(
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder instantiates a new ManagedAppRegistrationItemRequestBuilder and sets the default values.
@@ -117,7 +117,7 @@ func (m *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) Get(ct
 }
 // IntendedPolicies provides operations to manage the intendedPolicies property of the microsoft.graph.managedAppRegistration entity.
 func (m *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) IntendedPolicies()(*ManagedAppRegistrationsItemIntendedPoliciesRequestBuilder) {
-    return NewManagedAppRegistrationsItemIntendedPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedAppRegistrationsItemIntendedPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // IntendedPoliciesById provides operations to manage the intendedPolicies property of the microsoft.graph.managedAppRegistration entity.
 func (m *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) IntendedPoliciesById(id string)(*ManagedAppRegistrationsItemIntendedPoliciesManagedAppPolicyItemRequestBuilder) {
@@ -128,11 +128,11 @@ func (m *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) Intend
     if id != "" {
         urlTplParams["managedAppPolicy%2Did"] = id
     }
-    return NewManagedAppRegistrationsItemIntendedPoliciesManagedAppPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagedAppRegistrationsItemIntendedPoliciesManagedAppPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Operations provides operations to manage the operations property of the microsoft.graph.managedAppRegistration entity.
 func (m *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) Operations()(*ManagedAppRegistrationsItemOperationsRequestBuilder) {
-    return NewManagedAppRegistrationsItemOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedAppRegistrationsItemOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // OperationsById provides operations to manage the operations property of the microsoft.graph.managedAppRegistration entity.
 func (m *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) OperationsById(id string)(*ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilder) {
@@ -143,7 +143,7 @@ func (m *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) Operat
     if id != "" {
         urlTplParams["managedAppOperation%2Did"] = id
     }
-    return NewManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch update the navigation property managedAppRegistrations in deviceAppManagement
 func (m *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppRegistrationable, requestConfiguration *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppRegistrationable, error) {
@@ -199,7 +199,10 @@ func (m *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) ToPatc
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

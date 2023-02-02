@@ -18,13 +18,13 @@ type ExtensionProperty struct {
     // Following values are supported. Not nullable. UserGroupAdministrativeUnitApplicationDeviceOrganization
     targetObjects []string
 }
-// NewExtensionProperty instantiates a new ExtensionProperty and sets the default values.
+// NewExtensionProperty instantiates a new extensionProperty and sets the default values.
 func NewExtensionProperty()(*ExtensionProperty) {
     m := &ExtensionProperty{
         DirectoryObject: *NewDirectoryObject(),
     }
-    odataTypeValue := "#microsoft.graph.extensionProperty";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.extensionProperty"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateExtensionPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

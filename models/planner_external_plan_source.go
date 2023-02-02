@@ -19,8 +19,8 @@ func NewPlannerExternalPlanSource()(*PlannerExternalPlanSource) {
     m := &PlannerExternalPlanSource{
         PlannerPlanCreation: *NewPlannerPlanCreation(),
     }
-    odataTypeValue := "#microsoft.graph.plannerExternalPlanSource";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.plannerExternalPlanSource"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreatePlannerExternalPlanSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

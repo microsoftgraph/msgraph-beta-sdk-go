@@ -41,8 +41,8 @@ func NewItemRegisteredUsersDirectoryObjectItemRequestBuilderInternal(pathParamet
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemRegisteredUsersDirectoryObjectItemRequestBuilder instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
@@ -50,10 +50,6 @@ func NewItemRegisteredUsersDirectoryObjectItemRequestBuilder(rawUrl string, requ
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemRegisteredUsersDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
-}
-// Endpoint casts the previous resource to endpoint.
-func (m *ItemRegisteredUsersDirectoryObjectItemRequestBuilder) Endpoint()(*ItemRegisteredUsersItemEndpointRequestBuilder) {
-    return NewItemRegisteredUsersItemEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
 func (m *ItemRegisteredUsersDirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemRegisteredUsersDirectoryObjectItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
@@ -74,9 +70,17 @@ func (m *ItemRegisteredUsersDirectoryObjectItemRequestBuilder) Get(ctx context.C
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
 }
-// ServicePrincipal casts the previous resource to servicePrincipal.
-func (m *ItemRegisteredUsersDirectoryObjectItemRequestBuilder) ServicePrincipal()(*ItemRegisteredUsersItemServicePrincipalRequestBuilder) {
-    return NewItemRegisteredUsersItemServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphEndpoint casts the previous resource to endpoint.
+func (m *ItemRegisteredUsersDirectoryObjectItemRequestBuilder) MicrosoftGraphEndpoint()(*ItemRegisteredUsersItemMicrosoftGraphEndpointEndpointRequestBuilder) {
+    return NewItemRegisteredUsersItemMicrosoftGraphEndpointEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *ItemRegisteredUsersDirectoryObjectItemRequestBuilder) MicrosoftGraphServicePrincipal()(*ItemRegisteredUsersItemMicrosoftGraphServicePrincipalServicePrincipalRequestBuilder) {
+    return NewItemRegisteredUsersItemMicrosoftGraphServicePrincipalServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUser casts the previous resource to user.
+func (m *ItemRegisteredUsersDirectoryObjectItemRequestBuilder) MicrosoftGraphUser()(*ItemRegisteredUsersItemMicrosoftGraphUserUserRequestBuilder) {
+    return NewItemRegisteredUsersItemMicrosoftGraphUserUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
 func (m *ItemRegisteredUsersDirectoryObjectItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRegisteredUsersDirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -93,8 +97,4 @@ func (m *ItemRegisteredUsersDirectoryObjectItemRequestBuilder) ToGetRequestInfor
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// User casts the previous resource to user.
-func (m *ItemRegisteredUsersDirectoryObjectItemRequestBuilder) User()(*ItemRegisteredUsersItemUserRequestBuilder) {
-    return NewItemRegisteredUsersItemUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

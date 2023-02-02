@@ -14,10 +14,12 @@ const (
     BOOTPERFORMANCE_WINDOWSHEALTHMONITORINGSCOPE
     // Windows updates events
     WINDOWSUPDATES_WINDOWSHEALTHMONITORINGSCOPE
+    // PrivilegeManagement
+    PRIVILEGEMANAGEMENT_WINDOWSHEALTHMONITORINGSCOPE
 )
 
 func (i WindowsHealthMonitoringScope) String() string {
-    return []string{"undefined", "healthMonitoring", "bootPerformance", "windowsUpdates"}[i]
+    return []string{"undefined", "healthMonitoring", "bootPerformance", "windowsUpdates", "privilegeManagement"}[i]
 }
 func ParseWindowsHealthMonitoringScope(v string) (any, error) {
     result := UNDEFINED_WINDOWSHEALTHMONITORINGSCOPE
@@ -30,6 +32,8 @@ func ParseWindowsHealthMonitoringScope(v string) (any, error) {
             result = BOOTPERFORMANCE_WINDOWSHEALTHMONITORINGSCOPE
         case "windowsUpdates":
             result = WINDOWSUPDATES_WINDOWSHEALTHMONITORINGSCOPE
+        case "privilegeManagement":
+            result = PRIVILEGEMANAGEMENT_WINDOWSHEALTHMONITORINGSCOPE
         default:
             return 0, errors.New("Unknown WindowsHealthMonitoringScope value: " + v)
     }

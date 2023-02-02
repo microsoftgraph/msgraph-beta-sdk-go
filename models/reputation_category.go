@@ -21,7 +21,7 @@ type ReputationCategory struct {
 func NewReputationCategory()(*ReputationCategory) {
     m := &ReputationCategory{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateReputationCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

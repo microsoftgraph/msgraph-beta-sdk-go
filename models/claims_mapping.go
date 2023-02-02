@@ -25,7 +25,7 @@ type ClaimsMapping struct {
 func NewClaimsMapping()(*ClaimsMapping) {
     m := &ClaimsMapping{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateClaimsMappingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

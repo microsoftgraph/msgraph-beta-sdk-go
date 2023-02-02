@@ -15,8 +15,8 @@ func NewSubjectRightsRequestEnumeratedMailboxLocation()(*SubjectRightsRequestEnu
     m := &SubjectRightsRequestEnumeratedMailboxLocation{
         SubjectRightsRequestMailboxLocation: *NewSubjectRightsRequestMailboxLocation(),
     }
-    odataTypeValue := "#microsoft.graph.subjectRightsRequestEnumeratedMailboxLocation";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.subjectRightsRequestEnumeratedMailboxLocation"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateSubjectRightsRequestEnumeratedMailboxLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

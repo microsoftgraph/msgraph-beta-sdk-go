@@ -15,7 +15,7 @@ type DeployableContent struct {
 func NewDeployableContent()(*DeployableContent) {
     m := &DeployableContent{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeployableContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,16 +32,8 @@ func CreateDeployableContentFromDiscriminatorValue(parseNode i878a80d2330e89d268
             }
             if mappingValue != nil {
                 switch *mappingValue {
-                    case "#microsoft.graph.windowsUpdates.expeditedQualityUpdateReference":
-                        return NewExpeditedQualityUpdateReference(), nil
-                    case "#microsoft.graph.windowsUpdates.featureUpdateReference":
-                        return NewFeatureUpdateReference(), nil
-                    case "#microsoft.graph.windowsUpdates.qualityUpdateReference":
-                        return NewQualityUpdateReference(), nil
-                    case "#microsoft.graph.windowsUpdates.softwareUpdateReference":
-                        return NewSoftwareUpdateReference(), nil
-                    case "#microsoft.graph.windowsUpdates.windowsUpdateReference":
-                        return NewWindowsUpdateReference(), nil
+                    case "#microsoft.graph.windowsUpdates.catalogContent":
+                        return NewCatalogContent(), nil
                 }
             }
         }

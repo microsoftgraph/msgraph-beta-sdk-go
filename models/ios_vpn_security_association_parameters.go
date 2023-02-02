@@ -23,7 +23,7 @@ type IosVpnSecurityAssociationParameters struct {
 func NewIosVpnSecurityAssociationParameters()(*IosVpnSecurityAssociationParameters) {
     m := &IosVpnSecurityAssociationParameters{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateIosVpnSecurityAssociationParametersFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

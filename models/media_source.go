@@ -17,7 +17,7 @@ type MediaSource struct {
 func NewMediaSource()(*MediaSource) {
     m := &MediaSource{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMediaSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

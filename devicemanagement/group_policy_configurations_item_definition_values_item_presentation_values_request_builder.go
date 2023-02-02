@@ -60,8 +60,8 @@ func NewGroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesReque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesRequestBuilder instantiates a new PresentationValuesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewGroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesReque
 }
 // Count provides operations to count the resources in the collection.
 func (m *GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesRequestBuilder) Count()(*GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesCountRequestBuilder) {
-    return NewGroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the associated group policy presentation values with the definition value.
 func (m *GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesRequestBuilder) Get(ctx context.Context, requestConfiguration *GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyPresentationValueCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

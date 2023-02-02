@@ -15,8 +15,8 @@ func NewEducationIdentityMatchingConfiguration()(*EducationIdentityMatchingConfi
     m := &EducationIdentityMatchingConfiguration{
         EducationIdentitySynchronizationConfiguration: *NewEducationIdentitySynchronizationConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.educationIdentityMatchingConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.educationIdentityMatchingConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEducationIdentityMatchingConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

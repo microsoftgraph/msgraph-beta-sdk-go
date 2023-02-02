@@ -34,7 +34,7 @@ type CompaniesItemGeneralLedgerEntriesGeneralLedgerEntryItemRequestBuilderGetReq
 }
 // Account provides operations to manage the account property of the microsoft.graph.generalLedgerEntry entity.
 func (m *CompaniesItemGeneralLedgerEntriesGeneralLedgerEntryItemRequestBuilder) Account()(*CompaniesItemGeneralLedgerEntriesItemAccountRequestBuilder) {
-    return NewCompaniesItemGeneralLedgerEntriesItemAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemGeneralLedgerEntriesItemAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewCompaniesItemGeneralLedgerEntriesGeneralLedgerEntryItemRequestBuilderInternal instantiates a new GeneralLedgerEntryItemRequestBuilder and sets the default values.
 func NewCompaniesItemGeneralLedgerEntriesGeneralLedgerEntryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemGeneralLedgerEntriesGeneralLedgerEntryItemRequestBuilder) {
@@ -45,8 +45,8 @@ func NewCompaniesItemGeneralLedgerEntriesGeneralLedgerEntryItemRequestBuilderInt
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemGeneralLedgerEntriesGeneralLedgerEntryItemRequestBuilder instantiates a new GeneralLedgerEntryItemRequestBuilder and sets the default values.

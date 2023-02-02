@@ -11,6 +11,8 @@ type AuthenticationStrengthRoot struct {
     authenticationCombinations []AuthenticationMethodModes
     // Names and descriptions of all valid authentication method modes in the system.
     authenticationMethodModes []AuthenticationMethodModeDetailable
+    // The combinations property
+    combinations []AuthenticationMethodModes
     // A collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.
     policies []AuthenticationStrengthPolicyable
 }
@@ -32,6 +34,10 @@ func (m *AuthenticationStrengthRoot) GetAuthenticationCombinations()([]Authentic
 // GetAuthenticationMethodModes gets the authenticationMethodModes property value. Names and descriptions of all valid authentication method modes in the system.
 func (m *AuthenticationStrengthRoot) GetAuthenticationMethodModes()([]AuthenticationMethodModeDetailable) {
     return m.authenticationMethodModes
+}
+// GetCombinations gets the combinations property value. The combinations property
+func (m *AuthenticationStrengthRoot) GetCombinations()([]AuthenticationMethodModes) {
+    return m.combinations
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuthenticationStrengthRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -61,6 +67,20 @@ func (m *AuthenticationStrengthRoot) GetFieldDeserializers()(map[string]func(i87
                 res[i] = v.(AuthenticationMethodModeDetailable)
             }
             m.SetAuthenticationMethodModes(res)
+        }
+        return nil
+    }
+    res["combinations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfEnumValues(ParseAuthenticationMethodModes)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AuthenticationMethodModes, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AuthenticationMethodModes))
+            }
+            m.SetCombinations(res)
         }
         return nil
     }
@@ -106,6 +126,12 @@ func (m *AuthenticationStrengthRoot) Serialize(writer i878a80d2330e89d26896388a3
             return err
         }
     }
+    if m.GetCombinations() != nil {
+        err = writer.WriteCollectionOfStringValues("combinations", SerializeAuthenticationMethodModes(m.GetCombinations()))
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPolicies()))
         for i, v := range m.GetPolicies() {
@@ -125,6 +151,10 @@ func (m *AuthenticationStrengthRoot) SetAuthenticationCombinations(value []Authe
 // SetAuthenticationMethodModes sets the authenticationMethodModes property value. Names and descriptions of all valid authentication method modes in the system.
 func (m *AuthenticationStrengthRoot) SetAuthenticationMethodModes(value []AuthenticationMethodModeDetailable)() {
     m.authenticationMethodModes = value
+}
+// SetCombinations sets the combinations property value. The combinations property
+func (m *AuthenticationStrengthRoot) SetCombinations(value []AuthenticationMethodModes)() {
+    m.combinations = value
 }
 // SetPolicies sets the policies property value. A collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.
 func (m *AuthenticationStrengthRoot) SetPolicies(value []AuthenticationStrengthPolicyable)() {

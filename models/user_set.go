@@ -17,7 +17,7 @@ type UserSet struct {
 func NewUserSet()(*UserSet) {
     m := &UserSet{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateUserSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

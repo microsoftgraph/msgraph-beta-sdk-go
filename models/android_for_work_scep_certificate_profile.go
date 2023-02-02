@@ -31,8 +31,8 @@ func NewAndroidForWorkScepCertificateProfile()(*AndroidForWorkScepCertificatePro
     m := &AndroidForWorkScepCertificateProfile{
         AndroidForWorkCertificateProfileBase: *NewAndroidForWorkCertificateProfileBase(),
     }
-    odataTypeValue := "#microsoft.graph.androidForWorkScepCertificateProfile";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidForWorkScepCertificateProfile"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidForWorkScepCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

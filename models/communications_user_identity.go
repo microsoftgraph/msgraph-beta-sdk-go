@@ -15,8 +15,8 @@ func NewCommunicationsUserIdentity()(*CommunicationsUserIdentity) {
     m := &CommunicationsUserIdentity{
         Identity: *NewIdentity(),
     }
-    odataTypeValue := "#microsoft.graph.communicationsUserIdentity";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.communicationsUserIdentity"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateCommunicationsUserIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

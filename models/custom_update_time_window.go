@@ -23,7 +23,7 @@ type CustomUpdateTimeWindow struct {
 func NewCustomUpdateTimeWindow()(*CustomUpdateTimeWindow) {
     m := &CustomUpdateTimeWindow{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCustomUpdateTimeWindowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

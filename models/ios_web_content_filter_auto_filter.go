@@ -17,8 +17,8 @@ func NewIosWebContentFilterAutoFilter()(*IosWebContentFilterAutoFilter) {
     m := &IosWebContentFilterAutoFilter{
         IosWebContentFilterBase: *NewIosWebContentFilterBase(),
     }
-    odataTypeValue := "#microsoft.graph.iosWebContentFilterAutoFilter";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.iosWebContentFilterAutoFilter"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateIosWebContentFilterAutoFilterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

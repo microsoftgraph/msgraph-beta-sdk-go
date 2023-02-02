@@ -19,7 +19,7 @@ type AndroidDeviceOwnerKioskModeAppPositionItem struct {
 func NewAndroidDeviceOwnerKioskModeAppPositionItem()(*AndroidDeviceOwnerKioskModeAppPositionItem) {
     m := &AndroidDeviceOwnerKioskModeAppPositionItem{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAndroidDeviceOwnerKioskModeAppPositionItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

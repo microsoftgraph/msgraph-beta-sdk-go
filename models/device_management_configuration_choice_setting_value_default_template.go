@@ -15,7 +15,7 @@ type DeviceManagementConfigurationChoiceSettingValueDefaultTemplate struct {
 func NewDeviceManagementConfigurationChoiceSettingValueDefaultTemplate()(*DeviceManagementConfigurationChoiceSettingValueDefaultTemplate) {
     m := &DeviceManagementConfigurationChoiceSettingValueDefaultTemplate{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceManagementConfigurationChoiceSettingValueDefaultTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

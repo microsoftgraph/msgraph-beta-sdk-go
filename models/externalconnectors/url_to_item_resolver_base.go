@@ -17,7 +17,7 @@ type UrlToItemResolverBase struct {
 func NewUrlToItemResolverBase()(*UrlToItemResolverBase) {
     m := &UrlToItemResolverBase{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateUrlToItemResolverBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

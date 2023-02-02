@@ -8,11 +8,11 @@ import (
 type AppliedAuthenticationEventListener struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The eventType property
+    // The type of authentication event that triggered the custom extension request. The possible values are: tokenIssuanceStart, pageRenderStart, unknownFutureValue.
     eventType *AuthenticationEventType
-    // The executedListenerId property
+    // ID of the Event Listener that was executed.
     executedListenerId *string
-    // The handlerResult property
+    // The result from the listening client, such as an Azure Logic App and Azure Functions, of this authentication event.
     handlerResult AuthenticationEventHandlerResultable
     // The OdataType property
     odataType *string
@@ -21,7 +21,7 @@ type AppliedAuthenticationEventListener struct {
 func NewAppliedAuthenticationEventListener()(*AppliedAuthenticationEventListener) {
     m := &AppliedAuthenticationEventListener{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAppliedAuthenticationEventListenerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,11 +32,11 @@ func CreateAppliedAuthenticationEventListenerFromDiscriminatorValue(parseNode i8
 func (m *AppliedAuthenticationEventListener) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetEventType gets the eventType property value. The eventType property
+// GetEventType gets the eventType property value. The type of authentication event that triggered the custom extension request. The possible values are: tokenIssuanceStart, pageRenderStart, unknownFutureValue.
 func (m *AppliedAuthenticationEventListener) GetEventType()(*AuthenticationEventType) {
     return m.eventType
 }
-// GetExecutedListenerId gets the executedListenerId property value. The executedListenerId property
+// GetExecutedListenerId gets the executedListenerId property value. ID of the Event Listener that was executed.
 func (m *AppliedAuthenticationEventListener) GetExecutedListenerId()(*string) {
     return m.executedListenerId
 }
@@ -85,7 +85,7 @@ func (m *AppliedAuthenticationEventListener) GetFieldDeserializers()(map[string]
     }
     return res
 }
-// GetHandlerResult gets the handlerResult property value. The handlerResult property
+// GetHandlerResult gets the handlerResult property value. The result from the listening client, such as an Azure Logic App and Azure Functions, of this authentication event.
 func (m *AppliedAuthenticationEventListener) GetHandlerResult()(AuthenticationEventHandlerResultable) {
     return m.handlerResult
 }
@@ -132,15 +132,15 @@ func (m *AppliedAuthenticationEventListener) Serialize(writer i878a80d2330e89d26
 func (m *AppliedAuthenticationEventListener) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetEventType sets the eventType property value. The eventType property
+// SetEventType sets the eventType property value. The type of authentication event that triggered the custom extension request. The possible values are: tokenIssuanceStart, pageRenderStart, unknownFutureValue.
 func (m *AppliedAuthenticationEventListener) SetEventType(value *AuthenticationEventType)() {
     m.eventType = value
 }
-// SetExecutedListenerId sets the executedListenerId property value. The executedListenerId property
+// SetExecutedListenerId sets the executedListenerId property value. ID of the Event Listener that was executed.
 func (m *AppliedAuthenticationEventListener) SetExecutedListenerId(value *string)() {
     m.executedListenerId = value
 }
-// SetHandlerResult sets the handlerResult property value. The handlerResult property
+// SetHandlerResult sets the handlerResult property value. The result from the listening client, such as an Azure Logic App and Azure Functions, of this authentication event.
 func (m *AppliedAuthenticationEventListener) SetHandlerResult(value AuthenticationEventHandlerResultable)() {
     m.handlerResult = value
 }

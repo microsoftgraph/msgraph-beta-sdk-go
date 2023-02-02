@@ -60,8 +60,8 @@ func NewPolicyLabelsRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPolicyLabelsRequestBuilder instantiates a new LabelsRequestBuilder and sets the default values.
@@ -72,23 +72,7 @@ func NewPolicyLabelsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 }
 // Count provides operations to count the resources in the collection.
 func (m *PolicyLabelsRequestBuilder) Count()(*PolicyLabelsCountRequestBuilder) {
-    return NewPolicyLabelsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// EvaluateApplication provides operations to call the evaluateApplication method.
-func (m *PolicyLabelsRequestBuilder) EvaluateApplication()(*PolicyLabelsEvaluateApplicationRequestBuilder) {
-    return NewPolicyLabelsEvaluateApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// EvaluateClassificationResults provides operations to call the evaluateClassificationResults method.
-func (m *PolicyLabelsRequestBuilder) EvaluateClassificationResults()(*PolicyLabelsEvaluateClassificationResultsRequestBuilder) {
-    return NewPolicyLabelsEvaluateClassificationResultsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// EvaluateRemoval provides operations to call the evaluateRemoval method.
-func (m *PolicyLabelsRequestBuilder) EvaluateRemoval()(*PolicyLabelsEvaluateRemovalRequestBuilder) {
-    return NewPolicyLabelsEvaluateRemovalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ExtractLabel provides operations to call the extractLabel method.
-func (m *PolicyLabelsRequestBuilder) ExtractLabel()(*PolicyLabelsExtractLabelRequestBuilder) {
-    return NewPolicyLabelsExtractLabelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPolicyLabelsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a collection of information protection labels available to the user or to the organization.
 // [Find more info here]
@@ -111,6 +95,22 @@ func (m *PolicyLabelsRequestBuilder) Get(ctx context.Context, requestConfigurati
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionLabelCollectionResponseable), nil
+}
+// MicrosoftGraphEvaluateApplication provides operations to call the evaluateApplication method.
+func (m *PolicyLabelsRequestBuilder) MicrosoftGraphEvaluateApplication()(*PolicyLabelsMicrosoftGraphEvaluateApplicationEvaluateApplicationRequestBuilder) {
+    return NewPolicyLabelsMicrosoftGraphEvaluateApplicationEvaluateApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphEvaluateClassificationResults provides operations to call the evaluateClassificationResults method.
+func (m *PolicyLabelsRequestBuilder) MicrosoftGraphEvaluateClassificationResults()(*PolicyLabelsMicrosoftGraphEvaluateClassificationResultsEvaluateClassificationResultsRequestBuilder) {
+    return NewPolicyLabelsMicrosoftGraphEvaluateClassificationResultsEvaluateClassificationResultsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphEvaluateRemoval provides operations to call the evaluateRemoval method.
+func (m *PolicyLabelsRequestBuilder) MicrosoftGraphEvaluateRemoval()(*PolicyLabelsMicrosoftGraphEvaluateRemovalEvaluateRemovalRequestBuilder) {
+    return NewPolicyLabelsMicrosoftGraphEvaluateRemovalEvaluateRemovalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphExtractLabel provides operations to call the extractLabel method.
+func (m *PolicyLabelsRequestBuilder) MicrosoftGraphExtractLabel()(*PolicyLabelsMicrosoftGraphExtractLabelExtractLabelRequestBuilder) {
+    return NewPolicyLabelsMicrosoftGraphExtractLabelExtractLabelRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to labels for informationProtection
 func (m *PolicyLabelsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionLabelable, requestConfiguration *PolicyLabelsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionLabelable, error) {
@@ -154,7 +154,10 @@ func (m *PolicyLabelsRequestBuilder) ToPostRequestInformation(ctx context.Contex
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

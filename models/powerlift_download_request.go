@@ -20,7 +20,7 @@ type PowerliftDownloadRequest struct {
 func NewPowerliftDownloadRequest()(*PowerliftDownloadRequest) {
     m := &PowerliftDownloadRequest{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePowerliftDownloadRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -23,7 +23,7 @@ type AuthenticationAppDeviceDetails struct {
 func NewAuthenticationAppDeviceDetails()(*AuthenticationAppDeviceDetails) {
     m := &AuthenticationAppDeviceDetails{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAuthenticationAppDeviceDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

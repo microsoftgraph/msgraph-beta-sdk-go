@@ -17,8 +17,8 @@ func NewDeviceManagementConfigurationSecretSettingValue()(*DeviceManagementConfi
     m := &DeviceManagementConfigurationSecretSettingValue{
         DeviceManagementConfigurationSimpleSettingValue: *NewDeviceManagementConfigurationSimpleSettingValue(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationSecretSettingValue";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationSecretSettingValue"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementConfigurationSecretSettingValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

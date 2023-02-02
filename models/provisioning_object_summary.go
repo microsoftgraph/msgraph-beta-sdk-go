@@ -45,7 +45,7 @@ type ProvisioningObjectSummary struct {
     // Unique Azure AD tenant ID.
     tenantId *string
 }
-// NewProvisioningObjectSummary instantiates a new ProvisioningObjectSummary and sets the default values.
+// NewProvisioningObjectSummary instantiates a new provisioningObjectSummary and sets the default values.
 func NewProvisioningObjectSummary()(*ProvisioningObjectSummary) {
     m := &ProvisioningObjectSummary{
         Entity: *NewEntity(),

@@ -53,8 +53,8 @@ func NewPlannerFavoritePlansRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPlannerFavoritePlansRequestBuilder instantiates a new FavoritePlansRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewPlannerFavoritePlansRequestBuilder(rawUrl string, requestAdapter i2ae418
 }
 // Count provides operations to count the resources in the collection.
 func (m *PlannerFavoritePlansRequestBuilder) Count()(*PlannerFavoritePlansCountRequestBuilder) {
-    return NewPlannerFavoritePlansCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPlannerFavoritePlansCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of plannerPlans that are marked as favorite by a user. You can mark a plan as favorite by updating the plannerUser resource.
 // [Find more info here]

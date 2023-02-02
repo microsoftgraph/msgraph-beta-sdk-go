@@ -53,8 +53,8 @@ func NewCasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsRequestBuilderInterna
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsRequestBuilder instantiates a new TagsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewCasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsRequestBuilder(rawUrl
 }
 // Count provides operations to count the resources in the collection.
 func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsRequestBuilder) Count()(*CasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsCountRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get tags associated with the file.
 func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsRequestBuilder) Get(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewTagCollectionResponseable, error) {

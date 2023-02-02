@@ -53,8 +53,8 @@ func NewItemPlannerRecentPlansRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemPlannerRecentPlansRequestBuilder instantiates a new RecentPlansRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemPlannerRecentPlansRequestBuilder(rawUrl string, requestAdapter i2ae4
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemPlannerRecentPlansRequestBuilder) Count()(*ItemPlannerRecentPlansCountRequestBuilder) {
-    return NewItemPlannerRecentPlansCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemPlannerRecentPlansCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of plannerPlans recently viewed by a user. You can update recently viewed plans by updating the plannerUser resource.
 // [Find more info here]

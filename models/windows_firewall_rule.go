@@ -47,7 +47,7 @@ type WindowsFirewallRule struct {
 func NewWindowsFirewallRule()(*WindowsFirewallRule) {
     m := &WindowsFirewallRule{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWindowsFirewallRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

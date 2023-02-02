@@ -46,14 +46,6 @@ type ItemTeamScheduleTimeCardsTimeCardItemRequestBuilderPatchRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ClockOut provides operations to call the clockOut method.
-func (m *ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder) ClockOut()(*ItemTeamScheduleTimeCardsItemClockOutRequestBuilder) {
-    return NewItemTeamScheduleTimeCardsItemClockOutRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Confirm provides operations to call the confirm method.
-func (m *ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder) Confirm()(*ItemTeamScheduleTimeCardsItemConfirmRequestBuilder) {
-    return NewItemTeamScheduleTimeCardsItemConfirmRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewItemTeamScheduleTimeCardsTimeCardItemRequestBuilderInternal instantiates a new TimeCardItemRequestBuilder and sets the default values.
 func NewItemTeamScheduleTimeCardsTimeCardItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder) {
     m := &ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder{
@@ -63,8 +55,8 @@ func NewItemTeamScheduleTimeCardsTimeCardItemRequestBuilderInternal(pathParamete
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTeamScheduleTimeCardsTimeCardItemRequestBuilder instantiates a new TimeCardItemRequestBuilder and sets the default values.
@@ -89,10 +81,6 @@ func (m *ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder) Delete(ctx context
     }
     return nil
 }
-// EndBreak provides operations to call the endBreak method.
-func (m *ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder) EndBreak()(*ItemTeamScheduleTimeCardsItemEndBreakRequestBuilder) {
-    return NewItemTeamScheduleTimeCardsItemEndBreakRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Get get timeCards from groups
 func (m *ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamScheduleTimeCardsTimeCardItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -112,6 +100,22 @@ func (m *ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder) Get(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable), nil
 }
+// MicrosoftGraphClockOut provides operations to call the clockOut method.
+func (m *ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder) MicrosoftGraphClockOut()(*ItemTeamScheduleTimeCardsItemMicrosoftGraphClockOutClockOutRequestBuilder) {
+    return NewItemTeamScheduleTimeCardsItemMicrosoftGraphClockOutClockOutRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphConfirm provides operations to call the confirm method.
+func (m *ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder) MicrosoftGraphConfirm()(*ItemTeamScheduleTimeCardsItemMicrosoftGraphConfirmConfirmRequestBuilder) {
+    return NewItemTeamScheduleTimeCardsItemMicrosoftGraphConfirmConfirmRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphEndBreak provides operations to call the endBreak method.
+func (m *ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder) MicrosoftGraphEndBreak()(*ItemTeamScheduleTimeCardsItemMicrosoftGraphEndBreakEndBreakRequestBuilder) {
+    return NewItemTeamScheduleTimeCardsItemMicrosoftGraphEndBreakEndBreakRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphStartBreak provides operations to call the startBreak method.
+func (m *ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder) MicrosoftGraphStartBreak()(*ItemTeamScheduleTimeCardsItemMicrosoftGraphStartBreakStartBreakRequestBuilder) {
+    return NewItemTeamScheduleTimeCardsItemMicrosoftGraphStartBreakStartBreakRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property timeCards in groups
 func (m *ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, requestConfiguration *ItemTeamScheduleTimeCardsTimeCardItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -130,10 +134,6 @@ func (m *ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder) Patch(ctx context.
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable), nil
-}
-// StartBreak provides operations to call the startBreak method.
-func (m *ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder) StartBreak()(*ItemTeamScheduleTimeCardsItemStartBreakRequestBuilder) {
-    return NewItemTeamScheduleTimeCardsItemStartBreakRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property timeCards for groups
 func (m *ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamScheduleTimeCardsTimeCardItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -170,7 +170,10 @@ func (m *ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder) ToPatchRequestInfo
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

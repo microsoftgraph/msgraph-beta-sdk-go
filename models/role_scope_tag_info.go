@@ -19,7 +19,7 @@ type RoleScopeTagInfo struct {
 func NewRoleScopeTagInfo()(*RoleScopeTagInfo) {
     m := &RoleScopeTagInfo{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateRoleScopeTagInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

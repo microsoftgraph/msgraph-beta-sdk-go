@@ -15,8 +15,8 @@ func NewEncryptContent()(*EncryptContent) {
     m := &EncryptContent{
         LabelActionBase: *NewLabelActionBase(),
     }
-    odataTypeValue := "#microsoft.graph.encryptContent";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.encryptContent"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEncryptContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

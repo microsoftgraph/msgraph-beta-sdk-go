@@ -19,8 +19,8 @@ func NewItemAddress()(*ItemAddress) {
     m := &ItemAddress{
         ItemFacet: *NewItemFacet(),
     }
-    odataTypeValue := "#microsoft.graph.itemAddress";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.itemAddress"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateItemAddressFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

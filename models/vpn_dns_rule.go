@@ -25,7 +25,7 @@ type VpnDnsRule struct {
 func NewVpnDnsRule()(*VpnDnsRule) {
     m := &VpnDnsRule{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateVpnDnsRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

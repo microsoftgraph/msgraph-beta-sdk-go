@@ -17,7 +17,7 @@ type ContinuousAccessEvaluationSessionControl struct {
 func NewContinuousAccessEvaluationSessionControl()(*ContinuousAccessEvaluationSessionControl) {
     m := &ContinuousAccessEvaluationSessionControl{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateContinuousAccessEvaluationSessionControlFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

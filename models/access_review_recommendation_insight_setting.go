@@ -15,7 +15,7 @@ type AccessReviewRecommendationInsightSetting struct {
 func NewAccessReviewRecommendationInsightSetting()(*AccessReviewRecommendationInsightSetting) {
     m := &AccessReviewRecommendationInsightSetting{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAccessReviewRecommendationInsightSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

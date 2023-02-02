@@ -55,8 +55,8 @@ func NewEdiscoveryCasesItemSettingsRequestBuilderInternal(pathParameters map[str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEdiscoveryCasesItemSettingsRequestBuilder instantiates a new SettingsRequestBuilder and sets the default values.
@@ -103,6 +103,10 @@ func (m *EdiscoveryCasesItemSettingsRequestBuilder) Get(ctx context.Context, req
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseSettingsable), nil
 }
+// MicrosoftGraphEdiscoveryResetToDefault provides operations to call the resetToDefault method.
+func (m *EdiscoveryCasesItemSettingsRequestBuilder) MicrosoftGraphEdiscoveryResetToDefault()(*EdiscoveryCasesItemSettingsMicrosoftGraphEdiscoveryResetToDefaultResetToDefaultRequestBuilder) {
+    return NewEdiscoveryCasesItemSettingsMicrosoftGraphEdiscoveryResetToDefaultResetToDefaultRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the properties of a an eDiscovery caseSettings object.
 // [Find more info here]
 // 
@@ -124,10 +128,6 @@ func (m *EdiscoveryCasesItemSettingsRequestBuilder) Patch(ctx context.Context, b
         return nil, nil
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseSettingsable), nil
-}
-// ResetToDefault provides operations to call the resetToDefault method.
-func (m *EdiscoveryCasesItemSettingsRequestBuilder) ResetToDefault()(*EdiscoveryCasesItemSettingsResetToDefaultRequestBuilder) {
-    return NewEdiscoveryCasesItemSettingsResetToDefaultRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property settings for compliance
 func (m *EdiscoveryCasesItemSettingsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemSettingsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -164,7 +164,10 @@ func (m *EdiscoveryCasesItemSettingsRequestBuilder) ToPatchRequestInformation(ct
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

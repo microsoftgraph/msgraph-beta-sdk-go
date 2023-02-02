@@ -17,7 +17,7 @@ type BufferDecryptionResult struct {
 func NewBufferDecryptionResult()(*BufferDecryptionResult) {
     m := &BufferDecryptionResult{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateBufferDecryptionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

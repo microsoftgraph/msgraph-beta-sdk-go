@@ -51,10 +51,6 @@ type ManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilderPostReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ChangeDeploymentStatus provides operations to call the changeDeploymentStatus method.
-func (m *ManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilder) ChangeDeploymentStatus()(*ManagedTenantsManagementActionTenantDeploymentStatusesChangeDeploymentStatusRequestBuilder) {
-    return NewManagedTenantsManagementActionTenantDeploymentStatusesChangeDeploymentStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilderInternal instantiates a new ManagementActionTenantDeploymentStatusesRequestBuilder and sets the default values.
 func NewManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilder) {
     m := &ManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilder{
@@ -64,8 +60,8 @@ func NewManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilderInte
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilder instantiates a new ManagementActionTenantDeploymentStatusesRequestBuilder and sets the default values.
@@ -76,7 +72,7 @@ func NewManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilder(raw
 }
 // Count provides operations to count the resources in the collection.
 func (m *ManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilder) Count()(*ManagedTenantsManagementActionTenantDeploymentStatusesCountRequestBuilder) {
-    return NewManagedTenantsManagementActionTenantDeploymentStatusesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedTenantsManagementActionTenantDeploymentStatusesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of the managementActionTenantDeploymentStatus objects and their properties.
 // [Find more info here]
@@ -99,6 +95,10 @@ func (m *ManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilder) G
         return nil, nil
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionTenantDeploymentStatusCollectionResponseable), nil
+}
+// MicrosoftGraphManagedTenantsChangeDeploymentStatus provides operations to call the changeDeploymentStatus method.
+func (m *ManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilder) MicrosoftGraphManagedTenantsChangeDeploymentStatus()(*ManagedTenantsManagementActionTenantDeploymentStatusesMicrosoftGraphManagedTenantsChangeDeploymentStatusChangeDeploymentStatusRequestBuilder) {
+    return NewManagedTenantsManagementActionTenantDeploymentStatusesMicrosoftGraphManagedTenantsChangeDeploymentStatusChangeDeploymentStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to managementActionTenantDeploymentStatuses for tenantRelationships
 func (m *ManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilder) Post(ctx context.Context, body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionTenantDeploymentStatusable, requestConfiguration *ManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilderPostRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionTenantDeploymentStatusable, error) {
@@ -142,7 +142,10 @@ func (m *ManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilder) T
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -39,8 +39,8 @@ func NewOfficeSuiteApp()(*OfficeSuiteApp) {
     m := &OfficeSuiteApp{
         MobileApp: *NewMobileApp(),
     }
-    odataTypeValue := "#microsoft.graph.officeSuiteApp";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.officeSuiteApp"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateOfficeSuiteAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

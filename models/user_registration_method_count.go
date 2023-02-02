@@ -19,7 +19,7 @@ type UserRegistrationMethodCount struct {
 func NewUserRegistrationMethodCount()(*UserRegistrationMethodCount) {
     m := &UserRegistrationMethodCount{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateUserRegistrationMethodCountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

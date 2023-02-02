@@ -11,7 +11,9 @@ type CrossTenantIdentitySyncPolicyPartnerable interface {
     GetDisplayName()(*string)
     GetOdataType()(*string)
     GetTenantId()(*string)
+    GetUserSyncInbound()(CrossTenantUserSyncInboundable)
     SetDisplayName(value *string)()
     SetOdataType(value *string)()
     SetTenantId(value *string)()
+    SetUserSyncInbound(value CrossTenantUserSyncInboundable)()
 }

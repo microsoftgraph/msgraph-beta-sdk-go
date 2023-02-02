@@ -19,7 +19,7 @@ type EncryptionReportPolicyDetails struct {
 func NewEncryptionReportPolicyDetails()(*EncryptionReportPolicyDetails) {
     m := &EncryptionReportPolicyDetails{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateEncryptionReportPolicyDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

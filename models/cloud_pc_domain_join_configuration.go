@@ -23,7 +23,7 @@ type CloudPcDomainJoinConfiguration struct {
 func NewCloudPcDomainJoinConfiguration()(*CloudPcDomainJoinConfiguration) {
     m := &CloudPcDomainJoinConfiguration{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCloudPcDomainJoinConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

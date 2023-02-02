@@ -46,10 +46,6 @@ type EdiscoveryCasesItemOperationsCaseOperationItemRequestBuilderPatchRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CaseExportOperation casts the previous resource to caseExportOperation.
-func (m *EdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder) CaseExportOperation()(*EdiscoveryCasesItemOperationsItemCaseExportOperationRequestBuilder) {
-    return NewEdiscoveryCasesItemOperationsItemCaseExportOperationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilderInternal instantiates a new CaseOperationItemRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder) {
     m := &EdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder{
@@ -59,8 +55,8 @@ func NewEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilderInternal(pat
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder instantiates a new CaseOperationItemRequestBuilder and sets the default values.
@@ -103,6 +99,10 @@ func (m *EdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder) Get(ctx c
         return nil, nil
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseOperationable), nil
+}
+// MicrosoftGraphEdiscoveryCaseExportOperation casts the previous resource to caseExportOperation.
+func (m *EdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder) MicrosoftGraphEdiscoveryCaseExportOperation()(*EdiscoveryCasesItemOperationsItemMicrosoftGraphEdiscoveryCaseExportOperationCaseExportOperationRequestBuilder) {
+    return NewEdiscoveryCasesItemOperationsItemMicrosoftGraphEdiscoveryCaseExportOperationCaseExportOperationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property operations in compliance
 func (m *EdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder) Patch(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseOperationable, requestConfiguration *EdiscoveryCasesItemOperationsCaseOperationItemRequestBuilderPatchRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseOperationable, error) {
@@ -158,7 +158,10 @@ func (m *EdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder) ToPatchRe
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

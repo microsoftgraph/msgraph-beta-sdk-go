@@ -17,7 +17,7 @@ type DeviceManagementConfigurationSettingValue struct {
 func NewDeviceManagementConfigurationSettingValue()(*DeviceManagementConfigurationSettingValue) {
     m := &DeviceManagementConfigurationSettingValue{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceManagementConfigurationSettingValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

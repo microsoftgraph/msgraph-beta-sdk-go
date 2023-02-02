@@ -60,8 +60,8 @@ func NewEntitlementManagementAccessPackageCatalogsRequestBuilderInternal(pathPar
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementAccessPackageCatalogsRequestBuilder instantiates a new AccessPackageCatalogsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewEntitlementManagementAccessPackageCatalogsRequestBuilder(rawUrl string, 
 }
 // Count provides operations to count the resources in the collection.
 func (m *EntitlementManagementAccessPackageCatalogsRequestBuilder) Count()(*EntitlementManagementAccessPackageCatalogsCountRequestBuilder) {
-    return NewEntitlementManagementAccessPackageCatalogsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementAccessPackageCatalogsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of accessPackageCatalog objects.
 // [Find more info here]
@@ -96,6 +96,10 @@ func (m *EntitlementManagementAccessPackageCatalogsRequestBuilder) Get(ctx conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCatalogCollectionResponseable), nil
 }
+// MicrosoftGraphSearch provides operations to call the Search method.
+func (m *EntitlementManagementAccessPackageCatalogsRequestBuilder) MicrosoftGraphSearch()(*EntitlementManagementAccessPackageCatalogsMicrosoftGraphSearchSearchRequestBuilder) {
+    return NewEntitlementManagementAccessPackageCatalogsMicrosoftGraphSearchSearchRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Post create a new accessPackageCatalog object.
 // [Find more info here]
 // 
@@ -117,10 +121,6 @@ func (m *EntitlementManagementAccessPackageCatalogsRequestBuilder) Post(ctx cont
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCatalogable), nil
-}
-// Search provides operations to call the Search method.
-func (m *EntitlementManagementAccessPackageCatalogsRequestBuilder) Search()(*EntitlementManagementAccessPackageCatalogsSearchRequestBuilder) {
-    return NewEntitlementManagementAccessPackageCatalogsSearchRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToGetRequestInformation retrieve a list of accessPackageCatalog objects.
 func (m *EntitlementManagementAccessPackageCatalogsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageCatalogsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -145,7 +145,10 @@ func (m *EntitlementManagementAccessPackageCatalogsRequestBuilder) ToPostRequest
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

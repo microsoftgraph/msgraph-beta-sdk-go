@@ -60,8 +60,8 @@ func NewItemContentTypesItemColumnLinksRequestBuilderInternal(pathParameters map
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemContentTypesItemColumnLinksRequestBuilder instantiates a new ColumnLinksRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemContentTypesItemColumnLinksRequestBuilder(rawUrl string, requestAdap
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemContentTypesItemColumnLinksRequestBuilder) Count()(*ItemContentTypesItemColumnLinksCountRequestBuilder) {
-    return NewItemContentTypesItemColumnLinksCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemContentTypesItemColumnLinksCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the collection of columns that are required by this content type
 func (m *ItemContentTypesItemColumnLinksRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemContentTypesItemColumnLinksRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnLinkCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *ItemContentTypesItemColumnLinksRequestBuilder) ToPostRequestInformation
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

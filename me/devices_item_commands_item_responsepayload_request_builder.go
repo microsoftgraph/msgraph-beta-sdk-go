@@ -41,8 +41,8 @@ func NewDevicesItemCommandsItemResponsepayloadRequestBuilderInternal(pathParamet
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDevicesItemCommandsItemResponsepayloadRequestBuilder instantiates a new ResponsepayloadRequestBuilder and sets the default values.

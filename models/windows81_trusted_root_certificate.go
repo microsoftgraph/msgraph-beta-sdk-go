@@ -19,8 +19,8 @@ func NewWindows81TrustedRootCertificate()(*Windows81TrustedRootCertificate) {
     m := &Windows81TrustedRootCertificate{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.windows81TrustedRootCertificate";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windows81TrustedRootCertificate"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindows81TrustedRootCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

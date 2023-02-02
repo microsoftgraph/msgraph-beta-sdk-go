@@ -17,7 +17,7 @@ type ConditionalAccessExternalTenants struct {
 func NewConditionalAccessExternalTenants()(*ConditionalAccessExternalTenants) {
     m := &ConditionalAccessExternalTenants{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateConditionalAccessExternalTenantsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

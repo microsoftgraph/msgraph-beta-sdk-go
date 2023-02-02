@@ -17,8 +17,8 @@ func NewDeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate()
     m := &DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate{
         DeviceManagementConfigurationChoiceSettingValueDefaultTemplate: *NewDeviceManagementConfigurationChoiceSettingValueDefaultTemplate(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

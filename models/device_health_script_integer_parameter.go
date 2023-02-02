@@ -15,8 +15,8 @@ func NewDeviceHealthScriptIntegerParameter()(*DeviceHealthScriptIntegerParameter
     m := &DeviceHealthScriptIntegerParameter{
         DeviceHealthScriptParameter: *NewDeviceHealthScriptParameter(),
     }
-    odataTypeValue := "#microsoft.graph.deviceHealthScriptIntegerParameter";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceHealthScriptIntegerParameter"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceHealthScriptIntegerParameterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

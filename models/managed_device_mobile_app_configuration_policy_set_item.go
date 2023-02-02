@@ -13,8 +13,8 @@ func NewManagedDeviceMobileAppConfigurationPolicySetItem()(*ManagedDeviceMobileA
     m := &ManagedDeviceMobileAppConfigurationPolicySetItem{
         PolicySetItem: *NewPolicySetItem(),
     }
-    odataTypeValue := "#microsoft.graph.managedDeviceMobileAppConfigurationPolicySetItem";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.managedDeviceMobileAppConfigurationPolicySetItem"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateManagedDeviceMobileAppConfigurationPolicySetItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -55,8 +55,8 @@ func NewSecurityInformationProtectionRequestBuilderInternal(pathParameters map[s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewSecurityInformationProtectionRequestBuilder instantiates a new InformationProtectionRequestBuilder and sets the default values.
@@ -102,7 +102,7 @@ func (m *SecurityInformationProtectionRequestBuilder) Get(ctx context.Context, r
 }
 // LabelPolicySettings provides operations to manage the labelPolicySettings property of the microsoft.graph.security.informationProtection entity.
 func (m *SecurityInformationProtectionRequestBuilder) LabelPolicySettings()(*SecurityInformationProtectionLabelPolicySettingsRequestBuilder) {
-    return NewSecurityInformationProtectionLabelPolicySettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSecurityInformationProtectionLabelPolicySettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property informationProtection in me
 func (m *SecurityInformationProtectionRequestBuilder) Patch(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.InformationProtectionable, requestConfiguration *SecurityInformationProtectionRequestBuilderPatchRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.InformationProtectionable, error) {
@@ -125,7 +125,7 @@ func (m *SecurityInformationProtectionRequestBuilder) Patch(ctx context.Context,
 }
 // SensitivityLabels provides operations to manage the sensitivityLabels property of the microsoft.graph.security.informationProtection entity.
 func (m *SecurityInformationProtectionRequestBuilder) SensitivityLabels()(*SecurityInformationProtectionSensitivityLabelsRequestBuilder) {
-    return NewSecurityInformationProtectionSensitivityLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSecurityInformationProtectionSensitivityLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SensitivityLabelsById provides operations to manage the sensitivityLabels property of the microsoft.graph.security.informationProtection entity.
 func (m *SecurityInformationProtectionRequestBuilder) SensitivityLabelsById(id string)(*SecurityInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder) {
@@ -136,7 +136,7 @@ func (m *SecurityInformationProtectionRequestBuilder) SensitivityLabelsById(id s
     if id != "" {
         urlTplParams["sensitivityLabel%2Did"] = id
     }
-    return NewSecurityInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSecurityInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property informationProtection for me
 func (m *SecurityInformationProtectionRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SecurityInformationProtectionRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -173,7 +173,10 @@ func (m *SecurityInformationProtectionRequestBuilder) ToPatchRequestInformation(
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

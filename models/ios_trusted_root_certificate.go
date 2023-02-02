@@ -17,8 +17,8 @@ func NewIosTrustedRootCertificate()(*IosTrustedRootCertificate) {
     m := &IosTrustedRootCertificate{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.iosTrustedRootCertificate";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.iosTrustedRootCertificate"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateIosTrustedRootCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

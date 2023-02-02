@@ -17,8 +17,8 @@ func NewAccessPackageTextInputQuestion()(*AccessPackageTextInputQuestion) {
     m := &AccessPackageTextInputQuestion{
         AccessPackageQuestion: *NewAccessPackageQuestion(),
     }
-    odataTypeValue := "#microsoft.graph.accessPackageTextInputQuestion";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.accessPackageTextInputQuestion"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAccessPackageTextInputQuestionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

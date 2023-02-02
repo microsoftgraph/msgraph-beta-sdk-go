@@ -19,8 +19,8 @@ func NewWinGetApp()(*WinGetApp) {
     m := &WinGetApp{
         MobileApp: *NewMobileApp(),
     }
-    odataTypeValue := "#microsoft.graph.winGetApp";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.winGetApp"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWinGetAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

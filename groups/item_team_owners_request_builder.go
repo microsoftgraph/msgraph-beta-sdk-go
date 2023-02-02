@@ -53,8 +53,8 @@ func NewItemTeamOwnersRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTeamOwnersRequestBuilder instantiates a new OwnersRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemTeamOwnersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemTeamOwnersRequestBuilder) Count()(*ItemTeamOwnersCountRequestBuilder) {
-    return NewItemTeamOwnersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTeamOwnersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
 func (m *ItemTeamOwnersRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamOwnersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCollectionResponseable, error) {

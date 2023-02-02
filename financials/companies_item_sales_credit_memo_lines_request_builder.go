@@ -53,8 +53,8 @@ func NewCompaniesItemSalesCreditMemoLinesRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemSalesCreditMemoLinesRequestBuilder instantiates a new SalesCreditMemoLinesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewCompaniesItemSalesCreditMemoLinesRequestBuilder(rawUrl string, requestAd
 }
 // Count provides operations to count the resources in the collection.
 func (m *CompaniesItemSalesCreditMemoLinesRequestBuilder) Count()(*CompaniesItemSalesCreditMemoLinesCountRequestBuilder) {
-    return NewCompaniesItemSalesCreditMemoLinesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesCreditMemoLinesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get salesCreditMemoLines from financials
 func (m *CompaniesItemSalesCreditMemoLinesRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemSalesCreditMemoLinesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesCreditMemoLineCollectionResponseable, error) {

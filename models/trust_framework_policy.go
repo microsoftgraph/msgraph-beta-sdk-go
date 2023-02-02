@@ -8,7 +8,7 @@ import (
 type TrustFrameworkPolicy struct {
     Entity
 }
-// NewTrustFrameworkPolicy instantiates a new TrustFrameworkPolicy and sets the default values.
+// NewTrustFrameworkPolicy instantiates a new trustFrameworkPolicy and sets the default values.
 func NewTrustFrameworkPolicy()(*TrustFrameworkPolicy) {
     m := &TrustFrameworkPolicy{
         Entity: *NewEntity(),

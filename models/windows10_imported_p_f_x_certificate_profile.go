@@ -17,8 +17,8 @@ func NewWindows10ImportedPFXCertificateProfile()(*Windows10ImportedPFXCertificat
     m := &Windows10ImportedPFXCertificateProfile{
         WindowsCertificateProfileBase: *NewWindowsCertificateProfileBase(),
     }
-    odataTypeValue := "#microsoft.graph.windows10ImportedPFXCertificateProfile";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windows10ImportedPFXCertificateProfile"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindows10ImportedPFXCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

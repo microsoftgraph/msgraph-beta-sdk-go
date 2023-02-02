@@ -19,7 +19,7 @@ type PropertyToEvaluate struct {
 func NewPropertyToEvaluate()(*PropertyToEvaluate) {
     m := &PropertyToEvaluate{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePropertyToEvaluateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -48,7 +48,7 @@ type PrivilegedAccessGroupRequestBuilderPatchRequestConfiguration struct {
 }
 // AssignmentScheduleInstances provides operations to manage the assignmentScheduleInstances property of the microsoft.graph.privilegedAccessGroup entity.
 func (m *PrivilegedAccessGroupRequestBuilder) AssignmentScheduleInstances()(*PrivilegedAccessGroupAssignmentScheduleInstancesRequestBuilder) {
-    return NewPrivilegedAccessGroupAssignmentScheduleInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPrivilegedAccessGroupAssignmentScheduleInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AssignmentScheduleInstancesById provides operations to manage the assignmentScheduleInstances property of the microsoft.graph.privilegedAccessGroup entity.
 func (m *PrivilegedAccessGroupRequestBuilder) AssignmentScheduleInstancesById(id string)(*PrivilegedAccessGroupAssignmentScheduleInstancesPrivilegedAccessGroupAssignmentScheduleInstanceItemRequestBuilder) {
@@ -59,11 +59,11 @@ func (m *PrivilegedAccessGroupRequestBuilder) AssignmentScheduleInstancesById(id
     if id != "" {
         urlTplParams["privilegedAccessGroupAssignmentScheduleInstance%2Did"] = id
     }
-    return NewPrivilegedAccessGroupAssignmentScheduleInstancesPrivilegedAccessGroupAssignmentScheduleInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPrivilegedAccessGroupAssignmentScheduleInstancesPrivilegedAccessGroupAssignmentScheduleInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // AssignmentScheduleRequests provides operations to manage the assignmentScheduleRequests property of the microsoft.graph.privilegedAccessGroup entity.
 func (m *PrivilegedAccessGroupRequestBuilder) AssignmentScheduleRequests()(*PrivilegedAccessGroupAssignmentScheduleRequestsRequestBuilder) {
-    return NewPrivilegedAccessGroupAssignmentScheduleRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPrivilegedAccessGroupAssignmentScheduleRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AssignmentScheduleRequestsById provides operations to manage the assignmentScheduleRequests property of the microsoft.graph.privilegedAccessGroup entity.
 func (m *PrivilegedAccessGroupRequestBuilder) AssignmentScheduleRequestsById(id string)(*PrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilder) {
@@ -74,11 +74,11 @@ func (m *PrivilegedAccessGroupRequestBuilder) AssignmentScheduleRequestsById(id 
     if id != "" {
         urlTplParams["privilegedAccessGroupAssignmentScheduleRequest%2Did"] = id
     }
-    return NewPrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // AssignmentSchedules provides operations to manage the assignmentSchedules property of the microsoft.graph.privilegedAccessGroup entity.
 func (m *PrivilegedAccessGroupRequestBuilder) AssignmentSchedules()(*PrivilegedAccessGroupAssignmentSchedulesRequestBuilder) {
-    return NewPrivilegedAccessGroupAssignmentSchedulesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPrivilegedAccessGroupAssignmentSchedulesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AssignmentSchedulesById provides operations to manage the assignmentSchedules property of the microsoft.graph.privilegedAccessGroup entity.
 func (m *PrivilegedAccessGroupRequestBuilder) AssignmentSchedulesById(id string)(*PrivilegedAccessGroupAssignmentSchedulesPrivilegedAccessGroupAssignmentScheduleItemRequestBuilder) {
@@ -89,7 +89,7 @@ func (m *PrivilegedAccessGroupRequestBuilder) AssignmentSchedulesById(id string)
     if id != "" {
         urlTplParams["privilegedAccessGroupAssignmentSchedule%2Did"] = id
     }
-    return NewPrivilegedAccessGroupAssignmentSchedulesPrivilegedAccessGroupAssignmentScheduleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPrivilegedAccessGroupAssignmentSchedulesPrivilegedAccessGroupAssignmentScheduleItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewPrivilegedAccessGroupRequestBuilderInternal instantiates a new GroupRequestBuilder and sets the default values.
 func NewPrivilegedAccessGroupRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrivilegedAccessGroupRequestBuilder) {
@@ -100,8 +100,8 @@ func NewPrivilegedAccessGroupRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPrivilegedAccessGroupRequestBuilder instantiates a new GroupRequestBuilder and sets the default values.
@@ -128,7 +128,7 @@ func (m *PrivilegedAccessGroupRequestBuilder) Delete(ctx context.Context, reques
 }
 // EligibilityScheduleInstances provides operations to manage the eligibilityScheduleInstances property of the microsoft.graph.privilegedAccessGroup entity.
 func (m *PrivilegedAccessGroupRequestBuilder) EligibilityScheduleInstances()(*PrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilder) {
-    return NewPrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // EligibilityScheduleInstancesById provides operations to manage the eligibilityScheduleInstances property of the microsoft.graph.privilegedAccessGroup entity.
 func (m *PrivilegedAccessGroupRequestBuilder) EligibilityScheduleInstancesById(id string)(*PrivilegedAccessGroupEligibilityScheduleInstancesPrivilegedAccessGroupEligibilityScheduleInstanceItemRequestBuilder) {
@@ -139,11 +139,11 @@ func (m *PrivilegedAccessGroupRequestBuilder) EligibilityScheduleInstancesById(i
     if id != "" {
         urlTplParams["privilegedAccessGroupEligibilityScheduleInstance%2Did"] = id
     }
-    return NewPrivilegedAccessGroupEligibilityScheduleInstancesPrivilegedAccessGroupEligibilityScheduleInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPrivilegedAccessGroupEligibilityScheduleInstancesPrivilegedAccessGroupEligibilityScheduleInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // EligibilityScheduleRequests provides operations to manage the eligibilityScheduleRequests property of the microsoft.graph.privilegedAccessGroup entity.
 func (m *PrivilegedAccessGroupRequestBuilder) EligibilityScheduleRequests()(*PrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilder) {
-    return NewPrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // EligibilityScheduleRequestsById provides operations to manage the eligibilityScheduleRequests property of the microsoft.graph.privilegedAccessGroup entity.
 func (m *PrivilegedAccessGroupRequestBuilder) EligibilityScheduleRequestsById(id string)(*PrivilegedAccessGroupEligibilityScheduleRequestsPrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilder) {
@@ -154,11 +154,11 @@ func (m *PrivilegedAccessGroupRequestBuilder) EligibilityScheduleRequestsById(id
     if id != "" {
         urlTplParams["privilegedAccessGroupEligibilityScheduleRequest%2Did"] = id
     }
-    return NewPrivilegedAccessGroupEligibilityScheduleRequestsPrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPrivilegedAccessGroupEligibilityScheduleRequestsPrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // EligibilitySchedules provides operations to manage the eligibilitySchedules property of the microsoft.graph.privilegedAccessGroup entity.
 func (m *PrivilegedAccessGroupRequestBuilder) EligibilitySchedules()(*PrivilegedAccessGroupEligibilitySchedulesRequestBuilder) {
-    return NewPrivilegedAccessGroupEligibilitySchedulesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPrivilegedAccessGroupEligibilitySchedulesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // EligibilitySchedulesById provides operations to manage the eligibilitySchedules property of the microsoft.graph.privilegedAccessGroup entity.
 func (m *PrivilegedAccessGroupRequestBuilder) EligibilitySchedulesById(id string)(*PrivilegedAccessGroupEligibilitySchedulesPrivilegedAccessGroupEligibilityScheduleItemRequestBuilder) {
@@ -169,7 +169,7 @@ func (m *PrivilegedAccessGroupRequestBuilder) EligibilitySchedulesById(id string
     if id != "" {
         urlTplParams["privilegedAccessGroupEligibilitySchedule%2Did"] = id
     }
-    return NewPrivilegedAccessGroupEligibilitySchedulesPrivilegedAccessGroupEligibilityScheduleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPrivilegedAccessGroupEligibilitySchedulesPrivilegedAccessGroupEligibilityScheduleItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Get get group from identityGovernance
 func (m *PrivilegedAccessGroupRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedAccessGroupRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupable, error) {
@@ -244,7 +244,10 @@ func (m *PrivilegedAccessGroupRequestBuilder) ToPatchRequestInformation(ctx cont
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

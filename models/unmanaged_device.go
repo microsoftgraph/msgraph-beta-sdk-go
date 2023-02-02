@@ -38,7 +38,7 @@ type UnmanagedDevice struct {
 func NewUnmanagedDevice()(*UnmanagedDevice) {
     m := &UnmanagedDevice{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateUnmanagedDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -1,0 +1,78 @@
+package groups
+
+import (
+    "context"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+)
+
+// ItemConversationsItemThreadsItemPostsItemMicrosoftGraphReplyReplyRequestBuilder provides operations to call the reply method.
+type ItemConversationsItemThreadsItemPostsItemMicrosoftGraphReplyReplyRequestBuilder struct {
+    // Path parameters for the request
+    pathParameters map[string]string
+    // The request adapter to use to execute the requests.
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
+    // Url template to use to build the URL for the current request builder
+    urlTemplate string
+}
+// ItemConversationsItemThreadsItemPostsItemMicrosoftGraphReplyReplyRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ItemConversationsItemThreadsItemPostsItemMicrosoftGraphReplyReplyRequestBuilderPostRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// NewItemConversationsItemThreadsItemPostsItemMicrosoftGraphReplyReplyRequestBuilderInternal instantiates a new ReplyRequestBuilder and sets the default values.
+func NewItemConversationsItemThreadsItemPostsItemMicrosoftGraphReplyReplyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConversationsItemThreadsItemPostsItemMicrosoftGraphReplyReplyRequestBuilder) {
+    m := &ItemConversationsItemThreadsItemPostsItemMicrosoftGraphReplyReplyRequestBuilder{
+    }
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/microsoft.graph.reply";
+    urlTplParams := make(map[string]string)
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
+    return m
+}
+// NewItemConversationsItemThreadsItemPostsItemMicrosoftGraphReplyReplyRequestBuilder instantiates a new ReplyRequestBuilder and sets the default values.
+func NewItemConversationsItemThreadsItemPostsItemMicrosoftGraphReplyReplyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConversationsItemThreadsItemPostsItemMicrosoftGraphReplyReplyRequestBuilder) {
+    urlParams := make(map[string]string)
+    urlParams["request-raw-url"] = rawUrl
+    return NewItemConversationsItemThreadsItemPostsItemMicrosoftGraphReplyReplyRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Post create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+func (m *ItemConversationsItemThreadsItemPostsItemMicrosoftGraphReplyReplyRequestBuilder) Post(ctx context.Context, body ItemConversationsItemThreadsItemPostsItemMicrosoftGraphReplyReplyPostRequestBodyable, requestConfiguration *ItemConversationsItemThreadsItemPostsItemMicrosoftGraphReplyReplyRequestBuilderPostRequestConfiguration)(error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    if err != nil {
+        return err
+    }
+    return nil
+}
+// ToPostRequestInformation create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.
+func (m *ItemConversationsItemThreadsItemPostsItemMicrosoftGraphReplyReplyRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemConversationsItemThreadsItemPostsItemMicrosoftGraphReplyReplyPostRequestBodyable, requestConfiguration *ItemConversationsItemThreadsItemPostsItemMicrosoftGraphReplyReplyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
+}

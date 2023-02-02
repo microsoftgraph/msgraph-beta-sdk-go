@@ -33,7 +33,7 @@ type AccessReviewSettings struct {
 func NewAccessReviewSettings()(*AccessReviewSettings) {
     m := &AccessReviewSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAccessReviewSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

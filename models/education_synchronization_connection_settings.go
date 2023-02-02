@@ -19,7 +19,7 @@ type EducationSynchronizationConnectionSettings struct {
 func NewEducationSynchronizationConnectionSettings()(*EducationSynchronizationConnectionSettings) {
     m := &EducationSynchronizationConnectionSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateEducationSynchronizationConnectionSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

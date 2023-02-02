@@ -15,8 +15,8 @@ func NewAddressBookAccountTargetContent()(*AddressBookAccountTargetContent) {
     m := &AddressBookAccountTargetContent{
         AccountTargetContent: *NewAccountTargetContent(),
     }
-    odataTypeValue := "#microsoft.graph.addressBookAccountTargetContent";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.addressBookAccountTargetContent"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAddressBookAccountTargetContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -31,7 +31,7 @@ type ObjectMapping struct {
 func NewObjectMapping()(*ObjectMapping) {
     m := &ObjectMapping{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateObjectMappingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

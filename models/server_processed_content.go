@@ -27,7 +27,7 @@ type ServerProcessedContent struct {
 func NewServerProcessedContent()(*ServerProcessedContent) {
     m := &ServerProcessedContent{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateServerProcessedContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

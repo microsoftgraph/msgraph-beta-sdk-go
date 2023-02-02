@@ -19,7 +19,7 @@ type Windows10XCustomSubjectAlternativeName struct {
 func NewWindows10XCustomSubjectAlternativeName()(*Windows10XCustomSubjectAlternativeName) {
     m := &Windows10XCustomSubjectAlternativeName{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWindows10XCustomSubjectAlternativeNameFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

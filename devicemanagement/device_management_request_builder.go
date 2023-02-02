@@ -41,11 +41,11 @@ type DeviceManagementRequestBuilderPatchRequestConfiguration struct {
 }
 // AdvancedThreatProtectionOnboardingStateSummary provides operations to manage the advancedThreatProtectionOnboardingStateSummary property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AdvancedThreatProtectionOnboardingStateSummary()(*AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) {
-    return NewAdvancedThreatProtectionOnboardingStateSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAdvancedThreatProtectionOnboardingStateSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AndroidDeviceOwnerEnrollmentProfiles provides operations to manage the androidDeviceOwnerEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AndroidDeviceOwnerEnrollmentProfiles()(*AndroidDeviceOwnerEnrollmentProfilesRequestBuilder) {
-    return NewAndroidDeviceOwnerEnrollmentProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAndroidDeviceOwnerEnrollmentProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AndroidDeviceOwnerEnrollmentProfilesById provides operations to manage the androidDeviceOwnerEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AndroidDeviceOwnerEnrollmentProfilesById(id string)(*AndroidDeviceOwnerEnrollmentProfilesAndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) {
@@ -56,11 +56,11 @@ func (m *DeviceManagementRequestBuilder) AndroidDeviceOwnerEnrollmentProfilesByI
     if id != "" {
         urlTplParams["androidDeviceOwnerEnrollmentProfile%2Did"] = id
     }
-    return NewAndroidDeviceOwnerEnrollmentProfilesAndroidDeviceOwnerEnrollmentProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAndroidDeviceOwnerEnrollmentProfilesAndroidDeviceOwnerEnrollmentProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // AndroidForWorkAppConfigurationSchemas provides operations to manage the androidForWorkAppConfigurationSchemas property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AndroidForWorkAppConfigurationSchemas()(*AndroidForWorkAppConfigurationSchemasRequestBuilder) {
-    return NewAndroidForWorkAppConfigurationSchemasRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAndroidForWorkAppConfigurationSchemasRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AndroidForWorkAppConfigurationSchemasById provides operations to manage the androidForWorkAppConfigurationSchemas property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AndroidForWorkAppConfigurationSchemasById(id string)(*AndroidForWorkAppConfigurationSchemasAndroidForWorkAppConfigurationSchemaItemRequestBuilder) {
@@ -71,11 +71,11 @@ func (m *DeviceManagementRequestBuilder) AndroidForWorkAppConfigurationSchemasBy
     if id != "" {
         urlTplParams["androidForWorkAppConfigurationSchema%2Did"] = id
     }
-    return NewAndroidForWorkAppConfigurationSchemasAndroidForWorkAppConfigurationSchemaItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAndroidForWorkAppConfigurationSchemasAndroidForWorkAppConfigurationSchemaItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // AndroidForWorkEnrollmentProfiles provides operations to manage the androidForWorkEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AndroidForWorkEnrollmentProfiles()(*AndroidForWorkEnrollmentProfilesRequestBuilder) {
-    return NewAndroidForWorkEnrollmentProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAndroidForWorkEnrollmentProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AndroidForWorkEnrollmentProfilesById provides operations to manage the androidForWorkEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AndroidForWorkEnrollmentProfilesById(id string)(*AndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilder) {
@@ -86,19 +86,19 @@ func (m *DeviceManagementRequestBuilder) AndroidForWorkEnrollmentProfilesById(id
     if id != "" {
         urlTplParams["androidForWorkEnrollmentProfile%2Did"] = id
     }
-    return NewAndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // AndroidForWorkSettings provides operations to manage the androidForWorkSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AndroidForWorkSettings()(*AndroidForWorkSettingsRequestBuilder) {
-    return NewAndroidForWorkSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAndroidForWorkSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AndroidManagedStoreAccountEnterpriseSettings provides operations to manage the androidManagedStoreAccountEnterpriseSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AndroidManagedStoreAccountEnterpriseSettings()(*AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) {
-    return NewAndroidManagedStoreAccountEnterpriseSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAndroidManagedStoreAccountEnterpriseSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AndroidManagedStoreAppConfigurationSchemas provides operations to manage the androidManagedStoreAppConfigurationSchemas property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AndroidManagedStoreAppConfigurationSchemas()(*AndroidManagedStoreAppConfigurationSchemasRequestBuilder) {
-    return NewAndroidManagedStoreAppConfigurationSchemasRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAndroidManagedStoreAppConfigurationSchemasRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AndroidManagedStoreAppConfigurationSchemasById provides operations to manage the androidManagedStoreAppConfigurationSchemas property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AndroidManagedStoreAppConfigurationSchemasById(id string)(*AndroidManagedStoreAppConfigurationSchemasAndroidManagedStoreAppConfigurationSchemaItemRequestBuilder) {
@@ -109,15 +109,15 @@ func (m *DeviceManagementRequestBuilder) AndroidManagedStoreAppConfigurationSche
     if id != "" {
         urlTplParams["androidManagedStoreAppConfigurationSchema%2Did"] = id
     }
-    return NewAndroidManagedStoreAppConfigurationSchemasAndroidManagedStoreAppConfigurationSchemaItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAndroidManagedStoreAppConfigurationSchemasAndroidManagedStoreAppConfigurationSchemaItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ApplePushNotificationCertificate provides operations to manage the applePushNotificationCertificate property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ApplePushNotificationCertificate()(*ApplePushNotificationCertificateRequestBuilder) {
-    return NewApplePushNotificationCertificateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewApplePushNotificationCertificateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AppleUserInitiatedEnrollmentProfiles provides operations to manage the appleUserInitiatedEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AppleUserInitiatedEnrollmentProfiles()(*AppleUserInitiatedEnrollmentProfilesRequestBuilder) {
-    return NewAppleUserInitiatedEnrollmentProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAppleUserInitiatedEnrollmentProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AppleUserInitiatedEnrollmentProfilesById provides operations to manage the appleUserInitiatedEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AppleUserInitiatedEnrollmentProfilesById(id string)(*AppleUserInitiatedEnrollmentProfilesAppleUserInitiatedEnrollmentProfileItemRequestBuilder) {
@@ -128,11 +128,11 @@ func (m *DeviceManagementRequestBuilder) AppleUserInitiatedEnrollmentProfilesByI
     if id != "" {
         urlTplParams["appleUserInitiatedEnrollmentProfile%2Did"] = id
     }
-    return NewAppleUserInitiatedEnrollmentProfilesAppleUserInitiatedEnrollmentProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAppleUserInitiatedEnrollmentProfilesAppleUserInitiatedEnrollmentProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // AssignmentFilters provides operations to manage the assignmentFilters property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AssignmentFilters()(*AssignmentFiltersRequestBuilder) {
-    return NewAssignmentFiltersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAssignmentFiltersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AssignmentFiltersById provides operations to manage the assignmentFilters property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AssignmentFiltersById(id string)(*AssignmentFiltersDeviceAndAppManagementAssignmentFilterItemRequestBuilder) {
@@ -143,11 +143,11 @@ func (m *DeviceManagementRequestBuilder) AssignmentFiltersById(id string)(*Assig
     if id != "" {
         urlTplParams["deviceAndAppManagementAssignmentFilter%2Did"] = id
     }
-    return NewAssignmentFiltersDeviceAndAppManagementAssignmentFilterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAssignmentFiltersDeviceAndAppManagementAssignmentFilterItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // AuditEvents provides operations to manage the auditEvents property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AuditEvents()(*AuditEventsRequestBuilder) {
-    return NewAuditEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAuditEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AuditEventsById provides operations to manage the auditEvents property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AuditEventsById(id string)(*AuditEventsAuditEventItemRequestBuilder) {
@@ -158,11 +158,11 @@ func (m *DeviceManagementRequestBuilder) AuditEventsById(id string)(*AuditEvents
     if id != "" {
         urlTplParams["auditEvent%2Did"] = id
     }
-    return NewAuditEventsAuditEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAuditEventsAuditEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // AutopilotEvents provides operations to manage the autopilotEvents property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AutopilotEvents()(*AutopilotEventsRequestBuilder) {
-    return NewAutopilotEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAutopilotEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AutopilotEventsById provides operations to manage the autopilotEvents property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AutopilotEventsById(id string)(*AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) {
@@ -173,11 +173,11 @@ func (m *DeviceManagementRequestBuilder) AutopilotEventsById(id string)(*Autopil
     if id != "" {
         urlTplParams["deviceManagementAutopilotEvent%2Did"] = id
     }
-    return NewAutopilotEventsDeviceManagementAutopilotEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAutopilotEventsDeviceManagementAutopilotEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // CartToClassAssociations provides operations to manage the cartToClassAssociations property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) CartToClassAssociations()(*CartToClassAssociationsRequestBuilder) {
-    return NewCartToClassAssociationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCartToClassAssociationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CartToClassAssociationsById provides operations to manage the cartToClassAssociations property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) CartToClassAssociationsById(id string)(*CartToClassAssociationsCartToClassAssociationItemRequestBuilder) {
@@ -188,11 +188,11 @@ func (m *DeviceManagementRequestBuilder) CartToClassAssociationsById(id string)(
     if id != "" {
         urlTplParams["cartToClassAssociation%2Did"] = id
     }
-    return NewCartToClassAssociationsCartToClassAssociationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCartToClassAssociationsCartToClassAssociationItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Categories provides operations to manage the categories property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) Categories()(*CategoriesRequestBuilder) {
-    return NewCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CategoriesById provides operations to manage the categories property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) CategoriesById(id string)(*CategoriesDeviceManagementSettingCategoryItemRequestBuilder) {
@@ -203,11 +203,11 @@ func (m *DeviceManagementRequestBuilder) CategoriesById(id string)(*CategoriesDe
     if id != "" {
         urlTplParams["deviceManagementSettingCategory%2Did"] = id
     }
-    return NewCategoriesDeviceManagementSettingCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCategoriesDeviceManagementSettingCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // CertificateConnectorDetails provides operations to manage the certificateConnectorDetails property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) CertificateConnectorDetails()(*CertificateConnectorDetailsRequestBuilder) {
-    return NewCertificateConnectorDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCertificateConnectorDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CertificateConnectorDetailsById provides operations to manage the certificateConnectorDetails property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) CertificateConnectorDetailsById(id string)(*CertificateConnectorDetailsCertificateConnectorDetailsItemRequestBuilder) {
@@ -218,11 +218,11 @@ func (m *DeviceManagementRequestBuilder) CertificateConnectorDetailsById(id stri
     if id != "" {
         urlTplParams["certificateConnectorDetails%2Did"] = id
     }
-    return NewCertificateConnectorDetailsCertificateConnectorDetailsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCertificateConnectorDetailsCertificateConnectorDetailsItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ChromeOSOnboardingSettings provides operations to manage the chromeOSOnboardingSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ChromeOSOnboardingSettings()(*ChromeOSOnboardingSettingsRequestBuilder) {
-    return NewChromeOSOnboardingSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewChromeOSOnboardingSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ChromeOSOnboardingSettingsById provides operations to manage the chromeOSOnboardingSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ChromeOSOnboardingSettingsById(id string)(*ChromeOSOnboardingSettingsChromeOSOnboardingSettingsItemRequestBuilder) {
@@ -233,11 +233,11 @@ func (m *DeviceManagementRequestBuilder) ChromeOSOnboardingSettingsById(id strin
     if id != "" {
         urlTplParams["chromeOSOnboardingSettings%2Did"] = id
     }
-    return NewChromeOSOnboardingSettingsChromeOSOnboardingSettingsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewChromeOSOnboardingSettingsChromeOSOnboardingSettingsItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // CloudPCConnectivityIssues provides operations to manage the cloudPCConnectivityIssues property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) CloudPCConnectivityIssues()(*CloudPCConnectivityIssuesRequestBuilder) {
-    return NewCloudPCConnectivityIssuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCloudPCConnectivityIssuesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CloudPCConnectivityIssuesById provides operations to manage the cloudPCConnectivityIssues property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) CloudPCConnectivityIssuesById(id string)(*CloudPCConnectivityIssuesCloudPCConnectivityIssueItemRequestBuilder) {
@@ -248,11 +248,11 @@ func (m *DeviceManagementRequestBuilder) CloudPCConnectivityIssuesById(id string
     if id != "" {
         urlTplParams["cloudPCConnectivityIssue%2Did"] = id
     }
-    return NewCloudPCConnectivityIssuesCloudPCConnectivityIssueItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCloudPCConnectivityIssuesCloudPCConnectivityIssueItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ComanagedDevices provides operations to manage the comanagedDevices property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ComanagedDevices()(*ComanagedDevicesRequestBuilder) {
-    return NewComanagedDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewComanagedDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ComanagedDevicesById provides operations to manage the comanagedDevices property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ComanagedDevicesById(id string)(*ComanagedDevicesManagedDeviceItemRequestBuilder) {
@@ -263,11 +263,11 @@ func (m *DeviceManagementRequestBuilder) ComanagedDevicesById(id string)(*Comana
     if id != "" {
         urlTplParams["managedDevice%2Did"] = id
     }
-    return NewComanagedDevicesManagedDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewComanagedDevicesManagedDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ComanagementEligibleDevices provides operations to manage the comanagementEligibleDevices property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ComanagementEligibleDevices()(*ComanagementEligibleDevicesRequestBuilder) {
-    return NewComanagementEligibleDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewComanagementEligibleDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ComanagementEligibleDevicesById provides operations to manage the comanagementEligibleDevices property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ComanagementEligibleDevicesById(id string)(*ComanagementEligibleDevicesComanagementEligibleDeviceItemRequestBuilder) {
@@ -278,11 +278,11 @@ func (m *DeviceManagementRequestBuilder) ComanagementEligibleDevicesById(id stri
     if id != "" {
         urlTplParams["comanagementEligibleDevice%2Did"] = id
     }
-    return NewComanagementEligibleDevicesComanagementEligibleDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewComanagementEligibleDevicesComanagementEligibleDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ComplianceCategories provides operations to manage the complianceCategories property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ComplianceCategories()(*ComplianceCategoriesRequestBuilder) {
-    return NewComplianceCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewComplianceCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ComplianceCategoriesById provides operations to manage the complianceCategories property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ComplianceCategoriesById(id string)(*ComplianceCategoriesDeviceManagementConfigurationCategoryItemRequestBuilder) {
@@ -293,11 +293,11 @@ func (m *DeviceManagementRequestBuilder) ComplianceCategoriesById(id string)(*Co
     if id != "" {
         urlTplParams["deviceManagementConfigurationCategory%2Did"] = id
     }
-    return NewComplianceCategoriesDeviceManagementConfigurationCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewComplianceCategoriesDeviceManagementConfigurationCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ComplianceManagementPartners provides operations to manage the complianceManagementPartners property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ComplianceManagementPartners()(*ComplianceManagementPartnersRequestBuilder) {
-    return NewComplianceManagementPartnersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewComplianceManagementPartnersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ComplianceManagementPartnersById provides operations to manage the complianceManagementPartners property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ComplianceManagementPartnersById(id string)(*ComplianceManagementPartnersComplianceManagementPartnerItemRequestBuilder) {
@@ -308,11 +308,11 @@ func (m *DeviceManagementRequestBuilder) ComplianceManagementPartnersById(id str
     if id != "" {
         urlTplParams["complianceManagementPartner%2Did"] = id
     }
-    return NewComplianceManagementPartnersComplianceManagementPartnerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewComplianceManagementPartnersComplianceManagementPartnerItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // CompliancePolicies provides operations to manage the compliancePolicies property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) CompliancePolicies()(*CompliancePoliciesRequestBuilder) {
-    return NewCompliancePoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompliancePoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CompliancePoliciesById provides operations to manage the compliancePolicies property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) CompliancePoliciesById(id string)(*CompliancePoliciesDeviceManagementCompliancePolicyItemRequestBuilder) {
@@ -323,11 +323,11 @@ func (m *DeviceManagementRequestBuilder) CompliancePoliciesById(id string)(*Comp
     if id != "" {
         urlTplParams["deviceManagementCompliancePolicy%2Did"] = id
     }
-    return NewCompliancePoliciesDeviceManagementCompliancePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompliancePoliciesDeviceManagementCompliancePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ComplianceSettings provides operations to manage the complianceSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ComplianceSettings()(*ComplianceSettingsRequestBuilder) {
-    return NewComplianceSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewComplianceSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ComplianceSettingsById provides operations to manage the complianceSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ComplianceSettingsById(id string)(*ComplianceSettingsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder) {
@@ -338,15 +338,15 @@ func (m *DeviceManagementRequestBuilder) ComplianceSettingsById(id string)(*Comp
     if id != "" {
         urlTplParams["deviceManagementConfigurationSettingDefinition%2Did"] = id
     }
-    return NewComplianceSettingsDeviceManagementConfigurationSettingDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewComplianceSettingsDeviceManagementConfigurationSettingDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ConditionalAccessSettings provides operations to manage the conditionalAccessSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ConditionalAccessSettings()(*ConditionalAccessSettingsRequestBuilder) {
-    return NewConditionalAccessSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewConditionalAccessSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ConfigManagerCollections provides operations to manage the configManagerCollections property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ConfigManagerCollections()(*ConfigManagerCollectionsRequestBuilder) {
-    return NewConfigManagerCollectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewConfigManagerCollectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ConfigManagerCollectionsById provides operations to manage the configManagerCollections property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ConfigManagerCollectionsById(id string)(*ConfigManagerCollectionsConfigManagerCollectionItemRequestBuilder) {
@@ -357,11 +357,11 @@ func (m *DeviceManagementRequestBuilder) ConfigManagerCollectionsById(id string)
     if id != "" {
         urlTplParams["configManagerCollection%2Did"] = id
     }
-    return NewConfigManagerCollectionsConfigManagerCollectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewConfigManagerCollectionsConfigManagerCollectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ConfigurationCategories provides operations to manage the configurationCategories property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ConfigurationCategories()(*ConfigurationCategoriesRequestBuilder) {
-    return NewConfigurationCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewConfigurationCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ConfigurationCategoriesById provides operations to manage the configurationCategories property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ConfigurationCategoriesById(id string)(*ConfigurationCategoriesDeviceManagementConfigurationCategoryItemRequestBuilder) {
@@ -372,11 +372,11 @@ func (m *DeviceManagementRequestBuilder) ConfigurationCategoriesById(id string)(
     if id != "" {
         urlTplParams["deviceManagementConfigurationCategory%2Did"] = id
     }
-    return NewConfigurationCategoriesDeviceManagementConfigurationCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewConfigurationCategoriesDeviceManagementConfigurationCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ConfigurationPolicies provides operations to manage the configurationPolicies property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ConfigurationPolicies()(*ConfigurationPoliciesRequestBuilder) {
-    return NewConfigurationPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewConfigurationPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ConfigurationPoliciesById provides operations to manage the configurationPolicies property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ConfigurationPoliciesById(id string)(*ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) {
@@ -387,11 +387,11 @@ func (m *DeviceManagementRequestBuilder) ConfigurationPoliciesById(id string)(*C
     if id != "" {
         urlTplParams["deviceManagementConfigurationPolicy%2Did"] = id
     }
-    return NewConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ConfigurationPolicyTemplates provides operations to manage the configurationPolicyTemplates property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ConfigurationPolicyTemplates()(*ConfigurationPolicyTemplatesRequestBuilder) {
-    return NewConfigurationPolicyTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewConfigurationPolicyTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ConfigurationPolicyTemplatesById provides operations to manage the configurationPolicyTemplates property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ConfigurationPolicyTemplatesById(id string)(*ConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplateItemRequestBuilder) {
@@ -402,11 +402,11 @@ func (m *DeviceManagementRequestBuilder) ConfigurationPolicyTemplatesById(id str
     if id != "" {
         urlTplParams["deviceManagementConfigurationPolicyTemplate%2Did"] = id
     }
-    return NewConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ConfigurationSettings provides operations to manage the configurationSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ConfigurationSettings()(*ConfigurationSettingsRequestBuilder) {
-    return NewConfigurationSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewConfigurationSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ConfigurationSettingsById provides operations to manage the configurationSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ConfigurationSettingsById(id string)(*ConfigurationSettingsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder) {
@@ -417,7 +417,7 @@ func (m *DeviceManagementRequestBuilder) ConfigurationSettingsById(id string)(*C
     if id != "" {
         urlTplParams["deviceManagementConfigurationSettingDefinition%2Did"] = id
     }
-    return NewConfigurationSettingsDeviceManagementConfigurationSettingDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewConfigurationSettingsDeviceManagementConfigurationSettingDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewDeviceManagementRequestBuilderInternal instantiates a new DeviceManagementRequestBuilder and sets the default values.
 func NewDeviceManagementRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceManagementRequestBuilder) {
@@ -428,8 +428,8 @@ func NewDeviceManagementRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceManagementRequestBuilder instantiates a new DeviceManagementRequestBuilder and sets the default values.
@@ -440,7 +440,7 @@ func NewDeviceManagementRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 }
 // DataSharingConsents provides operations to manage the dataSharingConsents property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DataSharingConsents()(*DataSharingConsentsRequestBuilder) {
-    return NewDataSharingConsentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDataSharingConsentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DataSharingConsentsById provides operations to manage the dataSharingConsents property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DataSharingConsentsById(id string)(*DataSharingConsentsDataSharingConsentItemRequestBuilder) {
@@ -451,11 +451,11 @@ func (m *DeviceManagementRequestBuilder) DataSharingConsentsById(id string)(*Dat
     if id != "" {
         urlTplParams["dataSharingConsent%2Did"] = id
     }
-    return NewDataSharingConsentsDataSharingConsentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDataSharingConsentsDataSharingConsentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // DepOnboardingSettings provides operations to manage the depOnboardingSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DepOnboardingSettings()(*DepOnboardingSettingsRequestBuilder) {
-    return NewDepOnboardingSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDepOnboardingSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DepOnboardingSettingsById provides operations to manage the depOnboardingSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DepOnboardingSettingsById(id string)(*DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) {
@@ -466,11 +466,11 @@ func (m *DeviceManagementRequestBuilder) DepOnboardingSettingsById(id string)(*D
     if id != "" {
         urlTplParams["depOnboardingSetting%2Did"] = id
     }
-    return NewDepOnboardingSettingsDepOnboardingSettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDepOnboardingSettingsDepOnboardingSettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // DerivedCredentials provides operations to manage the derivedCredentials property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DerivedCredentials()(*DerivedCredentialsRequestBuilder) {
-    return NewDerivedCredentialsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDerivedCredentialsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DerivedCredentialsById provides operations to manage the derivedCredentials property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DerivedCredentialsById(id string)(*DerivedCredentialsDeviceManagementDerivedCredentialSettingsItemRequestBuilder) {
@@ -481,11 +481,11 @@ func (m *DeviceManagementRequestBuilder) DerivedCredentialsById(id string)(*Deri
     if id != "" {
         urlTplParams["deviceManagementDerivedCredentialSettings%2Did"] = id
     }
-    return NewDerivedCredentialsDeviceManagementDerivedCredentialSettingsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDerivedCredentialsDeviceManagementDerivedCredentialSettingsItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // DetectedApps provides operations to manage the detectedApps property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DetectedApps()(*DetectedAppsRequestBuilder) {
-    return NewDetectedAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDetectedAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DetectedAppsById provides operations to manage the detectedApps property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DetectedAppsById(id string)(*DetectedAppsDetectedAppItemRequestBuilder) {
@@ -496,11 +496,11 @@ func (m *DeviceManagementRequestBuilder) DetectedAppsById(id string)(*DetectedAp
     if id != "" {
         urlTplParams["detectedApp%2Did"] = id
     }
-    return NewDetectedAppsDetectedAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDetectedAppsDetectedAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // DeviceCategories provides operations to manage the deviceCategories property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceCategories()(*DeviceCategoriesRequestBuilder) {
-    return NewDeviceCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeviceCategoriesById provides operations to manage the deviceCategories property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceCategoriesById(id string)(*DeviceCategoriesDeviceCategoryItemRequestBuilder) {
@@ -511,11 +511,11 @@ func (m *DeviceManagementRequestBuilder) DeviceCategoriesById(id string)(*Device
     if id != "" {
         urlTplParams["deviceCategory%2Did"] = id
     }
-    return NewDeviceCategoriesDeviceCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceCategoriesDeviceCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // DeviceCompliancePolicies provides operations to manage the deviceCompliancePolicies property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceCompliancePolicies()(*DeviceCompliancePoliciesRequestBuilder) {
-    return NewDeviceCompliancePoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceCompliancePoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeviceCompliancePoliciesById provides operations to manage the deviceCompliancePolicies property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceCompliancePoliciesById(id string)(*DeviceCompliancePoliciesDeviceCompliancePolicyItemRequestBuilder) {
@@ -526,15 +526,15 @@ func (m *DeviceManagementRequestBuilder) DeviceCompliancePoliciesById(id string)
     if id != "" {
         urlTplParams["deviceCompliancePolicy%2Did"] = id
     }
-    return NewDeviceCompliancePoliciesDeviceCompliancePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceCompliancePoliciesDeviceCompliancePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // DeviceCompliancePolicyDeviceStateSummary provides operations to manage the deviceCompliancePolicyDeviceStateSummary property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceCompliancePolicyDeviceStateSummary()(*DeviceCompliancePolicyDeviceStateSummaryRequestBuilder) {
-    return NewDeviceCompliancePolicyDeviceStateSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceCompliancePolicyDeviceStateSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeviceCompliancePolicySettingStateSummaries provides operations to manage the deviceCompliancePolicySettingStateSummaries property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceCompliancePolicySettingStateSummaries()(*DeviceCompliancePolicySettingStateSummariesRequestBuilder) {
-    return NewDeviceCompliancePolicySettingStateSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceCompliancePolicySettingStateSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeviceCompliancePolicySettingStateSummariesById provides operations to manage the deviceCompliancePolicySettingStateSummaries property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceCompliancePolicySettingStateSummariesById(id string)(*DeviceCompliancePolicySettingStateSummariesDeviceCompliancePolicySettingStateSummaryItemRequestBuilder) {
@@ -545,11 +545,11 @@ func (m *DeviceManagementRequestBuilder) DeviceCompliancePolicySettingStateSumma
     if id != "" {
         urlTplParams["deviceCompliancePolicySettingStateSummary%2Did"] = id
     }
-    return NewDeviceCompliancePolicySettingStateSummariesDeviceCompliancePolicySettingStateSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceCompliancePolicySettingStateSummariesDeviceCompliancePolicySettingStateSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // DeviceComplianceScripts provides operations to manage the deviceComplianceScripts property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceComplianceScripts()(*DeviceComplianceScriptsRequestBuilder) {
-    return NewDeviceComplianceScriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceComplianceScriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeviceComplianceScriptsById provides operations to manage the deviceComplianceScripts property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceComplianceScriptsById(id string)(*DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) {
@@ -560,11 +560,11 @@ func (m *DeviceManagementRequestBuilder) DeviceComplianceScriptsById(id string)(
     if id != "" {
         urlTplParams["deviceComplianceScript%2Did"] = id
     }
-    return NewDeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // DeviceConfigurationConflictSummary provides operations to manage the deviceConfigurationConflictSummary property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceConfigurationConflictSummary()(*DeviceConfigurationConflictSummaryRequestBuilder) {
-    return NewDeviceConfigurationConflictSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceConfigurationConflictSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeviceConfigurationConflictSummaryById provides operations to manage the deviceConfigurationConflictSummary property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceConfigurationConflictSummaryById(id string)(*DeviceConfigurationConflictSummaryDeviceConfigurationConflictSummaryItemRequestBuilder) {
@@ -575,15 +575,15 @@ func (m *DeviceManagementRequestBuilder) DeviceConfigurationConflictSummaryById(
     if id != "" {
         urlTplParams["deviceConfigurationConflictSummary%2Did"] = id
     }
-    return NewDeviceConfigurationConflictSummaryDeviceConfigurationConflictSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceConfigurationConflictSummaryDeviceConfigurationConflictSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // DeviceConfigurationDeviceStateSummaries provides operations to manage the deviceConfigurationDeviceStateSummaries property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceConfigurationDeviceStateSummaries()(*DeviceConfigurationDeviceStateSummariesRequestBuilder) {
-    return NewDeviceConfigurationDeviceStateSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceConfigurationDeviceStateSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeviceConfigurationRestrictedAppsViolations provides operations to manage the deviceConfigurationRestrictedAppsViolations property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceConfigurationRestrictedAppsViolations()(*DeviceConfigurationRestrictedAppsViolationsRequestBuilder) {
-    return NewDeviceConfigurationRestrictedAppsViolationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceConfigurationRestrictedAppsViolationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeviceConfigurationRestrictedAppsViolationsById provides operations to manage the deviceConfigurationRestrictedAppsViolations property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceConfigurationRestrictedAppsViolationsById(id string)(*DeviceConfigurationRestrictedAppsViolationsRestrictedAppsViolationItemRequestBuilder) {
@@ -594,15 +594,15 @@ func (m *DeviceManagementRequestBuilder) DeviceConfigurationRestrictedAppsViolat
     if id != "" {
         urlTplParams["restrictedAppsViolation%2Did"] = id
     }
-    return NewDeviceConfigurationRestrictedAppsViolationsRestrictedAppsViolationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceConfigurationRestrictedAppsViolationsRestrictedAppsViolationItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // DeviceConfigurations provides operations to manage the deviceConfigurations property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceConfigurations()(*DeviceConfigurationsRequestBuilder) {
-    return NewDeviceConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeviceConfigurationsAllManagedDeviceCertificateStates provides operations to manage the deviceConfigurationsAllManagedDeviceCertificateStates property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceConfigurationsAllManagedDeviceCertificateStates()(*DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) {
-    return NewDeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeviceConfigurationsAllManagedDeviceCertificateStatesById provides operations to manage the deviceConfigurationsAllManagedDeviceCertificateStates property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceConfigurationsAllManagedDeviceCertificateStatesById(id string)(*DeviceConfigurationsAllManagedDeviceCertificateStatesManagedAllDeviceCertificateStateItemRequestBuilder) {
@@ -613,7 +613,7 @@ func (m *DeviceManagementRequestBuilder) DeviceConfigurationsAllManagedDeviceCer
     if id != "" {
         urlTplParams["managedAllDeviceCertificateState%2Did"] = id
     }
-    return NewDeviceConfigurationsAllManagedDeviceCertificateStatesManagedAllDeviceCertificateStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceConfigurationsAllManagedDeviceCertificateStatesManagedAllDeviceCertificateStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // DeviceConfigurationsById provides operations to manage the deviceConfigurations property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceConfigurationsById(id string)(*DeviceConfigurationsDeviceConfigurationItemRequestBuilder) {
@@ -624,15 +624,15 @@ func (m *DeviceManagementRequestBuilder) DeviceConfigurationsById(id string)(*De
     if id != "" {
         urlTplParams["deviceConfiguration%2Did"] = id
     }
-    return NewDeviceConfigurationsDeviceConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceConfigurationsDeviceConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // DeviceConfigurationUserStateSummaries provides operations to manage the deviceConfigurationUserStateSummaries property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceConfigurationUserStateSummaries()(*DeviceConfigurationUserStateSummariesRequestBuilder) {
-    return NewDeviceConfigurationUserStateSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceConfigurationUserStateSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeviceCustomAttributeShellScripts provides operations to manage the deviceCustomAttributeShellScripts property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceCustomAttributeShellScripts()(*DeviceCustomAttributeShellScriptsRequestBuilder) {
-    return NewDeviceCustomAttributeShellScriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceCustomAttributeShellScriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeviceCustomAttributeShellScriptsById provides operations to manage the deviceCustomAttributeShellScripts property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceCustomAttributeShellScriptsById(id string)(*DeviceCustomAttributeShellScriptsDeviceCustomAttributeShellScriptItemRequestBuilder) {
@@ -643,11 +643,11 @@ func (m *DeviceManagementRequestBuilder) DeviceCustomAttributeShellScriptsById(i
     if id != "" {
         urlTplParams["deviceCustomAttributeShellScript%2Did"] = id
     }
-    return NewDeviceCustomAttributeShellScriptsDeviceCustomAttributeShellScriptItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceCustomAttributeShellScriptsDeviceCustomAttributeShellScriptItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // DeviceEnrollmentConfigurations provides operations to manage the deviceEnrollmentConfigurations property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceEnrollmentConfigurations()(*DeviceEnrollmentConfigurationsRequestBuilder) {
-    return NewDeviceEnrollmentConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceEnrollmentConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeviceEnrollmentConfigurationsById provides operations to manage the deviceEnrollmentConfigurations property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceEnrollmentConfigurationsById(id string)(*DeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder) {
@@ -658,11 +658,11 @@ func (m *DeviceManagementRequestBuilder) DeviceEnrollmentConfigurationsById(id s
     if id != "" {
         urlTplParams["deviceEnrollmentConfiguration%2Did"] = id
     }
-    return NewDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // DeviceHealthScripts provides operations to manage the deviceHealthScripts property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceHealthScripts()(*DeviceHealthScriptsRequestBuilder) {
-    return NewDeviceHealthScriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceHealthScriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeviceHealthScriptsById provides operations to manage the deviceHealthScripts property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceHealthScriptsById(id string)(*DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder) {
@@ -673,11 +673,11 @@ func (m *DeviceManagementRequestBuilder) DeviceHealthScriptsById(id string)(*Dev
     if id != "" {
         urlTplParams["deviceHealthScript%2Did"] = id
     }
-    return NewDeviceHealthScriptsDeviceHealthScriptItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceHealthScriptsDeviceHealthScriptItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // DeviceManagementPartners provides operations to manage the deviceManagementPartners property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceManagementPartners()(*DeviceManagementPartnersRequestBuilder) {
-    return NewDeviceManagementPartnersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceManagementPartnersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeviceManagementPartnersById provides operations to manage the deviceManagementPartners property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceManagementPartnersById(id string)(*DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) {
@@ -688,11 +688,11 @@ func (m *DeviceManagementRequestBuilder) DeviceManagementPartnersById(id string)
     if id != "" {
         urlTplParams["deviceManagementPartner%2Did"] = id
     }
-    return NewDeviceManagementPartnersDeviceManagementPartnerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceManagementPartnersDeviceManagementPartnerItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // DeviceManagementScripts provides operations to manage the deviceManagementScripts property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceManagementScripts()(*DeviceManagementScriptsRequestBuilder) {
-    return NewDeviceManagementScriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceManagementScriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeviceManagementScriptsById provides operations to manage the deviceManagementScripts property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceManagementScriptsById(id string)(*DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) {
@@ -703,11 +703,11 @@ func (m *DeviceManagementRequestBuilder) DeviceManagementScriptsById(id string)(
     if id != "" {
         urlTplParams["deviceManagementScript%2Did"] = id
     }
-    return NewDeviceManagementScriptsDeviceManagementScriptItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceManagementScriptsDeviceManagementScriptItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // DeviceShellScripts provides operations to manage the deviceShellScripts property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceShellScripts()(*DeviceShellScriptsRequestBuilder) {
-    return NewDeviceShellScriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceShellScriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeviceShellScriptsById provides operations to manage the deviceShellScripts property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceShellScriptsById(id string)(*DeviceShellScriptsDeviceShellScriptItemRequestBuilder) {
@@ -718,11 +718,11 @@ func (m *DeviceManagementRequestBuilder) DeviceShellScriptsById(id string)(*Devi
     if id != "" {
         urlTplParams["deviceShellScript%2Did"] = id
     }
-    return NewDeviceShellScriptsDeviceShellScriptItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceShellScriptsDeviceShellScriptItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // DomainJoinConnectors provides operations to manage the domainJoinConnectors property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DomainJoinConnectors()(*DomainJoinConnectorsRequestBuilder) {
-    return NewDomainJoinConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDomainJoinConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DomainJoinConnectorsById provides operations to manage the domainJoinConnectors property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DomainJoinConnectorsById(id string)(*DomainJoinConnectorsDeviceManagementDomainJoinConnectorItemRequestBuilder) {
@@ -733,11 +733,11 @@ func (m *DeviceManagementRequestBuilder) DomainJoinConnectorsById(id string)(*Do
     if id != "" {
         urlTplParams["deviceManagementDomainJoinConnector%2Did"] = id
     }
-    return NewDomainJoinConnectorsDeviceManagementDomainJoinConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDomainJoinConnectorsDeviceManagementDomainJoinConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // EmbeddedSIMActivationCodePools provides operations to manage the embeddedSIMActivationCodePools property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) EmbeddedSIMActivationCodePools()(*EmbeddedSIMActivationCodePoolsRequestBuilder) {
-    return NewEmbeddedSIMActivationCodePoolsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEmbeddedSIMActivationCodePoolsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // EmbeddedSIMActivationCodePoolsById provides operations to manage the embeddedSIMActivationCodePools property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) EmbeddedSIMActivationCodePoolsById(id string)(*EmbeddedSIMActivationCodePoolsEmbeddedSIMActivationCodePoolItemRequestBuilder) {
@@ -748,27 +748,11 @@ func (m *DeviceManagementRequestBuilder) EmbeddedSIMActivationCodePoolsById(id s
     if id != "" {
         urlTplParams["embeddedSIMActivationCodePool%2Did"] = id
     }
-    return NewEmbeddedSIMActivationCodePoolsEmbeddedSIMActivationCodePoolItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// EnableAndroidDeviceAdministratorEnrollment provides operations to call the enableAndroidDeviceAdministratorEnrollment method.
-func (m *DeviceManagementRequestBuilder) EnableAndroidDeviceAdministratorEnrollment()(*EnableAndroidDeviceAdministratorEnrollmentRequestBuilder) {
-    return NewEnableAndroidDeviceAdministratorEnrollmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// EnableLegacyPcManagement provides operations to call the enableLegacyPcManagement method.
-func (m *DeviceManagementRequestBuilder) EnableLegacyPcManagement()(*EnableLegacyPcManagementRequestBuilder) {
-    return NewEnableLegacyPcManagementRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// EnableUnlicensedAdminstrators provides operations to call the enableUnlicensedAdminstrators method.
-func (m *DeviceManagementRequestBuilder) EnableUnlicensedAdminstrators()(*EnableUnlicensedAdminstratorsRequestBuilder) {
-    return NewEnableUnlicensedAdminstratorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// EvaluateAssignmentFilter provides operations to call the evaluateAssignmentFilter method.
-func (m *DeviceManagementRequestBuilder) EvaluateAssignmentFilter()(*EvaluateAssignmentFilterRequestBuilder) {
-    return NewEvaluateAssignmentFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEmbeddedSIMActivationCodePoolsEmbeddedSIMActivationCodePoolItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ExchangeConnectors provides operations to manage the exchangeConnectors property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ExchangeConnectors()(*ExchangeConnectorsRequestBuilder) {
-    return NewExchangeConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewExchangeConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ExchangeConnectorsById provides operations to manage the exchangeConnectors property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ExchangeConnectorsById(id string)(*ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilder) {
@@ -779,11 +763,11 @@ func (m *DeviceManagementRequestBuilder) ExchangeConnectorsById(id string)(*Exch
     if id != "" {
         urlTplParams["deviceManagementExchangeConnector%2Did"] = id
     }
-    return NewExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ExchangeOnPremisesPolicies provides operations to manage the exchangeOnPremisesPolicies property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ExchangeOnPremisesPolicies()(*ExchangeOnPremisesPoliciesRequestBuilder) {
-    return NewExchangeOnPremisesPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewExchangeOnPremisesPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ExchangeOnPremisesPoliciesById provides operations to manage the exchangeOnPremisesPolicies property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ExchangeOnPremisesPoliciesById(id string)(*ExchangeOnPremisesPoliciesDeviceManagementExchangeOnPremisesPolicyItemRequestBuilder) {
@@ -794,11 +778,11 @@ func (m *DeviceManagementRequestBuilder) ExchangeOnPremisesPoliciesById(id strin
     if id != "" {
         urlTplParams["deviceManagementExchangeOnPremisesPolicy%2Did"] = id
     }
-    return NewExchangeOnPremisesPoliciesDeviceManagementExchangeOnPremisesPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewExchangeOnPremisesPoliciesDeviceManagementExchangeOnPremisesPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ExchangeOnPremisesPolicy provides operations to manage the exchangeOnPremisesPolicy property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ExchangeOnPremisesPolicy()(*ExchangeOnPremisesPolicyRequestBuilder) {
-    return NewExchangeOnPremisesPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewExchangeOnPremisesPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get deviceManagement
 func (m *DeviceManagementRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceManagementRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementable, error) {
@@ -819,45 +803,9 @@ func (m *DeviceManagementRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementable), nil
 }
-// GetAssignedRoleDetails provides operations to call the getAssignedRoleDetails method.
-func (m *DeviceManagementRequestBuilder) GetAssignedRoleDetails()(*GetAssignedRoleDetailsRequestBuilder) {
-    return NewGetAssignedRoleDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// GetAssignmentFiltersStatusDetails provides operations to call the getAssignmentFiltersStatusDetails method.
-func (m *DeviceManagementRequestBuilder) GetAssignmentFiltersStatusDetails()(*GetAssignmentFiltersStatusDetailsRequestBuilder) {
-    return NewGetAssignmentFiltersStatusDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// GetComanagedDevicesSummary provides operations to call the getComanagedDevicesSummary method.
-func (m *DeviceManagementRequestBuilder) GetComanagedDevicesSummary()(*GetComanagedDevicesSummaryRequestBuilder) {
-    return NewGetComanagedDevicesSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// GetComanagementEligibleDevicesSummary provides operations to call the getComanagementEligibleDevicesSummary method.
-func (m *DeviceManagementRequestBuilder) GetComanagementEligibleDevicesSummary()(*GetComanagementEligibleDevicesSummaryRequestBuilder) {
-    return NewGetComanagementEligibleDevicesSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// GetEffectivePermissions provides operations to call the getEffectivePermissions method.
-func (m *DeviceManagementRequestBuilder) GetEffectivePermissions()(*GetEffectivePermissionsRequestBuilder) {
-    return NewGetEffectivePermissionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// GetEffectivePermissionsWithScope provides operations to call the getEffectivePermissions method.
-func (m *DeviceManagementRequestBuilder) GetEffectivePermissionsWithScope(scope *string)(*GetEffectivePermissionsWithScopeRequestBuilder) {
-    return NewGetEffectivePermissionsWithScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter, scope);
-}
-// GetRoleScopeTagsByIdsWithIds provides operations to call the getRoleScopeTagsByIds method.
-func (m *DeviceManagementRequestBuilder) GetRoleScopeTagsByIdsWithIds(ids *string)(*GetRoleScopeTagsByIdsWithIdsRequestBuilder) {
-    return NewGetRoleScopeTagsByIdsWithIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter, ids);
-}
-// GetRoleScopeTagsByResourceWithResource provides operations to call the getRoleScopeTagsByResource method.
-func (m *DeviceManagementRequestBuilder) GetRoleScopeTagsByResourceWithResource(resource *string)(*GetRoleScopeTagsByResourceWithResourceRequestBuilder) {
-    return NewGetRoleScopeTagsByResourceWithResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter, resource);
-}
-// GetSuggestedEnrollmentLimitWithEnrollmentType provides operations to call the getSuggestedEnrollmentLimit method.
-func (m *DeviceManagementRequestBuilder) GetSuggestedEnrollmentLimitWithEnrollmentType(enrollmentType *string)(*GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder) {
-    return NewGetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilderInternal(m.pathParameters, m.requestAdapter, enrollmentType);
-}
 // GroupPolicyCategories provides operations to manage the groupPolicyCategories property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) GroupPolicyCategories()(*GroupPolicyCategoriesRequestBuilder) {
-    return NewGroupPolicyCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GroupPolicyCategoriesById provides operations to manage the groupPolicyCategories property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) GroupPolicyCategoriesById(id string)(*GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) {
@@ -868,11 +816,11 @@ func (m *DeviceManagementRequestBuilder) GroupPolicyCategoriesById(id string)(*G
     if id != "" {
         urlTplParams["groupPolicyCategory%2Did"] = id
     }
-    return NewGroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewGroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // GroupPolicyConfigurations provides operations to manage the groupPolicyConfigurations property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) GroupPolicyConfigurations()(*GroupPolicyConfigurationsRequestBuilder) {
-    return NewGroupPolicyConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GroupPolicyConfigurationsById provides operations to manage the groupPolicyConfigurations property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) GroupPolicyConfigurationsById(id string)(*GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) {
@@ -883,11 +831,11 @@ func (m *DeviceManagementRequestBuilder) GroupPolicyConfigurationsById(id string
     if id != "" {
         urlTplParams["groupPolicyConfiguration%2Did"] = id
     }
-    return NewGroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewGroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // GroupPolicyDefinitionFiles provides operations to manage the groupPolicyDefinitionFiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) GroupPolicyDefinitionFiles()(*GroupPolicyDefinitionFilesRequestBuilder) {
-    return NewGroupPolicyDefinitionFilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyDefinitionFilesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GroupPolicyDefinitionFilesById provides operations to manage the groupPolicyDefinitionFiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) GroupPolicyDefinitionFilesById(id string)(*GroupPolicyDefinitionFilesGroupPolicyDefinitionFileItemRequestBuilder) {
@@ -898,11 +846,11 @@ func (m *DeviceManagementRequestBuilder) GroupPolicyDefinitionFilesById(id strin
     if id != "" {
         urlTplParams["groupPolicyDefinitionFile%2Did"] = id
     }
-    return NewGroupPolicyDefinitionFilesGroupPolicyDefinitionFileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewGroupPolicyDefinitionFilesGroupPolicyDefinitionFileItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // GroupPolicyDefinitions provides operations to manage the groupPolicyDefinitions property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) GroupPolicyDefinitions()(*GroupPolicyDefinitionsRequestBuilder) {
-    return NewGroupPolicyDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GroupPolicyDefinitionsById provides operations to manage the groupPolicyDefinitions property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) GroupPolicyDefinitionsById(id string)(*GroupPolicyDefinitionsGroupPolicyDefinitionItemRequestBuilder) {
@@ -913,11 +861,11 @@ func (m *DeviceManagementRequestBuilder) GroupPolicyDefinitionsById(id string)(*
     if id != "" {
         urlTplParams["groupPolicyDefinition%2Did"] = id
     }
-    return NewGroupPolicyDefinitionsGroupPolicyDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewGroupPolicyDefinitionsGroupPolicyDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // GroupPolicyMigrationReports provides operations to manage the groupPolicyMigrationReports property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) GroupPolicyMigrationReports()(*GroupPolicyMigrationReportsRequestBuilder) {
-    return NewGroupPolicyMigrationReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyMigrationReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GroupPolicyMigrationReportsById provides operations to manage the groupPolicyMigrationReports property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) GroupPolicyMigrationReportsById(id string)(*GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder) {
@@ -928,11 +876,11 @@ func (m *DeviceManagementRequestBuilder) GroupPolicyMigrationReportsById(id stri
     if id != "" {
         urlTplParams["groupPolicyMigrationReport%2Did"] = id
     }
-    return NewGroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewGroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // GroupPolicyObjectFiles provides operations to manage the groupPolicyObjectFiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) GroupPolicyObjectFiles()(*GroupPolicyObjectFilesRequestBuilder) {
-    return NewGroupPolicyObjectFilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyObjectFilesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GroupPolicyObjectFilesById provides operations to manage the groupPolicyObjectFiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) GroupPolicyObjectFilesById(id string)(*GroupPolicyObjectFilesGroupPolicyObjectFileItemRequestBuilder) {
@@ -943,11 +891,11 @@ func (m *DeviceManagementRequestBuilder) GroupPolicyObjectFilesById(id string)(*
     if id != "" {
         urlTplParams["groupPolicyObjectFile%2Did"] = id
     }
-    return NewGroupPolicyObjectFilesGroupPolicyObjectFileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewGroupPolicyObjectFilesGroupPolicyObjectFileItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // GroupPolicyUploadedDefinitionFiles provides operations to manage the groupPolicyUploadedDefinitionFiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) GroupPolicyUploadedDefinitionFiles()(*GroupPolicyUploadedDefinitionFilesRequestBuilder) {
-    return NewGroupPolicyUploadedDefinitionFilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyUploadedDefinitionFilesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GroupPolicyUploadedDefinitionFilesById provides operations to manage the groupPolicyUploadedDefinitionFiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) GroupPolicyUploadedDefinitionFilesById(id string)(*GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilder) {
@@ -958,11 +906,11 @@ func (m *DeviceManagementRequestBuilder) GroupPolicyUploadedDefinitionFilesById(
     if id != "" {
         urlTplParams["groupPolicyUploadedDefinitionFile%2Did"] = id
     }
-    return NewGroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewGroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ImportedDeviceIdentities provides operations to manage the importedDeviceIdentities property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ImportedDeviceIdentities()(*ImportedDeviceIdentitiesRequestBuilder) {
-    return NewImportedDeviceIdentitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewImportedDeviceIdentitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ImportedDeviceIdentitiesById provides operations to manage the importedDeviceIdentities property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ImportedDeviceIdentitiesById(id string)(*ImportedDeviceIdentitiesImportedDeviceIdentityItemRequestBuilder) {
@@ -973,11 +921,11 @@ func (m *DeviceManagementRequestBuilder) ImportedDeviceIdentitiesById(id string)
     if id != "" {
         urlTplParams["importedDeviceIdentity%2Did"] = id
     }
-    return NewImportedDeviceIdentitiesImportedDeviceIdentityItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewImportedDeviceIdentitiesImportedDeviceIdentityItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ImportedWindowsAutopilotDeviceIdentities provides operations to manage the importedWindowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ImportedWindowsAutopilotDeviceIdentities()(*ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) {
-    return NewImportedWindowsAutopilotDeviceIdentitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewImportedWindowsAutopilotDeviceIdentitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ImportedWindowsAutopilotDeviceIdentitiesById provides operations to manage the importedWindowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ImportedWindowsAutopilotDeviceIdentitiesById(id string)(*ImportedWindowsAutopilotDeviceIdentitiesImportedWindowsAutopilotDeviceIdentityItemRequestBuilder) {
@@ -988,11 +936,11 @@ func (m *DeviceManagementRequestBuilder) ImportedWindowsAutopilotDeviceIdentitie
     if id != "" {
         urlTplParams["importedWindowsAutopilotDeviceIdentity%2Did"] = id
     }
-    return NewImportedWindowsAutopilotDeviceIdentitiesImportedWindowsAutopilotDeviceIdentityItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewImportedWindowsAutopilotDeviceIdentitiesImportedWindowsAutopilotDeviceIdentityItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Intents provides operations to manage the intents property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) Intents()(*IntentsRequestBuilder) {
-    return NewIntentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIntentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // IntentsById provides operations to manage the intents property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) IntentsById(id string)(*IntentsDeviceManagementIntentItemRequestBuilder) {
@@ -1003,11 +951,11 @@ func (m *DeviceManagementRequestBuilder) IntentsById(id string)(*IntentsDeviceMa
     if id != "" {
         urlTplParams["deviceManagementIntent%2Did"] = id
     }
-    return NewIntentsDeviceManagementIntentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewIntentsDeviceManagementIntentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // IntuneBrandingProfiles provides operations to manage the intuneBrandingProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) IntuneBrandingProfiles()(*IntuneBrandingProfilesRequestBuilder) {
-    return NewIntuneBrandingProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIntuneBrandingProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // IntuneBrandingProfilesById provides operations to manage the intuneBrandingProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) IntuneBrandingProfilesById(id string)(*IntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilder) {
@@ -1018,11 +966,11 @@ func (m *DeviceManagementRequestBuilder) IntuneBrandingProfilesById(id string)(*
     if id != "" {
         urlTplParams["intuneBrandingProfile%2Did"] = id
     }
-    return NewIntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewIntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // IosUpdateStatuses provides operations to manage the iosUpdateStatuses property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) IosUpdateStatuses()(*IosUpdateStatusesRequestBuilder) {
-    return NewIosUpdateStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIosUpdateStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // IosUpdateStatusesById provides operations to manage the iosUpdateStatuses property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) IosUpdateStatusesById(id string)(*IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilder) {
@@ -1033,11 +981,11 @@ func (m *DeviceManagementRequestBuilder) IosUpdateStatusesById(id string)(*IosUp
     if id != "" {
         urlTplParams["iosUpdateDeviceStatus%2Did"] = id
     }
-    return NewIosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewIosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // MacOSSoftwareUpdateAccountSummaries provides operations to manage the macOSSoftwareUpdateAccountSummaries property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) MacOSSoftwareUpdateAccountSummaries()(*MacOSSoftwareUpdateAccountSummariesRequestBuilder) {
-    return NewMacOSSoftwareUpdateAccountSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMacOSSoftwareUpdateAccountSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MacOSSoftwareUpdateAccountSummariesById provides operations to manage the macOSSoftwareUpdateAccountSummaries property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) MacOSSoftwareUpdateAccountSummariesById(id string)(*MacOSSoftwareUpdateAccountSummariesMacOSSoftwareUpdateAccountSummaryItemRequestBuilder) {
@@ -1048,11 +996,11 @@ func (m *DeviceManagementRequestBuilder) MacOSSoftwareUpdateAccountSummariesById
     if id != "" {
         urlTplParams["macOSSoftwareUpdateAccountSummary%2Did"] = id
     }
-    return NewMacOSSoftwareUpdateAccountSummariesMacOSSoftwareUpdateAccountSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMacOSSoftwareUpdateAccountSummariesMacOSSoftwareUpdateAccountSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ManagedDeviceEncryptionStates provides operations to manage the managedDeviceEncryptionStates property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ManagedDeviceEncryptionStates()(*ManagedDeviceEncryptionStatesRequestBuilder) {
-    return NewManagedDeviceEncryptionStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedDeviceEncryptionStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ManagedDeviceEncryptionStatesById provides operations to manage the managedDeviceEncryptionStates property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ManagedDeviceEncryptionStatesById(id string)(*ManagedDeviceEncryptionStatesManagedDeviceEncryptionStateItemRequestBuilder) {
@@ -1063,15 +1011,15 @@ func (m *DeviceManagementRequestBuilder) ManagedDeviceEncryptionStatesById(id st
     if id != "" {
         urlTplParams["managedDeviceEncryptionState%2Did"] = id
     }
-    return NewManagedDeviceEncryptionStatesManagedDeviceEncryptionStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagedDeviceEncryptionStatesManagedDeviceEncryptionStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ManagedDeviceOverview provides operations to manage the managedDeviceOverview property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ManagedDeviceOverview()(*ManagedDeviceOverviewRequestBuilder) {
-    return NewManagedDeviceOverviewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedDeviceOverviewRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ManagedDevices provides operations to manage the managedDevices property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ManagedDevices()(*ManagedDevicesRequestBuilder) {
-    return NewManagedDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ManagedDevicesById provides operations to manage the managedDevices property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ManagedDevicesById(id string)(*ManagedDevicesManagedDeviceItemRequestBuilder) {
@@ -1082,11 +1030,83 @@ func (m *DeviceManagementRequestBuilder) ManagedDevicesById(id string)(*ManagedD
     if id != "" {
         urlTplParams["managedDevice%2Did"] = id
     }
-    return NewManagedDevicesManagedDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagedDevicesManagedDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+// MicrosoftGraphEnableAndroidDeviceAdministratorEnrollment provides operations to call the enableAndroidDeviceAdministratorEnrollment method.
+func (m *DeviceManagementRequestBuilder) MicrosoftGraphEnableAndroidDeviceAdministratorEnrollment()(*MicrosoftGraphEnableAndroidDeviceAdministratorEnrollmentEnableAndroidDeviceAdministratorEnrollmentRequestBuilder) {
+    return NewMicrosoftGraphEnableAndroidDeviceAdministratorEnrollmentEnableAndroidDeviceAdministratorEnrollmentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphEnableLegacyPcManagement provides operations to call the enableLegacyPcManagement method.
+func (m *DeviceManagementRequestBuilder) MicrosoftGraphEnableLegacyPcManagement()(*MicrosoftGraphEnableLegacyPcManagementEnableLegacyPcManagementRequestBuilder) {
+    return NewMicrosoftGraphEnableLegacyPcManagementEnableLegacyPcManagementRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphEnableUnlicensedAdminstrators provides operations to call the enableUnlicensedAdminstrators method.
+func (m *DeviceManagementRequestBuilder) MicrosoftGraphEnableUnlicensedAdminstrators()(*MicrosoftGraphEnableUnlicensedAdminstratorsEnableUnlicensedAdminstratorsRequestBuilder) {
+    return NewMicrosoftGraphEnableUnlicensedAdminstratorsEnableUnlicensedAdminstratorsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphEvaluateAssignmentFilter provides operations to call the evaluateAssignmentFilter method.
+func (m *DeviceManagementRequestBuilder) MicrosoftGraphEvaluateAssignmentFilter()(*MicrosoftGraphEvaluateAssignmentFilterEvaluateAssignmentFilterRequestBuilder) {
+    return NewMicrosoftGraphEvaluateAssignmentFilterEvaluateAssignmentFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphGetAssignedRoleDetails provides operations to call the getAssignedRoleDetails method.
+func (m *DeviceManagementRequestBuilder) MicrosoftGraphGetAssignedRoleDetails()(*MicrosoftGraphGetAssignedRoleDetailsGetAssignedRoleDetailsRequestBuilder) {
+    return NewMicrosoftGraphGetAssignedRoleDetailsGetAssignedRoleDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphGetAssignmentFiltersStatusDetails provides operations to call the getAssignmentFiltersStatusDetails method.
+func (m *DeviceManagementRequestBuilder) MicrosoftGraphGetAssignmentFiltersStatusDetails()(*MicrosoftGraphGetAssignmentFiltersStatusDetailsGetAssignmentFiltersStatusDetailsRequestBuilder) {
+    return NewMicrosoftGraphGetAssignmentFiltersStatusDetailsGetAssignmentFiltersStatusDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphGetComanagedDevicesSummary provides operations to call the getComanagedDevicesSummary method.
+func (m *DeviceManagementRequestBuilder) MicrosoftGraphGetComanagedDevicesSummary()(*MicrosoftGraphGetComanagedDevicesSummaryGetComanagedDevicesSummaryRequestBuilder) {
+    return NewMicrosoftGraphGetComanagedDevicesSummaryGetComanagedDevicesSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphGetComanagementEligibleDevicesSummary provides operations to call the getComanagementEligibleDevicesSummary method.
+func (m *DeviceManagementRequestBuilder) MicrosoftGraphGetComanagementEligibleDevicesSummary()(*MicrosoftGraphGetComanagementEligibleDevicesSummaryGetComanagementEligibleDevicesSummaryRequestBuilder) {
+    return NewMicrosoftGraphGetComanagementEligibleDevicesSummaryGetComanagementEligibleDevicesSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphGetEffectivePermissions provides operations to call the getEffectivePermissions method.
+func (m *DeviceManagementRequestBuilder) MicrosoftGraphGetEffectivePermissions()(*MicrosoftGraphGetEffectivePermissionsGetEffectivePermissionsRequestBuilder) {
+    return NewMicrosoftGraphGetEffectivePermissionsGetEffectivePermissionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphGetEffectivePermissionsWithScope provides operations to call the getEffectivePermissions method.
+func (m *DeviceManagementRequestBuilder) MicrosoftGraphGetEffectivePermissionsWithScope(scope *string)(*MicrosoftGraphGetEffectivePermissionsWithScopeGetEffectivePermissionsWithScopeRequestBuilder) {
+    return NewMicrosoftGraphGetEffectivePermissionsWithScopeGetEffectivePermissionsWithScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter, scope)
+}
+// MicrosoftGraphGetRoleScopeTagsByIdsWithIds provides operations to call the getRoleScopeTagsByIds method.
+func (m *DeviceManagementRequestBuilder) MicrosoftGraphGetRoleScopeTagsByIdsWithIds(ids *string)(*MicrosoftGraphGetRoleScopeTagsByIdsWithIdsGetRoleScopeTagsByIdsWithIdsRequestBuilder) {
+    return NewMicrosoftGraphGetRoleScopeTagsByIdsWithIdsGetRoleScopeTagsByIdsWithIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter, ids)
+}
+// MicrosoftGraphGetRoleScopeTagsByResourceWithResource provides operations to call the getRoleScopeTagsByResource method.
+func (m *DeviceManagementRequestBuilder) MicrosoftGraphGetRoleScopeTagsByResourceWithResource(resource *string)(*MicrosoftGraphGetRoleScopeTagsByResourceWithResourceGetRoleScopeTagsByResourceWithResourceRequestBuilder) {
+    return NewMicrosoftGraphGetRoleScopeTagsByResourceWithResourceGetRoleScopeTagsByResourceWithResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter, resource)
+}
+// MicrosoftGraphGetSuggestedEnrollmentLimitWithEnrollmentType provides operations to call the getSuggestedEnrollmentLimit method.
+func (m *DeviceManagementRequestBuilder) MicrosoftGraphGetSuggestedEnrollmentLimitWithEnrollmentType(enrollmentType *string)(*MicrosoftGraphGetSuggestedEnrollmentLimitWithEnrollmentTypeGetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder) {
+    return NewMicrosoftGraphGetSuggestedEnrollmentLimitWithEnrollmentTypeGetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilderInternal(m.pathParameters, m.requestAdapter, enrollmentType)
+}
+// MicrosoftGraphScopedForResourceWithResource provides operations to call the scopedForResource method.
+func (m *DeviceManagementRequestBuilder) MicrosoftGraphScopedForResourceWithResource(resource *string)(*MicrosoftGraphScopedForResourceWithResourceScopedForResourceWithResourceRequestBuilder) {
+    return NewMicrosoftGraphScopedForResourceWithResourceScopedForResourceWithResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter, resource)
+}
+// MicrosoftGraphSendCustomNotificationToCompanyPortal provides operations to call the sendCustomNotificationToCompanyPortal method.
+func (m *DeviceManagementRequestBuilder) MicrosoftGraphSendCustomNotificationToCompanyPortal()(*MicrosoftGraphSendCustomNotificationToCompanyPortalSendCustomNotificationToCompanyPortalRequestBuilder) {
+    return NewMicrosoftGraphSendCustomNotificationToCompanyPortalSendCustomNotificationToCompanyPortalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUserExperienceAnalyticsSummarizedDeviceScopes provides operations to call the userExperienceAnalyticsSummarizedDeviceScopes method.
+func (m *DeviceManagementRequestBuilder) MicrosoftGraphUserExperienceAnalyticsSummarizedDeviceScopes()(*MicrosoftGraphUserExperienceAnalyticsSummarizedDeviceScopesUserExperienceAnalyticsSummarizedDeviceScopesRequestBuilder) {
+    return NewMicrosoftGraphUserExperienceAnalyticsSummarizedDeviceScopesUserExperienceAnalyticsSummarizedDeviceScopesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUserExperienceAnalyticsSummarizeWorkFromAnywhereDevices provides operations to call the userExperienceAnalyticsSummarizeWorkFromAnywhereDevices method.
+func (m *DeviceManagementRequestBuilder) MicrosoftGraphUserExperienceAnalyticsSummarizeWorkFromAnywhereDevices()(*MicrosoftGraphUserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesUserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder) {
+    return NewMicrosoftGraphUserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesUserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphVerifyWindowsEnrollmentAutoDiscoveryWithDomainName provides operations to call the verifyWindowsEnrollmentAutoDiscovery method.
+func (m *DeviceManagementRequestBuilder) MicrosoftGraphVerifyWindowsEnrollmentAutoDiscoveryWithDomainName(domainName *string)(*MicrosoftGraphVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder) {
+    return NewMicrosoftGraphVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilderInternal(m.pathParameters, m.requestAdapter, domainName)
 }
 // MicrosoftTunnelConfigurations provides operations to manage the microsoftTunnelConfigurations property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) MicrosoftTunnelConfigurations()(*MicrosoftTunnelConfigurationsRequestBuilder) {
-    return NewMicrosoftTunnelConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMicrosoftTunnelConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MicrosoftTunnelConfigurationsById provides operations to manage the microsoftTunnelConfigurations property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) MicrosoftTunnelConfigurationsById(id string)(*MicrosoftTunnelConfigurationsMicrosoftTunnelConfigurationItemRequestBuilder) {
@@ -1097,11 +1117,11 @@ func (m *DeviceManagementRequestBuilder) MicrosoftTunnelConfigurationsById(id st
     if id != "" {
         urlTplParams["microsoftTunnelConfiguration%2Did"] = id
     }
-    return NewMicrosoftTunnelConfigurationsMicrosoftTunnelConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMicrosoftTunnelConfigurationsMicrosoftTunnelConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // MicrosoftTunnelHealthThresholds provides operations to manage the microsoftTunnelHealthThresholds property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) MicrosoftTunnelHealthThresholds()(*MicrosoftTunnelHealthThresholdsRequestBuilder) {
-    return NewMicrosoftTunnelHealthThresholdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMicrosoftTunnelHealthThresholdsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MicrosoftTunnelHealthThresholdsById provides operations to manage the microsoftTunnelHealthThresholds property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) MicrosoftTunnelHealthThresholdsById(id string)(*MicrosoftTunnelHealthThresholdsMicrosoftTunnelHealthThresholdItemRequestBuilder) {
@@ -1112,11 +1132,11 @@ func (m *DeviceManagementRequestBuilder) MicrosoftTunnelHealthThresholdsById(id 
     if id != "" {
         urlTplParams["microsoftTunnelHealthThreshold%2Did"] = id
     }
-    return NewMicrosoftTunnelHealthThresholdsMicrosoftTunnelHealthThresholdItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMicrosoftTunnelHealthThresholdsMicrosoftTunnelHealthThresholdItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // MicrosoftTunnelServerLogCollectionResponses provides operations to manage the microsoftTunnelServerLogCollectionResponses property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) MicrosoftTunnelServerLogCollectionResponses()(*MicrosoftTunnelServerLogCollectionResponsesRequestBuilder) {
-    return NewMicrosoftTunnelServerLogCollectionResponsesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMicrosoftTunnelServerLogCollectionResponsesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MicrosoftTunnelServerLogCollectionResponsesById provides operations to manage the microsoftTunnelServerLogCollectionResponses property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) MicrosoftTunnelServerLogCollectionResponsesById(id string)(*MicrosoftTunnelServerLogCollectionResponsesMicrosoftTunnelServerLogCollectionResponseItemRequestBuilder) {
@@ -1127,11 +1147,11 @@ func (m *DeviceManagementRequestBuilder) MicrosoftTunnelServerLogCollectionRespo
     if id != "" {
         urlTplParams["microsoftTunnelServerLogCollectionResponse%2Did"] = id
     }
-    return NewMicrosoftTunnelServerLogCollectionResponsesMicrosoftTunnelServerLogCollectionResponseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMicrosoftTunnelServerLogCollectionResponsesMicrosoftTunnelServerLogCollectionResponseItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // MicrosoftTunnelSites provides operations to manage the microsoftTunnelSites property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) MicrosoftTunnelSites()(*MicrosoftTunnelSitesRequestBuilder) {
-    return NewMicrosoftTunnelSitesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMicrosoftTunnelSitesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MicrosoftTunnelSitesById provides operations to manage the microsoftTunnelSites property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) MicrosoftTunnelSitesById(id string)(*MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) {
@@ -1142,11 +1162,11 @@ func (m *DeviceManagementRequestBuilder) MicrosoftTunnelSitesById(id string)(*Mi
     if id != "" {
         urlTplParams["microsoftTunnelSite%2Did"] = id
     }
-    return NewMicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // MobileAppTroubleshootingEvents provides operations to manage the mobileAppTroubleshootingEvents property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) MobileAppTroubleshootingEvents()(*MobileAppTroubleshootingEventsRequestBuilder) {
-    return NewMobileAppTroubleshootingEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMobileAppTroubleshootingEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MobileAppTroubleshootingEventsById provides operations to manage the mobileAppTroubleshootingEvents property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) MobileAppTroubleshootingEventsById(id string)(*MobileAppTroubleshootingEventsMobileAppTroubleshootingEventItemRequestBuilder) {
@@ -1157,11 +1177,11 @@ func (m *DeviceManagementRequestBuilder) MobileAppTroubleshootingEventsById(id s
     if id != "" {
         urlTplParams["mobileAppTroubleshootingEvent%2Did"] = id
     }
-    return NewMobileAppTroubleshootingEventsMobileAppTroubleshootingEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMobileAppTroubleshootingEventsMobileAppTroubleshootingEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // MobileThreatDefenseConnectors provides operations to manage the mobileThreatDefenseConnectors property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) MobileThreatDefenseConnectors()(*MobileThreatDefenseConnectorsRequestBuilder) {
-    return NewMobileThreatDefenseConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMobileThreatDefenseConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MobileThreatDefenseConnectorsById provides operations to manage the mobileThreatDefenseConnectors property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) MobileThreatDefenseConnectorsById(id string)(*MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilder) {
@@ -1172,15 +1192,15 @@ func (m *DeviceManagementRequestBuilder) MobileThreatDefenseConnectorsById(id st
     if id != "" {
         urlTplParams["mobileThreatDefenseConnector%2Did"] = id
     }
-    return NewMobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Monitoring provides operations to manage the monitoring property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) Monitoring()(*MonitoringRequestBuilder) {
-    return NewMonitoringRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMonitoringRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NdesConnectors provides operations to manage the ndesConnectors property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) NdesConnectors()(*NdesConnectorsRequestBuilder) {
-    return NewNdesConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewNdesConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NdesConnectorsById provides operations to manage the ndesConnectors property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) NdesConnectorsById(id string)(*NdesConnectorsNdesConnectorItemRequestBuilder) {
@@ -1191,11 +1211,11 @@ func (m *DeviceManagementRequestBuilder) NdesConnectorsById(id string)(*NdesConn
     if id != "" {
         urlTplParams["ndesConnector%2Did"] = id
     }
-    return NewNdesConnectorsNdesConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewNdesConnectorsNdesConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NotificationMessageTemplates provides operations to manage the notificationMessageTemplates property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) NotificationMessageTemplates()(*NotificationMessageTemplatesRequestBuilder) {
-    return NewNotificationMessageTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewNotificationMessageTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NotificationMessageTemplatesById provides operations to manage the notificationMessageTemplates property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) NotificationMessageTemplatesById(id string)(*NotificationMessageTemplatesNotificationMessageTemplateItemRequestBuilder) {
@@ -1206,11 +1226,11 @@ func (m *DeviceManagementRequestBuilder) NotificationMessageTemplatesById(id str
     if id != "" {
         urlTplParams["notificationMessageTemplate%2Did"] = id
     }
-    return NewNotificationMessageTemplatesNotificationMessageTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewNotificationMessageTemplatesNotificationMessageTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // OemWarrantyInformationOnboarding provides operations to manage the oemWarrantyInformationOnboarding property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) OemWarrantyInformationOnboarding()(*OemWarrantyInformationOnboardingRequestBuilder) {
-    return NewOemWarrantyInformationOnboardingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewOemWarrantyInformationOnboardingRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // OemWarrantyInformationOnboardingById provides operations to manage the oemWarrantyInformationOnboarding property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) OemWarrantyInformationOnboardingById(id string)(*OemWarrantyInformationOnboardingOemWarrantyInformationOnboardingItemRequestBuilder) {
@@ -1221,7 +1241,7 @@ func (m *DeviceManagementRequestBuilder) OemWarrantyInformationOnboardingById(id
     if id != "" {
         urlTplParams["oemWarrantyInformationOnboarding%2Did"] = id
     }
-    return NewOemWarrantyInformationOnboardingOemWarrantyInformationOnboardingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewOemWarrantyInformationOnboardingOemWarrantyInformationOnboardingItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch update deviceManagement
 func (m *DeviceManagementRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementable, requestConfiguration *DeviceManagementRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementable, error) {
@@ -1244,7 +1264,7 @@ func (m *DeviceManagementRequestBuilder) Patch(ctx context.Context, body ie233ee
 }
 // RemoteActionAudits provides operations to manage the remoteActionAudits property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) RemoteActionAudits()(*RemoteActionAuditsRequestBuilder) {
-    return NewRemoteActionAuditsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewRemoteActionAuditsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RemoteActionAuditsById provides operations to manage the remoteActionAudits property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) RemoteActionAuditsById(id string)(*RemoteActionAuditsRemoteActionAuditItemRequestBuilder) {
@@ -1255,11 +1275,11 @@ func (m *DeviceManagementRequestBuilder) RemoteActionAuditsById(id string)(*Remo
     if id != "" {
         urlTplParams["remoteActionAudit%2Did"] = id
     }
-    return NewRemoteActionAuditsRemoteActionAuditItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewRemoteActionAuditsRemoteActionAuditItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // RemoteAssistancePartners provides operations to manage the remoteAssistancePartners property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) RemoteAssistancePartners()(*RemoteAssistancePartnersRequestBuilder) {
-    return NewRemoteAssistancePartnersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewRemoteAssistancePartnersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RemoteAssistancePartnersById provides operations to manage the remoteAssistancePartners property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) RemoteAssistancePartnersById(id string)(*RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) {
@@ -1270,19 +1290,19 @@ func (m *DeviceManagementRequestBuilder) RemoteAssistancePartnersById(id string)
     if id != "" {
         urlTplParams["remoteAssistancePartner%2Did"] = id
     }
-    return NewRemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewRemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // RemoteAssistanceSettings provides operations to manage the remoteAssistanceSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) RemoteAssistanceSettings()(*RemoteAssistanceSettingsRequestBuilder) {
-    return NewRemoteAssistanceSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewRemoteAssistanceSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Reports provides operations to manage the reports property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) Reports()(*ReportsRequestBuilder) {
-    return NewReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ResourceAccessProfiles provides operations to manage the resourceAccessProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ResourceAccessProfiles()(*ResourceAccessProfilesRequestBuilder) {
-    return NewResourceAccessProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewResourceAccessProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ResourceAccessProfilesById provides operations to manage the resourceAccessProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ResourceAccessProfilesById(id string)(*ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder) {
@@ -1293,11 +1313,11 @@ func (m *DeviceManagementRequestBuilder) ResourceAccessProfilesById(id string)(*
     if id != "" {
         urlTplParams["deviceManagementResourceAccessProfileBase%2Did"] = id
     }
-    return NewResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ResourceOperations provides operations to manage the resourceOperations property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ResourceOperations()(*ResourceOperationsRequestBuilder) {
-    return NewResourceOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewResourceOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ResourceOperationsById provides operations to manage the resourceOperations property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ResourceOperationsById(id string)(*ResourceOperationsResourceOperationItemRequestBuilder) {
@@ -1308,11 +1328,11 @@ func (m *DeviceManagementRequestBuilder) ResourceOperationsById(id string)(*Reso
     if id != "" {
         urlTplParams["resourceOperation%2Did"] = id
     }
-    return NewResourceOperationsResourceOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewResourceOperationsResourceOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ReusablePolicySettings provides operations to manage the reusablePolicySettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ReusablePolicySettings()(*ReusablePolicySettingsRequestBuilder) {
-    return NewReusablePolicySettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewReusablePolicySettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ReusablePolicySettingsById provides operations to manage the reusablePolicySettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ReusablePolicySettingsById(id string)(*ReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBuilder) {
@@ -1323,11 +1343,11 @@ func (m *DeviceManagementRequestBuilder) ReusablePolicySettingsById(id string)(*
     if id != "" {
         urlTplParams["deviceManagementReusablePolicySetting%2Did"] = id
     }
-    return NewReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ReusableSettings provides operations to manage the reusableSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ReusableSettings()(*ReusableSettingsRequestBuilder) {
-    return NewReusableSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewReusableSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ReusableSettingsById provides operations to manage the reusableSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ReusableSettingsById(id string)(*ReusableSettingsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder) {
@@ -1338,11 +1358,11 @@ func (m *DeviceManagementRequestBuilder) ReusableSettingsById(id string)(*Reusab
     if id != "" {
         urlTplParams["deviceManagementConfigurationSettingDefinition%2Did"] = id
     }
-    return NewReusableSettingsDeviceManagementConfigurationSettingDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewReusableSettingsDeviceManagementConfigurationSettingDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // RoleAssignments provides operations to manage the roleAssignments property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) RoleAssignments()(*RoleAssignmentsRequestBuilder) {
-    return NewRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RoleAssignmentsById provides operations to manage the roleAssignments property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) RoleAssignmentsById(id string)(*RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilder) {
@@ -1353,11 +1373,11 @@ func (m *DeviceManagementRequestBuilder) RoleAssignmentsById(id string)(*RoleAss
     if id != "" {
         urlTplParams["deviceAndAppManagementRoleAssignment%2Did"] = id
     }
-    return NewRoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewRoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // RoleDefinitions provides operations to manage the roleDefinitions property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) RoleDefinitions()(*RoleDefinitionsRequestBuilder) {
-    return NewRoleDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewRoleDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RoleDefinitionsById provides operations to manage the roleDefinitions property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) RoleDefinitionsById(id string)(*RoleDefinitionsRoleDefinitionItemRequestBuilder) {
@@ -1368,11 +1388,11 @@ func (m *DeviceManagementRequestBuilder) RoleDefinitionsById(id string)(*RoleDef
     if id != "" {
         urlTplParams["roleDefinition%2Did"] = id
     }
-    return NewRoleDefinitionsRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewRoleDefinitionsRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // RoleScopeTags provides operations to manage the roleScopeTags property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) RoleScopeTags()(*RoleScopeTagsRequestBuilder) {
-    return NewRoleScopeTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewRoleScopeTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RoleScopeTagsById provides operations to manage the roleScopeTags property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) RoleScopeTagsById(id string)(*RoleScopeTagsRoleScopeTagItemRequestBuilder) {
@@ -1383,19 +1403,26 @@ func (m *DeviceManagementRequestBuilder) RoleScopeTagsById(id string)(*RoleScope
     if id != "" {
         urlTplParams["roleScopeTag%2Did"] = id
     }
-    return NewRoleScopeTagsRoleScopeTagItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewRoleScopeTagsRoleScopeTagItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
-// ScopedForResourceWithResource provides operations to call the scopedForResource method.
-func (m *DeviceManagementRequestBuilder) ScopedForResourceWithResource(resource *string)(*ScopedForResourceWithResourceRequestBuilder) {
-    return NewScopedForResourceWithResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter, resource);
+// ServiceNowConnections provides operations to manage the serviceNowConnections property of the microsoft.graph.deviceManagement entity.
+func (m *DeviceManagementRequestBuilder) ServiceNowConnections()(*ServiceNowConnectionsRequestBuilder) {
+    return NewServiceNowConnectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// SendCustomNotificationToCompanyPortal provides operations to call the sendCustomNotificationToCompanyPortal method.
-func (m *DeviceManagementRequestBuilder) SendCustomNotificationToCompanyPortal()(*SendCustomNotificationToCompanyPortalRequestBuilder) {
-    return NewSendCustomNotificationToCompanyPortalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// ServiceNowConnectionsById provides operations to manage the serviceNowConnections property of the microsoft.graph.deviceManagement entity.
+func (m *DeviceManagementRequestBuilder) ServiceNowConnectionsById(id string)(*ServiceNowConnectionsServiceNowConnectionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["serviceNowConnection%2Did"] = id
+    }
+    return NewServiceNowConnectionsServiceNowConnectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // SettingDefinitions provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) SettingDefinitions()(*SettingDefinitionsRequestBuilder) {
-    return NewSettingDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSettingDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SettingDefinitionsById provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) SettingDefinitionsById(id string)(*SettingDefinitionsDeviceManagementSettingDefinitionItemRequestBuilder) {
@@ -1406,15 +1433,15 @@ func (m *DeviceManagementRequestBuilder) SettingDefinitionsById(id string)(*Sett
     if id != "" {
         urlTplParams["deviceManagementSettingDefinition%2Did"] = id
     }
-    return NewSettingDefinitionsDeviceManagementSettingDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSettingDefinitionsDeviceManagementSettingDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // SoftwareUpdateStatusSummary provides operations to manage the softwareUpdateStatusSummary property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) SoftwareUpdateStatusSummary()(*SoftwareUpdateStatusSummaryRequestBuilder) {
-    return NewSoftwareUpdateStatusSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSoftwareUpdateStatusSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TelecomExpenseManagementPartners provides operations to manage the telecomExpenseManagementPartners property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) TelecomExpenseManagementPartners()(*TelecomExpenseManagementPartnersRequestBuilder) {
-    return NewTelecomExpenseManagementPartnersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTelecomExpenseManagementPartnersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TelecomExpenseManagementPartnersById provides operations to manage the telecomExpenseManagementPartners property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) TelecomExpenseManagementPartnersById(id string)(*TelecomExpenseManagementPartnersTelecomExpenseManagementPartnerItemRequestBuilder) {
@@ -1425,11 +1452,11 @@ func (m *DeviceManagementRequestBuilder) TelecomExpenseManagementPartnersById(id
     if id != "" {
         urlTplParams["telecomExpenseManagementPartner%2Did"] = id
     }
-    return NewTelecomExpenseManagementPartnersTelecomExpenseManagementPartnerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTelecomExpenseManagementPartnersTelecomExpenseManagementPartnerItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Templates provides operations to manage the templates property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) Templates()(*TemplatesRequestBuilder) {
-    return NewTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TemplatesById provides operations to manage the templates property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) TemplatesById(id string)(*TemplatesDeviceManagementTemplateItemRequestBuilder) {
@@ -1440,11 +1467,11 @@ func (m *DeviceManagementRequestBuilder) TemplatesById(id string)(*TemplatesDevi
     if id != "" {
         urlTplParams["deviceManagementTemplate%2Did"] = id
     }
-    return NewTemplatesDeviceManagementTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTemplatesDeviceManagementTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // TemplateSettings provides operations to manage the templateSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) TemplateSettings()(*TemplateSettingsRequestBuilder) {
-    return NewTemplateSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTemplateSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TemplateSettingsById provides operations to manage the templateSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) TemplateSettingsById(id string)(*TemplateSettingsDeviceManagementConfigurationSettingTemplateItemRequestBuilder) {
@@ -1455,15 +1482,15 @@ func (m *DeviceManagementRequestBuilder) TemplateSettingsById(id string)(*Templa
     if id != "" {
         urlTplParams["deviceManagementConfigurationSettingTemplate%2Did"] = id
     }
-    return NewTemplateSettingsDeviceManagementConfigurationSettingTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTemplateSettingsDeviceManagementConfigurationSettingTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // TenantAttachRBAC provides operations to manage the tenantAttachRBAC property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) TenantAttachRBAC()(*TenantAttachRBACRequestBuilder) {
-    return NewTenantAttachRBACRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTenantAttachRBACRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TermsAndConditions provides operations to manage the termsAndConditions property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) TermsAndConditions()(*TermsAndConditionsRequestBuilder) {
-    return NewTermsAndConditionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTermsAndConditionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TermsAndConditionsById provides operations to manage the termsAndConditions property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) TermsAndConditionsById(id string)(*TermsAndConditionsTermsAndConditionsItemRequestBuilder) {
@@ -1474,7 +1501,7 @@ func (m *DeviceManagementRequestBuilder) TermsAndConditionsById(id string)(*Term
     if id != "" {
         urlTplParams["termsAndConditions%2Did"] = id
     }
-    return NewTermsAndConditionsTermsAndConditionsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTermsAndConditionsTermsAndConditionsItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToGetRequestInformation get deviceManagement
 func (m *DeviceManagementRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceManagementRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -1499,7 +1526,10 @@ func (m *DeviceManagementRequestBuilder) ToPatchRequestInformation(ctx context.C
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -1508,7 +1538,7 @@ func (m *DeviceManagementRequestBuilder) ToPatchRequestInformation(ctx context.C
 }
 // TroubleshootingEvents provides operations to manage the troubleshootingEvents property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) TroubleshootingEvents()(*TroubleshootingEventsRequestBuilder) {
-    return NewTroubleshootingEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTroubleshootingEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TroubleshootingEventsById provides operations to manage the troubleshootingEvents property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) TroubleshootingEventsById(id string)(*TroubleshootingEventsDeviceManagementTroubleshootingEventItemRequestBuilder) {
@@ -1519,11 +1549,11 @@ func (m *DeviceManagementRequestBuilder) TroubleshootingEventsById(id string)(*T
     if id != "" {
         urlTplParams["deviceManagementTroubleshootingEvent%2Did"] = id
     }
-    return NewTroubleshootingEventsDeviceManagementTroubleshootingEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTroubleshootingEventsDeviceManagementTroubleshootingEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsAnomaly provides operations to manage the userExperienceAnalyticsAnomaly property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAnomaly()(*UserExperienceAnalyticsAnomalyRequestBuilder) {
-    return NewUserExperienceAnalyticsAnomalyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsAnomalyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsAnomalyById provides operations to manage the userExperienceAnalyticsAnomaly property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAnomalyById(id string)(*UserExperienceAnalyticsAnomalyUserExperienceAnalyticsAnomalyItemRequestBuilder) {
@@ -1534,11 +1564,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAnomalyById(id s
     if id != "" {
         urlTplParams["userExperienceAnalyticsAnomaly%2Did"] = id
     }
-    return NewUserExperienceAnalyticsAnomalyUserExperienceAnalyticsAnomalyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsAnomalyUserExperienceAnalyticsAnomalyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsAnomalyDevice provides operations to manage the userExperienceAnalyticsAnomalyDevice property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAnomalyDevice()(*UserExperienceAnalyticsAnomalyDeviceRequestBuilder) {
-    return NewUserExperienceAnalyticsAnomalyDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsAnomalyDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsAnomalyDeviceById provides operations to manage the userExperienceAnalyticsAnomalyDevice property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAnomalyDeviceById(id string)(*UserExperienceAnalyticsAnomalyDeviceUserExperienceAnalyticsAnomalyDeviceItemRequestBuilder) {
@@ -1549,15 +1579,15 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAnomalyDeviceByI
     if id != "" {
         urlTplParams["userExperienceAnalyticsAnomalyDevice%2Did"] = id
     }
-    return NewUserExperienceAnalyticsAnomalyDeviceUserExperienceAnalyticsAnomalyDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsAnomalyDeviceUserExperienceAnalyticsAnomalyDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsAppHealthApplicationPerformance provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformance()(*UserExperienceAnalyticsAppHealthApplicationPerformanceRequestBuilder) {
-    return NewUserExperienceAnalyticsAppHealthApplicationPerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsAppHealthApplicationPerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion()(*UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder) {
-    return NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionById provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionById(id string)(*UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionItemRequestBuilder) {
@@ -1568,11 +1598,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplica
     if id != "" {
         urlTplParams["userExperienceAnalyticsAppHealthAppPerformanceByAppVersion%2Did"] = id
     }
-    return NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails()(*UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsRequestBuilder) {
-    return NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsById provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsById(id string)(*UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsItemRequestBuilder) {
@@ -1583,11 +1613,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplica
     if id != "" {
         urlTplParams["userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails%2Did"] = id
     }
-    return NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId()(*UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdRequestBuilder) {
-    return NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdById provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdById(id string)(*UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdItemRequestBuilder) {
@@ -1598,7 +1628,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplica
     if id != "" {
         urlTplParams["userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId%2Did"] = id
     }
-    return NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsAppHealthApplicationPerformanceById provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceById(id string)(*UserExperienceAnalyticsAppHealthApplicationPerformanceUserExperienceAnalyticsAppHealthApplicationPerformanceItemRequestBuilder) {
@@ -1609,11 +1639,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplica
     if id != "" {
         urlTplParams["userExperienceAnalyticsAppHealthApplicationPerformance%2Did"] = id
     }
-    return NewUserExperienceAnalyticsAppHealthApplicationPerformanceUserExperienceAnalyticsAppHealthApplicationPerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsAppHealthApplicationPerformanceUserExperienceAnalyticsAppHealthApplicationPerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion()(*UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder) {
-    return NewUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionById provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionById(id string)(*UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionUserExperienceAnalyticsAppHealthAppPerformanceByOSVersionItemRequestBuilder) {
@@ -1624,11 +1654,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplica
     if id != "" {
         urlTplParams["userExperienceAnalyticsAppHealthAppPerformanceByOSVersion%2Did"] = id
     }
-    return NewUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionUserExperienceAnalyticsAppHealthAppPerformanceByOSVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionUserExperienceAnalyticsAppHealthAppPerformanceByOSVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsAppHealthDeviceModelPerformance provides operations to manage the userExperienceAnalyticsAppHealthDeviceModelPerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthDeviceModelPerformance()(*UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder) {
-    return NewUserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsAppHealthDeviceModelPerformanceById provides operations to manage the userExperienceAnalyticsAppHealthDeviceModelPerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthDeviceModelPerformanceById(id string)(*UserExperienceAnalyticsAppHealthDeviceModelPerformanceUserExperienceAnalyticsAppHealthDeviceModelPerformanceItemRequestBuilder) {
@@ -1639,11 +1669,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthDeviceM
     if id != "" {
         urlTplParams["userExperienceAnalyticsAppHealthDeviceModelPerformance%2Did"] = id
     }
-    return NewUserExperienceAnalyticsAppHealthDeviceModelPerformanceUserExperienceAnalyticsAppHealthDeviceModelPerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsAppHealthDeviceModelPerformanceUserExperienceAnalyticsAppHealthDeviceModelPerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsAppHealthDevicePerformance provides operations to manage the userExperienceAnalyticsAppHealthDevicePerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthDevicePerformance()(*UserExperienceAnalyticsAppHealthDevicePerformanceRequestBuilder) {
-    return NewUserExperienceAnalyticsAppHealthDevicePerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsAppHealthDevicePerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsAppHealthDevicePerformanceById provides operations to manage the userExperienceAnalyticsAppHealthDevicePerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthDevicePerformanceById(id string)(*UserExperienceAnalyticsAppHealthDevicePerformanceUserExperienceAnalyticsAppHealthDevicePerformanceItemRequestBuilder) {
@@ -1654,11 +1684,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthDeviceP
     if id != "" {
         urlTplParams["userExperienceAnalyticsAppHealthDevicePerformance%2Did"] = id
     }
-    return NewUserExperienceAnalyticsAppHealthDevicePerformanceUserExperienceAnalyticsAppHealthDevicePerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsAppHealthDevicePerformanceUserExperienceAnalyticsAppHealthDevicePerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsAppHealthDevicePerformanceDetails provides operations to manage the userExperienceAnalyticsAppHealthDevicePerformanceDetails property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthDevicePerformanceDetails()(*UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder) {
-    return NewUserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsAppHealthDevicePerformanceDetailsById provides operations to manage the userExperienceAnalyticsAppHealthDevicePerformanceDetails property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthDevicePerformanceDetailsById(id string)(*UserExperienceAnalyticsAppHealthDevicePerformanceDetailsUserExperienceAnalyticsAppHealthDevicePerformanceDetailsItemRequestBuilder) {
@@ -1669,11 +1699,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthDeviceP
     if id != "" {
         urlTplParams["userExperienceAnalyticsAppHealthDevicePerformanceDetails%2Did"] = id
     }
-    return NewUserExperienceAnalyticsAppHealthDevicePerformanceDetailsUserExperienceAnalyticsAppHealthDevicePerformanceDetailsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsAppHealthDevicePerformanceDetailsUserExperienceAnalyticsAppHealthDevicePerformanceDetailsItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsAppHealthOSVersionPerformance provides operations to manage the userExperienceAnalyticsAppHealthOSVersionPerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthOSVersionPerformance()(*UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder) {
-    return NewUserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsAppHealthOSVersionPerformanceById provides operations to manage the userExperienceAnalyticsAppHealthOSVersionPerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthOSVersionPerformanceById(id string)(*UserExperienceAnalyticsAppHealthOSVersionPerformanceUserExperienceAnalyticsAppHealthOSVersionPerformanceItemRequestBuilder) {
@@ -1684,15 +1714,15 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthOSVersi
     if id != "" {
         urlTplParams["userExperienceAnalyticsAppHealthOSVersionPerformance%2Did"] = id
     }
-    return NewUserExperienceAnalyticsAppHealthOSVersionPerformanceUserExperienceAnalyticsAppHealthOSVersionPerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsAppHealthOSVersionPerformanceUserExperienceAnalyticsAppHealthOSVersionPerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsAppHealthOverview provides operations to manage the userExperienceAnalyticsAppHealthOverview property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthOverview()(*UserExperienceAnalyticsAppHealthOverviewRequestBuilder) {
-    return NewUserExperienceAnalyticsAppHealthOverviewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsAppHealthOverviewRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsBaselines provides operations to manage the userExperienceAnalyticsBaselines property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBaselines()(*UserExperienceAnalyticsBaselinesRequestBuilder) {
-    return NewUserExperienceAnalyticsBaselinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsBaselinesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsBaselinesById provides operations to manage the userExperienceAnalyticsBaselines property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBaselinesById(id string)(*UserExperienceAnalyticsBaselinesUserExperienceAnalyticsBaselineItemRequestBuilder) {
@@ -1703,11 +1733,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBaselinesById(id
     if id != "" {
         urlTplParams["userExperienceAnalyticsBaseline%2Did"] = id
     }
-    return NewUserExperienceAnalyticsBaselinesUserExperienceAnalyticsBaselineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsBaselinesUserExperienceAnalyticsBaselineItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsBatteryHealthAppImpact provides operations to manage the userExperienceAnalyticsBatteryHealthAppImpact property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthAppImpact()(*UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder) {
-    return NewUserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsBatteryHealthAppImpactById provides operations to manage the userExperienceAnalyticsBatteryHealthAppImpact property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthAppImpactById(id string)(*UserExperienceAnalyticsBatteryHealthAppImpactUserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder) {
@@ -1718,15 +1748,15 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthApp
     if id != "" {
         urlTplParams["userExperienceAnalyticsBatteryHealthAppImpact%2Did"] = id
     }
-    return NewUserExperienceAnalyticsBatteryHealthAppImpactUserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsBatteryHealthAppImpactUserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsBatteryHealthCapacityDetails provides operations to manage the userExperienceAnalyticsBatteryHealthCapacityDetails property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthCapacityDetails()(*UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilder) {
-    return NewUserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsBatteryHealthDeviceAppImpact provides operations to manage the userExperienceAnalyticsBatteryHealthDeviceAppImpact property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthDeviceAppImpact()(*UserExperienceAnalyticsBatteryHealthDeviceAppImpactRequestBuilder) {
-    return NewUserExperienceAnalyticsBatteryHealthDeviceAppImpactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsBatteryHealthDeviceAppImpactRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsBatteryHealthDeviceAppImpactById provides operations to manage the userExperienceAnalyticsBatteryHealthDeviceAppImpact property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthDeviceAppImpactById(id string)(*UserExperienceAnalyticsBatteryHealthDeviceAppImpactUserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilder) {
@@ -1737,11 +1767,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthDev
     if id != "" {
         urlTplParams["userExperienceAnalyticsBatteryHealthDeviceAppImpact%2Did"] = id
     }
-    return NewUserExperienceAnalyticsBatteryHealthDeviceAppImpactUserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsBatteryHealthDeviceAppImpactUserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsBatteryHealthDevicePerformance provides operations to manage the userExperienceAnalyticsBatteryHealthDevicePerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthDevicePerformance()(*UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder) {
-    return NewUserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsBatteryHealthDevicePerformanceById provides operations to manage the userExperienceAnalyticsBatteryHealthDevicePerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthDevicePerformanceById(id string)(*UserExperienceAnalyticsBatteryHealthDevicePerformanceUserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBuilder) {
@@ -1752,11 +1782,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthDev
     if id != "" {
         urlTplParams["userExperienceAnalyticsBatteryHealthDevicePerformance%2Did"] = id
     }
-    return NewUserExperienceAnalyticsBatteryHealthDevicePerformanceUserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsBatteryHealthDevicePerformanceUserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory provides operations to manage the userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory()(*UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder) {
-    return NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryById provides operations to manage the userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryById(id string)(*UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilder) {
@@ -1767,11 +1797,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthDev
     if id != "" {
         urlTplParams["userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory%2Did"] = id
     }
-    return NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsBatteryHealthModelPerformance provides operations to manage the userExperienceAnalyticsBatteryHealthModelPerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthModelPerformance()(*UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder) {
-    return NewUserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsBatteryHealthModelPerformanceById provides operations to manage the userExperienceAnalyticsBatteryHealthModelPerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthModelPerformanceById(id string)(*UserExperienceAnalyticsBatteryHealthModelPerformanceUserExperienceAnalyticsBatteryHealthModelPerformanceItemRequestBuilder) {
@@ -1782,11 +1812,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthMod
     if id != "" {
         urlTplParams["userExperienceAnalyticsBatteryHealthModelPerformance%2Did"] = id
     }
-    return NewUserExperienceAnalyticsBatteryHealthModelPerformanceUserExperienceAnalyticsBatteryHealthModelPerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsBatteryHealthModelPerformanceUserExperienceAnalyticsBatteryHealthModelPerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsBatteryHealthOsPerformance provides operations to manage the userExperienceAnalyticsBatteryHealthOsPerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthOsPerformance()(*UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilder) {
-    return NewUserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsBatteryHealthOsPerformanceById provides operations to manage the userExperienceAnalyticsBatteryHealthOsPerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthOsPerformanceById(id string)(*UserExperienceAnalyticsBatteryHealthOsPerformanceUserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilder) {
@@ -1797,15 +1827,15 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthOsP
     if id != "" {
         urlTplParams["userExperienceAnalyticsBatteryHealthOsPerformance%2Did"] = id
     }
-    return NewUserExperienceAnalyticsBatteryHealthOsPerformanceUserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsBatteryHealthOsPerformanceUserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsBatteryHealthRuntimeDetails provides operations to manage the userExperienceAnalyticsBatteryHealthRuntimeDetails property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthRuntimeDetails()(*UserExperienceAnalyticsBatteryHealthRuntimeDetailsRequestBuilder) {
-    return NewUserExperienceAnalyticsBatteryHealthRuntimeDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsBatteryHealthRuntimeDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsCategories provides operations to manage the userExperienceAnalyticsCategories property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsCategories()(*UserExperienceAnalyticsCategoriesRequestBuilder) {
-    return NewUserExperienceAnalyticsCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsCategoriesById provides operations to manage the userExperienceAnalyticsCategories property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsCategoriesById(id string)(*UserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemRequestBuilder) {
@@ -1816,11 +1846,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsCategoriesById(i
     if id != "" {
         urlTplParams["userExperienceAnalyticsCategory%2Did"] = id
     }
-    return NewUserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsDeviceMetricHistory provides operations to manage the userExperienceAnalyticsDeviceMetricHistory property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceMetricHistory()(*UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder) {
-    return NewUserExperienceAnalyticsDeviceMetricHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsDeviceMetricHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsDeviceMetricHistoryById provides operations to manage the userExperienceAnalyticsDeviceMetricHistory property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceMetricHistoryById(id string)(*UserExperienceAnalyticsDeviceMetricHistoryUserExperienceAnalyticsMetricHistoryItemRequestBuilder) {
@@ -1831,11 +1861,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceMetricHist
     if id != "" {
         urlTplParams["userExperienceAnalyticsMetricHistory%2Did"] = id
     }
-    return NewUserExperienceAnalyticsDeviceMetricHistoryUserExperienceAnalyticsMetricHistoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsDeviceMetricHistoryUserExperienceAnalyticsMetricHistoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsDevicePerformance provides operations to manage the userExperienceAnalyticsDevicePerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDevicePerformance()(*UserExperienceAnalyticsDevicePerformanceRequestBuilder) {
-    return NewUserExperienceAnalyticsDevicePerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsDevicePerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsDevicePerformanceById provides operations to manage the userExperienceAnalyticsDevicePerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDevicePerformanceById(id string)(*UserExperienceAnalyticsDevicePerformanceUserExperienceAnalyticsDevicePerformanceItemRequestBuilder) {
@@ -1846,15 +1876,15 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDevicePerformanc
     if id != "" {
         urlTplParams["userExperienceAnalyticsDevicePerformance%2Did"] = id
     }
-    return NewUserExperienceAnalyticsDevicePerformanceUserExperienceAnalyticsDevicePerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsDevicePerformanceUserExperienceAnalyticsDevicePerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsDeviceScope provides operations to manage the userExperienceAnalyticsDeviceScope property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceScope()(*UserExperienceAnalyticsDeviceScopeRequestBuilder) {
-    return NewUserExperienceAnalyticsDeviceScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsDeviceScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsDeviceScopes provides operations to manage the userExperienceAnalyticsDeviceScopes property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceScopes()(*UserExperienceAnalyticsDeviceScopesRequestBuilder) {
-    return NewUserExperienceAnalyticsDeviceScopesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsDeviceScopesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsDeviceScopesById provides operations to manage the userExperienceAnalyticsDeviceScopes property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceScopesById(id string)(*UserExperienceAnalyticsDeviceScopesUserExperienceAnalyticsDeviceScopeItemRequestBuilder) {
@@ -1865,11 +1895,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceScopesById
     if id != "" {
         urlTplParams["userExperienceAnalyticsDeviceScope%2Did"] = id
     }
-    return NewUserExperienceAnalyticsDeviceScopesUserExperienceAnalyticsDeviceScopeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsDeviceScopesUserExperienceAnalyticsDeviceScopeItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsDeviceScores provides operations to manage the userExperienceAnalyticsDeviceScores property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceScores()(*UserExperienceAnalyticsDeviceScoresRequestBuilder) {
-    return NewUserExperienceAnalyticsDeviceScoresRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsDeviceScoresRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsDeviceScoresById provides operations to manage the userExperienceAnalyticsDeviceScores property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceScoresById(id string)(*UserExperienceAnalyticsDeviceScoresUserExperienceAnalyticsDeviceScoresItemRequestBuilder) {
@@ -1880,11 +1910,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceScoresById
     if id != "" {
         urlTplParams["userExperienceAnalyticsDeviceScores%2Did"] = id
     }
-    return NewUserExperienceAnalyticsDeviceScoresUserExperienceAnalyticsDeviceScoresItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsDeviceScoresUserExperienceAnalyticsDeviceScoresItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsDeviceStartupHistory provides operations to manage the userExperienceAnalyticsDeviceStartupHistory property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceStartupHistory()(*UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder) {
-    return NewUserExperienceAnalyticsDeviceStartupHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsDeviceStartupHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsDeviceStartupHistoryById provides operations to manage the userExperienceAnalyticsDeviceStartupHistory property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceStartupHistoryById(id string)(*UserExperienceAnalyticsDeviceStartupHistoryUserExperienceAnalyticsDeviceStartupHistoryItemRequestBuilder) {
@@ -1895,11 +1925,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceStartupHis
     if id != "" {
         urlTplParams["userExperienceAnalyticsDeviceStartupHistory%2Did"] = id
     }
-    return NewUserExperienceAnalyticsDeviceStartupHistoryUserExperienceAnalyticsDeviceStartupHistoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsDeviceStartupHistoryUserExperienceAnalyticsDeviceStartupHistoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsDeviceStartupProcesses provides operations to manage the userExperienceAnalyticsDeviceStartupProcesses property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceStartupProcesses()(*UserExperienceAnalyticsDeviceStartupProcessesRequestBuilder) {
-    return NewUserExperienceAnalyticsDeviceStartupProcessesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsDeviceStartupProcessesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsDeviceStartupProcessesById provides operations to manage the userExperienceAnalyticsDeviceStartupProcesses property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceStartupProcessesById(id string)(*UserExperienceAnalyticsDeviceStartupProcessesUserExperienceAnalyticsDeviceStartupProcessItemRequestBuilder) {
@@ -1910,11 +1940,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceStartupPro
     if id != "" {
         urlTplParams["userExperienceAnalyticsDeviceStartupProcess%2Did"] = id
     }
-    return NewUserExperienceAnalyticsDeviceStartupProcessesUserExperienceAnalyticsDeviceStartupProcessItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsDeviceStartupProcessesUserExperienceAnalyticsDeviceStartupProcessItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsDeviceStartupProcessPerformance provides operations to manage the userExperienceAnalyticsDeviceStartupProcessPerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceStartupProcessPerformance()(*UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder) {
-    return NewUserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsDeviceStartupProcessPerformanceById provides operations to manage the userExperienceAnalyticsDeviceStartupProcessPerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceStartupProcessPerformanceById(id string)(*UserExperienceAnalyticsDeviceStartupProcessPerformanceUserExperienceAnalyticsDeviceStartupProcessPerformanceItemRequestBuilder) {
@@ -1925,11 +1955,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceStartupPro
     if id != "" {
         urlTplParams["userExperienceAnalyticsDeviceStartupProcessPerformance%2Did"] = id
     }
-    return NewUserExperienceAnalyticsDeviceStartupProcessPerformanceUserExperienceAnalyticsDeviceStartupProcessPerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsDeviceStartupProcessPerformanceUserExperienceAnalyticsDeviceStartupProcessPerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsDevicesWithoutCloudIdentity provides operations to manage the userExperienceAnalyticsDevicesWithoutCloudIdentity property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDevicesWithoutCloudIdentity()(*UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) {
-    return NewUserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsDevicesWithoutCloudIdentityById provides operations to manage the userExperienceAnalyticsDevicesWithoutCloudIdentity property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDevicesWithoutCloudIdentityById(id string)(*UserExperienceAnalyticsDevicesWithoutCloudIdentityUserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilder) {
@@ -1940,26 +1970,26 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDevicesWithoutCl
     if id != "" {
         urlTplParams["userExperienceAnalyticsDeviceWithoutCloudIdentity%2Did"] = id
     }
-    return NewUserExperienceAnalyticsDevicesWithoutCloudIdentityUserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsDevicesWithoutCloudIdentityUserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
-// UserExperienceAnalyticsDeviceTimelineEvents provides operations to manage the userExperienceAnalyticsDeviceTimelineEvents property of the microsoft.graph.deviceManagement entity.
-func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceTimelineEvents()(*UserExperienceAnalyticsDeviceTimelineEventsRequestBuilder) {
-    return NewUserExperienceAnalyticsDeviceTimelineEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// UserExperienceAnalyticsDeviceTimelineEvent provides operations to manage the userExperienceAnalyticsDeviceTimelineEvent property of the microsoft.graph.deviceManagement entity.
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceTimelineEvent()(*UserExperienceAnalyticsDeviceTimelineEventRequestBuilder) {
+    return NewUserExperienceAnalyticsDeviceTimelineEventRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// UserExperienceAnalyticsDeviceTimelineEventsById provides operations to manage the userExperienceAnalyticsDeviceTimelineEvents property of the microsoft.graph.deviceManagement entity.
-func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceTimelineEventsById(id string)(*UserExperienceAnalyticsDeviceTimelineEventsUserExperienceAnalyticsDeviceTimelineEventsItemRequestBuilder) {
+// UserExperienceAnalyticsDeviceTimelineEventById provides operations to manage the userExperienceAnalyticsDeviceTimelineEvent property of the microsoft.graph.deviceManagement entity.
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceTimelineEventById(id string)(*UserExperienceAnalyticsDeviceTimelineEventUserExperienceAnalyticsDeviceTimelineEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["userExperienceAnalyticsDeviceTimelineEvents%2Did"] = id
+        urlTplParams["userExperienceAnalyticsDeviceTimelineEvent%2Did"] = id
     }
-    return NewUserExperienceAnalyticsDeviceTimelineEventsUserExperienceAnalyticsDeviceTimelineEventsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsDeviceTimelineEventUserExperienceAnalyticsDeviceTimelineEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsImpactingProcess provides operations to manage the userExperienceAnalyticsImpactingProcess property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsImpactingProcess()(*UserExperienceAnalyticsImpactingProcessRequestBuilder) {
-    return NewUserExperienceAnalyticsImpactingProcessRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsImpactingProcessRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsImpactingProcessById provides operations to manage the userExperienceAnalyticsImpactingProcess property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsImpactingProcessById(id string)(*UserExperienceAnalyticsImpactingProcessUserExperienceAnalyticsImpactingProcessItemRequestBuilder) {
@@ -1970,11 +2000,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsImpactingProcess
     if id != "" {
         urlTplParams["userExperienceAnalyticsImpactingProcess%2Did"] = id
     }
-    return NewUserExperienceAnalyticsImpactingProcessUserExperienceAnalyticsImpactingProcessItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsImpactingProcessUserExperienceAnalyticsImpactingProcessItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsMetricHistory provides operations to manage the userExperienceAnalyticsMetricHistory property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsMetricHistory()(*UserExperienceAnalyticsMetricHistoryRequestBuilder) {
-    return NewUserExperienceAnalyticsMetricHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsMetricHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsMetricHistoryById provides operations to manage the userExperienceAnalyticsMetricHistory property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsMetricHistoryById(id string)(*UserExperienceAnalyticsMetricHistoryUserExperienceAnalyticsMetricHistoryItemRequestBuilder) {
@@ -1985,11 +2015,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsMetricHistoryByI
     if id != "" {
         urlTplParams["userExperienceAnalyticsMetricHistory%2Did"] = id
     }
-    return NewUserExperienceAnalyticsMetricHistoryUserExperienceAnalyticsMetricHistoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsMetricHistoryUserExperienceAnalyticsMetricHistoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsModelScores provides operations to manage the userExperienceAnalyticsModelScores property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsModelScores()(*UserExperienceAnalyticsModelScoresRequestBuilder) {
-    return NewUserExperienceAnalyticsModelScoresRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsModelScoresRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsModelScoresById provides operations to manage the userExperienceAnalyticsModelScores property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsModelScoresById(id string)(*UserExperienceAnalyticsModelScoresUserExperienceAnalyticsModelScoresItemRequestBuilder) {
@@ -2000,11 +2030,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsModelScoresById(
     if id != "" {
         urlTplParams["userExperienceAnalyticsModelScores%2Did"] = id
     }
-    return NewUserExperienceAnalyticsModelScoresUserExperienceAnalyticsModelScoresItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsModelScoresUserExperienceAnalyticsModelScoresItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsNotAutopilotReadyDevice provides operations to manage the userExperienceAnalyticsNotAutopilotReadyDevice property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsNotAutopilotReadyDevice()(*UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder) {
-    return NewUserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsNotAutopilotReadyDeviceById provides operations to manage the userExperienceAnalyticsNotAutopilotReadyDevice property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsNotAutopilotReadyDeviceById(id string)(*UserExperienceAnalyticsNotAutopilotReadyDeviceUserExperienceAnalyticsNotAutopilotReadyDeviceItemRequestBuilder) {
@@ -2015,15 +2045,15 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsNotAutopilotRead
     if id != "" {
         urlTplParams["userExperienceAnalyticsNotAutopilotReadyDevice%2Did"] = id
     }
-    return NewUserExperienceAnalyticsNotAutopilotReadyDeviceUserExperienceAnalyticsNotAutopilotReadyDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsNotAutopilotReadyDeviceUserExperienceAnalyticsNotAutopilotReadyDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsOverview provides operations to manage the userExperienceAnalyticsOverview property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsOverview()(*UserExperienceAnalyticsOverviewRequestBuilder) {
-    return NewUserExperienceAnalyticsOverviewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsOverviewRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsRemoteConnection provides operations to manage the userExperienceAnalyticsRemoteConnection property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsRemoteConnection()(*UserExperienceAnalyticsRemoteConnectionRequestBuilder) {
-    return NewUserExperienceAnalyticsRemoteConnectionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsRemoteConnectionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsRemoteConnectionById provides operations to manage the userExperienceAnalyticsRemoteConnection property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsRemoteConnectionById(id string)(*UserExperienceAnalyticsRemoteConnectionUserExperienceAnalyticsRemoteConnectionItemRequestBuilder) {
@@ -2034,11 +2064,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsRemoteConnection
     if id != "" {
         urlTplParams["userExperienceAnalyticsRemoteConnection%2Did"] = id
     }
-    return NewUserExperienceAnalyticsRemoteConnectionUserExperienceAnalyticsRemoteConnectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsRemoteConnectionUserExperienceAnalyticsRemoteConnectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsResourcePerformance provides operations to manage the userExperienceAnalyticsResourcePerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsResourcePerformance()(*UserExperienceAnalyticsResourcePerformanceRequestBuilder) {
-    return NewUserExperienceAnalyticsResourcePerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsResourcePerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsResourcePerformanceById provides operations to manage the userExperienceAnalyticsResourcePerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsResourcePerformanceById(id string)(*UserExperienceAnalyticsResourcePerformanceUserExperienceAnalyticsResourcePerformanceItemRequestBuilder) {
@@ -2049,11 +2079,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsResourcePerforma
     if id != "" {
         urlTplParams["userExperienceAnalyticsResourcePerformance%2Did"] = id
     }
-    return NewUserExperienceAnalyticsResourcePerformanceUserExperienceAnalyticsResourcePerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsResourcePerformanceUserExperienceAnalyticsResourcePerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsScoreHistory provides operations to manage the userExperienceAnalyticsScoreHistory property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsScoreHistory()(*UserExperienceAnalyticsScoreHistoryRequestBuilder) {
-    return NewUserExperienceAnalyticsScoreHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsScoreHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsScoreHistoryById provides operations to manage the userExperienceAnalyticsScoreHistory property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsScoreHistoryById(id string)(*UserExperienceAnalyticsScoreHistoryUserExperienceAnalyticsScoreHistoryItemRequestBuilder) {
@@ -2064,23 +2094,15 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsScoreHistoryById
     if id != "" {
         urlTplParams["userExperienceAnalyticsScoreHistory%2Did"] = id
     }
-    return NewUserExperienceAnalyticsScoreHistoryUserExperienceAnalyticsScoreHistoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// UserExperienceAnalyticsSummarizedDeviceScopes provides operations to call the userExperienceAnalyticsSummarizedDeviceScopes method.
-func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsSummarizedDeviceScopes()(*UserExperienceAnalyticsSummarizedDeviceScopesRequestBuilder) {
-    return NewUserExperienceAnalyticsSummarizedDeviceScopesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// UserExperienceAnalyticsSummarizeWorkFromAnywhereDevices provides operations to call the userExperienceAnalyticsSummarizeWorkFromAnywhereDevices method.
-func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsSummarizeWorkFromAnywhereDevices()(*UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder) {
-    return NewUserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsScoreHistoryUserExperienceAnalyticsScoreHistoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric provides operations to manage the userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric()(*UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder) {
-    return NewUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsWorkFromAnywhereMetrics provides operations to manage the userExperienceAnalyticsWorkFromAnywhereMetrics property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsWorkFromAnywhereMetrics()(*UserExperienceAnalyticsWorkFromAnywhereMetricsRequestBuilder) {
-    return NewUserExperienceAnalyticsWorkFromAnywhereMetricsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsWorkFromAnywhereMetricsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsWorkFromAnywhereMetricsById provides operations to manage the userExperienceAnalyticsWorkFromAnywhereMetrics property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsWorkFromAnywhereMetricsById(id string)(*UserExperienceAnalyticsWorkFromAnywhereMetricsUserExperienceAnalyticsWorkFromAnywhereMetricItemRequestBuilder) {
@@ -2091,11 +2113,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsWorkFromAnywhere
     if id != "" {
         urlTplParams["userExperienceAnalyticsWorkFromAnywhereMetric%2Did"] = id
     }
-    return NewUserExperienceAnalyticsWorkFromAnywhereMetricsUserExperienceAnalyticsWorkFromAnywhereMetricItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsWorkFromAnywhereMetricsUserExperienceAnalyticsWorkFromAnywhereMetricItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserExperienceAnalyticsWorkFromAnywhereModelPerformance provides operations to manage the userExperienceAnalyticsWorkFromAnywhereModelPerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsWorkFromAnywhereModelPerformance()(*UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder) {
-    return NewUserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserExperienceAnalyticsWorkFromAnywhereModelPerformanceById provides operations to manage the userExperienceAnalyticsWorkFromAnywhereModelPerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsWorkFromAnywhereModelPerformanceById(id string)(*UserExperienceAnalyticsWorkFromAnywhereModelPerformanceUserExperienceAnalyticsWorkFromAnywhereModelPerformanceItemRequestBuilder) {
@@ -2106,11 +2128,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsWorkFromAnywhere
     if id != "" {
         urlTplParams["userExperienceAnalyticsWorkFromAnywhereModelPerformance%2Did"] = id
     }
-    return NewUserExperienceAnalyticsWorkFromAnywhereModelPerformanceUserExperienceAnalyticsWorkFromAnywhereModelPerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsWorkFromAnywhereModelPerformanceUserExperienceAnalyticsWorkFromAnywhereModelPerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserPfxCertificates provides operations to manage the userPfxCertificates property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserPfxCertificates()(*UserPfxCertificatesRequestBuilder) {
-    return NewUserPfxCertificatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserPfxCertificatesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserPfxCertificatesById provides operations to manage the userPfxCertificates property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserPfxCertificatesById(id string)(*UserPfxCertificatesUserPFXCertificateItemRequestBuilder) {
@@ -2121,19 +2143,15 @@ func (m *DeviceManagementRequestBuilder) UserPfxCertificatesById(id string)(*Use
     if id != "" {
         urlTplParams["userPFXCertificate%2Did"] = id
     }
-    return NewUserPfxCertificatesUserPFXCertificateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// VerifyWindowsEnrollmentAutoDiscoveryWithDomainName provides operations to call the verifyWindowsEnrollmentAutoDiscovery method.
-func (m *DeviceManagementRequestBuilder) VerifyWindowsEnrollmentAutoDiscoveryWithDomainName(domainName *string)(*VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder) {
-    return NewVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilderInternal(m.pathParameters, m.requestAdapter, domainName);
+    return NewUserPfxCertificatesUserPFXCertificateItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // VirtualEndpoint provides operations to manage the virtualEndpoint property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) VirtualEndpoint()(*VirtualEndpointRequestBuilder) {
-    return NewVirtualEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // WindowsAutopilotDeploymentProfiles provides operations to manage the windowsAutopilotDeploymentProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsAutopilotDeploymentProfiles()(*WindowsAutopilotDeploymentProfilesRequestBuilder) {
-    return NewWindowsAutopilotDeploymentProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsAutopilotDeploymentProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // WindowsAutopilotDeploymentProfilesById provides operations to manage the windowsAutopilotDeploymentProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsAutopilotDeploymentProfilesById(id string)(*WindowsAutopilotDeploymentProfilesWindowsAutopilotDeploymentProfileItemRequestBuilder) {
@@ -2144,11 +2162,11 @@ func (m *DeviceManagementRequestBuilder) WindowsAutopilotDeploymentProfilesById(
     if id != "" {
         urlTplParams["windowsAutopilotDeploymentProfile%2Did"] = id
     }
-    return NewWindowsAutopilotDeploymentProfilesWindowsAutopilotDeploymentProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWindowsAutopilotDeploymentProfilesWindowsAutopilotDeploymentProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // WindowsAutopilotDeviceIdentities provides operations to manage the windowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsAutopilotDeviceIdentities()(*WindowsAutopilotDeviceIdentitiesRequestBuilder) {
-    return NewWindowsAutopilotDeviceIdentitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsAutopilotDeviceIdentitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // WindowsAutopilotDeviceIdentitiesById provides operations to manage the windowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsAutopilotDeviceIdentitiesById(id string)(*WindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityItemRequestBuilder) {
@@ -2159,15 +2177,15 @@ func (m *DeviceManagementRequestBuilder) WindowsAutopilotDeviceIdentitiesById(id
     if id != "" {
         urlTplParams["windowsAutopilotDeviceIdentity%2Did"] = id
     }
-    return NewWindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // WindowsAutopilotSettings provides operations to manage the windowsAutopilotSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsAutopilotSettings()(*WindowsAutopilotSettingsRequestBuilder) {
-    return NewWindowsAutopilotSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsAutopilotSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // WindowsDriverUpdateProfiles provides operations to manage the windowsDriverUpdateProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsDriverUpdateProfiles()(*WindowsDriverUpdateProfilesRequestBuilder) {
-    return NewWindowsDriverUpdateProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsDriverUpdateProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // WindowsDriverUpdateProfilesById provides operations to manage the windowsDriverUpdateProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsDriverUpdateProfilesById(id string)(*WindowsDriverUpdateProfilesWindowsDriverUpdateProfileItemRequestBuilder) {
@@ -2178,11 +2196,11 @@ func (m *DeviceManagementRequestBuilder) WindowsDriverUpdateProfilesById(id stri
     if id != "" {
         urlTplParams["windowsDriverUpdateProfile%2Did"] = id
     }
-    return NewWindowsDriverUpdateProfilesWindowsDriverUpdateProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWindowsDriverUpdateProfilesWindowsDriverUpdateProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // WindowsFeatureUpdateProfiles provides operations to manage the windowsFeatureUpdateProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsFeatureUpdateProfiles()(*WindowsFeatureUpdateProfilesRequestBuilder) {
-    return NewWindowsFeatureUpdateProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsFeatureUpdateProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // WindowsFeatureUpdateProfilesById provides operations to manage the windowsFeatureUpdateProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsFeatureUpdateProfilesById(id string)(*WindowsFeatureUpdateProfilesWindowsFeatureUpdateProfileItemRequestBuilder) {
@@ -2193,11 +2211,11 @@ func (m *DeviceManagementRequestBuilder) WindowsFeatureUpdateProfilesById(id str
     if id != "" {
         urlTplParams["windowsFeatureUpdateProfile%2Did"] = id
     }
-    return NewWindowsFeatureUpdateProfilesWindowsFeatureUpdateProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWindowsFeatureUpdateProfilesWindowsFeatureUpdateProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // WindowsInformationProtectionAppLearningSummaries provides operations to manage the windowsInformationProtectionAppLearningSummaries property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsInformationProtectionAppLearningSummaries()(*WindowsInformationProtectionAppLearningSummariesRequestBuilder) {
-    return NewWindowsInformationProtectionAppLearningSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsInformationProtectionAppLearningSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // WindowsInformationProtectionAppLearningSummariesById provides operations to manage the windowsInformationProtectionAppLearningSummaries property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsInformationProtectionAppLearningSummariesById(id string)(*WindowsInformationProtectionAppLearningSummariesWindowsInformationProtectionAppLearningSummaryItemRequestBuilder) {
@@ -2208,11 +2226,11 @@ func (m *DeviceManagementRequestBuilder) WindowsInformationProtectionAppLearning
     if id != "" {
         urlTplParams["windowsInformationProtectionAppLearningSummary%2Did"] = id
     }
-    return NewWindowsInformationProtectionAppLearningSummariesWindowsInformationProtectionAppLearningSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWindowsInformationProtectionAppLearningSummariesWindowsInformationProtectionAppLearningSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // WindowsInformationProtectionNetworkLearningSummaries provides operations to manage the windowsInformationProtectionNetworkLearningSummaries property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsInformationProtectionNetworkLearningSummaries()(*WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) {
-    return NewWindowsInformationProtectionNetworkLearningSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsInformationProtectionNetworkLearningSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // WindowsInformationProtectionNetworkLearningSummariesById provides operations to manage the windowsInformationProtectionNetworkLearningSummaries property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsInformationProtectionNetworkLearningSummariesById(id string)(*WindowsInformationProtectionNetworkLearningSummariesWindowsInformationProtectionNetworkLearningSummaryItemRequestBuilder) {
@@ -2223,11 +2241,11 @@ func (m *DeviceManagementRequestBuilder) WindowsInformationProtectionNetworkLear
     if id != "" {
         urlTplParams["windowsInformationProtectionNetworkLearningSummary%2Did"] = id
     }
-    return NewWindowsInformationProtectionNetworkLearningSummariesWindowsInformationProtectionNetworkLearningSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWindowsInformationProtectionNetworkLearningSummariesWindowsInformationProtectionNetworkLearningSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // WindowsMalwareInformation provides operations to manage the windowsMalwareInformation property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsMalwareInformation()(*WindowsMalwareInformationRequestBuilder) {
-    return NewWindowsMalwareInformationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsMalwareInformationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // WindowsMalwareInformationById provides operations to manage the windowsMalwareInformation property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsMalwareInformationById(id string)(*WindowsMalwareInformationWindowsMalwareInformationItemRequestBuilder) {
@@ -2238,11 +2256,11 @@ func (m *DeviceManagementRequestBuilder) WindowsMalwareInformationById(id string
     if id != "" {
         urlTplParams["windowsMalwareInformation%2Did"] = id
     }
-    return NewWindowsMalwareInformationWindowsMalwareInformationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWindowsMalwareInformationWindowsMalwareInformationItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // WindowsQualityUpdateProfiles provides operations to manage the windowsQualityUpdateProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsQualityUpdateProfiles()(*WindowsQualityUpdateProfilesRequestBuilder) {
-    return NewWindowsQualityUpdateProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsQualityUpdateProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // WindowsQualityUpdateProfilesById provides operations to manage the windowsQualityUpdateProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsQualityUpdateProfilesById(id string)(*WindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuilder) {
@@ -2253,11 +2271,11 @@ func (m *DeviceManagementRequestBuilder) WindowsQualityUpdateProfilesById(id str
     if id != "" {
         urlTplParams["windowsQualityUpdateProfile%2Did"] = id
     }
-    return NewWindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // WindowsUpdateCatalogItems provides operations to manage the windowsUpdateCatalogItems property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsUpdateCatalogItems()(*WindowsUpdateCatalogItemsRequestBuilder) {
-    return NewWindowsUpdateCatalogItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsUpdateCatalogItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // WindowsUpdateCatalogItemsById provides operations to manage the windowsUpdateCatalogItems property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsUpdateCatalogItemsById(id string)(*WindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilder) {
@@ -2268,11 +2286,11 @@ func (m *DeviceManagementRequestBuilder) WindowsUpdateCatalogItemsById(id string
     if id != "" {
         urlTplParams["windowsUpdateCatalogItem%2Did"] = id
     }
-    return NewWindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ZebraFotaArtifacts provides operations to manage the zebraFotaArtifacts property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ZebraFotaArtifacts()(*ZebraFotaArtifactsRequestBuilder) {
-    return NewZebraFotaArtifactsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewZebraFotaArtifactsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ZebraFotaArtifactsById provides operations to manage the zebraFotaArtifacts property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ZebraFotaArtifactsById(id string)(*ZebraFotaArtifactsZebraFotaArtifactItemRequestBuilder) {
@@ -2283,15 +2301,15 @@ func (m *DeviceManagementRequestBuilder) ZebraFotaArtifactsById(id string)(*Zebr
     if id != "" {
         urlTplParams["zebraFotaArtifact%2Did"] = id
     }
-    return NewZebraFotaArtifactsZebraFotaArtifactItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewZebraFotaArtifactsZebraFotaArtifactItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ZebraFotaConnector provides operations to manage the zebraFotaConnector property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ZebraFotaConnector()(*ZebraFotaConnectorRequestBuilder) {
-    return NewZebraFotaConnectorRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewZebraFotaConnectorRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ZebraFotaDeployments provides operations to manage the zebraFotaDeployments property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ZebraFotaDeployments()(*ZebraFotaDeploymentsRequestBuilder) {
-    return NewZebraFotaDeploymentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewZebraFotaDeploymentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ZebraFotaDeploymentsById provides operations to manage the zebraFotaDeployments property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ZebraFotaDeploymentsById(id string)(*ZebraFotaDeploymentsZebraFotaDeploymentItemRequestBuilder) {
@@ -2302,5 +2320,5 @@ func (m *DeviceManagementRequestBuilder) ZebraFotaDeploymentsById(id string)(*Ze
     if id != "" {
         urlTplParams["zebraFotaDeployment%2Did"] = id
     }
-    return NewZebraFotaDeploymentsZebraFotaDeploymentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewZebraFotaDeploymentsZebraFotaDeploymentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }

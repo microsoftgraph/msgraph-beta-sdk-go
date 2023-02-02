@@ -8,13 +8,13 @@ import (
 type TeamworkTagIdentity struct {
     Identity
 }
-// NewTeamworkTagIdentity instantiates a new TeamworkTagIdentity and sets the default values.
+// NewTeamworkTagIdentity instantiates a new teamworkTagIdentity and sets the default values.
 func NewTeamworkTagIdentity()(*TeamworkTagIdentity) {
     m := &TeamworkTagIdentity{
         Identity: *NewIdentity(),
     }
-    odataTypeValue := "#microsoft.graph.teamworkTagIdentity";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.teamworkTagIdentity"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateTeamworkTagIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

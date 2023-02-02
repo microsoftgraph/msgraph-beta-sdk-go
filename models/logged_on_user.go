@@ -20,7 +20,7 @@ type LoggedOnUser struct {
 func NewLoggedOnUser()(*LoggedOnUser) {
     m := &LoggedOnUser{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateLoggedOnUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

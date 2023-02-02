@@ -58,8 +58,8 @@ func NewMailFoldersItemMessagesItemMentionsRequestBuilderInternal(pathParameters
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMailFoldersItemMessagesItemMentionsRequestBuilder instantiates a new MentionsRequestBuilder and sets the default values.
@@ -70,7 +70,7 @@ func NewMailFoldersItemMessagesItemMentionsRequestBuilder(rawUrl string, request
 }
 // Count provides operations to count the resources in the collection.
 func (m *MailFoldersItemMessagesItemMentionsRequestBuilder) Count()(*MailFoldersItemMessagesItemMentionsCountRequestBuilder) {
-    return NewMailFoldersItemMessagesItemMentionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMailFoldersItemMessagesItemMentionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get a collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.
 func (m *MailFoldersItemMessagesItemMentionsRequestBuilder) Get(ctx context.Context, requestConfiguration *MailFoldersItemMessagesItemMentionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MentionCollectionResponseable, error) {
@@ -133,7 +133,10 @@ func (m *MailFoldersItemMessagesItemMentionsRequestBuilder) ToPostRequestInforma
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

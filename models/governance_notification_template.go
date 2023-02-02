@@ -25,7 +25,7 @@ type GovernanceNotificationTemplate struct {
 func NewGovernanceNotificationTemplate()(*GovernanceNotificationTemplate) {
     m := &GovernanceNotificationTemplate{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateGovernanceNotificationTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

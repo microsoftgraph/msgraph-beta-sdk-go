@@ -17,7 +17,7 @@ type MentionAction struct {
 func NewMentionAction()(*MentionAction) {
     m := &MentionAction{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMentionActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

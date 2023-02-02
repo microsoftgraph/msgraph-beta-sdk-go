@@ -19,7 +19,7 @@ type DeviceAndAppManagementAssignedRoleDetails struct {
 func NewDeviceAndAppManagementAssignedRoleDetails()(*DeviceAndAppManagementAssignedRoleDetails) {
     m := &DeviceAndAppManagementAssignedRoleDetails{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceAndAppManagementAssignedRoleDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

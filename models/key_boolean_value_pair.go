@@ -15,8 +15,8 @@ func NewKeyBooleanValuePair()(*KeyBooleanValuePair) {
     m := &KeyBooleanValuePair{
         KeyTypedValuePair: *NewKeyTypedValuePair(),
     }
-    odataTypeValue := "#microsoft.graph.keyBooleanValuePair";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.keyBooleanValuePair"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateKeyBooleanValuePairFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -25,7 +25,7 @@ type MessageTrace struct {
     // The subject property
     subject *string
 }
-// NewMessageTrace instantiates a new MessageTrace and sets the default values.
+// NewMessageTrace instantiates a new messageTrace and sets the default values.
 func NewMessageTrace()(*MessageTrace) {
     m := &MessageTrace{
         Entity: *NewEntity(),

@@ -55,8 +55,8 @@ func NewDirectoryRoleAssignmentApprovalsApprovalItemRequestBuilderInternal(pathP
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDirectoryRoleAssignmentApprovalsApprovalItemRequestBuilder instantiates a new ApprovalItemRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *DirectoryRoleAssignmentApprovalsApprovalItemRequestBuilder) Patch(ctx c
 }
 // Steps provides operations to manage the steps property of the microsoft.graph.approval entity.
 func (m *DirectoryRoleAssignmentApprovalsApprovalItemRequestBuilder) Steps()(*DirectoryRoleAssignmentApprovalsItemStepsRequestBuilder) {
-    return NewDirectoryRoleAssignmentApprovalsItemStepsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDirectoryRoleAssignmentApprovalsItemStepsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // StepsById provides operations to manage the steps property of the microsoft.graph.approval entity.
 func (m *DirectoryRoleAssignmentApprovalsApprovalItemRequestBuilder) StepsById(id string)(*DirectoryRoleAssignmentApprovalsItemStepsApprovalStepItemRequestBuilder) {
@@ -132,7 +132,7 @@ func (m *DirectoryRoleAssignmentApprovalsApprovalItemRequestBuilder) StepsById(i
     if id != "" {
         urlTplParams["approvalStep%2Did"] = id
     }
-    return NewDirectoryRoleAssignmentApprovalsItemStepsApprovalStepItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryRoleAssignmentApprovalsItemStepsApprovalStepItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property roleAssignmentApprovals for roleManagement
 func (m *DirectoryRoleAssignmentApprovalsApprovalItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DirectoryRoleAssignmentApprovalsApprovalItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +169,10 @@ func (m *DirectoryRoleAssignmentApprovalsApprovalItemRequestBuilder) ToPatchRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

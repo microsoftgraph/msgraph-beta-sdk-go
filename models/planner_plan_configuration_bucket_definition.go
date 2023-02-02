@@ -17,7 +17,7 @@ type PlannerPlanConfigurationBucketDefinition struct {
 func NewPlannerPlanConfigurationBucketDefinition()(*PlannerPlanConfigurationBucketDefinition) {
     m := &PlannerPlanConfigurationBucketDefinition{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePlannerPlanConfigurationBucketDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -24,7 +24,7 @@ type CloudPcHealthCheckItem struct {
 func NewCloudPcHealthCheckItem()(*CloudPcHealthCheckItem) {
     m := &CloudPcHealthCheckItem{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCloudPcHealthCheckItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

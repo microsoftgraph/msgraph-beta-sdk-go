@@ -21,7 +21,7 @@ type PayloadDetail struct {
 func NewPayloadDetail()(*PayloadDetail) {
     m := &PayloadDetail{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePayloadDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

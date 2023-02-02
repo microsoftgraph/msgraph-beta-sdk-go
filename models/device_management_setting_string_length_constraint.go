@@ -17,8 +17,8 @@ func NewDeviceManagementSettingStringLengthConstraint()(*DeviceManagementSetting
     m := &DeviceManagementSettingStringLengthConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementSettingStringLengthConstraint";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementSettingStringLengthConstraint"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementSettingStringLengthConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

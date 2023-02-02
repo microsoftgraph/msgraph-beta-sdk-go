@@ -13,8 +13,8 @@ func NewWindowsKioskAutologon()(*WindowsKioskAutologon) {
     m := &WindowsKioskAutologon{
         WindowsKioskUser: *NewWindowsKioskUser(),
     }
-    odataTypeValue := "#microsoft.graph.windowsKioskAutologon";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsKioskAutologon"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsKioskAutologonFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

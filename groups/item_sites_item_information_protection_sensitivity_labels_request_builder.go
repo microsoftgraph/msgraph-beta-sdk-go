@@ -60,8 +60,8 @@ func NewItemSitesItemInformationProtectionSensitivityLabelsRequestBuilderInterna
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemInformationProtectionSensitivityLabelsRequestBuilder instantiates a new SensitivityLabelsRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewItemSitesItemInformationProtectionSensitivityLabelsRequestBuilder(rawUrl
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemSitesItemInformationProtectionSensitivityLabelsRequestBuilder) Count()(*ItemSitesItemInformationProtectionSensitivityLabelsCountRequestBuilder) {
-    return NewItemSitesItemInformationProtectionSensitivityLabelsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Evaluate provides operations to call the evaluate method.
-func (m *ItemSitesItemInformationProtectionSensitivityLabelsRequestBuilder) Evaluate()(*ItemSitesItemInformationProtectionSensitivityLabelsEvaluateRequestBuilder) {
-    return NewItemSitesItemInformationProtectionSensitivityLabelsEvaluateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemInformationProtectionSensitivityLabelsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get sensitivityLabels from groups
 func (m *ItemSitesItemInformationProtectionSensitivityLabelsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemInformationProtectionSensitivityLabelsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelCollectionResponseable, error) {
@@ -96,6 +92,10 @@ func (m *ItemSitesItemInformationProtectionSensitivityLabelsRequestBuilder) Get(
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelCollectionResponseable), nil
+}
+// MicrosoftGraphEvaluate provides operations to call the evaluate method.
+func (m *ItemSitesItemInformationProtectionSensitivityLabelsRequestBuilder) MicrosoftGraphEvaluate()(*ItemSitesItemInformationProtectionSensitivityLabelsMicrosoftGraphEvaluateEvaluateRequestBuilder) {
+    return NewItemSitesItemInformationProtectionSensitivityLabelsMicrosoftGraphEvaluateEvaluateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to sensitivityLabels for groups
 func (m *ItemSitesItemInformationProtectionSensitivityLabelsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelable, requestConfiguration *ItemSitesItemInformationProtectionSensitivityLabelsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelable, error) {
@@ -139,7 +139,10 @@ func (m *ItemSitesItemInformationProtectionSensitivityLabelsRequestBuilder) ToPo
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

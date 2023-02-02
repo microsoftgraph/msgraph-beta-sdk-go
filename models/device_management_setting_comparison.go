@@ -27,7 +27,7 @@ type DeviceManagementSettingComparison struct {
 func NewDeviceManagementSettingComparison()(*DeviceManagementSettingComparison) {
     m := &DeviceManagementSettingComparison{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceManagementSettingComparisonFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

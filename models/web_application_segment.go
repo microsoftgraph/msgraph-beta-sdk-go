@@ -7,13 +7,13 @@ import (
 // WebApplicationSegment 
 type WebApplicationSegment struct {
     ApplicationSegment
-    // The alternateUrl property
+    // If you're configuring a traffic manager in front of multiple App Proxy application segments, this property contains the user-friendly URL that will point to the traffic manager.
     alternateUrl *string
-    // The corsConfigurations property
+    // A collection of CORS Rule definitions for a particular application segment.
     corsConfigurations []CorsConfiguration_v2able
-    // The externalUrl property
+    // The published external URL for the application segment; for example, https://intranet.contoso.com/.
     externalUrl *string
-    // The internalUrl property
+    // The internal URL of the application segment; for example, https://intranet/.
     internalUrl *string
 }
 // NewWebApplicationSegment instantiates a new WebApplicationSegment and sets the default values.
@@ -21,23 +21,23 @@ func NewWebApplicationSegment()(*WebApplicationSegment) {
     m := &WebApplicationSegment{
         ApplicationSegment: *NewApplicationSegment(),
     }
-    odataTypeValue := "#microsoft.graph.webApplicationSegment";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.webApplicationSegment"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWebApplicationSegmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateWebApplicationSegmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWebApplicationSegment(), nil
 }
-// GetAlternateUrl gets the alternateUrl property value. The alternateUrl property
+// GetAlternateUrl gets the alternateUrl property value. If you're configuring a traffic manager in front of multiple App Proxy application segments, this property contains the user-friendly URL that will point to the traffic manager.
 func (m *WebApplicationSegment) GetAlternateUrl()(*string) {
     return m.alternateUrl
 }
-// GetCorsConfigurations gets the corsConfigurations property value. The corsConfigurations property
+// GetCorsConfigurations gets the corsConfigurations property value. A collection of CORS Rule definitions for a particular application segment.
 func (m *WebApplicationSegment) GetCorsConfigurations()([]CorsConfiguration_v2able) {
     return m.corsConfigurations
 }
-// GetExternalUrl gets the externalUrl property value. The externalUrl property
+// GetExternalUrl gets the externalUrl property value. The published external URL for the application segment; for example, https://intranet.contoso.com/.
 func (m *WebApplicationSegment) GetExternalUrl()(*string) {
     return m.externalUrl
 }
@@ -90,7 +90,7 @@ func (m *WebApplicationSegment) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetInternalUrl gets the internalUrl property value. The internalUrl property
+// GetInternalUrl gets the internalUrl property value. The internal URL of the application segment; for example, https://intranet/.
 func (m *WebApplicationSegment) GetInternalUrl()(*string) {
     return m.internalUrl
 }
@@ -130,19 +130,19 @@ func (m *WebApplicationSegment) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetAlternateUrl sets the alternateUrl property value. The alternateUrl property
+// SetAlternateUrl sets the alternateUrl property value. If you're configuring a traffic manager in front of multiple App Proxy application segments, this property contains the user-friendly URL that will point to the traffic manager.
 func (m *WebApplicationSegment) SetAlternateUrl(value *string)() {
     m.alternateUrl = value
 }
-// SetCorsConfigurations sets the corsConfigurations property value. The corsConfigurations property
+// SetCorsConfigurations sets the corsConfigurations property value. A collection of CORS Rule definitions for a particular application segment.
 func (m *WebApplicationSegment) SetCorsConfigurations(value []CorsConfiguration_v2able)() {
     m.corsConfigurations = value
 }
-// SetExternalUrl sets the externalUrl property value. The externalUrl property
+// SetExternalUrl sets the externalUrl property value. The published external URL for the application segment; for example, https://intranet.contoso.com/.
 func (m *WebApplicationSegment) SetExternalUrl(value *string)() {
     m.externalUrl = value
 }
-// SetInternalUrl sets the internalUrl property value. The internalUrl property
+// SetInternalUrl sets the internalUrl property value. The internal URL of the application segment; for example, https://intranet/.
 func (m *WebApplicationSegment) SetInternalUrl(value *string)() {
     m.internalUrl = value
 }

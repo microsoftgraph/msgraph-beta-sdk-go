@@ -25,7 +25,7 @@ type BusinessScenario struct {
     // Unique name of the scenario. To avoid conflicts, the recommended value for the unique name is a reverse domain name format, owned by the author of the scenario. For example, a scenario authored by Contoso.com would have a unique name that starts with com.contoso.
     uniqueName *string
 }
-// NewBusinessScenario instantiates a new BusinessScenario and sets the default values.
+// NewBusinessScenario instantiates a new businessScenario and sets the default values.
 func NewBusinessScenario()(*BusinessScenario) {
     m := &BusinessScenario{
         Entity: *NewEntity(),

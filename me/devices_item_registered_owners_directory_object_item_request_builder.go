@@ -22,8 +22,8 @@ func NewDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilderInternal(pat
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
@@ -32,19 +32,19 @@ func NewDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Endpoint casts the previous resource to endpoint.
-func (m *DevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder) Endpoint()(*DevicesItemRegisteredOwnersItemEndpointRequestBuilder) {
-    return NewDevicesItemRegisteredOwnersItemEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphEndpoint casts the previous resource to endpoint.
+func (m *DevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder) MicrosoftGraphEndpoint()(*DevicesItemRegisteredOwnersItemMicrosoftGraphEndpointEndpointRequestBuilder) {
+    return NewDevicesItemRegisteredOwnersItemMicrosoftGraphEndpointEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *DevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder) MicrosoftGraphServicePrincipal()(*DevicesItemRegisteredOwnersItemMicrosoftGraphServicePrincipalServicePrincipalRequestBuilder) {
+    return NewDevicesItemRegisteredOwnersItemMicrosoftGraphServicePrincipalServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUser casts the previous resource to user.
+func (m *DevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder) MicrosoftGraphUser()(*DevicesItemRegisteredOwnersItemMicrosoftGraphUserUserRequestBuilder) {
+    return NewDevicesItemRegisteredOwnersItemMicrosoftGraphUserUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Ref provides operations to manage the collection of user entities.
 func (m *DevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder) Ref()(*DevicesItemRegisteredOwnersItemRefRequestBuilder) {
-    return NewDevicesItemRegisteredOwnersItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ServicePrincipal casts the previous resource to servicePrincipal.
-func (m *DevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder) ServicePrincipal()(*DevicesItemRegisteredOwnersItemServicePrincipalRequestBuilder) {
-    return NewDevicesItemRegisteredOwnersItemServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// User casts the previous resource to user.
-func (m *DevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder) User()(*DevicesItemRegisteredOwnersItemUserRequestBuilder) {
-    return NewDevicesItemRegisteredOwnersItemUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDevicesItemRegisteredOwnersItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

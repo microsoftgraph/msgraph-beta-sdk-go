@@ -32,7 +32,7 @@ type CloudPcGalleryImage struct {
     // The status of the gallery image on the Cloud PC. Possible values are: supported, supportedWithWarning, notSupported, unknownFutureValue. Read-only.
     status *CloudPcGalleryImageStatus
 }
-// NewCloudPcGalleryImage instantiates a new CloudPcGalleryImage and sets the default values.
+// NewCloudPcGalleryImage instantiates a new cloudPcGalleryImage and sets the default values.
 func NewCloudPcGalleryImage()(*CloudPcGalleryImage) {
     m := &CloudPcGalleryImage{
         Entity: *NewEntity(),

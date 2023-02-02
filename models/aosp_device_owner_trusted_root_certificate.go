@@ -17,8 +17,8 @@ func NewAospDeviceOwnerTrustedRootCertificate()(*AospDeviceOwnerTrustedRootCerti
     m := &AospDeviceOwnerTrustedRootCertificate{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.aospDeviceOwnerTrustedRootCertificate";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.aospDeviceOwnerTrustedRootCertificate"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAospDeviceOwnerTrustedRootCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

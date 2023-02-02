@@ -15,8 +15,8 @@ func NewWindows10PFXImportCertificateProfile()(*Windows10PFXImportCertificatePro
     m := &Windows10PFXImportCertificateProfile{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.windows10PFXImportCertificateProfile";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windows10PFXImportCertificateProfile"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindows10PFXImportCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -60,8 +60,8 @@ func NewManagedDeviceEncryptionStatesRequestBuilderInternal(pathParameters map[s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedDeviceEncryptionStatesRequestBuilder instantiates a new ManagedDeviceEncryptionStatesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewManagedDeviceEncryptionStatesRequestBuilder(rawUrl string, requestAdapte
 }
 // Count provides operations to count the resources in the collection.
 func (m *ManagedDeviceEncryptionStatesRequestBuilder) Count()(*ManagedDeviceEncryptionStatesCountRequestBuilder) {
-    return NewManagedDeviceEncryptionStatesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedDeviceEncryptionStatesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get encryption report for devices in this account
 func (m *ManagedDeviceEncryptionStatesRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedDeviceEncryptionStatesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceEncryptionStateCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *ManagedDeviceEncryptionStatesRequestBuilder) ToPostRequestInformation(c
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -60,8 +60,8 @@ func NewDeviceManagementScriptsRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceManagementScriptsRequestBuilder instantiates a new DeviceManagementScriptsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewDeviceManagementScriptsRequestBuilder(rawUrl string, requestAdapter i2ae
 }
 // Count provides operations to count the resources in the collection.
 func (m *DeviceManagementScriptsRequestBuilder) Count()(*DeviceManagementScriptsCountRequestBuilder) {
-    return NewDeviceManagementScriptsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceManagementScriptsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the list of device management scripts associated with the tenant.
 func (m *DeviceManagementScriptsRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceManagementScriptsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptCollectionResponseable, error) {
@@ -93,9 +93,9 @@ func (m *DeviceManagementScriptsRequestBuilder) Get(ctx context.Context, request
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptCollectionResponseable), nil
 }
-// HasPayloadLinks provides operations to call the hasPayloadLinks method.
-func (m *DeviceManagementScriptsRequestBuilder) HasPayloadLinks()(*DeviceManagementScriptsHasPayloadLinksRequestBuilder) {
-    return NewDeviceManagementScriptsHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphHasPayloadLinks provides operations to call the hasPayloadLinks method.
+func (m *DeviceManagementScriptsRequestBuilder) MicrosoftGraphHasPayloadLinks()(*DeviceManagementScriptsMicrosoftGraphHasPayloadLinksHasPayloadLinksRequestBuilder) {
+    return NewDeviceManagementScriptsMicrosoftGraphHasPayloadLinksHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to deviceManagementScripts for deviceManagement
 func (m *DeviceManagementScriptsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptable, requestConfiguration *DeviceManagementScriptsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptable, error) {
@@ -139,7 +139,10 @@ func (m *DeviceManagementScriptsRequestBuilder) ToPostRequestInformation(ctx con
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

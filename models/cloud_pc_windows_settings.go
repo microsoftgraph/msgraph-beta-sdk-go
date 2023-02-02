@@ -17,7 +17,7 @@ type CloudPcWindowsSettings struct {
 func NewCloudPcWindowsSettings()(*CloudPcWindowsSettings) {
     m := &CloudPcWindowsSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCloudPcWindowsSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

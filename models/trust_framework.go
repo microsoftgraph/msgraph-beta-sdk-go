@@ -19,7 +19,7 @@ type TrustFramework struct {
 func NewTrustFramework()(*TrustFramework) {
     m := &TrustFramework{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTrustFrameworkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

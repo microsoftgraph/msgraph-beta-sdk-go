@@ -46,8 +46,8 @@ func NewInferenceClassificationRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewInferenceClassificationRequestBuilder instantiates a new InferenceClassificationRequestBuilder and sets the default values.
@@ -77,7 +77,7 @@ func (m *InferenceClassificationRequestBuilder) Get(ctx context.Context, request
 }
 // Overrides provides operations to manage the overrides property of the microsoft.graph.inferenceClassification entity.
 func (m *InferenceClassificationRequestBuilder) Overrides()(*InferenceClassificationOverridesRequestBuilder) {
-    return NewInferenceClassificationOverridesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewInferenceClassificationOverridesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // OverridesById provides operations to manage the overrides property of the microsoft.graph.inferenceClassification entity.
 func (m *InferenceClassificationRequestBuilder) OverridesById(id string)(*InferenceClassificationOverridesInferenceClassificationOverrideItemRequestBuilder) {
@@ -88,7 +88,7 @@ func (m *InferenceClassificationRequestBuilder) OverridesById(id string)(*Infere
     if id != "" {
         urlTplParams["inferenceClassificationOverride%2Did"] = id
     }
-    return NewInferenceClassificationOverridesInferenceClassificationOverrideItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewInferenceClassificationOverridesInferenceClassificationOverrideItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch update the navigation property inferenceClassification in me
 func (m *InferenceClassificationRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InferenceClassificationable, requestConfiguration *InferenceClassificationRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InferenceClassificationable, error) {
@@ -132,7 +132,10 @@ func (m *InferenceClassificationRequestBuilder) ToPatchRequestInformation(ctx co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

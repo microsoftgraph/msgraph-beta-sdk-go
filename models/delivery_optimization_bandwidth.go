@@ -15,7 +15,7 @@ type DeliveryOptimizationBandwidth struct {
 func NewDeliveryOptimizationBandwidth()(*DeliveryOptimizationBandwidth) {
     m := &DeliveryOptimizationBandwidth{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeliveryOptimizationBandwidthFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -3,11 +3,11 @@ package admin
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c "github.com/microsoftgraph/msgraph-beta-sdk-go/models/windowsupdates"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
-// WindowsUpdatesRequestBuilder provides operations to manage the updates property of the microsoft.graph.windowsUpdates.windows entity.
+// WindowsUpdatesRequestBuilder provides operations to manage the updates property of the microsoft.graph.adminWindows entity.
 type WindowsUpdatesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string
@@ -23,7 +23,7 @@ type WindowsUpdatesRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// WindowsUpdatesRequestBuilderGetQueryParameters entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
+// WindowsUpdatesRequestBuilderGetQueryParameters get updates from admin
 type WindowsUpdatesRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -46,9 +46,9 @@ type WindowsUpdatesRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Catalog provides operations to manage the catalog property of the microsoft.graph.windowsUpdates.updates entity.
+// Catalog provides operations to manage the catalog property of the microsoft.graph.adminWindowsUpdates entity.
 func (m *WindowsUpdatesRequestBuilder) Catalog()(*WindowsUpdatesCatalogRequestBuilder) {
-    return NewWindowsUpdatesCatalogRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsUpdatesCatalogRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewWindowsUpdatesRequestBuilderInternal instantiates a new UpdatesRequestBuilder and sets the default values.
 func NewWindowsUpdatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesRequestBuilder) {
@@ -59,8 +59,8 @@ func NewWindowsUpdatesRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsUpdatesRequestBuilder instantiates a new UpdatesRequestBuilder and sets the default values.
@@ -85,11 +85,26 @@ func (m *WindowsUpdatesRequestBuilder) Delete(ctx context.Context, requestConfig
     }
     return nil
 }
-// Deployments provides operations to manage the deployments property of the microsoft.graph.windowsUpdates.updates entity.
-func (m *WindowsUpdatesRequestBuilder) Deployments()(*WindowsUpdatesDeploymentsRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// DeploymentAudiences provides operations to manage the deploymentAudiences property of the microsoft.graph.adminWindowsUpdates entity.
+func (m *WindowsUpdatesRequestBuilder) DeploymentAudiences()(*WindowsUpdatesDeploymentAudiencesRequestBuilder) {
+    return NewWindowsUpdatesDeploymentAudiencesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// DeploymentsById provides operations to manage the deployments property of the microsoft.graph.windowsUpdates.updates entity.
+// DeploymentAudiencesById provides operations to manage the deploymentAudiences property of the microsoft.graph.adminWindowsUpdates entity.
+func (m *WindowsUpdatesRequestBuilder) DeploymentAudiencesById(id string)(*WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["deploymentAudience%2Did"] = id
+    }
+    return NewWindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+// Deployments provides operations to manage the deployments property of the microsoft.graph.adminWindowsUpdates entity.
+func (m *WindowsUpdatesRequestBuilder) Deployments()(*WindowsUpdatesDeploymentsRequestBuilder) {
+    return NewWindowsUpdatesDeploymentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// DeploymentsById provides operations to manage the deployments property of the microsoft.graph.adminWindowsUpdates entity.
 func (m *WindowsUpdatesRequestBuilder) DeploymentsById(id string)(*WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -98,10 +113,10 @@ func (m *WindowsUpdatesRequestBuilder) DeploymentsById(id string)(*WindowsUpdate
     if id != "" {
         urlTplParams["deployment%2Did"] = id
     }
-    return NewWindowsUpdatesDeploymentsDeploymentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWindowsUpdatesDeploymentsDeploymentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
-// Get entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
-func (m *WindowsUpdatesRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Updatesable, error) {
+// Get get updates from admin
+func (m *WindowsUpdatesRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminWindowsUpdatesable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -110,17 +125,17 @@ func (m *WindowsUpdatesRequestBuilder) Get(ctx context.Context, requestConfigura
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.CreateUpdatesFromDiscriminatorValue, errorMapping)
+    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAdminWindowsUpdatesFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Updatesable), nil
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminWindowsUpdatesable), nil
 }
 // Patch update the navigation property updates in admin
-func (m *WindowsUpdatesRequestBuilder) Patch(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Updatesable, requestConfiguration *WindowsUpdatesRequestBuilderPatchRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Updatesable, error) {
+func (m *WindowsUpdatesRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminWindowsUpdatesable, requestConfiguration *WindowsUpdatesRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminWindowsUpdatesable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -129,20 +144,20 @@ func (m *WindowsUpdatesRequestBuilder) Patch(ctx context.Context, body i17376df5
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.CreateUpdatesFromDiscriminatorValue, errorMapping)
+    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAdminWindowsUpdatesFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Updatesable), nil
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminWindowsUpdatesable), nil
 }
-// ResourceConnections provides operations to manage the resourceConnections property of the microsoft.graph.windowsUpdates.updates entity.
+// ResourceConnections provides operations to manage the resourceConnections property of the microsoft.graph.adminWindowsUpdates entity.
 func (m *WindowsUpdatesRequestBuilder) ResourceConnections()(*WindowsUpdatesResourceConnectionsRequestBuilder) {
-    return NewWindowsUpdatesResourceConnectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsUpdatesResourceConnectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// ResourceConnectionsById provides operations to manage the resourceConnections property of the microsoft.graph.windowsUpdates.updates entity.
+// ResourceConnectionsById provides operations to manage the resourceConnections property of the microsoft.graph.adminWindowsUpdates entity.
 func (m *WindowsUpdatesRequestBuilder) ResourceConnectionsById(id string)(*WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -151,7 +166,7 @@ func (m *WindowsUpdatesRequestBuilder) ResourceConnectionsById(id string)(*Windo
     if id != "" {
         urlTplParams["resourceConnection%2Did"] = id
     }
-    return NewWindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property updates for admin
 func (m *WindowsUpdatesRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -165,7 +180,7 @@ func (m *WindowsUpdatesRequestBuilder) ToDeleteRequestInformation(ctx context.Co
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
+// ToGetRequestInformation get updates from admin
 func (m *WindowsUpdatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -182,24 +197,27 @@ func (m *WindowsUpdatesRequestBuilder) ToGetRequestInformation(ctx context.Conte
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property updates in admin
-func (m *WindowsUpdatesRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Updatesable, requestConfiguration *WindowsUpdatesRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *WindowsUpdatesRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminWindowsUpdatesable, requestConfiguration *WindowsUpdatesRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
-// UpdatableAssets provides operations to manage the updatableAssets property of the microsoft.graph.windowsUpdates.updates entity.
+// UpdatableAssets provides operations to manage the updatableAssets property of the microsoft.graph.adminWindowsUpdates entity.
 func (m *WindowsUpdatesRequestBuilder) UpdatableAssets()(*WindowsUpdatesUpdatableAssetsRequestBuilder) {
-    return NewWindowsUpdatesUpdatableAssetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsUpdatesUpdatableAssetsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// UpdatableAssetsById provides operations to manage the updatableAssets property of the microsoft.graph.windowsUpdates.updates entity.
+// UpdatableAssetsById provides operations to manage the updatableAssets property of the microsoft.graph.adminWindowsUpdates entity.
 func (m *WindowsUpdatesRequestBuilder) UpdatableAssetsById(id string)(*WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -208,5 +226,20 @@ func (m *WindowsUpdatesRequestBuilder) UpdatableAssetsById(id string)(*WindowsUp
     if id != "" {
         urlTplParams["updatableAsset%2Did"] = id
     }
-    return NewWindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+// UpdatePolicies provides operations to manage the updatePolicies property of the microsoft.graph.adminWindowsUpdates entity.
+func (m *WindowsUpdatesRequestBuilder) UpdatePolicies()(*WindowsUpdatesUpdatePoliciesRequestBuilder) {
+    return NewWindowsUpdatesUpdatePoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// UpdatePoliciesById provides operations to manage the updatePolicies property of the microsoft.graph.adminWindowsUpdates entity.
+func (m *WindowsUpdatesRequestBuilder) UpdatePoliciesById(id string)(*WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["updatePolicy%2Did"] = id
+    }
+    return NewWindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }

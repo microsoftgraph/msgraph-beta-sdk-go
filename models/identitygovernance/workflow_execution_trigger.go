@@ -15,7 +15,7 @@ type WorkflowExecutionTrigger struct {
 func NewWorkflowExecutionTrigger()(*WorkflowExecutionTrigger) {
     m := &WorkflowExecutionTrigger{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWorkflowExecutionTriggerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

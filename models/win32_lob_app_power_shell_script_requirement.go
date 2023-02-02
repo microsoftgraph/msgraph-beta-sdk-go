@@ -25,8 +25,8 @@ func NewWin32LobAppPowerShellScriptRequirement()(*Win32LobAppPowerShellScriptReq
     m := &Win32LobAppPowerShellScriptRequirement{
         Win32LobAppRequirement: *NewWin32LobAppRequirement(),
     }
-    odataTypeValue := "#microsoft.graph.win32LobAppPowerShellScriptRequirement";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.win32LobAppPowerShellScriptRequirement"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWin32LobAppPowerShellScriptRequirementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

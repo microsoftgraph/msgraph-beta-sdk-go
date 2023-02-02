@@ -55,8 +55,8 @@ func NewOutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilde
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewOutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilder instantiates a new OutboundSharedUserProfileUserItemRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuild
 }
 // Tenants provides operations to manage the tenants property of the microsoft.graph.outboundSharedUserProfile entity.
 func (m *OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilder) Tenants()(*OutboundSharedUserProfilesItemTenantsRequestBuilder) {
-    return NewOutboundSharedUserProfilesItemTenantsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewOutboundSharedUserProfilesItemTenantsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TenantsById provides operations to manage the tenants property of the microsoft.graph.outboundSharedUserProfile entity.
 func (m *OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilder) TenantsById(id string)(*OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilder) {
@@ -132,7 +132,7 @@ func (m *OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuild
     if id != "" {
         urlTplParams["tenantReference%2DtenantId"] = id
     }
-    return NewOutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewOutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property outboundSharedUserProfiles for directory
 func (m *OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +169,10 @@ func (m *OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuild
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

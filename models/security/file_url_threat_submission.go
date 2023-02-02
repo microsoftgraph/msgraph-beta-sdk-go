@@ -15,8 +15,8 @@ func NewFileUrlThreatSubmission()(*FileUrlThreatSubmission) {
     m := &FileUrlThreatSubmission{
         FileThreatSubmission: *NewFileThreatSubmission(),
     }
-    odataTypeValue := "#microsoft.graph.security.fileUrlThreatSubmission";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.security.fileUrlThreatSubmission"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateFileUrlThreatSubmissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -49,8 +49,8 @@ func NewTodoListsItemTasksItemAttachmentSessionsRequestBuilderInternal(pathParam
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTodoListsItemTasksItemAttachmentSessionsRequestBuilder instantiates a new AttachmentSessionsRequestBuilder and sets the default values.
@@ -61,7 +61,7 @@ func NewTodoListsItemTasksItemAttachmentSessionsRequestBuilder(rawUrl string, re
 }
 // Count provides operations to count the resources in the collection.
 func (m *TodoListsItemTasksItemAttachmentSessionsRequestBuilder) Count()(*TodoListsItemTasksItemAttachmentSessionsCountRequestBuilder) {
-    return NewTodoListsItemTasksItemAttachmentSessionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTodoListsItemTasksItemAttachmentSessionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get attachmentSessions from me
 func (m *TodoListsItemTasksItemAttachmentSessionsRequestBuilder) Get(ctx context.Context, requestConfiguration *TodoListsItemTasksItemAttachmentSessionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentSessionCollectionResponseable, error) {

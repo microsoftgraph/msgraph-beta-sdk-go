@@ -55,8 +55,8 @@ func NewItemRoleAssignmentsItemRoleDefinitionRequestBuilderInternal(pathParamete
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemRoleAssignmentsItemRoleDefinitionRequestBuilder instantiates a new RoleDefinitionRequestBuilder and sets the default values.
@@ -121,11 +121,11 @@ func (m *ItemRoleAssignmentsItemRoleDefinitionRequestBuilder) Patch(ctx context.
 }
 // Resource provides operations to manage the resource property of the microsoft.graph.governanceRoleDefinition entity.
 func (m *ItemRoleAssignmentsItemRoleDefinitionRequestBuilder) Resource()(*ItemRoleAssignmentsItemRoleDefinitionResourceRequestBuilder) {
-    return NewItemRoleAssignmentsItemRoleDefinitionResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRoleAssignmentsItemRoleDefinitionResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RoleSetting provides operations to manage the roleSetting property of the microsoft.graph.governanceRoleDefinition entity.
 func (m *ItemRoleAssignmentsItemRoleDefinitionRequestBuilder) RoleSetting()(*ItemRoleAssignmentsItemRoleDefinitionRoleSettingRequestBuilder) {
-    return NewItemRoleAssignmentsItemRoleDefinitionRoleSettingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRoleAssignmentsItemRoleDefinitionRoleSettingRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property roleDefinition for privilegedAccess
 func (m *ItemRoleAssignmentsItemRoleDefinitionRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemRoleAssignmentsItemRoleDefinitionRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -162,7 +162,10 @@ func (m *ItemRoleAssignmentsItemRoleDefinitionRequestBuilder) ToPatchRequestInfo
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

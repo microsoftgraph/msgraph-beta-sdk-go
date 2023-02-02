@@ -19,7 +19,7 @@ type DirectorySizeQuota struct {
 func NewDirectorySizeQuota()(*DirectorySizeQuota) {
     m := &DirectorySizeQuota{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDirectorySizeQuotaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

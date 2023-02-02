@@ -21,7 +21,7 @@ type AnswerKeyword struct {
 func NewAnswerKeyword()(*AnswerKeyword) {
     m := &AnswerKeyword{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAnswerKeywordFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

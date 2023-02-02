@@ -33,7 +33,7 @@ type Property struct {
 func NewProperty()(*Property) {
     m := &Property{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

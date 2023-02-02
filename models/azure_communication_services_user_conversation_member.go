@@ -15,8 +15,8 @@ func NewAzureCommunicationServicesUserConversationMember()(*AzureCommunicationSe
     m := &AzureCommunicationServicesUserConversationMember{
         ConversationMember: *NewConversationMember(),
     }
-    odataTypeValue := "#microsoft.graph.azureCommunicationServicesUserConversationMember";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.azureCommunicationServicesUserConversationMember"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAzureCommunicationServicesUserConversationMemberFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

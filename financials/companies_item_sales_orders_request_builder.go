@@ -53,8 +53,8 @@ func NewCompaniesItemSalesOrdersRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemSalesOrdersRequestBuilder instantiates a new SalesOrdersRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewCompaniesItemSalesOrdersRequestBuilder(rawUrl string, requestAdapter i2a
 }
 // Count provides operations to count the resources in the collection.
 func (m *CompaniesItemSalesOrdersRequestBuilder) Count()(*CompaniesItemSalesOrdersCountRequestBuilder) {
-    return NewCompaniesItemSalesOrdersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesOrdersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get salesOrders from financials
 func (m *CompaniesItemSalesOrdersRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemSalesOrdersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesOrderCollectionResponseable, error) {

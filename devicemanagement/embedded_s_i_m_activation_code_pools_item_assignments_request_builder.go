@@ -60,8 +60,8 @@ func NewEmbeddedSIMActivationCodePoolsItemAssignmentsRequestBuilderInternal(path
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEmbeddedSIMActivationCodePoolsItemAssignmentsRequestBuilder instantiates a new AssignmentsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewEmbeddedSIMActivationCodePoolsItemAssignmentsRequestBuilder(rawUrl strin
 }
 // Count provides operations to count the resources in the collection.
 func (m *EmbeddedSIMActivationCodePoolsItemAssignmentsRequestBuilder) Count()(*EmbeddedSIMActivationCodePoolsItemAssignmentsCountRequestBuilder) {
-    return NewEmbeddedSIMActivationCodePoolsItemAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEmbeddedSIMActivationCodePoolsItemAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get navigational property to a list of targets to which this pool is assigned.
 func (m *EmbeddedSIMActivationCodePoolsItemAssignmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *EmbeddedSIMActivationCodePoolsItemAssignmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmbeddedSIMActivationCodePoolAssignmentCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *EmbeddedSIMActivationCodePoolsItemAssignmentsRequestBuilder) ToPostRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

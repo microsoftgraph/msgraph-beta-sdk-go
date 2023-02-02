@@ -29,7 +29,7 @@ type BitLockerRecoveryOptions struct {
 func NewBitLockerRecoveryOptions()(*BitLockerRecoveryOptions) {
     m := &BitLockerRecoveryOptions{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateBitLockerRecoveryOptionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

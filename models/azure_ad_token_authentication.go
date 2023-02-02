@@ -15,8 +15,8 @@ func NewAzureAdTokenAuthentication()(*AzureAdTokenAuthentication) {
     m := &AzureAdTokenAuthentication{
         CustomExtensionAuthenticationConfiguration: *NewCustomExtensionAuthenticationConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.azureAdTokenAuthentication";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.azureAdTokenAuthentication"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAzureAdTokenAuthenticationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

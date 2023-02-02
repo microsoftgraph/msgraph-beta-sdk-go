@@ -13,8 +13,8 @@ func NewProtectDoNotForwardAction()(*ProtectDoNotForwardAction) {
     m := &ProtectDoNotForwardAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
     }
-    odataTypeValue := "#microsoft.graph.security.protectDoNotForwardAction";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.security.protectDoNotForwardAction"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateProtectDoNotForwardActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

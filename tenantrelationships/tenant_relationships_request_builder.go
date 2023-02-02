@@ -48,8 +48,8 @@ func NewTenantRelationshipsRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTenantRelationshipsRequestBuilder instantiates a new TenantRelationshipsRequestBuilder and sets the default values.
@@ -60,7 +60,7 @@ func NewTenantRelationshipsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 }
 // DelegatedAdminCustomers provides operations to manage the delegatedAdminCustomers property of the microsoft.graph.tenantRelationship entity.
 func (m *TenantRelationshipsRequestBuilder) DelegatedAdminCustomers()(*DelegatedAdminCustomersRequestBuilder) {
-    return NewDelegatedAdminCustomersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDelegatedAdminCustomersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DelegatedAdminCustomersById provides operations to manage the delegatedAdminCustomers property of the microsoft.graph.tenantRelationship entity.
 func (m *TenantRelationshipsRequestBuilder) DelegatedAdminCustomersById(id string)(*DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilder) {
@@ -71,11 +71,11 @@ func (m *TenantRelationshipsRequestBuilder) DelegatedAdminCustomersById(id strin
     if id != "" {
         urlTplParams["delegatedAdminCustomer%2Did"] = id
     }
-    return NewDelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // DelegatedAdminRelationships provides operations to manage the delegatedAdminRelationships property of the microsoft.graph.tenantRelationship entity.
 func (m *TenantRelationshipsRequestBuilder) DelegatedAdminRelationships()(*DelegatedAdminRelationshipsRequestBuilder) {
-    return NewDelegatedAdminRelationshipsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDelegatedAdminRelationshipsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DelegatedAdminRelationshipsById provides operations to manage the delegatedAdminRelationships property of the microsoft.graph.tenantRelationship entity.
 func (m *TenantRelationshipsRequestBuilder) DelegatedAdminRelationshipsById(id string)(*DelegatedAdminRelationshipsDelegatedAdminRelationshipItemRequestBuilder) {
@@ -86,15 +86,7 @@ func (m *TenantRelationshipsRequestBuilder) DelegatedAdminRelationshipsById(id s
     if id != "" {
         urlTplParams["delegatedAdminRelationship%2Did"] = id
     }
-    return NewDelegatedAdminRelationshipsDelegatedAdminRelationshipItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// FindTenantInformationByDomainNameWithDomainName provides operations to call the findTenantInformationByDomainName method.
-func (m *TenantRelationshipsRequestBuilder) FindTenantInformationByDomainNameWithDomainName(domainName *string)(*FindTenantInformationByDomainNameWithDomainNameRequestBuilder) {
-    return NewFindTenantInformationByDomainNameWithDomainNameRequestBuilderInternal(m.pathParameters, m.requestAdapter, domainName);
-}
-// FindTenantInformationByTenantIdWithTenantId provides operations to call the findTenantInformationByTenantId method.
-func (m *TenantRelationshipsRequestBuilder) FindTenantInformationByTenantIdWithTenantId(tenantId *string)(*FindTenantInformationByTenantIdWithTenantIdRequestBuilder) {
-    return NewFindTenantInformationByTenantIdWithTenantIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, tenantId);
+    return NewDelegatedAdminRelationshipsDelegatedAdminRelationshipItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Get get tenantRelationships
 func (m *TenantRelationshipsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantRelationshipsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantRelationshipable, error) {
@@ -117,7 +109,15 @@ func (m *TenantRelationshipsRequestBuilder) Get(ctx context.Context, requestConf
 }
 // ManagedTenants provides operations to manage the managedTenants property of the microsoft.graph.tenantRelationship entity.
 func (m *TenantRelationshipsRequestBuilder) ManagedTenants()(*ManagedTenantsRequestBuilder) {
-    return NewManagedTenantsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedTenantsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphFindTenantInformationByDomainNameWithDomainName provides operations to call the findTenantInformationByDomainName method.
+func (m *TenantRelationshipsRequestBuilder) MicrosoftGraphFindTenantInformationByDomainNameWithDomainName(domainName *string)(*MicrosoftGraphFindTenantInformationByDomainNameWithDomainNameFindTenantInformationByDomainNameWithDomainNameRequestBuilder) {
+    return NewMicrosoftGraphFindTenantInformationByDomainNameWithDomainNameFindTenantInformationByDomainNameWithDomainNameRequestBuilderInternal(m.pathParameters, m.requestAdapter, domainName)
+}
+// MicrosoftGraphFindTenantInformationByTenantIdWithTenantId provides operations to call the findTenantInformationByTenantId method.
+func (m *TenantRelationshipsRequestBuilder) MicrosoftGraphFindTenantInformationByTenantIdWithTenantId(tenantId *string)(*MicrosoftGraphFindTenantInformationByTenantIdWithTenantIdFindTenantInformationByTenantIdWithTenantIdRequestBuilder) {
+    return NewMicrosoftGraphFindTenantInformationByTenantIdWithTenantIdFindTenantInformationByTenantIdWithTenantIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, tenantId)
 }
 // Patch update tenantRelationships
 func (m *TenantRelationshipsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantRelationshipable, requestConfiguration *TenantRelationshipsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantRelationshipable, error) {
@@ -161,7 +161,10 @@ func (m *TenantRelationshipsRequestBuilder) ToPatchRequestInformation(ctx contex
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

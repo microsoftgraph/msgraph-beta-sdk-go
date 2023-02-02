@@ -55,8 +55,8 @@ func NewAutopilotEventsDeviceManagementAutopilotEventItemRequestBuilderInternal(
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder instantiates a new DeviceManagementAutopilotEventItemRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) Patch(
 }
 // PolicyStatusDetails provides operations to manage the policyStatusDetails property of the microsoft.graph.deviceManagementAutopilotEvent entity.
 func (m *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) PolicyStatusDetails()(*AutopilotEventsItemPolicyStatusDetailsRequestBuilder) {
-    return NewAutopilotEventsItemPolicyStatusDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAutopilotEventsItemPolicyStatusDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PolicyStatusDetailsById provides operations to manage the policyStatusDetails property of the microsoft.graph.deviceManagementAutopilotEvent entity.
 func (m *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) PolicyStatusDetailsById(id string)(*AutopilotEventsItemPolicyStatusDetailsDeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder) {
@@ -132,7 +132,7 @@ func (m *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) Policy
     if id != "" {
         urlTplParams["deviceManagementAutopilotPolicyStatusDetail%2Did"] = id
     }
-    return NewAutopilotEventsItemPolicyStatusDetailsDeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAutopilotEventsItemPolicyStatusDetailsDeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property autopilotEvents for deviceManagement
 func (m *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +169,10 @@ func (m *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) ToPatc
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

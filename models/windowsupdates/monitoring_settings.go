@@ -17,7 +17,7 @@ type MonitoringSettings struct {
 func NewMonitoringSettings()(*MonitoringSettings) {
     m := &MonitoringSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMonitoringSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

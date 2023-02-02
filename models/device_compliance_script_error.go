@@ -21,7 +21,7 @@ type DeviceComplianceScriptError struct {
 func NewDeviceComplianceScriptError()(*DeviceComplianceScriptError) {
     m := &DeviceComplianceScriptError{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceComplianceScriptErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -60,8 +60,8 @@ func NewImportedDeviceIdentitiesRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewImportedDeviceIdentitiesRequestBuilder instantiates a new ImportedDeviceIdentitiesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewImportedDeviceIdentitiesRequestBuilder(rawUrl string, requestAdapter i2a
 }
 // Count provides operations to count the resources in the collection.
 func (m *ImportedDeviceIdentitiesRequestBuilder) Count()(*ImportedDeviceIdentitiesCountRequestBuilder) {
-    return NewImportedDeviceIdentitiesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewImportedDeviceIdentitiesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the imported device identities.
 func (m *ImportedDeviceIdentitiesRequestBuilder) Get(ctx context.Context, requestConfiguration *ImportedDeviceIdentitiesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedDeviceIdentityCollectionResponseable, error) {
@@ -93,9 +93,13 @@ func (m *ImportedDeviceIdentitiesRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedDeviceIdentityCollectionResponseable), nil
 }
-// ImportDeviceIdentityList provides operations to call the importDeviceIdentityList method.
-func (m *ImportedDeviceIdentitiesRequestBuilder) ImportDeviceIdentityList()(*ImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilder) {
-    return NewImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphImportDeviceIdentityList provides operations to call the importDeviceIdentityList method.
+func (m *ImportedDeviceIdentitiesRequestBuilder) MicrosoftGraphImportDeviceIdentityList()(*ImportedDeviceIdentitiesMicrosoftGraphImportDeviceIdentityListImportDeviceIdentityListRequestBuilder) {
+    return NewImportedDeviceIdentitiesMicrosoftGraphImportDeviceIdentityListImportDeviceIdentityListRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphSearchExistingIdentities provides operations to call the searchExistingIdentities method.
+func (m *ImportedDeviceIdentitiesRequestBuilder) MicrosoftGraphSearchExistingIdentities()(*ImportedDeviceIdentitiesMicrosoftGraphSearchExistingIdentitiesSearchExistingIdentitiesRequestBuilder) {
+    return NewImportedDeviceIdentitiesMicrosoftGraphSearchExistingIdentitiesSearchExistingIdentitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to importedDeviceIdentities for deviceManagement
 func (m *ImportedDeviceIdentitiesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedDeviceIdentityable, requestConfiguration *ImportedDeviceIdentitiesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedDeviceIdentityable, error) {
@@ -115,10 +119,6 @@ func (m *ImportedDeviceIdentitiesRequestBuilder) Post(ctx context.Context, body 
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedDeviceIdentityable), nil
-}
-// SearchExistingIdentities provides operations to call the searchExistingIdentities method.
-func (m *ImportedDeviceIdentitiesRequestBuilder) SearchExistingIdentities()(*ImportedDeviceIdentitiesSearchExistingIdentitiesRequestBuilder) {
-    return NewImportedDeviceIdentitiesSearchExistingIdentitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToGetRequestInformation the imported device identities.
 func (m *ImportedDeviceIdentitiesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ImportedDeviceIdentitiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -143,7 +143,10 @@ func (m *ImportedDeviceIdentitiesRequestBuilder) ToPostRequestInformation(ctx co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

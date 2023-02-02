@@ -7,7 +7,7 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
-// WindowsUpdatesDeploymentsDeploymentItemRequestBuilder provides operations to manage the deployments property of the microsoft.graph.windowsUpdates.updates entity.
+// WindowsUpdatesDeploymentsDeploymentItemRequestBuilder provides operations to manage the deployments property of the microsoft.graph.adminWindowsUpdates entity.
 type WindowsUpdatesDeploymentsDeploymentItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string
@@ -23,7 +23,7 @@ type WindowsUpdatesDeploymentsDeploymentItemRequestBuilderDeleteRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// WindowsUpdatesDeploymentsDeploymentItemRequestBuilderGetQueryParameters deployments created using the deployment service. Read-only.
+// WindowsUpdatesDeploymentsDeploymentItemRequestBuilderGetQueryParameters get deployments from admin
 type WindowsUpdatesDeploymentsDeploymentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -48,7 +48,7 @@ type WindowsUpdatesDeploymentsDeploymentItemRequestBuilderPatchRequestConfigurat
 }
 // Audience provides operations to manage the audience property of the microsoft.graph.windowsUpdates.deployment entity.
 func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) Audience()(*WindowsUpdatesDeploymentsItemAudienceRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsItemAudienceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsUpdatesDeploymentsItemAudienceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewWindowsUpdatesDeploymentsDeploymentItemRequestBuilderInternal instantiates a new DeploymentItemRequestBuilder and sets the default values.
 func NewWindowsUpdatesDeploymentsDeploymentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) {
@@ -59,8 +59,8 @@ func NewWindowsUpdatesDeploymentsDeploymentItemRequestBuilderInternal(pathParame
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsUpdatesDeploymentsDeploymentItemRequestBuilder instantiates a new DeploymentItemRequestBuilder and sets the default values.
@@ -85,7 +85,7 @@ func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) Delete(ctx conte
     }
     return nil
 }
-// Get deployments created using the deployment service. Read-only.
+// Get get deployments from admin
 func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentsDeploymentItemRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -135,7 +135,7 @@ func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) ToDeleteRequestI
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation deployments created using the deployment service. Read-only.
+// ToGetRequestInformation get deployments from admin
 func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentsDeploymentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -158,7 +158,10 @@ func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) ToPatchRequestIn
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

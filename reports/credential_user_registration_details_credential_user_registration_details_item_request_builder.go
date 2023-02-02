@@ -55,8 +55,8 @@ func NewCredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemRe
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemRequestBuilder instantiates a new CredentialUserRegistrationDetailsItemRequestBuilder and sets the default values.
@@ -154,7 +154,10 @@ func (m *CredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemR
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

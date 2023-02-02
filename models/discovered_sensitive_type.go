@@ -24,7 +24,7 @@ type DiscoveredSensitiveType struct {
 func NewDiscoveredSensitiveType()(*DiscoveredSensitiveType) {
     m := &DiscoveredSensitiveType{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDiscoveredSensitiveTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

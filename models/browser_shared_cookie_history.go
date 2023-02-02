@@ -32,7 +32,7 @@ type BrowserSharedCookieHistory struct {
 func NewBrowserSharedCookieHistory()(*BrowserSharedCookieHistory) {
     m := &BrowserSharedCookieHistory{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateBrowserSharedCookieHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

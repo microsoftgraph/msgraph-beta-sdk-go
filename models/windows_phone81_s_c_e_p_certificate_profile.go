@@ -29,8 +29,8 @@ func NewWindowsPhone81SCEPCertificateProfile()(*WindowsPhone81SCEPCertificatePro
     m := &WindowsPhone81SCEPCertificateProfile{
         WindowsPhone81CertificateProfileBase: *NewWindowsPhone81CertificateProfileBase(),
     }
-    odataTypeValue := "#microsoft.graph.windowsPhone81SCEPCertificateProfile";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsPhone81SCEPCertificateProfile"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsPhone81SCEPCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

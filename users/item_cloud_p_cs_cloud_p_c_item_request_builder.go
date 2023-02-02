@@ -46,10 +46,6 @@ type ItemCloudPCsCloudPCItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ChangeUserAccountType provides operations to call the changeUserAccountType method.
-func (m *ItemCloudPCsCloudPCItemRequestBuilder) ChangeUserAccountType()(*ItemCloudPCsItemChangeUserAccountTypeRequestBuilder) {
-    return NewItemCloudPCsItemChangeUserAccountTypeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewItemCloudPCsCloudPCItemRequestBuilderInternal instantiates a new CloudPCItemRequestBuilder and sets the default values.
 func NewItemCloudPCsCloudPCItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCloudPCsCloudPCItemRequestBuilder) {
     m := &ItemCloudPCsCloudPCItemRequestBuilder{
@@ -59,8 +55,8 @@ func NewItemCloudPCsCloudPCItemRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemCloudPCsCloudPCItemRequestBuilder instantiates a new CloudPCItemRequestBuilder and sets the default values.
@@ -85,10 +81,6 @@ func (m *ItemCloudPCsCloudPCItemRequestBuilder) Delete(ctx context.Context, requ
     }
     return nil
 }
-// EndGracePeriod provides operations to call the endGracePeriod method.
-func (m *ItemCloudPCsCloudPCItemRequestBuilder) EndGracePeriod()(*ItemCloudPCsItemEndGracePeriodRequestBuilder) {
-    return NewItemCloudPCsItemEndGracePeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Get get cloudPCs from users
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCloudPCsCloudPCItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -108,21 +100,53 @@ func (m *ItemCloudPCsCloudPCItemRequestBuilder) Get(ctx context.Context, request
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCable), nil
 }
-// GetCloudPcConnectivityHistory provides operations to call the getCloudPcConnectivityHistory method.
-func (m *ItemCloudPCsCloudPCItemRequestBuilder) GetCloudPcConnectivityHistory()(*ItemCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder) {
-    return NewItemCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphChangeUserAccountType provides operations to call the changeUserAccountType method.
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) MicrosoftGraphChangeUserAccountType()(*ItemCloudPCsItemMicrosoftGraphChangeUserAccountTypeChangeUserAccountTypeRequestBuilder) {
+    return NewItemCloudPCsItemMicrosoftGraphChangeUserAccountTypeChangeUserAccountTypeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetCloudPcLaunchInfo provides operations to call the getCloudPcLaunchInfo method.
-func (m *ItemCloudPCsCloudPCItemRequestBuilder) GetCloudPcLaunchInfo()(*ItemCloudPCsItemGetCloudPcLaunchInfoRequestBuilder) {
-    return NewItemCloudPCsItemGetCloudPcLaunchInfoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphEndGracePeriod provides operations to call the endGracePeriod method.
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) MicrosoftGraphEndGracePeriod()(*ItemCloudPCsItemMicrosoftGraphEndGracePeriodEndGracePeriodRequestBuilder) {
+    return NewItemCloudPCsItemMicrosoftGraphEndGracePeriodEndGracePeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetShiftWorkCloudPcAccessState provides operations to call the getShiftWorkCloudPcAccessState method.
-func (m *ItemCloudPCsCloudPCItemRequestBuilder) GetShiftWorkCloudPcAccessState()(*ItemCloudPCsItemGetShiftWorkCloudPcAccessStateRequestBuilder) {
-    return NewItemCloudPCsItemGetShiftWorkCloudPcAccessStateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetCloudPcConnectivityHistory provides operations to call the getCloudPcConnectivityHistory method.
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) MicrosoftGraphGetCloudPcConnectivityHistory()(*ItemCloudPCsItemMicrosoftGraphGetCloudPcConnectivityHistoryGetCloudPcConnectivityHistoryRequestBuilder) {
+    return NewItemCloudPCsItemMicrosoftGraphGetCloudPcConnectivityHistoryGetCloudPcConnectivityHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetSupportedCloudPcRemoteActions provides operations to call the getSupportedCloudPcRemoteActions method.
-func (m *ItemCloudPCsCloudPCItemRequestBuilder) GetSupportedCloudPcRemoteActions()(*ItemCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilder) {
-    return NewItemCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetCloudPcLaunchInfo provides operations to call the getCloudPcLaunchInfo method.
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) MicrosoftGraphGetCloudPcLaunchInfo()(*ItemCloudPCsItemMicrosoftGraphGetCloudPcLaunchInfoGetCloudPcLaunchInfoRequestBuilder) {
+    return NewItemCloudPCsItemMicrosoftGraphGetCloudPcLaunchInfoGetCloudPcLaunchInfoRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphGetShiftWorkCloudPcAccessState provides operations to call the getShiftWorkCloudPcAccessState method.
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) MicrosoftGraphGetShiftWorkCloudPcAccessState()(*ItemCloudPCsItemMicrosoftGraphGetShiftWorkCloudPcAccessStateGetShiftWorkCloudPcAccessStateRequestBuilder) {
+    return NewItemCloudPCsItemMicrosoftGraphGetShiftWorkCloudPcAccessStateGetShiftWorkCloudPcAccessStateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphGetSupportedCloudPcRemoteActions provides operations to call the getSupportedCloudPcRemoteActions method.
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) MicrosoftGraphGetSupportedCloudPcRemoteActions()(*ItemCloudPCsItemMicrosoftGraphGetSupportedCloudPcRemoteActionsGetSupportedCloudPcRemoteActionsRequestBuilder) {
+    return NewItemCloudPCsItemMicrosoftGraphGetSupportedCloudPcRemoteActionsGetSupportedCloudPcRemoteActionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphReboot provides operations to call the reboot method.
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) MicrosoftGraphReboot()(*ItemCloudPCsItemMicrosoftGraphRebootRebootRequestBuilder) {
+    return NewItemCloudPCsItemMicrosoftGraphRebootRebootRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRename provides operations to call the rename method.
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) MicrosoftGraphRename()(*ItemCloudPCsItemMicrosoftGraphRenameRenameRequestBuilder) {
+    return NewItemCloudPCsItemMicrosoftGraphRenameRenameRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphReprovision provides operations to call the reprovision method.
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) MicrosoftGraphReprovision()(*ItemCloudPCsItemMicrosoftGraphReprovisionReprovisionRequestBuilder) {
+    return NewItemCloudPCsItemMicrosoftGraphReprovisionReprovisionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRestore provides operations to call the restore method.
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) MicrosoftGraphRestore()(*ItemCloudPCsItemMicrosoftGraphRestoreRestoreRequestBuilder) {
+    return NewItemCloudPCsItemMicrosoftGraphRestoreRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRetryPartnerAgentInstallation provides operations to call the retryPartnerAgentInstallation method.
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) MicrosoftGraphRetryPartnerAgentInstallation()(*ItemCloudPCsItemMicrosoftGraphRetryPartnerAgentInstallationRetryPartnerAgentInstallationRequestBuilder) {
+    return NewItemCloudPCsItemMicrosoftGraphRetryPartnerAgentInstallationRetryPartnerAgentInstallationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphTroubleshoot provides operations to call the troubleshoot method.
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) MicrosoftGraphTroubleshoot()(*ItemCloudPCsItemMicrosoftGraphTroubleshootTroubleshootRequestBuilder) {
+    return NewItemCloudPCsItemMicrosoftGraphTroubleshootTroubleshootRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property cloudPCs in users
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCable, requestConfiguration *ItemCloudPCsCloudPCItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCable, error) {
@@ -142,26 +166,6 @@ func (m *ItemCloudPCsCloudPCItemRequestBuilder) Patch(ctx context.Context, body 
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCable), nil
-}
-// Reboot provides operations to call the reboot method.
-func (m *ItemCloudPCsCloudPCItemRequestBuilder) Reboot()(*ItemCloudPCsItemRebootRequestBuilder) {
-    return NewItemCloudPCsItemRebootRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Rename provides operations to call the rename method.
-func (m *ItemCloudPCsCloudPCItemRequestBuilder) Rename()(*ItemCloudPCsItemRenameRequestBuilder) {
-    return NewItemCloudPCsItemRenameRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Reprovision provides operations to call the reprovision method.
-func (m *ItemCloudPCsCloudPCItemRequestBuilder) Reprovision()(*ItemCloudPCsItemReprovisionRequestBuilder) {
-    return NewItemCloudPCsItemReprovisionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Restore provides operations to call the restore method.
-func (m *ItemCloudPCsCloudPCItemRequestBuilder) Restore()(*ItemCloudPCsItemRestoreRequestBuilder) {
-    return NewItemCloudPCsItemRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// RetryPartnerAgentInstallation provides operations to call the retryPartnerAgentInstallation method.
-func (m *ItemCloudPCsCloudPCItemRequestBuilder) RetryPartnerAgentInstallation()(*ItemCloudPCsItemRetryPartnerAgentInstallationRequestBuilder) {
-    return NewItemCloudPCsItemRetryPartnerAgentInstallationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property cloudPCs for users
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemCloudPCsCloudPCItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -198,14 +202,13 @@ func (m *ItemCloudPCsCloudPCItemRequestBuilder) ToPatchRequestInformation(ctx co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// Troubleshoot provides operations to call the troubleshoot method.
-func (m *ItemCloudPCsCloudPCItemRequestBuilder) Troubleshoot()(*ItemCloudPCsItemTroubleshootRequestBuilder) {
-    return NewItemCloudPCsItemTroubleshootRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

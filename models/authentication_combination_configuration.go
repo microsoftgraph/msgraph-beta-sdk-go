@@ -10,7 +10,7 @@ type AuthenticationCombinationConfiguration struct {
     // Which authentication method combinations this configuration applies to. Must be an allowedCombinations object that's defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is 'fido2'.
     appliesToCombinations []AuthenticationMethodModes
 }
-// NewAuthenticationCombinationConfiguration instantiates a new AuthenticationCombinationConfiguration and sets the default values.
+// NewAuthenticationCombinationConfiguration instantiates a new authenticationCombinationConfiguration and sets the default values.
 func NewAuthenticationCombinationConfiguration()(*AuthenticationCombinationConfiguration) {
     m := &AuthenticationCombinationConfiguration{
         Entity: *NewEntity(),

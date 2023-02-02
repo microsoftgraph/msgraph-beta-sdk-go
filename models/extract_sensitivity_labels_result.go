@@ -17,7 +17,7 @@ type ExtractSensitivityLabelsResult struct {
 func NewExtractSensitivityLabelsResult()(*ExtractSensitivityLabelsResult) {
     m := &ExtractSensitivityLabelsResult{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateExtractSensitivityLabelsResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
