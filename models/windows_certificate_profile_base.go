@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsCertificateProfileBase 
+// WindowsCertificateProfileBase device Configuration.
 type WindowsCertificateProfileBase struct {
     DeviceConfiguration
     // Certificate Validity Period Options.
@@ -20,13 +20,13 @@ type WindowsCertificateProfileBase struct {
     // Subject Name Format Options.
     subjectNameFormat *SubjectNameFormat
 }
-// NewWindowsCertificateProfileBase instantiates a new WindowsCertificateProfileBase and sets the default values.
+// NewWindowsCertificateProfileBase instantiates a new windowsCertificateProfileBase and sets the default values.
 func NewWindowsCertificateProfileBase()(*WindowsCertificateProfileBase) {
     m := &WindowsCertificateProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.windowsCertificateProfileBase";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsCertificateProfileBase"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsCertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

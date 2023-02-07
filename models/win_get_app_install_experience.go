@@ -17,7 +17,7 @@ type WinGetAppInstallExperience struct {
 func NewWinGetAppInstallExperience()(*WinGetAppInstallExperience) {
     m := &WinGetAppInstallExperience{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWinGetAppInstallExperienceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

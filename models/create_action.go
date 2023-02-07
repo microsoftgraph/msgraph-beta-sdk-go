@@ -15,7 +15,7 @@ type CreateAction struct {
 func NewCreateAction()(*CreateAction) {
     m := &CreateAction{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCreateActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

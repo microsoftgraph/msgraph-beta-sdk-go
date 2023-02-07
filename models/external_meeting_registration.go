@@ -13,8 +13,8 @@ func NewExternalMeetingRegistration()(*ExternalMeetingRegistration) {
     m := &ExternalMeetingRegistration{
         MeetingRegistrationBase: *NewMeetingRegistrationBase(),
     }
-    odataTypeValue := "#microsoft.graph.externalMeetingRegistration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.externalMeetingRegistration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateExternalMeetingRegistrationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

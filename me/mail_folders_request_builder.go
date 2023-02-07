@@ -56,8 +56,8 @@ func NewMailFoldersRequestBuilderInternal(pathParameters map[string]string, requ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMailFoldersRequestBuilder instantiates a new MailFoldersRequestBuilder and sets the default values.
@@ -68,11 +68,7 @@ func NewMailFoldersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 }
 // Count provides operations to count the resources in the collection.
 func (m *MailFoldersRequestBuilder) Count()(*MailFoldersCountRequestBuilder) {
-    return NewMailFoldersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Delta provides operations to call the delta method.
-func (m *MailFoldersRequestBuilder) Delta()(*MailFoldersDeltaRequestBuilder) {
-    return NewMailFoldersDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMailFoldersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get all the mail folders in the specified user's mailbox, including any mail search folders. By default, this operation does not return hidden folders. Use a query parameter _includeHiddenFolders_ to include them in the response.
 // [Find more info here]
@@ -95,6 +91,10 @@ func (m *MailFoldersRequestBuilder) Get(ctx context.Context, requestConfiguratio
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailFolderCollectionResponseable), nil
+}
+// MicrosoftGraphDelta provides operations to call the delta method.
+func (m *MailFoldersRequestBuilder) MicrosoftGraphDelta()(*MailFoldersMicrosoftGraphDeltaRequestBuilder) {
+    return NewMailFoldersMicrosoftGraphDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post use this API to create a new mail folder in the root folder of the user's mailbox. If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
 // [Find more info here]
@@ -141,7 +141,10 @@ func (m *MailFoldersRequestBuilder) ToPostRequestInformation(ctx context.Context
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

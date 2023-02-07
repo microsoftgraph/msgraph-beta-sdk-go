@@ -58,8 +58,8 @@ func NewItemThreadsItemPostsItemInReplyToAttachmentsRequestBuilderInternal(pathP
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemThreadsItemPostsItemInReplyToAttachmentsRequestBuilder instantiates a new AttachmentsRequestBuilder and sets the default values.
@@ -70,11 +70,7 @@ func NewItemThreadsItemPostsItemInReplyToAttachmentsRequestBuilder(rawUrl string
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemThreadsItemPostsItemInReplyToAttachmentsRequestBuilder) Count()(*ItemThreadsItemPostsItemInReplyToAttachmentsCountRequestBuilder) {
-    return NewItemThreadsItemPostsItemInReplyToAttachmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// CreateUploadSession provides operations to call the createUploadSession method.
-func (m *ItemThreadsItemPostsItemInReplyToAttachmentsRequestBuilder) CreateUploadSession()(*ItemThreadsItemPostsItemInReplyToAttachmentsCreateUploadSessionRequestBuilder) {
-    return NewItemThreadsItemPostsItemInReplyToAttachmentsCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemThreadsItemPostsItemInReplyToAttachmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of attachment objects attached to a post.
 // [Find more info here]
@@ -97,6 +93,10 @@ func (m *ItemThreadsItemPostsItemInReplyToAttachmentsRequestBuilder) Get(ctx con
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentCollectionResponseable), nil
+}
+// MicrosoftGraphCreateUploadSession provides operations to call the createUploadSession method.
+func (m *ItemThreadsItemPostsItemInReplyToAttachmentsRequestBuilder) MicrosoftGraphCreateUploadSession()(*ItemThreadsItemPostsItemInReplyToAttachmentsMicrosoftGraphCreateUploadSessionRequestBuilder) {
+    return NewItemThreadsItemPostsItemInReplyToAttachmentsMicrosoftGraphCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to attachments for groups
 func (m *ItemThreadsItemPostsItemInReplyToAttachmentsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Attachmentable, requestConfiguration *ItemThreadsItemPostsItemInReplyToAttachmentsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Attachmentable, error) {
@@ -140,7 +140,10 @@ func (m *ItemThreadsItemPostsItemInReplyToAttachmentsRequestBuilder) ToPostReque
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

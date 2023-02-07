@@ -60,8 +60,8 @@ func NewGroupPolicyMigrationReportsRequestBuilderInternal(pathParameters map[str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGroupPolicyMigrationReportsRequestBuilder instantiates a new GroupPolicyMigrationReportsRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewGroupPolicyMigrationReportsRequestBuilder(rawUrl string, requestAdapter 
 }
 // Count provides operations to count the resources in the collection.
 func (m *GroupPolicyMigrationReportsRequestBuilder) Count()(*GroupPolicyMigrationReportsCountRequestBuilder) {
-    return NewGroupPolicyMigrationReportsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// CreateMigrationReport provides operations to call the createMigrationReport method.
-func (m *GroupPolicyMigrationReportsRequestBuilder) CreateMigrationReport()(*GroupPolicyMigrationReportsCreateMigrationReportRequestBuilder) {
-    return NewGroupPolicyMigrationReportsCreateMigrationReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyMigrationReportsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get a list of Group Policy migration reports.
 func (m *GroupPolicyMigrationReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *GroupPolicyMigrationReportsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyMigrationReportCollectionResponseable, error) {
@@ -96,6 +92,10 @@ func (m *GroupPolicyMigrationReportsRequestBuilder) Get(ctx context.Context, req
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyMigrationReportCollectionResponseable), nil
+}
+// MicrosoftGraphCreateMigrationReport provides operations to call the createMigrationReport method.
+func (m *GroupPolicyMigrationReportsRequestBuilder) MicrosoftGraphCreateMigrationReport()(*GroupPolicyMigrationReportsMicrosoftGraphCreateMigrationReportRequestBuilder) {
+    return NewGroupPolicyMigrationReportsMicrosoftGraphCreateMigrationReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to groupPolicyMigrationReports for deviceManagement
 func (m *GroupPolicyMigrationReportsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyMigrationReportable, requestConfiguration *GroupPolicyMigrationReportsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyMigrationReportable, error) {
@@ -139,7 +139,10 @@ func (m *GroupPolicyMigrationReportsRequestBuilder) ToPostRequestInformation(ctx
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

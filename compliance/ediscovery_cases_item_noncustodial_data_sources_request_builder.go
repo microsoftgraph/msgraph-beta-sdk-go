@@ -51,10 +51,6 @@ type EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilderPostRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ApplyHold provides operations to call the applyHold method.
-func (m *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) ApplyHold()(*EdiscoveryCasesItemNoncustodialDataSourcesApplyHoldRequestBuilder) {
-    return NewEdiscoveryCasesItemNoncustodialDataSourcesApplyHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewEdiscoveryCasesItemNoncustodialDataSourcesRequestBuilderInternal instantiates a new NoncustodialDataSourcesRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemNoncustodialDataSourcesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) {
     m := &EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder{
@@ -64,8 +60,8 @@ func NewEdiscoveryCasesItemNoncustodialDataSourcesRequestBuilderInternal(pathPar
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder instantiates a new NoncustodialDataSourcesRequestBuilder and sets the default values.
@@ -76,7 +72,7 @@ func NewEdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder(rawUrl string, 
 }
 // Count provides operations to count the resources in the collection.
 func (m *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) Count()(*EdiscoveryCasesItemNoncustodialDataSourcesCountRequestBuilder) {
-    return NewEdiscoveryCasesItemNoncustodialDataSourcesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesItemNoncustodialDataSourcesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of the noncustodialDataSource objects and their properties.
 // [Find more info here]
@@ -100,6 +96,14 @@ func (m *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) Get(ctx conte
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.NoncustodialDataSourceCollectionResponseable), nil
 }
+// MicrosoftGraphEdiscoveryApplyHold provides operations to call the applyHold method.
+func (m *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) MicrosoftGraphEdiscoveryApplyHold()(*EdiscoveryCasesItemNoncustodialDataSourcesMicrosoftGraphEdiscoveryApplyHoldRequestBuilder) {
+    return NewEdiscoveryCasesItemNoncustodialDataSourcesMicrosoftGraphEdiscoveryApplyHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphEdiscoveryRemoveHold provides operations to call the removeHold method.
+func (m *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) MicrosoftGraphEdiscoveryRemoveHold()(*EdiscoveryCasesItemNoncustodialDataSourcesMicrosoftGraphEdiscoveryRemoveHoldRequestBuilder) {
+    return NewEdiscoveryCasesItemNoncustodialDataSourcesMicrosoftGraphEdiscoveryRemoveHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Post create a new noncustodialDataSource object.
 // [Find more info here]
 // 
@@ -121,10 +125,6 @@ func (m *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) Post(ctx cont
         return nil, nil
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.NoncustodialDataSourceable), nil
-}
-// RemoveHold provides operations to call the removeHold method.
-func (m *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) RemoveHold()(*EdiscoveryCasesItemNoncustodialDataSourcesRemoveHoldRequestBuilder) {
-    return NewEdiscoveryCasesItemNoncustodialDataSourcesRemoveHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToGetRequestInformation get a list of the noncustodialDataSource objects and their properties.
 func (m *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -149,7 +149,10 @@ func (m *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) ToPostRequest
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

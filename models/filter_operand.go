@@ -17,7 +17,7 @@ type FilterOperand struct {
 func NewFilterOperand()(*FilterOperand) {
     m := &FilterOperand{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateFilterOperandFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

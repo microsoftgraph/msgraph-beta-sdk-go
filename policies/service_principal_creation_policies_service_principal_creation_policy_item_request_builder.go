@@ -55,8 +55,8 @@ func NewServicePrincipalCreationPoliciesServicePrincipalCreationPolicyItemReques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewServicePrincipalCreationPoliciesServicePrincipalCreationPolicyItemRequestBuilder instantiates a new ServicePrincipalCreationPolicyItemRequestBuilder and sets the default values.
@@ -83,7 +83,7 @@ func (m *ServicePrincipalCreationPoliciesServicePrincipalCreationPolicyItemReque
 }
 // Excludes provides operations to manage the excludes property of the microsoft.graph.servicePrincipalCreationPolicy entity.
 func (m *ServicePrincipalCreationPoliciesServicePrincipalCreationPolicyItemRequestBuilder) Excludes()(*ServicePrincipalCreationPoliciesItemExcludesRequestBuilder) {
-    return NewServicePrincipalCreationPoliciesItemExcludesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewServicePrincipalCreationPoliciesItemExcludesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ExcludesById provides operations to manage the excludes property of the microsoft.graph.servicePrincipalCreationPolicy entity.
 func (m *ServicePrincipalCreationPoliciesServicePrincipalCreationPolicyItemRequestBuilder) ExcludesById(id string)(*ServicePrincipalCreationPoliciesItemExcludesServicePrincipalCreationConditionSetItemRequestBuilder) {
@@ -94,7 +94,7 @@ func (m *ServicePrincipalCreationPoliciesServicePrincipalCreationPolicyItemReque
     if id != "" {
         urlTplParams["servicePrincipalCreationConditionSet%2Did"] = id
     }
-    return NewServicePrincipalCreationPoliciesItemExcludesServicePrincipalCreationConditionSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewServicePrincipalCreationPoliciesItemExcludesServicePrincipalCreationConditionSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Get get servicePrincipalCreationPolicies from policies
 func (m *ServicePrincipalCreationPoliciesServicePrincipalCreationPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ServicePrincipalCreationPoliciesServicePrincipalCreationPolicyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalCreationPolicyable, error) {
@@ -117,7 +117,7 @@ func (m *ServicePrincipalCreationPoliciesServicePrincipalCreationPolicyItemReque
 }
 // Includes provides operations to manage the includes property of the microsoft.graph.servicePrincipalCreationPolicy entity.
 func (m *ServicePrincipalCreationPoliciesServicePrincipalCreationPolicyItemRequestBuilder) Includes()(*ServicePrincipalCreationPoliciesItemIncludesRequestBuilder) {
-    return NewServicePrincipalCreationPoliciesItemIncludesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewServicePrincipalCreationPoliciesItemIncludesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // IncludesById provides operations to manage the includes property of the microsoft.graph.servicePrincipalCreationPolicy entity.
 func (m *ServicePrincipalCreationPoliciesServicePrincipalCreationPolicyItemRequestBuilder) IncludesById(id string)(*ServicePrincipalCreationPoliciesItemIncludesServicePrincipalCreationConditionSetItemRequestBuilder) {
@@ -128,7 +128,7 @@ func (m *ServicePrincipalCreationPoliciesServicePrincipalCreationPolicyItemReque
     if id != "" {
         urlTplParams["servicePrincipalCreationConditionSet%2Did"] = id
     }
-    return NewServicePrincipalCreationPoliciesItemIncludesServicePrincipalCreationConditionSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewServicePrincipalCreationPoliciesItemIncludesServicePrincipalCreationConditionSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch update the navigation property servicePrincipalCreationPolicies in policies
 func (m *ServicePrincipalCreationPoliciesServicePrincipalCreationPolicyItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalCreationPolicyable, requestConfiguration *ServicePrincipalCreationPoliciesServicePrincipalCreationPolicyItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalCreationPolicyable, error) {
@@ -184,7 +184,10 @@ func (m *ServicePrincipalCreationPoliciesServicePrincipalCreationPolicyItemReque
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

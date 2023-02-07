@@ -17,8 +17,8 @@ func NewAddHeader()(*AddHeader) {
     m := &AddHeader{
         MarkContent: *NewMarkContent(),
     }
-    odataTypeValue := "#microsoft.graph.addHeader";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.addHeader"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAddHeaderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

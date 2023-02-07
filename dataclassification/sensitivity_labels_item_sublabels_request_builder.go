@@ -60,8 +60,8 @@ func NewSensitivityLabelsItemSublabelsRequestBuilderInternal(pathParameters map[
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewSensitivityLabelsItemSublabelsRequestBuilder instantiates a new SublabelsRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewSensitivityLabelsItemSublabelsRequestBuilder(rawUrl string, requestAdapt
 }
 // Count provides operations to count the resources in the collection.
 func (m *SensitivityLabelsItemSublabelsRequestBuilder) Count()(*SensitivityLabelsItemSublabelsCountRequestBuilder) {
-    return NewSensitivityLabelsItemSublabelsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Evaluate provides operations to call the evaluate method.
-func (m *SensitivityLabelsItemSublabelsRequestBuilder) Evaluate()(*SensitivityLabelsItemSublabelsEvaluateRequestBuilder) {
-    return NewSensitivityLabelsItemSublabelsEvaluateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSensitivityLabelsItemSublabelsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get sublabels from dataClassification
 func (m *SensitivityLabelsItemSublabelsRequestBuilder) Get(ctx context.Context, requestConfiguration *SensitivityLabelsItemSublabelsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelCollectionResponseable, error) {
@@ -96,6 +92,10 @@ func (m *SensitivityLabelsItemSublabelsRequestBuilder) Get(ctx context.Context, 
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelCollectionResponseable), nil
+}
+// MicrosoftGraphEvaluate provides operations to call the evaluate method.
+func (m *SensitivityLabelsItemSublabelsRequestBuilder) MicrosoftGraphEvaluate()(*SensitivityLabelsItemSublabelsMicrosoftGraphEvaluateRequestBuilder) {
+    return NewSensitivityLabelsItemSublabelsMicrosoftGraphEvaluateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to sublabels for dataClassification
 func (m *SensitivityLabelsItemSublabelsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelable, requestConfiguration *SensitivityLabelsItemSublabelsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelable, error) {
@@ -139,7 +139,10 @@ func (m *SensitivityLabelsItemSublabelsRequestBuilder) ToPostRequestInformation(
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

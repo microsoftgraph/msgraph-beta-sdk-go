@@ -17,8 +17,8 @@ func NewIosWebContentFilterSpecificWebsitesAccess()(*IosWebContentFilterSpecific
     m := &IosWebContentFilterSpecificWebsitesAccess{
         IosWebContentFilterBase: *NewIosWebContentFilterBase(),
     }
-    odataTypeValue := "#microsoft.graph.iosWebContentFilterSpecificWebsitesAccess";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.iosWebContentFilterSpecificWebsitesAccess"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateIosWebContentFilterSpecificWebsitesAccessFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -11,13 +11,13 @@ type AccountTargetContent struct {
     // The OdataType property
     odataType *string
     // The type of account target content. Possible values are: unknown,includeAll, addressBook,  unknownFutureValue.
-    type_escaped *AccountTargetContentType
+    typeEscaped *AccountTargetContentType
 }
 // NewAccountTargetContent instantiates a new accountTargetContent and sets the default values.
 func NewAccountTargetContent()(*AccountTargetContent) {
     m := &AccountTargetContent{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAccountTargetContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -79,7 +79,7 @@ func (m *AccountTargetContent) GetOdataType()(*string) {
 }
 // GetType gets the type property value. The type of account target content. Possible values are: unknown,includeAll, addressBook,  unknownFutureValue.
 func (m *AccountTargetContent) GetType()(*AccountTargetContentType) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *AccountTargetContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,5 +114,5 @@ func (m *AccountTargetContent) SetOdataType(value *string)() {
 }
 // SetType sets the type property value. The type of account target content. Possible values are: unknown,includeAll, addressBook,  unknownFutureValue.
 func (m *AccountTargetContent) SetType(value *AccountTargetContentType)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

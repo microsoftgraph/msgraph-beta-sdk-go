@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedDevice devices that are managed or pre-enrolled through Intune
+// ManagedDevice 
 type ManagedDevice struct {
     Entity
     // Whether the device is Azure Active Directory registered. This property is read-only.
@@ -60,6 +60,8 @@ type ManagedDevice struct {
     deviceFirmwareConfigurationInterfaceManaged *bool
     // The device health attestation state. This property is read-only.
     deviceHealthAttestationState DeviceHealthAttestationStateable
+    // Results of device health scripts that ran for this device. Default is empty list. This property is read-only.
+    deviceHealthScriptStates []DeviceHealthScriptPolicyStateable
     // Name of the device. This property is read-only.
     deviceName *string
     // Device registration status.
@@ -78,7 +80,7 @@ type ManagedDevice struct {
     enrolledDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Name of the enrollment profile assigned to the device. Default value is empty string, indicating no enrollment profile was assgined. This property is read-only.
     enrollmentProfileName *string
-    // Ethernet MAC. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.
+    // Indicates Ethernet MAC Address of the device. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.
     ethernetMacAddress *string
     // Device Exchange Access State.
     exchangeAccessState *DeviceManagementExchangeAccessState
@@ -162,7 +164,7 @@ type ManagedDevice struct {
     serialNumber *string
     // Device sku family
     skuFamily *string
-    // Device sku number, see also: https://learn.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.
+    // Device sku number, see also: https://learn.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.
     skuNumber *int32
     // Specification version. This property is read-only.
     specificationVersion *string
@@ -324,6 +326,10 @@ func (m *ManagedDevice) GetDeviceFirmwareConfigurationInterfaceManaged()(*bool) 
 func (m *ManagedDevice) GetDeviceHealthAttestationState()(DeviceHealthAttestationStateable) {
     return m.deviceHealthAttestationState
 }
+// GetDeviceHealthScriptStates gets the deviceHealthScriptStates property value. Results of device health scripts that ran for this device. Default is empty list. This property is read-only.
+func (m *ManagedDevice) GetDeviceHealthScriptStates()([]DeviceHealthScriptPolicyStateable) {
+    return m.deviceHealthScriptStates
+}
 // GetDeviceName gets the deviceName property value. Name of the device. This property is read-only.
 func (m *ManagedDevice) GetDeviceName()(*string) {
     return m.deviceName
@@ -360,7 +366,7 @@ func (m *ManagedDevice) GetEnrolledDateTime()(*i336074805fc853987abe6f7fe3ad97a6
 func (m *ManagedDevice) GetEnrollmentProfileName()(*string) {
     return m.enrollmentProfileName
 }
-// GetEthernetMacAddress gets the ethernetMacAddress property value. Ethernet MAC. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.
+// GetEthernetMacAddress gets the ethernetMacAddress property value. Indicates Ethernet MAC Address of the device. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.
 func (m *ManagedDevice) GetEthernetMacAddress()(*string) {
     return m.ethernetMacAddress
 }
@@ -664,6 +670,20 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetDeviceHealthAttestationState(val.(DeviceHealthAttestationStateable))
+        }
+        return nil
+    }
+    res["deviceHealthScriptStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceHealthScriptPolicyStateFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DeviceHealthScriptPolicyStateable, len(val))
+            for i, v := range val {
+                res[i] = v.(DeviceHealthScriptPolicyStateable)
+            }
+            m.SetDeviceHealthScriptStates(res)
         }
         return nil
     }
@@ -1495,7 +1515,7 @@ func (m *ManagedDevice) GetSerialNumber()(*string) {
 func (m *ManagedDevice) GetSkuFamily()(*string) {
     return m.skuFamily
 }
-// GetSkuNumber gets the skuNumber property value. Device sku number, see also: https://learn.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.
+// GetSkuNumber gets the skuNumber property value. Device sku number, see also: https://learn.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.
 func (m *ManagedDevice) GetSkuNumber()(*int32) {
     return m.skuNumber
 }
@@ -1658,6 +1678,16 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err = writer.WriteBoolValue("deviceFirmwareConfigurationInterfaceManaged", m.GetDeviceFirmwareConfigurationInterfaceManaged())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetDeviceHealthScriptStates() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceHealthScriptStates()))
+        for i, v := range m.GetDeviceHealthScriptStates() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("deviceHealthScriptStates", cast)
         if err != nil {
             return err
         }
@@ -1929,6 +1959,10 @@ func (m *ManagedDevice) SetDeviceFirmwareConfigurationInterfaceManaged(value *bo
 func (m *ManagedDevice) SetDeviceHealthAttestationState(value DeviceHealthAttestationStateable)() {
     m.deviceHealthAttestationState = value
 }
+// SetDeviceHealthScriptStates sets the deviceHealthScriptStates property value. Results of device health scripts that ran for this device. Default is empty list. This property is read-only.
+func (m *ManagedDevice) SetDeviceHealthScriptStates(value []DeviceHealthScriptPolicyStateable)() {
+    m.deviceHealthScriptStates = value
+}
 // SetDeviceName sets the deviceName property value. Name of the device. This property is read-only.
 func (m *ManagedDevice) SetDeviceName(value *string)() {
     m.deviceName = value
@@ -1965,7 +1999,7 @@ func (m *ManagedDevice) SetEnrolledDateTime(value *i336074805fc853987abe6f7fe3ad
 func (m *ManagedDevice) SetEnrollmentProfileName(value *string)() {
     m.enrollmentProfileName = value
 }
-// SetEthernetMacAddress sets the ethernetMacAddress property value. Ethernet MAC. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.
+// SetEthernetMacAddress sets the ethernetMacAddress property value. Indicates Ethernet MAC Address of the device. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.
 func (m *ManagedDevice) SetEthernetMacAddress(value *string)() {
     m.ethernetMacAddress = value
 }
@@ -2133,7 +2167,7 @@ func (m *ManagedDevice) SetSerialNumber(value *string)() {
 func (m *ManagedDevice) SetSkuFamily(value *string)() {
     m.skuFamily = value
 }
-// SetSkuNumber sets the skuNumber property value. Device sku number, see also: https://learn.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.
+// SetSkuNumber sets the skuNumber property value. Device sku number, see also: https://learn.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.
 func (m *ManagedDevice) SetSkuNumber(value *int32)() {
     m.skuNumber = value
 }

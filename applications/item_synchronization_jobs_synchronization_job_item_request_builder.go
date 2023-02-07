@@ -55,8 +55,8 @@ func NewItemSynchronizationJobsSynchronizationJobItemRequestBuilderInternal(path
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSynchronizationJobsSynchronizationJobItemRequestBuilder instantiates a new SynchronizationJobItemRequestBuilder and sets the default values.
@@ -100,6 +100,30 @@ func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) Get(ctx co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationJobable), nil
 }
+// MicrosoftGraphPause provides operations to call the pause method.
+func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) MicrosoftGraphPause()(*ItemSynchronizationJobsItemMicrosoftGraphPauseRequestBuilder) {
+    return NewItemSynchronizationJobsItemMicrosoftGraphPauseRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphProvisionOnDemand provides operations to call the provisionOnDemand method.
+func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) MicrosoftGraphProvisionOnDemand()(*ItemSynchronizationJobsItemMicrosoftGraphProvisionOnDemandRequestBuilder) {
+    return NewItemSynchronizationJobsItemMicrosoftGraphProvisionOnDemandRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRestart provides operations to call the restart method.
+func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) MicrosoftGraphRestart()(*ItemSynchronizationJobsItemMicrosoftGraphRestartRequestBuilder) {
+    return NewItemSynchronizationJobsItemMicrosoftGraphRestartRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphStart provides operations to call the start method.
+func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) MicrosoftGraphStart()(*ItemSynchronizationJobsItemMicrosoftGraphStartRequestBuilder) {
+    return NewItemSynchronizationJobsItemMicrosoftGraphStartRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphStop provides operations to call the stop method.
+func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) MicrosoftGraphStop()(*ItemSynchronizationJobsItemMicrosoftGraphStopRequestBuilder) {
+    return NewItemSynchronizationJobsItemMicrosoftGraphStopRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphValidateCredentials provides operations to call the validateCredentials method.
+func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) MicrosoftGraphValidateCredentials()(*ItemSynchronizationJobsItemMicrosoftGraphValidateCredentialsRequestBuilder) {
+    return NewItemSynchronizationJobsItemMicrosoftGraphValidateCredentialsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property jobs in applications
 func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationJobable, requestConfiguration *ItemSynchronizationJobsSynchronizationJobItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationJobable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -119,29 +143,9 @@ func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) Patch(ctx 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationJobable), nil
 }
-// Pause provides operations to call the pause method.
-func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) Pause()(*ItemSynchronizationJobsItemPauseRequestBuilder) {
-    return NewItemSynchronizationJobsItemPauseRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ProvisionOnDemand provides operations to call the provisionOnDemand method.
-func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) ProvisionOnDemand()(*ItemSynchronizationJobsItemProvisionOnDemandRequestBuilder) {
-    return NewItemSynchronizationJobsItemProvisionOnDemandRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Restart provides operations to call the restart method.
-func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) Restart()(*ItemSynchronizationJobsItemRestartRequestBuilder) {
-    return NewItemSynchronizationJobsItemRestartRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Schema provides operations to manage the schema property of the microsoft.graph.synchronizationJob entity.
 func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) Schema()(*ItemSynchronizationJobsItemSchemaRequestBuilder) {
-    return NewItemSynchronizationJobsItemSchemaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Start provides operations to call the start method.
-func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) Start()(*ItemSynchronizationJobsItemStartRequestBuilder) {
-    return NewItemSynchronizationJobsItemStartRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Stop provides operations to call the stop method.
-func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) Stop()(*ItemSynchronizationJobsItemStopRequestBuilder) {
-    return NewItemSynchronizationJobsItemStopRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSynchronizationJobsItemSchemaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property jobs for applications
 func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationJobsSynchronizationJobItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -178,14 +182,13 @@ func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) ToPatchReq
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// ValidateCredentials provides operations to call the validateCredentials method.
-func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) ValidateCredentials()(*ItemSynchronizationJobsItemValidateCredentialsRequestBuilder) {
-    return NewItemSynchronizationJobsItemValidateCredentialsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

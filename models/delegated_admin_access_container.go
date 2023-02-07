@@ -19,7 +19,7 @@ type DelegatedAdminAccessContainer struct {
 func NewDelegatedAdminAccessContainer()(*DelegatedAdminAccessContainer) {
     m := &DelegatedAdminAccessContainer{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDelegatedAdminAccessContainerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

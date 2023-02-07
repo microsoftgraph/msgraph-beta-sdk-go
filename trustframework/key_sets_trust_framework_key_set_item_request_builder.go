@@ -55,8 +55,8 @@ func NewKeySetsTrustFrameworkKeySetItemRequestBuilderInternal(pathParameters map
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewKeySetsTrustFrameworkKeySetItemRequestBuilder instantiates a new TrustFrameworkKeySetItemRequestBuilder and sets the default values.
@@ -81,10 +81,6 @@ func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) Delete(ctx context.Conte
     }
     return nil
 }
-// GenerateKey provides operations to call the generateKey method.
-func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) GenerateKey()(*KeySetsItemGenerateKeyRequestBuilder) {
-    return NewKeySetsItemGenerateKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Get get keySets from trustFramework
 func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) Get(ctx context.Context, requestConfiguration *KeySetsTrustFrameworkKeySetItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeySetable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -104,9 +100,25 @@ func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) Get(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeySetable), nil
 }
-// GetActiveKey provides operations to call the getActiveKey method.
-func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) GetActiveKey()(*KeySetsItemGetActiveKeyRequestBuilder) {
-    return NewKeySetsItemGetActiveKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGenerateKey provides operations to call the generateKey method.
+func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) MicrosoftGraphGenerateKey()(*KeySetsItemMicrosoftGraphGenerateKeyRequestBuilder) {
+    return NewKeySetsItemMicrosoftGraphGenerateKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphGetActiveKey provides operations to call the getActiveKey method.
+func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) MicrosoftGraphGetActiveKey()(*KeySetsItemMicrosoftGraphGetActiveKeyRequestBuilder) {
+    return NewKeySetsItemMicrosoftGraphGetActiveKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUploadCertificate provides operations to call the uploadCertificate method.
+func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) MicrosoftGraphUploadCertificate()(*KeySetsItemMicrosoftGraphUploadCertificateRequestBuilder) {
+    return NewKeySetsItemMicrosoftGraphUploadCertificateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUploadPkcs12 provides operations to call the uploadPkcs12 method.
+func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) MicrosoftGraphUploadPkcs12()(*KeySetsItemMicrosoftGraphUploadPkcs12RequestBuilder) {
+    return NewKeySetsItemMicrosoftGraphUploadPkcs12RequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUploadSecret provides operations to call the uploadSecret method.
+func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) MicrosoftGraphUploadSecret()(*KeySetsItemMicrosoftGraphUploadSecretRequestBuilder) {
+    return NewKeySetsItemMicrosoftGraphUploadSecretRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property keySets in trustFramework
 func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeySetable, requestConfiguration *KeySetsTrustFrameworkKeySetItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeySetable, error) {
@@ -162,22 +174,13 @@ func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) ToPatchRequestInformatio
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// UploadCertificate provides operations to call the uploadCertificate method.
-func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) UploadCertificate()(*KeySetsItemUploadCertificateRequestBuilder) {
-    return NewKeySetsItemUploadCertificateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// UploadPkcs12 provides operations to call the uploadPkcs12 method.
-func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) UploadPkcs12()(*KeySetsItemUploadPkcs12RequestBuilder) {
-    return NewKeySetsItemUploadPkcs12RequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// UploadSecret provides operations to call the uploadSecret method.
-func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) UploadSecret()(*KeySetsItemUploadSecretRequestBuilder) {
-    return NewKeySetsItemUploadSecretRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

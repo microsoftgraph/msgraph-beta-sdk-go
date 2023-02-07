@@ -60,8 +60,8 @@ func NewItemRoleAssignmentRequestsRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemRoleAssignmentRequestsRequestBuilder instantiates a new RoleAssignmentRequestsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemRoleAssignmentRequestsRequestBuilder(rawUrl string, requestAdapter i
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemRoleAssignmentRequestsRequestBuilder) Count()(*ItemRoleAssignmentRequestsCountRequestBuilder) {
-    return NewItemRoleAssignmentRequestsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRoleAssignmentRequestsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the collection of role assignment requests for the resource.
 func (m *ItemRoleAssignmentRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemRoleAssignmentRequestsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentRequestCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *ItemRoleAssignmentRequestsRequestBuilder) ToPostRequestInformation(ctx 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

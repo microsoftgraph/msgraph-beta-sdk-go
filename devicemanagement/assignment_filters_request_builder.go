@@ -60,8 +60,8 @@ func NewAssignmentFiltersRequestBuilderInternal(pathParameters map[string]string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAssignmentFiltersRequestBuilder instantiates a new AssignmentFiltersRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewAssignmentFiltersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 }
 // Count provides operations to count the resources in the collection.
 func (m *AssignmentFiltersRequestBuilder) Count()(*AssignmentFiltersCountRequestBuilder) {
-    return NewAssignmentFiltersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Enable provides operations to call the enable method.
-func (m *AssignmentFiltersRequestBuilder) Enable()(*AssignmentFiltersEnableRequestBuilder) {
-    return NewAssignmentFiltersEnableRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAssignmentFiltersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the list of assignment filters
 func (m *AssignmentFiltersRequestBuilder) Get(ctx context.Context, requestConfiguration *AssignmentFiltersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAndAppManagementAssignmentFilterCollectionResponseable, error) {
@@ -97,13 +93,21 @@ func (m *AssignmentFiltersRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAndAppManagementAssignmentFilterCollectionResponseable), nil
 }
-// GetPlatformSupportedPropertiesWithPlatform provides operations to call the getPlatformSupportedProperties method.
-func (m *AssignmentFiltersRequestBuilder) GetPlatformSupportedPropertiesWithPlatform(platform *string)(*AssignmentFiltersGetPlatformSupportedPropertiesWithPlatformRequestBuilder) {
-    return NewAssignmentFiltersGetPlatformSupportedPropertiesWithPlatformRequestBuilderInternal(m.pathParameters, m.requestAdapter, platform);
+// MicrosoftGraphEnable provides operations to call the enable method.
+func (m *AssignmentFiltersRequestBuilder) MicrosoftGraphEnable()(*AssignmentFiltersMicrosoftGraphEnableRequestBuilder) {
+    return NewAssignmentFiltersMicrosoftGraphEnableRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetState provides operations to call the getState method.
-func (m *AssignmentFiltersRequestBuilder) GetState()(*AssignmentFiltersGetStateRequestBuilder) {
-    return NewAssignmentFiltersGetStateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetPlatformSupportedPropertiesWithPlatform provides operations to call the getPlatformSupportedProperties method.
+func (m *AssignmentFiltersRequestBuilder) MicrosoftGraphGetPlatformSupportedPropertiesWithPlatform(platform *string)(*AssignmentFiltersMicrosoftGraphGetPlatformSupportedPropertiesWithPlatformRequestBuilder) {
+    return NewAssignmentFiltersMicrosoftGraphGetPlatformSupportedPropertiesWithPlatformRequestBuilderInternal(m.pathParameters, m.requestAdapter, platform)
+}
+// MicrosoftGraphGetState provides operations to call the getState method.
+func (m *AssignmentFiltersRequestBuilder) MicrosoftGraphGetState()(*AssignmentFiltersMicrosoftGraphGetStateRequestBuilder) {
+    return NewAssignmentFiltersMicrosoftGraphGetStateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphValidateFilter provides operations to call the validateFilter method.
+func (m *AssignmentFiltersRequestBuilder) MicrosoftGraphValidateFilter()(*AssignmentFiltersMicrosoftGraphValidateFilterRequestBuilder) {
+    return NewAssignmentFiltersMicrosoftGraphValidateFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to assignmentFilters for deviceManagement
 func (m *AssignmentFiltersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAndAppManagementAssignmentFilterable, requestConfiguration *AssignmentFiltersRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAndAppManagementAssignmentFilterable, error) {
@@ -147,14 +151,13 @@ func (m *AssignmentFiltersRequestBuilder) ToPostRequestInformation(ctx context.C
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// ValidateFilter provides operations to call the validateFilter method.
-func (m *AssignmentFiltersRequestBuilder) ValidateFilter()(*AssignmentFiltersValidateFilterRequestBuilder) {
-    return NewAssignmentFiltersValidateFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

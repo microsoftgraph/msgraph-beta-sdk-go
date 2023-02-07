@@ -17,8 +17,8 @@ func NewUnsupportedDeviceConfiguration()(*UnsupportedDeviceConfiguration) {
     m := &UnsupportedDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.unsupportedDeviceConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.unsupportedDeviceConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateUnsupportedDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

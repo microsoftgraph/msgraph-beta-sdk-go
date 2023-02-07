@@ -19,7 +19,7 @@ type ApplicationSignInDetailedSummary struct {
     // Details of the sign-in status.
     status SignInStatusable
 }
-// NewApplicationSignInDetailedSummary instantiates a new ApplicationSignInDetailedSummary and sets the default values.
+// NewApplicationSignInDetailedSummary instantiates a new applicationSignInDetailedSummary and sets the default values.
 func NewApplicationSignInDetailedSummary()(*ApplicationSignInDetailedSummary) {
     m := &ApplicationSignInDetailedSummary{
         Entity: *NewEntity(),

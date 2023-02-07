@@ -60,8 +60,8 @@ func NewItemListItemsRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemListItemsRequestBuilder instantiates a new ItemsRequestBuilder and sets the default values.
@@ -72,15 +72,7 @@ func NewItemListItemsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemListItemsRequestBuilder) Count()(*ItemListItemsCountRequestBuilder) {
-    return NewItemListItemsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Delta provides operations to call the delta method.
-func (m *ItemListItemsRequestBuilder) Delta()(*ItemListItemsDeltaRequestBuilder) {
-    return NewItemListItemsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// DeltaWithToken provides operations to call the delta method.
-func (m *ItemListItemsRequestBuilder) DeltaWithToken(token *string)(*ItemListItemsDeltaWithTokenRequestBuilder) {
-    return NewItemListItemsDeltaWithTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter, token);
+    return NewItemListItemsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the collection of [items][item] in a [list][].
 // [Find more info here]
@@ -103,6 +95,14 @@ func (m *ItemListItemsRequestBuilder) Get(ctx context.Context, requestConfigurat
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ListItemCollectionResponseable), nil
+}
+// MicrosoftGraphDelta provides operations to call the delta method.
+func (m *ItemListItemsRequestBuilder) MicrosoftGraphDelta()(*ItemListItemsMicrosoftGraphDeltaRequestBuilder) {
+    return NewItemListItemsMicrosoftGraphDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphDeltaWithToken provides operations to call the delta method.
+func (m *ItemListItemsRequestBuilder) MicrosoftGraphDeltaWithToken(token *string)(*ItemListItemsMicrosoftGraphDeltaWithTokenRequestBuilder) {
+    return NewItemListItemsMicrosoftGraphDeltaWithTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter, token)
 }
 // Post create a new [listItem][] in a [list][].
 // [Find more info here]
@@ -149,7 +149,10 @@ func (m *ItemListItemsRequestBuilder) ToPostRequestInformation(ctx context.Conte
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

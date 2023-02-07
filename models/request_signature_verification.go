@@ -19,7 +19,7 @@ type RequestSignatureVerification struct {
 func NewRequestSignatureVerification()(*RequestSignatureVerification) {
     m := &RequestSignatureVerification{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateRequestSignatureVerificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

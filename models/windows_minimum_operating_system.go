@@ -41,7 +41,7 @@ type WindowsMinimumOperatingSystem struct {
 func NewWindowsMinimumOperatingSystem()(*WindowsMinimumOperatingSystem) {
     m := &WindowsMinimumOperatingSystem{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWindowsMinimumOperatingSystemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -71,7 +71,7 @@ func (m *WindowsMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV10_0(val)
+            m.SetV100(val)
         }
         return nil
     }
@@ -81,7 +81,7 @@ func (m *WindowsMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV10_1607(val)
+            m.SetV101607(val)
         }
         return nil
     }
@@ -91,7 +91,7 @@ func (m *WindowsMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV10_1703(val)
+            m.SetV101703(val)
         }
         return nil
     }
@@ -101,7 +101,7 @@ func (m *WindowsMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV10_1709(val)
+            m.SetV101709(val)
         }
         return nil
     }
@@ -111,7 +111,7 @@ func (m *WindowsMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV10_1803(val)
+            m.SetV101803(val)
         }
         return nil
     }
@@ -121,7 +121,7 @@ func (m *WindowsMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV10_1809(val)
+            m.SetV101809(val)
         }
         return nil
     }
@@ -131,7 +131,7 @@ func (m *WindowsMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV10_1903(val)
+            m.SetV101903(val)
         }
         return nil
     }
@@ -141,7 +141,7 @@ func (m *WindowsMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV10_1909(val)
+            m.SetV101909(val)
         }
         return nil
     }
@@ -151,7 +151,7 @@ func (m *WindowsMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV10_2004(val)
+            m.SetV102004(val)
         }
         return nil
     }
@@ -161,7 +161,7 @@ func (m *WindowsMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV10_21H1(val)
+            m.SetV1021H1(val)
         }
         return nil
     }
@@ -171,7 +171,7 @@ func (m *WindowsMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV10_2H20(val)
+            m.SetV102H20(val)
         }
         return nil
     }
@@ -181,7 +181,7 @@ func (m *WindowsMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV8_0(val)
+            m.SetV80(val)
         }
         return nil
     }
@@ -191,7 +191,7 @@ func (m *WindowsMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV8_1(val)
+            m.SetV81(val)
         }
         return nil
     }
@@ -201,56 +201,56 @@ func (m *WindowsMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
 func (m *WindowsMinimumOperatingSystem) GetOdataType()(*string) {
     return m.odataType
 }
-// GetV10_0 gets the v10_0 property value. Windows version 10.0 or later.
-func (m *WindowsMinimumOperatingSystem) GetV10_0()(*bool) {
+// GetV100 gets the v10_0 property value. Windows version 10.0 or later.
+func (m *WindowsMinimumOperatingSystem) GetV100()(*bool) {
     return m.v10_0
 }
-// GetV10_1607 gets the v10_1607 property value. Windows 10 1607 or later.
-func (m *WindowsMinimumOperatingSystem) GetV10_1607()(*bool) {
+// GetV101607 gets the v10_1607 property value. Windows 10 1607 or later.
+func (m *WindowsMinimumOperatingSystem) GetV101607()(*bool) {
     return m.v10_1607
 }
-// GetV10_1703 gets the v10_1703 property value. Windows 10 1703 or later.
-func (m *WindowsMinimumOperatingSystem) GetV10_1703()(*bool) {
+// GetV101703 gets the v10_1703 property value. Windows 10 1703 or later.
+func (m *WindowsMinimumOperatingSystem) GetV101703()(*bool) {
     return m.v10_1703
 }
-// GetV10_1709 gets the v10_1709 property value. Windows 10 1709 or later.
-func (m *WindowsMinimumOperatingSystem) GetV10_1709()(*bool) {
+// GetV101709 gets the v10_1709 property value. Windows 10 1709 or later.
+func (m *WindowsMinimumOperatingSystem) GetV101709()(*bool) {
     return m.v10_1709
 }
-// GetV10_1803 gets the v10_1803 property value. Windows 10 1803 or later.
-func (m *WindowsMinimumOperatingSystem) GetV10_1803()(*bool) {
+// GetV101803 gets the v10_1803 property value. Windows 10 1803 or later.
+func (m *WindowsMinimumOperatingSystem) GetV101803()(*bool) {
     return m.v10_1803
 }
-// GetV10_1809 gets the v10_1809 property value. Windows 10 1809 or later.
-func (m *WindowsMinimumOperatingSystem) GetV10_1809()(*bool) {
+// GetV101809 gets the v10_1809 property value. Windows 10 1809 or later.
+func (m *WindowsMinimumOperatingSystem) GetV101809()(*bool) {
     return m.v10_1809
 }
-// GetV10_1903 gets the v10_1903 property value. Windows 10 1903 or later.
-func (m *WindowsMinimumOperatingSystem) GetV10_1903()(*bool) {
+// GetV101903 gets the v10_1903 property value. Windows 10 1903 or later.
+func (m *WindowsMinimumOperatingSystem) GetV101903()(*bool) {
     return m.v10_1903
 }
-// GetV10_1909 gets the v10_1909 property value. Windows 10 1909 or later.
-func (m *WindowsMinimumOperatingSystem) GetV10_1909()(*bool) {
+// GetV101909 gets the v10_1909 property value. Windows 10 1909 or later.
+func (m *WindowsMinimumOperatingSystem) GetV101909()(*bool) {
     return m.v10_1909
 }
-// GetV10_2004 gets the v10_2004 property value. Windows 10 2004 or later.
-func (m *WindowsMinimumOperatingSystem) GetV10_2004()(*bool) {
+// GetV102004 gets the v10_2004 property value. Windows 10 2004 or later.
+func (m *WindowsMinimumOperatingSystem) GetV102004()(*bool) {
     return m.v10_2004
 }
-// GetV10_21H1 gets the v10_21H1 property value. Windows 10 21H1 or later.
-func (m *WindowsMinimumOperatingSystem) GetV10_21H1()(*bool) {
+// GetV1021H1 gets the v10_21H1 property value. Windows 10 21H1 or later.
+func (m *WindowsMinimumOperatingSystem) GetV1021H1()(*bool) {
     return m.v10_21H1
 }
-// GetV10_2H20 gets the v10_2H20 property value. Windows 10 2H20 or later.
-func (m *WindowsMinimumOperatingSystem) GetV10_2H20()(*bool) {
+// GetV102H20 gets the v10_2H20 property value. Windows 10 2H20 or later.
+func (m *WindowsMinimumOperatingSystem) GetV102H20()(*bool) {
     return m.v10_2H20
 }
-// GetV8_0 gets the v8_0 property value. Windows version 8.0 or later.
-func (m *WindowsMinimumOperatingSystem) GetV8_0()(*bool) {
+// GetV80 gets the v8_0 property value. Windows version 8.0 or later.
+func (m *WindowsMinimumOperatingSystem) GetV80()(*bool) {
     return m.v8_0
 }
-// GetV8_1 gets the v8_1 property value. Windows version 8.1 or later.
-func (m *WindowsMinimumOperatingSystem) GetV8_1()(*bool) {
+// GetV81 gets the v8_1 property value. Windows version 8.1 or later.
+func (m *WindowsMinimumOperatingSystem) GetV81()(*bool) {
     return m.v8_1
 }
 // Serialize serializes information the current object
@@ -262,79 +262,79 @@ func (m *WindowsMinimumOperatingSystem) Serialize(writer i878a80d2330e89d2689638
         }
     }
     {
-        err := writer.WriteBoolValue("v10_0", m.GetV10_0())
+        err := writer.WriteBoolValue("v10_0", m.GetV100())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v10_1607", m.GetV10_1607())
+        err := writer.WriteBoolValue("v10_1607", m.GetV101607())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v10_1703", m.GetV10_1703())
+        err := writer.WriteBoolValue("v10_1703", m.GetV101703())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v10_1709", m.GetV10_1709())
+        err := writer.WriteBoolValue("v10_1709", m.GetV101709())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v10_1803", m.GetV10_1803())
+        err := writer.WriteBoolValue("v10_1803", m.GetV101803())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v10_1809", m.GetV10_1809())
+        err := writer.WriteBoolValue("v10_1809", m.GetV101809())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v10_1903", m.GetV10_1903())
+        err := writer.WriteBoolValue("v10_1903", m.GetV101903())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v10_1909", m.GetV10_1909())
+        err := writer.WriteBoolValue("v10_1909", m.GetV101909())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v10_2004", m.GetV10_2004())
+        err := writer.WriteBoolValue("v10_2004", m.GetV102004())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v10_21H1", m.GetV10_21H1())
+        err := writer.WriteBoolValue("v10_21H1", m.GetV1021H1())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v10_2H20", m.GetV10_2H20())
+        err := writer.WriteBoolValue("v10_2H20", m.GetV102H20())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v8_0", m.GetV8_0())
+        err := writer.WriteBoolValue("v8_0", m.GetV80())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v8_1", m.GetV8_1())
+        err := writer.WriteBoolValue("v8_1", m.GetV81())
         if err != nil {
             return err
         }
@@ -355,55 +355,55 @@ func (m *WindowsMinimumOperatingSystem) SetAdditionalData(value map[string]any)(
 func (m *WindowsMinimumOperatingSystem) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetV10_0 sets the v10_0 property value. Windows version 10.0 or later.
-func (m *WindowsMinimumOperatingSystem) SetV10_0(value *bool)() {
+// SetV100 sets the v10_0 property value. Windows version 10.0 or later.
+func (m *WindowsMinimumOperatingSystem) SetV100(value *bool)() {
     m.v10_0 = value
 }
-// SetV10_1607 sets the v10_1607 property value. Windows 10 1607 or later.
-func (m *WindowsMinimumOperatingSystem) SetV10_1607(value *bool)() {
+// SetV101607 sets the v10_1607 property value. Windows 10 1607 or later.
+func (m *WindowsMinimumOperatingSystem) SetV101607(value *bool)() {
     m.v10_1607 = value
 }
-// SetV10_1703 sets the v10_1703 property value. Windows 10 1703 or later.
-func (m *WindowsMinimumOperatingSystem) SetV10_1703(value *bool)() {
+// SetV101703 sets the v10_1703 property value. Windows 10 1703 or later.
+func (m *WindowsMinimumOperatingSystem) SetV101703(value *bool)() {
     m.v10_1703 = value
 }
-// SetV10_1709 sets the v10_1709 property value. Windows 10 1709 or later.
-func (m *WindowsMinimumOperatingSystem) SetV10_1709(value *bool)() {
+// SetV101709 sets the v10_1709 property value. Windows 10 1709 or later.
+func (m *WindowsMinimumOperatingSystem) SetV101709(value *bool)() {
     m.v10_1709 = value
 }
-// SetV10_1803 sets the v10_1803 property value. Windows 10 1803 or later.
-func (m *WindowsMinimumOperatingSystem) SetV10_1803(value *bool)() {
+// SetV101803 sets the v10_1803 property value. Windows 10 1803 or later.
+func (m *WindowsMinimumOperatingSystem) SetV101803(value *bool)() {
     m.v10_1803 = value
 }
-// SetV10_1809 sets the v10_1809 property value. Windows 10 1809 or later.
-func (m *WindowsMinimumOperatingSystem) SetV10_1809(value *bool)() {
+// SetV101809 sets the v10_1809 property value. Windows 10 1809 or later.
+func (m *WindowsMinimumOperatingSystem) SetV101809(value *bool)() {
     m.v10_1809 = value
 }
-// SetV10_1903 sets the v10_1903 property value. Windows 10 1903 or later.
-func (m *WindowsMinimumOperatingSystem) SetV10_1903(value *bool)() {
+// SetV101903 sets the v10_1903 property value. Windows 10 1903 or later.
+func (m *WindowsMinimumOperatingSystem) SetV101903(value *bool)() {
     m.v10_1903 = value
 }
-// SetV10_1909 sets the v10_1909 property value. Windows 10 1909 or later.
-func (m *WindowsMinimumOperatingSystem) SetV10_1909(value *bool)() {
+// SetV101909 sets the v10_1909 property value. Windows 10 1909 or later.
+func (m *WindowsMinimumOperatingSystem) SetV101909(value *bool)() {
     m.v10_1909 = value
 }
-// SetV10_2004 sets the v10_2004 property value. Windows 10 2004 or later.
-func (m *WindowsMinimumOperatingSystem) SetV10_2004(value *bool)() {
+// SetV102004 sets the v10_2004 property value. Windows 10 2004 or later.
+func (m *WindowsMinimumOperatingSystem) SetV102004(value *bool)() {
     m.v10_2004 = value
 }
-// SetV10_21H1 sets the v10_21H1 property value. Windows 10 21H1 or later.
-func (m *WindowsMinimumOperatingSystem) SetV10_21H1(value *bool)() {
+// SetV1021H1 sets the v10_21H1 property value. Windows 10 21H1 or later.
+func (m *WindowsMinimumOperatingSystem) SetV1021H1(value *bool)() {
     m.v10_21H1 = value
 }
-// SetV10_2H20 sets the v10_2H20 property value. Windows 10 2H20 or later.
-func (m *WindowsMinimumOperatingSystem) SetV10_2H20(value *bool)() {
+// SetV102H20 sets the v10_2H20 property value. Windows 10 2H20 or later.
+func (m *WindowsMinimumOperatingSystem) SetV102H20(value *bool)() {
     m.v10_2H20 = value
 }
-// SetV8_0 sets the v8_0 property value. Windows version 8.0 or later.
-func (m *WindowsMinimumOperatingSystem) SetV8_0(value *bool)() {
+// SetV80 sets the v8_0 property value. Windows version 8.0 or later.
+func (m *WindowsMinimumOperatingSystem) SetV80(value *bool)() {
     m.v8_0 = value
 }
-// SetV8_1 sets the v8_1 property value. Windows version 8.1 or later.
-func (m *WindowsMinimumOperatingSystem) SetV8_1(value *bool)() {
+// SetV81 sets the v8_1 property value. Windows version 8.1 or later.
+func (m *WindowsMinimumOperatingSystem) SetV81(value *bool)() {
     m.v8_1 = value
 }

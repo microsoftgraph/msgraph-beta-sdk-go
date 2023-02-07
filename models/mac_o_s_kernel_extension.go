@@ -19,7 +19,7 @@ type MacOSKernelExtension struct {
 func NewMacOSKernelExtension()(*MacOSKernelExtension) {
     m := &MacOSKernelExtension{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMacOSKernelExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

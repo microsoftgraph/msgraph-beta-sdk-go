@@ -17,13 +17,13 @@ type CloudPcDomainJoinConfiguration struct {
     // The supported Azure region where the IT admin wants the provisioning policy to create Cloud PCs. The underlying virtual network will be created and managed by the Windows 365 service. This can only be entered if the IT admin chooses Azure AD joined as the domain join type. If you enter a regionName, leave onPremisesConnectionId as empty.
     regionName *string
     // Specifies how the provisioned Cloud PC will be joined to Azure AD. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave regionName as empty. If you choose the azureADJoin type, provide a value for either onPremisesConnectionId or regionName. The possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
-    type_escaped *CloudPcDomainJoinType
+    typeEscaped *CloudPcDomainJoinType
 }
 // NewCloudPcDomainJoinConfiguration instantiates a new cloudPcDomainJoinConfiguration and sets the default values.
 func NewCloudPcDomainJoinConfiguration()(*CloudPcDomainJoinConfiguration) {
     m := &CloudPcDomainJoinConfiguration{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCloudPcDomainJoinConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -107,7 +107,7 @@ func (m *CloudPcDomainJoinConfiguration) GetRegionName()(*string) {
 }
 // GetType gets the type property value. Specifies how the provisioned Cloud PC will be joined to Azure AD. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave regionName as empty. If you choose the azureADJoin type, provide a value for either onPremisesConnectionId or regionName. The possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
 func (m *CloudPcDomainJoinConfiguration) GetType()(*CloudPcDomainJoinType) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *CloudPcDomainJoinConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -173,5 +173,5 @@ func (m *CloudPcDomainJoinConfiguration) SetRegionName(value *string)() {
 }
 // SetType sets the type property value. Specifies how the provisioned Cloud PC will be joined to Azure AD. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave regionName as empty. If you choose the azureADJoin type, provide a value for either onPremisesConnectionId or regionName. The possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
 func (m *CloudPcDomainJoinConfiguration) SetType(value *CloudPcDomainJoinType)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

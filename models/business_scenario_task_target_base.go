@@ -17,7 +17,7 @@ type BusinessScenarioTaskTargetBase struct {
 func NewBusinessScenarioTaskTargetBase()(*BusinessScenarioTaskTargetBase) {
     m := &BusinessScenarioTaskTargetBase{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateBusinessScenarioTaskTargetBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -15,7 +15,7 @@ type AccessPackageResourceAttributeDestination struct {
 func NewAccessPackageResourceAttributeDestination()(*AccessPackageResourceAttributeDestination) {
     m := &AccessPackageResourceAttributeDestination{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAccessPackageResourceAttributeDestinationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

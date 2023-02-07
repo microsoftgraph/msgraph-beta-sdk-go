@@ -51,10 +51,6 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestBuild
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ClockIn provides operations to call the clockIn method.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestBuilder) ClockIn()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsClockInRequestBuilder) {
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsClockInRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestBuilderInternal instantiates a new TimeCardsRequestBuilder and sets the default values.
 func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestBuilder) {
     m := &TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestBuilder{
@@ -64,8 +60,8 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestBu
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestBuilder instantiates a new TimeCardsRequestBuilder and sets the default values.
@@ -76,7 +72,7 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestBu
 }
 // Count provides operations to count the resources in the collection.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestBuilder) Count()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsCountRequestBuilder) {
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of timeCard entries in a schedule.
 // [Find more info here]
@@ -99,6 +95,10 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestB
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardCollectionResponseable), nil
+}
+// MicrosoftGraphClockIn provides operations to call the clockIn method.
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestBuilder) MicrosoftGraphClockIn()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsMicrosoftGraphClockInRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsMicrosoftGraphClockInRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to timeCards for teamwork
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
@@ -142,7 +142,10 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestB
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

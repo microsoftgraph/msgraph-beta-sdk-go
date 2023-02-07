@@ -60,8 +60,8 @@ func NewInformationProtectionSensitivityLabelsRequestBuilderInternal(pathParamet
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewInformationProtectionSensitivityLabelsRequestBuilder instantiates a new SensitivityLabelsRequestBuilder and sets the default values.
@@ -72,23 +72,7 @@ func NewInformationProtectionSensitivityLabelsRequestBuilder(rawUrl string, requ
 }
 // Count provides operations to count the resources in the collection.
 func (m *InformationProtectionSensitivityLabelsRequestBuilder) Count()(*InformationProtectionSensitivityLabelsCountRequestBuilder) {
-    return NewInformationProtectionSensitivityLabelsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// EvaluateApplication provides operations to call the evaluateApplication method.
-func (m *InformationProtectionSensitivityLabelsRequestBuilder) EvaluateApplication()(*InformationProtectionSensitivityLabelsEvaluateApplicationRequestBuilder) {
-    return NewInformationProtectionSensitivityLabelsEvaluateApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// EvaluateClassificationResults provides operations to call the evaluateClassificationResults method.
-func (m *InformationProtectionSensitivityLabelsRequestBuilder) EvaluateClassificationResults()(*InformationProtectionSensitivityLabelsEvaluateClassificationResultsRequestBuilder) {
-    return NewInformationProtectionSensitivityLabelsEvaluateClassificationResultsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// EvaluateRemoval provides operations to call the evaluateRemoval method.
-func (m *InformationProtectionSensitivityLabelsRequestBuilder) EvaluateRemoval()(*InformationProtectionSensitivityLabelsEvaluateRemovalRequestBuilder) {
-    return NewInformationProtectionSensitivityLabelsEvaluateRemovalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ExtractContentLabel provides operations to call the extractContentLabel method.
-func (m *InformationProtectionSensitivityLabelsRequestBuilder) ExtractContentLabel()(*InformationProtectionSensitivityLabelsExtractContentLabelRequestBuilder) {
-    return NewInformationProtectionSensitivityLabelsExtractContentLabelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewInformationProtectionSensitivityLabelsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of sensitivityLabel objects associated with a user or organization.
 // [Find more info here]
@@ -111,6 +95,22 @@ func (m *InformationProtectionSensitivityLabelsRequestBuilder) Get(ctx context.C
         return nil, nil
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelCollectionResponseable), nil
+}
+// MicrosoftGraphSecurityEvaluateApplication provides operations to call the evaluateApplication method.
+func (m *InformationProtectionSensitivityLabelsRequestBuilder) MicrosoftGraphSecurityEvaluateApplication()(*InformationProtectionSensitivityLabelsMicrosoftGraphSecurityEvaluateApplicationRequestBuilder) {
+    return NewInformationProtectionSensitivityLabelsMicrosoftGraphSecurityEvaluateApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphSecurityEvaluateClassificationResults provides operations to call the evaluateClassificationResults method.
+func (m *InformationProtectionSensitivityLabelsRequestBuilder) MicrosoftGraphSecurityEvaluateClassificationResults()(*InformationProtectionSensitivityLabelsMicrosoftGraphSecurityEvaluateClassificationResultsRequestBuilder) {
+    return NewInformationProtectionSensitivityLabelsMicrosoftGraphSecurityEvaluateClassificationResultsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphSecurityEvaluateRemoval provides operations to call the evaluateRemoval method.
+func (m *InformationProtectionSensitivityLabelsRequestBuilder) MicrosoftGraphSecurityEvaluateRemoval()(*InformationProtectionSensitivityLabelsMicrosoftGraphSecurityEvaluateRemovalRequestBuilder) {
+    return NewInformationProtectionSensitivityLabelsMicrosoftGraphSecurityEvaluateRemovalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphSecurityExtractContentLabel provides operations to call the extractContentLabel method.
+func (m *InformationProtectionSensitivityLabelsRequestBuilder) MicrosoftGraphSecurityExtractContentLabel()(*InformationProtectionSensitivityLabelsMicrosoftGraphSecurityExtractContentLabelRequestBuilder) {
+    return NewInformationProtectionSensitivityLabelsMicrosoftGraphSecurityExtractContentLabelRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to sensitivityLabels for security
 func (m *InformationProtectionSensitivityLabelsRequestBuilder) Post(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable, requestConfiguration *InformationProtectionSensitivityLabelsRequestBuilderPostRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable, error) {
@@ -154,7 +154,10 @@ func (m *InformationProtectionSensitivityLabelsRequestBuilder) ToPostRequestInfo
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

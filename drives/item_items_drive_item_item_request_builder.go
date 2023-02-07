@@ -48,7 +48,7 @@ type ItemItemsDriveItemItemRequestBuilderPatchRequestConfiguration struct {
 }
 // Activities provides operations to manage the activities property of the microsoft.graph.driveItem entity.
 func (m *ItemItemsDriveItemItemRequestBuilder) Activities()(*ItemItemsItemActivitiesRequestBuilder) {
-    return NewItemItemsItemActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemItemsItemActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ActivitiesById provides operations to manage the activities property of the microsoft.graph.driveItem entity.
 func (m *ItemItemsDriveItemItemRequestBuilder) ActivitiesById(id string)(*ItemItemsItemActivitiesItemActivityOLDItemRequestBuilder) {
@@ -59,27 +59,15 @@ func (m *ItemItemsDriveItemItemRequestBuilder) ActivitiesById(id string)(*ItemIt
     if id != "" {
         urlTplParams["itemActivityOLD%2Did"] = id
     }
-    return NewItemItemsItemActivitiesItemActivityOLDItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemItemsItemActivitiesItemActivityOLDItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Analytics provides operations to manage the analytics property of the microsoft.graph.driveItem entity.
 func (m *ItemItemsDriveItemItemRequestBuilder) Analytics()(*ItemItemsItemAnalyticsRequestBuilder) {
-    return NewItemItemsItemAnalyticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// AssignSensitivityLabel provides operations to call the assignSensitivityLabel method.
-func (m *ItemItemsDriveItemItemRequestBuilder) AssignSensitivityLabel()(*ItemItemsItemAssignSensitivityLabelRequestBuilder) {
-    return NewItemItemsItemAssignSensitivityLabelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Checkin provides operations to call the checkin method.
-func (m *ItemItemsDriveItemItemRequestBuilder) Checkin()(*ItemItemsItemCheckinRequestBuilder) {
-    return NewItemItemsItemCheckinRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Checkout provides operations to call the checkout method.
-func (m *ItemItemsDriveItemItemRequestBuilder) Checkout()(*ItemItemsItemCheckoutRequestBuilder) {
-    return NewItemItemsItemCheckoutRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemItemsItemAnalyticsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Children provides operations to manage the children property of the microsoft.graph.driveItem entity.
 func (m *ItemItemsDriveItemItemRequestBuilder) Children()(*ItemItemsItemChildrenRequestBuilder) {
-    return NewItemItemsItemChildrenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemItemsItemChildrenRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ChildrenById provides operations to manage the children property of the microsoft.graph.driveItem entity.
 func (m *ItemItemsDriveItemItemRequestBuilder) ChildrenById(id string)(*ItemItemsItemChildrenDriveItemItemRequestBuilder) {
@@ -90,7 +78,7 @@ func (m *ItemItemsDriveItemItemRequestBuilder) ChildrenById(id string)(*ItemItem
     if id != "" {
         urlTplParams["driveItem%2Did1"] = id
     }
-    return NewItemItemsItemChildrenDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemItemsItemChildrenDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewItemItemsDriveItemItemRequestBuilderInternal instantiates a new DriveItemItemRequestBuilder and sets the default values.
 func NewItemItemsDriveItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsDriveItemItemRequestBuilder) {
@@ -101,8 +89,8 @@ func NewItemItemsDriveItemItemRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemItemsDriveItemItemRequestBuilder instantiates a new DriveItemItemRequestBuilder and sets the default values.
@@ -113,19 +101,7 @@ func NewItemItemsDriveItemItemRequestBuilder(rawUrl string, requestAdapter i2ae4
 }
 // Content provides operations to manage the media for the drive entity.
 func (m *ItemItemsDriveItemItemRequestBuilder) Content()(*ItemItemsItemContentRequestBuilder) {
-    return NewItemItemsItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Copy provides operations to call the copy method.
-func (m *ItemItemsDriveItemItemRequestBuilder) Copy()(*ItemItemsItemCopyRequestBuilder) {
-    return NewItemItemsItemCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// CreateLink provides operations to call the createLink method.
-func (m *ItemItemsDriveItemItemRequestBuilder) CreateLink()(*ItemItemsItemCreateLinkRequestBuilder) {
-    return NewItemItemsItemCreateLinkRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// CreateUploadSession provides operations to call the createUploadSession method.
-func (m *ItemItemsDriveItemItemRequestBuilder) CreateUploadSession()(*ItemItemsItemCreateUploadSessionRequestBuilder) {
-    return NewItemItemsItemCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemItemsItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property items for drives
 func (m *ItemItemsDriveItemItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemItemsDriveItemItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -142,22 +118,6 @@ func (m *ItemItemsDriveItemItemRequestBuilder) Delete(ctx context.Context, reque
         return err
     }
     return nil
-}
-// Delta provides operations to call the delta method.
-func (m *ItemItemsDriveItemItemRequestBuilder) Delta()(*ItemItemsItemDeltaRequestBuilder) {
-    return NewItemItemsItemDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// DeltaWithToken provides operations to call the delta method.
-func (m *ItemItemsDriveItemItemRequestBuilder) DeltaWithToken(token *string)(*ItemItemsItemDeltaWithTokenRequestBuilder) {
-    return NewItemItemsItemDeltaWithTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter, token);
-}
-// ExtractSensitivityLabels provides operations to call the extractSensitivityLabels method.
-func (m *ItemItemsDriveItemItemRequestBuilder) ExtractSensitivityLabels()(*ItemItemsItemExtractSensitivityLabelsRequestBuilder) {
-    return NewItemItemsItemExtractSensitivityLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Follow provides operations to call the follow method.
-func (m *ItemItemsDriveItemItemRequestBuilder) Follow()(*ItemItemsItemFollowRequestBuilder) {
-    return NewItemItemsItemFollowRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get all items contained in the drive. Read-only. Nullable.
 func (m *ItemItemsDriveItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsDriveItemItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {
@@ -178,17 +138,77 @@ func (m *ItemItemsDriveItemItemRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable), nil
 }
-// GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval provides operations to call the getActivitiesByInterval method.
-func (m *ItemItemsDriveItemItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(endDateTime *string, interval *string, startDateTime *string)(*ItemItemsItemGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
-    return NewItemItemsItemGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, interval, startDateTime);
-}
-// Invite provides operations to call the invite method.
-func (m *ItemItemsDriveItemItemRequestBuilder) Invite()(*ItemItemsItemInviteRequestBuilder) {
-    return NewItemItemsItemInviteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // ListItem provides operations to manage the listItem property of the microsoft.graph.driveItem entity.
 func (m *ItemItemsDriveItemItemRequestBuilder) ListItem()(*ItemItemsItemListItemRequestBuilder) {
-    return NewItemItemsItemListItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemItemsItemListItemRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphAssignSensitivityLabel provides operations to call the assignSensitivityLabel method.
+func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphAssignSensitivityLabel()(*ItemItemsItemMicrosoftGraphAssignSensitivityLabelRequestBuilder) {
+    return NewItemItemsItemMicrosoftGraphAssignSensitivityLabelRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphCheckin provides operations to call the checkin method.
+func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphCheckin()(*ItemItemsItemMicrosoftGraphCheckinRequestBuilder) {
+    return NewItemItemsItemMicrosoftGraphCheckinRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphCheckout provides operations to call the checkout method.
+func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphCheckout()(*ItemItemsItemMicrosoftGraphCheckoutRequestBuilder) {
+    return NewItemItemsItemMicrosoftGraphCheckoutRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphCopy provides operations to call the copy method.
+func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphCopy()(*ItemItemsItemMicrosoftGraphCopyRequestBuilder) {
+    return NewItemItemsItemMicrosoftGraphCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphCreateLink provides operations to call the createLink method.
+func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphCreateLink()(*ItemItemsItemMicrosoftGraphCreateLinkRequestBuilder) {
+    return NewItemItemsItemMicrosoftGraphCreateLinkRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphCreateUploadSession provides operations to call the createUploadSession method.
+func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphCreateUploadSession()(*ItemItemsItemMicrosoftGraphCreateUploadSessionRequestBuilder) {
+    return NewItemItemsItemMicrosoftGraphCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphDelta provides operations to call the delta method.
+func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphDelta()(*ItemItemsItemMicrosoftGraphDeltaRequestBuilder) {
+    return NewItemItemsItemMicrosoftGraphDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphDeltaWithToken provides operations to call the delta method.
+func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphDeltaWithToken(token *string)(*ItemItemsItemMicrosoftGraphDeltaWithTokenRequestBuilder) {
+    return NewItemItemsItemMicrosoftGraphDeltaWithTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter, token)
+}
+// MicrosoftGraphExtractSensitivityLabels provides operations to call the extractSensitivityLabels method.
+func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphExtractSensitivityLabels()(*ItemItemsItemMicrosoftGraphExtractSensitivityLabelsRequestBuilder) {
+    return NewItemItemsItemMicrosoftGraphExtractSensitivityLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphFollow provides operations to call the follow method.
+func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphFollow()(*ItemItemsItemMicrosoftGraphFollowRequestBuilder) {
+    return NewItemItemsItemMicrosoftGraphFollowRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval provides operations to call the getActivitiesByInterval method.
+func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(endDateTime *string, interval *string, startDateTime *string)(*ItemItemsItemMicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
+    return NewItemItemsItemMicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, interval, startDateTime)
+}
+// MicrosoftGraphInvite provides operations to call the invite method.
+func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphInvite()(*ItemItemsItemMicrosoftGraphInviteRequestBuilder) {
+    return NewItemItemsItemMicrosoftGraphInviteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphPreview provides operations to call the preview method.
+func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphPreview()(*ItemItemsItemMicrosoftGraphPreviewRequestBuilder) {
+    return NewItemItemsItemMicrosoftGraphPreviewRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRestore provides operations to call the restore method.
+func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphRestore()(*ItemItemsItemMicrosoftGraphRestoreRequestBuilder) {
+    return NewItemItemsItemMicrosoftGraphRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphSearchWithQ provides operations to call the search method.
+func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphSearchWithQ(q *string)(*ItemItemsItemMicrosoftGraphSearchWithQRequestBuilder) {
+    return NewItemItemsItemMicrosoftGraphSearchWithQRequestBuilderInternal(m.pathParameters, m.requestAdapter, q)
+}
+// MicrosoftGraphUnfollow provides operations to call the unfollow method.
+func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphUnfollow()(*ItemItemsItemMicrosoftGraphUnfollowRequestBuilder) {
+    return NewItemItemsItemMicrosoftGraphUnfollowRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphValidatePermission provides operations to call the validatePermission method.
+func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphValidatePermission()(*ItemItemsItemMicrosoftGraphValidatePermissionRequestBuilder) {
+    return NewItemItemsItemMicrosoftGraphValidatePermissionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property items in drives
 func (m *ItemItemsDriveItemItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, requestConfiguration *ItemItemsDriveItemItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {
@@ -211,7 +231,7 @@ func (m *ItemItemsDriveItemItemRequestBuilder) Patch(ctx context.Context, body i
 }
 // Permissions provides operations to manage the permissions property of the microsoft.graph.driveItem entity.
 func (m *ItemItemsDriveItemItemRequestBuilder) Permissions()(*ItemItemsItemPermissionsRequestBuilder) {
-    return NewItemItemsItemPermissionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemItemsItemPermissionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PermissionsById provides operations to manage the permissions property of the microsoft.graph.driveItem entity.
 func (m *ItemItemsDriveItemItemRequestBuilder) PermissionsById(id string)(*ItemItemsItemPermissionsPermissionItemRequestBuilder) {
@@ -222,23 +242,11 @@ func (m *ItemItemsDriveItemItemRequestBuilder) PermissionsById(id string)(*ItemI
     if id != "" {
         urlTplParams["permission%2Did"] = id
     }
-    return NewItemItemsItemPermissionsPermissionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// Preview provides operations to call the preview method.
-func (m *ItemItemsDriveItemItemRequestBuilder) Preview()(*ItemItemsItemPreviewRequestBuilder) {
-    return NewItemItemsItemPreviewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Restore provides operations to call the restore method.
-func (m *ItemItemsDriveItemItemRequestBuilder) Restore()(*ItemItemsItemRestoreRequestBuilder) {
-    return NewItemItemsItemRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// SearchWithQ provides operations to call the search method.
-func (m *ItemItemsDriveItemItemRequestBuilder) SearchWithQ(q *string)(*ItemItemsItemSearchWithQRequestBuilder) {
-    return NewItemItemsItemSearchWithQRequestBuilderInternal(m.pathParameters, m.requestAdapter, q);
+    return NewItemItemsItemPermissionsPermissionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Subscriptions provides operations to manage the subscriptions property of the microsoft.graph.driveItem entity.
 func (m *ItemItemsDriveItemItemRequestBuilder) Subscriptions()(*ItemItemsItemSubscriptionsRequestBuilder) {
-    return NewItemItemsItemSubscriptionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemItemsItemSubscriptionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SubscriptionsById provides operations to manage the subscriptions property of the microsoft.graph.driveItem entity.
 func (m *ItemItemsDriveItemItemRequestBuilder) SubscriptionsById(id string)(*ItemItemsItemSubscriptionsSubscriptionItemRequestBuilder) {
@@ -249,11 +257,11 @@ func (m *ItemItemsDriveItemItemRequestBuilder) SubscriptionsById(id string)(*Ite
     if id != "" {
         urlTplParams["subscription%2Did"] = id
     }
-    return NewItemItemsItemSubscriptionsSubscriptionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemItemsItemSubscriptionsSubscriptionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Thumbnails provides operations to manage the thumbnails property of the microsoft.graph.driveItem entity.
 func (m *ItemItemsDriveItemItemRequestBuilder) Thumbnails()(*ItemItemsItemThumbnailsRequestBuilder) {
-    return NewItemItemsItemThumbnailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemItemsItemThumbnailsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ThumbnailsById provides operations to manage the thumbnails property of the microsoft.graph.driveItem entity.
 func (m *ItemItemsDriveItemItemRequestBuilder) ThumbnailsById(id string)(*ItemItemsItemThumbnailsThumbnailSetItemRequestBuilder) {
@@ -264,7 +272,7 @@ func (m *ItemItemsDriveItemItemRequestBuilder) ThumbnailsById(id string)(*ItemIt
     if id != "" {
         urlTplParams["thumbnailSet%2Did"] = id
     }
-    return NewItemItemsItemThumbnailsThumbnailSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemItemsItemThumbnailsThumbnailSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property items for drives
 func (m *ItemItemsDriveItemItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemItemsDriveItemItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -301,24 +309,19 @@ func (m *ItemItemsDriveItemItemRequestBuilder) ToPatchRequestInformation(ctx con
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
-// Unfollow provides operations to call the unfollow method.
-func (m *ItemItemsDriveItemItemRequestBuilder) Unfollow()(*ItemItemsItemUnfollowRequestBuilder) {
-    return NewItemItemsItemUnfollowRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ValidatePermission provides operations to call the validatePermission method.
-func (m *ItemItemsDriveItemItemRequestBuilder) ValidatePermission()(*ItemItemsItemValidatePermissionRequestBuilder) {
-    return NewItemItemsItemValidatePermissionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Versions provides operations to manage the versions property of the microsoft.graph.driveItem entity.
 func (m *ItemItemsDriveItemItemRequestBuilder) Versions()(*ItemItemsItemVersionsRequestBuilder) {
-    return NewItemItemsItemVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemItemsItemVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // VersionsById provides operations to manage the versions property of the microsoft.graph.driveItem entity.
 func (m *ItemItemsDriveItemItemRequestBuilder) VersionsById(id string)(*ItemItemsItemVersionsDriveItemVersionItemRequestBuilder) {
@@ -329,5 +332,9 @@ func (m *ItemItemsDriveItemItemRequestBuilder) VersionsById(id string)(*ItemItem
     if id != "" {
         urlTplParams["driveItemVersion%2Did"] = id
     }
-    return NewItemItemsItemVersionsDriveItemVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemItemsItemVersionsDriveItemVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+// Workbook provides operations to manage the workbook property of the microsoft.graph.driveItem entity.
+func (m *ItemItemsDriveItemItemRequestBuilder) Workbook()(*ItemItemsItemWorkbookRequestBuilder) {
+    return NewItemItemsItemWorkbookRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

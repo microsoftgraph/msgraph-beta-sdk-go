@@ -24,7 +24,7 @@ type EducationSynchronizationCustomization struct {
 func NewEducationSynchronizationCustomization()(*EducationSynchronizationCustomization) {
     m := &EducationSynchronizationCustomization{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateEducationSynchronizationCustomizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

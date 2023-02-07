@@ -35,7 +35,7 @@ type ItemActionSet struct {
 func NewItemActionSet()(*ItemActionSet) {
     m := &ItemActionSet{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateItemActionSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

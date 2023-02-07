@@ -60,8 +60,8 @@ func NewItemChatsItemPermissionGrantsRequestBuilderInternal(pathParameters map[s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemChatsItemPermissionGrantsRequestBuilder instantiates a new PermissionGrantsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemChatsItemPermissionGrantsRequestBuilder(rawUrl string, requestAdapte
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemChatsItemPermissionGrantsRequestBuilder) Count()(*ItemChatsItemPermissionGrantsCountRequestBuilder) {
-    return NewItemChatsItemPermissionGrantsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemChatsItemPermissionGrantsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list all resource-specific permission grants on the chat. This list specifies the Azure AD apps that have access to the **chat**, along with the corresponding kind of resource-specific access that each app has.
 // [Find more info here]
@@ -96,13 +96,17 @@ func (m *ItemChatsItemPermissionGrantsRequestBuilder) Get(ctx context.Context, r
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantCollectionResponseable), nil
 }
-// GetByIds provides operations to call the getByIds method.
-func (m *ItemChatsItemPermissionGrantsRequestBuilder) GetByIds()(*ItemChatsItemPermissionGrantsGetByIdsRequestBuilder) {
-    return NewItemChatsItemPermissionGrantsGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetByIds provides operations to call the getByIds method.
+func (m *ItemChatsItemPermissionGrantsRequestBuilder) MicrosoftGraphGetByIds()(*ItemChatsItemPermissionGrantsMicrosoftGraphGetByIdsRequestBuilder) {
+    return NewItemChatsItemPermissionGrantsMicrosoftGraphGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
-func (m *ItemChatsItemPermissionGrantsRequestBuilder) GetUserOwnedObjects()(*ItemChatsItemPermissionGrantsGetUserOwnedObjectsRequestBuilder) {
-    return NewItemChatsItemPermissionGrantsGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
+func (m *ItemChatsItemPermissionGrantsRequestBuilder) MicrosoftGraphGetUserOwnedObjects()(*ItemChatsItemPermissionGrantsMicrosoftGraphGetUserOwnedObjectsRequestBuilder) {
+    return NewItemChatsItemPermissionGrantsMicrosoftGraphGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphValidateProperties provides operations to call the validateProperties method.
+func (m *ItemChatsItemPermissionGrantsRequestBuilder) MicrosoftGraphValidateProperties()(*ItemChatsItemPermissionGrantsMicrosoftGraphValidatePropertiesRequestBuilder) {
+    return NewItemChatsItemPermissionGrantsMicrosoftGraphValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to permissionGrants for users
 func (m *ItemChatsItemPermissionGrantsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable, requestConfiguration *ItemChatsItemPermissionGrantsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable, error) {
@@ -146,14 +150,13 @@ func (m *ItemChatsItemPermissionGrantsRequestBuilder) ToPostRequestInformation(c
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// ValidateProperties provides operations to call the validateProperties method.
-func (m *ItemChatsItemPermissionGrantsRequestBuilder) ValidateProperties()(*ItemChatsItemPermissionGrantsValidatePropertiesRequestBuilder) {
-    return NewItemChatsItemPermissionGrantsValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

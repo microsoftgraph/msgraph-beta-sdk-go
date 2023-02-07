@@ -55,8 +55,8 @@ func NewItemSettingsRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSettingsRequestBuilder instantiates a new SettingsRequestBuilder and sets the default values.
@@ -67,7 +67,7 @@ func NewItemSettingsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 }
 // ContactInsights provides operations to manage the contactInsights property of the microsoft.graph.organizationSettings entity.
 func (m *ItemSettingsRequestBuilder) ContactInsights()(*ItemSettingsContactInsightsRequestBuilder) {
-    return NewItemSettingsContactInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSettingsContactInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property settings for organization
 func (m *ItemSettingsRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSettingsRequestBuilderDeleteRequestConfiguration)(error) {
@@ -109,11 +109,11 @@ func (m *ItemSettingsRequestBuilder) Get(ctx context.Context, requestConfigurati
 }
 // ItemInsights provides operations to manage the itemInsights property of the microsoft.graph.organizationSettings entity.
 func (m *ItemSettingsRequestBuilder) ItemInsights()(*ItemSettingsItemInsightsRequestBuilder) {
-    return NewItemSettingsItemInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSettingsItemInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MicrosoftApplicationDataAccess provides operations to manage the microsoftApplicationDataAccess property of the microsoft.graph.organizationSettings entity.
 func (m *ItemSettingsRequestBuilder) MicrosoftApplicationDataAccess()(*ItemSettingsMicrosoftApplicationDataAccessRequestBuilder) {
-    return NewItemSettingsMicrosoftApplicationDataAccessRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSettingsMicrosoftApplicationDataAccessRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property settings in organization
 func (m *ItemSettingsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationSettingsable, requestConfiguration *ItemSettingsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationSettingsable, error) {
@@ -136,11 +136,11 @@ func (m *ItemSettingsRequestBuilder) Patch(ctx context.Context, body ie233ee762e
 }
 // PeopleInsights provides operations to manage the peopleInsights property of the microsoft.graph.organizationSettings entity.
 func (m *ItemSettingsRequestBuilder) PeopleInsights()(*ItemSettingsPeopleInsightsRequestBuilder) {
-    return NewItemSettingsPeopleInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSettingsPeopleInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ProfileCardProperties provides operations to manage the profileCardProperties property of the microsoft.graph.organizationSettings entity.
 func (m *ItemSettingsRequestBuilder) ProfileCardProperties()(*ItemSettingsProfileCardPropertiesRequestBuilder) {
-    return NewItemSettingsProfileCardPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSettingsProfileCardPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ProfileCardPropertiesById provides operations to manage the profileCardProperties property of the microsoft.graph.organizationSettings entity.
 func (m *ItemSettingsRequestBuilder) ProfileCardPropertiesById(id string)(*ItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilder) {
@@ -151,7 +151,7 @@ func (m *ItemSettingsRequestBuilder) ProfileCardPropertiesById(id string)(*ItemS
     if id != "" {
         urlTplParams["profileCardProperty%2Did"] = id
     }
-    return NewItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property settings for organization
 func (m *ItemSettingsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -188,7 +188,10 @@ func (m *ItemSettingsRequestBuilder) ToPatchRequestInformation(ctx context.Conte
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

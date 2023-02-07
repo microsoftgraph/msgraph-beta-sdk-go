@@ -9,7 +9,7 @@ import (
 type Identity struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The type property
-    type_escaped *IdentityType
+    typeEscaped *IdentityType
 }
 // NewIdentity instantiates a new identity and sets the default values.
 func NewIdentity()(*Identity) {
@@ -39,7 +39,7 @@ func (m *Identity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetType gets the type property value. The type property
 func (m *Identity) GetType()(*IdentityType) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *Identity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +58,5 @@ func (m *Identity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetType sets the type property value. The type property
 func (m *Identity) SetType(value *IdentityType)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

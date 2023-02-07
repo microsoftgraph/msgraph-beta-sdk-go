@@ -60,8 +60,8 @@ func NewInformationProtectionPolicyLabelsRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewInformationProtectionPolicyLabelsRequestBuilder instantiates a new LabelsRequestBuilder and sets the default values.
@@ -72,23 +72,7 @@ func NewInformationProtectionPolicyLabelsRequestBuilder(rawUrl string, requestAd
 }
 // Count provides operations to count the resources in the collection.
 func (m *InformationProtectionPolicyLabelsRequestBuilder) Count()(*InformationProtectionPolicyLabelsCountRequestBuilder) {
-    return NewInformationProtectionPolicyLabelsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// EvaluateApplication provides operations to call the evaluateApplication method.
-func (m *InformationProtectionPolicyLabelsRequestBuilder) EvaluateApplication()(*InformationProtectionPolicyLabelsEvaluateApplicationRequestBuilder) {
-    return NewInformationProtectionPolicyLabelsEvaluateApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// EvaluateClassificationResults provides operations to call the evaluateClassificationResults method.
-func (m *InformationProtectionPolicyLabelsRequestBuilder) EvaluateClassificationResults()(*InformationProtectionPolicyLabelsEvaluateClassificationResultsRequestBuilder) {
-    return NewInformationProtectionPolicyLabelsEvaluateClassificationResultsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// EvaluateRemoval provides operations to call the evaluateRemoval method.
-func (m *InformationProtectionPolicyLabelsRequestBuilder) EvaluateRemoval()(*InformationProtectionPolicyLabelsEvaluateRemovalRequestBuilder) {
-    return NewInformationProtectionPolicyLabelsEvaluateRemovalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ExtractLabel provides operations to call the extractLabel method.
-func (m *InformationProtectionPolicyLabelsRequestBuilder) ExtractLabel()(*InformationProtectionPolicyLabelsExtractLabelRequestBuilder) {
-    return NewInformationProtectionPolicyLabelsExtractLabelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewInformationProtectionPolicyLabelsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a collection of information protection labels available to the user or to the organization.
 // [Find more info here]
@@ -111,6 +95,22 @@ func (m *InformationProtectionPolicyLabelsRequestBuilder) Get(ctx context.Contex
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionLabelCollectionResponseable), nil
+}
+// MicrosoftGraphEvaluateApplication provides operations to call the evaluateApplication method.
+func (m *InformationProtectionPolicyLabelsRequestBuilder) MicrosoftGraphEvaluateApplication()(*InformationProtectionPolicyLabelsMicrosoftGraphEvaluateApplicationRequestBuilder) {
+    return NewInformationProtectionPolicyLabelsMicrosoftGraphEvaluateApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphEvaluateClassificationResults provides operations to call the evaluateClassificationResults method.
+func (m *InformationProtectionPolicyLabelsRequestBuilder) MicrosoftGraphEvaluateClassificationResults()(*InformationProtectionPolicyLabelsMicrosoftGraphEvaluateClassificationResultsRequestBuilder) {
+    return NewInformationProtectionPolicyLabelsMicrosoftGraphEvaluateClassificationResultsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphEvaluateRemoval provides operations to call the evaluateRemoval method.
+func (m *InformationProtectionPolicyLabelsRequestBuilder) MicrosoftGraphEvaluateRemoval()(*InformationProtectionPolicyLabelsMicrosoftGraphEvaluateRemovalRequestBuilder) {
+    return NewInformationProtectionPolicyLabelsMicrosoftGraphEvaluateRemovalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphExtractLabel provides operations to call the extractLabel method.
+func (m *InformationProtectionPolicyLabelsRequestBuilder) MicrosoftGraphExtractLabel()(*InformationProtectionPolicyLabelsMicrosoftGraphExtractLabelRequestBuilder) {
+    return NewInformationProtectionPolicyLabelsMicrosoftGraphExtractLabelRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to labels for me
 func (m *InformationProtectionPolicyLabelsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionLabelable, requestConfiguration *InformationProtectionPolicyLabelsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionLabelable, error) {
@@ -154,7 +154,10 @@ func (m *InformationProtectionPolicyLabelsRequestBuilder) ToPostRequestInformati
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

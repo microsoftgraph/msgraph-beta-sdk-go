@@ -19,7 +19,7 @@ type VpnRoute struct {
 func NewVpnRoute()(*VpnRoute) {
     m := &VpnRoute{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateVpnRouteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

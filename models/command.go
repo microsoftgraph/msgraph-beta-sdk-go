@@ -24,7 +24,7 @@ type Command struct {
     // The status property
     status *string
     // The type property
-    type_escaped *string
+    typeEscaped *string
 }
 // NewCommand instantiates a new command and sets the default values.
 func NewCommand()(*Command) {
@@ -166,7 +166,7 @@ func (m *Command) GetStatus()(*string) {
 }
 // GetType gets the type property value. The type property
 func (m *Command) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *Command) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -264,5 +264,5 @@ func (m *Command) SetStatus(value *string)() {
 }
 // SetType sets the type property value. The type property
 func (m *Command) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

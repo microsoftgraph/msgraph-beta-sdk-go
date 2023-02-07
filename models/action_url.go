@@ -8,18 +8,18 @@ import (
 type ActionUrl struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The displayName property
+    // Brief title for the page that the links directs to.
     displayName *string
     // The OdataType property
     odataType *string
-    // The url property
+    // The URL to the documentation or Azure portal page.
     url *string
 }
 // NewActionUrl instantiates a new actionUrl and sets the default values.
 func NewActionUrl()(*ActionUrl) {
     m := &ActionUrl{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateActionUrlFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateActionUrlFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 func (m *ActionUrl) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Brief title for the page that the links directs to.
 func (m *ActionUrl) GetDisplayName()(*string) {
     return m.displayName
 }
@@ -73,7 +73,7 @@ func (m *ActionUrl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 func (m *ActionUrl) GetOdataType()(*string) {
     return m.odataType
 }
-// GetUrl gets the url property value. The url property
+// GetUrl gets the url property value. The URL to the documentation or Azure portal page.
 func (m *ActionUrl) GetUrl()(*string) {
     return m.url
 }
@@ -109,7 +109,7 @@ func (m *ActionUrl) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 func (m *ActionUrl) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Brief title for the page that the links directs to.
 func (m *ActionUrl) SetDisplayName(value *string)() {
     m.displayName = value
 }
@@ -117,7 +117,7 @@ func (m *ActionUrl) SetDisplayName(value *string)() {
 func (m *ActionUrl) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetUrl sets the url property value. The url property
+// SetUrl sets the url property value. The URL to the documentation or Azure portal page.
 func (m *ActionUrl) SetUrl(value *string)() {
     m.url = value
 }

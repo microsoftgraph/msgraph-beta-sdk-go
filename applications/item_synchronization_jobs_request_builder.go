@@ -60,8 +60,8 @@ func NewItemSynchronizationJobsRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSynchronizationJobsRequestBuilder instantiates a new JobsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemSynchronizationJobsRequestBuilder(rawUrl string, requestAdapter i2ae
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemSynchronizationJobsRequestBuilder) Count()(*ItemSynchronizationJobsCountRequestBuilder) {
-    return NewItemSynchronizationJobsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSynchronizationJobsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list existing jobs for a given application instance (service principal).
 // [Find more info here]
@@ -95,6 +95,10 @@ func (m *ItemSynchronizationJobsRequestBuilder) Get(ctx context.Context, request
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationJobCollectionResponseable), nil
+}
+// MicrosoftGraphValidateCredentials provides operations to call the validateCredentials method.
+func (m *ItemSynchronizationJobsRequestBuilder) MicrosoftGraphValidateCredentials()(*ItemSynchronizationJobsMicrosoftGraphValidateCredentialsRequestBuilder) {
+    return NewItemSynchronizationJobsMicrosoftGraphValidateCredentialsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new synchronization job with a default synchronization schema. The job is created in a disabled state. Call Start job to start synchronization.
 // [Find more info here]
@@ -141,14 +145,13 @@ func (m *ItemSynchronizationJobsRequestBuilder) ToPostRequestInformation(ctx con
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// ValidateCredentials provides operations to call the validateCredentials method.
-func (m *ItemSynchronizationJobsRequestBuilder) ValidateCredentials()(*ItemSynchronizationJobsValidateCredentialsRequestBuilder) {
-    return NewItemSynchronizationJobsValidateCredentialsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

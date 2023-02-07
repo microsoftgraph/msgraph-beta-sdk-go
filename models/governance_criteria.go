@@ -15,7 +15,7 @@ type GovernanceCriteria struct {
 func NewGovernanceCriteria()(*GovernanceCriteria) {
     m := &GovernanceCriteria{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateGovernanceCriteriaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

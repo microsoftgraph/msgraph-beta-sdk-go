@@ -10,8 +10,10 @@ type AuthenticationStrengthRootable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAuthenticationCombinations()([]AuthenticationMethodModes)
     GetAuthenticationMethodModes()([]AuthenticationMethodModeDetailable)
+    GetCombinations()([]AuthenticationMethodModes)
     GetPolicies()([]AuthenticationStrengthPolicyable)
     SetAuthenticationCombinations(value []AuthenticationMethodModes)()
     SetAuthenticationMethodModes(value []AuthenticationMethodModeDetailable)()
+    SetCombinations(value []AuthenticationMethodModes)()
     SetPolicies(value []AuthenticationStrengthPolicyable)()
 }

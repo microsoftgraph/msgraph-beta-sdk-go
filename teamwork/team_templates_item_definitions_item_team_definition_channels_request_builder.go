@@ -51,10 +51,6 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsRequestBuilderPostReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AllMessages provides operations to call the allMessages method.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsRequestBuilder) AllMessages()(*TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsAllMessagesRequestBuilder) {
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsRequestBuilderInternal instantiates a new ChannelsRequestBuilder and sets the default values.
 func NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsRequestBuilder) {
     m := &TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsRequestBuilder{
@@ -64,8 +60,8 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsRequestBuilderInte
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsRequestBuilder instantiates a new ChannelsRequestBuilder and sets the default values.
@@ -76,7 +72,7 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsRequestBuilder(raw
 }
 // Count provides operations to count the resources in the collection.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsRequestBuilder) Count()(*TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsCountRequestBuilder) {
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve the list of channels in this team.
 // [Find more info here]
@@ -100,9 +96,13 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsRequestBuilder) G
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChannelCollectionResponseable), nil
 }
-// GetAllMessages provides operations to call the getAllMessages method.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsRequestBuilder) GetAllMessages()(*TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsGetAllMessagesRequestBuilder) {
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphAllMessages provides operations to call the allMessages method.
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsRequestBuilder) MicrosoftGraphAllMessages()(*TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsMicrosoftGraphAllMessagesRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsMicrosoftGraphAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphGetAllMessages provides operations to call the getAllMessages method.
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsRequestBuilder) MicrosoftGraphGetAllMessages()(*TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsMicrosoftGraphGetAllMessagesRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsMicrosoftGraphGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create a new channel in a team, as specified in the request body. When you create a channel, the maximum length of the channel's `displayName` is 50 characters. This is the name that appears to the user in Microsoft Teams. You can add a maximum of 200 members when you create a private channel.
 // [Find more info here]
@@ -149,7 +149,10 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsRequestBuilder) T
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

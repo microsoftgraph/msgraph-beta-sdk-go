@@ -31,7 +31,7 @@ type CloudPcAuditEvent struct {
     // List of cloudPcAuditResource objects. Read-only.
     resources []CloudPcAuditResourceable
 }
-// NewCloudPcAuditEvent instantiates a new CloudPcAuditEvent and sets the default values.
+// NewCloudPcAuditEvent instantiates a new cloudPcAuditEvent and sets the default values.
 func NewCloudPcAuditEvent()(*CloudPcAuditEvent) {
     m := &CloudPcAuditEvent{
         Entity: *NewEntity(),

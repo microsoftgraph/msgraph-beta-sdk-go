@@ -55,8 +55,8 @@ func NewDirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilde
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder instantiates a new UnifiedRbacResourceNamespaceItemRequestBuilder and sets the default values.
@@ -100,9 +100,9 @@ func (m *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuild
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceable), nil
 }
-// ImportResourceActions provides operations to call the importResourceActions method.
-func (m *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) ImportResourceActions()(*DirectoryResourceNamespacesItemImportResourceActionsRequestBuilder) {
-    return NewDirectoryResourceNamespacesItemImportResourceActionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphImportResourceActions provides operations to call the importResourceActions method.
+func (m *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) MicrosoftGraphImportResourceActions()(*DirectoryResourceNamespacesItemMicrosoftGraphImportResourceActionsRequestBuilder) {
+    return NewDirectoryResourceNamespacesItemMicrosoftGraphImportResourceActionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property resourceNamespaces in roleManagement
 func (m *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceable, requestConfiguration *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceable, error) {
@@ -125,7 +125,7 @@ func (m *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuild
 }
 // ResourceActions provides operations to manage the resourceActions property of the microsoft.graph.unifiedRbacResourceNamespace entity.
 func (m *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) ResourceActions()(*DirectoryResourceNamespacesItemResourceActionsRequestBuilder) {
-    return NewDirectoryResourceNamespacesItemResourceActionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDirectoryResourceNamespacesItemResourceActionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ResourceActionsById provides operations to manage the resourceActions property of the microsoft.graph.unifiedRbacResourceNamespace entity.
 func (m *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) ResourceActionsById(id string)(*DirectoryResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder) {
@@ -136,7 +136,7 @@ func (m *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuild
     if id != "" {
         urlTplParams["unifiedRbacResourceAction%2Did"] = id
     }
-    return NewDirectoryResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property resourceNamespaces for roleManagement
 func (m *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -173,7 +173,10 @@ func (m *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuild
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

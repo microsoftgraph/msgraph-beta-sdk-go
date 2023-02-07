@@ -17,7 +17,7 @@ type UserExperienceSettings struct {
 func NewUserExperienceSettings()(*UserExperienceSettings) {
     m := &UserExperienceSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateUserExperienceSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

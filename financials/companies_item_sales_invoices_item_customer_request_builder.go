@@ -55,8 +55,8 @@ func NewCompaniesItemSalesInvoicesItemCustomerRequestBuilderInternal(pathParamet
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemSalesInvoicesItemCustomerRequestBuilder instantiates a new CustomerRequestBuilder and sets the default values.
@@ -67,7 +67,7 @@ func NewCompaniesItemSalesInvoicesItemCustomerRequestBuilder(rawUrl string, requ
 }
 // Currency provides operations to manage the currency property of the microsoft.graph.customer entity.
 func (m *CompaniesItemSalesInvoicesItemCustomerRequestBuilder) Currency()(*CompaniesItemSalesInvoicesItemCustomerCurrencyRequestBuilder) {
-    return NewCompaniesItemSalesInvoicesItemCustomerCurrencyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesInvoicesItemCustomerCurrencyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property customer for financials
 func (m *CompaniesItemSalesInvoicesItemCustomerRequestBuilder) Delete(ctx context.Context, requestConfiguration *CompaniesItemSalesInvoicesItemCustomerRequestBuilderDeleteRequestConfiguration)(error) {
@@ -125,15 +125,15 @@ func (m *CompaniesItemSalesInvoicesItemCustomerRequestBuilder) Patch(ctx context
 }
 // PaymentMethod provides operations to manage the paymentMethod property of the microsoft.graph.customer entity.
 func (m *CompaniesItemSalesInvoicesItemCustomerRequestBuilder) PaymentMethod()(*CompaniesItemSalesInvoicesItemCustomerPaymentMethodRequestBuilder) {
-    return NewCompaniesItemSalesInvoicesItemCustomerPaymentMethodRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesInvoicesItemCustomerPaymentMethodRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PaymentTerm provides operations to manage the paymentTerm property of the microsoft.graph.customer entity.
 func (m *CompaniesItemSalesInvoicesItemCustomerRequestBuilder) PaymentTerm()(*CompaniesItemSalesInvoicesItemCustomerPaymentTermRequestBuilder) {
-    return NewCompaniesItemSalesInvoicesItemCustomerPaymentTermRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesInvoicesItemCustomerPaymentTermRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Picture provides operations to manage the picture property of the microsoft.graph.customer entity.
 func (m *CompaniesItemSalesInvoicesItemCustomerRequestBuilder) Picture()(*CompaniesItemSalesInvoicesItemCustomerPictureRequestBuilder) {
-    return NewCompaniesItemSalesInvoicesItemCustomerPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesInvoicesItemCustomerPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PictureById provides operations to manage the picture property of the microsoft.graph.customer entity.
 func (m *CompaniesItemSalesInvoicesItemCustomerRequestBuilder) PictureById(id string)(*CompaniesItemSalesInvoicesItemCustomerPicturePictureItemRequestBuilder) {
@@ -144,11 +144,11 @@ func (m *CompaniesItemSalesInvoicesItemCustomerRequestBuilder) PictureById(id st
     if id != "" {
         urlTplParams["picture%2Did"] = id
     }
-    return NewCompaniesItemSalesInvoicesItemCustomerPicturePictureItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemSalesInvoicesItemCustomerPicturePictureItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ShipmentMethod provides operations to manage the shipmentMethod property of the microsoft.graph.customer entity.
 func (m *CompaniesItemSalesInvoicesItemCustomerRequestBuilder) ShipmentMethod()(*CompaniesItemSalesInvoicesItemCustomerShipmentMethodRequestBuilder) {
-    return NewCompaniesItemSalesInvoicesItemCustomerShipmentMethodRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesInvoicesItemCustomerShipmentMethodRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property customer for financials
 func (m *CompaniesItemSalesInvoicesItemCustomerRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemSalesInvoicesItemCustomerRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -185,7 +185,10 @@ func (m *CompaniesItemSalesInvoicesItemCustomerRequestBuilder) ToPatchRequestInf
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

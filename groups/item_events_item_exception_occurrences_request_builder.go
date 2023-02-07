@@ -51,8 +51,8 @@ func NewItemEventsItemExceptionOccurrencesRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemEventsItemExceptionOccurrencesRequestBuilder instantiates a new ExceptionOccurrencesRequestBuilder and sets the default values.
@@ -63,11 +63,7 @@ func NewItemEventsItemExceptionOccurrencesRequestBuilder(rawUrl string, requestA
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemEventsItemExceptionOccurrencesRequestBuilder) Count()(*ItemEventsItemExceptionOccurrencesCountRequestBuilder) {
-    return NewItemEventsItemExceptionOccurrencesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Delta provides operations to call the delta method.
-func (m *ItemEventsItemExceptionOccurrencesRequestBuilder) Delta()(*ItemEventsItemExceptionOccurrencesDeltaRequestBuilder) {
-    return NewItemEventsItemExceptionOccurrencesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemEventsItemExceptionOccurrencesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get exceptionOccurrences from groups
 func (m *ItemEventsItemExceptionOccurrencesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemEventsItemExceptionOccurrencesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EventCollectionResponseable, error) {
@@ -87,6 +83,10 @@ func (m *ItemEventsItemExceptionOccurrencesRequestBuilder) Get(ctx context.Conte
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EventCollectionResponseable), nil
+}
+// MicrosoftGraphDelta provides operations to call the delta method.
+func (m *ItemEventsItemExceptionOccurrencesRequestBuilder) MicrosoftGraphDelta()(*ItemEventsItemExceptionOccurrencesMicrosoftGraphDeltaRequestBuilder) {
+    return NewItemEventsItemExceptionOccurrencesMicrosoftGraphDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation get exceptionOccurrences from groups
 func (m *ItemEventsItemExceptionOccurrencesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemEventsItemExceptionOccurrencesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

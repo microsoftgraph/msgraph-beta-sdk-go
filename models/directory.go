@@ -27,7 +27,7 @@ type Directory struct {
     onPremisesSynchronization []OnPremisesDirectorySynchronizationable
     // The outboundSharedUserProfiles property
     outboundSharedUserProfiles []OutboundSharedUserProfileable
-    // The recommendations property
+    // List of recommended improvements to improve tenant posture.
     recommendations []Recommendationable
     // The sharedEmailDomains property
     sharedEmailDomains []SharedEmailDomainable
@@ -256,7 +256,7 @@ func (m *Directory) GetOnPremisesSynchronization()([]OnPremisesDirectorySynchron
 func (m *Directory) GetOutboundSharedUserProfiles()([]OutboundSharedUserProfileable) {
     return m.outboundSharedUserProfiles
 }
-// GetRecommendations gets the recommendations property value. The recommendations property
+// GetRecommendations gets the recommendations property value. List of recommended improvements to improve tenant posture.
 func (m *Directory) GetRecommendations()([]Recommendationable) {
     return m.recommendations
 }
@@ -432,7 +432,7 @@ func (m *Directory) SetOnPremisesSynchronization(value []OnPremisesDirectorySync
 func (m *Directory) SetOutboundSharedUserProfiles(value []OutboundSharedUserProfileable)() {
     m.outboundSharedUserProfiles = value
 }
-// SetRecommendations sets the recommendations property value. The recommendations property
+// SetRecommendations sets the recommendations property value. List of recommended improvements to improve tenant posture.
 func (m *Directory) SetRecommendations(value []Recommendationable)() {
     m.recommendations = value
 }

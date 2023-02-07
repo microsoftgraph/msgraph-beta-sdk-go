@@ -19,7 +19,7 @@ type AppleOwnerTypeEnrollmentType struct {
 func NewAppleOwnerTypeEnrollmentType()(*AppleOwnerTypeEnrollmentType) {
     m := &AppleOwnerTypeEnrollmentType{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAppleOwnerTypeEnrollmentTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

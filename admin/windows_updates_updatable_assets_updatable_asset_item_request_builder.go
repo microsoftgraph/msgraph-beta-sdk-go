@@ -7,7 +7,7 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
-// WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder provides operations to manage the updatableAssets property of the microsoft.graph.windowsUpdates.updates entity.
+// WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder provides operations to manage the updatableAssets property of the microsoft.graph.adminWindowsUpdates entity.
 type WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string
@@ -23,7 +23,7 @@ type WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderDeleteRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderGetQueryParameters assets registered with the deployment service that can receive updates. Read-only.
+// WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderGetQueryParameters assets registered with the deployment service that can receive updates.
 type WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -46,14 +46,6 @@ type WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderPatchRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AddMembers provides operations to call the addMembers method.
-func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) AddMembers()(*WindowsUpdatesUpdatableAssetsItemAddMembersRequestBuilder) {
-    return NewWindowsUpdatesUpdatableAssetsItemAddMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// AddMembersById provides operations to call the addMembersById method.
-func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) AddMembersById()(*WindowsUpdatesUpdatableAssetsItemAddMembersByIdRequestBuilder) {
-    return NewWindowsUpdatesUpdatableAssetsItemAddMembersByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewWindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderInternal instantiates a new UpdatableAssetItemRequestBuilder and sets the default values.
 func NewWindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) {
     m := &WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder{
@@ -63,8 +55,8 @@ func NewWindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder instantiates a new UpdatableAssetItemRequestBuilder and sets the default values.
@@ -89,7 +81,7 @@ func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) Delete(c
     }
     return nil
 }
-// Get assets registered with the deployment service that can receive updates. Read-only.
+// Get assets registered with the deployment service that can receive updates.
 func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -107,6 +99,22 @@ func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) Get(ctx 
         return nil, nil
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable), nil
+}
+// MicrosoftGraphWindowsUpdatesAddMembers provides operations to call the addMembers method.
+func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) MicrosoftGraphWindowsUpdatesAddMembers()(*WindowsUpdatesUpdatableAssetsItemMicrosoftGraphWindowsUpdatesAddMembersRequestBuilder) {
+    return NewWindowsUpdatesUpdatableAssetsItemMicrosoftGraphWindowsUpdatesAddMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphWindowsUpdatesAddMembersById provides operations to call the addMembersById method.
+func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) MicrosoftGraphWindowsUpdatesAddMembersById()(*WindowsUpdatesUpdatableAssetsItemMicrosoftGraphWindowsUpdatesAddMembersByIdRequestBuilder) {
+    return NewWindowsUpdatesUpdatableAssetsItemMicrosoftGraphWindowsUpdatesAddMembersByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphWindowsUpdatesRemoveMembers provides operations to call the removeMembers method.
+func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) MicrosoftGraphWindowsUpdatesRemoveMembers()(*WindowsUpdatesUpdatableAssetsItemMicrosoftGraphWindowsUpdatesRemoveMembersRequestBuilder) {
+    return NewWindowsUpdatesUpdatableAssetsItemMicrosoftGraphWindowsUpdatesRemoveMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphWindowsUpdatesRemoveMembersById provides operations to call the removeMembersById method.
+func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) MicrosoftGraphWindowsUpdatesRemoveMembersById()(*WindowsUpdatesUpdatableAssetsItemMicrosoftGraphWindowsUpdatesRemoveMembersByIdRequestBuilder) {
+    return NewWindowsUpdatesUpdatableAssetsItemMicrosoftGraphWindowsUpdatesRemoveMembersByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property updatableAssets in admin
 func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) Patch(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable, requestConfiguration *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderPatchRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable, error) {
@@ -127,14 +135,6 @@ func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) Patch(ct
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable), nil
 }
-// RemoveMembers provides operations to call the removeMembers method.
-func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) RemoveMembers()(*WindowsUpdatesUpdatableAssetsItemRemoveMembersRequestBuilder) {
-    return NewWindowsUpdatesUpdatableAssetsItemRemoveMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// RemoveMembersById provides operations to call the removeMembersById method.
-func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) RemoveMembersById()(*WindowsUpdatesUpdatableAssetsItemRemoveMembersByIdRequestBuilder) {
-    return NewWindowsUpdatesUpdatableAssetsItemRemoveMembersByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // ToDeleteRequestInformation delete navigation property updatableAssets for admin
 func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -147,7 +147,7 @@ func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) ToDelete
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation assets registered with the deployment service that can receive updates. Read-only.
+// ToGetRequestInformation assets registered with the deployment service that can receive updates.
 func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -170,7 +170,10 @@ func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) ToPatchR
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -15,7 +15,7 @@ type PlannerPlanContextDetailsCollection struct {
 func NewPlannerPlanContextDetailsCollection()(*PlannerPlanContextDetailsCollection) {
     m := &PlannerPlanContextDetailsCollection{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePlannerPlanContextDetailsCollectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

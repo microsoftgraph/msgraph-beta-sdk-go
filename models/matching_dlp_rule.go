@@ -31,7 +31,7 @@ type MatchingDlpRule struct {
 func NewMatchingDlpRule()(*MatchingDlpRule) {
     m := &MatchingDlpRule{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMatchingDlpRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

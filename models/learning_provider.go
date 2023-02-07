@@ -24,7 +24,7 @@ type LearningProvider struct {
     // The square logo URL for the light mode, which needs to be a publicly accessible image. This image would be saved to the Blob storage of Viva Learning for rendering within the Viva Learning app. Required.
     squareLogoWebUrlForLightTheme *string
 }
-// NewLearningProvider instantiates a new LearningProvider and sets the default values.
+// NewLearningProvider instantiates a new learningProvider and sets the default values.
 func NewLearningProvider()(*LearningProvider) {
     m := &LearningProvider{
         Entity: *NewEntity(),

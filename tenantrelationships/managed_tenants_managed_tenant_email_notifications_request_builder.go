@@ -60,8 +60,8 @@ func NewManagedTenantsManagedTenantEmailNotificationsRequestBuilderInternal(path
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedTenantsManagedTenantEmailNotificationsRequestBuilder instantiates a new ManagedTenantEmailNotificationsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewManagedTenantsManagedTenantEmailNotificationsRequestBuilder(rawUrl strin
 }
 // Count provides operations to count the resources in the collection.
 func (m *ManagedTenantsManagedTenantEmailNotificationsRequestBuilder) Count()(*ManagedTenantsManagedTenantEmailNotificationsCountRequestBuilder) {
-    return NewManagedTenantsManagedTenantEmailNotificationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedTenantsManagedTenantEmailNotificationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get managedTenantEmailNotifications from tenantRelationships
 func (m *ManagedTenantsManagedTenantEmailNotificationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsManagedTenantEmailNotificationsRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagedTenantEmailNotificationCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *ManagedTenantsManagedTenantEmailNotificationsRequestBuilder) ToPostRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

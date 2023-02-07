@@ -15,8 +15,8 @@ func NewWebSegmentConfiguration()(*WebSegmentConfiguration) {
     m := &WebSegmentConfiguration{
         SegmentConfiguration: *NewSegmentConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.webSegmentConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.webSegmentConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWebSegmentConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

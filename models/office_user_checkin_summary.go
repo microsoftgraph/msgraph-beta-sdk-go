@@ -19,7 +19,7 @@ type OfficeUserCheckinSummary struct {
 func NewOfficeUserCheckinSummary()(*OfficeUserCheckinSummary) {
     m := &OfficeUserCheckinSummary{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateOfficeUserCheckinSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

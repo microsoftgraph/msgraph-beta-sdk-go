@@ -10,7 +10,7 @@ type TrustFrameworkKeySet struct {
     // A collection of the keys.
     keys []TrustFrameworkKeyable
 }
-// NewTrustFrameworkKeySet instantiates a new TrustFrameworkKeySet and sets the default values.
+// NewTrustFrameworkKeySet instantiates a new trustFrameworkKeySet and sets the default values.
 func NewTrustFrameworkKeySet()(*TrustFrameworkKeySet) {
     m := &TrustFrameworkKeySet{
         Entity: *NewEntity(),

@@ -45,8 +45,8 @@ func NewUnifiedRoleAssignmentScheduleRequest()(*UnifiedRoleAssignmentScheduleReq
     m := &UnifiedRoleAssignmentScheduleRequest{
         Request: *NewRequest(),
     }
-    odataTypeValue := "#microsoft.graph.unifiedRoleAssignmentScheduleRequest";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.unifiedRoleAssignmentScheduleRequest"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateUnifiedRoleAssignmentScheduleRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

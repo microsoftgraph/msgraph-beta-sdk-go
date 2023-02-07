@@ -55,8 +55,8 @@ func NewItemSynchronizationTemplatesItemSchemaRequestBuilderInternal(pathParamet
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSynchronizationTemplatesItemSchemaRequestBuilder instantiates a new SchemaRequestBuilder and sets the default values.
@@ -83,7 +83,7 @@ func (m *ItemSynchronizationTemplatesItemSchemaRequestBuilder) Delete(ctx contex
 }
 // Directories provides operations to manage the directories property of the microsoft.graph.synchronizationSchema entity.
 func (m *ItemSynchronizationTemplatesItemSchemaRequestBuilder) Directories()(*ItemSynchronizationTemplatesItemSchemaDirectoriesRequestBuilder) {
-    return NewItemSynchronizationTemplatesItemSchemaDirectoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSynchronizationTemplatesItemSchemaDirectoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DirectoriesById provides operations to manage the directories property of the microsoft.graph.synchronizationSchema entity.
 func (m *ItemSynchronizationTemplatesItemSchemaRequestBuilder) DirectoriesById(id string)(*ItemSynchronizationTemplatesItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilder) {
@@ -94,15 +94,7 @@ func (m *ItemSynchronizationTemplatesItemSchemaRequestBuilder) DirectoriesById(i
     if id != "" {
         urlTplParams["directoryDefinition%2Did"] = id
     }
-    return NewItemSynchronizationTemplatesItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// FilterOperators provides operations to call the filterOperators method.
-func (m *ItemSynchronizationTemplatesItemSchemaRequestBuilder) FilterOperators()(*ItemSynchronizationTemplatesItemSchemaFilterOperatorsRequestBuilder) {
-    return NewItemSynchronizationTemplatesItemSchemaFilterOperatorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Functions provides operations to call the functions method.
-func (m *ItemSynchronizationTemplatesItemSchemaRequestBuilder) Functions()(*ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilder) {
-    return NewItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSynchronizationTemplatesItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Get default synchronization schema for the jobs based on this template.
 func (m *ItemSynchronizationTemplatesItemSchemaRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSynchronizationTemplatesItemSchemaRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationSchemaable, error) {
@@ -123,9 +115,17 @@ func (m *ItemSynchronizationTemplatesItemSchemaRequestBuilder) Get(ctx context.C
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationSchemaable), nil
 }
-// ParseExpression provides operations to call the parseExpression method.
-func (m *ItemSynchronizationTemplatesItemSchemaRequestBuilder) ParseExpression()(*ItemSynchronizationTemplatesItemSchemaParseExpressionRequestBuilder) {
-    return NewItemSynchronizationTemplatesItemSchemaParseExpressionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphFilterOperators provides operations to call the filterOperators method.
+func (m *ItemSynchronizationTemplatesItemSchemaRequestBuilder) MicrosoftGraphFilterOperators()(*ItemSynchronizationTemplatesItemSchemaMicrosoftGraphFilterOperatorsRequestBuilder) {
+    return NewItemSynchronizationTemplatesItemSchemaMicrosoftGraphFilterOperatorsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphFunctions provides operations to call the functions method.
+func (m *ItemSynchronizationTemplatesItemSchemaRequestBuilder) MicrosoftGraphFunctions()(*ItemSynchronizationTemplatesItemSchemaMicrosoftGraphFunctionsRequestBuilder) {
+    return NewItemSynchronizationTemplatesItemSchemaMicrosoftGraphFunctionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphParseExpression provides operations to call the parseExpression method.
+func (m *ItemSynchronizationTemplatesItemSchemaRequestBuilder) MicrosoftGraphParseExpression()(*ItemSynchronizationTemplatesItemSchemaMicrosoftGraphParseExpressionRequestBuilder) {
+    return NewItemSynchronizationTemplatesItemSchemaMicrosoftGraphParseExpressionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property schema in applications
 func (m *ItemSynchronizationTemplatesItemSchemaRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationSchemaable, requestConfiguration *ItemSynchronizationTemplatesItemSchemaRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationSchemaable, error) {
@@ -181,7 +181,10 @@ func (m *ItemSynchronizationTemplatesItemSchemaRequestBuilder) ToPatchRequestInf
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

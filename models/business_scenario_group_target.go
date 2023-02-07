@@ -15,8 +15,8 @@ func NewBusinessScenarioGroupTarget()(*BusinessScenarioGroupTarget) {
     m := &BusinessScenarioGroupTarget{
         BusinessScenarioTaskTargetBase: *NewBusinessScenarioTaskTargetBase(),
     }
-    odataTypeValue := "#microsoft.graph.businessScenarioGroupTarget";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.businessScenarioGroupTarget"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateBusinessScenarioGroupTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

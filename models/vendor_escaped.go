@@ -6,8 +6,8 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Vendor_escaped 
-type Vendor_escaped struct {
+// VendorEscaped 
+type VendorEscaped struct {
     Entity
     // The address property
     address PostalAddressTypeable
@@ -48,51 +48,51 @@ type Vendor_escaped struct {
     // The website property
     website *string
 }
-// NewVendor_escaped instantiates a new vendor_escaped and sets the default values.
-func NewVendor_escaped()(*Vendor_escaped) {
-    m := &Vendor_escaped{
+// NewVendorEscaped instantiates a new vendorEscaped and sets the default values.
+func NewVendorEscaped()(*VendorEscaped) {
+    m := &VendorEscaped{
         Entity: *NewEntity(),
     }
     return m
 }
-// CreateVendor_escapedFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateVendor_escapedFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewVendor_escaped(), nil
+// CreateVendorEscapedFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateVendorEscapedFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewVendorEscaped(), nil
 }
 // GetAddress gets the address property value. The address property
-func (m *Vendor_escaped) GetAddress()(PostalAddressTypeable) {
+func (m *VendorEscaped) GetAddress()(PostalAddressTypeable) {
     return m.address
 }
 // GetBalance gets the balance property value. The balance property
-func (m *Vendor_escaped) GetBalance()(*float64) {
+func (m *VendorEscaped) GetBalance()(*float64) {
     return m.balance
 }
 // GetBlocked gets the blocked property value. The blocked property
-func (m *Vendor_escaped) GetBlocked()(*string) {
+func (m *VendorEscaped) GetBlocked()(*string) {
     return m.blocked
 }
 // GetCurrency gets the currency property value. The currency property
-func (m *Vendor_escaped) GetCurrency()(Currencyable) {
+func (m *VendorEscaped) GetCurrency()(Currencyable) {
     return m.currency
 }
 // GetCurrencyCode gets the currencyCode property value. The currencyCode property
-func (m *Vendor_escaped) GetCurrencyCode()(*string) {
+func (m *VendorEscaped) GetCurrencyCode()(*string) {
     return m.currencyCode
 }
 // GetCurrencyId gets the currencyId property value. The currencyId property
-func (m *Vendor_escaped) GetCurrencyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
+func (m *VendorEscaped) GetCurrencyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.currencyId
 }
 // GetDisplayName gets the displayName property value. The displayName property
-func (m *Vendor_escaped) GetDisplayName()(*string) {
+func (m *VendorEscaped) GetDisplayName()(*string) {
     return m.displayName
 }
 // GetEmail gets the email property value. The email property
-func (m *Vendor_escaped) GetEmail()(*string) {
+func (m *VendorEscaped) GetEmail()(*string) {
     return m.email
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Vendor_escaped) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *VendorEscaped) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["address"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePostalAddressTypeFromDiscriminatorValue)
@@ -291,51 +291,51 @@ func (m *Vendor_escaped) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
-func (m *Vendor_escaped) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+func (m *VendorEscaped) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastModifiedDateTime
 }
 // GetNumber gets the number property value. The number property
-func (m *Vendor_escaped) GetNumber()(*string) {
+func (m *VendorEscaped) GetNumber()(*string) {
     return m.number
 }
 // GetPaymentMethod gets the paymentMethod property value. The paymentMethod property
-func (m *Vendor_escaped) GetPaymentMethod()(PaymentMethodable) {
+func (m *VendorEscaped) GetPaymentMethod()(PaymentMethodable) {
     return m.paymentMethod
 }
 // GetPaymentMethodId gets the paymentMethodId property value. The paymentMethodId property
-func (m *Vendor_escaped) GetPaymentMethodId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
+func (m *VendorEscaped) GetPaymentMethodId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.paymentMethodId
 }
 // GetPaymentTerm gets the paymentTerm property value. The paymentTerm property
-func (m *Vendor_escaped) GetPaymentTerm()(PaymentTermable) {
+func (m *VendorEscaped) GetPaymentTerm()(PaymentTermable) {
     return m.paymentTerm
 }
 // GetPaymentTermsId gets the paymentTermsId property value. The paymentTermsId property
-func (m *Vendor_escaped) GetPaymentTermsId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
+func (m *VendorEscaped) GetPaymentTermsId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.paymentTermsId
 }
 // GetPhoneNumber gets the phoneNumber property value. The phoneNumber property
-func (m *Vendor_escaped) GetPhoneNumber()(*string) {
+func (m *VendorEscaped) GetPhoneNumber()(*string) {
     return m.phoneNumber
 }
 // GetPicture gets the picture property value. The picture property
-func (m *Vendor_escaped) GetPicture()([]Pictureable) {
+func (m *VendorEscaped) GetPicture()([]Pictureable) {
     return m.picture
 }
 // GetTaxLiable gets the taxLiable property value. The taxLiable property
-func (m *Vendor_escaped) GetTaxLiable()(*bool) {
+func (m *VendorEscaped) GetTaxLiable()(*bool) {
     return m.taxLiable
 }
 // GetTaxRegistrationNumber gets the taxRegistrationNumber property value. The taxRegistrationNumber property
-func (m *Vendor_escaped) GetTaxRegistrationNumber()(*string) {
+func (m *VendorEscaped) GetTaxRegistrationNumber()(*string) {
     return m.taxRegistrationNumber
 }
 // GetWebsite gets the website property value. The website property
-func (m *Vendor_escaped) GetWebsite()(*string) {
+func (m *VendorEscaped) GetWebsite()(*string) {
     return m.website
 }
 // Serialize serializes information the current object
-func (m *Vendor_escaped) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+func (m *VendorEscaped) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
         return err
@@ -461,78 +461,78 @@ func (m *Vendor_escaped) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     return nil
 }
 // SetAddress sets the address property value. The address property
-func (m *Vendor_escaped) SetAddress(value PostalAddressTypeable)() {
+func (m *VendorEscaped) SetAddress(value PostalAddressTypeable)() {
     m.address = value
 }
 // SetBalance sets the balance property value. The balance property
-func (m *Vendor_escaped) SetBalance(value *float64)() {
+func (m *VendorEscaped) SetBalance(value *float64)() {
     m.balance = value
 }
 // SetBlocked sets the blocked property value. The blocked property
-func (m *Vendor_escaped) SetBlocked(value *string)() {
+func (m *VendorEscaped) SetBlocked(value *string)() {
     m.blocked = value
 }
 // SetCurrency sets the currency property value. The currency property
-func (m *Vendor_escaped) SetCurrency(value Currencyable)() {
+func (m *VendorEscaped) SetCurrency(value Currencyable)() {
     m.currency = value
 }
 // SetCurrencyCode sets the currencyCode property value. The currencyCode property
-func (m *Vendor_escaped) SetCurrencyCode(value *string)() {
+func (m *VendorEscaped) SetCurrencyCode(value *string)() {
     m.currencyCode = value
 }
 // SetCurrencyId sets the currencyId property value. The currencyId property
-func (m *Vendor_escaped) SetCurrencyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
+func (m *VendorEscaped) SetCurrencyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.currencyId = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
-func (m *Vendor_escaped) SetDisplayName(value *string)() {
+func (m *VendorEscaped) SetDisplayName(value *string)() {
     m.displayName = value
 }
 // SetEmail sets the email property value. The email property
-func (m *Vendor_escaped) SetEmail(value *string)() {
+func (m *VendorEscaped) SetEmail(value *string)() {
     m.email = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
-func (m *Vendor_escaped) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+func (m *VendorEscaped) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
 // SetNumber sets the number property value. The number property
-func (m *Vendor_escaped) SetNumber(value *string)() {
+func (m *VendorEscaped) SetNumber(value *string)() {
     m.number = value
 }
 // SetPaymentMethod sets the paymentMethod property value. The paymentMethod property
-func (m *Vendor_escaped) SetPaymentMethod(value PaymentMethodable)() {
+func (m *VendorEscaped) SetPaymentMethod(value PaymentMethodable)() {
     m.paymentMethod = value
 }
 // SetPaymentMethodId sets the paymentMethodId property value. The paymentMethodId property
-func (m *Vendor_escaped) SetPaymentMethodId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
+func (m *VendorEscaped) SetPaymentMethodId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.paymentMethodId = value
 }
 // SetPaymentTerm sets the paymentTerm property value. The paymentTerm property
-func (m *Vendor_escaped) SetPaymentTerm(value PaymentTermable)() {
+func (m *VendorEscaped) SetPaymentTerm(value PaymentTermable)() {
     m.paymentTerm = value
 }
 // SetPaymentTermsId sets the paymentTermsId property value. The paymentTermsId property
-func (m *Vendor_escaped) SetPaymentTermsId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
+func (m *VendorEscaped) SetPaymentTermsId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.paymentTermsId = value
 }
 // SetPhoneNumber sets the phoneNumber property value. The phoneNumber property
-func (m *Vendor_escaped) SetPhoneNumber(value *string)() {
+func (m *VendorEscaped) SetPhoneNumber(value *string)() {
     m.phoneNumber = value
 }
 // SetPicture sets the picture property value. The picture property
-func (m *Vendor_escaped) SetPicture(value []Pictureable)() {
+func (m *VendorEscaped) SetPicture(value []Pictureable)() {
     m.picture = value
 }
 // SetTaxLiable sets the taxLiable property value. The taxLiable property
-func (m *Vendor_escaped) SetTaxLiable(value *bool)() {
+func (m *VendorEscaped) SetTaxLiable(value *bool)() {
     m.taxLiable = value
 }
 // SetTaxRegistrationNumber sets the taxRegistrationNumber property value. The taxRegistrationNumber property
-func (m *Vendor_escaped) SetTaxRegistrationNumber(value *string)() {
+func (m *VendorEscaped) SetTaxRegistrationNumber(value *string)() {
     m.taxRegistrationNumber = value
 }
 // SetWebsite sets the website property value. The website property
-func (m *Vendor_escaped) SetWebsite(value *string)() {
+func (m *VendorEscaped) SetWebsite(value *string)() {
     m.website = value
 }

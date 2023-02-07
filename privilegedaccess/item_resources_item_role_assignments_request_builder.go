@@ -60,8 +60,8 @@ func NewItemResourcesItemRoleAssignmentsRequestBuilderInternal(pathParameters ma
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemResourcesItemRoleAssignmentsRequestBuilder instantiates a new RoleAssignmentsRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewItemResourcesItemRoleAssignmentsRequestBuilder(rawUrl string, requestAda
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemResourcesItemRoleAssignmentsRequestBuilder) Count()(*ItemResourcesItemRoleAssignmentsCountRequestBuilder) {
-    return NewItemResourcesItemRoleAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Export provides operations to call the export method.
-func (m *ItemResourcesItemRoleAssignmentsRequestBuilder) Export()(*ItemResourcesItemRoleAssignmentsExportRequestBuilder) {
-    return NewItemResourcesItemRoleAssignmentsExportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemResourcesItemRoleAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the collection of role assignments for the resource.
 func (m *ItemResourcesItemRoleAssignmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemResourcesItemRoleAssignmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentCollectionResponseable, error) {
@@ -96,6 +92,10 @@ func (m *ItemResourcesItemRoleAssignmentsRequestBuilder) Get(ctx context.Context
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentCollectionResponseable), nil
+}
+// MicrosoftGraphExport provides operations to call the export method.
+func (m *ItemResourcesItemRoleAssignmentsRequestBuilder) MicrosoftGraphExport()(*ItemResourcesItemRoleAssignmentsMicrosoftGraphExportRequestBuilder) {
+    return NewItemResourcesItemRoleAssignmentsMicrosoftGraphExportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to roleAssignments for privilegedAccess
 func (m *ItemResourcesItemRoleAssignmentsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentable, requestConfiguration *ItemResourcesItemRoleAssignmentsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentable, error) {
@@ -139,7 +139,10 @@ func (m *ItemResourcesItemRoleAssignmentsRequestBuilder) ToPostRequestInformatio
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

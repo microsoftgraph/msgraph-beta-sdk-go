@@ -7,7 +7,7 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
-// WindowsUpdatesDeploymentsRequestBuilder provides operations to manage the deployments property of the microsoft.graph.windowsUpdates.updates entity.
+// WindowsUpdatesDeploymentsRequestBuilder provides operations to manage the deployments property of the microsoft.graph.adminWindowsUpdates entity.
 type WindowsUpdatesDeploymentsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string
@@ -60,8 +60,8 @@ func NewWindowsUpdatesDeploymentsRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsUpdatesDeploymentsRequestBuilder instantiates a new DeploymentsRequestBuilder and sets the default values.
@@ -72,12 +72,12 @@ func NewWindowsUpdatesDeploymentsRequestBuilder(rawUrl string, requestAdapter i2
 }
 // Count provides operations to count the resources in the collection.
 func (m *WindowsUpdatesDeploymentsRequestBuilder) Count()(*WindowsUpdatesDeploymentsCountRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsUpdatesDeploymentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of deployment objects and their properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/windowsupdates-updates-list-deployments?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/adminwindowsupdates-list-deployments?view=graph-rest-1.0
 func (m *WindowsUpdatesDeploymentsRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentsRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *WindowsUpdatesDeploymentsRequestBuilder) Get(ctx context.Context, reque
 // Post create a new deployment object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/windowsupdates-updates-post-deployments?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/adminwindowsupdates-post-deployments?view=graph-rest-1.0
 func (m *WindowsUpdatesDeploymentsRequestBuilder) Post(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable, requestConfiguration *WindowsUpdatesDeploymentsRequestBuilderPostRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -141,7 +141,10 @@ func (m *WindowsUpdatesDeploymentsRequestBuilder) ToPostRequestInformation(ctx c
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

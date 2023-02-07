@@ -39,7 +39,7 @@ type WorkflowBase struct {
 func NewWorkflowBase()(*WorkflowBase) {
     m := &WorkflowBase{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWorkflowBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

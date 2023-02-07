@@ -55,8 +55,8 @@ func NewItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilderInter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilder instantiates a new ChatMessageItemRequestBuilder and sets the default values.
@@ -102,7 +102,7 @@ func (m *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilder) Ge
 }
 // HostedContents provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
 func (m *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilder) HostedContents()(*ItemTeamDefinitionChannelsItemMessagesItemHostedContentsRequestBuilder) {
-    return NewItemTeamDefinitionChannelsItemMessagesItemHostedContentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTeamDefinitionChannelsItemMessagesItemHostedContentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // HostedContentsById provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
 func (m *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilder) HostedContentsById(id string)(*ItemTeamDefinitionChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilder) {
@@ -113,7 +113,23 @@ func (m *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilder) Ho
     if id != "" {
         urlTplParams["chatMessageHostedContent%2Did"] = id
     }
-    return NewItemTeamDefinitionChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemTeamDefinitionChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+// MicrosoftGraphSetReaction provides operations to call the setReaction method.
+func (m *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilder) MicrosoftGraphSetReaction()(*ItemTeamDefinitionChannelsItemMessagesItemMicrosoftGraphSetReactionRequestBuilder) {
+    return NewItemTeamDefinitionChannelsItemMessagesItemMicrosoftGraphSetReactionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphSoftDelete provides operations to call the softDelete method.
+func (m *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilder) MicrosoftGraphSoftDelete()(*ItemTeamDefinitionChannelsItemMessagesItemMicrosoftGraphSoftDeleteRequestBuilder) {
+    return NewItemTeamDefinitionChannelsItemMessagesItemMicrosoftGraphSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUndoSoftDelete provides operations to call the undoSoftDelete method.
+func (m *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilder) MicrosoftGraphUndoSoftDelete()(*ItemTeamDefinitionChannelsItemMessagesItemMicrosoftGraphUndoSoftDeleteRequestBuilder) {
+    return NewItemTeamDefinitionChannelsItemMessagesItemMicrosoftGraphUndoSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUnsetReaction provides operations to call the unsetReaction method.
+func (m *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilder) MicrosoftGraphUnsetReaction()(*ItemTeamDefinitionChannelsItemMessagesItemMicrosoftGraphUnsetReactionRequestBuilder) {
+    return NewItemTeamDefinitionChannelsItemMessagesItemMicrosoftGraphUnsetReactionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property messages in teamTemplateDefinition
 func (m *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, requestConfiguration *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, error) {
@@ -136,7 +152,7 @@ func (m *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilder) Pa
 }
 // Replies provides operations to manage the replies property of the microsoft.graph.chatMessage entity.
 func (m *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilder) Replies()(*ItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilder) {
-    return NewItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RepliesById provides operations to manage the replies property of the microsoft.graph.chatMessage entity.
 func (m *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilder) RepliesById(id string)(*ItemTeamDefinitionChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) {
@@ -147,15 +163,7 @@ func (m *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilder) Re
     if id != "" {
         urlTplParams["chatMessage%2Did1"] = id
     }
-    return NewItemTeamDefinitionChannelsItemMessagesItemRepliesChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// SetReaction provides operations to call the setReaction method.
-func (m *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilder) SetReaction()(*ItemTeamDefinitionChannelsItemMessagesItemSetReactionRequestBuilder) {
-    return NewItemTeamDefinitionChannelsItemMessagesItemSetReactionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// SoftDelete provides operations to call the softDelete method.
-func (m *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilder) SoftDelete()(*ItemTeamDefinitionChannelsItemMessagesItemSoftDeleteRequestBuilder) {
-    return NewItemTeamDefinitionChannelsItemMessagesItemSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTeamDefinitionChannelsItemMessagesItemRepliesChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property messages for teamTemplateDefinition
 func (m *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -192,18 +200,13 @@ func (m *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilder) To
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// UndoSoftDelete provides operations to call the undoSoftDelete method.
-func (m *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilder) UndoSoftDelete()(*ItemTeamDefinitionChannelsItemMessagesItemUndoSoftDeleteRequestBuilder) {
-    return NewItemTeamDefinitionChannelsItemMessagesItemUndoSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// UnsetReaction provides operations to call the unsetReaction method.
-func (m *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilder) UnsetReaction()(*ItemTeamDefinitionChannelsItemMessagesItemUnsetReactionRequestBuilder) {
-    return NewItemTeamDefinitionChannelsItemMessagesItemUnsetReactionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

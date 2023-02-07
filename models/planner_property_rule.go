@@ -17,7 +17,7 @@ type PlannerPropertyRule struct {
 func NewPlannerPropertyRule()(*PlannerPropertyRule) {
     m := &PlannerPropertyRule{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePlannerPropertyRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

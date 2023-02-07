@@ -25,8 +25,8 @@ func NewSkillProficiency()(*SkillProficiency) {
     m := &SkillProficiency{
         ItemFacet: *NewItemFacet(),
     }
-    odataTypeValue := "#microsoft.graph.skillProficiency";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.skillProficiency"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateSkillProficiencyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

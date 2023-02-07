@@ -37,8 +37,8 @@ func NewSitePage()(*SitePage) {
     m := &SitePage{
         BaseItem: *NewBaseItem(),
     }
-    odataTypeValue := "#microsoft.graph.sitePage";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.sitePage"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateSitePageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

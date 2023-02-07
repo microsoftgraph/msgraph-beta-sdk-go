@@ -19,7 +19,7 @@ type Windows10AssociatedApps struct {
 func NewWindows10AssociatedApps()(*Windows10AssociatedApps) {
     m := &Windows10AssociatedApps{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWindows10AssociatedAppsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

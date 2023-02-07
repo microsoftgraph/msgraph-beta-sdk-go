@@ -46,10 +46,6 @@ type ManagedTenantsTenantTagsTenantTagItemRequestBuilderPatchRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AssignTag provides operations to call the assignTag method.
-func (m *ManagedTenantsTenantTagsTenantTagItemRequestBuilder) AssignTag()(*ManagedTenantsTenantTagsItemAssignTagRequestBuilder) {
-    return NewManagedTenantsTenantTagsItemAssignTagRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewManagedTenantsTenantTagsTenantTagItemRequestBuilderInternal instantiates a new TenantTagItemRequestBuilder and sets the default values.
 func NewManagedTenantsTenantTagsTenantTagItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsTenantTagsTenantTagItemRequestBuilder) {
     m := &ManagedTenantsTenantTagsTenantTagItemRequestBuilder{
@@ -59,8 +55,8 @@ func NewManagedTenantsTenantTagsTenantTagItemRequestBuilderInternal(pathParamete
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedTenantsTenantTagsTenantTagItemRequestBuilder instantiates a new TenantTagItemRequestBuilder and sets the default values.
@@ -103,6 +99,14 @@ func (m *ManagedTenantsTenantTagsTenantTagItemRequestBuilder) Get(ctx context.Co
         return nil, nil
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantTagable), nil
+}
+// MicrosoftGraphManagedTenantsAssignTag provides operations to call the assignTag method.
+func (m *ManagedTenantsTenantTagsTenantTagItemRequestBuilder) MicrosoftGraphManagedTenantsAssignTag()(*ManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagRequestBuilder) {
+    return NewManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphManagedTenantsUnassignTag provides operations to call the unassignTag method.
+func (m *ManagedTenantsTenantTagsTenantTagItemRequestBuilder) MicrosoftGraphManagedTenantsUnassignTag()(*ManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsUnassignTagRequestBuilder) {
+    return NewManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsUnassignTagRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property tenantTags in tenantRelationships
 func (m *ManagedTenantsTenantTagsTenantTagItemRequestBuilder) Patch(ctx context.Context, body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantTagable, requestConfiguration *ManagedTenantsTenantTagsTenantTagItemRequestBuilderPatchRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantTagable, error) {
@@ -158,14 +162,13 @@ func (m *ManagedTenantsTenantTagsTenantTagItemRequestBuilder) ToPatchRequestInfo
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// UnassignTag provides operations to call the unassignTag method.
-func (m *ManagedTenantsTenantTagsTenantTagItemRequestBuilder) UnassignTag()(*ManagedTenantsTenantTagsItemUnassignTagRequestBuilder) {
-    return NewManagedTenantsTenantTagsItemUnassignTagRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

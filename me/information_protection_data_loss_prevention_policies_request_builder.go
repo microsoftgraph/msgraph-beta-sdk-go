@@ -60,8 +60,8 @@ func NewInformationProtectionDataLossPreventionPoliciesRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewInformationProtectionDataLossPreventionPoliciesRequestBuilder instantiates a new DataLossPreventionPoliciesRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewInformationProtectionDataLossPreventionPoliciesRequestBuilder(rawUrl str
 }
 // Count provides operations to count the resources in the collection.
 func (m *InformationProtectionDataLossPreventionPoliciesRequestBuilder) Count()(*InformationProtectionDataLossPreventionPoliciesCountRequestBuilder) {
-    return NewInformationProtectionDataLossPreventionPoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Evaluate provides operations to call the evaluate method.
-func (m *InformationProtectionDataLossPreventionPoliciesRequestBuilder) Evaluate()(*InformationProtectionDataLossPreventionPoliciesEvaluateRequestBuilder) {
-    return NewInformationProtectionDataLossPreventionPoliciesEvaluateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewInformationProtectionDataLossPreventionPoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get dataLossPreventionPolicies from me
 func (m *InformationProtectionDataLossPreventionPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *InformationProtectionDataLossPreventionPoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyCollectionResponseable, error) {
@@ -96,6 +92,10 @@ func (m *InformationProtectionDataLossPreventionPoliciesRequestBuilder) Get(ctx 
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyCollectionResponseable), nil
+}
+// MicrosoftGraphEvaluate provides operations to call the evaluate method.
+func (m *InformationProtectionDataLossPreventionPoliciesRequestBuilder) MicrosoftGraphEvaluate()(*InformationProtectionDataLossPreventionPoliciesMicrosoftGraphEvaluateRequestBuilder) {
+    return NewInformationProtectionDataLossPreventionPoliciesMicrosoftGraphEvaluateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to dataLossPreventionPolicies for me
 func (m *InformationProtectionDataLossPreventionPoliciesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyable, requestConfiguration *InformationProtectionDataLossPreventionPoliciesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyable, error) {
@@ -139,7 +139,10 @@ func (m *InformationProtectionDataLossPreventionPoliciesRequestBuilder) ToPostRe
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

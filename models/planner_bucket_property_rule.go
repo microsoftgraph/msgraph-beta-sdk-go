@@ -17,8 +17,8 @@ func NewPlannerBucketPropertyRule()(*PlannerBucketPropertyRule) {
     m := &PlannerBucketPropertyRule{
         PlannerPropertyRule: *NewPlannerPropertyRule(),
     }
-    odataTypeValue := "#microsoft.graph.plannerBucketPropertyRule";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.plannerBucketPropertyRule"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreatePlannerBucketPropertyRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

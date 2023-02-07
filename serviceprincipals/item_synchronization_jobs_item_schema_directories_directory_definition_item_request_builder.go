@@ -55,8 +55,8 @@ func NewItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemReque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilder instantiates a new DirectoryDefinitionItemRequestBuilder and sets the default values.
@@ -81,10 +81,6 @@ func (m *ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequ
     }
     return nil
 }
-// Discover provides operations to call the discover method.
-func (m *ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilder) Discover()(*ItemSynchronizationJobsItemSchemaDirectoriesItemDiscoverRequestBuilder) {
-    return NewItemSynchronizationJobsItemSchemaDirectoriesItemDiscoverRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Get contains the collection of directories and all of their objects.
 func (m *ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryDefinitionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -103,6 +99,10 @@ func (m *ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequ
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryDefinitionable), nil
+}
+// MicrosoftGraphDiscover provides operations to call the discover method.
+func (m *ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilder) MicrosoftGraphDiscover()(*ItemSynchronizationJobsItemSchemaDirectoriesItemMicrosoftGraphDiscoverRequestBuilder) {
+    return NewItemSynchronizationJobsItemSchemaDirectoriesItemMicrosoftGraphDiscoverRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property directories in servicePrincipals
 func (m *ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryDefinitionable, requestConfiguration *ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryDefinitionable, error) {
@@ -158,7 +158,10 @@ func (m *ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

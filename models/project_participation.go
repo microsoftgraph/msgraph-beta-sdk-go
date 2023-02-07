@@ -29,8 +29,8 @@ func NewProjectParticipation()(*ProjectParticipation) {
     m := &ProjectParticipation{
         ItemFacet: *NewItemFacet(),
     }
-    odataTypeValue := "#microsoft.graph.projectParticipation";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.projectParticipation"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateProjectParticipationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

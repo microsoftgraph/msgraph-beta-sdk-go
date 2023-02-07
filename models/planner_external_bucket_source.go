@@ -19,8 +19,8 @@ func NewPlannerExternalBucketSource()(*PlannerExternalBucketSource) {
     m := &PlannerExternalBucketSource{
         PlannerBucketCreation: *NewPlannerBucketCreation(),
     }
-    odataTypeValue := "#microsoft.graph.plannerExternalBucketSource";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.plannerExternalBucketSource"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreatePlannerExternalBucketSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

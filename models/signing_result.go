@@ -19,7 +19,7 @@ type SigningResult struct {
 func NewSigningResult()(*SigningResult) {
     m := &SigningResult{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSigningResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

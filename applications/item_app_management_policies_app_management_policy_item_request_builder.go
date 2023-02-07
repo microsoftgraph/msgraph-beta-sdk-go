@@ -22,8 +22,8 @@ func NewItemAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal(p
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder instantiates a new AppManagementPolicyItemRequestBuilder and sets the default values.
@@ -34,5 +34,5 @@ func NewItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder(rawUrl st
 }
 // Ref provides operations to manage the collection of application entities.
 func (m *ItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder) Ref()(*ItemAppManagementPoliciesItemRefRequestBuilder) {
-    return NewItemAppManagementPoliciesItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemAppManagementPoliciesItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

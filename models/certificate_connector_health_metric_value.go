@@ -22,7 +22,7 @@ type CertificateConnectorHealthMetricValue struct {
 func NewCertificateConnectorHealthMetricValue()(*CertificateConnectorHealthMetricValue) {
     m := &CertificateConnectorHealthMetricValue{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCertificateConnectorHealthMetricValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

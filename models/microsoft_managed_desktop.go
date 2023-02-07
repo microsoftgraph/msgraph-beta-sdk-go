@@ -13,13 +13,13 @@ type MicrosoftManagedDesktop struct {
     // The name of the Microsoft Managed Desktop profile that the Windows 365 Cloud PC is associated with.
     profile *string
     // Indicates whether the provisioning policy enables Microsoft Managed Desktop. It indicates the type of plan under which the device is managed if the provisioning policy is enabled. Possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue.
-    type_escaped *MicrosoftManagedDesktopType
+    typeEscaped *MicrosoftManagedDesktopType
 }
 // NewMicrosoftManagedDesktop instantiates a new microsoftManagedDesktop and sets the default values.
 func NewMicrosoftManagedDesktop()(*MicrosoftManagedDesktop) {
     m := &MicrosoftManagedDesktop{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMicrosoftManagedDesktopFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -75,7 +75,7 @@ func (m *MicrosoftManagedDesktop) GetProfile()(*string) {
 }
 // GetType gets the type property value. Indicates whether the provisioning policy enables Microsoft Managed Desktop. It indicates the type of plan under which the device is managed if the provisioning policy is enabled. Possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue.
 func (m *MicrosoftManagedDesktop) GetType()(*MicrosoftManagedDesktopType) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *MicrosoftManagedDesktop) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -120,5 +120,5 @@ func (m *MicrosoftManagedDesktop) SetProfile(value *string)() {
 }
 // SetType sets the type property value. Indicates whether the provisioning policy enables Microsoft Managed Desktop. It indicates the type of plan under which the device is managed if the provisioning policy is enabled. Possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue.
 func (m *MicrosoftManagedDesktop) SetType(value *MicrosoftManagedDesktopType)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

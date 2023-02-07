@@ -25,7 +25,7 @@ type TeamworkDateTimeConfiguration struct {
 func NewTeamworkDateTimeConfiguration()(*TeamworkDateTimeConfiguration) {
     m := &TeamworkDateTimeConfiguration{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTeamworkDateTimeConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

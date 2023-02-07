@@ -17,13 +17,13 @@ type CloudPcAuditResource struct {
     // The ID of the audit resource.
     resourceId *string
     // The type of the audit resource.
-    type_escaped *string
+    typeEscaped *string
 }
 // NewCloudPcAuditResource instantiates a new cloudPcAuditResource and sets the default values.
 func NewCloudPcAuditResource()(*CloudPcAuditResource) {
     m := &CloudPcAuditResource{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCloudPcAuditResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -111,7 +111,7 @@ func (m *CloudPcAuditResource) GetResourceId()(*string) {
 }
 // GetType gets the type property value. The type of the audit resource.
 func (m *CloudPcAuditResource) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *CloudPcAuditResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -179,5 +179,5 @@ func (m *CloudPcAuditResource) SetResourceId(value *string)() {
 }
 // SetType sets the type property value. The type of the audit resource.
 func (m *CloudPcAuditResource) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

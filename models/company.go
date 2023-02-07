@@ -84,9 +84,9 @@ type Company struct {
     // The unitsOfMeasure property
     unitsOfMeasure []UnitOfMeasureable
     // The vendors property
-    vendors []Vendor_escapedable
+    vendors []VendorEscapedable
 }
-// NewCompany instantiates a new company and sets the default values.
+// NewCompany instantiates a new Company and sets the default values.
 func NewCompany()(*Company) {
     m := &Company{
         Entity: *NewEntity(),
@@ -673,14 +673,14 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         return nil
     }
     res["vendors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateVendor_escapedFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(CreateVendorEscapedFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Vendor_escapedable, len(val))
+            res := make([]VendorEscapedable, len(val))
             for i, v := range val {
-                res[i] = v.(Vendor_escapedable)
+                res[i] = v.(VendorEscapedable)
             }
             m.SetVendors(res)
         }
@@ -785,7 +785,7 @@ func (m *Company) GetUnitsOfMeasure()([]UnitOfMeasureable) {
     return m.unitsOfMeasure
 }
 // GetVendors gets the vendors property value. The vendors property
-func (m *Company) GetVendors()([]Vendor_escapedable) {
+func (m *Company) GetVendors()([]VendorEscapedable) {
     return m.vendors
 }
 // Serialize serializes information the current object
@@ -1323,6 +1323,6 @@ func (m *Company) SetUnitsOfMeasure(value []UnitOfMeasureable)() {
     m.unitsOfMeasure = value
 }
 // SetVendors sets the vendors property value. The vendors property
-func (m *Company) SetVendors(value []Vendor_escapedable)() {
+func (m *Company) SetVendors(value []VendorEscapedable)() {
     m.vendors = value
 }

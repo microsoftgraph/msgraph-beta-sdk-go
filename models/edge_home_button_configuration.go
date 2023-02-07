@@ -15,7 +15,7 @@ type EdgeHomeButtonConfiguration struct {
 func NewEdgeHomeButtonConfiguration()(*EdgeHomeButtonConfiguration) {
     m := &EdgeHomeButtonConfiguration{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateEdgeHomeButtonConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

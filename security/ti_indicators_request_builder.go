@@ -60,8 +60,8 @@ func NewTiIndicatorsRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTiIndicatorsRequestBuilder instantiates a new TiIndicatorsRequestBuilder and sets the default values.
@@ -72,15 +72,7 @@ func NewTiIndicatorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 }
 // Count provides operations to count the resources in the collection.
 func (m *TiIndicatorsRequestBuilder) Count()(*TiIndicatorsCountRequestBuilder) {
-    return NewTiIndicatorsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// DeleteTiIndicators provides operations to call the deleteTiIndicators method.
-func (m *TiIndicatorsRequestBuilder) DeleteTiIndicators()(*TiIndicatorsDeleteTiIndicatorsRequestBuilder) {
-    return NewTiIndicatorsDeleteTiIndicatorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// DeleteTiIndicatorsByExternalId provides operations to call the deleteTiIndicatorsByExternalId method.
-func (m *TiIndicatorsRequestBuilder) DeleteTiIndicatorsByExternalId()(*TiIndicatorsDeleteTiIndicatorsByExternalIdRequestBuilder) {
-    return NewTiIndicatorsDeleteTiIndicatorsByExternalIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTiIndicatorsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of tiIndicator objects.
 // [Find more info here]
@@ -104,6 +96,22 @@ func (m *TiIndicatorsRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TiIndicatorCollectionResponseable), nil
 }
+// MicrosoftGraphDeleteTiIndicators provides operations to call the deleteTiIndicators method.
+func (m *TiIndicatorsRequestBuilder) MicrosoftGraphDeleteTiIndicators()(*TiIndicatorsMicrosoftGraphDeleteTiIndicatorsRequestBuilder) {
+    return NewTiIndicatorsMicrosoftGraphDeleteTiIndicatorsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphDeleteTiIndicatorsByExternalId provides operations to call the deleteTiIndicatorsByExternalId method.
+func (m *TiIndicatorsRequestBuilder) MicrosoftGraphDeleteTiIndicatorsByExternalId()(*TiIndicatorsMicrosoftGraphDeleteTiIndicatorsByExternalIdRequestBuilder) {
+    return NewTiIndicatorsMicrosoftGraphDeleteTiIndicatorsByExternalIdRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphSubmitTiIndicators provides operations to call the submitTiIndicators method.
+func (m *TiIndicatorsRequestBuilder) MicrosoftGraphSubmitTiIndicators()(*TiIndicatorsMicrosoftGraphSubmitTiIndicatorsRequestBuilder) {
+    return NewTiIndicatorsMicrosoftGraphSubmitTiIndicatorsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUpdateTiIndicators provides operations to call the updateTiIndicators method.
+func (m *TiIndicatorsRequestBuilder) MicrosoftGraphUpdateTiIndicators()(*TiIndicatorsMicrosoftGraphUpdateTiIndicatorsRequestBuilder) {
+    return NewTiIndicatorsMicrosoftGraphUpdateTiIndicatorsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Post create a new tiIndicator object.
 // [Find more info here]
 // 
@@ -125,10 +133,6 @@ func (m *TiIndicatorsRequestBuilder) Post(ctx context.Context, body ie233ee762e2
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TiIndicatorable), nil
-}
-// SubmitTiIndicators provides operations to call the submitTiIndicators method.
-func (m *TiIndicatorsRequestBuilder) SubmitTiIndicators()(*TiIndicatorsSubmitTiIndicatorsRequestBuilder) {
-    return NewTiIndicatorsSubmitTiIndicatorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToGetRequestInformation retrieve a list of tiIndicator objects.
 func (m *TiIndicatorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TiIndicatorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -153,14 +157,13 @@ func (m *TiIndicatorsRequestBuilder) ToPostRequestInformation(ctx context.Contex
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// UpdateTiIndicators provides operations to call the updateTiIndicators method.
-func (m *TiIndicatorsRequestBuilder) UpdateTiIndicators()(*TiIndicatorsUpdateTiIndicatorsRequestBuilder) {
-    return NewTiIndicatorsUpdateTiIndicatorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

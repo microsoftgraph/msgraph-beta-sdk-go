@@ -8,7 +8,7 @@ import (
 type DelegatedAdminRelationshipCustomerParticipant struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The display name of the customer tenant as set by Azure AD. Read only
+    // The display name of the customer tenant as set by Azure AD. Read-only
     displayName *string
     // The OdataType property
     odataType *string
@@ -19,7 +19,7 @@ type DelegatedAdminRelationshipCustomerParticipant struct {
 func NewDelegatedAdminRelationshipCustomerParticipant()(*DelegatedAdminRelationshipCustomerParticipant) {
     m := &DelegatedAdminRelationshipCustomerParticipant{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDelegatedAdminRelationshipCustomerParticipantFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateDelegatedAdminRelationshipCustomerParticipantFromDiscriminatorValue(p
 func (m *DelegatedAdminRelationshipCustomerParticipant) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetDisplayName gets the displayName property value. The display name of the customer tenant as set by Azure AD. Read only
+// GetDisplayName gets the displayName property value. The display name of the customer tenant as set by Azure AD. Read-only
 func (m *DelegatedAdminRelationshipCustomerParticipant) GetDisplayName()(*string) {
     return m.displayName
 }
@@ -109,7 +109,7 @@ func (m *DelegatedAdminRelationshipCustomerParticipant) Serialize(writer i878a80
 func (m *DelegatedAdminRelationshipCustomerParticipant) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetDisplayName sets the displayName property value. The display name of the customer tenant as set by Azure AD. Read only
+// SetDisplayName sets the displayName property value. The display name of the customer tenant as set by Azure AD. Read-only
 func (m *DelegatedAdminRelationshipCustomerParticipant) SetDisplayName(value *string)() {
     m.displayName = value
 }

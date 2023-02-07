@@ -17,7 +17,7 @@ type CustomExtensionCallbackConfiguration struct {
 func NewCustomExtensionCallbackConfiguration()(*CustomExtensionCallbackConfiguration) {
     m := &CustomExtensionCallbackConfiguration{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCustomExtensionCallbackConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

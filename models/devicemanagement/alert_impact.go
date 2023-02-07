@@ -19,7 +19,7 @@ type AlertImpact struct {
 func NewAlertImpact()(*AlertImpact) {
     m := &AlertImpact{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAlertImpactFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

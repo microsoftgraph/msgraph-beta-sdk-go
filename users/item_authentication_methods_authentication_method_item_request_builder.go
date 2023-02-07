@@ -48,8 +48,8 @@ func NewItemAuthenticationMethodsAuthenticationMethodItemRequestBuilderInternal(
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder instantiates a new AuthenticationMethodItemRequestBuilder and sets the default values.
@@ -57,14 +57,6 @@ func NewItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder(rawUrl s
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemAuthenticationMethodsAuthenticationMethodItemRequestBuilderInternal(urlParams, requestAdapter)
-}
-// DisableSmsSignIn provides operations to call the disableSmsSignIn method.
-func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) DisableSmsSignIn()(*ItemAuthenticationMethodsItemDisableSmsSignInRequestBuilder) {
-    return NewItemAuthenticationMethodsItemDisableSmsSignInRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// EnableSmsSignIn provides operations to call the enableSmsSignIn method.
-func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) EnableSmsSignIn()(*ItemAuthenticationMethodsItemEnableSmsSignInRequestBuilder) {
-    return NewItemAuthenticationMethodsItemEnableSmsSignInRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get represents all authentication methods registered to a user.
 func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodable, error) {
@@ -85,6 +77,18 @@ func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) Get(ct
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodable), nil
 }
+// MicrosoftGraphDisableSmsSignIn provides operations to call the disableSmsSignIn method.
+func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) MicrosoftGraphDisableSmsSignIn()(*ItemAuthenticationMethodsItemMicrosoftGraphDisableSmsSignInRequestBuilder) {
+    return NewItemAuthenticationMethodsItemMicrosoftGraphDisableSmsSignInRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphEnableSmsSignIn provides operations to call the enableSmsSignIn method.
+func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) MicrosoftGraphEnableSmsSignIn()(*ItemAuthenticationMethodsItemMicrosoftGraphEnableSmsSignInRequestBuilder) {
+    return NewItemAuthenticationMethodsItemMicrosoftGraphEnableSmsSignInRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphResetPassword provides operations to call the resetPassword method.
+func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) MicrosoftGraphResetPassword()(*ItemAuthenticationMethodsItemMicrosoftGraphResetPasswordRequestBuilder) {
+    return NewItemAuthenticationMethodsItemMicrosoftGraphResetPasswordRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property methods in users
 func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodable, requestConfiguration *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -103,10 +107,6 @@ func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) Patch(
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodable), nil
-}
-// ResetPassword provides operations to call the resetPassword method.
-func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) ResetPassword()(*ItemAuthenticationMethodsItemResetPasswordRequestBuilder) {
-    return NewItemAuthenticationMethodsItemResetPasswordRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToGetRequestInformation represents all authentication methods registered to a user.
 func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -131,7 +131,10 @@ func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) ToPatc
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -27,7 +27,7 @@ type SelfSignedCertificate struct {
     // The thumbprint value for the key.
     thumbprint *string
     // The type of key credential. 'AsymmetricX509Cert'.
-    type_escaped *string
+    typeEscaped *string
     // A string that describes the purpose for which the key can be used. For example, 'Verify'.
     usage *string
 }
@@ -35,7 +35,7 @@ type SelfSignedCertificate struct {
 func NewSelfSignedCertificate()(*SelfSignedCertificate) {
     m := &SelfSignedCertificate{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSelfSignedCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -185,7 +185,7 @@ func (m *SelfSignedCertificate) GetThumbprint()(*string) {
 }
 // GetType gets the type property value. The type of key credential. 'AsymmetricX509Cert'.
 func (m *SelfSignedCertificate) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // GetUsage gets the usage property value. A string that describes the purpose for which the key can be used. For example, 'Verify'.
 func (m *SelfSignedCertificate) GetUsage()(*string) {
@@ -299,7 +299,7 @@ func (m *SelfSignedCertificate) SetThumbprint(value *string)() {
 }
 // SetType sets the type property value. The type of key credential. 'AsymmetricX509Cert'.
 func (m *SelfSignedCertificate) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }
 // SetUsage sets the usage property value. A string that describes the purpose for which the key can be used. For example, 'Verify'.
 func (m *SelfSignedCertificate) SetUsage(value *string)() {

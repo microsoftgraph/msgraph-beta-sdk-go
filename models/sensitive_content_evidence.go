@@ -21,7 +21,7 @@ type SensitiveContentEvidence struct {
 func NewSensitiveContentEvidence()(*SensitiveContentEvidence) {
     m := &SensitiveContentEvidence{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSensitiveContentEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

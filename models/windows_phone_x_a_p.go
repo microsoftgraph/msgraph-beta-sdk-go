@@ -19,8 +19,8 @@ func NewWindowsPhoneXAP()(*WindowsPhoneXAP) {
     m := &WindowsPhoneXAP{
         MobileLobApp: *NewMobileLobApp(),
     }
-    odataTypeValue := "#microsoft.graph.windowsPhoneXAP";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsPhoneXAP"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsPhoneXAPFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

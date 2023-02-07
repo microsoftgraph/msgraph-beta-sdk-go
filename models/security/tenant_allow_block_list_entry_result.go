@@ -26,7 +26,7 @@ type TenantAllowBlockListEntryResult struct {
 func NewTenantAllowBlockListEntryResult()(*TenantAllowBlockListEntryResult) {
     m := &TenantAllowBlockListEntryResult{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTenantAllowBlockListEntryResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

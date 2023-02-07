@@ -59,8 +59,8 @@ func NewIosikEv2VpnConfiguration()(*IosikEv2VpnConfiguration) {
     m := &IosikEv2VpnConfiguration{
         IosVpnConfiguration: *NewIosVpnConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.iosikEv2VpnConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.iosikEv2VpnConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateIosikEv2VpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

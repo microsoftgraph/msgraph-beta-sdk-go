@@ -16,9 +16,7 @@ type DeviceManagementPartnerable interface {
     GetPartnerAppType()(*DeviceManagementPartnerAppType)
     GetPartnerState()(*DeviceManagementPartnerTenantState)
     GetSingleTenantAppId()(*string)
-    GetWhenPartnerDevicesWillBeMarkedAsNonCompliant()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetWhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetWhenPartnerDevicesWillBeRemoved()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetWhenPartnerDevicesWillBeRemovedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     SetDisplayName(value *string)()
     SetGroupsRequiringPartnerEnrollment(value []DeviceManagementPartnerAssignmentable)()
@@ -27,8 +25,6 @@ type DeviceManagementPartnerable interface {
     SetPartnerAppType(value *DeviceManagementPartnerAppType)()
     SetPartnerState(value *DeviceManagementPartnerTenantState)()
     SetSingleTenantAppId(value *string)()
-    SetWhenPartnerDevicesWillBeMarkedAsNonCompliant(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetWhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetWhenPartnerDevicesWillBeRemoved(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetWhenPartnerDevicesWillBeRemovedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
 }

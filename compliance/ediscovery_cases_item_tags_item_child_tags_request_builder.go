@@ -53,8 +53,8 @@ func NewEdiscoveryCasesItemTagsItemChildTagsRequestBuilderInternal(pathParameter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEdiscoveryCasesItemTagsItemChildTagsRequestBuilder instantiates a new ChildTagsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewEdiscoveryCasesItemTagsItemChildTagsRequestBuilder(rawUrl string, reques
 }
 // Count provides operations to count the resources in the collection.
 func (m *EdiscoveryCasesItemTagsItemChildTagsRequestBuilder) Count()(*EdiscoveryCasesItemTagsItemChildTagsCountRequestBuilder) {
-    return NewEdiscoveryCasesItemTagsItemChildTagsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesItemTagsItemChildTagsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of child tag objects associated with a tag.
 // [Find more info here]

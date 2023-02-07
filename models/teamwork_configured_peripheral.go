@@ -19,7 +19,7 @@ type TeamworkConfiguredPeripheral struct {
 func NewTeamworkConfiguredPeripheral()(*TeamworkConfiguredPeripheral) {
     m := &TeamworkConfiguredPeripheral{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTeamworkConfiguredPeripheralFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

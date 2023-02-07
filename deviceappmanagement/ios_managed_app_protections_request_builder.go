@@ -60,8 +60,8 @@ func NewIosManagedAppProtectionsRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewIosManagedAppProtectionsRequestBuilder instantiates a new IosManagedAppProtectionsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewIosManagedAppProtectionsRequestBuilder(rawUrl string, requestAdapter i2a
 }
 // Count provides operations to count the resources in the collection.
 func (m *IosManagedAppProtectionsRequestBuilder) Count()(*IosManagedAppProtectionsCountRequestBuilder) {
-    return NewIosManagedAppProtectionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIosManagedAppProtectionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get iOS managed app policies.
 func (m *IosManagedAppProtectionsRequestBuilder) Get(ctx context.Context, requestConfiguration *IosManagedAppProtectionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosManagedAppProtectionCollectionResponseable, error) {
@@ -93,9 +93,9 @@ func (m *IosManagedAppProtectionsRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosManagedAppProtectionCollectionResponseable), nil
 }
-// HasPayloadLinks provides operations to call the hasPayloadLinks method.
-func (m *IosManagedAppProtectionsRequestBuilder) HasPayloadLinks()(*IosManagedAppProtectionsHasPayloadLinksRequestBuilder) {
-    return NewIosManagedAppProtectionsHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphHasPayloadLinks provides operations to call the hasPayloadLinks method.
+func (m *IosManagedAppProtectionsRequestBuilder) MicrosoftGraphHasPayloadLinks()(*IosManagedAppProtectionsMicrosoftGraphHasPayloadLinksRequestBuilder) {
+    return NewIosManagedAppProtectionsMicrosoftGraphHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to iosManagedAppProtections for deviceAppManagement
 func (m *IosManagedAppProtectionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosManagedAppProtectionable, requestConfiguration *IosManagedAppProtectionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosManagedAppProtectionable, error) {
@@ -139,7 +139,10 @@ func (m *IosManagedAppProtectionsRequestBuilder) ToPostRequestInformation(ctx co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

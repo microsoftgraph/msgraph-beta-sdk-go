@@ -23,7 +23,7 @@ type AttachmentInfo struct {
 func NewAttachmentInfo()(*AttachmentInfo) {
     m := &AttachmentInfo{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAttachmentInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

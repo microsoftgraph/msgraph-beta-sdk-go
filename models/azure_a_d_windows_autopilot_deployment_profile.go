@@ -13,8 +13,8 @@ func NewAzureADWindowsAutopilotDeploymentProfile()(*AzureADWindowsAutopilotDeplo
     m := &AzureADWindowsAutopilotDeploymentProfile{
         WindowsAutopilotDeploymentProfile: *NewWindowsAutopilotDeploymentProfile(),
     }
-    odataTypeValue := "#microsoft.graph.azureADWindowsAutopilotDeploymentProfile";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.azureADWindowsAutopilotDeploymentProfile"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAzureADWindowsAutopilotDeploymentProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

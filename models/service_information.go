@@ -19,7 +19,7 @@ type ServiceInformation struct {
 func NewServiceInformation()(*ServiceInformation) {
     m := &ServiceInformation{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateServiceInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -15,7 +15,7 @@ type CustomExtensionEndpointConfiguration struct {
 func NewCustomExtensionEndpointConfiguration()(*CustomExtensionEndpointConfiguration) {
     m := &CustomExtensionEndpointConfiguration{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCustomExtensionEndpointConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

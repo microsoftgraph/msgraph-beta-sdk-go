@@ -51,22 +51,6 @@ type ManagedDevicesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AppDiagnosticsWithUpn provides operations to call the appDiagnostics method.
-func (m *ManagedDevicesRequestBuilder) AppDiagnosticsWithUpn(upn *string)(*ManagedDevicesAppDiagnosticsWithUpnRequestBuilder) {
-    return NewManagedDevicesAppDiagnosticsWithUpnRequestBuilderInternal(m.pathParameters, m.requestAdapter, upn);
-}
-// BulkReprovisionCloudPc provides operations to call the bulkReprovisionCloudPc method.
-func (m *ManagedDevicesRequestBuilder) BulkReprovisionCloudPc()(*ManagedDevicesBulkReprovisionCloudPcRequestBuilder) {
-    return NewManagedDevicesBulkReprovisionCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// BulkRestoreCloudPc provides operations to call the bulkRestoreCloudPc method.
-func (m *ManagedDevicesRequestBuilder) BulkRestoreCloudPc()(*ManagedDevicesBulkRestoreCloudPcRequestBuilder) {
-    return NewManagedDevicesBulkRestoreCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// BulkSetCloudPcReviewStatus provides operations to call the bulkSetCloudPcReviewStatus method.
-func (m *ManagedDevicesRequestBuilder) BulkSetCloudPcReviewStatus()(*ManagedDevicesBulkSetCloudPcReviewStatusRequestBuilder) {
-    return NewManagedDevicesBulkSetCloudPcReviewStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewManagedDevicesRequestBuilderInternal instantiates a new ManagedDevicesRequestBuilder and sets the default values.
 func NewManagedDevicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedDevicesRequestBuilder) {
     m := &ManagedDevicesRequestBuilder{
@@ -76,8 +60,8 @@ func NewManagedDevicesRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedDevicesRequestBuilder instantiates a new ManagedDevicesRequestBuilder and sets the default values.
@@ -88,15 +72,7 @@ func NewManagedDevicesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 }
 // Count provides operations to count the resources in the collection.
 func (m *ManagedDevicesRequestBuilder) Count()(*ManagedDevicesCountRequestBuilder) {
-    return NewManagedDevicesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// DownloadAppDiagnostics provides operations to call the downloadAppDiagnostics method.
-func (m *ManagedDevicesRequestBuilder) DownloadAppDiagnostics()(*ManagedDevicesDownloadAppDiagnosticsRequestBuilder) {
-    return NewManagedDevicesDownloadAppDiagnosticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ExecuteAction provides operations to call the executeAction method.
-func (m *ManagedDevicesRequestBuilder) ExecuteAction()(*ManagedDevicesExecuteActionRequestBuilder) {
-    return NewManagedDevicesExecuteActionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedDevicesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the managed devices associated with the user.
 func (m *ManagedDevicesRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedDevicesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceCollectionResponseable, error) {
@@ -117,9 +93,33 @@ func (m *ManagedDevicesRequestBuilder) Get(ctx context.Context, requestConfigura
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceCollectionResponseable), nil
 }
-// MoveDevicesToOU provides operations to call the moveDevicesToOU method.
-func (m *ManagedDevicesRequestBuilder) MoveDevicesToOU()(*ManagedDevicesMoveDevicesToOURequestBuilder) {
-    return NewManagedDevicesMoveDevicesToOURequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphAppDiagnosticsWithUpn provides operations to call the appDiagnostics method.
+func (m *ManagedDevicesRequestBuilder) MicrosoftGraphAppDiagnosticsWithUpn(upn *string)(*ManagedDevicesMicrosoftGraphAppDiagnosticsWithUpnRequestBuilder) {
+    return NewManagedDevicesMicrosoftGraphAppDiagnosticsWithUpnRequestBuilderInternal(m.pathParameters, m.requestAdapter, upn)
+}
+// MicrosoftGraphBulkReprovisionCloudPc provides operations to call the bulkReprovisionCloudPc method.
+func (m *ManagedDevicesRequestBuilder) MicrosoftGraphBulkReprovisionCloudPc()(*ManagedDevicesMicrosoftGraphBulkReprovisionCloudPcRequestBuilder) {
+    return NewManagedDevicesMicrosoftGraphBulkReprovisionCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphBulkRestoreCloudPc provides operations to call the bulkRestoreCloudPc method.
+func (m *ManagedDevicesRequestBuilder) MicrosoftGraphBulkRestoreCloudPc()(*ManagedDevicesMicrosoftGraphBulkRestoreCloudPcRequestBuilder) {
+    return NewManagedDevicesMicrosoftGraphBulkRestoreCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphBulkSetCloudPcReviewStatus provides operations to call the bulkSetCloudPcReviewStatus method.
+func (m *ManagedDevicesRequestBuilder) MicrosoftGraphBulkSetCloudPcReviewStatus()(*ManagedDevicesMicrosoftGraphBulkSetCloudPcReviewStatusRequestBuilder) {
+    return NewManagedDevicesMicrosoftGraphBulkSetCloudPcReviewStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphDownloadAppDiagnostics provides operations to call the downloadAppDiagnostics method.
+func (m *ManagedDevicesRequestBuilder) MicrosoftGraphDownloadAppDiagnostics()(*ManagedDevicesMicrosoftGraphDownloadAppDiagnosticsRequestBuilder) {
+    return NewManagedDevicesMicrosoftGraphDownloadAppDiagnosticsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphExecuteAction provides operations to call the executeAction method.
+func (m *ManagedDevicesRequestBuilder) MicrosoftGraphExecuteAction()(*ManagedDevicesMicrosoftGraphExecuteActionRequestBuilder) {
+    return NewManagedDevicesMicrosoftGraphExecuteActionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphMoveDevicesToOU provides operations to call the moveDevicesToOU method.
+func (m *ManagedDevicesRequestBuilder) MicrosoftGraphMoveDevicesToOU()(*ManagedDevicesMicrosoftGraphMoveDevicesToOURequestBuilder) {
+    return NewManagedDevicesMicrosoftGraphMoveDevicesToOURequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to managedDevices for me
 func (m *ManagedDevicesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable, requestConfiguration *ManagedDevicesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable, error) {
@@ -163,7 +163,10 @@ func (m *ManagedDevicesRequestBuilder) ToPostRequestInformation(ctx context.Cont
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

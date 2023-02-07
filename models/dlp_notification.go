@@ -17,7 +17,7 @@ type DlpNotification struct {
 func NewDlpNotification()(*DlpNotification) {
     m := &DlpNotification{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDlpNotificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

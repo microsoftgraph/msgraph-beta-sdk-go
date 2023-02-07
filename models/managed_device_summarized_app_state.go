@@ -19,7 +19,7 @@ type ManagedDeviceSummarizedAppState struct {
 func NewManagedDeviceSummarizedAppState()(*ManagedDeviceSummarizedAppState) {
     m := &ManagedDeviceSummarizedAppState{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateManagedDeviceSummarizedAppStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

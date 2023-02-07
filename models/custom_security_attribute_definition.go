@@ -22,7 +22,7 @@ type CustomSecurityAttributeDefinition struct {
     // Specifies whether the custom security attribute is active or deactivated. Acceptable values are Available and Deprecated. Can be changed later.
     status *string
     // Data type for the custom security attribute values. Supported types are Boolean, Integer, and String. Cannot be changed later.
-    type_escaped *string
+    typeEscaped *string
     // Indicates whether only predefined values can be assigned to the custom security attribute. If set to false, free-form values are allowed. Can later be changed from true to false, but cannot be changed from false to true. If type is set to Boolean, usePreDefinedValuesOnly cannot be set to true.
     usePreDefinedValuesOnly *bool
 }
@@ -166,7 +166,7 @@ func (m *CustomSecurityAttributeDefinition) GetStatus()(*string) {
 }
 // GetType gets the type property value. Data type for the custom security attribute values. Supported types are Boolean, Integer, and String. Cannot be changed later.
 func (m *CustomSecurityAttributeDefinition) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // GetUsePreDefinedValuesOnly gets the usePreDefinedValuesOnly property value. Indicates whether only predefined values can be assigned to the custom security attribute. If set to false, free-form values are allowed. Can later be changed from true to false, but cannot be changed from false to true. If type is set to Boolean, usePreDefinedValuesOnly cannot be set to true.
 func (m *CustomSecurityAttributeDefinition) GetUsePreDefinedValuesOnly()(*bool) {
@@ -268,7 +268,7 @@ func (m *CustomSecurityAttributeDefinition) SetStatus(value *string)() {
 }
 // SetType sets the type property value. Data type for the custom security attribute values. Supported types are Boolean, Integer, and String. Cannot be changed later.
 func (m *CustomSecurityAttributeDefinition) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }
 // SetUsePreDefinedValuesOnly sets the usePreDefinedValuesOnly property value. Indicates whether only predefined values can be assigned to the custom security attribute. If set to false, free-form values are allowed. Can later be changed from true to false, but cannot be changed from false to true. If type is set to Boolean, usePreDefinedValuesOnly cannot be set to true.
 func (m *CustomSecurityAttributeDefinition) SetUsePreDefinedValuesOnly(value *bool)() {

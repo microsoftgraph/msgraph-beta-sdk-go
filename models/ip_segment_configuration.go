@@ -15,8 +15,8 @@ func NewIpSegmentConfiguration()(*IpSegmentConfiguration) {
     m := &IpSegmentConfiguration{
         SegmentConfiguration: *NewSegmentConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.ipSegmentConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.ipSegmentConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateIpSegmentConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

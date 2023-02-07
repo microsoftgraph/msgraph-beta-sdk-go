@@ -12,8 +12,10 @@ type Adminable interface {
     GetOdataType()(*string)
     GetReportSettings()(AdminReportSettingsable)
     GetServiceAnnouncement()(ServiceAnnouncementable)
+    GetWindows()(AdminWindowsable)
     SetEdge(value Edgeable)()
     SetOdataType(value *string)()
     SetReportSettings(value AdminReportSettingsable)()
     SetServiceAnnouncement(value ServiceAnnouncementable)()
+    SetWindows(value AdminWindowsable)()
 }

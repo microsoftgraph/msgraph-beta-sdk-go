@@ -49,8 +49,8 @@ func NewOutlookTask()(*OutlookTask) {
     m := &OutlookTask{
         OutlookItem: *NewOutlookItem(),
     }
-    odataTypeValue := "#microsoft.graph.outlookTask";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.outlookTask"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateOutlookTaskFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

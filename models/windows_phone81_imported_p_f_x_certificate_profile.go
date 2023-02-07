@@ -17,8 +17,8 @@ func NewWindowsPhone81ImportedPFXCertificateProfile()(*WindowsPhone81ImportedPFX
     m := &WindowsPhone81ImportedPFXCertificateProfile{
         WindowsCertificateProfileBase: *NewWindowsCertificateProfileBase(),
     }
-    odataTypeValue := "#microsoft.graph.windowsPhone81ImportedPFXCertificateProfile";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsPhone81ImportedPFXCertificateProfile"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsPhone81ImportedPFXCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -19,7 +19,7 @@ type RenameAction struct {
 func NewRenameAction()(*RenameAction) {
     m := &RenameAction{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateRenameActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -38,7 +38,7 @@ type Item struct {
     // The taxGroupId property
     taxGroupId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The type property
-    type_escaped *string
+    typeEscaped *string
     // The unitCost property
     unitCost *float64
     // The unitPrice property
@@ -292,7 +292,7 @@ func (m *Item) GetTaxGroupId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5
 }
 // GetType gets the type property value. The type property
 func (m *Item) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // GetUnitCost gets the unitCost property value. The unitCost property
 func (m *Item) GetUnitCost()(*float64) {
@@ -474,7 +474,7 @@ func (m *Item) SetTaxGroupId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf67
 }
 // SetType sets the type property value. The type property
 func (m *Item) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }
 // SetUnitCost sets the unitCost property value. The unitCost property
 func (m *Item) SetUnitCost(value *float64)() {

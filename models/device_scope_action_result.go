@@ -23,7 +23,7 @@ type DeviceScopeActionResult struct {
 func NewDeviceScopeActionResult()(*DeviceScopeActionResult) {
     m := &DeviceScopeActionResult{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceScopeActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

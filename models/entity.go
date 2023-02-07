@@ -17,7 +17,7 @@ type Entity struct {
 func NewEntity()(*Entity) {
     m := &Entity{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateEntityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -102,6 +102,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAdministrativeUnit(), nil
                     case "#microsoft.graph.adminReportSettings":
                         return NewAdminReportSettings(), nil
+                    case "#microsoft.graph.adminWindows":
+                        return NewAdminWindows(), nil
+                    case "#microsoft.graph.adminWindowsUpdates":
+                        return NewAdminWindowsUpdates(), nil
                     case "#microsoft.graph.advancedThreatProtectionOnboardingDeviceSettingState":
                         return NewAdvancedThreatProtectionOnboardingDeviceSettingState(), nil
                     case "#microsoft.graph.advancedThreatProtectionOnboardingStateSummary":
@@ -2050,6 +2054,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewServiceHealth(), nil
                     case "#microsoft.graph.serviceHealthIssue":
                         return NewServiceHealthIssue(), nil
+                    case "#microsoft.graph.serviceNowConnection":
+                        return NewServiceNowConnection(), nil
                     case "#microsoft.graph.servicePrincipal":
                         return NewServicePrincipal(), nil
                     case "#microsoft.graph.servicePrincipalCreationConditionSet":
@@ -2396,8 +2402,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUserExperienceAnalyticsDeviceStartupProcess(), nil
                     case "#microsoft.graph.userExperienceAnalyticsDeviceStartupProcessPerformance":
                         return NewUserExperienceAnalyticsDeviceStartupProcessPerformance(), nil
-                    case "#microsoft.graph.userExperienceAnalyticsDeviceTimelineEvents":
-                        return NewUserExperienceAnalyticsDeviceTimelineEvents(), nil
+                    case "#microsoft.graph.userExperienceAnalyticsDeviceTimelineEvent":
+                        return NewUserExperienceAnalyticsDeviceTimelineEvent(), nil
                     case "#microsoft.graph.userExperienceAnalyticsDeviceWithoutCloudIdentity":
                         return NewUserExperienceAnalyticsDeviceWithoutCloudIdentity(), nil
                     case "#microsoft.graph.userExperienceAnalyticsImpactingProcess":
@@ -2449,7 +2455,7 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                     case "#microsoft.graph.userTeamwork":
                         return NewUserTeamwork(), nil
                     case "#microsoft.graph.vendor":
-                        return NewVendor_escaped(), nil
+                        return NewVendorEscaped(), nil
                     case "#microsoft.graph.verticalSection":
                         return NewVerticalSection(), nil
                     case "#microsoft.graph.virtualAppointment":

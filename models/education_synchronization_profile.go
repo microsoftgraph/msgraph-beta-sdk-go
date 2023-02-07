@@ -26,7 +26,7 @@ type EducationSynchronizationProfile struct {
     // The state of the profile. Possible values are: provisioning, provisioned, provisioningFailed, deleting, deletionFailed.
     state *EducationSynchronizationProfileState
 }
-// NewEducationSynchronizationProfile instantiates a new EducationSynchronizationProfile and sets the default values.
+// NewEducationSynchronizationProfile instantiates a new educationSynchronizationProfile and sets the default values.
 func NewEducationSynchronizationProfile()(*EducationSynchronizationProfile) {
     m := &EducationSynchronizationProfile{
         Entity: *NewEntity(),

@@ -19,7 +19,7 @@ type AuthenticationConditionsApplications struct {
 func NewAuthenticationConditionsApplications()(*AuthenticationConditionsApplications) {
     m := &AuthenticationConditionsApplications{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAuthenticationConditionsApplicationsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

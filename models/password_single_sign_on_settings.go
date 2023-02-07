@@ -17,7 +17,7 @@ type PasswordSingleSignOnSettings struct {
 func NewPasswordSingleSignOnSettings()(*PasswordSingleSignOnSettings) {
     m := &PasswordSingleSignOnSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePasswordSingleSignOnSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

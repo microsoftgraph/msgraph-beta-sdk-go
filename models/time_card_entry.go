@@ -21,7 +21,7 @@ type TimeCardEntry struct {
 func NewTimeCardEntry()(*TimeCardEntry) {
     m := &TimeCardEntry{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTimeCardEntryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

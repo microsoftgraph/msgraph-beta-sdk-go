@@ -17,7 +17,7 @@ type GovernanceNotificationTemplate struct {
     // The source property
     source *string
     // The type property
-    type_escaped *string
+    typeEscaped *string
     // The version property
     version *string
 }
@@ -25,7 +25,7 @@ type GovernanceNotificationTemplate struct {
 func NewGovernanceNotificationTemplate()(*GovernanceNotificationTemplate) {
     m := &GovernanceNotificationTemplate{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateGovernanceNotificationTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -119,7 +119,7 @@ func (m *GovernanceNotificationTemplate) GetSource()(*string) {
 }
 // GetType gets the type property value. The type property
 func (m *GovernanceNotificationTemplate) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // GetVersion gets the version property value. The version property
 func (m *GovernanceNotificationTemplate) GetVersion()(*string) {
@@ -193,7 +193,7 @@ func (m *GovernanceNotificationTemplate) SetSource(value *string)() {
 }
 // SetType sets the type property value. The type property
 func (m *GovernanceNotificationTemplate) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }
 // SetVersion sets the version property value. The version property
 func (m *GovernanceNotificationTemplate) SetVersion(value *string)() {

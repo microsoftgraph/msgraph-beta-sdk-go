@@ -41,8 +41,8 @@ func NewEntitlementManagementAccessPackageAssignmentRequestsItemAccessPackageReq
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementAccessPackageAssignmentRequestsItemAccessPackageRequestBuilder instantiates a new AccessPackageRequestBuilder and sets the default values.

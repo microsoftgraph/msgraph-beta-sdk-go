@@ -46,13 +46,9 @@ type ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilderP
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Assign provides operations to call the assign method.
-func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) Assign()(*ConfigurationPoliciesItemAssignRequestBuilder) {
-    return NewConfigurationPoliciesItemAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Assignments provides operations to manage the assignments property of the microsoft.graph.deviceManagementConfigurationPolicy entity.
 func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) Assignments()(*ConfigurationPoliciesItemAssignmentsRequestBuilder) {
-    return NewConfigurationPoliciesItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewConfigurationPoliciesItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.deviceManagementConfigurationPolicy entity.
 func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) AssignmentsById(id string)(*ConfigurationPoliciesItemAssignmentsDeviceManagementConfigurationPolicyAssignmentItemRequestBuilder) {
@@ -63,7 +59,7 @@ func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuil
     if id != "" {
         urlTplParams["deviceManagementConfigurationPolicyAssignment%2Did"] = id
     }
-    return NewConfigurationPoliciesItemAssignmentsDeviceManagementConfigurationPolicyAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewConfigurationPoliciesItemAssignmentsDeviceManagementConfigurationPolicyAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilderInternal instantiates a new DeviceManagementConfigurationPolicyItemRequestBuilder and sets the default values.
 func NewConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) {
@@ -74,8 +70,8 @@ func NewConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuild
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder instantiates a new DeviceManagementConfigurationPolicyItemRequestBuilder and sets the default values.
@@ -83,10 +79,6 @@ func NewConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuild
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
-}
-// CreateCopy provides operations to call the createCopy method.
-func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) CreateCopy()(*ConfigurationPoliciesItemCreateCopyRequestBuilder) {
-    return NewConfigurationPoliciesItemCreateCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Delete delete navigation property configurationPolicies for deviceManagement
 func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -123,6 +115,18 @@ func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationPolicyable), nil
 }
+// MicrosoftGraphAssign provides operations to call the assign method.
+func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) MicrosoftGraphAssign()(*ConfigurationPoliciesItemMicrosoftGraphAssignRequestBuilder) {
+    return NewConfigurationPoliciesItemMicrosoftGraphAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphCreateCopy provides operations to call the createCopy method.
+func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) MicrosoftGraphCreateCopy()(*ConfigurationPoliciesItemMicrosoftGraphCreateCopyRequestBuilder) {
+    return NewConfigurationPoliciesItemMicrosoftGraphCreateCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphReorder provides operations to call the reorder method.
+func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) MicrosoftGraphReorder()(*ConfigurationPoliciesItemMicrosoftGraphReorderRequestBuilder) {
+    return NewConfigurationPoliciesItemMicrosoftGraphReorderRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property configurationPolicies in deviceManagement
 func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationPolicyable, requestConfiguration *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -142,13 +146,9 @@ func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationPolicyable), nil
 }
-// Reorder provides operations to call the reorder method.
-func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) Reorder()(*ConfigurationPoliciesItemReorderRequestBuilder) {
-    return NewConfigurationPoliciesItemReorderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Settings provides operations to manage the settings property of the microsoft.graph.deviceManagementConfigurationPolicy entity.
 func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) Settings()(*ConfigurationPoliciesItemSettingsRequestBuilder) {
-    return NewConfigurationPoliciesItemSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewConfigurationPoliciesItemSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SettingsById provides operations to manage the settings property of the microsoft.graph.deviceManagementConfigurationPolicy entity.
 func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) SettingsById(id string)(*ConfigurationPoliciesItemSettingsDeviceManagementConfigurationSettingItemRequestBuilder) {
@@ -159,7 +159,7 @@ func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuil
     if id != "" {
         urlTplParams["deviceManagementConfigurationSetting%2Did"] = id
     }
-    return NewConfigurationPoliciesItemSettingsDeviceManagementConfigurationSettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewConfigurationPoliciesItemSettingsDeviceManagementConfigurationSettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property configurationPolicies for deviceManagement
 func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -196,7 +196,10 @@ func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuil
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -4,19 +4,19 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementConfigurationGroupSettingValue 
+// DeviceManagementConfigurationGroupSettingValue value of the GroupSetting
 type DeviceManagementConfigurationGroupSettingValue struct {
     DeviceManagementConfigurationSettingValue
     // Collection of child setting instances contained within this GroupSetting
     children []DeviceManagementConfigurationSettingInstanceable
 }
-// NewDeviceManagementConfigurationGroupSettingValue instantiates a new DeviceManagementConfigurationGroupSettingValue and sets the default values.
+// NewDeviceManagementConfigurationGroupSettingValue instantiates a new deviceManagementConfigurationGroupSettingValue and sets the default values.
 func NewDeviceManagementConfigurationGroupSettingValue()(*DeviceManagementConfigurationGroupSettingValue) {
     m := &DeviceManagementConfigurationGroupSettingValue{
         DeviceManagementConfigurationSettingValue: *NewDeviceManagementConfigurationSettingValue(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationGroupSettingValue";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationGroupSettingValue"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementConfigurationGroupSettingValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

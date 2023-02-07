@@ -21,7 +21,7 @@ type DeviceManagementCachedReportConfiguration struct {
     // Name of the report
     reportName *string
     // Columns selected from the report
-    select_escaped []string
+    selectEscaped []string
     // Possible statuses associated with a generated report
     status *DeviceManagementReportStatus
 }
@@ -155,7 +155,7 @@ func (m *DeviceManagementCachedReportConfiguration) GetReportName()(*string) {
 }
 // GetSelect gets the select property value. Columns selected from the report
 func (m *DeviceManagementCachedReportConfiguration) GetSelect()([]string) {
-    return m.select_escaped
+    return m.selectEscaped
 }
 // GetStatus gets the status property value. Possible statuses associated with a generated report
 func (m *DeviceManagementCachedReportConfiguration) GetStatus()(*DeviceManagementReportStatus) {
@@ -244,7 +244,7 @@ func (m *DeviceManagementCachedReportConfiguration) SetReportName(value *string)
 }
 // SetSelect sets the select property value. Columns selected from the report
 func (m *DeviceManagementCachedReportConfiguration) SetSelect(value []string)() {
-    m.select_escaped = value
+    m.selectEscaped = value
 }
 // SetStatus sets the status property value. Possible statuses associated with a generated report
 func (m *DeviceManagementCachedReportConfiguration) SetStatus(value *DeviceManagementReportStatus)() {

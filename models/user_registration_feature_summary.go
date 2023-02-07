@@ -23,7 +23,7 @@ type UserRegistrationFeatureSummary struct {
 func NewUserRegistrationFeatureSummary()(*UserRegistrationFeatureSummary) {
     m := &UserRegistrationFeatureSummary{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateUserRegistrationFeatureSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -58,7 +58,7 @@ type PurchaseInvoice struct {
     // The totalTaxAmount property
     totalTaxAmount *float64
     // The vendor property
-    vendor_escaped Vendor_escapedable
+    vendorEscaped VendorEscapedable
     // The vendorId property
     vendorId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The vendorInvoiceNumber property
@@ -355,12 +355,12 @@ func (m *PurchaseInvoice) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     res["vendor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateVendor_escapedFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateVendorEscapedFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVendor(val.(Vendor_escapedable))
+            m.SetVendor(val.(VendorEscapedable))
         }
         return nil
     }
@@ -475,8 +475,8 @@ func (m *PurchaseInvoice) GetTotalTaxAmount()(*float64) {
     return m.totalTaxAmount
 }
 // GetVendor gets the vendor property value. The vendor property
-func (m *PurchaseInvoice) GetVendor()(Vendor_escapedable) {
-    return m.vendor_escaped
+func (m *PurchaseInvoice) GetVendor()(VendorEscapedable) {
+    return m.vendorEscaped
 }
 // GetVendorId gets the vendorId property value. The vendorId property
 func (m *PurchaseInvoice) GetVendorId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
@@ -649,6 +649,12 @@ func (m *PurchaseInvoice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     {
+        err = writer.WriteObjectValue("vendor", m.GetVendor())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteUUIDValue("vendorId", m.GetVendorId())
         if err != nil {
             return err
@@ -668,12 +674,6 @@ func (m *PurchaseInvoice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     {
         err = writer.WriteStringValue("vendorNumber", m.GetVendorNumber())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("vendor", m.GetVendor())
         if err != nil {
             return err
         }
@@ -777,8 +777,8 @@ func (m *PurchaseInvoice) SetTotalTaxAmount(value *float64)() {
     m.totalTaxAmount = value
 }
 // SetVendor sets the vendor property value. The vendor property
-func (m *PurchaseInvoice) SetVendor(value Vendor_escapedable)() {
-    m.vendor_escaped = value
+func (m *PurchaseInvoice) SetVendor(value VendorEscapedable)() {
+    m.vendorEscaped = value
 }
 // SetVendorId sets the vendorId property value. The vendorId property
 func (m *PurchaseInvoice) SetVendorId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {

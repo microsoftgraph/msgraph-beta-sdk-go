@@ -14,13 +14,13 @@ type DirectorySettingTemplate struct {
     // Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.  Read-only.
     values []SettingTemplateValueable
 }
-// NewDirectorySettingTemplate instantiates a new DirectorySettingTemplate and sets the default values.
+// NewDirectorySettingTemplate instantiates a new directorySettingTemplate and sets the default values.
 func NewDirectorySettingTemplate()(*DirectorySettingTemplate) {
     m := &DirectorySettingTemplate{
         DirectoryObject: *NewDirectoryObject(),
     }
-    odataTypeValue := "#microsoft.graph.directorySettingTemplate";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.directorySettingTemplate"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDirectorySettingTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

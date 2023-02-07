@@ -39,7 +39,7 @@ type BitLockerSystemDrivePolicy struct {
 func NewBitLockerSystemDrivePolicy()(*BitLockerSystemDrivePolicy) {
     m := &BitLockerSystemDrivePolicy{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateBitLockerSystemDrivePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

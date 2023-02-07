@@ -21,7 +21,7 @@ type ManagementActionInfo struct {
 func NewManagementActionInfo()(*ManagementActionInfo) {
     m := &ManagementActionInfo{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateManagementActionInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

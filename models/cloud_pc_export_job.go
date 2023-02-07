@@ -18,12 +18,12 @@ type CloudPcExportJob struct {
     filter *string
     // The format of the exported report.
     format *string
-    // The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, unknownFutureValue.
+    // The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, sharedUseLicenseUsageReport, sharedUseLicenseUsageRealTimeReport, or unknownFutureValue.
     reportName *CloudPcReportName
     // The date and time when the export job was requested.
     requestDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The selected columns of the report.
-    select_escaped []string
+    selectEscaped []string
 }
 // NewCloudPcExportJob instantiates a new CloudPcExportJob and sets the default values.
 func NewCloudPcExportJob()(*CloudPcExportJob) {
@@ -145,7 +145,7 @@ func (m *CloudPcExportJob) GetFilter()(*string) {
 func (m *CloudPcExportJob) GetFormat()(*string) {
     return m.format
 }
-// GetReportName gets the reportName property value. The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, unknownFutureValue.
+// GetReportName gets the reportName property value. The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, sharedUseLicenseUsageReport, sharedUseLicenseUsageRealTimeReport, or unknownFutureValue.
 func (m *CloudPcExportJob) GetReportName()(*CloudPcReportName) {
     return m.reportName
 }
@@ -155,7 +155,7 @@ func (m *CloudPcExportJob) GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad97
 }
 // GetSelect gets the select property value. The selected columns of the report.
 func (m *CloudPcExportJob) GetSelect()([]string) {
-    return m.select_escaped
+    return m.selectEscaped
 }
 // Serialize serializes information the current object
 func (m *CloudPcExportJob) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -235,7 +235,7 @@ func (m *CloudPcExportJob) SetFilter(value *string)() {
 func (m *CloudPcExportJob) SetFormat(value *string)() {
     m.format = value
 }
-// SetReportName sets the reportName property value. The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, unknownFutureValue.
+// SetReportName sets the reportName property value. The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, sharedUseLicenseUsageReport, sharedUseLicenseUsageRealTimeReport, or unknownFutureValue.
 func (m *CloudPcExportJob) SetReportName(value *CloudPcReportName)() {
     m.reportName = value
 }
@@ -245,5 +245,5 @@ func (m *CloudPcExportJob) SetRequestDateTime(value *i336074805fc853987abe6f7fe3
 }
 // SetSelect sets the select property value. The selected columns of the report.
 func (m *CloudPcExportJob) SetSelect(value []string)() {
-    m.select_escaped = value
+    m.selectEscaped = value
 }

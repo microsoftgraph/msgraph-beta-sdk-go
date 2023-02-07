@@ -61,7 +61,7 @@ type PrinterDefaults struct {
 func NewPrinterDefaults()(*PrinterDefaults) {
     m := &PrinterDefaults{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePrinterDefaultsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

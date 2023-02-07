@@ -24,7 +24,7 @@ type TenantAllowOrBlockListAction struct {
 func NewTenantAllowOrBlockListAction()(*TenantAllowOrBlockListAction) {
     m := &TenantAllowOrBlockListAction{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTenantAllowOrBlockListActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

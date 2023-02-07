@@ -4,17 +4,17 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementConfigurationSimpleSettingValue 
+// DeviceManagementConfigurationSimpleSettingValue simple setting value
 type DeviceManagementConfigurationSimpleSettingValue struct {
     DeviceManagementConfigurationSettingValue
 }
-// NewDeviceManagementConfigurationSimpleSettingValue instantiates a new DeviceManagementConfigurationSimpleSettingValue and sets the default values.
+// NewDeviceManagementConfigurationSimpleSettingValue instantiates a new deviceManagementConfigurationSimpleSettingValue and sets the default values.
 func NewDeviceManagementConfigurationSimpleSettingValue()(*DeviceManagementConfigurationSimpleSettingValue) {
     m := &DeviceManagementConfigurationSimpleSettingValue{
         DeviceManagementConfigurationSettingValue: *NewDeviceManagementConfigurationSettingValue(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationSimpleSettingValue";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationSimpleSettingValue"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementConfigurationSimpleSettingValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

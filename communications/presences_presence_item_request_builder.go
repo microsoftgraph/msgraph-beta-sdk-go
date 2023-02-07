@@ -46,14 +46,6 @@ type PresencesPresenceItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ClearPresence provides operations to call the clearPresence method.
-func (m *PresencesPresenceItemRequestBuilder) ClearPresence()(*PresencesItemClearPresenceRequestBuilder) {
-    return NewPresencesItemClearPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ClearUserPreferredPresence provides operations to call the clearUserPreferredPresence method.
-func (m *PresencesPresenceItemRequestBuilder) ClearUserPreferredPresence()(*PresencesItemClearUserPreferredPresenceRequestBuilder) {
-    return NewPresencesItemClearUserPreferredPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewPresencesPresenceItemRequestBuilderInternal instantiates a new PresenceItemRequestBuilder and sets the default values.
 func NewPresencesPresenceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PresencesPresenceItemRequestBuilder) {
     m := &PresencesPresenceItemRequestBuilder{
@@ -63,8 +55,8 @@ func NewPresencesPresenceItemRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPresencesPresenceItemRequestBuilder instantiates a new PresenceItemRequestBuilder and sets the default values.
@@ -108,6 +100,26 @@ func (m *PresencesPresenceItemRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Presenceable), nil
 }
+// MicrosoftGraphClearPresence provides operations to call the clearPresence method.
+func (m *PresencesPresenceItemRequestBuilder) MicrosoftGraphClearPresence()(*PresencesItemMicrosoftGraphClearPresenceRequestBuilder) {
+    return NewPresencesItemMicrosoftGraphClearPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphClearUserPreferredPresence provides operations to call the clearUserPreferredPresence method.
+func (m *PresencesPresenceItemRequestBuilder) MicrosoftGraphClearUserPreferredPresence()(*PresencesItemMicrosoftGraphClearUserPreferredPresenceRequestBuilder) {
+    return NewPresencesItemMicrosoftGraphClearUserPreferredPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphSetPresence provides operations to call the setPresence method.
+func (m *PresencesPresenceItemRequestBuilder) MicrosoftGraphSetPresence()(*PresencesItemMicrosoftGraphSetPresenceRequestBuilder) {
+    return NewPresencesItemMicrosoftGraphSetPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphSetStatusMessage provides operations to call the setStatusMessage method.
+func (m *PresencesPresenceItemRequestBuilder) MicrosoftGraphSetStatusMessage()(*PresencesItemMicrosoftGraphSetStatusMessageRequestBuilder) {
+    return NewPresencesItemMicrosoftGraphSetStatusMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphSetUserPreferredPresence provides operations to call the setUserPreferredPresence method.
+func (m *PresencesPresenceItemRequestBuilder) MicrosoftGraphSetUserPreferredPresence()(*PresencesItemMicrosoftGraphSetUserPreferredPresenceRequestBuilder) {
+    return NewPresencesItemMicrosoftGraphSetUserPreferredPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property presences in communications
 func (m *PresencesPresenceItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Presenceable, requestConfiguration *PresencesPresenceItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Presenceable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -126,18 +138,6 @@ func (m *PresencesPresenceItemRequestBuilder) Patch(ctx context.Context, body ie
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Presenceable), nil
-}
-// SetPresence provides operations to call the setPresence method.
-func (m *PresencesPresenceItemRequestBuilder) SetPresence()(*PresencesItemSetPresenceRequestBuilder) {
-    return NewPresencesItemSetPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// SetStatusMessage provides operations to call the setStatusMessage method.
-func (m *PresencesPresenceItemRequestBuilder) SetStatusMessage()(*PresencesItemSetStatusMessageRequestBuilder) {
-    return NewPresencesItemSetStatusMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// SetUserPreferredPresence provides operations to call the setUserPreferredPresence method.
-func (m *PresencesPresenceItemRequestBuilder) SetUserPreferredPresence()(*PresencesItemSetUserPreferredPresenceRequestBuilder) {
-    return NewPresencesItemSetUserPreferredPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property presences for communications
 func (m *PresencesPresenceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PresencesPresenceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -174,7 +174,10 @@ func (m *PresencesPresenceItemRequestBuilder) ToPatchRequestInformation(ctx cont
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

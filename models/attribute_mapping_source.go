@@ -17,13 +17,13 @@ type AttributeMappingSource struct {
     // The parameters property
     parameters []StringKeyAttributeMappingSourceValuePairable
     // The type property
-    type_escaped *AttributeMappingSourceType
+    typeEscaped *AttributeMappingSourceType
 }
 // NewAttributeMappingSource instantiates a new attributeMappingSource and sets the default values.
 func NewAttributeMappingSource()(*AttributeMappingSource) {
     m := &AttributeMappingSource{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAttributeMappingSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -111,7 +111,7 @@ func (m *AttributeMappingSource) GetParameters()([]StringKeyAttributeMappingSour
 }
 // GetType gets the type property value. The type property
 func (m *AttributeMappingSource) GetType()(*AttributeMappingSourceType) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *AttributeMappingSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -180,5 +180,5 @@ func (m *AttributeMappingSource) SetParameters(value []StringKeyAttributeMapping
 }
 // SetType sets the type property value. The type property
 func (m *AttributeMappingSource) SetType(value *AttributeMappingSourceType)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

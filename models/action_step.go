@@ -6,29 +6,29 @@ import (
 
 // ActionStep 
 type ActionStep struct {
-    // The actionUrl property
+    // A link to the documentation or Azure portal page that is associated with the action step.
     actionUrl ActionUrlable
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // The OdataType property
     odataType *string
-    // The stepNumber property
+    // Indicates the position for this action in the order of the collection of actions to be taken.
     stepNumber *int64
-    // The text property
+    // Friendly description of the action to take.
     text *string
 }
 // NewActionStep instantiates a new actionStep and sets the default values.
 func NewActionStep()(*ActionStep) {
     m := &ActionStep{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateActionStepFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateActionStepFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewActionStep(), nil
 }
-// GetActionUrl gets the actionUrl property value. The actionUrl property
+// GetActionUrl gets the actionUrl property value. A link to the documentation or Azure portal page that is associated with the action step.
 func (m *ActionStep) GetActionUrl()(ActionUrlable) {
     return m.actionUrl
 }
@@ -85,11 +85,11 @@ func (m *ActionStep) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 func (m *ActionStep) GetOdataType()(*string) {
     return m.odataType
 }
-// GetStepNumber gets the stepNumber property value. The stepNumber property
+// GetStepNumber gets the stepNumber property value. Indicates the position for this action in the order of the collection of actions to be taken.
 func (m *ActionStep) GetStepNumber()(*int64) {
     return m.stepNumber
 }
-// GetText gets the text property value. The text property
+// GetText gets the text property value. Friendly description of the action to take.
 func (m *ActionStep) GetText()(*string) {
     return m.text
 }
@@ -127,7 +127,7 @@ func (m *ActionStep) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// SetActionUrl sets the actionUrl property value. The actionUrl property
+// SetActionUrl sets the actionUrl property value. A link to the documentation or Azure portal page that is associated with the action step.
 func (m *ActionStep) SetActionUrl(value ActionUrlable)() {
     m.actionUrl = value
 }
@@ -139,11 +139,11 @@ func (m *ActionStep) SetAdditionalData(value map[string]any)() {
 func (m *ActionStep) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetStepNumber sets the stepNumber property value. The stepNumber property
+// SetStepNumber sets the stepNumber property value. Indicates the position for this action in the order of the collection of actions to be taken.
 func (m *ActionStep) SetStepNumber(value *int64)() {
     m.stepNumber = value
 }
-// SetText sets the text property value. The text property
+// SetText sets the text property value. Friendly description of the action to take.
 func (m *ActionStep) SetText(value *string)() {
     m.text = value
 }

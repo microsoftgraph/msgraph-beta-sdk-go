@@ -51,10 +51,6 @@ type DeviceHealthScriptsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AreGlobalScriptsAvailable provides operations to call the areGlobalScriptsAvailable method.
-func (m *DeviceHealthScriptsRequestBuilder) AreGlobalScriptsAvailable()(*DeviceHealthScriptsAreGlobalScriptsAvailableRequestBuilder) {
-    return NewDeviceHealthScriptsAreGlobalScriptsAvailableRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewDeviceHealthScriptsRequestBuilderInternal instantiates a new DeviceHealthScriptsRequestBuilder and sets the default values.
 func NewDeviceHealthScriptsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceHealthScriptsRequestBuilder) {
     m := &DeviceHealthScriptsRequestBuilder{
@@ -64,8 +60,8 @@ func NewDeviceHealthScriptsRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceHealthScriptsRequestBuilder instantiates a new DeviceHealthScriptsRequestBuilder and sets the default values.
@@ -76,11 +72,7 @@ func NewDeviceHealthScriptsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 }
 // Count provides operations to count the resources in the collection.
 func (m *DeviceHealthScriptsRequestBuilder) Count()(*DeviceHealthScriptsCountRequestBuilder) {
-    return NewDeviceHealthScriptsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// EnableGlobalScripts provides operations to call the enableGlobalScripts method.
-func (m *DeviceHealthScriptsRequestBuilder) EnableGlobalScripts()(*DeviceHealthScriptsEnableGlobalScriptsRequestBuilder) {
-    return NewDeviceHealthScriptsEnableGlobalScriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceHealthScriptsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the list of device health scripts associated with the tenant.
 func (m *DeviceHealthScriptsRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceHealthScriptsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptCollectionResponseable, error) {
@@ -101,9 +93,17 @@ func (m *DeviceHealthScriptsRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptCollectionResponseable), nil
 }
-// GetRemediationSummary provides operations to call the getRemediationSummary method.
-func (m *DeviceHealthScriptsRequestBuilder) GetRemediationSummary()(*DeviceHealthScriptsGetRemediationSummaryRequestBuilder) {
-    return NewDeviceHealthScriptsGetRemediationSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphAreGlobalScriptsAvailable provides operations to call the areGlobalScriptsAvailable method.
+func (m *DeviceHealthScriptsRequestBuilder) MicrosoftGraphAreGlobalScriptsAvailable()(*DeviceHealthScriptsMicrosoftGraphAreGlobalScriptsAvailableRequestBuilder) {
+    return NewDeviceHealthScriptsMicrosoftGraphAreGlobalScriptsAvailableRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphEnableGlobalScripts provides operations to call the enableGlobalScripts method.
+func (m *DeviceHealthScriptsRequestBuilder) MicrosoftGraphEnableGlobalScripts()(*DeviceHealthScriptsMicrosoftGraphEnableGlobalScriptsRequestBuilder) {
+    return NewDeviceHealthScriptsMicrosoftGraphEnableGlobalScriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphGetRemediationSummary provides operations to call the getRemediationSummary method.
+func (m *DeviceHealthScriptsRequestBuilder) MicrosoftGraphGetRemediationSummary()(*DeviceHealthScriptsMicrosoftGraphGetRemediationSummaryRequestBuilder) {
+    return NewDeviceHealthScriptsMicrosoftGraphGetRemediationSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to deviceHealthScripts for deviceManagement
 func (m *DeviceHealthScriptsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptable, requestConfiguration *DeviceHealthScriptsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptable, error) {
@@ -147,7 +147,10 @@ func (m *DeviceHealthScriptsRequestBuilder) ToPostRequestInformation(ctx context
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

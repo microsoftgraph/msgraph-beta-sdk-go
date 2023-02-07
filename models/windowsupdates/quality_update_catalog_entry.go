@@ -17,8 +17,8 @@ func NewQualityUpdateCatalogEntry()(*QualityUpdateCatalogEntry) {
     m := &QualityUpdateCatalogEntry{
         SoftwareUpdateCatalogEntry: *NewSoftwareUpdateCatalogEntry(),
     }
-    odataTypeValue := "#microsoft.graph.windowsUpdates.qualityUpdateCatalogEntry";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsUpdates.qualityUpdateCatalogEntry"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateQualityUpdateCatalogEntryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

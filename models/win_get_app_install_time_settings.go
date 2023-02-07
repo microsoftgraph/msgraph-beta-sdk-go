@@ -20,7 +20,7 @@ type WinGetAppInstallTimeSettings struct {
 func NewWinGetAppInstallTimeSettings()(*WinGetAppInstallTimeSettings) {
     m := &WinGetAppInstallTimeSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWinGetAppInstallTimeSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -19,8 +19,8 @@ func NewSecurityBaselineTemplate()(*SecurityBaselineTemplate) {
     m := &SecurityBaselineTemplate{
         DeviceManagementTemplate: *NewDeviceManagementTemplate(),
     }
-    odataTypeValue := "#microsoft.graph.securityBaselineTemplate";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.securityBaselineTemplate"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateSecurityBaselineTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -25,7 +25,7 @@ type AuditActor struct {
     // Service Principal Name (SPN).
     servicePrincipalName *string
     // Actor Type.
-    type_escaped *string
+    typeEscaped *string
     // User Id.
     userId *string
     // List of user permissions when the audit was performed.
@@ -39,7 +39,7 @@ type AuditActor struct {
 func NewAuditActor()(*AuditActor) {
     m := &AuditActor{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAuditActorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -227,7 +227,7 @@ func (m *AuditActor) GetServicePrincipalName()(*string) {
 }
 // GetType gets the type property value. Actor Type.
 func (m *AuditActor) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // GetUserId gets the userId property value. User Id.
 func (m *AuditActor) GetUserId()(*string) {
@@ -375,7 +375,7 @@ func (m *AuditActor) SetServicePrincipalName(value *string)() {
 }
 // SetType sets the type property value. Actor Type.
 func (m *AuditActor) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }
 // SetUserId sets the userId property value. User Id.
 func (m *AuditActor) SetUserId(value *string)() {

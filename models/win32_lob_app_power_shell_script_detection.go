@@ -19,8 +19,8 @@ func NewWin32LobAppPowerShellScriptDetection()(*Win32LobAppPowerShellScriptDetec
     m := &Win32LobAppPowerShellScriptDetection{
         Win32LobAppDetection: *NewWin32LobAppDetection(),
     }
-    odataTypeValue := "#microsoft.graph.win32LobAppPowerShellScriptDetection";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.win32LobAppPowerShellScriptDetection"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWin32LobAppPowerShellScriptDetectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

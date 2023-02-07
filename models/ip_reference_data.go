@@ -21,13 +21,13 @@ type IpReferenceData struct {
     // The state property
     state *string
     // The vendor property
-    vendor_escaped *string
+    vendorEscaped *string
 }
 // NewIpReferenceData instantiates a new ipReferenceData and sets the default values.
 func NewIpReferenceData()(*IpReferenceData) {
     m := &IpReferenceData{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateIpReferenceDataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -139,7 +139,7 @@ func (m *IpReferenceData) GetState()(*string) {
 }
 // GetVendor gets the vendor property value. The vendor property
 func (m *IpReferenceData) GetVendor()(*string) {
-    return m.vendor_escaped
+    return m.vendorEscaped
 }
 // Serialize serializes information the current object
 func (m *IpReferenceData) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -223,5 +223,5 @@ func (m *IpReferenceData) SetState(value *string)() {
 }
 // SetVendor sets the vendor property value. The vendor property
 func (m *IpReferenceData) SetVendor(value *string)() {
-    m.vendor_escaped = value
+    m.vendorEscaped = value
 }

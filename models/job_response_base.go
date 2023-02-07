@@ -21,9 +21,9 @@ type JobResponseBase struct {
     // The tenantId property
     tenantId *string
     // The type property
-    type_escaped *string
+    typeEscaped *string
 }
-// NewJobResponseBase instantiates a new JobResponseBase and sets the default values.
+// NewJobResponseBase instantiates a new jobResponseBase and sets the default values.
 func NewJobResponseBase()(*JobResponseBase) {
     m := &JobResponseBase{
         Entity: *NewEntity(),
@@ -157,7 +157,7 @@ func (m *JobResponseBase) GetTenantId()(*string) {
 }
 // GetType gets the type property value. The type property
 func (m *JobResponseBase) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *JobResponseBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -235,5 +235,5 @@ func (m *JobResponseBase) SetTenantId(value *string)() {
 }
 // SetType sets the type property value. The type property
 func (m *JobResponseBase) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

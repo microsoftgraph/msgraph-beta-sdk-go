@@ -17,7 +17,7 @@ type ShareAction struct {
 func NewShareAction()(*ShareAction) {
     m := &ShareAction{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateShareActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

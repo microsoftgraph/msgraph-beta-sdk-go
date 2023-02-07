@@ -15,7 +15,7 @@ type EducationIdentitySynchronizationConfiguration struct {
 func NewEducationIdentitySynchronizationConfiguration()(*EducationIdentitySynchronizationConfiguration) {
     m := &EducationIdentitySynchronizationConfiguration{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateEducationIdentitySynchronizationConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

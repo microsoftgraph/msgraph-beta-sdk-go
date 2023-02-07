@@ -11,13 +11,13 @@ type PersonDataSources struct {
     // The OdataType property
     odataType *string
     // The type property
-    type_escaped []string
+    typeEscaped []string
 }
 // NewPersonDataSources instantiates a new personDataSources and sets the default values.
 func NewPersonDataSources()(*PersonDataSources) {
     m := &PersonDataSources{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePersonDataSourcesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -63,7 +63,7 @@ func (m *PersonDataSources) GetOdataType()(*string) {
 }
 // GetType gets the type property value. The type property
 func (m *PersonDataSources) GetType()([]string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *PersonDataSources) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -97,5 +97,5 @@ func (m *PersonDataSources) SetOdataType(value *string)() {
 }
 // SetType sets the type property value. The type property
 func (m *PersonDataSources) SetType(value []string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

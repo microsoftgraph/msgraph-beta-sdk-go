@@ -13,8 +13,8 @@ func NewCommunicationsPhoneIdentity()(*CommunicationsPhoneIdentity) {
     m := &CommunicationsPhoneIdentity{
         Identity: *NewIdentity(),
     }
-    odataTypeValue := "#microsoft.graph.communicationsPhoneIdentity";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.communicationsPhoneIdentity"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateCommunicationsPhoneIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

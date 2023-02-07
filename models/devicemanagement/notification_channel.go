@@ -21,7 +21,7 @@ type NotificationChannel struct {
 func NewNotificationChannel()(*NotificationChannel) {
     m := &NotificationChannel{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateNotificationChannelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

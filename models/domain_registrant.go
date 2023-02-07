@@ -17,13 +17,13 @@ type DomainRegistrant struct {
     // The url property
     url *string
     // The vendor property
-    vendor_escaped *string
+    vendorEscaped *string
 }
 // NewDomainRegistrant instantiates a new domainRegistrant and sets the default values.
 func NewDomainRegistrant()(*DomainRegistrant) {
     m := &DomainRegistrant{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDomainRegistrantFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -107,7 +107,7 @@ func (m *DomainRegistrant) GetUrl()(*string) {
 }
 // GetVendor gets the vendor property value. The vendor property
 func (m *DomainRegistrant) GetVendor()(*string) {
-    return m.vendor_escaped
+    return m.vendorEscaped
 }
 // Serialize serializes information the current object
 func (m *DomainRegistrant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -171,5 +171,5 @@ func (m *DomainRegistrant) SetUrl(value *string)() {
 }
 // SetVendor sets the vendor property value. The vendor property
 func (m *DomainRegistrant) SetVendor(value *string)() {
-    m.vendor_escaped = value
+    m.vendorEscaped = value
 }

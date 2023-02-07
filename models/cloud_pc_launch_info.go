@@ -19,7 +19,7 @@ type CloudPcLaunchInfo struct {
 func NewCloudPcLaunchInfo()(*CloudPcLaunchInfo) {
     m := &CloudPcLaunchInfo{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCloudPcLaunchInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

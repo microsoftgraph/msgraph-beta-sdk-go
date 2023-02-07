@@ -36,13 +36,13 @@ type CloudPcOnPremisesConnection struct {
     // The name of the target Azure subscription. Read-only.
     subscriptionName *string
     // Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
-    type_escaped *CloudPcOnPremisesConnectionType
+    typeEscaped *CloudPcOnPremisesConnectionType
     // The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.
     virtualNetworkId *string
     // Indicates resource location of the virtual target network. Read-only, computed value.
     virtualNetworkLocation *string
 }
-// NewCloudPcOnPremisesConnection instantiates a new CloudPcOnPremisesConnection and sets the default values.
+// NewCloudPcOnPremisesConnection instantiates a new cloudPcOnPremisesConnection and sets the default values.
 func NewCloudPcOnPremisesConnection()(*CloudPcOnPremisesConnection) {
     m := &CloudPcOnPremisesConnection{
         Entity: *NewEntity(),
@@ -286,7 +286,7 @@ func (m *CloudPcOnPremisesConnection) GetSubscriptionName()(*string) {
 }
 // GetType gets the type property value. Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
 func (m *CloudPcOnPremisesConnection) GetType()(*CloudPcOnPremisesConnectionType) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // GetVirtualNetworkId gets the virtualNetworkId property value. The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.
 func (m *CloudPcOnPremisesConnection) GetVirtualNetworkId()(*string) {
@@ -467,7 +467,7 @@ func (m *CloudPcOnPremisesConnection) SetSubscriptionName(value *string)() {
 }
 // SetType sets the type property value. Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
 func (m *CloudPcOnPremisesConnection) SetType(value *CloudPcOnPremisesConnectionType)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }
 // SetVirtualNetworkId sets the virtualNetworkId property value. The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.
 func (m *CloudPcOnPremisesConnection) SetVirtualNetworkId(value *string)() {

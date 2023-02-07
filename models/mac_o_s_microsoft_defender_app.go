@@ -13,8 +13,8 @@ func NewMacOSMicrosoftDefenderApp()(*MacOSMicrosoftDefenderApp) {
     m := &MacOSMicrosoftDefenderApp{
         MobileApp: *NewMobileApp(),
     }
-    odataTypeValue := "#microsoft.graph.macOSMicrosoftDefenderApp";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.macOSMicrosoftDefenderApp"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMacOSMicrosoftDefenderAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

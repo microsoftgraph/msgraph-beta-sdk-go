@@ -58,8 +58,8 @@ func NewOutlookTaskFoldersItemTasksItemAttachmentsRequestBuilderInternal(pathPar
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewOutlookTaskFoldersItemTasksItemAttachmentsRequestBuilder instantiates a new AttachmentsRequestBuilder and sets the default values.
@@ -70,11 +70,7 @@ func NewOutlookTaskFoldersItemTasksItemAttachmentsRequestBuilder(rawUrl string, 
 }
 // Count provides operations to count the resources in the collection.
 func (m *OutlookTaskFoldersItemTasksItemAttachmentsRequestBuilder) Count()(*OutlookTaskFoldersItemTasksItemAttachmentsCountRequestBuilder) {
-    return NewOutlookTaskFoldersItemTasksItemAttachmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// CreateUploadSession provides operations to call the createUploadSession method.
-func (m *OutlookTaskFoldersItemTasksItemAttachmentsRequestBuilder) CreateUploadSession()(*OutlookTaskFoldersItemTasksItemAttachmentsCreateUploadSessionRequestBuilder) {
-    return NewOutlookTaskFoldersItemTasksItemAttachmentsCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewOutlookTaskFoldersItemTasksItemAttachmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of attachment objects attached to an Outlook task.
 // [Find more info here]
@@ -97,6 +93,10 @@ func (m *OutlookTaskFoldersItemTasksItemAttachmentsRequestBuilder) Get(ctx conte
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentCollectionResponseable), nil
+}
+// MicrosoftGraphCreateUploadSession provides operations to call the createUploadSession method.
+func (m *OutlookTaskFoldersItemTasksItemAttachmentsRequestBuilder) MicrosoftGraphCreateUploadSession()(*OutlookTaskFoldersItemTasksItemAttachmentsMicrosoftGraphCreateUploadSessionRequestBuilder) {
+    return NewOutlookTaskFoldersItemTasksItemAttachmentsMicrosoftGraphCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post use this API to add an attachment to an outlookTask. The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
 // [Find more info here]
@@ -143,7 +143,10 @@ func (m *OutlookTaskFoldersItemTasksItemAttachmentsRequestBuilder) ToPostRequest
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

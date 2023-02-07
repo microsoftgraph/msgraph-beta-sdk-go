@@ -19,7 +19,7 @@ type MoveAction struct {
 func NewMoveAction()(*MoveAction) {
     m := &MoveAction{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMoveActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

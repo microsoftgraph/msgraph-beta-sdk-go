@@ -17,7 +17,7 @@ type DeviceManagementPriorityMetaData struct {
 func NewDeviceManagementPriorityMetaData()(*DeviceManagementPriorityMetaData) {
     m := &DeviceManagementPriorityMetaData{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceManagementPriorityMetaDataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

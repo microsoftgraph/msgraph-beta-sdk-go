@@ -46,10 +46,6 @@ type ImpactedResourcesImpactedResourceItemRequestBuilderPatchRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Complete provides operations to call the complete method.
-func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) Complete()(*ImpactedResourcesItemCompleteRequestBuilder) {
-    return NewImpactedResourcesItemCompleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewImpactedResourcesImpactedResourceItemRequestBuilderInternal instantiates a new ImpactedResourceItemRequestBuilder and sets the default values.
 func NewImpactedResourcesImpactedResourceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ImpactedResourcesImpactedResourceItemRequestBuilder) {
     m := &ImpactedResourcesImpactedResourceItemRequestBuilder{
@@ -59,8 +55,8 @@ func NewImpactedResourcesImpactedResourceItemRequestBuilderInternal(pathParamete
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewImpactedResourcesImpactedResourceItemRequestBuilder instantiates a new ImpactedResourceItemRequestBuilder and sets the default values.
@@ -85,10 +81,6 @@ func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) Delete(ctx context
     }
     return nil
 }
-// Dismiss provides operations to call the dismiss method.
-func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) Dismiss()(*ImpactedResourcesItemDismissRequestBuilder) {
-    return NewImpactedResourcesItemDismissRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Get get impactedResources from directory
 func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ImpactedResourcesImpactedResourceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImpactedResourceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -108,6 +100,22 @@ func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) Get(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImpactedResourceable), nil
 }
+// MicrosoftGraphComplete provides operations to call the complete method.
+func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) MicrosoftGraphComplete()(*ImpactedResourcesItemMicrosoftGraphCompleteRequestBuilder) {
+    return NewImpactedResourcesItemMicrosoftGraphCompleteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphDismiss provides operations to call the dismiss method.
+func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) MicrosoftGraphDismiss()(*ImpactedResourcesItemMicrosoftGraphDismissRequestBuilder) {
+    return NewImpactedResourcesItemMicrosoftGraphDismissRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphPostpone provides operations to call the postpone method.
+func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) MicrosoftGraphPostpone()(*ImpactedResourcesItemMicrosoftGraphPostponeRequestBuilder) {
+    return NewImpactedResourcesItemMicrosoftGraphPostponeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphReactivate provides operations to call the reactivate method.
+func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) MicrosoftGraphReactivate()(*ImpactedResourcesItemMicrosoftGraphReactivateRequestBuilder) {
+    return NewImpactedResourcesItemMicrosoftGraphReactivateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property impactedResources in directory
 func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImpactedResourceable, requestConfiguration *ImpactedResourcesImpactedResourceItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImpactedResourceable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -126,14 +134,6 @@ func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) Patch(ctx context.
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImpactedResourceable), nil
-}
-// Postpone provides operations to call the postpone method.
-func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) Postpone()(*ImpactedResourcesItemPostponeRequestBuilder) {
-    return NewImpactedResourcesItemPostponeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Reactivate provides operations to call the reactivate method.
-func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) Reactivate()(*ImpactedResourcesItemReactivateRequestBuilder) {
-    return NewImpactedResourcesItemReactivateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property impactedResources for directory
 func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ImpactedResourcesImpactedResourceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -170,7 +170,10 @@ func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) ToPatchRequestInfo
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

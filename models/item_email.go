@@ -12,15 +12,15 @@ type ItemEmail struct {
     // The name or label a user has associated with a particular email address.
     displayName *string
     // The type property
-    type_escaped *EmailType
+    typeEscaped *EmailType
 }
 // NewItemEmail instantiates a new ItemEmail and sets the default values.
 func NewItemEmail()(*ItemEmail) {
     m := &ItemEmail{
         ItemFacet: *NewItemFacet(),
     }
-    odataTypeValue := "#microsoft.graph.itemEmail";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.itemEmail"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateItemEmailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -72,7 +72,7 @@ func (m *ItemEmail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetType gets the type property value. The type property
 func (m *ItemEmail) GetType()(*EmailType) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *ItemEmail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -111,5 +111,5 @@ func (m *ItemEmail) SetDisplayName(value *string)() {
 }
 // SetType sets the type property value. The type property
 func (m *ItemEmail) SetType(value *EmailType)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

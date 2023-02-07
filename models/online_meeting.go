@@ -14,6 +14,8 @@ type OnlineMeeting struct {
     allowAttendeeToEnableMic *bool
     // Specifies who can be a presenter in a meeting.
     allowedPresenters *OnlineMeetingPresenters
+    // The allowParticipantsToChangeName property
+    allowParticipantsToChangeName *bool
     // Indicates if Teams reactions are enabled for the meeting.
     allowTeamworkReactions *bool
     // The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
@@ -62,6 +64,8 @@ type OnlineMeeting struct {
     recording []byte
     // The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
     registration MeetingRegistrationable
+    // The shareMeetingChatHistoryDefault property
+    shareMeetingChatHistoryDefault *MeetingChatHistoryDefaultMode
     // The meeting start time in UTC.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The subject of the online meeting.
@@ -97,6 +101,10 @@ func (m *OnlineMeeting) GetAllowAttendeeToEnableMic()(*bool) {
 // GetAllowedPresenters gets the allowedPresenters property value. Specifies who can be a presenter in a meeting.
 func (m *OnlineMeeting) GetAllowedPresenters()(*OnlineMeetingPresenters) {
     return m.allowedPresenters
+}
+// GetAllowParticipantsToChangeName gets the allowParticipantsToChangeName property value. The allowParticipantsToChangeName property
+func (m *OnlineMeeting) GetAllowParticipantsToChangeName()(*bool) {
+    return m.allowParticipantsToChangeName
 }
 // GetAllowTeamworkReactions gets the allowTeamworkReactions property value. Indicates if Teams reactions are enabled for the meeting.
 func (m *OnlineMeeting) GetAllowTeamworkReactions()(*bool) {
@@ -176,6 +184,16 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetAllowedPresenters(val.(*OnlineMeetingPresenters))
+        }
+        return nil
+    }
+    res["allowParticipantsToChangeName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowParticipantsToChangeName(val)
         }
         return nil
     }
@@ -431,6 +449,16 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["shareMeetingChatHistoryDefault"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseMeetingChatHistoryDefaultMode)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetShareMeetingChatHistoryDefault(val.(*MeetingChatHistoryDefaultMode))
+        }
+        return nil
+    }
     res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -545,6 +573,10 @@ func (m *OnlineMeeting) GetRecording()([]byte) {
 func (m *OnlineMeeting) GetRegistration()(MeetingRegistrationable) {
     return m.registration
 }
+// GetShareMeetingChatHistoryDefault gets the shareMeetingChatHistoryDefault property value. The shareMeetingChatHistoryDefault property
+func (m *OnlineMeeting) GetShareMeetingChatHistoryDefault()(*MeetingChatHistoryDefaultMode) {
+    return m.shareMeetingChatHistoryDefault
+}
 // GetStartDateTime gets the startDateTime property value. The meeting start time in UTC.
 func (m *OnlineMeeting) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.startDateTime
@@ -590,6 +622,12 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetAllowedPresenters() != nil {
         cast := (*m.GetAllowedPresenters()).String()
         err = writer.WriteStringValue("allowedPresenters", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("allowParticipantsToChangeName", m.GetAllowParticipantsToChangeName())
         if err != nil {
             return err
         }
@@ -742,6 +780,13 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    if m.GetShareMeetingChatHistoryDefault() != nil {
+        cast := (*m.GetShareMeetingChatHistoryDefault()).String()
+        err = writer.WriteStringValue("shareMeetingChatHistoryDefault", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteTimeValue("startDateTime", m.GetStartDateTime())
         if err != nil {
@@ -795,6 +840,10 @@ func (m *OnlineMeeting) SetAllowAttendeeToEnableMic(value *bool)() {
 // SetAllowedPresenters sets the allowedPresenters property value. Specifies who can be a presenter in a meeting.
 func (m *OnlineMeeting) SetAllowedPresenters(value *OnlineMeetingPresenters)() {
     m.allowedPresenters = value
+}
+// SetAllowParticipantsToChangeName sets the allowParticipantsToChangeName property value. The allowParticipantsToChangeName property
+func (m *OnlineMeeting) SetAllowParticipantsToChangeName(value *bool)() {
+    m.allowParticipantsToChangeName = value
 }
 // SetAllowTeamworkReactions sets the allowTeamworkReactions property value. Indicates if Teams reactions are enabled for the meeting.
 func (m *OnlineMeeting) SetAllowTeamworkReactions(value *bool)() {
@@ -891,6 +940,10 @@ func (m *OnlineMeeting) SetRecording(value []byte)() {
 // SetRegistration sets the registration property value. The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
 func (m *OnlineMeeting) SetRegistration(value MeetingRegistrationable)() {
     m.registration = value
+}
+// SetShareMeetingChatHistoryDefault sets the shareMeetingChatHistoryDefault property value. The shareMeetingChatHistoryDefault property
+func (m *OnlineMeeting) SetShareMeetingChatHistoryDefault(value *MeetingChatHistoryDefaultMode)() {
+    m.shareMeetingChatHistoryDefault = value
 }
 // SetStartDateTime sets the startDateTime property value. The meeting start time in UTC.
 func (m *OnlineMeeting) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {

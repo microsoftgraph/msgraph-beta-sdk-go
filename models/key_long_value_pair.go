@@ -19,7 +19,7 @@ type KeyLongValuePair struct {
 func NewKeyLongValuePair()(*KeyLongValuePair) {
     m := &KeyLongValuePair{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateKeyLongValuePairFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

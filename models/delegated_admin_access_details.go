@@ -17,7 +17,7 @@ type DelegatedAdminAccessDetails struct {
 func NewDelegatedAdminAccessDetails()(*DelegatedAdminAccessDetails) {
     m := &DelegatedAdminAccessDetails{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDelegatedAdminAccessDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

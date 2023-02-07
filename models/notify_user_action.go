@@ -12,8 +12,6 @@ type NotifyUserAction struct {
     actionLastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The emailText property
     emailText *string
-    // The overrideOption property
-    overrideOption *OverrideOption
     // The policyTip property
     policyTip *string
     // The recipients property
@@ -61,16 +59,6 @@ func (m *NotifyUserAction) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
-    res["overrideOption"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOverrideOption)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOverrideOption(val.(*OverrideOption))
-        }
-        return nil
-    }
     res["policyTip"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -96,10 +84,6 @@ func (m *NotifyUserAction) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     return res
-}
-// GetOverrideOption gets the overrideOption property value. The overrideOption property
-func (m *NotifyUserAction) GetOverrideOption()(*OverrideOption) {
-    return m.overrideOption
 }
 // GetPolicyTip gets the policyTip property value. The policyTip property
 func (m *NotifyUserAction) GetPolicyTip()(*string) {
@@ -127,13 +111,6 @@ func (m *NotifyUserAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
-    if m.GetOverrideOption() != nil {
-        cast := (*m.GetOverrideOption()).String()
-        err = writer.WriteStringValue("overrideOption", &cast)
-        if err != nil {
-            return err
-        }
-    }
     {
         err = writer.WriteStringValue("policyTip", m.GetPolicyTip())
         if err != nil {
@@ -155,10 +132,6 @@ func (m *NotifyUserAction) SetActionLastModifiedDateTime(value *i336074805fc8539
 // SetEmailText sets the emailText property value. The emailText property
 func (m *NotifyUserAction) SetEmailText(value *string)() {
     m.emailText = value
-}
-// SetOverrideOption sets the overrideOption property value. The overrideOption property
-func (m *NotifyUserAction) SetOverrideOption(value *OverrideOption)() {
-    m.overrideOption = value
 }
 // SetPolicyTip sets the policyTip property value. The policyTip property
 func (m *NotifyUserAction) SetPolicyTip(value *string)() {

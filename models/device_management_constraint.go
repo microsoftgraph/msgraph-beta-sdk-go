@@ -15,7 +15,7 @@ type DeviceManagementConstraint struct {
 func NewDeviceManagementConstraint()(*DeviceManagementConstraint) {
     m := &DeviceManagementConstraint{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceManagementConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

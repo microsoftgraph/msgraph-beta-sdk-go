@@ -20,14 +20,14 @@ type AssignmentFilterSupportedProperty struct {
     propertyRegexConstraint *string
     // List of all supported operators on this property.
     supportedOperators []AssignmentFilterOperator
-    // List of all supported values for this propery, empty if everything is supported.
+    // List of all supported values for this property, empty if everything is supported.
     supportedValues []string
 }
 // NewAssignmentFilterSupportedProperty instantiates a new assignmentFilterSupportedProperty and sets the default values.
 func NewAssignmentFilterSupportedProperty()(*AssignmentFilterSupportedProperty) {
     m := &AssignmentFilterSupportedProperty{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAssignmentFilterSupportedPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -145,7 +145,7 @@ func (m *AssignmentFilterSupportedProperty) GetPropertyRegexConstraint()(*string
 func (m *AssignmentFilterSupportedProperty) GetSupportedOperators()([]AssignmentFilterOperator) {
     return m.supportedOperators
 }
-// GetSupportedValues gets the supportedValues property value. List of all supported values for this propery, empty if everything is supported.
+// GetSupportedValues gets the supportedValues property value. List of all supported values for this property, empty if everything is supported.
 func (m *AssignmentFilterSupportedProperty) GetSupportedValues()([]string) {
     return m.supportedValues
 }
@@ -229,7 +229,7 @@ func (m *AssignmentFilterSupportedProperty) SetPropertyRegexConstraint(value *st
 func (m *AssignmentFilterSupportedProperty) SetSupportedOperators(value []AssignmentFilterOperator)() {
     m.supportedOperators = value
 }
-// SetSupportedValues sets the supportedValues property value. List of all supported values for this propery, empty if everything is supported.
+// SetSupportedValues sets the supportedValues property value. List of all supported values for this property, empty if everything is supported.
 func (m *AssignmentFilterSupportedProperty) SetSupportedValues(value []string)() {
     m.supportedValues = value
 }

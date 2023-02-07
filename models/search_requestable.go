@@ -24,7 +24,7 @@ type SearchRequestable interface {
     GetSharePointOneDriveOptions()(SharePointOneDriveOptionsable)
     GetSize()(*int32)
     GetSortProperties()([]SortPropertyable)
-    GetStored_fields()([]string)
+    GetStoredFields()([]string)
     GetTrimDuplicates()(*bool)
     SetAggregationFilters(value []string)()
     SetAggregations(value []AggregationOptionable)()
@@ -42,6 +42,6 @@ type SearchRequestable interface {
     SetSharePointOneDriveOptions(value SharePointOneDriveOptionsable)()
     SetSize(value *int32)()
     SetSortProperties(value []SortPropertyable)()
-    SetStored_fields(value []string)()
+    SetStoredFields(value []string)()
     SetTrimDuplicates(value *bool)()
 }

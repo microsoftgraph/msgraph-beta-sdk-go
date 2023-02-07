@@ -12,7 +12,7 @@ type PrivilegedSignupStatus struct {
     // The status property
     status *SetupStatus
 }
-// NewPrivilegedSignupStatus instantiates a new PrivilegedSignupStatus and sets the default values.
+// NewPrivilegedSignupStatus instantiates a new privilegedSignupStatus and sets the default values.
 func NewPrivilegedSignupStatus()(*PrivilegedSignupStatus) {
     m := &PrivilegedSignupStatus{
         Entity: *NewEntity(),

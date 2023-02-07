@@ -44,10 +44,6 @@ type DevicesItemMemberOfRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *DevicesItemMemberOfRequestBuilderGetQueryParameters
 }
-// Application casts the previous resource to application.
-func (m *DevicesItemMemberOfRequestBuilder) Application()(*DevicesItemMemberOfApplicationRequestBuilder) {
-    return NewDevicesItemMemberOfApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewDevicesItemMemberOfRequestBuilderInternal instantiates a new MemberOfRequestBuilder and sets the default values.
 func NewDevicesItemMemberOfRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DevicesItemMemberOfRequestBuilder) {
     m := &DevicesItemMemberOfRequestBuilder{
@@ -57,8 +53,8 @@ func NewDevicesItemMemberOfRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDevicesItemMemberOfRequestBuilder instantiates a new MemberOfRequestBuilder and sets the default values.
@@ -69,11 +65,7 @@ func NewDevicesItemMemberOfRequestBuilder(rawUrl string, requestAdapter i2ae4187
 }
 // Count provides operations to count the resources in the collection.
 func (m *DevicesItemMemberOfRequestBuilder) Count()(*DevicesItemMemberOfCountRequestBuilder) {
-    return NewDevicesItemMemberOfCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Device casts the previous resource to device.
-func (m *DevicesItemMemberOfRequestBuilder) Device()(*DevicesItemMemberOfDeviceRequestBuilder) {
-    return NewDevicesItemMemberOfDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDevicesItemMemberOfCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
 // [Find more info here]
@@ -97,17 +89,29 @@ func (m *DevicesItemMemberOfRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
-// Group casts the previous resource to group.
-func (m *DevicesItemMemberOfRequestBuilder) Group()(*DevicesItemMemberOfGroupRequestBuilder) {
-    return NewDevicesItemMemberOfGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphApplication casts the previous resource to application.
+func (m *DevicesItemMemberOfRequestBuilder) MicrosoftGraphApplication()(*DevicesItemMemberOfMicrosoftGraphApplicationRequestBuilder) {
+    return NewDevicesItemMemberOfMicrosoftGraphApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// OrgContact casts the previous resource to orgContact.
-func (m *DevicesItemMemberOfRequestBuilder) OrgContact()(*DevicesItemMemberOfOrgContactRequestBuilder) {
-    return NewDevicesItemMemberOfOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphDevice casts the previous resource to device.
+func (m *DevicesItemMemberOfRequestBuilder) MicrosoftGraphDevice()(*DevicesItemMemberOfMicrosoftGraphDeviceRequestBuilder) {
+    return NewDevicesItemMemberOfMicrosoftGraphDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// ServicePrincipal casts the previous resource to servicePrincipal.
-func (m *DevicesItemMemberOfRequestBuilder) ServicePrincipal()(*DevicesItemMemberOfServicePrincipalRequestBuilder) {
-    return NewDevicesItemMemberOfServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGroup casts the previous resource to group.
+func (m *DevicesItemMemberOfRequestBuilder) MicrosoftGraphGroup()(*DevicesItemMemberOfMicrosoftGraphGroupRequestBuilder) {
+    return NewDevicesItemMemberOfMicrosoftGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphOrgContact casts the previous resource to orgContact.
+func (m *DevicesItemMemberOfRequestBuilder) MicrosoftGraphOrgContact()(*DevicesItemMemberOfMicrosoftGraphOrgContactRequestBuilder) {
+    return NewDevicesItemMemberOfMicrosoftGraphOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *DevicesItemMemberOfRequestBuilder) MicrosoftGraphServicePrincipal()(*DevicesItemMemberOfMicrosoftGraphServicePrincipalRequestBuilder) {
+    return NewDevicesItemMemberOfMicrosoftGraphServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUser casts the previous resource to user.
+func (m *DevicesItemMemberOfRequestBuilder) MicrosoftGraphUser()(*DevicesItemMemberOfMicrosoftGraphUserRequestBuilder) {
+    return NewDevicesItemMemberOfMicrosoftGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
 func (m *DevicesItemMemberOfRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DevicesItemMemberOfRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -124,8 +128,4 @@ func (m *DevicesItemMemberOfRequestBuilder) ToGetRequestInformation(ctx context.
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// User casts the previous resource to user.
-func (m *DevicesItemMemberOfRequestBuilder) User()(*DevicesItemMemberOfUserRequestBuilder) {
-    return NewDevicesItemMemberOfUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

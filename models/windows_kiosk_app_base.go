@@ -23,7 +23,7 @@ type WindowsKioskAppBase struct {
 func NewWindowsKioskAppBase()(*WindowsKioskAppBase) {
     m := &WindowsKioskAppBase{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWindowsKioskAppBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

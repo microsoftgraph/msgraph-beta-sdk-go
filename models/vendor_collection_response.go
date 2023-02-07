@@ -8,7 +8,7 @@ import (
 type VendorCollectionResponse struct {
     BaseCollectionPaginationCountResponse
     // The value property
-    value []Vendor_escapedable
+    value []VendorEscapedable
 }
 // NewVendorCollectionResponse instantiates a new VendorCollectionResponse and sets the default values.
 func NewVendorCollectionResponse()(*VendorCollectionResponse) {
@@ -25,14 +25,14 @@ func CreateVendorCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330
 func (m *VendorCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateVendor_escapedFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(CreateVendorEscapedFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Vendor_escapedable, len(val))
+            res := make([]VendorEscapedable, len(val))
             for i, v := range val {
-                res[i] = v.(Vendor_escapedable)
+                res[i] = v.(VendorEscapedable)
             }
             m.SetValue(res)
         }
@@ -41,7 +41,7 @@ func (m *VendorCollectionResponse) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetValue gets the value property value. The value property
-func (m *VendorCollectionResponse) GetValue()([]Vendor_escapedable) {
+func (m *VendorCollectionResponse) GetValue()([]VendorEscapedable) {
     return m.value
 }
 // Serialize serializes information the current object
@@ -63,6 +63,6 @@ func (m *VendorCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f4
     return nil
 }
 // SetValue sets the value property value. The value property
-func (m *VendorCollectionResponse) SetValue(value []Vendor_escapedable)() {
+func (m *VendorCollectionResponse) SetValue(value []VendorEscapedable)() {
     m.value = value
 }

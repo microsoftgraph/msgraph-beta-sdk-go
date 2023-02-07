@@ -71,6 +71,8 @@ type DeviceManagement struct {
     configurationPolicyTemplates []DeviceManagementConfigurationPolicyTemplateable
     // List of all ConfigurationSettings
     configurationSettings []DeviceManagementConfigurationSettingDefinitionable
+    // The list of connector status for the tenant.
+    connectorStatus []ConnectorStatusDetailsable
     // A configuration entity for MEM features that utilize Data Processor Service for Windows (DPSW) data.
     dataProcessorServiceForWindowsFeaturesOnboarding DataProcessorServiceForWindowsFeaturesOnboardingable
     // Data sharing consents.
@@ -213,6 +215,8 @@ type DeviceManagement struct {
     roleDefinitions []RoleDefinitionable
     // The Role Scope Tags.
     roleScopeTags []RoleScopeTagable
+    // A list of ServiceNowConnections
+    serviceNowConnections []ServiceNowConnectionable
     // The device management intent setting definitions
     settingDefinitions []DeviceManagementSettingDefinitionable
     // Account level settings.
@@ -301,8 +305,8 @@ type DeviceManagement struct {
     userExperienceAnalyticsDeviceStartupProcessPerformance []UserExperienceAnalyticsDeviceStartupProcessPerformanceable
     // User experience analytics devices without cloud identity.
     userExperienceAnalyticsDevicesWithoutCloudIdentity []UserExperienceAnalyticsDeviceWithoutCloudIdentityable
-    // The user experience analytics device events entity contains NRT device timeline events details.
-    userExperienceAnalyticsDeviceTimelineEvents []UserExperienceAnalyticsDeviceTimelineEventsable
+    // The user experience analytics device events entity contains NRT device timeline event details.
+    userExperienceAnalyticsDeviceTimelineEvent []UserExperienceAnalyticsDeviceTimelineEventable
     // User experience analytics impacting process
     userExperienceAnalyticsImpactingProcess []UserExperienceAnalyticsImpactingProcessable
     // User experience analytics metric history
@@ -494,6 +498,10 @@ func (m *DeviceManagement) GetConfigurationPolicyTemplates()([]DeviceManagementC
 // GetConfigurationSettings gets the configurationSettings property value. List of all ConfigurationSettings
 func (m *DeviceManagement) GetConfigurationSettings()([]DeviceManagementConfigurationSettingDefinitionable) {
     return m.configurationSettings
+}
+// GetConnectorStatus gets the connectorStatus property value. The list of connector status for the tenant.
+func (m *DeviceManagement) GetConnectorStatus()([]ConnectorStatusDetailsable) {
+    return m.connectorStatus
 }
 // GetDataProcessorServiceForWindowsFeaturesOnboarding gets the dataProcessorServiceForWindowsFeaturesOnboarding property value. A configuration entity for MEM features that utilize Data Processor Service for Windows (DPSW) data.
 func (m *DeviceManagement) GetDataProcessorServiceForWindowsFeaturesOnboarding()(DataProcessorServiceForWindowsFeaturesOnboardingable) {
@@ -1017,6 +1025,20 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
                 res[i] = v.(DeviceManagementConfigurationSettingDefinitionable)
             }
             m.SetConfigurationSettings(res)
+        }
+        return nil
+    }
+    res["connectorStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateConnectorStatusDetailsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ConnectorStatusDetailsable, len(val))
+            for i, v := range val {
+                res[i] = v.(ConnectorStatusDetailsable)
+            }
+            m.SetConnectorStatus(res)
         }
         return nil
     }
@@ -1950,6 +1972,20 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["serviceNowConnections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateServiceNowConnectionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ServiceNowConnectionable, len(val))
+            for i, v := range val {
+                res[i] = v.(ServiceNowConnectionable)
+            }
+            m.SetServiceNowConnections(res)
+        }
+        return nil
+    }
     res["settingDefinitions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementSettingDefinitionFromDiscriminatorValue)
         if err != nil {
@@ -2522,17 +2558,17 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
-    res["userExperienceAnalyticsDeviceTimelineEvents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateUserExperienceAnalyticsDeviceTimelineEventsFromDiscriminatorValue)
+    res["userExperienceAnalyticsDeviceTimelineEvent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUserExperienceAnalyticsDeviceTimelineEventFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]UserExperienceAnalyticsDeviceTimelineEventsable, len(val))
+            res := make([]UserExperienceAnalyticsDeviceTimelineEventable, len(val))
             for i, v := range val {
-                res[i] = v.(UserExperienceAnalyticsDeviceTimelineEventsable)
+                res[i] = v.(UserExperienceAnalyticsDeviceTimelineEventable)
             }
-            m.SetUserExperienceAnalyticsDeviceTimelineEvents(res)
+            m.SetUserExperienceAnalyticsDeviceTimelineEvent(res)
         }
         return nil
     }
@@ -3070,6 +3106,10 @@ func (m *DeviceManagement) GetRoleDefinitions()([]RoleDefinitionable) {
 func (m *DeviceManagement) GetRoleScopeTags()([]RoleScopeTagable) {
     return m.roleScopeTags
 }
+// GetServiceNowConnections gets the serviceNowConnections property value. A list of ServiceNowConnections
+func (m *DeviceManagement) GetServiceNowConnections()([]ServiceNowConnectionable) {
+    return m.serviceNowConnections
+}
 // GetSettingDefinitions gets the settingDefinitions property value. The device management intent setting definitions
 func (m *DeviceManagement) GetSettingDefinitions()([]DeviceManagementSettingDefinitionable) {
     return m.settingDefinitions
@@ -3246,9 +3286,9 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsDeviceStartupProcessPerform
 func (m *DeviceManagement) GetUserExperienceAnalyticsDevicesWithoutCloudIdentity()([]UserExperienceAnalyticsDeviceWithoutCloudIdentityable) {
     return m.userExperienceAnalyticsDevicesWithoutCloudIdentity
 }
-// GetUserExperienceAnalyticsDeviceTimelineEvents gets the userExperienceAnalyticsDeviceTimelineEvents property value. The user experience analytics device events entity contains NRT device timeline events details.
-func (m *DeviceManagement) GetUserExperienceAnalyticsDeviceTimelineEvents()([]UserExperienceAnalyticsDeviceTimelineEventsable) {
-    return m.userExperienceAnalyticsDeviceTimelineEvents
+// GetUserExperienceAnalyticsDeviceTimelineEvent gets the userExperienceAnalyticsDeviceTimelineEvent property value. The user experience analytics device events entity contains NRT device timeline event details.
+func (m *DeviceManagement) GetUserExperienceAnalyticsDeviceTimelineEvent()([]UserExperienceAnalyticsDeviceTimelineEventable) {
+    return m.userExperienceAnalyticsDeviceTimelineEvent
 }
 // GetUserExperienceAnalyticsImpactingProcess gets the userExperienceAnalyticsImpactingProcess property value. User experience analytics impacting process
 func (m *DeviceManagement) GetUserExperienceAnalyticsImpactingProcess()([]UserExperienceAnalyticsImpactingProcessable) {
@@ -3646,6 +3686,16 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("configurationSettings", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetConnectorStatus() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetConnectorStatus()))
+        for i, v := range m.GetConnectorStatus() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("connectorStatus", cast)
         if err != nil {
             return err
         }
@@ -4278,6 +4328,16 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    if m.GetServiceNowConnections() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetServiceNowConnections()))
+        for i, v := range m.GetServiceNowConnections() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("serviceNowConnections", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSettingDefinitions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSettingDefinitions()))
         for i, v := range m.GetSettingDefinitions() {
@@ -4670,12 +4730,12 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
-    if m.GetUserExperienceAnalyticsDeviceTimelineEvents() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserExperienceAnalyticsDeviceTimelineEvents()))
-        for i, v := range m.GetUserExperienceAnalyticsDeviceTimelineEvents() {
+    if m.GetUserExperienceAnalyticsDeviceTimelineEvent() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserExperienceAnalyticsDeviceTimelineEvent()))
+        for i, v := range m.GetUserExperienceAnalyticsDeviceTimelineEvent() {
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
-        err = writer.WriteCollectionOfObjectValues("userExperienceAnalyticsDeviceTimelineEvents", cast)
+        err = writer.WriteCollectionOfObjectValues("userExperienceAnalyticsDeviceTimelineEvent", cast)
         if err != nil {
             return err
         }
@@ -5058,6 +5118,10 @@ func (m *DeviceManagement) SetConfigurationPolicyTemplates(value []DeviceManagem
 func (m *DeviceManagement) SetConfigurationSettings(value []DeviceManagementConfigurationSettingDefinitionable)() {
     m.configurationSettings = value
 }
+// SetConnectorStatus sets the connectorStatus property value. The list of connector status for the tenant.
+func (m *DeviceManagement) SetConnectorStatus(value []ConnectorStatusDetailsable)() {
+    m.connectorStatus = value
+}
 // SetDataProcessorServiceForWindowsFeaturesOnboarding sets the dataProcessorServiceForWindowsFeaturesOnboarding property value. A configuration entity for MEM features that utilize Data Processor Service for Windows (DPSW) data.
 func (m *DeviceManagement) SetDataProcessorServiceForWindowsFeaturesOnboarding(value DataProcessorServiceForWindowsFeaturesOnboardingable)() {
     m.dataProcessorServiceForWindowsFeaturesOnboarding = value
@@ -5342,6 +5406,10 @@ func (m *DeviceManagement) SetRoleDefinitions(value []RoleDefinitionable)() {
 func (m *DeviceManagement) SetRoleScopeTags(value []RoleScopeTagable)() {
     m.roleScopeTags = value
 }
+// SetServiceNowConnections sets the serviceNowConnections property value. A list of ServiceNowConnections
+func (m *DeviceManagement) SetServiceNowConnections(value []ServiceNowConnectionable)() {
+    m.serviceNowConnections = value
+}
 // SetSettingDefinitions sets the settingDefinitions property value. The device management intent setting definitions
 func (m *DeviceManagement) SetSettingDefinitions(value []DeviceManagementSettingDefinitionable)() {
     m.settingDefinitions = value
@@ -5518,9 +5586,9 @@ func (m *DeviceManagement) SetUserExperienceAnalyticsDeviceStartupProcessPerform
 func (m *DeviceManagement) SetUserExperienceAnalyticsDevicesWithoutCloudIdentity(value []UserExperienceAnalyticsDeviceWithoutCloudIdentityable)() {
     m.userExperienceAnalyticsDevicesWithoutCloudIdentity = value
 }
-// SetUserExperienceAnalyticsDeviceTimelineEvents sets the userExperienceAnalyticsDeviceTimelineEvents property value. The user experience analytics device events entity contains NRT device timeline events details.
-func (m *DeviceManagement) SetUserExperienceAnalyticsDeviceTimelineEvents(value []UserExperienceAnalyticsDeviceTimelineEventsable)() {
-    m.userExperienceAnalyticsDeviceTimelineEvents = value
+// SetUserExperienceAnalyticsDeviceTimelineEvent sets the userExperienceAnalyticsDeviceTimelineEvent property value. The user experience analytics device events entity contains NRT device timeline event details.
+func (m *DeviceManagement) SetUserExperienceAnalyticsDeviceTimelineEvent(value []UserExperienceAnalyticsDeviceTimelineEventable)() {
+    m.userExperienceAnalyticsDeviceTimelineEvent = value
 }
 // SetUserExperienceAnalyticsImpactingProcess sets the userExperienceAnalyticsImpactingProcess property value. User experience analytics impacting process
 func (m *DeviceManagement) SetUserExperienceAnalyticsImpactingProcess(value []UserExperienceAnalyticsImpactingProcessable)() {

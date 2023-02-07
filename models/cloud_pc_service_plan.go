@@ -13,14 +13,16 @@ type CloudPcServicePlan struct {
     ramInGB *int32
     // The size of the OS Disk in GB. Read-only.
     storageInGB *int32
+    // The supportedSolution property
+    supportedSolution *CloudPcManagementService
     // The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
-    type_escaped *CloudPcServicePlanType
+    typeEscaped *CloudPcServicePlanType
     // The size of the user profile disk in GB. Read-only.
     userProfileInGB *int32
     // The number of vCPUs. Read-only.
     vCpuCount *int32
 }
-// NewCloudPcServicePlan instantiates a new cloudPcServicePlan and sets the default values.
+// NewCloudPcServicePlan instantiates a new CloudPcServicePlan and sets the default values.
 func NewCloudPcServicePlan()(*CloudPcServicePlan) {
     m := &CloudPcServicePlan{
         Entity: *NewEntity(),
@@ -68,6 +70,16 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["supportedSolution"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCloudPcManagementService)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSupportedSolution(val.(*CloudPcManagementService))
+        }
+        return nil
+    }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcServicePlanType)
         if err != nil {
@@ -108,9 +120,13 @@ func (m *CloudPcServicePlan) GetRamInGB()(*int32) {
 func (m *CloudPcServicePlan) GetStorageInGB()(*int32) {
     return m.storageInGB
 }
+// GetSupportedSolution gets the supportedSolution property value. The supportedSolution property
+func (m *CloudPcServicePlan) GetSupportedSolution()(*CloudPcManagementService) {
+    return m.supportedSolution
+}
 // GetType gets the type property value. The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
 func (m *CloudPcServicePlan) GetType()(*CloudPcServicePlanType) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // GetUserProfileInGB gets the userProfileInGB property value. The size of the user profile disk in GB. Read-only.
 func (m *CloudPcServicePlan) GetUserProfileInGB()(*int32) {
@@ -140,6 +156,13 @@ func (m *CloudPcServicePlan) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     {
         err = writer.WriteInt32Value("storageInGB", m.GetStorageInGB())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetSupportedSolution() != nil {
+        cast := (*m.GetSupportedSolution()).String()
+        err = writer.WriteStringValue("supportedSolution", &cast)
         if err != nil {
             return err
         }
@@ -177,9 +200,13 @@ func (m *CloudPcServicePlan) SetRamInGB(value *int32)() {
 func (m *CloudPcServicePlan) SetStorageInGB(value *int32)() {
     m.storageInGB = value
 }
+// SetSupportedSolution sets the supportedSolution property value. The supportedSolution property
+func (m *CloudPcServicePlan) SetSupportedSolution(value *CloudPcManagementService)() {
+    m.supportedSolution = value
+}
 // SetType sets the type property value. The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
 func (m *CloudPcServicePlan) SetType(value *CloudPcServicePlanType)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }
 // SetUserProfileInGB sets the userProfileInGB property value. The size of the user profile disk in GB. Read-only.
 func (m *CloudPcServicePlan) SetUserProfileInGB(value *int32)() {

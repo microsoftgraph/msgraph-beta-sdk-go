@@ -41,8 +41,8 @@ func NewWindowsManagementAppRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsManagementAppRequestBuilder instantiates a new WindowsManagementAppRequestBuilder and sets the default values.

@@ -15,8 +15,8 @@ func NewDeviceManagementSettingBooleanConstraint()(*DeviceManagementSettingBoole
     m := &DeviceManagementSettingBooleanConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementSettingBooleanConstraint";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementSettingBooleanConstraint"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementSettingBooleanConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

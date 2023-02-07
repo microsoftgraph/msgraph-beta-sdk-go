@@ -13,8 +13,8 @@ func NewSoftwareUpdateCatalogEntry()(*SoftwareUpdateCatalogEntry) {
     m := &SoftwareUpdateCatalogEntry{
         CatalogEntry: *NewCatalogEntry(),
     }
-    odataTypeValue := "#microsoft.graph.windowsUpdates.softwareUpdateCatalogEntry";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsUpdates.softwareUpdateCatalogEntry"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateSoftwareUpdateCatalogEntryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,6 +31,8 @@ func CreateSoftwareUpdateCatalogEntryFromDiscriminatorValue(parseNode i878a80d23
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.windowsUpdates.driverUpdateCatalogEntry":
+                        return NewDriverUpdateCatalogEntry(), nil
                     case "#microsoft.graph.windowsUpdates.featureUpdateCatalogEntry":
                         return NewFeatureUpdateCatalogEntry(), nil
                     case "#microsoft.graph.windowsUpdates.qualityUpdateCatalogEntry":

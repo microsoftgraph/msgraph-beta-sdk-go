@@ -55,8 +55,8 @@ func NewGroupsGroupItemRequestBuilderInternal(pathParameters map[string]string, 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGroupsGroupItemRequestBuilder instantiates a new GroupItemRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *GroupsGroupItemRequestBuilder) Patch(ctx context.Context, body i45fc416
 }
 // Sets provides operations to manage the sets property of the microsoft.graph.termStore.group entity.
 func (m *GroupsGroupItemRequestBuilder) Sets()(*GroupsItemSetsRequestBuilder) {
-    return NewGroupsItemSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupsItemSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SetsById provides operations to manage the sets property of the microsoft.graph.termStore.group entity.
 func (m *GroupsGroupItemRequestBuilder) SetsById(id string)(*GroupsItemSetsSetItemRequestBuilder) {
@@ -132,7 +132,7 @@ func (m *GroupsGroupItemRequestBuilder) SetsById(id string)(*GroupsItemSetsSetIt
     if id != "" {
         urlTplParams["set%2Did"] = id
     }
-    return NewGroupsItemSetsSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewGroupsItemSetsSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property groups for termStore
 func (m *GroupsGroupItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *GroupsGroupItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +169,10 @@ func (m *GroupsGroupItemRequestBuilder) ToPatchRequestInformation(ctx context.Co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

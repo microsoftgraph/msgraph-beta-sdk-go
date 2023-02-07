@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosStoreApp 
+// IosStoreApp contains properties and inherited properties for iOS store apps.
 type IosStoreApp struct {
     MobileApp
     // Contains properties of the possible iOS device types the mobile app can run on.
@@ -16,13 +16,13 @@ type IosStoreApp struct {
     // The value for the minimum applicable operating system.
     minimumSupportedOperatingSystem IosMinimumOperatingSystemable
 }
-// NewIosStoreApp instantiates a new IosStoreApp and sets the default values.
+// NewIosStoreApp instantiates a new iosStoreApp and sets the default values.
 func NewIosStoreApp()(*IosStoreApp) {
     m := &IosStoreApp{
         MobileApp: *NewMobileApp(),
     }
-    odataTypeValue := "#microsoft.graph.iosStoreApp";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.iosStoreApp"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateIosStoreAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

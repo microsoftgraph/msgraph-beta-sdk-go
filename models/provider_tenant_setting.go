@@ -17,7 +17,7 @@ type ProviderTenantSetting struct {
     // The provider property
     provider *string
     // The vendor property
-    vendor_escaped *string
+    vendorEscaped *string
 }
 // NewProviderTenantSetting instantiates a new providerTenantSetting and sets the default values.
 func NewProviderTenantSetting()(*ProviderTenantSetting) {
@@ -103,7 +103,7 @@ func (m *ProviderTenantSetting) GetProvider()(*string) {
 }
 // GetVendor gets the vendor property value. The vendor property
 func (m *ProviderTenantSetting) GetVendor()(*string) {
-    return m.vendor_escaped
+    return m.vendorEscaped
 }
 // Serialize serializes information the current object
 func (m *ProviderTenantSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -161,5 +161,5 @@ func (m *ProviderTenantSetting) SetProvider(value *string)() {
 }
 // SetVendor sets the vendor property value. The vendor property
 func (m *ProviderTenantSetting) SetVendor(value *string)() {
-    m.vendor_escaped = value
+    m.vendorEscaped = value
 }

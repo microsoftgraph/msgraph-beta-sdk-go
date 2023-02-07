@@ -15,7 +15,7 @@ type DeliveryOptimizationMaxCacheSize struct {
 func NewDeliveryOptimizationMaxCacheSize()(*DeliveryOptimizationMaxCacheSize) {
     m := &DeliveryOptimizationMaxCacheSize{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeliveryOptimizationMaxCacheSizeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

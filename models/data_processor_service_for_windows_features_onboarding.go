@@ -19,7 +19,7 @@ type DataProcessorServiceForWindowsFeaturesOnboarding struct {
 func NewDataProcessorServiceForWindowsFeaturesOnboarding()(*DataProcessorServiceForWindowsFeaturesOnboarding) {
     m := &DataProcessorServiceForWindowsFeaturesOnboarding{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDataProcessorServiceForWindowsFeaturesOnboardingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

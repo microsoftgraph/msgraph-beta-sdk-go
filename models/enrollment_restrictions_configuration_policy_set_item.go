@@ -17,8 +17,8 @@ func NewEnrollmentRestrictionsConfigurationPolicySetItem()(*EnrollmentRestrictio
     m := &EnrollmentRestrictionsConfigurationPolicySetItem{
         PolicySetItem: *NewPolicySetItem(),
     }
-    odataTypeValue := "#microsoft.graph.enrollmentRestrictionsConfigurationPolicySetItem";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.enrollmentRestrictionsConfigurationPolicySetItem"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEnrollmentRestrictionsConfigurationPolicySetItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

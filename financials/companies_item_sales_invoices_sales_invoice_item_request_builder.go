@@ -39,14 +39,6 @@ type CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilderPatchRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Cancel provides operations to call the cancel method.
-func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) Cancel()(*CompaniesItemSalesInvoicesItemCancelRequestBuilder) {
-    return NewCompaniesItemSalesInvoicesItemCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// CancelAndSend provides operations to call the cancelAndSend method.
-func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) CancelAndSend()(*CompaniesItemSalesInvoicesItemCancelAndSendRequestBuilder) {
-    return NewCompaniesItemSalesInvoicesItemCancelAndSendRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewCompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilderInternal instantiates a new SalesInvoiceItemRequestBuilder and sets the default values.
 func NewCompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) {
     m := &CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder{
@@ -56,8 +48,8 @@ func NewCompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilderInternal(pathPar
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder instantiates a new SalesInvoiceItemRequestBuilder and sets the default values.
@@ -68,11 +60,11 @@ func NewCompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder(rawUrl string, 
 }
 // Currency provides operations to manage the currency property of the microsoft.graph.salesInvoice entity.
 func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) Currency()(*CompaniesItemSalesInvoicesItemCurrencyRequestBuilder) {
-    return NewCompaniesItemSalesInvoicesItemCurrencyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesInvoicesItemCurrencyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Customer provides operations to manage the customer property of the microsoft.graph.salesInvoice entity.
 func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) Customer()(*CompaniesItemSalesInvoicesItemCustomerRequestBuilder) {
-    return NewCompaniesItemSalesInvoicesItemCustomerRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesInvoicesItemCustomerRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get salesInvoices from financials
 func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesInvoiceable, error) {
@@ -92,6 +84,26 @@ func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) Get(ctx conte
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesInvoiceable), nil
+}
+// MicrosoftGraphCancel provides operations to call the cancel method.
+func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) MicrosoftGraphCancel()(*CompaniesItemSalesInvoicesItemMicrosoftGraphCancelRequestBuilder) {
+    return NewCompaniesItemSalesInvoicesItemMicrosoftGraphCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphCancelAndSend provides operations to call the cancelAndSend method.
+func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) MicrosoftGraphCancelAndSend()(*CompaniesItemSalesInvoicesItemMicrosoftGraphCancelAndSendRequestBuilder) {
+    return NewCompaniesItemSalesInvoicesItemMicrosoftGraphCancelAndSendRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphPost provides operations to call the post method.
+func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) MicrosoftGraphPost()(*CompaniesItemSalesInvoicesItemMicrosoftGraphPostRequestBuilder) {
+    return NewCompaniesItemSalesInvoicesItemMicrosoftGraphPostRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphPostAndSend provides operations to call the postAndSend method.
+func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) MicrosoftGraphPostAndSend()(*CompaniesItemSalesInvoicesItemMicrosoftGraphPostAndSendRequestBuilder) {
+    return NewCompaniesItemSalesInvoicesItemMicrosoftGraphPostAndSendRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphSend provides operations to call the send method.
+func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) MicrosoftGraphSend()(*CompaniesItemSalesInvoicesItemMicrosoftGraphSendRequestBuilder) {
+    return NewCompaniesItemSalesInvoicesItemMicrosoftGraphSendRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property salesInvoices in financials
 func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesInvoiceable, requestConfiguration *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesInvoiceable, error) {
@@ -114,19 +126,11 @@ func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) Patch(ctx con
 }
 // PaymentTerm provides operations to manage the paymentTerm property of the microsoft.graph.salesInvoice entity.
 func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) PaymentTerm()(*CompaniesItemSalesInvoicesItemPaymentTermRequestBuilder) {
-    return NewCompaniesItemSalesInvoicesItemPaymentTermRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Post provides operations to call the post method.
-func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) Post()(*CompaniesItemSalesInvoicesItemPostRequestBuilder) {
-    return NewCompaniesItemSalesInvoicesItemPostRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// PostAndSend provides operations to call the postAndSend method.
-func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) PostAndSend()(*CompaniesItemSalesInvoicesItemPostAndSendRequestBuilder) {
-    return NewCompaniesItemSalesInvoicesItemPostAndSendRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesInvoicesItemPaymentTermRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SalesInvoiceLines provides operations to manage the salesInvoiceLines property of the microsoft.graph.salesInvoice entity.
 func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) SalesInvoiceLines()(*CompaniesItemSalesInvoicesItemSalesInvoiceLinesRequestBuilder) {
-    return NewCompaniesItemSalesInvoicesItemSalesInvoiceLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesInvoicesItemSalesInvoiceLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SalesInvoiceLinesById provides operations to manage the salesInvoiceLines property of the microsoft.graph.salesInvoice entity.
 func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) SalesInvoiceLinesById(id string)(*CompaniesItemSalesInvoicesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilder) {
@@ -137,15 +141,11 @@ func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) SalesInvoiceL
     if id != "" {
         urlTplParams["salesInvoiceLine%2Did"] = id
     }
-    return NewCompaniesItemSalesInvoicesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// Send provides operations to call the send method.
-func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) Send()(*CompaniesItemSalesInvoicesItemSendRequestBuilder) {
-    return NewCompaniesItemSalesInvoicesItemSendRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesInvoicesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ShipmentMethod provides operations to manage the shipmentMethod property of the microsoft.graph.salesInvoice entity.
 func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) ShipmentMethod()(*CompaniesItemSalesInvoicesItemShipmentMethodRequestBuilder) {
-    return NewCompaniesItemSalesInvoicesItemShipmentMethodRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesInvoicesItemShipmentMethodRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation get salesInvoices from financials
 func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -170,7 +170,10 @@ func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) ToPatchReques
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

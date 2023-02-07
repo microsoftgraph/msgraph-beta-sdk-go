@@ -51,14 +51,6 @@ type PrivilegedSignupStatusRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CanSignUp provides operations to call the canSignUp method.
-func (m *PrivilegedSignupStatusRequestBuilder) CanSignUp()(*CanSignUpRequestBuilder) {
-    return NewCanSignUpRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// CompleteSetup provides operations to call the completeSetup method.
-func (m *PrivilegedSignupStatusRequestBuilder) CompleteSetup()(*CompleteSetupRequestBuilder) {
-    return NewCompleteSetupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewPrivilegedSignupStatusRequestBuilderInternal instantiates a new PrivilegedSignupStatusRequestBuilder and sets the default values.
 func NewPrivilegedSignupStatusRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrivilegedSignupStatusRequestBuilder) {
     m := &PrivilegedSignupStatusRequestBuilder{
@@ -68,8 +60,8 @@ func NewPrivilegedSignupStatusRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPrivilegedSignupStatusRequestBuilder instantiates a new PrivilegedSignupStatusRequestBuilder and sets the default values.
@@ -80,7 +72,7 @@ func NewPrivilegedSignupStatusRequestBuilder(rawUrl string, requestAdapter i2ae4
 }
 // Count provides operations to count the resources in the collection.
 func (m *PrivilegedSignupStatusRequestBuilder) Count()(*CountRequestBuilder) {
-    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get entities from privilegedSignupStatus
 func (m *PrivilegedSignupStatusRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedSignupStatusRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedSignupStatusCollectionResponseable, error) {
@@ -101,9 +93,21 @@ func (m *PrivilegedSignupStatusRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedSignupStatusCollectionResponseable), nil
 }
-// IsSignedUp provides operations to call the isSignedUp method.
-func (m *PrivilegedSignupStatusRequestBuilder) IsSignedUp()(*IsSignedUpRequestBuilder) {
-    return NewIsSignedUpRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphCanSignUp provides operations to call the canSignUp method.
+func (m *PrivilegedSignupStatusRequestBuilder) MicrosoftGraphCanSignUp()(*MicrosoftGraphCanSignUpRequestBuilder) {
+    return NewMicrosoftGraphCanSignUpRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphCompleteSetup provides operations to call the completeSetup method.
+func (m *PrivilegedSignupStatusRequestBuilder) MicrosoftGraphCompleteSetup()(*MicrosoftGraphCompleteSetupRequestBuilder) {
+    return NewMicrosoftGraphCompleteSetupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphIsSignedUp provides operations to call the isSignedUp method.
+func (m *PrivilegedSignupStatusRequestBuilder) MicrosoftGraphIsSignedUp()(*MicrosoftGraphIsSignedUpRequestBuilder) {
+    return NewMicrosoftGraphIsSignedUpRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphSignUp provides operations to call the signUp method.
+func (m *PrivilegedSignupStatusRequestBuilder) MicrosoftGraphSignUp()(*MicrosoftGraphSignUpRequestBuilder) {
+    return NewMicrosoftGraphSignUpRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post add new entity to privilegedSignupStatus
 func (m *PrivilegedSignupStatusRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedSignupStatusable, requestConfiguration *PrivilegedSignupStatusRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedSignupStatusable, error) {
@@ -123,10 +127,6 @@ func (m *PrivilegedSignupStatusRequestBuilder) Post(ctx context.Context, body ie
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedSignupStatusable), nil
-}
-// SignUp provides operations to call the signUp method.
-func (m *PrivilegedSignupStatusRequestBuilder) SignUp()(*SignUpRequestBuilder) {
-    return NewSignUpRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToGetRequestInformation get entities from privilegedSignupStatus
 func (m *PrivilegedSignupStatusRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedSignupStatusRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -151,7 +151,10 @@ func (m *PrivilegedSignupStatusRequestBuilder) ToPostRequestInformation(ctx cont
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -19,7 +19,7 @@ type UrlMatchInfo struct {
 func NewUrlMatchInfo()(*UrlMatchInfo) {
     m := &UrlMatchInfo{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateUrlMatchInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

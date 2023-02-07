@@ -18,13 +18,13 @@ type WarrantyOffer struct {
     // Warranty offer start date
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Models and Manufactures meatadata for managed devices in the account
-    type_escaped *WarrantyType
+    typeEscaped *WarrantyType
 }
 // NewWarrantyOffer instantiates a new warrantyOffer and sets the default values.
 func NewWarrantyOffer()(*WarrantyOffer) {
     m := &WarrantyOffer{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWarrantyOfferFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -108,7 +108,7 @@ func (m *WarrantyOffer) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
 }
 // GetType gets the type property value. Models and Manufactures meatadata for managed devices in the account
 func (m *WarrantyOffer) GetType()(*WarrantyType) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *WarrantyOffer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -173,5 +173,5 @@ func (m *WarrantyOffer) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a
 }
 // SetType sets the type property value. Models and Manufactures meatadata for managed devices in the account
 func (m *WarrantyOffer) SetType(value *WarrantyType)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

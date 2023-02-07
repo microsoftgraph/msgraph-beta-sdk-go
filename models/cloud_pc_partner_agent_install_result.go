@@ -23,7 +23,7 @@ type CloudPcPartnerAgentInstallResult struct {
 func NewCloudPcPartnerAgentInstallResult()(*CloudPcPartnerAgentInstallResult) {
     m := &CloudPcPartnerAgentInstallResult{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCloudPcPartnerAgentInstallResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

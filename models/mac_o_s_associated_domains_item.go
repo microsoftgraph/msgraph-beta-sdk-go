@@ -21,7 +21,7 @@ type MacOSAssociatedDomainsItem struct {
 func NewMacOSAssociatedDomainsItem()(*MacOSAssociatedDomainsItem) {
     m := &MacOSAssociatedDomainsItem{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMacOSAssociatedDomainsItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

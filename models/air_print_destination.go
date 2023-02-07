@@ -23,7 +23,7 @@ type AirPrintDestination struct {
 func NewAirPrintDestination()(*AirPrintDestination) {
     m := &AirPrintDestination{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAirPrintDestinationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -60,8 +60,8 @@ func NewDeviceEnrollmentConfigurationsRequestBuilderInternal(pathParameters map[
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceEnrollmentConfigurationsRequestBuilder instantiates a new DeviceEnrollmentConfigurationsRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewDeviceEnrollmentConfigurationsRequestBuilder(rawUrl string, requestAdapt
 }
 // Count provides operations to count the resources in the collection.
 func (m *DeviceEnrollmentConfigurationsRequestBuilder) Count()(*DeviceEnrollmentConfigurationsCountRequestBuilder) {
-    return NewDeviceEnrollmentConfigurationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// CreateEnrollmentNotificationConfiguration provides operations to call the createEnrollmentNotificationConfiguration method.
-func (m *DeviceEnrollmentConfigurationsRequestBuilder) CreateEnrollmentNotificationConfiguration()(*DeviceEnrollmentConfigurationsCreateEnrollmentNotificationConfigurationRequestBuilder) {
-    return NewDeviceEnrollmentConfigurationsCreateEnrollmentNotificationConfigurationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceEnrollmentConfigurationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the list of device enrollment configurations
 func (m *DeviceEnrollmentConfigurationsRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceEnrollmentConfigurationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationCollectionResponseable, error) {
@@ -97,9 +93,13 @@ func (m *DeviceEnrollmentConfigurationsRequestBuilder) Get(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationCollectionResponseable), nil
 }
-// HasPayloadLinks provides operations to call the hasPayloadLinks method.
-func (m *DeviceEnrollmentConfigurationsRequestBuilder) HasPayloadLinks()(*DeviceEnrollmentConfigurationsHasPayloadLinksRequestBuilder) {
-    return NewDeviceEnrollmentConfigurationsHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphCreateEnrollmentNotificationConfiguration provides operations to call the createEnrollmentNotificationConfiguration method.
+func (m *DeviceEnrollmentConfigurationsRequestBuilder) MicrosoftGraphCreateEnrollmentNotificationConfiguration()(*DeviceEnrollmentConfigurationsMicrosoftGraphCreateEnrollmentNotificationConfigurationRequestBuilder) {
+    return NewDeviceEnrollmentConfigurationsMicrosoftGraphCreateEnrollmentNotificationConfigurationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphHasPayloadLinks provides operations to call the hasPayloadLinks method.
+func (m *DeviceEnrollmentConfigurationsRequestBuilder) MicrosoftGraphHasPayloadLinks()(*DeviceEnrollmentConfigurationsMicrosoftGraphHasPayloadLinksRequestBuilder) {
+    return NewDeviceEnrollmentConfigurationsMicrosoftGraphHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to deviceEnrollmentConfigurations for deviceManagement
 func (m *DeviceEnrollmentConfigurationsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable, requestConfiguration *DeviceEnrollmentConfigurationsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable, error) {
@@ -143,7 +143,10 @@ func (m *DeviceEnrollmentConfigurationsRequestBuilder) ToPostRequestInformation(
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

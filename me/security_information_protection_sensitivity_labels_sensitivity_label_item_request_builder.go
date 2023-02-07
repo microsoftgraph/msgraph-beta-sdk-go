@@ -55,8 +55,8 @@ func NewSecurityInformationProtectionSensitivityLabelsSensitivityLabelItemReques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewSecurityInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder instantiates a new SensitivityLabelItemRequestBuilder and sets the default values.
@@ -102,7 +102,7 @@ func (m *SecurityInformationProtectionSensitivityLabelsSensitivityLabelItemReque
 }
 // Parent provides operations to manage the parent property of the microsoft.graph.security.sensitivityLabel entity.
 func (m *SecurityInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder) Parent()(*SecurityInformationProtectionSensitivityLabelsItemParentRequestBuilder) {
-    return NewSecurityInformationProtectionSensitivityLabelsItemParentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSecurityInformationProtectionSensitivityLabelsItemParentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property sensitivityLabels in me
 func (m *SecurityInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder) Patch(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable, requestConfiguration *SecurityInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderPatchRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable, error) {
@@ -158,7 +158,10 @@ func (m *SecurityInformationProtectionSensitivityLabelsSensitivityLabelItemReque
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

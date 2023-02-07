@@ -11,7 +11,7 @@ type SynchronizationTemplate struct {
     // Identifier of the application this template belongs to.
     applicationId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // true if this template is recommended to be the default for the application.
-    default_escaped *bool
+    defaultEscaped *bool
     // Description of the template.
     description *string
     // true if this template should appear in the collection of templates available for the application instance (service principal).
@@ -40,7 +40,7 @@ func (m *SynchronizationTemplate) GetApplicationId()(*i561e97a8befe7661a44c8f546
 }
 // GetDefault gets the default property value. true if this template is recommended to be the default for the application.
 func (m *SynchronizationTemplate) GetDefault()(*bool) {
-    return m.default_escaped
+    return m.defaultEscaped
 }
 // GetDescription gets the description property value. Description of the template.
 func (m *SynchronizationTemplate) GetDescription()(*string) {
@@ -201,7 +201,7 @@ func (m *SynchronizationTemplate) SetApplicationId(value *i561e97a8befe7661a44c8
 }
 // SetDefault sets the default property value. true if this template is recommended to be the default for the application.
 func (m *SynchronizationTemplate) SetDefault(value *bool)() {
-    m.default_escaped = value
+    m.defaultEscaped = value
 }
 // SetDescription sets the description property value. Description of the template.
 func (m *SynchronizationTemplate) SetDescription(value *string)() {

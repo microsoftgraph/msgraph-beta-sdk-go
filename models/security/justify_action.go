@@ -13,8 +13,8 @@ func NewJustifyAction()(*JustifyAction) {
     m := &JustifyAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
     }
-    odataTypeValue := "#microsoft.graph.security.justifyAction";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.security.justifyAction"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateJustifyActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

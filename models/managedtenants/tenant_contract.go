@@ -21,7 +21,7 @@ type TenantContract struct {
 func NewTenantContract()(*TenantContract) {
     m := &TenantContract{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTenantContractFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

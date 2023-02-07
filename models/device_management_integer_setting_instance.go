@@ -15,8 +15,8 @@ func NewDeviceManagementIntegerSettingInstance()(*DeviceManagementIntegerSetting
     m := &DeviceManagementIntegerSettingInstance{
         DeviceManagementSettingInstance: *NewDeviceManagementSettingInstance(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementIntegerSettingInstance";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementIntegerSettingInstance"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementIntegerSettingInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

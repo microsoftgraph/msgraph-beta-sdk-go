@@ -15,7 +15,7 @@ type UpdatableAssetEnrollment struct {
 func NewUpdatableAssetEnrollment()(*UpdatableAssetEnrollment) {
     m := &UpdatableAssetEnrollment{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateUpdatableAssetEnrollmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

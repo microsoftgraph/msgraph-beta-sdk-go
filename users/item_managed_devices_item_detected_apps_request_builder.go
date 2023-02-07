@@ -53,8 +53,8 @@ func NewItemManagedDevicesItemDetectedAppsRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemManagedDevicesItemDetectedAppsRequestBuilder instantiates a new DetectedAppsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemManagedDevicesItemDetectedAppsRequestBuilder(rawUrl string, requestA
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemManagedDevicesItemDetectedAppsRequestBuilder) Count()(*ItemManagedDevicesItemDetectedAppsCountRequestBuilder) {
-    return NewItemManagedDevicesItemDetectedAppsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemManagedDevicesItemDetectedAppsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get all applications currently installed on the device
 func (m *ItemManagedDevicesItemDetectedAppsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemManagedDevicesItemDetectedAppsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DetectedAppCollectionResponseable, error) {

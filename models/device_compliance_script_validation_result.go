@@ -21,7 +21,7 @@ type DeviceComplianceScriptValidationResult struct {
 func NewDeviceComplianceScriptValidationResult()(*DeviceComplianceScriptValidationResult) {
     m := &DeviceComplianceScriptValidationResult{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceComplianceScriptValidationResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

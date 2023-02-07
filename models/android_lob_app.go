@@ -7,9 +7,9 @@ import (
 // AndroidLobApp 
 type AndroidLobApp struct {
     MobileLobApp
-    // The Identity Name.
+    // The Identity Name. This property is deprecated starting in February 2023 (Release 2302).
     identityName *string
-    // The identity version.
+    // The identity version. This property is deprecated starting in February 2023 (Release 2302).
     identityVersion *string
     // The value for the minimum applicable operating system.
     minimumSupportedOperatingSystem AndroidMinimumOperatingSystemable
@@ -25,8 +25,8 @@ func NewAndroidLobApp()(*AndroidLobApp) {
     m := &AndroidLobApp{
         MobileLobApp: *NewMobileLobApp(),
     }
-    odataTypeValue := "#microsoft.graph.androidLobApp";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidLobApp"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidLobAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -98,11 +98,11 @@ func (m *AndroidLobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetIdentityName gets the identityName property value. The Identity Name.
+// GetIdentityName gets the identityName property value. The Identity Name. This property is deprecated starting in February 2023 (Release 2302).
 func (m *AndroidLobApp) GetIdentityName()(*string) {
     return m.identityName
 }
-// GetIdentityVersion gets the identityVersion property value. The identity version.
+// GetIdentityVersion gets the identityVersion property value. The identity version. This property is deprecated starting in February 2023 (Release 2302).
 func (m *AndroidLobApp) GetIdentityVersion()(*string) {
     return m.identityVersion
 }
@@ -166,11 +166,11 @@ func (m *AndroidLobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetIdentityName sets the identityName property value. The Identity Name.
+// SetIdentityName sets the identityName property value. The Identity Name. This property is deprecated starting in February 2023 (Release 2302).
 func (m *AndroidLobApp) SetIdentityName(value *string)() {
     m.identityName = value
 }
-// SetIdentityVersion sets the identityVersion property value. The identity version.
+// SetIdentityVersion sets the identityVersion property value. The identity version. This property is deprecated starting in February 2023 (Release 2302).
 func (m *AndroidLobApp) SetIdentityVersion(value *string)() {
     m.identityVersion = value
 }

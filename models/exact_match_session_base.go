@@ -30,8 +30,8 @@ func NewExactMatchSessionBase()(*ExactMatchSessionBase) {
     m := &ExactMatchSessionBase{
         ExactMatchJobBase: *NewExactMatchJobBase(),
     }
-    odataTypeValue := "#microsoft.graph.exactMatchSessionBase";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.exactMatchSessionBase"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateExactMatchSessionBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

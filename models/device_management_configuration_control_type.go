@@ -7,7 +7,7 @@ type DeviceManagementConfigurationControlType int
 
 const (
     // Don’t override default
-    DEFAULT_ESCAPED_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE DeviceManagementConfigurationControlType = iota
+    DEFAULTESCAPED_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE DeviceManagementConfigurationControlType = iota
     // Display Choice in dropdown
     DROPDOWN_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
     // Display text input in small text input
@@ -26,10 +26,10 @@ func (i DeviceManagementConfigurationControlType) String() string {
     return []string{"default", "dropdown", "smallTextBox", "largeTextBox", "toggle", "multiheaderGrid", "contextPane"}[i]
 }
 func ParseDeviceManagementConfigurationControlType(v string) (any, error) {
-    result := DEFAULT_ESCAPED_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
+    result := DEFAULTESCAPED_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
     switch v {
         case "default":
-            result = DEFAULT_ESCAPED_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
+            result = DEFAULTESCAPED_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
         case "dropdown":
             result = DROPDOWN_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
         case "smallTextBox":

@@ -23,8 +23,8 @@ func NewAndroidForWorkMobileAppConfiguration()(*AndroidForWorkMobileAppConfigura
     m := &AndroidForWorkMobileAppConfiguration{
         ManagedDeviceMobileAppConfiguration: *NewManagedDeviceMobileAppConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.androidForWorkMobileAppConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidForWorkMobileAppConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidForWorkMobileAppConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

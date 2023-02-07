@@ -23,7 +23,7 @@ type ProgramItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ProgramItemRequestBuilderGetQueryParameters get entity from programs by key (id)
+// ProgramItemRequestBuilderGetQueryParameters get entity from programs by key
 type ProgramItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -55,8 +55,8 @@ func NewProgramItemRequestBuilderInternal(pathParameters map[string]string, requ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewProgramItemRequestBuilder instantiates a new ProgramItemRequestBuilder and sets the default values.
@@ -67,7 +67,7 @@ func NewProgramItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 }
 // Controls provides operations to manage the controls property of the microsoft.graph.program entity.
 func (m *ProgramItemRequestBuilder) Controls()(*ItemControlsRequestBuilder) {
-    return NewItemControlsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemControlsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ControlsById provides operations to manage the controls property of the microsoft.graph.program entity.
 func (m *ProgramItemRequestBuilder) ControlsById(id string)(*ItemControlsProgramControlItemRequestBuilder) {
@@ -78,7 +78,7 @@ func (m *ProgramItemRequestBuilder) ControlsById(id string)(*ItemControlsProgram
     if id != "" {
         urlTplParams["programControl%2Did"] = id
     }
-    return NewItemControlsProgramControlItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemControlsProgramControlItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Delete in the Azure AD access reviews feature, delete a program object. Do not delete a program which still has `programControl` linked to it, those access reviews should first be deleted or unlinked from the program and linked to a different program.  Also, please note that the built-in default program cannot be deleted.
 // [Find more info here]
@@ -99,7 +99,7 @@ func (m *ProgramItemRequestBuilder) Delete(ctx context.Context, requestConfigura
     }
     return nil
 }
-// Get get entity from programs by key (id)
+// Get get entity from programs by key
 func (m *ProgramItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ProgramItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Programable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -152,7 +152,7 @@ func (m *ProgramItemRequestBuilder) ToDeleteRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from programs by key (id)
+// ToGetRequestInformation get entity from programs by key
 func (m *ProgramItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ProgramItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -175,7 +175,10 @@ func (m *ProgramItemRequestBuilder) ToPatchRequestInformation(ctx context.Contex
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -29,7 +29,7 @@ type PrivilegedRoleAssignmentRequest struct {
     // The ticketSystem for the role assignment.
     ticketSystem *string
     // Representing the type of the operation on the role assignment. The value can be AdminAdd: Administrators add users to roles;UserAdd: Users add role assignments.
-    type_escaped *string
+    typeEscaped *string
     // The id of the user.
     userId *string
 }
@@ -211,7 +211,7 @@ func (m *PrivilegedRoleAssignmentRequest) GetTicketSystem()(*string) {
 }
 // GetType gets the type property value. Representing the type of the operation on the role assignment. The value can be AdminAdd: Administrators add users to roles;UserAdd: Users add role assignments.
 func (m *PrivilegedRoleAssignmentRequest) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // GetUserId gets the userId property value. The id of the user.
 func (m *PrivilegedRoleAssignmentRequest) GetUserId()(*string) {
@@ -339,7 +339,7 @@ func (m *PrivilegedRoleAssignmentRequest) SetTicketSystem(value *string)() {
 }
 // SetType sets the type property value. Representing the type of the operation on the role assignment. The value can be AdminAdd: Administrators add users to roles;UserAdd: Users add role assignments.
 func (m *PrivilegedRoleAssignmentRequest) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }
 // SetUserId sets the userId property value. The id of the user.
 func (m *PrivilegedRoleAssignmentRequest) SetUserId(value *string)() {

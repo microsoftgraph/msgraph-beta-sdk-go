@@ -55,8 +55,8 @@ func NewSettingsRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewSettingsRequestBuilder instantiates a new SettingsRequestBuilder and sets the default values.
@@ -67,7 +67,7 @@ func NewSettingsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 }
 // ContactMergeSuggestions provides operations to manage the contactMergeSuggestions property of the microsoft.graph.userSettings entity.
 func (m *SettingsRequestBuilder) ContactMergeSuggestions()(*SettingsContactMergeSuggestionsRequestBuilder) {
-    return NewSettingsContactMergeSuggestionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSettingsContactMergeSuggestionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property settings for me
 func (m *SettingsRequestBuilder) Delete(ctx context.Context, requestConfiguration *SettingsRequestBuilderDeleteRequestConfiguration)(error) {
@@ -106,7 +106,7 @@ func (m *SettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *
 }
 // ItemInsights provides operations to manage the itemInsights property of the microsoft.graph.userSettings entity.
 func (m *SettingsRequestBuilder) ItemInsights()(*SettingsItemInsightsRequestBuilder) {
-    return NewSettingsItemInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSettingsItemInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property settings in me
 func (m *SettingsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSettingsable, requestConfiguration *SettingsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSettingsable, error) {
@@ -129,11 +129,11 @@ func (m *SettingsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4
 }
 // RegionalAndLanguageSettings provides operations to manage the regionalAndLanguageSettings property of the microsoft.graph.userSettings entity.
 func (m *SettingsRequestBuilder) RegionalAndLanguageSettings()(*SettingsRegionalAndLanguageSettingsRequestBuilder) {
-    return NewSettingsRegionalAndLanguageSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSettingsRegionalAndLanguageSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ShiftPreferences provides operations to manage the shiftPreferences property of the microsoft.graph.userSettings entity.
 func (m *SettingsRequestBuilder) ShiftPreferences()(*SettingsShiftPreferencesRequestBuilder) {
-    return NewSettingsShiftPreferencesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSettingsShiftPreferencesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property settings for me
 func (m *SettingsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SettingsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -170,7 +170,10 @@ func (m *SettingsRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

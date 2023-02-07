@@ -19,7 +19,7 @@ type AccessPackageLocalizedText struct {
 func NewAccessPackageLocalizedText()(*AccessPackageLocalizedText) {
     m := &AccessPackageLocalizedText{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAccessPackageLocalizedTextFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

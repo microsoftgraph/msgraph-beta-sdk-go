@@ -37,7 +37,7 @@ type AccessReview struct {
     // This read-only field specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting,InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.
     status *string
 }
-// NewAccessReview instantiates a new AccessReview and sets the default values.
+// NewAccessReview instantiates a new accessReview and sets the default values.
 func NewAccessReview()(*AccessReview) {
     m := &AccessReview{
         Entity: *NewEntity(),

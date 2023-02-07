@@ -19,7 +19,7 @@ type DeviceLogCollectionRequest struct {
 func NewDeviceLogCollectionRequest()(*DeviceLogCollectionRequest) {
     m := &DeviceLogCollectionRequest{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceLogCollectionRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

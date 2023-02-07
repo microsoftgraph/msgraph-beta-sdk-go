@@ -52,7 +52,7 @@ type Customer struct {
     // The taxRegistrationNumber property
     taxRegistrationNumber *string
     // The type property
-    type_escaped *string
+    typeEscaped *string
     // The website property
     website *string
 }
@@ -392,7 +392,7 @@ func (m *Customer) GetTaxRegistrationNumber()(*string) {
 }
 // GetType gets the type property value. The type property
 func (m *Customer) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // GetWebsite gets the website property value. The website property
 func (m *Customer) GetWebsite()(*string) {
@@ -634,7 +634,7 @@ func (m *Customer) SetTaxRegistrationNumber(value *string)() {
 }
 // SetType sets the type property value. The type property
 func (m *Customer) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }
 // SetWebsite sets the website property value. The website property
 func (m *Customer) SetWebsite(value *string)() {

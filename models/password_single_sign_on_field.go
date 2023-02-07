@@ -17,13 +17,13 @@ type PasswordSingleSignOnField struct {
     // The OdataType property
     odataType *string
     // Type of the credential. The values can be text, password.
-    type_escaped *string
+    typeEscaped *string
 }
 // NewPasswordSingleSignOnField instantiates a new passwordSingleSignOnField and sets the default values.
 func NewPasswordSingleSignOnField()(*PasswordSingleSignOnField) {
     m := &PasswordSingleSignOnField{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePasswordSingleSignOnFieldFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -107,7 +107,7 @@ func (m *PasswordSingleSignOnField) GetOdataType()(*string) {
 }
 // GetType gets the type property value. Type of the credential. The values can be text, password.
 func (m *PasswordSingleSignOnField) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *PasswordSingleSignOnField) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -171,5 +171,5 @@ func (m *PasswordSingleSignOnField) SetOdataType(value *string)() {
 }
 // SetType sets the type property value. Type of the credential. The values can be text, password.
 func (m *PasswordSingleSignOnField) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

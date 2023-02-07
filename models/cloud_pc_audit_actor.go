@@ -23,7 +23,7 @@ type CloudPcAuditActor struct {
     // Service Principal Name (SPN).
     servicePrincipalName *string
     // The type property
-    type_escaped *CloudPcAuditActorType
+    typeEscaped *CloudPcAuditActorType
     // Azure AD user ID.
     userId *string
     // List of user permissions and application permissions when the audit event was performed.
@@ -37,7 +37,7 @@ type CloudPcAuditActor struct {
 func NewCloudPcAuditActor()(*CloudPcAuditActor) {
     m := &CloudPcAuditActor{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCloudPcAuditActorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -211,7 +211,7 @@ func (m *CloudPcAuditActor) GetServicePrincipalName()(*string) {
 }
 // GetType gets the type property value. The type property
 func (m *CloudPcAuditActor) GetType()(*CloudPcAuditActorType) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // GetUserId gets the userId property value. Azure AD user ID.
 func (m *CloudPcAuditActor) GetUserId()(*string) {
@@ -350,7 +350,7 @@ func (m *CloudPcAuditActor) SetServicePrincipalName(value *string)() {
 }
 // SetType sets the type property value. The type property
 func (m *CloudPcAuditActor) SetType(value *CloudPcAuditActorType)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }
 // SetUserId sets the userId property value. Azure AD user ID.
 func (m *CloudPcAuditActor) SetUserId(value *string)() {

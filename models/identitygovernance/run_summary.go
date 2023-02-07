@@ -27,7 +27,7 @@ type RunSummary struct {
 func NewRunSummary()(*RunSummary) {
     m := &RunSummary{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateRunSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

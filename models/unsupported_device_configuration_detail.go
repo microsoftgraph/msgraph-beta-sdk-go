@@ -19,7 +19,7 @@ type UnsupportedDeviceConfigurationDetail struct {
 func NewUnsupportedDeviceConfigurationDetail()(*UnsupportedDeviceConfigurationDetail) {
     m := &UnsupportedDeviceConfigurationDetail{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateUnsupportedDeviceConfigurationDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

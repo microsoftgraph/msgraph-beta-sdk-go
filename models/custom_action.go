@@ -17,8 +17,8 @@ func NewCustomAction()(*CustomAction) {
     m := &CustomAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
     }
-    odataTypeValue := "#microsoft.graph.customAction";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.customAction"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateCustomActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

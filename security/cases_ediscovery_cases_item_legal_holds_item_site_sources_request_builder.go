@@ -60,8 +60,8 @@ func NewCasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderInternal(
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder instantiates a new SiteSourcesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewCasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder(rawUrl s
 }
 // Count provides operations to count the resources in the collection.
 func (m *CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) Count()(*CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesCountRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get data sources that represent SharePoint sites.
 func (m *CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SiteSourceCollectionResponseable, error) {
@@ -138,7 +138,10 @@ func (m *CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) ToPost
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

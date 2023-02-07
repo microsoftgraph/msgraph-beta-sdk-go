@@ -60,8 +60,8 @@ func NewDeviceConfigurationsRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceConfigurationsRequestBuilder instantiates a new DeviceConfigurationsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewDeviceConfigurationsRequestBuilder(rawUrl string, requestAdapter i2ae418
 }
 // Count provides operations to count the resources in the collection.
 func (m *DeviceConfigurationsRequestBuilder) Count()(*DeviceConfigurationsCountRequestBuilder) {
-    return NewDeviceConfigurationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceConfigurationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the device configurations.
 func (m *DeviceConfigurationsRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceConfigurationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationCollectionResponseable, error) {
@@ -93,17 +93,17 @@ func (m *DeviceConfigurationsRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationCollectionResponseable), nil
 }
-// GetIosAvailableUpdateVersions provides operations to call the getIosAvailableUpdateVersions method.
-func (m *DeviceConfigurationsRequestBuilder) GetIosAvailableUpdateVersions()(*DeviceConfigurationsGetIosAvailableUpdateVersionsRequestBuilder) {
-    return NewDeviceConfigurationsGetIosAvailableUpdateVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetIosAvailableUpdateVersions provides operations to call the getIosAvailableUpdateVersions method.
+func (m *DeviceConfigurationsRequestBuilder) MicrosoftGraphGetIosAvailableUpdateVersions()(*DeviceConfigurationsMicrosoftGraphGetIosAvailableUpdateVersionsRequestBuilder) {
+    return NewDeviceConfigurationsMicrosoftGraphGetIosAvailableUpdateVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetTargetedUsersAndDevices provides operations to call the getTargetedUsersAndDevices method.
-func (m *DeviceConfigurationsRequestBuilder) GetTargetedUsersAndDevices()(*DeviceConfigurationsGetTargetedUsersAndDevicesRequestBuilder) {
-    return NewDeviceConfigurationsGetTargetedUsersAndDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetTargetedUsersAndDevices provides operations to call the getTargetedUsersAndDevices method.
+func (m *DeviceConfigurationsRequestBuilder) MicrosoftGraphGetTargetedUsersAndDevices()(*DeviceConfigurationsMicrosoftGraphGetTargetedUsersAndDevicesRequestBuilder) {
+    return NewDeviceConfigurationsMicrosoftGraphGetTargetedUsersAndDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// HasPayloadLinks provides operations to call the hasPayloadLinks method.
-func (m *DeviceConfigurationsRequestBuilder) HasPayloadLinks()(*DeviceConfigurationsHasPayloadLinksRequestBuilder) {
-    return NewDeviceConfigurationsHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphHasPayloadLinks provides operations to call the hasPayloadLinks method.
+func (m *DeviceConfigurationsRequestBuilder) MicrosoftGraphHasPayloadLinks()(*DeviceConfigurationsMicrosoftGraphHasPayloadLinksRequestBuilder) {
+    return NewDeviceConfigurationsMicrosoftGraphHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to deviceConfigurations for deviceManagement
 func (m *DeviceConfigurationsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationable, requestConfiguration *DeviceConfigurationsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationable, error) {
@@ -147,7 +147,10 @@ func (m *DeviceConfigurationsRequestBuilder) ToPostRequestInformation(ctx contex
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

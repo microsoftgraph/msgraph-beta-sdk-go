@@ -33,7 +33,7 @@ type PowerliftIncidentMetadata struct {
 func NewPowerliftIncidentMetadata()(*PowerliftIncidentMetadata) {
     m := &PowerliftIncidentMetadata{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePowerliftIncidentMetadataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -17,8 +17,8 @@ func NewDeviceManagementSettingIntegerConstraint()(*DeviceManagementSettingInteg
     m := &DeviceManagementSettingIntegerConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementSettingIntegerConstraint";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementSettingIntegerConstraint"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementSettingIntegerConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

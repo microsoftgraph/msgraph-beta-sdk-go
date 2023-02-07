@@ -25,7 +25,7 @@ type ParseExpressionResponse struct {
 func NewParseExpressionResponse()(*ParseExpressionResponse) {
     m := &ParseExpressionResponse{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateParseExpressionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

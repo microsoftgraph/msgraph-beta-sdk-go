@@ -60,8 +60,8 @@ func NewItemTermStoreGroupsItemSetsItemTermsRequestBuilderInternal(pathParameter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTermStoreGroupsItemSetsItemTermsRequestBuilder instantiates a new TermsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemTermStoreGroupsItemSetsItemTermsRequestBuilder(rawUrl string, reques
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemTermStoreGroupsItemSetsItemTermsRequestBuilder) Count()(*ItemTermStoreGroupsItemSetsItemTermsCountRequestBuilder) {
-    return NewItemTermStoreGroupsItemSetsItemTermsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTermStoreGroupsItemSetsItemTermsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get all the terms under the set.
 func (m *ItemTermStoreGroupsItemSetsItemTermsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTermStoreGroupsItemSetsItemTermsRequestBuilderGetRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.TermCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *ItemTermStoreGroupsItemSetsItemTermsRequestBuilder) ToPostRequestInform
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

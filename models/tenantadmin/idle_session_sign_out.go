@@ -21,7 +21,7 @@ type IdleSessionSignOut struct {
 func NewIdleSessionSignOut()(*IdleSessionSignOut) {
     m := &IdleSessionSignOut{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateIdleSessionSignOutFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

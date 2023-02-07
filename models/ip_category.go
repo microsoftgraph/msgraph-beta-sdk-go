@@ -15,13 +15,13 @@ type IpCategory struct {
     // The OdataType property
     odataType *string
     // The vendor property
-    vendor_escaped *string
+    vendorEscaped *string
 }
 // NewIpCategory instantiates a new ipCategory and sets the default values.
 func NewIpCategory()(*IpCategory) {
     m := &IpCategory{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateIpCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -91,7 +91,7 @@ func (m *IpCategory) GetOdataType()(*string) {
 }
 // GetVendor gets the vendor property value. The vendor property
 func (m *IpCategory) GetVendor()(*string) {
-    return m.vendor_escaped
+    return m.vendorEscaped
 }
 // Serialize serializes information the current object
 func (m *IpCategory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -145,5 +145,5 @@ func (m *IpCategory) SetOdataType(value *string)() {
 }
 // SetVendor sets the vendor property value. The vendor property
 func (m *IpCategory) SetVendor(value *string)() {
-    m.vendor_escaped = value
+    m.vendorEscaped = value
 }

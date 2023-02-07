@@ -13,7 +13,7 @@ type PlannerPlanContainer struct {
     // The OdataType property
     odataType *string
     // The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster, and project. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster, project. Optional.
-    type_escaped *PlannerContainerType
+    typeEscaped *PlannerContainerType
     // The full canonical URL of the container. Optional.
     url *string
 }
@@ -21,11 +21,29 @@ type PlannerPlanContainer struct {
 func NewPlannerPlanContainer()(*PlannerPlanContainer) {
     m := &PlannerPlanContainer{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePlannerPlanContainerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreatePlannerPlanContainerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                switch *mappingValue {
+                    case "#microsoft.graph.plannerSharedWithContainer":
+                        return NewPlannerSharedWithContainer(), nil
+                }
+            }
+        }
+    }
     return NewPlannerPlanContainer(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -87,7 +105,7 @@ func (m *PlannerPlanContainer) GetOdataType()(*string) {
 }
 // GetType gets the type property value. The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster, and project. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster, project. Optional.
 func (m *PlannerPlanContainer) GetType()(*PlannerContainerType) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // GetUrl gets the url property value. The full canonical URL of the container. Optional.
 func (m *PlannerPlanContainer) GetUrl()(*string) {
@@ -142,7 +160,7 @@ func (m *PlannerPlanContainer) SetOdataType(value *string)() {
 }
 // SetType sets the type property value. The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster, and project. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster, project. Optional.
 func (m *PlannerPlanContainer) SetType(value *PlannerContainerType)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }
 // SetUrl sets the url property value. The full canonical URL of the container. Optional.
 func (m *PlannerPlanContainer) SetUrl(value *string)() {

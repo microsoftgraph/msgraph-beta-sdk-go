@@ -48,8 +48,8 @@ func NewTeamworkRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTeamworkRequestBuilder instantiates a new TeamworkRequestBuilder and sets the default values.
@@ -60,7 +60,7 @@ func NewTeamworkRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 }
 // DeletedTeams provides operations to manage the deletedTeams property of the microsoft.graph.teamwork entity.
 func (m *TeamworkRequestBuilder) DeletedTeams()(*DeletedTeamsRequestBuilder) {
-    return NewDeletedTeamsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeletedTeamsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeletedTeamsById provides operations to manage the deletedTeams property of the microsoft.graph.teamwork entity.
 func (m *TeamworkRequestBuilder) DeletedTeamsById(id string)(*DeletedTeamsDeletedTeamItemRequestBuilder) {
@@ -71,11 +71,11 @@ func (m *TeamworkRequestBuilder) DeletedTeamsById(id string)(*DeletedTeamsDelete
     if id != "" {
         urlTplParams["deletedTeam%2Did"] = id
     }
-    return NewDeletedTeamsDeletedTeamItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeletedTeamsDeletedTeamItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Devices provides operations to manage the devices property of the microsoft.graph.teamwork entity.
 func (m *TeamworkRequestBuilder) Devices()(*DevicesRequestBuilder) {
-    return NewDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DevicesById provides operations to manage the devices property of the microsoft.graph.teamwork entity.
 func (m *TeamworkRequestBuilder) DevicesById(id string)(*DevicesTeamworkDeviceItemRequestBuilder) {
@@ -86,7 +86,7 @@ func (m *TeamworkRequestBuilder) DevicesById(id string)(*DevicesTeamworkDeviceIt
     if id != "" {
         urlTplParams["teamworkDevice%2Did"] = id
     }
-    return NewDevicesTeamworkDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDevicesTeamworkDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Get get teamwork
 func (m *TeamworkRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamworkRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamworkable, error) {
@@ -107,6 +107,10 @@ func (m *TeamworkRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamworkable), nil
 }
+// MicrosoftGraphSendActivityNotificationToRecipients provides operations to call the sendActivityNotificationToRecipients method.
+func (m *TeamworkRequestBuilder) MicrosoftGraphSendActivityNotificationToRecipients()(*MicrosoftGraphSendActivityNotificationToRecipientsRequestBuilder) {
+    return NewMicrosoftGraphSendActivityNotificationToRecipientsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update teamwork
 func (m *TeamworkRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamworkable, requestConfiguration *TeamworkRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamworkable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -126,17 +130,13 @@ func (m *TeamworkRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamworkable), nil
 }
-// SendActivityNotificationToRecipients provides operations to call the sendActivityNotificationToRecipients method.
-func (m *TeamworkRequestBuilder) SendActivityNotificationToRecipients()(*SendActivityNotificationToRecipientsRequestBuilder) {
-    return NewSendActivityNotificationToRecipientsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // TeamsAppSettings provides operations to manage the teamsAppSettings property of the microsoft.graph.teamwork entity.
 func (m *TeamworkRequestBuilder) TeamsAppSettings()(*TeamsAppSettingsRequestBuilder) {
-    return NewTeamsAppSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTeamsAppSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TeamTemplates provides operations to manage the teamTemplates property of the microsoft.graph.teamwork entity.
 func (m *TeamworkRequestBuilder) TeamTemplates()(*TeamTemplatesRequestBuilder) {
-    return NewTeamTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTeamTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TeamTemplatesById provides operations to manage the teamTemplates property of the microsoft.graph.teamwork entity.
 func (m *TeamworkRequestBuilder) TeamTemplatesById(id string)(*TeamTemplatesTeamTemplateItemRequestBuilder) {
@@ -147,7 +147,7 @@ func (m *TeamworkRequestBuilder) TeamTemplatesById(id string)(*TeamTemplatesTeam
     if id != "" {
         urlTplParams["teamTemplate%2Did"] = id
     }
-    return NewTeamTemplatesTeamTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTeamTemplatesTeamTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToGetRequestInformation get teamwork
 func (m *TeamworkRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamworkRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -172,7 +172,10 @@ func (m *TeamworkRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -181,7 +184,7 @@ func (m *TeamworkRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
 }
 // WorkforceIntegrations provides operations to manage the workforceIntegrations property of the microsoft.graph.teamwork entity.
 func (m *TeamworkRequestBuilder) WorkforceIntegrations()(*WorkforceIntegrationsRequestBuilder) {
-    return NewWorkforceIntegrationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWorkforceIntegrationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // WorkforceIntegrationsById provides operations to manage the workforceIntegrations property of the microsoft.graph.teamwork entity.
 func (m *TeamworkRequestBuilder) WorkforceIntegrationsById(id string)(*WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) {
@@ -192,5 +195,5 @@ func (m *TeamworkRequestBuilder) WorkforceIntegrationsById(id string)(*Workforce
     if id != "" {
         urlTplParams["workforceIntegration%2Did"] = id
     }
-    return NewWorkforceIntegrationsWorkforceIntegrationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWorkforceIntegrationsWorkforceIntegrationItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }

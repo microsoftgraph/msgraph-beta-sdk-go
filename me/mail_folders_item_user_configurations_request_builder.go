@@ -49,8 +49,8 @@ func NewMailFoldersItemUserConfigurationsRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMailFoldersItemUserConfigurationsRequestBuilder instantiates a new UserConfigurationsRequestBuilder and sets the default values.
@@ -61,7 +61,7 @@ func NewMailFoldersItemUserConfigurationsRequestBuilder(rawUrl string, requestAd
 }
 // Count provides operations to count the resources in the collection.
 func (m *MailFoldersItemUserConfigurationsRequestBuilder) Count()(*MailFoldersItemUserConfigurationsCountRequestBuilder) {
-    return NewMailFoldersItemUserConfigurationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMailFoldersItemUserConfigurationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get userConfigurations from me
 func (m *MailFoldersItemUserConfigurationsRequestBuilder) Get(ctx context.Context, requestConfiguration *MailFoldersItemUserConfigurationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConfigurationCollectionResponseable, error) {

@@ -17,8 +17,8 @@ func NewTimeBasedAttributeTrigger()(*TimeBasedAttributeTrigger) {
     m := &TimeBasedAttributeTrigger{
         WorkflowExecutionTrigger: *NewWorkflowExecutionTrigger(),
     }
-    odataTypeValue := "#microsoft.graph.identityGovernance.timeBasedAttributeTrigger";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.identityGovernance.timeBasedAttributeTrigger"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateTimeBasedAttributeTriggerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

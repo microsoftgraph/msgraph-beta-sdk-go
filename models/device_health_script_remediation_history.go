@@ -20,7 +20,7 @@ type DeviceHealthScriptRemediationHistory struct {
 func NewDeviceHealthScriptRemediationHistory()(*DeviceHealthScriptRemediationHistory) {
     m := &DeviceHealthScriptRemediationHistory{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceHealthScriptRemediationHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

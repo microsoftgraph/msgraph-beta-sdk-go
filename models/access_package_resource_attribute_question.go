@@ -15,8 +15,8 @@ func NewAccessPackageResourceAttributeQuestion()(*AccessPackageResourceAttribute
     m := &AccessPackageResourceAttributeQuestion{
         AccessPackageResourceAttributeSource: *NewAccessPackageResourceAttributeSource(),
     }
-    odataTypeValue := "#microsoft.graph.accessPackageResourceAttributeQuestion";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.accessPackageResourceAttributeQuestion"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAccessPackageResourceAttributeQuestionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

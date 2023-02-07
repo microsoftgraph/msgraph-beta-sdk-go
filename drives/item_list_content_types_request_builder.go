@@ -51,14 +51,6 @@ type ItemListContentTypesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AddCopy provides operations to call the addCopy method.
-func (m *ItemListContentTypesRequestBuilder) AddCopy()(*ItemListContentTypesAddCopyRequestBuilder) {
-    return NewItemListContentTypesAddCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// AddCopyFromContentTypeHub provides operations to call the addCopyFromContentTypeHub method.
-func (m *ItemListContentTypesRequestBuilder) AddCopyFromContentTypeHub()(*ItemListContentTypesAddCopyFromContentTypeHubRequestBuilder) {
-    return NewItemListContentTypesAddCopyFromContentTypeHubRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewItemListContentTypesRequestBuilderInternal instantiates a new ContentTypesRequestBuilder and sets the default values.
 func NewItemListContentTypesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListContentTypesRequestBuilder) {
     m := &ItemListContentTypesRequestBuilder{
@@ -68,8 +60,8 @@ func NewItemListContentTypesRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemListContentTypesRequestBuilder instantiates a new ContentTypesRequestBuilder and sets the default values.
@@ -80,7 +72,7 @@ func NewItemListContentTypesRequestBuilder(rawUrl string, requestAdapter i2ae418
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemListContentTypesRequestBuilder) Count()(*ItemListContentTypesCountRequestBuilder) {
-    return NewItemListContentTypesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemListContentTypesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the collection of [contentType][contentType] resources in a [list][].
 // [Find more info here]
@@ -104,9 +96,17 @@ func (m *ItemListContentTypesRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentTypeCollectionResponseable), nil
 }
-// GetCompatibleHubContentTypes provides operations to call the getCompatibleHubContentTypes method.
-func (m *ItemListContentTypesRequestBuilder) GetCompatibleHubContentTypes()(*ItemListContentTypesGetCompatibleHubContentTypesRequestBuilder) {
-    return NewItemListContentTypesGetCompatibleHubContentTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphAddCopy provides operations to call the addCopy method.
+func (m *ItemListContentTypesRequestBuilder) MicrosoftGraphAddCopy()(*ItemListContentTypesMicrosoftGraphAddCopyRequestBuilder) {
+    return NewItemListContentTypesMicrosoftGraphAddCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphAddCopyFromContentTypeHub provides operations to call the addCopyFromContentTypeHub method.
+func (m *ItemListContentTypesRequestBuilder) MicrosoftGraphAddCopyFromContentTypeHub()(*ItemListContentTypesMicrosoftGraphAddCopyFromContentTypeHubRequestBuilder) {
+    return NewItemListContentTypesMicrosoftGraphAddCopyFromContentTypeHubRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphGetCompatibleHubContentTypes provides operations to call the getCompatibleHubContentTypes method.
+func (m *ItemListContentTypesRequestBuilder) MicrosoftGraphGetCompatibleHubContentTypes()(*ItemListContentTypesMicrosoftGraphGetCompatibleHubContentTypesRequestBuilder) {
+    return NewItemListContentTypesMicrosoftGraphGetCompatibleHubContentTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to contentTypes for drives
 func (m *ItemListContentTypesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentTypeable, requestConfiguration *ItemListContentTypesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentTypeable, error) {
@@ -150,7 +150,10 @@ func (m *ItemListContentTypesRequestBuilder) ToPostRequestInformation(ctx contex
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -27,7 +27,7 @@ type ApprovalStage struct {
 func NewApprovalStage()(*ApprovalStage) {
     m := &ApprovalStage{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateApprovalStageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

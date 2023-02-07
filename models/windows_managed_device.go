@@ -13,8 +13,8 @@ func NewWindowsManagedDevice()(*WindowsManagedDevice) {
     m := &WindowsManagedDevice{
         ManagedDevice: *NewManagedDevice(),
     }
-    odataTypeValue := "#microsoft.graph.windowsManagedDevice";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsManagedDevice"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsManagedDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

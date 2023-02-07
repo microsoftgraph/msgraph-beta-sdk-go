@@ -17,7 +17,7 @@ type VirtualAppointmentSettings struct {
 func NewVirtualAppointmentSettings()(*VirtualAppointmentSettings) {
     m := &VirtualAppointmentSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateVirtualAppointmentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

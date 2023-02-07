@@ -17,7 +17,7 @@ type DeviceManagementConfigurationReferredSettingInformation struct {
 func NewDeviceManagementConfigurationReferredSettingInformation()(*DeviceManagementConfigurationReferredSettingInformation) {
     m := &DeviceManagementConfigurationReferredSettingInformation{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceManagementConfigurationReferredSettingInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -19,7 +19,7 @@ type DeviceManagementConfigurationSettingValueTemplateReference struct {
 func NewDeviceManagementConfigurationSettingValueTemplateReference()(*DeviceManagementConfigurationSettingValueTemplateReference) {
     m := &DeviceManagementConfigurationSettingValueTemplateReference{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceManagementConfigurationSettingValueTemplateReferenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -35,8 +35,8 @@ func NewPersonName()(*PersonName) {
     m := &PersonName{
         ItemFacet: *NewItemFacet(),
     }
-    odataTypeValue := "#microsoft.graph.personName";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.personName"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreatePersonNameFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

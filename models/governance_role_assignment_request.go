@@ -33,7 +33,7 @@ type GovernanceRoleAssignmentRequest struct {
     // Required. The unique identifier of the principal or subject that the role assignment request is associated with. Principals can be users, groups, or service principals.
     subjectId *string
     // Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.
-    type_escaped *string
+    typeEscaped *string
 }
 // NewGovernanceRoleAssignmentRequest instantiates a new governanceRoleAssignmentRequest and sets the default values.
 func NewGovernanceRoleAssignmentRequest()(*GovernanceRoleAssignmentRequest) {
@@ -231,7 +231,7 @@ func (m *GovernanceRoleAssignmentRequest) GetSubjectId()(*string) {
 }
 // GetType gets the type property value. Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.
 func (m *GovernanceRoleAssignmentRequest) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *GovernanceRoleAssignmentRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -369,5 +369,5 @@ func (m *GovernanceRoleAssignmentRequest) SetSubjectId(value *string)() {
 }
 // SetType sets the type property value. Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.
 func (m *GovernanceRoleAssignmentRequest) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

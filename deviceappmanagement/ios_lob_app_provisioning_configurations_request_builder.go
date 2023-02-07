@@ -60,8 +60,8 @@ func NewIosLobAppProvisioningConfigurationsRequestBuilderInternal(pathParameters
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewIosLobAppProvisioningConfigurationsRequestBuilder instantiates a new IosLobAppProvisioningConfigurationsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewIosLobAppProvisioningConfigurationsRequestBuilder(rawUrl string, request
 }
 // Count provides operations to count the resources in the collection.
 func (m *IosLobAppProvisioningConfigurationsRequestBuilder) Count()(*IosLobAppProvisioningConfigurationsCountRequestBuilder) {
-    return NewIosLobAppProvisioningConfigurationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIosLobAppProvisioningConfigurationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the IOS Lob App Provisioning Configurations.
 func (m *IosLobAppProvisioningConfigurationsRequestBuilder) Get(ctx context.Context, requestConfiguration *IosLobAppProvisioningConfigurationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationCollectionResponseable, error) {
@@ -93,9 +93,9 @@ func (m *IosLobAppProvisioningConfigurationsRequestBuilder) Get(ctx context.Cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationCollectionResponseable), nil
 }
-// HasPayloadLinks provides operations to call the hasPayloadLinks method.
-func (m *IosLobAppProvisioningConfigurationsRequestBuilder) HasPayloadLinks()(*IosLobAppProvisioningConfigurationsHasPayloadLinksRequestBuilder) {
-    return NewIosLobAppProvisioningConfigurationsHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphHasPayloadLinks provides operations to call the hasPayloadLinks method.
+func (m *IosLobAppProvisioningConfigurationsRequestBuilder) MicrosoftGraphHasPayloadLinks()(*IosLobAppProvisioningConfigurationsMicrosoftGraphHasPayloadLinksRequestBuilder) {
+    return NewIosLobAppProvisioningConfigurationsMicrosoftGraphHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to iosLobAppProvisioningConfigurations for deviceAppManagement
 func (m *IosLobAppProvisioningConfigurationsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationable, requestConfiguration *IosLobAppProvisioningConfigurationsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationable, error) {
@@ -139,7 +139,10 @@ func (m *IosLobAppProvisioningConfigurationsRequestBuilder) ToPostRequestInforma
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

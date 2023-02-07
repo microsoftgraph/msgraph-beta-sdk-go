@@ -40,8 +40,8 @@ func NewItemTransitiveReportsCountRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTransitiveReportsCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.

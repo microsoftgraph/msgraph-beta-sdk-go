@@ -9,10 +9,11 @@ const (
     FEATURE_UPDATECATEGORY UpdateCategory = iota
     QUALITY_UPDATECATEGORY
     UNKNOWNFUTUREVALUE_UPDATECATEGORY
+    DRIVER_UPDATECATEGORY
 )
 
 func (i UpdateCategory) String() string {
-    return []string{"feature", "quality", "unknownFutureValue"}[i]
+    return []string{"feature", "quality", "unknownFutureValue", "driver"}[i]
 }
 func ParseUpdateCategory(v string) (any, error) {
     result := FEATURE_UPDATECATEGORY
@@ -23,6 +24,8 @@ func ParseUpdateCategory(v string) (any, error) {
             result = QUALITY_UPDATECATEGORY
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_UPDATECATEGORY
+        case "driver":
+            result = DRIVER_UPDATECATEGORY
         default:
             return 0, errors.New("Unknown UpdateCategory value: " + v)
     }

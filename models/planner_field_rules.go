@@ -19,7 +19,7 @@ type PlannerFieldRules struct {
 func NewPlannerFieldRules()(*PlannerFieldRules) {
     m := &PlannerFieldRules{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePlannerFieldRulesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

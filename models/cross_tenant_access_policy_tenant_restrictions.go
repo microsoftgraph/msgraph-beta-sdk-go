@@ -15,8 +15,8 @@ func NewCrossTenantAccessPolicyTenantRestrictions()(*CrossTenantAccessPolicyTena
     m := &CrossTenantAccessPolicyTenantRestrictions{
         CrossTenantAccessPolicyB2BSetting: *NewCrossTenantAccessPolicyB2BSetting(),
     }
-    odataTypeValue := "#microsoft.graph.crossTenantAccessPolicyTenantRestrictions";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.crossTenantAccessPolicyTenantRestrictions"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateCrossTenantAccessPolicyTenantRestrictionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

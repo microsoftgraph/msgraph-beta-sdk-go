@@ -17,7 +17,7 @@ type TenantReference struct {
 func NewTenantReference()(*TenantReference) {
     m := &TenantReference{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTenantReferenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

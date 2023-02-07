@@ -15,8 +15,8 @@ func NewDeviceManagementConfigurationReferenceSettingValue()(*DeviceManagementCo
     m := &DeviceManagementConfigurationReferenceSettingValue{
         DeviceManagementConfigurationStringSettingValue: *NewDeviceManagementConfigurationStringSettingValue(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationReferenceSettingValue";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationReferenceSettingValue"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementConfigurationReferenceSettingValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -17,7 +17,7 @@ type DeploymentStateReason struct {
 func NewDeploymentStateReason()(*DeploymentStateReason) {
     m := &DeploymentStateReason{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeploymentStateReasonFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

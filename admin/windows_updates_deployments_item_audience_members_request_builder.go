@@ -60,8 +60,8 @@ func NewWindowsUpdatesDeploymentsItemAudienceMembersRequestBuilderInternal(pathP
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsUpdatesDeploymentsItemAudienceMembersRequestBuilder instantiates a new MembersRequestBuilder and sets the default values.
@@ -72,15 +72,7 @@ func NewWindowsUpdatesDeploymentsItemAudienceMembersRequestBuilder(rawUrl string
 }
 // Count provides operations to count the resources in the collection.
 func (m *WindowsUpdatesDeploymentsItemAudienceMembersRequestBuilder) Count()(*WindowsUpdatesDeploymentsItemAudienceMembersCountRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsItemAudienceMembersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// EnrollAssets provides operations to call the enrollAssets method.
-func (m *WindowsUpdatesDeploymentsItemAudienceMembersRequestBuilder) EnrollAssets()(*WindowsUpdatesDeploymentsItemAudienceMembersEnrollAssetsRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsItemAudienceMembersEnrollAssetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// EnrollAssetsById provides operations to call the enrollAssetsById method.
-func (m *WindowsUpdatesDeploymentsItemAudienceMembersRequestBuilder) EnrollAssetsById()(*WindowsUpdatesDeploymentsItemAudienceMembersEnrollAssetsByIdRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsItemAudienceMembersEnrollAssetsByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsUpdatesDeploymentsItemAudienceMembersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list the updatableAsset resources that are members of a deploymentAudience.
 // [Find more info here]
@@ -103,6 +95,22 @@ func (m *WindowsUpdatesDeploymentsItemAudienceMembersRequestBuilder) Get(ctx con
         return nil, nil
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetCollectionResponseable), nil
+}
+// MicrosoftGraphWindowsUpdatesEnrollAssets provides operations to call the enrollAssets method.
+func (m *WindowsUpdatesDeploymentsItemAudienceMembersRequestBuilder) MicrosoftGraphWindowsUpdatesEnrollAssets()(*WindowsUpdatesDeploymentsItemAudienceMembersMicrosoftGraphWindowsUpdatesEnrollAssetsRequestBuilder) {
+    return NewWindowsUpdatesDeploymentsItemAudienceMembersMicrosoftGraphWindowsUpdatesEnrollAssetsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphWindowsUpdatesEnrollAssetsById provides operations to call the enrollAssetsById method.
+func (m *WindowsUpdatesDeploymentsItemAudienceMembersRequestBuilder) MicrosoftGraphWindowsUpdatesEnrollAssetsById()(*WindowsUpdatesDeploymentsItemAudienceMembersMicrosoftGraphWindowsUpdatesEnrollAssetsByIdRequestBuilder) {
+    return NewWindowsUpdatesDeploymentsItemAudienceMembersMicrosoftGraphWindowsUpdatesEnrollAssetsByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphWindowsUpdatesUnenrollAssets provides operations to call the unenrollAssets method.
+func (m *WindowsUpdatesDeploymentsItemAudienceMembersRequestBuilder) MicrosoftGraphWindowsUpdatesUnenrollAssets()(*WindowsUpdatesDeploymentsItemAudienceMembersMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilder) {
+    return NewWindowsUpdatesDeploymentsItemAudienceMembersMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphWindowsUpdatesUnenrollAssetsById provides operations to call the unenrollAssetsById method.
+func (m *WindowsUpdatesDeploymentsItemAudienceMembersRequestBuilder) MicrosoftGraphWindowsUpdatesUnenrollAssetsById()(*WindowsUpdatesDeploymentsItemAudienceMembersMicrosoftGraphWindowsUpdatesUnenrollAssetsByIdRequestBuilder) {
+    return NewWindowsUpdatesDeploymentsItemAudienceMembersMicrosoftGraphWindowsUpdatesUnenrollAssetsByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to members for admin
 func (m *WindowsUpdatesDeploymentsItemAudienceMembersRequestBuilder) Post(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable, requestConfiguration *WindowsUpdatesDeploymentsItemAudienceMembersRequestBuilderPostRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable, error) {
@@ -146,18 +154,13 @@ func (m *WindowsUpdatesDeploymentsItemAudienceMembersRequestBuilder) ToPostReque
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// UnenrollAssets provides operations to call the unenrollAssets method.
-func (m *WindowsUpdatesDeploymentsItemAudienceMembersRequestBuilder) UnenrollAssets()(*WindowsUpdatesDeploymentsItemAudienceMembersUnenrollAssetsRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsItemAudienceMembersUnenrollAssetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// UnenrollAssetsById provides operations to call the unenrollAssetsById method.
-func (m *WindowsUpdatesDeploymentsItemAudienceMembersRequestBuilder) UnenrollAssetsById()(*WindowsUpdatesDeploymentsItemAudienceMembersUnenrollAssetsByIdRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsItemAudienceMembersUnenrollAssetsByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

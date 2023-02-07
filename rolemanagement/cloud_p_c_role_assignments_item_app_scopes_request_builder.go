@@ -60,8 +60,8 @@ func NewCloudPCRoleAssignmentsItemAppScopesRequestBuilderInternal(pathParameters
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCloudPCRoleAssignmentsItemAppScopesRequestBuilder instantiates a new AppScopesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewCloudPCRoleAssignmentsItemAppScopesRequestBuilder(rawUrl string, request
 }
 // Count provides operations to count the resources in the collection.
 func (m *CloudPCRoleAssignmentsItemAppScopesRequestBuilder) Count()(*CloudPCRoleAssignmentsItemAppScopesCountRequestBuilder) {
-    return NewCloudPCRoleAssignmentsItemAppScopesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCloudPCRoleAssignmentsItemAppScopesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
 func (m *CloudPCRoleAssignmentsItemAppScopesRequestBuilder) Get(ctx context.Context, requestConfiguration *CloudPCRoleAssignmentsItemAppScopesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppScopeCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *CloudPCRoleAssignmentsItemAppScopesRequestBuilder) ToPostRequestInforma
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

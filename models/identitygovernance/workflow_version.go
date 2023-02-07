@@ -15,8 +15,8 @@ func NewWorkflowVersion()(*WorkflowVersion) {
     m := &WorkflowVersion{
         WorkflowBase: *NewWorkflowBase(),
     }
-    odataTypeValue := "#microsoft.graph.identityGovernance.workflowVersion";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.identityGovernance.workflowVersion"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWorkflowVersionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

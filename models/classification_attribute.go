@@ -19,7 +19,7 @@ type ClassificationAttribute struct {
 func NewClassificationAttribute()(*ClassificationAttribute) {
     m := &ClassificationAttribute{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateClassificationAttributeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

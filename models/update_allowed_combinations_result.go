@@ -23,7 +23,7 @@ type UpdateAllowedCombinationsResult struct {
 func NewUpdateAllowedCombinationsResult()(*UpdateAllowedCombinationsResult) {
     m := &UpdateAllowedCombinationsResult{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateUpdateAllowedCombinationsResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

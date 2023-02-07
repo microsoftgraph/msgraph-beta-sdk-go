@@ -39,7 +39,7 @@ type CloudAppSecurityProfile struct {
     // The tags property
     tags []string
     // The type property
-    type_escaped *string
+    typeEscaped *string
     // The vendorInformation property
     vendorInformation SecurityVendorInformationable
 }
@@ -295,7 +295,7 @@ func (m *CloudAppSecurityProfile) GetTags()([]string) {
 }
 // GetType gets the type property value. The type property
 func (m *CloudAppSecurityProfile) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // GetVendorInformation gets the vendorInformation property value. The vendorInformation property
 func (m *CloudAppSecurityProfile) GetVendorInformation()(SecurityVendorInformationable) {
@@ -474,7 +474,7 @@ func (m *CloudAppSecurityProfile) SetTags(value []string)() {
 }
 // SetType sets the type property value. The type property
 func (m *CloudAppSecurityProfile) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }
 // SetVendorInformation sets the vendorInformation property value. The vendorInformation property
 func (m *CloudAppSecurityProfile) SetVendorInformation(value SecurityVendorInformationable)() {

@@ -23,8 +23,8 @@ func NewWindowsKioskMultipleApps()(*WindowsKioskMultipleApps) {
     m := &WindowsKioskMultipleApps{
         WindowsKioskAppConfiguration: *NewWindowsKioskAppConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.windowsKioskMultipleApps";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsKioskMultipleApps"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsKioskMultipleAppsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

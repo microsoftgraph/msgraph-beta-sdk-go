@@ -21,7 +21,7 @@ type BitLockerFixedDrivePolicy struct {
 func NewBitLockerFixedDrivePolicy()(*BitLockerFixedDrivePolicy) {
     m := &BitLockerFixedDrivePolicy{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateBitLockerFixedDrivePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

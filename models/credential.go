@@ -13,7 +13,7 @@ type Credential struct {
     // The OdataType property
     odataType *string
     // The type for this credential. Valid values: username, password, or other.
-    type_escaped *string
+    typeEscaped *string
     // The value for this credential. e.g, mysuperhiddenpassword. Note the value for passwords is write-only, the value can never be read back.
     value *string
 }
@@ -21,7 +21,7 @@ type Credential struct {
 func NewCredential()(*Credential) {
     m := &Credential{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCredentialFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -87,7 +87,7 @@ func (m *Credential) GetOdataType()(*string) {
 }
 // GetType gets the type property value. The type for this credential. Valid values: username, password, or other.
 func (m *Credential) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // GetValue gets the value property value. The value for this credential. e.g, mysuperhiddenpassword. Note the value for passwords is write-only, the value can never be read back.
 func (m *Credential) GetValue()(*string) {
@@ -141,7 +141,7 @@ func (m *Credential) SetOdataType(value *string)() {
 }
 // SetType sets the type property value. The type for this credential. Valid values: username, password, or other.
 func (m *Credential) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }
 // SetValue sets the value property value. The value for this credential. e.g, mysuperhiddenpassword. Note the value for passwords is write-only, the value can never be read back.
 func (m *Credential) SetValue(value *string)() {

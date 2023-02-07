@@ -21,7 +21,7 @@ type AndroidFotaDeploymentAssignment struct {
 func NewAndroidFotaDeploymentAssignment()(*AndroidFotaDeploymentAssignment) {
     m := &AndroidFotaDeploymentAssignment{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAndroidFotaDeploymentAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

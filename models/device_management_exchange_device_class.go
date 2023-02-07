@@ -13,13 +13,13 @@ type DeviceManagementExchangeDeviceClass struct {
     // The OdataType property
     odataType *string
     // Criteria which defines the type of device this access rule will apply to
-    type_escaped *DeviceManagementExchangeAccessRuleType
+    typeEscaped *DeviceManagementExchangeAccessRuleType
 }
 // NewDeviceManagementExchangeDeviceClass instantiates a new deviceManagementExchangeDeviceClass and sets the default values.
 func NewDeviceManagementExchangeDeviceClass()(*DeviceManagementExchangeDeviceClass) {
     m := &DeviceManagementExchangeDeviceClass{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceManagementExchangeDeviceClassFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -75,7 +75,7 @@ func (m *DeviceManagementExchangeDeviceClass) GetOdataType()(*string) {
 }
 // GetType gets the type property value. Criteria which defines the type of device this access rule will apply to
 func (m *DeviceManagementExchangeDeviceClass) GetType()(*DeviceManagementExchangeAccessRuleType) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementExchangeDeviceClass) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -120,5 +120,5 @@ func (m *DeviceManagementExchangeDeviceClass) SetOdataType(value *string)() {
 }
 // SetType sets the type property value. Criteria which defines the type of device this access rule will apply to
 func (m *DeviceManagementExchangeDeviceClass) SetType(value *DeviceManagementExchangeAccessRuleType)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

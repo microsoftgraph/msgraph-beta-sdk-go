@@ -95,7 +95,7 @@ type HardwareInformation struct {
 func NewHardwareInformation()(*HardwareInformation) {
     m := &HardwareInformation{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateHardwareInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

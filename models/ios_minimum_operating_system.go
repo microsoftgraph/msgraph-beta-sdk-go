@@ -22,6 +22,8 @@ type IosMinimumOperatingSystem struct {
     v14_0 *bool
     // When TRUE, only Version 15.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
     v15_0 *bool
+    // When TRUE, only Version 16.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+    v16_0 *bool
     // When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
     v8_0 *bool
     // When TRUE, only Version 9.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
@@ -31,7 +33,7 @@ type IosMinimumOperatingSystem struct {
 func NewIosMinimumOperatingSystem()(*IosMinimumOperatingSystem) {
     m := &IosMinimumOperatingSystem{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateIosMinimumOperatingSystemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -61,7 +63,7 @@ func (m *IosMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(i878
             return err
         }
         if val != nil {
-            m.SetV10_0(val)
+            m.SetV100(val)
         }
         return nil
     }
@@ -71,7 +73,7 @@ func (m *IosMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(i878
             return err
         }
         if val != nil {
-            m.SetV11_0(val)
+            m.SetV110(val)
         }
         return nil
     }
@@ -81,7 +83,7 @@ func (m *IosMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(i878
             return err
         }
         if val != nil {
-            m.SetV12_0(val)
+            m.SetV120(val)
         }
         return nil
     }
@@ -91,7 +93,7 @@ func (m *IosMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(i878
             return err
         }
         if val != nil {
-            m.SetV13_0(val)
+            m.SetV130(val)
         }
         return nil
     }
@@ -101,7 +103,7 @@ func (m *IosMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(i878
             return err
         }
         if val != nil {
-            m.SetV14_0(val)
+            m.SetV140(val)
         }
         return nil
     }
@@ -111,7 +113,17 @@ func (m *IosMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(i878
             return err
         }
         if val != nil {
-            m.SetV15_0(val)
+            m.SetV150(val)
+        }
+        return nil
+    }
+    res["v16_0"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetV160(val)
         }
         return nil
     }
@@ -121,7 +133,7 @@ func (m *IosMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(i878
             return err
         }
         if val != nil {
-            m.SetV8_0(val)
+            m.SetV80(val)
         }
         return nil
     }
@@ -131,7 +143,7 @@ func (m *IosMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(i878
             return err
         }
         if val != nil {
-            m.SetV9_0(val)
+            m.SetV90(val)
         }
         return nil
     }
@@ -141,36 +153,40 @@ func (m *IosMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(i878
 func (m *IosMinimumOperatingSystem) GetOdataType()(*string) {
     return m.odataType
 }
-// GetV10_0 gets the v10_0 property value. When TRUE, only Version 10.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *IosMinimumOperatingSystem) GetV10_0()(*bool) {
+// GetV100 gets the v10_0 property value. When TRUE, only Version 10.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *IosMinimumOperatingSystem) GetV100()(*bool) {
     return m.v10_0
 }
-// GetV11_0 gets the v11_0 property value. When TRUE, only Version 11.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *IosMinimumOperatingSystem) GetV11_0()(*bool) {
+// GetV110 gets the v11_0 property value. When TRUE, only Version 11.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *IosMinimumOperatingSystem) GetV110()(*bool) {
     return m.v11_0
 }
-// GetV12_0 gets the v12_0 property value. When TRUE, only Version 12.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *IosMinimumOperatingSystem) GetV12_0()(*bool) {
+// GetV120 gets the v12_0 property value. When TRUE, only Version 12.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *IosMinimumOperatingSystem) GetV120()(*bool) {
     return m.v12_0
 }
-// GetV13_0 gets the v13_0 property value. When TRUE, only Version 13.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *IosMinimumOperatingSystem) GetV13_0()(*bool) {
+// GetV130 gets the v13_0 property value. When TRUE, only Version 13.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *IosMinimumOperatingSystem) GetV130()(*bool) {
     return m.v13_0
 }
-// GetV14_0 gets the v14_0 property value. When TRUE, only Version 14.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *IosMinimumOperatingSystem) GetV14_0()(*bool) {
+// GetV140 gets the v14_0 property value. When TRUE, only Version 14.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *IosMinimumOperatingSystem) GetV140()(*bool) {
     return m.v14_0
 }
-// GetV15_0 gets the v15_0 property value. When TRUE, only Version 15.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *IosMinimumOperatingSystem) GetV15_0()(*bool) {
+// GetV150 gets the v15_0 property value. When TRUE, only Version 15.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *IosMinimumOperatingSystem) GetV150()(*bool) {
     return m.v15_0
 }
-// GetV8_0 gets the v8_0 property value. When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *IosMinimumOperatingSystem) GetV8_0()(*bool) {
+// GetV160 gets the v16_0 property value. When TRUE, only Version 16.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *IosMinimumOperatingSystem) GetV160()(*bool) {
+    return m.v16_0
+}
+// GetV80 gets the v8_0 property value. When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *IosMinimumOperatingSystem) GetV80()(*bool) {
     return m.v8_0
 }
-// GetV9_0 gets the v9_0 property value. When TRUE, only Version 9.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *IosMinimumOperatingSystem) GetV9_0()(*bool) {
+// GetV90 gets the v9_0 property value. When TRUE, only Version 9.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *IosMinimumOperatingSystem) GetV90()(*bool) {
     return m.v9_0
 }
 // Serialize serializes information the current object
@@ -182,49 +198,55 @@ func (m *IosMinimumOperatingSystem) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
-        err := writer.WriteBoolValue("v10_0", m.GetV10_0())
+        err := writer.WriteBoolValue("v10_0", m.GetV100())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v11_0", m.GetV11_0())
+        err := writer.WriteBoolValue("v11_0", m.GetV110())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v12_0", m.GetV12_0())
+        err := writer.WriteBoolValue("v12_0", m.GetV120())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v13_0", m.GetV13_0())
+        err := writer.WriteBoolValue("v13_0", m.GetV130())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v14_0", m.GetV14_0())
+        err := writer.WriteBoolValue("v14_0", m.GetV140())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v15_0", m.GetV15_0())
+        err := writer.WriteBoolValue("v15_0", m.GetV150())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v8_0", m.GetV8_0())
+        err := writer.WriteBoolValue("v16_0", m.GetV160())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v9_0", m.GetV9_0())
+        err := writer.WriteBoolValue("v8_0", m.GetV80())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("v9_0", m.GetV90())
         if err != nil {
             return err
         }
@@ -245,35 +267,39 @@ func (m *IosMinimumOperatingSystem) SetAdditionalData(value map[string]any)() {
 func (m *IosMinimumOperatingSystem) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetV10_0 sets the v10_0 property value. When TRUE, only Version 10.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *IosMinimumOperatingSystem) SetV10_0(value *bool)() {
+// SetV100 sets the v10_0 property value. When TRUE, only Version 10.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *IosMinimumOperatingSystem) SetV100(value *bool)() {
     m.v10_0 = value
 }
-// SetV11_0 sets the v11_0 property value. When TRUE, only Version 11.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *IosMinimumOperatingSystem) SetV11_0(value *bool)() {
+// SetV110 sets the v11_0 property value. When TRUE, only Version 11.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *IosMinimumOperatingSystem) SetV110(value *bool)() {
     m.v11_0 = value
 }
-// SetV12_0 sets the v12_0 property value. When TRUE, only Version 12.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *IosMinimumOperatingSystem) SetV12_0(value *bool)() {
+// SetV120 sets the v12_0 property value. When TRUE, only Version 12.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *IosMinimumOperatingSystem) SetV120(value *bool)() {
     m.v12_0 = value
 }
-// SetV13_0 sets the v13_0 property value. When TRUE, only Version 13.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *IosMinimumOperatingSystem) SetV13_0(value *bool)() {
+// SetV130 sets the v13_0 property value. When TRUE, only Version 13.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *IosMinimumOperatingSystem) SetV130(value *bool)() {
     m.v13_0 = value
 }
-// SetV14_0 sets the v14_0 property value. When TRUE, only Version 14.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *IosMinimumOperatingSystem) SetV14_0(value *bool)() {
+// SetV140 sets the v14_0 property value. When TRUE, only Version 14.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *IosMinimumOperatingSystem) SetV140(value *bool)() {
     m.v14_0 = value
 }
-// SetV15_0 sets the v15_0 property value. When TRUE, only Version 15.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *IosMinimumOperatingSystem) SetV15_0(value *bool)() {
+// SetV150 sets the v15_0 property value. When TRUE, only Version 15.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *IosMinimumOperatingSystem) SetV150(value *bool)() {
     m.v15_0 = value
 }
-// SetV8_0 sets the v8_0 property value. When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *IosMinimumOperatingSystem) SetV8_0(value *bool)() {
+// SetV160 sets the v16_0 property value. When TRUE, only Version 16.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *IosMinimumOperatingSystem) SetV160(value *bool)() {
+    m.v16_0 = value
+}
+// SetV80 sets the v8_0 property value. When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *IosMinimumOperatingSystem) SetV80(value *bool)() {
     m.v8_0 = value
 }
-// SetV9_0 sets the v9_0 property value. When TRUE, only Version 9.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *IosMinimumOperatingSystem) SetV9_0(value *bool)() {
+// SetV90 sets the v9_0 property value. When TRUE, only Version 9.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *IosMinimumOperatingSystem) SetV90(value *bool)() {
     m.v9_0 = value
 }

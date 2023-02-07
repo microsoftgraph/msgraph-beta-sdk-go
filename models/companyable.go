@@ -46,7 +46,7 @@ type Companyable interface {
     GetTaxAreas()([]TaxAreaable)
     GetTaxGroups()([]TaxGroupable)
     GetUnitsOfMeasure()([]UnitOfMeasureable)
-    GetVendors()([]Vendor_escapedable)
+    GetVendors()([]VendorEscapedable)
     SetAccounts(value []Accountable)()
     SetAgedAccountsPayable(value []AgedAccountsPayableable)()
     SetAgedAccountsReceivable(value []AgedAccountsReceivableable)()
@@ -85,5 +85,5 @@ type Companyable interface {
     SetTaxAreas(value []TaxAreaable)()
     SetTaxGroups(value []TaxGroupable)()
     SetUnitsOfMeasure(value []UnitOfMeasureable)()
-    SetVendors(value []Vendor_escapedable)()
+    SetVendors(value []VendorEscapedable)()
 }

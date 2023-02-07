@@ -48,7 +48,7 @@ type ItemRoleInfoRequestBuilderPatchRequestConfiguration struct {
 }
 // Assignments provides operations to manage the assignments property of the microsoft.graph.privilegedRole entity.
 func (m *ItemRoleInfoRequestBuilder) Assignments()(*ItemRoleInfoAssignmentsRequestBuilder) {
-    return NewItemRoleInfoAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRoleInfoAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.privilegedRole entity.
 func (m *ItemRoleInfoRequestBuilder) AssignmentsById(id string)(*ItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilder) {
@@ -59,7 +59,7 @@ func (m *ItemRoleInfoRequestBuilder) AssignmentsById(id string)(*ItemRoleInfoAss
     if id != "" {
         urlTplParams["privilegedRoleAssignment%2Did"] = id
     }
-    return NewItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewItemRoleInfoRequestBuilderInternal instantiates a new RoleInfoRequestBuilder and sets the default values.
 func NewItemRoleInfoRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRoleInfoRequestBuilder) {
@@ -70,8 +70,8 @@ func NewItemRoleInfoRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemRoleInfoRequestBuilder instantiates a new RoleInfoRequestBuilder and sets the default values.
@@ -115,6 +115,14 @@ func (m *ItemRoleInfoRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleable), nil
 }
+// MicrosoftGraphSelfActivate provides operations to call the selfActivate method.
+func (m *ItemRoleInfoRequestBuilder) MicrosoftGraphSelfActivate()(*ItemRoleInfoMicrosoftGraphSelfActivateRequestBuilder) {
+    return NewItemRoleInfoMicrosoftGraphSelfActivateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphSelfDeactivate provides operations to call the selfDeactivate method.
+func (m *ItemRoleInfoRequestBuilder) MicrosoftGraphSelfDeactivate()(*ItemRoleInfoMicrosoftGraphSelfDeactivateRequestBuilder) {
+    return NewItemRoleInfoMicrosoftGraphSelfDeactivateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property roleInfo in privilegedApproval
 func (m *ItemRoleInfoRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleable, requestConfiguration *ItemRoleInfoRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -134,21 +142,13 @@ func (m *ItemRoleInfoRequestBuilder) Patch(ctx context.Context, body ie233ee762e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleable), nil
 }
-// SelfActivate provides operations to call the selfActivate method.
-func (m *ItemRoleInfoRequestBuilder) SelfActivate()(*ItemRoleInfoSelfActivateRequestBuilder) {
-    return NewItemRoleInfoSelfActivateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// SelfDeactivate provides operations to call the selfDeactivate method.
-func (m *ItemRoleInfoRequestBuilder) SelfDeactivate()(*ItemRoleInfoSelfDeactivateRequestBuilder) {
-    return NewItemRoleInfoSelfDeactivateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Settings provides operations to manage the settings property of the microsoft.graph.privilegedRole entity.
 func (m *ItemRoleInfoRequestBuilder) Settings()(*ItemRoleInfoSettingsRequestBuilder) {
-    return NewItemRoleInfoSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRoleInfoSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Summary provides operations to manage the summary property of the microsoft.graph.privilegedRole entity.
 func (m *ItemRoleInfoRequestBuilder) Summary()(*ItemRoleInfoSummaryRequestBuilder) {
-    return NewItemRoleInfoSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRoleInfoSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property roleInfo for privilegedApproval
 func (m *ItemRoleInfoRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemRoleInfoRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -185,7 +185,10 @@ func (m *ItemRoleInfoRequestBuilder) ToPatchRequestInformation(ctx context.Conte
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

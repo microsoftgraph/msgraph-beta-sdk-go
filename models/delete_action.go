@@ -19,7 +19,7 @@ type DeleteAction struct {
 func NewDeleteAction()(*DeleteAction) {
     m := &DeleteAction{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeleteActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

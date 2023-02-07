@@ -33,13 +33,13 @@ type AttributeDefinition struct {
     // true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
     required *bool
     // The type property
-    type_escaped *AttributeType
+    typeEscaped *AttributeType
 }
 // NewAttributeDefinition instantiates a new attributeDefinition and sets the default values.
 func NewAttributeDefinition()(*AttributeDefinition) {
     m := &AttributeDefinition{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAttributeDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -247,7 +247,7 @@ func (m *AttributeDefinition) GetRequired()(*bool) {
 }
 // GetType gets the type property value. The type property
 func (m *AttributeDefinition) GetType()(*AttributeType) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *AttributeDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -405,5 +405,5 @@ func (m *AttributeDefinition) SetRequired(value *bool)() {
 }
 // SetType sets the type property value. The type property
 func (m *AttributeDefinition) SetType(value *AttributeType)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

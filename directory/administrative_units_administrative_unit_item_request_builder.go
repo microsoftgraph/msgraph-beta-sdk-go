@@ -46,14 +46,6 @@ type AdministrativeUnitsAdministrativeUnitItemRequestBuilderPatchRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CheckMemberGroups provides operations to call the checkMemberGroups method.
-func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) CheckMemberGroups()(*AdministrativeUnitsItemCheckMemberGroupsRequestBuilder) {
-    return NewAdministrativeUnitsItemCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// CheckMemberObjects provides operations to call the checkMemberObjects method.
-func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) CheckMemberObjects()(*AdministrativeUnitsItemCheckMemberObjectsRequestBuilder) {
-    return NewAdministrativeUnitsItemCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewAdministrativeUnitsAdministrativeUnitItemRequestBuilderInternal instantiates a new AdministrativeUnitItemRequestBuilder and sets the default values.
 func NewAdministrativeUnitsAdministrativeUnitItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AdministrativeUnitsAdministrativeUnitItemRequestBuilder) {
     m := &AdministrativeUnitsAdministrativeUnitItemRequestBuilder{
@@ -63,8 +55,8 @@ func NewAdministrativeUnitsAdministrativeUnitItemRequestBuilderInternal(pathPara
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAdministrativeUnitsAdministrativeUnitItemRequestBuilder instantiates a new AdministrativeUnitItemRequestBuilder and sets the default values.
@@ -91,7 +83,7 @@ func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) Delete(ctx con
 }
 // Extensions provides operations to manage the extensions property of the microsoft.graph.administrativeUnit entity.
 func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) Extensions()(*AdministrativeUnitsItemExtensionsRequestBuilder) {
-    return NewAdministrativeUnitsItemExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAdministrativeUnitsItemExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ExtensionsById provides operations to manage the extensions property of the microsoft.graph.administrativeUnit entity.
 func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) ExtensionsById(id string)(*AdministrativeUnitsItemExtensionsExtensionItemRequestBuilder) {
@@ -102,7 +94,7 @@ func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) ExtensionsById
     if id != "" {
         urlTplParams["extension%2Did"] = id
     }
-    return NewAdministrativeUnitsItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAdministrativeUnitsItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Get conceptual container for user and group directory objects.
 func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AdministrativeUnitsAdministrativeUnitItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable, error) {
@@ -123,17 +115,9 @@ func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) Get(ctx contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable), nil
 }
-// GetMemberGroups provides operations to call the getMemberGroups method.
-func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) GetMemberGroups()(*AdministrativeUnitsItemGetMemberGroupsRequestBuilder) {
-    return NewAdministrativeUnitsItemGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// GetMemberObjects provides operations to call the getMemberObjects method.
-func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) GetMemberObjects()(*AdministrativeUnitsItemGetMemberObjectsRequestBuilder) {
-    return NewAdministrativeUnitsItemGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Members provides operations to manage the members property of the microsoft.graph.administrativeUnit entity.
 func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) Members()(*AdministrativeUnitsItemMembersRequestBuilder) {
-    return NewAdministrativeUnitsItemMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAdministrativeUnitsItemMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MembersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.directory.administrativeUnits.item.members.item collection
 func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) MembersById(id string)(*AdministrativeUnitsItemMembersDirectoryObjectItemRequestBuilder) {
@@ -144,7 +128,27 @@ func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) MembersById(id
     if id != "" {
         urlTplParams["directoryObject%2Did"] = id
     }
-    return NewAdministrativeUnitsItemMembersDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAdministrativeUnitsItemMembersDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+// MicrosoftGraphCheckMemberGroups provides operations to call the checkMemberGroups method.
+func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) MicrosoftGraphCheckMemberGroups()(*AdministrativeUnitsItemMicrosoftGraphCheckMemberGroupsRequestBuilder) {
+    return NewAdministrativeUnitsItemMicrosoftGraphCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphCheckMemberObjects provides operations to call the checkMemberObjects method.
+func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) MicrosoftGraphCheckMemberObjects()(*AdministrativeUnitsItemMicrosoftGraphCheckMemberObjectsRequestBuilder) {
+    return NewAdministrativeUnitsItemMicrosoftGraphCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphGetMemberGroups provides operations to call the getMemberGroups method.
+func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) MicrosoftGraphGetMemberGroups()(*AdministrativeUnitsItemMicrosoftGraphGetMemberGroupsRequestBuilder) {
+    return NewAdministrativeUnitsItemMicrosoftGraphGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphGetMemberObjects provides operations to call the getMemberObjects method.
+func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) MicrosoftGraphGetMemberObjects()(*AdministrativeUnitsItemMicrosoftGraphGetMemberObjectsRequestBuilder) {
+    return NewAdministrativeUnitsItemMicrosoftGraphGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRestore provides operations to call the restore method.
+func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) MicrosoftGraphRestore()(*AdministrativeUnitsItemMicrosoftGraphRestoreRequestBuilder) {
+    return NewAdministrativeUnitsItemMicrosoftGraphRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property administrativeUnits in directory
 func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable, requestConfiguration *AdministrativeUnitsAdministrativeUnitItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable, error) {
@@ -165,13 +169,9 @@ func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) Patch(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable), nil
 }
-// Restore provides operations to call the restore method.
-func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) Restore()(*AdministrativeUnitsItemRestoreRequestBuilder) {
-    return NewAdministrativeUnitsItemRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // ScopedRoleMembers provides operations to manage the scopedRoleMembers property of the microsoft.graph.administrativeUnit entity.
 func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) ScopedRoleMembers()(*AdministrativeUnitsItemScopedRoleMembersRequestBuilder) {
-    return NewAdministrativeUnitsItemScopedRoleMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAdministrativeUnitsItemScopedRoleMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ScopedRoleMembersById provides operations to manage the scopedRoleMembers property of the microsoft.graph.administrativeUnit entity.
 func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) ScopedRoleMembersById(id string)(*AdministrativeUnitsItemScopedRoleMembersScopedRoleMembershipItemRequestBuilder) {
@@ -182,7 +182,7 @@ func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) ScopedRoleMemb
     if id != "" {
         urlTplParams["scopedRoleMembership%2Did"] = id
     }
-    return NewAdministrativeUnitsItemScopedRoleMembersScopedRoleMembershipItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAdministrativeUnitsItemScopedRoleMembersScopedRoleMembershipItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property administrativeUnits for directory
 func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AdministrativeUnitsAdministrativeUnitItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -219,7 +219,10 @@ func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) ToPatchRequest
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

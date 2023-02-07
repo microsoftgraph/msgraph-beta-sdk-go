@@ -13,8 +13,8 @@ func NewDeviceManagementConfigurationExchangeOnlineSettingApplicability()(*Devic
     m := &DeviceManagementConfigurationExchangeOnlineSettingApplicability{
         DeviceManagementConfigurationSettingApplicability: *NewDeviceManagementConfigurationSettingApplicability(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationExchangeOnlineSettingApplicability";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationExchangeOnlineSettingApplicability"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementConfigurationExchangeOnlineSettingApplicabilityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

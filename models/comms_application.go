@@ -19,7 +19,7 @@ type CommsApplication struct {
 func NewCommsApplication()(*CommsApplication) {
     m := &CommsApplication{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCommsApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

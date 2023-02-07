@@ -27,7 +27,7 @@ type PayloadCoachmark struct {
 func NewPayloadCoachmark()(*PayloadCoachmark) {
     m := &PayloadCoachmark{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePayloadCoachmarkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

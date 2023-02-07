@@ -25,7 +25,7 @@ type TeamworkFeaturesConfiguration struct {
 func NewTeamworkFeaturesConfiguration()(*TeamworkFeaturesConfiguration) {
     m := &TeamworkFeaturesConfiguration{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTeamworkFeaturesConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

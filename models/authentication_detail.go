@@ -28,7 +28,7 @@ type AuthenticationDetail struct {
 func NewAuthenticationDetail()(*AuthenticationDetail) {
     m := &AuthenticationDetail{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAuthenticationDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

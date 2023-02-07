@@ -60,8 +60,8 @@ func NewConditionalAccessAuthenticationStrengthsPoliciesRequestBuilderInternal(p
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewConditionalAccessAuthenticationStrengthsPoliciesRequestBuilder instantiates a new PoliciesRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewConditionalAccessAuthenticationStrengthsPoliciesRequestBuilder(rawUrl st
 }
 // Count provides operations to count the resources in the collection.
 func (m *ConditionalAccessAuthenticationStrengthsPoliciesRequestBuilder) Count()(*ConditionalAccessAuthenticationStrengthsPoliciesCountRequestBuilder) {
-    return NewConditionalAccessAuthenticationStrengthsPoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// FindByMethodModeWithAuthenticationMethodModes provides operations to call the findByMethodMode method.
-func (m *ConditionalAccessAuthenticationStrengthsPoliciesRequestBuilder) FindByMethodModeWithAuthenticationMethodModes(authenticationMethodModes *string)(*ConditionalAccessAuthenticationStrengthsPoliciesFindByMethodModeWithAuthenticationMethodModesRequestBuilder) {
-    return NewConditionalAccessAuthenticationStrengthsPoliciesFindByMethodModeWithAuthenticationMethodModesRequestBuilderInternal(m.pathParameters, m.requestAdapter, authenticationMethodModes);
+    return NewConditionalAccessAuthenticationStrengthsPoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get a collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.
 func (m *ConditionalAccessAuthenticationStrengthsPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationStrengthsPoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationStrengthPolicyCollectionResponseable, error) {
@@ -96,6 +92,10 @@ func (m *ConditionalAccessAuthenticationStrengthsPoliciesRequestBuilder) Get(ctx
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationStrengthPolicyCollectionResponseable), nil
+}
+// MicrosoftGraphFindByMethodModeWithAuthenticationMethodModes provides operations to call the findByMethodMode method.
+func (m *ConditionalAccessAuthenticationStrengthsPoliciesRequestBuilder) MicrosoftGraphFindByMethodModeWithAuthenticationMethodModes(authenticationMethodModes *string)(*ConditionalAccessAuthenticationStrengthsPoliciesMicrosoftGraphFindByMethodModeWithAuthenticationMethodModesRequestBuilder) {
+    return NewConditionalAccessAuthenticationStrengthsPoliciesMicrosoftGraphFindByMethodModeWithAuthenticationMethodModesRequestBuilderInternal(m.pathParameters, m.requestAdapter, authenticationMethodModes)
 }
 // Post create new navigation property to policies for identity
 func (m *ConditionalAccessAuthenticationStrengthsPoliciesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationStrengthPolicyable, requestConfiguration *ConditionalAccessAuthenticationStrengthsPoliciesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationStrengthPolicyable, error) {
@@ -139,7 +139,10 @@ func (m *ConditionalAccessAuthenticationStrengthsPoliciesRequestBuilder) ToPostR
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

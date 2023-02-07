@@ -17,7 +17,7 @@ type PlannerTaskConfigurationRoleBase struct {
 func NewPlannerTaskConfigurationRoleBase()(*PlannerTaskConfigurationRoleBase) {
     m := &PlannerTaskConfigurationRoleBase{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePlannerTaskConfigurationRoleBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

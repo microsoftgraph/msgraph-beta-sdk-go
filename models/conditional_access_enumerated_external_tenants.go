@@ -15,8 +15,8 @@ func NewConditionalAccessEnumeratedExternalTenants()(*ConditionalAccessEnumerate
     m := &ConditionalAccessEnumeratedExternalTenants{
         ConditionalAccessExternalTenants: *NewConditionalAccessExternalTenants(),
     }
-    odataTypeValue := "#microsoft.graph.conditionalAccessEnumeratedExternalTenants";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.conditionalAccessEnumeratedExternalTenants"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateConditionalAccessEnumeratedExternalTenantsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

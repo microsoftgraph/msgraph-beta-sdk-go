@@ -17,6 +17,7 @@ type PlannerPlanable interface {
     GetCreationSource()(PlannerPlanCreationable)
     GetDetails()(PlannerPlanDetailsable)
     GetOwner()(*string)
+    GetSharedWithContainers()([]PlannerSharedWithContainerable)
     GetTasks()([]PlannerTaskable)
     GetTitle()(*string)
     SetBuckets(value []PlannerBucketable)()
@@ -27,6 +28,7 @@ type PlannerPlanable interface {
     SetCreationSource(value PlannerPlanCreationable)()
     SetDetails(value PlannerPlanDetailsable)()
     SetOwner(value *string)()
+    SetSharedWithContainers(value []PlannerSharedWithContainerable)()
     SetTasks(value []PlannerTaskable)()
     SetTitle(value *string)()
 }

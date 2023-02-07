@@ -15,13 +15,13 @@ type CoachmarkLocation struct {
     // Offset of coachmark.
     offset *int32
     // Type of coachmark location. The possible values are: unknown, fromEmail, subject, externalTag, displayName, messageBody, unknownFutureValue.
-    type_escaped *CoachmarkLocationType
+    typeEscaped *CoachmarkLocationType
 }
 // NewCoachmarkLocation instantiates a new coachmarkLocation and sets the default values.
 func NewCoachmarkLocation()(*CoachmarkLocation) {
     m := &CoachmarkLocation{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCoachmarkLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -91,7 +91,7 @@ func (m *CoachmarkLocation) GetOffset()(*int32) {
 }
 // GetType gets the type property value. Type of coachmark location. The possible values are: unknown, fromEmail, subject, externalTag, displayName, messageBody, unknownFutureValue.
 func (m *CoachmarkLocation) GetType()(*CoachmarkLocationType) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *CoachmarkLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -146,5 +146,5 @@ func (m *CoachmarkLocation) SetOffset(value *int32)() {
 }
 // SetType sets the type property value. Type of coachmark location. The possible values are: unknown, fromEmail, subject, externalTag, displayName, messageBody, unknownFutureValue.
 func (m *CoachmarkLocation) SetType(value *CoachmarkLocationType)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

@@ -17,7 +17,7 @@ type TimeClockSettings struct {
 func NewTimeClockSettings()(*TimeClockSettings) {
     m := &TimeClockSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTimeClockSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

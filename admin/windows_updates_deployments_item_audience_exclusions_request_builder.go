@@ -60,8 +60,8 @@ func NewWindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder instantiates a new ExclusionsRequestBuilder and sets the default values.
@@ -72,15 +72,7 @@ func NewWindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder(rawUrl str
 }
 // Count provides operations to count the resources in the collection.
 func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) Count()(*WindowsUpdatesDeploymentsItemAudienceExclusionsCountRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// EnrollAssets provides operations to call the enrollAssets method.
-func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) EnrollAssets()(*WindowsUpdatesDeploymentsItemAudienceExclusionsEnrollAssetsRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsEnrollAssetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// EnrollAssetsById provides operations to call the enrollAssetsById method.
-func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) EnrollAssetsById()(*WindowsUpdatesDeploymentsItemAudienceExclusionsEnrollAssetsByIdRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsEnrollAssetsByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list the updatableAsset resources that are excluded from a deploymentAudience.
 // [Find more info here]
@@ -103,6 +95,22 @@ func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) Get(ctx 
         return nil, nil
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetCollectionResponseable), nil
+}
+// MicrosoftGraphWindowsUpdatesEnrollAssets provides operations to call the enrollAssets method.
+func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) MicrosoftGraphWindowsUpdatesEnrollAssets()(*WindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdatesEnrollAssetsRequestBuilder) {
+    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdatesEnrollAssetsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphWindowsUpdatesEnrollAssetsById provides operations to call the enrollAssetsById method.
+func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) MicrosoftGraphWindowsUpdatesEnrollAssetsById()(*WindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdatesEnrollAssetsByIdRequestBuilder) {
+    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdatesEnrollAssetsByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphWindowsUpdatesUnenrollAssets provides operations to call the unenrollAssets method.
+func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) MicrosoftGraphWindowsUpdatesUnenrollAssets()(*WindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilder) {
+    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphWindowsUpdatesUnenrollAssetsById provides operations to call the unenrollAssetsById method.
+func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) MicrosoftGraphWindowsUpdatesUnenrollAssetsById()(*WindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdatesUnenrollAssetsByIdRequestBuilder) {
+    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdatesUnenrollAssetsByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to exclusions for admin
 func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) Post(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable, requestConfiguration *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilderPostRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable, error) {
@@ -146,18 +154,13 @@ func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) ToPostRe
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// UnenrollAssets provides operations to call the unenrollAssets method.
-func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) UnenrollAssets()(*WindowsUpdatesDeploymentsItemAudienceExclusionsUnenrollAssetsRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsUnenrollAssetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// UnenrollAssetsById provides operations to call the unenrollAssetsById method.
-func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) UnenrollAssetsById()(*WindowsUpdatesDeploymentsItemAudienceExclusionsUnenrollAssetsByIdRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsUnenrollAssetsByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

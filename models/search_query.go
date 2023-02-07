@@ -10,8 +10,6 @@ type SearchQuery struct {
     additionalData map[string]any
     // The OdataType property
     odataType *string
-    // The query_string property
-    query_string SearchQueryStringable
     // The search query containing the search terms. Required.
     queryString *string
     // Provides a way to decorate the query string. Supports both KQL and query variables. Optional.
@@ -21,7 +19,7 @@ type SearchQuery struct {
 func NewSearchQuery()(*SearchQuery) {
     m := &SearchQuery{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSearchQueryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -42,16 +40,6 @@ func (m *SearchQuery) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         if val != nil {
             m.SetOdataType(val)
-        }
-        return nil
-    }
-    res["query_string"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateSearchQueryStringFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetQuery_string(val.(SearchQueryStringable))
         }
         return nil
     }
@@ -80,10 +68,6 @@ func (m *SearchQuery) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SearchQuery) GetOdataType()(*string) {
     return m.odataType
-}
-// GetQuery_string gets the query_string property value. The query_string property
-func (m *SearchQuery) GetQuery_string()(SearchQueryStringable) {
-    return m.query_string
 }
 // GetQueryString gets the queryString property value. The search query containing the search terms. Required.
 func (m *SearchQuery) GetQueryString()(*string) {
@@ -114,12 +98,6 @@ func (m *SearchQuery) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
-        err := writer.WriteObjectValue("query_string", m.GetQuery_string())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
             return err
@@ -134,10 +112,6 @@ func (m *SearchQuery) SetAdditionalData(value map[string]any)() {
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SearchQuery) SetOdataType(value *string)() {
     m.odataType = value
-}
-// SetQuery_string sets the query_string property value. The query_string property
-func (m *SearchQuery) SetQuery_string(value SearchQueryStringable)() {
-    m.query_string = value
 }
 // SetQueryString sets the queryString property value. The search query containing the search terms. Required.
 func (m *SearchQuery) SetQueryString(value *string)() {

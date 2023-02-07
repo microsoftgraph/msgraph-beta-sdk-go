@@ -31,8 +31,8 @@ func NewMacOSPkcsCertificateProfile()(*MacOSPkcsCertificateProfile) {
     m := &MacOSPkcsCertificateProfile{
         MacOSCertificateProfileBase: *NewMacOSCertificateProfileBase(),
     }
-    odataTypeValue := "#microsoft.graph.macOSPkcsCertificateProfile";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.macOSPkcsCertificateProfile"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMacOSPkcsCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

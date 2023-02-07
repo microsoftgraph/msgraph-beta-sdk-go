@@ -67,8 +67,8 @@ func NewWindowsWifiEnterpriseEAPConfiguration()(*WindowsWifiEnterpriseEAPConfigu
     m := &WindowsWifiEnterpriseEAPConfiguration{
         WindowsWifiConfiguration: *NewWindowsWifiConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.windowsWifiEnterpriseEAPConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsWifiEnterpriseEAPConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsWifiEnterpriseEAPConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

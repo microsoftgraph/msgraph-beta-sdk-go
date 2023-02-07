@@ -18,13 +18,13 @@ type GovernanceSchedule struct {
     // The start time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The role assignment schedule type. Only Once is supported for now.
-    type_escaped *string
+    typeEscaped *string
 }
 // NewGovernanceSchedule instantiates a new governanceSchedule and sets the default values.
 func NewGovernanceSchedule()(*GovernanceSchedule) {
     m := &GovernanceSchedule{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateGovernanceScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -108,7 +108,7 @@ func (m *GovernanceSchedule) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97
 }
 // GetType gets the type property value. The role assignment schedule type. Only Once is supported for now.
 func (m *GovernanceSchedule) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *GovernanceSchedule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -172,5 +172,5 @@ func (m *GovernanceSchedule) SetStartDateTime(value *i336074805fc853987abe6f7fe3
 }
 // SetType sets the type property value. The role assignment schedule type. Only Once is supported for now.
 func (m *GovernanceSchedule) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

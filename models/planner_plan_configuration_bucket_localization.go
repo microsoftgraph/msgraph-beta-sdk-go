@@ -19,7 +19,7 @@ type PlannerPlanConfigurationBucketLocalization struct {
 func NewPlannerPlanConfigurationBucketLocalization()(*PlannerPlanConfigurationBucketLocalization) {
     m := &PlannerPlanConfigurationBucketLocalization{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePlannerPlanConfigurationBucketLocalizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

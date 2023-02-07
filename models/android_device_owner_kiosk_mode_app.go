@@ -10,15 +10,15 @@ type AndroidDeviceOwnerKioskModeApp struct {
     // Class name of application
     className *string
     // Package name of application
-    package_escaped *string
+    packageEscaped *string
 }
 // NewAndroidDeviceOwnerKioskModeApp instantiates a new AndroidDeviceOwnerKioskModeApp and sets the default values.
 func NewAndroidDeviceOwnerKioskModeApp()(*AndroidDeviceOwnerKioskModeApp) {
     m := &AndroidDeviceOwnerKioskModeApp{
         AndroidDeviceOwnerKioskModeFolderItem: *NewAndroidDeviceOwnerKioskModeFolderItem(),
     }
-    odataTypeValue := "#microsoft.graph.androidDeviceOwnerKioskModeApp";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidDeviceOwnerKioskModeApp"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidDeviceOwnerKioskModeAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -56,7 +56,7 @@ func (m *AndroidDeviceOwnerKioskModeApp) GetFieldDeserializers()(map[string]func
 }
 // GetPackage gets the package property value. Package name of application
 func (m *AndroidDeviceOwnerKioskModeApp) GetPackage()(*string) {
-    return m.package_escaped
+    return m.packageEscaped
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerKioskModeApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -84,5 +84,5 @@ func (m *AndroidDeviceOwnerKioskModeApp) SetClassName(value *string)() {
 }
 // SetPackage sets the package property value. Package name of application
 func (m *AndroidDeviceOwnerKioskModeApp) SetPackage(value *string)() {
-    m.package_escaped = value
+    m.packageEscaped = value
 }

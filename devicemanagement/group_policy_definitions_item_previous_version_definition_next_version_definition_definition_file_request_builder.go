@@ -41,8 +41,8 @@ func NewGroupPolicyDefinitionsItemPreviousVersionDefinitionNextVersionDefinition
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGroupPolicyDefinitionsItemPreviousVersionDefinitionNextVersionDefinitionDefinitionFileRequestBuilder instantiates a new DefinitionFileRequestBuilder and sets the default values.

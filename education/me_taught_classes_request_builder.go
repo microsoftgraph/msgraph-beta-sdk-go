@@ -53,8 +53,8 @@ func NewMeTaughtClassesRequestBuilderInternal(pathParameters map[string]string, 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMeTaughtClassesRequestBuilder instantiates a new TaughtClassesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewMeTaughtClassesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 }
 // Count provides operations to count the resources in the collection.
 func (m *MeTaughtClassesRequestBuilder) Count()(*MeTaughtClassesCountRequestBuilder) {
-    return NewMeTaughtClassesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMeTaughtClassesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get classes for which the user is a teacher.
 func (m *MeTaughtClassesRequestBuilder) Get(ctx context.Context, requestConfiguration *MeTaughtClassesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationClassCollectionResponseable, error) {

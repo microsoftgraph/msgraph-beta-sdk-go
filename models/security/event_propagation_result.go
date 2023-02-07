@@ -23,7 +23,7 @@ type EventPropagationResult struct {
 func NewEventPropagationResult()(*EventPropagationResult) {
     m := &EventPropagationResult{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateEventPropagationResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

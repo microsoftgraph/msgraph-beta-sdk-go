@@ -19,7 +19,7 @@ type TeamworkHardwareHealth struct {
 func NewTeamworkHardwareHealth()(*TeamworkHardwareHealth) {
     m := &TeamworkHardwareHealth{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTeamworkHardwareHealthFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

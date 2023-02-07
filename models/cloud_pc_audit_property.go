@@ -21,7 +21,7 @@ type CloudPcAuditProperty struct {
 func NewCloudPcAuditProperty()(*CloudPcAuditProperty) {
     m := &CloudPcAuditProperty{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCloudPcAuditPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

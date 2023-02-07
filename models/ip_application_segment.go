@@ -17,8 +17,8 @@ func NewIpApplicationSegment()(*IpApplicationSegment) {
     m := &IpApplicationSegment{
         ApplicationSegment: *NewApplicationSegment(),
     }
-    odataTypeValue := "#microsoft.graph.ipApplicationSegment";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.ipApplicationSegment"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateIpApplicationSegmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

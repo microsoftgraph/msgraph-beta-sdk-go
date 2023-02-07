@@ -53,8 +53,8 @@ func NewItemIncludedGroupsRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemIncludedGroupsRequestBuilder instantiates a new IncludedGroupsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemIncludedGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemIncludedGroupsRequestBuilder) Count()(*ItemIncludedGroupsCountRequestBuilder) {
-    return NewItemIncludedGroupsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemIncludedGroupsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the list of groups that are included in a mobile app management policy.
 // [Find more info here]
@@ -91,7 +91,7 @@ func (m *ItemIncludedGroupsRequestBuilder) Get(ctx context.Context, requestConfi
 }
 // Ref provides operations to manage the collection of mobilityManagementPolicy entities.
 func (m *ItemIncludedGroupsRequestBuilder) Ref()(*ItemIncludedGroupsRefRequestBuilder) {
-    return NewItemIncludedGroupsRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemIncludedGroupsRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation get the list of groups that are included in a mobile app management policy.
 func (m *ItemIncludedGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemIncludedGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

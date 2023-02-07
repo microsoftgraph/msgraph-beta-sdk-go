@@ -61,8 +61,8 @@ func NewMacOSEndpointProtectionConfiguration()(*MacOSEndpointProtectionConfigura
     m := &MacOSEndpointProtectionConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.macOSEndpointProtectionConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.macOSEndpointProtectionConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMacOSEndpointProtectionConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

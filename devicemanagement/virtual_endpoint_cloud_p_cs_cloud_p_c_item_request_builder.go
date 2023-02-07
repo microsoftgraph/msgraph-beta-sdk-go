@@ -46,10 +46,6 @@ type VirtualEndpointCloudPCsCloudPCItemRequestBuilderPatchRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ChangeUserAccountType provides operations to call the changeUserAccountType method.
-func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) ChangeUserAccountType()(*VirtualEndpointCloudPCsItemChangeUserAccountTypeRequestBuilder) {
-    return NewVirtualEndpointCloudPCsItemChangeUserAccountTypeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewVirtualEndpointCloudPCsCloudPCItemRequestBuilderInternal instantiates a new CloudPCItemRequestBuilder and sets the default values.
 func NewVirtualEndpointCloudPCsCloudPCItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointCloudPCsCloudPCItemRequestBuilder) {
     m := &VirtualEndpointCloudPCsCloudPCItemRequestBuilder{
@@ -59,8 +55,8 @@ func NewVirtualEndpointCloudPCsCloudPCItemRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewVirtualEndpointCloudPCsCloudPCItemRequestBuilder instantiates a new CloudPCItemRequestBuilder and sets the default values.
@@ -85,10 +81,6 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Delete(ctx context.Co
     }
     return nil
 }
-// EndGracePeriod provides operations to call the endGracePeriod method.
-func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) EndGracePeriod()(*VirtualEndpointCloudPCsItemEndGracePeriodRequestBuilder) {
-    return NewVirtualEndpointCloudPCsItemEndGracePeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Get cloud managed virtual desktops.
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsCloudPCItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -108,21 +100,53 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Get(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCable), nil
 }
-// GetCloudPcConnectivityHistory provides operations to call the getCloudPcConnectivityHistory method.
-func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) GetCloudPcConnectivityHistory()(*VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder) {
-    return NewVirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphChangeUserAccountType provides operations to call the changeUserAccountType method.
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) MicrosoftGraphChangeUserAccountType()(*VirtualEndpointCloudPCsItemMicrosoftGraphChangeUserAccountTypeRequestBuilder) {
+    return NewVirtualEndpointCloudPCsItemMicrosoftGraphChangeUserAccountTypeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetCloudPcLaunchInfo provides operations to call the getCloudPcLaunchInfo method.
-func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) GetCloudPcLaunchInfo()(*VirtualEndpointCloudPCsItemGetCloudPcLaunchInfoRequestBuilder) {
-    return NewVirtualEndpointCloudPCsItemGetCloudPcLaunchInfoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphEndGracePeriod provides operations to call the endGracePeriod method.
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) MicrosoftGraphEndGracePeriod()(*VirtualEndpointCloudPCsItemMicrosoftGraphEndGracePeriodRequestBuilder) {
+    return NewVirtualEndpointCloudPCsItemMicrosoftGraphEndGracePeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetShiftWorkCloudPcAccessState provides operations to call the getShiftWorkCloudPcAccessState method.
-func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) GetShiftWorkCloudPcAccessState()(*VirtualEndpointCloudPCsItemGetShiftWorkCloudPcAccessStateRequestBuilder) {
-    return NewVirtualEndpointCloudPCsItemGetShiftWorkCloudPcAccessStateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetCloudPcConnectivityHistory provides operations to call the getCloudPcConnectivityHistory method.
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) MicrosoftGraphGetCloudPcConnectivityHistory()(*VirtualEndpointCloudPCsItemMicrosoftGraphGetCloudPcConnectivityHistoryRequestBuilder) {
+    return NewVirtualEndpointCloudPCsItemMicrosoftGraphGetCloudPcConnectivityHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetSupportedCloudPcRemoteActions provides operations to call the getSupportedCloudPcRemoteActions method.
-func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) GetSupportedCloudPcRemoteActions()(*VirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilder) {
-    return NewVirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetCloudPcLaunchInfo provides operations to call the getCloudPcLaunchInfo method.
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) MicrosoftGraphGetCloudPcLaunchInfo()(*VirtualEndpointCloudPCsItemMicrosoftGraphGetCloudPcLaunchInfoRequestBuilder) {
+    return NewVirtualEndpointCloudPCsItemMicrosoftGraphGetCloudPcLaunchInfoRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphGetShiftWorkCloudPcAccessState provides operations to call the getShiftWorkCloudPcAccessState method.
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) MicrosoftGraphGetShiftWorkCloudPcAccessState()(*VirtualEndpointCloudPCsItemMicrosoftGraphGetShiftWorkCloudPcAccessStateRequestBuilder) {
+    return NewVirtualEndpointCloudPCsItemMicrosoftGraphGetShiftWorkCloudPcAccessStateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphGetSupportedCloudPcRemoteActions provides operations to call the getSupportedCloudPcRemoteActions method.
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) MicrosoftGraphGetSupportedCloudPcRemoteActions()(*VirtualEndpointCloudPCsItemMicrosoftGraphGetSupportedCloudPcRemoteActionsRequestBuilder) {
+    return NewVirtualEndpointCloudPCsItemMicrosoftGraphGetSupportedCloudPcRemoteActionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphReboot provides operations to call the reboot method.
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) MicrosoftGraphReboot()(*VirtualEndpointCloudPCsItemMicrosoftGraphRebootRequestBuilder) {
+    return NewVirtualEndpointCloudPCsItemMicrosoftGraphRebootRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRename provides operations to call the rename method.
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) MicrosoftGraphRename()(*VirtualEndpointCloudPCsItemMicrosoftGraphRenameRequestBuilder) {
+    return NewVirtualEndpointCloudPCsItemMicrosoftGraphRenameRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphReprovision provides operations to call the reprovision method.
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) MicrosoftGraphReprovision()(*VirtualEndpointCloudPCsItemMicrosoftGraphReprovisionRequestBuilder) {
+    return NewVirtualEndpointCloudPCsItemMicrosoftGraphReprovisionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRestore provides operations to call the restore method.
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) MicrosoftGraphRestore()(*VirtualEndpointCloudPCsItemMicrosoftGraphRestoreRequestBuilder) {
+    return NewVirtualEndpointCloudPCsItemMicrosoftGraphRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRetryPartnerAgentInstallation provides operations to call the retryPartnerAgentInstallation method.
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) MicrosoftGraphRetryPartnerAgentInstallation()(*VirtualEndpointCloudPCsItemMicrosoftGraphRetryPartnerAgentInstallationRequestBuilder) {
+    return NewVirtualEndpointCloudPCsItemMicrosoftGraphRetryPartnerAgentInstallationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphTroubleshoot provides operations to call the troubleshoot method.
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) MicrosoftGraphTroubleshoot()(*VirtualEndpointCloudPCsItemMicrosoftGraphTroubleshootRequestBuilder) {
+    return NewVirtualEndpointCloudPCsItemMicrosoftGraphTroubleshootRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property cloudPCs in deviceManagement
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCable, requestConfiguration *VirtualEndpointCloudPCsCloudPCItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCable, error) {
@@ -142,26 +166,6 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Patch(ctx context.Con
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCable), nil
-}
-// Reboot provides operations to call the reboot method.
-func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Reboot()(*VirtualEndpointCloudPCsItemRebootRequestBuilder) {
-    return NewVirtualEndpointCloudPCsItemRebootRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Rename provides operations to call the rename method.
-func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Rename()(*VirtualEndpointCloudPCsItemRenameRequestBuilder) {
-    return NewVirtualEndpointCloudPCsItemRenameRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Reprovision provides operations to call the reprovision method.
-func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Reprovision()(*VirtualEndpointCloudPCsItemReprovisionRequestBuilder) {
-    return NewVirtualEndpointCloudPCsItemReprovisionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Restore provides operations to call the restore method.
-func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Restore()(*VirtualEndpointCloudPCsItemRestoreRequestBuilder) {
-    return NewVirtualEndpointCloudPCsItemRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// RetryPartnerAgentInstallation provides operations to call the retryPartnerAgentInstallation method.
-func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) RetryPartnerAgentInstallation()(*VirtualEndpointCloudPCsItemRetryPartnerAgentInstallationRequestBuilder) {
-    return NewVirtualEndpointCloudPCsItemRetryPartnerAgentInstallationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property cloudPCs for deviceManagement
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsCloudPCItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -198,14 +202,13 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) ToPatchRequestInforma
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// Troubleshoot provides operations to call the troubleshoot method.
-func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Troubleshoot()(*VirtualEndpointCloudPCsItemTroubleshootRequestBuilder) {
-    return NewVirtualEndpointCloudPCsItemTroubleshootRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
