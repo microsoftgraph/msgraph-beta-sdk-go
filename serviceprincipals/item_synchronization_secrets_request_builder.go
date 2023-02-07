@@ -78,7 +78,7 @@ func (m *ItemSynchronizationSecretsRequestBuilder) ToPutRequestInformation(ctx c
     for i, v := range body {
         cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
     }
-    err := requestInfo.SetContentFromParsableCollection(ctx, m.requestAdapter, "application/json", cast...)
+    err := requestInfo.SetContentFromParsableCollection(ctx, m.requestAdapter, "application/json", cast)
     if err != nil {
         return nil, err
     }
