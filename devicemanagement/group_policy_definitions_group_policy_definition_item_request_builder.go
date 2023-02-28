@@ -48,7 +48,7 @@ type GroupPolicyDefinitionsGroupPolicyDefinitionItemRequestBuilderPatchRequestCo
 }
 // Category provides operations to manage the category property of the microsoft.graph.groupPolicyDefinition entity.
 func (m *GroupPolicyDefinitionsGroupPolicyDefinitionItemRequestBuilder) Category()(*GroupPolicyDefinitionsItemCategoryRequestBuilder) {
-    return NewGroupPolicyDefinitionsItemCategoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyDefinitionsItemCategoryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewGroupPolicyDefinitionsGroupPolicyDefinitionItemRequestBuilderInternal instantiates a new GroupPolicyDefinitionItemRequestBuilder and sets the default values.
 func NewGroupPolicyDefinitionsGroupPolicyDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyDefinitionsGroupPolicyDefinitionItemRequestBuilder) {
@@ -59,8 +59,8 @@ func NewGroupPolicyDefinitionsGroupPolicyDefinitionItemRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGroupPolicyDefinitionsGroupPolicyDefinitionItemRequestBuilder instantiates a new GroupPolicyDefinitionItemRequestBuilder and sets the default values.
@@ -71,7 +71,7 @@ func NewGroupPolicyDefinitionsGroupPolicyDefinitionItemRequestBuilder(rawUrl str
 }
 // DefinitionFile provides operations to manage the definitionFile property of the microsoft.graph.groupPolicyDefinition entity.
 func (m *GroupPolicyDefinitionsGroupPolicyDefinitionItemRequestBuilder) DefinitionFile()(*GroupPolicyDefinitionsItemDefinitionFileRequestBuilder) {
-    return NewGroupPolicyDefinitionsItemDefinitionFileRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyDefinitionsItemDefinitionFileRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property groupPolicyDefinitions for deviceManagement
 func (m *GroupPolicyDefinitionsGroupPolicyDefinitionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *GroupPolicyDefinitionsGroupPolicyDefinitionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -110,7 +110,7 @@ func (m *GroupPolicyDefinitionsGroupPolicyDefinitionItemRequestBuilder) Get(ctx 
 }
 // NextVersionDefinition provides operations to manage the nextVersionDefinition property of the microsoft.graph.groupPolicyDefinition entity.
 func (m *GroupPolicyDefinitionsGroupPolicyDefinitionItemRequestBuilder) NextVersionDefinition()(*GroupPolicyDefinitionsItemNextVersionDefinitionRequestBuilder) {
-    return NewGroupPolicyDefinitionsItemNextVersionDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyDefinitionsItemNextVersionDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property groupPolicyDefinitions in deviceManagement
 func (m *GroupPolicyDefinitionsGroupPolicyDefinitionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyDefinitionable, requestConfiguration *GroupPolicyDefinitionsGroupPolicyDefinitionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyDefinitionable, error) {
@@ -133,7 +133,7 @@ func (m *GroupPolicyDefinitionsGroupPolicyDefinitionItemRequestBuilder) Patch(ct
 }
 // Presentations provides operations to manage the presentations property of the microsoft.graph.groupPolicyDefinition entity.
 func (m *GroupPolicyDefinitionsGroupPolicyDefinitionItemRequestBuilder) Presentations()(*GroupPolicyDefinitionsItemPresentationsRequestBuilder) {
-    return NewGroupPolicyDefinitionsItemPresentationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyDefinitionsItemPresentationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PresentationsById provides operations to manage the presentations property of the microsoft.graph.groupPolicyDefinition entity.
 func (m *GroupPolicyDefinitionsGroupPolicyDefinitionItemRequestBuilder) PresentationsById(id string)(*GroupPolicyDefinitionsItemPresentationsGroupPolicyPresentationItemRequestBuilder) {
@@ -144,11 +144,11 @@ func (m *GroupPolicyDefinitionsGroupPolicyDefinitionItemRequestBuilder) Presenta
     if id != "" {
         urlTplParams["groupPolicyPresentation%2Did"] = id
     }
-    return NewGroupPolicyDefinitionsItemPresentationsGroupPolicyPresentationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewGroupPolicyDefinitionsItemPresentationsGroupPolicyPresentationItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // PreviousVersionDefinition provides operations to manage the previousVersionDefinition property of the microsoft.graph.groupPolicyDefinition entity.
 func (m *GroupPolicyDefinitionsGroupPolicyDefinitionItemRequestBuilder) PreviousVersionDefinition()(*GroupPolicyDefinitionsItemPreviousVersionDefinitionRequestBuilder) {
-    return NewGroupPolicyDefinitionsItemPreviousVersionDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyDefinitionsItemPreviousVersionDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property groupPolicyDefinitions for deviceManagement
 func (m *GroupPolicyDefinitionsGroupPolicyDefinitionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *GroupPolicyDefinitionsGroupPolicyDefinitionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -185,7 +185,10 @@ func (m *GroupPolicyDefinitionsGroupPolicyDefinitionItemRequestBuilder) ToPatchR
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

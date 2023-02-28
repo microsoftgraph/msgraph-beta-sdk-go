@@ -60,8 +60,8 @@ func NewManagedTenantsManagedTenantAlertRuleDefinitionsRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedTenantsManagedTenantAlertRuleDefinitionsRequestBuilder instantiates a new ManagedTenantAlertRuleDefinitionsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewManagedTenantsManagedTenantAlertRuleDefinitionsRequestBuilder(rawUrl str
 }
 // Count provides operations to count the resources in the collection.
 func (m *ManagedTenantsManagedTenantAlertRuleDefinitionsRequestBuilder) Count()(*ManagedTenantsManagedTenantAlertRuleDefinitionsCountRequestBuilder) {
-    return NewManagedTenantsManagedTenantAlertRuleDefinitionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedTenantsManagedTenantAlertRuleDefinitionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get managedTenantAlertRuleDefinitions from tenantRelationships
 func (m *ManagedTenantsManagedTenantAlertRuleDefinitionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsManagedTenantAlertRuleDefinitionsRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagedTenantAlertRuleDefinitionCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *ManagedTenantsManagedTenantAlertRuleDefinitionsRequestBuilder) ToPostRe
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

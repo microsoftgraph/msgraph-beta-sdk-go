@@ -7,16 +7,14 @@ import (
 // EducationCsvDataProvider 
 type EducationCsvDataProvider struct {
     EducationSynchronizationDataProvider
-    // Optional customizations to be applied to the synchronization profile.
-    customizations EducationSynchronizationCustomizationsable
 }
 // NewEducationCsvDataProvider instantiates a new EducationCsvDataProvider and sets the default values.
 func NewEducationCsvDataProvider()(*EducationCsvDataProvider) {
     m := &EducationCsvDataProvider{
         EducationSynchronizationDataProvider: *NewEducationSynchronizationDataProvider(),
     }
-    odataTypeValue := "#microsoft.graph.educationCsvDataProvider";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.educationCsvDataProvider"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEducationCsvDataProviderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +23,14 @@ func CreateEducationCsvDataProviderFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetCustomizations gets the customizations property value. Optional customizations to be applied to the synchronization profile.
 func (m *EducationCsvDataProvider) GetCustomizations()(EducationSynchronizationCustomizationsable) {
-    return m.customizations
+    val, err := m.GetBackingStore().Get("customizations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EducationSynchronizationCustomizationsable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationCsvDataProvider) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -58,5 +63,15 @@ func (m *EducationCsvDataProvider) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetCustomizations sets the customizations property value. Optional customizations to be applied to the synchronization profile.
 func (m *EducationCsvDataProvider) SetCustomizations(value EducationSynchronizationCustomizationsable)() {
-    m.customizations = value
+    err := m.GetBackingStore().Set("customizations", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EducationCsvDataProviderable 
+type EducationCsvDataProviderable interface {
+    EducationSynchronizationDataProviderable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCustomizations()(EducationSynchronizationCustomizationsable)
+    SetCustomizations(value EducationSynchronizationCustomizationsable)()
 }

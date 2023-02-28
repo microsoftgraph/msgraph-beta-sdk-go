@@ -7,24 +7,6 @@ import (
 // AdvancedThreatProtectionOnboardingStateSummary 
 type AdvancedThreatProtectionOnboardingStateSummary struct {
     Entity
-    // Not yet documented
-    advancedThreatProtectionOnboardingDeviceSettingStates []AdvancedThreatProtectionOnboardingDeviceSettingStateable
-    // Number of compliant devices
-    compliantDeviceCount *int32
-    // Number of conflict devices
-    conflictDeviceCount *int32
-    // Number of error devices
-    errorDeviceCount *int32
-    // Number of NonCompliant devices
-    nonCompliantDeviceCount *int32
-    // Number of not applicable devices
-    notApplicableDeviceCount *int32
-    // Number of not assigned devices
-    notAssignedDeviceCount *int32
-    // Number of remediated devices
-    remediatedDeviceCount *int32
-    // Number of unknown devices
-    unknownDeviceCount *int32
 }
 // NewAdvancedThreatProtectionOnboardingStateSummary instantiates a new advancedThreatProtectionOnboardingStateSummary and sets the default values.
 func NewAdvancedThreatProtectionOnboardingStateSummary()(*AdvancedThreatProtectionOnboardingStateSummary) {
@@ -39,19 +21,47 @@ func CreateAdvancedThreatProtectionOnboardingStateSummaryFromDiscriminatorValue(
 }
 // GetAdvancedThreatProtectionOnboardingDeviceSettingStates gets the advancedThreatProtectionOnboardingDeviceSettingStates property value. Not yet documented
 func (m *AdvancedThreatProtectionOnboardingStateSummary) GetAdvancedThreatProtectionOnboardingDeviceSettingStates()([]AdvancedThreatProtectionOnboardingDeviceSettingStateable) {
-    return m.advancedThreatProtectionOnboardingDeviceSettingStates
+    val, err := m.GetBackingStore().Get("advancedThreatProtectionOnboardingDeviceSettingStates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AdvancedThreatProtectionOnboardingDeviceSettingStateable)
+    }
+    return nil
 }
 // GetCompliantDeviceCount gets the compliantDeviceCount property value. Number of compliant devices
 func (m *AdvancedThreatProtectionOnboardingStateSummary) GetCompliantDeviceCount()(*int32) {
-    return m.compliantDeviceCount
+    val, err := m.GetBackingStore().Get("compliantDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetConflictDeviceCount gets the conflictDeviceCount property value. Number of conflict devices
 func (m *AdvancedThreatProtectionOnboardingStateSummary) GetConflictDeviceCount()(*int32) {
-    return m.conflictDeviceCount
+    val, err := m.GetBackingStore().Get("conflictDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetErrorDeviceCount gets the errorDeviceCount property value. Number of error devices
 func (m *AdvancedThreatProtectionOnboardingStateSummary) GetErrorDeviceCount()(*int32) {
-    return m.errorDeviceCount
+    val, err := m.GetBackingStore().Get("errorDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AdvancedThreatProtectionOnboardingStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -154,23 +164,58 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) GetFieldDeserializers()
 }
 // GetNonCompliantDeviceCount gets the nonCompliantDeviceCount property value. Number of NonCompliant devices
 func (m *AdvancedThreatProtectionOnboardingStateSummary) GetNonCompliantDeviceCount()(*int32) {
-    return m.nonCompliantDeviceCount
+    val, err := m.GetBackingStore().Get("nonCompliantDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetNotApplicableDeviceCount gets the notApplicableDeviceCount property value. Number of not applicable devices
 func (m *AdvancedThreatProtectionOnboardingStateSummary) GetNotApplicableDeviceCount()(*int32) {
-    return m.notApplicableDeviceCount
+    val, err := m.GetBackingStore().Get("notApplicableDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetNotAssignedDeviceCount gets the notAssignedDeviceCount property value. Number of not assigned devices
 func (m *AdvancedThreatProtectionOnboardingStateSummary) GetNotAssignedDeviceCount()(*int32) {
-    return m.notAssignedDeviceCount
+    val, err := m.GetBackingStore().Get("notAssignedDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetRemediatedDeviceCount gets the remediatedDeviceCount property value. Number of remediated devices
 func (m *AdvancedThreatProtectionOnboardingStateSummary) GetRemediatedDeviceCount()(*int32) {
-    return m.remediatedDeviceCount
+    val, err := m.GetBackingStore().Get("remediatedDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetUnknownDeviceCount gets the unknownDeviceCount property value. Number of unknown devices
 func (m *AdvancedThreatProtectionOnboardingStateSummary) GetUnknownDeviceCount()(*int32) {
-    return m.unknownDeviceCount
+    val, err := m.GetBackingStore().Get("unknownDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AdvancedThreatProtectionOnboardingStateSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -240,37 +285,87 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) Serialize(writer i878a8
 }
 // SetAdvancedThreatProtectionOnboardingDeviceSettingStates sets the advancedThreatProtectionOnboardingDeviceSettingStates property value. Not yet documented
 func (m *AdvancedThreatProtectionOnboardingStateSummary) SetAdvancedThreatProtectionOnboardingDeviceSettingStates(value []AdvancedThreatProtectionOnboardingDeviceSettingStateable)() {
-    m.advancedThreatProtectionOnboardingDeviceSettingStates = value
+    err := m.GetBackingStore().Set("advancedThreatProtectionOnboardingDeviceSettingStates", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCompliantDeviceCount sets the compliantDeviceCount property value. Number of compliant devices
 func (m *AdvancedThreatProtectionOnboardingStateSummary) SetCompliantDeviceCount(value *int32)() {
-    m.compliantDeviceCount = value
+    err := m.GetBackingStore().Set("compliantDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConflictDeviceCount sets the conflictDeviceCount property value. Number of conflict devices
 func (m *AdvancedThreatProtectionOnboardingStateSummary) SetConflictDeviceCount(value *int32)() {
-    m.conflictDeviceCount = value
+    err := m.GetBackingStore().Set("conflictDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetErrorDeviceCount sets the errorDeviceCount property value. Number of error devices
 func (m *AdvancedThreatProtectionOnboardingStateSummary) SetErrorDeviceCount(value *int32)() {
-    m.errorDeviceCount = value
+    err := m.GetBackingStore().Set("errorDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNonCompliantDeviceCount sets the nonCompliantDeviceCount property value. Number of NonCompliant devices
 func (m *AdvancedThreatProtectionOnboardingStateSummary) SetNonCompliantDeviceCount(value *int32)() {
-    m.nonCompliantDeviceCount = value
+    err := m.GetBackingStore().Set("nonCompliantDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotApplicableDeviceCount sets the notApplicableDeviceCount property value. Number of not applicable devices
 func (m *AdvancedThreatProtectionOnboardingStateSummary) SetNotApplicableDeviceCount(value *int32)() {
-    m.notApplicableDeviceCount = value
+    err := m.GetBackingStore().Set("notApplicableDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotAssignedDeviceCount sets the notAssignedDeviceCount property value. Number of not assigned devices
 func (m *AdvancedThreatProtectionOnboardingStateSummary) SetNotAssignedDeviceCount(value *int32)() {
-    m.notAssignedDeviceCount = value
+    err := m.GetBackingStore().Set("notAssignedDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRemediatedDeviceCount sets the remediatedDeviceCount property value. Number of remediated devices
 func (m *AdvancedThreatProtectionOnboardingStateSummary) SetRemediatedDeviceCount(value *int32)() {
-    m.remediatedDeviceCount = value
+    err := m.GetBackingStore().Set("remediatedDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUnknownDeviceCount sets the unknownDeviceCount property value. Number of unknown devices
 func (m *AdvancedThreatProtectionOnboardingStateSummary) SetUnknownDeviceCount(value *int32)() {
-    m.unknownDeviceCount = value
+    err := m.GetBackingStore().Set("unknownDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AdvancedThreatProtectionOnboardingStateSummaryable 
+type AdvancedThreatProtectionOnboardingStateSummaryable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAdvancedThreatProtectionOnboardingDeviceSettingStates()([]AdvancedThreatProtectionOnboardingDeviceSettingStateable)
+    GetCompliantDeviceCount()(*int32)
+    GetConflictDeviceCount()(*int32)
+    GetErrorDeviceCount()(*int32)
+    GetNonCompliantDeviceCount()(*int32)
+    GetNotApplicableDeviceCount()(*int32)
+    GetNotAssignedDeviceCount()(*int32)
+    GetRemediatedDeviceCount()(*int32)
+    GetUnknownDeviceCount()(*int32)
+    SetAdvancedThreatProtectionOnboardingDeviceSettingStates(value []AdvancedThreatProtectionOnboardingDeviceSettingStateable)()
+    SetCompliantDeviceCount(value *int32)()
+    SetConflictDeviceCount(value *int32)()
+    SetErrorDeviceCount(value *int32)()
+    SetNonCompliantDeviceCount(value *int32)()
+    SetNotApplicableDeviceCount(value *int32)()
+    SetNotAssignedDeviceCount(value *int32)()
+    SetRemediatedDeviceCount(value *int32)()
+    SetUnknownDeviceCount(value *int32)()
 }

@@ -7,20 +7,14 @@ import (
 // ProtectGroup 
 type ProtectGroup struct {
     LabelActionBase
-    // The allowEmailFromGuestUsers property
-    allowEmailFromGuestUsers *bool
-    // The allowGuestUsers property
-    allowGuestUsers *bool
-    // The privacy property
-    privacy *GroupPrivacy
 }
 // NewProtectGroup instantiates a new ProtectGroup and sets the default values.
 func NewProtectGroup()(*ProtectGroup) {
     m := &ProtectGroup{
         LabelActionBase: *NewLabelActionBase(),
     }
-    odataTypeValue := "#microsoft.graph.protectGroup";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.protectGroup"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateProtectGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,11 +23,25 @@ func CreateProtectGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAllowEmailFromGuestUsers gets the allowEmailFromGuestUsers property value. The allowEmailFromGuestUsers property
 func (m *ProtectGroup) GetAllowEmailFromGuestUsers()(*bool) {
-    return m.allowEmailFromGuestUsers
+    val, err := m.GetBackingStore().Get("allowEmailFromGuestUsers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetAllowGuestUsers gets the allowGuestUsers property value. The allowGuestUsers property
 func (m *ProtectGroup) GetAllowGuestUsers()(*bool) {
-    return m.allowGuestUsers
+    val, err := m.GetBackingStore().Get("allowGuestUsers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ProtectGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,7 +80,14 @@ func (m *ProtectGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetPrivacy gets the privacy property value. The privacy property
 func (m *ProtectGroup) GetPrivacy()(*GroupPrivacy) {
-    return m.privacy
+    val, err := m.GetBackingStore().Get("privacy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*GroupPrivacy)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ProtectGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -103,13 +118,33 @@ func (m *ProtectGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAllowEmailFromGuestUsers sets the allowEmailFromGuestUsers property value. The allowEmailFromGuestUsers property
 func (m *ProtectGroup) SetAllowEmailFromGuestUsers(value *bool)() {
-    m.allowEmailFromGuestUsers = value
+    err := m.GetBackingStore().Set("allowEmailFromGuestUsers", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAllowGuestUsers sets the allowGuestUsers property value. The allowGuestUsers property
 func (m *ProtectGroup) SetAllowGuestUsers(value *bool)() {
-    m.allowGuestUsers = value
+    err := m.GetBackingStore().Set("allowGuestUsers", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPrivacy sets the privacy property value. The privacy property
 func (m *ProtectGroup) SetPrivacy(value *GroupPrivacy)() {
-    m.privacy = value
+    err := m.GetBackingStore().Set("privacy", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ProtectGroupable 
+type ProtectGroupable interface {
+    LabelActionBaseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllowEmailFromGuestUsers()(*bool)
+    GetAllowGuestUsers()(*bool)
+    GetPrivacy()(*GroupPrivacy)
+    SetAllowEmailFromGuestUsers(value *bool)()
+    SetAllowGuestUsers(value *bool)()
+    SetPrivacy(value *GroupPrivacy)()
 }

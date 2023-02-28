@@ -27,7 +27,7 @@ type GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilderGetRequestConfig
 func NewGetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, enrollmentType *string)(*GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder) {
     m := &GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/microsoft.graph.getSuggestedEnrollmentLimit(enrollmentType='{enrollmentType}')";
+    m.urlTemplate = "{+baseurl}/deviceManagement/getSuggestedEnrollmentLimit(enrollmentType='{enrollmentType}')";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -35,8 +35,8 @@ func NewGetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilderInternal(path
     if enrollmentType != nil {
         urlTplParams["enrollmentType"] = *enrollmentType
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder instantiates a new GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder and sets the default values.

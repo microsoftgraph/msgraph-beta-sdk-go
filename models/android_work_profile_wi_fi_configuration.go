@@ -7,24 +7,14 @@ import (
 // AndroidWorkProfileWiFiConfiguration 
 type AndroidWorkProfileWiFiConfiguration struct {
     DeviceConfiguration
-    // Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
-    connectAutomatically *bool
-    // When set to true, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices.
-    connectWhenNetworkNameIsHidden *bool
-    // Network Name
-    networkName *string
-    // This is the name of the Wi-Fi network that is broadcast to all devices.
-    ssid *string
-    // Wi-Fi Security Types for Android.
-    wiFiSecurityType *AndroidWiFiSecurityType
 }
 // NewAndroidWorkProfileWiFiConfiguration instantiates a new AndroidWorkProfileWiFiConfiguration and sets the default values.
 func NewAndroidWorkProfileWiFiConfiguration()(*AndroidWorkProfileWiFiConfiguration) {
     m := &AndroidWorkProfileWiFiConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.androidWorkProfileWiFiConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidWorkProfileWiFiConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidWorkProfileWiFiConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -51,11 +41,25 @@ func CreateAndroidWorkProfileWiFiConfigurationFromDiscriminatorValue(parseNode i
 }
 // GetConnectAutomatically gets the connectAutomatically property value. Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
 func (m *AndroidWorkProfileWiFiConfiguration) GetConnectAutomatically()(*bool) {
-    return m.connectAutomatically
+    val, err := m.GetBackingStore().Get("connectAutomatically")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetConnectWhenNetworkNameIsHidden gets the connectWhenNetworkNameIsHidden property value. When set to true, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices.
 func (m *AndroidWorkProfileWiFiConfiguration) GetConnectWhenNetworkNameIsHidden()(*bool) {
-    return m.connectWhenNetworkNameIsHidden
+    val, err := m.GetBackingStore().Get("connectWhenNetworkNameIsHidden")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidWorkProfileWiFiConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -114,15 +118,36 @@ func (m *AndroidWorkProfileWiFiConfiguration) GetFieldDeserializers()(map[string
 }
 // GetNetworkName gets the networkName property value. Network Name
 func (m *AndroidWorkProfileWiFiConfiguration) GetNetworkName()(*string) {
-    return m.networkName
+    val, err := m.GetBackingStore().Get("networkName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSsid gets the ssid property value. This is the name of the Wi-Fi network that is broadcast to all devices.
 func (m *AndroidWorkProfileWiFiConfiguration) GetSsid()(*string) {
-    return m.ssid
+    val, err := m.GetBackingStore().Get("ssid")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetWiFiSecurityType gets the wiFiSecurityType property value. Wi-Fi Security Types for Android.
 func (m *AndroidWorkProfileWiFiConfiguration) GetWiFiSecurityType()(*AndroidWiFiSecurityType) {
-    return m.wiFiSecurityType
+    val, err := m.GetBackingStore().Get("wiFiSecurityType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AndroidWiFiSecurityType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidWorkProfileWiFiConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -165,21 +190,51 @@ func (m *AndroidWorkProfileWiFiConfiguration) Serialize(writer i878a80d2330e89d2
 }
 // SetConnectAutomatically sets the connectAutomatically property value. Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
 func (m *AndroidWorkProfileWiFiConfiguration) SetConnectAutomatically(value *bool)() {
-    m.connectAutomatically = value
+    err := m.GetBackingStore().Set("connectAutomatically", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConnectWhenNetworkNameIsHidden sets the connectWhenNetworkNameIsHidden property value. When set to true, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices.
 func (m *AndroidWorkProfileWiFiConfiguration) SetConnectWhenNetworkNameIsHidden(value *bool)() {
-    m.connectWhenNetworkNameIsHidden = value
+    err := m.GetBackingStore().Set("connectWhenNetworkNameIsHidden", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNetworkName sets the networkName property value. Network Name
 func (m *AndroidWorkProfileWiFiConfiguration) SetNetworkName(value *string)() {
-    m.networkName = value
+    err := m.GetBackingStore().Set("networkName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSsid sets the ssid property value. This is the name of the Wi-Fi network that is broadcast to all devices.
 func (m *AndroidWorkProfileWiFiConfiguration) SetSsid(value *string)() {
-    m.ssid = value
+    err := m.GetBackingStore().Set("ssid", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWiFiSecurityType sets the wiFiSecurityType property value. Wi-Fi Security Types for Android.
 func (m *AndroidWorkProfileWiFiConfiguration) SetWiFiSecurityType(value *AndroidWiFiSecurityType)() {
-    m.wiFiSecurityType = value
+    err := m.GetBackingStore().Set("wiFiSecurityType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidWorkProfileWiFiConfigurationable 
+type AndroidWorkProfileWiFiConfigurationable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetConnectAutomatically()(*bool)
+    GetConnectWhenNetworkNameIsHidden()(*bool)
+    GetNetworkName()(*string)
+    GetSsid()(*string)
+    GetWiFiSecurityType()(*AndroidWiFiSecurityType)
+    SetConnectAutomatically(value *bool)()
+    SetConnectWhenNetworkNameIsHidden(value *bool)()
+    SetNetworkName(value *string)()
+    SetSsid(value *string)()
+    SetWiFiSecurityType(value *AndroidWiFiSecurityType)()
 }

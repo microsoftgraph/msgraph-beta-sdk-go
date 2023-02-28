@@ -7,16 +7,14 @@ import (
 // WindowsUniversalAppXAppAssignmentSettings 
 type WindowsUniversalAppXAppAssignmentSettings struct {
     MobileAppAssignmentSettings
-    // Whether or not to use device execution context for Windows Universal AppX mobile app.
-    useDeviceContext *bool
 }
 // NewWindowsUniversalAppXAppAssignmentSettings instantiates a new WindowsUniversalAppXAppAssignmentSettings and sets the default values.
 func NewWindowsUniversalAppXAppAssignmentSettings()(*WindowsUniversalAppXAppAssignmentSettings) {
     m := &WindowsUniversalAppXAppAssignmentSettings{
         MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),
     }
-    odataTypeValue := "#microsoft.graph.windowsUniversalAppXAppAssignmentSettings";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsUniversalAppXAppAssignmentSettings"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsUniversalAppXAppAssignmentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *WindowsUniversalAppXAppAssignmentSettings) GetFieldDeserializers()(map[
 }
 // GetUseDeviceContext gets the useDeviceContext property value. Whether or not to use device execution context for Windows Universal AppX mobile app.
 func (m *WindowsUniversalAppXAppAssignmentSettings) GetUseDeviceContext()(*bool) {
-    return m.useDeviceContext
+    val, err := m.GetBackingStore().Get("useDeviceContext")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsUniversalAppXAppAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *WindowsUniversalAppXAppAssignmentSettings) Serialize(writer i878a80d233
 }
 // SetUseDeviceContext sets the useDeviceContext property value. Whether or not to use device execution context for Windows Universal AppX mobile app.
 func (m *WindowsUniversalAppXAppAssignmentSettings) SetUseDeviceContext(value *bool)() {
-    m.useDeviceContext = value
+    err := m.GetBackingStore().Set("useDeviceContext", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsUniversalAppXAppAssignmentSettingsable 
+type WindowsUniversalAppXAppAssignmentSettingsable interface {
+    MobileAppAssignmentSettingsable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetUseDeviceContext()(*bool)
+    SetUseDeviceContext(value *bool)()
 }

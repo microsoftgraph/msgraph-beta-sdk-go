@@ -7,8 +7,6 @@ import (
 // WindowsAutopilotDeploymentProfileAssignmentCollectionResponse 
 type WindowsAutopilotDeploymentProfileAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WindowsAutopilotDeploymentProfileAssignmentable
 }
 // NewWindowsAutopilotDeploymentProfileAssignmentCollectionResponse instantiates a new WindowsAutopilotDeploymentProfileAssignmentCollectionResponse and sets the default values.
 func NewWindowsAutopilotDeploymentProfileAssignmentCollectionResponse()(*WindowsAutopilotDeploymentProfileAssignmentCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WindowsAutopilotDeploymentProfileAssignmentCollectionResponse) GetField
 }
 // GetValue gets the value property value. The value property
 func (m *WindowsAutopilotDeploymentProfileAssignmentCollectionResponse) GetValue()([]WindowsAutopilotDeploymentProfileAssignmentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsAutopilotDeploymentProfileAssignmentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsAutopilotDeploymentProfileAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WindowsAutopilotDeploymentProfileAssignmentCollectionResponse) Serializ
 }
 // SetValue sets the value property value. The value property
 func (m *WindowsAutopilotDeploymentProfileAssignmentCollectionResponse) SetValue(value []WindowsAutopilotDeploymentProfileAssignmentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsAutopilotDeploymentProfileAssignmentCollectionResponseable 
+type WindowsAutopilotDeploymentProfileAssignmentCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WindowsAutopilotDeploymentProfileAssignmentable)
+    SetValue(value []WindowsAutopilotDeploymentProfileAssignmentable)()
 }

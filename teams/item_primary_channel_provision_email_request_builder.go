@@ -27,13 +27,13 @@ type ItemPrimaryChannelProvisionEmailRequestBuilderPostRequestConfiguration stru
 func NewItemPrimaryChannelProvisionEmailRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPrimaryChannelProvisionEmailRequestBuilder) {
     m := &ItemPrimaryChannelProvisionEmailRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/teams/{team%2Did}/primaryChannel/microsoft.graph.provisionEmail";
+    m.urlTemplate = "{+baseurl}/teams/{team%2Did}/primaryChannel/provisionEmail";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemPrimaryChannelProvisionEmailRequestBuilder instantiates a new ProvisionEmailRequestBuilder and sets the default values.

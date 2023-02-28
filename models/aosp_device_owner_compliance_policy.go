@@ -7,32 +7,14 @@ import (
 // AospDeviceOwnerCompliancePolicy 
 type AospDeviceOwnerCompliancePolicy struct {
     DeviceCompliancePolicy
-    // Minimum Android security patch level.
-    minAndroidSecurityPatchLevel *string
-    // Maximum Android version.
-    osMaximumVersion *string
-    // Minimum Android version.
-    osMinimumVersion *string
-    // Minimum password length. Valid values 4 to 16
-    passwordMinimumLength *int32
-    // Minutes of inactivity before a password is required. Valid values 1 to 8640
-    passwordMinutesOfInactivityBeforeLock *int32
-    // Require a password to unlock device.
-    passwordRequired *bool
-    // Type of characters in password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
-    passwordRequiredType *AndroidDeviceOwnerRequiredPasswordType
-    // Devices must not be jailbroken or rooted.
-    securityBlockJailbrokenDevices *bool
-    // Require encryption on Android devices.
-    storageRequireEncryption *bool
 }
 // NewAospDeviceOwnerCompliancePolicy instantiates a new AospDeviceOwnerCompliancePolicy and sets the default values.
 func NewAospDeviceOwnerCompliancePolicy()(*AospDeviceOwnerCompliancePolicy) {
     m := &AospDeviceOwnerCompliancePolicy{
         DeviceCompliancePolicy: *NewDeviceCompliancePolicy(),
     }
-    odataTypeValue := "#microsoft.graph.aospDeviceOwnerCompliancePolicy";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.aospDeviceOwnerCompliancePolicy"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAospDeviceOwnerCompliancePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -136,39 +118,102 @@ func (m *AospDeviceOwnerCompliancePolicy) GetFieldDeserializers()(map[string]fun
 }
 // GetMinAndroidSecurityPatchLevel gets the minAndroidSecurityPatchLevel property value. Minimum Android security patch level.
 func (m *AospDeviceOwnerCompliancePolicy) GetMinAndroidSecurityPatchLevel()(*string) {
-    return m.minAndroidSecurityPatchLevel
+    val, err := m.GetBackingStore().Get("minAndroidSecurityPatchLevel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOsMaximumVersion gets the osMaximumVersion property value. Maximum Android version.
 func (m *AospDeviceOwnerCompliancePolicy) GetOsMaximumVersion()(*string) {
-    return m.osMaximumVersion
+    val, err := m.GetBackingStore().Get("osMaximumVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOsMinimumVersion gets the osMinimumVersion property value. Minimum Android version.
 func (m *AospDeviceOwnerCompliancePolicy) GetOsMinimumVersion()(*string) {
-    return m.osMinimumVersion
+    val, err := m.GetBackingStore().Get("osMinimumVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPasswordMinimumLength gets the passwordMinimumLength property value. Minimum password length. Valid values 4 to 16
 func (m *AospDeviceOwnerCompliancePolicy) GetPasswordMinimumLength()(*int32) {
-    return m.passwordMinimumLength
+    val, err := m.GetBackingStore().Get("passwordMinimumLength")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPasswordMinutesOfInactivityBeforeLock gets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a password is required. Valid values 1 to 8640
 func (m *AospDeviceOwnerCompliancePolicy) GetPasswordMinutesOfInactivityBeforeLock()(*int32) {
-    return m.passwordMinutesOfInactivityBeforeLock
+    val, err := m.GetBackingStore().Get("passwordMinutesOfInactivityBeforeLock")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPasswordRequired gets the passwordRequired property value. Require a password to unlock device.
 func (m *AospDeviceOwnerCompliancePolicy) GetPasswordRequired()(*bool) {
-    return m.passwordRequired
+    val, err := m.GetBackingStore().Get("passwordRequired")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPasswordRequiredType gets the passwordRequiredType property value. Type of characters in password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
 func (m *AospDeviceOwnerCompliancePolicy) GetPasswordRequiredType()(*AndroidDeviceOwnerRequiredPasswordType) {
-    return m.passwordRequiredType
+    val, err := m.GetBackingStore().Get("passwordRequiredType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AndroidDeviceOwnerRequiredPasswordType)
+    }
+    return nil
 }
 // GetSecurityBlockJailbrokenDevices gets the securityBlockJailbrokenDevices property value. Devices must not be jailbroken or rooted.
 func (m *AospDeviceOwnerCompliancePolicy) GetSecurityBlockJailbrokenDevices()(*bool) {
-    return m.securityBlockJailbrokenDevices
+    val, err := m.GetBackingStore().Get("securityBlockJailbrokenDevices")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetStorageRequireEncryption gets the storageRequireEncryption property value. Require encryption on Android devices.
 func (m *AospDeviceOwnerCompliancePolicy) GetStorageRequireEncryption()(*bool) {
-    return m.storageRequireEncryption
+    val, err := m.GetBackingStore().Get("storageRequireEncryption")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AospDeviceOwnerCompliancePolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -235,37 +280,87 @@ func (m *AospDeviceOwnerCompliancePolicy) Serialize(writer i878a80d2330e89d26896
 }
 // SetMinAndroidSecurityPatchLevel sets the minAndroidSecurityPatchLevel property value. Minimum Android security patch level.
 func (m *AospDeviceOwnerCompliancePolicy) SetMinAndroidSecurityPatchLevel(value *string)() {
-    m.minAndroidSecurityPatchLevel = value
+    err := m.GetBackingStore().Set("minAndroidSecurityPatchLevel", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOsMaximumVersion sets the osMaximumVersion property value. Maximum Android version.
 func (m *AospDeviceOwnerCompliancePolicy) SetOsMaximumVersion(value *string)() {
-    m.osMaximumVersion = value
+    err := m.GetBackingStore().Set("osMaximumVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOsMinimumVersion sets the osMinimumVersion property value. Minimum Android version.
 func (m *AospDeviceOwnerCompliancePolicy) SetOsMinimumVersion(value *string)() {
-    m.osMinimumVersion = value
+    err := m.GetBackingStore().Set("osMinimumVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordMinimumLength sets the passwordMinimumLength property value. Minimum password length. Valid values 4 to 16
 func (m *AospDeviceOwnerCompliancePolicy) SetPasswordMinimumLength(value *int32)() {
-    m.passwordMinimumLength = value
+    err := m.GetBackingStore().Set("passwordMinimumLength", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordMinutesOfInactivityBeforeLock sets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a password is required. Valid values 1 to 8640
 func (m *AospDeviceOwnerCompliancePolicy) SetPasswordMinutesOfInactivityBeforeLock(value *int32)() {
-    m.passwordMinutesOfInactivityBeforeLock = value
+    err := m.GetBackingStore().Set("passwordMinutesOfInactivityBeforeLock", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordRequired sets the passwordRequired property value. Require a password to unlock device.
 func (m *AospDeviceOwnerCompliancePolicy) SetPasswordRequired(value *bool)() {
-    m.passwordRequired = value
+    err := m.GetBackingStore().Set("passwordRequired", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordRequiredType sets the passwordRequiredType property value. Type of characters in password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
 func (m *AospDeviceOwnerCompliancePolicy) SetPasswordRequiredType(value *AndroidDeviceOwnerRequiredPasswordType)() {
-    m.passwordRequiredType = value
+    err := m.GetBackingStore().Set("passwordRequiredType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSecurityBlockJailbrokenDevices sets the securityBlockJailbrokenDevices property value. Devices must not be jailbroken or rooted.
 func (m *AospDeviceOwnerCompliancePolicy) SetSecurityBlockJailbrokenDevices(value *bool)() {
-    m.securityBlockJailbrokenDevices = value
+    err := m.GetBackingStore().Set("securityBlockJailbrokenDevices", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStorageRequireEncryption sets the storageRequireEncryption property value. Require encryption on Android devices.
 func (m *AospDeviceOwnerCompliancePolicy) SetStorageRequireEncryption(value *bool)() {
-    m.storageRequireEncryption = value
+    err := m.GetBackingStore().Set("storageRequireEncryption", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AospDeviceOwnerCompliancePolicyable 
+type AospDeviceOwnerCompliancePolicyable interface {
+    DeviceCompliancePolicyable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetMinAndroidSecurityPatchLevel()(*string)
+    GetOsMaximumVersion()(*string)
+    GetOsMinimumVersion()(*string)
+    GetPasswordMinimumLength()(*int32)
+    GetPasswordMinutesOfInactivityBeforeLock()(*int32)
+    GetPasswordRequired()(*bool)
+    GetPasswordRequiredType()(*AndroidDeviceOwnerRequiredPasswordType)
+    GetSecurityBlockJailbrokenDevices()(*bool)
+    GetStorageRequireEncryption()(*bool)
+    SetMinAndroidSecurityPatchLevel(value *string)()
+    SetOsMaximumVersion(value *string)()
+    SetOsMinimumVersion(value *string)()
+    SetPasswordMinimumLength(value *int32)()
+    SetPasswordMinutesOfInactivityBeforeLock(value *int32)()
+    SetPasswordRequired(value *bool)()
+    SetPasswordRequiredType(value *AndroidDeviceOwnerRequiredPasswordType)()
+    SetSecurityBlockJailbrokenDevices(value *bool)()
+    SetStorageRequireEncryption(value *bool)()
 }

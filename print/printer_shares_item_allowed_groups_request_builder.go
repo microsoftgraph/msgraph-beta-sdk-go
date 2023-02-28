@@ -53,8 +53,8 @@ func NewPrinterSharesItemAllowedGroupsRequestBuilderInternal(pathParameters map[
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPrinterSharesItemAllowedGroupsRequestBuilder instantiates a new AllowedGroupsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewPrinterSharesItemAllowedGroupsRequestBuilder(rawUrl string, requestAdapt
 }
 // Count provides operations to count the resources in the collection.
 func (m *PrinterSharesItemAllowedGroupsRequestBuilder) Count()(*PrinterSharesItemAllowedGroupsCountRequestBuilder) {
-    return NewPrinterSharesItemAllowedGroupsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPrinterSharesItemAllowedGroupsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
 // [Find more info here]
@@ -91,7 +91,7 @@ func (m *PrinterSharesItemAllowedGroupsRequestBuilder) Get(ctx context.Context, 
 }
 // Ref provides operations to manage the collection of print entities.
 func (m *PrinterSharesItemAllowedGroupsRequestBuilder) Ref()(*PrinterSharesItemAllowedGroupsRefRequestBuilder) {
-    return NewPrinterSharesItemAllowedGroupsRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPrinterSharesItemAllowedGroupsRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
 func (m *PrinterSharesItemAllowedGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrinterSharesItemAllowedGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

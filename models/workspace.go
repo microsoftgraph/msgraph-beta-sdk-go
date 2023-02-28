@@ -7,32 +7,14 @@ import (
 // Workspace 
 type Workspace struct {
     Place
-    // Specifies the building name or building number that the workspace is in.
-    building *string
-    // Specifies the capacity of the workspace.
-    capacity *int32
-    // Email address of the workspace.
-    emailAddress *string
-    // Specifies a descriptive label for the floor, for example, P.
-    floorLabel *string
-    // Specifies the floor number that the workspace is on.
-    floorNumber *int32
-    // Specifies whether the workspace is wheelchair accessible.
-    isWheelChairAccessible *bool
-    // Specifies a descriptive label for the workspace, for example, a number or name.
-    label *string
-    // Specifies a nickname for the workspace, for example, 'quiet workspace'.
-    nickname *string
-    // Specifies additional features of the workspace, for example, details like the type of view or furniture type.
-    tags []string
 }
 // NewWorkspace instantiates a new workspace and sets the default values.
 func NewWorkspace()(*Workspace) {
     m := &Workspace{
         Place: *NewPlace(),
     }
-    odataTypeValue := "#microsoft.graph.workspace";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.workspace"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWorkspaceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,15 +23,36 @@ func CreateWorkspaceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetBuilding gets the building property value. Specifies the building name or building number that the workspace is in.
 func (m *Workspace) GetBuilding()(*string) {
-    return m.building
+    val, err := m.GetBackingStore().Get("building")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCapacity gets the capacity property value. Specifies the capacity of the workspace.
 func (m *Workspace) GetCapacity()(*int32) {
-    return m.capacity
+    val, err := m.GetBackingStore().Get("capacity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetEmailAddress gets the emailAddress property value. Email address of the workspace.
 func (m *Workspace) GetEmailAddress()(*string) {
-    return m.emailAddress
+    val, err := m.GetBackingStore().Get("emailAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Workspace) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -152,27 +155,69 @@ func (m *Workspace) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetFloorLabel gets the floorLabel property value. Specifies a descriptive label for the floor, for example, P.
 func (m *Workspace) GetFloorLabel()(*string) {
-    return m.floorLabel
+    val, err := m.GetBackingStore().Get("floorLabel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFloorNumber gets the floorNumber property value. Specifies the floor number that the workspace is on.
 func (m *Workspace) GetFloorNumber()(*int32) {
-    return m.floorNumber
+    val, err := m.GetBackingStore().Get("floorNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetIsWheelChairAccessible gets the isWheelChairAccessible property value. Specifies whether the workspace is wheelchair accessible.
 func (m *Workspace) GetIsWheelChairAccessible()(*bool) {
-    return m.isWheelChairAccessible
+    val, err := m.GetBackingStore().Get("isWheelChairAccessible")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLabel gets the label property value. Specifies a descriptive label for the workspace, for example, a number or name.
 func (m *Workspace) GetLabel()(*string) {
-    return m.label
+    val, err := m.GetBackingStore().Get("label")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetNickname gets the nickname property value. Specifies a nickname for the workspace, for example, 'quiet workspace'.
 func (m *Workspace) GetNickname()(*string) {
-    return m.nickname
+    val, err := m.GetBackingStore().Get("nickname")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTags gets the tags property value. Specifies additional features of the workspace, for example, details like the type of view or furniture type.
 func (m *Workspace) GetTags()([]string) {
-    return m.tags
+    val, err := m.GetBackingStore().Get("tags")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Workspace) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -238,37 +283,87 @@ func (m *Workspace) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetBuilding sets the building property value. Specifies the building name or building number that the workspace is in.
 func (m *Workspace) SetBuilding(value *string)() {
-    m.building = value
+    err := m.GetBackingStore().Set("building", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCapacity sets the capacity property value. Specifies the capacity of the workspace.
 func (m *Workspace) SetCapacity(value *int32)() {
-    m.capacity = value
+    err := m.GetBackingStore().Set("capacity", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEmailAddress sets the emailAddress property value. Email address of the workspace.
 func (m *Workspace) SetEmailAddress(value *string)() {
-    m.emailAddress = value
+    err := m.GetBackingStore().Set("emailAddress", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFloorLabel sets the floorLabel property value. Specifies a descriptive label for the floor, for example, P.
 func (m *Workspace) SetFloorLabel(value *string)() {
-    m.floorLabel = value
+    err := m.GetBackingStore().Set("floorLabel", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFloorNumber sets the floorNumber property value. Specifies the floor number that the workspace is on.
 func (m *Workspace) SetFloorNumber(value *int32)() {
-    m.floorNumber = value
+    err := m.GetBackingStore().Set("floorNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsWheelChairAccessible sets the isWheelChairAccessible property value. Specifies whether the workspace is wheelchair accessible.
 func (m *Workspace) SetIsWheelChairAccessible(value *bool)() {
-    m.isWheelChairAccessible = value
+    err := m.GetBackingStore().Set("isWheelChairAccessible", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLabel sets the label property value. Specifies a descriptive label for the workspace, for example, a number or name.
 func (m *Workspace) SetLabel(value *string)() {
-    m.label = value
+    err := m.GetBackingStore().Set("label", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNickname sets the nickname property value. Specifies a nickname for the workspace, for example, 'quiet workspace'.
 func (m *Workspace) SetNickname(value *string)() {
-    m.nickname = value
+    err := m.GetBackingStore().Set("nickname", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTags sets the tags property value. Specifies additional features of the workspace, for example, details like the type of view or furniture type.
 func (m *Workspace) SetTags(value []string)() {
-    m.tags = value
+    err := m.GetBackingStore().Set("tags", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Workspaceable 
+type Workspaceable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    Placeable
+    GetBuilding()(*string)
+    GetCapacity()(*int32)
+    GetEmailAddress()(*string)
+    GetFloorLabel()(*string)
+    GetFloorNumber()(*int32)
+    GetIsWheelChairAccessible()(*bool)
+    GetLabel()(*string)
+    GetNickname()(*string)
+    GetTags()([]string)
+    SetBuilding(value *string)()
+    SetCapacity(value *int32)()
+    SetEmailAddress(value *string)()
+    SetFloorLabel(value *string)()
+    SetFloorNumber(value *int32)()
+    SetIsWheelChairAccessible(value *bool)()
+    SetLabel(value *string)()
+    SetNickname(value *string)()
+    SetTags(value []string)()
 }

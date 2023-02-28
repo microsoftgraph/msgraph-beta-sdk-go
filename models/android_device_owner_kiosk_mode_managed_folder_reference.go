@@ -7,18 +7,14 @@ import (
 // AndroidDeviceOwnerKioskModeManagedFolderReference 
 type AndroidDeviceOwnerKioskModeManagedFolderReference struct {
     AndroidDeviceOwnerKioskModeHomeScreenItem
-    // Unique identifier for the folder
-    folderIdentifier *string
-    // Name of the folder
-    folderName *string
 }
 // NewAndroidDeviceOwnerKioskModeManagedFolderReference instantiates a new AndroidDeviceOwnerKioskModeManagedFolderReference and sets the default values.
 func NewAndroidDeviceOwnerKioskModeManagedFolderReference()(*AndroidDeviceOwnerKioskModeManagedFolderReference) {
     m := &AndroidDeviceOwnerKioskModeManagedFolderReference{
         AndroidDeviceOwnerKioskModeHomeScreenItem: *NewAndroidDeviceOwnerKioskModeHomeScreenItem(),
     }
-    odataTypeValue := "#microsoft.graph.androidDeviceOwnerKioskModeManagedFolderReference";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidDeviceOwnerKioskModeManagedFolderReference"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidDeviceOwnerKioskModeManagedFolderReferenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -52,11 +48,25 @@ func (m *AndroidDeviceOwnerKioskModeManagedFolderReference) GetFieldDeserializer
 }
 // GetFolderIdentifier gets the folderIdentifier property value. Unique identifier for the folder
 func (m *AndroidDeviceOwnerKioskModeManagedFolderReference) GetFolderIdentifier()(*string) {
-    return m.folderIdentifier
+    val, err := m.GetBackingStore().Get("folderIdentifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFolderName gets the folderName property value. Name of the folder
 func (m *AndroidDeviceOwnerKioskModeManagedFolderReference) GetFolderName()(*string) {
-    return m.folderName
+    val, err := m.GetBackingStore().Get("folderName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerKioskModeManagedFolderReference) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *AndroidDeviceOwnerKioskModeManagedFolderReference) Serialize(writer i87
 }
 // SetFolderIdentifier sets the folderIdentifier property value. Unique identifier for the folder
 func (m *AndroidDeviceOwnerKioskModeManagedFolderReference) SetFolderIdentifier(value *string)() {
-    m.folderIdentifier = value
+    err := m.GetBackingStore().Set("folderIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFolderName sets the folderName property value. Name of the folder
 func (m *AndroidDeviceOwnerKioskModeManagedFolderReference) SetFolderName(value *string)() {
-    m.folderName = value
+    err := m.GetBackingStore().Set("folderName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidDeviceOwnerKioskModeManagedFolderReferenceable 
+type AndroidDeviceOwnerKioskModeManagedFolderReferenceable interface {
+    AndroidDeviceOwnerKioskModeHomeScreenItemable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetFolderIdentifier()(*string)
+    GetFolderName()(*string)
+    SetFolderIdentifier(value *string)()
+    SetFolderName(value *string)()
 }

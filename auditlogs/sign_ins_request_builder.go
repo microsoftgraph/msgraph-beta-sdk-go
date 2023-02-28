@@ -53,11 +53,11 @@ type SignInsRequestBuilderPostRequestConfiguration struct {
 }
 // ConfirmCompromised provides operations to call the confirmCompromised method.
 func (m *SignInsRequestBuilder) ConfirmCompromised()(*SignInsConfirmCompromisedRequestBuilder) {
-    return NewSignInsConfirmCompromisedRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSignInsConfirmCompromisedRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ConfirmSafe provides operations to call the confirmSafe method.
 func (m *SignInsRequestBuilder) ConfirmSafe()(*SignInsConfirmSafeRequestBuilder) {
-    return NewSignInsConfirmSafeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSignInsConfirmSafeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewSignInsRequestBuilderInternal instantiates a new SignInsRequestBuilder and sets the default values.
 func NewSignInsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SignInsRequestBuilder) {
@@ -68,8 +68,8 @@ func NewSignInsRequestBuilderInternal(pathParameters map[string]string, requestA
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewSignInsRequestBuilder instantiates a new SignInsRequestBuilder and sets the default values.
@@ -80,7 +80,7 @@ func NewSignInsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 }
 // Count provides operations to count the resources in the collection.
 func (m *SignInsRequestBuilder) Count()(*SignInsCountRequestBuilder) {
-    return NewSignInsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSignInsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of signIn objects. The list contains the user sign-ins for your Azure Active Directory tenant. Sign-ins where a username and password are passed as part of authorization token, and successful federated sign-ins are currently included in the sign-in logs. The maximum and default page size is 1,000 objects and by default, the most recent sign-ins are returned first. Only sign-in events that occurred within the Azure Active Directory (Azure AD) default retention period are available.
 // [Find more info here]
@@ -146,7 +146,10 @@ func (m *SignInsRequestBuilder) ToPostRequestInformation(ctx context.Context, bo
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

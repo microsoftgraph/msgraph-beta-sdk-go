@@ -7,20 +7,14 @@ import (
 // OperationalInsightsConnection 
 type OperationalInsightsConnection struct {
     ResourceConnection
-    // The name of the Azure resource group that contains the Log Analytics workspace.
-    azureResourceGroupName *string
-    // The Azure subscription ID that contains the Log Analytics workspace.
-    azureSubscriptionId *string
-    // The name of the Log Analytics workspace.
-    workspaceName *string
 }
 // NewOperationalInsightsConnection instantiates a new OperationalInsightsConnection and sets the default values.
 func NewOperationalInsightsConnection()(*OperationalInsightsConnection) {
     m := &OperationalInsightsConnection{
         ResourceConnection: *NewResourceConnection(),
     }
-    odataTypeValue := "#microsoft.graph.windowsUpdates.operationalInsightsConnection";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsUpdates.operationalInsightsConnection"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateOperationalInsightsConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,11 +23,25 @@ func CreateOperationalInsightsConnectionFromDiscriminatorValue(parseNode i878a80
 }
 // GetAzureResourceGroupName gets the azureResourceGroupName property value. The name of the Azure resource group that contains the Log Analytics workspace.
 func (m *OperationalInsightsConnection) GetAzureResourceGroupName()(*string) {
-    return m.azureResourceGroupName
+    val, err := m.GetBackingStore().Get("azureResourceGroupName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAzureSubscriptionId gets the azureSubscriptionId property value. The Azure subscription ID that contains the Log Analytics workspace.
 func (m *OperationalInsightsConnection) GetAzureSubscriptionId()(*string) {
-    return m.azureSubscriptionId
+    val, err := m.GetBackingStore().Get("azureSubscriptionId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OperationalInsightsConnection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,7 +80,14 @@ func (m *OperationalInsightsConnection) GetFieldDeserializers()(map[string]func(
 }
 // GetWorkspaceName gets the workspaceName property value. The name of the Log Analytics workspace.
 func (m *OperationalInsightsConnection) GetWorkspaceName()(*string) {
-    return m.workspaceName
+    val, err := m.GetBackingStore().Get("workspaceName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OperationalInsightsConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -102,13 +117,33 @@ func (m *OperationalInsightsConnection) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAzureResourceGroupName sets the azureResourceGroupName property value. The name of the Azure resource group that contains the Log Analytics workspace.
 func (m *OperationalInsightsConnection) SetAzureResourceGroupName(value *string)() {
-    m.azureResourceGroupName = value
+    err := m.GetBackingStore().Set("azureResourceGroupName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAzureSubscriptionId sets the azureSubscriptionId property value. The Azure subscription ID that contains the Log Analytics workspace.
 func (m *OperationalInsightsConnection) SetAzureSubscriptionId(value *string)() {
-    m.azureSubscriptionId = value
+    err := m.GetBackingStore().Set("azureSubscriptionId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkspaceName sets the workspaceName property value. The name of the Log Analytics workspace.
 func (m *OperationalInsightsConnection) SetWorkspaceName(value *string)() {
-    m.workspaceName = value
+    err := m.GetBackingStore().Set("workspaceName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OperationalInsightsConnectionable 
+type OperationalInsightsConnectionable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    ResourceConnectionable
+    GetAzureResourceGroupName()(*string)
+    GetAzureSubscriptionId()(*string)
+    GetWorkspaceName()(*string)
+    SetAzureResourceGroupName(value *string)()
+    SetAzureSubscriptionId(value *string)()
+    SetWorkspaceName(value *string)()
 }

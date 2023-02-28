@@ -2,26 +2,20 @@ package privilegedapproval
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ItemRoleInfoSelfActivatePostRequestBody 
 type ItemRoleInfoSelfActivatePostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The duration property
-    duration *string
-    // The reason property
-    reason *string
-    // The ticketNumber property
-    ticketNumber *string
-    // The ticketSystem property
-    ticketSystem *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewItemRoleInfoSelfActivatePostRequestBody instantiates a new ItemRoleInfoSelfActivatePostRequestBody and sets the default values.
 func NewItemRoleInfoSelfActivatePostRequestBody()(*ItemRoleInfoSelfActivatePostRequestBody) {
     m := &ItemRoleInfoSelfActivatePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateItemRoleInfoSelfActivatePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,11 +24,30 @@ func CreateItemRoleInfoSelfActivatePostRequestBodyFromDiscriminatorValue(parseNo
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemRoleInfoSelfActivatePostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ItemRoleInfoSelfActivatePostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDuration gets the duration property value. The duration property
 func (m *ItemRoleInfoSelfActivatePostRequestBody) GetDuration()(*string) {
-    return m.duration
+    val, err := m.GetBackingStore().Get("duration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemRoleInfoSelfActivatePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -83,15 +96,36 @@ func (m *ItemRoleInfoSelfActivatePostRequestBody) GetFieldDeserializers()(map[st
 }
 // GetReason gets the reason property value. The reason property
 func (m *ItemRoleInfoSelfActivatePostRequestBody) GetReason()(*string) {
-    return m.reason
+    val, err := m.GetBackingStore().Get("reason")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTicketNumber gets the ticketNumber property value. The ticketNumber property
 func (m *ItemRoleInfoSelfActivatePostRequestBody) GetTicketNumber()(*string) {
-    return m.ticketNumber
+    val, err := m.GetBackingStore().Get("ticketNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTicketSystem gets the ticketSystem property value. The ticketSystem property
 func (m *ItemRoleInfoSelfActivatePostRequestBody) GetTicketSystem()(*string) {
-    return m.ticketSystem
+    val, err := m.GetBackingStore().Get("ticketSystem")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemRoleInfoSelfActivatePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -129,21 +163,56 @@ func (m *ItemRoleInfoSelfActivatePostRequestBody) Serialize(writer i878a80d2330e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemRoleInfoSelfActivatePostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ItemRoleInfoSelfActivatePostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDuration sets the duration property value. The duration property
 func (m *ItemRoleInfoSelfActivatePostRequestBody) SetDuration(value *string)() {
-    m.duration = value
+    err := m.GetBackingStore().Set("duration", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReason sets the reason property value. The reason property
 func (m *ItemRoleInfoSelfActivatePostRequestBody) SetReason(value *string)() {
-    m.reason = value
+    err := m.GetBackingStore().Set("reason", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTicketNumber sets the ticketNumber property value. The ticketNumber property
 func (m *ItemRoleInfoSelfActivatePostRequestBody) SetTicketNumber(value *string)() {
-    m.ticketNumber = value
+    err := m.GetBackingStore().Set("ticketNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTicketSystem sets the ticketSystem property value. The ticketSystem property
 func (m *ItemRoleInfoSelfActivatePostRequestBody) SetTicketSystem(value *string)() {
-    m.ticketSystem = value
+    err := m.GetBackingStore().Set("ticketSystem", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemRoleInfoSelfActivatePostRequestBodyable 
+type ItemRoleInfoSelfActivatePostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDuration()(*string)
+    GetReason()(*string)
+    GetTicketNumber()(*string)
+    GetTicketSystem()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDuration(value *string)()
+    SetReason(value *string)()
+    SetTicketNumber(value *string)()
+    SetTicketSystem(value *string)()
 }

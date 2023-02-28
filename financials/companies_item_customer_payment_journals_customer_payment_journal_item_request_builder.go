@@ -48,7 +48,7 @@ type CompaniesItemCustomerPaymentJournalsCustomerPaymentJournalItemRequestBuilde
 }
 // Account provides operations to manage the account property of the microsoft.graph.customerPaymentJournal entity.
 func (m *CompaniesItemCustomerPaymentJournalsCustomerPaymentJournalItemRequestBuilder) Account()(*CompaniesItemCustomerPaymentJournalsItemAccountRequestBuilder) {
-    return NewCompaniesItemCustomerPaymentJournalsItemAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemCustomerPaymentJournalsItemAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewCompaniesItemCustomerPaymentJournalsCustomerPaymentJournalItemRequestBuilderInternal instantiates a new CustomerPaymentJournalItemRequestBuilder and sets the default values.
 func NewCompaniesItemCustomerPaymentJournalsCustomerPaymentJournalItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemCustomerPaymentJournalsCustomerPaymentJournalItemRequestBuilder) {
@@ -59,8 +59,8 @@ func NewCompaniesItemCustomerPaymentJournalsCustomerPaymentJournalItemRequestBui
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemCustomerPaymentJournalsCustomerPaymentJournalItemRequestBuilder instantiates a new CustomerPaymentJournalItemRequestBuilder and sets the default values.
@@ -71,7 +71,7 @@ func NewCompaniesItemCustomerPaymentJournalsCustomerPaymentJournalItemRequestBui
 }
 // CustomerPayments provides operations to manage the customerPayments property of the microsoft.graph.customerPaymentJournal entity.
 func (m *CompaniesItemCustomerPaymentJournalsCustomerPaymentJournalItemRequestBuilder) CustomerPayments()(*CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilder) {
-    return NewCompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CustomerPaymentsById provides operations to manage the customerPayments property of the microsoft.graph.customerPaymentJournal entity.
 func (m *CompaniesItemCustomerPaymentJournalsCustomerPaymentJournalItemRequestBuilder) CustomerPaymentsById(id string)(*CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsCustomerPaymentItemRequestBuilder) {
@@ -82,7 +82,7 @@ func (m *CompaniesItemCustomerPaymentJournalsCustomerPaymentJournalItemRequestBu
     if id != "" {
         urlTplParams["customerPayment%2Did"] = id
     }
-    return NewCompaniesItemCustomerPaymentJournalsItemCustomerPaymentsCustomerPaymentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemCustomerPaymentJournalsItemCustomerPaymentsCustomerPaymentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Delete delete navigation property customerPaymentJournals for financials
 func (m *CompaniesItemCustomerPaymentJournalsCustomerPaymentJournalItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CompaniesItemCustomerPaymentJournalsCustomerPaymentJournalItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -173,7 +173,10 @@ func (m *CompaniesItemCustomerPaymentJournalsCustomerPaymentJournalItemRequestBu
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

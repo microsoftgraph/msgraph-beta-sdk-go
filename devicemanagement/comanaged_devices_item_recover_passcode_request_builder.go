@@ -26,13 +26,13 @@ type ComanagedDevicesItemRecoverPasscodeRequestBuilderPostRequestConfiguration s
 func NewComanagedDevicesItemRecoverPasscodeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ComanagedDevicesItemRecoverPasscodeRequestBuilder) {
     m := &ComanagedDevicesItemRecoverPasscodeRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/microsoft.graph.recoverPasscode";
+    m.urlTemplate = "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/recoverPasscode";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewComanagedDevicesItemRecoverPasscodeRequestBuilder instantiates a new RecoverPasscodeRequestBuilder and sets the default values.

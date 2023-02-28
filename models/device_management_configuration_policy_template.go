@@ -7,30 +7,6 @@ import (
 // DeviceManagementConfigurationPolicyTemplate device Management Configuration Policy Template
 type DeviceManagementConfigurationPolicyTemplate struct {
     Entity
-    // Allow unmanaged setting templates
-    allowUnmanagedSettings *bool
-    // Template base identifier
-    baseId *string
-    // Template description
-    description *string
-    // Template display name
-    displayName *string
-    // Description of template version
-    displayVersion *string
-    // Describes current lifecycle state of a template
-    lifecycleState *DeviceManagementTemplateLifecycleState
-    // Supported platform types.
-    platforms *DeviceManagementConfigurationPlatforms
-    // Number of setting templates. Valid values 0 to 2147483647. This property is read-only.
-    settingTemplateCount *int32
-    // Setting templates
-    settingTemplates []DeviceManagementConfigurationSettingTemplateable
-    // Describes which technology this setting can be deployed with
-    technologies *DeviceManagementConfigurationTechnologies
-    // Describes the TemplateFamily for the Template entity
-    templateFamily *DeviceManagementConfigurationTemplateFamily
-    // Template version. Valid values 1 to 2147483647. This property is read-only.
-    version *int32
 }
 // NewDeviceManagementConfigurationPolicyTemplate instantiates a new deviceManagementConfigurationPolicyTemplate and sets the default values.
 func NewDeviceManagementConfigurationPolicyTemplate()(*DeviceManagementConfigurationPolicyTemplate) {
@@ -45,23 +21,58 @@ func CreateDeviceManagementConfigurationPolicyTemplateFromDiscriminatorValue(par
 }
 // GetAllowUnmanagedSettings gets the allowUnmanagedSettings property value. Allow unmanaged setting templates
 func (m *DeviceManagementConfigurationPolicyTemplate) GetAllowUnmanagedSettings()(*bool) {
-    return m.allowUnmanagedSettings
+    val, err := m.GetBackingStore().Get("allowUnmanagedSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetBaseId gets the baseId property value. Template base identifier
 func (m *DeviceManagementConfigurationPolicyTemplate) GetBaseId()(*string) {
-    return m.baseId
+    val, err := m.GetBackingStore().Get("baseId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDescription gets the description property value. Template description
 func (m *DeviceManagementConfigurationPolicyTemplate) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. Template display name
 func (m *DeviceManagementConfigurationPolicyTemplate) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayVersion gets the displayVersion property value. Description of template version
 func (m *DeviceManagementConfigurationPolicyTemplate) GetDisplayVersion()(*string) {
-    return m.displayVersion
+    val, err := m.GetBackingStore().Get("displayVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationPolicyTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -194,31 +205,80 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetFieldDeserializers()(ma
 }
 // GetLifecycleState gets the lifecycleState property value. Describes current lifecycle state of a template
 func (m *DeviceManagementConfigurationPolicyTemplate) GetLifecycleState()(*DeviceManagementTemplateLifecycleState) {
-    return m.lifecycleState
+    val, err := m.GetBackingStore().Get("lifecycleState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceManagementTemplateLifecycleState)
+    }
+    return nil
 }
 // GetPlatforms gets the platforms property value. Supported platform types.
 func (m *DeviceManagementConfigurationPolicyTemplate) GetPlatforms()(*DeviceManagementConfigurationPlatforms) {
-    return m.platforms
+    val, err := m.GetBackingStore().Get("platforms")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceManagementConfigurationPlatforms)
+    }
+    return nil
 }
 // GetSettingTemplateCount gets the settingTemplateCount property value. Number of setting templates. Valid values 0 to 2147483647. This property is read-only.
 func (m *DeviceManagementConfigurationPolicyTemplate) GetSettingTemplateCount()(*int32) {
-    return m.settingTemplateCount
+    val, err := m.GetBackingStore().Get("settingTemplateCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetSettingTemplates gets the settingTemplates property value. Setting templates
 func (m *DeviceManagementConfigurationPolicyTemplate) GetSettingTemplates()([]DeviceManagementConfigurationSettingTemplateable) {
-    return m.settingTemplates
+    val, err := m.GetBackingStore().Get("settingTemplates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementConfigurationSettingTemplateable)
+    }
+    return nil
 }
 // GetTechnologies gets the technologies property value. Describes which technology this setting can be deployed with
 func (m *DeviceManagementConfigurationPolicyTemplate) GetTechnologies()(*DeviceManagementConfigurationTechnologies) {
-    return m.technologies
+    val, err := m.GetBackingStore().Get("technologies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceManagementConfigurationTechnologies)
+    }
+    return nil
 }
 // GetTemplateFamily gets the templateFamily property value. Describes the TemplateFamily for the Template entity
 func (m *DeviceManagementConfigurationPolicyTemplate) GetTemplateFamily()(*DeviceManagementConfigurationTemplateFamily) {
-    return m.templateFamily
+    val, err := m.GetBackingStore().Get("templateFamily")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceManagementConfigurationTemplateFamily)
+    }
+    return nil
 }
 // GetVersion gets the version property value. Template version. Valid values 1 to 2147483647. This property is read-only.
 func (m *DeviceManagementConfigurationPolicyTemplate) GetVersion()(*int32) {
-    return m.version
+    val, err := m.GetBackingStore().Get("version")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationPolicyTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -298,49 +358,114 @@ func (m *DeviceManagementConfigurationPolicyTemplate) Serialize(writer i878a80d2
 }
 // SetAllowUnmanagedSettings sets the allowUnmanagedSettings property value. Allow unmanaged setting templates
 func (m *DeviceManagementConfigurationPolicyTemplate) SetAllowUnmanagedSettings(value *bool)() {
-    m.allowUnmanagedSettings = value
+    err := m.GetBackingStore().Set("allowUnmanagedSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBaseId sets the baseId property value. Template base identifier
 func (m *DeviceManagementConfigurationPolicyTemplate) SetBaseId(value *string)() {
-    m.baseId = value
+    err := m.GetBackingStore().Set("baseId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. Template description
 func (m *DeviceManagementConfigurationPolicyTemplate) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. Template display name
 func (m *DeviceManagementConfigurationPolicyTemplate) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayVersion sets the displayVersion property value. Description of template version
 func (m *DeviceManagementConfigurationPolicyTemplate) SetDisplayVersion(value *string)() {
-    m.displayVersion = value
+    err := m.GetBackingStore().Set("displayVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLifecycleState sets the lifecycleState property value. Describes current lifecycle state of a template
 func (m *DeviceManagementConfigurationPolicyTemplate) SetLifecycleState(value *DeviceManagementTemplateLifecycleState)() {
-    m.lifecycleState = value
+    err := m.GetBackingStore().Set("lifecycleState", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPlatforms sets the platforms property value. Supported platform types.
 func (m *DeviceManagementConfigurationPolicyTemplate) SetPlatforms(value *DeviceManagementConfigurationPlatforms)() {
-    m.platforms = value
+    err := m.GetBackingStore().Set("platforms", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingTemplateCount sets the settingTemplateCount property value. Number of setting templates. Valid values 0 to 2147483647. This property is read-only.
 func (m *DeviceManagementConfigurationPolicyTemplate) SetSettingTemplateCount(value *int32)() {
-    m.settingTemplateCount = value
+    err := m.GetBackingStore().Set("settingTemplateCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingTemplates sets the settingTemplates property value. Setting templates
 func (m *DeviceManagementConfigurationPolicyTemplate) SetSettingTemplates(value []DeviceManagementConfigurationSettingTemplateable)() {
-    m.settingTemplates = value
+    err := m.GetBackingStore().Set("settingTemplates", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTechnologies sets the technologies property value. Describes which technology this setting can be deployed with
 func (m *DeviceManagementConfigurationPolicyTemplate) SetTechnologies(value *DeviceManagementConfigurationTechnologies)() {
-    m.technologies = value
+    err := m.GetBackingStore().Set("technologies", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTemplateFamily sets the templateFamily property value. Describes the TemplateFamily for the Template entity
 func (m *DeviceManagementConfigurationPolicyTemplate) SetTemplateFamily(value *DeviceManagementConfigurationTemplateFamily)() {
-    m.templateFamily = value
+    err := m.GetBackingStore().Set("templateFamily", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVersion sets the version property value. Template version. Valid values 1 to 2147483647. This property is read-only.
 func (m *DeviceManagementConfigurationPolicyTemplate) SetVersion(value *int32)() {
-    m.version = value
+    err := m.GetBackingStore().Set("version", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationPolicyTemplateable 
+type DeviceManagementConfigurationPolicyTemplateable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllowUnmanagedSettings()(*bool)
+    GetBaseId()(*string)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetDisplayVersion()(*string)
+    GetLifecycleState()(*DeviceManagementTemplateLifecycleState)
+    GetPlatforms()(*DeviceManagementConfigurationPlatforms)
+    GetSettingTemplateCount()(*int32)
+    GetSettingTemplates()([]DeviceManagementConfigurationSettingTemplateable)
+    GetTechnologies()(*DeviceManagementConfigurationTechnologies)
+    GetTemplateFamily()(*DeviceManagementConfigurationTemplateFamily)
+    GetVersion()(*int32)
+    SetAllowUnmanagedSettings(value *bool)()
+    SetBaseId(value *string)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetDisplayVersion(value *string)()
+    SetLifecycleState(value *DeviceManagementTemplateLifecycleState)()
+    SetPlatforms(value *DeviceManagementConfigurationPlatforms)()
+    SetSettingTemplateCount(value *int32)()
+    SetSettingTemplates(value []DeviceManagementConfigurationSettingTemplateable)()
+    SetTechnologies(value *DeviceManagementConfigurationTechnologies)()
+    SetTemplateFamily(value *DeviceManagementConfigurationTemplateFamily)()
+    SetVersion(value *int32)()
 }

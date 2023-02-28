@@ -7,8 +7,6 @@ import (
 // DeviceManagementComplianceActionItemCollectionResponse 
 type DeviceManagementComplianceActionItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementComplianceActionItemable
 }
 // NewDeviceManagementComplianceActionItemCollectionResponse instantiates a new DeviceManagementComplianceActionItemCollectionResponse and sets the default values.
 func NewDeviceManagementComplianceActionItemCollectionResponse()(*DeviceManagementComplianceActionItemCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementComplianceActionItemCollectionResponse) GetFieldDeseria
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementComplianceActionItemCollectionResponse) GetValue()([]DeviceManagementComplianceActionItemable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementComplianceActionItemable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementComplianceActionItemCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementComplianceActionItemCollectionResponse) Serialize(write
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementComplianceActionItemCollectionResponse) SetValue(value []DeviceManagementComplianceActionItemable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementComplianceActionItemCollectionResponseable 
+type DeviceManagementComplianceActionItemCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementComplianceActionItemable)
+    SetValue(value []DeviceManagementComplianceActionItemable)()
 }

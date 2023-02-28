@@ -7,34 +7,14 @@ import (
 // AndroidForWorkVpnConfiguration 
 type AndroidForWorkVpnConfiguration struct {
     DeviceConfiguration
-    // VPN Authentication Method.
-    authenticationMethod *VpnAuthenticationMethod
-    // Connection name displayed to the user.
-    connectionName *string
-    // Android For Work VPN connection type.
-    connectionType *AndroidForWorkVpnConnectionType
-    // Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.
-    customData []KeyValueable
-    // Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.
-    customKeyValueData []KeyValuePairable
-    // Fingerprint is a string that will be used to verify the VPN server can be trusted, which is only applicable when connection type is Check Point Capsule VPN.
-    fingerprint *string
-    // Identity certificate for client authentication when authentication method is certificate.
-    identityCertificate AndroidForWorkCertificateProfileBaseable
-    // Realm when connection type is set to Pulse Secure.
-    realm *string
-    // Role when connection type is set to Pulse Secure.
-    role *string
-    // List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.
-    servers []VpnServerable
 }
 // NewAndroidForWorkVpnConfiguration instantiates a new AndroidForWorkVpnConfiguration and sets the default values.
 func NewAndroidForWorkVpnConfiguration()(*AndroidForWorkVpnConfiguration) {
     m := &AndroidForWorkVpnConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.androidForWorkVpnConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidForWorkVpnConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidForWorkVpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,23 +23,58 @@ func CreateAndroidForWorkVpnConfigurationFromDiscriminatorValue(parseNode i878a8
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. VPN Authentication Method.
 func (m *AndroidForWorkVpnConfiguration) GetAuthenticationMethod()(*VpnAuthenticationMethod) {
-    return m.authenticationMethod
+    val, err := m.GetBackingStore().Get("authenticationMethod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*VpnAuthenticationMethod)
+    }
+    return nil
 }
 // GetConnectionName gets the connectionName property value. Connection name displayed to the user.
 func (m *AndroidForWorkVpnConfiguration) GetConnectionName()(*string) {
-    return m.connectionName
+    val, err := m.GetBackingStore().Get("connectionName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetConnectionType gets the connectionType property value. Android For Work VPN connection type.
 func (m *AndroidForWorkVpnConfiguration) GetConnectionType()(*AndroidForWorkVpnConnectionType) {
-    return m.connectionType
+    val, err := m.GetBackingStore().Get("connectionType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AndroidForWorkVpnConnectionType)
+    }
+    return nil
 }
 // GetCustomData gets the customData property value. Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.
 func (m *AndroidForWorkVpnConfiguration) GetCustomData()([]KeyValueable) {
-    return m.customData
+    val, err := m.GetBackingStore().Get("customData")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]KeyValueable)
+    }
+    return nil
 }
 // GetCustomKeyValueData gets the customKeyValueData property value. Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.
 func (m *AndroidForWorkVpnConfiguration) GetCustomKeyValueData()([]KeyValuePairable) {
-    return m.customKeyValueData
+    val, err := m.GetBackingStore().Get("customKeyValueData")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]KeyValuePairable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidForWorkVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -180,23 +195,58 @@ func (m *AndroidForWorkVpnConfiguration) GetFieldDeserializers()(map[string]func
 }
 // GetFingerprint gets the fingerprint property value. Fingerprint is a string that will be used to verify the VPN server can be trusted, which is only applicable when connection type is Check Point Capsule VPN.
 func (m *AndroidForWorkVpnConfiguration) GetFingerprint()(*string) {
-    return m.fingerprint
+    val, err := m.GetBackingStore().Get("fingerprint")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIdentityCertificate gets the identityCertificate property value. Identity certificate for client authentication when authentication method is certificate.
 func (m *AndroidForWorkVpnConfiguration) GetIdentityCertificate()(AndroidForWorkCertificateProfileBaseable) {
-    return m.identityCertificate
+    val, err := m.GetBackingStore().Get("identityCertificate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AndroidForWorkCertificateProfileBaseable)
+    }
+    return nil
 }
 // GetRealm gets the realm property value. Realm when connection type is set to Pulse Secure.
 func (m *AndroidForWorkVpnConfiguration) GetRealm()(*string) {
-    return m.realm
+    val, err := m.GetBackingStore().Get("realm")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRole gets the role property value. Role when connection type is set to Pulse Secure.
 func (m *AndroidForWorkVpnConfiguration) GetRole()(*string) {
-    return m.role
+    val, err := m.GetBackingStore().Get("role")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetServers gets the servers property value. List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.
 func (m *AndroidForWorkVpnConfiguration) GetServers()([]VpnServerable) {
-    return m.servers
+    val, err := m.GetBackingStore().Get("servers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]VpnServerable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidForWorkVpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -282,41 +332,96 @@ func (m *AndroidForWorkVpnConfiguration) Serialize(writer i878a80d2330e89d268963
 }
 // SetAuthenticationMethod sets the authenticationMethod property value. VPN Authentication Method.
 func (m *AndroidForWorkVpnConfiguration) SetAuthenticationMethod(value *VpnAuthenticationMethod)() {
-    m.authenticationMethod = value
+    err := m.GetBackingStore().Set("authenticationMethod", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConnectionName sets the connectionName property value. Connection name displayed to the user.
 func (m *AndroidForWorkVpnConfiguration) SetConnectionName(value *string)() {
-    m.connectionName = value
+    err := m.GetBackingStore().Set("connectionName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConnectionType sets the connectionType property value. Android For Work VPN connection type.
 func (m *AndroidForWorkVpnConfiguration) SetConnectionType(value *AndroidForWorkVpnConnectionType)() {
-    m.connectionType = value
+    err := m.GetBackingStore().Set("connectionType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomData sets the customData property value. Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.
 func (m *AndroidForWorkVpnConfiguration) SetCustomData(value []KeyValueable)() {
-    m.customData = value
+    err := m.GetBackingStore().Set("customData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomKeyValueData sets the customKeyValueData property value. Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.
 func (m *AndroidForWorkVpnConfiguration) SetCustomKeyValueData(value []KeyValuePairable)() {
-    m.customKeyValueData = value
+    err := m.GetBackingStore().Set("customKeyValueData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFingerprint sets the fingerprint property value. Fingerprint is a string that will be used to verify the VPN server can be trusted, which is only applicable when connection type is Check Point Capsule VPN.
 func (m *AndroidForWorkVpnConfiguration) SetFingerprint(value *string)() {
-    m.fingerprint = value
+    err := m.GetBackingStore().Set("fingerprint", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentityCertificate sets the identityCertificate property value. Identity certificate for client authentication when authentication method is certificate.
 func (m *AndroidForWorkVpnConfiguration) SetIdentityCertificate(value AndroidForWorkCertificateProfileBaseable)() {
-    m.identityCertificate = value
+    err := m.GetBackingStore().Set("identityCertificate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRealm sets the realm property value. Realm when connection type is set to Pulse Secure.
 func (m *AndroidForWorkVpnConfiguration) SetRealm(value *string)() {
-    m.realm = value
+    err := m.GetBackingStore().Set("realm", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRole sets the role property value. Role when connection type is set to Pulse Secure.
 func (m *AndroidForWorkVpnConfiguration) SetRole(value *string)() {
-    m.role = value
+    err := m.GetBackingStore().Set("role", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetServers sets the servers property value. List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.
 func (m *AndroidForWorkVpnConfiguration) SetServers(value []VpnServerable)() {
-    m.servers = value
+    err := m.GetBackingStore().Set("servers", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidForWorkVpnConfigurationable 
+type AndroidForWorkVpnConfigurationable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAuthenticationMethod()(*VpnAuthenticationMethod)
+    GetConnectionName()(*string)
+    GetConnectionType()(*AndroidForWorkVpnConnectionType)
+    GetCustomData()([]KeyValueable)
+    GetCustomKeyValueData()([]KeyValuePairable)
+    GetFingerprint()(*string)
+    GetIdentityCertificate()(AndroidForWorkCertificateProfileBaseable)
+    GetRealm()(*string)
+    GetRole()(*string)
+    GetServers()([]VpnServerable)
+    SetAuthenticationMethod(value *VpnAuthenticationMethod)()
+    SetConnectionName(value *string)()
+    SetConnectionType(value *AndroidForWorkVpnConnectionType)()
+    SetCustomData(value []KeyValueable)()
+    SetCustomKeyValueData(value []KeyValuePairable)()
+    SetFingerprint(value *string)()
+    SetIdentityCertificate(value AndroidForWorkCertificateProfileBaseable)()
+    SetRealm(value *string)()
+    SetRole(value *string)()
+    SetServers(value []VpnServerable)()
 }

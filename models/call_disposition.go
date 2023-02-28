@@ -6,7 +6,7 @@ import (
 type CallDisposition int
 
 const (
-    DEFAULT_ESCAPED_CALLDISPOSITION CallDisposition = iota
+    DEFAULTESCAPED_CALLDISPOSITION CallDisposition = iota
     SIMULTANEOUSRING_CALLDISPOSITION
     FORWARD_CALLDISPOSITION
 )
@@ -15,10 +15,10 @@ func (i CallDisposition) String() string {
     return []string{"default", "simultaneousRing", "forward"}[i]
 }
 func ParseCallDisposition(v string) (any, error) {
-    result := DEFAULT_ESCAPED_CALLDISPOSITION
+    result := DEFAULTESCAPED_CALLDISPOSITION
     switch v {
         case "default":
-            result = DEFAULT_ESCAPED_CALLDISPOSITION
+            result = DEFAULTESCAPED_CALLDISPOSITION
         case "simultaneousRing":
             result = SIMULTANEOUSRING_CALLDISPOSITION
         case "forward":

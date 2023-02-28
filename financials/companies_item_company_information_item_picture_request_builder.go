@@ -38,8 +38,8 @@ func NewCompaniesItemCompanyInformationItemPictureRequestBuilderInternal(pathPar
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemCompanyInformationItemPictureRequestBuilder instantiates a new PictureRequestBuilder and sets the default values.

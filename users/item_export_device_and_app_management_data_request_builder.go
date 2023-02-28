@@ -27,13 +27,13 @@ type ItemExportDeviceAndAppManagementDataRequestBuilderGetRequestConfiguration s
 func NewItemExportDeviceAndAppManagementDataRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemExportDeviceAndAppManagementDataRequestBuilder) {
     m := &ItemExportDeviceAndAppManagementDataRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/microsoft.graph.exportDeviceAndAppManagementData()";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/exportDeviceAndAppManagementData()";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemExportDeviceAndAppManagementDataRequestBuilder instantiates a new ExportDeviceAndAppManagementDataRequestBuilder and sets the default values.

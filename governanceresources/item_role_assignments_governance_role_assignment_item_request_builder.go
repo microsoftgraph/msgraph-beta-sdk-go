@@ -55,8 +55,8 @@ func NewItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilder instantiates a new GovernanceRoleAssignmentItemRequestBuilder and sets the default values.
@@ -102,7 +102,7 @@ func (m *ItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilder) Get(ctx 
 }
 // LinkedEligibleRoleAssignment provides operations to manage the linkedEligibleRoleAssignment property of the microsoft.graph.governanceRoleAssignment entity.
 func (m *ItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilder) LinkedEligibleRoleAssignment()(*ItemRoleAssignmentsItemLinkedEligibleRoleAssignmentRequestBuilder) {
-    return NewItemRoleAssignmentsItemLinkedEligibleRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRoleAssignmentsItemLinkedEligibleRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property roleAssignments in governanceResources
 func (m *ItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentable, requestConfiguration *ItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentable, error) {
@@ -125,15 +125,15 @@ func (m *ItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilder) Patch(ct
 }
 // Resource provides operations to manage the resource property of the microsoft.graph.governanceRoleAssignment entity.
 func (m *ItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilder) Resource()(*ItemRoleAssignmentsItemResourceRequestBuilder) {
-    return NewItemRoleAssignmentsItemResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRoleAssignmentsItemResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RoleDefinition provides operations to manage the roleDefinition property of the microsoft.graph.governanceRoleAssignment entity.
 func (m *ItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilder) RoleDefinition()(*ItemRoleAssignmentsItemRoleDefinitionRequestBuilder) {
-    return NewItemRoleAssignmentsItemRoleDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRoleAssignmentsItemRoleDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Subject provides operations to manage the subject property of the microsoft.graph.governanceRoleAssignment entity.
 func (m *ItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilder) Subject()(*ItemRoleAssignmentsItemSubjectRequestBuilder) {
-    return NewItemRoleAssignmentsItemSubjectRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRoleAssignmentsItemSubjectRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property roleAssignments for governanceResources
 func (m *ItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -170,7 +170,10 @@ func (m *ItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilder) ToPatchR
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -26,13 +26,13 @@ type VirtualEndpointDeviceImagesItemReuploadRequestBuilderPostRequestConfigurati
 func NewVirtualEndpointDeviceImagesItemReuploadRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointDeviceImagesItemReuploadRequestBuilder) {
     m := &VirtualEndpointDeviceImagesItemReuploadRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/deviceImages/{cloudPcDeviceImage%2Did}/microsoft.graph.reupload";
+    m.urlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/deviceImages/{cloudPcDeviceImage%2Did}/reupload";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewVirtualEndpointDeviceImagesItemReuploadRequestBuilder instantiates a new ReuploadRequestBuilder and sets the default values.

@@ -7,12 +7,6 @@ import (
 // DeviceHealthScriptAssignment contains properties used to assign a device management script to a group.
 type DeviceHealthScriptAssignment struct {
     Entity
-    // Determine whether we want to run detection script only or run both detection script and remediation script
-    runRemediationScript *bool
-    // Script run schedule for the target group
-    runSchedule DeviceHealthScriptRunScheduleable
-    // The Azure Active Directory group we are targeting the script to
-    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewDeviceHealthScriptAssignment instantiates a new deviceHealthScriptAssignment and sets the default values.
 func NewDeviceHealthScriptAssignment()(*DeviceHealthScriptAssignment) {
@@ -62,15 +56,36 @@ func (m *DeviceHealthScriptAssignment) GetFieldDeserializers()(map[string]func(i
 }
 // GetRunRemediationScript gets the runRemediationScript property value. Determine whether we want to run detection script only or run both detection script and remediation script
 func (m *DeviceHealthScriptAssignment) GetRunRemediationScript()(*bool) {
-    return m.runRemediationScript
+    val, err := m.GetBackingStore().Get("runRemediationScript")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetRunSchedule gets the runSchedule property value. Script run schedule for the target group
 func (m *DeviceHealthScriptAssignment) GetRunSchedule()(DeviceHealthScriptRunScheduleable) {
-    return m.runSchedule
+    val, err := m.GetBackingStore().Get("runSchedule")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceHealthScriptRunScheduleable)
+    }
+    return nil
 }
 // GetTarget gets the target property value. The Azure Active Directory group we are targeting the script to
 func (m *DeviceHealthScriptAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
-    return m.target
+    val, err := m.GetBackingStore().Get("target")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceAndAppManagementAssignmentTargetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceHealthScriptAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -100,13 +115,33 @@ func (m *DeviceHealthScriptAssignment) Serialize(writer i878a80d2330e89d26896388
 }
 // SetRunRemediationScript sets the runRemediationScript property value. Determine whether we want to run detection script only or run both detection script and remediation script
 func (m *DeviceHealthScriptAssignment) SetRunRemediationScript(value *bool)() {
-    m.runRemediationScript = value
+    err := m.GetBackingStore().Set("runRemediationScript", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRunSchedule sets the runSchedule property value. Script run schedule for the target group
 func (m *DeviceHealthScriptAssignment) SetRunSchedule(value DeviceHealthScriptRunScheduleable)() {
-    m.runSchedule = value
+    err := m.GetBackingStore().Set("runSchedule", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTarget sets the target property value. The Azure Active Directory group we are targeting the script to
 func (m *DeviceHealthScriptAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
-    m.target = value
+    err := m.GetBackingStore().Set("target", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceHealthScriptAssignmentable 
+type DeviceHealthScriptAssignmentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetRunRemediationScript()(*bool)
+    GetRunSchedule()(DeviceHealthScriptRunScheduleable)
+    GetTarget()(DeviceAndAppManagementAssignmentTargetable)
+    SetRunRemediationScript(value *bool)()
+    SetRunSchedule(value DeviceHealthScriptRunScheduleable)()
+    SetTarget(value DeviceAndAppManagementAssignmentTargetable)()
 }

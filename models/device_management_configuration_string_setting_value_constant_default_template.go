@@ -7,16 +7,14 @@ import (
 // DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate 
 type DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate struct {
     DeviceManagementConfigurationStringSettingValueDefaultTemplate
-    // Default Constant Value
-    constantValue *string
 }
 // NewDeviceManagementConfigurationStringSettingValueConstantDefaultTemplate instantiates a new DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate and sets the default values.
 func NewDeviceManagementConfigurationStringSettingValueConstantDefaultTemplate()(*DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate) {
     m := &DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate{
         DeviceManagementConfigurationStringSettingValueDefaultTemplate: *NewDeviceManagementConfigurationStringSettingValueDefaultTemplate(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationStringSettingValueConstantDefaultTemplate";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationStringSettingValueConstantDefaultTemplate"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementConfigurationStringSettingValueConstantDefaultTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +23,14 @@ func CreateDeviceManagementConfigurationStringSettingValueConstantDefaultTemplat
 }
 // GetConstantValue gets the constantValue property value. Default Constant Value
 func (m *DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate) GetConstantValue()(*string) {
-    return m.constantValue
+    val, err := m.GetBackingStore().Get("constantValue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -58,5 +63,15 @@ func (m *DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate)
 }
 // SetConstantValue sets the constantValue property value. Default Constant Value
 func (m *DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate) SetConstantValue(value *string)() {
-    m.constantValue = value
+    err := m.GetBackingStore().Set("constantValue", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationStringSettingValueConstantDefaultTemplateable 
+type DeviceManagementConfigurationStringSettingValueConstantDefaultTemplateable interface {
+    DeviceManagementConfigurationStringSettingValueDefaultTemplateable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetConstantValue()(*string)
+    SetConstantValue(value *string)()
 }

@@ -7,8 +7,6 @@ import (
 // BusinessScenarioPlanReference 
 type BusinessScenarioPlanReference struct {
     Entity
-    // The title property of the plannerPlan.
-    title *string
 }
 // NewBusinessScenarioPlanReference instantiates a new BusinessScenarioPlanReference and sets the default values.
 func NewBusinessScenarioPlanReference()(*BusinessScenarioPlanReference) {
@@ -38,7 +36,14 @@ func (m *BusinessScenarioPlanReference) GetFieldDeserializers()(map[string]func(
 }
 // GetTitle gets the title property value. The title property of the plannerPlan.
 func (m *BusinessScenarioPlanReference) GetTitle()(*string) {
-    return m.title
+    val, err := m.GetBackingStore().Get("title")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *BusinessScenarioPlanReference) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *BusinessScenarioPlanReference) Serialize(writer i878a80d2330e89d2689638
 }
 // SetTitle sets the title property value. The title property of the plannerPlan.
 func (m *BusinessScenarioPlanReference) SetTitle(value *string)() {
-    m.title = value
+    err := m.GetBackingStore().Set("title", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// BusinessScenarioPlanReferenceable 
+type BusinessScenarioPlanReferenceable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetTitle()(*string)
+    SetTitle(value *string)()
 }

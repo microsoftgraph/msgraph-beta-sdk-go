@@ -60,8 +60,8 @@ func NewAndroidForWorkEnrollmentProfilesRequestBuilderInternal(pathParameters ma
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAndroidForWorkEnrollmentProfilesRequestBuilder instantiates a new AndroidForWorkEnrollmentProfilesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewAndroidForWorkEnrollmentProfilesRequestBuilder(rawUrl string, requestAda
 }
 // Count provides operations to count the resources in the collection.
 func (m *AndroidForWorkEnrollmentProfilesRequestBuilder) Count()(*AndroidForWorkEnrollmentProfilesCountRequestBuilder) {
-    return NewAndroidForWorkEnrollmentProfilesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAndroidForWorkEnrollmentProfilesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get android for Work enrollment profile entities.
 func (m *AndroidForWorkEnrollmentProfilesRequestBuilder) Get(ctx context.Context, requestConfiguration *AndroidForWorkEnrollmentProfilesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkEnrollmentProfileCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *AndroidForWorkEnrollmentProfilesRequestBuilder) ToPostRequestInformatio
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

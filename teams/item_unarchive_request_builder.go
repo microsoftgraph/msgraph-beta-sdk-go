@@ -26,13 +26,13 @@ type ItemUnarchiveRequestBuilderPostRequestConfiguration struct {
 func NewItemUnarchiveRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemUnarchiveRequestBuilder) {
     m := &ItemUnarchiveRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/teams/{team%2Did}/microsoft.graph.unarchive";
+    m.urlTemplate = "{+baseurl}/teams/{team%2Did}/unarchive";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemUnarchiveRequestBuilder instantiates a new UnarchiveRequestBuilder and sets the default values.

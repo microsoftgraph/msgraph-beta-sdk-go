@@ -7,8 +7,6 @@ import (
 // AppleOwnerTypeEnrollmentTypeCollectionResponse 
 type AppleOwnerTypeEnrollmentTypeCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AppleOwnerTypeEnrollmentTypeable
 }
 // NewAppleOwnerTypeEnrollmentTypeCollectionResponse instantiates a new AppleOwnerTypeEnrollmentTypeCollectionResponse and sets the default values.
 func NewAppleOwnerTypeEnrollmentTypeCollectionResponse()(*AppleOwnerTypeEnrollmentTypeCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AppleOwnerTypeEnrollmentTypeCollectionResponse) GetFieldDeserializers()
 }
 // GetValue gets the value property value. The value property
 func (m *AppleOwnerTypeEnrollmentTypeCollectionResponse) GetValue()([]AppleOwnerTypeEnrollmentTypeable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AppleOwnerTypeEnrollmentTypeable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AppleOwnerTypeEnrollmentTypeCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AppleOwnerTypeEnrollmentTypeCollectionResponse) Serialize(writer i878a8
 }
 // SetValue sets the value property value. The value property
 func (m *AppleOwnerTypeEnrollmentTypeCollectionResponse) SetValue(value []AppleOwnerTypeEnrollmentTypeable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AppleOwnerTypeEnrollmentTypeCollectionResponseable 
+type AppleOwnerTypeEnrollmentTypeCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AppleOwnerTypeEnrollmentTypeable)
+    SetValue(value []AppleOwnerTypeEnrollmentTypeable)()
 }

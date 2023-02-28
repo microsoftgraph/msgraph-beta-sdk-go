@@ -26,13 +26,13 @@ type ItemInstancesItemResetDecisionsRequestBuilderPostRequestConfiguration struc
 func NewItemInstancesItemResetDecisionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInstancesItemResetDecisionsRequestBuilder) {
     m := &ItemInstancesItemResetDecisionsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/accessReviews/{accessReview%2Did}/instances/{accessReview%2Did1}/microsoft.graph.resetDecisions";
+    m.urlTemplate = "{+baseurl}/accessReviews/{accessReview%2Did}/instances/{accessReview%2Did1}/resetDecisions";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemInstancesItemResetDecisionsRequestBuilder instantiates a new ResetDecisionsRequestBuilder and sets the default values.

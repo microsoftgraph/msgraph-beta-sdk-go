@@ -53,8 +53,8 @@ func NewPrinterSharesItemAllowedUsersRequestBuilderInternal(pathParameters map[s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPrinterSharesItemAllowedUsersRequestBuilder instantiates a new AllowedUsersRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewPrinterSharesItemAllowedUsersRequestBuilder(rawUrl string, requestAdapte
 }
 // Count provides operations to count the resources in the collection.
 func (m *PrinterSharesItemAllowedUsersRequestBuilder) Count()(*PrinterSharesItemAllowedUsersCountRequestBuilder) {
-    return NewPrinterSharesItemAllowedUsersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPrinterSharesItemAllowedUsersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
 // [Find more info here]
@@ -91,7 +91,7 @@ func (m *PrinterSharesItemAllowedUsersRequestBuilder) Get(ctx context.Context, r
 }
 // Ref provides operations to manage the collection of print entities.
 func (m *PrinterSharesItemAllowedUsersRequestBuilder) Ref()(*PrinterSharesItemAllowedUsersRefRequestBuilder) {
-    return NewPrinterSharesItemAllowedUsersRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPrinterSharesItemAllowedUsersRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
 func (m *PrinterSharesItemAllowedUsersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrinterSharesItemAllowedUsersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

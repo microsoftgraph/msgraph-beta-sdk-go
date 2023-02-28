@@ -23,7 +23,7 @@ type MessageRecipientItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// MessageRecipientItemRequestBuilderGetQueryParameters get entity from messageRecipients by key (id)
+// MessageRecipientItemRequestBuilderGetQueryParameters get entity from messageRecipients by key
 type MessageRecipientItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -55,8 +55,8 @@ func NewMessageRecipientItemRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMessageRecipientItemRequestBuilder instantiates a new MessageRecipientItemRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewMessageRecipientItemRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewMessageRecipientItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from messageRecipients by key (id)
+// Delete delete entity from messageRecipients
 func (m *MessageRecipientItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MessageRecipientItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -83,7 +83,7 @@ func (m *MessageRecipientItemRequestBuilder) Delete(ctx context.Context, request
 }
 // Events provides operations to manage the events property of the microsoft.graph.messageRecipient entity.
 func (m *MessageRecipientItemRequestBuilder) Events()(*ItemEventsRequestBuilder) {
-    return NewItemEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // EventsById provides operations to manage the events property of the microsoft.graph.messageRecipient entity.
 func (m *MessageRecipientItemRequestBuilder) EventsById(id string)(*ItemEventsMessageEventItemRequestBuilder) {
@@ -94,9 +94,9 @@ func (m *MessageRecipientItemRequestBuilder) EventsById(id string)(*ItemEventsMe
     if id != "" {
         urlTplParams["messageEvent%2Did"] = id
     }
-    return NewItemEventsMessageEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemEventsMessageEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
-// Get get entity from messageRecipients by key (id)
+// Get get entity from messageRecipients by key
 func (m *MessageRecipientItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MessageRecipientItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageRecipientable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +115,7 @@ func (m *MessageRecipientItemRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageRecipientable), nil
 }
-// Patch update entity in messageRecipients by key (id)
+// Patch update entity in messageRecipients
 func (m *MessageRecipientItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageRecipientable, requestConfiguration *MessageRecipientItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageRecipientable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -134,7 +134,7 @@ func (m *MessageRecipientItemRequestBuilder) Patch(ctx context.Context, body ie2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageRecipientable), nil
 }
-// ToDeleteRequestInformation delete entity from messageRecipients by key (id)
+// ToDeleteRequestInformation delete entity from messageRecipients
 func (m *MessageRecipientItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MessageRecipientItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -146,7 +146,7 @@ func (m *MessageRecipientItemRequestBuilder) ToDeleteRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from messageRecipients by key (id)
+// ToGetRequestInformation get entity from messageRecipients by key
 func (m *MessageRecipientItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MessageRecipientItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -162,14 +162,17 @@ func (m *MessageRecipientItemRequestBuilder) ToGetRequestInformation(ctx context
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in messageRecipients by key (id)
+// ToPatchRequestInformation update entity in messageRecipients
 func (m *MessageRecipientItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageRecipientable, requestConfiguration *MessageRecipientItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -26,13 +26,13 @@ type ItemSubscribeByMailRequestBuilderPostRequestConfiguration struct {
 func NewItemSubscribeByMailRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSubscribeByMailRequestBuilder) {
     m := &ItemSubscribeByMailRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/microsoft.graph.subscribeByMail";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/subscribeByMail";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSubscribeByMailRequestBuilder instantiates a new SubscribeByMailRequestBuilder and sets the default values.

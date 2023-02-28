@@ -7,20 +7,14 @@ import (
 // AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration 
 type AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration struct {
     DeviceConfiguration
-    // Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
-    certificateAccessType *AndroidDeviceOwnerCertificateAccessType
-    // Tenant level settings for the Derived Credentials to be used for authentication.
-    derivedCredentialSettings DeviceManagementDerivedCredentialSettingsable
-    // Certificate access information. This collection can contain a maximum of 50 elements.
-    silentCertificateAccessDetails []AndroidDeviceOwnerSilentCertificateAccessable
 }
 // NewAndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration instantiates a new AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration and sets the default values.
 func NewAndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration()(*AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) {
     m := &AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.androidDeviceOwnerDerivedCredentialAuthenticationConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidDeviceOwnerDerivedCredentialAuthenticationConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidDeviceOwnerDerivedCredentialAuthenticationConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,11 +23,25 @@ func CreateAndroidDeviceOwnerDerivedCredentialAuthenticationConfigurationFromDis
 }
 // GetCertificateAccessType gets the certificateAccessType property value. Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
 func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) GetCertificateAccessType()(*AndroidDeviceOwnerCertificateAccessType) {
-    return m.certificateAccessType
+    val, err := m.GetBackingStore().Get("certificateAccessType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AndroidDeviceOwnerCertificateAccessType)
+    }
+    return nil
 }
 // GetDerivedCredentialSettings gets the derivedCredentialSettings property value. Tenant level settings for the Derived Credentials to be used for authentication.
 func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) GetDerivedCredentialSettings()(DeviceManagementDerivedCredentialSettingsable) {
-    return m.derivedCredentialSettings
+    val, err := m.GetBackingStore().Get("derivedCredentialSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementDerivedCredentialSettingsable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -76,7 +84,14 @@ func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) GetFiel
 }
 // GetSilentCertificateAccessDetails gets the silentCertificateAccessDetails property value. Certificate access information. This collection can contain a maximum of 50 elements.
 func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) GetSilentCertificateAccessDetails()([]AndroidDeviceOwnerSilentCertificateAccessable) {
-    return m.silentCertificateAccessDetails
+    val, err := m.GetBackingStore().Get("silentCertificateAccessDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidDeviceOwnerSilentCertificateAccessable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -111,13 +126,33 @@ func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) Seriali
 }
 // SetCertificateAccessType sets the certificateAccessType property value. Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
 func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) SetCertificateAccessType(value *AndroidDeviceOwnerCertificateAccessType)() {
-    m.certificateAccessType = value
+    err := m.GetBackingStore().Set("certificateAccessType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDerivedCredentialSettings sets the derivedCredentialSettings property value. Tenant level settings for the Derived Credentials to be used for authentication.
 func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) SetDerivedCredentialSettings(value DeviceManagementDerivedCredentialSettingsable)() {
-    m.derivedCredentialSettings = value
+    err := m.GetBackingStore().Set("derivedCredentialSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSilentCertificateAccessDetails sets the silentCertificateAccessDetails property value. Certificate access information. This collection can contain a maximum of 50 elements.
 func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) SetSilentCertificateAccessDetails(value []AndroidDeviceOwnerSilentCertificateAccessable)() {
-    m.silentCertificateAccessDetails = value
+    err := m.GetBackingStore().Set("silentCertificateAccessDetails", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidDeviceOwnerDerivedCredentialAuthenticationConfigurationable 
+type AndroidDeviceOwnerDerivedCredentialAuthenticationConfigurationable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCertificateAccessType()(*AndroidDeviceOwnerCertificateAccessType)
+    GetDerivedCredentialSettings()(DeviceManagementDerivedCredentialSettingsable)
+    GetSilentCertificateAccessDetails()([]AndroidDeviceOwnerSilentCertificateAccessable)
+    SetCertificateAccessType(value *AndroidDeviceOwnerCertificateAccessType)()
+    SetDerivedCredentialSettings(value DeviceManagementDerivedCredentialSettingsable)()
+    SetSilentCertificateAccessDetails(value []AndroidDeviceOwnerSilentCertificateAccessable)()
 }

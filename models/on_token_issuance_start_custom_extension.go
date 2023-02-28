@@ -7,16 +7,14 @@ import (
 // OnTokenIssuanceStartCustomExtension 
 type OnTokenIssuanceStartCustomExtension struct {
     CustomAuthenticationExtension
-    // The claimsForTokenConfiguration property
-    claimsForTokenConfiguration []OnTokenIssuanceStartReturnClaimable
 }
 // NewOnTokenIssuanceStartCustomExtension instantiates a new OnTokenIssuanceStartCustomExtension and sets the default values.
 func NewOnTokenIssuanceStartCustomExtension()(*OnTokenIssuanceStartCustomExtension) {
     m := &OnTokenIssuanceStartCustomExtension{
         CustomAuthenticationExtension: *NewCustomAuthenticationExtension(),
     }
-    odataTypeValue := "#microsoft.graph.onTokenIssuanceStartCustomExtension";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.onTokenIssuanceStartCustomExtension"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateOnTokenIssuanceStartCustomExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +23,14 @@ func CreateOnTokenIssuanceStartCustomExtensionFromDiscriminatorValue(parseNode i
 }
 // GetClaimsForTokenConfiguration gets the claimsForTokenConfiguration property value. The claimsForTokenConfiguration property
 func (m *OnTokenIssuanceStartCustomExtension) GetClaimsForTokenConfiguration()([]OnTokenIssuanceStartReturnClaimable) {
-    return m.claimsForTokenConfiguration
+    val, err := m.GetBackingStore().Get("claimsForTokenConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OnTokenIssuanceStartReturnClaimable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OnTokenIssuanceStartCustomExtension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -66,5 +71,15 @@ func (m *OnTokenIssuanceStartCustomExtension) Serialize(writer i878a80d2330e89d2
 }
 // SetClaimsForTokenConfiguration sets the claimsForTokenConfiguration property value. The claimsForTokenConfiguration property
 func (m *OnTokenIssuanceStartCustomExtension) SetClaimsForTokenConfiguration(value []OnTokenIssuanceStartReturnClaimable)() {
-    m.claimsForTokenConfiguration = value
+    err := m.GetBackingStore().Set("claimsForTokenConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OnTokenIssuanceStartCustomExtensionable 
+type OnTokenIssuanceStartCustomExtensionable interface {
+    CustomAuthenticationExtensionable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetClaimsForTokenConfiguration()([]OnTokenIssuanceStartReturnClaimable)
+    SetClaimsForTokenConfiguration(value []OnTokenIssuanceStartReturnClaimable)()
 }

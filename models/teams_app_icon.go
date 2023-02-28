@@ -7,10 +7,6 @@ import (
 // TeamsAppIcon 
 type TeamsAppIcon struct {
     Entity
-    // The contents of the app icon if the icon is hosted within the Teams infrastructure.
-    hostedContent TeamworkHostedContentable
-    // The web URL that can be used for downloading the image.
-    webUrl *string
 }
 // NewTeamsAppIcon instantiates a new teamsAppIcon and sets the default values.
 func NewTeamsAppIcon()(*TeamsAppIcon) {
@@ -50,11 +46,25 @@ func (m *TeamsAppIcon) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetHostedContent gets the hostedContent property value. The contents of the app icon if the icon is hosted within the Teams infrastructure.
 func (m *TeamsAppIcon) GetHostedContent()(TeamworkHostedContentable) {
-    return m.hostedContent
+    val, err := m.GetBackingStore().Get("hostedContent")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamworkHostedContentable)
+    }
+    return nil
 }
 // GetWebUrl gets the webUrl property value. The web URL that can be used for downloading the image.
 func (m *TeamsAppIcon) GetWebUrl()(*string) {
-    return m.webUrl
+    val, err := m.GetBackingStore().Get("webUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TeamsAppIcon) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -78,9 +88,24 @@ func (m *TeamsAppIcon) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetHostedContent sets the hostedContent property value. The contents of the app icon if the icon is hosted within the Teams infrastructure.
 func (m *TeamsAppIcon) SetHostedContent(value TeamworkHostedContentable)() {
-    m.hostedContent = value
+    err := m.GetBackingStore().Set("hostedContent", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWebUrl sets the webUrl property value. The web URL that can be used for downloading the image.
 func (m *TeamsAppIcon) SetWebUrl(value *string)() {
-    m.webUrl = value
+    err := m.GetBackingStore().Set("webUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TeamsAppIconable 
+type TeamsAppIconable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetHostedContent()(TeamworkHostedContentable)
+    GetWebUrl()(*string)
+    SetHostedContent(value TeamworkHostedContentable)()
+    SetWebUrl(value *string)()
 }

@@ -7,16 +7,14 @@ import (
 // WindowsStoreApp 
 type WindowsStoreApp struct {
     MobileApp
-    // The Windows app store URL.
-    appStoreUrl *string
 }
 // NewWindowsStoreApp instantiates a new WindowsStoreApp and sets the default values.
 func NewWindowsStoreApp()(*WindowsStoreApp) {
     m := &WindowsStoreApp{
         MobileApp: *NewMobileApp(),
     }
-    odataTypeValue := "#microsoft.graph.windowsStoreApp";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsStoreApp"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsStoreAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +23,14 @@ func CreateWindowsStoreAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAppStoreUrl gets the appStoreUrl property value. The Windows app store URL.
 func (m *WindowsStoreApp) GetAppStoreUrl()(*string) {
-    return m.appStoreUrl
+    val, err := m.GetBackingStore().Get("appStoreUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsStoreApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -58,5 +63,15 @@ func (m *WindowsStoreApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAppStoreUrl sets the appStoreUrl property value. The Windows app store URL.
 func (m *WindowsStoreApp) SetAppStoreUrl(value *string)() {
-    m.appStoreUrl = value
+    err := m.GetBackingStore().Set("appStoreUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsStoreAppable 
+type WindowsStoreAppable interface {
+    MobileAppable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppStoreUrl()(*string)
+    SetAppStoreUrl(value *string)()
 }

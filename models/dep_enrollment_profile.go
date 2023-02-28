@@ -7,62 +7,14 @@ import (
 // DepEnrollmentProfile 
 type DepEnrollmentProfile struct {
     EnrollmentProfile
-    // Indicates if Apple id setup pane is disabled
-    appleIdDisabled *bool
-    // Indicates if Apple pay setup pane is disabled
-    applePayDisabled *bool
-    // Indicates if the device will need to wait for configured confirmation
-    awaitDeviceConfiguredConfirmation *bool
-    // Indicates if diagnostics setup pane is disabled
-    diagnosticsDisabled *bool
-    // This indicates whether the device is to be enrolled in a mode which enables multi user scenarios. Only applicable in shared iPads.
-    enableSharedIPad *bool
-    // Indicates if this is the default profile
-    isDefault *bool
-    // Indicates if the profile is mandatory
-    isMandatory *bool
-    // The iTunesPairingMode property
-    iTunesPairingMode *ITunesPairingMode
-    // Indicates if Location service setup pane is disabled
-    locationDisabled *bool
-    // Indicates if Mac OS file vault is disabled
-    macOSFileVaultDisabled *bool
-    // Indicates if Mac OS registration is disabled
-    macOSRegistrationDisabled *bool
-    // Management certificates for Apple Configurator
-    managementCertificates []ManagementCertificateWithThumbprintable
-    // Indicates if Passcode setup pane is disabled
-    passCodeDisabled *bool
-    // Indicates if the profile removal option is disabled
-    profileRemovalDisabled *bool
-    // Indicates if Restore setup pane is blocked
-    restoreBlocked *bool
-    // Indicates if Restore from Android is disabled
-    restoreFromAndroidDisabled *bool
-    // This specifies the maximum number of users that can use a shared iPad. Only applicable in shared iPad mode.
-    sharedIPadMaximumUserCount *int32
-    // Indicates if siri setup pane is disabled
-    siriDisabled *bool
-    // Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/en-us/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
-    supervisedModeEnabled *bool
-    // Support department information
-    supportDepartment *string
-    // Support phone number
-    supportPhoneNumber *string
-    // Indicates if 'Terms and Conditions' setup pane is disabled
-    termsAndConditionsDisabled *bool
-    // Indicates if touch id setup pane is disabled
-    touchIdDisabled *bool
-    // Indicates if zoom setup pane is disabled
-    zoomDisabled *bool
 }
 // NewDepEnrollmentProfile instantiates a new DepEnrollmentProfile and sets the default values.
 func NewDepEnrollmentProfile()(*DepEnrollmentProfile) {
     m := &DepEnrollmentProfile{
         EnrollmentProfile: *NewEnrollmentProfile(),
     }
-    odataTypeValue := "#microsoft.graph.depEnrollmentProfile";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.depEnrollmentProfile"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDepEnrollmentProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -71,23 +23,58 @@ func CreateDepEnrollmentProfileFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetAppleIdDisabled gets the appleIdDisabled property value. Indicates if Apple id setup pane is disabled
 func (m *DepEnrollmentProfile) GetAppleIdDisabled()(*bool) {
-    return m.appleIdDisabled
+    val, err := m.GetBackingStore().Get("appleIdDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetApplePayDisabled gets the applePayDisabled property value. Indicates if Apple pay setup pane is disabled
 func (m *DepEnrollmentProfile) GetApplePayDisabled()(*bool) {
-    return m.applePayDisabled
+    val, err := m.GetBackingStore().Get("applePayDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetAwaitDeviceConfiguredConfirmation gets the awaitDeviceConfiguredConfirmation property value. Indicates if the device will need to wait for configured confirmation
 func (m *DepEnrollmentProfile) GetAwaitDeviceConfiguredConfirmation()(*bool) {
-    return m.awaitDeviceConfiguredConfirmation
+    val, err := m.GetBackingStore().Get("awaitDeviceConfiguredConfirmation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDiagnosticsDisabled gets the diagnosticsDisabled property value. Indicates if diagnostics setup pane is disabled
 func (m *DepEnrollmentProfile) GetDiagnosticsDisabled()(*bool) {
-    return m.diagnosticsDisabled
+    val, err := m.GetBackingStore().Get("diagnosticsDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEnableSharedIPad gets the enableSharedIPad property value. This indicates whether the device is to be enrolled in a mode which enables multi user scenarios. Only applicable in shared iPads.
 func (m *DepEnrollmentProfile) GetEnableSharedIPad()(*bool) {
-    return m.enableSharedIPad
+    val, err := m.GetBackingStore().Get("enableSharedIPad")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DepEnrollmentProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -340,79 +327,212 @@ func (m *DepEnrollmentProfile) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetIsDefault gets the isDefault property value. Indicates if this is the default profile
 func (m *DepEnrollmentProfile) GetIsDefault()(*bool) {
-    return m.isDefault
+    val, err := m.GetBackingStore().Get("isDefault")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsMandatory gets the isMandatory property value. Indicates if the profile is mandatory
 func (m *DepEnrollmentProfile) GetIsMandatory()(*bool) {
-    return m.isMandatory
+    val, err := m.GetBackingStore().Get("isMandatory")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetITunesPairingMode gets the iTunesPairingMode property value. The iTunesPairingMode property
 func (m *DepEnrollmentProfile) GetITunesPairingMode()(*ITunesPairingMode) {
-    return m.iTunesPairingMode
+    val, err := m.GetBackingStore().Get("iTunesPairingMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ITunesPairingMode)
+    }
+    return nil
 }
 // GetLocationDisabled gets the locationDisabled property value. Indicates if Location service setup pane is disabled
 func (m *DepEnrollmentProfile) GetLocationDisabled()(*bool) {
-    return m.locationDisabled
+    val, err := m.GetBackingStore().Get("locationDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetMacOSFileVaultDisabled gets the macOSFileVaultDisabled property value. Indicates if Mac OS file vault is disabled
 func (m *DepEnrollmentProfile) GetMacOSFileVaultDisabled()(*bool) {
-    return m.macOSFileVaultDisabled
+    val, err := m.GetBackingStore().Get("macOSFileVaultDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetMacOSRegistrationDisabled gets the macOSRegistrationDisabled property value. Indicates if Mac OS registration is disabled
 func (m *DepEnrollmentProfile) GetMacOSRegistrationDisabled()(*bool) {
-    return m.macOSRegistrationDisabled
+    val, err := m.GetBackingStore().Get("macOSRegistrationDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetManagementCertificates gets the managementCertificates property value. Management certificates for Apple Configurator
 func (m *DepEnrollmentProfile) GetManagementCertificates()([]ManagementCertificateWithThumbprintable) {
-    return m.managementCertificates
+    val, err := m.GetBackingStore().Get("managementCertificates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagementCertificateWithThumbprintable)
+    }
+    return nil
 }
 // GetPassCodeDisabled gets the passCodeDisabled property value. Indicates if Passcode setup pane is disabled
 func (m *DepEnrollmentProfile) GetPassCodeDisabled()(*bool) {
-    return m.passCodeDisabled
+    val, err := m.GetBackingStore().Get("passCodeDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetProfileRemovalDisabled gets the profileRemovalDisabled property value. Indicates if the profile removal option is disabled
 func (m *DepEnrollmentProfile) GetProfileRemovalDisabled()(*bool) {
-    return m.profileRemovalDisabled
+    val, err := m.GetBackingStore().Get("profileRemovalDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetRestoreBlocked gets the restoreBlocked property value. Indicates if Restore setup pane is blocked
 func (m *DepEnrollmentProfile) GetRestoreBlocked()(*bool) {
-    return m.restoreBlocked
+    val, err := m.GetBackingStore().Get("restoreBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetRestoreFromAndroidDisabled gets the restoreFromAndroidDisabled property value. Indicates if Restore from Android is disabled
 func (m *DepEnrollmentProfile) GetRestoreFromAndroidDisabled()(*bool) {
-    return m.restoreFromAndroidDisabled
+    val, err := m.GetBackingStore().Get("restoreFromAndroidDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSharedIPadMaximumUserCount gets the sharedIPadMaximumUserCount property value. This specifies the maximum number of users that can use a shared iPad. Only applicable in shared iPad mode.
 func (m *DepEnrollmentProfile) GetSharedIPadMaximumUserCount()(*int32) {
-    return m.sharedIPadMaximumUserCount
+    val, err := m.GetBackingStore().Get("sharedIPadMaximumUserCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetSiriDisabled gets the siriDisabled property value. Indicates if siri setup pane is disabled
 func (m *DepEnrollmentProfile) GetSiriDisabled()(*bool) {
-    return m.siriDisabled
+    val, err := m.GetBackingStore().Get("siriDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
-// GetSupervisedModeEnabled gets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/en-us/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
+// GetSupervisedModeEnabled gets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
 func (m *DepEnrollmentProfile) GetSupervisedModeEnabled()(*bool) {
-    return m.supervisedModeEnabled
+    val, err := m.GetBackingStore().Get("supervisedModeEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSupportDepartment gets the supportDepartment property value. Support department information
 func (m *DepEnrollmentProfile) GetSupportDepartment()(*string) {
-    return m.supportDepartment
+    val, err := m.GetBackingStore().Get("supportDepartment")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSupportPhoneNumber gets the supportPhoneNumber property value. Support phone number
 func (m *DepEnrollmentProfile) GetSupportPhoneNumber()(*string) {
-    return m.supportPhoneNumber
+    val, err := m.GetBackingStore().Get("supportPhoneNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTermsAndConditionsDisabled gets the termsAndConditionsDisabled property value. Indicates if 'Terms and Conditions' setup pane is disabled
 func (m *DepEnrollmentProfile) GetTermsAndConditionsDisabled()(*bool) {
-    return m.termsAndConditionsDisabled
+    val, err := m.GetBackingStore().Get("termsAndConditionsDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetTouchIdDisabled gets the touchIdDisabled property value. Indicates if touch id setup pane is disabled
 func (m *DepEnrollmentProfile) GetTouchIdDisabled()(*bool) {
-    return m.touchIdDisabled
+    val, err := m.GetBackingStore().Get("touchIdDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetZoomDisabled gets the zoomDisabled property value. Indicates if zoom setup pane is disabled
 func (m *DepEnrollmentProfile) GetZoomDisabled()(*bool) {
-    return m.zoomDisabled
+    val, err := m.GetBackingStore().Get("zoomDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DepEnrollmentProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -573,97 +693,222 @@ func (m *DepEnrollmentProfile) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetAppleIdDisabled sets the appleIdDisabled property value. Indicates if Apple id setup pane is disabled
 func (m *DepEnrollmentProfile) SetAppleIdDisabled(value *bool)() {
-    m.appleIdDisabled = value
+    err := m.GetBackingStore().Set("appleIdDisabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApplePayDisabled sets the applePayDisabled property value. Indicates if Apple pay setup pane is disabled
 func (m *DepEnrollmentProfile) SetApplePayDisabled(value *bool)() {
-    m.applePayDisabled = value
+    err := m.GetBackingStore().Set("applePayDisabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAwaitDeviceConfiguredConfirmation sets the awaitDeviceConfiguredConfirmation property value. Indicates if the device will need to wait for configured confirmation
 func (m *DepEnrollmentProfile) SetAwaitDeviceConfiguredConfirmation(value *bool)() {
-    m.awaitDeviceConfiguredConfirmation = value
+    err := m.GetBackingStore().Set("awaitDeviceConfiguredConfirmation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDiagnosticsDisabled sets the diagnosticsDisabled property value. Indicates if diagnostics setup pane is disabled
 func (m *DepEnrollmentProfile) SetDiagnosticsDisabled(value *bool)() {
-    m.diagnosticsDisabled = value
+    err := m.GetBackingStore().Set("diagnosticsDisabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnableSharedIPad sets the enableSharedIPad property value. This indicates whether the device is to be enrolled in a mode which enables multi user scenarios. Only applicable in shared iPads.
 func (m *DepEnrollmentProfile) SetEnableSharedIPad(value *bool)() {
-    m.enableSharedIPad = value
+    err := m.GetBackingStore().Set("enableSharedIPad", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsDefault sets the isDefault property value. Indicates if this is the default profile
 func (m *DepEnrollmentProfile) SetIsDefault(value *bool)() {
-    m.isDefault = value
+    err := m.GetBackingStore().Set("isDefault", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsMandatory sets the isMandatory property value. Indicates if the profile is mandatory
 func (m *DepEnrollmentProfile) SetIsMandatory(value *bool)() {
-    m.isMandatory = value
+    err := m.GetBackingStore().Set("isMandatory", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetITunesPairingMode sets the iTunesPairingMode property value. The iTunesPairingMode property
 func (m *DepEnrollmentProfile) SetITunesPairingMode(value *ITunesPairingMode)() {
-    m.iTunesPairingMode = value
+    err := m.GetBackingStore().Set("iTunesPairingMode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocationDisabled sets the locationDisabled property value. Indicates if Location service setup pane is disabled
 func (m *DepEnrollmentProfile) SetLocationDisabled(value *bool)() {
-    m.locationDisabled = value
+    err := m.GetBackingStore().Set("locationDisabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMacOSFileVaultDisabled sets the macOSFileVaultDisabled property value. Indicates if Mac OS file vault is disabled
 func (m *DepEnrollmentProfile) SetMacOSFileVaultDisabled(value *bool)() {
-    m.macOSFileVaultDisabled = value
+    err := m.GetBackingStore().Set("macOSFileVaultDisabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMacOSRegistrationDisabled sets the macOSRegistrationDisabled property value. Indicates if Mac OS registration is disabled
 func (m *DepEnrollmentProfile) SetMacOSRegistrationDisabled(value *bool)() {
-    m.macOSRegistrationDisabled = value
+    err := m.GetBackingStore().Set("macOSRegistrationDisabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagementCertificates sets the managementCertificates property value. Management certificates for Apple Configurator
 func (m *DepEnrollmentProfile) SetManagementCertificates(value []ManagementCertificateWithThumbprintable)() {
-    m.managementCertificates = value
+    err := m.GetBackingStore().Set("managementCertificates", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPassCodeDisabled sets the passCodeDisabled property value. Indicates if Passcode setup pane is disabled
 func (m *DepEnrollmentProfile) SetPassCodeDisabled(value *bool)() {
-    m.passCodeDisabled = value
+    err := m.GetBackingStore().Set("passCodeDisabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProfileRemovalDisabled sets the profileRemovalDisabled property value. Indicates if the profile removal option is disabled
 func (m *DepEnrollmentProfile) SetProfileRemovalDisabled(value *bool)() {
-    m.profileRemovalDisabled = value
+    err := m.GetBackingStore().Set("profileRemovalDisabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRestoreBlocked sets the restoreBlocked property value. Indicates if Restore setup pane is blocked
 func (m *DepEnrollmentProfile) SetRestoreBlocked(value *bool)() {
-    m.restoreBlocked = value
+    err := m.GetBackingStore().Set("restoreBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRestoreFromAndroidDisabled sets the restoreFromAndroidDisabled property value. Indicates if Restore from Android is disabled
 func (m *DepEnrollmentProfile) SetRestoreFromAndroidDisabled(value *bool)() {
-    m.restoreFromAndroidDisabled = value
+    err := m.GetBackingStore().Set("restoreFromAndroidDisabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSharedIPadMaximumUserCount sets the sharedIPadMaximumUserCount property value. This specifies the maximum number of users that can use a shared iPad. Only applicable in shared iPad mode.
 func (m *DepEnrollmentProfile) SetSharedIPadMaximumUserCount(value *int32)() {
-    m.sharedIPadMaximumUserCount = value
+    err := m.GetBackingStore().Set("sharedIPadMaximumUserCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSiriDisabled sets the siriDisabled property value. Indicates if siri setup pane is disabled
 func (m *DepEnrollmentProfile) SetSiriDisabled(value *bool)() {
-    m.siriDisabled = value
+    err := m.GetBackingStore().Set("siriDisabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetSupervisedModeEnabled sets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/en-us/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
+// SetSupervisedModeEnabled sets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
 func (m *DepEnrollmentProfile) SetSupervisedModeEnabled(value *bool)() {
-    m.supervisedModeEnabled = value
+    err := m.GetBackingStore().Set("supervisedModeEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSupportDepartment sets the supportDepartment property value. Support department information
 func (m *DepEnrollmentProfile) SetSupportDepartment(value *string)() {
-    m.supportDepartment = value
+    err := m.GetBackingStore().Set("supportDepartment", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSupportPhoneNumber sets the supportPhoneNumber property value. Support phone number
 func (m *DepEnrollmentProfile) SetSupportPhoneNumber(value *string)() {
-    m.supportPhoneNumber = value
+    err := m.GetBackingStore().Set("supportPhoneNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTermsAndConditionsDisabled sets the termsAndConditionsDisabled property value. Indicates if 'Terms and Conditions' setup pane is disabled
 func (m *DepEnrollmentProfile) SetTermsAndConditionsDisabled(value *bool)() {
-    m.termsAndConditionsDisabled = value
+    err := m.GetBackingStore().Set("termsAndConditionsDisabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTouchIdDisabled sets the touchIdDisabled property value. Indicates if touch id setup pane is disabled
 func (m *DepEnrollmentProfile) SetTouchIdDisabled(value *bool)() {
-    m.touchIdDisabled = value
+    err := m.GetBackingStore().Set("touchIdDisabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetZoomDisabled sets the zoomDisabled property value. Indicates if zoom setup pane is disabled
 func (m *DepEnrollmentProfile) SetZoomDisabled(value *bool)() {
-    m.zoomDisabled = value
+    err := m.GetBackingStore().Set("zoomDisabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DepEnrollmentProfileable 
+type DepEnrollmentProfileable interface {
+    EnrollmentProfileable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppleIdDisabled()(*bool)
+    GetApplePayDisabled()(*bool)
+    GetAwaitDeviceConfiguredConfirmation()(*bool)
+    GetDiagnosticsDisabled()(*bool)
+    GetEnableSharedIPad()(*bool)
+    GetIsDefault()(*bool)
+    GetIsMandatory()(*bool)
+    GetITunesPairingMode()(*ITunesPairingMode)
+    GetLocationDisabled()(*bool)
+    GetMacOSFileVaultDisabled()(*bool)
+    GetMacOSRegistrationDisabled()(*bool)
+    GetManagementCertificates()([]ManagementCertificateWithThumbprintable)
+    GetPassCodeDisabled()(*bool)
+    GetProfileRemovalDisabled()(*bool)
+    GetRestoreBlocked()(*bool)
+    GetRestoreFromAndroidDisabled()(*bool)
+    GetSharedIPadMaximumUserCount()(*int32)
+    GetSiriDisabled()(*bool)
+    GetSupervisedModeEnabled()(*bool)
+    GetSupportDepartment()(*string)
+    GetSupportPhoneNumber()(*string)
+    GetTermsAndConditionsDisabled()(*bool)
+    GetTouchIdDisabled()(*bool)
+    GetZoomDisabled()(*bool)
+    SetAppleIdDisabled(value *bool)()
+    SetApplePayDisabled(value *bool)()
+    SetAwaitDeviceConfiguredConfirmation(value *bool)()
+    SetDiagnosticsDisabled(value *bool)()
+    SetEnableSharedIPad(value *bool)()
+    SetIsDefault(value *bool)()
+    SetIsMandatory(value *bool)()
+    SetITunesPairingMode(value *ITunesPairingMode)()
+    SetLocationDisabled(value *bool)()
+    SetMacOSFileVaultDisabled(value *bool)()
+    SetMacOSRegistrationDisabled(value *bool)()
+    SetManagementCertificates(value []ManagementCertificateWithThumbprintable)()
+    SetPassCodeDisabled(value *bool)()
+    SetProfileRemovalDisabled(value *bool)()
+    SetRestoreBlocked(value *bool)()
+    SetRestoreFromAndroidDisabled(value *bool)()
+    SetSharedIPadMaximumUserCount(value *int32)()
+    SetSiriDisabled(value *bool)()
+    SetSupervisedModeEnabled(value *bool)()
+    SetSupportDepartment(value *string)()
+    SetSupportPhoneNumber(value *string)()
+    SetTermsAndConditionsDisabled(value *bool)()
+    SetTouchIdDisabled(value *bool)()
+    SetZoomDisabled(value *bool)()
 }

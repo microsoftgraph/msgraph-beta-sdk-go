@@ -54,8 +54,8 @@ func NewLifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilderIntern
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewLifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilder instantiates a new UserProcessingResultsRequestBuilder and sets the default values.
@@ -66,7 +66,7 @@ func NewLifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilder(rawUr
 }
 // Count provides operations to count the resources in the collection.
 func (m *LifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilder) Count()(*LifecycleWorkflowsWorkflowsItemUserProcessingResultsCountRequestBuilder) {
-    return NewLifecycleWorkflowsWorkflowsItemUserProcessingResultsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewLifecycleWorkflowsWorkflowsItemUserProcessingResultsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the **userProcessingResult** resources for a workflow.
 // [Find more info here]
@@ -90,9 +90,9 @@ func (m *LifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilder) Get
     }
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.UserProcessingResultCollectionResponseable), nil
 }
-// SummaryWithStartDateTimeWithEndDateTime provides operations to call the summary method.
-func (m *LifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilder) SummaryWithStartDateTimeWithEndDateTime(endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*LifecycleWorkflowsWorkflowsItemUserProcessingResultsSummaryWithStartDateTimeWithEndDateTimeRequestBuilder) {
-    return NewLifecycleWorkflowsWorkflowsItemUserProcessingResultsSummaryWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, startDateTime);
+// IdentityGovernanceSummaryWithStartDateTimeWithEndDateTime provides operations to call the summary method.
+func (m *LifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilder) IdentityGovernanceSummaryWithStartDateTimeWithEndDateTime(endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*LifecycleWorkflowsWorkflowsItemUserProcessingResultsIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder) {
+    return NewLifecycleWorkflowsWorkflowsItemUserProcessingResultsIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, startDateTime)
 }
 // ToGetRequestInformation get the **userProcessingResult** resources for a workflow.
 func (m *LifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -7,8 +7,6 @@ import (
 // AttributeSetCollectionResponse 
 type AttributeSetCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AttributeSetable
 }
 // NewAttributeSetCollectionResponse instantiates a new AttributeSetCollectionResponse and sets the default values.
 func NewAttributeSetCollectionResponse()(*AttributeSetCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AttributeSetCollectionResponse) GetFieldDeserializers()(map[string]func
 }
 // GetValue gets the value property value. The value property
 func (m *AttributeSetCollectionResponse) GetValue()([]AttributeSetable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AttributeSetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AttributeSetCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AttributeSetCollectionResponse) Serialize(writer i878a80d2330e89d268963
 }
 // SetValue sets the value property value. The value property
 func (m *AttributeSetCollectionResponse) SetValue(value []AttributeSetable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AttributeSetCollectionResponseable 
+type AttributeSetCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AttributeSetable)
+    SetValue(value []AttributeSetable)()
 }

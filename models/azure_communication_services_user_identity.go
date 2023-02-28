@@ -7,16 +7,14 @@ import (
 // AzureCommunicationServicesUserIdentity 
 type AzureCommunicationServicesUserIdentity struct {
     Identity
-    // The Azure Communication Services resource ID associated with the user.
-    azureCommunicationServicesResourceId *string
 }
 // NewAzureCommunicationServicesUserIdentity instantiates a new AzureCommunicationServicesUserIdentity and sets the default values.
 func NewAzureCommunicationServicesUserIdentity()(*AzureCommunicationServicesUserIdentity) {
     m := &AzureCommunicationServicesUserIdentity{
         Identity: *NewIdentity(),
     }
-    odataTypeValue := "#microsoft.graph.azureCommunicationServicesUserIdentity";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.azureCommunicationServicesUserIdentity"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAzureCommunicationServicesUserIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +23,14 @@ func CreateAzureCommunicationServicesUserIdentityFromDiscriminatorValue(parseNod
 }
 // GetAzureCommunicationServicesResourceId gets the azureCommunicationServicesResourceId property value. The Azure Communication Services resource ID associated with the user.
 func (m *AzureCommunicationServicesUserIdentity) GetAzureCommunicationServicesResourceId()(*string) {
-    return m.azureCommunicationServicesResourceId
+    val, err := m.GetBackingStore().Get("azureCommunicationServicesResourceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AzureCommunicationServicesUserIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -58,5 +63,15 @@ func (m *AzureCommunicationServicesUserIdentity) Serialize(writer i878a80d2330e8
 }
 // SetAzureCommunicationServicesResourceId sets the azureCommunicationServicesResourceId property value. The Azure Communication Services resource ID associated with the user.
 func (m *AzureCommunicationServicesUserIdentity) SetAzureCommunicationServicesResourceId(value *string)() {
-    m.azureCommunicationServicesResourceId = value
+    err := m.GetBackingStore().Set("azureCommunicationServicesResourceId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AzureCommunicationServicesUserIdentityable 
+type AzureCommunicationServicesUserIdentityable interface {
+    Identityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAzureCommunicationServicesResourceId()(*string)
+    SetAzureCommunicationServicesResourceId(value *string)()
 }

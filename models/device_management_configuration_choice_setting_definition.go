@@ -7,10 +7,6 @@ import (
 // DeviceManagementConfigurationChoiceSettingDefinition 
 type DeviceManagementConfigurationChoiceSettingDefinition struct {
     DeviceManagementConfigurationSettingDefinition
-    // Default option for choice setting
-    defaultOptionId *string
-    // Options for the setting that can be selected
-    options []DeviceManagementConfigurationOptionDefinitionable
 }
 // NewDeviceManagementConfigurationChoiceSettingDefinition instantiates a new DeviceManagementConfigurationChoiceSettingDefinition and sets the default values.
 func NewDeviceManagementConfigurationChoiceSettingDefinition()(*DeviceManagementConfigurationChoiceSettingDefinition) {
@@ -43,7 +39,14 @@ func CreateDeviceManagementConfigurationChoiceSettingDefinitionFromDiscriminator
 }
 // GetDefaultOptionId gets the defaultOptionId property value. Default option for choice setting
 func (m *DeviceManagementConfigurationChoiceSettingDefinition) GetDefaultOptionId()(*string) {
-    return m.defaultOptionId
+    val, err := m.GetBackingStore().Get("defaultOptionId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationChoiceSettingDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -76,7 +79,14 @@ func (m *DeviceManagementConfigurationChoiceSettingDefinition) GetFieldDeseriali
 }
 // GetOptions gets the options property value. Options for the setting that can be selected
 func (m *DeviceManagementConfigurationChoiceSettingDefinition) GetOptions()([]DeviceManagementConfigurationOptionDefinitionable) {
-    return m.options
+    val, err := m.GetBackingStore().Get("options")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementConfigurationOptionDefinitionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationChoiceSettingDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -104,9 +114,24 @@ func (m *DeviceManagementConfigurationChoiceSettingDefinition) Serialize(writer 
 }
 // SetDefaultOptionId sets the defaultOptionId property value. Default option for choice setting
 func (m *DeviceManagementConfigurationChoiceSettingDefinition) SetDefaultOptionId(value *string)() {
-    m.defaultOptionId = value
+    err := m.GetBackingStore().Set("defaultOptionId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOptions sets the options property value. Options for the setting that can be selected
 func (m *DeviceManagementConfigurationChoiceSettingDefinition) SetOptions(value []DeviceManagementConfigurationOptionDefinitionable)() {
-    m.options = value
+    err := m.GetBackingStore().Set("options", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationChoiceSettingDefinitionable 
+type DeviceManagementConfigurationChoiceSettingDefinitionable interface {
+    DeviceManagementConfigurationSettingDefinitionable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDefaultOptionId()(*string)
+    GetOptions()([]DeviceManagementConfigurationOptionDefinitionable)
+    SetDefaultOptionId(value *string)()
+    SetOptions(value []DeviceManagementConfigurationOptionDefinitionable)()
 }

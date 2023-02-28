@@ -53,11 +53,11 @@ type ItemSitesItemContentTypesRequestBuilderPostRequestConfiguration struct {
 }
 // AddCopy provides operations to call the addCopy method.
 func (m *ItemSitesItemContentTypesRequestBuilder) AddCopy()(*ItemSitesItemContentTypesAddCopyRequestBuilder) {
-    return NewItemSitesItemContentTypesAddCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemContentTypesAddCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AddCopyFromContentTypeHub provides operations to call the addCopyFromContentTypeHub method.
 func (m *ItemSitesItemContentTypesRequestBuilder) AddCopyFromContentTypeHub()(*ItemSitesItemContentTypesAddCopyFromContentTypeHubRequestBuilder) {
-    return NewItemSitesItemContentTypesAddCopyFromContentTypeHubRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemContentTypesAddCopyFromContentTypeHubRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewItemSitesItemContentTypesRequestBuilderInternal instantiates a new ContentTypesRequestBuilder and sets the default values.
 func NewItemSitesItemContentTypesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemContentTypesRequestBuilder) {
@@ -68,8 +68,8 @@ func NewItemSitesItemContentTypesRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemContentTypesRequestBuilder instantiates a new ContentTypesRequestBuilder and sets the default values.
@@ -80,7 +80,7 @@ func NewItemSitesItemContentTypesRequestBuilder(rawUrl string, requestAdapter i2
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemSitesItemContentTypesRequestBuilder) Count()(*ItemSitesItemContentTypesCountRequestBuilder) {
-    return NewItemSitesItemContentTypesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemContentTypesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the collection of [contentType][contentType] resources in a [site][].
 // [Find more info here]
@@ -106,7 +106,7 @@ func (m *ItemSitesItemContentTypesRequestBuilder) Get(ctx context.Context, reque
 }
 // GetCompatibleHubContentTypes provides operations to call the getCompatibleHubContentTypes method.
 func (m *ItemSitesItemContentTypesRequestBuilder) GetCompatibleHubContentTypes()(*ItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilder) {
-    return NewItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create a new [contentType][] for a [site][].
 // [Find more info here]
@@ -153,7 +153,10 @@ func (m *ItemSitesItemContentTypesRequestBuilder) ToPostRequestInformation(ctx c
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

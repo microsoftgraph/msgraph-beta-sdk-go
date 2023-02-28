@@ -8,8 +8,6 @@ import (
 // ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesFilterByCurrentUserWithOnResponse 
 type ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesFilterByCurrentUserWithOnResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
-    // The value property
-    value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewStageable
 }
 // NewItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesFilterByCurrentUserWithOnResponse instantiates a new ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesFilterByCurrentUserWithOnResponse and sets the default values.
 func NewItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesFilterByCurrentUserWithOnResponse()(*ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesFilterByCurrentUserWithOnResponse) {
@@ -43,7 +41,14 @@ func (m *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesFilterBy
 }
 // GetValue gets the value property value. The value property
 func (m *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesFilterByCurrentUserWithOnResponse) GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewStageable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewStageable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesFilterByCurrentUserWithOnResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesFilterBy
 }
 // SetValue sets the value property value. The value property
 func (m *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesFilterByCurrentUserWithOnResponse) SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewStageable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesFilterByCurrentUserWithOnResponseable 
+type ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesFilterByCurrentUserWithOnResponseable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewStageable)
+    SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewStageable)()
 }

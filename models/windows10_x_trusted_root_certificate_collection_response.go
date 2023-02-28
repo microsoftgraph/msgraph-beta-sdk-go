@@ -7,8 +7,6 @@ import (
 // Windows10XTrustedRootCertificateCollectionResponse 
 type Windows10XTrustedRootCertificateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Windows10XTrustedRootCertificateable
 }
 // NewWindows10XTrustedRootCertificateCollectionResponse instantiates a new Windows10XTrustedRootCertificateCollectionResponse and sets the default values.
 func NewWindows10XTrustedRootCertificateCollectionResponse()(*Windows10XTrustedRootCertificateCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *Windows10XTrustedRootCertificateCollectionResponse) GetFieldDeserialize
 }
 // GetValue gets the value property value. The value property
 func (m *Windows10XTrustedRootCertificateCollectionResponse) GetValue()([]Windows10XTrustedRootCertificateable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Windows10XTrustedRootCertificateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Windows10XTrustedRootCertificateCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *Windows10XTrustedRootCertificateCollectionResponse) Serialize(writer i8
 }
 // SetValue sets the value property value. The value property
 func (m *Windows10XTrustedRootCertificateCollectionResponse) SetValue(value []Windows10XTrustedRootCertificateable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Windows10XTrustedRootCertificateCollectionResponseable 
+type Windows10XTrustedRootCertificateCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Windows10XTrustedRootCertificateable)
+    SetValue(value []Windows10XTrustedRootCertificateable)()
 }

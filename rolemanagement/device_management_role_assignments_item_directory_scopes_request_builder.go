@@ -53,8 +53,8 @@ func NewDeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilderInternal
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilder instantiates a new DirectoryScopesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewDeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilder(rawUrl 
 }
 // Count provides operations to count the resources in the collection.
 func (m *DeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilder) Count()(*DeviceManagementRoleAssignmentsItemDirectoryScopesCountRequestBuilder) {
-    return NewDeviceManagementRoleAssignmentsItemDirectoryScopesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceManagementRoleAssignmentsItemDirectoryScopesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
 func (m *DeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {

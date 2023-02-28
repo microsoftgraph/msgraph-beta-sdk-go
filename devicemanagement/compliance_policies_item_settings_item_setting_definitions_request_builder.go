@@ -53,8 +53,8 @@ func NewCompliancePoliciesItemSettingsItemSettingDefinitionsRequestBuilderIntern
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompliancePoliciesItemSettingsItemSettingDefinitionsRequestBuilder instantiates a new SettingDefinitionsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewCompliancePoliciesItemSettingsItemSettingDefinitionsRequestBuilder(rawUr
 }
 // Count provides operations to count the resources in the collection.
 func (m *CompliancePoliciesItemSettingsItemSettingDefinitionsRequestBuilder) Count()(*CompliancePoliciesItemSettingsItemSettingDefinitionsCountRequestBuilder) {
-    return NewCompliancePoliciesItemSettingsItemSettingDefinitionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompliancePoliciesItemSettingsItemSettingDefinitionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list of related Setting Definitions. This property is read-only.
 func (m *CompliancePoliciesItemSettingsItemSettingDefinitionsRequestBuilder) Get(ctx context.Context, requestConfiguration *CompliancePoliciesItemSettingsItemSettingDefinitionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationSettingDefinitionCollectionResponseable, error) {

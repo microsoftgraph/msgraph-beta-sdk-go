@@ -7,8 +7,6 @@ import (
 // MeetingRegistrantCollectionResponse 
 type MeetingRegistrantCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MeetingRegistrantable
 }
 // NewMeetingRegistrantCollectionResponse instantiates a new MeetingRegistrantCollectionResponse and sets the default values.
 func NewMeetingRegistrantCollectionResponse()(*MeetingRegistrantCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MeetingRegistrantCollectionResponse) GetFieldDeserializers()(map[string
 }
 // GetValue gets the value property value. The value property
 func (m *MeetingRegistrantCollectionResponse) GetValue()([]MeetingRegistrantable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MeetingRegistrantable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MeetingRegistrantCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MeetingRegistrantCollectionResponse) Serialize(writer i878a80d2330e89d2
 }
 // SetValue sets the value property value. The value property
 func (m *MeetingRegistrantCollectionResponse) SetValue(value []MeetingRegistrantable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MeetingRegistrantCollectionResponseable 
+type MeetingRegistrantCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MeetingRegistrantable)
+    SetValue(value []MeetingRegistrantable)()
 }

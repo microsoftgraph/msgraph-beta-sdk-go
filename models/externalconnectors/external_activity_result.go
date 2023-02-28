@@ -8,8 +8,6 @@ import (
 // ExternalActivityResult 
 type ExternalActivityResult struct {
     ExternalActivity
-    // Error information explaining failure to process external activity.
-    error ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublicErrorable
 }
 // NewExternalActivityResult instantiates a new ExternalActivityResult and sets the default values.
 func NewExternalActivityResult()(*ExternalActivityResult) {
@@ -24,7 +22,14 @@ func CreateExternalActivityResultFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetError gets the error property value. Error information explaining failure to process external activity.
 func (m *ExternalActivityResult) GetError()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublicErrorable) {
-    return m.error
+    val, err := m.GetBackingStore().Get("error")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublicErrorable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExternalActivityResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -57,5 +62,15 @@ func (m *ExternalActivityResult) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetError sets the error property value. Error information explaining failure to process external activity.
 func (m *ExternalActivityResult) SetError(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublicErrorable)() {
-    m.error = value
+    err := m.GetBackingStore().Set("error", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ExternalActivityResultable 
+type ExternalActivityResultable interface {
+    ExternalActivityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetError()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublicErrorable)
+    SetError(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublicErrorable)()
 }

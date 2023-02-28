@@ -7,18 +7,14 @@ import (
 // WindowsKioskAzureADGroup 
 type WindowsKioskAzureADGroup struct {
     WindowsKioskUser
-    // The display name of the AzureAD group that will be locked to this kiosk configuration
-    displayName *string
-    // The ID of the AzureAD group that will be locked to this kiosk configuration
-    groupId *string
 }
 // NewWindowsKioskAzureADGroup instantiates a new WindowsKioskAzureADGroup and sets the default values.
 func NewWindowsKioskAzureADGroup()(*WindowsKioskAzureADGroup) {
     m := &WindowsKioskAzureADGroup{
         WindowsKioskUser: *NewWindowsKioskUser(),
     }
-    odataTypeValue := "#microsoft.graph.windowsKioskAzureADGroup";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsKioskAzureADGroup"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsKioskAzureADGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +23,14 @@ func CreateWindowsKioskAzureADGroupFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetDisplayName gets the displayName property value. The display name of the AzureAD group that will be locked to this kiosk configuration
 func (m *WindowsKioskAzureADGroup) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsKioskAzureADGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,7 +59,14 @@ func (m *WindowsKioskAzureADGroup) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetGroupId gets the groupId property value. The ID of the AzureAD group that will be locked to this kiosk configuration
 func (m *WindowsKioskAzureADGroup) GetGroupId()(*string) {
-    return m.groupId
+    val, err := m.GetBackingStore().Get("groupId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsKioskAzureADGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *WindowsKioskAzureADGroup) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetDisplayName sets the displayName property value. The display name of the AzureAD group that will be locked to this kiosk configuration
 func (m *WindowsKioskAzureADGroup) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGroupId sets the groupId property value. The ID of the AzureAD group that will be locked to this kiosk configuration
 func (m *WindowsKioskAzureADGroup) SetGroupId(value *string)() {
-    m.groupId = value
+    err := m.GetBackingStore().Set("groupId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsKioskAzureADGroupable 
+type WindowsKioskAzureADGroupable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    WindowsKioskUserable
+    GetDisplayName()(*string)
+    GetGroupId()(*string)
+    SetDisplayName(value *string)()
+    SetGroupId(value *string)()
 }

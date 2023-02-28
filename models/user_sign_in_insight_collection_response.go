@@ -7,8 +7,6 @@ import (
 // UserSignInInsightCollectionResponse 
 type UserSignInInsightCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UserSignInInsightable
 }
 // NewUserSignInInsightCollectionResponse instantiates a new UserSignInInsightCollectionResponse and sets the default values.
 func NewUserSignInInsightCollectionResponse()(*UserSignInInsightCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UserSignInInsightCollectionResponse) GetFieldDeserializers()(map[string
 }
 // GetValue gets the value property value. The value property
 func (m *UserSignInInsightCollectionResponse) GetValue()([]UserSignInInsightable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserSignInInsightable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserSignInInsightCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UserSignInInsightCollectionResponse) Serialize(writer i878a80d2330e89d2
 }
 // SetValue sets the value property value. The value property
 func (m *UserSignInInsightCollectionResponse) SetValue(value []UserSignInInsightable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserSignInInsightCollectionResponseable 
+type UserSignInInsightCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UserSignInInsightable)
+    SetValue(value []UserSignInInsightable)()
 }

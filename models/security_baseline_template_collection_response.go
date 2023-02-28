@@ -7,8 +7,6 @@ import (
 // SecurityBaselineTemplateCollectionResponse 
 type SecurityBaselineTemplateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []SecurityBaselineTemplateable
 }
 // NewSecurityBaselineTemplateCollectionResponse instantiates a new SecurityBaselineTemplateCollectionResponse and sets the default values.
 func NewSecurityBaselineTemplateCollectionResponse()(*SecurityBaselineTemplateCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *SecurityBaselineTemplateCollectionResponse) GetFieldDeserializers()(map
 }
 // GetValue gets the value property value. The value property
 func (m *SecurityBaselineTemplateCollectionResponse) GetValue()([]SecurityBaselineTemplateable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SecurityBaselineTemplateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SecurityBaselineTemplateCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *SecurityBaselineTemplateCollectionResponse) Serialize(writer i878a80d23
 }
 // SetValue sets the value property value. The value property
 func (m *SecurityBaselineTemplateCollectionResponse) SetValue(value []SecurityBaselineTemplateable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SecurityBaselineTemplateCollectionResponseable 
+type SecurityBaselineTemplateCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]SecurityBaselineTemplateable)
+    SetValue(value []SecurityBaselineTemplateable)()
 }

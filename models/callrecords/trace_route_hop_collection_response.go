@@ -8,8 +8,6 @@ import (
 // TraceRouteHopCollectionResponse 
 type TraceRouteHopCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
-    // The value property
-    value []TraceRouteHopable
 }
 // NewTraceRouteHopCollectionResponse instantiates a new TraceRouteHopCollectionResponse and sets the default values.
 func NewTraceRouteHopCollectionResponse()(*TraceRouteHopCollectionResponse) {
@@ -43,7 +41,14 @@ func (m *TraceRouteHopCollectionResponse) GetFieldDeserializers()(map[string]fun
 }
 // GetValue gets the value property value. The value property
 func (m *TraceRouteHopCollectionResponse) GetValue()([]TraceRouteHopable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TraceRouteHopable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TraceRouteHopCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *TraceRouteHopCollectionResponse) Serialize(writer i878a80d2330e89d26896
 }
 // SetValue sets the value property value. The value property
 func (m *TraceRouteHopCollectionResponse) SetValue(value []TraceRouteHopable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TraceRouteHopCollectionResponseable 
+type TraceRouteHopCollectionResponseable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]TraceRouteHopable)
+    SetValue(value []TraceRouteHopable)()
 }

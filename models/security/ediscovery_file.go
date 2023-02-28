@@ -7,10 +7,6 @@ import (
 // EdiscoveryFile 
 type EdiscoveryFile struct {
     File
-    // Custodians associated with the file.
-    custodian EdiscoveryCustodianable
-    // Tags associated with the file.
-    tags []EdiscoveryReviewTagable
 }
 // NewEdiscoveryFile instantiates a new EdiscoveryFile and sets the default values.
 func NewEdiscoveryFile()(*EdiscoveryFile) {
@@ -25,7 +21,14 @@ func CreateEdiscoveryFileFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetCustodian gets the custodian property value. Custodians associated with the file.
 func (m *EdiscoveryFile) GetCustodian()(EdiscoveryCustodianable) {
-    return m.custodian
+    val, err := m.GetBackingStore().Get("custodian")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EdiscoveryCustodianable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EdiscoveryFile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -58,7 +61,14 @@ func (m *EdiscoveryFile) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetTags gets the tags property value. Tags associated with the file.
 func (m *EdiscoveryFile) GetTags()([]EdiscoveryReviewTagable) {
-    return m.tags
+    val, err := m.GetBackingStore().Get("tags")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EdiscoveryReviewTagable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EdiscoveryFile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -86,9 +96,24 @@ func (m *EdiscoveryFile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetCustodian sets the custodian property value. Custodians associated with the file.
 func (m *EdiscoveryFile) SetCustodian(value EdiscoveryCustodianable)() {
-    m.custodian = value
+    err := m.GetBackingStore().Set("custodian", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTags sets the tags property value. Tags associated with the file.
 func (m *EdiscoveryFile) SetTags(value []EdiscoveryReviewTagable)() {
-    m.tags = value
+    err := m.GetBackingStore().Set("tags", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EdiscoveryFileable 
+type EdiscoveryFileable interface {
+    Fileable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCustodian()(EdiscoveryCustodianable)
+    GetTags()([]EdiscoveryReviewTagable)
+    SetCustodian(value EdiscoveryCustodianable)()
+    SetTags(value []EdiscoveryReviewTagable)()
 }

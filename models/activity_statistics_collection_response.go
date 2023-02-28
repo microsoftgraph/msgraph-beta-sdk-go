@@ -7,8 +7,6 @@ import (
 // ActivityStatisticsCollectionResponse 
 type ActivityStatisticsCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ActivityStatisticsable
 }
 // NewActivityStatisticsCollectionResponse instantiates a new ActivityStatisticsCollectionResponse and sets the default values.
 func NewActivityStatisticsCollectionResponse()(*ActivityStatisticsCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ActivityStatisticsCollectionResponse) GetFieldDeserializers()(map[strin
 }
 // GetValue gets the value property value. The value property
 func (m *ActivityStatisticsCollectionResponse) GetValue()([]ActivityStatisticsable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ActivityStatisticsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ActivityStatisticsCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ActivityStatisticsCollectionResponse) Serialize(writer i878a80d2330e89d
 }
 // SetValue sets the value property value. The value property
 func (m *ActivityStatisticsCollectionResponse) SetValue(value []ActivityStatisticsable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ActivityStatisticsCollectionResponseable 
+type ActivityStatisticsCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ActivityStatisticsable)
+    SetValue(value []ActivityStatisticsable)()
 }

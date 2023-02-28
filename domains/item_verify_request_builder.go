@@ -27,13 +27,13 @@ type ItemVerifyRequestBuilderPostRequestConfiguration struct {
 func NewItemVerifyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemVerifyRequestBuilder) {
     m := &ItemVerifyRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/domains/{domain%2Did}/microsoft.graph.verify";
+    m.urlTemplate = "{+baseurl}/domains/{domain%2Did}/verify";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemVerifyRequestBuilder instantiates a new VerifyRequestBuilder and sets the default values.

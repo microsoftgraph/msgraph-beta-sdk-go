@@ -7,10 +7,6 @@ import (
 // IosVppAppAssignedDeviceLicense 
 type IosVppAppAssignedDeviceLicense struct {
     IosVppAppAssignedLicense
-    // The device name.
-    deviceName *string
-    // The managed device ID.
-    managedDeviceId *string
 }
 // NewIosVppAppAssignedDeviceLicense instantiates a new IosVppAppAssignedDeviceLicense and sets the default values.
 func NewIosVppAppAssignedDeviceLicense()(*IosVppAppAssignedDeviceLicense) {
@@ -25,7 +21,14 @@ func CreateIosVppAppAssignedDeviceLicenseFromDiscriminatorValue(parseNode i878a8
 }
 // GetDeviceName gets the deviceName property value. The device name.
 func (m *IosVppAppAssignedDeviceLicense) GetDeviceName()(*string) {
-    return m.deviceName
+    val, err := m.GetBackingStore().Get("deviceName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosVppAppAssignedDeviceLicense) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -54,7 +57,14 @@ func (m *IosVppAppAssignedDeviceLicense) GetFieldDeserializers()(map[string]func
 }
 // GetManagedDeviceId gets the managedDeviceId property value. The managed device ID.
 func (m *IosVppAppAssignedDeviceLicense) GetManagedDeviceId()(*string) {
-    return m.managedDeviceId
+    val, err := m.GetBackingStore().Get("managedDeviceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosVppAppAssignedDeviceLicense) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -78,9 +88,24 @@ func (m *IosVppAppAssignedDeviceLicense) Serialize(writer i878a80d2330e89d268963
 }
 // SetDeviceName sets the deviceName property value. The device name.
 func (m *IosVppAppAssignedDeviceLicense) SetDeviceName(value *string)() {
-    m.deviceName = value
+    err := m.GetBackingStore().Set("deviceName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedDeviceId sets the managedDeviceId property value. The managed device ID.
 func (m *IosVppAppAssignedDeviceLicense) SetManagedDeviceId(value *string)() {
-    m.managedDeviceId = value
+    err := m.GetBackingStore().Set("managedDeviceId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosVppAppAssignedDeviceLicenseable 
+type IosVppAppAssignedDeviceLicenseable interface {
+    IosVppAppAssignedLicenseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDeviceName()(*string)
+    GetManagedDeviceId()(*string)
+    SetDeviceName(value *string)()
+    SetManagedDeviceId(value *string)()
 }

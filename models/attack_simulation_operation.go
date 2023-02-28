@@ -7,12 +7,8 @@ import (
 // AttackSimulationOperation 
 type AttackSimulationOperation struct {
     LongRunningOperation
-    // Percentage of completion of the respective operation.
-    percentageCompleted *int32
-    // Tenant identifier.
-    tenantId *string
     // The attack simulation operation type. Possible values are: createSimulation, updateSimulation, unknownFutureValue.
-    type_escaped *AttackSimulationOperationType
+    TypeEscaped *AttackSimulationOperationType
 }
 // NewAttackSimulationOperation instantiates a new AttackSimulationOperation and sets the default values.
 func NewAttackSimulationOperation()(*AttackSimulationOperation) {
@@ -62,15 +58,36 @@ func (m *AttackSimulationOperation) GetFieldDeserializers()(map[string]func(i878
 }
 // GetPercentageCompleted gets the percentageCompleted property value. Percentage of completion of the respective operation.
 func (m *AttackSimulationOperation) GetPercentageCompleted()(*int32) {
-    return m.percentageCompleted
+    val, err := m.GetBackingStore().Get("percentageCompleted")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetTenantId gets the tenantId property value. Tenant identifier.
 func (m *AttackSimulationOperation) GetTenantId()(*string) {
-    return m.tenantId
+    val, err := m.GetBackingStore().Get("tenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetType gets the type property value. The attack simulation operation type. Possible values are: createSimulation, updateSimulation, unknownFutureValue.
 func (m *AttackSimulationOperation) GetType()(*AttackSimulationOperationType) {
-    return m.type_escaped
+    val, err := m.GetBackingStore().Get("typeEscaped")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AttackSimulationOperationType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AttackSimulationOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -101,13 +118,33 @@ func (m *AttackSimulationOperation) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetPercentageCompleted sets the percentageCompleted property value. Percentage of completion of the respective operation.
 func (m *AttackSimulationOperation) SetPercentageCompleted(value *int32)() {
-    m.percentageCompleted = value
+    err := m.GetBackingStore().Set("percentageCompleted", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantId sets the tenantId property value. Tenant identifier.
 func (m *AttackSimulationOperation) SetTenantId(value *string)() {
-    m.tenantId = value
+    err := m.GetBackingStore().Set("tenantId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetType sets the type property value. The attack simulation operation type. Possible values are: createSimulation, updateSimulation, unknownFutureValue.
 func (m *AttackSimulationOperation) SetType(value *AttackSimulationOperationType)() {
-    m.type_escaped = value
+    err := m.GetBackingStore().Set("typeEscaped", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AttackSimulationOperationable 
+type AttackSimulationOperationable interface {
+    LongRunningOperationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetPercentageCompleted()(*int32)
+    GetTenantId()(*string)
+    GetType()(*AttackSimulationOperationType)
+    SetPercentageCompleted(value *int32)()
+    SetTenantId(value *string)()
+    SetType(value *AttackSimulationOperationType)()
 }

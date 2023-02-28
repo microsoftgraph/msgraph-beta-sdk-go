@@ -7,8 +7,6 @@ import (
 // AuthenticationCombinationConfigurationCollectionResponse 
 type AuthenticationCombinationConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AuthenticationCombinationConfigurationable
 }
 // NewAuthenticationCombinationConfigurationCollectionResponse instantiates a new AuthenticationCombinationConfigurationCollectionResponse and sets the default values.
 func NewAuthenticationCombinationConfigurationCollectionResponse()(*AuthenticationCombinationConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AuthenticationCombinationConfigurationCollectionResponse) GetFieldDeser
 }
 // GetValue gets the value property value. The value property
 func (m *AuthenticationCombinationConfigurationCollectionResponse) GetValue()([]AuthenticationCombinationConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AuthenticationCombinationConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AuthenticationCombinationConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AuthenticationCombinationConfigurationCollectionResponse) Serialize(wri
 }
 // SetValue sets the value property value. The value property
 func (m *AuthenticationCombinationConfigurationCollectionResponse) SetValue(value []AuthenticationCombinationConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AuthenticationCombinationConfigurationCollectionResponseable 
+type AuthenticationCombinationConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AuthenticationCombinationConfigurationable)
+    SetValue(value []AuthenticationCombinationConfigurationable)()
 }

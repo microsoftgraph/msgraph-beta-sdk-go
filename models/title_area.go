@@ -2,40 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // TitleArea 
 type TitleArea struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Alternative text on the title area.
-    alternativeText *string
-    // Indicates whether the title area has a gradient effect enabled.
-    enableGradientEffect *bool
-    // URL of the image in the title area.
-    imageWebUrl *string
-    // Enumeration value that indicates the layout of the title area. The possible values are: imageAndTitle, plain, colorBlock, overlap, unknownFutureValue.
-    layout *TitleAreaLayoutType
-    // The OdataType property
-    odataType *string
-    // Contains collections of data that can be processed by server side services like search index and link fixup.
-    serverProcessedContent ServerProcessedContentable
-    // Indicates whether the author should be shown in title area.
-    showAuthor *bool
-    // Indicates whether the published date should be shown in title area.
-    showPublishedDate *bool
-    // Indicates whether the text block above title should be shown in title area.
-    showTextBlockAboveTitle *bool
-    // The text above title line.
-    textAboveTitle *string
-    // Enumeration value that indicates the text alignment of the title area. The possible values are: left, center, unknownFutureValue.
-    textAlignment *TitleAreaTextAlignmentType
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewTitleArea instantiates a new titleArea and sets the default values.
 func NewTitleArea()(*TitleArea) {
     m := &TitleArea{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTitleAreaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,15 +24,41 @@ func CreateTitleAreaFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TitleArea) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAlternativeText gets the alternativeText property value. Alternative text on the title area.
 func (m *TitleArea) GetAlternativeText()(*string) {
-    return m.alternativeText
+    val, err := m.GetBackingStore().Get("alternativeText")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *TitleArea) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetEnableGradientEffect gets the enableGradientEffect property value. Indicates whether the title area has a gradient effect enabled.
 func (m *TitleArea) GetEnableGradientEffect()(*bool) {
-    return m.enableGradientEffect
+    val, err := m.GetBackingStore().Get("enableGradientEffect")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TitleArea) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -171,39 +177,102 @@ func (m *TitleArea) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetImageWebUrl gets the imageWebUrl property value. URL of the image in the title area.
 func (m *TitleArea) GetImageWebUrl()(*string) {
-    return m.imageWebUrl
+    val, err := m.GetBackingStore().Get("imageWebUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLayout gets the layout property value. Enumeration value that indicates the layout of the title area. The possible values are: imageAndTitle, plain, colorBlock, overlap, unknownFutureValue.
 func (m *TitleArea) GetLayout()(*TitleAreaLayoutType) {
-    return m.layout
+    val, err := m.GetBackingStore().Get("layout")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*TitleAreaLayoutType)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TitleArea) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetServerProcessedContent gets the serverProcessedContent property value. Contains collections of data that can be processed by server side services like search index and link fixup.
 func (m *TitleArea) GetServerProcessedContent()(ServerProcessedContentable) {
-    return m.serverProcessedContent
+    val, err := m.GetBackingStore().Get("serverProcessedContent")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ServerProcessedContentable)
+    }
+    return nil
 }
 // GetShowAuthor gets the showAuthor property value. Indicates whether the author should be shown in title area.
 func (m *TitleArea) GetShowAuthor()(*bool) {
-    return m.showAuthor
+    val, err := m.GetBackingStore().Get("showAuthor")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetShowPublishedDate gets the showPublishedDate property value. Indicates whether the published date should be shown in title area.
 func (m *TitleArea) GetShowPublishedDate()(*bool) {
-    return m.showPublishedDate
+    val, err := m.GetBackingStore().Get("showPublishedDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetShowTextBlockAboveTitle gets the showTextBlockAboveTitle property value. Indicates whether the text block above title should be shown in title area.
 func (m *TitleArea) GetShowTextBlockAboveTitle()(*bool) {
-    return m.showTextBlockAboveTitle
+    val, err := m.GetBackingStore().Get("showTextBlockAboveTitle")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetTextAboveTitle gets the textAboveTitle property value. The text above title line.
 func (m *TitleArea) GetTextAboveTitle()(*string) {
-    return m.textAboveTitle
+    val, err := m.GetBackingStore().Get("textAboveTitle")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTextAlignment gets the textAlignment property value. Enumeration value that indicates the text alignment of the title area. The possible values are: left, center, unknownFutureValue.
 func (m *TitleArea) GetTextAlignment()(*TitleAreaTextAlignmentType) {
-    return m.textAlignment
+    val, err := m.GetBackingStore().Get("textAlignment")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*TitleAreaTextAlignmentType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TitleArea) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -285,49 +354,119 @@ func (m *TitleArea) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TitleArea) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAlternativeText sets the alternativeText property value. Alternative text on the title area.
 func (m *TitleArea) SetAlternativeText(value *string)() {
-    m.alternativeText = value
+    err := m.GetBackingStore().Set("alternativeText", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *TitleArea) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetEnableGradientEffect sets the enableGradientEffect property value. Indicates whether the title area has a gradient effect enabled.
 func (m *TitleArea) SetEnableGradientEffect(value *bool)() {
-    m.enableGradientEffect = value
+    err := m.GetBackingStore().Set("enableGradientEffect", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetImageWebUrl sets the imageWebUrl property value. URL of the image in the title area.
 func (m *TitleArea) SetImageWebUrl(value *string)() {
-    m.imageWebUrl = value
+    err := m.GetBackingStore().Set("imageWebUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLayout sets the layout property value. Enumeration value that indicates the layout of the title area. The possible values are: imageAndTitle, plain, colorBlock, overlap, unknownFutureValue.
 func (m *TitleArea) SetLayout(value *TitleAreaLayoutType)() {
-    m.layout = value
+    err := m.GetBackingStore().Set("layout", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TitleArea) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetServerProcessedContent sets the serverProcessedContent property value. Contains collections of data that can be processed by server side services like search index and link fixup.
 func (m *TitleArea) SetServerProcessedContent(value ServerProcessedContentable)() {
-    m.serverProcessedContent = value
+    err := m.GetBackingStore().Set("serverProcessedContent", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetShowAuthor sets the showAuthor property value. Indicates whether the author should be shown in title area.
 func (m *TitleArea) SetShowAuthor(value *bool)() {
-    m.showAuthor = value
+    err := m.GetBackingStore().Set("showAuthor", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetShowPublishedDate sets the showPublishedDate property value. Indicates whether the published date should be shown in title area.
 func (m *TitleArea) SetShowPublishedDate(value *bool)() {
-    m.showPublishedDate = value
+    err := m.GetBackingStore().Set("showPublishedDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetShowTextBlockAboveTitle sets the showTextBlockAboveTitle property value. Indicates whether the text block above title should be shown in title area.
 func (m *TitleArea) SetShowTextBlockAboveTitle(value *bool)() {
-    m.showTextBlockAboveTitle = value
+    err := m.GetBackingStore().Set("showTextBlockAboveTitle", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTextAboveTitle sets the textAboveTitle property value. The text above title line.
 func (m *TitleArea) SetTextAboveTitle(value *string)() {
-    m.textAboveTitle = value
+    err := m.GetBackingStore().Set("textAboveTitle", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTextAlignment sets the textAlignment property value. Enumeration value that indicates the text alignment of the title area. The possible values are: left, center, unknownFutureValue.
 func (m *TitleArea) SetTextAlignment(value *TitleAreaTextAlignmentType)() {
-    m.textAlignment = value
+    err := m.GetBackingStore().Set("textAlignment", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TitleAreaable 
+type TitleAreaable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAlternativeText()(*string)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetEnableGradientEffect()(*bool)
+    GetImageWebUrl()(*string)
+    GetLayout()(*TitleAreaLayoutType)
+    GetOdataType()(*string)
+    GetServerProcessedContent()(ServerProcessedContentable)
+    GetShowAuthor()(*bool)
+    GetShowPublishedDate()(*bool)
+    GetShowTextBlockAboveTitle()(*bool)
+    GetTextAboveTitle()(*string)
+    GetTextAlignment()(*TitleAreaTextAlignmentType)
+    SetAlternativeText(value *string)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetEnableGradientEffect(value *bool)()
+    SetImageWebUrl(value *string)()
+    SetLayout(value *TitleAreaLayoutType)()
+    SetOdataType(value *string)()
+    SetServerProcessedContent(value ServerProcessedContentable)()
+    SetShowAuthor(value *bool)()
+    SetShowPublishedDate(value *bool)()
+    SetShowTextBlockAboveTitle(value *bool)()
+    SetTextAboveTitle(value *string)()
+    SetTextAlignment(value *TitleAreaTextAlignmentType)()
 }

@@ -7,8 +7,6 @@ import (
 // DeviceManagementResourceAccessProfileAssignmentCollectionResponse 
 type DeviceManagementResourceAccessProfileAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementResourceAccessProfileAssignmentable
 }
 // NewDeviceManagementResourceAccessProfileAssignmentCollectionResponse instantiates a new DeviceManagementResourceAccessProfileAssignmentCollectionResponse and sets the default values.
 func NewDeviceManagementResourceAccessProfileAssignmentCollectionResponse()(*DeviceManagementResourceAccessProfileAssignmentCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementResourceAccessProfileAssignmentCollectionResponse) GetF
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementResourceAccessProfileAssignmentCollectionResponse) GetValue()([]DeviceManagementResourceAccessProfileAssignmentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementResourceAccessProfileAssignmentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementResourceAccessProfileAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementResourceAccessProfileAssignmentCollectionResponse) Seri
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementResourceAccessProfileAssignmentCollectionResponse) SetValue(value []DeviceManagementResourceAccessProfileAssignmentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementResourceAccessProfileAssignmentCollectionResponseable 
+type DeviceManagementResourceAccessProfileAssignmentCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementResourceAccessProfileAssignmentable)
+    SetValue(value []DeviceManagementResourceAccessProfileAssignmentable)()
 }

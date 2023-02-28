@@ -7,8 +7,6 @@ import (
 // UserPrintUsageSummaryCollectionResponse 
 type UserPrintUsageSummaryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UserPrintUsageSummaryable
 }
 // NewUserPrintUsageSummaryCollectionResponse instantiates a new UserPrintUsageSummaryCollectionResponse and sets the default values.
 func NewUserPrintUsageSummaryCollectionResponse()(*UserPrintUsageSummaryCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UserPrintUsageSummaryCollectionResponse) GetFieldDeserializers()(map[st
 }
 // GetValue gets the value property value. The value property
 func (m *UserPrintUsageSummaryCollectionResponse) GetValue()([]UserPrintUsageSummaryable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserPrintUsageSummaryable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserPrintUsageSummaryCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UserPrintUsageSummaryCollectionResponse) Serialize(writer i878a80d2330e
 }
 // SetValue sets the value property value. The value property
 func (m *UserPrintUsageSummaryCollectionResponse) SetValue(value []UserPrintUsageSummaryable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserPrintUsageSummaryCollectionResponseable 
+type UserPrintUsageSummaryCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UserPrintUsageSummaryable)
+    SetValue(value []UserPrintUsageSummaryable)()
 }

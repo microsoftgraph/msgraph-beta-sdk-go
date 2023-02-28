@@ -8,32 +8,6 @@ import (
 // AccessPackageResource 
 type AccessPackageResource struct {
     Entity
-    // Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
-    accessPackageResourceEnvironment AccessPackageResourceEnvironmentable
-    // Read-only. Nullable. Supports $expand.
-    accessPackageResourceRoles []AccessPackageResourceRoleable
-    // Read-only. Nullable. Supports $expand.
-    accessPackageResourceScopes []AccessPackageResourceScopeable
-    // The name of the user or application that first added this resource. Read-only.
-    addedBy *string
-    // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-    addedOn *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Contains information about the attributes to be collected from the requestor and sent to the resource application.
-    attributes []AccessPackageResourceAttributeable
-    // A description for the resource.
-    description *string
-    // The display name of the resource, such as the application name, group name or site name.
-    displayName *string
-    // True if the resource is not yet available for assignment. Read-only.
-    isPendingOnboarding *bool
-    // The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.
-    originId *string
-    // The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
-    originSystem *string
-    // The type of the resource, such as Application if it is an Azure AD connected application, or SharePoint Online Site for a SharePoint Online site.
-    resourceType *string
-    // A unique resource locator for the resource, such as the URL for signing a user into an application.
-    url *string
 }
 // NewAccessPackageResource instantiates a new accessPackageResource and sets the default values.
 func NewAccessPackageResource()(*AccessPackageResource) {
@@ -48,35 +22,91 @@ func CreateAccessPackageResourceFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAccessPackageResourceEnvironment gets the accessPackageResourceEnvironment property value. Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 func (m *AccessPackageResource) GetAccessPackageResourceEnvironment()(AccessPackageResourceEnvironmentable) {
-    return m.accessPackageResourceEnvironment
+    val, err := m.GetBackingStore().Get("accessPackageResourceEnvironment")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AccessPackageResourceEnvironmentable)
+    }
+    return nil
 }
 // GetAccessPackageResourceRoles gets the accessPackageResourceRoles property value. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageResource) GetAccessPackageResourceRoles()([]AccessPackageResourceRoleable) {
-    return m.accessPackageResourceRoles
+    val, err := m.GetBackingStore().Get("accessPackageResourceRoles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AccessPackageResourceRoleable)
+    }
+    return nil
 }
 // GetAccessPackageResourceScopes gets the accessPackageResourceScopes property value. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageResource) GetAccessPackageResourceScopes()([]AccessPackageResourceScopeable) {
-    return m.accessPackageResourceScopes
+    val, err := m.GetBackingStore().Get("accessPackageResourceScopes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AccessPackageResourceScopeable)
+    }
+    return nil
 }
 // GetAddedBy gets the addedBy property value. The name of the user or application that first added this resource. Read-only.
 func (m *AccessPackageResource) GetAddedBy()(*string) {
-    return m.addedBy
+    val, err := m.GetBackingStore().Get("addedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAddedOn gets the addedOn property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessPackageResource) GetAddedOn()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.addedOn
+    val, err := m.GetBackingStore().Get("addedOn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetAttributes gets the attributes property value. Contains information about the attributes to be collected from the requestor and sent to the resource application.
 func (m *AccessPackageResource) GetAttributes()([]AccessPackageResourceAttributeable) {
-    return m.attributes
+    val, err := m.GetBackingStore().Get("attributes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AccessPackageResourceAttributeable)
+    }
+    return nil
 }
 // GetDescription gets the description property value. A description for the resource.
 func (m *AccessPackageResource) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the resource, such as the application name, group name or site name.
 func (m *AccessPackageResource) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -227,23 +257,58 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetIsPendingOnboarding gets the isPendingOnboarding property value. True if the resource is not yet available for assignment. Read-only.
 func (m *AccessPackageResource) GetIsPendingOnboarding()(*bool) {
-    return m.isPendingOnboarding
+    val, err := m.GetBackingStore().Get("isPendingOnboarding")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetOriginId gets the originId property value. The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.
 func (m *AccessPackageResource) GetOriginId()(*string) {
-    return m.originId
+    val, err := m.GetBackingStore().Get("originId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOriginSystem gets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
 func (m *AccessPackageResource) GetOriginSystem()(*string) {
-    return m.originSystem
+    val, err := m.GetBackingStore().Get("originSystem")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetResourceType gets the resourceType property value. The type of the resource, such as Application if it is an Azure AD connected application, or SharePoint Online Site for a SharePoint Online site.
 func (m *AccessPackageResource) GetResourceType()(*string) {
-    return m.resourceType
+    val, err := m.GetBackingStore().Get("resourceType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUrl gets the url property value. A unique resource locator for the resource, such as the URL for signing a user into an application.
 func (m *AccessPackageResource) GetUrl()(*string) {
-    return m.url
+    val, err := m.GetBackingStore().Get("url")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AccessPackageResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -345,53 +410,123 @@ func (m *AccessPackageResource) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAccessPackageResourceEnvironment sets the accessPackageResourceEnvironment property value. Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 func (m *AccessPackageResource) SetAccessPackageResourceEnvironment(value AccessPackageResourceEnvironmentable)() {
-    m.accessPackageResourceEnvironment = value
+    err := m.GetBackingStore().Set("accessPackageResourceEnvironment", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAccessPackageResourceRoles sets the accessPackageResourceRoles property value. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageResource) SetAccessPackageResourceRoles(value []AccessPackageResourceRoleable)() {
-    m.accessPackageResourceRoles = value
+    err := m.GetBackingStore().Set("accessPackageResourceRoles", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAccessPackageResourceScopes sets the accessPackageResourceScopes property value. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageResource) SetAccessPackageResourceScopes(value []AccessPackageResourceScopeable)() {
-    m.accessPackageResourceScopes = value
+    err := m.GetBackingStore().Set("accessPackageResourceScopes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAddedBy sets the addedBy property value. The name of the user or application that first added this resource. Read-only.
 func (m *AccessPackageResource) SetAddedBy(value *string)() {
-    m.addedBy = value
+    err := m.GetBackingStore().Set("addedBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAddedOn sets the addedOn property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessPackageResource) SetAddedOn(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.addedOn = value
+    err := m.GetBackingStore().Set("addedOn", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAttributes sets the attributes property value. Contains information about the attributes to be collected from the requestor and sent to the resource application.
 func (m *AccessPackageResource) SetAttributes(value []AccessPackageResourceAttributeable)() {
-    m.attributes = value
+    err := m.GetBackingStore().Set("attributes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. A description for the resource.
 func (m *AccessPackageResource) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the resource, such as the application name, group name or site name.
 func (m *AccessPackageResource) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsPendingOnboarding sets the isPendingOnboarding property value. True if the resource is not yet available for assignment. Read-only.
 func (m *AccessPackageResource) SetIsPendingOnboarding(value *bool)() {
-    m.isPendingOnboarding = value
+    err := m.GetBackingStore().Set("isPendingOnboarding", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOriginId sets the originId property value. The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.
 func (m *AccessPackageResource) SetOriginId(value *string)() {
-    m.originId = value
+    err := m.GetBackingStore().Set("originId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOriginSystem sets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
 func (m *AccessPackageResource) SetOriginSystem(value *string)() {
-    m.originSystem = value
+    err := m.GetBackingStore().Set("originSystem", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResourceType sets the resourceType property value. The type of the resource, such as Application if it is an Azure AD connected application, or SharePoint Online Site for a SharePoint Online site.
 func (m *AccessPackageResource) SetResourceType(value *string)() {
-    m.resourceType = value
+    err := m.GetBackingStore().Set("resourceType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUrl sets the url property value. A unique resource locator for the resource, such as the URL for signing a user into an application.
 func (m *AccessPackageResource) SetUrl(value *string)() {
-    m.url = value
+    err := m.GetBackingStore().Set("url", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AccessPackageResourceable 
+type AccessPackageResourceable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAccessPackageResourceEnvironment()(AccessPackageResourceEnvironmentable)
+    GetAccessPackageResourceRoles()([]AccessPackageResourceRoleable)
+    GetAccessPackageResourceScopes()([]AccessPackageResourceScopeable)
+    GetAddedBy()(*string)
+    GetAddedOn()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetAttributes()([]AccessPackageResourceAttributeable)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetIsPendingOnboarding()(*bool)
+    GetOriginId()(*string)
+    GetOriginSystem()(*string)
+    GetResourceType()(*string)
+    GetUrl()(*string)
+    SetAccessPackageResourceEnvironment(value AccessPackageResourceEnvironmentable)()
+    SetAccessPackageResourceRoles(value []AccessPackageResourceRoleable)()
+    SetAccessPackageResourceScopes(value []AccessPackageResourceScopeable)()
+    SetAddedBy(value *string)()
+    SetAddedOn(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetAttributes(value []AccessPackageResourceAttributeable)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetIsPendingOnboarding(value *bool)()
+    SetOriginId(value *string)()
+    SetOriginSystem(value *string)()
+    SetResourceType(value *string)()
+    SetUrl(value *string)()
 }

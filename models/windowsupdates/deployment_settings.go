@@ -2,57 +2,87 @@ package windowsupdates
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // DeploymentSettings 
 type DeploymentSettings struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Settings governing conditions to monitor and automated actions to take.
-    monitoring MonitoringSettingsable
-    // The OdataType property
-    odataType *string
-    // Settings governing how the content is rolled out.
-    rollout RolloutSettingsable
-    // Settings governing safeguard holds on offering content.
-    safeguard SafeguardSettingsable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewDeploymentSettings instantiates a new deploymentSettings and sets the default values.
 func NewDeploymentSettings()(*DeploymentSettings) {
     m := &DeploymentSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeploymentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeploymentSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    if parseNode != nil {
-        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
-        if err != nil {
-            return nil, err
-        }
-        if mappingValueNode != nil {
-            mappingValue, err := mappingValueNode.GetStringValue()
-            if err != nil {
-                return nil, err
-            }
-            if mappingValue != nil {
-                switch *mappingValue {
-                    case "#microsoft.graph.windowsUpdates.windowsDeploymentSettings":
-                        return NewWindowsDeploymentSettings(), nil
-                }
-            }
-        }
-    }
     return NewDeploymentSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeploymentSettings) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *DeploymentSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetContentApplicability gets the contentApplicability property value. Settings for governing whether content is applicable to a device.
+func (m *DeploymentSettings) GetContentApplicability()(ContentApplicabilitySettingsable) {
+    val, err := m.GetBackingStore().Get("contentApplicability")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ContentApplicabilitySettingsable)
+    }
+    return nil
+}
+// GetExpedite gets the expedite property value. Settings for governing whether updates should be expedited.
+func (m *DeploymentSettings) GetExpedite()(ExpediteSettingsable) {
+    val, err := m.GetBackingStore().Get("expedite")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ExpediteSettingsable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeploymentSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["contentApplicability"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateContentApplicabilitySettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetContentApplicability(val.(ContentApplicabilitySettingsable))
+        }
+        return nil
+    }
+    res["expedite"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateExpediteSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetExpedite(val.(ExpediteSettingsable))
+        }
+        return nil
+    }
     res["monitoring"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMonitoringSettingsFromDiscriminatorValue)
         if err != nil {
@@ -73,46 +103,86 @@ func (m *DeploymentSettings) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
-    res["rollout"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateRolloutSettingsFromDiscriminatorValue)
+    res["schedule"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateScheduleSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRollout(val.(RolloutSettingsable))
+            m.SetSchedule(val.(ScheduleSettingsable))
         }
         return nil
     }
-    res["safeguard"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateSafeguardSettingsFromDiscriminatorValue)
+    res["userExperience"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateUserExperienceSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSafeguard(val.(SafeguardSettingsable))
+            m.SetUserExperience(val.(UserExperienceSettingsable))
         }
         return nil
     }
     return res
 }
-// GetMonitoring gets the monitoring property value. Settings governing conditions to monitor and automated actions to take.
+// GetMonitoring gets the monitoring property value. Settings for governing conditions to monitor and automated actions to take.
 func (m *DeploymentSettings) GetMonitoring()(MonitoringSettingsable) {
-    return m.monitoring
+    val, err := m.GetBackingStore().Get("monitoring")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(MonitoringSettingsable)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeploymentSettings) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
-// GetRollout gets the rollout property value. Settings governing how the content is rolled out.
-func (m *DeploymentSettings) GetRollout()(RolloutSettingsable) {
-    return m.rollout
+// GetSchedule gets the schedule property value. Settings for governing how and when the content is rolled out.
+func (m *DeploymentSettings) GetSchedule()(ScheduleSettingsable) {
+    val, err := m.GetBackingStore().Get("schedule")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ScheduleSettingsable)
+    }
+    return nil
 }
-// GetSafeguard gets the safeguard property value. Settings governing safeguard holds on offering content.
-func (m *DeploymentSettings) GetSafeguard()(SafeguardSettingsable) {
-    return m.safeguard
+// GetUserExperience gets the userExperience property value. Settings for governing end user update experience.
+func (m *DeploymentSettings) GetUserExperience()(UserExperienceSettingsable) {
+    val, err := m.GetBackingStore().Get("userExperience")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(UserExperienceSettingsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeploymentSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteObjectValue("contentApplicability", m.GetContentApplicability())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("expedite", m.GetExpedite())
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteObjectValue("monitoring", m.GetMonitoring())
         if err != nil {
@@ -126,13 +196,13 @@ func (m *DeploymentSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
-        err := writer.WriteObjectValue("rollout", m.GetRollout())
+        err := writer.WriteObjectValue("schedule", m.GetSchedule())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteObjectValue("safeguard", m.GetSafeguard())
+        err := writer.WriteObjectValue("userExperience", m.GetUserExperience())
         if err != nil {
             return err
         }
@@ -147,21 +217,74 @@ func (m *DeploymentSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeploymentSettings) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetMonitoring sets the monitoring property value. Settings governing conditions to monitor and automated actions to take.
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *DeploymentSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetContentApplicability sets the contentApplicability property value. Settings for governing whether content is applicable to a device.
+func (m *DeploymentSettings) SetContentApplicability(value ContentApplicabilitySettingsable)() {
+    err := m.GetBackingStore().Set("contentApplicability", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetExpedite sets the expedite property value. Settings for governing whether updates should be expedited.
+func (m *DeploymentSettings) SetExpedite(value ExpediteSettingsable)() {
+    err := m.GetBackingStore().Set("expedite", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMonitoring sets the monitoring property value. Settings for governing conditions to monitor and automated actions to take.
 func (m *DeploymentSettings) SetMonitoring(value MonitoringSettingsable)() {
-    m.monitoring = value
+    err := m.GetBackingStore().Set("monitoring", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeploymentSettings) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetRollout sets the rollout property value. Settings governing how the content is rolled out.
-func (m *DeploymentSettings) SetRollout(value RolloutSettingsable)() {
-    m.rollout = value
+// SetSchedule sets the schedule property value. Settings for governing how and when the content is rolled out.
+func (m *DeploymentSettings) SetSchedule(value ScheduleSettingsable)() {
+    err := m.GetBackingStore().Set("schedule", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetSafeguard sets the safeguard property value. Settings governing safeguard holds on offering content.
-func (m *DeploymentSettings) SetSafeguard(value SafeguardSettingsable)() {
-    m.safeguard = value
+// SetUserExperience sets the userExperience property value. Settings for governing end user update experience.
+func (m *DeploymentSettings) SetUserExperience(value UserExperienceSettingsable)() {
+    err := m.GetBackingStore().Set("userExperience", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeploymentSettingsable 
+type DeploymentSettingsable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetContentApplicability()(ContentApplicabilitySettingsable)
+    GetExpedite()(ExpediteSettingsable)
+    GetMonitoring()(MonitoringSettingsable)
+    GetOdataType()(*string)
+    GetSchedule()(ScheduleSettingsable)
+    GetUserExperience()(UserExperienceSettingsable)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetContentApplicability(value ContentApplicabilitySettingsable)()
+    SetExpedite(value ExpediteSettingsable)()
+    SetMonitoring(value MonitoringSettingsable)()
+    SetOdataType(value *string)()
+    SetSchedule(value ScheduleSettingsable)()
+    SetUserExperience(value UserExperienceSettingsable)()
 }

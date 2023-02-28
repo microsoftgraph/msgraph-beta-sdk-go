@@ -2,26 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // AppLogCollectionDownloadDetails 
 type AppLogCollectionDownloadDetails struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The appLogDecryptionAlgorithm property
-    appLogDecryptionAlgorithm *AppLogDecryptionAlgorithm
-    // DecryptionKey as string
-    decryptionKey *string
-    // Download SAS Url for completed AppLogUploadRequest
-    downloadUrl *string
-    // The OdataType property
-    odataType *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewAppLogCollectionDownloadDetails instantiates a new appLogCollectionDownloadDetails and sets the default values.
 func NewAppLogCollectionDownloadDetails()(*AppLogCollectionDownloadDetails) {
     m := &AppLogCollectionDownloadDetails{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAppLogCollectionDownloadDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,19 +24,52 @@ func CreateAppLogCollectionDownloadDetailsFromDiscriminatorValue(parseNode i878a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppLogCollectionDownloadDetails) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAppLogDecryptionAlgorithm gets the appLogDecryptionAlgorithm property value. The appLogDecryptionAlgorithm property
 func (m *AppLogCollectionDownloadDetails) GetAppLogDecryptionAlgorithm()(*AppLogDecryptionAlgorithm) {
-    return m.appLogDecryptionAlgorithm
+    val, err := m.GetBackingStore().Get("appLogDecryptionAlgorithm")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AppLogDecryptionAlgorithm)
+    }
+    return nil
 }
-// GetDecryptionKey gets the decryptionKey property value. DecryptionKey as string
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *AppLogCollectionDownloadDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetDecryptionKey gets the decryptionKey property value. Decryption key that used to decrypt the log.
 func (m *AppLogCollectionDownloadDetails) GetDecryptionKey()(*string) {
-    return m.decryptionKey
+    val, err := m.GetBackingStore().Get("decryptionKey")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
-// GetDownloadUrl gets the downloadUrl property value. Download SAS Url for completed AppLogUploadRequest
+// GetDownloadUrl gets the downloadUrl property value. Download SAS (Shared Access Signature) Url for completed app log request.
 func (m *AppLogCollectionDownloadDetails) GetDownloadUrl()(*string) {
-    return m.downloadUrl
+    val, err := m.GetBackingStore().Get("downloadUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AppLogCollectionDownloadDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -91,7 +118,14 @@ func (m *AppLogCollectionDownloadDetails) GetFieldDeserializers()(map[string]fun
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AppLogCollectionDownloadDetails) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AppLogCollectionDownloadDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -130,21 +164,56 @@ func (m *AppLogCollectionDownloadDetails) Serialize(writer i878a80d2330e89d26896
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppLogCollectionDownloadDetails) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppLogDecryptionAlgorithm sets the appLogDecryptionAlgorithm property value. The appLogDecryptionAlgorithm property
 func (m *AppLogCollectionDownloadDetails) SetAppLogDecryptionAlgorithm(value *AppLogDecryptionAlgorithm)() {
-    m.appLogDecryptionAlgorithm = value
+    err := m.GetBackingStore().Set("appLogDecryptionAlgorithm", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetDecryptionKey sets the decryptionKey property value. DecryptionKey as string
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *AppLogCollectionDownloadDetails) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetDecryptionKey sets the decryptionKey property value. Decryption key that used to decrypt the log.
 func (m *AppLogCollectionDownloadDetails) SetDecryptionKey(value *string)() {
-    m.decryptionKey = value
+    err := m.GetBackingStore().Set("decryptionKey", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetDownloadUrl sets the downloadUrl property value. Download SAS Url for completed AppLogUploadRequest
+// SetDownloadUrl sets the downloadUrl property value. Download SAS (Shared Access Signature) Url for completed app log request.
 func (m *AppLogCollectionDownloadDetails) SetDownloadUrl(value *string)() {
-    m.downloadUrl = value
+    err := m.GetBackingStore().Set("downloadUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AppLogCollectionDownloadDetails) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AppLogCollectionDownloadDetailsable 
+type AppLogCollectionDownloadDetailsable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppLogDecryptionAlgorithm()(*AppLogDecryptionAlgorithm)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDecryptionKey()(*string)
+    GetDownloadUrl()(*string)
+    GetOdataType()(*string)
+    SetAppLogDecryptionAlgorithm(value *AppLogDecryptionAlgorithm)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDecryptionKey(value *string)()
+    SetDownloadUrl(value *string)()
+    SetOdataType(value *string)()
 }

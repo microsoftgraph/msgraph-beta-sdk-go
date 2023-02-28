@@ -53,8 +53,8 @@ func NewItemHomeRealmDiscoveryPoliciesRequestBuilderInternal(pathParameters map[
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemHomeRealmDiscoveryPoliciesRequestBuilder instantiates a new HomeRealmDiscoveryPoliciesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemHomeRealmDiscoveryPoliciesRequestBuilder(rawUrl string, requestAdapt
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemHomeRealmDiscoveryPoliciesRequestBuilder) Count()(*ItemHomeRealmDiscoveryPoliciesCountRequestBuilder) {
-    return NewItemHomeRealmDiscoveryPoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemHomeRealmDiscoveryPoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get homeRealmDiscoveryPolicies from applications
 func (m *ItemHomeRealmDiscoveryPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemHomeRealmDiscoveryPoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.HomeRealmDiscoveryPolicyCollectionResponseable, error) {

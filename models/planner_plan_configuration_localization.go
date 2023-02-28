@@ -7,12 +7,6 @@ import (
 // PlannerPlanConfigurationLocalization 
 type PlannerPlanConfigurationLocalization struct {
     Entity
-    // Localized names for configured buckets in the plan configuration.
-    buckets []PlannerPlanConfigurationBucketLocalizationable
-    // The language code associated with the localized names in this object.
-    languageTag *string
-    // Localized title of the plan.
-    planTitle *string
 }
 // NewPlannerPlanConfigurationLocalization instantiates a new plannerPlanConfigurationLocalization and sets the default values.
 func NewPlannerPlanConfigurationLocalization()(*PlannerPlanConfigurationLocalization) {
@@ -27,7 +21,14 @@ func CreatePlannerPlanConfigurationLocalizationFromDiscriminatorValue(parseNode 
 }
 // GetBuckets gets the buckets property value. Localized names for configured buckets in the plan configuration.
 func (m *PlannerPlanConfigurationLocalization) GetBuckets()([]PlannerPlanConfigurationBucketLocalizationable) {
-    return m.buckets
+    val, err := m.GetBackingStore().Get("buckets")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerPlanConfigurationBucketLocalizationable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlannerPlanConfigurationLocalization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -70,11 +71,25 @@ func (m *PlannerPlanConfigurationLocalization) GetFieldDeserializers()(map[strin
 }
 // GetLanguageTag gets the languageTag property value. The language code associated with the localized names in this object.
 func (m *PlannerPlanConfigurationLocalization) GetLanguageTag()(*string) {
-    return m.languageTag
+    val, err := m.GetBackingStore().Get("languageTag")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPlanTitle gets the planTitle property value. Localized title of the plan.
 func (m *PlannerPlanConfigurationLocalization) GetPlanTitle()(*string) {
-    return m.planTitle
+    val, err := m.GetBackingStore().Get("planTitle")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PlannerPlanConfigurationLocalization) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -108,13 +123,33 @@ func (m *PlannerPlanConfigurationLocalization) Serialize(writer i878a80d2330e89d
 }
 // SetBuckets sets the buckets property value. Localized names for configured buckets in the plan configuration.
 func (m *PlannerPlanConfigurationLocalization) SetBuckets(value []PlannerPlanConfigurationBucketLocalizationable)() {
-    m.buckets = value
+    err := m.GetBackingStore().Set("buckets", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLanguageTag sets the languageTag property value. The language code associated with the localized names in this object.
 func (m *PlannerPlanConfigurationLocalization) SetLanguageTag(value *string)() {
-    m.languageTag = value
+    err := m.GetBackingStore().Set("languageTag", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPlanTitle sets the planTitle property value. Localized title of the plan.
 func (m *PlannerPlanConfigurationLocalization) SetPlanTitle(value *string)() {
-    m.planTitle = value
+    err := m.GetBackingStore().Set("planTitle", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PlannerPlanConfigurationLocalizationable 
+type PlannerPlanConfigurationLocalizationable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBuckets()([]PlannerPlanConfigurationBucketLocalizationable)
+    GetLanguageTag()(*string)
+    GetPlanTitle()(*string)
+    SetBuckets(value []PlannerPlanConfigurationBucketLocalizationable)()
+    SetLanguageTag(value *string)()
+    SetPlanTitle(value *string)()
 }

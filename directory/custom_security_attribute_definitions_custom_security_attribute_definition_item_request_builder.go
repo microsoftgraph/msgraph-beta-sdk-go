@@ -48,7 +48,7 @@ type CustomSecurityAttributeDefinitionsCustomSecurityAttributeDefinitionItemRequ
 }
 // AllowedValues provides operations to manage the allowedValues property of the microsoft.graph.customSecurityAttributeDefinition entity.
 func (m *CustomSecurityAttributeDefinitionsCustomSecurityAttributeDefinitionItemRequestBuilder) AllowedValues()(*CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilder) {
-    return NewCustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AllowedValuesById provides operations to manage the allowedValues property of the microsoft.graph.customSecurityAttributeDefinition entity.
 func (m *CustomSecurityAttributeDefinitionsCustomSecurityAttributeDefinitionItemRequestBuilder) AllowedValuesById(id string)(*CustomSecurityAttributeDefinitionsItemAllowedValuesAllowedValueItemRequestBuilder) {
@@ -59,7 +59,7 @@ func (m *CustomSecurityAttributeDefinitionsCustomSecurityAttributeDefinitionItem
     if id != "" {
         urlTplParams["allowedValue%2Did"] = id
     }
-    return NewCustomSecurityAttributeDefinitionsItemAllowedValuesAllowedValueItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCustomSecurityAttributeDefinitionsItemAllowedValuesAllowedValueItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewCustomSecurityAttributeDefinitionsCustomSecurityAttributeDefinitionItemRequestBuilderInternal instantiates a new CustomSecurityAttributeDefinitionItemRequestBuilder and sets the default values.
 func NewCustomSecurityAttributeDefinitionsCustomSecurityAttributeDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CustomSecurityAttributeDefinitionsCustomSecurityAttributeDefinitionItemRequestBuilder) {
@@ -70,8 +70,8 @@ func NewCustomSecurityAttributeDefinitionsCustomSecurityAttributeDefinitionItemR
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCustomSecurityAttributeDefinitionsCustomSecurityAttributeDefinitionItemRequestBuilder instantiates a new CustomSecurityAttributeDefinitionItemRequestBuilder and sets the default values.
@@ -169,7 +169,10 @@ func (m *CustomSecurityAttributeDefinitionsCustomSecurityAttributeDefinitionItem
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -7,8 +7,6 @@ import (
 // AndroidWorkProfileGmailEasConfigurationCollectionResponse 
 type AndroidWorkProfileGmailEasConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidWorkProfileGmailEasConfigurationable
 }
 // NewAndroidWorkProfileGmailEasConfigurationCollectionResponse instantiates a new AndroidWorkProfileGmailEasConfigurationCollectionResponse and sets the default values.
 func NewAndroidWorkProfileGmailEasConfigurationCollectionResponse()(*AndroidWorkProfileGmailEasConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidWorkProfileGmailEasConfigurationCollectionResponse) GetFieldDese
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidWorkProfileGmailEasConfigurationCollectionResponse) GetValue()([]AndroidWorkProfileGmailEasConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidWorkProfileGmailEasConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidWorkProfileGmailEasConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidWorkProfileGmailEasConfigurationCollectionResponse) Serialize(wr
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidWorkProfileGmailEasConfigurationCollectionResponse) SetValue(value []AndroidWorkProfileGmailEasConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidWorkProfileGmailEasConfigurationCollectionResponseable 
+type AndroidWorkProfileGmailEasConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidWorkProfileGmailEasConfigurationable)
+    SetValue(value []AndroidWorkProfileGmailEasConfigurationable)()
 }

@@ -7,32 +7,14 @@ import (
 // IosUpdateConfiguration 
 type IosUpdateConfiguration struct {
     DeviceConfiguration
-    // Active Hours End (active hours mean the time window when updates install should not happen)
-    activeHoursEnd *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
-    // Active Hours Start (active hours mean the time window when updates install should not happen)
-    activeHoursStart *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
-    // If update schedule type is set to use time window scheduling, custom time windows when updates will be scheduled. This collection can contain a maximum of 20 elements.
-    customUpdateTimeWindows []CustomUpdateTimeWindowable
-    // If left unspecified, devices will update to the latest version of the OS.
-    desiredOsVersion *string
-    // Days before software updates are visible to iOS devices ranging from 0 to 90 inclusive
-    enforcedSoftwareUpdateDelayInDays *int32
-    // Is setting enabled in UI
-    isEnabled *bool
-    // Days in week for which active hours are configured. This collection can contain a maximum of 7 elements.
-    scheduledInstallDays []DayOfWeek
-    // Update schedule type for iOS software updates.
-    updateScheduleType *IosSoftwareUpdateScheduleType
-    // UTC Time Offset indicated in minutes
-    utcTimeOffsetInMinutes *int32
 }
 // NewIosUpdateConfiguration instantiates a new IosUpdateConfiguration and sets the default values.
 func NewIosUpdateConfiguration()(*IosUpdateConfiguration) {
     m := &IosUpdateConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.iosUpdateConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.iosUpdateConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateIosUpdateConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,23 +23,58 @@ func CreateIosUpdateConfigurationFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetActiveHoursEnd gets the activeHoursEnd property value. Active Hours End (active hours mean the time window when updates install should not happen)
 func (m *IosUpdateConfiguration) GetActiveHoursEnd()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
-    return m.activeHoursEnd
+    val, err := m.GetBackingStore().Get("activeHoursEnd")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
+    }
+    return nil
 }
 // GetActiveHoursStart gets the activeHoursStart property value. Active Hours Start (active hours mean the time window when updates install should not happen)
 func (m *IosUpdateConfiguration) GetActiveHoursStart()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
-    return m.activeHoursStart
+    val, err := m.GetBackingStore().Get("activeHoursStart")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
+    }
+    return nil
 }
 // GetCustomUpdateTimeWindows gets the customUpdateTimeWindows property value. If update schedule type is set to use time window scheduling, custom time windows when updates will be scheduled. This collection can contain a maximum of 20 elements.
 func (m *IosUpdateConfiguration) GetCustomUpdateTimeWindows()([]CustomUpdateTimeWindowable) {
-    return m.customUpdateTimeWindows
+    val, err := m.GetBackingStore().Get("customUpdateTimeWindows")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CustomUpdateTimeWindowable)
+    }
+    return nil
 }
 // GetDesiredOsVersion gets the desiredOsVersion property value. If left unspecified, devices will update to the latest version of the OS.
 func (m *IosUpdateConfiguration) GetDesiredOsVersion()(*string) {
-    return m.desiredOsVersion
+    val, err := m.GetBackingStore().Get("desiredOsVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetEnforcedSoftwareUpdateDelayInDays gets the enforcedSoftwareUpdateDelayInDays property value. Days before software updates are visible to iOS devices ranging from 0 to 90 inclusive
 func (m *IosUpdateConfiguration) GetEnforcedSoftwareUpdateDelayInDays()(*int32) {
-    return m.enforcedSoftwareUpdateDelayInDays
+    val, err := m.GetBackingStore().Get("enforcedSoftwareUpdateDelayInDays")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosUpdateConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -164,19 +181,47 @@ func (m *IosUpdateConfiguration) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetIsEnabled gets the isEnabled property value. Is setting enabled in UI
 func (m *IosUpdateConfiguration) GetIsEnabled()(*bool) {
-    return m.isEnabled
+    val, err := m.GetBackingStore().Get("isEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetScheduledInstallDays gets the scheduledInstallDays property value. Days in week for which active hours are configured. This collection can contain a maximum of 7 elements.
 func (m *IosUpdateConfiguration) GetScheduledInstallDays()([]DayOfWeek) {
-    return m.scheduledInstallDays
+    val, err := m.GetBackingStore().Get("scheduledInstallDays")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DayOfWeek)
+    }
+    return nil
 }
 // GetUpdateScheduleType gets the updateScheduleType property value. Update schedule type for iOS software updates.
 func (m *IosUpdateConfiguration) GetUpdateScheduleType()(*IosSoftwareUpdateScheduleType) {
-    return m.updateScheduleType
+    val, err := m.GetBackingStore().Get("updateScheduleType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*IosSoftwareUpdateScheduleType)
+    }
+    return nil
 }
 // GetUtcTimeOffsetInMinutes gets the utcTimeOffsetInMinutes property value. UTC Time Offset indicated in minutes
 func (m *IosUpdateConfiguration) GetUtcTimeOffsetInMinutes()(*int32) {
-    return m.utcTimeOffsetInMinutes
+    val, err := m.GetBackingStore().Get("utcTimeOffsetInMinutes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosUpdateConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -247,37 +292,87 @@ func (m *IosUpdateConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetActiveHoursEnd sets the activeHoursEnd property value. Active Hours End (active hours mean the time window when updates install should not happen)
 func (m *IosUpdateConfiguration) SetActiveHoursEnd(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
-    m.activeHoursEnd = value
+    err := m.GetBackingStore().Set("activeHoursEnd", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetActiveHoursStart sets the activeHoursStart property value. Active Hours Start (active hours mean the time window when updates install should not happen)
 func (m *IosUpdateConfiguration) SetActiveHoursStart(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
-    m.activeHoursStart = value
+    err := m.GetBackingStore().Set("activeHoursStart", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomUpdateTimeWindows sets the customUpdateTimeWindows property value. If update schedule type is set to use time window scheduling, custom time windows when updates will be scheduled. This collection can contain a maximum of 20 elements.
 func (m *IosUpdateConfiguration) SetCustomUpdateTimeWindows(value []CustomUpdateTimeWindowable)() {
-    m.customUpdateTimeWindows = value
+    err := m.GetBackingStore().Set("customUpdateTimeWindows", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDesiredOsVersion sets the desiredOsVersion property value. If left unspecified, devices will update to the latest version of the OS.
 func (m *IosUpdateConfiguration) SetDesiredOsVersion(value *string)() {
-    m.desiredOsVersion = value
+    err := m.GetBackingStore().Set("desiredOsVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnforcedSoftwareUpdateDelayInDays sets the enforcedSoftwareUpdateDelayInDays property value. Days before software updates are visible to iOS devices ranging from 0 to 90 inclusive
 func (m *IosUpdateConfiguration) SetEnforcedSoftwareUpdateDelayInDays(value *int32)() {
-    m.enforcedSoftwareUpdateDelayInDays = value
+    err := m.GetBackingStore().Set("enforcedSoftwareUpdateDelayInDays", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsEnabled sets the isEnabled property value. Is setting enabled in UI
 func (m *IosUpdateConfiguration) SetIsEnabled(value *bool)() {
-    m.isEnabled = value
+    err := m.GetBackingStore().Set("isEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetScheduledInstallDays sets the scheduledInstallDays property value. Days in week for which active hours are configured. This collection can contain a maximum of 7 elements.
 func (m *IosUpdateConfiguration) SetScheduledInstallDays(value []DayOfWeek)() {
-    m.scheduledInstallDays = value
+    err := m.GetBackingStore().Set("scheduledInstallDays", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUpdateScheduleType sets the updateScheduleType property value. Update schedule type for iOS software updates.
 func (m *IosUpdateConfiguration) SetUpdateScheduleType(value *IosSoftwareUpdateScheduleType)() {
-    m.updateScheduleType = value
+    err := m.GetBackingStore().Set("updateScheduleType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUtcTimeOffsetInMinutes sets the utcTimeOffsetInMinutes property value. UTC Time Offset indicated in minutes
 func (m *IosUpdateConfiguration) SetUtcTimeOffsetInMinutes(value *int32)() {
-    m.utcTimeOffsetInMinutes = value
+    err := m.GetBackingStore().Set("utcTimeOffsetInMinutes", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosUpdateConfigurationable 
+type IosUpdateConfigurationable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActiveHoursEnd()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
+    GetActiveHoursStart()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
+    GetCustomUpdateTimeWindows()([]CustomUpdateTimeWindowable)
+    GetDesiredOsVersion()(*string)
+    GetEnforcedSoftwareUpdateDelayInDays()(*int32)
+    GetIsEnabled()(*bool)
+    GetScheduledInstallDays()([]DayOfWeek)
+    GetUpdateScheduleType()(*IosSoftwareUpdateScheduleType)
+    GetUtcTimeOffsetInMinutes()(*int32)
+    SetActiveHoursEnd(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)()
+    SetActiveHoursStart(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)()
+    SetCustomUpdateTimeWindows(value []CustomUpdateTimeWindowable)()
+    SetDesiredOsVersion(value *string)()
+    SetEnforcedSoftwareUpdateDelayInDays(value *int32)()
+    SetIsEnabled(value *bool)()
+    SetScheduledInstallDays(value []DayOfWeek)()
+    SetUpdateScheduleType(value *IosSoftwareUpdateScheduleType)()
+    SetUtcTimeOffsetInMinutes(value *int32)()
 }

@@ -45,7 +45,7 @@ type GetOffice365GroupsActivityCountsWithPeriodRequestBuilderGetRequestConfigura
 func NewGetOffice365GroupsActivityCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, period *string)(*GetOffice365GroupsActivityCountsWithPeriodRequestBuilder) {
     m := &GetOffice365GroupsActivityCountsWithPeriodRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/reports/microsoft.graph.getOffice365GroupsActivityCounts(period='{period}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
+    m.urlTemplate = "{+baseurl}/reports/getOffice365GroupsActivityCounts(period='{period}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -53,8 +53,8 @@ func NewGetOffice365GroupsActivityCountsWithPeriodRequestBuilderInternal(pathPar
     if period != nil {
         urlTplParams["period"] = *period
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGetOffice365GroupsActivityCountsWithPeriodRequestBuilder instantiates a new GetOffice365GroupsActivityCountsWithPeriodRequestBuilder and sets the default values.

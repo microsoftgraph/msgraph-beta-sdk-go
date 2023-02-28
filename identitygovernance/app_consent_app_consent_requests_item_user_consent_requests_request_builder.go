@@ -60,8 +60,8 @@ func NewAppConsentAppConsentRequestsItemUserConsentRequestsRequestBuilderInterna
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAppConsentAppConsentRequestsItemUserConsentRequestsRequestBuilder instantiates a new UserConsentRequestsRequestBuilder and sets the default values.
@@ -72,11 +72,11 @@ func NewAppConsentAppConsentRequestsItemUserConsentRequestsRequestBuilder(rawUrl
 }
 // Count provides operations to count the resources in the collection.
 func (m *AppConsentAppConsentRequestsItemUserConsentRequestsRequestBuilder) Count()(*AppConsentAppConsentRequestsItemUserConsentRequestsCountRequestBuilder) {
-    return NewAppConsentAppConsentRequestsItemUserConsentRequestsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAppConsentAppConsentRequestsItemUserConsentRequestsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
 func (m *AppConsentAppConsentRequestsItemUserConsentRequestsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*AppConsentAppConsentRequestsItemUserConsentRequestsFilterByCurrentUserWithOnRequestBuilder) {
-    return NewAppConsentAppConsentRequestsItemUserConsentRequestsFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
+    return NewAppConsentAppConsentRequestsItemUserConsentRequestsFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Get retrieve a collection of userConsentRequest objects and their properties.
 // [Find more info here]
@@ -142,7 +142,10 @@ func (m *AppConsentAppConsentRequestsItemUserConsentRequestsRequestBuilder) ToPo
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

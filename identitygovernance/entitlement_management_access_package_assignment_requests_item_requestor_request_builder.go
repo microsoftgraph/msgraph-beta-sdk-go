@@ -48,7 +48,7 @@ type EntitlementManagementAccessPackageAssignmentRequestsItemRequestorRequestBui
 }
 // ConnectedOrganization provides operations to manage the connectedOrganization property of the microsoft.graph.accessPackageSubject entity.
 func (m *EntitlementManagementAccessPackageAssignmentRequestsItemRequestorRequestBuilder) ConnectedOrganization()(*EntitlementManagementAccessPackageAssignmentRequestsItemRequestorConnectedOrganizationRequestBuilder) {
-    return NewEntitlementManagementAccessPackageAssignmentRequestsItemRequestorConnectedOrganizationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementAccessPackageAssignmentRequestsItemRequestorConnectedOrganizationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewEntitlementManagementAccessPackageAssignmentRequestsItemRequestorRequestBuilderInternal instantiates a new RequestorRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageAssignmentRequestsItemRequestorRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageAssignmentRequestsItemRequestorRequestBuilder) {
@@ -59,8 +59,8 @@ func NewEntitlementManagementAccessPackageAssignmentRequestsItemRequestorRequest
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementAccessPackageAssignmentRequestsItemRequestorRequestBuilder instantiates a new RequestorRequestBuilder and sets the default values.
@@ -158,7 +158,10 @@ func (m *EntitlementManagementAccessPackageAssignmentRequestsItemRequestorReques
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -7,10 +7,6 @@ import (
 // AddToReviewSetOperation 
 type AddToReviewSetOperation struct {
     CaseOperation
-    // The review set to which items matching the source collection query are added to.
-    reviewSet ReviewSetable
-    // The sourceCollection that items are being added from.
-    sourceCollection SourceCollectionable
 }
 // NewAddToReviewSetOperation instantiates a new AddToReviewSetOperation and sets the default values.
 func NewAddToReviewSetOperation()(*AddToReviewSetOperation) {
@@ -50,11 +46,25 @@ func (m *AddToReviewSetOperation) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetReviewSet gets the reviewSet property value. The review set to which items matching the source collection query are added to.
 func (m *AddToReviewSetOperation) GetReviewSet()(ReviewSetable) {
-    return m.reviewSet
+    val, err := m.GetBackingStore().Get("reviewSet")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ReviewSetable)
+    }
+    return nil
 }
 // GetSourceCollection gets the sourceCollection property value. The sourceCollection that items are being added from.
 func (m *AddToReviewSetOperation) GetSourceCollection()(SourceCollectionable) {
-    return m.sourceCollection
+    val, err := m.GetBackingStore().Get("sourceCollection")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SourceCollectionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AddToReviewSetOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -78,9 +88,24 @@ func (m *AddToReviewSetOperation) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetReviewSet sets the reviewSet property value. The review set to which items matching the source collection query are added to.
 func (m *AddToReviewSetOperation) SetReviewSet(value ReviewSetable)() {
-    m.reviewSet = value
+    err := m.GetBackingStore().Set("reviewSet", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSourceCollection sets the sourceCollection property value. The sourceCollection that items are being added from.
 func (m *AddToReviewSetOperation) SetSourceCollection(value SourceCollectionable)() {
-    m.sourceCollection = value
+    err := m.GetBackingStore().Set("sourceCollection", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AddToReviewSetOperationable 
+type AddToReviewSetOperationable interface {
+    CaseOperationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetReviewSet()(ReviewSetable)
+    GetSourceCollection()(SourceCollectionable)
+    SetReviewSet(value ReviewSetable)()
+    SetSourceCollection(value SourceCollectionable)()
 }

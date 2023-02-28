@@ -7,22 +7,14 @@ import (
 // RecommendLabelAction 
 type RecommendLabelAction struct {
     InformationProtectionAction
-    // Actions to take if the label is accepted by the user.
-    actions []InformationProtectionActionable
-    // The actionSource property
-    actionSource *ActionSource
-    // The sensitive information type GUIDs that caused the recommendation to be given.
-    responsibleSensitiveTypeIds []string
-    // The sensitivityLabelId property
-    sensitivityLabelId *string
 }
 // NewRecommendLabelAction instantiates a new RecommendLabelAction and sets the default values.
 func NewRecommendLabelAction()(*RecommendLabelAction) {
     m := &RecommendLabelAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
     }
-    odataTypeValue := "#microsoft.graph.security.recommendLabelAction";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.security.recommendLabelAction"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateRecommendLabelActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,11 +23,25 @@ func CreateRecommendLabelActionFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetActions gets the actions property value. Actions to take if the label is accepted by the user.
 func (m *RecommendLabelAction) GetActions()([]InformationProtectionActionable) {
-    return m.actions
+    val, err := m.GetBackingStore().Get("actions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]InformationProtectionActionable)
+    }
+    return nil
 }
 // GetActionSource gets the actionSource property value. The actionSource property
 func (m *RecommendLabelAction) GetActionSource()(*ActionSource) {
-    return m.actionSource
+    val, err := m.GetBackingStore().Get("actionSource")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ActionSource)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RecommendLabelAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -92,11 +98,25 @@ func (m *RecommendLabelAction) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetResponsibleSensitiveTypeIds gets the responsibleSensitiveTypeIds property value. The sensitive information type GUIDs that caused the recommendation to be given.
 func (m *RecommendLabelAction) GetResponsibleSensitiveTypeIds()([]string) {
-    return m.responsibleSensitiveTypeIds
+    val, err := m.GetBackingStore().Get("responsibleSensitiveTypeIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetSensitivityLabelId gets the sensitivityLabelId property value. The sensitivityLabelId property
 func (m *RecommendLabelAction) GetSensitivityLabelId()(*string) {
-    return m.sensitivityLabelId
+    val, err := m.GetBackingStore().Get("sensitivityLabelId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RecommendLabelAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -137,17 +157,42 @@ func (m *RecommendLabelAction) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetActions sets the actions property value. Actions to take if the label is accepted by the user.
 func (m *RecommendLabelAction) SetActions(value []InformationProtectionActionable)() {
-    m.actions = value
+    err := m.GetBackingStore().Set("actions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetActionSource sets the actionSource property value. The actionSource property
 func (m *RecommendLabelAction) SetActionSource(value *ActionSource)() {
-    m.actionSource = value
+    err := m.GetBackingStore().Set("actionSource", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResponsibleSensitiveTypeIds sets the responsibleSensitiveTypeIds property value. The sensitive information type GUIDs that caused the recommendation to be given.
 func (m *RecommendLabelAction) SetResponsibleSensitiveTypeIds(value []string)() {
-    m.responsibleSensitiveTypeIds = value
+    err := m.GetBackingStore().Set("responsibleSensitiveTypeIds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSensitivityLabelId sets the sensitivityLabelId property value. The sensitivityLabelId property
 func (m *RecommendLabelAction) SetSensitivityLabelId(value *string)() {
-    m.sensitivityLabelId = value
+    err := m.GetBackingStore().Set("sensitivityLabelId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RecommendLabelActionable 
+type RecommendLabelActionable interface {
+    InformationProtectionActionable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActions()([]InformationProtectionActionable)
+    GetActionSource()(*ActionSource)
+    GetResponsibleSensitiveTypeIds()([]string)
+    GetSensitivityLabelId()(*string)
+    SetActions(value []InformationProtectionActionable)()
+    SetActionSource(value *ActionSource)()
+    SetResponsibleSensitiveTypeIds(value []string)()
+    SetSensitivityLabelId(value *string)()
 }

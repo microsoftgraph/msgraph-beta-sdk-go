@@ -7,8 +7,6 @@ import (
 // Windows10XCustomSubjectAlternativeNameCollectionResponse 
 type Windows10XCustomSubjectAlternativeNameCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Windows10XCustomSubjectAlternativeNameable
 }
 // NewWindows10XCustomSubjectAlternativeNameCollectionResponse instantiates a new Windows10XCustomSubjectAlternativeNameCollectionResponse and sets the default values.
 func NewWindows10XCustomSubjectAlternativeNameCollectionResponse()(*Windows10XCustomSubjectAlternativeNameCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *Windows10XCustomSubjectAlternativeNameCollectionResponse) GetFieldDeser
 }
 // GetValue gets the value property value. The value property
 func (m *Windows10XCustomSubjectAlternativeNameCollectionResponse) GetValue()([]Windows10XCustomSubjectAlternativeNameable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Windows10XCustomSubjectAlternativeNameable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Windows10XCustomSubjectAlternativeNameCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *Windows10XCustomSubjectAlternativeNameCollectionResponse) Serialize(wri
 }
 // SetValue sets the value property value. The value property
 func (m *Windows10XCustomSubjectAlternativeNameCollectionResponse) SetValue(value []Windows10XCustomSubjectAlternativeNameable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Windows10XCustomSubjectAlternativeNameCollectionResponseable 
+type Windows10XCustomSubjectAlternativeNameCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Windows10XCustomSubjectAlternativeNameable)
+    SetValue(value []Windows10XCustomSubjectAlternativeNameable)()
 }

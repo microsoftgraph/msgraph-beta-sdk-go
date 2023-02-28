@@ -53,8 +53,8 @@ func NewCompaniesItemSalesInvoicesItemSalesInvoiceLinesRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemSalesInvoicesItemSalesInvoiceLinesRequestBuilder instantiates a new SalesInvoiceLinesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewCompaniesItemSalesInvoicesItemSalesInvoiceLinesRequestBuilder(rawUrl str
 }
 // Count provides operations to count the resources in the collection.
 func (m *CompaniesItemSalesInvoicesItemSalesInvoiceLinesRequestBuilder) Count()(*CompaniesItemSalesInvoicesItemSalesInvoiceLinesCountRequestBuilder) {
-    return NewCompaniesItemSalesInvoicesItemSalesInvoiceLinesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesInvoicesItemSalesInvoiceLinesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get salesInvoiceLines from financials
 func (m *CompaniesItemSalesInvoicesItemSalesInvoiceLinesRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemSalesInvoicesItemSalesInvoiceLinesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesInvoiceLineCollectionResponseable, error) {

@@ -7,18 +7,6 @@ import (
 // UserExperienceAnalyticsAppHealthOSVersionPerformance the user experience analytics device OS version performance entity contains OS version performance details.
 type UserExperienceAnalyticsAppHealthOSVersionPerformance struct {
     Entity
-    // The number of active devices for the OS version. Valid values -2147483648 to 2147483647
-    activeDeviceCount *int32
-    // The mean time to failure for the OS version in minutes. Valid values -2147483648 to 2147483647
-    meanTimeToFailureInMinutes *int32
-    // The OS build number installed on the device.
-    osBuildNumber *string
-    // The OS version installed on the device.
-    osVersion *string
-    // The app health score of the OS version. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    osVersionAppHealthScore *float64
-    // The overall app health status of the OS version.
-    osVersionAppHealthStatus *string
 }
 // NewUserExperienceAnalyticsAppHealthOSVersionPerformance instantiates a new userExperienceAnalyticsAppHealthOSVersionPerformance and sets the default values.
 func NewUserExperienceAnalyticsAppHealthOSVersionPerformance()(*UserExperienceAnalyticsAppHealthOSVersionPerformance) {
@@ -33,7 +21,14 @@ func CreateUserExperienceAnalyticsAppHealthOSVersionPerformanceFromDiscriminator
 }
 // GetActiveDeviceCount gets the activeDeviceCount property value. The number of active devices for the OS version. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetActiveDeviceCount()(*int32) {
-    return m.activeDeviceCount
+    val, err := m.GetBackingStore().Get("activeDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -102,23 +97,58 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetFieldDeseriali
 }
 // GetMeanTimeToFailureInMinutes gets the meanTimeToFailureInMinutes property value. The mean time to failure for the OS version in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetMeanTimeToFailureInMinutes()(*int32) {
-    return m.meanTimeToFailureInMinutes
+    val, err := m.GetBackingStore().Get("meanTimeToFailureInMinutes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetOsBuildNumber gets the osBuildNumber property value. The OS build number installed on the device.
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetOsBuildNumber()(*string) {
-    return m.osBuildNumber
+    val, err := m.GetBackingStore().Get("osBuildNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOsVersion gets the osVersion property value. The OS version installed on the device.
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetOsVersion()(*string) {
-    return m.osVersion
+    val, err := m.GetBackingStore().Get("osVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOsVersionAppHealthScore gets the osVersionAppHealthScore property value. The app health score of the OS version. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetOsVersionAppHealthScore()(*float64) {
-    return m.osVersionAppHealthScore
+    val, err := m.GetBackingStore().Get("osVersionAppHealthScore")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetOsVersionAppHealthStatus gets the osVersionAppHealthStatus property value. The overall app health status of the OS version.
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetOsVersionAppHealthStatus()(*string) {
-    return m.osVersionAppHealthStatus
+    val, err := m.GetBackingStore().Get("osVersionAppHealthStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -166,25 +196,60 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) Serialize(writer 
 }
 // SetActiveDeviceCount sets the activeDeviceCount property value. The number of active devices for the OS version. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) SetActiveDeviceCount(value *int32)() {
-    m.activeDeviceCount = value
+    err := m.GetBackingStore().Set("activeDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMeanTimeToFailureInMinutes sets the meanTimeToFailureInMinutes property value. The mean time to failure for the OS version in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) SetMeanTimeToFailureInMinutes(value *int32)() {
-    m.meanTimeToFailureInMinutes = value
+    err := m.GetBackingStore().Set("meanTimeToFailureInMinutes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOsBuildNumber sets the osBuildNumber property value. The OS build number installed on the device.
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) SetOsBuildNumber(value *string)() {
-    m.osBuildNumber = value
+    err := m.GetBackingStore().Set("osBuildNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOsVersion sets the osVersion property value. The OS version installed on the device.
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) SetOsVersion(value *string)() {
-    m.osVersion = value
+    err := m.GetBackingStore().Set("osVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOsVersionAppHealthScore sets the osVersionAppHealthScore property value. The app health score of the OS version. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) SetOsVersionAppHealthScore(value *float64)() {
-    m.osVersionAppHealthScore = value
+    err := m.GetBackingStore().Set("osVersionAppHealthScore", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOsVersionAppHealthStatus sets the osVersionAppHealthStatus property value. The overall app health status of the OS version.
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) SetOsVersionAppHealthStatus(value *string)() {
-    m.osVersionAppHealthStatus = value
+    err := m.GetBackingStore().Set("osVersionAppHealthStatus", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsAppHealthOSVersionPerformanceable 
+type UserExperienceAnalyticsAppHealthOSVersionPerformanceable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActiveDeviceCount()(*int32)
+    GetMeanTimeToFailureInMinutes()(*int32)
+    GetOsBuildNumber()(*string)
+    GetOsVersion()(*string)
+    GetOsVersionAppHealthScore()(*float64)
+    GetOsVersionAppHealthStatus()(*string)
+    SetActiveDeviceCount(value *int32)()
+    SetMeanTimeToFailureInMinutes(value *int32)()
+    SetOsBuildNumber(value *string)()
+    SetOsVersion(value *string)()
+    SetOsVersionAppHealthScore(value *float64)()
+    SetOsVersionAppHealthStatus(value *string)()
 }

@@ -7,8 +7,6 @@ import (
 // AospDeviceOwnerCertificateProfileBaseCollectionResponse 
 type AospDeviceOwnerCertificateProfileBaseCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AospDeviceOwnerCertificateProfileBaseable
 }
 // NewAospDeviceOwnerCertificateProfileBaseCollectionResponse instantiates a new AospDeviceOwnerCertificateProfileBaseCollectionResponse and sets the default values.
 func NewAospDeviceOwnerCertificateProfileBaseCollectionResponse()(*AospDeviceOwnerCertificateProfileBaseCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AospDeviceOwnerCertificateProfileBaseCollectionResponse) GetFieldDeseri
 }
 // GetValue gets the value property value. The value property
 func (m *AospDeviceOwnerCertificateProfileBaseCollectionResponse) GetValue()([]AospDeviceOwnerCertificateProfileBaseable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AospDeviceOwnerCertificateProfileBaseable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AospDeviceOwnerCertificateProfileBaseCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AospDeviceOwnerCertificateProfileBaseCollectionResponse) Serialize(writ
 }
 // SetValue sets the value property value. The value property
 func (m *AospDeviceOwnerCertificateProfileBaseCollectionResponse) SetValue(value []AospDeviceOwnerCertificateProfileBaseable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AospDeviceOwnerCertificateProfileBaseCollectionResponseable 
+type AospDeviceOwnerCertificateProfileBaseCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AospDeviceOwnerCertificateProfileBaseable)
+    SetValue(value []AospDeviceOwnerCertificateProfileBaseable)()
 }

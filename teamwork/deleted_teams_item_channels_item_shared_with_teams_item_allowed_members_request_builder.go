@@ -53,8 +53,8 @@ func NewDeletedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuil
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeletedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilder instantiates a new AllowedMembersRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewDeletedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuil
 }
 // Count provides operations to count the resources in the collection.
 func (m *DeletedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilder) Count()(*DeletedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilder) {
-    return NewDeletedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeletedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the list of conversationMembers who can access a shared channel. This method does not return the following conversationMembers from the team:- Users with `Guest` role- Users who are externally authenticated in the tenant
 // [Find more info here]

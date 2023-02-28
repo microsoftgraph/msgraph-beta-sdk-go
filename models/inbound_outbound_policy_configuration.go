@@ -2,24 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // InboundOutboundPolicyConfiguration 
 type InboundOutboundPolicyConfiguration struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Defines whether external users coming inbound are allowed.
-    inboundAllowed *bool
-    // The OdataType property
-    odataType *string
-    // Defines whether internal users are allowed to go outbound.
-    outboundAllowed *bool
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewInboundOutboundPolicyConfiguration instantiates a new inboundOutboundPolicyConfiguration and sets the default values.
 func NewInboundOutboundPolicyConfiguration()(*InboundOutboundPolicyConfiguration) {
     m := &InboundOutboundPolicyConfiguration{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateInboundOutboundPolicyConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,7 +24,19 @@ func CreateInboundOutboundPolicyConfigurationFromDiscriminatorValue(parseNode i8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InboundOutboundPolicyConfiguration) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *InboundOutboundPolicyConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *InboundOutboundPolicyConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -67,15 +75,36 @@ func (m *InboundOutboundPolicyConfiguration) GetFieldDeserializers()(map[string]
 }
 // GetInboundAllowed gets the inboundAllowed property value. Defines whether external users coming inbound are allowed.
 func (m *InboundOutboundPolicyConfiguration) GetInboundAllowed()(*bool) {
-    return m.inboundAllowed
+    val, err := m.GetBackingStore().Get("inboundAllowed")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *InboundOutboundPolicyConfiguration) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOutboundAllowed gets the outboundAllowed property value. Defines whether internal users are allowed to go outbound.
 func (m *InboundOutboundPolicyConfiguration) GetOutboundAllowed()(*bool) {
-    return m.outboundAllowed
+    val, err := m.GetBackingStore().Get("outboundAllowed")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *InboundOutboundPolicyConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -107,17 +136,47 @@ func (m *InboundOutboundPolicyConfiguration) Serialize(writer i878a80d2330e89d26
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InboundOutboundPolicyConfiguration) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *InboundOutboundPolicyConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetInboundAllowed sets the inboundAllowed property value. Defines whether external users coming inbound are allowed.
 func (m *InboundOutboundPolicyConfiguration) SetInboundAllowed(value *bool)() {
-    m.inboundAllowed = value
+    err := m.GetBackingStore().Set("inboundAllowed", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *InboundOutboundPolicyConfiguration) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOutboundAllowed sets the outboundAllowed property value. Defines whether internal users are allowed to go outbound.
 func (m *InboundOutboundPolicyConfiguration) SetOutboundAllowed(value *bool)() {
-    m.outboundAllowed = value
+    err := m.GetBackingStore().Set("outboundAllowed", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// InboundOutboundPolicyConfigurationable 
+type InboundOutboundPolicyConfigurationable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetInboundAllowed()(*bool)
+    GetOdataType()(*string)
+    GetOutboundAllowed()(*bool)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetInboundAllowed(value *bool)()
+    SetOdataType(value *string)()
+    SetOutboundAllowed(value *bool)()
 }

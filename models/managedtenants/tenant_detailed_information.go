@@ -8,26 +8,6 @@ import (
 // TenantDetailedInformation 
 type TenantDetailedInformation struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The city where the managed tenant is located. Optional. Read-only.
-    city *string
-    // The code for the country where the managed tenant is located. Optional. Read-only.
-    countryCode *string
-    // The name for the country where the managed tenant is located. Optional. Read-only.
-    countryName *string
-    // The default domain name for the managed tenant. Optional. Read-only.
-    defaultDomainName *string
-    // The display name for the managed tenant.
-    displayName *string
-    // The business industry associated with the managed tenant. Optional. Read-only.
-    industryName *string
-    // The region where the managed tenant is located. Optional. Read-only.
-    region *string
-    // The business segment associated with the managed tenant. Optional. Read-only.
-    segmentName *string
-    // The Azure Active Directory tenant identifier for the managed tenant.
-    tenantId *string
-    // The vertical associated with the managed tenant. Optional. Read-only.
-    verticalName *string
 }
 // NewTenantDetailedInformation instantiates a new tenantDetailedInformation and sets the default values.
 func NewTenantDetailedInformation()(*TenantDetailedInformation) {
@@ -42,23 +22,58 @@ func CreateTenantDetailedInformationFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetCity gets the city property value. The city where the managed tenant is located. Optional. Read-only.
 func (m *TenantDetailedInformation) GetCity()(*string) {
-    return m.city
+    val, err := m.GetBackingStore().Get("city")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCountryCode gets the countryCode property value. The code for the country where the managed tenant is located. Optional. Read-only.
 func (m *TenantDetailedInformation) GetCountryCode()(*string) {
-    return m.countryCode
+    val, err := m.GetBackingStore().Get("countryCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCountryName gets the countryName property value. The name for the country where the managed tenant is located. Optional. Read-only.
 func (m *TenantDetailedInformation) GetCountryName()(*string) {
-    return m.countryName
+    val, err := m.GetBackingStore().Get("countryName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDefaultDomainName gets the defaultDomainName property value. The default domain name for the managed tenant. Optional. Read-only.
 func (m *TenantDetailedInformation) GetDefaultDomainName()(*string) {
-    return m.defaultDomainName
+    val, err := m.GetBackingStore().Get("defaultDomainName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The display name for the managed tenant.
 func (m *TenantDetailedInformation) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TenantDetailedInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -167,23 +182,58 @@ func (m *TenantDetailedInformation) GetFieldDeserializers()(map[string]func(i878
 }
 // GetIndustryName gets the industryName property value. The business industry associated with the managed tenant. Optional. Read-only.
 func (m *TenantDetailedInformation) GetIndustryName()(*string) {
-    return m.industryName
+    val, err := m.GetBackingStore().Get("industryName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRegion gets the region property value. The region where the managed tenant is located. Optional. Read-only.
 func (m *TenantDetailedInformation) GetRegion()(*string) {
-    return m.region
+    val, err := m.GetBackingStore().Get("region")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSegmentName gets the segmentName property value. The business segment associated with the managed tenant. Optional. Read-only.
 func (m *TenantDetailedInformation) GetSegmentName()(*string) {
-    return m.segmentName
+    val, err := m.GetBackingStore().Get("segmentName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant.
 func (m *TenantDetailedInformation) GetTenantId()(*string) {
-    return m.tenantId
+    val, err := m.GetBackingStore().Get("tenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetVerticalName gets the verticalName property value. The vertical associated with the managed tenant. Optional. Read-only.
 func (m *TenantDetailedInformation) GetVerticalName()(*string) {
-    return m.verticalName
+    val, err := m.GetBackingStore().Get("verticalName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TenantDetailedInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -255,41 +305,96 @@ func (m *TenantDetailedInformation) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetCity sets the city property value. The city where the managed tenant is located. Optional. Read-only.
 func (m *TenantDetailedInformation) SetCity(value *string)() {
-    m.city = value
+    err := m.GetBackingStore().Set("city", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCountryCode sets the countryCode property value. The code for the country where the managed tenant is located. Optional. Read-only.
 func (m *TenantDetailedInformation) SetCountryCode(value *string)() {
-    m.countryCode = value
+    err := m.GetBackingStore().Set("countryCode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCountryName sets the countryName property value. The name for the country where the managed tenant is located. Optional. Read-only.
 func (m *TenantDetailedInformation) SetCountryName(value *string)() {
-    m.countryName = value
+    err := m.GetBackingStore().Set("countryName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefaultDomainName sets the defaultDomainName property value. The default domain name for the managed tenant. Optional. Read-only.
 func (m *TenantDetailedInformation) SetDefaultDomainName(value *string)() {
-    m.defaultDomainName = value
+    err := m.GetBackingStore().Set("defaultDomainName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The display name for the managed tenant.
 func (m *TenantDetailedInformation) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIndustryName sets the industryName property value. The business industry associated with the managed tenant. Optional. Read-only.
 func (m *TenantDetailedInformation) SetIndustryName(value *string)() {
-    m.industryName = value
+    err := m.GetBackingStore().Set("industryName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRegion sets the region property value. The region where the managed tenant is located. Optional. Read-only.
 func (m *TenantDetailedInformation) SetRegion(value *string)() {
-    m.region = value
+    err := m.GetBackingStore().Set("region", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSegmentName sets the segmentName property value. The business segment associated with the managed tenant. Optional. Read-only.
 func (m *TenantDetailedInformation) SetSegmentName(value *string)() {
-    m.segmentName = value
+    err := m.GetBackingStore().Set("segmentName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantId sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant.
 func (m *TenantDetailedInformation) SetTenantId(value *string)() {
-    m.tenantId = value
+    err := m.GetBackingStore().Set("tenantId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVerticalName sets the verticalName property value. The vertical associated with the managed tenant. Optional. Read-only.
 func (m *TenantDetailedInformation) SetVerticalName(value *string)() {
-    m.verticalName = value
+    err := m.GetBackingStore().Set("verticalName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TenantDetailedInformationable 
+type TenantDetailedInformationable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCity()(*string)
+    GetCountryCode()(*string)
+    GetCountryName()(*string)
+    GetDefaultDomainName()(*string)
+    GetDisplayName()(*string)
+    GetIndustryName()(*string)
+    GetRegion()(*string)
+    GetSegmentName()(*string)
+    GetTenantId()(*string)
+    GetVerticalName()(*string)
+    SetCity(value *string)()
+    SetCountryCode(value *string)()
+    SetCountryName(value *string)()
+    SetDefaultDomainName(value *string)()
+    SetDisplayName(value *string)()
+    SetIndustryName(value *string)()
+    SetRegion(value *string)()
+    SetSegmentName(value *string)()
+    SetTenantId(value *string)()
+    SetVerticalName(value *string)()
 }

@@ -58,8 +58,8 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRequestBuild
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRequestBuilder instantiates a new ShiftsRequestBuilder and sets the default values.
@@ -70,7 +70,7 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRequestBuild
 }
 // Count provides operations to count the resources in the collection.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRequestBuilder) Count()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsCountRequestBuilder) {
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the list of shift instances in a schedule.
 // [Find more info here]
@@ -94,7 +94,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRequestBuil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftCollectionResponseable), nil
 }
-// Post create a new shift instance in a schedule.
+// Post create a new shift instance in a schedule. The duration of a shift cannot be less than 1 minute or longer than 24 hours.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/schedule-post-shifts?view=graph-rest-1.0
@@ -132,14 +132,17 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRequestBuil
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new shift instance in a schedule.
+// ToPostRequestInformation create a new shift instance in a schedule. The duration of a shift cannot be less than 1 minute or longer than 24 hours.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Shiftable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

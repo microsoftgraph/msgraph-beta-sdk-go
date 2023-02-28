@@ -7,20 +7,14 @@ import (
 // EncryptWithUserDefinedRights 
 type EncryptWithUserDefinedRights struct {
     EncryptContent
-    // The allowAdHocPermissions property
-    allowAdHocPermissions *bool
-    // The allowMailForwarding property
-    allowMailForwarding *bool
-    // The decryptionRightsManagementTemplateId property
-    decryptionRightsManagementTemplateId *string
 }
 // NewEncryptWithUserDefinedRights instantiates a new EncryptWithUserDefinedRights and sets the default values.
 func NewEncryptWithUserDefinedRights()(*EncryptWithUserDefinedRights) {
     m := &EncryptWithUserDefinedRights{
         EncryptContent: *NewEncryptContent(),
     }
-    odataTypeValue := "#microsoft.graph.encryptWithUserDefinedRights";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.encryptWithUserDefinedRights"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEncryptWithUserDefinedRightsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,15 +23,36 @@ func CreateEncryptWithUserDefinedRightsFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAllowAdHocPermissions gets the allowAdHocPermissions property value. The allowAdHocPermissions property
 func (m *EncryptWithUserDefinedRights) GetAllowAdHocPermissions()(*bool) {
-    return m.allowAdHocPermissions
+    val, err := m.GetBackingStore().Get("allowAdHocPermissions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetAllowMailForwarding gets the allowMailForwarding property value. The allowMailForwarding property
 func (m *EncryptWithUserDefinedRights) GetAllowMailForwarding()(*bool) {
-    return m.allowMailForwarding
+    val, err := m.GetBackingStore().Get("allowMailForwarding")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDecryptionRightsManagementTemplateId gets the decryptionRightsManagementTemplateId property value. The decryptionRightsManagementTemplateId property
 func (m *EncryptWithUserDefinedRights) GetDecryptionRightsManagementTemplateId()(*string) {
-    return m.decryptionRightsManagementTemplateId
+    val, err := m.GetBackingStore().Get("decryptionRightsManagementTemplateId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EncryptWithUserDefinedRights) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -102,13 +117,33 @@ func (m *EncryptWithUserDefinedRights) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAllowAdHocPermissions sets the allowAdHocPermissions property value. The allowAdHocPermissions property
 func (m *EncryptWithUserDefinedRights) SetAllowAdHocPermissions(value *bool)() {
-    m.allowAdHocPermissions = value
+    err := m.GetBackingStore().Set("allowAdHocPermissions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAllowMailForwarding sets the allowMailForwarding property value. The allowMailForwarding property
 func (m *EncryptWithUserDefinedRights) SetAllowMailForwarding(value *bool)() {
-    m.allowMailForwarding = value
+    err := m.GetBackingStore().Set("allowMailForwarding", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDecryptionRightsManagementTemplateId sets the decryptionRightsManagementTemplateId property value. The decryptionRightsManagementTemplateId property
 func (m *EncryptWithUserDefinedRights) SetDecryptionRightsManagementTemplateId(value *string)() {
-    m.decryptionRightsManagementTemplateId = value
+    err := m.GetBackingStore().Set("decryptionRightsManagementTemplateId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EncryptWithUserDefinedRightsable 
+type EncryptWithUserDefinedRightsable interface {
+    EncryptContentable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllowAdHocPermissions()(*bool)
+    GetAllowMailForwarding()(*bool)
+    GetDecryptionRightsManagementTemplateId()(*string)
+    SetAllowAdHocPermissions(value *bool)()
+    SetAllowMailForwarding(value *bool)()
+    SetDecryptionRightsManagementTemplateId(value *string)()
 }

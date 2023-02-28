@@ -7,8 +7,6 @@ import (
 // TeamworkConfiguredPeripheralCollectionResponse 
 type TeamworkConfiguredPeripheralCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []TeamworkConfiguredPeripheralable
 }
 // NewTeamworkConfiguredPeripheralCollectionResponse instantiates a new TeamworkConfiguredPeripheralCollectionResponse and sets the default values.
 func NewTeamworkConfiguredPeripheralCollectionResponse()(*TeamworkConfiguredPeripheralCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *TeamworkConfiguredPeripheralCollectionResponse) GetFieldDeserializers()
 }
 // GetValue gets the value property value. The value property
 func (m *TeamworkConfiguredPeripheralCollectionResponse) GetValue()([]TeamworkConfiguredPeripheralable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TeamworkConfiguredPeripheralable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TeamworkConfiguredPeripheralCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *TeamworkConfiguredPeripheralCollectionResponse) Serialize(writer i878a8
 }
 // SetValue sets the value property value. The value property
 func (m *TeamworkConfiguredPeripheralCollectionResponse) SetValue(value []TeamworkConfiguredPeripheralable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TeamworkConfiguredPeripheralCollectionResponseable 
+type TeamworkConfiguredPeripheralCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]TeamworkConfiguredPeripheralable)
+    SetValue(value []TeamworkConfiguredPeripheralable)()
 }

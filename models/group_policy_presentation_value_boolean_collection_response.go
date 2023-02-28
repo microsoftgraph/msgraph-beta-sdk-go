@@ -7,8 +7,6 @@ import (
 // GroupPolicyPresentationValueBooleanCollectionResponse 
 type GroupPolicyPresentationValueBooleanCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []GroupPolicyPresentationValueBooleanable
 }
 // NewGroupPolicyPresentationValueBooleanCollectionResponse instantiates a new GroupPolicyPresentationValueBooleanCollectionResponse and sets the default values.
 func NewGroupPolicyPresentationValueBooleanCollectionResponse()(*GroupPolicyPresentationValueBooleanCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *GroupPolicyPresentationValueBooleanCollectionResponse) GetFieldDeserial
 }
 // GetValue gets the value property value. The value property
 func (m *GroupPolicyPresentationValueBooleanCollectionResponse) GetValue()([]GroupPolicyPresentationValueBooleanable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GroupPolicyPresentationValueBooleanable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyPresentationValueBooleanCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *GroupPolicyPresentationValueBooleanCollectionResponse) Serialize(writer
 }
 // SetValue sets the value property value. The value property
 func (m *GroupPolicyPresentationValueBooleanCollectionResponse) SetValue(value []GroupPolicyPresentationValueBooleanable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GroupPolicyPresentationValueBooleanCollectionResponseable 
+type GroupPolicyPresentationValueBooleanCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]GroupPolicyPresentationValueBooleanable)
+    SetValue(value []GroupPolicyPresentationValueBooleanable)()
 }

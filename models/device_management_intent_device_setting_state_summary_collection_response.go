@@ -7,8 +7,6 @@ import (
 // DeviceManagementIntentDeviceSettingStateSummaryCollectionResponse 
 type DeviceManagementIntentDeviceSettingStateSummaryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementIntentDeviceSettingStateSummaryable
 }
 // NewDeviceManagementIntentDeviceSettingStateSummaryCollectionResponse instantiates a new DeviceManagementIntentDeviceSettingStateSummaryCollectionResponse and sets the default values.
 func NewDeviceManagementIntentDeviceSettingStateSummaryCollectionResponse()(*DeviceManagementIntentDeviceSettingStateSummaryCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementIntentDeviceSettingStateSummaryCollectionResponse) GetF
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementIntentDeviceSettingStateSummaryCollectionResponse) GetValue()([]DeviceManagementIntentDeviceSettingStateSummaryable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementIntentDeviceSettingStateSummaryable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementIntentDeviceSettingStateSummaryCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementIntentDeviceSettingStateSummaryCollectionResponse) Seri
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementIntentDeviceSettingStateSummaryCollectionResponse) SetValue(value []DeviceManagementIntentDeviceSettingStateSummaryable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementIntentDeviceSettingStateSummaryCollectionResponseable 
+type DeviceManagementIntentDeviceSettingStateSummaryCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementIntentDeviceSettingStateSummaryable)
+    SetValue(value []DeviceManagementIntentDeviceSettingStateSummaryable)()
 }

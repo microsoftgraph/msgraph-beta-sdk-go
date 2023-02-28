@@ -8,8 +8,6 @@ import (
 // GetOffice365ActiveUserDetailWithDateResponse 
 type GetOffice365ActiveUserDetailWithDateResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
-    // The value property
-    value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365ActiveUserDetailable
 }
 // NewGetOffice365ActiveUserDetailWithDateResponse instantiates a new GetOffice365ActiveUserDetailWithDateResponse and sets the default values.
 func NewGetOffice365ActiveUserDetailWithDateResponse()(*GetOffice365ActiveUserDetailWithDateResponse) {
@@ -43,7 +41,14 @@ func (m *GetOffice365ActiveUserDetailWithDateResponse) GetFieldDeserializers()(m
 }
 // GetValue gets the value property value. The value property
 func (m *GetOffice365ActiveUserDetailWithDateResponse) GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365ActiveUserDetailable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365ActiveUserDetailable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GetOffice365ActiveUserDetailWithDateResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *GetOffice365ActiveUserDetailWithDateResponse) Serialize(writer i878a80d
 }
 // SetValue sets the value property value. The value property
 func (m *GetOffice365ActiveUserDetailWithDateResponse) SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365ActiveUserDetailable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GetOffice365ActiveUserDetailWithDateResponseable 
+type GetOffice365ActiveUserDetailWithDateResponseable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365ActiveUserDetailable)
+    SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365ActiveUserDetailable)()
 }

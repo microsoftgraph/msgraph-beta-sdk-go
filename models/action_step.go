@@ -2,39 +2,52 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ActionStep 
 type ActionStep struct {
-    // The actionUrl property
-    actionUrl ActionUrlable
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The OdataType property
-    odataType *string
-    // The stepNumber property
-    stepNumber *int64
-    // The text property
-    text *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewActionStep instantiates a new actionStep and sets the default values.
 func NewActionStep()(*ActionStep) {
     m := &ActionStep{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateActionStepFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateActionStepFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewActionStep(), nil
 }
-// GetActionUrl gets the actionUrl property value. The actionUrl property
+// GetActionUrl gets the actionUrl property value. A link to the documentation or Azure portal page that is associated with the action step.
 func (m *ActionStep) GetActionUrl()(ActionUrlable) {
-    return m.actionUrl
+    val, err := m.GetBackingStore().Get("actionUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ActionUrlable)
+    }
+    return nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ActionStep) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ActionStep) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ActionStep) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -83,15 +96,36 @@ func (m *ActionStep) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ActionStep) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
-// GetStepNumber gets the stepNumber property value. The stepNumber property
+// GetStepNumber gets the stepNumber property value. Indicates the position for this action in the order of the collection of actions to be taken.
 func (m *ActionStep) GetStepNumber()(*int64) {
-    return m.stepNumber
+    val, err := m.GetBackingStore().Get("stepNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
-// GetText gets the text property value. The text property
+// GetText gets the text property value. Friendly description of the action to take.
 func (m *ActionStep) GetText()(*string) {
-    return m.text
+    val, err := m.GetBackingStore().Get("text")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ActionStep) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -127,23 +161,58 @@ func (m *ActionStep) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// SetActionUrl sets the actionUrl property value. The actionUrl property
+// SetActionUrl sets the actionUrl property value. A link to the documentation or Azure portal page that is associated with the action step.
 func (m *ActionStep) SetActionUrl(value ActionUrlable)() {
-    m.actionUrl = value
+    err := m.GetBackingStore().Set("actionUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ActionStep) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ActionStep) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ActionStep) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetStepNumber sets the stepNumber property value. The stepNumber property
+// SetStepNumber sets the stepNumber property value. Indicates the position for this action in the order of the collection of actions to be taken.
 func (m *ActionStep) SetStepNumber(value *int64)() {
-    m.stepNumber = value
+    err := m.GetBackingStore().Set("stepNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetText sets the text property value. The text property
+// SetText sets the text property value. Friendly description of the action to take.
 func (m *ActionStep) SetText(value *string)() {
-    m.text = value
+    err := m.GetBackingStore().Set("text", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ActionStepable 
+type ActionStepable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActionUrl()(ActionUrlable)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetOdataType()(*string)
+    GetStepNumber()(*int64)
+    GetText()(*string)
+    SetActionUrl(value ActionUrlable)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetOdataType(value *string)()
+    SetStepNumber(value *int64)()
+    SetText(value *string)()
 }

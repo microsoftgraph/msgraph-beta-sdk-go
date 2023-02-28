@@ -7,16 +7,14 @@ import (
 // AndroidManagedAppRegistration 
 type AndroidManagedAppRegistration struct {
     ManagedAppRegistration
-    // The patch version for the current android app registration
-    patchVersion *string
 }
 // NewAndroidManagedAppRegistration instantiates a new AndroidManagedAppRegistration and sets the default values.
 func NewAndroidManagedAppRegistration()(*AndroidManagedAppRegistration) {
     m := &AndroidManagedAppRegistration{
         ManagedAppRegistration: *NewManagedAppRegistration(),
     }
-    odataTypeValue := "#microsoft.graph.androidManagedAppRegistration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidManagedAppRegistration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidManagedAppRegistrationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *AndroidManagedAppRegistration) GetFieldDeserializers()(map[string]func(
 }
 // GetPatchVersion gets the patchVersion property value. The patch version for the current android app registration
 func (m *AndroidManagedAppRegistration) GetPatchVersion()(*string) {
-    return m.patchVersion
+    val, err := m.GetBackingStore().Get("patchVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidManagedAppRegistration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *AndroidManagedAppRegistration) Serialize(writer i878a80d2330e89d2689638
 }
 // SetPatchVersion sets the patchVersion property value. The patch version for the current android app registration
 func (m *AndroidManagedAppRegistration) SetPatchVersion(value *string)() {
-    m.patchVersion = value
+    err := m.GetBackingStore().Set("patchVersion", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidManagedAppRegistrationable 
+type AndroidManagedAppRegistrationable interface {
+    ManagedAppRegistrationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetPatchVersion()(*string)
+    SetPatchVersion(value *string)()
 }

@@ -55,8 +55,8 @@ func NewComanagedDevicesItemWindowsProtectionStateRequestBuilderInternal(pathPar
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewComanagedDevicesItemWindowsProtectionStateRequestBuilder instantiates a new WindowsProtectionStateRequestBuilder and sets the default values.
@@ -83,7 +83,7 @@ func (m *ComanagedDevicesItemWindowsProtectionStateRequestBuilder) Delete(ctx co
 }
 // DetectedMalwareState provides operations to manage the detectedMalwareState property of the microsoft.graph.windowsProtectionState entity.
 func (m *ComanagedDevicesItemWindowsProtectionStateRequestBuilder) DetectedMalwareState()(*ComanagedDevicesItemWindowsProtectionStateDetectedMalwareStateRequestBuilder) {
-    return NewComanagedDevicesItemWindowsProtectionStateDetectedMalwareStateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewComanagedDevicesItemWindowsProtectionStateDetectedMalwareStateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DetectedMalwareStateById provides operations to manage the detectedMalwareState property of the microsoft.graph.windowsProtectionState entity.
 func (m *ComanagedDevicesItemWindowsProtectionStateRequestBuilder) DetectedMalwareStateById(id string)(*ComanagedDevicesItemWindowsProtectionStateDetectedMalwareStateWindowsDeviceMalwareStateItemRequestBuilder) {
@@ -94,7 +94,7 @@ func (m *ComanagedDevicesItemWindowsProtectionStateRequestBuilder) DetectedMalwa
     if id != "" {
         urlTplParams["windowsDeviceMalwareState%2Did"] = id
     }
-    return NewComanagedDevicesItemWindowsProtectionStateDetectedMalwareStateWindowsDeviceMalwareStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewComanagedDevicesItemWindowsProtectionStateDetectedMalwareStateWindowsDeviceMalwareStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Get the device protection status. This property is read-only.
 func (m *ComanagedDevicesItemWindowsProtectionStateRequestBuilder) Get(ctx context.Context, requestConfiguration *ComanagedDevicesItemWindowsProtectionStateRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsProtectionStateable, error) {
@@ -169,7 +169,10 @@ func (m *ComanagedDevicesItemWindowsProtectionStateRequestBuilder) ToPatchReques
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

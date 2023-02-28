@@ -7,8 +7,6 @@ import (
 // DeviceManagementScriptPolicySetItemCollectionResponse 
 type DeviceManagementScriptPolicySetItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementScriptPolicySetItemable
 }
 // NewDeviceManagementScriptPolicySetItemCollectionResponse instantiates a new DeviceManagementScriptPolicySetItemCollectionResponse and sets the default values.
 func NewDeviceManagementScriptPolicySetItemCollectionResponse()(*DeviceManagementScriptPolicySetItemCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementScriptPolicySetItemCollectionResponse) GetFieldDeserial
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementScriptPolicySetItemCollectionResponse) GetValue()([]DeviceManagementScriptPolicySetItemable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementScriptPolicySetItemable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementScriptPolicySetItemCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementScriptPolicySetItemCollectionResponse) Serialize(writer
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementScriptPolicySetItemCollectionResponse) SetValue(value []DeviceManagementScriptPolicySetItemable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementScriptPolicySetItemCollectionResponseable 
+type DeviceManagementScriptPolicySetItemCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementScriptPolicySetItemable)
+    SetValue(value []DeviceManagementScriptPolicySetItemable)()
 }

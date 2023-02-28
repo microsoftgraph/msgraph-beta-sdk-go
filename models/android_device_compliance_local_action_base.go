@@ -7,8 +7,6 @@ import (
 // AndroidDeviceComplianceLocalActionBase 
 type AndroidDeviceComplianceLocalActionBase struct {
     Entity
-    // Number of minutes to wait till a local action is enforced. Valid values 0 to 2147483647
-    gracePeriodInMinutes *int32
 }
 // NewAndroidDeviceComplianceLocalActionBase instantiates a new AndroidDeviceComplianceLocalActionBase and sets the default values.
 func NewAndroidDeviceComplianceLocalActionBase()(*AndroidDeviceComplianceLocalActionBase) {
@@ -58,7 +56,14 @@ func (m *AndroidDeviceComplianceLocalActionBase) GetFieldDeserializers()(map[str
 }
 // GetGracePeriodInMinutes gets the gracePeriodInMinutes property value. Number of minutes to wait till a local action is enforced. Valid values 0 to 2147483647
 func (m *AndroidDeviceComplianceLocalActionBase) GetGracePeriodInMinutes()(*int32) {
-    return m.gracePeriodInMinutes
+    val, err := m.GetBackingStore().Get("gracePeriodInMinutes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceComplianceLocalActionBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -76,5 +81,15 @@ func (m *AndroidDeviceComplianceLocalActionBase) Serialize(writer i878a80d2330e8
 }
 // SetGracePeriodInMinutes sets the gracePeriodInMinutes property value. Number of minutes to wait till a local action is enforced. Valid values 0 to 2147483647
 func (m *AndroidDeviceComplianceLocalActionBase) SetGracePeriodInMinutes(value *int32)() {
-    m.gracePeriodInMinutes = value
+    err := m.GetBackingStore().Set("gracePeriodInMinutes", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidDeviceComplianceLocalActionBaseable 
+type AndroidDeviceComplianceLocalActionBaseable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetGracePeriodInMinutes()(*int32)
+    SetGracePeriodInMinutes(value *int32)()
 }

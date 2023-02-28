@@ -7,8 +7,6 @@ import (
 // ManagedDeviceCertificateStateCollectionResponse 
 type ManagedDeviceCertificateStateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ManagedDeviceCertificateStateable
 }
 // NewManagedDeviceCertificateStateCollectionResponse instantiates a new ManagedDeviceCertificateStateCollectionResponse and sets the default values.
 func NewManagedDeviceCertificateStateCollectionResponse()(*ManagedDeviceCertificateStateCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ManagedDeviceCertificateStateCollectionResponse) GetFieldDeserializers(
 }
 // GetValue gets the value property value. The value property
 func (m *ManagedDeviceCertificateStateCollectionResponse) GetValue()([]ManagedDeviceCertificateStateable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedDeviceCertificateStateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagedDeviceCertificateStateCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ManagedDeviceCertificateStateCollectionResponse) Serialize(writer i878a
 }
 // SetValue sets the value property value. The value property
 func (m *ManagedDeviceCertificateStateCollectionResponse) SetValue(value []ManagedDeviceCertificateStateable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagedDeviceCertificateStateCollectionResponseable 
+type ManagedDeviceCertificateStateCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ManagedDeviceCertificateStateable)
+    SetValue(value []ManagedDeviceCertificateStateable)()
 }

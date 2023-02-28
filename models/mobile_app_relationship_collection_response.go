@@ -7,8 +7,6 @@ import (
 // MobileAppRelationshipCollectionResponse 
 type MobileAppRelationshipCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MobileAppRelationshipable
 }
 // NewMobileAppRelationshipCollectionResponse instantiates a new MobileAppRelationshipCollectionResponse and sets the default values.
 func NewMobileAppRelationshipCollectionResponse()(*MobileAppRelationshipCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MobileAppRelationshipCollectionResponse) GetFieldDeserializers()(map[st
 }
 // GetValue gets the value property value. The value property
 func (m *MobileAppRelationshipCollectionResponse) GetValue()([]MobileAppRelationshipable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MobileAppRelationshipable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MobileAppRelationshipCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MobileAppRelationshipCollectionResponse) Serialize(writer i878a80d2330e
 }
 // SetValue sets the value property value. The value property
 func (m *MobileAppRelationshipCollectionResponse) SetValue(value []MobileAppRelationshipable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MobileAppRelationshipCollectionResponseable 
+type MobileAppRelationshipCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MobileAppRelationshipable)
+    SetValue(value []MobileAppRelationshipable)()
 }

@@ -3,38 +3,20 @@ package models
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // RetrieveRemoteHelpSessionResponse remote help - response we provide back to the helper on retrieve session API call
 type RetrieveRemoteHelpSessionResponse struct {
-    // ACS Group Id
-    acsGroupId *string
-    // Helper ACS User Id
-    acsHelperUserId *string
-    // Helper ACS User Token
-    acsHelperUserToken *string
-    // Sharer ACS User Id
-    acsSharerUserId *string
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Android Device Name
-    deviceName *string
-    // The OdataType property
-    odataType *string
-    // Azure Pubsub Group Id
-    pubSubGroupId *string
-    // Azure Pubsub Group Id
-    pubSubHelperAccessUri *string
-    // Azure Pubsub Session Expiration Date Time.
-    sessionExpirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The unique identifier for a session
-    sessionKey *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewRetrieveRemoteHelpSessionResponse instantiates a new retrieveRemoteHelpSessionResponse and sets the default values.
 func NewRetrieveRemoteHelpSessionResponse()(*RetrieveRemoteHelpSessionResponse) {
     m := &RetrieveRemoteHelpSessionResponse{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateRetrieveRemoteHelpSessionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,27 +25,74 @@ func CreateRetrieveRemoteHelpSessionResponseFromDiscriminatorValue(parseNode i87
 }
 // GetAcsGroupId gets the acsGroupId property value. ACS Group Id
 func (m *RetrieveRemoteHelpSessionResponse) GetAcsGroupId()(*string) {
-    return m.acsGroupId
+    val, err := m.GetBackingStore().Get("acsGroupId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAcsHelperUserId gets the acsHelperUserId property value. Helper ACS User Id
 func (m *RetrieveRemoteHelpSessionResponse) GetAcsHelperUserId()(*string) {
-    return m.acsHelperUserId
+    val, err := m.GetBackingStore().Get("acsHelperUserId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAcsHelperUserToken gets the acsHelperUserToken property value. Helper ACS User Token
 func (m *RetrieveRemoteHelpSessionResponse) GetAcsHelperUserToken()(*string) {
-    return m.acsHelperUserToken
+    val, err := m.GetBackingStore().Get("acsHelperUserToken")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAcsSharerUserId gets the acsSharerUserId property value. Sharer ACS User Id
 func (m *RetrieveRemoteHelpSessionResponse) GetAcsSharerUserId()(*string) {
-    return m.acsSharerUserId
+    val, err := m.GetBackingStore().Get("acsSharerUserId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RetrieveRemoteHelpSessionResponse) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *RetrieveRemoteHelpSessionResponse) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDeviceName gets the deviceName property value. Android Device Name
 func (m *RetrieveRemoteHelpSessionResponse) GetDeviceName()(*string) {
-    return m.deviceName
+    val, err := m.GetBackingStore().Get("deviceName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RetrieveRemoteHelpSessionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -172,23 +201,58 @@ func (m *RetrieveRemoteHelpSessionResponse) GetFieldDeserializers()(map[string]f
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *RetrieveRemoteHelpSessionResponse) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPubSubGroupId gets the pubSubGroupId property value. Azure Pubsub Group Id
 func (m *RetrieveRemoteHelpSessionResponse) GetPubSubGroupId()(*string) {
-    return m.pubSubGroupId
+    val, err := m.GetBackingStore().Get("pubSubGroupId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPubSubHelperAccessUri gets the pubSubHelperAccessUri property value. Azure Pubsub Group Id
 func (m *RetrieveRemoteHelpSessionResponse) GetPubSubHelperAccessUri()(*string) {
-    return m.pubSubHelperAccessUri
+    val, err := m.GetBackingStore().Get("pubSubHelperAccessUri")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSessionExpirationDateTime gets the sessionExpirationDateTime property value. Azure Pubsub Session Expiration Date Time.
 func (m *RetrieveRemoteHelpSessionResponse) GetSessionExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.sessionExpirationDateTime
+    val, err := m.GetBackingStore().Get("sessionExpirationDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetSessionKey gets the sessionKey property value. The unique identifier for a session
 func (m *RetrieveRemoteHelpSessionResponse) GetSessionKey()(*string) {
-    return m.sessionKey
+    val, err := m.GetBackingStore().Get("sessionKey")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RetrieveRemoteHelpSessionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -262,45 +326,110 @@ func (m *RetrieveRemoteHelpSessionResponse) Serialize(writer i878a80d2330e89d268
 }
 // SetAcsGroupId sets the acsGroupId property value. ACS Group Id
 func (m *RetrieveRemoteHelpSessionResponse) SetAcsGroupId(value *string)() {
-    m.acsGroupId = value
+    err := m.GetBackingStore().Set("acsGroupId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAcsHelperUserId sets the acsHelperUserId property value. Helper ACS User Id
 func (m *RetrieveRemoteHelpSessionResponse) SetAcsHelperUserId(value *string)() {
-    m.acsHelperUserId = value
+    err := m.GetBackingStore().Set("acsHelperUserId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAcsHelperUserToken sets the acsHelperUserToken property value. Helper ACS User Token
 func (m *RetrieveRemoteHelpSessionResponse) SetAcsHelperUserToken(value *string)() {
-    m.acsHelperUserToken = value
+    err := m.GetBackingStore().Set("acsHelperUserToken", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAcsSharerUserId sets the acsSharerUserId property value. Sharer ACS User Id
 func (m *RetrieveRemoteHelpSessionResponse) SetAcsSharerUserId(value *string)() {
-    m.acsSharerUserId = value
+    err := m.GetBackingStore().Set("acsSharerUserId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RetrieveRemoteHelpSessionResponse) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *RetrieveRemoteHelpSessionResponse) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDeviceName sets the deviceName property value. Android Device Name
 func (m *RetrieveRemoteHelpSessionResponse) SetDeviceName(value *string)() {
-    m.deviceName = value
+    err := m.GetBackingStore().Set("deviceName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *RetrieveRemoteHelpSessionResponse) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPubSubGroupId sets the pubSubGroupId property value. Azure Pubsub Group Id
 func (m *RetrieveRemoteHelpSessionResponse) SetPubSubGroupId(value *string)() {
-    m.pubSubGroupId = value
+    err := m.GetBackingStore().Set("pubSubGroupId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPubSubHelperAccessUri sets the pubSubHelperAccessUri property value. Azure Pubsub Group Id
 func (m *RetrieveRemoteHelpSessionResponse) SetPubSubHelperAccessUri(value *string)() {
-    m.pubSubHelperAccessUri = value
+    err := m.GetBackingStore().Set("pubSubHelperAccessUri", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSessionExpirationDateTime sets the sessionExpirationDateTime property value. Azure Pubsub Session Expiration Date Time.
 func (m *RetrieveRemoteHelpSessionResponse) SetSessionExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.sessionExpirationDateTime = value
+    err := m.GetBackingStore().Set("sessionExpirationDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSessionKey sets the sessionKey property value. The unique identifier for a session
 func (m *RetrieveRemoteHelpSessionResponse) SetSessionKey(value *string)() {
-    m.sessionKey = value
+    err := m.GetBackingStore().Set("sessionKey", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RetrieveRemoteHelpSessionResponseable 
+type RetrieveRemoteHelpSessionResponseable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAcsGroupId()(*string)
+    GetAcsHelperUserId()(*string)
+    GetAcsHelperUserToken()(*string)
+    GetAcsSharerUserId()(*string)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDeviceName()(*string)
+    GetOdataType()(*string)
+    GetPubSubGroupId()(*string)
+    GetPubSubHelperAccessUri()(*string)
+    GetSessionExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetSessionKey()(*string)
+    SetAcsGroupId(value *string)()
+    SetAcsHelperUserId(value *string)()
+    SetAcsHelperUserToken(value *string)()
+    SetAcsSharerUserId(value *string)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDeviceName(value *string)()
+    SetOdataType(value *string)()
+    SetPubSubGroupId(value *string)()
+    SetPubSubHelperAccessUri(value *string)()
+    SetSessionExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetSessionKey(value *string)()
 }

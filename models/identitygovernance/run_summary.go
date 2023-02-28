@@ -2,32 +2,20 @@ package identitygovernance
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // RunSummary 
 type RunSummary struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The number of failed workflow runs.
-    failedRuns *int32
-    // The number of failed tasks of a workflow.
-    failedTasks *int32
-    // The OdataType property
-    odataType *string
-    // The number of successful workflow runs.
-    successfulRuns *int32
-    // The total number of runs for a workflow.
-    totalRuns *int32
-    // The totalTasks property
-    totalTasks *int32
-    // The totalUsers property
-    totalUsers *int32
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewRunSummary instantiates a new runSummary and sets the default values.
 func NewRunSummary()(*RunSummary) {
     m := &RunSummary{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateRunSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,15 +24,41 @@ func CreateRunSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RunSummary) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *RunSummary) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFailedRuns gets the failedRuns property value. The number of failed workflow runs.
 func (m *RunSummary) GetFailedRuns()(*int32) {
-    return m.failedRuns
+    val, err := m.GetBackingStore().Get("failedRuns")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFailedTasks gets the failedTasks property value. The number of failed tasks of a workflow.
 func (m *RunSummary) GetFailedTasks()(*int32) {
-    return m.failedTasks
+    val, err := m.GetBackingStore().Get("failedTasks")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RunSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -123,23 +137,58 @@ func (m *RunSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *RunSummary) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSuccessfulRuns gets the successfulRuns property value. The number of successful workflow runs.
 func (m *RunSummary) GetSuccessfulRuns()(*int32) {
-    return m.successfulRuns
+    val, err := m.GetBackingStore().Get("successfulRuns")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetTotalRuns gets the totalRuns property value. The total number of runs for a workflow.
 func (m *RunSummary) GetTotalRuns()(*int32) {
-    return m.totalRuns
+    val, err := m.GetBackingStore().Get("totalRuns")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetTotalTasks gets the totalTasks property value. The totalTasks property
 func (m *RunSummary) GetTotalTasks()(*int32) {
-    return m.totalTasks
+    val, err := m.GetBackingStore().Get("totalTasks")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetTotalUsers gets the totalUsers property value. The totalUsers property
 func (m *RunSummary) GetTotalUsers()(*int32) {
-    return m.totalUsers
+    val, err := m.GetBackingStore().Get("totalUsers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RunSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -195,33 +244,83 @@ func (m *RunSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RunSummary) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *RunSummary) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetFailedRuns sets the failedRuns property value. The number of failed workflow runs.
 func (m *RunSummary) SetFailedRuns(value *int32)() {
-    m.failedRuns = value
+    err := m.GetBackingStore().Set("failedRuns", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFailedTasks sets the failedTasks property value. The number of failed tasks of a workflow.
 func (m *RunSummary) SetFailedTasks(value *int32)() {
-    m.failedTasks = value
+    err := m.GetBackingStore().Set("failedTasks", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *RunSummary) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSuccessfulRuns sets the successfulRuns property value. The number of successful workflow runs.
 func (m *RunSummary) SetSuccessfulRuns(value *int32)() {
-    m.successfulRuns = value
+    err := m.GetBackingStore().Set("successfulRuns", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTotalRuns sets the totalRuns property value. The total number of runs for a workflow.
 func (m *RunSummary) SetTotalRuns(value *int32)() {
-    m.totalRuns = value
+    err := m.GetBackingStore().Set("totalRuns", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTotalTasks sets the totalTasks property value. The totalTasks property
 func (m *RunSummary) SetTotalTasks(value *int32)() {
-    m.totalTasks = value
+    err := m.GetBackingStore().Set("totalTasks", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTotalUsers sets the totalUsers property value. The totalUsers property
 func (m *RunSummary) SetTotalUsers(value *int32)() {
-    m.totalUsers = value
+    err := m.GetBackingStore().Set("totalUsers", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RunSummaryable 
+type RunSummaryable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetFailedRuns()(*int32)
+    GetFailedTasks()(*int32)
+    GetOdataType()(*string)
+    GetSuccessfulRuns()(*int32)
+    GetTotalRuns()(*int32)
+    GetTotalTasks()(*int32)
+    GetTotalUsers()(*int32)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetFailedRuns(value *int32)()
+    SetFailedTasks(value *int32)()
+    SetOdataType(value *string)()
+    SetSuccessfulRuns(value *int32)()
+    SetTotalRuns(value *int32)()
+    SetTotalTasks(value *int32)()
+    SetTotalUsers(value *int32)()
 }

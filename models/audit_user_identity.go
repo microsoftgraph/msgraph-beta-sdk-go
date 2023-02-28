@@ -7,18 +7,14 @@ import (
 // AuditUserIdentity 
 type AuditUserIdentity struct {
     UserIdentity
-    // For user sign ins, the identifier of the tenant that the user is a member of.
-    homeTenantId *string
-    // For user sign ins, the name of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.
-    homeTenantName *string
 }
 // NewAuditUserIdentity instantiates a new AuditUserIdentity and sets the default values.
 func NewAuditUserIdentity()(*AuditUserIdentity) {
     m := &AuditUserIdentity{
         UserIdentity: *NewUserIdentity(),
     }
-    odataTypeValue := "#microsoft.graph.auditUserIdentity";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.auditUserIdentity"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAuditUserIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -52,11 +48,25 @@ func (m *AuditUserIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetHomeTenantId gets the homeTenantId property value. For user sign ins, the identifier of the tenant that the user is a member of.
 func (m *AuditUserIdentity) GetHomeTenantId()(*string) {
-    return m.homeTenantId
+    val, err := m.GetBackingStore().Get("homeTenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetHomeTenantName gets the homeTenantName property value. For user sign ins, the name of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.
 func (m *AuditUserIdentity) GetHomeTenantName()(*string) {
-    return m.homeTenantName
+    val, err := m.GetBackingStore().Get("homeTenantName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AuditUserIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *AuditUserIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetHomeTenantId sets the homeTenantId property value. For user sign ins, the identifier of the tenant that the user is a member of.
 func (m *AuditUserIdentity) SetHomeTenantId(value *string)() {
-    m.homeTenantId = value
+    err := m.GetBackingStore().Set("homeTenantId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHomeTenantName sets the homeTenantName property value. For user sign ins, the name of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.
 func (m *AuditUserIdentity) SetHomeTenantName(value *string)() {
-    m.homeTenantName = value
+    err := m.GetBackingStore().Set("homeTenantName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AuditUserIdentityable 
+type AuditUserIdentityable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    UserIdentityable
+    GetHomeTenantId()(*string)
+    GetHomeTenantName()(*string)
+    SetHomeTenantId(value *string)()
+    SetHomeTenantName(value *string)()
 }

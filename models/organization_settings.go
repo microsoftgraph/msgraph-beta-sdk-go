@@ -7,16 +7,6 @@ import (
 // OrganizationSettings 
 type OrganizationSettings struct {
     Entity
-    // Contains the properties that are configured by an administrator as a tenant-level privacy control whether to identify duplicate contacts among a user's contacts list and suggest the user to merge those contacts to have a cleaner contacts list. List contactInsights returns the settings to display or return contact insights in an organization.
-    contactInsights InsightsSettingsable
-    // Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. List itemInsights returns the settings to display or return item insights in an organization.
-    itemInsights InsightsSettingsable
-    // The microsoftApplicationDataAccess property
-    microsoftApplicationDataAccess MicrosoftApplicationDataAccessSettingsable
-    // Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.
-    peopleInsights InsightsSettingsable
-    // Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
-    profileCardProperties []ProfileCardPropertyable
 }
 // NewOrganizationSettings instantiates a new organizationSettings and sets the default values.
 func NewOrganizationSettings()(*OrganizationSettings) {
@@ -31,7 +21,14 @@ func CreateOrganizationSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetContactInsights gets the contactInsights property value. Contains the properties that are configured by an administrator as a tenant-level privacy control whether to identify duplicate contacts among a user's contacts list and suggest the user to merge those contacts to have a cleaner contacts list. List contactInsights returns the settings to display or return contact insights in an organization.
 func (m *OrganizationSettings) GetContactInsights()(InsightsSettingsable) {
-    return m.contactInsights
+    val, err := m.GetBackingStore().Get("contactInsights")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(InsightsSettingsable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OrganizationSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -94,19 +91,47 @@ func (m *OrganizationSettings) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetItemInsights gets the itemInsights property value. Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. List itemInsights returns the settings to display or return item insights in an organization.
 func (m *OrganizationSettings) GetItemInsights()(InsightsSettingsable) {
-    return m.itemInsights
+    val, err := m.GetBackingStore().Get("itemInsights")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(InsightsSettingsable)
+    }
+    return nil
 }
 // GetMicrosoftApplicationDataAccess gets the microsoftApplicationDataAccess property value. The microsoftApplicationDataAccess property
 func (m *OrganizationSettings) GetMicrosoftApplicationDataAccess()(MicrosoftApplicationDataAccessSettingsable) {
-    return m.microsoftApplicationDataAccess
+    val, err := m.GetBackingStore().Get("microsoftApplicationDataAccess")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(MicrosoftApplicationDataAccessSettingsable)
+    }
+    return nil
 }
 // GetPeopleInsights gets the peopleInsights property value. Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.
 func (m *OrganizationSettings) GetPeopleInsights()(InsightsSettingsable) {
-    return m.peopleInsights
+    val, err := m.GetBackingStore().Get("peopleInsights")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(InsightsSettingsable)
+    }
+    return nil
 }
 // GetProfileCardProperties gets the profileCardProperties property value. Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
 func (m *OrganizationSettings) GetProfileCardProperties()([]ProfileCardPropertyable) {
-    return m.profileCardProperties
+    val, err := m.GetBackingStore().Get("profileCardProperties")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ProfileCardPropertyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OrganizationSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -152,21 +177,51 @@ func (m *OrganizationSettings) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetContactInsights sets the contactInsights property value. Contains the properties that are configured by an administrator as a tenant-level privacy control whether to identify duplicate contacts among a user's contacts list and suggest the user to merge those contacts to have a cleaner contacts list. List contactInsights returns the settings to display or return contact insights in an organization.
 func (m *OrganizationSettings) SetContactInsights(value InsightsSettingsable)() {
-    m.contactInsights = value
+    err := m.GetBackingStore().Set("contactInsights", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetItemInsights sets the itemInsights property value. Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. List itemInsights returns the settings to display or return item insights in an organization.
 func (m *OrganizationSettings) SetItemInsights(value InsightsSettingsable)() {
-    m.itemInsights = value
+    err := m.GetBackingStore().Set("itemInsights", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMicrosoftApplicationDataAccess sets the microsoftApplicationDataAccess property value. The microsoftApplicationDataAccess property
 func (m *OrganizationSettings) SetMicrosoftApplicationDataAccess(value MicrosoftApplicationDataAccessSettingsable)() {
-    m.microsoftApplicationDataAccess = value
+    err := m.GetBackingStore().Set("microsoftApplicationDataAccess", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPeopleInsights sets the peopleInsights property value. Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.
 func (m *OrganizationSettings) SetPeopleInsights(value InsightsSettingsable)() {
-    m.peopleInsights = value
+    err := m.GetBackingStore().Set("peopleInsights", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProfileCardProperties sets the profileCardProperties property value. Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
 func (m *OrganizationSettings) SetProfileCardProperties(value []ProfileCardPropertyable)() {
-    m.profileCardProperties = value
+    err := m.GetBackingStore().Set("profileCardProperties", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OrganizationSettingsable 
+type OrganizationSettingsable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetContactInsights()(InsightsSettingsable)
+    GetItemInsights()(InsightsSettingsable)
+    GetMicrosoftApplicationDataAccess()(MicrosoftApplicationDataAccessSettingsable)
+    GetPeopleInsights()(InsightsSettingsable)
+    GetProfileCardProperties()([]ProfileCardPropertyable)
+    SetContactInsights(value InsightsSettingsable)()
+    SetItemInsights(value InsightsSettingsable)()
+    SetMicrosoftApplicationDataAccess(value MicrosoftApplicationDataAccessSettingsable)()
+    SetPeopleInsights(value InsightsSettingsable)()
+    SetProfileCardProperties(value []ProfileCardPropertyable)()
 }

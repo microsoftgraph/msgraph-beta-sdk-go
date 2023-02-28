@@ -7,18 +7,14 @@ import (
 // GroupPolicyPresentationListBox 
 type GroupPolicyPresentationListBox struct {
     GroupPolicyUploadedPresentation
-    // If this option is specified true the user must specify the registry subkey value and the registry subkey name. The list box shows two columns, one for the name and one for the data. The default value is false.
-    explicitValue *bool
-    // Not yet documented
-    valuePrefix *string
 }
 // NewGroupPolicyPresentationListBox instantiates a new GroupPolicyPresentationListBox and sets the default values.
 func NewGroupPolicyPresentationListBox()(*GroupPolicyPresentationListBox) {
     m := &GroupPolicyPresentationListBox{
         GroupPolicyUploadedPresentation: *NewGroupPolicyUploadedPresentation(),
     }
-    odataTypeValue := "#microsoft.graph.groupPolicyPresentationListBox";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.groupPolicyPresentationListBox"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateGroupPolicyPresentationListBoxFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +23,14 @@ func CreateGroupPolicyPresentationListBoxFromDiscriminatorValue(parseNode i878a8
 }
 // GetExplicitValue gets the explicitValue property value. If this option is specified true the user must specify the registry subkey value and the registry subkey name. The list box shows two columns, one for the name and one for the data. The default value is false.
 func (m *GroupPolicyPresentationListBox) GetExplicitValue()(*bool) {
-    return m.explicitValue
+    val, err := m.GetBackingStore().Get("explicitValue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyPresentationListBox) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,7 +59,14 @@ func (m *GroupPolicyPresentationListBox) GetFieldDeserializers()(map[string]func
 }
 // GetValuePrefix gets the valuePrefix property value. Not yet documented
 func (m *GroupPolicyPresentationListBox) GetValuePrefix()(*string) {
-    return m.valuePrefix
+    val, err := m.GetBackingStore().Get("valuePrefix")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyPresentationListBox) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *GroupPolicyPresentationListBox) Serialize(writer i878a80d2330e89d268963
 }
 // SetExplicitValue sets the explicitValue property value. If this option is specified true the user must specify the registry subkey value and the registry subkey name. The list box shows two columns, one for the name and one for the data. The default value is false.
 func (m *GroupPolicyPresentationListBox) SetExplicitValue(value *bool)() {
-    m.explicitValue = value
+    err := m.GetBackingStore().Set("explicitValue", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetValuePrefix sets the valuePrefix property value. Not yet documented
 func (m *GroupPolicyPresentationListBox) SetValuePrefix(value *string)() {
-    m.valuePrefix = value
+    err := m.GetBackingStore().Set("valuePrefix", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GroupPolicyPresentationListBoxable 
+type GroupPolicyPresentationListBoxable interface {
+    GroupPolicyUploadedPresentationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetExplicitValue()(*bool)
+    GetValuePrefix()(*string)
+    SetExplicitValue(value *bool)()
+    SetValuePrefix(value *string)()
 }

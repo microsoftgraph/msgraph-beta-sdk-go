@@ -26,13 +26,13 @@ type ItemCheckGrantedPermissionsForAppRequestBuilderPostRequestConfiguration str
 func NewItemCheckGrantedPermissionsForAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCheckGrantedPermissionsForAppRequestBuilder) {
     m := &ItemCheckGrantedPermissionsForAppRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/microsoft.graph.checkGrantedPermissionsForApp";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/checkGrantedPermissionsForApp";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemCheckGrantedPermissionsForAppRequestBuilder instantiates a new CheckGrantedPermissionsForAppRequestBuilder and sets the default values.

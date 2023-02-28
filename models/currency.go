@@ -8,18 +8,6 @@ import (
 // Currency 
 type Currency struct {
     Entity
-    // The amountDecimalPlaces property
-    amountDecimalPlaces *string
-    // The amountRoundingPrecision property
-    amountRoundingPrecision *float64
-    // The code property
-    code *string
-    // The displayName property
-    displayName *string
-    // The lastModifiedDateTime property
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The symbol property
-    symbol *string
 }
 // NewCurrency instantiates a new currency and sets the default values.
 func NewCurrency()(*Currency) {
@@ -34,19 +22,47 @@ func CreateCurrencyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetAmountDecimalPlaces gets the amountDecimalPlaces property value. The amountDecimalPlaces property
 func (m *Currency) GetAmountDecimalPlaces()(*string) {
-    return m.amountDecimalPlaces
+    val, err := m.GetBackingStore().Get("amountDecimalPlaces")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAmountRoundingPrecision gets the amountRoundingPrecision property value. The amountRoundingPrecision property
 func (m *Currency) GetAmountRoundingPrecision()(*float64) {
-    return m.amountRoundingPrecision
+    val, err := m.GetBackingStore().Get("amountRoundingPrecision")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetCode gets the code property value. The code property
 func (m *Currency) GetCode()(*string) {
-    return m.code
+    val, err := m.GetBackingStore().Get("code")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *Currency) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Currency) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -115,11 +131,25 @@ func (m *Currency) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Currency) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetSymbol gets the symbol property value. The symbol property
 func (m *Currency) GetSymbol()(*string) {
-    return m.symbol
+    val, err := m.GetBackingStore().Get("symbol")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Currency) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -167,25 +197,60 @@ func (m *Currency) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetAmountDecimalPlaces sets the amountDecimalPlaces property value. The amountDecimalPlaces property
 func (m *Currency) SetAmountDecimalPlaces(value *string)() {
-    m.amountDecimalPlaces = value
+    err := m.GetBackingStore().Set("amountDecimalPlaces", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAmountRoundingPrecision sets the amountRoundingPrecision property value. The amountRoundingPrecision property
 func (m *Currency) SetAmountRoundingPrecision(value *float64)() {
-    m.amountRoundingPrecision = value
+    err := m.GetBackingStore().Set("amountRoundingPrecision", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCode sets the code property value. The code property
 func (m *Currency) SetCode(value *string)() {
-    m.code = value
+    err := m.GetBackingStore().Set("code", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *Currency) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Currency) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSymbol sets the symbol property value. The symbol property
 func (m *Currency) SetSymbol(value *string)() {
-    m.symbol = value
+    err := m.GetBackingStore().Set("symbol", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Currencyable 
+type Currencyable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAmountDecimalPlaces()(*string)
+    GetAmountRoundingPrecision()(*float64)
+    GetCode()(*string)
+    GetDisplayName()(*string)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetSymbol()(*string)
+    SetAmountDecimalPlaces(value *string)()
+    SetAmountRoundingPrecision(value *float64)()
+    SetCode(value *string)()
+    SetDisplayName(value *string)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetSymbol(value *string)()
 }

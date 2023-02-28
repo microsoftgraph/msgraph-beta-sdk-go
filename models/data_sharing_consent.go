@@ -8,18 +8,6 @@ import (
 // DataSharingConsent data sharing consent information.
 type DataSharingConsent struct {
     Entity
-    // The time consent was granted for this account
-    grantDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The granted state for the data sharing consent
-    granted *bool
-    // The Upn of the user that granted consent for this account
-    grantedByUpn *string
-    // The UserId of the user that granted consent for this account
-    grantedByUserId *string
-    // The display name of the service work flow
-    serviceDisplayName *string
-    // The TermsUrl for the data sharing consent
-    termsUrl *string
 }
 // NewDataSharingConsent instantiates a new dataSharingConsent and sets the default values.
 func NewDataSharingConsent()(*DataSharingConsent) {
@@ -99,27 +87,69 @@ func (m *DataSharingConsent) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetGrantDateTime gets the grantDateTime property value. The time consent was granted for this account
 func (m *DataSharingConsent) GetGrantDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.grantDateTime
+    val, err := m.GetBackingStore().Get("grantDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetGranted gets the granted property value. The granted state for the data sharing consent
 func (m *DataSharingConsent) GetGranted()(*bool) {
-    return m.granted
+    val, err := m.GetBackingStore().Get("granted")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetGrantedByUpn gets the grantedByUpn property value. The Upn of the user that granted consent for this account
 func (m *DataSharingConsent) GetGrantedByUpn()(*string) {
-    return m.grantedByUpn
+    val, err := m.GetBackingStore().Get("grantedByUpn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetGrantedByUserId gets the grantedByUserId property value. The UserId of the user that granted consent for this account
 func (m *DataSharingConsent) GetGrantedByUserId()(*string) {
-    return m.grantedByUserId
+    val, err := m.GetBackingStore().Get("grantedByUserId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetServiceDisplayName gets the serviceDisplayName property value. The display name of the service work flow
 func (m *DataSharingConsent) GetServiceDisplayName()(*string) {
-    return m.serviceDisplayName
+    val, err := m.GetBackingStore().Get("serviceDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTermsUrl gets the termsUrl property value. The TermsUrl for the data sharing consent
 func (m *DataSharingConsent) GetTermsUrl()(*string) {
-    return m.termsUrl
+    val, err := m.GetBackingStore().Get("termsUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DataSharingConsent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -167,25 +197,60 @@ func (m *DataSharingConsent) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetGrantDateTime sets the grantDateTime property value. The time consent was granted for this account
 func (m *DataSharingConsent) SetGrantDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.grantDateTime = value
+    err := m.GetBackingStore().Set("grantDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGranted sets the granted property value. The granted state for the data sharing consent
 func (m *DataSharingConsent) SetGranted(value *bool)() {
-    m.granted = value
+    err := m.GetBackingStore().Set("granted", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGrantedByUpn sets the grantedByUpn property value. The Upn of the user that granted consent for this account
 func (m *DataSharingConsent) SetGrantedByUpn(value *string)() {
-    m.grantedByUpn = value
+    err := m.GetBackingStore().Set("grantedByUpn", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGrantedByUserId sets the grantedByUserId property value. The UserId of the user that granted consent for this account
 func (m *DataSharingConsent) SetGrantedByUserId(value *string)() {
-    m.grantedByUserId = value
+    err := m.GetBackingStore().Set("grantedByUserId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetServiceDisplayName sets the serviceDisplayName property value. The display name of the service work flow
 func (m *DataSharingConsent) SetServiceDisplayName(value *string)() {
-    m.serviceDisplayName = value
+    err := m.GetBackingStore().Set("serviceDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTermsUrl sets the termsUrl property value. The TermsUrl for the data sharing consent
 func (m *DataSharingConsent) SetTermsUrl(value *string)() {
-    m.termsUrl = value
+    err := m.GetBackingStore().Set("termsUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DataSharingConsentable 
+type DataSharingConsentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetGrantDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetGranted()(*bool)
+    GetGrantedByUpn()(*string)
+    GetGrantedByUserId()(*string)
+    GetServiceDisplayName()(*string)
+    GetTermsUrl()(*string)
+    SetGrantDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetGranted(value *bool)()
+    SetGrantedByUpn(value *string)()
+    SetGrantedByUserId(value *string)()
+    SetServiceDisplayName(value *string)()
+    SetTermsUrl(value *string)()
 }

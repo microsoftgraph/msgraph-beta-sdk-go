@@ -7,8 +7,6 @@ import (
 // UserConfiguration 
 type UserConfiguration struct {
     Entity
-    // The binaryData property
-    binaryData []byte
 }
 // NewUserConfiguration instantiates a new userConfiguration and sets the default values.
 func NewUserConfiguration()(*UserConfiguration) {
@@ -23,7 +21,14 @@ func CreateUserConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetBinaryData gets the binaryData property value. The binaryData property
 func (m *UserConfiguration) GetBinaryData()([]byte) {
-    return m.binaryData
+    val, err := m.GetBackingStore().Get("binaryData")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,5 +61,15 @@ func (m *UserConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetBinaryData sets the binaryData property value. The binaryData property
 func (m *UserConfiguration) SetBinaryData(value []byte)() {
-    m.binaryData = value
+    err := m.GetBackingStore().Set("binaryData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserConfigurationable 
+type UserConfigurationable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBinaryData()([]byte)
+    SetBinaryData(value []byte)()
 }

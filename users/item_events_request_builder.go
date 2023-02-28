@@ -56,8 +56,8 @@ func NewItemEventsRequestBuilderInternal(pathParameters map[string]string, reque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemEventsRequestBuilder instantiates a new EventsRequestBuilder and sets the default values.
@@ -68,11 +68,11 @@ func NewItemEventsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemEventsRequestBuilder) Count()(*ItemEventsCountRequestBuilder) {
-    return NewItemEventsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemEventsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delta provides operations to call the delta method.
 func (m *ItemEventsRequestBuilder) Delta()(*ItemEventsDeltaRequestBuilder) {
-    return NewItemEventsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemEventsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of event objects from the user's default calendar orfrom a specified calendar. The list contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, orget the instances of an event. There are two scenarios where an app can get events in another user's calendar:
 // [Find more info here]
@@ -141,7 +141,10 @@ func (m *ItemEventsRequestBuilder) ToPostRequestInformation(ctx context.Context,
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

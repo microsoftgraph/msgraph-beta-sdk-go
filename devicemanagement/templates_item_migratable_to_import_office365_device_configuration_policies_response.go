@@ -8,8 +8,6 @@ import (
 // TemplatesItemMigratableToImportOffice365DeviceConfigurationPoliciesResponse 
 type TemplatesItemMigratableToImportOffice365DeviceConfigurationPoliciesResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
-    // The value property
-    value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementIntentable
 }
 // NewTemplatesItemMigratableToImportOffice365DeviceConfigurationPoliciesResponse instantiates a new TemplatesItemMigratableToImportOffice365DeviceConfigurationPoliciesResponse and sets the default values.
 func NewTemplatesItemMigratableToImportOffice365DeviceConfigurationPoliciesResponse()(*TemplatesItemMigratableToImportOffice365DeviceConfigurationPoliciesResponse) {
@@ -43,7 +41,14 @@ func (m *TemplatesItemMigratableToImportOffice365DeviceConfigurationPoliciesResp
 }
 // GetValue gets the value property value. The value property
 func (m *TemplatesItemMigratableToImportOffice365DeviceConfigurationPoliciesResponse) GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementIntentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementIntentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TemplatesItemMigratableToImportOffice365DeviceConfigurationPoliciesResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *TemplatesItemMigratableToImportOffice365DeviceConfigurationPoliciesResp
 }
 // SetValue sets the value property value. The value property
 func (m *TemplatesItemMigratableToImportOffice365DeviceConfigurationPoliciesResponse) SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementIntentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TemplatesItemMigratableToImportOffice365DeviceConfigurationPoliciesResponseable 
+type TemplatesItemMigratableToImportOffice365DeviceConfigurationPoliciesResponseable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementIntentable)
+    SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementIntentable)()
 }

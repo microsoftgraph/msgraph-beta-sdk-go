@@ -7,8 +7,6 @@ import (
 // PlannerPlanDetailsCollectionResponse 
 type PlannerPlanDetailsCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PlannerPlanDetailsable
 }
 // NewPlannerPlanDetailsCollectionResponse instantiates a new PlannerPlanDetailsCollectionResponse and sets the default values.
 func NewPlannerPlanDetailsCollectionResponse()(*PlannerPlanDetailsCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PlannerPlanDetailsCollectionResponse) GetFieldDeserializers()(map[strin
 }
 // GetValue gets the value property value. The value property
 func (m *PlannerPlanDetailsCollectionResponse) GetValue()([]PlannerPlanDetailsable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerPlanDetailsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PlannerPlanDetailsCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PlannerPlanDetailsCollectionResponse) Serialize(writer i878a80d2330e89d
 }
 // SetValue sets the value property value. The value property
 func (m *PlannerPlanDetailsCollectionResponse) SetValue(value []PlannerPlanDetailsable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PlannerPlanDetailsCollectionResponseable 
+type PlannerPlanDetailsCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PlannerPlanDetailsable)
+    SetValue(value []PlannerPlanDetailsable)()
 }

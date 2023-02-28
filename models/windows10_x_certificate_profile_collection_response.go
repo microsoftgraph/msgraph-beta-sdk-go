@@ -7,8 +7,6 @@ import (
 // Windows10XCertificateProfileCollectionResponse 
 type Windows10XCertificateProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Windows10XCertificateProfileable
 }
 // NewWindows10XCertificateProfileCollectionResponse instantiates a new Windows10XCertificateProfileCollectionResponse and sets the default values.
 func NewWindows10XCertificateProfileCollectionResponse()(*Windows10XCertificateProfileCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *Windows10XCertificateProfileCollectionResponse) GetFieldDeserializers()
 }
 // GetValue gets the value property value. The value property
 func (m *Windows10XCertificateProfileCollectionResponse) GetValue()([]Windows10XCertificateProfileable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Windows10XCertificateProfileable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Windows10XCertificateProfileCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *Windows10XCertificateProfileCollectionResponse) Serialize(writer i878a8
 }
 // SetValue sets the value property value. The value property
 func (m *Windows10XCertificateProfileCollectionResponse) SetValue(value []Windows10XCertificateProfileable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Windows10XCertificateProfileCollectionResponseable 
+type Windows10XCertificateProfileCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Windows10XCertificateProfileable)
+    SetValue(value []Windows10XCertificateProfileable)()
 }

@@ -7,8 +7,6 @@ import (
 // DeviceEnrollmentNotificationConfigurationCollectionResponse 
 type DeviceEnrollmentNotificationConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceEnrollmentNotificationConfigurationable
 }
 // NewDeviceEnrollmentNotificationConfigurationCollectionResponse instantiates a new DeviceEnrollmentNotificationConfigurationCollectionResponse and sets the default values.
 func NewDeviceEnrollmentNotificationConfigurationCollectionResponse()(*DeviceEnrollmentNotificationConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceEnrollmentNotificationConfigurationCollectionResponse) GetFieldDe
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceEnrollmentNotificationConfigurationCollectionResponse) GetValue()([]DeviceEnrollmentNotificationConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceEnrollmentNotificationConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceEnrollmentNotificationConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceEnrollmentNotificationConfigurationCollectionResponse) Serialize(
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceEnrollmentNotificationConfigurationCollectionResponse) SetValue(value []DeviceEnrollmentNotificationConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceEnrollmentNotificationConfigurationCollectionResponseable 
+type DeviceEnrollmentNotificationConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceEnrollmentNotificationConfigurationable)
+    SetValue(value []DeviceEnrollmentNotificationConfigurationable)()
 }

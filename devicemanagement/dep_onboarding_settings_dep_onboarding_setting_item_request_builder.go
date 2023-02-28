@@ -55,8 +55,8 @@ func NewDepOnboardingSettingsDepOnboardingSettingItemRequestBuilderInternal(path
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDepOnboardingSettingsDepOnboardingSettingItemRequestBuilder instantiates a new DepOnboardingSettingItemRequestBuilder and sets the default values.
@@ -67,11 +67,11 @@ func NewDepOnboardingSettingsDepOnboardingSettingItemRequestBuilder(rawUrl strin
 }
 // DefaultIosEnrollmentProfile provides operations to manage the defaultIosEnrollmentProfile property of the microsoft.graph.depOnboardingSetting entity.
 func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) DefaultIosEnrollmentProfile()(*DepOnboardingSettingsItemDefaultIosEnrollmentProfileRequestBuilder) {
-    return NewDepOnboardingSettingsItemDefaultIosEnrollmentProfileRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDepOnboardingSettingsItemDefaultIosEnrollmentProfileRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DefaultMacOsEnrollmentProfile provides operations to manage the defaultMacOsEnrollmentProfile property of the microsoft.graph.depOnboardingSetting entity.
 func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) DefaultMacOsEnrollmentProfile()(*DepOnboardingSettingsItemDefaultMacOsEnrollmentProfileRequestBuilder) {
-    return NewDepOnboardingSettingsItemDefaultMacOsEnrollmentProfileRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDepOnboardingSettingsItemDefaultMacOsEnrollmentProfileRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property depOnboardingSettings for deviceManagement
 func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -91,7 +91,7 @@ func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) Delete(ctx
 }
 // EnrollmentProfiles provides operations to manage the enrollmentProfiles property of the microsoft.graph.depOnboardingSetting entity.
 func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) EnrollmentProfiles()(*DepOnboardingSettingsItemEnrollmentProfilesRequestBuilder) {
-    return NewDepOnboardingSettingsItemEnrollmentProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDepOnboardingSettingsItemEnrollmentProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // EnrollmentProfilesById provides operations to manage the enrollmentProfiles property of the microsoft.graph.depOnboardingSetting entity.
 func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) EnrollmentProfilesById(id string)(*DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder) {
@@ -102,11 +102,11 @@ func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) Enrollment
     if id != "" {
         urlTplParams["enrollmentProfile%2Did"] = id
     }
-    return NewDepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // GenerateEncryptionPublicKey provides operations to call the generateEncryptionPublicKey method.
 func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) GenerateEncryptionPublicKey()(*DepOnboardingSettingsItemGenerateEncryptionPublicKeyRequestBuilder) {
-    return NewDepOnboardingSettingsItemGenerateEncryptionPublicKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDepOnboardingSettingsItemGenerateEncryptionPublicKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get this collections of multiple DEP tokens per-tenant.
 func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable, error) {
@@ -129,11 +129,11 @@ func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) Get(ctx co
 }
 // GetEncryptionPublicKey provides operations to call the getEncryptionPublicKey method.
 func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) GetEncryptionPublicKey()(*DepOnboardingSettingsItemGetEncryptionPublicKeyRequestBuilder) {
-    return NewDepOnboardingSettingsItemGetEncryptionPublicKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDepOnboardingSettingsItemGetEncryptionPublicKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ImportedAppleDeviceIdentities provides operations to manage the importedAppleDeviceIdentities property of the microsoft.graph.depOnboardingSetting entity.
 func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) ImportedAppleDeviceIdentities()(*DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilder) {
-    return NewDepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ImportedAppleDeviceIdentitiesById provides operations to manage the importedAppleDeviceIdentities property of the microsoft.graph.depOnboardingSetting entity.
 func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) ImportedAppleDeviceIdentitiesById(id string)(*DepOnboardingSettingsItemImportedAppleDeviceIdentitiesImportedAppleDeviceIdentityItemRequestBuilder) {
@@ -144,7 +144,7 @@ func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) ImportedAp
     if id != "" {
         urlTplParams["importedAppleDeviceIdentity%2Did"] = id
     }
-    return NewDepOnboardingSettingsItemImportedAppleDeviceIdentitiesImportedAppleDeviceIdentityItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDepOnboardingSettingsItemImportedAppleDeviceIdentitiesImportedAppleDeviceIdentityItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch update the navigation property depOnboardingSettings in deviceManagement
 func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable, requestConfiguration *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable, error) {
@@ -167,11 +167,11 @@ func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) Patch(ctx 
 }
 // ShareForSchoolDataSyncService provides operations to call the shareForSchoolDataSyncService method.
 func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) ShareForSchoolDataSyncService()(*DepOnboardingSettingsItemShareForSchoolDataSyncServiceRequestBuilder) {
-    return NewDepOnboardingSettingsItemShareForSchoolDataSyncServiceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDepOnboardingSettingsItemShareForSchoolDataSyncServiceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SyncWithAppleDeviceEnrollmentProgram provides operations to call the syncWithAppleDeviceEnrollmentProgram method.
 func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) SyncWithAppleDeviceEnrollmentProgram()(*DepOnboardingSettingsItemSyncWithAppleDeviceEnrollmentProgramRequestBuilder) {
-    return NewDepOnboardingSettingsItemSyncWithAppleDeviceEnrollmentProgramRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDepOnboardingSettingsItemSyncWithAppleDeviceEnrollmentProgramRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property depOnboardingSettings for deviceManagement
 func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -208,7 +208,10 @@ func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) ToPatchReq
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -217,9 +220,9 @@ func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) ToPatchReq
 }
 // UnshareForSchoolDataSyncService provides operations to call the unshareForSchoolDataSyncService method.
 func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) UnshareForSchoolDataSyncService()(*DepOnboardingSettingsItemUnshareForSchoolDataSyncServiceRequestBuilder) {
-    return NewDepOnboardingSettingsItemUnshareForSchoolDataSyncServiceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDepOnboardingSettingsItemUnshareForSchoolDataSyncServiceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UploadDepToken provides operations to call the uploadDepToken method.
 func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) UploadDepToken()(*DepOnboardingSettingsItemUploadDepTokenRequestBuilder) {
-    return NewDepOnboardingSettingsItemUploadDepTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDepOnboardingSettingsItemUploadDepTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

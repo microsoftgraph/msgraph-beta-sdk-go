@@ -7,8 +7,6 @@ import (
 // MacOSFirewallApplicationCollectionResponse 
 type MacOSFirewallApplicationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MacOSFirewallApplicationable
 }
 // NewMacOSFirewallApplicationCollectionResponse instantiates a new MacOSFirewallApplicationCollectionResponse and sets the default values.
 func NewMacOSFirewallApplicationCollectionResponse()(*MacOSFirewallApplicationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MacOSFirewallApplicationCollectionResponse) GetFieldDeserializers()(map
 }
 // GetValue gets the value property value. The value property
 func (m *MacOSFirewallApplicationCollectionResponse) GetValue()([]MacOSFirewallApplicationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MacOSFirewallApplicationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MacOSFirewallApplicationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MacOSFirewallApplicationCollectionResponse) Serialize(writer i878a80d23
 }
 // SetValue sets the value property value. The value property
 func (m *MacOSFirewallApplicationCollectionResponse) SetValue(value []MacOSFirewallApplicationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MacOSFirewallApplicationCollectionResponseable 
+type MacOSFirewallApplicationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MacOSFirewallApplicationable)
+    SetValue(value []MacOSFirewallApplicationable)()
 }

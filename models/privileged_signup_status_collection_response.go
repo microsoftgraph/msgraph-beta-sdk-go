@@ -7,8 +7,6 @@ import (
 // PrivilegedSignupStatusCollectionResponse 
 type PrivilegedSignupStatusCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PrivilegedSignupStatusable
 }
 // NewPrivilegedSignupStatusCollectionResponse instantiates a new PrivilegedSignupStatusCollectionResponse and sets the default values.
 func NewPrivilegedSignupStatusCollectionResponse()(*PrivilegedSignupStatusCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PrivilegedSignupStatusCollectionResponse) GetFieldDeserializers()(map[s
 }
 // GetValue gets the value property value. The value property
 func (m *PrivilegedSignupStatusCollectionResponse) GetValue()([]PrivilegedSignupStatusable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrivilegedSignupStatusable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrivilegedSignupStatusCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PrivilegedSignupStatusCollectionResponse) Serialize(writer i878a80d2330
 }
 // SetValue sets the value property value. The value property
 func (m *PrivilegedSignupStatusCollectionResponse) SetValue(value []PrivilegedSignupStatusable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrivilegedSignupStatusCollectionResponseable 
+type PrivilegedSignupStatusCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PrivilegedSignupStatusable)
+    SetValue(value []PrivilegedSignupStatusable)()
 }

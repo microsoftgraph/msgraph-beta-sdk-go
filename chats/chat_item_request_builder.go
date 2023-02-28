@@ -55,8 +55,8 @@ func NewChatItemRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewChatItemRequestBuilder instantiates a new ChatItemRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewChatItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewChatItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from chats by key (id)
+// Delete delete entity from chats
 func (m *ChatItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ChatItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -105,11 +105,11 @@ func (m *ChatItemRequestBuilder) Get(ctx context.Context, requestConfiguration *
 }
 // HideForUser provides operations to call the hideForUser method.
 func (m *ChatItemRequestBuilder) HideForUser()(*ItemHideForUserRequestBuilder) {
-    return NewItemHideForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemHideForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // InstalledApps provides operations to manage the installedApps property of the microsoft.graph.chat entity.
 func (m *ChatItemRequestBuilder) InstalledApps()(*ItemInstalledAppsRequestBuilder) {
-    return NewItemInstalledAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemInstalledAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // InstalledAppsById provides operations to manage the installedApps property of the microsoft.graph.chat entity.
 func (m *ChatItemRequestBuilder) InstalledAppsById(id string)(*ItemInstalledAppsTeamsAppInstallationItemRequestBuilder) {
@@ -120,23 +120,23 @@ func (m *ChatItemRequestBuilder) InstalledAppsById(id string)(*ItemInstalledApps
     if id != "" {
         urlTplParams["teamsAppInstallation%2Did"] = id
     }
-    return NewItemInstalledAppsTeamsAppInstallationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemInstalledAppsTeamsAppInstallationItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // LastMessagePreview provides operations to manage the lastMessagePreview property of the microsoft.graph.chat entity.
 func (m *ChatItemRequestBuilder) LastMessagePreview()(*ItemLastMessagePreviewRequestBuilder) {
-    return NewItemLastMessagePreviewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemLastMessagePreviewRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MarkChatReadForUser provides operations to call the markChatReadForUser method.
 func (m *ChatItemRequestBuilder) MarkChatReadForUser()(*ItemMarkChatReadForUserRequestBuilder) {
-    return NewItemMarkChatReadForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemMarkChatReadForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MarkChatUnreadForUser provides operations to call the markChatUnreadForUser method.
 func (m *ChatItemRequestBuilder) MarkChatUnreadForUser()(*ItemMarkChatUnreadForUserRequestBuilder) {
-    return NewItemMarkChatUnreadForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemMarkChatUnreadForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Members provides operations to manage the members property of the microsoft.graph.chat entity.
 func (m *ChatItemRequestBuilder) Members()(*ItemMembersRequestBuilder) {
-    return NewItemMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MembersById provides operations to manage the members property of the microsoft.graph.chat entity.
 func (m *ChatItemRequestBuilder) MembersById(id string)(*ItemMembersConversationMemberItemRequestBuilder) {
@@ -147,11 +147,11 @@ func (m *ChatItemRequestBuilder) MembersById(id string)(*ItemMembersConversation
     if id != "" {
         urlTplParams["conversationMember%2Did"] = id
     }
-    return NewItemMembersConversationMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemMembersConversationMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Messages provides operations to manage the messages property of the microsoft.graph.chat entity.
 func (m *ChatItemRequestBuilder) Messages()(*ItemMessagesRequestBuilder) {
-    return NewItemMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MessagesById provides operations to manage the messages property of the microsoft.graph.chat entity.
 func (m *ChatItemRequestBuilder) MessagesById(id string)(*ItemMessagesChatMessageItemRequestBuilder) {
@@ -162,11 +162,11 @@ func (m *ChatItemRequestBuilder) MessagesById(id string)(*ItemMessagesChatMessag
     if id != "" {
         urlTplParams["chatMessage%2Did"] = id
     }
-    return NewItemMessagesChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemMessagesChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Operations provides operations to manage the operations property of the microsoft.graph.chat entity.
 func (m *ChatItemRequestBuilder) Operations()(*ItemOperationsRequestBuilder) {
-    return NewItemOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // OperationsById provides operations to manage the operations property of the microsoft.graph.chat entity.
 func (m *ChatItemRequestBuilder) OperationsById(id string)(*ItemOperationsTeamsAsyncOperationItemRequestBuilder) {
@@ -177,7 +177,7 @@ func (m *ChatItemRequestBuilder) OperationsById(id string)(*ItemOperationsTeamsA
     if id != "" {
         urlTplParams["teamsAsyncOperation%2Did"] = id
     }
-    return NewItemOperationsTeamsAsyncOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemOperationsTeamsAsyncOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch update the properties of a chat object.
 // [Find more info here]
@@ -203,7 +203,7 @@ func (m *ChatItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4
 }
 // PermissionGrants provides operations to manage the permissionGrants property of the microsoft.graph.chat entity.
 func (m *ChatItemRequestBuilder) PermissionGrants()(*ItemPermissionGrantsRequestBuilder) {
-    return NewItemPermissionGrantsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemPermissionGrantsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PermissionGrantsById provides operations to manage the permissionGrants property of the microsoft.graph.chat entity.
 func (m *ChatItemRequestBuilder) PermissionGrantsById(id string)(*ItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) {
@@ -214,11 +214,11 @@ func (m *ChatItemRequestBuilder) PermissionGrantsById(id string)(*ItemPermission
     if id != "" {
         urlTplParams["resourceSpecificPermissionGrant%2Did"] = id
     }
-    return NewItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // PinnedMessages provides operations to manage the pinnedMessages property of the microsoft.graph.chat entity.
 func (m *ChatItemRequestBuilder) PinnedMessages()(*ItemPinnedMessagesRequestBuilder) {
-    return NewItemPinnedMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemPinnedMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PinnedMessagesById provides operations to manage the pinnedMessages property of the microsoft.graph.chat entity.
 func (m *ChatItemRequestBuilder) PinnedMessagesById(id string)(*ItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder) {
@@ -229,15 +229,15 @@ func (m *ChatItemRequestBuilder) PinnedMessagesById(id string)(*ItemPinnedMessag
     if id != "" {
         urlTplParams["pinnedChatMessageInfo%2Did"] = id
     }
-    return NewItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // SendActivityNotification provides operations to call the sendActivityNotification method.
 func (m *ChatItemRequestBuilder) SendActivityNotification()(*ItemSendActivityNotificationRequestBuilder) {
-    return NewItemSendActivityNotificationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSendActivityNotificationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Tabs provides operations to manage the tabs property of the microsoft.graph.chat entity.
 func (m *ChatItemRequestBuilder) Tabs()(*ItemTabsRequestBuilder) {
-    return NewItemTabsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTabsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TabsById provides operations to manage the tabs property of the microsoft.graph.chat entity.
 func (m *ChatItemRequestBuilder) TabsById(id string)(*ItemTabsTeamsTabItemRequestBuilder) {
@@ -248,9 +248,9 @@ func (m *ChatItemRequestBuilder) TabsById(id string)(*ItemTabsTeamsTabItemReques
     if id != "" {
         urlTplParams["teamsTab%2Did"] = id
     }
-    return NewItemTabsTeamsTabItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemTabsTeamsTabItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
-// ToDeleteRequestInformation delete entity from chats by key (id)
+// ToDeleteRequestInformation delete entity from chats
 func (m *ChatItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ChatItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -285,7 +285,10 @@ func (m *ChatItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -294,5 +297,5 @@ func (m *ChatItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
 }
 // UnhideForUser provides operations to call the unhideForUser method.
 func (m *ChatItemRequestBuilder) UnhideForUser()(*ItemUnhideForUserRequestBuilder) {
-    return NewItemUnhideForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemUnhideForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

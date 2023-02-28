@@ -44,10 +44,6 @@ type ItemTransitiveMemberOfRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemTransitiveMemberOfRequestBuilderGetQueryParameters
 }
-// Application casts the previous resource to application.
-func (m *ItemTransitiveMemberOfRequestBuilder) Application()(*ItemTransitiveMemberOfApplicationRequestBuilder) {
-    return NewItemTransitiveMemberOfApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewItemTransitiveMemberOfRequestBuilderInternal instantiates a new TransitiveMemberOfRequestBuilder and sets the default values.
 func NewItemTransitiveMemberOfRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTransitiveMemberOfRequestBuilder) {
     m := &ItemTransitiveMemberOfRequestBuilder{
@@ -57,8 +53,8 @@ func NewItemTransitiveMemberOfRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTransitiveMemberOfRequestBuilder instantiates a new TransitiveMemberOfRequestBuilder and sets the default values.
@@ -69,11 +65,7 @@ func NewItemTransitiveMemberOfRequestBuilder(rawUrl string, requestAdapter i2ae4
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemTransitiveMemberOfRequestBuilder) Count()(*ItemTransitiveMemberOfCountRequestBuilder) {
-    return NewItemTransitiveMemberOfCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Device casts the previous resource to device.
-func (m *ItemTransitiveMemberOfRequestBuilder) Device()(*ItemTransitiveMemberOfDeviceRequestBuilder) {
-    return NewItemTransitiveMemberOfDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTransitiveMemberOfCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get transitiveMemberOf from contacts
 func (m *ItemTransitiveMemberOfRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTransitiveMemberOfRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
@@ -94,17 +86,9 @@ func (m *ItemTransitiveMemberOfRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
-// Group casts the previous resource to group.
-func (m *ItemTransitiveMemberOfRequestBuilder) Group()(*ItemTransitiveMemberOfGroupRequestBuilder) {
-    return NewItemTransitiveMemberOfGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// OrgContact casts the previous resource to orgContact.
-func (m *ItemTransitiveMemberOfRequestBuilder) OrgContact()(*ItemTransitiveMemberOfOrgContactRequestBuilder) {
-    return NewItemTransitiveMemberOfOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ServicePrincipal casts the previous resource to servicePrincipal.
-func (m *ItemTransitiveMemberOfRequestBuilder) ServicePrincipal()(*ItemTransitiveMemberOfServicePrincipalRequestBuilder) {
-    return NewItemTransitiveMemberOfServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// GraphGroup casts the previous resource to group.
+func (m *ItemTransitiveMemberOfRequestBuilder) GraphGroup()(*ItemTransitiveMemberOfGraphGroupRequestBuilder) {
+    return NewItemTransitiveMemberOfGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation get transitiveMemberOf from contacts
 func (m *ItemTransitiveMemberOfRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTransitiveMemberOfRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -121,8 +105,4 @@ func (m *ItemTransitiveMemberOfRequestBuilder) ToGetRequestInformation(ctx conte
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// User casts the previous resource to user.
-func (m *ItemTransitiveMemberOfRequestBuilder) User()(*ItemTransitiveMemberOfUserRequestBuilder) {
-    return NewItemTransitiveMemberOfUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

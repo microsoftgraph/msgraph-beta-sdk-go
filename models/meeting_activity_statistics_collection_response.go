@@ -7,8 +7,6 @@ import (
 // MeetingActivityStatisticsCollectionResponse 
 type MeetingActivityStatisticsCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MeetingActivityStatisticsable
 }
 // NewMeetingActivityStatisticsCollectionResponse instantiates a new MeetingActivityStatisticsCollectionResponse and sets the default values.
 func NewMeetingActivityStatisticsCollectionResponse()(*MeetingActivityStatisticsCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MeetingActivityStatisticsCollectionResponse) GetFieldDeserializers()(ma
 }
 // GetValue gets the value property value. The value property
 func (m *MeetingActivityStatisticsCollectionResponse) GetValue()([]MeetingActivityStatisticsable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MeetingActivityStatisticsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MeetingActivityStatisticsCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MeetingActivityStatisticsCollectionResponse) Serialize(writer i878a80d2
 }
 // SetValue sets the value property value. The value property
 func (m *MeetingActivityStatisticsCollectionResponse) SetValue(value []MeetingActivityStatisticsable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MeetingActivityStatisticsCollectionResponseable 
+type MeetingActivityStatisticsCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MeetingActivityStatisticsable)
+    SetValue(value []MeetingActivityStatisticsable)()
 }

@@ -8,8 +8,6 @@ import (
 // GetOffice365GroupsActivityFileCountsWithPeriodResponse 
 type GetOffice365GroupsActivityFileCountsWithPeriodResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
-    // The value property
-    value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365GroupsActivityFileCountsable
 }
 // NewGetOffice365GroupsActivityFileCountsWithPeriodResponse instantiates a new GetOffice365GroupsActivityFileCountsWithPeriodResponse and sets the default values.
 func NewGetOffice365GroupsActivityFileCountsWithPeriodResponse()(*GetOffice365GroupsActivityFileCountsWithPeriodResponse) {
@@ -43,7 +41,14 @@ func (m *GetOffice365GroupsActivityFileCountsWithPeriodResponse) GetFieldDeseria
 }
 // GetValue gets the value property value. The value property
 func (m *GetOffice365GroupsActivityFileCountsWithPeriodResponse) GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365GroupsActivityFileCountsable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365GroupsActivityFileCountsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GetOffice365GroupsActivityFileCountsWithPeriodResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *GetOffice365GroupsActivityFileCountsWithPeriodResponse) Serialize(write
 }
 // SetValue sets the value property value. The value property
 func (m *GetOffice365GroupsActivityFileCountsWithPeriodResponse) SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365GroupsActivityFileCountsable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GetOffice365GroupsActivityFileCountsWithPeriodResponseable 
+type GetOffice365GroupsActivityFileCountsWithPeriodResponseable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365GroupsActivityFileCountsable)
+    SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365GroupsActivityFileCountsable)()
 }

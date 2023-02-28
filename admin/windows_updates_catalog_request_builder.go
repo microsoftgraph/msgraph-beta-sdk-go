@@ -7,7 +7,7 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
-// WindowsUpdatesCatalogRequestBuilder provides operations to manage the catalog property of the microsoft.graph.windowsUpdates.updates entity.
+// WindowsUpdatesCatalogRequestBuilder provides operations to manage the catalog property of the microsoft.graph.adminWindowsUpdates entity.
 type WindowsUpdatesCatalogRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string
@@ -55,8 +55,8 @@ func NewWindowsUpdatesCatalogRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsUpdatesCatalogRequestBuilder instantiates a new CatalogRequestBuilder and sets the default values.
@@ -83,7 +83,7 @@ func (m *WindowsUpdatesCatalogRequestBuilder) Delete(ctx context.Context, reques
 }
 // Entries provides operations to manage the entries property of the microsoft.graph.windowsUpdates.catalog entity.
 func (m *WindowsUpdatesCatalogRequestBuilder) Entries()(*WindowsUpdatesCatalogEntriesRequestBuilder) {
-    return NewWindowsUpdatesCatalogEntriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsUpdatesCatalogEntriesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // EntriesById provides operations to manage the entries property of the microsoft.graph.windowsUpdates.catalog entity.
 func (m *WindowsUpdatesCatalogRequestBuilder) EntriesById(id string)(*WindowsUpdatesCatalogEntriesCatalogEntryItemRequestBuilder) {
@@ -94,7 +94,7 @@ func (m *WindowsUpdatesCatalogRequestBuilder) EntriesById(id string)(*WindowsUpd
     if id != "" {
         urlTplParams["catalogEntry%2Did"] = id
     }
-    return NewWindowsUpdatesCatalogEntriesCatalogEntryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWindowsUpdatesCatalogEntriesCatalogEntryItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Get catalog of content that can be approved for deployment by the deployment service. Read-only.
 func (m *WindowsUpdatesCatalogRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesCatalogRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Catalogable, error) {
@@ -169,7 +169,10 @@ func (m *WindowsUpdatesCatalogRequestBuilder) ToPatchRequestInformation(ctx cont
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -7,16 +7,14 @@ import (
 // DeviceManagementConfigurationGroupSettingInstanceTemplate 
 type DeviceManagementConfigurationGroupSettingInstanceTemplate struct {
     DeviceManagementConfigurationSettingInstanceTemplate
-    // Group Setting Value Template
-    groupSettingValueTemplate DeviceManagementConfigurationGroupSettingValueTemplateable
 }
 // NewDeviceManagementConfigurationGroupSettingInstanceTemplate instantiates a new DeviceManagementConfigurationGroupSettingInstanceTemplate and sets the default values.
 func NewDeviceManagementConfigurationGroupSettingInstanceTemplate()(*DeviceManagementConfigurationGroupSettingInstanceTemplate) {
     m := &DeviceManagementConfigurationGroupSettingInstanceTemplate{
         DeviceManagementConfigurationSettingInstanceTemplate: *NewDeviceManagementConfigurationSettingInstanceTemplate(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationGroupSettingInstanceTemplate";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationGroupSettingInstanceTemplate"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementConfigurationGroupSettingInstanceTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *DeviceManagementConfigurationGroupSettingInstanceTemplate) GetFieldDese
 }
 // GetGroupSettingValueTemplate gets the groupSettingValueTemplate property value. Group Setting Value Template
 func (m *DeviceManagementConfigurationGroupSettingInstanceTemplate) GetGroupSettingValueTemplate()(DeviceManagementConfigurationGroupSettingValueTemplateable) {
-    return m.groupSettingValueTemplate
+    val, err := m.GetBackingStore().Get("groupSettingValueTemplate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementConfigurationGroupSettingValueTemplateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationGroupSettingInstanceTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *DeviceManagementConfigurationGroupSettingInstanceTemplate) Serialize(wr
 }
 // SetGroupSettingValueTemplate sets the groupSettingValueTemplate property value. Group Setting Value Template
 func (m *DeviceManagementConfigurationGroupSettingInstanceTemplate) SetGroupSettingValueTemplate(value DeviceManagementConfigurationGroupSettingValueTemplateable)() {
-    m.groupSettingValueTemplate = value
+    err := m.GetBackingStore().Set("groupSettingValueTemplate", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationGroupSettingInstanceTemplateable 
+type DeviceManagementConfigurationGroupSettingInstanceTemplateable interface {
+    DeviceManagementConfigurationSettingInstanceTemplateable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetGroupSettingValueTemplate()(DeviceManagementConfigurationGroupSettingValueTemplateable)
+    SetGroupSettingValueTemplate(value DeviceManagementConfigurationGroupSettingValueTemplateable)()
 }

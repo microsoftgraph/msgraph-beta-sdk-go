@@ -7,8 +7,6 @@ import (
 // AttributeMappingCollectionResponse 
 type AttributeMappingCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AttributeMappingable
 }
 // NewAttributeMappingCollectionResponse instantiates a new AttributeMappingCollectionResponse and sets the default values.
 func NewAttributeMappingCollectionResponse()(*AttributeMappingCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AttributeMappingCollectionResponse) GetFieldDeserializers()(map[string]
 }
 // GetValue gets the value property value. The value property
 func (m *AttributeMappingCollectionResponse) GetValue()([]AttributeMappingable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AttributeMappingable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AttributeMappingCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AttributeMappingCollectionResponse) Serialize(writer i878a80d2330e89d26
 }
 // SetValue sets the value property value. The value property
 func (m *AttributeMappingCollectionResponse) SetValue(value []AttributeMappingable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AttributeMappingCollectionResponseable 
+type AttributeMappingCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AttributeMappingable)
+    SetValue(value []AttributeMappingable)()
 }

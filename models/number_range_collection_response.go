@@ -7,8 +7,6 @@ import (
 // NumberRangeCollectionResponse 
 type NumberRangeCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []NumberRangeable
 }
 // NewNumberRangeCollectionResponse instantiates a new NumberRangeCollectionResponse and sets the default values.
 func NewNumberRangeCollectionResponse()(*NumberRangeCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *NumberRangeCollectionResponse) GetFieldDeserializers()(map[string]func(
 }
 // GetValue gets the value property value. The value property
 func (m *NumberRangeCollectionResponse) GetValue()([]NumberRangeable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]NumberRangeable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *NumberRangeCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *NumberRangeCollectionResponse) Serialize(writer i878a80d2330e89d2689638
 }
 // SetValue sets the value property value. The value property
 func (m *NumberRangeCollectionResponse) SetValue(value []NumberRangeable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// NumberRangeCollectionResponseable 
+type NumberRangeCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]NumberRangeable)
+    SetValue(value []NumberRangeable)()
 }

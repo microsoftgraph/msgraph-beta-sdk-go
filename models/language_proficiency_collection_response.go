@@ -7,8 +7,6 @@ import (
 // LanguageProficiencyCollectionResponse 
 type LanguageProficiencyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []LanguageProficiencyable
 }
 // NewLanguageProficiencyCollectionResponse instantiates a new LanguageProficiencyCollectionResponse and sets the default values.
 func NewLanguageProficiencyCollectionResponse()(*LanguageProficiencyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *LanguageProficiencyCollectionResponse) GetFieldDeserializers()(map[stri
 }
 // GetValue gets the value property value. The value property
 func (m *LanguageProficiencyCollectionResponse) GetValue()([]LanguageProficiencyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]LanguageProficiencyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *LanguageProficiencyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *LanguageProficiencyCollectionResponse) Serialize(writer i878a80d2330e89
 }
 // SetValue sets the value property value. The value property
 func (m *LanguageProficiencyCollectionResponse) SetValue(value []LanguageProficiencyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// LanguageProficiencyCollectionResponseable 
+type LanguageProficiencyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]LanguageProficiencyable)
+    SetValue(value []LanguageProficiencyable)()
 }

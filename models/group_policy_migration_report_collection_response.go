@@ -7,8 +7,6 @@ import (
 // GroupPolicyMigrationReportCollectionResponse 
 type GroupPolicyMigrationReportCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []GroupPolicyMigrationReportable
 }
 // NewGroupPolicyMigrationReportCollectionResponse instantiates a new GroupPolicyMigrationReportCollectionResponse and sets the default values.
 func NewGroupPolicyMigrationReportCollectionResponse()(*GroupPolicyMigrationReportCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *GroupPolicyMigrationReportCollectionResponse) GetFieldDeserializers()(m
 }
 // GetValue gets the value property value. The value property
 func (m *GroupPolicyMigrationReportCollectionResponse) GetValue()([]GroupPolicyMigrationReportable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GroupPolicyMigrationReportable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyMigrationReportCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *GroupPolicyMigrationReportCollectionResponse) Serialize(writer i878a80d
 }
 // SetValue sets the value property value. The value property
 func (m *GroupPolicyMigrationReportCollectionResponse) SetValue(value []GroupPolicyMigrationReportable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GroupPolicyMigrationReportCollectionResponseable 
+type GroupPolicyMigrationReportCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]GroupPolicyMigrationReportable)
+    SetValue(value []GroupPolicyMigrationReportable)()
 }

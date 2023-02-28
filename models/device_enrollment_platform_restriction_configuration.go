@@ -7,18 +7,14 @@ import (
 // DeviceEnrollmentPlatformRestrictionConfiguration 
 type DeviceEnrollmentPlatformRestrictionConfiguration struct {
     DeviceEnrollmentConfiguration
-    // Restrictions based on platform, platform operating system version, and device ownership
-    platformRestriction DeviceEnrollmentPlatformRestrictionable
-    // This enum indicates the platform type for which the enrollment restriction applies.
-    platformType *EnrollmentRestrictionPlatformType
 }
 // NewDeviceEnrollmentPlatformRestrictionConfiguration instantiates a new DeviceEnrollmentPlatformRestrictionConfiguration and sets the default values.
 func NewDeviceEnrollmentPlatformRestrictionConfiguration()(*DeviceEnrollmentPlatformRestrictionConfiguration) {
     m := &DeviceEnrollmentPlatformRestrictionConfiguration{
         DeviceEnrollmentConfiguration: *NewDeviceEnrollmentConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.deviceEnrollmentPlatformRestrictionConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceEnrollmentPlatformRestrictionConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceEnrollmentPlatformRestrictionConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -52,11 +48,25 @@ func (m *DeviceEnrollmentPlatformRestrictionConfiguration) GetFieldDeserializers
 }
 // GetPlatformRestriction gets the platformRestriction property value. Restrictions based on platform, platform operating system version, and device ownership
 func (m *DeviceEnrollmentPlatformRestrictionConfiguration) GetPlatformRestriction()(DeviceEnrollmentPlatformRestrictionable) {
-    return m.platformRestriction
+    val, err := m.GetBackingStore().Get("platformRestriction")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceEnrollmentPlatformRestrictionable)
+    }
+    return nil
 }
 // GetPlatformType gets the platformType property value. This enum indicates the platform type for which the enrollment restriction applies.
 func (m *DeviceEnrollmentPlatformRestrictionConfiguration) GetPlatformType()(*EnrollmentRestrictionPlatformType) {
-    return m.platformType
+    val, err := m.GetBackingStore().Get("platformType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*EnrollmentRestrictionPlatformType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceEnrollmentPlatformRestrictionConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -81,9 +91,24 @@ func (m *DeviceEnrollmentPlatformRestrictionConfiguration) Serialize(writer i878
 }
 // SetPlatformRestriction sets the platformRestriction property value. Restrictions based on platform, platform operating system version, and device ownership
 func (m *DeviceEnrollmentPlatformRestrictionConfiguration) SetPlatformRestriction(value DeviceEnrollmentPlatformRestrictionable)() {
-    m.platformRestriction = value
+    err := m.GetBackingStore().Set("platformRestriction", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPlatformType sets the platformType property value. This enum indicates the platform type for which the enrollment restriction applies.
 func (m *DeviceEnrollmentPlatformRestrictionConfiguration) SetPlatformType(value *EnrollmentRestrictionPlatformType)() {
-    m.platformType = value
+    err := m.GetBackingStore().Set("platformType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceEnrollmentPlatformRestrictionConfigurationable 
+type DeviceEnrollmentPlatformRestrictionConfigurationable interface {
+    DeviceEnrollmentConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetPlatformRestriction()(DeviceEnrollmentPlatformRestrictionable)
+    GetPlatformType()(*EnrollmentRestrictionPlatformType)
+    SetPlatformRestriction(value DeviceEnrollmentPlatformRestrictionable)()
+    SetPlatformType(value *EnrollmentRestrictionPlatformType)()
 }

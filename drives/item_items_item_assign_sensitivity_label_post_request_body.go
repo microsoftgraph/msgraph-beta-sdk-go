@@ -3,24 +3,20 @@ package drives
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ItemItemsItemAssignSensitivityLabelPostRequestBody 
 type ItemItemsItemAssignSensitivityLabelPostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The assignmentMethod property
-    assignmentMethod *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelAssignmentMethod
-    // The justificationText property
-    justificationText *string
-    // The sensitivityLabelId property
-    sensitivityLabelId *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewItemItemsItemAssignSensitivityLabelPostRequestBody instantiates a new ItemItemsItemAssignSensitivityLabelPostRequestBody and sets the default values.
 func NewItemItemsItemAssignSensitivityLabelPostRequestBody()(*ItemItemsItemAssignSensitivityLabelPostRequestBody) {
     m := &ItemItemsItemAssignSensitivityLabelPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateItemItemsItemAssignSensitivityLabelPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,11 +25,30 @@ func CreateItemItemsItemAssignSensitivityLabelPostRequestBodyFromDiscriminatorVa
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemAssignSensitivityLabelPostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAssignmentMethod gets the assignmentMethod property value. The assignmentMethod property
 func (m *ItemItemsItemAssignSensitivityLabelPostRequestBody) GetAssignmentMethod()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelAssignmentMethod) {
-    return m.assignmentMethod
+    val, err := m.GetBackingStore().Get("assignmentMethod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelAssignmentMethod)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ItemItemsItemAssignSensitivityLabelPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemItemsItemAssignSensitivityLabelPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,11 +87,25 @@ func (m *ItemItemsItemAssignSensitivityLabelPostRequestBody) GetFieldDeserialize
 }
 // GetJustificationText gets the justificationText property value. The justificationText property
 func (m *ItemItemsItemAssignSensitivityLabelPostRequestBody) GetJustificationText()(*string) {
-    return m.justificationText
+    val, err := m.GetBackingStore().Get("justificationText")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSensitivityLabelId gets the sensitivityLabelId property value. The sensitivityLabelId property
 func (m *ItemItemsItemAssignSensitivityLabelPostRequestBody) GetSensitivityLabelId()(*string) {
-    return m.sensitivityLabelId
+    val, err := m.GetBackingStore().Get("sensitivityLabelId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemItemsItemAssignSensitivityLabelPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -109,17 +138,47 @@ func (m *ItemItemsItemAssignSensitivityLabelPostRequestBody) Serialize(writer i8
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemAssignSensitivityLabelPostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAssignmentMethod sets the assignmentMethod property value. The assignmentMethod property
 func (m *ItemItemsItemAssignSensitivityLabelPostRequestBody) SetAssignmentMethod(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelAssignmentMethod)() {
-    m.assignmentMethod = value
+    err := m.GetBackingStore().Set("assignmentMethod", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ItemItemsItemAssignSensitivityLabelPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetJustificationText sets the justificationText property value. The justificationText property
 func (m *ItemItemsItemAssignSensitivityLabelPostRequestBody) SetJustificationText(value *string)() {
-    m.justificationText = value
+    err := m.GetBackingStore().Set("justificationText", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSensitivityLabelId sets the sensitivityLabelId property value. The sensitivityLabelId property
 func (m *ItemItemsItemAssignSensitivityLabelPostRequestBody) SetSensitivityLabelId(value *string)() {
-    m.sensitivityLabelId = value
+    err := m.GetBackingStore().Set("sensitivityLabelId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemItemsItemAssignSensitivityLabelPostRequestBodyable 
+type ItemItemsItemAssignSensitivityLabelPostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssignmentMethod()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelAssignmentMethod)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetJustificationText()(*string)
+    GetSensitivityLabelId()(*string)
+    SetAssignmentMethod(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelAssignmentMethod)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetJustificationText(value *string)()
+    SetSensitivityLabelId(value *string)()
 }

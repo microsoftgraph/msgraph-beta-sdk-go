@@ -7,8 +7,6 @@ import (
 // PlayPromptOperation 
 type PlayPromptOperation struct {
     CommsOperation
-    // Possible values are: unknown, completedSuccessfully, mediaOperationCanceled.
-    completionReason *PlayPromptCompletionReason
 }
 // NewPlayPromptOperation instantiates a new PlayPromptOperation and sets the default values.
 func NewPlayPromptOperation()(*PlayPromptOperation) {
@@ -23,7 +21,14 @@ func CreatePlayPromptOperationFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetCompletionReason gets the completionReason property value. Possible values are: unknown, completedSuccessfully, mediaOperationCanceled.
 func (m *PlayPromptOperation) GetCompletionReason()(*PlayPromptCompletionReason) {
-    return m.completionReason
+    val, err := m.GetBackingStore().Get("completionReason")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PlayPromptCompletionReason)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlayPromptOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -57,5 +62,15 @@ func (m *PlayPromptOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetCompletionReason sets the completionReason property value. Possible values are: unknown, completedSuccessfully, mediaOperationCanceled.
 func (m *PlayPromptOperation) SetCompletionReason(value *PlayPromptCompletionReason)() {
-    m.completionReason = value
+    err := m.GetBackingStore().Set("completionReason", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PlayPromptOperationable 
+type PlayPromptOperationable interface {
+    CommsOperationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCompletionReason()(*PlayPromptCompletionReason)
+    SetCompletionReason(value *PlayPromptCompletionReason)()
 }

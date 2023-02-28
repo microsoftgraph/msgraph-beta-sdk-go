@@ -7,36 +7,6 @@ import (
 // Security 
 type Security struct {
     Entity
-    // Notifications for suspicious or potential security issues in a customer’s tenant.
-    alerts []Alertable
-    // Provides tenants capability to launch a simulated and realistic phishing attack and learn from it.
-    attackSimulation AttackSimulationRootable
-    // The cloudAppSecurityProfiles property
-    cloudAppSecurityProfiles []CloudAppSecurityProfileable
-    // The domainSecurityProfiles property
-    domainSecurityProfiles []DomainSecurityProfileable
-    // The fileSecurityProfiles property
-    fileSecurityProfiles []FileSecurityProfileable
-    // The hostSecurityProfiles property
-    hostSecurityProfiles []HostSecurityProfileable
-    // The ipSecurityProfiles property
-    ipSecurityProfiles []IpSecurityProfileable
-    // The providerStatus property
-    providerStatus []SecurityProviderStatusable
-    // The providerTenantSettings property
-    providerTenantSettings []ProviderTenantSettingable
-    // The secureScoreControlProfiles property
-    secureScoreControlProfiles []SecureScoreControlProfileable
-    // Measurements of tenants’ security posture to help protect them from threats.
-    secureScores []SecureScoreable
-    // The securityActions property
-    securityActions []SecurityActionable
-    // The subjectRightsRequests property
-    subjectRightsRequests []SubjectRightsRequestable
-    // The tiIndicators property
-    tiIndicators []TiIndicatorable
-    // The userSecurityProfiles property
-    userSecurityProfiles []UserSecurityProfileable
 }
 // NewSecurity instantiates a new Security and sets the default values.
 func NewSecurity()(*Security) {
@@ -51,19 +21,47 @@ func CreateSecurityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetAlerts gets the alerts property value. Notifications for suspicious or potential security issues in a customer’s tenant.
 func (m *Security) GetAlerts()([]Alertable) {
-    return m.alerts
+    val, err := m.GetBackingStore().Get("alerts")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Alertable)
+    }
+    return nil
 }
 // GetAttackSimulation gets the attackSimulation property value. Provides tenants capability to launch a simulated and realistic phishing attack and learn from it.
 func (m *Security) GetAttackSimulation()(AttackSimulationRootable) {
-    return m.attackSimulation
+    val, err := m.GetBackingStore().Get("attackSimulation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AttackSimulationRootable)
+    }
+    return nil
 }
 // GetCloudAppSecurityProfiles gets the cloudAppSecurityProfiles property value. The cloudAppSecurityProfiles property
 func (m *Security) GetCloudAppSecurityProfiles()([]CloudAppSecurityProfileable) {
-    return m.cloudAppSecurityProfiles
+    val, err := m.GetBackingStore().Get("cloudAppSecurityProfiles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CloudAppSecurityProfileable)
+    }
+    return nil
 }
 // GetDomainSecurityProfiles gets the domainSecurityProfiles property value. The domainSecurityProfiles property
 func (m *Security) GetDomainSecurityProfiles()([]DomainSecurityProfileable) {
-    return m.domainSecurityProfiles
+    val, err := m.GetBackingStore().Get("domainSecurityProfiles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DomainSecurityProfileable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Security) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -278,47 +276,124 @@ func (m *Security) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetFileSecurityProfiles gets the fileSecurityProfiles property value. The fileSecurityProfiles property
 func (m *Security) GetFileSecurityProfiles()([]FileSecurityProfileable) {
-    return m.fileSecurityProfiles
+    val, err := m.GetBackingStore().Get("fileSecurityProfiles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]FileSecurityProfileable)
+    }
+    return nil
 }
 // GetHostSecurityProfiles gets the hostSecurityProfiles property value. The hostSecurityProfiles property
 func (m *Security) GetHostSecurityProfiles()([]HostSecurityProfileable) {
-    return m.hostSecurityProfiles
+    val, err := m.GetBackingStore().Get("hostSecurityProfiles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]HostSecurityProfileable)
+    }
+    return nil
 }
 // GetIpSecurityProfiles gets the ipSecurityProfiles property value. The ipSecurityProfiles property
 func (m *Security) GetIpSecurityProfiles()([]IpSecurityProfileable) {
-    return m.ipSecurityProfiles
+    val, err := m.GetBackingStore().Get("ipSecurityProfiles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IpSecurityProfileable)
+    }
+    return nil
 }
 // GetProviderStatus gets the providerStatus property value. The providerStatus property
 func (m *Security) GetProviderStatus()([]SecurityProviderStatusable) {
-    return m.providerStatus
+    val, err := m.GetBackingStore().Get("providerStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SecurityProviderStatusable)
+    }
+    return nil
 }
 // GetProviderTenantSettings gets the providerTenantSettings property value. The providerTenantSettings property
 func (m *Security) GetProviderTenantSettings()([]ProviderTenantSettingable) {
-    return m.providerTenantSettings
+    val, err := m.GetBackingStore().Get("providerTenantSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ProviderTenantSettingable)
+    }
+    return nil
 }
 // GetSecureScoreControlProfiles gets the secureScoreControlProfiles property value. The secureScoreControlProfiles property
 func (m *Security) GetSecureScoreControlProfiles()([]SecureScoreControlProfileable) {
-    return m.secureScoreControlProfiles
+    val, err := m.GetBackingStore().Get("secureScoreControlProfiles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SecureScoreControlProfileable)
+    }
+    return nil
 }
 // GetSecureScores gets the secureScores property value. Measurements of tenants’ security posture to help protect them from threats.
 func (m *Security) GetSecureScores()([]SecureScoreable) {
-    return m.secureScores
+    val, err := m.GetBackingStore().Get("secureScores")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SecureScoreable)
+    }
+    return nil
 }
 // GetSecurityActions gets the securityActions property value. The securityActions property
 func (m *Security) GetSecurityActions()([]SecurityActionable) {
-    return m.securityActions
+    val, err := m.GetBackingStore().Get("securityActions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SecurityActionable)
+    }
+    return nil
 }
 // GetSubjectRightsRequests gets the subjectRightsRequests property value. The subjectRightsRequests property
 func (m *Security) GetSubjectRightsRequests()([]SubjectRightsRequestable) {
-    return m.subjectRightsRequests
+    val, err := m.GetBackingStore().Get("subjectRightsRequests")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SubjectRightsRequestable)
+    }
+    return nil
 }
 // GetTiIndicators gets the tiIndicators property value. The tiIndicators property
 func (m *Security) GetTiIndicators()([]TiIndicatorable) {
-    return m.tiIndicators
+    val, err := m.GetBackingStore().Get("tiIndicators")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TiIndicatorable)
+    }
+    return nil
 }
 // GetUserSecurityProfiles gets the userSecurityProfiles property value. The userSecurityProfiles property
 func (m *Security) GetUserSecurityProfiles()([]UserSecurityProfileable) {
-    return m.userSecurityProfiles
+    val, err := m.GetBackingStore().Get("userSecurityProfiles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserSecurityProfileable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -476,61 +551,141 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetAlerts sets the alerts property value. Notifications for suspicious or potential security issues in a customer’s tenant.
 func (m *Security) SetAlerts(value []Alertable)() {
-    m.alerts = value
+    err := m.GetBackingStore().Set("alerts", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAttackSimulation sets the attackSimulation property value. Provides tenants capability to launch a simulated and realistic phishing attack and learn from it.
 func (m *Security) SetAttackSimulation(value AttackSimulationRootable)() {
-    m.attackSimulation = value
+    err := m.GetBackingStore().Set("attackSimulation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCloudAppSecurityProfiles sets the cloudAppSecurityProfiles property value. The cloudAppSecurityProfiles property
 func (m *Security) SetCloudAppSecurityProfiles(value []CloudAppSecurityProfileable)() {
-    m.cloudAppSecurityProfiles = value
+    err := m.GetBackingStore().Set("cloudAppSecurityProfiles", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDomainSecurityProfiles sets the domainSecurityProfiles property value. The domainSecurityProfiles property
 func (m *Security) SetDomainSecurityProfiles(value []DomainSecurityProfileable)() {
-    m.domainSecurityProfiles = value
+    err := m.GetBackingStore().Set("domainSecurityProfiles", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFileSecurityProfiles sets the fileSecurityProfiles property value. The fileSecurityProfiles property
 func (m *Security) SetFileSecurityProfiles(value []FileSecurityProfileable)() {
-    m.fileSecurityProfiles = value
+    err := m.GetBackingStore().Set("fileSecurityProfiles", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHostSecurityProfiles sets the hostSecurityProfiles property value. The hostSecurityProfiles property
 func (m *Security) SetHostSecurityProfiles(value []HostSecurityProfileable)() {
-    m.hostSecurityProfiles = value
+    err := m.GetBackingStore().Set("hostSecurityProfiles", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIpSecurityProfiles sets the ipSecurityProfiles property value. The ipSecurityProfiles property
 func (m *Security) SetIpSecurityProfiles(value []IpSecurityProfileable)() {
-    m.ipSecurityProfiles = value
+    err := m.GetBackingStore().Set("ipSecurityProfiles", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProviderStatus sets the providerStatus property value. The providerStatus property
 func (m *Security) SetProviderStatus(value []SecurityProviderStatusable)() {
-    m.providerStatus = value
+    err := m.GetBackingStore().Set("providerStatus", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProviderTenantSettings sets the providerTenantSettings property value. The providerTenantSettings property
 func (m *Security) SetProviderTenantSettings(value []ProviderTenantSettingable)() {
-    m.providerTenantSettings = value
+    err := m.GetBackingStore().Set("providerTenantSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSecureScoreControlProfiles sets the secureScoreControlProfiles property value. The secureScoreControlProfiles property
 func (m *Security) SetSecureScoreControlProfiles(value []SecureScoreControlProfileable)() {
-    m.secureScoreControlProfiles = value
+    err := m.GetBackingStore().Set("secureScoreControlProfiles", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSecureScores sets the secureScores property value. Measurements of tenants’ security posture to help protect them from threats.
 func (m *Security) SetSecureScores(value []SecureScoreable)() {
-    m.secureScores = value
+    err := m.GetBackingStore().Set("secureScores", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSecurityActions sets the securityActions property value. The securityActions property
 func (m *Security) SetSecurityActions(value []SecurityActionable)() {
-    m.securityActions = value
+    err := m.GetBackingStore().Set("securityActions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubjectRightsRequests sets the subjectRightsRequests property value. The subjectRightsRequests property
 func (m *Security) SetSubjectRightsRequests(value []SubjectRightsRequestable)() {
-    m.subjectRightsRequests = value
+    err := m.GetBackingStore().Set("subjectRightsRequests", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTiIndicators sets the tiIndicators property value. The tiIndicators property
 func (m *Security) SetTiIndicators(value []TiIndicatorable)() {
-    m.tiIndicators = value
+    err := m.GetBackingStore().Set("tiIndicators", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserSecurityProfiles sets the userSecurityProfiles property value. The userSecurityProfiles property
 func (m *Security) SetUserSecurityProfiles(value []UserSecurityProfileable)() {
-    m.userSecurityProfiles = value
+    err := m.GetBackingStore().Set("userSecurityProfiles", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Securityable 
+type Securityable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAlerts()([]Alertable)
+    GetAttackSimulation()(AttackSimulationRootable)
+    GetCloudAppSecurityProfiles()([]CloudAppSecurityProfileable)
+    GetDomainSecurityProfiles()([]DomainSecurityProfileable)
+    GetFileSecurityProfiles()([]FileSecurityProfileable)
+    GetHostSecurityProfiles()([]HostSecurityProfileable)
+    GetIpSecurityProfiles()([]IpSecurityProfileable)
+    GetProviderStatus()([]SecurityProviderStatusable)
+    GetProviderTenantSettings()([]ProviderTenantSettingable)
+    GetSecureScoreControlProfiles()([]SecureScoreControlProfileable)
+    GetSecureScores()([]SecureScoreable)
+    GetSecurityActions()([]SecurityActionable)
+    GetSubjectRightsRequests()([]SubjectRightsRequestable)
+    GetTiIndicators()([]TiIndicatorable)
+    GetUserSecurityProfiles()([]UserSecurityProfileable)
+    SetAlerts(value []Alertable)()
+    SetAttackSimulation(value AttackSimulationRootable)()
+    SetCloudAppSecurityProfiles(value []CloudAppSecurityProfileable)()
+    SetDomainSecurityProfiles(value []DomainSecurityProfileable)()
+    SetFileSecurityProfiles(value []FileSecurityProfileable)()
+    SetHostSecurityProfiles(value []HostSecurityProfileable)()
+    SetIpSecurityProfiles(value []IpSecurityProfileable)()
+    SetProviderStatus(value []SecurityProviderStatusable)()
+    SetProviderTenantSettings(value []ProviderTenantSettingable)()
+    SetSecureScoreControlProfiles(value []SecureScoreControlProfileable)()
+    SetSecureScores(value []SecureScoreable)()
+    SetSecurityActions(value []SecurityActionable)()
+    SetSubjectRightsRequests(value []SubjectRightsRequestable)()
+    SetTiIndicators(value []TiIndicatorable)()
+    SetUserSecurityProfiles(value []UserSecurityProfileable)()
 }

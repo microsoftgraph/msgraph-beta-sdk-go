@@ -7,28 +7,6 @@ import (
 // PrintUsage 
 type PrintUsage struct {
     Entity
-    // The blackAndWhitePageCount property
-    blackAndWhitePageCount *int64
-    // The colorPageCount property
-    colorPageCount *int64
-    // The completedBlackAndWhiteJobCount property
-    completedBlackAndWhiteJobCount *int64
-    // The completedColorJobCount property
-    completedColorJobCount *int64
-    // The completedJobCount property
-    completedJobCount *int64
-    // The doubleSidedSheetCount property
-    doubleSidedSheetCount *int64
-    // The incompleteJobCount property
-    incompleteJobCount *int64
-    // The mediaSheetCount property
-    mediaSheetCount *int64
-    // The pageCount property
-    pageCount *int64
-    // The singleSidedSheetCount property
-    singleSidedSheetCount *int64
-    // The usageDate property
-    usageDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
 }
 // NewPrintUsage instantiates a new printUsage and sets the default values.
 func NewPrintUsage()(*PrintUsage) {
@@ -63,27 +41,69 @@ func CreatePrintUsageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetBlackAndWhitePageCount gets the blackAndWhitePageCount property value. The blackAndWhitePageCount property
 func (m *PrintUsage) GetBlackAndWhitePageCount()(*int64) {
-    return m.blackAndWhitePageCount
+    val, err := m.GetBackingStore().Get("blackAndWhitePageCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetColorPageCount gets the colorPageCount property value. The colorPageCount property
 func (m *PrintUsage) GetColorPageCount()(*int64) {
-    return m.colorPageCount
+    val, err := m.GetBackingStore().Get("colorPageCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetCompletedBlackAndWhiteJobCount gets the completedBlackAndWhiteJobCount property value. The completedBlackAndWhiteJobCount property
 func (m *PrintUsage) GetCompletedBlackAndWhiteJobCount()(*int64) {
-    return m.completedBlackAndWhiteJobCount
+    val, err := m.GetBackingStore().Get("completedBlackAndWhiteJobCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetCompletedColorJobCount gets the completedColorJobCount property value. The completedColorJobCount property
 func (m *PrintUsage) GetCompletedColorJobCount()(*int64) {
-    return m.completedColorJobCount
+    val, err := m.GetBackingStore().Get("completedColorJobCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetCompletedJobCount gets the completedJobCount property value. The completedJobCount property
 func (m *PrintUsage) GetCompletedJobCount()(*int64) {
-    return m.completedJobCount
+    val, err := m.GetBackingStore().Get("completedJobCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetDoubleSidedSheetCount gets the doubleSidedSheetCount property value. The doubleSidedSheetCount property
 func (m *PrintUsage) GetDoubleSidedSheetCount()(*int64) {
-    return m.doubleSidedSheetCount
+    val, err := m.GetBackingStore().Get("doubleSidedSheetCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrintUsage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -202,23 +222,58 @@ func (m *PrintUsage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetIncompleteJobCount gets the incompleteJobCount property value. The incompleteJobCount property
 func (m *PrintUsage) GetIncompleteJobCount()(*int64) {
-    return m.incompleteJobCount
+    val, err := m.GetBackingStore().Get("incompleteJobCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetMediaSheetCount gets the mediaSheetCount property value. The mediaSheetCount property
 func (m *PrintUsage) GetMediaSheetCount()(*int64) {
-    return m.mediaSheetCount
+    val, err := m.GetBackingStore().Get("mediaSheetCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetPageCount gets the pageCount property value. The pageCount property
 func (m *PrintUsage) GetPageCount()(*int64) {
-    return m.pageCount
+    val, err := m.GetBackingStore().Get("pageCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetSingleSidedSheetCount gets the singleSidedSheetCount property value. The singleSidedSheetCount property
 func (m *PrintUsage) GetSingleSidedSheetCount()(*int64) {
-    return m.singleSidedSheetCount
+    val, err := m.GetBackingStore().Get("singleSidedSheetCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetUsageDate gets the usageDate property value. The usageDate property
 func (m *PrintUsage) GetUsageDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.usageDate
+    val, err := m.GetBackingStore().Get("usageDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrintUsage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -296,45 +351,105 @@ func (m *PrintUsage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetBlackAndWhitePageCount sets the blackAndWhitePageCount property value. The blackAndWhitePageCount property
 func (m *PrintUsage) SetBlackAndWhitePageCount(value *int64)() {
-    m.blackAndWhitePageCount = value
+    err := m.GetBackingStore().Set("blackAndWhitePageCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetColorPageCount sets the colorPageCount property value. The colorPageCount property
 func (m *PrintUsage) SetColorPageCount(value *int64)() {
-    m.colorPageCount = value
+    err := m.GetBackingStore().Set("colorPageCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCompletedBlackAndWhiteJobCount sets the completedBlackAndWhiteJobCount property value. The completedBlackAndWhiteJobCount property
 func (m *PrintUsage) SetCompletedBlackAndWhiteJobCount(value *int64)() {
-    m.completedBlackAndWhiteJobCount = value
+    err := m.GetBackingStore().Set("completedBlackAndWhiteJobCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCompletedColorJobCount sets the completedColorJobCount property value. The completedColorJobCount property
 func (m *PrintUsage) SetCompletedColorJobCount(value *int64)() {
-    m.completedColorJobCount = value
+    err := m.GetBackingStore().Set("completedColorJobCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCompletedJobCount sets the completedJobCount property value. The completedJobCount property
 func (m *PrintUsage) SetCompletedJobCount(value *int64)() {
-    m.completedJobCount = value
+    err := m.GetBackingStore().Set("completedJobCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDoubleSidedSheetCount sets the doubleSidedSheetCount property value. The doubleSidedSheetCount property
 func (m *PrintUsage) SetDoubleSidedSheetCount(value *int64)() {
-    m.doubleSidedSheetCount = value
+    err := m.GetBackingStore().Set("doubleSidedSheetCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIncompleteJobCount sets the incompleteJobCount property value. The incompleteJobCount property
 func (m *PrintUsage) SetIncompleteJobCount(value *int64)() {
-    m.incompleteJobCount = value
+    err := m.GetBackingStore().Set("incompleteJobCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMediaSheetCount sets the mediaSheetCount property value. The mediaSheetCount property
 func (m *PrintUsage) SetMediaSheetCount(value *int64)() {
-    m.mediaSheetCount = value
+    err := m.GetBackingStore().Set("mediaSheetCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPageCount sets the pageCount property value. The pageCount property
 func (m *PrintUsage) SetPageCount(value *int64)() {
-    m.pageCount = value
+    err := m.GetBackingStore().Set("pageCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSingleSidedSheetCount sets the singleSidedSheetCount property value. The singleSidedSheetCount property
 func (m *PrintUsage) SetSingleSidedSheetCount(value *int64)() {
-    m.singleSidedSheetCount = value
+    err := m.GetBackingStore().Set("singleSidedSheetCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUsageDate sets the usageDate property value. The usageDate property
 func (m *PrintUsage) SetUsageDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.usageDate = value
+    err := m.GetBackingStore().Set("usageDate", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrintUsageable 
+type PrintUsageable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBlackAndWhitePageCount()(*int64)
+    GetColorPageCount()(*int64)
+    GetCompletedBlackAndWhiteJobCount()(*int64)
+    GetCompletedColorJobCount()(*int64)
+    GetCompletedJobCount()(*int64)
+    GetDoubleSidedSheetCount()(*int64)
+    GetIncompleteJobCount()(*int64)
+    GetMediaSheetCount()(*int64)
+    GetPageCount()(*int64)
+    GetSingleSidedSheetCount()(*int64)
+    GetUsageDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    SetBlackAndWhitePageCount(value *int64)()
+    SetColorPageCount(value *int64)()
+    SetCompletedBlackAndWhiteJobCount(value *int64)()
+    SetCompletedColorJobCount(value *int64)()
+    SetCompletedJobCount(value *int64)()
+    SetDoubleSidedSheetCount(value *int64)()
+    SetIncompleteJobCount(value *int64)()
+    SetMediaSheetCount(value *int64)()
+    SetPageCount(value *int64)()
+    SetSingleSidedSheetCount(value *int64)()
+    SetUsageDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
 }

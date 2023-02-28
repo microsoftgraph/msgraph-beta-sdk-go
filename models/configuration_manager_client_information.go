@@ -2,26 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ConfigurationManagerClientInformation configuration Manager client information synced from SCCM
 type ConfigurationManagerClientInformation struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Configuration Manager Client Id from SCCM
-    clientIdentifier *string
-    // Configuration Manager Client version from SCCM
-    clientVersion *string
-    // Configuration Manager Client blocked status from SCCM
-    isBlocked *bool
-    // The OdataType property
-    odataType *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewConfigurationManagerClientInformation instantiates a new configurationManagerClientInformation and sets the default values.
 func NewConfigurationManagerClientInformation()(*ConfigurationManagerClientInformation) {
     m := &ConfigurationManagerClientInformation{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateConfigurationManagerClientInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,15 +24,41 @@ func CreateConfigurationManagerClientInformationFromDiscriminatorValue(parseNode
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConfigurationManagerClientInformation) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ConfigurationManagerClientInformation) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetClientIdentifier gets the clientIdentifier property value. Configuration Manager Client Id from SCCM
 func (m *ConfigurationManagerClientInformation) GetClientIdentifier()(*string) {
-    return m.clientIdentifier
+    val, err := m.GetBackingStore().Get("clientIdentifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetClientVersion gets the clientVersion property value. Configuration Manager Client version from SCCM
 func (m *ConfigurationManagerClientInformation) GetClientVersion()(*string) {
-    return m.clientVersion
+    val, err := m.GetBackingStore().Get("clientVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConfigurationManagerClientInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -87,11 +107,25 @@ func (m *ConfigurationManagerClientInformation) GetFieldDeserializers()(map[stri
 }
 // GetIsBlocked gets the isBlocked property value. Configuration Manager Client blocked status from SCCM
 func (m *ConfigurationManagerClientInformation) GetIsBlocked()(*bool) {
-    return m.isBlocked
+    val, err := m.GetBackingStore().Get("isBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ConfigurationManagerClientInformation) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ConfigurationManagerClientInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -129,21 +163,56 @@ func (m *ConfigurationManagerClientInformation) Serialize(writer i878a80d2330e89
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConfigurationManagerClientInformation) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ConfigurationManagerClientInformation) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetClientIdentifier sets the clientIdentifier property value. Configuration Manager Client Id from SCCM
 func (m *ConfigurationManagerClientInformation) SetClientIdentifier(value *string)() {
-    m.clientIdentifier = value
+    err := m.GetBackingStore().Set("clientIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetClientVersion sets the clientVersion property value. Configuration Manager Client version from SCCM
 func (m *ConfigurationManagerClientInformation) SetClientVersion(value *string)() {
-    m.clientVersion = value
+    err := m.GetBackingStore().Set("clientVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsBlocked sets the isBlocked property value. Configuration Manager Client blocked status from SCCM
 func (m *ConfigurationManagerClientInformation) SetIsBlocked(value *bool)() {
-    m.isBlocked = value
+    err := m.GetBackingStore().Set("isBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ConfigurationManagerClientInformation) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ConfigurationManagerClientInformationable 
+type ConfigurationManagerClientInformationable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetClientIdentifier()(*string)
+    GetClientVersion()(*string)
+    GetIsBlocked()(*bool)
+    GetOdataType()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetClientIdentifier(value *string)()
+    SetClientVersion(value *string)()
+    SetIsBlocked(value *bool)()
+    SetOdataType(value *string)()
 }

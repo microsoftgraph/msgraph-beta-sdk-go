@@ -8,8 +8,6 @@ import (
 // GetOffice365ServicesUserCountsWithPeriodResponse 
 type GetOffice365ServicesUserCountsWithPeriodResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
-    // The value property
-    value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365ServicesUserCountsable
 }
 // NewGetOffice365ServicesUserCountsWithPeriodResponse instantiates a new GetOffice365ServicesUserCountsWithPeriodResponse and sets the default values.
 func NewGetOffice365ServicesUserCountsWithPeriodResponse()(*GetOffice365ServicesUserCountsWithPeriodResponse) {
@@ -43,7 +41,14 @@ func (m *GetOffice365ServicesUserCountsWithPeriodResponse) GetFieldDeserializers
 }
 // GetValue gets the value property value. The value property
 func (m *GetOffice365ServicesUserCountsWithPeriodResponse) GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365ServicesUserCountsable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365ServicesUserCountsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GetOffice365ServicesUserCountsWithPeriodResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *GetOffice365ServicesUserCountsWithPeriodResponse) Serialize(writer i878
 }
 // SetValue sets the value property value. The value property
 func (m *GetOffice365ServicesUserCountsWithPeriodResponse) SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365ServicesUserCountsable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GetOffice365ServicesUserCountsWithPeriodResponseable 
+type GetOffice365ServicesUserCountsWithPeriodResponseable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365ServicesUserCountsable)
+    SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365ServicesUserCountsable)()
 }

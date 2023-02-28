@@ -7,8 +7,6 @@ import (
 // UserSetCollectionResponse 
 type UserSetCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UserSetable
 }
 // NewUserSetCollectionResponse instantiates a new UserSetCollectionResponse and sets the default values.
 func NewUserSetCollectionResponse()(*UserSetCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UserSetCollectionResponse) GetFieldDeserializers()(map[string]func(i878
 }
 // GetValue gets the value property value. The value property
 func (m *UserSetCollectionResponse) GetValue()([]UserSetable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserSetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserSetCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UserSetCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetValue sets the value property value. The value property
 func (m *UserSetCollectionResponse) SetValue(value []UserSetable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserSetCollectionResponseable 
+type UserSetCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UserSetable)
+    SetValue(value []UserSetable)()
 }

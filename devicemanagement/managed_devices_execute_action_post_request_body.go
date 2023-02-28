@@ -3,40 +3,20 @@ package devicemanagement
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ManagedDevicesExecuteActionPostRequestBody 
 type ManagedDevicesExecuteActionPostRequestBody struct {
-    // The actionName property
-    actionName *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceRemoteAction
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The carrierUrl property
-    carrierUrl *string
-    // The deprovisionReason property
-    deprovisionReason *string
-    // The deviceIds property
-    deviceIds []string
-    // The deviceName property
-    deviceName *string
-    // The keepEnrollmentData property
-    keepEnrollmentData *bool
-    // The keepUserData property
-    keepUserData *bool
-    // The notificationBody property
-    notificationBody *string
-    // The notificationTitle property
-    notificationTitle *string
-    // The organizationalUnitPath property
-    organizationalUnitPath *string
-    // The persistEsimDataPlan property
-    persistEsimDataPlan *bool
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewManagedDevicesExecuteActionPostRequestBody instantiates a new ManagedDevicesExecuteActionPostRequestBody and sets the default values.
 func NewManagedDevicesExecuteActionPostRequestBody()(*ManagedDevicesExecuteActionPostRequestBody) {
     m := &ManagedDevicesExecuteActionPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateManagedDevicesExecuteActionPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,27 +25,74 @@ func CreateManagedDevicesExecuteActionPostRequestBodyFromDiscriminatorValue(pars
 }
 // GetActionName gets the actionName property value. The actionName property
 func (m *ManagedDevicesExecuteActionPostRequestBody) GetActionName()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceRemoteAction) {
-    return m.actionName
+    val, err := m.GetBackingStore().Get("actionName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceRemoteAction)
+    }
+    return nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagedDevicesExecuteActionPostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ManagedDevicesExecuteActionPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetCarrierUrl gets the carrierUrl property value. The carrierUrl property
 func (m *ManagedDevicesExecuteActionPostRequestBody) GetCarrierUrl()(*string) {
-    return m.carrierUrl
+    val, err := m.GetBackingStore().Get("carrierUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDeprovisionReason gets the deprovisionReason property value. The deprovisionReason property
 func (m *ManagedDevicesExecuteActionPostRequestBody) GetDeprovisionReason()(*string) {
-    return m.deprovisionReason
+    val, err := m.GetBackingStore().Get("deprovisionReason")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDeviceIds gets the deviceIds property value. The deviceIds property
 func (m *ManagedDevicesExecuteActionPostRequestBody) GetDeviceIds()([]string) {
-    return m.deviceIds
+    val, err := m.GetBackingStore().Get("deviceIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetDeviceName gets the deviceName property value. The deviceName property
 func (m *ManagedDevicesExecuteActionPostRequestBody) GetDeviceName()(*string) {
-    return m.deviceName
+    val, err := m.GetBackingStore().Get("deviceName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedDevicesExecuteActionPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -188,27 +215,69 @@ func (m *ManagedDevicesExecuteActionPostRequestBody) GetFieldDeserializers()(map
 }
 // GetKeepEnrollmentData gets the keepEnrollmentData property value. The keepEnrollmentData property
 func (m *ManagedDevicesExecuteActionPostRequestBody) GetKeepEnrollmentData()(*bool) {
-    return m.keepEnrollmentData
+    val, err := m.GetBackingStore().Get("keepEnrollmentData")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetKeepUserData gets the keepUserData property value. The keepUserData property
 func (m *ManagedDevicesExecuteActionPostRequestBody) GetKeepUserData()(*bool) {
-    return m.keepUserData
+    val, err := m.GetBackingStore().Get("keepUserData")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetNotificationBody gets the notificationBody property value. The notificationBody property
 func (m *ManagedDevicesExecuteActionPostRequestBody) GetNotificationBody()(*string) {
-    return m.notificationBody
+    val, err := m.GetBackingStore().Get("notificationBody")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetNotificationTitle gets the notificationTitle property value. The notificationTitle property
 func (m *ManagedDevicesExecuteActionPostRequestBody) GetNotificationTitle()(*string) {
-    return m.notificationTitle
+    val, err := m.GetBackingStore().Get("notificationTitle")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOrganizationalUnitPath gets the organizationalUnitPath property value. The organizationalUnitPath property
 func (m *ManagedDevicesExecuteActionPostRequestBody) GetOrganizationalUnitPath()(*string) {
-    return m.organizationalUnitPath
+    val, err := m.GetBackingStore().Get("organizationalUnitPath")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPersistEsimDataPlan gets the persistEsimDataPlan property value. The persistEsimDataPlan property
 func (m *ManagedDevicesExecuteActionPostRequestBody) GetPersistEsimDataPlan()(*bool) {
-    return m.persistEsimDataPlan
+    val, err := m.GetBackingStore().Get("persistEsimDataPlan")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagedDevicesExecuteActionPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -289,49 +358,119 @@ func (m *ManagedDevicesExecuteActionPostRequestBody) Serialize(writer i878a80d23
 }
 // SetActionName sets the actionName property value. The actionName property
 func (m *ManagedDevicesExecuteActionPostRequestBody) SetActionName(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceRemoteAction)() {
-    m.actionName = value
+    err := m.GetBackingStore().Set("actionName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagedDevicesExecuteActionPostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ManagedDevicesExecuteActionPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetCarrierUrl sets the carrierUrl property value. The carrierUrl property
 func (m *ManagedDevicesExecuteActionPostRequestBody) SetCarrierUrl(value *string)() {
-    m.carrierUrl = value
+    err := m.GetBackingStore().Set("carrierUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeprovisionReason sets the deprovisionReason property value. The deprovisionReason property
 func (m *ManagedDevicesExecuteActionPostRequestBody) SetDeprovisionReason(value *string)() {
-    m.deprovisionReason = value
+    err := m.GetBackingStore().Set("deprovisionReason", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceIds sets the deviceIds property value. The deviceIds property
 func (m *ManagedDevicesExecuteActionPostRequestBody) SetDeviceIds(value []string)() {
-    m.deviceIds = value
+    err := m.GetBackingStore().Set("deviceIds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceName sets the deviceName property value. The deviceName property
 func (m *ManagedDevicesExecuteActionPostRequestBody) SetDeviceName(value *string)() {
-    m.deviceName = value
+    err := m.GetBackingStore().Set("deviceName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetKeepEnrollmentData sets the keepEnrollmentData property value. The keepEnrollmentData property
 func (m *ManagedDevicesExecuteActionPostRequestBody) SetKeepEnrollmentData(value *bool)() {
-    m.keepEnrollmentData = value
+    err := m.GetBackingStore().Set("keepEnrollmentData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetKeepUserData sets the keepUserData property value. The keepUserData property
 func (m *ManagedDevicesExecuteActionPostRequestBody) SetKeepUserData(value *bool)() {
-    m.keepUserData = value
+    err := m.GetBackingStore().Set("keepUserData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotificationBody sets the notificationBody property value. The notificationBody property
 func (m *ManagedDevicesExecuteActionPostRequestBody) SetNotificationBody(value *string)() {
-    m.notificationBody = value
+    err := m.GetBackingStore().Set("notificationBody", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotificationTitle sets the notificationTitle property value. The notificationTitle property
 func (m *ManagedDevicesExecuteActionPostRequestBody) SetNotificationTitle(value *string)() {
-    m.notificationTitle = value
+    err := m.GetBackingStore().Set("notificationTitle", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOrganizationalUnitPath sets the organizationalUnitPath property value. The organizationalUnitPath property
 func (m *ManagedDevicesExecuteActionPostRequestBody) SetOrganizationalUnitPath(value *string)() {
-    m.organizationalUnitPath = value
+    err := m.GetBackingStore().Set("organizationalUnitPath", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPersistEsimDataPlan sets the persistEsimDataPlan property value. The persistEsimDataPlan property
 func (m *ManagedDevicesExecuteActionPostRequestBody) SetPersistEsimDataPlan(value *bool)() {
-    m.persistEsimDataPlan = value
+    err := m.GetBackingStore().Set("persistEsimDataPlan", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagedDevicesExecuteActionPostRequestBodyable 
+type ManagedDevicesExecuteActionPostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActionName()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceRemoteAction)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCarrierUrl()(*string)
+    GetDeprovisionReason()(*string)
+    GetDeviceIds()([]string)
+    GetDeviceName()(*string)
+    GetKeepEnrollmentData()(*bool)
+    GetKeepUserData()(*bool)
+    GetNotificationBody()(*string)
+    GetNotificationTitle()(*string)
+    GetOrganizationalUnitPath()(*string)
+    GetPersistEsimDataPlan()(*bool)
+    SetActionName(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceRemoteAction)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCarrierUrl(value *string)()
+    SetDeprovisionReason(value *string)()
+    SetDeviceIds(value []string)()
+    SetDeviceName(value *string)()
+    SetKeepEnrollmentData(value *bool)()
+    SetKeepUserData(value *bool)()
+    SetNotificationBody(value *string)()
+    SetNotificationTitle(value *string)()
+    SetOrganizationalUnitPath(value *string)()
+    SetPersistEsimDataPlan(value *bool)()
 }

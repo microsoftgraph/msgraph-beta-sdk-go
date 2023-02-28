@@ -7,8 +7,6 @@ import (
 // AccessPackageAssignmentResourceRoleCollectionResponse 
 type AccessPackageAssignmentResourceRoleCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AccessPackageAssignmentResourceRoleable
 }
 // NewAccessPackageAssignmentResourceRoleCollectionResponse instantiates a new AccessPackageAssignmentResourceRoleCollectionResponse and sets the default values.
 func NewAccessPackageAssignmentResourceRoleCollectionResponse()(*AccessPackageAssignmentResourceRoleCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AccessPackageAssignmentResourceRoleCollectionResponse) GetFieldDeserial
 }
 // GetValue gets the value property value. The value property
 func (m *AccessPackageAssignmentResourceRoleCollectionResponse) GetValue()([]AccessPackageAssignmentResourceRoleable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AccessPackageAssignmentResourceRoleable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AccessPackageAssignmentResourceRoleCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AccessPackageAssignmentResourceRoleCollectionResponse) Serialize(writer
 }
 // SetValue sets the value property value. The value property
 func (m *AccessPackageAssignmentResourceRoleCollectionResponse) SetValue(value []AccessPackageAssignmentResourceRoleable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AccessPackageAssignmentResourceRoleCollectionResponseable 
+type AccessPackageAssignmentResourceRoleCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AccessPackageAssignmentResourceRoleable)
+    SetValue(value []AccessPackageAssignmentResourceRoleable)()
 }

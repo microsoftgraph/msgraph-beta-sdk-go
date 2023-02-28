@@ -7,24 +7,14 @@ import (
 // PersonResponsibility 
 type PersonResponsibility struct {
     ItemFacet
-    // Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
-    collaborationTags []string
-    // Description of the responsibility.
-    description *string
-    // Contains a friendly name for the responsibility.
-    displayName *string
-    // The thumbnailUrl property
-    thumbnailUrl *string
-    // Contains a link to a web page or resource about the responsibility.
-    webUrl *string
 }
 // NewPersonResponsibility instantiates a new PersonResponsibility and sets the default values.
 func NewPersonResponsibility()(*PersonResponsibility) {
     m := &PersonResponsibility{
         ItemFacet: *NewItemFacet(),
     }
-    odataTypeValue := "#microsoft.graph.personResponsibility";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.personResponsibility"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreatePersonResponsibilityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,15 +23,36 @@ func CreatePersonResponsibilityFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetCollaborationTags gets the collaborationTags property value. Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
 func (m *PersonResponsibility) GetCollaborationTags()([]string) {
-    return m.collaborationTags
+    val, err := m.GetBackingStore().Get("collaborationTags")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetDescription gets the description property value. Description of the responsibility.
 func (m *PersonResponsibility) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. Contains a friendly name for the responsibility.
 func (m *PersonResponsibility) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PersonResponsibility) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -104,11 +115,25 @@ func (m *PersonResponsibility) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetThumbnailUrl gets the thumbnailUrl property value. The thumbnailUrl property
 func (m *PersonResponsibility) GetThumbnailUrl()(*string) {
-    return m.thumbnailUrl
+    val, err := m.GetBackingStore().Get("thumbnailUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetWebUrl gets the webUrl property value. Contains a link to a web page or resource about the responsibility.
 func (m *PersonResponsibility) GetWebUrl()(*string) {
-    return m.webUrl
+    val, err := m.GetBackingStore().Get("webUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PersonResponsibility) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -150,21 +175,51 @@ func (m *PersonResponsibility) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetCollaborationTags sets the collaborationTags property value. Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
 func (m *PersonResponsibility) SetCollaborationTags(value []string)() {
-    m.collaborationTags = value
+    err := m.GetBackingStore().Set("collaborationTags", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. Description of the responsibility.
 func (m *PersonResponsibility) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. Contains a friendly name for the responsibility.
 func (m *PersonResponsibility) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetThumbnailUrl sets the thumbnailUrl property value. The thumbnailUrl property
 func (m *PersonResponsibility) SetThumbnailUrl(value *string)() {
-    m.thumbnailUrl = value
+    err := m.GetBackingStore().Set("thumbnailUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWebUrl sets the webUrl property value. Contains a link to a web page or resource about the responsibility.
 func (m *PersonResponsibility) SetWebUrl(value *string)() {
-    m.webUrl = value
+    err := m.GetBackingStore().Set("webUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PersonResponsibilityable 
+type PersonResponsibilityable interface {
+    ItemFacetable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCollaborationTags()([]string)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetThumbnailUrl()(*string)
+    GetWebUrl()(*string)
+    SetCollaborationTags(value []string)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetThumbnailUrl(value *string)()
+    SetWebUrl(value *string)()
 }

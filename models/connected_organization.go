@@ -8,26 +8,6 @@ import (
 // ConnectedOrganization 
 type ConnectedOrganization struct {
     Entity
-    // UPN of the user who created this resource. Read-only.
-    createdBy *string
-    // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The description of the connected organization.
-    description *string
-    // The display name of the connected organization. Supports $filter (eq).
-    displayName *string
-    // The externalSponsors property
-    externalSponsors []DirectoryObjectable
-    // The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Read-only. Nullable. Supports $select and $filter(eq). To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/microsoft.graph.azureActiveDirectoryTenant/tenantId eq 'bcfdfff4-cbc3-43f2-9000-ba7b7515054f').
-    identitySources []IdentitySourceable
-    // The internalSponsors property
-    internalSponsors []DirectoryObjectable
-    // UPN of the user who last modified this resource. Read-only.
-    modifiedBy *string
-    // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-    modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. Possible values are: configured, proposed.
-    state *ConnectedOrganizationState
 }
 // NewConnectedOrganization instantiates a new connectedOrganization and sets the default values.
 func NewConnectedOrganization()(*ConnectedOrganization) {
@@ -42,23 +22,58 @@ func CreateConnectedOrganizationFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetCreatedBy gets the createdBy property value. UPN of the user who created this resource. Read-only.
 func (m *ConnectedOrganization) GetCreatedBy()(*string) {
-    return m.createdBy
+    val, err := m.GetBackingStore().Get("createdBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *ConnectedOrganization) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDescription gets the description property value. The description of the connected organization.
 func (m *ConnectedOrganization) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the connected organization. Supports $filter (eq).
 func (m *ConnectedOrganization) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetExternalSponsors gets the externalSponsors property value. The externalSponsors property
 func (m *ConnectedOrganization) GetExternalSponsors()([]DirectoryObjectable) {
-    return m.externalSponsors
+    val, err := m.GetBackingStore().Get("externalSponsors")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DirectoryObjectable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConnectedOrganization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -179,23 +194,58 @@ func (m *ConnectedOrganization) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetIdentitySources gets the identitySources property value. The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Read-only. Nullable. Supports $select and $filter(eq). To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/microsoft.graph.azureActiveDirectoryTenant/tenantId eq 'bcfdfff4-cbc3-43f2-9000-ba7b7515054f').
 func (m *ConnectedOrganization) GetIdentitySources()([]IdentitySourceable) {
-    return m.identitySources
+    val, err := m.GetBackingStore().Get("identitySources")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IdentitySourceable)
+    }
+    return nil
 }
 // GetInternalSponsors gets the internalSponsors property value. The internalSponsors property
 func (m *ConnectedOrganization) GetInternalSponsors()([]DirectoryObjectable) {
-    return m.internalSponsors
+    val, err := m.GetBackingStore().Get("internalSponsors")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DirectoryObjectable)
+    }
+    return nil
 }
 // GetModifiedBy gets the modifiedBy property value. UPN of the user who last modified this resource. Read-only.
 func (m *ConnectedOrganization) GetModifiedBy()(*string) {
-    return m.modifiedBy
+    val, err := m.GetBackingStore().Get("modifiedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *ConnectedOrganization) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.modifiedDateTime
+    val, err := m.GetBackingStore().Get("modifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetState gets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. Possible values are: configured, proposed.
 func (m *ConnectedOrganization) GetState()(*ConnectedOrganizationState) {
-    return m.state
+    val, err := m.GetBackingStore().Get("state")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ConnectedOrganizationState)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ConnectedOrganization) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -280,41 +330,96 @@ func (m *ConnectedOrganization) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetCreatedBy sets the createdBy property value. UPN of the user who created this resource. Read-only.
 func (m *ConnectedOrganization) SetCreatedBy(value *string)() {
-    m.createdBy = value
+    err := m.GetBackingStore().Set("createdBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *ConnectedOrganization) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. The description of the connected organization.
 func (m *ConnectedOrganization) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the connected organization. Supports $filter (eq).
 func (m *ConnectedOrganization) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExternalSponsors sets the externalSponsors property value. The externalSponsors property
 func (m *ConnectedOrganization) SetExternalSponsors(value []DirectoryObjectable)() {
-    m.externalSponsors = value
+    err := m.GetBackingStore().Set("externalSponsors", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentitySources sets the identitySources property value. The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Read-only. Nullable. Supports $select and $filter(eq). To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/microsoft.graph.azureActiveDirectoryTenant/tenantId eq 'bcfdfff4-cbc3-43f2-9000-ba7b7515054f').
 func (m *ConnectedOrganization) SetIdentitySources(value []IdentitySourceable)() {
-    m.identitySources = value
+    err := m.GetBackingStore().Set("identitySources", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInternalSponsors sets the internalSponsors property value. The internalSponsors property
 func (m *ConnectedOrganization) SetInternalSponsors(value []DirectoryObjectable)() {
-    m.internalSponsors = value
+    err := m.GetBackingStore().Set("internalSponsors", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetModifiedBy sets the modifiedBy property value. UPN of the user who last modified this resource. Read-only.
 func (m *ConnectedOrganization) SetModifiedBy(value *string)() {
-    m.modifiedBy = value
+    err := m.GetBackingStore().Set("modifiedBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetModifiedDateTime sets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *ConnectedOrganization) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.modifiedDateTime = value
+    err := m.GetBackingStore().Set("modifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetState sets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. Possible values are: configured, proposed.
 func (m *ConnectedOrganization) SetState(value *ConnectedOrganizationState)() {
-    m.state = value
+    err := m.GetBackingStore().Set("state", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ConnectedOrganizationable 
+type ConnectedOrganizationable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCreatedBy()(*string)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetExternalSponsors()([]DirectoryObjectable)
+    GetIdentitySources()([]IdentitySourceable)
+    GetInternalSponsors()([]DirectoryObjectable)
+    GetModifiedBy()(*string)
+    GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetState()(*ConnectedOrganizationState)
+    SetCreatedBy(value *string)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetExternalSponsors(value []DirectoryObjectable)()
+    SetIdentitySources(value []IdentitySourceable)()
+    SetInternalSponsors(value []DirectoryObjectable)()
+    SetModifiedBy(value *string)()
+    SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetState(value *ConnectedOrganizationState)()
 }

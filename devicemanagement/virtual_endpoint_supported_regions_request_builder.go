@@ -60,8 +60,8 @@ func NewVirtualEndpointSupportedRegionsRequestBuilderInternal(pathParameters map
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewVirtualEndpointSupportedRegionsRequestBuilder instantiates a new SupportedRegionsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewVirtualEndpointSupportedRegionsRequestBuilder(rawUrl string, requestAdap
 }
 // Count provides operations to count the resources in the collection.
 func (m *VirtualEndpointSupportedRegionsRequestBuilder) Count()(*VirtualEndpointSupportedRegionsCountRequestBuilder) {
-    return NewVirtualEndpointSupportedRegionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointSupportedRegionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list the supported regions that are available for creating Cloud PC connections.
 // [Find more info here]
@@ -138,7 +138,10 @@ func (m *VirtualEndpointSupportedRegionsRequestBuilder) ToPostRequestInformation
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

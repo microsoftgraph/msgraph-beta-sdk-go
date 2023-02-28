@@ -8,22 +8,6 @@ import (
 // GroupPolicyConfiguration the group policy configuration entity contains the configured values for one or more group policy definitions.
 type GroupPolicyConfiguration struct {
     Entity
-    // The list of group assignments for the configuration.
-    assignments []GroupPolicyConfigurationAssignmentable
-    // The date and time the object was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The list of enabled or disabled group policy definition values for the configuration.
-    definitionValues []GroupPolicyDefinitionValueable
-    // User provided description for the resource object.
-    description *string
-    // User provided name for the resource object.
-    displayName *string
-    // The date and time the entity was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Group Policy Configuration Ingestion Type
-    policyConfigurationIngestionType *GroupPolicyConfigurationIngestionType
-    // The list of scope tags for the configuration.
-    roleScopeTagIds []string
 }
 // NewGroupPolicyConfiguration instantiates a new groupPolicyConfiguration and sets the default values.
 func NewGroupPolicyConfiguration()(*GroupPolicyConfiguration) {
@@ -38,23 +22,58 @@ func CreateGroupPolicyConfigurationFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAssignments gets the assignments property value. The list of group assignments for the configuration.
 func (m *GroupPolicyConfiguration) GetAssignments()([]GroupPolicyConfigurationAssignmentable) {
-    return m.assignments
+    val, err := m.GetBackingStore().Get("assignments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GroupPolicyConfigurationAssignmentable)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time the object was created.
 func (m *GroupPolicyConfiguration) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDefinitionValues gets the definitionValues property value. The list of enabled or disabled group policy definition values for the configuration.
 func (m *GroupPolicyConfiguration) GetDefinitionValues()([]GroupPolicyDefinitionValueable) {
-    return m.definitionValues
+    val, err := m.GetBackingStore().Get("definitionValues")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GroupPolicyDefinitionValueable)
+    }
+    return nil
 }
 // GetDescription gets the description property value. User provided description for the resource object.
 func (m *GroupPolicyConfiguration) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. User provided name for the resource object.
 func (m *GroupPolicyConfiguration) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -155,15 +174,36 @@ func (m *GroupPolicyConfiguration) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
 func (m *GroupPolicyConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetPolicyConfigurationIngestionType gets the policyConfigurationIngestionType property value. Group Policy Configuration Ingestion Type
 func (m *GroupPolicyConfiguration) GetPolicyConfigurationIngestionType()(*GroupPolicyConfigurationIngestionType) {
-    return m.policyConfigurationIngestionType
+    val, err := m.GetBackingStore().Get("policyConfigurationIngestionType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*GroupPolicyConfigurationIngestionType)
+    }
+    return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. The list of scope tags for the configuration.
 func (m *GroupPolicyConfiguration) GetRoleScopeTagIds()([]string) {
-    return m.roleScopeTagIds
+    val, err := m.GetBackingStore().Get("roleScopeTagIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -232,33 +272,78 @@ func (m *GroupPolicyConfiguration) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAssignments sets the assignments property value. The list of group assignments for the configuration.
 func (m *GroupPolicyConfiguration) SetAssignments(value []GroupPolicyConfigurationAssignmentable)() {
-    m.assignments = value
+    err := m.GetBackingStore().Set("assignments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time the object was created.
 func (m *GroupPolicyConfiguration) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefinitionValues sets the definitionValues property value. The list of enabled or disabled group policy definition values for the configuration.
 func (m *GroupPolicyConfiguration) SetDefinitionValues(value []GroupPolicyDefinitionValueable)() {
-    m.definitionValues = value
+    err := m.GetBackingStore().Set("definitionValues", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. User provided description for the resource object.
 func (m *GroupPolicyConfiguration) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. User provided name for the resource object.
 func (m *GroupPolicyConfiguration) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the entity was last modified.
 func (m *GroupPolicyConfiguration) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPolicyConfigurationIngestionType sets the policyConfigurationIngestionType property value. Group Policy Configuration Ingestion Type
 func (m *GroupPolicyConfiguration) SetPolicyConfigurationIngestionType(value *GroupPolicyConfigurationIngestionType)() {
-    m.policyConfigurationIngestionType = value
+    err := m.GetBackingStore().Set("policyConfigurationIngestionType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. The list of scope tags for the configuration.
 func (m *GroupPolicyConfiguration) SetRoleScopeTagIds(value []string)() {
-    m.roleScopeTagIds = value
+    err := m.GetBackingStore().Set("roleScopeTagIds", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GroupPolicyConfigurationable 
+type GroupPolicyConfigurationable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssignments()([]GroupPolicyConfigurationAssignmentable)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDefinitionValues()([]GroupPolicyDefinitionValueable)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetPolicyConfigurationIngestionType()(*GroupPolicyConfigurationIngestionType)
+    GetRoleScopeTagIds()([]string)
+    SetAssignments(value []GroupPolicyConfigurationAssignmentable)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDefinitionValues(value []GroupPolicyDefinitionValueable)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetPolicyConfigurationIngestionType(value *GroupPolicyConfigurationIngestionType)()
+    SetRoleScopeTagIds(value []string)()
 }

@@ -7,8 +7,6 @@ import (
 // MeetingRegistrantBase 
 type MeetingRegistrantBase struct {
     Entity
-    // A unique web URL for the registrant to join the meeting. Read-only.
-    joinWebUrl *string
 }
 // NewMeetingRegistrantBase instantiates a new meetingRegistrantBase and sets the default values.
 func NewMeetingRegistrantBase()(*MeetingRegistrantBase) {
@@ -58,7 +56,14 @@ func (m *MeetingRegistrantBase) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetJoinWebUrl gets the joinWebUrl property value. A unique web URL for the registrant to join the meeting. Read-only.
 func (m *MeetingRegistrantBase) GetJoinWebUrl()(*string) {
-    return m.joinWebUrl
+    val, err := m.GetBackingStore().Get("joinWebUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MeetingRegistrantBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -76,5 +81,15 @@ func (m *MeetingRegistrantBase) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetJoinWebUrl sets the joinWebUrl property value. A unique web URL for the registrant to join the meeting. Read-only.
 func (m *MeetingRegistrantBase) SetJoinWebUrl(value *string)() {
-    m.joinWebUrl = value
+    err := m.GetBackingStore().Set("joinWebUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MeetingRegistrantBaseable 
+type MeetingRegistrantBaseable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetJoinWebUrl()(*string)
+    SetJoinWebUrl(value *string)()
 }

@@ -8,8 +8,6 @@ import (
 // RetentionLabelCollectionResponse 
 type RetentionLabelCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
-    // The value property
-    value []RetentionLabelable
 }
 // NewRetentionLabelCollectionResponse instantiates a new RetentionLabelCollectionResponse and sets the default values.
 func NewRetentionLabelCollectionResponse()(*RetentionLabelCollectionResponse) {
@@ -43,7 +41,14 @@ func (m *RetentionLabelCollectionResponse) GetFieldDeserializers()(map[string]fu
 }
 // GetValue gets the value property value. The value property
 func (m *RetentionLabelCollectionResponse) GetValue()([]RetentionLabelable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]RetentionLabelable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RetentionLabelCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *RetentionLabelCollectionResponse) Serialize(writer i878a80d2330e89d2689
 }
 // SetValue sets the value property value. The value property
 func (m *RetentionLabelCollectionResponse) SetValue(value []RetentionLabelable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RetentionLabelCollectionResponseable 
+type RetentionLabelCollectionResponseable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]RetentionLabelable)
+    SetValue(value []RetentionLabelable)()
 }

@@ -51,10 +51,6 @@ type EdiscoveryCasesItemCustodiansRequestBuilderPostRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ApplyHold provides operations to call the applyHold method.
-func (m *EdiscoveryCasesItemCustodiansRequestBuilder) ApplyHold()(*EdiscoveryCasesItemCustodiansApplyHoldRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansApplyHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewEdiscoveryCasesItemCustodiansRequestBuilderInternal instantiates a new CustodiansRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemCustodiansRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemCustodiansRequestBuilder) {
     m := &EdiscoveryCasesItemCustodiansRequestBuilder{
@@ -64,8 +60,8 @@ func NewEdiscoveryCasesItemCustodiansRequestBuilderInternal(pathParameters map[s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEdiscoveryCasesItemCustodiansRequestBuilder instantiates a new CustodiansRequestBuilder and sets the default values.
@@ -76,7 +72,15 @@ func NewEdiscoveryCasesItemCustodiansRequestBuilder(rawUrl string, requestAdapte
 }
 // Count provides operations to count the resources in the collection.
 func (m *EdiscoveryCasesItemCustodiansRequestBuilder) Count()(*EdiscoveryCasesItemCustodiansCountRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesItemCustodiansCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// EdiscoveryApplyHold provides operations to call the applyHold method.
+func (m *EdiscoveryCasesItemCustodiansRequestBuilder) EdiscoveryApplyHold()(*EdiscoveryCasesItemCustodiansEdiscoveryApplyHoldRequestBuilder) {
+    return NewEdiscoveryCasesItemCustodiansEdiscoveryApplyHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// EdiscoveryRemoveHold provides operations to call the removeHold method.
+func (m *EdiscoveryCasesItemCustodiansRequestBuilder) EdiscoveryRemoveHold()(*EdiscoveryCasesItemCustodiansEdiscoveryRemoveHoldRequestBuilder) {
+    return NewEdiscoveryCasesItemCustodiansEdiscoveryRemoveHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of the custodian objects and their properties.
 // [Find more info here]
@@ -122,10 +126,6 @@ func (m *EdiscoveryCasesItemCustodiansRequestBuilder) Post(ctx context.Context, 
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Custodianable), nil
 }
-// RemoveHold provides operations to call the removeHold method.
-func (m *EdiscoveryCasesItemCustodiansRequestBuilder) RemoveHold()(*EdiscoveryCasesItemCustodiansRemoveHoldRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansRemoveHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // ToGetRequestInformation get a list of the custodian objects and their properties.
 func (m *EdiscoveryCasesItemCustodiansRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -149,7 +149,10 @@ func (m *EdiscoveryCasesItemCustodiansRequestBuilder) ToPostRequestInformation(c
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

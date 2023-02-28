@@ -7,8 +7,6 @@ import (
 // AospDeviceOwnerWiFiConfigurationCollectionResponse 
 type AospDeviceOwnerWiFiConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AospDeviceOwnerWiFiConfigurationable
 }
 // NewAospDeviceOwnerWiFiConfigurationCollectionResponse instantiates a new AospDeviceOwnerWiFiConfigurationCollectionResponse and sets the default values.
 func NewAospDeviceOwnerWiFiConfigurationCollectionResponse()(*AospDeviceOwnerWiFiConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AospDeviceOwnerWiFiConfigurationCollectionResponse) GetFieldDeserialize
 }
 // GetValue gets the value property value. The value property
 func (m *AospDeviceOwnerWiFiConfigurationCollectionResponse) GetValue()([]AospDeviceOwnerWiFiConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AospDeviceOwnerWiFiConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AospDeviceOwnerWiFiConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AospDeviceOwnerWiFiConfigurationCollectionResponse) Serialize(writer i8
 }
 // SetValue sets the value property value. The value property
 func (m *AospDeviceOwnerWiFiConfigurationCollectionResponse) SetValue(value []AospDeviceOwnerWiFiConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AospDeviceOwnerWiFiConfigurationCollectionResponseable 
+type AospDeviceOwnerWiFiConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AospDeviceOwnerWiFiConfigurationable)
+    SetValue(value []AospDeviceOwnerWiFiConfigurationable)()
 }

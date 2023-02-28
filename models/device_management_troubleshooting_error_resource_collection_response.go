@@ -7,8 +7,6 @@ import (
 // DeviceManagementTroubleshootingErrorResourceCollectionResponse 
 type DeviceManagementTroubleshootingErrorResourceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementTroubleshootingErrorResourceable
 }
 // NewDeviceManagementTroubleshootingErrorResourceCollectionResponse instantiates a new DeviceManagementTroubleshootingErrorResourceCollectionResponse and sets the default values.
 func NewDeviceManagementTroubleshootingErrorResourceCollectionResponse()(*DeviceManagementTroubleshootingErrorResourceCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementTroubleshootingErrorResourceCollectionResponse) GetFiel
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementTroubleshootingErrorResourceCollectionResponse) GetValue()([]DeviceManagementTroubleshootingErrorResourceable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementTroubleshootingErrorResourceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementTroubleshootingErrorResourceCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementTroubleshootingErrorResourceCollectionResponse) Seriali
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementTroubleshootingErrorResourceCollectionResponse) SetValue(value []DeviceManagementTroubleshootingErrorResourceable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementTroubleshootingErrorResourceCollectionResponseable 
+type DeviceManagementTroubleshootingErrorResourceCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementTroubleshootingErrorResourceable)
+    SetValue(value []DeviceManagementTroubleshootingErrorResourceable)()
 }

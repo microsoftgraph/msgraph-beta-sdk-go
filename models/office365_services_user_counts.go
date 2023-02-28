@@ -7,38 +7,6 @@ import (
 // Office365ServicesUserCounts 
 type Office365ServicesUserCounts struct {
     Entity
-    // The number of active users on Exchange. Any user who can read and send email is considered an active user.
-    exchangeActive *int64
-    // The number of inactive users on Exchange.
-    exchangeInactive *int64
-    // The number of active users on Microsoft 365.
-    office365Active *int64
-    // The number of inactive users on Microsoft 365.
-    office365Inactive *int64
-    // The number of active users on OneDrive. Any user who viewed or edited files, shared files internally or externally, or synced files is considered an active user.
-    oneDriveActive *int64
-    // The number of inactive users on OneDrive.
-    oneDriveInactive *int64
-    // The number of days the report covers.
-    reportPeriod *string
-    // The latest date of the content.
-    reportRefreshDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // The number of active users on SharePoint. Any user who viewed or edited files, shared files internally or externally, synced files, or viewed SharePoint pages is considered an active user.
-    sharePointActive *int64
-    // The number of inactive users on SharePoint.
-    sharePointInactive *int64
-    // The number of active users on Skype For Business. Any user who organized or participated in conferences, or joined peer-to-peer sessions is considered an active user.
-    skypeForBusinessActive *int64
-    // The number of inactive users on Skype For Business.
-    skypeForBusinessInactive *int64
-    // The number of active users on Microsoft Teams. Any user who posted messages in team channels, sent messages in private chat sessions, or participated in meetings or calls is considered an active user.
-    teamsActive *int64
-    // The number of inactive users on Microsoft Teams.
-    teamsInactive *int64
-    // The number of active users on Yammer. Any user who can post, read, or like messages is considered an active user.
-    yammerActive *int64
-    // The number of inactive users on Yammer.
-    yammerInactive *int64
 }
 // NewOffice365ServicesUserCounts instantiates a new Office365ServicesUserCounts and sets the default values.
 func NewOffice365ServicesUserCounts()(*Office365ServicesUserCounts) {
@@ -53,11 +21,25 @@ func CreateOffice365ServicesUserCountsFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetExchangeActive gets the exchangeActive property value. The number of active users on Exchange. Any user who can read and send email is considered an active user.
 func (m *Office365ServicesUserCounts) GetExchangeActive()(*int64) {
-    return m.exchangeActive
+    val, err := m.GetBackingStore().Get("exchangeActive")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetExchangeInactive gets the exchangeInactive property value. The number of inactive users on Exchange.
 func (m *Office365ServicesUserCounts) GetExchangeInactive()(*int64) {
-    return m.exchangeInactive
+    val, err := m.GetBackingStore().Get("exchangeInactive")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Office365ServicesUserCounts) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -226,59 +208,157 @@ func (m *Office365ServicesUserCounts) GetFieldDeserializers()(map[string]func(i8
 }
 // GetOffice365Active gets the office365Active property value. The number of active users on Microsoft 365.
 func (m *Office365ServicesUserCounts) GetOffice365Active()(*int64) {
-    return m.office365Active
+    val, err := m.GetBackingStore().Get("office365Active")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetOffice365Inactive gets the office365Inactive property value. The number of inactive users on Microsoft 365.
 func (m *Office365ServicesUserCounts) GetOffice365Inactive()(*int64) {
-    return m.office365Inactive
+    val, err := m.GetBackingStore().Get("office365Inactive")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetOneDriveActive gets the oneDriveActive property value. The number of active users on OneDrive. Any user who viewed or edited files, shared files internally or externally, or synced files is considered an active user.
 func (m *Office365ServicesUserCounts) GetOneDriveActive()(*int64) {
-    return m.oneDriveActive
+    val, err := m.GetBackingStore().Get("oneDriveActive")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetOneDriveInactive gets the oneDriveInactive property value. The number of inactive users on OneDrive.
 func (m *Office365ServicesUserCounts) GetOneDriveInactive()(*int64) {
-    return m.oneDriveInactive
+    val, err := m.GetBackingStore().Get("oneDriveInactive")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetReportPeriod gets the reportPeriod property value. The number of days the report covers.
 func (m *Office365ServicesUserCounts) GetReportPeriod()(*string) {
-    return m.reportPeriod
+    val, err := m.GetBackingStore().Get("reportPeriod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetReportRefreshDate gets the reportRefreshDate property value. The latest date of the content.
 func (m *Office365ServicesUserCounts) GetReportRefreshDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.reportRefreshDate
+    val, err := m.GetBackingStore().Get("reportRefreshDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetSharePointActive gets the sharePointActive property value. The number of active users on SharePoint. Any user who viewed or edited files, shared files internally or externally, synced files, or viewed SharePoint pages is considered an active user.
 func (m *Office365ServicesUserCounts) GetSharePointActive()(*int64) {
-    return m.sharePointActive
+    val, err := m.GetBackingStore().Get("sharePointActive")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetSharePointInactive gets the sharePointInactive property value. The number of inactive users on SharePoint.
 func (m *Office365ServicesUserCounts) GetSharePointInactive()(*int64) {
-    return m.sharePointInactive
+    val, err := m.GetBackingStore().Get("sharePointInactive")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetSkypeForBusinessActive gets the skypeForBusinessActive property value. The number of active users on Skype For Business. Any user who organized or participated in conferences, or joined peer-to-peer sessions is considered an active user.
 func (m *Office365ServicesUserCounts) GetSkypeForBusinessActive()(*int64) {
-    return m.skypeForBusinessActive
+    val, err := m.GetBackingStore().Get("skypeForBusinessActive")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetSkypeForBusinessInactive gets the skypeForBusinessInactive property value. The number of inactive users on Skype For Business.
 func (m *Office365ServicesUserCounts) GetSkypeForBusinessInactive()(*int64) {
-    return m.skypeForBusinessInactive
+    val, err := m.GetBackingStore().Get("skypeForBusinessInactive")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetTeamsActive gets the teamsActive property value. The number of active users on Microsoft Teams. Any user who posted messages in team channels, sent messages in private chat sessions, or participated in meetings or calls is considered an active user.
 func (m *Office365ServicesUserCounts) GetTeamsActive()(*int64) {
-    return m.teamsActive
+    val, err := m.GetBackingStore().Get("teamsActive")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetTeamsInactive gets the teamsInactive property value. The number of inactive users on Microsoft Teams.
 func (m *Office365ServicesUserCounts) GetTeamsInactive()(*int64) {
-    return m.teamsInactive
+    val, err := m.GetBackingStore().Get("teamsInactive")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetYammerActive gets the yammerActive property value. The number of active users on Yammer. Any user who can post, read, or like messages is considered an active user.
 func (m *Office365ServicesUserCounts) GetYammerActive()(*int64) {
-    return m.yammerActive
+    val, err := m.GetBackingStore().Get("yammerActive")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetYammerInactive gets the yammerInactive property value. The number of inactive users on Yammer.
 func (m *Office365ServicesUserCounts) GetYammerInactive()(*int64) {
-    return m.yammerInactive
+    val, err := m.GetBackingStore().Get("yammerInactive")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Office365ServicesUserCounts) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -386,65 +466,150 @@ func (m *Office365ServicesUserCounts) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetExchangeActive sets the exchangeActive property value. The number of active users on Exchange. Any user who can read and send email is considered an active user.
 func (m *Office365ServicesUserCounts) SetExchangeActive(value *int64)() {
-    m.exchangeActive = value
+    err := m.GetBackingStore().Set("exchangeActive", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExchangeInactive sets the exchangeInactive property value. The number of inactive users on Exchange.
 func (m *Office365ServicesUserCounts) SetExchangeInactive(value *int64)() {
-    m.exchangeInactive = value
+    err := m.GetBackingStore().Set("exchangeInactive", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOffice365Active sets the office365Active property value. The number of active users on Microsoft 365.
 func (m *Office365ServicesUserCounts) SetOffice365Active(value *int64)() {
-    m.office365Active = value
+    err := m.GetBackingStore().Set("office365Active", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOffice365Inactive sets the office365Inactive property value. The number of inactive users on Microsoft 365.
 func (m *Office365ServicesUserCounts) SetOffice365Inactive(value *int64)() {
-    m.office365Inactive = value
+    err := m.GetBackingStore().Set("office365Inactive", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOneDriveActive sets the oneDriveActive property value. The number of active users on OneDrive. Any user who viewed or edited files, shared files internally or externally, or synced files is considered an active user.
 func (m *Office365ServicesUserCounts) SetOneDriveActive(value *int64)() {
-    m.oneDriveActive = value
+    err := m.GetBackingStore().Set("oneDriveActive", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOneDriveInactive sets the oneDriveInactive property value. The number of inactive users on OneDrive.
 func (m *Office365ServicesUserCounts) SetOneDriveInactive(value *int64)() {
-    m.oneDriveInactive = value
+    err := m.GetBackingStore().Set("oneDriveInactive", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. The number of days the report covers.
 func (m *Office365ServicesUserCounts) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    err := m.GetBackingStore().Set("reportPeriod", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. The latest date of the content.
 func (m *Office365ServicesUserCounts) SetReportRefreshDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.reportRefreshDate = value
+    err := m.GetBackingStore().Set("reportRefreshDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSharePointActive sets the sharePointActive property value. The number of active users on SharePoint. Any user who viewed or edited files, shared files internally or externally, synced files, or viewed SharePoint pages is considered an active user.
 func (m *Office365ServicesUserCounts) SetSharePointActive(value *int64)() {
-    m.sharePointActive = value
+    err := m.GetBackingStore().Set("sharePointActive", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSharePointInactive sets the sharePointInactive property value. The number of inactive users on SharePoint.
 func (m *Office365ServicesUserCounts) SetSharePointInactive(value *int64)() {
-    m.sharePointInactive = value
+    err := m.GetBackingStore().Set("sharePointInactive", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSkypeForBusinessActive sets the skypeForBusinessActive property value. The number of active users on Skype For Business. Any user who organized or participated in conferences, or joined peer-to-peer sessions is considered an active user.
 func (m *Office365ServicesUserCounts) SetSkypeForBusinessActive(value *int64)() {
-    m.skypeForBusinessActive = value
+    err := m.GetBackingStore().Set("skypeForBusinessActive", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSkypeForBusinessInactive sets the skypeForBusinessInactive property value. The number of inactive users on Skype For Business.
 func (m *Office365ServicesUserCounts) SetSkypeForBusinessInactive(value *int64)() {
-    m.skypeForBusinessInactive = value
+    err := m.GetBackingStore().Set("skypeForBusinessInactive", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTeamsActive sets the teamsActive property value. The number of active users on Microsoft Teams. Any user who posted messages in team channels, sent messages in private chat sessions, or participated in meetings or calls is considered an active user.
 func (m *Office365ServicesUserCounts) SetTeamsActive(value *int64)() {
-    m.teamsActive = value
+    err := m.GetBackingStore().Set("teamsActive", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTeamsInactive sets the teamsInactive property value. The number of inactive users on Microsoft Teams.
 func (m *Office365ServicesUserCounts) SetTeamsInactive(value *int64)() {
-    m.teamsInactive = value
+    err := m.GetBackingStore().Set("teamsInactive", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetYammerActive sets the yammerActive property value. The number of active users on Yammer. Any user who can post, read, or like messages is considered an active user.
 func (m *Office365ServicesUserCounts) SetYammerActive(value *int64)() {
-    m.yammerActive = value
+    err := m.GetBackingStore().Set("yammerActive", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetYammerInactive sets the yammerInactive property value. The number of inactive users on Yammer.
 func (m *Office365ServicesUserCounts) SetYammerInactive(value *int64)() {
-    m.yammerInactive = value
+    err := m.GetBackingStore().Set("yammerInactive", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Office365ServicesUserCountsable 
+type Office365ServicesUserCountsable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetExchangeActive()(*int64)
+    GetExchangeInactive()(*int64)
+    GetOffice365Active()(*int64)
+    GetOffice365Inactive()(*int64)
+    GetOneDriveActive()(*int64)
+    GetOneDriveInactive()(*int64)
+    GetReportPeriod()(*string)
+    GetReportRefreshDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetSharePointActive()(*int64)
+    GetSharePointInactive()(*int64)
+    GetSkypeForBusinessActive()(*int64)
+    GetSkypeForBusinessInactive()(*int64)
+    GetTeamsActive()(*int64)
+    GetTeamsInactive()(*int64)
+    GetYammerActive()(*int64)
+    GetYammerInactive()(*int64)
+    SetExchangeActive(value *int64)()
+    SetExchangeInactive(value *int64)()
+    SetOffice365Active(value *int64)()
+    SetOffice365Inactive(value *int64)()
+    SetOneDriveActive(value *int64)()
+    SetOneDriveInactive(value *int64)()
+    SetReportPeriod(value *string)()
+    SetReportRefreshDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetSharePointActive(value *int64)()
+    SetSharePointInactive(value *int64)()
+    SetSkypeForBusinessActive(value *int64)()
+    SetSkypeForBusinessInactive(value *int64)()
+    SetTeamsActive(value *int64)()
+    SetTeamsInactive(value *int64)()
+    SetYammerActive(value *int64)()
+    SetYammerInactive(value *int64)()
 }

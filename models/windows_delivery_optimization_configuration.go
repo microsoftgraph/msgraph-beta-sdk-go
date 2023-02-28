@@ -7,48 +7,14 @@ import (
 // WindowsDeliveryOptimizationConfiguration 
 type WindowsDeliveryOptimizationConfiguration struct {
     DeviceConfiguration
-    // Specifies number of seconds to delay an HTTP source in a background download that is allowed to use peer-to-peer. Valid values 0 to 4294967295
-    backgroundDownloadFromHttpDelayInSeconds *int64
-    // Specifies foreground and background bandwidth usage using percentages, absolutes, or hours.
-    bandwidthMode DeliveryOptimizationBandwidthable
-    // Specifies number of seconds to delay a fall back from cache servers to an HTTP source for a background download. Valid values 0 to 2592000.
-    cacheServerBackgroundDownloadFallbackToHttpDelayInSeconds *int32
-    // Specifies number of seconds to delay a fall back from cache servers to an HTTP source for a foreground download. Valid values 0 to 2592000.​
-    cacheServerForegroundDownloadFallbackToHttpDelayInSeconds *int32
-    // Specifies cache servers host names.
-    cacheServerHostNames []string
-    // Delivery optimization mode for peer distribution
-    deliveryOptimizationMode *WindowsDeliveryOptimizationMode
-    // Specifies number of seconds to delay an HTTP source in a foreground download that is allowed to use peer-to-peer (0-86400). Valid values 0 to 86400
-    foregroundDownloadFromHttpDelayInSeconds *int64
-    // Specifies to restrict peer selection to a specfic source.
-    groupIdSource DeliveryOptimizationGroupIdSourceable
-    // Specifies the maximum time in days that each file is held in the Delivery Optimization cache after downloading successfully (0-3650). Valid values 0 to 3650
-    maximumCacheAgeInDays *int32
-    // Specifies the maximum cache size that Delivery Optimization either as a percentage or in GB.
-    maximumCacheSize DeliveryOptimizationMaxCacheSizeable
-    // Specifies the minimum battery percentage to allow the device to upload data (0-100). Valid values 0 to 100
-    minimumBatteryPercentageAllowedToUpload *int32
-    // Specifies the minimum disk size in GB to use Peer Caching (1-100000). Valid values 1 to 100000
-    minimumDiskSizeAllowedToPeerInGigabytes *int32
-    // Specifies the minimum content file size in MB enabled to use Peer Caching (1-100000). Valid values 1 to 100000
-    minimumFileSizeToCacheInMegabytes *int32
-    // Specifies the minimum RAM size in GB to use Peer Caching (1-100000). Valid values 1 to 100000
-    minimumRamAllowedToPeerInGigabytes *int32
-    // Specifies the drive that Delivery Optimization should use for its cache.
-    modifyCacheLocation *string
-    // Values to restrict peer selection by.
-    restrictPeerSelectionBy *DeliveryOptimizationRestrictPeerSelectionByOptions
-    // Possible values of a property
-    vpnPeerCaching *Enablement
 }
 // NewWindowsDeliveryOptimizationConfiguration instantiates a new WindowsDeliveryOptimizationConfiguration and sets the default values.
 func NewWindowsDeliveryOptimizationConfiguration()(*WindowsDeliveryOptimizationConfiguration) {
     m := &WindowsDeliveryOptimizationConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.windowsDeliveryOptimizationConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsDeliveryOptimizationConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsDeliveryOptimizationConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,27 +23,69 @@ func CreateWindowsDeliveryOptimizationConfigurationFromDiscriminatorValue(parseN
 }
 // GetBackgroundDownloadFromHttpDelayInSeconds gets the backgroundDownloadFromHttpDelayInSeconds property value. Specifies number of seconds to delay an HTTP source in a background download that is allowed to use peer-to-peer. Valid values 0 to 4294967295
 func (m *WindowsDeliveryOptimizationConfiguration) GetBackgroundDownloadFromHttpDelayInSeconds()(*int64) {
-    return m.backgroundDownloadFromHttpDelayInSeconds
+    val, err := m.GetBackingStore().Get("backgroundDownloadFromHttpDelayInSeconds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetBandwidthMode gets the bandwidthMode property value. Specifies foreground and background bandwidth usage using percentages, absolutes, or hours.
 func (m *WindowsDeliveryOptimizationConfiguration) GetBandwidthMode()(DeliveryOptimizationBandwidthable) {
-    return m.bandwidthMode
+    val, err := m.GetBackingStore().Get("bandwidthMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeliveryOptimizationBandwidthable)
+    }
+    return nil
 }
 // GetCacheServerBackgroundDownloadFallbackToHttpDelayInSeconds gets the cacheServerBackgroundDownloadFallbackToHttpDelayInSeconds property value. Specifies number of seconds to delay a fall back from cache servers to an HTTP source for a background download. Valid values 0 to 2592000.
 func (m *WindowsDeliveryOptimizationConfiguration) GetCacheServerBackgroundDownloadFallbackToHttpDelayInSeconds()(*int32) {
-    return m.cacheServerBackgroundDownloadFallbackToHttpDelayInSeconds
+    val, err := m.GetBackingStore().Get("cacheServerBackgroundDownloadFallbackToHttpDelayInSeconds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetCacheServerForegroundDownloadFallbackToHttpDelayInSeconds gets the cacheServerForegroundDownloadFallbackToHttpDelayInSeconds property value. Specifies number of seconds to delay a fall back from cache servers to an HTTP source for a foreground download. Valid values 0 to 2592000.​
 func (m *WindowsDeliveryOptimizationConfiguration) GetCacheServerForegroundDownloadFallbackToHttpDelayInSeconds()(*int32) {
-    return m.cacheServerForegroundDownloadFallbackToHttpDelayInSeconds
+    val, err := m.GetBackingStore().Get("cacheServerForegroundDownloadFallbackToHttpDelayInSeconds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetCacheServerHostNames gets the cacheServerHostNames property value. Specifies cache servers host names.
 func (m *WindowsDeliveryOptimizationConfiguration) GetCacheServerHostNames()([]string) {
-    return m.cacheServerHostNames
+    val, err := m.GetBackingStore().Get("cacheServerHostNames")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetDeliveryOptimizationMode gets the deliveryOptimizationMode property value. Delivery optimization mode for peer distribution
 func (m *WindowsDeliveryOptimizationConfiguration) GetDeliveryOptimizationMode()(*WindowsDeliveryOptimizationMode) {
-    return m.deliveryOptimizationMode
+    val, err := m.GetBackingStore().Get("deliveryOptimizationMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WindowsDeliveryOptimizationMode)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsDeliveryOptimizationConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -260,47 +268,124 @@ func (m *WindowsDeliveryOptimizationConfiguration) GetFieldDeserializers()(map[s
 }
 // GetForegroundDownloadFromHttpDelayInSeconds gets the foregroundDownloadFromHttpDelayInSeconds property value. Specifies number of seconds to delay an HTTP source in a foreground download that is allowed to use peer-to-peer (0-86400). Valid values 0 to 86400
 func (m *WindowsDeliveryOptimizationConfiguration) GetForegroundDownloadFromHttpDelayInSeconds()(*int64) {
-    return m.foregroundDownloadFromHttpDelayInSeconds
+    val, err := m.GetBackingStore().Get("foregroundDownloadFromHttpDelayInSeconds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetGroupIdSource gets the groupIdSource property value. Specifies to restrict peer selection to a specfic source.
 func (m *WindowsDeliveryOptimizationConfiguration) GetGroupIdSource()(DeliveryOptimizationGroupIdSourceable) {
-    return m.groupIdSource
+    val, err := m.GetBackingStore().Get("groupIdSource")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeliveryOptimizationGroupIdSourceable)
+    }
+    return nil
 }
 // GetMaximumCacheAgeInDays gets the maximumCacheAgeInDays property value. Specifies the maximum time in days that each file is held in the Delivery Optimization cache after downloading successfully (0-3650). Valid values 0 to 3650
 func (m *WindowsDeliveryOptimizationConfiguration) GetMaximumCacheAgeInDays()(*int32) {
-    return m.maximumCacheAgeInDays
+    val, err := m.GetBackingStore().Get("maximumCacheAgeInDays")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetMaximumCacheSize gets the maximumCacheSize property value. Specifies the maximum cache size that Delivery Optimization either as a percentage or in GB.
 func (m *WindowsDeliveryOptimizationConfiguration) GetMaximumCacheSize()(DeliveryOptimizationMaxCacheSizeable) {
-    return m.maximumCacheSize
+    val, err := m.GetBackingStore().Get("maximumCacheSize")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeliveryOptimizationMaxCacheSizeable)
+    }
+    return nil
 }
 // GetMinimumBatteryPercentageAllowedToUpload gets the minimumBatteryPercentageAllowedToUpload property value. Specifies the minimum battery percentage to allow the device to upload data (0-100). Valid values 0 to 100
 func (m *WindowsDeliveryOptimizationConfiguration) GetMinimumBatteryPercentageAllowedToUpload()(*int32) {
-    return m.minimumBatteryPercentageAllowedToUpload
+    val, err := m.GetBackingStore().Get("minimumBatteryPercentageAllowedToUpload")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetMinimumDiskSizeAllowedToPeerInGigabytes gets the minimumDiskSizeAllowedToPeerInGigabytes property value. Specifies the minimum disk size in GB to use Peer Caching (1-100000). Valid values 1 to 100000
 func (m *WindowsDeliveryOptimizationConfiguration) GetMinimumDiskSizeAllowedToPeerInGigabytes()(*int32) {
-    return m.minimumDiskSizeAllowedToPeerInGigabytes
+    val, err := m.GetBackingStore().Get("minimumDiskSizeAllowedToPeerInGigabytes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetMinimumFileSizeToCacheInMegabytes gets the minimumFileSizeToCacheInMegabytes property value. Specifies the minimum content file size in MB enabled to use Peer Caching (1-100000). Valid values 1 to 100000
 func (m *WindowsDeliveryOptimizationConfiguration) GetMinimumFileSizeToCacheInMegabytes()(*int32) {
-    return m.minimumFileSizeToCacheInMegabytes
+    val, err := m.GetBackingStore().Get("minimumFileSizeToCacheInMegabytes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetMinimumRamAllowedToPeerInGigabytes gets the minimumRamAllowedToPeerInGigabytes property value. Specifies the minimum RAM size in GB to use Peer Caching (1-100000). Valid values 1 to 100000
 func (m *WindowsDeliveryOptimizationConfiguration) GetMinimumRamAllowedToPeerInGigabytes()(*int32) {
-    return m.minimumRamAllowedToPeerInGigabytes
+    val, err := m.GetBackingStore().Get("minimumRamAllowedToPeerInGigabytes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetModifyCacheLocation gets the modifyCacheLocation property value. Specifies the drive that Delivery Optimization should use for its cache.
 func (m *WindowsDeliveryOptimizationConfiguration) GetModifyCacheLocation()(*string) {
-    return m.modifyCacheLocation
+    val, err := m.GetBackingStore().Get("modifyCacheLocation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRestrictPeerSelectionBy gets the restrictPeerSelectionBy property value. Values to restrict peer selection by.
 func (m *WindowsDeliveryOptimizationConfiguration) GetRestrictPeerSelectionBy()(*DeliveryOptimizationRestrictPeerSelectionByOptions) {
-    return m.restrictPeerSelectionBy
+    val, err := m.GetBackingStore().Get("restrictPeerSelectionBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeliveryOptimizationRestrictPeerSelectionByOptions)
+    }
+    return nil
 }
 // GetVpnPeerCaching gets the vpnPeerCaching property value. Possible values of a property
 func (m *WindowsDeliveryOptimizationConfiguration) GetVpnPeerCaching()(*Enablement) {
-    return m.vpnPeerCaching
+    val, err := m.GetBackingStore().Get("vpnPeerCaching")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Enablement)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsDeliveryOptimizationConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -417,69 +502,159 @@ func (m *WindowsDeliveryOptimizationConfiguration) Serialize(writer i878a80d2330
 }
 // SetBackgroundDownloadFromHttpDelayInSeconds sets the backgroundDownloadFromHttpDelayInSeconds property value. Specifies number of seconds to delay an HTTP source in a background download that is allowed to use peer-to-peer. Valid values 0 to 4294967295
 func (m *WindowsDeliveryOptimizationConfiguration) SetBackgroundDownloadFromHttpDelayInSeconds(value *int64)() {
-    m.backgroundDownloadFromHttpDelayInSeconds = value
+    err := m.GetBackingStore().Set("backgroundDownloadFromHttpDelayInSeconds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBandwidthMode sets the bandwidthMode property value. Specifies foreground and background bandwidth usage using percentages, absolutes, or hours.
 func (m *WindowsDeliveryOptimizationConfiguration) SetBandwidthMode(value DeliveryOptimizationBandwidthable)() {
-    m.bandwidthMode = value
+    err := m.GetBackingStore().Set("bandwidthMode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCacheServerBackgroundDownloadFallbackToHttpDelayInSeconds sets the cacheServerBackgroundDownloadFallbackToHttpDelayInSeconds property value. Specifies number of seconds to delay a fall back from cache servers to an HTTP source for a background download. Valid values 0 to 2592000.
 func (m *WindowsDeliveryOptimizationConfiguration) SetCacheServerBackgroundDownloadFallbackToHttpDelayInSeconds(value *int32)() {
-    m.cacheServerBackgroundDownloadFallbackToHttpDelayInSeconds = value
+    err := m.GetBackingStore().Set("cacheServerBackgroundDownloadFallbackToHttpDelayInSeconds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCacheServerForegroundDownloadFallbackToHttpDelayInSeconds sets the cacheServerForegroundDownloadFallbackToHttpDelayInSeconds property value. Specifies number of seconds to delay a fall back from cache servers to an HTTP source for a foreground download. Valid values 0 to 2592000.​
 func (m *WindowsDeliveryOptimizationConfiguration) SetCacheServerForegroundDownloadFallbackToHttpDelayInSeconds(value *int32)() {
-    m.cacheServerForegroundDownloadFallbackToHttpDelayInSeconds = value
+    err := m.GetBackingStore().Set("cacheServerForegroundDownloadFallbackToHttpDelayInSeconds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCacheServerHostNames sets the cacheServerHostNames property value. Specifies cache servers host names.
 func (m *WindowsDeliveryOptimizationConfiguration) SetCacheServerHostNames(value []string)() {
-    m.cacheServerHostNames = value
+    err := m.GetBackingStore().Set("cacheServerHostNames", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeliveryOptimizationMode sets the deliveryOptimizationMode property value. Delivery optimization mode for peer distribution
 func (m *WindowsDeliveryOptimizationConfiguration) SetDeliveryOptimizationMode(value *WindowsDeliveryOptimizationMode)() {
-    m.deliveryOptimizationMode = value
+    err := m.GetBackingStore().Set("deliveryOptimizationMode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetForegroundDownloadFromHttpDelayInSeconds sets the foregroundDownloadFromHttpDelayInSeconds property value. Specifies number of seconds to delay an HTTP source in a foreground download that is allowed to use peer-to-peer (0-86400). Valid values 0 to 86400
 func (m *WindowsDeliveryOptimizationConfiguration) SetForegroundDownloadFromHttpDelayInSeconds(value *int64)() {
-    m.foregroundDownloadFromHttpDelayInSeconds = value
+    err := m.GetBackingStore().Set("foregroundDownloadFromHttpDelayInSeconds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGroupIdSource sets the groupIdSource property value. Specifies to restrict peer selection to a specfic source.
 func (m *WindowsDeliveryOptimizationConfiguration) SetGroupIdSource(value DeliveryOptimizationGroupIdSourceable)() {
-    m.groupIdSource = value
+    err := m.GetBackingStore().Set("groupIdSource", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMaximumCacheAgeInDays sets the maximumCacheAgeInDays property value. Specifies the maximum time in days that each file is held in the Delivery Optimization cache after downloading successfully (0-3650). Valid values 0 to 3650
 func (m *WindowsDeliveryOptimizationConfiguration) SetMaximumCacheAgeInDays(value *int32)() {
-    m.maximumCacheAgeInDays = value
+    err := m.GetBackingStore().Set("maximumCacheAgeInDays", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMaximumCacheSize sets the maximumCacheSize property value. Specifies the maximum cache size that Delivery Optimization either as a percentage or in GB.
 func (m *WindowsDeliveryOptimizationConfiguration) SetMaximumCacheSize(value DeliveryOptimizationMaxCacheSizeable)() {
-    m.maximumCacheSize = value
+    err := m.GetBackingStore().Set("maximumCacheSize", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMinimumBatteryPercentageAllowedToUpload sets the minimumBatteryPercentageAllowedToUpload property value. Specifies the minimum battery percentage to allow the device to upload data (0-100). Valid values 0 to 100
 func (m *WindowsDeliveryOptimizationConfiguration) SetMinimumBatteryPercentageAllowedToUpload(value *int32)() {
-    m.minimumBatteryPercentageAllowedToUpload = value
+    err := m.GetBackingStore().Set("minimumBatteryPercentageAllowedToUpload", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMinimumDiskSizeAllowedToPeerInGigabytes sets the minimumDiskSizeAllowedToPeerInGigabytes property value. Specifies the minimum disk size in GB to use Peer Caching (1-100000). Valid values 1 to 100000
 func (m *WindowsDeliveryOptimizationConfiguration) SetMinimumDiskSizeAllowedToPeerInGigabytes(value *int32)() {
-    m.minimumDiskSizeAllowedToPeerInGigabytes = value
+    err := m.GetBackingStore().Set("minimumDiskSizeAllowedToPeerInGigabytes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMinimumFileSizeToCacheInMegabytes sets the minimumFileSizeToCacheInMegabytes property value. Specifies the minimum content file size in MB enabled to use Peer Caching (1-100000). Valid values 1 to 100000
 func (m *WindowsDeliveryOptimizationConfiguration) SetMinimumFileSizeToCacheInMegabytes(value *int32)() {
-    m.minimumFileSizeToCacheInMegabytes = value
+    err := m.GetBackingStore().Set("minimumFileSizeToCacheInMegabytes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMinimumRamAllowedToPeerInGigabytes sets the minimumRamAllowedToPeerInGigabytes property value. Specifies the minimum RAM size in GB to use Peer Caching (1-100000). Valid values 1 to 100000
 func (m *WindowsDeliveryOptimizationConfiguration) SetMinimumRamAllowedToPeerInGigabytes(value *int32)() {
-    m.minimumRamAllowedToPeerInGigabytes = value
+    err := m.GetBackingStore().Set("minimumRamAllowedToPeerInGigabytes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetModifyCacheLocation sets the modifyCacheLocation property value. Specifies the drive that Delivery Optimization should use for its cache.
 func (m *WindowsDeliveryOptimizationConfiguration) SetModifyCacheLocation(value *string)() {
-    m.modifyCacheLocation = value
+    err := m.GetBackingStore().Set("modifyCacheLocation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRestrictPeerSelectionBy sets the restrictPeerSelectionBy property value. Values to restrict peer selection by.
 func (m *WindowsDeliveryOptimizationConfiguration) SetRestrictPeerSelectionBy(value *DeliveryOptimizationRestrictPeerSelectionByOptions)() {
-    m.restrictPeerSelectionBy = value
+    err := m.GetBackingStore().Set("restrictPeerSelectionBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVpnPeerCaching sets the vpnPeerCaching property value. Possible values of a property
 func (m *WindowsDeliveryOptimizationConfiguration) SetVpnPeerCaching(value *Enablement)() {
-    m.vpnPeerCaching = value
+    err := m.GetBackingStore().Set("vpnPeerCaching", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsDeliveryOptimizationConfigurationable 
+type WindowsDeliveryOptimizationConfigurationable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackgroundDownloadFromHttpDelayInSeconds()(*int64)
+    GetBandwidthMode()(DeliveryOptimizationBandwidthable)
+    GetCacheServerBackgroundDownloadFallbackToHttpDelayInSeconds()(*int32)
+    GetCacheServerForegroundDownloadFallbackToHttpDelayInSeconds()(*int32)
+    GetCacheServerHostNames()([]string)
+    GetDeliveryOptimizationMode()(*WindowsDeliveryOptimizationMode)
+    GetForegroundDownloadFromHttpDelayInSeconds()(*int64)
+    GetGroupIdSource()(DeliveryOptimizationGroupIdSourceable)
+    GetMaximumCacheAgeInDays()(*int32)
+    GetMaximumCacheSize()(DeliveryOptimizationMaxCacheSizeable)
+    GetMinimumBatteryPercentageAllowedToUpload()(*int32)
+    GetMinimumDiskSizeAllowedToPeerInGigabytes()(*int32)
+    GetMinimumFileSizeToCacheInMegabytes()(*int32)
+    GetMinimumRamAllowedToPeerInGigabytes()(*int32)
+    GetModifyCacheLocation()(*string)
+    GetRestrictPeerSelectionBy()(*DeliveryOptimizationRestrictPeerSelectionByOptions)
+    GetVpnPeerCaching()(*Enablement)
+    SetBackgroundDownloadFromHttpDelayInSeconds(value *int64)()
+    SetBandwidthMode(value DeliveryOptimizationBandwidthable)()
+    SetCacheServerBackgroundDownloadFallbackToHttpDelayInSeconds(value *int32)()
+    SetCacheServerForegroundDownloadFallbackToHttpDelayInSeconds(value *int32)()
+    SetCacheServerHostNames(value []string)()
+    SetDeliveryOptimizationMode(value *WindowsDeliveryOptimizationMode)()
+    SetForegroundDownloadFromHttpDelayInSeconds(value *int64)()
+    SetGroupIdSource(value DeliveryOptimizationGroupIdSourceable)()
+    SetMaximumCacheAgeInDays(value *int32)()
+    SetMaximumCacheSize(value DeliveryOptimizationMaxCacheSizeable)()
+    SetMinimumBatteryPercentageAllowedToUpload(value *int32)()
+    SetMinimumDiskSizeAllowedToPeerInGigabytes(value *int32)()
+    SetMinimumFileSizeToCacheInMegabytes(value *int32)()
+    SetMinimumRamAllowedToPeerInGigabytes(value *int32)()
+    SetModifyCacheLocation(value *string)()
+    SetRestrictPeerSelectionBy(value *DeliveryOptimizationRestrictPeerSelectionByOptions)()
+    SetVpnPeerCaching(value *Enablement)()
 }

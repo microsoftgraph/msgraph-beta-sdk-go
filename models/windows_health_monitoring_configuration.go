@@ -7,20 +7,14 @@ import (
 // WindowsHealthMonitoringConfiguration 
 type WindowsHealthMonitoringConfiguration struct {
     DeviceConfiguration
-    // Possible values of a property
-    allowDeviceHealthMonitoring *Enablement
-    // Specifies custom set of events collected from the device where health monitoring is enabled
-    configDeviceHealthMonitoringCustomScope *string
-    // Device health monitoring scope
-    configDeviceHealthMonitoringScope *WindowsHealthMonitoringScope
 }
 // NewWindowsHealthMonitoringConfiguration instantiates a new WindowsHealthMonitoringConfiguration and sets the default values.
 func NewWindowsHealthMonitoringConfiguration()(*WindowsHealthMonitoringConfiguration) {
     m := &WindowsHealthMonitoringConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.windowsHealthMonitoringConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsHealthMonitoringConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsHealthMonitoringConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,15 +23,36 @@ func CreateWindowsHealthMonitoringConfigurationFromDiscriminatorValue(parseNode 
 }
 // GetAllowDeviceHealthMonitoring gets the allowDeviceHealthMonitoring property value. Possible values of a property
 func (m *WindowsHealthMonitoringConfiguration) GetAllowDeviceHealthMonitoring()(*Enablement) {
-    return m.allowDeviceHealthMonitoring
+    val, err := m.GetBackingStore().Get("allowDeviceHealthMonitoring")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Enablement)
+    }
+    return nil
 }
 // GetConfigDeviceHealthMonitoringCustomScope gets the configDeviceHealthMonitoringCustomScope property value. Specifies custom set of events collected from the device where health monitoring is enabled
 func (m *WindowsHealthMonitoringConfiguration) GetConfigDeviceHealthMonitoringCustomScope()(*string) {
-    return m.configDeviceHealthMonitoringCustomScope
+    val, err := m.GetBackingStore().Get("configDeviceHealthMonitoringCustomScope")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetConfigDeviceHealthMonitoringScope gets the configDeviceHealthMonitoringScope property value. Device health monitoring scope
 func (m *WindowsHealthMonitoringConfiguration) GetConfigDeviceHealthMonitoringScope()(*WindowsHealthMonitoringScope) {
-    return m.configDeviceHealthMonitoringScope
+    val, err := m.GetBackingStore().Get("configDeviceHealthMonitoringScope")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WindowsHealthMonitoringScope)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsHealthMonitoringConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -104,13 +119,33 @@ func (m *WindowsHealthMonitoringConfiguration) Serialize(writer i878a80d2330e89d
 }
 // SetAllowDeviceHealthMonitoring sets the allowDeviceHealthMonitoring property value. Possible values of a property
 func (m *WindowsHealthMonitoringConfiguration) SetAllowDeviceHealthMonitoring(value *Enablement)() {
-    m.allowDeviceHealthMonitoring = value
+    err := m.GetBackingStore().Set("allowDeviceHealthMonitoring", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConfigDeviceHealthMonitoringCustomScope sets the configDeviceHealthMonitoringCustomScope property value. Specifies custom set of events collected from the device where health monitoring is enabled
 func (m *WindowsHealthMonitoringConfiguration) SetConfigDeviceHealthMonitoringCustomScope(value *string)() {
-    m.configDeviceHealthMonitoringCustomScope = value
+    err := m.GetBackingStore().Set("configDeviceHealthMonitoringCustomScope", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConfigDeviceHealthMonitoringScope sets the configDeviceHealthMonitoringScope property value. Device health monitoring scope
 func (m *WindowsHealthMonitoringConfiguration) SetConfigDeviceHealthMonitoringScope(value *WindowsHealthMonitoringScope)() {
-    m.configDeviceHealthMonitoringScope = value
+    err := m.GetBackingStore().Set("configDeviceHealthMonitoringScope", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsHealthMonitoringConfigurationable 
+type WindowsHealthMonitoringConfigurationable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllowDeviceHealthMonitoring()(*Enablement)
+    GetConfigDeviceHealthMonitoringCustomScope()(*string)
+    GetConfigDeviceHealthMonitoringScope()(*WindowsHealthMonitoringScope)
+    SetAllowDeviceHealthMonitoring(value *Enablement)()
+    SetConfigDeviceHealthMonitoringCustomScope(value *string)()
+    SetConfigDeviceHealthMonitoringScope(value *WindowsHealthMonitoringScope)()
 }

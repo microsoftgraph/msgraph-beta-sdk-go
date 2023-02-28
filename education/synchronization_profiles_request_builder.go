@@ -60,8 +60,8 @@ func NewSynchronizationProfilesRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewSynchronizationProfilesRequestBuilder instantiates a new SynchronizationProfilesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewSynchronizationProfilesRequestBuilder(rawUrl string, requestAdapter i2ae
 }
 // Count provides operations to count the resources in the collection.
 func (m *SynchronizationProfilesRequestBuilder) Count()(*SynchronizationProfilesCountRequestBuilder) {
-    return NewSynchronizationProfilesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSynchronizationProfilesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve the collection of school data synchronization profiles in the tenant.
 // [Find more info here]
@@ -138,7 +138,10 @@ func (m *SynchronizationProfilesRequestBuilder) ToPostRequestInformation(ctx con
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

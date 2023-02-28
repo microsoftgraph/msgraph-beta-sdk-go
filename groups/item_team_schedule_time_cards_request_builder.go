@@ -53,7 +53,7 @@ type ItemTeamScheduleTimeCardsRequestBuilderPostRequestConfiguration struct {
 }
 // ClockIn provides operations to call the clockIn method.
 func (m *ItemTeamScheduleTimeCardsRequestBuilder) ClockIn()(*ItemTeamScheduleTimeCardsClockInRequestBuilder) {
-    return NewItemTeamScheduleTimeCardsClockInRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTeamScheduleTimeCardsClockInRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewItemTeamScheduleTimeCardsRequestBuilderInternal instantiates a new TimeCardsRequestBuilder and sets the default values.
 func NewItemTeamScheduleTimeCardsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamScheduleTimeCardsRequestBuilder) {
@@ -64,8 +64,8 @@ func NewItemTeamScheduleTimeCardsRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTeamScheduleTimeCardsRequestBuilder instantiates a new TimeCardsRequestBuilder and sets the default values.
@@ -76,7 +76,7 @@ func NewItemTeamScheduleTimeCardsRequestBuilder(rawUrl string, requestAdapter i2
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemTeamScheduleTimeCardsRequestBuilder) Count()(*ItemTeamScheduleTimeCardsCountRequestBuilder) {
-    return NewItemTeamScheduleTimeCardsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTeamScheduleTimeCardsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of timeCard entries in a schedule.
 // [Find more info here]
@@ -142,7 +142,10 @@ func (m *ItemTeamScheduleTimeCardsRequestBuilder) ToPostRequestInformation(ctx c
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

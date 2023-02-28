@@ -3,30 +3,20 @@ package app
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // CallsItemRedirectPostRequestBody 
 type CallsItemRedirectPostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The callbackUri property
-    callbackUri *string
-    // The maskCallee property
-    maskCallee *bool
-    // The maskCaller property
-    maskCaller *bool
-    // The targetDisposition property
-    targetDisposition *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallDisposition
-    // The targets property
-    targets []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InvitationParticipantInfoable
-    // The timeout property
-    timeout *int32
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewCallsItemRedirectPostRequestBody instantiates a new CallsItemRedirectPostRequestBody and sets the default values.
 func NewCallsItemRedirectPostRequestBody()(*CallsItemRedirectPostRequestBody) {
     m := &CallsItemRedirectPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCallsItemRedirectPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,11 +25,30 @@ func CreateCallsItemRedirectPostRequestBodyFromDiscriminatorValue(parseNode i878
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CallsItemRedirectPostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *CallsItemRedirectPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetCallbackUri gets the callbackUri property value. The callbackUri property
 func (m *CallsItemRedirectPostRequestBody) GetCallbackUri()(*string) {
-    return m.callbackUri
+    val, err := m.GetBackingStore().Get("callbackUri")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CallsItemRedirectPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -112,23 +121,58 @@ func (m *CallsItemRedirectPostRequestBody) GetFieldDeserializers()(map[string]fu
 }
 // GetMaskCallee gets the maskCallee property value. The maskCallee property
 func (m *CallsItemRedirectPostRequestBody) GetMaskCallee()(*bool) {
-    return m.maskCallee
+    val, err := m.GetBackingStore().Get("maskCallee")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetMaskCaller gets the maskCaller property value. The maskCaller property
 func (m *CallsItemRedirectPostRequestBody) GetMaskCaller()(*bool) {
-    return m.maskCaller
+    val, err := m.GetBackingStore().Get("maskCaller")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetTargetDisposition gets the targetDisposition property value. The targetDisposition property
 func (m *CallsItemRedirectPostRequestBody) GetTargetDisposition()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallDisposition) {
-    return m.targetDisposition
+    val, err := m.GetBackingStore().Get("targetDisposition")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallDisposition)
+    }
+    return nil
 }
 // GetTargets gets the targets property value. The targets property
 func (m *CallsItemRedirectPostRequestBody) GetTargets()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InvitationParticipantInfoable) {
-    return m.targets
+    val, err := m.GetBackingStore().Get("targets")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InvitationParticipantInfoable)
+    }
+    return nil
 }
 // GetTimeout gets the timeout property value. The timeout property
 func (m *CallsItemRedirectPostRequestBody) GetTimeout()(*int32) {
-    return m.timeout
+    val, err := m.GetBackingStore().Get("timeout")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CallsItemRedirectPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -183,29 +227,74 @@ func (m *CallsItemRedirectPostRequestBody) Serialize(writer i878a80d2330e89d2689
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CallsItemRedirectPostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *CallsItemRedirectPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetCallbackUri sets the callbackUri property value. The callbackUri property
 func (m *CallsItemRedirectPostRequestBody) SetCallbackUri(value *string)() {
-    m.callbackUri = value
+    err := m.GetBackingStore().Set("callbackUri", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMaskCallee sets the maskCallee property value. The maskCallee property
 func (m *CallsItemRedirectPostRequestBody) SetMaskCallee(value *bool)() {
-    m.maskCallee = value
+    err := m.GetBackingStore().Set("maskCallee", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMaskCaller sets the maskCaller property value. The maskCaller property
 func (m *CallsItemRedirectPostRequestBody) SetMaskCaller(value *bool)() {
-    m.maskCaller = value
+    err := m.GetBackingStore().Set("maskCaller", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTargetDisposition sets the targetDisposition property value. The targetDisposition property
 func (m *CallsItemRedirectPostRequestBody) SetTargetDisposition(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallDisposition)() {
-    m.targetDisposition = value
+    err := m.GetBackingStore().Set("targetDisposition", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTargets sets the targets property value. The targets property
 func (m *CallsItemRedirectPostRequestBody) SetTargets(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InvitationParticipantInfoable)() {
-    m.targets = value
+    err := m.GetBackingStore().Set("targets", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTimeout sets the timeout property value. The timeout property
 func (m *CallsItemRedirectPostRequestBody) SetTimeout(value *int32)() {
-    m.timeout = value
+    err := m.GetBackingStore().Set("timeout", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CallsItemRedirectPostRequestBodyable 
+type CallsItemRedirectPostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCallbackUri()(*string)
+    GetMaskCallee()(*bool)
+    GetMaskCaller()(*bool)
+    GetTargetDisposition()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallDisposition)
+    GetTargets()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InvitationParticipantInfoable)
+    GetTimeout()(*int32)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCallbackUri(value *string)()
+    SetMaskCallee(value *bool)()
+    SetMaskCaller(value *bool)()
+    SetTargetDisposition(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallDisposition)()
+    SetTargets(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InvitationParticipantInfoable)()
+    SetTimeout(value *int32)()
 }

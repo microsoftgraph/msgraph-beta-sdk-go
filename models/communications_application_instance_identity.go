@@ -7,18 +7,14 @@ import (
 // CommunicationsApplicationInstanceIdentity 
 type CommunicationsApplicationInstanceIdentity struct {
     Identity
-    // True if the participant would not like to be shown in other participants' rosters.
-    hidden *bool
-    // The application's tenant ID.
-    tenantId *string
 }
 // NewCommunicationsApplicationInstanceIdentity instantiates a new CommunicationsApplicationInstanceIdentity and sets the default values.
 func NewCommunicationsApplicationInstanceIdentity()(*CommunicationsApplicationInstanceIdentity) {
     m := &CommunicationsApplicationInstanceIdentity{
         Identity: *NewIdentity(),
     }
-    odataTypeValue := "#microsoft.graph.communicationsApplicationInstanceIdentity";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.communicationsApplicationInstanceIdentity"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateCommunicationsApplicationInstanceIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -52,11 +48,25 @@ func (m *CommunicationsApplicationInstanceIdentity) GetFieldDeserializers()(map[
 }
 // GetHidden gets the hidden property value. True if the participant would not like to be shown in other participants' rosters.
 func (m *CommunicationsApplicationInstanceIdentity) GetHidden()(*bool) {
-    return m.hidden
+    val, err := m.GetBackingStore().Get("hidden")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetTenantId gets the tenantId property value. The application's tenant ID.
 func (m *CommunicationsApplicationInstanceIdentity) GetTenantId()(*string) {
-    return m.tenantId
+    val, err := m.GetBackingStore().Get("tenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CommunicationsApplicationInstanceIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *CommunicationsApplicationInstanceIdentity) Serialize(writer i878a80d233
 }
 // SetHidden sets the hidden property value. True if the participant would not like to be shown in other participants' rosters.
 func (m *CommunicationsApplicationInstanceIdentity) SetHidden(value *bool)() {
-    m.hidden = value
+    err := m.GetBackingStore().Set("hidden", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantId sets the tenantId property value. The application's tenant ID.
 func (m *CommunicationsApplicationInstanceIdentity) SetTenantId(value *string)() {
-    m.tenantId = value
+    err := m.GetBackingStore().Set("tenantId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CommunicationsApplicationInstanceIdentityable 
+type CommunicationsApplicationInstanceIdentityable interface {
+    Identityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetHidden()(*bool)
+    GetTenantId()(*string)
+    SetHidden(value *bool)()
+    SetTenantId(value *string)()
 }

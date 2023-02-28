@@ -8,8 +8,6 @@ import (
 // WorkflowTemplateCollectionResponse 
 type WorkflowTemplateCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
-    // The value property
-    value []WorkflowTemplateable
 }
 // NewWorkflowTemplateCollectionResponse instantiates a new WorkflowTemplateCollectionResponse and sets the default values.
 func NewWorkflowTemplateCollectionResponse()(*WorkflowTemplateCollectionResponse) {
@@ -43,7 +41,14 @@ func (m *WorkflowTemplateCollectionResponse) GetFieldDeserializers()(map[string]
 }
 // GetValue gets the value property value. The value property
 func (m *WorkflowTemplateCollectionResponse) GetValue()([]WorkflowTemplateable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WorkflowTemplateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WorkflowTemplateCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *WorkflowTemplateCollectionResponse) Serialize(writer i878a80d2330e89d26
 }
 // SetValue sets the value property value. The value property
 func (m *WorkflowTemplateCollectionResponse) SetValue(value []WorkflowTemplateable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WorkflowTemplateCollectionResponseable 
+type WorkflowTemplateCollectionResponseable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WorkflowTemplateable)
+    SetValue(value []WorkflowTemplateable)()
 }

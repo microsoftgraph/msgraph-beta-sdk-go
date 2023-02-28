@@ -7,10 +7,6 @@ import (
 // TermsAndConditionsGroupAssignment a termsAndConditionsGroupAssignment entity represents the assignment of a given Terms and Conditions (T&C) policy to a given group. Users in the group will be required to accept the terms in order to have devices enrolled into Intune.
 type TermsAndConditionsGroupAssignment struct {
     Entity
-    // Unique identifier of a group that the T&C policy is assigned to.
-    targetGroupId *string
-    // Navigation link to the terms and conditions that are assigned.
-    termsAndConditions TermsAndConditionsable
 }
 // NewTermsAndConditionsGroupAssignment instantiates a new termsAndConditionsGroupAssignment and sets the default values.
 func NewTermsAndConditionsGroupAssignment()(*TermsAndConditionsGroupAssignment) {
@@ -50,11 +46,25 @@ func (m *TermsAndConditionsGroupAssignment) GetFieldDeserializers()(map[string]f
 }
 // GetTargetGroupId gets the targetGroupId property value. Unique identifier of a group that the T&C policy is assigned to.
 func (m *TermsAndConditionsGroupAssignment) GetTargetGroupId()(*string) {
-    return m.targetGroupId
+    val, err := m.GetBackingStore().Get("targetGroupId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTermsAndConditions gets the termsAndConditions property value. Navigation link to the terms and conditions that are assigned.
 func (m *TermsAndConditionsGroupAssignment) GetTermsAndConditions()(TermsAndConditionsable) {
-    return m.termsAndConditions
+    val, err := m.GetBackingStore().Get("termsAndConditions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TermsAndConditionsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TermsAndConditionsGroupAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -78,9 +88,24 @@ func (m *TermsAndConditionsGroupAssignment) Serialize(writer i878a80d2330e89d268
 }
 // SetTargetGroupId sets the targetGroupId property value. Unique identifier of a group that the T&C policy is assigned to.
 func (m *TermsAndConditionsGroupAssignment) SetTargetGroupId(value *string)() {
-    m.targetGroupId = value
+    err := m.GetBackingStore().Set("targetGroupId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTermsAndConditions sets the termsAndConditions property value. Navigation link to the terms and conditions that are assigned.
 func (m *TermsAndConditionsGroupAssignment) SetTermsAndConditions(value TermsAndConditionsable)() {
-    m.termsAndConditions = value
+    err := m.GetBackingStore().Set("termsAndConditions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TermsAndConditionsGroupAssignmentable 
+type TermsAndConditionsGroupAssignmentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetTargetGroupId()(*string)
+    GetTermsAndConditions()(TermsAndConditionsable)
+    SetTargetGroupId(value *string)()
+    SetTermsAndConditions(value TermsAndConditionsable)()
 }

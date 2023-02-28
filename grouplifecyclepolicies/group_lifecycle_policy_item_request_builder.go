@@ -48,7 +48,7 @@ type GroupLifecyclePolicyItemRequestBuilderPatchRequestConfiguration struct {
 }
 // AddGroup provides operations to call the addGroup method.
 func (m *GroupLifecyclePolicyItemRequestBuilder) AddGroup()(*ItemAddGroupRequestBuilder) {
-    return NewItemAddGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemAddGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewGroupLifecyclePolicyItemRequestBuilderInternal instantiates a new GroupLifecyclePolicyItemRequestBuilder and sets the default values.
 func NewGroupLifecyclePolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupLifecyclePolicyItemRequestBuilder) {
@@ -59,8 +59,8 @@ func NewGroupLifecyclePolicyItemRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGroupLifecyclePolicyItemRequestBuilder instantiates a new GroupLifecyclePolicyItemRequestBuilder and sets the default values.
@@ -134,7 +134,7 @@ func (m *GroupLifecyclePolicyItemRequestBuilder) Patch(ctx context.Context, body
 }
 // RemoveGroup provides operations to call the removeGroup method.
 func (m *GroupLifecyclePolicyItemRequestBuilder) RemoveGroup()(*ItemRemoveGroupRequestBuilder) {
-    return NewItemRemoveGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRemoveGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete a groupLifecyclePolicy.
 func (m *GroupLifecyclePolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *GroupLifecyclePolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -171,7 +171,10 @@ func (m *GroupLifecyclePolicyItemRequestBuilder) ToPatchRequestInformation(ctx c
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

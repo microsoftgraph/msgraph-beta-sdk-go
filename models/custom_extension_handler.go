@@ -7,10 +7,6 @@ import (
 // CustomExtensionHandler 
 type CustomExtensionHandler struct {
     Entity
-    // Indicates which custom workflow extension will be executed at this stage. Nullable. Supports $expand.
-    customExtension CustomAccessPackageWorkflowExtensionable
-    // Indicates the stage of the access package assignment request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
-    stage *AccessPackageCustomExtensionStage
 }
 // NewCustomExtensionHandler instantiates a new customExtensionHandler and sets the default values.
 func NewCustomExtensionHandler()(*CustomExtensionHandler) {
@@ -25,7 +21,14 @@ func CreateCustomExtensionHandlerFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetCustomExtension gets the customExtension property value. Indicates which custom workflow extension will be executed at this stage. Nullable. Supports $expand.
 func (m *CustomExtensionHandler) GetCustomExtension()(CustomAccessPackageWorkflowExtensionable) {
-    return m.customExtension
+    val, err := m.GetBackingStore().Get("customExtension")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CustomAccessPackageWorkflowExtensionable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CustomExtensionHandler) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -54,7 +57,14 @@ func (m *CustomExtensionHandler) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetStage gets the stage property value. Indicates the stage of the access package assignment request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
 func (m *CustomExtensionHandler) GetStage()(*AccessPackageCustomExtensionStage) {
-    return m.stage
+    val, err := m.GetBackingStore().Get("stage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AccessPackageCustomExtensionStage)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CustomExtensionHandler) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -79,9 +89,24 @@ func (m *CustomExtensionHandler) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetCustomExtension sets the customExtension property value. Indicates which custom workflow extension will be executed at this stage. Nullable. Supports $expand.
 func (m *CustomExtensionHandler) SetCustomExtension(value CustomAccessPackageWorkflowExtensionable)() {
-    m.customExtension = value
+    err := m.GetBackingStore().Set("customExtension", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStage sets the stage property value. Indicates the stage of the access package assignment request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
 func (m *CustomExtensionHandler) SetStage(value *AccessPackageCustomExtensionStage)() {
-    m.stage = value
+    err := m.GetBackingStore().Set("stage", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CustomExtensionHandlerable 
+type CustomExtensionHandlerable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCustomExtension()(CustomAccessPackageWorkflowExtensionable)
+    GetStage()(*AccessPackageCustomExtensionStage)
+    SetCustomExtension(value CustomAccessPackageWorkflowExtensionable)()
+    SetStage(value *AccessPackageCustomExtensionStage)()
 }

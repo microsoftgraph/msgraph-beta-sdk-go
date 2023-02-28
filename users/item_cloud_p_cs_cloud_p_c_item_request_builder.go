@@ -48,7 +48,7 @@ type ItemCloudPCsCloudPCItemRequestBuilderPatchRequestConfiguration struct {
 }
 // ChangeUserAccountType provides operations to call the changeUserAccountType method.
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) ChangeUserAccountType()(*ItemCloudPCsItemChangeUserAccountTypeRequestBuilder) {
-    return NewItemCloudPCsItemChangeUserAccountTypeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCloudPCsItemChangeUserAccountTypeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewItemCloudPCsCloudPCItemRequestBuilderInternal instantiates a new CloudPCItemRequestBuilder and sets the default values.
 func NewItemCloudPCsCloudPCItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCloudPCsCloudPCItemRequestBuilder) {
@@ -59,8 +59,8 @@ func NewItemCloudPCsCloudPCItemRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemCloudPCsCloudPCItemRequestBuilder instantiates a new CloudPCItemRequestBuilder and sets the default values.
@@ -87,7 +87,7 @@ func (m *ItemCloudPCsCloudPCItemRequestBuilder) Delete(ctx context.Context, requ
 }
 // EndGracePeriod provides operations to call the endGracePeriod method.
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) EndGracePeriod()(*ItemCloudPCsItemEndGracePeriodRequestBuilder) {
-    return NewItemCloudPCsItemEndGracePeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCloudPCsItemEndGracePeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get cloudPCs from users
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCloudPCsCloudPCItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCable, error) {
@@ -110,19 +110,19 @@ func (m *ItemCloudPCsCloudPCItemRequestBuilder) Get(ctx context.Context, request
 }
 // GetCloudPcConnectivityHistory provides operations to call the getCloudPcConnectivityHistory method.
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) GetCloudPcConnectivityHistory()(*ItemCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder) {
-    return NewItemCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GetCloudPcLaunchInfo provides operations to call the getCloudPcLaunchInfo method.
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) GetCloudPcLaunchInfo()(*ItemCloudPCsItemGetCloudPcLaunchInfoRequestBuilder) {
-    return NewItemCloudPCsItemGetCloudPcLaunchInfoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCloudPCsItemGetCloudPcLaunchInfoRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GetShiftWorkCloudPcAccessState provides operations to call the getShiftWorkCloudPcAccessState method.
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) GetShiftWorkCloudPcAccessState()(*ItemCloudPCsItemGetShiftWorkCloudPcAccessStateRequestBuilder) {
-    return NewItemCloudPCsItemGetShiftWorkCloudPcAccessStateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCloudPCsItemGetShiftWorkCloudPcAccessStateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GetSupportedCloudPcRemoteActions provides operations to call the getSupportedCloudPcRemoteActions method.
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) GetSupportedCloudPcRemoteActions()(*ItemCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilder) {
-    return NewItemCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property cloudPCs in users
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCable, requestConfiguration *ItemCloudPCsCloudPCItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCable, error) {
@@ -145,23 +145,23 @@ func (m *ItemCloudPCsCloudPCItemRequestBuilder) Patch(ctx context.Context, body 
 }
 // Reboot provides operations to call the reboot method.
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) Reboot()(*ItemCloudPCsItemRebootRequestBuilder) {
-    return NewItemCloudPCsItemRebootRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCloudPCsItemRebootRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Rename provides operations to call the rename method.
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) Rename()(*ItemCloudPCsItemRenameRequestBuilder) {
-    return NewItemCloudPCsItemRenameRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCloudPCsItemRenameRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Reprovision provides operations to call the reprovision method.
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) Reprovision()(*ItemCloudPCsItemReprovisionRequestBuilder) {
-    return NewItemCloudPCsItemReprovisionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCloudPCsItemReprovisionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Restore provides operations to call the restore method.
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) Restore()(*ItemCloudPCsItemRestoreRequestBuilder) {
-    return NewItemCloudPCsItemRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCloudPCsItemRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RetryPartnerAgentInstallation provides operations to call the retryPartnerAgentInstallation method.
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) RetryPartnerAgentInstallation()(*ItemCloudPCsItemRetryPartnerAgentInstallationRequestBuilder) {
-    return NewItemCloudPCsItemRetryPartnerAgentInstallationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCloudPCsItemRetryPartnerAgentInstallationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property cloudPCs for users
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemCloudPCsCloudPCItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -198,7 +198,10 @@ func (m *ItemCloudPCsCloudPCItemRequestBuilder) ToPatchRequestInformation(ctx co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -207,5 +210,5 @@ func (m *ItemCloudPCsCloudPCItemRequestBuilder) ToPatchRequestInformation(ctx co
 }
 // Troubleshoot provides operations to call the troubleshoot method.
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) Troubleshoot()(*ItemCloudPCsItemTroubleshootRequestBuilder) {
-    return NewItemCloudPCsItemTroubleshootRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCloudPCsItemTroubleshootRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

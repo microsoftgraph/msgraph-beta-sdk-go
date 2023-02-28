@@ -7,8 +7,6 @@ import (
 // WindowsPhoneXAPCollectionResponse 
 type WindowsPhoneXAPCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WindowsPhoneXAPable
 }
 // NewWindowsPhoneXAPCollectionResponse instantiates a new WindowsPhoneXAPCollectionResponse and sets the default values.
 func NewWindowsPhoneXAPCollectionResponse()(*WindowsPhoneXAPCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WindowsPhoneXAPCollectionResponse) GetFieldDeserializers()(map[string]f
 }
 // GetValue gets the value property value. The value property
 func (m *WindowsPhoneXAPCollectionResponse) GetValue()([]WindowsPhoneXAPable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsPhoneXAPable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsPhoneXAPCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WindowsPhoneXAPCollectionResponse) Serialize(writer i878a80d2330e89d268
 }
 // SetValue sets the value property value. The value property
 func (m *WindowsPhoneXAPCollectionResponse) SetValue(value []WindowsPhoneXAPable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsPhoneXAPCollectionResponseable 
+type WindowsPhoneXAPCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WindowsPhoneXAPable)
+    SetValue(value []WindowsPhoneXAPable)()
 }

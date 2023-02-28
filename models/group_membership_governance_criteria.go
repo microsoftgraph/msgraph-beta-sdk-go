@@ -7,16 +7,14 @@ import (
 // GroupMembershipGovernanceCriteria 
 type GroupMembershipGovernanceCriteria struct {
     GovernanceCriteria
-    // The groupId property
-    groupId *string
 }
 // NewGroupMembershipGovernanceCriteria instantiates a new GroupMembershipGovernanceCriteria and sets the default values.
 func NewGroupMembershipGovernanceCriteria()(*GroupMembershipGovernanceCriteria) {
     m := &GroupMembershipGovernanceCriteria{
         GovernanceCriteria: *NewGovernanceCriteria(),
     }
-    odataTypeValue := "#microsoft.graph.groupMembershipGovernanceCriteria";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.groupMembershipGovernanceCriteria"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateGroupMembershipGovernanceCriteriaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *GroupMembershipGovernanceCriteria) GetFieldDeserializers()(map[string]f
 }
 // GetGroupId gets the groupId property value. The groupId property
 func (m *GroupMembershipGovernanceCriteria) GetGroupId()(*string) {
-    return m.groupId
+    val, err := m.GetBackingStore().Get("groupId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GroupMembershipGovernanceCriteria) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *GroupMembershipGovernanceCriteria) Serialize(writer i878a80d2330e89d268
 }
 // SetGroupId sets the groupId property value. The groupId property
 func (m *GroupMembershipGovernanceCriteria) SetGroupId(value *string)() {
-    m.groupId = value
+    err := m.GetBackingStore().Set("groupId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GroupMembershipGovernanceCriteriaable 
+type GroupMembershipGovernanceCriteriaable interface {
+    GovernanceCriteriaable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetGroupId()(*string)
+    SetGroupId(value *string)()
 }

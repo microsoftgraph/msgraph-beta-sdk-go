@@ -7,8 +7,6 @@ import (
 // CorsConfiguration_v2CollectionResponse 
 type CorsConfiguration_v2CollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []CorsConfiguration_v2able
 }
 // NewCorsConfiguration_v2CollectionResponse instantiates a new CorsConfiguration_v2CollectionResponse and sets the default values.
 func NewCorsConfiguration_v2CollectionResponse()(*CorsConfiguration_v2CollectionResponse) {
@@ -42,7 +40,14 @@ func (m *CorsConfiguration_v2CollectionResponse) GetFieldDeserializers()(map[str
 }
 // GetValue gets the value property value. The value property
 func (m *CorsConfiguration_v2CollectionResponse) GetValue()([]CorsConfiguration_v2able) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CorsConfiguration_v2able)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CorsConfiguration_v2CollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *CorsConfiguration_v2CollectionResponse) Serialize(writer i878a80d2330e8
 }
 // SetValue sets the value property value. The value property
 func (m *CorsConfiguration_v2CollectionResponse) SetValue(value []CorsConfiguration_v2able)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CorsConfiguration_v2CollectionResponseable 
+type CorsConfiguration_v2CollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]CorsConfiguration_v2able)
+    SetValue(value []CorsConfiguration_v2able)()
 }

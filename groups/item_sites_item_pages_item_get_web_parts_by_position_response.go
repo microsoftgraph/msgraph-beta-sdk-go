@@ -8,8 +8,6 @@ import (
 // ItemSitesItemPagesItemGetWebPartsByPositionResponse 
 type ItemSitesItemPagesItemGetWebPartsByPositionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
-    // The value property
-    value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebPartable
 }
 // NewItemSitesItemPagesItemGetWebPartsByPositionResponse instantiates a new ItemSitesItemPagesItemGetWebPartsByPositionResponse and sets the default values.
 func NewItemSitesItemPagesItemGetWebPartsByPositionResponse()(*ItemSitesItemPagesItemGetWebPartsByPositionResponse) {
@@ -43,7 +41,14 @@ func (m *ItemSitesItemPagesItemGetWebPartsByPositionResponse) GetFieldDeserializ
 }
 // GetValue gets the value property value. The value property
 func (m *ItemSitesItemPagesItemGetWebPartsByPositionResponse) GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebPartable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebPartable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemSitesItemPagesItemGetWebPartsByPositionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *ItemSitesItemPagesItemGetWebPartsByPositionResponse) Serialize(writer i
 }
 // SetValue sets the value property value. The value property
 func (m *ItemSitesItemPagesItemGetWebPartsByPositionResponse) SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebPartable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemSitesItemPagesItemGetWebPartsByPositionResponseable 
+type ItemSitesItemPagesItemGetWebPartsByPositionResponseable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebPartable)
+    SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebPartable)()
 }

@@ -7,8 +7,6 @@ import (
 // MacOSEndpointProtectionConfigurationCollectionResponse 
 type MacOSEndpointProtectionConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MacOSEndpointProtectionConfigurationable
 }
 // NewMacOSEndpointProtectionConfigurationCollectionResponse instantiates a new MacOSEndpointProtectionConfigurationCollectionResponse and sets the default values.
 func NewMacOSEndpointProtectionConfigurationCollectionResponse()(*MacOSEndpointProtectionConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MacOSEndpointProtectionConfigurationCollectionResponse) GetFieldDeseria
 }
 // GetValue gets the value property value. The value property
 func (m *MacOSEndpointProtectionConfigurationCollectionResponse) GetValue()([]MacOSEndpointProtectionConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MacOSEndpointProtectionConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MacOSEndpointProtectionConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MacOSEndpointProtectionConfigurationCollectionResponse) Serialize(write
 }
 // SetValue sets the value property value. The value property
 func (m *MacOSEndpointProtectionConfigurationCollectionResponse) SetValue(value []MacOSEndpointProtectionConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MacOSEndpointProtectionConfigurationCollectionResponseable 
+type MacOSEndpointProtectionConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MacOSEndpointProtectionConfigurationable)
+    SetValue(value []MacOSEndpointProtectionConfigurationable)()
 }

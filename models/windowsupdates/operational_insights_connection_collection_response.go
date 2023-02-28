@@ -8,8 +8,6 @@ import (
 // OperationalInsightsConnectionCollectionResponse 
 type OperationalInsightsConnectionCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
-    // The value property
-    value []OperationalInsightsConnectionable
 }
 // NewOperationalInsightsConnectionCollectionResponse instantiates a new OperationalInsightsConnectionCollectionResponse and sets the default values.
 func NewOperationalInsightsConnectionCollectionResponse()(*OperationalInsightsConnectionCollectionResponse) {
@@ -43,7 +41,14 @@ func (m *OperationalInsightsConnectionCollectionResponse) GetFieldDeserializers(
 }
 // GetValue gets the value property value. The value property
 func (m *OperationalInsightsConnectionCollectionResponse) GetValue()([]OperationalInsightsConnectionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OperationalInsightsConnectionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OperationalInsightsConnectionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *OperationalInsightsConnectionCollectionResponse) Serialize(writer i878a
 }
 // SetValue sets the value property value. The value property
 func (m *OperationalInsightsConnectionCollectionResponse) SetValue(value []OperationalInsightsConnectionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OperationalInsightsConnectionCollectionResponseable 
+type OperationalInsightsConnectionCollectionResponseable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]OperationalInsightsConnectionable)
+    SetValue(value []OperationalInsightsConnectionable)()
 }

@@ -51,8 +51,8 @@ func NewItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesReques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesRequestBuilder instantiates a new ExceptionOccurrencesRequestBuilder and sets the default values.
@@ -63,11 +63,11 @@ func NewItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesReques
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesRequestBuilder) Count()(*ItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesCountRequestBuilder) {
-    return NewItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delta provides operations to call the delta method.
 func (m *ItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesRequestBuilder) Delta()(*ItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesDeltaRequestBuilder) {
-    return NewItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get exceptionOccurrences from users
 func (m *ItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EventCollectionResponseable, error) {

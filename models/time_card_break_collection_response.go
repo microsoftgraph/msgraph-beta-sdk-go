@@ -7,8 +7,6 @@ import (
 // TimeCardBreakCollectionResponse 
 type TimeCardBreakCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []TimeCardBreakable
 }
 // NewTimeCardBreakCollectionResponse instantiates a new TimeCardBreakCollectionResponse and sets the default values.
 func NewTimeCardBreakCollectionResponse()(*TimeCardBreakCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *TimeCardBreakCollectionResponse) GetFieldDeserializers()(map[string]fun
 }
 // GetValue gets the value property value. The value property
 func (m *TimeCardBreakCollectionResponse) GetValue()([]TimeCardBreakable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TimeCardBreakable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TimeCardBreakCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *TimeCardBreakCollectionResponse) Serialize(writer i878a80d2330e89d26896
 }
 // SetValue sets the value property value. The value property
 func (m *TimeCardBreakCollectionResponse) SetValue(value []TimeCardBreakable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TimeCardBreakCollectionResponseable 
+type TimeCardBreakCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]TimeCardBreakable)
+    SetValue(value []TimeCardBreakable)()
 }

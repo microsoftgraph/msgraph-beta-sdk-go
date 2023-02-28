@@ -7,16 +7,6 @@ import (
 // MobileAppRelationship describes a relationship between two mobile apps.
 type MobileAppRelationship struct {
     Entity
-    // The target mobile app's display name.
-    targetDisplayName *string
-    // The target mobile app's display version.
-    targetDisplayVersion *string
-    // The target mobile app's app id.
-    targetId *string
-    // The target mobile app's publisher.
-    targetPublisher *string
-    // Indicates whether the target of a relationship is the parent or the child in the relationship.
-    targetType *MobileAppRelationshipType
 }
 // NewMobileAppRelationship instantiates a new mobileAppRelationship and sets the default values.
 func NewMobileAppRelationship()(*MobileAppRelationship) {
@@ -106,23 +96,58 @@ func (m *MobileAppRelationship) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetTargetDisplayName gets the targetDisplayName property value. The target mobile app's display name.
 func (m *MobileAppRelationship) GetTargetDisplayName()(*string) {
-    return m.targetDisplayName
+    val, err := m.GetBackingStore().Get("targetDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTargetDisplayVersion gets the targetDisplayVersion property value. The target mobile app's display version.
 func (m *MobileAppRelationship) GetTargetDisplayVersion()(*string) {
-    return m.targetDisplayVersion
+    val, err := m.GetBackingStore().Get("targetDisplayVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTargetId gets the targetId property value. The target mobile app's app id.
 func (m *MobileAppRelationship) GetTargetId()(*string) {
-    return m.targetId
+    val, err := m.GetBackingStore().Get("targetId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTargetPublisher gets the targetPublisher property value. The target mobile app's publisher.
 func (m *MobileAppRelationship) GetTargetPublisher()(*string) {
-    return m.targetPublisher
+    val, err := m.GetBackingStore().Get("targetPublisher")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTargetType gets the targetType property value. Indicates whether the target of a relationship is the parent or the child in the relationship.
 func (m *MobileAppRelationship) GetTargetType()(*MobileAppRelationshipType) {
-    return m.targetType
+    val, err := m.GetBackingStore().Get("targetType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MobileAppRelationshipType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MobileAppRelationship) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -165,21 +190,51 @@ func (m *MobileAppRelationship) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetTargetDisplayName sets the targetDisplayName property value. The target mobile app's display name.
 func (m *MobileAppRelationship) SetTargetDisplayName(value *string)() {
-    m.targetDisplayName = value
+    err := m.GetBackingStore().Set("targetDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTargetDisplayVersion sets the targetDisplayVersion property value. The target mobile app's display version.
 func (m *MobileAppRelationship) SetTargetDisplayVersion(value *string)() {
-    m.targetDisplayVersion = value
+    err := m.GetBackingStore().Set("targetDisplayVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTargetId sets the targetId property value. The target mobile app's app id.
 func (m *MobileAppRelationship) SetTargetId(value *string)() {
-    m.targetId = value
+    err := m.GetBackingStore().Set("targetId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTargetPublisher sets the targetPublisher property value. The target mobile app's publisher.
 func (m *MobileAppRelationship) SetTargetPublisher(value *string)() {
-    m.targetPublisher = value
+    err := m.GetBackingStore().Set("targetPublisher", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTargetType sets the targetType property value. Indicates whether the target of a relationship is the parent or the child in the relationship.
 func (m *MobileAppRelationship) SetTargetType(value *MobileAppRelationshipType)() {
-    m.targetType = value
+    err := m.GetBackingStore().Set("targetType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MobileAppRelationshipable 
+type MobileAppRelationshipable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetTargetDisplayName()(*string)
+    GetTargetDisplayVersion()(*string)
+    GetTargetId()(*string)
+    GetTargetPublisher()(*string)
+    GetTargetType()(*MobileAppRelationshipType)
+    SetTargetDisplayName(value *string)()
+    SetTargetDisplayVersion(value *string)()
+    SetTargetId(value *string)()
+    SetTargetPublisher(value *string)()
+    SetTargetType(value *MobileAppRelationshipType)()
 }

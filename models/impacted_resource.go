@@ -8,34 +8,6 @@ import (
 // ImpactedResource 
 type ImpactedResource struct {
     Entity
-    // The addedDateTime property
-    addedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The additionalDetails property
-    additionalDetails []KeyValueable
-    // The apiUrl property
-    apiUrl *string
-    // The displayName property
-    displayName *string
-    // The lastModifiedBy property
-    lastModifiedBy *string
-    // The lastModifiedDateTime property
-    lastModifiedDateTime *string
-    // The owner property
-    owner *string
-    // The portalUrl property
-    portalUrl *string
-    // The postponeUntilDateTime property
-    postponeUntilDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The rank property
-    rank *int32
-    // The recommendationId property
-    recommendationId *string
-    // The resourceType property
-    resourceType *string
-    // The status property
-    status *RecommendationStatus
-    // The subjectId property
-    subjectId *string
 }
 // NewImpactedResource instantiates a new impactedResource and sets the default values.
 func NewImpactedResource()(*ImpactedResource) {
@@ -48,21 +20,49 @@ func NewImpactedResource()(*ImpactedResource) {
 func CreateImpactedResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewImpactedResource(), nil
 }
-// GetAddedDateTime gets the addedDateTime property value. The addedDateTime property
+// GetAddedDateTime gets the addedDateTime property value. The date and time when the impactedResource object was initially associated with the recommendation.
 func (m *ImpactedResource) GetAddedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.addedDateTime
+    val, err := m.GetBackingStore().Get("addedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
-// GetAdditionalDetails gets the additionalDetails property value. The additionalDetails property
+// GetAdditionalDetails gets the additionalDetails property value. Additional information unique to the impactedResource to help contextualize the recommendation.
 func (m *ImpactedResource) GetAdditionalDetails()([]KeyValueable) {
-    return m.additionalDetails
+    val, err := m.GetBackingStore().Get("additionalDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]KeyValueable)
+    }
+    return nil
 }
-// GetApiUrl gets the apiUrl property value. The apiUrl property
+// GetApiUrl gets the apiUrl property value. The URL link to the corresponding Azure AD resource.
 func (m *ImpactedResource) GetApiUrl()(*string) {
-    return m.apiUrl
+    val, err := m.GetBackingStore().Get("apiUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Friendly name of the Azure AD resource.
 func (m *ImpactedResource) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ImpactedResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -213,45 +213,115 @@ func (m *ImpactedResource) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// GetLastModifiedBy gets the lastModifiedBy property value. Name of the user or service that last updated the status.
 func (m *ImpactedResource) GetLastModifiedBy()(*string) {
-    return m.lastModifiedBy
+    val, err := m.GetBackingStore().Get("lastModifiedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the status was last updated.
 func (m *ImpactedResource) GetLastModifiedDateTime()(*string) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
-// GetOwner gets the owner property value. The owner property
+// GetOwner gets the owner property value. The user responsible for maintaining the resource.
 func (m *ImpactedResource) GetOwner()(*string) {
-    return m.owner
+    val, err := m.GetBackingStore().Get("owner")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
-// GetPortalUrl gets the portalUrl property value. The portalUrl property
+// GetPortalUrl gets the portalUrl property value. The URL link to the corresponding Azure AD portal page of the resource.
 func (m *ImpactedResource) GetPortalUrl()(*string) {
-    return m.portalUrl
+    val, err := m.GetBackingStore().Get("portalUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
-// GetPostponeUntilDateTime gets the postponeUntilDateTime property value. The postponeUntilDateTime property
+// GetPostponeUntilDateTime gets the postponeUntilDateTime property value. The future date and time when the status of a postponed impactedResource will be active again.
 func (m *ImpactedResource) GetPostponeUntilDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.postponeUntilDateTime
+    val, err := m.GetBackingStore().Get("postponeUntilDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
-// GetRank gets the rank property value. The rank property
+// GetRank gets the rank property value. Indicates the importance of the resource. A resource with a rank equal to 1 is of the highest importance.
 func (m *ImpactedResource) GetRank()(*int32) {
-    return m.rank
+    val, err := m.GetBackingStore().Get("rank")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
-// GetRecommendationId gets the recommendationId property value. The recommendationId property
+// GetRecommendationId gets the recommendationId property value. The unique identifier of the recommendation that the resource is associated with.
 func (m *ImpactedResource) GetRecommendationId()(*string) {
-    return m.recommendationId
+    val, err := m.GetBackingStore().Get("recommendationId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
-// GetResourceType gets the resourceType property value. The resourceType property
+// GetResourceType gets the resourceType property value. Indicates the type of Azure AD resource. Examples include user, application.
 func (m *ImpactedResource) GetResourceType()(*string) {
-    return m.resourceType
+    val, err := m.GetBackingStore().Get("resourceType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetStatus gets the status property value. The status property
 func (m *ImpactedResource) GetStatus()(*RecommendationStatus) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RecommendationStatus)
+    }
+    return nil
 }
-// GetSubjectId gets the subjectId property value. The subjectId property
+// GetSubjectId gets the subjectId property value. The related unique identifier, depending on the resourceType. For example, this property is set to the applicationId if the resourceType is an application.
 func (m *ImpactedResource) GetSubjectId()(*string) {
-    return m.subjectId
+    val, err := m.GetBackingStore().Get("subjectId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ImpactedResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -350,59 +420,134 @@ func (m *ImpactedResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetAddedDateTime sets the addedDateTime property value. The addedDateTime property
+// SetAddedDateTime sets the addedDateTime property value. The date and time when the impactedResource object was initially associated with the recommendation.
 func (m *ImpactedResource) SetAddedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.addedDateTime = value
+    err := m.GetBackingStore().Set("addedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetAdditionalDetails sets the additionalDetails property value. The additionalDetails property
+// SetAdditionalDetails sets the additionalDetails property value. Additional information unique to the impactedResource to help contextualize the recommendation.
 func (m *ImpactedResource) SetAdditionalDetails(value []KeyValueable)() {
-    m.additionalDetails = value
+    err := m.GetBackingStore().Set("additionalDetails", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetApiUrl sets the apiUrl property value. The apiUrl property
+// SetApiUrl sets the apiUrl property value. The URL link to the corresponding Azure AD resource.
 func (m *ImpactedResource) SetApiUrl(value *string)() {
-    m.apiUrl = value
+    err := m.GetBackingStore().Set("apiUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Friendly name of the Azure AD resource.
 func (m *ImpactedResource) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+// SetLastModifiedBy sets the lastModifiedBy property value. Name of the user or service that last updated the status.
 func (m *ImpactedResource) SetLastModifiedBy(value *string)() {
-    m.lastModifiedBy = value
+    err := m.GetBackingStore().Set("lastModifiedBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the status was last updated.
 func (m *ImpactedResource) SetLastModifiedDateTime(value *string)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetOwner sets the owner property value. The owner property
+// SetOwner sets the owner property value. The user responsible for maintaining the resource.
 func (m *ImpactedResource) SetOwner(value *string)() {
-    m.owner = value
+    err := m.GetBackingStore().Set("owner", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetPortalUrl sets the portalUrl property value. The portalUrl property
+// SetPortalUrl sets the portalUrl property value. The URL link to the corresponding Azure AD portal page of the resource.
 func (m *ImpactedResource) SetPortalUrl(value *string)() {
-    m.portalUrl = value
+    err := m.GetBackingStore().Set("portalUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetPostponeUntilDateTime sets the postponeUntilDateTime property value. The postponeUntilDateTime property
+// SetPostponeUntilDateTime sets the postponeUntilDateTime property value. The future date and time when the status of a postponed impactedResource will be active again.
 func (m *ImpactedResource) SetPostponeUntilDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.postponeUntilDateTime = value
+    err := m.GetBackingStore().Set("postponeUntilDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetRank sets the rank property value. The rank property
+// SetRank sets the rank property value. Indicates the importance of the resource. A resource with a rank equal to 1 is of the highest importance.
 func (m *ImpactedResource) SetRank(value *int32)() {
-    m.rank = value
+    err := m.GetBackingStore().Set("rank", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetRecommendationId sets the recommendationId property value. The recommendationId property
+// SetRecommendationId sets the recommendationId property value. The unique identifier of the recommendation that the resource is associated with.
 func (m *ImpactedResource) SetRecommendationId(value *string)() {
-    m.recommendationId = value
+    err := m.GetBackingStore().Set("recommendationId", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetResourceType sets the resourceType property value. The resourceType property
+// SetResourceType sets the resourceType property value. Indicates the type of Azure AD resource. Examples include user, application.
 func (m *ImpactedResource) SetResourceType(value *string)() {
-    m.resourceType = value
+    err := m.GetBackingStore().Set("resourceType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. The status property
 func (m *ImpactedResource) SetStatus(value *RecommendationStatus)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetSubjectId sets the subjectId property value. The subjectId property
+// SetSubjectId sets the subjectId property value. The related unique identifier, depending on the resourceType. For example, this property is set to the applicationId if the resourceType is an application.
 func (m *ImpactedResource) SetSubjectId(value *string)() {
-    m.subjectId = value
+    err := m.GetBackingStore().Set("subjectId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ImpactedResourceable 
+type ImpactedResourceable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAddedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetAdditionalDetails()([]KeyValueable)
+    GetApiUrl()(*string)
+    GetDisplayName()(*string)
+    GetLastModifiedBy()(*string)
+    GetLastModifiedDateTime()(*string)
+    GetOwner()(*string)
+    GetPortalUrl()(*string)
+    GetPostponeUntilDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetRank()(*int32)
+    GetRecommendationId()(*string)
+    GetResourceType()(*string)
+    GetStatus()(*RecommendationStatus)
+    GetSubjectId()(*string)
+    SetAddedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetAdditionalDetails(value []KeyValueable)()
+    SetApiUrl(value *string)()
+    SetDisplayName(value *string)()
+    SetLastModifiedBy(value *string)()
+    SetLastModifiedDateTime(value *string)()
+    SetOwner(value *string)()
+    SetPortalUrl(value *string)()
+    SetPostponeUntilDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetRank(value *int32)()
+    SetRecommendationId(value *string)()
+    SetResourceType(value *string)()
+    SetStatus(value *RecommendationStatus)()
+    SetSubjectId(value *string)()
 }

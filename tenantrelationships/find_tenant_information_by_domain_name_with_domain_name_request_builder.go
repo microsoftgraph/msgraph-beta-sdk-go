@@ -27,7 +27,7 @@ type FindTenantInformationByDomainNameWithDomainNameRequestBuilderGetRequestConf
 func NewFindTenantInformationByDomainNameWithDomainNameRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, domainName *string)(*FindTenantInformationByDomainNameWithDomainNameRequestBuilder) {
     m := &FindTenantInformationByDomainNameWithDomainNameRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/tenantRelationships/microsoft.graph.findTenantInformationByDomainName(domainName='{domainName}')";
+    m.urlTemplate = "{+baseurl}/tenantRelationships/findTenantInformationByDomainName(domainName='{domainName}')";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -35,8 +35,8 @@ func NewFindTenantInformationByDomainNameWithDomainNameRequestBuilderInternal(pa
     if domainName != nil {
         urlTplParams["domainName"] = *domainName
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewFindTenantInformationByDomainNameWithDomainNameRequestBuilder instantiates a new FindTenantInformationByDomainNameWithDomainNameRequestBuilder and sets the default values.

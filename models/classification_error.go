@@ -7,8 +7,6 @@ import (
 // ClassificationError 
 type ClassificationError struct {
     ClassifcationErrorBase
-    // The details property
-    details []ClassifcationErrorBaseable
 }
 // NewClassificationError instantiates a new ClassificationError and sets the default values.
 func NewClassificationError()(*ClassificationError) {
@@ -23,7 +21,14 @@ func CreateClassificationErrorFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetDetails gets the details property value. The details property
 func (m *ClassificationError) GetDetails()([]ClassifcationErrorBaseable) {
-    return m.details
+    val, err := m.GetBackingStore().Get("details")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ClassifcationErrorBaseable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ClassificationError) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -64,5 +69,15 @@ func (m *ClassificationError) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetDetails sets the details property value. The details property
 func (m *ClassificationError) SetDetails(value []ClassifcationErrorBaseable)() {
-    m.details = value
+    err := m.GetBackingStore().Set("details", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ClassificationErrorable 
+type ClassificationErrorable interface {
+    ClassifcationErrorBaseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDetails()([]ClassifcationErrorBaseable)
+    SetDetails(value []ClassifcationErrorBaseable)()
 }

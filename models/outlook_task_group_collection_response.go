@@ -7,8 +7,6 @@ import (
 // OutlookTaskGroupCollectionResponse 
 type OutlookTaskGroupCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []OutlookTaskGroupable
 }
 // NewOutlookTaskGroupCollectionResponse instantiates a new OutlookTaskGroupCollectionResponse and sets the default values.
 func NewOutlookTaskGroupCollectionResponse()(*OutlookTaskGroupCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *OutlookTaskGroupCollectionResponse) GetFieldDeserializers()(map[string]
 }
 // GetValue gets the value property value. The value property
 func (m *OutlookTaskGroupCollectionResponse) GetValue()([]OutlookTaskGroupable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OutlookTaskGroupable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OutlookTaskGroupCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *OutlookTaskGroupCollectionResponse) Serialize(writer i878a80d2330e89d26
 }
 // SetValue sets the value property value. The value property
 func (m *OutlookTaskGroupCollectionResponse) SetValue(value []OutlookTaskGroupable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OutlookTaskGroupCollectionResponseable 
+type OutlookTaskGroupCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]OutlookTaskGroupable)
+    SetValue(value []OutlookTaskGroupable)()
 }

@@ -53,8 +53,8 @@ func NewItemAgentGroupsItemAgentsItemAgentGroupsRequestBuilderInternal(pathParam
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemAgentGroupsItemAgentsItemAgentGroupsRequestBuilder instantiates a new AgentGroupsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemAgentGroupsItemAgentsItemAgentGroupsRequestBuilder(rawUrl string, re
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemAgentGroupsItemAgentsItemAgentGroupsRequestBuilder) Count()(*ItemAgentGroupsItemAgentsItemAgentGroupsCountRequestBuilder) {
-    return NewItemAgentGroupsItemAgentsItemAgentGroupsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemAgentGroupsItemAgentsItemAgentGroupsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
 func (m *ItemAgentGroupsItemAgentsItemAgentGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAgentGroupsItemAgentsItemAgentGroupsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupCollectionResponseable, error) {
@@ -88,7 +88,7 @@ func (m *ItemAgentGroupsItemAgentsItemAgentGroupsRequestBuilder) Get(ctx context
 }
 // Ref provides operations to manage the collection of onPremisesPublishingProfile entities.
 func (m *ItemAgentGroupsItemAgentsItemAgentGroupsRequestBuilder) Ref()(*ItemAgentGroupsItemAgentsItemAgentGroupsRefRequestBuilder) {
-    return NewItemAgentGroupsItemAgentsItemAgentGroupsRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemAgentGroupsItemAgentsItemAgentGroupsRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation list of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
 func (m *ItemAgentGroupsItemAgentsItemAgentGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAgentGroupsItemAgentsItemAgentGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -7,24 +7,14 @@ import (
 // PrivilegedAccessScheduleRequest 
 type PrivilegedAccessScheduleRequest struct {
     Request
-    // The action property
-    action *ScheduleRequestActions
-    // The isValidationOnly property
-    isValidationOnly *bool
-    // The justification property
-    justification *string
-    // The scheduleInfo property
-    scheduleInfo RequestScheduleable
-    // The ticketInfo property
-    ticketInfo TicketInfoable
 }
 // NewPrivilegedAccessScheduleRequest instantiates a new PrivilegedAccessScheduleRequest and sets the default values.
 func NewPrivilegedAccessScheduleRequest()(*PrivilegedAccessScheduleRequest) {
     m := &PrivilegedAccessScheduleRequest{
         Request: *NewRequest(),
     }
-    odataTypeValue := "#microsoft.graph.privilegedAccessScheduleRequest";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.privilegedAccessScheduleRequest"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreatePrivilegedAccessScheduleRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,7 +43,14 @@ func CreatePrivilegedAccessScheduleRequestFromDiscriminatorValue(parseNode i878a
 }
 // GetAction gets the action property value. The action property
 func (m *PrivilegedAccessScheduleRequest) GetAction()(*ScheduleRequestActions) {
-    return m.action
+    val, err := m.GetBackingStore().Get("action")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ScheduleRequestActions)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrivilegedAccessScheduleRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -112,19 +109,47 @@ func (m *PrivilegedAccessScheduleRequest) GetFieldDeserializers()(map[string]fun
 }
 // GetIsValidationOnly gets the isValidationOnly property value. The isValidationOnly property
 func (m *PrivilegedAccessScheduleRequest) GetIsValidationOnly()(*bool) {
-    return m.isValidationOnly
+    val, err := m.GetBackingStore().Get("isValidationOnly")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetJustification gets the justification property value. The justification property
 func (m *PrivilegedAccessScheduleRequest) GetJustification()(*string) {
-    return m.justification
+    val, err := m.GetBackingStore().Get("justification")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetScheduleInfo gets the scheduleInfo property value. The scheduleInfo property
 func (m *PrivilegedAccessScheduleRequest) GetScheduleInfo()(RequestScheduleable) {
-    return m.scheduleInfo
+    val, err := m.GetBackingStore().Get("scheduleInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(RequestScheduleable)
+    }
+    return nil
 }
 // GetTicketInfo gets the ticketInfo property value. The ticketInfo property
 func (m *PrivilegedAccessScheduleRequest) GetTicketInfo()(TicketInfoable) {
-    return m.ticketInfo
+    val, err := m.GetBackingStore().Get("ticketInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TicketInfoable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrivilegedAccessScheduleRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -167,21 +192,51 @@ func (m *PrivilegedAccessScheduleRequest) Serialize(writer i878a80d2330e89d26896
 }
 // SetAction sets the action property value. The action property
 func (m *PrivilegedAccessScheduleRequest) SetAction(value *ScheduleRequestActions)() {
-    m.action = value
+    err := m.GetBackingStore().Set("action", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsValidationOnly sets the isValidationOnly property value. The isValidationOnly property
 func (m *PrivilegedAccessScheduleRequest) SetIsValidationOnly(value *bool)() {
-    m.isValidationOnly = value
+    err := m.GetBackingStore().Set("isValidationOnly", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetJustification sets the justification property value. The justification property
 func (m *PrivilegedAccessScheduleRequest) SetJustification(value *string)() {
-    m.justification = value
+    err := m.GetBackingStore().Set("justification", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetScheduleInfo sets the scheduleInfo property value. The scheduleInfo property
 func (m *PrivilegedAccessScheduleRequest) SetScheduleInfo(value RequestScheduleable)() {
-    m.scheduleInfo = value
+    err := m.GetBackingStore().Set("scheduleInfo", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTicketInfo sets the ticketInfo property value. The ticketInfo property
 func (m *PrivilegedAccessScheduleRequest) SetTicketInfo(value TicketInfoable)() {
-    m.ticketInfo = value
+    err := m.GetBackingStore().Set("ticketInfo", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrivilegedAccessScheduleRequestable 
+type PrivilegedAccessScheduleRequestable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    Requestable
+    GetAction()(*ScheduleRequestActions)
+    GetIsValidationOnly()(*bool)
+    GetJustification()(*string)
+    GetScheduleInfo()(RequestScheduleable)
+    GetTicketInfo()(TicketInfoable)
+    SetAction(value *ScheduleRequestActions)()
+    SetIsValidationOnly(value *bool)()
+    SetJustification(value *string)()
+    SetScheduleInfo(value RequestScheduleable)()
+    SetTicketInfo(value TicketInfoable)()
 }

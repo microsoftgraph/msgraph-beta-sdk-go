@@ -7,8 +7,6 @@ import (
 // LookupResultRow 
 type LookupResultRow struct {
     Entity
-    // The row property
-    row *string
 }
 // NewLookupResultRow instantiates a new lookupResultRow and sets the default values.
 func NewLookupResultRow()(*LookupResultRow) {
@@ -38,7 +36,14 @@ func (m *LookupResultRow) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetRow gets the row property value. The row property
 func (m *LookupResultRow) GetRow()(*string) {
-    return m.row
+    val, err := m.GetBackingStore().Get("row")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *LookupResultRow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *LookupResultRow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetRow sets the row property value. The row property
 func (m *LookupResultRow) SetRow(value *string)() {
-    m.row = value
+    err := m.GetBackingStore().Set("row", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// LookupResultRowable 
+type LookupResultRowable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetRow()(*string)
+    SetRow(value *string)()
 }

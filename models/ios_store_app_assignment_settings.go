@@ -7,20 +7,14 @@ import (
 // IosStoreAppAssignmentSettings 
 type IosStoreAppAssignmentSettings struct {
     MobileAppAssignmentSettings
-    // Whether or not the app can be removed by the user.
-    isRemovable *bool
-    // Whether or not to uninstall the app when device is removed from Intune.
-    uninstallOnDeviceRemoval *bool
-    // The VPN Configuration Id to apply for this app.
-    vpnConfigurationId *string
 }
 // NewIosStoreAppAssignmentSettings instantiates a new IosStoreAppAssignmentSettings and sets the default values.
 func NewIosStoreAppAssignmentSettings()(*IosStoreAppAssignmentSettings) {
     m := &IosStoreAppAssignmentSettings{
         MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),
     }
-    odataTypeValue := "#microsoft.graph.iosStoreAppAssignmentSettings";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.iosStoreAppAssignmentSettings"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateIosStoreAppAssignmentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -64,15 +58,36 @@ func (m *IosStoreAppAssignmentSettings) GetFieldDeserializers()(map[string]func(
 }
 // GetIsRemovable gets the isRemovable property value. Whether or not the app can be removed by the user.
 func (m *IosStoreAppAssignmentSettings) GetIsRemovable()(*bool) {
-    return m.isRemovable
+    val, err := m.GetBackingStore().Get("isRemovable")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetUninstallOnDeviceRemoval gets the uninstallOnDeviceRemoval property value. Whether or not to uninstall the app when device is removed from Intune.
 func (m *IosStoreAppAssignmentSettings) GetUninstallOnDeviceRemoval()(*bool) {
-    return m.uninstallOnDeviceRemoval
+    val, err := m.GetBackingStore().Get("uninstallOnDeviceRemoval")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetVpnConfigurationId gets the vpnConfigurationId property value. The VPN Configuration Id to apply for this app.
 func (m *IosStoreAppAssignmentSettings) GetVpnConfigurationId()(*string) {
-    return m.vpnConfigurationId
+    val, err := m.GetBackingStore().Get("vpnConfigurationId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosStoreAppAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -102,13 +117,33 @@ func (m *IosStoreAppAssignmentSettings) Serialize(writer i878a80d2330e89d2689638
 }
 // SetIsRemovable sets the isRemovable property value. Whether or not the app can be removed by the user.
 func (m *IosStoreAppAssignmentSettings) SetIsRemovable(value *bool)() {
-    m.isRemovable = value
+    err := m.GetBackingStore().Set("isRemovable", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUninstallOnDeviceRemoval sets the uninstallOnDeviceRemoval property value. Whether or not to uninstall the app when device is removed from Intune.
 func (m *IosStoreAppAssignmentSettings) SetUninstallOnDeviceRemoval(value *bool)() {
-    m.uninstallOnDeviceRemoval = value
+    err := m.GetBackingStore().Set("uninstallOnDeviceRemoval", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVpnConfigurationId sets the vpnConfigurationId property value. The VPN Configuration Id to apply for this app.
 func (m *IosStoreAppAssignmentSettings) SetVpnConfigurationId(value *string)() {
-    m.vpnConfigurationId = value
+    err := m.GetBackingStore().Set("vpnConfigurationId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosStoreAppAssignmentSettingsable 
+type IosStoreAppAssignmentSettingsable interface {
+    MobileAppAssignmentSettingsable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetIsRemovable()(*bool)
+    GetUninstallOnDeviceRemoval()(*bool)
+    GetVpnConfigurationId()(*string)
+    SetIsRemovable(value *bool)()
+    SetUninstallOnDeviceRemoval(value *bool)()
+    SetVpnConfigurationId(value *string)()
 }

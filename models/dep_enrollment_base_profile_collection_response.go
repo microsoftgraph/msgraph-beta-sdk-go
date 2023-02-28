@@ -7,8 +7,6 @@ import (
 // DepEnrollmentBaseProfileCollectionResponse 
 type DepEnrollmentBaseProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DepEnrollmentBaseProfileable
 }
 // NewDepEnrollmentBaseProfileCollectionResponse instantiates a new DepEnrollmentBaseProfileCollectionResponse and sets the default values.
 func NewDepEnrollmentBaseProfileCollectionResponse()(*DepEnrollmentBaseProfileCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DepEnrollmentBaseProfileCollectionResponse) GetFieldDeserializers()(map
 }
 // GetValue gets the value property value. The value property
 func (m *DepEnrollmentBaseProfileCollectionResponse) GetValue()([]DepEnrollmentBaseProfileable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DepEnrollmentBaseProfileable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DepEnrollmentBaseProfileCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DepEnrollmentBaseProfileCollectionResponse) Serialize(writer i878a80d23
 }
 // SetValue sets the value property value. The value property
 func (m *DepEnrollmentBaseProfileCollectionResponse) SetValue(value []DepEnrollmentBaseProfileable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DepEnrollmentBaseProfileCollectionResponseable 
+type DepEnrollmentBaseProfileCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DepEnrollmentBaseProfileable)
+    SetValue(value []DepEnrollmentBaseProfileable)()
 }

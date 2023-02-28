@@ -7,8 +7,6 @@ import (
 // ManagementCertificateWithThumbprintCollectionResponse 
 type ManagementCertificateWithThumbprintCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ManagementCertificateWithThumbprintable
 }
 // NewManagementCertificateWithThumbprintCollectionResponse instantiates a new ManagementCertificateWithThumbprintCollectionResponse and sets the default values.
 func NewManagementCertificateWithThumbprintCollectionResponse()(*ManagementCertificateWithThumbprintCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ManagementCertificateWithThumbprintCollectionResponse) GetFieldDeserial
 }
 // GetValue gets the value property value. The value property
 func (m *ManagementCertificateWithThumbprintCollectionResponse) GetValue()([]ManagementCertificateWithThumbprintable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagementCertificateWithThumbprintable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagementCertificateWithThumbprintCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ManagementCertificateWithThumbprintCollectionResponse) Serialize(writer
 }
 // SetValue sets the value property value. The value property
 func (m *ManagementCertificateWithThumbprintCollectionResponse) SetValue(value []ManagementCertificateWithThumbprintable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagementCertificateWithThumbprintCollectionResponseable 
+type ManagementCertificateWithThumbprintCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ManagementCertificateWithThumbprintable)
+    SetValue(value []ManagementCertificateWithThumbprintable)()
 }

@@ -26,13 +26,13 @@ type ServiceAnnouncementIssuesItemIncidentReportRequestBuilderGetRequestConfigur
 func NewServiceAnnouncementIssuesItemIncidentReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServiceAnnouncementIssuesItemIncidentReportRequestBuilder) {
     m := &ServiceAnnouncementIssuesItemIncidentReportRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/admin/serviceAnnouncement/issues/{serviceHealthIssue%2Did}/microsoft.graph.incidentReport()";
+    m.urlTemplate = "{+baseurl}/admin/serviceAnnouncement/issues/{serviceHealthIssue%2Did}/incidentReport()";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewServiceAnnouncementIssuesItemIncidentReportRequestBuilder instantiates a new IncidentReportRequestBuilder and sets the default values.

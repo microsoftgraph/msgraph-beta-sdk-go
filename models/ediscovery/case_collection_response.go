@@ -8,8 +8,6 @@ import (
 // CaseCollectionResponse 
 type CaseCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
-    // The value property
-    value []Case_escapedable
 }
 // NewCaseCollectionResponse instantiates a new CaseCollectionResponse and sets the default values.
 func NewCaseCollectionResponse()(*CaseCollectionResponse) {
@@ -26,14 +24,14 @@ func CreateCaseCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e8
 func (m *CaseCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCase_escapedFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(CreateCaseEscapedFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Case_escapedable, len(val))
+            res := make([]CaseEscapedable, len(val))
             for i, v := range val {
-                res[i] = v.(Case_escapedable)
+                res[i] = v.(CaseEscapedable)
             }
             m.SetValue(res)
         }
@@ -42,8 +40,15 @@ func (m *CaseCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetValue gets the value property value. The value property
-func (m *CaseCollectionResponse) GetValue()([]Case_escapedable) {
-    return m.value
+func (m *CaseCollectionResponse) GetValue()([]CaseEscapedable) {
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CaseEscapedable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CaseCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,6 +69,16 @@ func (m *CaseCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetValue sets the value property value. The value property
-func (m *CaseCollectionResponse) SetValue(value []Case_escapedable)() {
-    m.value = value
+func (m *CaseCollectionResponse) SetValue(value []CaseEscapedable)() {
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CaseCollectionResponseable 
+type CaseCollectionResponseable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]CaseEscapedable)
+    SetValue(value []CaseEscapedable)()
 }

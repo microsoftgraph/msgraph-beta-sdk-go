@@ -6,85 +6,100 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// Case_escaped 
-type Case_escaped struct {
+// CaseEscaped 
+type CaseEscaped struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The user who closed the case.
-    closedBy ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable
-    // The date and time when the case was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    closedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The date and time when the entity was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Returns a list of case custodian objects for this case.  Nullable.
-    custodians []Custodianable
-    // The case description.
-    description *string
-    // The case name.
-    displayName *string
-    // The external case number for customer reference.
-    externalId *string
-    // The last user who modified the entity.
-    lastModifiedBy ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable
-    // The latest date and time when the case was modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Returns a list of case legalHold objects for this case.  Nullable.
-    legalHolds []LegalHoldable
-    // Returns a list of case noncustodialDataSource objects for this case.  Nullable.
-    noncustodialDataSources []NoncustodialDataSourceable
-    // Returns a list of case operation objects for this case. Nullable.
-    operations []CaseOperationable
-    // Returns a list of reviewSet objects in the case. Read-only. Nullable.
-    reviewSets []ReviewSetable
-    // The settings property
-    settings CaseSettingsable
-    // Returns a list of sourceCollection objects associated with this case.
-    sourceCollections []SourceCollectionable
-    // The case status. Possible values are unknown, active, pendingDelete, closing, closed, and closedWithError. For details, see the following table.
-    status *CaseStatus
-    // Returns a list of tag objects associated to this case.
-    tags []Tagable
 }
-// NewCase_escaped instantiates a new case_escaped and sets the default values.
-func NewCase_escaped()(*Case_escaped) {
-    m := &Case_escaped{
+// NewCaseEscaped instantiates a new caseEscaped and sets the default values.
+func NewCaseEscaped()(*CaseEscaped) {
+    m := &CaseEscaped{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
     return m
 }
-// CreateCase_escapedFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateCase_escapedFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewCase_escaped(), nil
+// CreateCaseEscapedFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCaseEscapedFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewCaseEscaped(), nil
 }
 // GetClosedBy gets the closedBy property value. The user who closed the case.
-func (m *Case_escaped) GetClosedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable) {
-    return m.closedBy
+func (m *CaseEscaped) GetClosedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable) {
+    val, err := m.GetBackingStore().Get("closedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)
+    }
+    return nil
 }
 // GetClosedDateTime gets the closedDateTime property value. The date and time when the case was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-func (m *Case_escaped) GetClosedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.closedDateTime
+func (m *CaseEscaped) GetClosedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("closedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when the entity was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-func (m *Case_escaped) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+func (m *CaseEscaped) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetCustodians gets the custodians property value. Returns a list of case custodian objects for this case.  Nullable.
-func (m *Case_escaped) GetCustodians()([]Custodianable) {
-    return m.custodians
+func (m *CaseEscaped) GetCustodians()([]Custodianable) {
+    val, err := m.GetBackingStore().Get("custodians")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Custodianable)
+    }
+    return nil
 }
 // GetDescription gets the description property value. The case description.
-func (m *Case_escaped) GetDescription()(*string) {
-    return m.description
+func (m *CaseEscaped) GetDescription()(*string) {
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The case name.
-func (m *Case_escaped) GetDisplayName()(*string) {
-    return m.displayName
+func (m *CaseEscaped) GetDisplayName()(*string) {
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetExternalId gets the externalId property value. The external case number for customer reference.
-func (m *Case_escaped) GetExternalId()(*string) {
-    return m.externalId
+func (m *CaseEscaped) GetExternalId()(*string) {
+    val, err := m.GetBackingStore().Get("externalId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Case_escaped) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *CaseEscaped) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["closedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateIdentitySetFromDiscriminatorValue)
@@ -287,47 +302,117 @@ func (m *Case_escaped) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The last user who modified the entity.
-func (m *Case_escaped) GetLastModifiedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable) {
-    return m.lastModifiedBy
+func (m *CaseEscaped) GetLastModifiedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable) {
+    val, err := m.GetBackingStore().Get("lastModifiedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)
+    }
+    return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The latest date and time when the case was modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-func (m *Case_escaped) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+func (m *CaseEscaped) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetLegalHolds gets the legalHolds property value. Returns a list of case legalHold objects for this case.  Nullable.
-func (m *Case_escaped) GetLegalHolds()([]LegalHoldable) {
-    return m.legalHolds
+func (m *CaseEscaped) GetLegalHolds()([]LegalHoldable) {
+    val, err := m.GetBackingStore().Get("legalHolds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]LegalHoldable)
+    }
+    return nil
 }
 // GetNoncustodialDataSources gets the noncustodialDataSources property value. Returns a list of case noncustodialDataSource objects for this case.  Nullable.
-func (m *Case_escaped) GetNoncustodialDataSources()([]NoncustodialDataSourceable) {
-    return m.noncustodialDataSources
+func (m *CaseEscaped) GetNoncustodialDataSources()([]NoncustodialDataSourceable) {
+    val, err := m.GetBackingStore().Get("noncustodialDataSources")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]NoncustodialDataSourceable)
+    }
+    return nil
 }
 // GetOperations gets the operations property value. Returns a list of case operation objects for this case. Nullable.
-func (m *Case_escaped) GetOperations()([]CaseOperationable) {
-    return m.operations
+func (m *CaseEscaped) GetOperations()([]CaseOperationable) {
+    val, err := m.GetBackingStore().Get("operations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CaseOperationable)
+    }
+    return nil
 }
 // GetReviewSets gets the reviewSets property value. Returns a list of reviewSet objects in the case. Read-only. Nullable.
-func (m *Case_escaped) GetReviewSets()([]ReviewSetable) {
-    return m.reviewSets
+func (m *CaseEscaped) GetReviewSets()([]ReviewSetable) {
+    val, err := m.GetBackingStore().Get("reviewSets")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ReviewSetable)
+    }
+    return nil
 }
 // GetSettings gets the settings property value. The settings property
-func (m *Case_escaped) GetSettings()(CaseSettingsable) {
-    return m.settings
+func (m *CaseEscaped) GetSettings()(CaseSettingsable) {
+    val, err := m.GetBackingStore().Get("settings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CaseSettingsable)
+    }
+    return nil
 }
 // GetSourceCollections gets the sourceCollections property value. Returns a list of sourceCollection objects associated with this case.
-func (m *Case_escaped) GetSourceCollections()([]SourceCollectionable) {
-    return m.sourceCollections
+func (m *CaseEscaped) GetSourceCollections()([]SourceCollectionable) {
+    val, err := m.GetBackingStore().Get("sourceCollections")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SourceCollectionable)
+    }
+    return nil
 }
 // GetStatus gets the status property value. The case status. Possible values are unknown, active, pendingDelete, closing, closed, and closedWithError. For details, see the following table.
-func (m *Case_escaped) GetStatus()(*CaseStatus) {
-    return m.status
+func (m *CaseEscaped) GetStatus()(*CaseStatus) {
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CaseStatus)
+    }
+    return nil
 }
 // GetTags gets the tags property value. Returns a list of tag objects associated to this case.
-func (m *Case_escaped) GetTags()([]Tagable) {
-    return m.tags
+func (m *CaseEscaped) GetTags()([]Tagable) {
+    val, err := m.GetBackingStore().Get("tags")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Tagable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
-func (m *Case_escaped) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+func (m *CaseEscaped) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
         return err
@@ -466,70 +551,121 @@ func (m *Case_escaped) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // SetClosedBy sets the closedBy property value. The user who closed the case.
-func (m *Case_escaped) SetClosedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)() {
-    m.closedBy = value
+func (m *CaseEscaped) SetClosedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)() {
+    err := m.GetBackingStore().Set("closedBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetClosedDateTime sets the closedDateTime property value. The date and time when the case was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-func (m *Case_escaped) SetClosedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.closedDateTime = value
+func (m *CaseEscaped) SetClosedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("closedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time when the entity was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-func (m *Case_escaped) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+func (m *CaseEscaped) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustodians sets the custodians property value. Returns a list of case custodian objects for this case.  Nullable.
-func (m *Case_escaped) SetCustodians(value []Custodianable)() {
-    m.custodians = value
+func (m *CaseEscaped) SetCustodians(value []Custodianable)() {
+    err := m.GetBackingStore().Set("custodians", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. The case description.
-func (m *Case_escaped) SetDescription(value *string)() {
-    m.description = value
+func (m *CaseEscaped) SetDescription(value *string)() {
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The case name.
-func (m *Case_escaped) SetDisplayName(value *string)() {
-    m.displayName = value
+func (m *CaseEscaped) SetDisplayName(value *string)() {
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExternalId sets the externalId property value. The external case number for customer reference.
-func (m *Case_escaped) SetExternalId(value *string)() {
-    m.externalId = value
+func (m *CaseEscaped) SetExternalId(value *string)() {
+    err := m.GetBackingStore().Set("externalId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. The last user who modified the entity.
-func (m *Case_escaped) SetLastModifiedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)() {
-    m.lastModifiedBy = value
+func (m *CaseEscaped) SetLastModifiedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)() {
+    err := m.GetBackingStore().Set("lastModifiedBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The latest date and time when the case was modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-func (m *Case_escaped) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+func (m *CaseEscaped) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLegalHolds sets the legalHolds property value. Returns a list of case legalHold objects for this case.  Nullable.
-func (m *Case_escaped) SetLegalHolds(value []LegalHoldable)() {
-    m.legalHolds = value
+func (m *CaseEscaped) SetLegalHolds(value []LegalHoldable)() {
+    err := m.GetBackingStore().Set("legalHolds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNoncustodialDataSources sets the noncustodialDataSources property value. Returns a list of case noncustodialDataSource objects for this case.  Nullable.
-func (m *Case_escaped) SetNoncustodialDataSources(value []NoncustodialDataSourceable)() {
-    m.noncustodialDataSources = value
+func (m *CaseEscaped) SetNoncustodialDataSources(value []NoncustodialDataSourceable)() {
+    err := m.GetBackingStore().Set("noncustodialDataSources", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOperations sets the operations property value. Returns a list of case operation objects for this case. Nullable.
-func (m *Case_escaped) SetOperations(value []CaseOperationable)() {
-    m.operations = value
+func (m *CaseEscaped) SetOperations(value []CaseOperationable)() {
+    err := m.GetBackingStore().Set("operations", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReviewSets sets the reviewSets property value. Returns a list of reviewSet objects in the case. Read-only. Nullable.
-func (m *Case_escaped) SetReviewSets(value []ReviewSetable)() {
-    m.reviewSets = value
+func (m *CaseEscaped) SetReviewSets(value []ReviewSetable)() {
+    err := m.GetBackingStore().Set("reviewSets", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettings sets the settings property value. The settings property
-func (m *Case_escaped) SetSettings(value CaseSettingsable)() {
-    m.settings = value
+func (m *CaseEscaped) SetSettings(value CaseSettingsable)() {
+    err := m.GetBackingStore().Set("settings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSourceCollections sets the sourceCollections property value. Returns a list of sourceCollection objects associated with this case.
-func (m *Case_escaped) SetSourceCollections(value []SourceCollectionable)() {
-    m.sourceCollections = value
+func (m *CaseEscaped) SetSourceCollections(value []SourceCollectionable)() {
+    err := m.GetBackingStore().Set("sourceCollections", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. The case status. Possible values are unknown, active, pendingDelete, closing, closed, and closedWithError. For details, see the following table.
-func (m *Case_escaped) SetStatus(value *CaseStatus)() {
-    m.status = value
+func (m *CaseEscaped) SetStatus(value *CaseStatus)() {
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTags sets the tags property value. Returns a list of tag objects associated to this case.
-func (m *Case_escaped) SetTags(value []Tagable)() {
-    m.tags = value
+func (m *CaseEscaped) SetTags(value []Tagable)() {
+    err := m.GetBackingStore().Set("tags", value)
+    if err != nil {
+        panic(err)
+    }
 }

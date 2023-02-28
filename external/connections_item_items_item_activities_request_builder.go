@@ -60,8 +60,8 @@ func NewConnectionsItemItemsItemActivitiesRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewConnectionsItemItemsItemActivitiesRequestBuilder instantiates a new ActivitiesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewConnectionsItemItemsItemActivitiesRequestBuilder(rawUrl string, requestA
 }
 // Count provides operations to count the resources in the collection.
 func (m *ConnectionsItemItemsItemActivitiesRequestBuilder) Count()(*ConnectionsItemItemsItemActivitiesCountRequestBuilder) {
-    return NewConnectionsItemItemsItemActivitiesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewConnectionsItemItemsItemActivitiesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get write-only property. Returns results.
 func (m *ConnectionsItemItemsItemActivitiesRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectionsItemItemsItemActivitiesRequestBuilderGetRequestConfiguration)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalActivityCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *ConnectionsItemItemsItemActivitiesRequestBuilder) ToPostRequestInformat
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

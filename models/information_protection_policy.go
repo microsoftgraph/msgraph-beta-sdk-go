@@ -7,8 +7,6 @@ import (
 // InformationProtectionPolicy 
 type InformationProtectionPolicy struct {
     Entity
-    // The labels property
-    labels []InformationProtectionLabelable
 }
 // NewInformationProtectionPolicy instantiates a new informationProtectionPolicy and sets the default values.
 func NewInformationProtectionPolicy()(*InformationProtectionPolicy) {
@@ -42,7 +40,14 @@ func (m *InformationProtectionPolicy) GetFieldDeserializers()(map[string]func(i8
 }
 // GetLabels gets the labels property value. The labels property
 func (m *InformationProtectionPolicy) GetLabels()([]InformationProtectionLabelable) {
-    return m.labels
+    val, err := m.GetBackingStore().Get("labels")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]InformationProtectionLabelable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *InformationProtectionPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *InformationProtectionPolicy) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetLabels sets the labels property value. The labels property
 func (m *InformationProtectionPolicy) SetLabels(value []InformationProtectionLabelable)() {
-    m.labels = value
+    err := m.GetBackingStore().Set("labels", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// InformationProtectionPolicyable 
+type InformationProtectionPolicyable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetLabels()([]InformationProtectionLabelable)
+    SetLabels(value []InformationProtectionLabelable)()
 }

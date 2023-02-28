@@ -7,8 +7,6 @@ import (
 // ProviderTenantSettingCollectionResponse 
 type ProviderTenantSettingCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ProviderTenantSettingable
 }
 // NewProviderTenantSettingCollectionResponse instantiates a new ProviderTenantSettingCollectionResponse and sets the default values.
 func NewProviderTenantSettingCollectionResponse()(*ProviderTenantSettingCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ProviderTenantSettingCollectionResponse) GetFieldDeserializers()(map[st
 }
 // GetValue gets the value property value. The value property
 func (m *ProviderTenantSettingCollectionResponse) GetValue()([]ProviderTenantSettingable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ProviderTenantSettingable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ProviderTenantSettingCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ProviderTenantSettingCollectionResponse) Serialize(writer i878a80d2330e
 }
 // SetValue sets the value property value. The value property
 func (m *ProviderTenantSettingCollectionResponse) SetValue(value []ProviderTenantSettingable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ProviderTenantSettingCollectionResponseable 
+type ProviderTenantSettingCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ProviderTenantSettingable)
+    SetValue(value []ProviderTenantSettingable)()
 }

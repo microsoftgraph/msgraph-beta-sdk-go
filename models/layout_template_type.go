@@ -6,7 +6,7 @@ import (
 type LayoutTemplateType int
 
 const (
-    DEFAULT_ESCAPED_LAYOUTTEMPLATETYPE LayoutTemplateType = iota
+    DEFAULTESCAPED_LAYOUTTEMPLATETYPE LayoutTemplateType = iota
     VERTICALSPLIT_LAYOUTTEMPLATETYPE
     UNKNOWNFUTUREVALUE_LAYOUTTEMPLATETYPE
 )
@@ -15,10 +15,10 @@ func (i LayoutTemplateType) String() string {
     return []string{"default", "verticalSplit", "unknownFutureValue"}[i]
 }
 func ParseLayoutTemplateType(v string) (any, error) {
-    result := DEFAULT_ESCAPED_LAYOUTTEMPLATETYPE
+    result := DEFAULTESCAPED_LAYOUTTEMPLATETYPE
     switch v {
         case "default":
-            result = DEFAULT_ESCAPED_LAYOUTTEMPLATETYPE
+            result = DEFAULTESCAPED_LAYOUTTEMPLATETYPE
         case "verticalSplit":
             result = VERTICALSPLIT_LAYOUTTEMPLATETYPE
         case "unknownFutureValue":

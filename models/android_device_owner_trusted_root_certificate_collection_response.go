@@ -7,8 +7,6 @@ import (
 // AndroidDeviceOwnerTrustedRootCertificateCollectionResponse 
 type AndroidDeviceOwnerTrustedRootCertificateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidDeviceOwnerTrustedRootCertificateable
 }
 // NewAndroidDeviceOwnerTrustedRootCertificateCollectionResponse instantiates a new AndroidDeviceOwnerTrustedRootCertificateCollectionResponse and sets the default values.
 func NewAndroidDeviceOwnerTrustedRootCertificateCollectionResponse()(*AndroidDeviceOwnerTrustedRootCertificateCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidDeviceOwnerTrustedRootCertificateCollectionResponse) GetFieldDes
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidDeviceOwnerTrustedRootCertificateCollectionResponse) GetValue()([]AndroidDeviceOwnerTrustedRootCertificateable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidDeviceOwnerTrustedRootCertificateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerTrustedRootCertificateCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidDeviceOwnerTrustedRootCertificateCollectionResponse) Serialize(w
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidDeviceOwnerTrustedRootCertificateCollectionResponse) SetValue(value []AndroidDeviceOwnerTrustedRootCertificateable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidDeviceOwnerTrustedRootCertificateCollectionResponseable 
+type AndroidDeviceOwnerTrustedRootCertificateCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidDeviceOwnerTrustedRootCertificateable)
+    SetValue(value []AndroidDeviceOwnerTrustedRootCertificateable)()
 }

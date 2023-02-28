@@ -26,13 +26,13 @@ type ItemConversationsItemThreadsItemReplyRequestBuilderPostRequestConfiguration
 func NewItemConversationsItemThreadsItemReplyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConversationsItemThreadsItemReplyRequestBuilder) {
     m := &ItemConversationsItemThreadsItemReplyRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}/threads/{conversationThread%2Did}/microsoft.graph.reply";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}/threads/{conversationThread%2Did}/reply";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemConversationsItemThreadsItemReplyRequestBuilder instantiates a new ReplyRequestBuilder and sets the default values.
@@ -41,10 +41,10 @@ func NewItemConversationsItemThreadsItemReplyRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewItemConversationsItemThreadsItemReplyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post add an attachment when creating a group post.  This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. 
+// Post reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation in the request, or, you can specify just the thread without the parent conversation.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/post-post-attachments?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
 func (m *ItemConversationsItemThreadsItemReplyRequestBuilder) Post(ctx context.Context, body ItemConversationsItemThreadsItemReplyPostRequestBodyable, requestConfiguration *ItemConversationsItemThreadsItemReplyRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -60,13 +60,16 @@ func (m *ItemConversationsItemThreadsItemReplyRequestBuilder) Post(ctx context.C
     }
     return nil
 }
-// ToPostRequestInformation add an attachment when creating a group post.  This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. 
+// ToPostRequestInformation reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation in the request, or, you can specify just the thread without the parent conversation.
 func (m *ItemConversationsItemThreadsItemReplyRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemConversationsItemThreadsItemReplyPostRequestBodyable, requestConfiguration *ItemConversationsItemThreadsItemReplyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

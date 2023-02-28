@@ -7,8 +7,6 @@ import (
 // AndroidDeviceOwnerEnterpriseWiFiConfigurationCollectionResponse 
 type AndroidDeviceOwnerEnterpriseWiFiConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidDeviceOwnerEnterpriseWiFiConfigurationable
 }
 // NewAndroidDeviceOwnerEnterpriseWiFiConfigurationCollectionResponse instantiates a new AndroidDeviceOwnerEnterpriseWiFiConfigurationCollectionResponse and sets the default values.
 func NewAndroidDeviceOwnerEnterpriseWiFiConfigurationCollectionResponse()(*AndroidDeviceOwnerEnterpriseWiFiConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidDeviceOwnerEnterpriseWiFiConfigurationCollectionResponse) GetFie
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidDeviceOwnerEnterpriseWiFiConfigurationCollectionResponse) GetValue()([]AndroidDeviceOwnerEnterpriseWiFiConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidDeviceOwnerEnterpriseWiFiConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerEnterpriseWiFiConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidDeviceOwnerEnterpriseWiFiConfigurationCollectionResponse) Serial
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidDeviceOwnerEnterpriseWiFiConfigurationCollectionResponse) SetValue(value []AndroidDeviceOwnerEnterpriseWiFiConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidDeviceOwnerEnterpriseWiFiConfigurationCollectionResponseable 
+type AndroidDeviceOwnerEnterpriseWiFiConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidDeviceOwnerEnterpriseWiFiConfigurationable)
+    SetValue(value []AndroidDeviceOwnerEnterpriseWiFiConfigurationable)()
 }

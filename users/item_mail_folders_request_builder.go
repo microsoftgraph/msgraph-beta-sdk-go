@@ -56,8 +56,8 @@ func NewItemMailFoldersRequestBuilderInternal(pathParameters map[string]string, 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemMailFoldersRequestBuilder instantiates a new MailFoldersRequestBuilder and sets the default values.
@@ -68,11 +68,11 @@ func NewItemMailFoldersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemMailFoldersRequestBuilder) Count()(*ItemMailFoldersCountRequestBuilder) {
-    return NewItemMailFoldersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemMailFoldersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delta provides operations to call the delta method.
 func (m *ItemMailFoldersRequestBuilder) Delta()(*ItemMailFoldersDeltaRequestBuilder) {
-    return NewItemMailFoldersDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemMailFoldersDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get all the mail folders in the specified user's mailbox, including any mail search folders. By default, this operation does not return hidden folders. Use a query parameter _includeHiddenFolders_ to include them in the response.
 // [Find more info here]
@@ -141,7 +141,10 @@ func (m *ItemMailFoldersRequestBuilder) ToPostRequestInformation(ctx context.Con
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

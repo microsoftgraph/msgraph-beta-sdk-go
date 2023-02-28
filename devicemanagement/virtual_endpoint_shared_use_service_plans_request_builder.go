@@ -16,7 +16,7 @@ type VirtualEndpointSharedUseServicePlansRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// VirtualEndpointSharedUseServicePlansRequestBuilderGetQueryParameters get sharedUseServicePlans from deviceManagement
+// VirtualEndpointSharedUseServicePlansRequestBuilderGetQueryParameters get a list of the cloudPcSharedUseServicePlan objects and their properties.
 type VirtualEndpointSharedUseServicePlansRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -60,8 +60,8 @@ func NewVirtualEndpointSharedUseServicePlansRequestBuilderInternal(pathParameter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewVirtualEndpointSharedUseServicePlansRequestBuilder instantiates a new SharedUseServicePlansRequestBuilder and sets the default values.
@@ -72,9 +72,12 @@ func NewVirtualEndpointSharedUseServicePlansRequestBuilder(rawUrl string, reques
 }
 // Count provides operations to count the resources in the collection.
 func (m *VirtualEndpointSharedUseServicePlansRequestBuilder) Count()(*VirtualEndpointSharedUseServicePlansCountRequestBuilder) {
-    return NewVirtualEndpointSharedUseServicePlansCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointSharedUseServicePlansCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// Get get sharedUseServicePlans from deviceManagement
+// Get get a list of the cloudPcSharedUseServicePlan objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/virtualendpoint-list-shareduseserviceplans?view=graph-rest-1.0
 func (m *VirtualEndpointSharedUseServicePlansRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointSharedUseServicePlansRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSharedUseServicePlanCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *VirtualEndpointSharedUseServicePlansRequestBuilder) Post(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSharedUseServicePlanable), nil
 }
-// ToGetRequestInformation get sharedUseServicePlans from deviceManagement
+// ToGetRequestInformation get a list of the cloudPcSharedUseServicePlan objects and their properties.
 func (m *VirtualEndpointSharedUseServicePlansRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointSharedUseServicePlansRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -135,7 +138,10 @@ func (m *VirtualEndpointSharedUseServicePlansRequestBuilder) ToPostRequestInform
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

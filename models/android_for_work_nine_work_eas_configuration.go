@@ -7,20 +7,14 @@ import (
 // AndroidForWorkNineWorkEasConfiguration 
 type AndroidForWorkNineWorkEasConfiguration struct {
     AndroidForWorkEasEmailProfileBase
-    // Toggles syncing the calendar. If set to false the calendar is turned off on the device.
-    syncCalendar *bool
-    // Toggles syncing contacts. If set to false contacts are turned off on the device.
-    syncContacts *bool
-    // Toggles syncing tasks. If set to false tasks are turned off on the device.
-    syncTasks *bool
 }
 // NewAndroidForWorkNineWorkEasConfiguration instantiates a new AndroidForWorkNineWorkEasConfiguration and sets the default values.
 func NewAndroidForWorkNineWorkEasConfiguration()(*AndroidForWorkNineWorkEasConfiguration) {
     m := &AndroidForWorkNineWorkEasConfiguration{
         AndroidForWorkEasEmailProfileBase: *NewAndroidForWorkEasEmailProfileBase(),
     }
-    odataTypeValue := "#microsoft.graph.androidForWorkNineWorkEasConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidForWorkNineWorkEasConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidForWorkNineWorkEasConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -64,15 +58,36 @@ func (m *AndroidForWorkNineWorkEasConfiguration) GetFieldDeserializers()(map[str
 }
 // GetSyncCalendar gets the syncCalendar property value. Toggles syncing the calendar. If set to false the calendar is turned off on the device.
 func (m *AndroidForWorkNineWorkEasConfiguration) GetSyncCalendar()(*bool) {
-    return m.syncCalendar
+    val, err := m.GetBackingStore().Get("syncCalendar")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSyncContacts gets the syncContacts property value. Toggles syncing contacts. If set to false contacts are turned off on the device.
 func (m *AndroidForWorkNineWorkEasConfiguration) GetSyncContacts()(*bool) {
-    return m.syncContacts
+    val, err := m.GetBackingStore().Get("syncContacts")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSyncTasks gets the syncTasks property value. Toggles syncing tasks. If set to false tasks are turned off on the device.
 func (m *AndroidForWorkNineWorkEasConfiguration) GetSyncTasks()(*bool) {
-    return m.syncTasks
+    val, err := m.GetBackingStore().Get("syncTasks")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidForWorkNineWorkEasConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -102,13 +117,33 @@ func (m *AndroidForWorkNineWorkEasConfiguration) Serialize(writer i878a80d2330e8
 }
 // SetSyncCalendar sets the syncCalendar property value. Toggles syncing the calendar. If set to false the calendar is turned off on the device.
 func (m *AndroidForWorkNineWorkEasConfiguration) SetSyncCalendar(value *bool)() {
-    m.syncCalendar = value
+    err := m.GetBackingStore().Set("syncCalendar", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSyncContacts sets the syncContacts property value. Toggles syncing contacts. If set to false contacts are turned off on the device.
 func (m *AndroidForWorkNineWorkEasConfiguration) SetSyncContacts(value *bool)() {
-    m.syncContacts = value
+    err := m.GetBackingStore().Set("syncContacts", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSyncTasks sets the syncTasks property value. Toggles syncing tasks. If set to false tasks are turned off on the device.
 func (m *AndroidForWorkNineWorkEasConfiguration) SetSyncTasks(value *bool)() {
-    m.syncTasks = value
+    err := m.GetBackingStore().Set("syncTasks", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidForWorkNineWorkEasConfigurationable 
+type AndroidForWorkNineWorkEasConfigurationable interface {
+    AndroidForWorkEasEmailProfileBaseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetSyncCalendar()(*bool)
+    GetSyncContacts()(*bool)
+    GetSyncTasks()(*bool)
+    SetSyncCalendar(value *bool)()
+    SetSyncContacts(value *bool)()
+    SetSyncTasks(value *bool)()
 }

@@ -8,7 +8,7 @@ import (
 type TrustFrameworkPolicy struct {
     Entity
 }
-// NewTrustFrameworkPolicy instantiates a new TrustFrameworkPolicy and sets the default values.
+// NewTrustFrameworkPolicy instantiates a new trustFrameworkPolicy and sets the default values.
 func NewTrustFrameworkPolicy()(*TrustFrameworkPolicy) {
     m := &TrustFrameworkPolicy{
         Entity: *NewEntity(),
@@ -31,4 +31,9 @@ func (m *TrustFrameworkPolicy) Serialize(writer i878a80d2330e89d26896388a3f487ee
         return err
     }
     return nil
+}
+// TrustFrameworkPolicyable 
+type TrustFrameworkPolicyable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

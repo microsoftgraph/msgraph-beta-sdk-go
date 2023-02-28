@@ -7,18 +7,6 @@ import (
 // DeviceRegistrationPolicy 
 type DeviceRegistrationPolicy struct {
     Entity
-    // Specifies the authorization policy for controlling registration of new devices using Azure AD Join within your organization. Required. For more information, see What is a device identity?.
-    azureADJoin AzureAdJoinPolicyable
-    // Specifies the authorization policy for controlling registration of new devices using Azure AD registered within your organization. Required. For more information, see What is a device identity?.
-    azureADRegistration AzureADRegistrationPolicyable
-    // The description of the device registration policy. It is always set to Tenant-wide policy that manages intial provisioning controls using quota restrictions, additional authentication and authorization checks. Read-only.
-    description *string
-    // The name of the device registration policy. It is always set to Device Registration Policy. Read-only.
-    displayName *string
-    // The multiFactorAuthConfiguration property
-    multiFactorAuthConfiguration *MultiFactorAuthConfiguration
-    // Specifies the maximum number of devices that a user can have within your organization before blocking new device registrations. The default value is set to 50. If this property is not specified during the policy update operation, it is automatically reset to 0 to indicate that users are not allowed to join any devices.
-    userDeviceQuota *int32
 }
 // NewDeviceRegistrationPolicy instantiates a new DeviceRegistrationPolicy and sets the default values.
 func NewDeviceRegistrationPolicy()(*DeviceRegistrationPolicy) {
@@ -33,19 +21,47 @@ func CreateDeviceRegistrationPolicyFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAzureADJoin gets the azureADJoin property value. Specifies the authorization policy for controlling registration of new devices using Azure AD Join within your organization. Required. For more information, see What is a device identity?.
 func (m *DeviceRegistrationPolicy) GetAzureADJoin()(AzureAdJoinPolicyable) {
-    return m.azureADJoin
+    val, err := m.GetBackingStore().Get("azureADJoin")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AzureAdJoinPolicyable)
+    }
+    return nil
 }
 // GetAzureADRegistration gets the azureADRegistration property value. Specifies the authorization policy for controlling registration of new devices using Azure AD registered within your organization. Required. For more information, see What is a device identity?.
 func (m *DeviceRegistrationPolicy) GetAzureADRegistration()(AzureADRegistrationPolicyable) {
-    return m.azureADRegistration
+    val, err := m.GetBackingStore().Get("azureADRegistration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AzureADRegistrationPolicyable)
+    }
+    return nil
 }
 // GetDescription gets the description property value. The description of the device registration policy. It is always set to Tenant-wide policy that manages intial provisioning controls using quota restrictions, additional authentication and authorization checks. Read-only.
 func (m *DeviceRegistrationPolicy) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The name of the device registration policy. It is always set to Device Registration Policy. Read-only.
 func (m *DeviceRegistrationPolicy) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceRegistrationPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -114,11 +130,25 @@ func (m *DeviceRegistrationPolicy) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetMultiFactorAuthConfiguration gets the multiFactorAuthConfiguration property value. The multiFactorAuthConfiguration property
 func (m *DeviceRegistrationPolicy) GetMultiFactorAuthConfiguration()(*MultiFactorAuthConfiguration) {
-    return m.multiFactorAuthConfiguration
+    val, err := m.GetBackingStore().Get("multiFactorAuthConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MultiFactorAuthConfiguration)
+    }
+    return nil
 }
 // GetUserDeviceQuota gets the userDeviceQuota property value. Specifies the maximum number of devices that a user can have within your organization before blocking new device registrations. The default value is set to 50. If this property is not specified during the policy update operation, it is automatically reset to 0 to indicate that users are not allowed to join any devices.
 func (m *DeviceRegistrationPolicy) GetUserDeviceQuota()(*int32) {
-    return m.userDeviceQuota
+    val, err := m.GetBackingStore().Get("userDeviceQuota")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceRegistrationPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -167,25 +197,60 @@ func (m *DeviceRegistrationPolicy) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAzureADJoin sets the azureADJoin property value. Specifies the authorization policy for controlling registration of new devices using Azure AD Join within your organization. Required. For more information, see What is a device identity?.
 func (m *DeviceRegistrationPolicy) SetAzureADJoin(value AzureAdJoinPolicyable)() {
-    m.azureADJoin = value
+    err := m.GetBackingStore().Set("azureADJoin", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAzureADRegistration sets the azureADRegistration property value. Specifies the authorization policy for controlling registration of new devices using Azure AD registered within your organization. Required. For more information, see What is a device identity?.
 func (m *DeviceRegistrationPolicy) SetAzureADRegistration(value AzureADRegistrationPolicyable)() {
-    m.azureADRegistration = value
+    err := m.GetBackingStore().Set("azureADRegistration", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. The description of the device registration policy. It is always set to Tenant-wide policy that manages intial provisioning controls using quota restrictions, additional authentication and authorization checks. Read-only.
 func (m *DeviceRegistrationPolicy) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the device registration policy. It is always set to Device Registration Policy. Read-only.
 func (m *DeviceRegistrationPolicy) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMultiFactorAuthConfiguration sets the multiFactorAuthConfiguration property value. The multiFactorAuthConfiguration property
 func (m *DeviceRegistrationPolicy) SetMultiFactorAuthConfiguration(value *MultiFactorAuthConfiguration)() {
-    m.multiFactorAuthConfiguration = value
+    err := m.GetBackingStore().Set("multiFactorAuthConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserDeviceQuota sets the userDeviceQuota property value. Specifies the maximum number of devices that a user can have within your organization before blocking new device registrations. The default value is set to 50. If this property is not specified during the policy update operation, it is automatically reset to 0 to indicate that users are not allowed to join any devices.
 func (m *DeviceRegistrationPolicy) SetUserDeviceQuota(value *int32)() {
-    m.userDeviceQuota = value
+    err := m.GetBackingStore().Set("userDeviceQuota", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceRegistrationPolicyable 
+type DeviceRegistrationPolicyable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAzureADJoin()(AzureAdJoinPolicyable)
+    GetAzureADRegistration()(AzureADRegistrationPolicyable)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetMultiFactorAuthConfiguration()(*MultiFactorAuthConfiguration)
+    GetUserDeviceQuota()(*int32)
+    SetAzureADJoin(value AzureAdJoinPolicyable)()
+    SetAzureADRegistration(value AzureADRegistrationPolicyable)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetMultiFactorAuthConfiguration(value *MultiFactorAuthConfiguration)()
+    SetUserDeviceQuota(value *int32)()
 }

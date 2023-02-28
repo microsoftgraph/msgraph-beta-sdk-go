@@ -7,8 +7,6 @@ import (
 // AgedAccountsPayableCollectionResponse 
 type AgedAccountsPayableCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AgedAccountsPayableable
 }
 // NewAgedAccountsPayableCollectionResponse instantiates a new AgedAccountsPayableCollectionResponse and sets the default values.
 func NewAgedAccountsPayableCollectionResponse()(*AgedAccountsPayableCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AgedAccountsPayableCollectionResponse) GetFieldDeserializers()(map[stri
 }
 // GetValue gets the value property value. The value property
 func (m *AgedAccountsPayableCollectionResponse) GetValue()([]AgedAccountsPayableable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AgedAccountsPayableable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AgedAccountsPayableCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AgedAccountsPayableCollectionResponse) Serialize(writer i878a80d2330e89
 }
 // SetValue sets the value property value. The value property
 func (m *AgedAccountsPayableCollectionResponse) SetValue(value []AgedAccountsPayableable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AgedAccountsPayableCollectionResponseable 
+type AgedAccountsPayableCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AgedAccountsPayableable)
+    SetValue(value []AgedAccountsPayableable)()
 }

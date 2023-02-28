@@ -8,22 +8,6 @@ import (
 // AlertRule 
 type AlertRule struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue.
-    alertRuleTemplate *AlertRuleTemplate
-    // The rule description.
-    description *string
-    // The display name of the rule.
-    displayName *string
-    // The status of the rule that indicates whether the rule is enabled or disabled. If true, the rule is enabled; otherwise, the rule is disabled.
-    enabled *bool
-    // Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom defined rule and can be edited. System rules are built-in and only a few properties can be edited.
-    isSystemRule *bool
-    // The notification channels of the rule selected by the user.
-    notificationChannels []NotificationChannelable
-    // The severity of the rule. The possible values are: unknown, informational, warning, critical, unknownFutureValue.
-    severity *RuleSeverityType
-    // The conditions to send alerts. For example, send alert when provisioning has failed for greater than or equal to 6 Cloud PCs.
-    threshold RuleThresholdable
 }
 // NewAlertRule instantiates a new alertRule and sets the default values.
 func NewAlertRule()(*AlertRule) {
@@ -38,19 +22,47 @@ func CreateAlertRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetAlertRuleTemplate gets the alertRuleTemplate property value. The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue.
 func (m *AlertRule) GetAlertRuleTemplate()(*AlertRuleTemplate) {
-    return m.alertRuleTemplate
+    val, err := m.GetBackingStore().Get("alertRuleTemplate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AlertRuleTemplate)
+    }
+    return nil
 }
 // GetDescription gets the description property value. The rule description.
 func (m *AlertRule) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the rule.
 func (m *AlertRule) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetEnabled gets the enabled property value. The status of the rule that indicates whether the rule is enabled or disabled. If true, the rule is enabled; otherwise, the rule is disabled.
 func (m *AlertRule) GetEnabled()(*bool) {
-    return m.enabled
+    val, err := m.GetBackingStore().Get("enabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AlertRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -143,19 +155,47 @@ func (m *AlertRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetIsSystemRule gets the isSystemRule property value. Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom defined rule and can be edited. System rules are built-in and only a few properties can be edited.
 func (m *AlertRule) GetIsSystemRule()(*bool) {
-    return m.isSystemRule
+    val, err := m.GetBackingStore().Get("isSystemRule")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetNotificationChannels gets the notificationChannels property value. The notification channels of the rule selected by the user.
 func (m *AlertRule) GetNotificationChannels()([]NotificationChannelable) {
-    return m.notificationChannels
+    val, err := m.GetBackingStore().Get("notificationChannels")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]NotificationChannelable)
+    }
+    return nil
 }
 // GetSeverity gets the severity property value. The severity of the rule. The possible values are: unknown, informational, warning, critical, unknownFutureValue.
 func (m *AlertRule) GetSeverity()(*RuleSeverityType) {
-    return m.severity
+    val, err := m.GetBackingStore().Get("severity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RuleSeverityType)
+    }
+    return nil
 }
 // GetThreshold gets the threshold property value. The conditions to send alerts. For example, send alert when provisioning has failed for greater than or equal to 6 Cloud PCs.
 func (m *AlertRule) GetThreshold()(RuleThresholdable) {
-    return m.threshold
+    val, err := m.GetBackingStore().Get("threshold")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(RuleThresholdable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AlertRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -221,33 +261,78 @@ func (m *AlertRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetAlertRuleTemplate sets the alertRuleTemplate property value. The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue.
 func (m *AlertRule) SetAlertRuleTemplate(value *AlertRuleTemplate)() {
-    m.alertRuleTemplate = value
+    err := m.GetBackingStore().Set("alertRuleTemplate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. The rule description.
 func (m *AlertRule) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the rule.
 func (m *AlertRule) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnabled sets the enabled property value. The status of the rule that indicates whether the rule is enabled or disabled. If true, the rule is enabled; otherwise, the rule is disabled.
 func (m *AlertRule) SetEnabled(value *bool)() {
-    m.enabled = value
+    err := m.GetBackingStore().Set("enabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsSystemRule sets the isSystemRule property value. Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom defined rule and can be edited. System rules are built-in and only a few properties can be edited.
 func (m *AlertRule) SetIsSystemRule(value *bool)() {
-    m.isSystemRule = value
+    err := m.GetBackingStore().Set("isSystemRule", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotificationChannels sets the notificationChannels property value. The notification channels of the rule selected by the user.
 func (m *AlertRule) SetNotificationChannels(value []NotificationChannelable)() {
-    m.notificationChannels = value
+    err := m.GetBackingStore().Set("notificationChannels", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSeverity sets the severity property value. The severity of the rule. The possible values are: unknown, informational, warning, critical, unknownFutureValue.
 func (m *AlertRule) SetSeverity(value *RuleSeverityType)() {
-    m.severity = value
+    err := m.GetBackingStore().Set("severity", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetThreshold sets the threshold property value. The conditions to send alerts. For example, send alert when provisioning has failed for greater than or equal to 6 Cloud PCs.
 func (m *AlertRule) SetThreshold(value RuleThresholdable)() {
-    m.threshold = value
+    err := m.GetBackingStore().Set("threshold", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AlertRuleable 
+type AlertRuleable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAlertRuleTemplate()(*AlertRuleTemplate)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetEnabled()(*bool)
+    GetIsSystemRule()(*bool)
+    GetNotificationChannels()([]NotificationChannelable)
+    GetSeverity()(*RuleSeverityType)
+    GetThreshold()(RuleThresholdable)
+    SetAlertRuleTemplate(value *AlertRuleTemplate)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetEnabled(value *bool)()
+    SetIsSystemRule(value *bool)()
+    SetNotificationChannels(value []NotificationChannelable)()
+    SetSeverity(value *RuleSeverityType)()
+    SetThreshold(value RuleThresholdable)()
 }

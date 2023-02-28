@@ -7,8 +7,6 @@ import (
 // UserAppInstallStatusCollectionResponse 
 type UserAppInstallStatusCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UserAppInstallStatusable
 }
 // NewUserAppInstallStatusCollectionResponse instantiates a new UserAppInstallStatusCollectionResponse and sets the default values.
 func NewUserAppInstallStatusCollectionResponse()(*UserAppInstallStatusCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UserAppInstallStatusCollectionResponse) GetFieldDeserializers()(map[str
 }
 // GetValue gets the value property value. The value property
 func (m *UserAppInstallStatusCollectionResponse) GetValue()([]UserAppInstallStatusable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserAppInstallStatusable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserAppInstallStatusCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UserAppInstallStatusCollectionResponse) Serialize(writer i878a80d2330e8
 }
 // SetValue sets the value property value. The value property
 func (m *UserAppInstallStatusCollectionResponse) SetValue(value []UserAppInstallStatusable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserAppInstallStatusCollectionResponseable 
+type UserAppInstallStatusCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UserAppInstallStatusable)
+    SetValue(value []UserAppInstallStatusable)()
 }

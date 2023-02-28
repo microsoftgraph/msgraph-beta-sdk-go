@@ -8,46 +8,6 @@ import (
 // RecommendationBase 
 type RecommendationBase struct {
     Entity
-    // The actionSteps property
-    actionSteps []ActionStepable
-    // The benefits property
-    benefits *string
-    // The category property
-    category *RecommendationCategory
-    // The createdDateTime property
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The currentScore property
-    currentScore *float64
-    // The displayName property
-    displayName *string
-    // The featureAreas property
-    featureAreas []RecommendationFeatureAreas
-    // The impactedResources property
-    impactedResources []ImpactedResourceable
-    // The impactStartDateTime property
-    impactStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The impactType property
-    impactType *string
-    // The insights property
-    insights *string
-    // The lastCheckedDateTime property
-    lastCheckedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The lastModifiedBy property
-    lastModifiedBy *string
-    // The lastModifiedDateTime property
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The maxScore property
-    maxScore *float64
-    // The postponeUntilDateTime property
-    postponeUntilDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The priority property
-    priority *RecommendationPriority
-    // The recommendationType property
-    recommendationType *RecommendationType
-    // The remediationImpact property
-    remediationImpact *string
-    // The status property
-    status *RecommendationStatus
 }
 // NewRecommendationBase instantiates a new recommendationBase and sets the default values.
 func NewRecommendationBase()(*RecommendationBase) {
@@ -78,33 +38,82 @@ func CreateRecommendationBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26
     }
     return NewRecommendationBase(), nil
 }
-// GetActionSteps gets the actionSteps property value. The actionSteps property
+// GetActionSteps gets the actionSteps property value. List of actions to take to complete a recommendation.
 func (m *RecommendationBase) GetActionSteps()([]ActionStepable) {
-    return m.actionSteps
+    val, err := m.GetBackingStore().Get("actionSteps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ActionStepable)
+    }
+    return nil
 }
-// GetBenefits gets the benefits property value. The benefits property
+// GetBenefits gets the benefits property value. An explanation of why completing the recommendation will benefit you. Corresponds to the Value section of a recommendation shown in the Azure AD portal.
 func (m *RecommendationBase) GetBenefits()(*string) {
-    return m.benefits
+    val, err := m.GetBackingStore().Get("benefits")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCategory gets the category property value. The category property
 func (m *RecommendationBase) GetCategory()(*RecommendationCategory) {
-    return m.category
+    val, err := m.GetBackingStore().Get("category")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RecommendationCategory)
+    }
+    return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the recommendation was detected as applicable to your directory.
 func (m *RecommendationBase) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
-// GetCurrentScore gets the currentScore property value. The currentScore property
+// GetCurrentScore gets the currentScore property value. The number of points the tenant has attained. Only applies to recommendations with category set to identitySecureScore.
 func (m *RecommendationBase) GetCurrentScore()(*float64) {
-    return m.currentScore
+    val, err := m.GetBackingStore().Get("currentScore")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The title of the recommendation.
 func (m *RecommendationBase) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
-// GetFeatureAreas gets the featureAreas property value. The featureAreas property
+// GetFeatureAreas gets the featureAreas property value. The directory feature that the recommendation is related to.
 func (m *RecommendationBase) GetFeatureAreas()([]RecommendationFeatureAreas) {
-    return m.featureAreas
+    val, err := m.GetBackingStore().Get("featureAreas")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]RecommendationFeatureAreas)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RecommendationBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -323,57 +332,148 @@ func (m *RecommendationBase) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetImpactedResources gets the impactedResources property value. The impactedResources property
+// GetImpactedResources gets the impactedResources property value. The list of directory objects associated with the recommendation.
 func (m *RecommendationBase) GetImpactedResources()([]ImpactedResourceable) {
-    return m.impactedResources
+    val, err := m.GetBackingStore().Get("impactedResources")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ImpactedResourceable)
+    }
+    return nil
 }
-// GetImpactStartDateTime gets the impactStartDateTime property value. The impactStartDateTime property
+// GetImpactStartDateTime gets the impactStartDateTime property value. The future date and time when a recommendation should be completed.
 func (m *RecommendationBase) GetImpactStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.impactStartDateTime
+    val, err := m.GetBackingStore().Get("impactStartDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
-// GetImpactType gets the impactType property value. The impactType property
+// GetImpactType gets the impactType property value. Indicates the scope of impact of a recommendation. Tenant level indicates that the recommendation impacts the whole tenant. Other possible values include users, applications.
 func (m *RecommendationBase) GetImpactType()(*string) {
-    return m.impactType
+    val, err := m.GetBackingStore().Get("impactType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
-// GetInsights gets the insights property value. The insights property
+// GetInsights gets the insights property value. Describes why a recommendation uniquely applies to your directory. Corresponds to the Description section of a recommendation shown in the Azure AD portal.
 func (m *RecommendationBase) GetInsights()(*string) {
-    return m.insights
+    val, err := m.GetBackingStore().Get("insights")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
-// GetLastCheckedDateTime gets the lastCheckedDateTime property value. The lastCheckedDateTime property
+// GetLastCheckedDateTime gets the lastCheckedDateTime property value. The most recent date and time a recommendation was deemed applicable to your directory.
 func (m *RecommendationBase) GetLastCheckedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastCheckedDateTime
+    val, err := m.GetBackingStore().Get("lastCheckedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// GetLastModifiedBy gets the lastModifiedBy property value. Name of the user who last updated the status of the recommendation.
 func (m *RecommendationBase) GetLastModifiedBy()(*string) {
-    return m.lastModifiedBy
+    val, err := m.GetBackingStore().Get("lastModifiedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the status of a recommendation was last updated.
 func (m *RecommendationBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
-// GetMaxScore gets the maxScore property value. The maxScore property
+// GetMaxScore gets the maxScore property value. The maximum number of points attainable. Only applies to recommendations with category set to identitySecureScore.
 func (m *RecommendationBase) GetMaxScore()(*float64) {
-    return m.maxScore
+    val, err := m.GetBackingStore().Get("maxScore")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
-// GetPostponeUntilDateTime gets the postponeUntilDateTime property value. The postponeUntilDateTime property
+// GetPostponeUntilDateTime gets the postponeUntilDateTime property value. The future date and time when the status of a postponed recommendation will be active again.
 func (m *RecommendationBase) GetPostponeUntilDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.postponeUntilDateTime
+    val, err := m.GetBackingStore().Get("postponeUntilDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetPriority gets the priority property value. The priority property
 func (m *RecommendationBase) GetPriority()(*RecommendationPriority) {
-    return m.priority
+    val, err := m.GetBackingStore().Get("priority")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RecommendationPriority)
+    }
+    return nil
 }
-// GetRecommendationType gets the recommendationType property value. The recommendationType property
+// GetRecommendationType gets the recommendationType property value. Friendly shortname to identify the recommendation. The possible values are: adfsAppsMigration, enableDesktopSSO, enablePHS, enableProvisioning, switchFromPerUserMFA, tenantMFA, thirdPartyApps, turnOffPerUserMFA, useAuthenticatorApp, useMyApps, staleApps, staleAppCreds, applicationCredentialExpiry, servicePrincipalKeyExpiry, adminMFAV2, blockLegacyAuthentication, integratedApps, mfaRegistrationV2, pwagePolicyNew, passwordHashSync, oneAdmin, roleOverlap, selfServicePasswordReset, signinRiskPolicy, userRiskPolicy, verifyAppPublisher, privateLinkForAAD, appRoleAssignmentsGroups, appRoleAssignmentsUsers, managedIdentity, overprivilegedApps, unknownFutureValue.
 func (m *RecommendationBase) GetRecommendationType()(*RecommendationType) {
-    return m.recommendationType
+    val, err := m.GetBackingStore().Get("recommendationType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RecommendationType)
+    }
+    return nil
 }
-// GetRemediationImpact gets the remediationImpact property value. The remediationImpact property
+// GetRemediationImpact gets the remediationImpact property value. Description of the impact on users of the remediation. Only applies to recommendations with category set to identitySecureScore.
 func (m *RecommendationBase) GetRemediationImpact()(*string) {
-    return m.remediationImpact
+    val, err := m.GetBackingStore().Get("remediationImpact")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetStatus gets the status property value. The status property
 func (m *RecommendationBase) GetStatus()(*RecommendationStatus) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RecommendationStatus)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RecommendationBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -515,83 +615,188 @@ func (m *RecommendationBase) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetActionSteps sets the actionSteps property value. The actionSteps property
+// SetActionSteps sets the actionSteps property value. List of actions to take to complete a recommendation.
 func (m *RecommendationBase) SetActionSteps(value []ActionStepable)() {
-    m.actionSteps = value
+    err := m.GetBackingStore().Set("actionSteps", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetBenefits sets the benefits property value. The benefits property
+// SetBenefits sets the benefits property value. An explanation of why completing the recommendation will benefit you. Corresponds to the Value section of a recommendation shown in the Azure AD portal.
 func (m *RecommendationBase) SetBenefits(value *string)() {
-    m.benefits = value
+    err := m.GetBackingStore().Set("benefits", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCategory sets the category property value. The category property
 func (m *RecommendationBase) SetCategory(value *RecommendationCategory)() {
-    m.category = value
+    err := m.GetBackingStore().Set("category", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the recommendation was detected as applicable to your directory.
 func (m *RecommendationBase) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetCurrentScore sets the currentScore property value. The currentScore property
+// SetCurrentScore sets the currentScore property value. The number of points the tenant has attained. Only applies to recommendations with category set to identitySecureScore.
 func (m *RecommendationBase) SetCurrentScore(value *float64)() {
-    m.currentScore = value
+    err := m.GetBackingStore().Set("currentScore", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The title of the recommendation.
 func (m *RecommendationBase) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetFeatureAreas sets the featureAreas property value. The featureAreas property
+// SetFeatureAreas sets the featureAreas property value. The directory feature that the recommendation is related to.
 func (m *RecommendationBase) SetFeatureAreas(value []RecommendationFeatureAreas)() {
-    m.featureAreas = value
+    err := m.GetBackingStore().Set("featureAreas", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetImpactedResources sets the impactedResources property value. The impactedResources property
+// SetImpactedResources sets the impactedResources property value. The list of directory objects associated with the recommendation.
 func (m *RecommendationBase) SetImpactedResources(value []ImpactedResourceable)() {
-    m.impactedResources = value
+    err := m.GetBackingStore().Set("impactedResources", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetImpactStartDateTime sets the impactStartDateTime property value. The impactStartDateTime property
+// SetImpactStartDateTime sets the impactStartDateTime property value. The future date and time when a recommendation should be completed.
 func (m *RecommendationBase) SetImpactStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.impactStartDateTime = value
+    err := m.GetBackingStore().Set("impactStartDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetImpactType sets the impactType property value. The impactType property
+// SetImpactType sets the impactType property value. Indicates the scope of impact of a recommendation. Tenant level indicates that the recommendation impacts the whole tenant. Other possible values include users, applications.
 func (m *RecommendationBase) SetImpactType(value *string)() {
-    m.impactType = value
+    err := m.GetBackingStore().Set("impactType", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetInsights sets the insights property value. The insights property
+// SetInsights sets the insights property value. Describes why a recommendation uniquely applies to your directory. Corresponds to the Description section of a recommendation shown in the Azure AD portal.
 func (m *RecommendationBase) SetInsights(value *string)() {
-    m.insights = value
+    err := m.GetBackingStore().Set("insights", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetLastCheckedDateTime sets the lastCheckedDateTime property value. The lastCheckedDateTime property
+// SetLastCheckedDateTime sets the lastCheckedDateTime property value. The most recent date and time a recommendation was deemed applicable to your directory.
 func (m *RecommendationBase) SetLastCheckedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastCheckedDateTime = value
+    err := m.GetBackingStore().Set("lastCheckedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+// SetLastModifiedBy sets the lastModifiedBy property value. Name of the user who last updated the status of the recommendation.
 func (m *RecommendationBase) SetLastModifiedBy(value *string)() {
-    m.lastModifiedBy = value
+    err := m.GetBackingStore().Set("lastModifiedBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the status of a recommendation was last updated.
 func (m *RecommendationBase) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetMaxScore sets the maxScore property value. The maxScore property
+// SetMaxScore sets the maxScore property value. The maximum number of points attainable. Only applies to recommendations with category set to identitySecureScore.
 func (m *RecommendationBase) SetMaxScore(value *float64)() {
-    m.maxScore = value
+    err := m.GetBackingStore().Set("maxScore", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetPostponeUntilDateTime sets the postponeUntilDateTime property value. The postponeUntilDateTime property
+// SetPostponeUntilDateTime sets the postponeUntilDateTime property value. The future date and time when the status of a postponed recommendation will be active again.
 func (m *RecommendationBase) SetPostponeUntilDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.postponeUntilDateTime = value
+    err := m.GetBackingStore().Set("postponeUntilDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPriority sets the priority property value. The priority property
 func (m *RecommendationBase) SetPriority(value *RecommendationPriority)() {
-    m.priority = value
+    err := m.GetBackingStore().Set("priority", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetRecommendationType sets the recommendationType property value. The recommendationType property
+// SetRecommendationType sets the recommendationType property value. Friendly shortname to identify the recommendation. The possible values are: adfsAppsMigration, enableDesktopSSO, enablePHS, enableProvisioning, switchFromPerUserMFA, tenantMFA, thirdPartyApps, turnOffPerUserMFA, useAuthenticatorApp, useMyApps, staleApps, staleAppCreds, applicationCredentialExpiry, servicePrincipalKeyExpiry, adminMFAV2, blockLegacyAuthentication, integratedApps, mfaRegistrationV2, pwagePolicyNew, passwordHashSync, oneAdmin, roleOverlap, selfServicePasswordReset, signinRiskPolicy, userRiskPolicy, verifyAppPublisher, privateLinkForAAD, appRoleAssignmentsGroups, appRoleAssignmentsUsers, managedIdentity, overprivilegedApps, unknownFutureValue.
 func (m *RecommendationBase) SetRecommendationType(value *RecommendationType)() {
-    m.recommendationType = value
+    err := m.GetBackingStore().Set("recommendationType", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetRemediationImpact sets the remediationImpact property value. The remediationImpact property
+// SetRemediationImpact sets the remediationImpact property value. Description of the impact on users of the remediation. Only applies to recommendations with category set to identitySecureScore.
 func (m *RecommendationBase) SetRemediationImpact(value *string)() {
-    m.remediationImpact = value
+    err := m.GetBackingStore().Set("remediationImpact", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. The status property
 func (m *RecommendationBase) SetStatus(value *RecommendationStatus)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RecommendationBaseable 
+type RecommendationBaseable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActionSteps()([]ActionStepable)
+    GetBenefits()(*string)
+    GetCategory()(*RecommendationCategory)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetCurrentScore()(*float64)
+    GetDisplayName()(*string)
+    GetFeatureAreas()([]RecommendationFeatureAreas)
+    GetImpactedResources()([]ImpactedResourceable)
+    GetImpactStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetImpactType()(*string)
+    GetInsights()(*string)
+    GetLastCheckedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetLastModifiedBy()(*string)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetMaxScore()(*float64)
+    GetPostponeUntilDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetPriority()(*RecommendationPriority)
+    GetRecommendationType()(*RecommendationType)
+    GetRemediationImpact()(*string)
+    GetStatus()(*RecommendationStatus)
+    SetActionSteps(value []ActionStepable)()
+    SetBenefits(value *string)()
+    SetCategory(value *RecommendationCategory)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetCurrentScore(value *float64)()
+    SetDisplayName(value *string)()
+    SetFeatureAreas(value []RecommendationFeatureAreas)()
+    SetImpactedResources(value []ImpactedResourceable)()
+    SetImpactStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetImpactType(value *string)()
+    SetInsights(value *string)()
+    SetLastCheckedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetLastModifiedBy(value *string)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetMaxScore(value *float64)()
+    SetPostponeUntilDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetPriority(value *RecommendationPriority)()
+    SetRecommendationType(value *RecommendationType)()
+    SetRemediationImpact(value *string)()
+    SetStatus(value *RecommendationStatus)()
 }

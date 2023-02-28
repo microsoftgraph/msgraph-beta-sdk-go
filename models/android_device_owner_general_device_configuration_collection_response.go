@@ -7,8 +7,6 @@ import (
 // AndroidDeviceOwnerGeneralDeviceConfigurationCollectionResponse 
 type AndroidDeviceOwnerGeneralDeviceConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidDeviceOwnerGeneralDeviceConfigurationable
 }
 // NewAndroidDeviceOwnerGeneralDeviceConfigurationCollectionResponse instantiates a new AndroidDeviceOwnerGeneralDeviceConfigurationCollectionResponse and sets the default values.
 func NewAndroidDeviceOwnerGeneralDeviceConfigurationCollectionResponse()(*AndroidDeviceOwnerGeneralDeviceConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfigurationCollectionResponse) GetFiel
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidDeviceOwnerGeneralDeviceConfigurationCollectionResponse) GetValue()([]AndroidDeviceOwnerGeneralDeviceConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidDeviceOwnerGeneralDeviceConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerGeneralDeviceConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfigurationCollectionResponse) Seriali
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidDeviceOwnerGeneralDeviceConfigurationCollectionResponse) SetValue(value []AndroidDeviceOwnerGeneralDeviceConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidDeviceOwnerGeneralDeviceConfigurationCollectionResponseable 
+type AndroidDeviceOwnerGeneralDeviceConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidDeviceOwnerGeneralDeviceConfigurationable)
+    SetValue(value []AndroidDeviceOwnerGeneralDeviceConfigurationable)()
 }

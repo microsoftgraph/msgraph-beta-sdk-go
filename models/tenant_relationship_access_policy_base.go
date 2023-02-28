@@ -7,16 +7,14 @@ import (
 // TenantRelationshipAccessPolicyBase 
 type TenantRelationshipAccessPolicyBase struct {
     PolicyBase
-    // The definition property
-    definition []string
 }
 // NewTenantRelationshipAccessPolicyBase instantiates a new TenantRelationshipAccessPolicyBase and sets the default values.
 func NewTenantRelationshipAccessPolicyBase()(*TenantRelationshipAccessPolicyBase) {
     m := &TenantRelationshipAccessPolicyBase{
         PolicyBase: *NewPolicyBase(),
     }
-    odataTypeValue := "#microsoft.graph.tenantRelationshipAccessPolicyBase";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.tenantRelationshipAccessPolicyBase"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateTenantRelationshipAccessPolicyBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,7 +41,14 @@ func CreateTenantRelationshipAccessPolicyBaseFromDiscriminatorValue(parseNode i8
 }
 // GetDefinition gets the definition property value. The definition property
 func (m *TenantRelationshipAccessPolicyBase) GetDefinition()([]string) {
-    return m.definition
+    val, err := m.GetBackingStore().Get("definition")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TenantRelationshipAccessPolicyBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,5 +85,15 @@ func (m *TenantRelationshipAccessPolicyBase) Serialize(writer i878a80d2330e89d26
 }
 // SetDefinition sets the definition property value. The definition property
 func (m *TenantRelationshipAccessPolicyBase) SetDefinition(value []string)() {
-    m.definition = value
+    err := m.GetBackingStore().Set("definition", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TenantRelationshipAccessPolicyBaseable 
+type TenantRelationshipAccessPolicyBaseable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    PolicyBaseable
+    GetDefinition()([]string)
+    SetDefinition(value []string)()
 }

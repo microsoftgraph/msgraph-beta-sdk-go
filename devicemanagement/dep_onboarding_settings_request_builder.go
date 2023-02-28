@@ -60,8 +60,8 @@ func NewDepOnboardingSettingsRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDepOnboardingSettingsRequestBuilder instantiates a new DepOnboardingSettingsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewDepOnboardingSettingsRequestBuilder(rawUrl string, requestAdapter i2ae41
 }
 // Count provides operations to count the resources in the collection.
 func (m *DepOnboardingSettingsRequestBuilder) Count()(*DepOnboardingSettingsCountRequestBuilder) {
-    return NewDepOnboardingSettingsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDepOnboardingSettingsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get this collections of multiple DEP tokens per-tenant.
 func (m *DepOnboardingSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *DepOnboardingSettingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingCollectionResponseable, error) {
@@ -95,7 +95,7 @@ func (m *DepOnboardingSettingsRequestBuilder) Get(ctx context.Context, requestCo
 }
 // GetExpiringVppTokenCountWithExpiringBeforeDateTime provides operations to call the getExpiringVppTokenCount method.
 func (m *DepOnboardingSettingsRequestBuilder) GetExpiringVppTokenCountWithExpiringBeforeDateTime(expiringBeforeDateTime *string)(*DepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder) {
-    return NewDepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, expiringBeforeDateTime);
+    return NewDepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, expiringBeforeDateTime)
 }
 // Post create new navigation property to depOnboardingSettings for deviceManagement
 func (m *DepOnboardingSettingsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable, requestConfiguration *DepOnboardingSettingsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable, error) {
@@ -139,7 +139,10 @@ func (m *DepOnboardingSettingsRequestBuilder) ToPostRequestInformation(ctx conte
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

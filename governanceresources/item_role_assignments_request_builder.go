@@ -60,8 +60,8 @@ func NewItemRoleAssignmentsRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemRoleAssignmentsRequestBuilder instantiates a new RoleAssignmentsRequestBuilder and sets the default values.
@@ -72,11 +72,11 @@ func NewItemRoleAssignmentsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemRoleAssignmentsRequestBuilder) Count()(*ItemRoleAssignmentsCountRequestBuilder) {
-    return NewItemRoleAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRoleAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Export provides operations to call the export method.
 func (m *ItemRoleAssignmentsRequestBuilder) Export()(*ItemRoleAssignmentsExportRequestBuilder) {
-    return NewItemRoleAssignmentsExportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRoleAssignmentsExportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the collection of role assignments for the resource.
 func (m *ItemRoleAssignmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemRoleAssignmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentCollectionResponseable, error) {
@@ -139,7 +139,10 @@ func (m *ItemRoleAssignmentsRequestBuilder) ToPostRequestInformation(ctx context
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

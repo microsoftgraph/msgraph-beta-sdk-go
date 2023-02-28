@@ -8,8 +8,6 @@ import (
 // ItemFindRoomsResponse 
 type ItemFindRoomsResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
-    // The value property
-    value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmailAddressable
 }
 // NewItemFindRoomsResponse instantiates a new ItemFindRoomsResponse and sets the default values.
 func NewItemFindRoomsResponse()(*ItemFindRoomsResponse) {
@@ -43,7 +41,14 @@ func (m *ItemFindRoomsResponse) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetValue gets the value property value. The value property
 func (m *ItemFindRoomsResponse) GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmailAddressable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmailAddressable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemFindRoomsResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *ItemFindRoomsResponse) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetValue sets the value property value. The value property
 func (m *ItemFindRoomsResponse) SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmailAddressable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemFindRoomsResponseable 
+type ItemFindRoomsResponseable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmailAddressable)
+    SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmailAddressable)()
 }

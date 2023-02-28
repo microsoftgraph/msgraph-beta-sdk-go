@@ -8,18 +8,6 @@ import (
 // WindowsInformationProtectionDeviceRegistration represents device registration records for Bring-Your-Own-Device(BYOD) Windows devices.
 type WindowsInformationProtectionDeviceRegistration struct {
     Entity
-    // Device Mac address.
-    deviceMacAddress *string
-    // Device name.
-    deviceName *string
-    // Device identifier for this device registration record.
-    deviceRegistrationId *string
-    // Device type, for example, Windows laptop VS Windows phone.
-    deviceType *string
-    // Last checkin time of the device.
-    lastCheckInDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // UserId associated with this device registration record.
-    userId *string
 }
 // NewWindowsInformationProtectionDeviceRegistration instantiates a new windowsInformationProtectionDeviceRegistration and sets the default values.
 func NewWindowsInformationProtectionDeviceRegistration()(*WindowsInformationProtectionDeviceRegistration) {
@@ -34,19 +22,47 @@ func CreateWindowsInformationProtectionDeviceRegistrationFromDiscriminatorValue(
 }
 // GetDeviceMacAddress gets the deviceMacAddress property value. Device Mac address.
 func (m *WindowsInformationProtectionDeviceRegistration) GetDeviceMacAddress()(*string) {
-    return m.deviceMacAddress
+    val, err := m.GetBackingStore().Get("deviceMacAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDeviceName gets the deviceName property value. Device name.
 func (m *WindowsInformationProtectionDeviceRegistration) GetDeviceName()(*string) {
-    return m.deviceName
+    val, err := m.GetBackingStore().Get("deviceName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDeviceRegistrationId gets the deviceRegistrationId property value. Device identifier for this device registration record.
 func (m *WindowsInformationProtectionDeviceRegistration) GetDeviceRegistrationId()(*string) {
-    return m.deviceRegistrationId
+    val, err := m.GetBackingStore().Get("deviceRegistrationId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDeviceType gets the deviceType property value. Device type, for example, Windows laptop VS Windows phone.
 func (m *WindowsInformationProtectionDeviceRegistration) GetDeviceType()(*string) {
-    return m.deviceType
+    val, err := m.GetBackingStore().Get("deviceType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsInformationProtectionDeviceRegistration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -115,11 +131,25 @@ func (m *WindowsInformationProtectionDeviceRegistration) GetFieldDeserializers()
 }
 // GetLastCheckInDateTime gets the lastCheckInDateTime property value. Last checkin time of the device.
 func (m *WindowsInformationProtectionDeviceRegistration) GetLastCheckInDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastCheckInDateTime
+    val, err := m.GetBackingStore().Get("lastCheckInDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetUserId gets the userId property value. UserId associated with this device registration record.
 func (m *WindowsInformationProtectionDeviceRegistration) GetUserId()(*string) {
-    return m.userId
+    val, err := m.GetBackingStore().Get("userId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsInformationProtectionDeviceRegistration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -167,25 +197,60 @@ func (m *WindowsInformationProtectionDeviceRegistration) Serialize(writer i878a8
 }
 // SetDeviceMacAddress sets the deviceMacAddress property value. Device Mac address.
 func (m *WindowsInformationProtectionDeviceRegistration) SetDeviceMacAddress(value *string)() {
-    m.deviceMacAddress = value
+    err := m.GetBackingStore().Set("deviceMacAddress", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceName sets the deviceName property value. Device name.
 func (m *WindowsInformationProtectionDeviceRegistration) SetDeviceName(value *string)() {
-    m.deviceName = value
+    err := m.GetBackingStore().Set("deviceName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceRegistrationId sets the deviceRegistrationId property value. Device identifier for this device registration record.
 func (m *WindowsInformationProtectionDeviceRegistration) SetDeviceRegistrationId(value *string)() {
-    m.deviceRegistrationId = value
+    err := m.GetBackingStore().Set("deviceRegistrationId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceType sets the deviceType property value. Device type, for example, Windows laptop VS Windows phone.
 func (m *WindowsInformationProtectionDeviceRegistration) SetDeviceType(value *string)() {
-    m.deviceType = value
+    err := m.GetBackingStore().Set("deviceType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastCheckInDateTime sets the lastCheckInDateTime property value. Last checkin time of the device.
 func (m *WindowsInformationProtectionDeviceRegistration) SetLastCheckInDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastCheckInDateTime = value
+    err := m.GetBackingStore().Set("lastCheckInDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserId sets the userId property value. UserId associated with this device registration record.
 func (m *WindowsInformationProtectionDeviceRegistration) SetUserId(value *string)() {
-    m.userId = value
+    err := m.GetBackingStore().Set("userId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsInformationProtectionDeviceRegistrationable 
+type WindowsInformationProtectionDeviceRegistrationable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDeviceMacAddress()(*string)
+    GetDeviceName()(*string)
+    GetDeviceRegistrationId()(*string)
+    GetDeviceType()(*string)
+    GetLastCheckInDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetUserId()(*string)
+    SetDeviceMacAddress(value *string)()
+    SetDeviceName(value *string)()
+    SetDeviceRegistrationId(value *string)()
+    SetDeviceType(value *string)()
+    SetLastCheckInDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetUserId(value *string)()
 }

@@ -26,7 +26,7 @@ type GetYammerGroupsActivityCountsWithPeriodRequestBuilderGetRequestConfiguratio
 func NewGetYammerGroupsActivityCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, period *string)(*GetYammerGroupsActivityCountsWithPeriodRequestBuilder) {
     m := &GetYammerGroupsActivityCountsWithPeriodRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/reports/microsoft.graph.getYammerGroupsActivityCounts(period='{period}')";
+    m.urlTemplate = "{+baseurl}/reports/getYammerGroupsActivityCounts(period='{period}')";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -34,8 +34,8 @@ func NewGetYammerGroupsActivityCountsWithPeriodRequestBuilderInternal(pathParame
     if period != nil {
         urlTplParams["period"] = *period
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGetYammerGroupsActivityCountsWithPeriodRequestBuilder instantiates a new GetYammerGroupsActivityCountsWithPeriodRequestBuilder and sets the default values.

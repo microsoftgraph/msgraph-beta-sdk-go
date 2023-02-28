@@ -13,8 +13,8 @@ func NewWindowsManagedDevice()(*WindowsManagedDevice) {
     m := &WindowsManagedDevice{
         ManagedDevice: *NewManagedDevice(),
     }
-    odataTypeValue := "#microsoft.graph.windowsManagedDevice";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsManagedDevice"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsManagedDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,4 +33,9 @@ func (m *WindowsManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487ee
         return err
     }
     return nil
+}
+// WindowsManagedDeviceable 
+type WindowsManagedDeviceable interface {
+    ManagedDeviceable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

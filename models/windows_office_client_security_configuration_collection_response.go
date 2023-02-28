@@ -7,8 +7,6 @@ import (
 // WindowsOfficeClientSecurityConfigurationCollectionResponse 
 type WindowsOfficeClientSecurityConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WindowsOfficeClientSecurityConfigurationable
 }
 // NewWindowsOfficeClientSecurityConfigurationCollectionResponse instantiates a new WindowsOfficeClientSecurityConfigurationCollectionResponse and sets the default values.
 func NewWindowsOfficeClientSecurityConfigurationCollectionResponse()(*WindowsOfficeClientSecurityConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WindowsOfficeClientSecurityConfigurationCollectionResponse) GetFieldDes
 }
 // GetValue gets the value property value. The value property
 func (m *WindowsOfficeClientSecurityConfigurationCollectionResponse) GetValue()([]WindowsOfficeClientSecurityConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsOfficeClientSecurityConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsOfficeClientSecurityConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WindowsOfficeClientSecurityConfigurationCollectionResponse) Serialize(w
 }
 // SetValue sets the value property value. The value property
 func (m *WindowsOfficeClientSecurityConfigurationCollectionResponse) SetValue(value []WindowsOfficeClientSecurityConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsOfficeClientSecurityConfigurationCollectionResponseable 
+type WindowsOfficeClientSecurityConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WindowsOfficeClientSecurityConfigurationable)
+    SetValue(value []WindowsOfficeClientSecurityConfigurationable)()
 }

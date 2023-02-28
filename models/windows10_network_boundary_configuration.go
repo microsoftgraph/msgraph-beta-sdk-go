@@ -7,16 +7,14 @@ import (
 // Windows10NetworkBoundaryConfiguration 
 type Windows10NetworkBoundaryConfiguration struct {
     DeviceConfiguration
-    // Windows Network Isolation Policy
-    windowsNetworkIsolationPolicy WindowsNetworkIsolationPolicyable
 }
 // NewWindows10NetworkBoundaryConfiguration instantiates a new Windows10NetworkBoundaryConfiguration and sets the default values.
 func NewWindows10NetworkBoundaryConfiguration()(*Windows10NetworkBoundaryConfiguration) {
     m := &Windows10NetworkBoundaryConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.windows10NetworkBoundaryConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windows10NetworkBoundaryConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindows10NetworkBoundaryConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *Windows10NetworkBoundaryConfiguration) GetFieldDeserializers()(map[stri
 }
 // GetWindowsNetworkIsolationPolicy gets the windowsNetworkIsolationPolicy property value. Windows Network Isolation Policy
 func (m *Windows10NetworkBoundaryConfiguration) GetWindowsNetworkIsolationPolicy()(WindowsNetworkIsolationPolicyable) {
-    return m.windowsNetworkIsolationPolicy
+    val, err := m.GetBackingStore().Get("windowsNetworkIsolationPolicy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WindowsNetworkIsolationPolicyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Windows10NetworkBoundaryConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *Windows10NetworkBoundaryConfiguration) Serialize(writer i878a80d2330e89
 }
 // SetWindowsNetworkIsolationPolicy sets the windowsNetworkIsolationPolicy property value. Windows Network Isolation Policy
 func (m *Windows10NetworkBoundaryConfiguration) SetWindowsNetworkIsolationPolicy(value WindowsNetworkIsolationPolicyable)() {
-    m.windowsNetworkIsolationPolicy = value
+    err := m.GetBackingStore().Set("windowsNetworkIsolationPolicy", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Windows10NetworkBoundaryConfigurationable 
+type Windows10NetworkBoundaryConfigurationable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetWindowsNetworkIsolationPolicy()(WindowsNetworkIsolationPolicyable)
+    SetWindowsNetworkIsolationPolicy(value WindowsNetworkIsolationPolicyable)()
 }

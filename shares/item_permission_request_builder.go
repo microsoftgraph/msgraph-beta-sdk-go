@@ -55,8 +55,8 @@ func NewItemPermissionRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemPermissionRequestBuilder instantiates a new PermissionRequestBuilder and sets the default values.
@@ -102,7 +102,7 @@ func (m *ItemPermissionRequestBuilder) Get(ctx context.Context, requestConfigura
 }
 // Grant provides operations to call the grant method.
 func (m *ItemPermissionRequestBuilder) Grant()(*ItemPermissionGrantRequestBuilder) {
-    return NewItemPermissionGrantRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemPermissionGrantRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property permission in shares
 func (m *ItemPermissionRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable, requestConfiguration *ItemPermissionRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable, error) {
@@ -125,7 +125,7 @@ func (m *ItemPermissionRequestBuilder) Patch(ctx context.Context, body ie233ee76
 }
 // RevokeGrants provides operations to call the revokeGrants method.
 func (m *ItemPermissionRequestBuilder) RevokeGrants()(*ItemPermissionRevokeGrantsRequestBuilder) {
-    return NewItemPermissionRevokeGrantsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemPermissionRevokeGrantsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property permission for shares
 func (m *ItemPermissionRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemPermissionRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -162,7 +162,10 @@ func (m *ItemPermissionRequestBuilder) ToPatchRequestInformation(ctx context.Con
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

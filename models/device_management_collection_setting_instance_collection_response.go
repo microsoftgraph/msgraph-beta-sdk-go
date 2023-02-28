@@ -7,8 +7,6 @@ import (
 // DeviceManagementCollectionSettingInstanceCollectionResponse 
 type DeviceManagementCollectionSettingInstanceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementCollectionSettingInstanceable
 }
 // NewDeviceManagementCollectionSettingInstanceCollectionResponse instantiates a new DeviceManagementCollectionSettingInstanceCollectionResponse and sets the default values.
 func NewDeviceManagementCollectionSettingInstanceCollectionResponse()(*DeviceManagementCollectionSettingInstanceCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementCollectionSettingInstanceCollectionResponse) GetFieldDe
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementCollectionSettingInstanceCollectionResponse) GetValue()([]DeviceManagementCollectionSettingInstanceable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementCollectionSettingInstanceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementCollectionSettingInstanceCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementCollectionSettingInstanceCollectionResponse) Serialize(
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementCollectionSettingInstanceCollectionResponse) SetValue(value []DeviceManagementCollectionSettingInstanceable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementCollectionSettingInstanceCollectionResponseable 
+type DeviceManagementCollectionSettingInstanceCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementCollectionSettingInstanceable)
+    SetValue(value []DeviceManagementCollectionSettingInstanceable)()
 }

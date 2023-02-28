@@ -7,8 +7,6 @@ import (
 // AndroidForWorkEnterpriseWiFiConfigurationCollectionResponse 
 type AndroidForWorkEnterpriseWiFiConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidForWorkEnterpriseWiFiConfigurationable
 }
 // NewAndroidForWorkEnterpriseWiFiConfigurationCollectionResponse instantiates a new AndroidForWorkEnterpriseWiFiConfigurationCollectionResponse and sets the default values.
 func NewAndroidForWorkEnterpriseWiFiConfigurationCollectionResponse()(*AndroidForWorkEnterpriseWiFiConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidForWorkEnterpriseWiFiConfigurationCollectionResponse) GetFieldDe
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidForWorkEnterpriseWiFiConfigurationCollectionResponse) GetValue()([]AndroidForWorkEnterpriseWiFiConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidForWorkEnterpriseWiFiConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidForWorkEnterpriseWiFiConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidForWorkEnterpriseWiFiConfigurationCollectionResponse) Serialize(
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidForWorkEnterpriseWiFiConfigurationCollectionResponse) SetValue(value []AndroidForWorkEnterpriseWiFiConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidForWorkEnterpriseWiFiConfigurationCollectionResponseable 
+type AndroidForWorkEnterpriseWiFiConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidForWorkEnterpriseWiFiConfigurationable)
+    SetValue(value []AndroidForWorkEnterpriseWiFiConfigurationable)()
 }

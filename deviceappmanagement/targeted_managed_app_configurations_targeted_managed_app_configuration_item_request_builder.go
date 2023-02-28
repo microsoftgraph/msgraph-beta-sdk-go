@@ -48,7 +48,7 @@ type TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestB
 }
 // Apps provides operations to manage the apps property of the microsoft.graph.targetedManagedAppConfiguration entity.
 func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder) Apps()(*TargetedManagedAppConfigurationsItemAppsRequestBuilder) {
-    return NewTargetedManagedAppConfigurationsItemAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTargetedManagedAppConfigurationsItemAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AppsById provides operations to manage the apps property of the microsoft.graph.targetedManagedAppConfiguration entity.
 func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder) AppsById(id string)(*TargetedManagedAppConfigurationsItemAppsManagedMobileAppItemRequestBuilder) {
@@ -59,15 +59,15 @@ func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequ
     if id != "" {
         urlTplParams["managedMobileApp%2Did"] = id
     }
-    return NewTargetedManagedAppConfigurationsItemAppsManagedMobileAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTargetedManagedAppConfigurationsItemAppsManagedMobileAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Assign provides operations to call the assign method.
 func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder) Assign()(*TargetedManagedAppConfigurationsItemAssignRequestBuilder) {
-    return NewTargetedManagedAppConfigurationsItemAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTargetedManagedAppConfigurationsItemAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Assignments provides operations to manage the assignments property of the microsoft.graph.targetedManagedAppConfiguration entity.
 func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder) Assignments()(*TargetedManagedAppConfigurationsItemAssignmentsRequestBuilder) {
-    return NewTargetedManagedAppConfigurationsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTargetedManagedAppConfigurationsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.targetedManagedAppConfiguration entity.
 func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder) AssignmentsById(id string)(*TargetedManagedAppConfigurationsItemAssignmentsTargetedManagedAppPolicyAssignmentItemRequestBuilder) {
@@ -78,7 +78,7 @@ func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequ
     if id != "" {
         urlTplParams["targetedManagedAppPolicyAssignment%2Did"] = id
     }
-    return NewTargetedManagedAppConfigurationsItemAssignmentsTargetedManagedAppPolicyAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTargetedManagedAppConfigurationsItemAssignmentsTargetedManagedAppPolicyAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewTargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilderInternal instantiates a new TargetedManagedAppConfigurationItemRequestBuilder and sets the default values.
 func NewTargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder) {
@@ -89,8 +89,8 @@ func NewTargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemReque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder instantiates a new TargetedManagedAppConfigurationItemRequestBuilder and sets the default values.
@@ -117,7 +117,7 @@ func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequ
 }
 // DeploymentSummary provides operations to manage the deploymentSummary property of the microsoft.graph.targetedManagedAppConfiguration entity.
 func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder) DeploymentSummary()(*TargetedManagedAppConfigurationsItemDeploymentSummaryRequestBuilder) {
-    return NewTargetedManagedAppConfigurationsItemDeploymentSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTargetedManagedAppConfigurationsItemDeploymentSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get targeted managed app configurations.
 func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TargetedManagedAppConfigurationable, error) {
@@ -159,7 +159,7 @@ func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequ
 }
 // TargetApps provides operations to call the targetApps method.
 func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder) TargetApps()(*TargetedManagedAppConfigurationsItemTargetAppsRequestBuilder) {
-    return NewTargetedManagedAppConfigurationsItemTargetAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTargetedManagedAppConfigurationsItemTargetAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property targetedManagedAppConfigurations for deviceAppManagement
 func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -196,7 +196,10 @@ func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

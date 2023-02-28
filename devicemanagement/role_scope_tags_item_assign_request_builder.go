@@ -26,13 +26,13 @@ type RoleScopeTagsItemAssignRequestBuilderPostRequestConfiguration struct {
 func NewRoleScopeTagsItemAssignRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleScopeTagsItemAssignRequestBuilder) {
     m := &RoleScopeTagsItemAssignRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/roleScopeTags/{roleScopeTag%2Did}/microsoft.graph.assign";
+    m.urlTemplate = "{+baseurl}/deviceManagement/roleScopeTags/{roleScopeTag%2Did}/assign";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewRoleScopeTagsItemAssignRequestBuilder instantiates a new AssignRequestBuilder and sets the default values.
@@ -67,7 +67,10 @@ func (m *RoleScopeTagsItemAssignRequestBuilder) ToPostRequestInformation(ctx con
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

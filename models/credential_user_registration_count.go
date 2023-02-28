@@ -7,10 +7,6 @@ import (
 // CredentialUserRegistrationCount 
 type CredentialUserRegistrationCount struct {
     Entity
-    // Provides the total user count in the tenant.
-    totalUserCount *int64
-    // A collection of registration count and status information for users in your tenant.
-    userRegistrationCounts []UserRegistrationCountable
 }
 // NewCredentialUserRegistrationCount instantiates a new CredentialUserRegistrationCount and sets the default values.
 func NewCredentialUserRegistrationCount()(*CredentialUserRegistrationCount) {
@@ -54,11 +50,25 @@ func (m *CredentialUserRegistrationCount) GetFieldDeserializers()(map[string]fun
 }
 // GetTotalUserCount gets the totalUserCount property value. Provides the total user count in the tenant.
 func (m *CredentialUserRegistrationCount) GetTotalUserCount()(*int64) {
-    return m.totalUserCount
+    val, err := m.GetBackingStore().Get("totalUserCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetUserRegistrationCounts gets the userRegistrationCounts property value. A collection of registration count and status information for users in your tenant.
 func (m *CredentialUserRegistrationCount) GetUserRegistrationCounts()([]UserRegistrationCountable) {
-    return m.userRegistrationCounts
+    val, err := m.GetBackingStore().Get("userRegistrationCounts")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserRegistrationCountable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CredentialUserRegistrationCount) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -86,9 +96,24 @@ func (m *CredentialUserRegistrationCount) Serialize(writer i878a80d2330e89d26896
 }
 // SetTotalUserCount sets the totalUserCount property value. Provides the total user count in the tenant.
 func (m *CredentialUserRegistrationCount) SetTotalUserCount(value *int64)() {
-    m.totalUserCount = value
+    err := m.GetBackingStore().Set("totalUserCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRegistrationCounts sets the userRegistrationCounts property value. A collection of registration count and status information for users in your tenant.
 func (m *CredentialUserRegistrationCount) SetUserRegistrationCounts(value []UserRegistrationCountable)() {
-    m.userRegistrationCounts = value
+    err := m.GetBackingStore().Set("userRegistrationCounts", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CredentialUserRegistrationCountable 
+type CredentialUserRegistrationCountable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetTotalUserCount()(*int64)
+    GetUserRegistrationCounts()([]UserRegistrationCountable)
+    SetTotalUserCount(value *int64)()
+    SetUserRegistrationCounts(value []UserRegistrationCountable)()
 }

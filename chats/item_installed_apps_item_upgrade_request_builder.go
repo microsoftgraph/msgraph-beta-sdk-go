@@ -26,13 +26,13 @@ type ItemInstalledAppsItemUpgradeRequestBuilderPostRequestConfiguration struct {
 func NewItemInstalledAppsItemUpgradeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInstalledAppsItemUpgradeRequestBuilder) {
     m := &ItemInstalledAppsItemUpgradeRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/chats/{chat%2Did}/installedApps/{teamsAppInstallation%2Did}/microsoft.graph.upgrade";
+    m.urlTemplate = "{+baseurl}/chats/{chat%2Did}/installedApps/{teamsAppInstallation%2Did}/upgrade";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemInstalledAppsItemUpgradeRequestBuilder instantiates a new UpgradeRequestBuilder and sets the default values.

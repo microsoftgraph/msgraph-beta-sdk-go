@@ -7,8 +7,6 @@ import (
 // EducationIdentityDomainCollectionResponse 
 type EducationIdentityDomainCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []EducationIdentityDomainable
 }
 // NewEducationIdentityDomainCollectionResponse instantiates a new EducationIdentityDomainCollectionResponse and sets the default values.
 func NewEducationIdentityDomainCollectionResponse()(*EducationIdentityDomainCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *EducationIdentityDomainCollectionResponse) GetFieldDeserializers()(map[
 }
 // GetValue gets the value property value. The value property
 func (m *EducationIdentityDomainCollectionResponse) GetValue()([]EducationIdentityDomainable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EducationIdentityDomainable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EducationIdentityDomainCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *EducationIdentityDomainCollectionResponse) Serialize(writer i878a80d233
 }
 // SetValue sets the value property value. The value property
 func (m *EducationIdentityDomainCollectionResponse) SetValue(value []EducationIdentityDomainable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EducationIdentityDomainCollectionResponseable 
+type EducationIdentityDomainCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]EducationIdentityDomainable)
+    SetValue(value []EducationIdentityDomainable)()
 }

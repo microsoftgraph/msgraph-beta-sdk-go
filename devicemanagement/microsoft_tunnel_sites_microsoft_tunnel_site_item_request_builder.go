@@ -55,8 +55,8 @@ func NewMicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilderInternal(pathPa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder instantiates a new MicrosoftTunnelSiteItemRequestBuilder and sets the default values.
@@ -102,11 +102,11 @@ func (m *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) Get(ctx cont
 }
 // MicrosoftTunnelConfiguration provides operations to manage the microsoftTunnelConfiguration property of the microsoft.graph.microsoftTunnelSite entity.
 func (m *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) MicrosoftTunnelConfiguration()(*MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder) {
-    return NewMicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MicrosoftTunnelServers provides operations to manage the microsoftTunnelServers property of the microsoft.graph.microsoftTunnelSite entity.
 func (m *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) MicrosoftTunnelServers()(*MicrosoftTunnelSitesItemMicrosoftTunnelServersRequestBuilder) {
-    return NewMicrosoftTunnelSitesItemMicrosoftTunnelServersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMicrosoftTunnelSitesItemMicrosoftTunnelServersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MicrosoftTunnelServersById provides operations to manage the microsoftTunnelServers property of the microsoft.graph.microsoftTunnelSite entity.
 func (m *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) MicrosoftTunnelServersById(id string)(*MicrosoftTunnelSitesItemMicrosoftTunnelServersMicrosoftTunnelServerItemRequestBuilder) {
@@ -117,7 +117,7 @@ func (m *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) MicrosoftTun
     if id != "" {
         urlTplParams["microsoftTunnelServer%2Did"] = id
     }
-    return NewMicrosoftTunnelSitesItemMicrosoftTunnelServersMicrosoftTunnelServerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMicrosoftTunnelSitesItemMicrosoftTunnelServersMicrosoftTunnelServerItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch update the navigation property microsoftTunnelSites in deviceManagement
 func (m *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelSiteable, requestConfiguration *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelSiteable, error) {
@@ -140,7 +140,7 @@ func (m *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) Patch(ctx co
 }
 // RequestUpgrade provides operations to call the requestUpgrade method.
 func (m *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) RequestUpgrade()(*MicrosoftTunnelSitesItemRequestUpgradeRequestBuilder) {
-    return NewMicrosoftTunnelSitesItemRequestUpgradeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMicrosoftTunnelSitesItemRequestUpgradeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property microsoftTunnelSites for deviceManagement
 func (m *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -177,7 +177,10 @@ func (m *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) ToPatchReque
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

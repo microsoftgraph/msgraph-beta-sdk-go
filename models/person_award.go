@@ -7,26 +7,14 @@ import (
 // PersonAward 
 type PersonAward struct {
     ItemFacet
-    // Descpription of the award or honor.
-    description *string
-    // Name of the award or honor.
-    displayName *string
-    // The date that the award or honor was granted.
-    issuedDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // Authority which granted the award or honor.
-    issuingAuthority *string
-    // URL referencing a thumbnail of the award or honor.
-    thumbnailUrl *string
-    // URL referencing the award or honor.
-    webUrl *string
 }
 // NewPersonAward instantiates a new PersonAward and sets the default values.
 func NewPersonAward()(*PersonAward) {
     m := &PersonAward{
         ItemFacet: *NewItemFacet(),
     }
-    odataTypeValue := "#microsoft.graph.personAward";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.personAward"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreatePersonAwardFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,11 +23,25 @@ func CreatePersonAwardFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetDescription gets the description property value. Descpription of the award or honor.
 func (m *PersonAward) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. Name of the award or honor.
 func (m *PersonAward) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PersonAward) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -108,19 +110,47 @@ func (m *PersonAward) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetIssuedDate gets the issuedDate property value. The date that the award or honor was granted.
 func (m *PersonAward) GetIssuedDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.issuedDate
+    val, err := m.GetBackingStore().Get("issuedDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetIssuingAuthority gets the issuingAuthority property value. Authority which granted the award or honor.
 func (m *PersonAward) GetIssuingAuthority()(*string) {
-    return m.issuingAuthority
+    val, err := m.GetBackingStore().Get("issuingAuthority")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetThumbnailUrl gets the thumbnailUrl property value. URL referencing a thumbnail of the award or honor.
 func (m *PersonAward) GetThumbnailUrl()(*string) {
-    return m.thumbnailUrl
+    val, err := m.GetBackingStore().Get("thumbnailUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetWebUrl gets the webUrl property value. URL referencing the award or honor.
 func (m *PersonAward) GetWebUrl()(*string) {
-    return m.webUrl
+    val, err := m.GetBackingStore().Get("webUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PersonAward) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -168,25 +198,60 @@ func (m *PersonAward) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetDescription sets the description property value. Descpription of the award or honor.
 func (m *PersonAward) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. Name of the award or honor.
 func (m *PersonAward) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIssuedDate sets the issuedDate property value. The date that the award or honor was granted.
 func (m *PersonAward) SetIssuedDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.issuedDate = value
+    err := m.GetBackingStore().Set("issuedDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIssuingAuthority sets the issuingAuthority property value. Authority which granted the award or honor.
 func (m *PersonAward) SetIssuingAuthority(value *string)() {
-    m.issuingAuthority = value
+    err := m.GetBackingStore().Set("issuingAuthority", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetThumbnailUrl sets the thumbnailUrl property value. URL referencing a thumbnail of the award or honor.
 func (m *PersonAward) SetThumbnailUrl(value *string)() {
-    m.thumbnailUrl = value
+    err := m.GetBackingStore().Set("thumbnailUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWebUrl sets the webUrl property value. URL referencing the award or honor.
 func (m *PersonAward) SetWebUrl(value *string)() {
-    m.webUrl = value
+    err := m.GetBackingStore().Set("webUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PersonAwardable 
+type PersonAwardable interface {
+    ItemFacetable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetIssuedDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetIssuingAuthority()(*string)
+    GetThumbnailUrl()(*string)
+    GetWebUrl()(*string)
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetIssuedDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetIssuingAuthority(value *string)()
+    SetThumbnailUrl(value *string)()
+    SetWebUrl(value *string)()
 }

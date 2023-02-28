@@ -41,13 +41,13 @@ type VirtualEndpointSnapshotsGetSubscriptionsRequestBuilderGetRequestConfigurati
 func NewVirtualEndpointSnapshotsGetSubscriptionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointSnapshotsGetSubscriptionsRequestBuilder) {
     m := &VirtualEndpointSnapshotsGetSubscriptionsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/snapshots/microsoft.graph.getSubscriptions(){?%24top,%24skip,%24search,%24filter,%24count}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/snapshots/getSubscriptions(){?%24top,%24skip,%24search,%24filter,%24count}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewVirtualEndpointSnapshotsGetSubscriptionsRequestBuilder instantiates a new GetSubscriptionsRequestBuilder and sets the default values.

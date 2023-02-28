@@ -3,34 +3,20 @@ package models
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // BrowserSiteHistory the history for the site modifications
 type BrowserSiteHistory struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Controls the behavior of redirected sites. If true, indicates that the site will open in Internet Explorer 11 or Microsoft Edge even if the site is navigated to as part of a HTTP or meta refresh redirection chain.
-    allowRedirect *bool
-    // The comment for the site.
-    comment *string
-    // Controls what compatibility setting is used for specific sites or domains. The possible values are: default, internetExplorer8Enterprise, internetExplorer7Enterprise, internetExplorer11, internetExplorer10, internetExplorer9, internetExplorer8, internetExplorer7, internetExplorer5, unknownFutureValue.
-    compatibilityMode *BrowserSiteCompatibilityMode
-    // The user who last modified the site.
-    lastModifiedBy IdentitySetable
-    // The merge type of the site. The possible values are: noMerge, default, unknownFutureValue.
-    mergeType *BrowserSiteMergeType
-    // The OdataType property
-    odataType *string
-    // The date and time when the site was last published.
-    publishedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The target environment that the site should open in. The possible values are: internetExplorerMode, internetExplorer11, microsoftEdge, configurable, none, unknownFutureValue.Prior to June 15, 2022, the internetExplorer11 option would allow opening a site in the Internet Explorer 11 (IE11) desktop application. Following the retirement of IE11 on June 15, 2022, the internetExplorer11 option will no longer open an IE11 window and will instead behave the same as the internetExplorerMode option.
-    targetEnvironment *BrowserSiteTargetEnvironment
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewBrowserSiteHistory instantiates a new browserSiteHistory and sets the default values.
 func NewBrowserSiteHistory()(*BrowserSiteHistory) {
     m := &BrowserSiteHistory{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateBrowserSiteHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -39,19 +25,52 @@ func CreateBrowserSiteHistoryFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BrowserSiteHistory) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAllowRedirect gets the allowRedirect property value. Controls the behavior of redirected sites. If true, indicates that the site will open in Internet Explorer 11 or Microsoft Edge even if the site is navigated to as part of a HTTP or meta refresh redirection chain.
 func (m *BrowserSiteHistory) GetAllowRedirect()(*bool) {
-    return m.allowRedirect
+    val, err := m.GetBackingStore().Get("allowRedirect")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *BrowserSiteHistory) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetComment gets the comment property value. The comment for the site.
 func (m *BrowserSiteHistory) GetComment()(*string) {
-    return m.comment
+    val, err := m.GetBackingStore().Get("comment")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCompatibilityMode gets the compatibilityMode property value. Controls what compatibility setting is used for specific sites or domains. The possible values are: default, internetExplorer8Enterprise, internetExplorer7Enterprise, internetExplorer11, internetExplorer10, internetExplorer9, internetExplorer8, internetExplorer7, internetExplorer5, unknownFutureValue.
 func (m *BrowserSiteHistory) GetCompatibilityMode()(*BrowserSiteCompatibilityMode) {
-    return m.compatibilityMode
+    val, err := m.GetBackingStore().Get("compatibilityMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*BrowserSiteCompatibilityMode)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BrowserSiteHistory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -140,23 +159,58 @@ func (m *BrowserSiteHistory) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The user who last modified the site.
 func (m *BrowserSiteHistory) GetLastModifiedBy()(IdentitySetable) {
-    return m.lastModifiedBy
+    val, err := m.GetBackingStore().Get("lastModifiedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
 }
 // GetMergeType gets the mergeType property value. The merge type of the site. The possible values are: noMerge, default, unknownFutureValue.
 func (m *BrowserSiteHistory) GetMergeType()(*BrowserSiteMergeType) {
-    return m.mergeType
+    val, err := m.GetBackingStore().Get("mergeType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*BrowserSiteMergeType)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *BrowserSiteHistory) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPublishedDateTime gets the publishedDateTime property value. The date and time when the site was last published.
 func (m *BrowserSiteHistory) GetPublishedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.publishedDateTime
+    val, err := m.GetBackingStore().Get("publishedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetTargetEnvironment gets the targetEnvironment property value. The target environment that the site should open in. The possible values are: internetExplorerMode, internetExplorer11, microsoftEdge, configurable, none, unknownFutureValue.Prior to June 15, 2022, the internetExplorer11 option would allow opening a site in the Internet Explorer 11 (IE11) desktop application. Following the retirement of IE11 on June 15, 2022, the internetExplorer11 option will no longer open an IE11 window and will instead behave the same as the internetExplorerMode option.
 func (m *BrowserSiteHistory) GetTargetEnvironment()(*BrowserSiteTargetEnvironment) {
-    return m.targetEnvironment
+    val, err := m.GetBackingStore().Get("targetEnvironment")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*BrowserSiteTargetEnvironment)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *BrowserSiteHistory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -221,37 +275,92 @@ func (m *BrowserSiteHistory) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BrowserSiteHistory) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAllowRedirect sets the allowRedirect property value. Controls the behavior of redirected sites. If true, indicates that the site will open in Internet Explorer 11 or Microsoft Edge even if the site is navigated to as part of a HTTP or meta refresh redirection chain.
 func (m *BrowserSiteHistory) SetAllowRedirect(value *bool)() {
-    m.allowRedirect = value
+    err := m.GetBackingStore().Set("allowRedirect", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *BrowserSiteHistory) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetComment sets the comment property value. The comment for the site.
 func (m *BrowserSiteHistory) SetComment(value *string)() {
-    m.comment = value
+    err := m.GetBackingStore().Set("comment", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCompatibilityMode sets the compatibilityMode property value. Controls what compatibility setting is used for specific sites or domains. The possible values are: default, internetExplorer8Enterprise, internetExplorer7Enterprise, internetExplorer11, internetExplorer10, internetExplorer9, internetExplorer8, internetExplorer7, internetExplorer5, unknownFutureValue.
 func (m *BrowserSiteHistory) SetCompatibilityMode(value *BrowserSiteCompatibilityMode)() {
-    m.compatibilityMode = value
+    err := m.GetBackingStore().Set("compatibilityMode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. The user who last modified the site.
 func (m *BrowserSiteHistory) SetLastModifiedBy(value IdentitySetable)() {
-    m.lastModifiedBy = value
+    err := m.GetBackingStore().Set("lastModifiedBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMergeType sets the mergeType property value. The merge type of the site. The possible values are: noMerge, default, unknownFutureValue.
 func (m *BrowserSiteHistory) SetMergeType(value *BrowserSiteMergeType)() {
-    m.mergeType = value
+    err := m.GetBackingStore().Set("mergeType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *BrowserSiteHistory) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPublishedDateTime sets the publishedDateTime property value. The date and time when the site was last published.
 func (m *BrowserSiteHistory) SetPublishedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.publishedDateTime = value
+    err := m.GetBackingStore().Set("publishedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTargetEnvironment sets the targetEnvironment property value. The target environment that the site should open in. The possible values are: internetExplorerMode, internetExplorer11, microsoftEdge, configurable, none, unknownFutureValue.Prior to June 15, 2022, the internetExplorer11 option would allow opening a site in the Internet Explorer 11 (IE11) desktop application. Following the retirement of IE11 on June 15, 2022, the internetExplorer11 option will no longer open an IE11 window and will instead behave the same as the internetExplorerMode option.
 func (m *BrowserSiteHistory) SetTargetEnvironment(value *BrowserSiteTargetEnvironment)() {
-    m.targetEnvironment = value
+    err := m.GetBackingStore().Set("targetEnvironment", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// BrowserSiteHistoryable 
+type BrowserSiteHistoryable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllowRedirect()(*bool)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetComment()(*string)
+    GetCompatibilityMode()(*BrowserSiteCompatibilityMode)
+    GetLastModifiedBy()(IdentitySetable)
+    GetMergeType()(*BrowserSiteMergeType)
+    GetOdataType()(*string)
+    GetPublishedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetTargetEnvironment()(*BrowserSiteTargetEnvironment)
+    SetAllowRedirect(value *bool)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetComment(value *string)()
+    SetCompatibilityMode(value *BrowserSiteCompatibilityMode)()
+    SetLastModifiedBy(value IdentitySetable)()
+    SetMergeType(value *BrowserSiteMergeType)()
+    SetOdataType(value *string)()
+    SetPublishedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetTargetEnvironment(value *BrowserSiteTargetEnvironment)()
 }

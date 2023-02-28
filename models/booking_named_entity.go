@@ -4,13 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BookingNamedEntity 
+// BookingNamedEntity booking entities that provide a display name.
 type BookingNamedEntity struct {
     Entity
-    // A name for the derived entity, which interfaces with customers.
-    displayName *string
 }
-// NewBookingNamedEntity instantiates a new BookingNamedEntity and sets the default values.
+// NewBookingNamedEntity instantiates a new bookingNamedEntity and sets the default values.
 func NewBookingNamedEntity()(*BookingNamedEntity) {
     m := &BookingNamedEntity{
         Entity: *NewEntity(),
@@ -49,7 +47,14 @@ func CreateBookingNamedEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetDisplayName gets the displayName property value. A name for the derived entity, which interfaces with customers.
 func (m *BookingNamedEntity) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BookingNamedEntity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -82,5 +87,15 @@ func (m *BookingNamedEntity) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetDisplayName sets the displayName property value. A name for the derived entity, which interfaces with customers.
 func (m *BookingNamedEntity) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// BookingNamedEntityable 
+type BookingNamedEntityable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDisplayName()(*string)
+    SetDisplayName(value *string)()
 }

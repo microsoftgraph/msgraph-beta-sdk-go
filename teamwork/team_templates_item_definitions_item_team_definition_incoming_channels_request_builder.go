@@ -53,8 +53,8 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsRequestBui
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsRequestBuilder instantiates a new IncomingChannelsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsRequestBui
 }
 // Count provides operations to count the resources in the collection.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsRequestBuilder) Count()(*TeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsCountRequestBuilder) {
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the list of incoming channels (channels shared with a team).
 // [Find more info here]

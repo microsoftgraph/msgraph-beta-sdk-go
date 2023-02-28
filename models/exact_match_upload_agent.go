@@ -8,10 +8,6 @@ import (
 // ExactMatchUploadAgent 
 type ExactMatchUploadAgent struct {
     Entity
-    // The creationDateTime property
-    creationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The description property
-    description *string
 }
 // NewExactMatchUploadAgent instantiates a new exactMatchUploadAgent and sets the default values.
 func NewExactMatchUploadAgent()(*ExactMatchUploadAgent) {
@@ -26,11 +22,25 @@ func CreateExactMatchUploadAgentFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetCreationDateTime gets the creationDateTime property value. The creationDateTime property
 func (m *ExactMatchUploadAgent) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.creationDateTime
+    val, err := m.GetBackingStore().Get("creationDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDescription gets the description property value. The description property
 func (m *ExactMatchUploadAgent) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExactMatchUploadAgent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -79,9 +89,24 @@ func (m *ExactMatchUploadAgent) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetCreationDateTime sets the creationDateTime property value. The creationDateTime property
 func (m *ExactMatchUploadAgent) SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.creationDateTime = value
+    err := m.GetBackingStore().Set("creationDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. The description property
 func (m *ExactMatchUploadAgent) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ExactMatchUploadAgentable 
+type ExactMatchUploadAgentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDescription()(*string)
+    SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDescription(value *string)()
 }

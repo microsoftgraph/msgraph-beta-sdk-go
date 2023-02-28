@@ -7,8 +7,6 @@ import (
 // DeviceManagementConfigurationSettingCollectionResponse 
 type DeviceManagementConfigurationSettingCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementConfigurationSettingable
 }
 // NewDeviceManagementConfigurationSettingCollectionResponse instantiates a new DeviceManagementConfigurationSettingCollectionResponse and sets the default values.
 func NewDeviceManagementConfigurationSettingCollectionResponse()(*DeviceManagementConfigurationSettingCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementConfigurationSettingCollectionResponse) GetFieldDeseria
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementConfigurationSettingCollectionResponse) GetValue()([]DeviceManagementConfigurationSettingable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementConfigurationSettingable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSettingCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementConfigurationSettingCollectionResponse) Serialize(write
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementConfigurationSettingCollectionResponse) SetValue(value []DeviceManagementConfigurationSettingable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationSettingCollectionResponseable 
+type DeviceManagementConfigurationSettingCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementConfigurationSettingable)
+    SetValue(value []DeviceManagementConfigurationSettingable)()
 }

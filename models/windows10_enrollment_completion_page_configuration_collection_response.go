@@ -7,8 +7,6 @@ import (
 // Windows10EnrollmentCompletionPageConfigurationCollectionResponse 
 type Windows10EnrollmentCompletionPageConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Windows10EnrollmentCompletionPageConfigurationable
 }
 // NewWindows10EnrollmentCompletionPageConfigurationCollectionResponse instantiates a new Windows10EnrollmentCompletionPageConfigurationCollectionResponse and sets the default values.
 func NewWindows10EnrollmentCompletionPageConfigurationCollectionResponse()(*Windows10EnrollmentCompletionPageConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *Windows10EnrollmentCompletionPageConfigurationCollectionResponse) GetFi
 }
 // GetValue gets the value property value. The value property
 func (m *Windows10EnrollmentCompletionPageConfigurationCollectionResponse) GetValue()([]Windows10EnrollmentCompletionPageConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Windows10EnrollmentCompletionPageConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Windows10EnrollmentCompletionPageConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *Windows10EnrollmentCompletionPageConfigurationCollectionResponse) Seria
 }
 // SetValue sets the value property value. The value property
 func (m *Windows10EnrollmentCompletionPageConfigurationCollectionResponse) SetValue(value []Windows10EnrollmentCompletionPageConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Windows10EnrollmentCompletionPageConfigurationCollectionResponseable 
+type Windows10EnrollmentCompletionPageConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Windows10EnrollmentCompletionPageConfigurationable)
+    SetValue(value []Windows10EnrollmentCompletionPageConfigurationable)()
 }

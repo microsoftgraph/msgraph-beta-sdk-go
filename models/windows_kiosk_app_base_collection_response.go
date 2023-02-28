@@ -7,8 +7,6 @@ import (
 // WindowsKioskAppBaseCollectionResponse 
 type WindowsKioskAppBaseCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WindowsKioskAppBaseable
 }
 // NewWindowsKioskAppBaseCollectionResponse instantiates a new WindowsKioskAppBaseCollectionResponse and sets the default values.
 func NewWindowsKioskAppBaseCollectionResponse()(*WindowsKioskAppBaseCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WindowsKioskAppBaseCollectionResponse) GetFieldDeserializers()(map[stri
 }
 // GetValue gets the value property value. The value property
 func (m *WindowsKioskAppBaseCollectionResponse) GetValue()([]WindowsKioskAppBaseable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsKioskAppBaseable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsKioskAppBaseCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WindowsKioskAppBaseCollectionResponse) Serialize(writer i878a80d2330e89
 }
 // SetValue sets the value property value. The value property
 func (m *WindowsKioskAppBaseCollectionResponse) SetValue(value []WindowsKioskAppBaseable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsKioskAppBaseCollectionResponseable 
+type WindowsKioskAppBaseCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WindowsKioskAppBaseable)
+    SetValue(value []WindowsKioskAppBaseable)()
 }

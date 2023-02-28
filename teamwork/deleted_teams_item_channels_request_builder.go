@@ -53,7 +53,7 @@ type DeletedTeamsItemChannelsRequestBuilderPostRequestConfiguration struct {
 }
 // AllMessages provides operations to call the allMessages method.
 func (m *DeletedTeamsItemChannelsRequestBuilder) AllMessages()(*DeletedTeamsItemChannelsAllMessagesRequestBuilder) {
-    return NewDeletedTeamsItemChannelsAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeletedTeamsItemChannelsAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewDeletedTeamsItemChannelsRequestBuilderInternal instantiates a new ChannelsRequestBuilder and sets the default values.
 func NewDeletedTeamsItemChannelsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedTeamsItemChannelsRequestBuilder) {
@@ -64,8 +64,8 @@ func NewDeletedTeamsItemChannelsRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeletedTeamsItemChannelsRequestBuilder instantiates a new ChannelsRequestBuilder and sets the default values.
@@ -76,7 +76,7 @@ func NewDeletedTeamsItemChannelsRequestBuilder(rawUrl string, requestAdapter i2a
 }
 // Count provides operations to count the resources in the collection.
 func (m *DeletedTeamsItemChannelsRequestBuilder) Count()(*DeletedTeamsItemChannelsCountRequestBuilder) {
-    return NewDeletedTeamsItemChannelsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeletedTeamsItemChannelsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the channels those are either shared with this deleted team or created in this deleted team.
 func (m *DeletedTeamsItemChannelsRequestBuilder) Get(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChannelCollectionResponseable, error) {
@@ -99,7 +99,7 @@ func (m *DeletedTeamsItemChannelsRequestBuilder) Get(ctx context.Context, reques
 }
 // GetAllMessages provides operations to call the getAllMessages method.
 func (m *DeletedTeamsItemChannelsRequestBuilder) GetAllMessages()(*DeletedTeamsItemChannelsGetAllMessagesRequestBuilder) {
-    return NewDeletedTeamsItemChannelsGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeletedTeamsItemChannelsGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to channels for teamwork
 func (m *DeletedTeamsItemChannelsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable, requestConfiguration *DeletedTeamsItemChannelsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable, error) {
@@ -143,7 +143,10 @@ func (m *DeletedTeamsItemChannelsRequestBuilder) ToPostRequestInformation(ctx co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

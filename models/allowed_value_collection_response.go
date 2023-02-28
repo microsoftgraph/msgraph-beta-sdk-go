@@ -7,8 +7,6 @@ import (
 // AllowedValueCollectionResponse 
 type AllowedValueCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AllowedValueable
 }
 // NewAllowedValueCollectionResponse instantiates a new AllowedValueCollectionResponse and sets the default values.
 func NewAllowedValueCollectionResponse()(*AllowedValueCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AllowedValueCollectionResponse) GetFieldDeserializers()(map[string]func
 }
 // GetValue gets the value property value. The value property
 func (m *AllowedValueCollectionResponse) GetValue()([]AllowedValueable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AllowedValueable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AllowedValueCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AllowedValueCollectionResponse) Serialize(writer i878a80d2330e89d268963
 }
 // SetValue sets the value property value. The value property
 func (m *AllowedValueCollectionResponse) SetValue(value []AllowedValueable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AllowedValueCollectionResponseable 
+type AllowedValueCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AllowedValueable)
+    SetValue(value []AllowedValueable)()
 }

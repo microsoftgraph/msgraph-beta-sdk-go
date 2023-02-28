@@ -22,8 +22,8 @@ func NewMobileDeviceManagementPoliciesItemIncludedGroupsGroupItemRequestBuilderI
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMobileDeviceManagementPoliciesItemIncludedGroupsGroupItemRequestBuilder instantiates a new GroupItemRequestBuilder and sets the default values.
@@ -34,5 +34,5 @@ func NewMobileDeviceManagementPoliciesItemIncludedGroupsGroupItemRequestBuilder(
 }
 // Ref provides operations to manage the collection of policyRoot entities.
 func (m *MobileDeviceManagementPoliciesItemIncludedGroupsGroupItemRequestBuilder) Ref()(*MobileDeviceManagementPoliciesItemIncludedGroupsItemRefRequestBuilder) {
-    return NewMobileDeviceManagementPoliciesItemIncludedGroupsItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMobileDeviceManagementPoliciesItemIncludedGroupsItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

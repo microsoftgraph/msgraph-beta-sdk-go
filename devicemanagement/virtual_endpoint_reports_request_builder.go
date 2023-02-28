@@ -55,8 +55,8 @@ func NewVirtualEndpointReportsRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewVirtualEndpointReportsRequestBuilder instantiates a new ReportsRequestBuilder and sets the default values.
@@ -83,7 +83,7 @@ func (m *VirtualEndpointReportsRequestBuilder) Delete(ctx context.Context, reque
 }
 // ExportJobs provides operations to manage the exportJobs property of the microsoft.graph.cloudPcReports entity.
 func (m *VirtualEndpointReportsRequestBuilder) ExportJobs()(*VirtualEndpointReportsExportJobsRequestBuilder) {
-    return NewVirtualEndpointReportsExportJobsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointReportsExportJobsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ExportJobsById provides operations to manage the exportJobs property of the microsoft.graph.cloudPcReports entity.
 func (m *VirtualEndpointReportsRequestBuilder) ExportJobsById(id string)(*VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilder) {
@@ -94,7 +94,7 @@ func (m *VirtualEndpointReportsRequestBuilder) ExportJobsById(id string)(*Virtua
     if id != "" {
         urlTplParams["cloudPcExportJob%2Did"] = id
     }
-    return NewVirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewVirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Get cloud PC related reports.
 func (m *VirtualEndpointReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointReportsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcReportsable, error) {
@@ -117,27 +117,27 @@ func (m *VirtualEndpointReportsRequestBuilder) Get(ctx context.Context, requestC
 }
 // GetDailyAggregatedRemoteConnectionReports provides operations to call the getDailyAggregatedRemoteConnectionReports method.
 func (m *VirtualEndpointReportsRequestBuilder) GetDailyAggregatedRemoteConnectionReports()(*VirtualEndpointReportsGetDailyAggregatedRemoteConnectionReportsRequestBuilder) {
-    return NewVirtualEndpointReportsGetDailyAggregatedRemoteConnectionReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointReportsGetDailyAggregatedRemoteConnectionReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GetRealTimeRemoteConnectionLatencyWithCloudPcId provides operations to call the getRealTimeRemoteConnectionLatency method.
 func (m *VirtualEndpointReportsRequestBuilder) GetRealTimeRemoteConnectionLatencyWithCloudPcId(cloudPcId *string)(*VirtualEndpointReportsGetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilder) {
-    return NewVirtualEndpointReportsGetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, cloudPcId);
+    return NewVirtualEndpointReportsGetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, cloudPcId)
 }
 // GetRealTimeRemoteConnectionStatusWithCloudPcId provides operations to call the getRealTimeRemoteConnectionStatus method.
 func (m *VirtualEndpointReportsRequestBuilder) GetRealTimeRemoteConnectionStatusWithCloudPcId(cloudPcId *string)(*VirtualEndpointReportsGetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder) {
-    return NewVirtualEndpointReportsGetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, cloudPcId);
+    return NewVirtualEndpointReportsGetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, cloudPcId)
 }
 // GetRemoteConnectionHistoricalReports provides operations to call the getRemoteConnectionHistoricalReports method.
 func (m *VirtualEndpointReportsRequestBuilder) GetRemoteConnectionHistoricalReports()(*VirtualEndpointReportsGetRemoteConnectionHistoricalReportsRequestBuilder) {
-    return NewVirtualEndpointReportsGetRemoteConnectionHistoricalReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointReportsGetRemoteConnectionHistoricalReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GetSharedUseLicenseUsageReport provides operations to call the getSharedUseLicenseUsageReport method.
 func (m *VirtualEndpointReportsRequestBuilder) GetSharedUseLicenseUsageReport()(*VirtualEndpointReportsGetSharedUseLicenseUsageReportRequestBuilder) {
-    return NewVirtualEndpointReportsGetSharedUseLicenseUsageReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointReportsGetSharedUseLicenseUsageReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GetTotalAggregatedRemoteConnectionReports provides operations to call the getTotalAggregatedRemoteConnectionReports method.
 func (m *VirtualEndpointReportsRequestBuilder) GetTotalAggregatedRemoteConnectionReports()(*VirtualEndpointReportsGetTotalAggregatedRemoteConnectionReportsRequestBuilder) {
-    return NewVirtualEndpointReportsGetTotalAggregatedRemoteConnectionReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointReportsGetTotalAggregatedRemoteConnectionReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property reports in deviceManagement
 func (m *VirtualEndpointReportsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcReportsable, requestConfiguration *VirtualEndpointReportsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcReportsable, error) {
@@ -193,7 +193,10 @@ func (m *VirtualEndpointReportsRequestBuilder) ToPatchRequestInformation(ctx con
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

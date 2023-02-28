@@ -7,8 +7,6 @@ import (
 // DeviceManagementComplianceScheduledActionForRuleCollectionResponse 
 type DeviceManagementComplianceScheduledActionForRuleCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementComplianceScheduledActionForRuleable
 }
 // NewDeviceManagementComplianceScheduledActionForRuleCollectionResponse instantiates a new DeviceManagementComplianceScheduledActionForRuleCollectionResponse and sets the default values.
 func NewDeviceManagementComplianceScheduledActionForRuleCollectionResponse()(*DeviceManagementComplianceScheduledActionForRuleCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementComplianceScheduledActionForRuleCollectionResponse) Get
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementComplianceScheduledActionForRuleCollectionResponse) GetValue()([]DeviceManagementComplianceScheduledActionForRuleable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementComplianceScheduledActionForRuleable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementComplianceScheduledActionForRuleCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementComplianceScheduledActionForRuleCollectionResponse) Ser
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementComplianceScheduledActionForRuleCollectionResponse) SetValue(value []DeviceManagementComplianceScheduledActionForRuleable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementComplianceScheduledActionForRuleCollectionResponseable 
+type DeviceManagementComplianceScheduledActionForRuleCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementComplianceScheduledActionForRuleable)
+    SetValue(value []DeviceManagementComplianceScheduledActionForRuleable)()
 }

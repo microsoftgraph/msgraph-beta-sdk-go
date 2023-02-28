@@ -7,8 +7,6 @@ import (
 // DeviceManagementScriptAssignmentCollectionResponse 
 type DeviceManagementScriptAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementScriptAssignmentable
 }
 // NewDeviceManagementScriptAssignmentCollectionResponse instantiates a new DeviceManagementScriptAssignmentCollectionResponse and sets the default values.
 func NewDeviceManagementScriptAssignmentCollectionResponse()(*DeviceManagementScriptAssignmentCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementScriptAssignmentCollectionResponse) GetFieldDeserialize
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementScriptAssignmentCollectionResponse) GetValue()([]DeviceManagementScriptAssignmentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementScriptAssignmentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementScriptAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementScriptAssignmentCollectionResponse) Serialize(writer i8
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementScriptAssignmentCollectionResponse) SetValue(value []DeviceManagementScriptAssignmentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementScriptAssignmentCollectionResponseable 
+type DeviceManagementScriptAssignmentCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementScriptAssignmentable)
+    SetValue(value []DeviceManagementScriptAssignmentable)()
 }

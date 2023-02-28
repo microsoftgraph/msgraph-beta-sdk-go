@@ -41,7 +41,7 @@ type MobileAppsItemGetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBu
 func NewMobileAppsItemGetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, deviceId *string, userPrincipalName *string)(*MobileAppsItemGetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder) {
     m := &MobileAppsItemGetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/microsoft.graph.getRelatedAppStates(userPrincipalName='{userPrincipalName}',deviceId='{deviceId}'){?%24top,%24skip,%24search,%24filter,%24count}";
+    m.urlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/getRelatedAppStates(userPrincipalName='{userPrincipalName}',deviceId='{deviceId}'){?%24top,%24skip,%24search,%24filter,%24count}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -52,8 +52,8 @@ func NewMobileAppsItemGetRelatedAppStatesWithUserPrincipalNameWithDeviceIdReques
     if userPrincipalName != nil {
         urlTplParams["userPrincipalName"] = *userPrincipalName
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMobileAppsItemGetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder instantiates a new GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder and sets the default values.

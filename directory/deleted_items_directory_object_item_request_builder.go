@@ -46,17 +46,13 @@ type DeletedItemsDirectoryObjectItemRequestBuilderPatchRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Application casts the previous resource to application.
-func (m *DeletedItemsDirectoryObjectItemRequestBuilder) Application()(*DeletedItemsItemApplicationRequestBuilder) {
-    return NewDeletedItemsItemApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // CheckMemberGroups provides operations to call the checkMemberGroups method.
 func (m *DeletedItemsDirectoryObjectItemRequestBuilder) CheckMemberGroups()(*DeletedItemsItemCheckMemberGroupsRequestBuilder) {
-    return NewDeletedItemsItemCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeletedItemsItemCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CheckMemberObjects provides operations to call the checkMemberObjects method.
 func (m *DeletedItemsDirectoryObjectItemRequestBuilder) CheckMemberObjects()(*DeletedItemsItemCheckMemberObjectsRequestBuilder) {
-    return NewDeletedItemsItemCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeletedItemsItemCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewDeletedItemsDirectoryObjectItemRequestBuilderInternal instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
 func NewDeletedItemsDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedItemsDirectoryObjectItemRequestBuilder) {
@@ -67,8 +63,8 @@ func NewDeletedItemsDirectoryObjectItemRequestBuilderInternal(pathParameters map
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeletedItemsDirectoryObjectItemRequestBuilder instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
@@ -114,15 +110,23 @@ func (m *DeletedItemsDirectoryObjectItemRequestBuilder) Get(ctx context.Context,
 }
 // GetMemberGroups provides operations to call the getMemberGroups method.
 func (m *DeletedItemsDirectoryObjectItemRequestBuilder) GetMemberGroups()(*DeletedItemsItemGetMemberGroupsRequestBuilder) {
-    return NewDeletedItemsItemGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeletedItemsItemGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GetMemberObjects provides operations to call the getMemberObjects method.
 func (m *DeletedItemsDirectoryObjectItemRequestBuilder) GetMemberObjects()(*DeletedItemsItemGetMemberObjectsRequestBuilder) {
-    return NewDeletedItemsItemGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeletedItemsItemGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// Group casts the previous resource to group.
-func (m *DeletedItemsDirectoryObjectItemRequestBuilder) Group()(*DeletedItemsItemGroupRequestBuilder) {
-    return NewDeletedItemsItemGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// GraphApplication casts the previous resource to application.
+func (m *DeletedItemsDirectoryObjectItemRequestBuilder) GraphApplication()(*DeletedItemsItemGraphApplicationRequestBuilder) {
+    return NewDeletedItemsItemGraphApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// GraphGroup casts the previous resource to group.
+func (m *DeletedItemsDirectoryObjectItemRequestBuilder) GraphGroup()(*DeletedItemsItemGraphGroupRequestBuilder) {
+    return NewDeletedItemsItemGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// GraphUser casts the previous resource to user.
+func (m *DeletedItemsDirectoryObjectItemRequestBuilder) GraphUser()(*DeletedItemsItemGraphUserRequestBuilder) {
+    return NewDeletedItemsItemGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property deletedItems in directory
 func (m *DeletedItemsDirectoryObjectItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, requestConfiguration *DeletedItemsDirectoryObjectItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
@@ -145,7 +149,7 @@ func (m *DeletedItemsDirectoryObjectItemRequestBuilder) Patch(ctx context.Contex
 }
 // Restore provides operations to call the restore method.
 func (m *DeletedItemsDirectoryObjectItemRequestBuilder) Restore()(*DeletedItemsItemRestoreRequestBuilder) {
-    return NewDeletedItemsItemRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeletedItemsItemRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property deletedItems for directory
 func (m *DeletedItemsDirectoryObjectItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DeletedItemsDirectoryObjectItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -182,14 +186,13 @@ func (m *DeletedItemsDirectoryObjectItemRequestBuilder) ToPatchRequestInformatio
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// User casts the previous resource to user.
-func (m *DeletedItemsDirectoryObjectItemRequestBuilder) User()(*DeletedItemsItemUserRequestBuilder) {
-    return NewDeletedItemsItemUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

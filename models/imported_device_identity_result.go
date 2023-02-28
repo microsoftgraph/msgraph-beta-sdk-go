@@ -7,8 +7,6 @@ import (
 // ImportedDeviceIdentityResult 
 type ImportedDeviceIdentityResult struct {
     ImportedDeviceIdentity
-    // Status of imported device identity
-    status *bool
 }
 // NewImportedDeviceIdentityResult instantiates a new ImportedDeviceIdentityResult and sets the default values.
 func NewImportedDeviceIdentityResult()(*ImportedDeviceIdentityResult) {
@@ -38,7 +36,14 @@ func (m *ImportedDeviceIdentityResult) GetFieldDeserializers()(map[string]func(i
 }
 // GetStatus gets the status property value. Status of imported device identity
 func (m *ImportedDeviceIdentityResult) GetStatus()(*bool) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ImportedDeviceIdentityResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *ImportedDeviceIdentityResult) Serialize(writer i878a80d2330e89d26896388
 }
 // SetStatus sets the status property value. Status of imported device identity
 func (m *ImportedDeviceIdentityResult) SetStatus(value *bool)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ImportedDeviceIdentityResultable 
+type ImportedDeviceIdentityResultable interface {
+    ImportedDeviceIdentityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetStatus()(*bool)
+    SetStatus(value *bool)()
 }

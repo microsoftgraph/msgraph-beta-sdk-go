@@ -7,8 +7,6 @@ import (
 // DataLossPreventionPolicy 
 type DataLossPreventionPolicy struct {
     Entity
-    // The name property
-    name *string
 }
 // NewDataLossPreventionPolicy instantiates a new dataLossPreventionPolicy and sets the default values.
 func NewDataLossPreventionPolicy()(*DataLossPreventionPolicy) {
@@ -38,7 +36,14 @@ func (m *DataLossPreventionPolicy) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetName gets the name property value. The name property
 func (m *DataLossPreventionPolicy) GetName()(*string) {
-    return m.name
+    val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DataLossPreventionPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *DataLossPreventionPolicy) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetName sets the name property value. The name property
 func (m *DataLossPreventionPolicy) SetName(value *string)() {
-    m.name = value
+    err := m.GetBackingStore().Set("name", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DataLossPreventionPolicyable 
+type DataLossPreventionPolicyable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetName()(*string)
+    SetName(value *string)()
 }

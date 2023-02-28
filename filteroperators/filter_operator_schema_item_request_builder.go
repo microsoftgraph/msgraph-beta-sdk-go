@@ -23,7 +23,7 @@ type FilterOperatorSchemaItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// FilterOperatorSchemaItemRequestBuilderGetQueryParameters get entity from filterOperators by key (id)
+// FilterOperatorSchemaItemRequestBuilderGetQueryParameters get entity from filterOperators by key
 type FilterOperatorSchemaItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -55,8 +55,8 @@ func NewFilterOperatorSchemaItemRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewFilterOperatorSchemaItemRequestBuilder instantiates a new FilterOperatorSchemaItemRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewFilterOperatorSchemaItemRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewFilterOperatorSchemaItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from filterOperators by key (id)
+// Delete delete entity from filterOperators
 func (m *FilterOperatorSchemaItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *FilterOperatorSchemaItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,7 +81,7 @@ func (m *FilterOperatorSchemaItemRequestBuilder) Delete(ctx context.Context, req
     }
     return nil
 }
-// Get get entity from filterOperators by key (id)
+// Get get entity from filterOperators by key
 func (m *FilterOperatorSchemaItemRequestBuilder) Get(ctx context.Context, requestConfiguration *FilterOperatorSchemaItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FilterOperatorSchemaable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,7 +100,7 @@ func (m *FilterOperatorSchemaItemRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FilterOperatorSchemaable), nil
 }
-// Patch update entity in filterOperators by key (id)
+// Patch update entity in filterOperators
 func (m *FilterOperatorSchemaItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FilterOperatorSchemaable, requestConfiguration *FilterOperatorSchemaItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FilterOperatorSchemaable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +119,7 @@ func (m *FilterOperatorSchemaItemRequestBuilder) Patch(ctx context.Context, body
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FilterOperatorSchemaable), nil
 }
-// ToDeleteRequestInformation delete entity from filterOperators by key (id)
+// ToDeleteRequestInformation delete entity from filterOperators
 func (m *FilterOperatorSchemaItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *FilterOperatorSchemaItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,7 +131,7 @@ func (m *FilterOperatorSchemaItemRequestBuilder) ToDeleteRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from filterOperators by key (id)
+// ToGetRequestInformation get entity from filterOperators by key
 func (m *FilterOperatorSchemaItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FilterOperatorSchemaItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,14 +147,17 @@ func (m *FilterOperatorSchemaItemRequestBuilder) ToGetRequestInformation(ctx con
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in filterOperators by key (id)
+// ToPatchRequestInformation update entity in filterOperators
 func (m *FilterOperatorSchemaItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FilterOperatorSchemaable, requestConfiguration *FilterOperatorSchemaItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

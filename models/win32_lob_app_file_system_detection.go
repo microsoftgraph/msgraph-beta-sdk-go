@@ -7,26 +7,14 @@ import (
 // Win32LobAppFileSystemDetection 
 type Win32LobAppFileSystemDetection struct {
     Win32LobAppDetection
-    // A value indicating whether this file or folder is for checking 32-bit app on 64-bit system
-    check32BitOn64System *bool
-    // Contains all supported file system detection type.
-    detectionType *Win32LobAppFileSystemDetectionType
-    // The file or folder detection value
-    detectionValue *string
-    // The file or folder name to detect Win32 Line of Business (LoB) app
-    fileOrFolderName *string
-    // Contains properties for detection operator.
-    operator *Win32LobAppDetectionOperator
-    // The file or folder path to detect Win32 Line of Business (LoB) app
-    path *string
 }
 // NewWin32LobAppFileSystemDetection instantiates a new Win32LobAppFileSystemDetection and sets the default values.
 func NewWin32LobAppFileSystemDetection()(*Win32LobAppFileSystemDetection) {
     m := &Win32LobAppFileSystemDetection{
         Win32LobAppDetection: *NewWin32LobAppDetection(),
     }
-    odataTypeValue := "#microsoft.graph.win32LobAppFileSystemDetection";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.win32LobAppFileSystemDetection"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWin32LobAppFileSystemDetectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,15 +23,36 @@ func CreateWin32LobAppFileSystemDetectionFromDiscriminatorValue(parseNode i878a8
 }
 // GetCheck32BitOn64System gets the check32BitOn64System property value. A value indicating whether this file or folder is for checking 32-bit app on 64-bit system
 func (m *Win32LobAppFileSystemDetection) GetCheck32BitOn64System()(*bool) {
-    return m.check32BitOn64System
+    val, err := m.GetBackingStore().Get("check32BitOn64System")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDetectionType gets the detectionType property value. Contains all supported file system detection type.
 func (m *Win32LobAppFileSystemDetection) GetDetectionType()(*Win32LobAppFileSystemDetectionType) {
-    return m.detectionType
+    val, err := m.GetBackingStore().Get("detectionType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Win32LobAppFileSystemDetectionType)
+    }
+    return nil
 }
 // GetDetectionValue gets the detectionValue property value. The file or folder detection value
 func (m *Win32LobAppFileSystemDetection) GetDetectionValue()(*string) {
-    return m.detectionValue
+    val, err := m.GetBackingStore().Get("detectionValue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Win32LobAppFileSystemDetection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -112,15 +121,36 @@ func (m *Win32LobAppFileSystemDetection) GetFieldDeserializers()(map[string]func
 }
 // GetFileOrFolderName gets the fileOrFolderName property value. The file or folder name to detect Win32 Line of Business (LoB) app
 func (m *Win32LobAppFileSystemDetection) GetFileOrFolderName()(*string) {
-    return m.fileOrFolderName
+    val, err := m.GetBackingStore().Get("fileOrFolderName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOperator gets the operator property value. Contains properties for detection operator.
 func (m *Win32LobAppFileSystemDetection) GetOperator()(*Win32LobAppDetectionOperator) {
-    return m.operator
+    val, err := m.GetBackingStore().Get("operator")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Win32LobAppDetectionOperator)
+    }
+    return nil
 }
 // GetPath gets the path property value. The file or folder path to detect Win32 Line of Business (LoB) app
 func (m *Win32LobAppFileSystemDetection) GetPath()(*string) {
-    return m.path
+    val, err := m.GetBackingStore().Get("path")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Win32LobAppFileSystemDetection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -170,25 +200,60 @@ func (m *Win32LobAppFileSystemDetection) Serialize(writer i878a80d2330e89d268963
 }
 // SetCheck32BitOn64System sets the check32BitOn64System property value. A value indicating whether this file or folder is for checking 32-bit app on 64-bit system
 func (m *Win32LobAppFileSystemDetection) SetCheck32BitOn64System(value *bool)() {
-    m.check32BitOn64System = value
+    err := m.GetBackingStore().Set("check32BitOn64System", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDetectionType sets the detectionType property value. Contains all supported file system detection type.
 func (m *Win32LobAppFileSystemDetection) SetDetectionType(value *Win32LobAppFileSystemDetectionType)() {
-    m.detectionType = value
+    err := m.GetBackingStore().Set("detectionType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDetectionValue sets the detectionValue property value. The file or folder detection value
 func (m *Win32LobAppFileSystemDetection) SetDetectionValue(value *string)() {
-    m.detectionValue = value
+    err := m.GetBackingStore().Set("detectionValue", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFileOrFolderName sets the fileOrFolderName property value. The file or folder name to detect Win32 Line of Business (LoB) app
 func (m *Win32LobAppFileSystemDetection) SetFileOrFolderName(value *string)() {
-    m.fileOrFolderName = value
+    err := m.GetBackingStore().Set("fileOrFolderName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOperator sets the operator property value. Contains properties for detection operator.
 func (m *Win32LobAppFileSystemDetection) SetOperator(value *Win32LobAppDetectionOperator)() {
-    m.operator = value
+    err := m.GetBackingStore().Set("operator", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPath sets the path property value. The file or folder path to detect Win32 Line of Business (LoB) app
 func (m *Win32LobAppFileSystemDetection) SetPath(value *string)() {
-    m.path = value
+    err := m.GetBackingStore().Set("path", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Win32LobAppFileSystemDetectionable 
+type Win32LobAppFileSystemDetectionable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    Win32LobAppDetectionable
+    GetCheck32BitOn64System()(*bool)
+    GetDetectionType()(*Win32LobAppFileSystemDetectionType)
+    GetDetectionValue()(*string)
+    GetFileOrFolderName()(*string)
+    GetOperator()(*Win32LobAppDetectionOperator)
+    GetPath()(*string)
+    SetCheck32BitOn64System(value *bool)()
+    SetDetectionType(value *Win32LobAppFileSystemDetectionType)()
+    SetDetectionValue(value *string)()
+    SetFileOrFolderName(value *string)()
+    SetOperator(value *Win32LobAppDetectionOperator)()
+    SetPath(value *string)()
 }

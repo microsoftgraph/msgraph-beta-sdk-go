@@ -7,24 +7,8 @@ import (
 // OnPremisesPublishingProfile 
 type OnPremisesPublishingProfile struct {
     Entity
-    // List of existing onPremisesAgentGroup objects. Read-only. Nullable.
-    agentGroups []OnPremisesAgentGroupable
-    // List of existing onPremisesAgent objects. Read-only. Nullable.
-    agents []OnPremisesAgentable
-    // List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
-    connectorGroups []ConnectorGroupable
-    // List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
-    connectors []Connectorable
-    // Represents a hybridAgentUpdaterConfiguration object.
-    hybridAgentUpdaterConfiguration HybridAgentUpdaterConfigurationable
-    // The isDefaultAccessEnabled property
-    isDefaultAccessEnabled *bool
-    // Represents if Azure AD Application Proxy is enabled for the tenant.
-    isEnabled *bool
-    // List of existing publishedResource objects. Read-only. Nullable.
-    publishedResources []PublishedResourceable
 }
-// NewOnPremisesPublishingProfile instantiates a new OnPremisesPublishingProfile and sets the default values.
+// NewOnPremisesPublishingProfile instantiates a new onPremisesPublishingProfile and sets the default values.
 func NewOnPremisesPublishingProfile()(*OnPremisesPublishingProfile) {
     m := &OnPremisesPublishingProfile{
         Entity: *NewEntity(),
@@ -37,19 +21,47 @@ func CreateOnPremisesPublishingProfileFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAgentGroups gets the agentGroups property value. List of existing onPremisesAgentGroup objects. Read-only. Nullable.
 func (m *OnPremisesPublishingProfile) GetAgentGroups()([]OnPremisesAgentGroupable) {
-    return m.agentGroups
+    val, err := m.GetBackingStore().Get("agentGroups")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OnPremisesAgentGroupable)
+    }
+    return nil
 }
 // GetAgents gets the agents property value. List of existing onPremisesAgent objects. Read-only. Nullable.
 func (m *OnPremisesPublishingProfile) GetAgents()([]OnPremisesAgentable) {
-    return m.agents
+    val, err := m.GetBackingStore().Get("agents")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OnPremisesAgentable)
+    }
+    return nil
 }
 // GetConnectorGroups gets the connectorGroups property value. List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
 func (m *OnPremisesPublishingProfile) GetConnectorGroups()([]ConnectorGroupable) {
-    return m.connectorGroups
+    val, err := m.GetBackingStore().Get("connectorGroups")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ConnectorGroupable)
+    }
+    return nil
 }
 // GetConnectors gets the connectors property value. List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
 func (m *OnPremisesPublishingProfile) GetConnectors()([]Connectorable) {
-    return m.connectors
+    val, err := m.GetBackingStore().Get("connectors")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Connectorable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OnPremisesPublishingProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -158,19 +170,47 @@ func (m *OnPremisesPublishingProfile) GetFieldDeserializers()(map[string]func(i8
 }
 // GetHybridAgentUpdaterConfiguration gets the hybridAgentUpdaterConfiguration property value. Represents a hybridAgentUpdaterConfiguration object.
 func (m *OnPremisesPublishingProfile) GetHybridAgentUpdaterConfiguration()(HybridAgentUpdaterConfigurationable) {
-    return m.hybridAgentUpdaterConfiguration
+    val, err := m.GetBackingStore().Get("hybridAgentUpdaterConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(HybridAgentUpdaterConfigurationable)
+    }
+    return nil
 }
 // GetIsDefaultAccessEnabled gets the isDefaultAccessEnabled property value. The isDefaultAccessEnabled property
 func (m *OnPremisesPublishingProfile) GetIsDefaultAccessEnabled()(*bool) {
-    return m.isDefaultAccessEnabled
+    val, err := m.GetBackingStore().Get("isDefaultAccessEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsEnabled gets the isEnabled property value. Represents if Azure AD Application Proxy is enabled for the tenant.
 func (m *OnPremisesPublishingProfile) GetIsEnabled()(*bool) {
-    return m.isEnabled
+    val, err := m.GetBackingStore().Get("isEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPublishedResources gets the publishedResources property value. List of existing publishedResource objects. Read-only. Nullable.
 func (m *OnPremisesPublishingProfile) GetPublishedResources()([]PublishedResourceable) {
-    return m.publishedResources
+    val, err := m.GetBackingStore().Get("publishedResources")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PublishedResourceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OnPremisesPublishingProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -250,33 +290,78 @@ func (m *OnPremisesPublishingProfile) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAgentGroups sets the agentGroups property value. List of existing onPremisesAgentGroup objects. Read-only. Nullable.
 func (m *OnPremisesPublishingProfile) SetAgentGroups(value []OnPremisesAgentGroupable)() {
-    m.agentGroups = value
+    err := m.GetBackingStore().Set("agentGroups", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAgents sets the agents property value. List of existing onPremisesAgent objects. Read-only. Nullable.
 func (m *OnPremisesPublishingProfile) SetAgents(value []OnPremisesAgentable)() {
-    m.agents = value
+    err := m.GetBackingStore().Set("agents", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConnectorGroups sets the connectorGroups property value. List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
 func (m *OnPremisesPublishingProfile) SetConnectorGroups(value []ConnectorGroupable)() {
-    m.connectorGroups = value
+    err := m.GetBackingStore().Set("connectorGroups", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConnectors sets the connectors property value. List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
 func (m *OnPremisesPublishingProfile) SetConnectors(value []Connectorable)() {
-    m.connectors = value
+    err := m.GetBackingStore().Set("connectors", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHybridAgentUpdaterConfiguration sets the hybridAgentUpdaterConfiguration property value. Represents a hybridAgentUpdaterConfiguration object.
 func (m *OnPremisesPublishingProfile) SetHybridAgentUpdaterConfiguration(value HybridAgentUpdaterConfigurationable)() {
-    m.hybridAgentUpdaterConfiguration = value
+    err := m.GetBackingStore().Set("hybridAgentUpdaterConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsDefaultAccessEnabled sets the isDefaultAccessEnabled property value. The isDefaultAccessEnabled property
 func (m *OnPremisesPublishingProfile) SetIsDefaultAccessEnabled(value *bool)() {
-    m.isDefaultAccessEnabled = value
+    err := m.GetBackingStore().Set("isDefaultAccessEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsEnabled sets the isEnabled property value. Represents if Azure AD Application Proxy is enabled for the tenant.
 func (m *OnPremisesPublishingProfile) SetIsEnabled(value *bool)() {
-    m.isEnabled = value
+    err := m.GetBackingStore().Set("isEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPublishedResources sets the publishedResources property value. List of existing publishedResource objects. Read-only. Nullable.
 func (m *OnPremisesPublishingProfile) SetPublishedResources(value []PublishedResourceable)() {
-    m.publishedResources = value
+    err := m.GetBackingStore().Set("publishedResources", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OnPremisesPublishingProfileable 
+type OnPremisesPublishingProfileable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAgentGroups()([]OnPremisesAgentGroupable)
+    GetAgents()([]OnPremisesAgentable)
+    GetConnectorGroups()([]ConnectorGroupable)
+    GetConnectors()([]Connectorable)
+    GetHybridAgentUpdaterConfiguration()(HybridAgentUpdaterConfigurationable)
+    GetIsDefaultAccessEnabled()(*bool)
+    GetIsEnabled()(*bool)
+    GetPublishedResources()([]PublishedResourceable)
+    SetAgentGroups(value []OnPremisesAgentGroupable)()
+    SetAgents(value []OnPremisesAgentable)()
+    SetConnectorGroups(value []ConnectorGroupable)()
+    SetConnectors(value []Connectorable)()
+    SetHybridAgentUpdaterConfiguration(value HybridAgentUpdaterConfigurationable)()
+    SetIsDefaultAccessEnabled(value *bool)()
+    SetIsEnabled(value *bool)()
+    SetPublishedResources(value []PublishedResourceable)()
 }

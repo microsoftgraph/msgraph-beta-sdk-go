@@ -9,12 +9,8 @@ import (
 // ExternalActivity 
 type ExternalActivity struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // Represents an identity used to identify who is responsible for the activity.
-    performedBy Identityable
-    // When the particular activity occurred.
-    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The type property
-    type_escaped *ExternalActivityType
+    TypeEscaped *ExternalActivityType
 }
 // NewExternalActivity instantiates a new externalActivity and sets the default values.
 func NewExternalActivity()(*ExternalActivity) {
@@ -82,15 +78,36 @@ func (m *ExternalActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetPerformedBy gets the performedBy property value. Represents an identity used to identify who is responsible for the activity.
 func (m *ExternalActivity) GetPerformedBy()(Identityable) {
-    return m.performedBy
+    val, err := m.GetBackingStore().Get("performedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Identityable)
+    }
+    return nil
 }
 // GetStartDateTime gets the startDateTime property value. When the particular activity occurred.
 func (m *ExternalActivity) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.startDateTime
+    val, err := m.GetBackingStore().Get("startDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetType gets the type property value. The type property
 func (m *ExternalActivity) GetType()(*ExternalActivityType) {
-    return m.type_escaped
+    val, err := m.GetBackingStore().Get("typeEscaped")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ExternalActivityType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ExternalActivity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -121,13 +138,33 @@ func (m *ExternalActivity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetPerformedBy sets the performedBy property value. Represents an identity used to identify who is responsible for the activity.
 func (m *ExternalActivity) SetPerformedBy(value Identityable)() {
-    m.performedBy = value
+    err := m.GetBackingStore().Set("performedBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartDateTime sets the startDateTime property value. When the particular activity occurred.
 func (m *ExternalActivity) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.startDateTime = value
+    err := m.GetBackingStore().Set("startDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetType sets the type property value. The type property
 func (m *ExternalActivity) SetType(value *ExternalActivityType)() {
-    m.type_escaped = value
+    err := m.GetBackingStore().Set("typeEscaped", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ExternalActivityable 
+type ExternalActivityable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetPerformedBy()(Identityable)
+    GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetType()(*ExternalActivityType)
+    SetPerformedBy(value Identityable)()
+    SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetType(value *ExternalActivityType)()
 }

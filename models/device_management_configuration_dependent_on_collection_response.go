@@ -7,8 +7,6 @@ import (
 // DeviceManagementConfigurationDependentOnCollectionResponse 
 type DeviceManagementConfigurationDependentOnCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementConfigurationDependentOnable
 }
 // NewDeviceManagementConfigurationDependentOnCollectionResponse instantiates a new DeviceManagementConfigurationDependentOnCollectionResponse and sets the default values.
 func NewDeviceManagementConfigurationDependentOnCollectionResponse()(*DeviceManagementConfigurationDependentOnCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementConfigurationDependentOnCollectionResponse) GetFieldDes
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementConfigurationDependentOnCollectionResponse) GetValue()([]DeviceManagementConfigurationDependentOnable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementConfigurationDependentOnable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationDependentOnCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementConfigurationDependentOnCollectionResponse) Serialize(w
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementConfigurationDependentOnCollectionResponse) SetValue(value []DeviceManagementConfigurationDependentOnable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationDependentOnCollectionResponseable 
+type DeviceManagementConfigurationDependentOnCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementConfigurationDependentOnable)
+    SetValue(value []DeviceManagementConfigurationDependentOnable)()
 }

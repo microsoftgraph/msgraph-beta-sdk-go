@@ -7,16 +7,14 @@ import (
 // GroupPolicyPresentationCheckBox 
 type GroupPolicyPresentationCheckBox struct {
     GroupPolicyUploadedPresentation
-    // Default value for the check box. The default value is false.
-    defaultChecked *bool
 }
 // NewGroupPolicyPresentationCheckBox instantiates a new GroupPolicyPresentationCheckBox and sets the default values.
 func NewGroupPolicyPresentationCheckBox()(*GroupPolicyPresentationCheckBox) {
     m := &GroupPolicyPresentationCheckBox{
         GroupPolicyUploadedPresentation: *NewGroupPolicyUploadedPresentation(),
     }
-    odataTypeValue := "#microsoft.graph.groupPolicyPresentationCheckBox";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.groupPolicyPresentationCheckBox"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateGroupPolicyPresentationCheckBoxFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +23,14 @@ func CreateGroupPolicyPresentationCheckBoxFromDiscriminatorValue(parseNode i878a
 }
 // GetDefaultChecked gets the defaultChecked property value. Default value for the check box. The default value is false.
 func (m *GroupPolicyPresentationCheckBox) GetDefaultChecked()(*bool) {
-    return m.defaultChecked
+    val, err := m.GetBackingStore().Get("defaultChecked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyPresentationCheckBox) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -58,5 +63,15 @@ func (m *GroupPolicyPresentationCheckBox) Serialize(writer i878a80d2330e89d26896
 }
 // SetDefaultChecked sets the defaultChecked property value. Default value for the check box. The default value is false.
 func (m *GroupPolicyPresentationCheckBox) SetDefaultChecked(value *bool)() {
-    m.defaultChecked = value
+    err := m.GetBackingStore().Set("defaultChecked", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GroupPolicyPresentationCheckBoxable 
+type GroupPolicyPresentationCheckBoxable interface {
+    GroupPolicyUploadedPresentationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDefaultChecked()(*bool)
+    SetDefaultChecked(value *bool)()
 }

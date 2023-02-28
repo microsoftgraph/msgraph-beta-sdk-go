@@ -7,18 +7,14 @@ import (
 // PlannerBucketPropertyRule 
 type PlannerBucketPropertyRule struct {
     PlannerPropertyRule
-    // The order property
-    order []string
-    // The title property
-    title []string
 }
 // NewPlannerBucketPropertyRule instantiates a new PlannerBucketPropertyRule and sets the default values.
 func NewPlannerBucketPropertyRule()(*PlannerBucketPropertyRule) {
     m := &PlannerBucketPropertyRule{
         PlannerPropertyRule: *NewPlannerPropertyRule(),
     }
-    odataTypeValue := "#microsoft.graph.plannerBucketPropertyRule";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.plannerBucketPropertyRule"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreatePlannerBucketPropertyRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -60,11 +56,25 @@ func (m *PlannerBucketPropertyRule) GetFieldDeserializers()(map[string]func(i878
 }
 // GetOrder gets the order property value. The order property
 func (m *PlannerBucketPropertyRule) GetOrder()([]string) {
-    return m.order
+    val, err := m.GetBackingStore().Get("order")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetTitle gets the title property value. The title property
 func (m *PlannerBucketPropertyRule) GetTitle()([]string) {
-    return m.title
+    val, err := m.GetBackingStore().Get("title")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PlannerBucketPropertyRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,9 +98,24 @@ func (m *PlannerBucketPropertyRule) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetOrder sets the order property value. The order property
 func (m *PlannerBucketPropertyRule) SetOrder(value []string)() {
-    m.order = value
+    err := m.GetBackingStore().Set("order", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTitle sets the title property value. The title property
 func (m *PlannerBucketPropertyRule) SetTitle(value []string)() {
-    m.title = value
+    err := m.GetBackingStore().Set("title", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PlannerBucketPropertyRuleable 
+type PlannerBucketPropertyRuleable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    PlannerPropertyRuleable
+    GetOrder()([]string)
+    GetTitle()([]string)
+    SetOrder(value []string)()
+    SetTitle(value []string)()
 }

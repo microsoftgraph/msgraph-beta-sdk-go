@@ -51,8 +51,8 @@ func NewItemCalendarViewItemExceptionOccurrencesRequestBuilderInternal(pathParam
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemCalendarViewItemExceptionOccurrencesRequestBuilder instantiates a new ExceptionOccurrencesRequestBuilder and sets the default values.
@@ -63,11 +63,11 @@ func NewItemCalendarViewItemExceptionOccurrencesRequestBuilder(rawUrl string, re
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemCalendarViewItemExceptionOccurrencesRequestBuilder) Count()(*ItemCalendarViewItemExceptionOccurrencesCountRequestBuilder) {
-    return NewItemCalendarViewItemExceptionOccurrencesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCalendarViewItemExceptionOccurrencesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delta provides operations to call the delta method.
 func (m *ItemCalendarViewItemExceptionOccurrencesRequestBuilder) Delta()(*ItemCalendarViewItemExceptionOccurrencesDeltaRequestBuilder) {
-    return NewItemCalendarViewItemExceptionOccurrencesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCalendarViewItemExceptionOccurrencesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get exceptionOccurrences from groups
 func (m *ItemCalendarViewItemExceptionOccurrencesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarViewItemExceptionOccurrencesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EventCollectionResponseable, error) {

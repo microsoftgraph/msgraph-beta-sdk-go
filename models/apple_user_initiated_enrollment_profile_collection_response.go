@@ -7,8 +7,6 @@ import (
 // AppleUserInitiatedEnrollmentProfileCollectionResponse 
 type AppleUserInitiatedEnrollmentProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AppleUserInitiatedEnrollmentProfileable
 }
 // NewAppleUserInitiatedEnrollmentProfileCollectionResponse instantiates a new AppleUserInitiatedEnrollmentProfileCollectionResponse and sets the default values.
 func NewAppleUserInitiatedEnrollmentProfileCollectionResponse()(*AppleUserInitiatedEnrollmentProfileCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AppleUserInitiatedEnrollmentProfileCollectionResponse) GetFieldDeserial
 }
 // GetValue gets the value property value. The value property
 func (m *AppleUserInitiatedEnrollmentProfileCollectionResponse) GetValue()([]AppleUserInitiatedEnrollmentProfileable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AppleUserInitiatedEnrollmentProfileable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AppleUserInitiatedEnrollmentProfileCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AppleUserInitiatedEnrollmentProfileCollectionResponse) Serialize(writer
 }
 // SetValue sets the value property value. The value property
 func (m *AppleUserInitiatedEnrollmentProfileCollectionResponse) SetValue(value []AppleUserInitiatedEnrollmentProfileable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AppleUserInitiatedEnrollmentProfileCollectionResponseable 
+type AppleUserInitiatedEnrollmentProfileCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AppleUserInitiatedEnrollmentProfileable)
+    SetValue(value []AppleUserInitiatedEnrollmentProfileable)()
 }

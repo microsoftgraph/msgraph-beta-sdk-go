@@ -2,40 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // IdentityContainer 
 type IdentityContainer struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Represents entry point for API connectors.
-    apiConnectors []IdentityApiConnectorable
-    // The authenticationEventListeners property
-    authenticationEventListeners []AuthenticationEventListenerable
-    // Represents entry point for B2C identity userflows.
-    b2cUserFlows []B2cIdentityUserFlowable
-    // Represents entry point for B2X and self-service sign-up identity userflows.
-    b2xUserFlows []B2xIdentityUserFlowable
-    // the entry point for the Conditional Access (CA) object model.
-    conditionalAccess ConditionalAccessRootable
-    // Represents entry point for continuous access evaluation policy.
-    continuousAccessEvaluationPolicy ContinuousAccessEvaluationPolicyable
-    // The customAuthenticationExtensions property
-    customAuthenticationExtensions []CustomAuthenticationExtensionable
-    // Represents entry point for identity provider base.
-    identityProviders []IdentityProviderBaseable
-    // The OdataType property
-    odataType *string
-    // Represents entry point for identity userflow attributes.
-    userFlowAttributes []IdentityUserFlowAttributeable
-    // The userFlows property
-    userFlows []IdentityUserFlowable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewIdentityContainer instantiates a new IdentityContainer and sets the default values.
 func NewIdentityContainer()(*IdentityContainer) {
     m := &IdentityContainer{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateIdentityContainerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,35 +24,96 @@ func CreateIdentityContainerFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IdentityContainer) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetApiConnectors gets the apiConnectors property value. Represents entry point for API connectors.
 func (m *IdentityContainer) GetApiConnectors()([]IdentityApiConnectorable) {
-    return m.apiConnectors
+    val, err := m.GetBackingStore().Get("apiConnectors")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IdentityApiConnectorable)
+    }
+    return nil
 }
 // GetAuthenticationEventListeners gets the authenticationEventListeners property value. The authenticationEventListeners property
 func (m *IdentityContainer) GetAuthenticationEventListeners()([]AuthenticationEventListenerable) {
-    return m.authenticationEventListeners
+    val, err := m.GetBackingStore().Get("authenticationEventListeners")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AuthenticationEventListenerable)
+    }
+    return nil
 }
 // GetB2cUserFlows gets the b2cUserFlows property value. Represents entry point for B2C identity userflows.
 func (m *IdentityContainer) GetB2cUserFlows()([]B2cIdentityUserFlowable) {
-    return m.b2cUserFlows
+    val, err := m.GetBackingStore().Get("b2cUserFlows")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]B2cIdentityUserFlowable)
+    }
+    return nil
 }
 // GetB2xUserFlows gets the b2xUserFlows property value. Represents entry point for B2X and self-service sign-up identity userflows.
 func (m *IdentityContainer) GetB2xUserFlows()([]B2xIdentityUserFlowable) {
-    return m.b2xUserFlows
+    val, err := m.GetBackingStore().Get("b2xUserFlows")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]B2xIdentityUserFlowable)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *IdentityContainer) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetConditionalAccess gets the conditionalAccess property value. the entry point for the Conditional Access (CA) object model.
 func (m *IdentityContainer) GetConditionalAccess()(ConditionalAccessRootable) {
-    return m.conditionalAccess
+    val, err := m.GetBackingStore().Get("conditionalAccess")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ConditionalAccessRootable)
+    }
+    return nil
 }
 // GetContinuousAccessEvaluationPolicy gets the continuousAccessEvaluationPolicy property value. Represents entry point for continuous access evaluation policy.
 func (m *IdentityContainer) GetContinuousAccessEvaluationPolicy()(ContinuousAccessEvaluationPolicyable) {
-    return m.continuousAccessEvaluationPolicy
+    val, err := m.GetBackingStore().Get("continuousAccessEvaluationPolicy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ContinuousAccessEvaluationPolicyable)
+    }
+    return nil
 }
 // GetCustomAuthenticationExtensions gets the customAuthenticationExtensions property value. The customAuthenticationExtensions property
 func (m *IdentityContainer) GetCustomAuthenticationExtensions()([]CustomAuthenticationExtensionable) {
-    return m.customAuthenticationExtensions
+    val, err := m.GetBackingStore().Get("customAuthenticationExtensions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CustomAuthenticationExtensionable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -223,19 +264,47 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetIdentityProviders gets the identityProviders property value. Represents entry point for identity provider base.
 func (m *IdentityContainer) GetIdentityProviders()([]IdentityProviderBaseable) {
-    return m.identityProviders
+    val, err := m.GetBackingStore().Get("identityProviders")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IdentityProviderBaseable)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *IdentityContainer) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserFlowAttributes gets the userFlowAttributes property value. Represents entry point for identity userflow attributes.
 func (m *IdentityContainer) GetUserFlowAttributes()([]IdentityUserFlowAttributeable) {
-    return m.userFlowAttributes
+    val, err := m.GetBackingStore().Get("userFlowAttributes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IdentityUserFlowAttributeable)
+    }
+    return nil
 }
 // GetUserFlows gets the userFlows property value. The userFlows property
 func (m *IdentityContainer) GetUserFlows()([]IdentityUserFlowable) {
-    return m.userFlows
+    val, err := m.GetBackingStore().Get("userFlows")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IdentityUserFlowable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -347,49 +416,119 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IdentityContainer) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApiConnectors sets the apiConnectors property value. Represents entry point for API connectors.
 func (m *IdentityContainer) SetApiConnectors(value []IdentityApiConnectorable)() {
-    m.apiConnectors = value
+    err := m.GetBackingStore().Set("apiConnectors", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAuthenticationEventListeners sets the authenticationEventListeners property value. The authenticationEventListeners property
 func (m *IdentityContainer) SetAuthenticationEventListeners(value []AuthenticationEventListenerable)() {
-    m.authenticationEventListeners = value
+    err := m.GetBackingStore().Set("authenticationEventListeners", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetB2cUserFlows sets the b2cUserFlows property value. Represents entry point for B2C identity userflows.
 func (m *IdentityContainer) SetB2cUserFlows(value []B2cIdentityUserFlowable)() {
-    m.b2cUserFlows = value
+    err := m.GetBackingStore().Set("b2cUserFlows", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetB2xUserFlows sets the b2xUserFlows property value. Represents entry point for B2X and self-service sign-up identity userflows.
 func (m *IdentityContainer) SetB2xUserFlows(value []B2xIdentityUserFlowable)() {
-    m.b2xUserFlows = value
+    err := m.GetBackingStore().Set("b2xUserFlows", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *IdentityContainer) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetConditionalAccess sets the conditionalAccess property value. the entry point for the Conditional Access (CA) object model.
 func (m *IdentityContainer) SetConditionalAccess(value ConditionalAccessRootable)() {
-    m.conditionalAccess = value
+    err := m.GetBackingStore().Set("conditionalAccess", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetContinuousAccessEvaluationPolicy sets the continuousAccessEvaluationPolicy property value. Represents entry point for continuous access evaluation policy.
 func (m *IdentityContainer) SetContinuousAccessEvaluationPolicy(value ContinuousAccessEvaluationPolicyable)() {
-    m.continuousAccessEvaluationPolicy = value
+    err := m.GetBackingStore().Set("continuousAccessEvaluationPolicy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomAuthenticationExtensions sets the customAuthenticationExtensions property value. The customAuthenticationExtensions property
 func (m *IdentityContainer) SetCustomAuthenticationExtensions(value []CustomAuthenticationExtensionable)() {
-    m.customAuthenticationExtensions = value
+    err := m.GetBackingStore().Set("customAuthenticationExtensions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentityProviders sets the identityProviders property value. Represents entry point for identity provider base.
 func (m *IdentityContainer) SetIdentityProviders(value []IdentityProviderBaseable)() {
-    m.identityProviders = value
+    err := m.GetBackingStore().Set("identityProviders", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *IdentityContainer) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserFlowAttributes sets the userFlowAttributes property value. Represents entry point for identity userflow attributes.
 func (m *IdentityContainer) SetUserFlowAttributes(value []IdentityUserFlowAttributeable)() {
-    m.userFlowAttributes = value
+    err := m.GetBackingStore().Set("userFlowAttributes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserFlows sets the userFlows property value. The userFlows property
 func (m *IdentityContainer) SetUserFlows(value []IdentityUserFlowable)() {
-    m.userFlows = value
+    err := m.GetBackingStore().Set("userFlows", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IdentityContainerable 
+type IdentityContainerable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetApiConnectors()([]IdentityApiConnectorable)
+    GetAuthenticationEventListeners()([]AuthenticationEventListenerable)
+    GetB2cUserFlows()([]B2cIdentityUserFlowable)
+    GetB2xUserFlows()([]B2xIdentityUserFlowable)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetConditionalAccess()(ConditionalAccessRootable)
+    GetContinuousAccessEvaluationPolicy()(ContinuousAccessEvaluationPolicyable)
+    GetCustomAuthenticationExtensions()([]CustomAuthenticationExtensionable)
+    GetIdentityProviders()([]IdentityProviderBaseable)
+    GetOdataType()(*string)
+    GetUserFlowAttributes()([]IdentityUserFlowAttributeable)
+    GetUserFlows()([]IdentityUserFlowable)
+    SetApiConnectors(value []IdentityApiConnectorable)()
+    SetAuthenticationEventListeners(value []AuthenticationEventListenerable)()
+    SetB2cUserFlows(value []B2cIdentityUserFlowable)()
+    SetB2xUserFlows(value []B2xIdentityUserFlowable)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetConditionalAccess(value ConditionalAccessRootable)()
+    SetContinuousAccessEvaluationPolicy(value ContinuousAccessEvaluationPolicyable)()
+    SetCustomAuthenticationExtensions(value []CustomAuthenticationExtensionable)()
+    SetIdentityProviders(value []IdentityProviderBaseable)()
+    SetOdataType(value *string)()
+    SetUserFlowAttributes(value []IdentityUserFlowAttributeable)()
+    SetUserFlows(value []IdentityUserFlowable)()
 }

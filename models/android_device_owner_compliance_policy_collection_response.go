@@ -7,8 +7,6 @@ import (
 // AndroidDeviceOwnerCompliancePolicyCollectionResponse 
 type AndroidDeviceOwnerCompliancePolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidDeviceOwnerCompliancePolicyable
 }
 // NewAndroidDeviceOwnerCompliancePolicyCollectionResponse instantiates a new AndroidDeviceOwnerCompliancePolicyCollectionResponse and sets the default values.
 func NewAndroidDeviceOwnerCompliancePolicyCollectionResponse()(*AndroidDeviceOwnerCompliancePolicyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidDeviceOwnerCompliancePolicyCollectionResponse) GetFieldDeseriali
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidDeviceOwnerCompliancePolicyCollectionResponse) GetValue()([]AndroidDeviceOwnerCompliancePolicyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidDeviceOwnerCompliancePolicyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerCompliancePolicyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidDeviceOwnerCompliancePolicyCollectionResponse) Serialize(writer 
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidDeviceOwnerCompliancePolicyCollectionResponse) SetValue(value []AndroidDeviceOwnerCompliancePolicyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidDeviceOwnerCompliancePolicyCollectionResponseable 
+type AndroidDeviceOwnerCompliancePolicyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidDeviceOwnerCompliancePolicyable)
+    SetValue(value []AndroidDeviceOwnerCompliancePolicyable)()
 }

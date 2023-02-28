@@ -27,13 +27,13 @@ type ItemSitesItemOnenotePagesItemPreviewRequestBuilderGetRequestConfiguration s
 func NewItemSitesItemOnenotePagesItemPreviewRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemOnenotePagesItemPreviewRequestBuilder) {
     m := &ItemSitesItemOnenotePagesItemPreviewRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/onenote/pages/{onenotePage%2Did}/microsoft.graph.preview()";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/onenote/pages/{onenotePage%2Did}/preview()";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemOnenotePagesItemPreviewRequestBuilder instantiates a new PreviewRequestBuilder and sets the default values.

@@ -16,7 +16,7 @@ type RecommendationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// RecommendationsRequestBuilderGetQueryParameters get recommendations from directory
+// RecommendationsRequestBuilderGetQueryParameters get a list of the recommendation objects and their properties.
 type RecommendationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -60,8 +60,8 @@ func NewRecommendationsRequestBuilderInternal(pathParameters map[string]string, 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewRecommendationsRequestBuilder instantiates a new RecommendationsRequestBuilder and sets the default values.
@@ -72,9 +72,12 @@ func NewRecommendationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 }
 // Count provides operations to count the resources in the collection.
 func (m *RecommendationsRequestBuilder) Count()(*RecommendationsCountRequestBuilder) {
-    return NewRecommendationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewRecommendationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// Get get recommendations from directory
+// Get get a list of the recommendation objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/directory-list-recommendation?view=graph-rest-1.0
 func (m *RecommendationsRequestBuilder) Get(ctx context.Context, requestConfiguration *RecommendationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RecommendationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *RecommendationsRequestBuilder) Post(ctx context.Context, body ie233ee76
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Recommendationable), nil
 }
-// ToGetRequestInformation get recommendations from directory
+// ToGetRequestInformation get a list of the recommendation objects and their properties.
 func (m *RecommendationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RecommendationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -135,7 +138,10 @@ func (m *RecommendationsRequestBuilder) ToPostRequestInformation(ctx context.Con
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

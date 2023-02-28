@@ -10,10 +10,11 @@ const (
     UNKNOWNFUTUREVALUE_PLANNERCONTAINERTYPE
     ROSTER_PLANNERCONTAINERTYPE
     PROJECT_PLANNERCONTAINERTYPE
+    DRIVEITEM_PLANNERCONTAINERTYPE
 )
 
 func (i PlannerContainerType) String() string {
-    return []string{"group", "unknownFutureValue", "roster", "project"}[i]
+    return []string{"group", "unknownFutureValue", "roster", "project", "driveItem"}[i]
 }
 func ParsePlannerContainerType(v string) (any, error) {
     result := GROUP_PLANNERCONTAINERTYPE
@@ -26,6 +27,8 @@ func ParsePlannerContainerType(v string) (any, error) {
             result = ROSTER_PLANNERCONTAINERTYPE
         case "project":
             result = PROJECT_PLANNERCONTAINERTYPE
+        case "driveItem":
+            result = DRIVEITEM_PLANNERCONTAINERTYPE
         default:
             return 0, errors.New("Unknown PlannerContainerType value: " + v)
     }

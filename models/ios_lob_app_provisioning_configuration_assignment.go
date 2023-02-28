@@ -7,8 +7,6 @@ import (
 // IosLobAppProvisioningConfigurationAssignment a class containing the properties used for Group Assignment of an iOS LOB App Provisioning and Configuration.
 type IosLobAppProvisioningConfigurationAssignment struct {
     Entity
-    // The target group assignment defined by the admin.
-    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewIosLobAppProvisioningConfigurationAssignment instantiates a new iosLobAppProvisioningConfigurationAssignment and sets the default values.
 func NewIosLobAppProvisioningConfigurationAssignment()(*IosLobAppProvisioningConfigurationAssignment) {
@@ -38,7 +36,14 @@ func (m *IosLobAppProvisioningConfigurationAssignment) GetFieldDeserializers()(m
 }
 // GetTarget gets the target property value. The target group assignment defined by the admin.
 func (m *IosLobAppProvisioningConfigurationAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
-    return m.target
+    val, err := m.GetBackingStore().Get("target")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceAndAppManagementAssignmentTargetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosLobAppProvisioningConfigurationAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *IosLobAppProvisioningConfigurationAssignment) Serialize(writer i878a80d
 }
 // SetTarget sets the target property value. The target group assignment defined by the admin.
 func (m *IosLobAppProvisioningConfigurationAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
-    m.target = value
+    err := m.GetBackingStore().Set("target", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosLobAppProvisioningConfigurationAssignmentable 
+type IosLobAppProvisioningConfigurationAssignmentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetTarget()(DeviceAndAppManagementAssignmentTargetable)
+    SetTarget(value DeviceAndAppManagementAssignmentTargetable)()
 }

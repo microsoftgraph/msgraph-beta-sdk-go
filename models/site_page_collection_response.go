@@ -7,8 +7,6 @@ import (
 // SitePageCollectionResponse 
 type SitePageCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []SitePageable
 }
 // NewSitePageCollectionResponse instantiates a new SitePageCollectionResponse and sets the default values.
 func NewSitePageCollectionResponse()(*SitePageCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *SitePageCollectionResponse) GetFieldDeserializers()(map[string]func(i87
 }
 // GetValue gets the value property value. The value property
 func (m *SitePageCollectionResponse) GetValue()([]SitePageable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SitePageable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SitePageCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *SitePageCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetValue sets the value property value. The value property
 func (m *SitePageCollectionResponse) SetValue(value []SitePageable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SitePageCollectionResponseable 
+type SitePageCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]SitePageable)
+    SetValue(value []SitePageable)()
 }

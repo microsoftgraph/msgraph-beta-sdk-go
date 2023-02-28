@@ -7,14 +7,6 @@ import (
 // AllowedDataLocation 
 type AllowedDataLocation struct {
     Entity
-    // The appId property
-    appId *string
-    // The domain property
-    domain *string
-    // The isDefault property
-    isDefault *bool
-    // The location property
-    location *string
 }
 // NewAllowedDataLocation instantiates a new allowedDataLocation and sets the default values.
 func NewAllowedDataLocation()(*AllowedDataLocation) {
@@ -29,11 +21,25 @@ func CreateAllowedDataLocationFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAppId gets the appId property value. The appId property
 func (m *AllowedDataLocation) GetAppId()(*string) {
-    return m.appId
+    val, err := m.GetBackingStore().Get("appId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDomain gets the domain property value. The domain property
 func (m *AllowedDataLocation) GetDomain()(*string) {
-    return m.domain
+    val, err := m.GetBackingStore().Get("domain")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AllowedDataLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -82,11 +88,25 @@ func (m *AllowedDataLocation) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetIsDefault gets the isDefault property value. The isDefault property
 func (m *AllowedDataLocation) GetIsDefault()(*bool) {
-    return m.isDefault
+    val, err := m.GetBackingStore().Get("isDefault")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocation gets the location property value. The location property
 func (m *AllowedDataLocation) GetLocation()(*string) {
-    return m.location
+    val, err := m.GetBackingStore().Get("location")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AllowedDataLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -122,17 +142,42 @@ func (m *AllowedDataLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAppId sets the appId property value. The appId property
 func (m *AllowedDataLocation) SetAppId(value *string)() {
-    m.appId = value
+    err := m.GetBackingStore().Set("appId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDomain sets the domain property value. The domain property
 func (m *AllowedDataLocation) SetDomain(value *string)() {
-    m.domain = value
+    err := m.GetBackingStore().Set("domain", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsDefault sets the isDefault property value. The isDefault property
 func (m *AllowedDataLocation) SetIsDefault(value *bool)() {
-    m.isDefault = value
+    err := m.GetBackingStore().Set("isDefault", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocation sets the location property value. The location property
 func (m *AllowedDataLocation) SetLocation(value *string)() {
-    m.location = value
+    err := m.GetBackingStore().Set("location", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AllowedDataLocationable 
+type AllowedDataLocationable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppId()(*string)
+    GetDomain()(*string)
+    GetIsDefault()(*bool)
+    GetLocation()(*string)
+    SetAppId(value *string)()
+    SetDomain(value *string)()
+    SetIsDefault(value *bool)()
+    SetLocation(value *string)()
 }

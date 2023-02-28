@@ -7,12 +7,8 @@ import (
 // PrivilegedSignupStatus 
 type PrivilegedSignupStatus struct {
     Entity
-    // The isRegistered property
-    isRegistered *bool
-    // The status property
-    status *SetupStatus
 }
-// NewPrivilegedSignupStatus instantiates a new PrivilegedSignupStatus and sets the default values.
+// NewPrivilegedSignupStatus instantiates a new privilegedSignupStatus and sets the default values.
 func NewPrivilegedSignupStatus()(*PrivilegedSignupStatus) {
     m := &PrivilegedSignupStatus{
         Entity: *NewEntity(),
@@ -50,11 +46,25 @@ func (m *PrivilegedSignupStatus) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetIsRegistered gets the isRegistered property value. The isRegistered property
 func (m *PrivilegedSignupStatus) GetIsRegistered()(*bool) {
-    return m.isRegistered
+    val, err := m.GetBackingStore().Get("isRegistered")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetStatus gets the status property value. The status property
 func (m *PrivilegedSignupStatus) GetStatus()(*SetupStatus) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SetupStatus)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrivilegedSignupStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -79,9 +89,24 @@ func (m *PrivilegedSignupStatus) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetIsRegistered sets the isRegistered property value. The isRegistered property
 func (m *PrivilegedSignupStatus) SetIsRegistered(value *bool)() {
-    m.isRegistered = value
+    err := m.GetBackingStore().Set("isRegistered", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. The status property
 func (m *PrivilegedSignupStatus) SetStatus(value *SetupStatus)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrivilegedSignupStatusable 
+type PrivilegedSignupStatusable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetIsRegistered()(*bool)
+    GetStatus()(*SetupStatus)
+    SetIsRegistered(value *bool)()
+    SetStatus(value *SetupStatus)()
 }

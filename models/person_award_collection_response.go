@@ -7,8 +7,6 @@ import (
 // PersonAwardCollectionResponse 
 type PersonAwardCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PersonAwardable
 }
 // NewPersonAwardCollectionResponse instantiates a new PersonAwardCollectionResponse and sets the default values.
 func NewPersonAwardCollectionResponse()(*PersonAwardCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PersonAwardCollectionResponse) GetFieldDeserializers()(map[string]func(
 }
 // GetValue gets the value property value. The value property
 func (m *PersonAwardCollectionResponse) GetValue()([]PersonAwardable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PersonAwardable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PersonAwardCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PersonAwardCollectionResponse) Serialize(writer i878a80d2330e89d2689638
 }
 // SetValue sets the value property value. The value property
 func (m *PersonAwardCollectionResponse) SetValue(value []PersonAwardable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PersonAwardCollectionResponseable 
+type PersonAwardCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PersonAwardable)
+    SetValue(value []PersonAwardable)()
 }

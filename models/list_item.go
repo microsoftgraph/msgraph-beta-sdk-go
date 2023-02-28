@@ -7,32 +7,14 @@ import (
 // ListItem 
 type ListItem struct {
     BaseItem
-    // The list of recent activities that took place on this item.
-    activities []ItemActivityOLDable
-    // Analytics about the view activities that took place on this item.
-    analytics ItemAnalyticsable
-    // The content type of this list item
-    contentType ContentTypeInfoable
-    // The deleted property
-    deleted Deletedable
-    // Version information for a document set version created by a user.
-    documentSetVersions []DocumentSetVersionable
-    // For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
-    driveItem DriveItemable
-    // The values of the columns set on this list item.
-    fields FieldValueSetable
-    // Returns identifiers useful for SharePoint REST compatibility. Read-only.
-    sharepointIds SharepointIdsable
-    // The list of previous versions of the list item.
-    versions []ListItemVersionable
 }
 // NewListItem instantiates a new listItem and sets the default values.
 func NewListItem()(*ListItem) {
     m := &ListItem{
         BaseItem: *NewBaseItem(),
     }
-    odataTypeValue := "#microsoft.graph.listItem";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.listItem"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateListItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,27 +23,69 @@ func CreateListItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetActivities gets the activities property value. The list of recent activities that took place on this item.
 func (m *ListItem) GetActivities()([]ItemActivityOLDable) {
-    return m.activities
+    val, err := m.GetBackingStore().Get("activities")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ItemActivityOLDable)
+    }
+    return nil
 }
 // GetAnalytics gets the analytics property value. Analytics about the view activities that took place on this item.
 func (m *ListItem) GetAnalytics()(ItemAnalyticsable) {
-    return m.analytics
+    val, err := m.GetBackingStore().Get("analytics")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ItemAnalyticsable)
+    }
+    return nil
 }
 // GetContentType gets the contentType property value. The content type of this list item
 func (m *ListItem) GetContentType()(ContentTypeInfoable) {
-    return m.contentType
+    val, err := m.GetBackingStore().Get("contentType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ContentTypeInfoable)
+    }
+    return nil
 }
 // GetDeleted gets the deleted property value. The deleted property
 func (m *ListItem) GetDeleted()(Deletedable) {
-    return m.deleted
+    val, err := m.GetBackingStore().Get("deleted")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Deletedable)
+    }
+    return nil
 }
 // GetDocumentSetVersions gets the documentSetVersions property value. Version information for a document set version created by a user.
 func (m *ListItem) GetDocumentSetVersions()([]DocumentSetVersionable) {
-    return m.documentSetVersions
+    val, err := m.GetBackingStore().Get("documentSetVersions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DocumentSetVersionable)
+    }
+    return nil
 }
 // GetDriveItem gets the driveItem property value. For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 func (m *ListItem) GetDriveItem()(DriveItemable) {
-    return m.driveItem
+    val, err := m.GetBackingStore().Get("driveItem")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DriveItemable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ListItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -172,15 +196,36 @@ func (m *ListItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetFields gets the fields property value. The values of the columns set on this list item.
 func (m *ListItem) GetFields()(FieldValueSetable) {
-    return m.fields
+    val, err := m.GetBackingStore().Get("fields")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(FieldValueSetable)
+    }
+    return nil
 }
 // GetSharepointIds gets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
 func (m *ListItem) GetSharepointIds()(SharepointIdsable) {
-    return m.sharepointIds
+    val, err := m.GetBackingStore().Get("sharepointIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SharepointIdsable)
+    }
+    return nil
 }
 // GetVersions gets the versions property value. The list of previous versions of the list item.
 func (m *ListItem) GetVersions()([]ListItemVersionable) {
-    return m.versions
+    val, err := m.GetBackingStore().Get("versions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ListItemVersionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ListItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -258,37 +303,87 @@ func (m *ListItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetActivities sets the activities property value. The list of recent activities that took place on this item.
 func (m *ListItem) SetActivities(value []ItemActivityOLDable)() {
-    m.activities = value
+    err := m.GetBackingStore().Set("activities", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAnalytics sets the analytics property value. Analytics about the view activities that took place on this item.
 func (m *ListItem) SetAnalytics(value ItemAnalyticsable)() {
-    m.analytics = value
+    err := m.GetBackingStore().Set("analytics", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetContentType sets the contentType property value. The content type of this list item
 func (m *ListItem) SetContentType(value ContentTypeInfoable)() {
-    m.contentType = value
+    err := m.GetBackingStore().Set("contentType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeleted sets the deleted property value. The deleted property
 func (m *ListItem) SetDeleted(value Deletedable)() {
-    m.deleted = value
+    err := m.GetBackingStore().Set("deleted", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDocumentSetVersions sets the documentSetVersions property value. Version information for a document set version created by a user.
 func (m *ListItem) SetDocumentSetVersions(value []DocumentSetVersionable)() {
-    m.documentSetVersions = value
+    err := m.GetBackingStore().Set("documentSetVersions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDriveItem sets the driveItem property value. For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 func (m *ListItem) SetDriveItem(value DriveItemable)() {
-    m.driveItem = value
+    err := m.GetBackingStore().Set("driveItem", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFields sets the fields property value. The values of the columns set on this list item.
 func (m *ListItem) SetFields(value FieldValueSetable)() {
-    m.fields = value
+    err := m.GetBackingStore().Set("fields", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSharepointIds sets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
 func (m *ListItem) SetSharepointIds(value SharepointIdsable)() {
-    m.sharepointIds = value
+    err := m.GetBackingStore().Set("sharepointIds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVersions sets the versions property value. The list of previous versions of the list item.
 func (m *ListItem) SetVersions(value []ListItemVersionable)() {
-    m.versions = value
+    err := m.GetBackingStore().Set("versions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ListItemable 
+type ListItemable interface {
+    BaseItemable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActivities()([]ItemActivityOLDable)
+    GetAnalytics()(ItemAnalyticsable)
+    GetContentType()(ContentTypeInfoable)
+    GetDeleted()(Deletedable)
+    GetDocumentSetVersions()([]DocumentSetVersionable)
+    GetDriveItem()(DriveItemable)
+    GetFields()(FieldValueSetable)
+    GetSharepointIds()(SharepointIdsable)
+    GetVersions()([]ListItemVersionable)
+    SetActivities(value []ItemActivityOLDable)()
+    SetAnalytics(value ItemAnalyticsable)()
+    SetContentType(value ContentTypeInfoable)()
+    SetDeleted(value Deletedable)()
+    SetDocumentSetVersions(value []DocumentSetVersionable)()
+    SetDriveItem(value DriveItemable)()
+    SetFields(value FieldValueSetable)()
+    SetSharepointIds(value SharepointIdsable)()
+    SetVersions(value []ListItemVersionable)()
 }

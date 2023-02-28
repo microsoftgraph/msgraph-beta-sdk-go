@@ -2,30 +2,20 @@ package identitygovernance
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // UserSummary 
 type UserSummary struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The number of failed tasks for users in a user summary.
-    failedTasks *int32
-    // The number of failed users in a user summary.
-    failedUsers *int32
-    // The OdataType property
-    odataType *string
-    // The number of successful users in a user summary.
-    successfulUsers *int32
-    // The total tasks of users in a user summary.
-    totalTasks *int32
-    // The total number of users in a user summary
-    totalUsers *int32
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewUserSummary instantiates a new userSummary and sets the default values.
 func NewUserSummary()(*UserSummary) {
     m := &UserSummary{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateUserSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -34,15 +24,41 @@ func CreateUserSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserSummary) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *UserSummary) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFailedTasks gets the failedTasks property value. The number of failed tasks for users in a user summary.
 func (m *UserSummary) GetFailedTasks()(*int32) {
-    return m.failedTasks
+    val, err := m.GetBackingStore().Get("failedTasks")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFailedUsers gets the failedUsers property value. The number of failed users in a user summary.
 func (m *UserSummary) GetFailedUsers()(*int32) {
-    return m.failedUsers
+    val, err := m.GetBackingStore().Get("failedUsers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -111,19 +127,47 @@ func (m *UserSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *UserSummary) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSuccessfulUsers gets the successfulUsers property value. The number of successful users in a user summary.
 func (m *UserSummary) GetSuccessfulUsers()(*int32) {
-    return m.successfulUsers
+    val, err := m.GetBackingStore().Get("successfulUsers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetTotalTasks gets the totalTasks property value. The total tasks of users in a user summary.
 func (m *UserSummary) GetTotalTasks()(*int32) {
-    return m.totalTasks
+    val, err := m.GetBackingStore().Get("totalTasks")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetTotalUsers gets the totalUsers property value. The total number of users in a user summary
 func (m *UserSummary) GetTotalUsers()(*int32) {
-    return m.totalUsers
+    val, err := m.GetBackingStore().Get("totalUsers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -173,29 +217,74 @@ func (m *UserSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserSummary) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *UserSummary) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetFailedTasks sets the failedTasks property value. The number of failed tasks for users in a user summary.
 func (m *UserSummary) SetFailedTasks(value *int32)() {
-    m.failedTasks = value
+    err := m.GetBackingStore().Set("failedTasks", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFailedUsers sets the failedUsers property value. The number of failed users in a user summary.
 func (m *UserSummary) SetFailedUsers(value *int32)() {
-    m.failedUsers = value
+    err := m.GetBackingStore().Set("failedUsers", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *UserSummary) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSuccessfulUsers sets the successfulUsers property value. The number of successful users in a user summary.
 func (m *UserSummary) SetSuccessfulUsers(value *int32)() {
-    m.successfulUsers = value
+    err := m.GetBackingStore().Set("successfulUsers", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTotalTasks sets the totalTasks property value. The total tasks of users in a user summary.
 func (m *UserSummary) SetTotalTasks(value *int32)() {
-    m.totalTasks = value
+    err := m.GetBackingStore().Set("totalTasks", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTotalUsers sets the totalUsers property value. The total number of users in a user summary
 func (m *UserSummary) SetTotalUsers(value *int32)() {
-    m.totalUsers = value
+    err := m.GetBackingStore().Set("totalUsers", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserSummaryable 
+type UserSummaryable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetFailedTasks()(*int32)
+    GetFailedUsers()(*int32)
+    GetOdataType()(*string)
+    GetSuccessfulUsers()(*int32)
+    GetTotalTasks()(*int32)
+    GetTotalUsers()(*int32)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetFailedTasks(value *int32)()
+    SetFailedUsers(value *int32)()
+    SetOdataType(value *string)()
+    SetSuccessfulUsers(value *int32)()
+    SetTotalTasks(value *int32)()
+    SetTotalUsers(value *int32)()
 }

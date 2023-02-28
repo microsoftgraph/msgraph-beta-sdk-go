@@ -29,10 +29,20 @@ const (
     UNKNOWNFUTUREVALUE_CONDITIONALACCESSRULE
     DEVICEFILTERINCLUDERULENOTMATCHED_CONDITIONALACCESSRULE
     ALLDEVICESTATES_CONDITIONALACCESSRULE
+    ANONYMIZEDIPADDRESS_CONDITIONALACCESSRULE
+    UNFAMILIARFEATURES_CONDITIONALACCESSRULE
+    NATIONSTATEIPADDRESS_CONDITIONALACCESSRULE
+    REALTIMETHREATINTELLIGENCE_CONDITIONALACCESSRULE
+    INTERNALGUEST_CONDITIONALACCESSRULE
+    B2BCOLLABORATIONGUEST_CONDITIONALACCESSRULE
+    B2BCOLLABORATIONMEMBER_CONDITIONALACCESSRULE
+    B2BDIRECTCONNECTUSER_CONDITIONALACCESSRULE
+    OTHEREXTERNALUSER_CONDITIONALACCESSRULE
+    SERVICEPROVIDER_CONDITIONALACCESSRULE
 )
 
 func (i ConditionalAccessRule) String() string {
-    return []string{"allApps", "firstPartyApps", "office365", "appId", "acr", "appFilter", "allUsers", "guest", "groupId", "roleId", "userId", "allDevicePlatforms", "devicePlatform", "allLocations", "insideCorpnet", "allTrustedLocations", "locationId", "allDevices", "deviceFilter", "deviceState", "unknownFutureValue", "deviceFilterIncludeRuleNotMatched", "allDeviceStates"}[i]
+    return []string{"allApps", "firstPartyApps", "office365", "appId", "acr", "appFilter", "allUsers", "guest", "groupId", "roleId", "userId", "allDevicePlatforms", "devicePlatform", "allLocations", "insideCorpnet", "allTrustedLocations", "locationId", "allDevices", "deviceFilter", "deviceState", "unknownFutureValue", "deviceFilterIncludeRuleNotMatched", "allDeviceStates", "anonymizedIPAddress", "unfamiliarFeatures", "nationStateIPAddress", "realTimeThreatIntelligence", "internalGuest", "b2bCollaborationGuest", "b2bCollaborationMember", "b2bDirectConnectUser", "otherExternalUser", "serviceProvider"}[i]
 }
 func ParseConditionalAccessRule(v string) (any, error) {
     result := ALLAPPS_CONDITIONALACCESSRULE
@@ -83,6 +93,26 @@ func ParseConditionalAccessRule(v string) (any, error) {
             result = DEVICEFILTERINCLUDERULENOTMATCHED_CONDITIONALACCESSRULE
         case "allDeviceStates":
             result = ALLDEVICESTATES_CONDITIONALACCESSRULE
+        case "anonymizedIPAddress":
+            result = ANONYMIZEDIPADDRESS_CONDITIONALACCESSRULE
+        case "unfamiliarFeatures":
+            result = UNFAMILIARFEATURES_CONDITIONALACCESSRULE
+        case "nationStateIPAddress":
+            result = NATIONSTATEIPADDRESS_CONDITIONALACCESSRULE
+        case "realTimeThreatIntelligence":
+            result = REALTIMETHREATINTELLIGENCE_CONDITIONALACCESSRULE
+        case "internalGuest":
+            result = INTERNALGUEST_CONDITIONALACCESSRULE
+        case "b2bCollaborationGuest":
+            result = B2BCOLLABORATIONGUEST_CONDITIONALACCESSRULE
+        case "b2bCollaborationMember":
+            result = B2BCOLLABORATIONMEMBER_CONDITIONALACCESSRULE
+        case "b2bDirectConnectUser":
+            result = B2BDIRECTCONNECTUSER_CONDITIONALACCESSRULE
+        case "otherExternalUser":
+            result = OTHEREXTERNALUSER_CONDITIONALACCESSRULE
+        case "serviceProvider":
+            result = SERVICEPROVIDER_CONDITIONALACCESSRULE
         default:
             return 0, errors.New("Unknown ConditionalAccessRule value: " + v)
     }

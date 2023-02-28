@@ -48,7 +48,7 @@ type BookingBusinessItemRequestBuilderPatchRequestConfiguration struct {
 }
 // Appointments provides operations to manage the appointments property of the microsoft.graph.bookingBusiness entity.
 func (m *BookingBusinessItemRequestBuilder) Appointments()(*ItemAppointmentsRequestBuilder) {
-    return NewItemAppointmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemAppointmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AppointmentsById provides operations to manage the appointments property of the microsoft.graph.bookingBusiness entity.
 func (m *BookingBusinessItemRequestBuilder) AppointmentsById(id string)(*ItemAppointmentsBookingAppointmentItemRequestBuilder) {
@@ -59,11 +59,11 @@ func (m *BookingBusinessItemRequestBuilder) AppointmentsById(id string)(*ItemApp
     if id != "" {
         urlTplParams["bookingAppointment%2Did"] = id
     }
-    return NewItemAppointmentsBookingAppointmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemAppointmentsBookingAppointmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // CalendarView provides operations to manage the calendarView property of the microsoft.graph.bookingBusiness entity.
 func (m *BookingBusinessItemRequestBuilder) CalendarView()(*ItemCalendarViewRequestBuilder) {
-    return NewItemCalendarViewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCalendarViewRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CalendarViewById provides operations to manage the calendarView property of the microsoft.graph.bookingBusiness entity.
 func (m *BookingBusinessItemRequestBuilder) CalendarViewById(id string)(*ItemCalendarViewBookingAppointmentItemRequestBuilder) {
@@ -74,7 +74,7 @@ func (m *BookingBusinessItemRequestBuilder) CalendarViewById(id string)(*ItemCal
     if id != "" {
         urlTplParams["bookingAppointment%2Did"] = id
     }
-    return NewItemCalendarViewBookingAppointmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemCalendarViewBookingAppointmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewBookingBusinessItemRequestBuilderInternal instantiates a new BookingBusinessItemRequestBuilder and sets the default values.
 func NewBookingBusinessItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BookingBusinessItemRequestBuilder) {
@@ -85,8 +85,8 @@ func NewBookingBusinessItemRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewBookingBusinessItemRequestBuilder instantiates a new BookingBusinessItemRequestBuilder and sets the default values.
@@ -97,7 +97,7 @@ func NewBookingBusinessItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
 }
 // Customers provides operations to manage the customers property of the microsoft.graph.bookingBusiness entity.
 func (m *BookingBusinessItemRequestBuilder) Customers()(*ItemCustomersRequestBuilder) {
-    return NewItemCustomersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCustomersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CustomersById provides operations to manage the customers property of the microsoft.graph.bookingBusiness entity.
 func (m *BookingBusinessItemRequestBuilder) CustomersById(id string)(*ItemCustomersBookingCustomerItemRequestBuilder) {
@@ -108,11 +108,11 @@ func (m *BookingBusinessItemRequestBuilder) CustomersById(id string)(*ItemCustom
     if id != "" {
         urlTplParams["bookingCustomer%2Did"] = id
     }
-    return NewItemCustomersBookingCustomerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemCustomersBookingCustomerItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // CustomQuestions provides operations to manage the customQuestions property of the microsoft.graph.bookingBusiness entity.
 func (m *BookingBusinessItemRequestBuilder) CustomQuestions()(*ItemCustomQuestionsRequestBuilder) {
-    return NewItemCustomQuestionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCustomQuestionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CustomQuestionsById provides operations to manage the customQuestions property of the microsoft.graph.bookingBusiness entity.
 func (m *BookingBusinessItemRequestBuilder) CustomQuestionsById(id string)(*ItemCustomQuestionsBookingCustomQuestionItemRequestBuilder) {
@@ -123,7 +123,7 @@ func (m *BookingBusinessItemRequestBuilder) CustomQuestionsById(id string)(*Item
     if id != "" {
         urlTplParams["bookingCustomQuestion%2Did"] = id
     }
-    return NewItemCustomQuestionsBookingCustomQuestionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemCustomQuestionsBookingCustomQuestionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Delete delete a bookingBusiness object.
 // [Find more info here]
@@ -168,7 +168,7 @@ func (m *BookingBusinessItemRequestBuilder) Get(ctx context.Context, requestConf
 }
 // GetStaffAvailability provides operations to call the getStaffAvailability method.
 func (m *BookingBusinessItemRequestBuilder) GetStaffAvailability()(*ItemGetStaffAvailabilityRequestBuilder) {
-    return NewItemGetStaffAvailabilityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemGetStaffAvailabilityRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the properties of a bookingBusiness object.
 // [Find more info here]
@@ -194,11 +194,11 @@ func (m *BookingBusinessItemRequestBuilder) Patch(ctx context.Context, body ie23
 }
 // Publish provides operations to call the publish method.
 func (m *BookingBusinessItemRequestBuilder) Publish()(*ItemPublishRequestBuilder) {
-    return NewItemPublishRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemPublishRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Services provides operations to manage the services property of the microsoft.graph.bookingBusiness entity.
 func (m *BookingBusinessItemRequestBuilder) Services()(*ItemServicesRequestBuilder) {
-    return NewItemServicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemServicesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ServicesById provides operations to manage the services property of the microsoft.graph.bookingBusiness entity.
 func (m *BookingBusinessItemRequestBuilder) ServicesById(id string)(*ItemServicesBookingServiceItemRequestBuilder) {
@@ -209,11 +209,11 @@ func (m *BookingBusinessItemRequestBuilder) ServicesById(id string)(*ItemService
     if id != "" {
         urlTplParams["bookingService%2Did"] = id
     }
-    return NewItemServicesBookingServiceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemServicesBookingServiceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // StaffMembers provides operations to manage the staffMembers property of the microsoft.graph.bookingBusiness entity.
 func (m *BookingBusinessItemRequestBuilder) StaffMembers()(*ItemStaffMembersRequestBuilder) {
-    return NewItemStaffMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemStaffMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // StaffMembersById provides operations to manage the staffMembers property of the microsoft.graph.bookingBusiness entity.
 func (m *BookingBusinessItemRequestBuilder) StaffMembersById(id string)(*ItemStaffMembersBookingStaffMemberItemRequestBuilder) {
@@ -224,7 +224,7 @@ func (m *BookingBusinessItemRequestBuilder) StaffMembersById(id string)(*ItemSta
     if id != "" {
         urlTplParams["bookingStaffMember%2Did"] = id
     }
-    return NewItemStaffMembersBookingStaffMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemStaffMembersBookingStaffMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete a bookingBusiness object.
 func (m *BookingBusinessItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -261,7 +261,10 @@ func (m *BookingBusinessItemRequestBuilder) ToPatchRequestInformation(ctx contex
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -270,5 +273,5 @@ func (m *BookingBusinessItemRequestBuilder) ToPatchRequestInformation(ctx contex
 }
 // Unpublish provides operations to call the unpublish method.
 func (m *BookingBusinessItemRequestBuilder) Unpublish()(*ItemUnpublishRequestBuilder) {
-    return NewItemUnpublishRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemUnpublishRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

@@ -8,8 +8,6 @@ import (
 // ResourceConnectionCollectionResponse 
 type ResourceConnectionCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
-    // The value property
-    value []ResourceConnectionable
 }
 // NewResourceConnectionCollectionResponse instantiates a new ResourceConnectionCollectionResponse and sets the default values.
 func NewResourceConnectionCollectionResponse()(*ResourceConnectionCollectionResponse) {
@@ -43,7 +41,14 @@ func (m *ResourceConnectionCollectionResponse) GetFieldDeserializers()(map[strin
 }
 // GetValue gets the value property value. The value property
 func (m *ResourceConnectionCollectionResponse) GetValue()([]ResourceConnectionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ResourceConnectionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ResourceConnectionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *ResourceConnectionCollectionResponse) Serialize(writer i878a80d2330e89d
 }
 // SetValue sets the value property value. The value property
 func (m *ResourceConnectionCollectionResponse) SetValue(value []ResourceConnectionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ResourceConnectionCollectionResponseable 
+type ResourceConnectionCollectionResponseable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ResourceConnectionable)
+    SetValue(value []ResourceConnectionable)()
 }

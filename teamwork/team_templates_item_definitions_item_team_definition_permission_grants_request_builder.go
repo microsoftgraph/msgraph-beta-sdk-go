@@ -60,8 +60,8 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsRequestBui
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsRequestBuilder instantiates a new PermissionGrantsRequestBuilder and sets the default values.
@@ -72,7 +72,11 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsRequestBui
 }
 // Count provides operations to count the resources in the collection.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsRequestBuilder) Count()(*TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsCountRequestBuilder) {
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// Delta provides operations to call the delta method.
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsRequestBuilder) Delta()(*TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsDeltaRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list all resource-specific permission grants on the team. This list specifies the Azure AD apps that have access to the **team**, along with the corresponding kind of resource-specific access that each app has.
 // [Find more info here]
@@ -98,11 +102,11 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsRequestBu
 }
 // GetByIds provides operations to call the getByIds method.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsRequestBuilder) GetByIds()(*TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsGetByIdsRequestBuilder) {
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsRequestBuilder) GetUserOwnedObjects()(*TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsGetUserOwnedObjectsRequestBuilder) {
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to permissionGrants for teamwork
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable, error) {
@@ -146,7 +150,10 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsRequestBu
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -155,5 +162,5 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsRequestBu
 }
 // ValidateProperties provides operations to call the validateProperties method.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsRequestBuilder) ValidateProperties()(*TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsValidatePropertiesRequestBuilder) {
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

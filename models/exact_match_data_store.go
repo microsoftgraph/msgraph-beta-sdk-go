@@ -7,8 +7,6 @@ import (
 // ExactMatchDataStore 
 type ExactMatchDataStore struct {
     ExactMatchDataStoreBase
-    // The sessions property
-    sessions []ExactMatchSessionable
 }
 // NewExactMatchDataStore instantiates a new ExactMatchDataStore and sets the default values.
 func NewExactMatchDataStore()(*ExactMatchDataStore) {
@@ -42,7 +40,14 @@ func (m *ExactMatchDataStore) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetSessions gets the sessions property value. The sessions property
 func (m *ExactMatchDataStore) GetSessions()([]ExactMatchSessionable) {
-    return m.sessions
+    val, err := m.GetBackingStore().Get("sessions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ExactMatchSessionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ExactMatchDataStore) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ExactMatchDataStore) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetSessions sets the sessions property value. The sessions property
 func (m *ExactMatchDataStore) SetSessions(value []ExactMatchSessionable)() {
-    m.sessions = value
+    err := m.GetBackingStore().Set("sessions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ExactMatchDataStoreable 
+type ExactMatchDataStoreable interface {
+    ExactMatchDataStoreBaseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetSessions()([]ExactMatchSessionable)
+    SetSessions(value []ExactMatchSessionable)()
 }

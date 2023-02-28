@@ -9,16 +9,6 @@ import (
 // CloudPcConnection 
 type CloudPcConnection struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The display name of the cloud PC connection. Required. Read-only.
-    displayName *string
-    // The health status of the cloud PC connection. Possible values are: pending, running, passed, failed, unknownFutureValue.  Required. Read-only.
-    healthCheckStatus *string
-    // Date and time the entity was last updated in the multi-tenant management platform. Required. Read-only.
-    lastRefreshedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The display name for the managed tenant. Required. Read-only.
-    tenantDisplayName *string
-    // The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
-    tenantId *string
 }
 // NewCloudPcConnection instantiates a new cloudPcConnection and sets the default values.
 func NewCloudPcConnection()(*CloudPcConnection) {
@@ -33,7 +23,14 @@ func CreateCloudPcConnectionFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetDisplayName gets the displayName property value. The display name of the cloud PC connection. Required. Read-only.
 func (m *CloudPcConnection) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcConnection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -92,19 +89,47 @@ func (m *CloudPcConnection) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetHealthCheckStatus gets the healthCheckStatus property value. The health status of the cloud PC connection. Possible values are: pending, running, passed, failed, unknownFutureValue.  Required. Read-only.
 func (m *CloudPcConnection) GetHealthCheckStatus()(*string) {
-    return m.healthCheckStatus
+    val, err := m.GetBackingStore().Get("healthCheckStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLastRefreshedDateTime gets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Required. Read-only.
 func (m *CloudPcConnection) GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastRefreshedDateTime
+    val, err := m.GetBackingStore().Get("lastRefreshedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetTenantDisplayName gets the tenantDisplayName property value. The display name for the managed tenant. Required. Read-only.
 func (m *CloudPcConnection) GetTenantDisplayName()(*string) {
-    return m.tenantDisplayName
+    val, err := m.GetBackingStore().Get("tenantDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
 func (m *CloudPcConnection) GetTenantId()(*string) {
-    return m.tenantId
+    val, err := m.GetBackingStore().Get("tenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CloudPcConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -146,21 +171,51 @@ func (m *CloudPcConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetDisplayName sets the displayName property value. The display name of the cloud PC connection. Required. Read-only.
 func (m *CloudPcConnection) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHealthCheckStatus sets the healthCheckStatus property value. The health status of the cloud PC connection. Possible values are: pending, running, passed, failed, unknownFutureValue.  Required. Read-only.
 func (m *CloudPcConnection) SetHealthCheckStatus(value *string)() {
-    m.healthCheckStatus = value
+    err := m.GetBackingStore().Set("healthCheckStatus", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastRefreshedDateTime sets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Required. Read-only.
 func (m *CloudPcConnection) SetLastRefreshedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastRefreshedDateTime = value
+    err := m.GetBackingStore().Set("lastRefreshedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantDisplayName sets the tenantDisplayName property value. The display name for the managed tenant. Required. Read-only.
 func (m *CloudPcConnection) SetTenantDisplayName(value *string)() {
-    m.tenantDisplayName = value
+    err := m.GetBackingStore().Set("tenantDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantId sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
 func (m *CloudPcConnection) SetTenantId(value *string)() {
-    m.tenantId = value
+    err := m.GetBackingStore().Set("tenantId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CloudPcConnectionable 
+type CloudPcConnectionable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDisplayName()(*string)
+    GetHealthCheckStatus()(*string)
+    GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetTenantDisplayName()(*string)
+    GetTenantId()(*string)
+    SetDisplayName(value *string)()
+    SetHealthCheckStatus(value *string)()
+    SetLastRefreshedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetTenantDisplayName(value *string)()
+    SetTenantId(value *string)()
 }

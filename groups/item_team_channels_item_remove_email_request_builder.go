@@ -26,13 +26,13 @@ type ItemTeamChannelsItemRemoveEmailRequestBuilderPostRequestConfiguration struc
 func NewItemTeamChannelsItemRemoveEmailRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamChannelsItemRemoveEmailRequestBuilder) {
     m := &ItemTeamChannelsItemRemoveEmailRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/team/channels/{channel%2Did}/microsoft.graph.removeEmail";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/team/channels/{channel%2Did}/removeEmail";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTeamChannelsItemRemoveEmailRequestBuilder instantiates a new RemoveEmailRequestBuilder and sets the default values.

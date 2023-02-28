@@ -7,8 +7,6 @@ import (
 // MuteParticipantsOperation 
 type MuteParticipantsOperation struct {
     CommsOperation
-    // The participants property
-    participants []string
 }
 // NewMuteParticipantsOperation instantiates a new MuteParticipantsOperation and sets the default values.
 func NewMuteParticipantsOperation()(*MuteParticipantsOperation) {
@@ -42,7 +40,14 @@ func (m *MuteParticipantsOperation) GetFieldDeserializers()(map[string]func(i878
 }
 // GetParticipants gets the participants property value. The participants property
 func (m *MuteParticipantsOperation) GetParticipants()([]string) {
-    return m.participants
+    val, err := m.GetBackingStore().Get("participants")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MuteParticipantsOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -60,5 +65,15 @@ func (m *MuteParticipantsOperation) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetParticipants sets the participants property value. The participants property
 func (m *MuteParticipantsOperation) SetParticipants(value []string)() {
-    m.participants = value
+    err := m.GetBackingStore().Set("participants", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MuteParticipantsOperationable 
+type MuteParticipantsOperationable interface {
+    CommsOperationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetParticipants()([]string)
+    SetParticipants(value []string)()
 }

@@ -7,8 +7,6 @@ import (
 // ExactMatchDetectedSensitiveContent 
 type ExactMatchDetectedSensitiveContent struct {
     DetectedSensitiveContentBase
-    // The matches property
-    matches []SensitiveContentLocationable
 }
 // NewExactMatchDetectedSensitiveContent instantiates a new ExactMatchDetectedSensitiveContent and sets the default values.
 func NewExactMatchDetectedSensitiveContent()(*ExactMatchDetectedSensitiveContent) {
@@ -42,7 +40,14 @@ func (m *ExactMatchDetectedSensitiveContent) GetFieldDeserializers()(map[string]
 }
 // GetMatches gets the matches property value. The matches property
 func (m *ExactMatchDetectedSensitiveContent) GetMatches()([]SensitiveContentLocationable) {
-    return m.matches
+    val, err := m.GetBackingStore().Get("matches")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SensitiveContentLocationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ExactMatchDetectedSensitiveContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ExactMatchDetectedSensitiveContent) Serialize(writer i878a80d2330e89d26
 }
 // SetMatches sets the matches property value. The matches property
 func (m *ExactMatchDetectedSensitiveContent) SetMatches(value []SensitiveContentLocationable)() {
-    m.matches = value
+    err := m.GetBackingStore().Set("matches", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ExactMatchDetectedSensitiveContentable 
+type ExactMatchDetectedSensitiveContentable interface {
+    DetectedSensitiveContentBaseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetMatches()([]SensitiveContentLocationable)
+    SetMatches(value []SensitiveContentLocationable)()
 }

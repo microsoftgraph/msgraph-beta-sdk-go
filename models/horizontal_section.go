@@ -7,12 +7,6 @@ import (
 // HorizontalSection 
 type HorizontalSection struct {
     Entity
-    // The set of vertical columns in this section.
-    columns []HorizontalSectionColumnable
-    // Enumeration value that indicates the emphasis of the section background. The possible values are: none, netural, soft, strong, unknownFutureValue.
-    emphasis *SectionEmphasisType
-    // Layout type of the section. The possible values are: none, oneColumn, twoColumns, threeColumns, oneThirdLeftColumn, oneThirdRightColumn, fullWidth, unknownFutureValue.
-    layout *HorizontalSectionLayoutType
 }
 // NewHorizontalSection instantiates a new horizontalSection and sets the default values.
 func NewHorizontalSection()(*HorizontalSection) {
@@ -27,11 +21,25 @@ func CreateHorizontalSectionFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetColumns gets the columns property value. The set of vertical columns in this section.
 func (m *HorizontalSection) GetColumns()([]HorizontalSectionColumnable) {
-    return m.columns
+    val, err := m.GetBackingStore().Get("columns")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]HorizontalSectionColumnable)
+    }
+    return nil
 }
 // GetEmphasis gets the emphasis property value. Enumeration value that indicates the emphasis of the section background. The possible values are: none, netural, soft, strong, unknownFutureValue.
 func (m *HorizontalSection) GetEmphasis()(*SectionEmphasisType) {
-    return m.emphasis
+    val, err := m.GetBackingStore().Get("emphasis")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SectionEmphasisType)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *HorizontalSection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -74,7 +82,14 @@ func (m *HorizontalSection) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetLayout gets the layout property value. Layout type of the section. The possible values are: none, oneColumn, twoColumns, threeColumns, oneThirdLeftColumn, oneThirdRightColumn, fullWidth, unknownFutureValue.
 func (m *HorizontalSection) GetLayout()(*HorizontalSectionLayoutType) {
-    return m.layout
+    val, err := m.GetBackingStore().Get("layout")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*HorizontalSectionLayoutType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *HorizontalSection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -110,13 +125,33 @@ func (m *HorizontalSection) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetColumns sets the columns property value. The set of vertical columns in this section.
 func (m *HorizontalSection) SetColumns(value []HorizontalSectionColumnable)() {
-    m.columns = value
+    err := m.GetBackingStore().Set("columns", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEmphasis sets the emphasis property value. Enumeration value that indicates the emphasis of the section background. The possible values are: none, netural, soft, strong, unknownFutureValue.
 func (m *HorizontalSection) SetEmphasis(value *SectionEmphasisType)() {
-    m.emphasis = value
+    err := m.GetBackingStore().Set("emphasis", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLayout sets the layout property value. Layout type of the section. The possible values are: none, oneColumn, twoColumns, threeColumns, oneThirdLeftColumn, oneThirdRightColumn, fullWidth, unknownFutureValue.
 func (m *HorizontalSection) SetLayout(value *HorizontalSectionLayoutType)() {
-    m.layout = value
+    err := m.GetBackingStore().Set("layout", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// HorizontalSectionable 
+type HorizontalSectionable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetColumns()([]HorizontalSectionColumnable)
+    GetEmphasis()(*SectionEmphasisType)
+    GetLayout()(*HorizontalSectionLayoutType)
+    SetColumns(value []HorizontalSectionColumnable)()
+    SetEmphasis(value *SectionEmphasisType)()
+    SetLayout(value *HorizontalSectionLayoutType)()
 }

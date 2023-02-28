@@ -27,13 +27,13 @@ type ItemTeamDefinitionChannelsItemProvisionEmailRequestBuilderPostRequestConfig
 func NewItemTeamDefinitionChannelsItemProvisionEmailRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionChannelsItemProvisionEmailRequestBuilder) {
     m := &ItemTeamDefinitionChannelsItemProvisionEmailRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/channels/{channel%2Did}/microsoft.graph.provisionEmail";
+    m.urlTemplate = "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/channels/{channel%2Did}/provisionEmail";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTeamDefinitionChannelsItemProvisionEmailRequestBuilder instantiates a new ProvisionEmailRequestBuilder and sets the default values.

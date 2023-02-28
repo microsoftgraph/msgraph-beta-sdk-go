@@ -7,8 +7,6 @@ import (
 // Windows10XSCEPCertificateProfileCollectionResponse 
 type Windows10XSCEPCertificateProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Windows10XSCEPCertificateProfileable
 }
 // NewWindows10XSCEPCertificateProfileCollectionResponse instantiates a new Windows10XSCEPCertificateProfileCollectionResponse and sets the default values.
 func NewWindows10XSCEPCertificateProfileCollectionResponse()(*Windows10XSCEPCertificateProfileCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *Windows10XSCEPCertificateProfileCollectionResponse) GetFieldDeserialize
 }
 // GetValue gets the value property value. The value property
 func (m *Windows10XSCEPCertificateProfileCollectionResponse) GetValue()([]Windows10XSCEPCertificateProfileable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Windows10XSCEPCertificateProfileable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Windows10XSCEPCertificateProfileCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *Windows10XSCEPCertificateProfileCollectionResponse) Serialize(writer i8
 }
 // SetValue sets the value property value. The value property
 func (m *Windows10XSCEPCertificateProfileCollectionResponse) SetValue(value []Windows10XSCEPCertificateProfileable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Windows10XSCEPCertificateProfileCollectionResponseable 
+type Windows10XSCEPCertificateProfileCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Windows10XSCEPCertificateProfileable)
+    SetValue(value []Windows10XSCEPCertificateProfileable)()
 }

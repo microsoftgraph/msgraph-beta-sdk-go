@@ -2,28 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // OemWarranty oEM Warranty information for a given device
 type OemWarranty struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // List of additional warranty offers. This collection can contain a maximum of 100 elements.
-    additionalWarranties []WarrantyOfferable
-    // List of base warranty offers. This collection can contain a maximum of 100 elements.
-    baseWarranties []WarrantyOfferable
-    // Device configuration page URL
-    deviceConfigurationUrl *string
-    // Device warranty page URL
-    deviceWarrantyUrl *string
-    // The OdataType property
-    odataType *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewOemWarranty instantiates a new oemWarranty and sets the default values.
 func NewOemWarranty()(*OemWarranty) {
     m := &OemWarranty{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateOemWarrantyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,23 +24,63 @@ func CreateOemWarrantyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OemWarranty) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAdditionalWarranties gets the additionalWarranties property value. List of additional warranty offers. This collection can contain a maximum of 100 elements.
 func (m *OemWarranty) GetAdditionalWarranties()([]WarrantyOfferable) {
-    return m.additionalWarranties
+    val, err := m.GetBackingStore().Get("additionalWarranties")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WarrantyOfferable)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *OemWarranty) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetBaseWarranties gets the baseWarranties property value. List of base warranty offers. This collection can contain a maximum of 100 elements.
 func (m *OemWarranty) GetBaseWarranties()([]WarrantyOfferable) {
-    return m.baseWarranties
+    val, err := m.GetBackingStore().Get("baseWarranties")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WarrantyOfferable)
+    }
+    return nil
 }
 // GetDeviceConfigurationUrl gets the deviceConfigurationUrl property value. Device configuration page URL
 func (m *OemWarranty) GetDeviceConfigurationUrl()(*string) {
-    return m.deviceConfigurationUrl
+    val, err := m.GetBackingStore().Get("deviceConfigurationUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDeviceWarrantyUrl gets the deviceWarrantyUrl property value. Device warranty page URL
 func (m *OemWarranty) GetDeviceWarrantyUrl()(*string) {
-    return m.deviceWarrantyUrl
+    val, err := m.GetBackingStore().Get("deviceWarrantyUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OemWarranty) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -115,7 +147,14 @@ func (m *OemWarranty) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *OemWarranty) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OemWarranty) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -167,25 +206,65 @@ func (m *OemWarranty) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OemWarranty) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAdditionalWarranties sets the additionalWarranties property value. List of additional warranty offers. This collection can contain a maximum of 100 elements.
 func (m *OemWarranty) SetAdditionalWarranties(value []WarrantyOfferable)() {
-    m.additionalWarranties = value
+    err := m.GetBackingStore().Set("additionalWarranties", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *OemWarranty) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetBaseWarranties sets the baseWarranties property value. List of base warranty offers. This collection can contain a maximum of 100 elements.
 func (m *OemWarranty) SetBaseWarranties(value []WarrantyOfferable)() {
-    m.baseWarranties = value
+    err := m.GetBackingStore().Set("baseWarranties", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceConfigurationUrl sets the deviceConfigurationUrl property value. Device configuration page URL
 func (m *OemWarranty) SetDeviceConfigurationUrl(value *string)() {
-    m.deviceConfigurationUrl = value
+    err := m.GetBackingStore().Set("deviceConfigurationUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceWarrantyUrl sets the deviceWarrantyUrl property value. Device warranty page URL
 func (m *OemWarranty) SetDeviceWarrantyUrl(value *string)() {
-    m.deviceWarrantyUrl = value
+    err := m.GetBackingStore().Set("deviceWarrantyUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *OemWarranty) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OemWarrantyable 
+type OemWarrantyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAdditionalWarranties()([]WarrantyOfferable)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetBaseWarranties()([]WarrantyOfferable)
+    GetDeviceConfigurationUrl()(*string)
+    GetDeviceWarrantyUrl()(*string)
+    GetOdataType()(*string)
+    SetAdditionalWarranties(value []WarrantyOfferable)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetBaseWarranties(value []WarrantyOfferable)()
+    SetDeviceConfigurationUrl(value *string)()
+    SetDeviceWarrantyUrl(value *string)()
+    SetOdataType(value *string)()
 }

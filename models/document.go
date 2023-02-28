@@ -7,8 +7,6 @@ import (
 // Document 
 type Document struct {
     Entity
-    // The comments property
-    comments []DocumentCommentable
 }
 // NewDocument instantiates a new Document and sets the default values.
 func NewDocument()(*Document) {
@@ -23,7 +21,14 @@ func CreateDocumentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetComments gets the comments property value. The comments property
 func (m *Document) GetComments()([]DocumentCommentable) {
-    return m.comments
+    val, err := m.GetBackingStore().Get("comments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DocumentCommentable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Document) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -64,5 +69,15 @@ func (m *Document) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetComments sets the comments property value. The comments property
 func (m *Document) SetComments(value []DocumentCommentable)() {
-    m.comments = value
+    err := m.GetBackingStore().Set("comments", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Documentable 
+type Documentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetComments()([]DocumentCommentable)
+    SetComments(value []DocumentCommentable)()
 }

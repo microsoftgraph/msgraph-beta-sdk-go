@@ -7,16 +7,14 @@ import (
 // DeviceManagementConfigurationStringSettingValueTemplate 
 type DeviceManagementConfigurationStringSettingValueTemplate struct {
     DeviceManagementConfigurationSimpleSettingValueTemplate
-    // String Setting Value Default Template.
-    defaultValue DeviceManagementConfigurationStringSettingValueDefaultTemplateable
 }
 // NewDeviceManagementConfigurationStringSettingValueTemplate instantiates a new DeviceManagementConfigurationStringSettingValueTemplate and sets the default values.
 func NewDeviceManagementConfigurationStringSettingValueTemplate()(*DeviceManagementConfigurationStringSettingValueTemplate) {
     m := &DeviceManagementConfigurationStringSettingValueTemplate{
         DeviceManagementConfigurationSimpleSettingValueTemplate: *NewDeviceManagementConfigurationSimpleSettingValueTemplate(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationStringSettingValueTemplate";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationStringSettingValueTemplate"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementConfigurationStringSettingValueTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +23,14 @@ func CreateDeviceManagementConfigurationStringSettingValueTemplateFromDiscrimina
 }
 // GetDefaultValue gets the defaultValue property value. String Setting Value Default Template.
 func (m *DeviceManagementConfigurationStringSettingValueTemplate) GetDefaultValue()(DeviceManagementConfigurationStringSettingValueDefaultTemplateable) {
-    return m.defaultValue
+    val, err := m.GetBackingStore().Get("defaultValue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementConfigurationStringSettingValueDefaultTemplateable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationStringSettingValueTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -58,5 +63,15 @@ func (m *DeviceManagementConfigurationStringSettingValueTemplate) Serialize(writ
 }
 // SetDefaultValue sets the defaultValue property value. String Setting Value Default Template.
 func (m *DeviceManagementConfigurationStringSettingValueTemplate) SetDefaultValue(value DeviceManagementConfigurationStringSettingValueDefaultTemplateable)() {
-    m.defaultValue = value
+    err := m.GetBackingStore().Set("defaultValue", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationStringSettingValueTemplateable 
+type DeviceManagementConfigurationStringSettingValueTemplateable interface {
+    DeviceManagementConfigurationSimpleSettingValueTemplateable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDefaultValue()(DeviceManagementConfigurationStringSettingValueDefaultTemplateable)
+    SetDefaultValue(value DeviceManagementConfigurationStringSettingValueDefaultTemplateable)()
 }

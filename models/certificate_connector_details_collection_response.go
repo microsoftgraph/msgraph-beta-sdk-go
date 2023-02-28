@@ -7,8 +7,6 @@ import (
 // CertificateConnectorDetailsCollectionResponse 
 type CertificateConnectorDetailsCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []CertificateConnectorDetailsable
 }
 // NewCertificateConnectorDetailsCollectionResponse instantiates a new CertificateConnectorDetailsCollectionResponse and sets the default values.
 func NewCertificateConnectorDetailsCollectionResponse()(*CertificateConnectorDetailsCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *CertificateConnectorDetailsCollectionResponse) GetFieldDeserializers()(
 }
 // GetValue gets the value property value. The value property
 func (m *CertificateConnectorDetailsCollectionResponse) GetValue()([]CertificateConnectorDetailsable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CertificateConnectorDetailsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CertificateConnectorDetailsCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *CertificateConnectorDetailsCollectionResponse) Serialize(writer i878a80
 }
 // SetValue sets the value property value. The value property
 func (m *CertificateConnectorDetailsCollectionResponse) SetValue(value []CertificateConnectorDetailsable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CertificateConnectorDetailsCollectionResponseable 
+type CertificateConnectorDetailsCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]CertificateConnectorDetailsable)
+    SetValue(value []CertificateConnectorDetailsable)()
 }

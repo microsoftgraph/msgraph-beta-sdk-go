@@ -7,8 +7,6 @@ import (
 // DeviceComplianceScriptRuleCollectionResponse 
 type DeviceComplianceScriptRuleCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceComplianceScriptRuleable
 }
 // NewDeviceComplianceScriptRuleCollectionResponse instantiates a new DeviceComplianceScriptRuleCollectionResponse and sets the default values.
 func NewDeviceComplianceScriptRuleCollectionResponse()(*DeviceComplianceScriptRuleCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceComplianceScriptRuleCollectionResponse) GetFieldDeserializers()(m
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceComplianceScriptRuleCollectionResponse) GetValue()([]DeviceComplianceScriptRuleable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceComplianceScriptRuleable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceComplianceScriptRuleCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceComplianceScriptRuleCollectionResponse) Serialize(writer i878a80d
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceComplianceScriptRuleCollectionResponse) SetValue(value []DeviceComplianceScriptRuleable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceComplianceScriptRuleCollectionResponseable 
+type DeviceComplianceScriptRuleCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceComplianceScriptRuleable)
+    SetValue(value []DeviceComplianceScriptRuleable)()
 }

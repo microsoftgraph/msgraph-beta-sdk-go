@@ -7,8 +7,6 @@ import (
 // MentionCollectionResponse 
 type MentionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Mentionable
 }
 // NewMentionCollectionResponse instantiates a new MentionCollectionResponse and sets the default values.
 func NewMentionCollectionResponse()(*MentionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MentionCollectionResponse) GetFieldDeserializers()(map[string]func(i878
 }
 // GetValue gets the value property value. The value property
 func (m *MentionCollectionResponse) GetValue()([]Mentionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Mentionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MentionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MentionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetValue sets the value property value. The value property
 func (m *MentionCollectionResponse) SetValue(value []Mentionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MentionCollectionResponseable 
+type MentionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Mentionable)
+    SetValue(value []Mentionable)()
 }

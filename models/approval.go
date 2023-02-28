@@ -7,8 +7,6 @@ import (
 // Approval 
 type Approval struct {
     Entity
-    // The steps property
-    steps []ApprovalStepable
 }
 // NewApproval instantiates a new approval and sets the default values.
 func NewApproval()(*Approval) {
@@ -42,7 +40,14 @@ func (m *Approval) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetSteps gets the steps property value. The steps property
 func (m *Approval) GetSteps()([]ApprovalStepable) {
-    return m.steps
+    val, err := m.GetBackingStore().Get("steps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ApprovalStepable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Approval) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *Approval) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetSteps sets the steps property value. The steps property
 func (m *Approval) SetSteps(value []ApprovalStepable)() {
-    m.steps = value
+    err := m.GetBackingStore().Set("steps", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Approvalable 
+type Approvalable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetSteps()([]ApprovalStepable)
+    SetSteps(value []ApprovalStepable)()
 }

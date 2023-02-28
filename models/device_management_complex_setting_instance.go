@@ -7,16 +7,14 @@ import (
 // DeviceManagementComplexSettingInstance 
 type DeviceManagementComplexSettingInstance struct {
     DeviceManagementSettingInstance
-    // The values that make up the complex setting
-    value []DeviceManagementSettingInstanceable
 }
 // NewDeviceManagementComplexSettingInstance instantiates a new DeviceManagementComplexSettingInstance and sets the default values.
 func NewDeviceManagementComplexSettingInstance()(*DeviceManagementComplexSettingInstance) {
     m := &DeviceManagementComplexSettingInstance{
         DeviceManagementSettingInstance: *NewDeviceManagementSettingInstance(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementComplexSettingInstance";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementComplexSettingInstance"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementComplexSettingInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,7 +42,14 @@ func (m *DeviceManagementComplexSettingInstance) GetFieldDeserializers()(map[str
 }
 // GetValue gets the value property value. The values that make up the complex setting
 func (m *DeviceManagementComplexSettingInstance) GetValue()([]DeviceManagementSettingInstanceable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementSettingInstanceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementComplexSettingInstance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -66,5 +71,15 @@ func (m *DeviceManagementComplexSettingInstance) Serialize(writer i878a80d2330e8
 }
 // SetValue sets the value property value. The values that make up the complex setting
 func (m *DeviceManagementComplexSettingInstance) SetValue(value []DeviceManagementSettingInstanceable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementComplexSettingInstanceable 
+type DeviceManagementComplexSettingInstanceable interface {
+    DeviceManagementSettingInstanceable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementSettingInstanceable)
+    SetValue(value []DeviceManagementSettingInstanceable)()
 }

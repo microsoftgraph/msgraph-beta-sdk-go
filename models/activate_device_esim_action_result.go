@@ -7,8 +7,6 @@ import (
 // ActivateDeviceEsimActionResult 
 type ActivateDeviceEsimActionResult struct {
     DeviceActionResult
-    // Carrier Url to activate the device eSIM
-    carrierUrl *string
 }
 // NewActivateDeviceEsimActionResult instantiates a new ActivateDeviceEsimActionResult and sets the default values.
 func NewActivateDeviceEsimActionResult()(*ActivateDeviceEsimActionResult) {
@@ -23,7 +21,14 @@ func CreateActivateDeviceEsimActionResultFromDiscriminatorValue(parseNode i878a8
 }
 // GetCarrierUrl gets the carrierUrl property value. Carrier Url to activate the device eSIM
 func (m *ActivateDeviceEsimActionResult) GetCarrierUrl()(*string) {
-    return m.carrierUrl
+    val, err := m.GetBackingStore().Get("carrierUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ActivateDeviceEsimActionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,5 +61,15 @@ func (m *ActivateDeviceEsimActionResult) Serialize(writer i878a80d2330e89d268963
 }
 // SetCarrierUrl sets the carrierUrl property value. Carrier Url to activate the device eSIM
 func (m *ActivateDeviceEsimActionResult) SetCarrierUrl(value *string)() {
-    m.carrierUrl = value
+    err := m.GetBackingStore().Set("carrierUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ActivateDeviceEsimActionResultable 
+type ActivateDeviceEsimActionResultable interface {
+    DeviceActionResultable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCarrierUrl()(*string)
+    SetCarrierUrl(value *string)()
 }

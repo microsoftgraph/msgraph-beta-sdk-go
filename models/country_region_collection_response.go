@@ -7,8 +7,6 @@ import (
 // CountryRegionCollectionResponse 
 type CountryRegionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []CountryRegionable
 }
 // NewCountryRegionCollectionResponse instantiates a new CountryRegionCollectionResponse and sets the default values.
 func NewCountryRegionCollectionResponse()(*CountryRegionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *CountryRegionCollectionResponse) GetFieldDeserializers()(map[string]fun
 }
 // GetValue gets the value property value. The value property
 func (m *CountryRegionCollectionResponse) GetValue()([]CountryRegionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CountryRegionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CountryRegionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *CountryRegionCollectionResponse) Serialize(writer i878a80d2330e89d26896
 }
 // SetValue sets the value property value. The value property
 func (m *CountryRegionCollectionResponse) SetValue(value []CountryRegionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CountryRegionCollectionResponseable 
+type CountryRegionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]CountryRegionable)
+    SetValue(value []CountryRegionable)()
 }

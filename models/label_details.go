@@ -13,8 +13,8 @@ func NewLabelDetails()(*LabelDetails) {
     m := &LabelDetails{
         ParentLabelDetails: *NewParentLabelDetails(),
     }
-    odataTypeValue := "#microsoft.graph.labelDetails";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.labelDetails"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateLabelDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,4 +33,9 @@ func (m *LabelDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         return err
     }
     return nil
+}
+// LabelDetailsable 
+type LabelDetailsable interface {
+    ParentLabelDetailsable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

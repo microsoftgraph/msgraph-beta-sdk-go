@@ -7,8 +7,6 @@ import (
 // DiscoveredSensitiveTypeCollectionResponse 
 type DiscoveredSensitiveTypeCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DiscoveredSensitiveTypeable
 }
 // NewDiscoveredSensitiveTypeCollectionResponse instantiates a new DiscoveredSensitiveTypeCollectionResponse and sets the default values.
 func NewDiscoveredSensitiveTypeCollectionResponse()(*DiscoveredSensitiveTypeCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DiscoveredSensitiveTypeCollectionResponse) GetFieldDeserializers()(map[
 }
 // GetValue gets the value property value. The value property
 func (m *DiscoveredSensitiveTypeCollectionResponse) GetValue()([]DiscoveredSensitiveTypeable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DiscoveredSensitiveTypeable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DiscoveredSensitiveTypeCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DiscoveredSensitiveTypeCollectionResponse) Serialize(writer i878a80d233
 }
 // SetValue sets the value property value. The value property
 func (m *DiscoveredSensitiveTypeCollectionResponse) SetValue(value []DiscoveredSensitiveTypeable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DiscoveredSensitiveTypeCollectionResponseable 
+type DiscoveredSensitiveTypeCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DiscoveredSensitiveTypeable)
+    SetValue(value []DiscoveredSensitiveTypeable)()
 }

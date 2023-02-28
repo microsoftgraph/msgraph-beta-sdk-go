@@ -53,8 +53,8 @@ func NewCompaniesItemDimensionsRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemDimensionsRequestBuilder instantiates a new DimensionsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewCompaniesItemDimensionsRequestBuilder(rawUrl string, requestAdapter i2ae
 }
 // Count provides operations to count the resources in the collection.
 func (m *CompaniesItemDimensionsRequestBuilder) Count()(*CompaniesItemDimensionsCountRequestBuilder) {
-    return NewCompaniesItemDimensionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemDimensionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get dimensions from financials
 func (m *CompaniesItemDimensionsRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemDimensionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DimensionCollectionResponseable, error) {

@@ -7,8 +7,6 @@ import (
 // AndroidForWorkEasEmailProfileBaseCollectionResponse 
 type AndroidForWorkEasEmailProfileBaseCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidForWorkEasEmailProfileBaseable
 }
 // NewAndroidForWorkEasEmailProfileBaseCollectionResponse instantiates a new AndroidForWorkEasEmailProfileBaseCollectionResponse and sets the default values.
 func NewAndroidForWorkEasEmailProfileBaseCollectionResponse()(*AndroidForWorkEasEmailProfileBaseCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidForWorkEasEmailProfileBaseCollectionResponse) GetFieldDeserializ
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidForWorkEasEmailProfileBaseCollectionResponse) GetValue()([]AndroidForWorkEasEmailProfileBaseable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidForWorkEasEmailProfileBaseable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidForWorkEasEmailProfileBaseCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidForWorkEasEmailProfileBaseCollectionResponse) Serialize(writer i
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidForWorkEasEmailProfileBaseCollectionResponse) SetValue(value []AndroidForWorkEasEmailProfileBaseable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidForWorkEasEmailProfileBaseCollectionResponseable 
+type AndroidForWorkEasEmailProfileBaseCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidForWorkEasEmailProfileBaseable)
+    SetValue(value []AndroidForWorkEasEmailProfileBaseable)()
 }

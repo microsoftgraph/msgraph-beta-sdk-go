@@ -7,8 +7,6 @@ import (
 // TeamworkPeripheralHealthCollectionResponse 
 type TeamworkPeripheralHealthCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []TeamworkPeripheralHealthable
 }
 // NewTeamworkPeripheralHealthCollectionResponse instantiates a new TeamworkPeripheralHealthCollectionResponse and sets the default values.
 func NewTeamworkPeripheralHealthCollectionResponse()(*TeamworkPeripheralHealthCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *TeamworkPeripheralHealthCollectionResponse) GetFieldDeserializers()(map
 }
 // GetValue gets the value property value. The value property
 func (m *TeamworkPeripheralHealthCollectionResponse) GetValue()([]TeamworkPeripheralHealthable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TeamworkPeripheralHealthable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TeamworkPeripheralHealthCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *TeamworkPeripheralHealthCollectionResponse) Serialize(writer i878a80d23
 }
 // SetValue sets the value property value. The value property
 func (m *TeamworkPeripheralHealthCollectionResponse) SetValue(value []TeamworkPeripheralHealthable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TeamworkPeripheralHealthCollectionResponseable 
+type TeamworkPeripheralHealthCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]TeamworkPeripheralHealthable)
+    SetValue(value []TeamworkPeripheralHealthable)()
 }

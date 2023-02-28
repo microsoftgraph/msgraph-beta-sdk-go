@@ -7,8 +7,6 @@ import (
 // Windows10EasEmailProfileConfigurationCollectionResponse 
 type Windows10EasEmailProfileConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Windows10EasEmailProfileConfigurationable
 }
 // NewWindows10EasEmailProfileConfigurationCollectionResponse instantiates a new Windows10EasEmailProfileConfigurationCollectionResponse and sets the default values.
 func NewWindows10EasEmailProfileConfigurationCollectionResponse()(*Windows10EasEmailProfileConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *Windows10EasEmailProfileConfigurationCollectionResponse) GetFieldDeseri
 }
 // GetValue gets the value property value. The value property
 func (m *Windows10EasEmailProfileConfigurationCollectionResponse) GetValue()([]Windows10EasEmailProfileConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Windows10EasEmailProfileConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Windows10EasEmailProfileConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *Windows10EasEmailProfileConfigurationCollectionResponse) Serialize(writ
 }
 // SetValue sets the value property value. The value property
 func (m *Windows10EasEmailProfileConfigurationCollectionResponse) SetValue(value []Windows10EasEmailProfileConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Windows10EasEmailProfileConfigurationCollectionResponseable 
+type Windows10EasEmailProfileConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Windows10EasEmailProfileConfigurationable)
+    SetValue(value []Windows10EasEmailProfileConfigurationable)()
 }

@@ -7,22 +7,14 @@ import (
 // AndroidDeviceOwnerImportedPFXCertificateProfile 
 type AndroidDeviceOwnerImportedPFXCertificateProfile struct {
     AndroidDeviceOwnerCertificateProfileBase
-    // Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
-    certificateAccessType *AndroidDeviceOwnerCertificateAccessType
-    // PFX Import Options.
-    intendedPurpose *IntendedPurpose
-    // Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
-    managedDeviceCertificateStates []ManagedDeviceCertificateStateable
-    // Certificate access information. This collection can contain a maximum of 50 elements.
-    silentCertificateAccessDetails []AndroidDeviceOwnerSilentCertificateAccessable
 }
 // NewAndroidDeviceOwnerImportedPFXCertificateProfile instantiates a new AndroidDeviceOwnerImportedPFXCertificateProfile and sets the default values.
 func NewAndroidDeviceOwnerImportedPFXCertificateProfile()(*AndroidDeviceOwnerImportedPFXCertificateProfile) {
     m := &AndroidDeviceOwnerImportedPFXCertificateProfile{
         AndroidDeviceOwnerCertificateProfileBase: *NewAndroidDeviceOwnerCertificateProfileBase(),
     }
-    odataTypeValue := "#microsoft.graph.androidDeviceOwnerImportedPFXCertificateProfile";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidDeviceOwnerImportedPFXCertificateProfile"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidDeviceOwnerImportedPFXCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +23,14 @@ func CreateAndroidDeviceOwnerImportedPFXCertificateProfileFromDiscriminatorValue
 }
 // GetCertificateAccessType gets the certificateAccessType property value. Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
 func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) GetCertificateAccessType()(*AndroidDeviceOwnerCertificateAccessType) {
-    return m.certificateAccessType
+    val, err := m.GetBackingStore().Get("certificateAccessType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AndroidDeviceOwnerCertificateAccessType)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -88,15 +87,36 @@ func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) GetFieldDeserializers(
 }
 // GetIntendedPurpose gets the intendedPurpose property value. PFX Import Options.
 func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) GetIntendedPurpose()(*IntendedPurpose) {
-    return m.intendedPurpose
+    val, err := m.GetBackingStore().Get("intendedPurpose")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*IntendedPurpose)
+    }
+    return nil
 }
 // GetManagedDeviceCertificateStates gets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable) {
-    return m.managedDeviceCertificateStates
+    val, err := m.GetBackingStore().Get("managedDeviceCertificateStates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedDeviceCertificateStateable)
+    }
+    return nil
 }
 // GetSilentCertificateAccessDetails gets the silentCertificateAccessDetails property value. Certificate access information. This collection can contain a maximum of 50 elements.
 func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) GetSilentCertificateAccessDetails()([]AndroidDeviceOwnerSilentCertificateAccessable) {
-    return m.silentCertificateAccessDetails
+    val, err := m.GetBackingStore().Get("silentCertificateAccessDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidDeviceOwnerSilentCertificateAccessable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -142,17 +162,42 @@ func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) Serialize(writer i878a
 }
 // SetCertificateAccessType sets the certificateAccessType property value. Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
 func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) SetCertificateAccessType(value *AndroidDeviceOwnerCertificateAccessType)() {
-    m.certificateAccessType = value
+    err := m.GetBackingStore().Set("certificateAccessType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIntendedPurpose sets the intendedPurpose property value. PFX Import Options.
 func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) SetIntendedPurpose(value *IntendedPurpose)() {
-    m.intendedPurpose = value
+    err := m.GetBackingStore().Set("intendedPurpose", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedDeviceCertificateStates sets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)() {
-    m.managedDeviceCertificateStates = value
+    err := m.GetBackingStore().Set("managedDeviceCertificateStates", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSilentCertificateAccessDetails sets the silentCertificateAccessDetails property value. Certificate access information. This collection can contain a maximum of 50 elements.
 func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) SetSilentCertificateAccessDetails(value []AndroidDeviceOwnerSilentCertificateAccessable)() {
-    m.silentCertificateAccessDetails = value
+    err := m.GetBackingStore().Set("silentCertificateAccessDetails", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidDeviceOwnerImportedPFXCertificateProfileable 
+type AndroidDeviceOwnerImportedPFXCertificateProfileable interface {
+    AndroidDeviceOwnerCertificateProfileBaseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCertificateAccessType()(*AndroidDeviceOwnerCertificateAccessType)
+    GetIntendedPurpose()(*IntendedPurpose)
+    GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable)
+    GetSilentCertificateAccessDetails()([]AndroidDeviceOwnerSilentCertificateAccessable)
+    SetCertificateAccessType(value *AndroidDeviceOwnerCertificateAccessType)()
+    SetIntendedPurpose(value *IntendedPurpose)()
+    SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)()
+    SetSilentCertificateAccessDetails(value []AndroidDeviceOwnerSilentCertificateAccessable)()
 }

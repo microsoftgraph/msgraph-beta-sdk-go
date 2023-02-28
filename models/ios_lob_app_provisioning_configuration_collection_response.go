@@ -7,8 +7,6 @@ import (
 // IosLobAppProvisioningConfigurationCollectionResponse 
 type IosLobAppProvisioningConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []IosLobAppProvisioningConfigurationable
 }
 // NewIosLobAppProvisioningConfigurationCollectionResponse instantiates a new IosLobAppProvisioningConfigurationCollectionResponse and sets the default values.
 func NewIosLobAppProvisioningConfigurationCollectionResponse()(*IosLobAppProvisioningConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *IosLobAppProvisioningConfigurationCollectionResponse) GetFieldDeseriali
 }
 // GetValue gets the value property value. The value property
 func (m *IosLobAppProvisioningConfigurationCollectionResponse) GetValue()([]IosLobAppProvisioningConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IosLobAppProvisioningConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosLobAppProvisioningConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *IosLobAppProvisioningConfigurationCollectionResponse) Serialize(writer 
 }
 // SetValue sets the value property value. The value property
 func (m *IosLobAppProvisioningConfigurationCollectionResponse) SetValue(value []IosLobAppProvisioningConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosLobAppProvisioningConfigurationCollectionResponseable 
+type IosLobAppProvisioningConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]IosLobAppProvisioningConfigurationable)
+    SetValue(value []IosLobAppProvisioningConfigurationable)()
 }

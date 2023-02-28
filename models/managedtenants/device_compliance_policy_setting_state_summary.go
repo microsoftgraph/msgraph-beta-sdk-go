@@ -9,32 +9,6 @@ import (
 // DeviceCompliancePolicySettingStateSummary 
 type DeviceCompliancePolicySettingStateSummary struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The number of devices in a conflict state. Optional. Read-only.
-    conflictDeviceCount *int32
-    // The number of devices in an error state. Optional. Read-only.
-    errorDeviceCount *int32
-    // The number of devices in a failed state. Optional. Read-only.
-    failedDeviceCount *int32
-    // The identifer for the Microsoft Intune account. Required. Read-only.
-    intuneAccountId *string
-    // The identifier for the Intune setting. Optional. Read-only.
-    intuneSettingId *string
-    // Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
-    lastRefreshedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The number of devices in a not applicable state. Optional. Read-only.
-    notApplicableDeviceCount *int32
-    // The number of devices in a pending state. Optional. Read-only.
-    pendingDeviceCount *int32
-    // The type for the device compliance policy. Optional. Read-only.
-    policyType *string
-    // The name for the setting within the device compliance policy. Optional. Read-only.
-    settingName *string
-    // The number of devices in a succeeded state. Optional. Read-only.
-    succeededDeviceCount *int32
-    // The display name for the managed tenant. Required. Read-only.
-    tenantDisplayName *string
-    // The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
-    tenantId *string
 }
 // NewDeviceCompliancePolicySettingStateSummary instantiates a new deviceCompliancePolicySettingStateSummary and sets the default values.
 func NewDeviceCompliancePolicySettingStateSummary()(*DeviceCompliancePolicySettingStateSummary) {
@@ -49,15 +23,36 @@ func CreateDeviceCompliancePolicySettingStateSummaryFromDiscriminatorValue(parse
 }
 // GetConflictDeviceCount gets the conflictDeviceCount property value. The number of devices in a conflict state. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) GetConflictDeviceCount()(*int32) {
-    return m.conflictDeviceCount
+    val, err := m.GetBackingStore().Get("conflictDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetErrorDeviceCount gets the errorDeviceCount property value. The number of devices in an error state. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) GetErrorDeviceCount()(*int32) {
-    return m.errorDeviceCount
+    val, err := m.GetBackingStore().Get("errorDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFailedDeviceCount gets the failedDeviceCount property value. The number of devices in a failed state. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) GetFailedDeviceCount()(*int32) {
-    return m.failedDeviceCount
+    val, err := m.GetBackingStore().Get("failedDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -196,43 +191,113 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[
 }
 // GetIntuneAccountId gets the intuneAccountId property value. The identifer for the Microsoft Intune account. Required. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) GetIntuneAccountId()(*string) {
-    return m.intuneAccountId
+    val, err := m.GetBackingStore().Get("intuneAccountId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIntuneSettingId gets the intuneSettingId property value. The identifier for the Intune setting. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) GetIntuneSettingId()(*string) {
-    return m.intuneSettingId
+    val, err := m.GetBackingStore().Get("intuneSettingId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLastRefreshedDateTime gets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastRefreshedDateTime
+    val, err := m.GetBackingStore().Get("lastRefreshedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetNotApplicableDeviceCount gets the notApplicableDeviceCount property value. The number of devices in a not applicable state. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) GetNotApplicableDeviceCount()(*int32) {
-    return m.notApplicableDeviceCount
+    val, err := m.GetBackingStore().Get("notApplicableDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPendingDeviceCount gets the pendingDeviceCount property value. The number of devices in a pending state. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) GetPendingDeviceCount()(*int32) {
-    return m.pendingDeviceCount
+    val, err := m.GetBackingStore().Get("pendingDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPolicyType gets the policyType property value. The type for the device compliance policy. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) GetPolicyType()(*string) {
-    return m.policyType
+    val, err := m.GetBackingStore().Get("policyType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSettingName gets the settingName property value. The name for the setting within the device compliance policy. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) GetSettingName()(*string) {
-    return m.settingName
+    val, err := m.GetBackingStore().Get("settingName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSucceededDeviceCount gets the succeededDeviceCount property value. The number of devices in a succeeded state. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) GetSucceededDeviceCount()(*int32) {
-    return m.succeededDeviceCount
+    val, err := m.GetBackingStore().Get("succeededDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetTenantDisplayName gets the tenantDisplayName property value. The display name for the managed tenant. Required. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) GetTenantDisplayName()(*string) {
-    return m.tenantDisplayName
+    val, err := m.GetBackingStore().Get("tenantDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) GetTenantId()(*string) {
-    return m.tenantId
+    val, err := m.GetBackingStore().Get("tenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceCompliancePolicySettingStateSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -322,53 +387,123 @@ func (m *DeviceCompliancePolicySettingStateSummary) Serialize(writer i878a80d233
 }
 // SetConflictDeviceCount sets the conflictDeviceCount property value. The number of devices in a conflict state. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) SetConflictDeviceCount(value *int32)() {
-    m.conflictDeviceCount = value
+    err := m.GetBackingStore().Set("conflictDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetErrorDeviceCount sets the errorDeviceCount property value. The number of devices in an error state. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) SetErrorDeviceCount(value *int32)() {
-    m.errorDeviceCount = value
+    err := m.GetBackingStore().Set("errorDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFailedDeviceCount sets the failedDeviceCount property value. The number of devices in a failed state. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) SetFailedDeviceCount(value *int32)() {
-    m.failedDeviceCount = value
+    err := m.GetBackingStore().Set("failedDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIntuneAccountId sets the intuneAccountId property value. The identifer for the Microsoft Intune account. Required. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) SetIntuneAccountId(value *string)() {
-    m.intuneAccountId = value
+    err := m.GetBackingStore().Set("intuneAccountId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIntuneSettingId sets the intuneSettingId property value. The identifier for the Intune setting. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) SetIntuneSettingId(value *string)() {
-    m.intuneSettingId = value
+    err := m.GetBackingStore().Set("intuneSettingId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastRefreshedDateTime sets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) SetLastRefreshedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastRefreshedDateTime = value
+    err := m.GetBackingStore().Set("lastRefreshedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotApplicableDeviceCount sets the notApplicableDeviceCount property value. The number of devices in a not applicable state. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) SetNotApplicableDeviceCount(value *int32)() {
-    m.notApplicableDeviceCount = value
+    err := m.GetBackingStore().Set("notApplicableDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPendingDeviceCount sets the pendingDeviceCount property value. The number of devices in a pending state. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) SetPendingDeviceCount(value *int32)() {
-    m.pendingDeviceCount = value
+    err := m.GetBackingStore().Set("pendingDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPolicyType sets the policyType property value. The type for the device compliance policy. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) SetPolicyType(value *string)() {
-    m.policyType = value
+    err := m.GetBackingStore().Set("policyType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingName sets the settingName property value. The name for the setting within the device compliance policy. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) SetSettingName(value *string)() {
-    m.settingName = value
+    err := m.GetBackingStore().Set("settingName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSucceededDeviceCount sets the succeededDeviceCount property value. The number of devices in a succeeded state. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) SetSucceededDeviceCount(value *int32)() {
-    m.succeededDeviceCount = value
+    err := m.GetBackingStore().Set("succeededDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantDisplayName sets the tenantDisplayName property value. The display name for the managed tenant. Required. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) SetTenantDisplayName(value *string)() {
-    m.tenantDisplayName = value
+    err := m.GetBackingStore().Set("tenantDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantId sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) SetTenantId(value *string)() {
-    m.tenantId = value
+    err := m.GetBackingStore().Set("tenantId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceCompliancePolicySettingStateSummaryable 
+type DeviceCompliancePolicySettingStateSummaryable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetConflictDeviceCount()(*int32)
+    GetErrorDeviceCount()(*int32)
+    GetFailedDeviceCount()(*int32)
+    GetIntuneAccountId()(*string)
+    GetIntuneSettingId()(*string)
+    GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetNotApplicableDeviceCount()(*int32)
+    GetPendingDeviceCount()(*int32)
+    GetPolicyType()(*string)
+    GetSettingName()(*string)
+    GetSucceededDeviceCount()(*int32)
+    GetTenantDisplayName()(*string)
+    GetTenantId()(*string)
+    SetConflictDeviceCount(value *int32)()
+    SetErrorDeviceCount(value *int32)()
+    SetFailedDeviceCount(value *int32)()
+    SetIntuneAccountId(value *string)()
+    SetIntuneSettingId(value *string)()
+    SetLastRefreshedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetNotApplicableDeviceCount(value *int32)()
+    SetPendingDeviceCount(value *int32)()
+    SetPolicyType(value *string)()
+    SetSettingName(value *string)()
+    SetSucceededDeviceCount(value *int32)()
+    SetTenantDisplayName(value *string)()
+    SetTenantId(value *string)()
 }
