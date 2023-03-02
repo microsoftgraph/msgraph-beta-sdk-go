@@ -45,13 +45,13 @@ type EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentRes
 func NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesMyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesMyRequestBuilder) {
     m := &EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesMyRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment%2Did}/accessPackageAssignmentResourceRoles/microsoft.graph.My(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
+    m.urlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment%2Did}/accessPackageAssignmentResourceRoles/My(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesMyRequestBuilder instantiates a new MyRequestBuilder and sets the default values.

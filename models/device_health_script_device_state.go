@@ -8,30 +8,6 @@ import (
 // DeviceHealthScriptDeviceState contains properties for device run state of the device health script.
 type DeviceHealthScriptDeviceState struct {
     Entity
-    // A list of the assignment filter ids used for health script applicability evaluation
-    assignmentFilterIds []string
-    // Indicates the type of execution status of the device management script.
-    detectionState *RunState
-    // The next timestamp of when the device health script is expected to execute
-    expectedStateUpdateDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The last timestamp of when the device health script executed
-    lastStateUpdateDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The last time that Intune Managment Extension synced with Intune
-    lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The managed device on which the device health script executed
-    managedDevice ManagedDeviceable
-    // Error from the detection script after remediation
-    postRemediationDetectionScriptError *string
-    // Detection script output after remediation
-    postRemediationDetectionScriptOutput *string
-    // Error from the detection script before remediation
-    preRemediationDetectionScriptError *string
-    // Output of the detection script before remediation
-    preRemediationDetectionScriptOutput *string
-    // Error output of the remediation script
-    remediationScriptError *string
-    // Indicates the type of execution status of the device management script.
-    remediationState *RemediationState
 }
 // NewDeviceHealthScriptDeviceState instantiates a new deviceHealthScriptDeviceState and sets the default values.
 func NewDeviceHealthScriptDeviceState()(*DeviceHealthScriptDeviceState) {
@@ -46,15 +22,36 @@ func CreateDeviceHealthScriptDeviceStateFromDiscriminatorValue(parseNode i878a80
 }
 // GetAssignmentFilterIds gets the assignmentFilterIds property value. A list of the assignment filter ids used for health script applicability evaluation
 func (m *DeviceHealthScriptDeviceState) GetAssignmentFilterIds()([]string) {
-    return m.assignmentFilterIds
+    val, err := m.GetBackingStore().Get("assignmentFilterIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetDetectionState gets the detectionState property value. Indicates the type of execution status of the device management script.
 func (m *DeviceHealthScriptDeviceState) GetDetectionState()(*RunState) {
-    return m.detectionState
+    val, err := m.GetBackingStore().Get("detectionState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RunState)
+    }
+    return nil
 }
 // GetExpectedStateUpdateDateTime gets the expectedStateUpdateDateTime property value. The next timestamp of when the device health script is expected to execute
 func (m *DeviceHealthScriptDeviceState) GetExpectedStateUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.expectedStateUpdateDateTime
+    val, err := m.GetBackingStore().Get("expectedStateUpdateDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -187,39 +184,102 @@ func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(
 }
 // GetLastStateUpdateDateTime gets the lastStateUpdateDateTime property value. The last timestamp of when the device health script executed
 func (m *DeviceHealthScriptDeviceState) GetLastStateUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastStateUpdateDateTime
+    val, err := m.GetBackingStore().Get("lastStateUpdateDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetLastSyncDateTime gets the lastSyncDateTime property value. The last time that Intune Managment Extension synced with Intune
 func (m *DeviceHealthScriptDeviceState) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastSyncDateTime
+    val, err := m.GetBackingStore().Get("lastSyncDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetManagedDevice gets the managedDevice property value. The managed device on which the device health script executed
 func (m *DeviceHealthScriptDeviceState) GetManagedDevice()(ManagedDeviceable) {
-    return m.managedDevice
+    val, err := m.GetBackingStore().Get("managedDevice")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ManagedDeviceable)
+    }
+    return nil
 }
 // GetPostRemediationDetectionScriptError gets the postRemediationDetectionScriptError property value. Error from the detection script after remediation
 func (m *DeviceHealthScriptDeviceState) GetPostRemediationDetectionScriptError()(*string) {
-    return m.postRemediationDetectionScriptError
+    val, err := m.GetBackingStore().Get("postRemediationDetectionScriptError")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPostRemediationDetectionScriptOutput gets the postRemediationDetectionScriptOutput property value. Detection script output after remediation
 func (m *DeviceHealthScriptDeviceState) GetPostRemediationDetectionScriptOutput()(*string) {
-    return m.postRemediationDetectionScriptOutput
+    val, err := m.GetBackingStore().Get("postRemediationDetectionScriptOutput")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPreRemediationDetectionScriptError gets the preRemediationDetectionScriptError property value. Error from the detection script before remediation
 func (m *DeviceHealthScriptDeviceState) GetPreRemediationDetectionScriptError()(*string) {
-    return m.preRemediationDetectionScriptError
+    val, err := m.GetBackingStore().Get("preRemediationDetectionScriptError")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPreRemediationDetectionScriptOutput gets the preRemediationDetectionScriptOutput property value. Output of the detection script before remediation
 func (m *DeviceHealthScriptDeviceState) GetPreRemediationDetectionScriptOutput()(*string) {
-    return m.preRemediationDetectionScriptOutput
+    val, err := m.GetBackingStore().Get("preRemediationDetectionScriptOutput")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRemediationScriptError gets the remediationScriptError property value. Error output of the remediation script
 func (m *DeviceHealthScriptDeviceState) GetRemediationScriptError()(*string) {
-    return m.remediationScriptError
+    val, err := m.GetBackingStore().Get("remediationScriptError")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRemediationState gets the remediationState property value. Indicates the type of execution status of the device management script.
 func (m *DeviceHealthScriptDeviceState) GetRemediationState()(*RemediationState) {
-    return m.remediationState
+    val, err := m.GetBackingStore().Get("remediationState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RemediationState)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceHealthScriptDeviceState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -305,49 +365,114 @@ func (m *DeviceHealthScriptDeviceState) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAssignmentFilterIds sets the assignmentFilterIds property value. A list of the assignment filter ids used for health script applicability evaluation
 func (m *DeviceHealthScriptDeviceState) SetAssignmentFilterIds(value []string)() {
-    m.assignmentFilterIds = value
+    err := m.GetBackingStore().Set("assignmentFilterIds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDetectionState sets the detectionState property value. Indicates the type of execution status of the device management script.
 func (m *DeviceHealthScriptDeviceState) SetDetectionState(value *RunState)() {
-    m.detectionState = value
+    err := m.GetBackingStore().Set("detectionState", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExpectedStateUpdateDateTime sets the expectedStateUpdateDateTime property value. The next timestamp of when the device health script is expected to execute
 func (m *DeviceHealthScriptDeviceState) SetExpectedStateUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.expectedStateUpdateDateTime = value
+    err := m.GetBackingStore().Set("expectedStateUpdateDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastStateUpdateDateTime sets the lastStateUpdateDateTime property value. The last timestamp of when the device health script executed
 func (m *DeviceHealthScriptDeviceState) SetLastStateUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastStateUpdateDateTime = value
+    err := m.GetBackingStore().Set("lastStateUpdateDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastSyncDateTime sets the lastSyncDateTime property value. The last time that Intune Managment Extension synced with Intune
 func (m *DeviceHealthScriptDeviceState) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastSyncDateTime = value
+    err := m.GetBackingStore().Set("lastSyncDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedDevice sets the managedDevice property value. The managed device on which the device health script executed
 func (m *DeviceHealthScriptDeviceState) SetManagedDevice(value ManagedDeviceable)() {
-    m.managedDevice = value
+    err := m.GetBackingStore().Set("managedDevice", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPostRemediationDetectionScriptError sets the postRemediationDetectionScriptError property value. Error from the detection script after remediation
 func (m *DeviceHealthScriptDeviceState) SetPostRemediationDetectionScriptError(value *string)() {
-    m.postRemediationDetectionScriptError = value
+    err := m.GetBackingStore().Set("postRemediationDetectionScriptError", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPostRemediationDetectionScriptOutput sets the postRemediationDetectionScriptOutput property value. Detection script output after remediation
 func (m *DeviceHealthScriptDeviceState) SetPostRemediationDetectionScriptOutput(value *string)() {
-    m.postRemediationDetectionScriptOutput = value
+    err := m.GetBackingStore().Set("postRemediationDetectionScriptOutput", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPreRemediationDetectionScriptError sets the preRemediationDetectionScriptError property value. Error from the detection script before remediation
 func (m *DeviceHealthScriptDeviceState) SetPreRemediationDetectionScriptError(value *string)() {
-    m.preRemediationDetectionScriptError = value
+    err := m.GetBackingStore().Set("preRemediationDetectionScriptError", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPreRemediationDetectionScriptOutput sets the preRemediationDetectionScriptOutput property value. Output of the detection script before remediation
 func (m *DeviceHealthScriptDeviceState) SetPreRemediationDetectionScriptOutput(value *string)() {
-    m.preRemediationDetectionScriptOutput = value
+    err := m.GetBackingStore().Set("preRemediationDetectionScriptOutput", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRemediationScriptError sets the remediationScriptError property value. Error output of the remediation script
 func (m *DeviceHealthScriptDeviceState) SetRemediationScriptError(value *string)() {
-    m.remediationScriptError = value
+    err := m.GetBackingStore().Set("remediationScriptError", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRemediationState sets the remediationState property value. Indicates the type of execution status of the device management script.
 func (m *DeviceHealthScriptDeviceState) SetRemediationState(value *RemediationState)() {
-    m.remediationState = value
+    err := m.GetBackingStore().Set("remediationState", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceHealthScriptDeviceStateable 
+type DeviceHealthScriptDeviceStateable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssignmentFilterIds()([]string)
+    GetDetectionState()(*RunState)
+    GetExpectedStateUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetLastStateUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetManagedDevice()(ManagedDeviceable)
+    GetPostRemediationDetectionScriptError()(*string)
+    GetPostRemediationDetectionScriptOutput()(*string)
+    GetPreRemediationDetectionScriptError()(*string)
+    GetPreRemediationDetectionScriptOutput()(*string)
+    GetRemediationScriptError()(*string)
+    GetRemediationState()(*RemediationState)
+    SetAssignmentFilterIds(value []string)()
+    SetDetectionState(value *RunState)()
+    SetExpectedStateUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetLastStateUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetManagedDevice(value ManagedDeviceable)()
+    SetPostRemediationDetectionScriptError(value *string)()
+    SetPostRemediationDetectionScriptOutput(value *string)()
+    SetPreRemediationDetectionScriptError(value *string)()
+    SetPreRemediationDetectionScriptOutput(value *string)()
+    SetRemediationScriptError(value *string)()
+    SetRemediationState(value *RemediationState)()
 }

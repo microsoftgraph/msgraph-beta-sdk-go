@@ -2,28 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // UserRegistrationFeatureSummary 
 type UserRegistrationFeatureSummary struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The OdataType property
-    odataType *string
-    // Total number of users accounts, excluding those that are blocked
-    totalUserCount *int64
-    // Number of users registered or capable for Multi-Factor Authentication, Self-Service Password Reset and Passwordless Authentication.
-    userRegistrationFeatureCounts []UserRegistrationFeatureCountable
-    // User role type. Possible values are: all, privilegedAdmin, admin, user.
-    userRoles *IncludedUserRoles
-    // User type. Possible values are: all, member, guest.
-    userTypes *IncludedUserTypes
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewUserRegistrationFeatureSummary instantiates a new UserRegistrationFeatureSummary and sets the default values.
 func NewUserRegistrationFeatureSummary()(*UserRegistrationFeatureSummary) {
     m := &UserRegistrationFeatureSummary{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateUserRegistrationFeatureSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,7 +24,19 @@ func CreateUserRegistrationFeatureSummaryFromDiscriminatorValue(parseNode i878a8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserRegistrationFeatureSummary) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *UserRegistrationFeatureSummary) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserRegistrationFeatureSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -95,23 +99,58 @@ func (m *UserRegistrationFeatureSummary) GetFieldDeserializers()(map[string]func
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *UserRegistrationFeatureSummary) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTotalUserCount gets the totalUserCount property value. Total number of users accounts, excluding those that are blocked
 func (m *UserRegistrationFeatureSummary) GetTotalUserCount()(*int64) {
-    return m.totalUserCount
+    val, err := m.GetBackingStore().Get("totalUserCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetUserRegistrationFeatureCounts gets the userRegistrationFeatureCounts property value. Number of users registered or capable for Multi-Factor Authentication, Self-Service Password Reset and Passwordless Authentication.
 func (m *UserRegistrationFeatureSummary) GetUserRegistrationFeatureCounts()([]UserRegistrationFeatureCountable) {
-    return m.userRegistrationFeatureCounts
+    val, err := m.GetBackingStore().Get("userRegistrationFeatureCounts")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserRegistrationFeatureCountable)
+    }
+    return nil
 }
 // GetUserRoles gets the userRoles property value. User role type. Possible values are: all, privilegedAdmin, admin, user.
 func (m *UserRegistrationFeatureSummary) GetUserRoles()(*IncludedUserRoles) {
-    return m.userRoles
+    val, err := m.GetBackingStore().Get("userRoles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*IncludedUserRoles)
+    }
+    return nil
 }
 // GetUserTypes gets the userTypes property value. User type. Possible values are: all, member, guest.
 func (m *UserRegistrationFeatureSummary) GetUserTypes()(*IncludedUserTypes) {
-    return m.userTypes
+    val, err := m.GetBackingStore().Get("userTypes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*IncludedUserTypes)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserRegistrationFeatureSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -161,25 +200,65 @@ func (m *UserRegistrationFeatureSummary) Serialize(writer i878a80d2330e89d268963
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserRegistrationFeatureSummary) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *UserRegistrationFeatureSummary) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *UserRegistrationFeatureSummary) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTotalUserCount sets the totalUserCount property value. Total number of users accounts, excluding those that are blocked
 func (m *UserRegistrationFeatureSummary) SetTotalUserCount(value *int64)() {
-    m.totalUserCount = value
+    err := m.GetBackingStore().Set("totalUserCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRegistrationFeatureCounts sets the userRegistrationFeatureCounts property value. Number of users registered or capable for Multi-Factor Authentication, Self-Service Password Reset and Passwordless Authentication.
 func (m *UserRegistrationFeatureSummary) SetUserRegistrationFeatureCounts(value []UserRegistrationFeatureCountable)() {
-    m.userRegistrationFeatureCounts = value
+    err := m.GetBackingStore().Set("userRegistrationFeatureCounts", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRoles sets the userRoles property value. User role type. Possible values are: all, privilegedAdmin, admin, user.
 func (m *UserRegistrationFeatureSummary) SetUserRoles(value *IncludedUserRoles)() {
-    m.userRoles = value
+    err := m.GetBackingStore().Set("userRoles", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserTypes sets the userTypes property value. User type. Possible values are: all, member, guest.
 func (m *UserRegistrationFeatureSummary) SetUserTypes(value *IncludedUserTypes)() {
-    m.userTypes = value
+    err := m.GetBackingStore().Set("userTypes", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserRegistrationFeatureSummaryable 
+type UserRegistrationFeatureSummaryable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetOdataType()(*string)
+    GetTotalUserCount()(*int64)
+    GetUserRegistrationFeatureCounts()([]UserRegistrationFeatureCountable)
+    GetUserRoles()(*IncludedUserRoles)
+    GetUserTypes()(*IncludedUserTypes)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetOdataType(value *string)()
+    SetTotalUserCount(value *int64)()
+    SetUserRegistrationFeatureCounts(value []UserRegistrationFeatureCountable)()
+    SetUserRoles(value *IncludedUserRoles)()
+    SetUserTypes(value *IncludedUserTypes)()
 }

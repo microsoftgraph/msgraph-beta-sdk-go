@@ -46,7 +46,7 @@ type ItemOutlookTasksOutlookTaskItemRequestBuilderPatchRequestConfiguration stru
 }
 // Attachments provides operations to manage the attachments property of the microsoft.graph.outlookTask entity.
 func (m *ItemOutlookTasksOutlookTaskItemRequestBuilder) Attachments()(*ItemOutlookTasksItemAttachmentsRequestBuilder) {
-    return NewItemOutlookTasksItemAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOutlookTasksItemAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AttachmentsById provides operations to manage the attachments property of the microsoft.graph.outlookTask entity.
 func (m *ItemOutlookTasksOutlookTaskItemRequestBuilder) AttachmentsById(id string)(*ItemOutlookTasksItemAttachmentsAttachmentItemRequestBuilder) {
@@ -57,11 +57,11 @@ func (m *ItemOutlookTasksOutlookTaskItemRequestBuilder) AttachmentsById(id strin
     if id != "" {
         urlTplParams["attachment%2Did"] = id
     }
-    return NewItemOutlookTasksItemAttachmentsAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemOutlookTasksItemAttachmentsAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Complete provides operations to call the complete method.
 func (m *ItemOutlookTasksOutlookTaskItemRequestBuilder) Complete()(*ItemOutlookTasksItemCompleteRequestBuilder) {
-    return NewItemOutlookTasksItemCompleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOutlookTasksItemCompleteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewItemOutlookTasksOutlookTaskItemRequestBuilderInternal instantiates a new OutlookTaskItemRequestBuilder and sets the default values.
 func NewItemOutlookTasksOutlookTaskItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOutlookTasksOutlookTaskItemRequestBuilder) {
@@ -72,8 +72,8 @@ func NewItemOutlookTasksOutlookTaskItemRequestBuilderInternal(pathParameters map
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemOutlookTasksOutlookTaskItemRequestBuilder instantiates a new OutlookTaskItemRequestBuilder and sets the default values.
@@ -119,7 +119,7 @@ func (m *ItemOutlookTasksOutlookTaskItemRequestBuilder) Get(ctx context.Context,
 }
 // MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.outlookTask entity.
 func (m *ItemOutlookTasksOutlookTaskItemRequestBuilder) MultiValueExtendedProperties()(*ItemOutlookTasksItemMultiValueExtendedPropertiesRequestBuilder) {
-    return NewItemOutlookTasksItemMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOutlookTasksItemMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MultiValueExtendedPropertiesById provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.outlookTask entity.
 func (m *ItemOutlookTasksOutlookTaskItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(*ItemOutlookTasksItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilder) {
@@ -130,7 +130,7 @@ func (m *ItemOutlookTasksOutlookTaskItemRequestBuilder) MultiValueExtendedProper
     if id != "" {
         urlTplParams["multiValueLegacyExtendedProperty%2Did"] = id
     }
-    return NewItemOutlookTasksItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemOutlookTasksItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch update the navigation property tasks in users
 func (m *ItemOutlookTasksOutlookTaskItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskable, requestConfiguration *ItemOutlookTasksOutlookTaskItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskable, error) {
@@ -153,7 +153,7 @@ func (m *ItemOutlookTasksOutlookTaskItemRequestBuilder) Patch(ctx context.Contex
 }
 // SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.outlookTask entity.
 func (m *ItemOutlookTasksOutlookTaskItemRequestBuilder) SingleValueExtendedProperties()(*ItemOutlookTasksItemSingleValueExtendedPropertiesRequestBuilder) {
-    return NewItemOutlookTasksItemSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOutlookTasksItemSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SingleValueExtendedPropertiesById provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.outlookTask entity.
 func (m *ItemOutlookTasksOutlookTaskItemRequestBuilder) SingleValueExtendedPropertiesById(id string)(*ItemOutlookTasksItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilder) {
@@ -164,7 +164,7 @@ func (m *ItemOutlookTasksOutlookTaskItemRequestBuilder) SingleValueExtendedPrope
     if id != "" {
         urlTplParams["singleValueLegacyExtendedProperty%2Did"] = id
     }
-    return NewItemOutlookTasksItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemOutlookTasksItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property tasks for users
 func (m *ItemOutlookTasksOutlookTaskItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookTasksOutlookTaskItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -201,7 +201,10 @@ func (m *ItemOutlookTasksOutlookTaskItemRequestBuilder) ToPatchRequestInformatio
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -7,10 +7,6 @@ import (
 // ConfigurationManagerActionResult 
 type ConfigurationManagerActionResult struct {
     DeviceActionResult
-    // Delivery state of Configuration Manager device action
-    actionDeliveryStatus *ConfigurationManagerActionDeliveryStatus
-    // Error code of Configuration Manager action from client
-    errorCode *int32
 }
 // NewConfigurationManagerActionResult instantiates a new ConfigurationManagerActionResult and sets the default values.
 func NewConfigurationManagerActionResult()(*ConfigurationManagerActionResult) {
@@ -25,11 +21,25 @@ func CreateConfigurationManagerActionResultFromDiscriminatorValue(parseNode i878
 }
 // GetActionDeliveryStatus gets the actionDeliveryStatus property value. Delivery state of Configuration Manager device action
 func (m *ConfigurationManagerActionResult) GetActionDeliveryStatus()(*ConfigurationManagerActionDeliveryStatus) {
-    return m.actionDeliveryStatus
+    val, err := m.GetBackingStore().Get("actionDeliveryStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ConfigurationManagerActionDeliveryStatus)
+    }
+    return nil
 }
 // GetErrorCode gets the errorCode property value. Error code of Configuration Manager action from client
 func (m *ConfigurationManagerActionResult) GetErrorCode()(*int32) {
-    return m.errorCode
+    val, err := m.GetBackingStore().Get("errorCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConfigurationManagerActionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -79,9 +89,24 @@ func (m *ConfigurationManagerActionResult) Serialize(writer i878a80d2330e89d2689
 }
 // SetActionDeliveryStatus sets the actionDeliveryStatus property value. Delivery state of Configuration Manager device action
 func (m *ConfigurationManagerActionResult) SetActionDeliveryStatus(value *ConfigurationManagerActionDeliveryStatus)() {
-    m.actionDeliveryStatus = value
+    err := m.GetBackingStore().Set("actionDeliveryStatus", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetErrorCode sets the errorCode property value. Error code of Configuration Manager action from client
 func (m *ConfigurationManagerActionResult) SetErrorCode(value *int32)() {
-    m.errorCode = value
+    err := m.GetBackingStore().Set("errorCode", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ConfigurationManagerActionResultable 
+type ConfigurationManagerActionResultable interface {
+    DeviceActionResultable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActionDeliveryStatus()(*ConfigurationManagerActionDeliveryStatus)
+    GetErrorCode()(*int32)
+    SetActionDeliveryStatus(value *ConfigurationManagerActionDeliveryStatus)()
+    SetErrorCode(value *int32)()
 }

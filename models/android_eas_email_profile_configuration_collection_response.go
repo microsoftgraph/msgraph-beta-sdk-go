@@ -7,8 +7,6 @@ import (
 // AndroidEasEmailProfileConfigurationCollectionResponse 
 type AndroidEasEmailProfileConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidEasEmailProfileConfigurationable
 }
 // NewAndroidEasEmailProfileConfigurationCollectionResponse instantiates a new AndroidEasEmailProfileConfigurationCollectionResponse and sets the default values.
 func NewAndroidEasEmailProfileConfigurationCollectionResponse()(*AndroidEasEmailProfileConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidEasEmailProfileConfigurationCollectionResponse) GetFieldDeserial
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidEasEmailProfileConfigurationCollectionResponse) GetValue()([]AndroidEasEmailProfileConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidEasEmailProfileConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidEasEmailProfileConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidEasEmailProfileConfigurationCollectionResponse) Serialize(writer
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidEasEmailProfileConfigurationCollectionResponse) SetValue(value []AndroidEasEmailProfileConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidEasEmailProfileConfigurationCollectionResponseable 
+type AndroidEasEmailProfileConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidEasEmailProfileConfigurationable)
+    SetValue(value []AndroidEasEmailProfileConfigurationable)()
 }

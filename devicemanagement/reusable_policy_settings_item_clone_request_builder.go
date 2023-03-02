@@ -27,13 +27,13 @@ type ReusablePolicySettingsItemCloneRequestBuilderPostRequestConfiguration struc
 func NewReusablePolicySettingsItemCloneRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReusablePolicySettingsItemCloneRequestBuilder) {
     m := &ReusablePolicySettingsItemCloneRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/reusablePolicySettings/{deviceManagementReusablePolicySetting%2Did}/microsoft.graph.clone";
+    m.urlTemplate = "{+baseurl}/deviceManagement/reusablePolicySettings/{deviceManagementReusablePolicySetting%2Did}/clone";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewReusablePolicySettingsItemCloneRequestBuilder instantiates a new CloneRequestBuilder and sets the default values.

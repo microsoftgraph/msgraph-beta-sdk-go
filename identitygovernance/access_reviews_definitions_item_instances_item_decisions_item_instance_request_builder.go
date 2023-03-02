@@ -48,15 +48,15 @@ type AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceRequestBuilde
 }
 // AcceptRecommendations provides operations to call the acceptRecommendations method.
 func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceRequestBuilder) AcceptRecommendations()(*AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceAcceptRecommendationsRequestBuilder) {
-    return NewAccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceAcceptRecommendationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceAcceptRecommendationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ApplyDecisions provides operations to call the applyDecisions method.
 func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceRequestBuilder) ApplyDecisions()(*AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceApplyDecisionsRequestBuilder) {
-    return NewAccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceApplyDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceApplyDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // BatchRecordDecisions provides operations to call the batchRecordDecisions method.
 func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceRequestBuilder) BatchRecordDecisions()(*AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilder) {
-    return NewAccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewAccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceRequestBuilderInternal instantiates a new InstanceRequestBuilder and sets the default values.
 func NewAccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceRequestBuilder) {
@@ -67,8 +67,8 @@ func NewAccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceRequestBui
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceRequestBuilder instantiates a new InstanceRequestBuilder and sets the default values.
@@ -79,7 +79,7 @@ func NewAccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceRequestBui
 }
 // ContactedReviewers provides operations to manage the contactedReviewers property of the microsoft.graph.accessReviewInstance entity.
 func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceRequestBuilder) ContactedReviewers()(*AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceContactedReviewersRequestBuilder) {
-    return NewAccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceContactedReviewersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceContactedReviewersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ContactedReviewersById provides operations to manage the contactedReviewers property of the microsoft.graph.accessReviewInstance entity.
 func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceRequestBuilder) ContactedReviewersById(id string)(*AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceContactedReviewersAccessReviewReviewerItemRequestBuilder) {
@@ -90,11 +90,11 @@ func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceRequestBu
     if id != "" {
         urlTplParams["accessReviewReviewer%2Did"] = id
     }
-    return NewAccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceContactedReviewersAccessReviewReviewerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceContactedReviewersAccessReviewReviewerItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Definition provides operations to manage the definition property of the microsoft.graph.accessReviewInstance entity.
 func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceRequestBuilder) Definition()(*AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceDefinitionRequestBuilder) {
-    return NewAccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property instance for identityGovernance
 func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceRequestBuilder) Delete(ctx context.Context, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceRequestBuilderDeleteRequestConfiguration)(error) {
@@ -152,15 +152,15 @@ func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceRequestBu
 }
 // ResetDecisions provides operations to call the resetDecisions method.
 func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceRequestBuilder) ResetDecisions()(*AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceResetDecisionsRequestBuilder) {
-    return NewAccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceResetDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceResetDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SendReminder provides operations to call the sendReminder method.
 func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceRequestBuilder) SendReminder()(*AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceSendReminderRequestBuilder) {
-    return NewAccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceSendReminderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceSendReminderRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Stages provides operations to manage the stages property of the microsoft.graph.accessReviewInstance entity.
 func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceRequestBuilder) Stages()(*AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceStagesRequestBuilder) {
-    return NewAccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceStagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceStagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // StagesById provides operations to manage the stages property of the microsoft.graph.accessReviewInstance entity.
 func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceRequestBuilder) StagesById(id string)(*AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceStagesAccessReviewStageItemRequestBuilder) {
@@ -171,11 +171,11 @@ func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceRequestBu
     if id != "" {
         urlTplParams["accessReviewStage%2Did"] = id
     }
-    return NewAccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceStagesAccessReviewStageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceStagesAccessReviewStageItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Stop provides operations to call the stop method.
 func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceRequestBuilder) Stop()(*AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceStopRequestBuilder) {
-    return NewAccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceStopRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceStopRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property instance for identityGovernance
 func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -212,7 +212,10 @@ func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceRequestBu
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

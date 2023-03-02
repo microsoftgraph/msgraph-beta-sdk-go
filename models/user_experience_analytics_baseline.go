@@ -8,26 +8,6 @@ import (
 // UserExperienceAnalyticsBaseline the user experience analytics baseline entity contains baseline values against which to compare the user experience analytics scores.
 type UserExperienceAnalyticsBaseline struct {
     Entity
-    // The user experience analytics app health metrics.
-    appHealthMetrics UserExperienceAnalyticsCategoryable
-    // The user experience analytics battery health metrics.
-    batteryHealthMetrics UserExperienceAnalyticsCategoryable
-    // The user experience analytics best practices metrics.
-    bestPracticesMetrics UserExperienceAnalyticsCategoryable
-    // The date the custom baseline was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The user experience analytics device boot performance metrics.
-    deviceBootPerformanceMetrics UserExperienceAnalyticsCategoryable
-    // The name of the user experience analytics baseline.
-    displayName *string
-    // Signifies if the current baseline is the commercial median baseline or a custom baseline.
-    isBuiltIn *bool
-    // The user experience analytics reboot analytics metrics.
-    rebootAnalyticsMetrics UserExperienceAnalyticsCategoryable
-    // The user experience analytics resource performance metrics.
-    resourcePerformanceMetrics UserExperienceAnalyticsCategoryable
-    // The user experience analytics work from anywhere metrics.
-    workFromAnywhereMetrics UserExperienceAnalyticsCategoryable
 }
 // NewUserExperienceAnalyticsBaseline instantiates a new userExperienceAnalyticsBaseline and sets the default values.
 func NewUserExperienceAnalyticsBaseline()(*UserExperienceAnalyticsBaseline) {
@@ -42,27 +22,69 @@ func CreateUserExperienceAnalyticsBaselineFromDiscriminatorValue(parseNode i878a
 }
 // GetAppHealthMetrics gets the appHealthMetrics property value. The user experience analytics app health metrics.
 func (m *UserExperienceAnalyticsBaseline) GetAppHealthMetrics()(UserExperienceAnalyticsCategoryable) {
-    return m.appHealthMetrics
+    val, err := m.GetBackingStore().Get("appHealthMetrics")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(UserExperienceAnalyticsCategoryable)
+    }
+    return nil
 }
 // GetBatteryHealthMetrics gets the batteryHealthMetrics property value. The user experience analytics battery health metrics.
 func (m *UserExperienceAnalyticsBaseline) GetBatteryHealthMetrics()(UserExperienceAnalyticsCategoryable) {
-    return m.batteryHealthMetrics
+    val, err := m.GetBackingStore().Get("batteryHealthMetrics")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(UserExperienceAnalyticsCategoryable)
+    }
+    return nil
 }
 // GetBestPracticesMetrics gets the bestPracticesMetrics property value. The user experience analytics best practices metrics.
 func (m *UserExperienceAnalyticsBaseline) GetBestPracticesMetrics()(UserExperienceAnalyticsCategoryable) {
-    return m.bestPracticesMetrics
+    val, err := m.GetBackingStore().Get("bestPracticesMetrics")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(UserExperienceAnalyticsCategoryable)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date the custom baseline was created.
 func (m *UserExperienceAnalyticsBaseline) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDeviceBootPerformanceMetrics gets the deviceBootPerformanceMetrics property value. The user experience analytics device boot performance metrics.
 func (m *UserExperienceAnalyticsBaseline) GetDeviceBootPerformanceMetrics()(UserExperienceAnalyticsCategoryable) {
-    return m.deviceBootPerformanceMetrics
+    val, err := m.GetBackingStore().Get("deviceBootPerformanceMetrics")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(UserExperienceAnalyticsCategoryable)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The name of the user experience analytics baseline.
 func (m *UserExperienceAnalyticsBaseline) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -171,19 +193,47 @@ func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]fun
 }
 // GetIsBuiltIn gets the isBuiltIn property value. Signifies if the current baseline is the commercial median baseline or a custom baseline.
 func (m *UserExperienceAnalyticsBaseline) GetIsBuiltIn()(*bool) {
-    return m.isBuiltIn
+    val, err := m.GetBackingStore().Get("isBuiltIn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetRebootAnalyticsMetrics gets the rebootAnalyticsMetrics property value. The user experience analytics reboot analytics metrics.
 func (m *UserExperienceAnalyticsBaseline) GetRebootAnalyticsMetrics()(UserExperienceAnalyticsCategoryable) {
-    return m.rebootAnalyticsMetrics
+    val, err := m.GetBackingStore().Get("rebootAnalyticsMetrics")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(UserExperienceAnalyticsCategoryable)
+    }
+    return nil
 }
 // GetResourcePerformanceMetrics gets the resourcePerformanceMetrics property value. The user experience analytics resource performance metrics.
 func (m *UserExperienceAnalyticsBaseline) GetResourcePerformanceMetrics()(UserExperienceAnalyticsCategoryable) {
-    return m.resourcePerformanceMetrics
+    val, err := m.GetBackingStore().Get("resourcePerformanceMetrics")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(UserExperienceAnalyticsCategoryable)
+    }
+    return nil
 }
 // GetWorkFromAnywhereMetrics gets the workFromAnywhereMetrics property value. The user experience analytics work from anywhere metrics.
 func (m *UserExperienceAnalyticsBaseline) GetWorkFromAnywhereMetrics()(UserExperienceAnalyticsCategoryable) {
-    return m.workFromAnywhereMetrics
+    val, err := m.GetBackingStore().Get("workFromAnywhereMetrics")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(UserExperienceAnalyticsCategoryable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsBaseline) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -255,41 +305,96 @@ func (m *UserExperienceAnalyticsBaseline) Serialize(writer i878a80d2330e89d26896
 }
 // SetAppHealthMetrics sets the appHealthMetrics property value. The user experience analytics app health metrics.
 func (m *UserExperienceAnalyticsBaseline) SetAppHealthMetrics(value UserExperienceAnalyticsCategoryable)() {
-    m.appHealthMetrics = value
+    err := m.GetBackingStore().Set("appHealthMetrics", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBatteryHealthMetrics sets the batteryHealthMetrics property value. The user experience analytics battery health metrics.
 func (m *UserExperienceAnalyticsBaseline) SetBatteryHealthMetrics(value UserExperienceAnalyticsCategoryable)() {
-    m.batteryHealthMetrics = value
+    err := m.GetBackingStore().Set("batteryHealthMetrics", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBestPracticesMetrics sets the bestPracticesMetrics property value. The user experience analytics best practices metrics.
 func (m *UserExperienceAnalyticsBaseline) SetBestPracticesMetrics(value UserExperienceAnalyticsCategoryable)() {
-    m.bestPracticesMetrics = value
+    err := m.GetBackingStore().Set("bestPracticesMetrics", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date the custom baseline was created.
 func (m *UserExperienceAnalyticsBaseline) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceBootPerformanceMetrics sets the deviceBootPerformanceMetrics property value. The user experience analytics device boot performance metrics.
 func (m *UserExperienceAnalyticsBaseline) SetDeviceBootPerformanceMetrics(value UserExperienceAnalyticsCategoryable)() {
-    m.deviceBootPerformanceMetrics = value
+    err := m.GetBackingStore().Set("deviceBootPerformanceMetrics", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the user experience analytics baseline.
 func (m *UserExperienceAnalyticsBaseline) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsBuiltIn sets the isBuiltIn property value. Signifies if the current baseline is the commercial median baseline or a custom baseline.
 func (m *UserExperienceAnalyticsBaseline) SetIsBuiltIn(value *bool)() {
-    m.isBuiltIn = value
+    err := m.GetBackingStore().Set("isBuiltIn", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRebootAnalyticsMetrics sets the rebootAnalyticsMetrics property value. The user experience analytics reboot analytics metrics.
 func (m *UserExperienceAnalyticsBaseline) SetRebootAnalyticsMetrics(value UserExperienceAnalyticsCategoryable)() {
-    m.rebootAnalyticsMetrics = value
+    err := m.GetBackingStore().Set("rebootAnalyticsMetrics", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResourcePerformanceMetrics sets the resourcePerformanceMetrics property value. The user experience analytics resource performance metrics.
 func (m *UserExperienceAnalyticsBaseline) SetResourcePerformanceMetrics(value UserExperienceAnalyticsCategoryable)() {
-    m.resourcePerformanceMetrics = value
+    err := m.GetBackingStore().Set("resourcePerformanceMetrics", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkFromAnywhereMetrics sets the workFromAnywhereMetrics property value. The user experience analytics work from anywhere metrics.
 func (m *UserExperienceAnalyticsBaseline) SetWorkFromAnywhereMetrics(value UserExperienceAnalyticsCategoryable)() {
-    m.workFromAnywhereMetrics = value
+    err := m.GetBackingStore().Set("workFromAnywhereMetrics", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsBaselineable 
+type UserExperienceAnalyticsBaselineable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppHealthMetrics()(UserExperienceAnalyticsCategoryable)
+    GetBatteryHealthMetrics()(UserExperienceAnalyticsCategoryable)
+    GetBestPracticesMetrics()(UserExperienceAnalyticsCategoryable)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDeviceBootPerformanceMetrics()(UserExperienceAnalyticsCategoryable)
+    GetDisplayName()(*string)
+    GetIsBuiltIn()(*bool)
+    GetRebootAnalyticsMetrics()(UserExperienceAnalyticsCategoryable)
+    GetResourcePerformanceMetrics()(UserExperienceAnalyticsCategoryable)
+    GetWorkFromAnywhereMetrics()(UserExperienceAnalyticsCategoryable)
+    SetAppHealthMetrics(value UserExperienceAnalyticsCategoryable)()
+    SetBatteryHealthMetrics(value UserExperienceAnalyticsCategoryable)()
+    SetBestPracticesMetrics(value UserExperienceAnalyticsCategoryable)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDeviceBootPerformanceMetrics(value UserExperienceAnalyticsCategoryable)()
+    SetDisplayName(value *string)()
+    SetIsBuiltIn(value *bool)()
+    SetRebootAnalyticsMetrics(value UserExperienceAnalyticsCategoryable)()
+    SetResourcePerformanceMetrics(value UserExperienceAnalyticsCategoryable)()
+    SetWorkFromAnywhereMetrics(value UserExperienceAnalyticsCategoryable)()
 }

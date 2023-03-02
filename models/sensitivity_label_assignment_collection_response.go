@@ -7,8 +7,6 @@ import (
 // SensitivityLabelAssignmentCollectionResponse 
 type SensitivityLabelAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []SensitivityLabelAssignmentable
 }
 // NewSensitivityLabelAssignmentCollectionResponse instantiates a new SensitivityLabelAssignmentCollectionResponse and sets the default values.
 func NewSensitivityLabelAssignmentCollectionResponse()(*SensitivityLabelAssignmentCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *SensitivityLabelAssignmentCollectionResponse) GetFieldDeserializers()(m
 }
 // GetValue gets the value property value. The value property
 func (m *SensitivityLabelAssignmentCollectionResponse) GetValue()([]SensitivityLabelAssignmentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SensitivityLabelAssignmentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SensitivityLabelAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *SensitivityLabelAssignmentCollectionResponse) Serialize(writer i878a80d
 }
 // SetValue sets the value property value. The value property
 func (m *SensitivityLabelAssignmentCollectionResponse) SetValue(value []SensitivityLabelAssignmentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SensitivityLabelAssignmentCollectionResponseable 
+type SensitivityLabelAssignmentCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]SensitivityLabelAssignmentable)
+    SetValue(value []SensitivityLabelAssignmentable)()
 }

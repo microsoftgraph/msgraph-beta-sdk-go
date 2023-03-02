@@ -26,7 +26,7 @@ type ReportsGetEmailAppUsageAppsUserCountsWithPeriodRequestBuilderGetRequestConf
 func NewReportsGetEmailAppUsageAppsUserCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, period *string)(*ReportsGetEmailAppUsageAppsUserCountsWithPeriodRequestBuilder) {
     m := &ReportsGetEmailAppUsageAppsUserCountsWithPeriodRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/print/reports/microsoft.graph.getEmailAppUsageAppsUserCounts(period='{period}')";
+    m.urlTemplate = "{+baseurl}/print/reports/getEmailAppUsageAppsUserCounts(period='{period}')";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -34,8 +34,8 @@ func NewReportsGetEmailAppUsageAppsUserCountsWithPeriodRequestBuilderInternal(pa
     if period != nil {
         urlTplParams["period"] = *period
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewReportsGetEmailAppUsageAppsUserCountsWithPeriodRequestBuilder instantiates a new GetEmailAppUsageAppsUserCountsWithPeriodRequestBuilder and sets the default values.

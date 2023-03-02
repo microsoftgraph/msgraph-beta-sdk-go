@@ -8,18 +8,6 @@ import (
 // DeviceManagementScriptDeviceState contains properties for device run state of the device management script.
 type DeviceManagementScriptDeviceState struct {
     Entity
-    // Error code corresponding to erroneous execution of the device management script.
-    errorCode *int32
-    // Error description corresponding to erroneous execution of the device management script.
-    errorDescription *string
-    // Latest time the device management script executes.
-    lastStateUpdateDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The managed devices that executes the device management script.
-    managedDevice ManagedDeviceable
-    // Details of execution output.
-    resultMessage *string
-    // Indicates the type of execution status of the device management script.
-    runState *RunState
 }
 // NewDeviceManagementScriptDeviceState instantiates a new deviceManagementScriptDeviceState and sets the default values.
 func NewDeviceManagementScriptDeviceState()(*DeviceManagementScriptDeviceState) {
@@ -34,11 +22,25 @@ func CreateDeviceManagementScriptDeviceStateFromDiscriminatorValue(parseNode i87
 }
 // GetErrorCode gets the errorCode property value. Error code corresponding to erroneous execution of the device management script.
 func (m *DeviceManagementScriptDeviceState) GetErrorCode()(*int32) {
-    return m.errorCode
+    val, err := m.GetBackingStore().Get("errorCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetErrorDescription gets the errorDescription property value. Error description corresponding to erroneous execution of the device management script.
 func (m *DeviceManagementScriptDeviceState) GetErrorDescription()(*string) {
-    return m.errorDescription
+    val, err := m.GetBackingStore().Get("errorDescription")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementScriptDeviceState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -107,19 +109,47 @@ func (m *DeviceManagementScriptDeviceState) GetFieldDeserializers()(map[string]f
 }
 // GetLastStateUpdateDateTime gets the lastStateUpdateDateTime property value. Latest time the device management script executes.
 func (m *DeviceManagementScriptDeviceState) GetLastStateUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastStateUpdateDateTime
+    val, err := m.GetBackingStore().Get("lastStateUpdateDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetManagedDevice gets the managedDevice property value. The managed devices that executes the device management script.
 func (m *DeviceManagementScriptDeviceState) GetManagedDevice()(ManagedDeviceable) {
-    return m.managedDevice
+    val, err := m.GetBackingStore().Get("managedDevice")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ManagedDeviceable)
+    }
+    return nil
 }
 // GetResultMessage gets the resultMessage property value. Details of execution output.
 func (m *DeviceManagementScriptDeviceState) GetResultMessage()(*string) {
-    return m.resultMessage
+    val, err := m.GetBackingStore().Get("resultMessage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRunState gets the runState property value. Indicates the type of execution status of the device management script.
 func (m *DeviceManagementScriptDeviceState) GetRunState()(*RunState) {
-    return m.runState
+    val, err := m.GetBackingStore().Get("runState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RunState)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementScriptDeviceState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -168,25 +198,60 @@ func (m *DeviceManagementScriptDeviceState) Serialize(writer i878a80d2330e89d268
 }
 // SetErrorCode sets the errorCode property value. Error code corresponding to erroneous execution of the device management script.
 func (m *DeviceManagementScriptDeviceState) SetErrorCode(value *int32)() {
-    m.errorCode = value
+    err := m.GetBackingStore().Set("errorCode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetErrorDescription sets the errorDescription property value. Error description corresponding to erroneous execution of the device management script.
 func (m *DeviceManagementScriptDeviceState) SetErrorDescription(value *string)() {
-    m.errorDescription = value
+    err := m.GetBackingStore().Set("errorDescription", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastStateUpdateDateTime sets the lastStateUpdateDateTime property value. Latest time the device management script executes.
 func (m *DeviceManagementScriptDeviceState) SetLastStateUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastStateUpdateDateTime = value
+    err := m.GetBackingStore().Set("lastStateUpdateDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedDevice sets the managedDevice property value. The managed devices that executes the device management script.
 func (m *DeviceManagementScriptDeviceState) SetManagedDevice(value ManagedDeviceable)() {
-    m.managedDevice = value
+    err := m.GetBackingStore().Set("managedDevice", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResultMessage sets the resultMessage property value. Details of execution output.
 func (m *DeviceManagementScriptDeviceState) SetResultMessage(value *string)() {
-    m.resultMessage = value
+    err := m.GetBackingStore().Set("resultMessage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRunState sets the runState property value. Indicates the type of execution status of the device management script.
 func (m *DeviceManagementScriptDeviceState) SetRunState(value *RunState)() {
-    m.runState = value
+    err := m.GetBackingStore().Set("runState", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementScriptDeviceStateable 
+type DeviceManagementScriptDeviceStateable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetErrorCode()(*int32)
+    GetErrorDescription()(*string)
+    GetLastStateUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetManagedDevice()(ManagedDeviceable)
+    GetResultMessage()(*string)
+    GetRunState()(*RunState)
+    SetErrorCode(value *int32)()
+    SetErrorDescription(value *string)()
+    SetLastStateUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetManagedDevice(value ManagedDeviceable)()
+    SetResultMessage(value *string)()
+    SetRunState(value *RunState)()
 }

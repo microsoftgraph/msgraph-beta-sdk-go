@@ -7,8 +7,6 @@ import (
 // PrivilegedAccessGroupEligibilityScheduleInstanceCollectionResponse 
 type PrivilegedAccessGroupEligibilityScheduleInstanceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PrivilegedAccessGroupEligibilityScheduleInstanceable
 }
 // NewPrivilegedAccessGroupEligibilityScheduleInstanceCollectionResponse instantiates a new PrivilegedAccessGroupEligibilityScheduleInstanceCollectionResponse and sets the default values.
 func NewPrivilegedAccessGroupEligibilityScheduleInstanceCollectionResponse()(*PrivilegedAccessGroupEligibilityScheduleInstanceCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PrivilegedAccessGroupEligibilityScheduleInstanceCollectionResponse) Get
 }
 // GetValue gets the value property value. The value property
 func (m *PrivilegedAccessGroupEligibilityScheduleInstanceCollectionResponse) GetValue()([]PrivilegedAccessGroupEligibilityScheduleInstanceable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrivilegedAccessGroupEligibilityScheduleInstanceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrivilegedAccessGroupEligibilityScheduleInstanceCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PrivilegedAccessGroupEligibilityScheduleInstanceCollectionResponse) Ser
 }
 // SetValue sets the value property value. The value property
 func (m *PrivilegedAccessGroupEligibilityScheduleInstanceCollectionResponse) SetValue(value []PrivilegedAccessGroupEligibilityScheduleInstanceable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrivilegedAccessGroupEligibilityScheduleInstanceCollectionResponseable 
+type PrivilegedAccessGroupEligibilityScheduleInstanceCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PrivilegedAccessGroupEligibilityScheduleInstanceable)
+    SetValue(value []PrivilegedAccessGroupEligibilityScheduleInstanceable)()
 }

@@ -7,8 +7,6 @@ import (
 // WorkspaceCollectionResponse 
 type WorkspaceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Workspaceable
 }
 // NewWorkspaceCollectionResponse instantiates a new WorkspaceCollectionResponse and sets the default values.
 func NewWorkspaceCollectionResponse()(*WorkspaceCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WorkspaceCollectionResponse) GetFieldDeserializers()(map[string]func(i8
 }
 // GetValue gets the value property value. The value property
 func (m *WorkspaceCollectionResponse) GetValue()([]Workspaceable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Workspaceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WorkspaceCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WorkspaceCollectionResponse) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetValue sets the value property value. The value property
 func (m *WorkspaceCollectionResponse) SetValue(value []Workspaceable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WorkspaceCollectionResponseable 
+type WorkspaceCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Workspaceable)
+    SetValue(value []Workspaceable)()
 }

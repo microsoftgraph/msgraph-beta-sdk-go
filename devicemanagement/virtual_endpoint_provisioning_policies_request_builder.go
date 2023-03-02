@@ -60,8 +60,8 @@ func NewVirtualEndpointProvisioningPoliciesRequestBuilderInternal(pathParameters
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewVirtualEndpointProvisioningPoliciesRequestBuilder instantiates a new ProvisioningPoliciesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewVirtualEndpointProvisioningPoliciesRequestBuilder(rawUrl string, request
 }
 // Count provides operations to count the resources in the collection.
 func (m *VirtualEndpointProvisioningPoliciesRequestBuilder) Count()(*VirtualEndpointProvisioningPoliciesCountRequestBuilder) {
-    return NewVirtualEndpointProvisioningPoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointProvisioningPoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list properties and relationships of the cloudPcProvisioningPolicy objects.
 // [Find more info here]
@@ -141,7 +141,10 @@ func (m *VirtualEndpointProvisioningPoliciesRequestBuilder) ToPostRequestInforma
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -45,13 +45,13 @@ type ItemTeamDefinitionChannelsAllMessagesRequestBuilderGetRequestConfiguration 
 func NewItemTeamDefinitionChannelsAllMessagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionChannelsAllMessagesRequestBuilder) {
     m := &ItemTeamDefinitionChannelsAllMessagesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/channels/microsoft.graph.allMessages(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
+    m.urlTemplate = "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/channels/allMessages(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTeamDefinitionChannelsAllMessagesRequestBuilder instantiates a new AllMessagesRequestBuilder and sets the default values.

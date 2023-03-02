@@ -60,8 +60,8 @@ func NewItemStaffMembersRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemStaffMembersRequestBuilder instantiates a new StaffMembersRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemStaffMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemStaffMembersRequestBuilder) Count()(*ItemStaffMembersCountRequestBuilder) {
-    return NewItemStaffMembersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemStaffMembersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of bookingStaffMember objects in the specified bookingBusiness.
 // [Find more info here]
@@ -141,7 +141,10 @@ func (m *ItemStaffMembersRequestBuilder) ToPostRequestInformation(ctx context.Co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

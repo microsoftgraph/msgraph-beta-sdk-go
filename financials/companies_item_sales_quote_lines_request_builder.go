@@ -53,8 +53,8 @@ func NewCompaniesItemSalesQuoteLinesRequestBuilderInternal(pathParameters map[st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemSalesQuoteLinesRequestBuilder instantiates a new SalesQuoteLinesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewCompaniesItemSalesQuoteLinesRequestBuilder(rawUrl string, requestAdapter
 }
 // Count provides operations to count the resources in the collection.
 func (m *CompaniesItemSalesQuoteLinesRequestBuilder) Count()(*CompaniesItemSalesQuoteLinesCountRequestBuilder) {
-    return NewCompaniesItemSalesQuoteLinesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesQuoteLinesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get salesQuoteLines from financials
 func (m *CompaniesItemSalesQuoteLinesRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemSalesQuoteLinesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesQuoteLineCollectionResponseable, error) {

@@ -7,12 +7,6 @@ import (
 // DeviceConfigurationGroupAssignment device configuration group assignment.
 type DeviceConfigurationGroupAssignment struct {
     Entity
-    // The navigation link to the Device Configuration being targeted.
-    deviceConfiguration DeviceConfigurationable
-    // Indicates if this group is should be excluded. Defaults that the group should be included
-    excludeGroup *bool
-    // The Id of the AAD group we are targeting the device configuration to.
-    targetGroupId *string
 }
 // NewDeviceConfigurationGroupAssignment instantiates a new deviceConfigurationGroupAssignment and sets the default values.
 func NewDeviceConfigurationGroupAssignment()(*DeviceConfigurationGroupAssignment) {
@@ -27,11 +21,25 @@ func CreateDeviceConfigurationGroupAssignmentFromDiscriminatorValue(parseNode i8
 }
 // GetDeviceConfiguration gets the deviceConfiguration property value. The navigation link to the Device Configuration being targeted.
 func (m *DeviceConfigurationGroupAssignment) GetDeviceConfiguration()(DeviceConfigurationable) {
-    return m.deviceConfiguration
+    val, err := m.GetBackingStore().Get("deviceConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceConfigurationable)
+    }
+    return nil
 }
 // GetExcludeGroup gets the excludeGroup property value. Indicates if this group is should be excluded. Defaults that the group should be included
 func (m *DeviceConfigurationGroupAssignment) GetExcludeGroup()(*bool) {
-    return m.excludeGroup
+    val, err := m.GetBackingStore().Get("excludeGroup")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceConfigurationGroupAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -70,7 +78,14 @@ func (m *DeviceConfigurationGroupAssignment) GetFieldDeserializers()(map[string]
 }
 // GetTargetGroupId gets the targetGroupId property value. The Id of the AAD group we are targeting the device configuration to.
 func (m *DeviceConfigurationGroupAssignment) GetTargetGroupId()(*string) {
-    return m.targetGroupId
+    val, err := m.GetBackingStore().Get("targetGroupId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceConfigurationGroupAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -100,13 +115,33 @@ func (m *DeviceConfigurationGroupAssignment) Serialize(writer i878a80d2330e89d26
 }
 // SetDeviceConfiguration sets the deviceConfiguration property value. The navigation link to the Device Configuration being targeted.
 func (m *DeviceConfigurationGroupAssignment) SetDeviceConfiguration(value DeviceConfigurationable)() {
-    m.deviceConfiguration = value
+    err := m.GetBackingStore().Set("deviceConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExcludeGroup sets the excludeGroup property value. Indicates if this group is should be excluded. Defaults that the group should be included
 func (m *DeviceConfigurationGroupAssignment) SetExcludeGroup(value *bool)() {
-    m.excludeGroup = value
+    err := m.GetBackingStore().Set("excludeGroup", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTargetGroupId sets the targetGroupId property value. The Id of the AAD group we are targeting the device configuration to.
 func (m *DeviceConfigurationGroupAssignment) SetTargetGroupId(value *string)() {
-    m.targetGroupId = value
+    err := m.GetBackingStore().Set("targetGroupId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceConfigurationGroupAssignmentable 
+type DeviceConfigurationGroupAssignmentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDeviceConfiguration()(DeviceConfigurationable)
+    GetExcludeGroup()(*bool)
+    GetTargetGroupId()(*string)
+    SetDeviceConfiguration(value DeviceConfigurationable)()
+    SetExcludeGroup(value *bool)()
+    SetTargetGroupId(value *string)()
 }

@@ -3,34 +3,20 @@ package drives
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ItemItemsItemInvitePostRequestBody 
 type ItemItemsItemInvitePostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The expirationDateTime property
-    expirationDateTime *string
-    // The message property
-    message *string
-    // The password property
-    password *string
-    // The recipients property
-    recipients []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveRecipientable
-    // The requireSignIn property
-    requireSignIn *bool
-    // The retainInheritedPermissions property
-    retainInheritedPermissions *bool
-    // The roles property
-    roles []string
-    // The sendInvitation property
-    sendInvitation *bool
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewItemItemsItemInvitePostRequestBody instantiates a new ItemItemsItemInvitePostRequestBody and sets the default values.
 func NewItemItemsItemInvitePostRequestBody()(*ItemItemsItemInvitePostRequestBody) {
     m := &ItemItemsItemInvitePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateItemItemsItemInvitePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -39,11 +25,30 @@ func CreateItemItemsItemInvitePostRequestBodyFromDiscriminatorValue(parseNode i8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemInvitePostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ItemItemsItemInvitePostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The expirationDateTime property
 func (m *ItemItemsItemInvitePostRequestBody) GetExpirationDateTime()(*string) {
-    return m.expirationDateTime
+    val, err := m.GetBackingStore().Get("expirationDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemItemsItemInvitePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -140,31 +145,80 @@ func (m *ItemItemsItemInvitePostRequestBody) GetFieldDeserializers()(map[string]
 }
 // GetMessage gets the message property value. The message property
 func (m *ItemItemsItemInvitePostRequestBody) GetMessage()(*string) {
-    return m.message
+    val, err := m.GetBackingStore().Get("message")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPassword gets the password property value. The password property
 func (m *ItemItemsItemInvitePostRequestBody) GetPassword()(*string) {
-    return m.password
+    val, err := m.GetBackingStore().Get("password")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRecipients gets the recipients property value. The recipients property
 func (m *ItemItemsItemInvitePostRequestBody) GetRecipients()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveRecipientable) {
-    return m.recipients
+    val, err := m.GetBackingStore().Get("recipients")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveRecipientable)
+    }
+    return nil
 }
 // GetRequireSignIn gets the requireSignIn property value. The requireSignIn property
 func (m *ItemItemsItemInvitePostRequestBody) GetRequireSignIn()(*bool) {
-    return m.requireSignIn
+    val, err := m.GetBackingStore().Get("requireSignIn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetRetainInheritedPermissions gets the retainInheritedPermissions property value. The retainInheritedPermissions property
 func (m *ItemItemsItemInvitePostRequestBody) GetRetainInheritedPermissions()(*bool) {
-    return m.retainInheritedPermissions
+    val, err := m.GetBackingStore().Get("retainInheritedPermissions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetRoles gets the roles property value. The roles property
 func (m *ItemItemsItemInvitePostRequestBody) GetRoles()([]string) {
-    return m.roles
+    val, err := m.GetBackingStore().Get("roles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetSendInvitation gets the sendInvitation property value. The sendInvitation property
 func (m *ItemItemsItemInvitePostRequestBody) GetSendInvitation()(*bool) {
-    return m.sendInvitation
+    val, err := m.GetBackingStore().Get("sendInvitation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemItemsItemInvitePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -230,37 +284,92 @@ func (m *ItemItemsItemInvitePostRequestBody) Serialize(writer i878a80d2330e89d26
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemInvitePostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ItemItemsItemInvitePostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetExpirationDateTime sets the expirationDateTime property value. The expirationDateTime property
 func (m *ItemItemsItemInvitePostRequestBody) SetExpirationDateTime(value *string)() {
-    m.expirationDateTime = value
+    err := m.GetBackingStore().Set("expirationDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMessage sets the message property value. The message property
 func (m *ItemItemsItemInvitePostRequestBody) SetMessage(value *string)() {
-    m.message = value
+    err := m.GetBackingStore().Set("message", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPassword sets the password property value. The password property
 func (m *ItemItemsItemInvitePostRequestBody) SetPassword(value *string)() {
-    m.password = value
+    err := m.GetBackingStore().Set("password", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRecipients sets the recipients property value. The recipients property
 func (m *ItemItemsItemInvitePostRequestBody) SetRecipients(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveRecipientable)() {
-    m.recipients = value
+    err := m.GetBackingStore().Set("recipients", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRequireSignIn sets the requireSignIn property value. The requireSignIn property
 func (m *ItemItemsItemInvitePostRequestBody) SetRequireSignIn(value *bool)() {
-    m.requireSignIn = value
+    err := m.GetBackingStore().Set("requireSignIn", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRetainInheritedPermissions sets the retainInheritedPermissions property value. The retainInheritedPermissions property
 func (m *ItemItemsItemInvitePostRequestBody) SetRetainInheritedPermissions(value *bool)() {
-    m.retainInheritedPermissions = value
+    err := m.GetBackingStore().Set("retainInheritedPermissions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoles sets the roles property value. The roles property
 func (m *ItemItemsItemInvitePostRequestBody) SetRoles(value []string)() {
-    m.roles = value
+    err := m.GetBackingStore().Set("roles", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSendInvitation sets the sendInvitation property value. The sendInvitation property
 func (m *ItemItemsItemInvitePostRequestBody) SetSendInvitation(value *bool)() {
-    m.sendInvitation = value
+    err := m.GetBackingStore().Set("sendInvitation", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemItemsItemInvitePostRequestBodyable 
+type ItemItemsItemInvitePostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetExpirationDateTime()(*string)
+    GetMessage()(*string)
+    GetPassword()(*string)
+    GetRecipients()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveRecipientable)
+    GetRequireSignIn()(*bool)
+    GetRetainInheritedPermissions()(*bool)
+    GetRoles()([]string)
+    GetSendInvitation()(*bool)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetExpirationDateTime(value *string)()
+    SetMessage(value *string)()
+    SetPassword(value *string)()
+    SetRecipients(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveRecipientable)()
+    SetRequireSignIn(value *bool)()
+    SetRetainInheritedPermissions(value *bool)()
+    SetRoles(value []string)()
+    SetSendInvitation(value *bool)()
 }

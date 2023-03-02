@@ -2,26 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // AndroidFotaDeploymentAssignment describes deployment security group to assign a deployment to. The backend will expand the security Group ID to extract device serial numbers prior sending a create deployment request to Zebra.
 type AndroidFotaDeploymentAssignment struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The display name of the Azure AD security group used for the assignment.
-    displayName *string
-    // A unique identifier assigned to each Android FOTA Assignment entity
-    id *string
-    // The OdataType property
-    odataType *string
-    // The AAD Group we are deploying firmware updates to
-    target AndroidFotaDeploymentAssignmentTargetable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewAndroidFotaDeploymentAssignment instantiates a new androidFotaDeploymentAssignment and sets the default values.
 func NewAndroidFotaDeploymentAssignment()(*AndroidFotaDeploymentAssignment) {
     m := &AndroidFotaDeploymentAssignment{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAndroidFotaDeploymentAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,11 +24,30 @@ func CreateAndroidFotaDeploymentAssignmentFromDiscriminatorValue(parseNode i878a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AndroidFotaDeploymentAssignment) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *AndroidFotaDeploymentAssignment) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDisplayName gets the displayName property value. The display name of the Azure AD security group used for the assignment.
 func (m *AndroidFotaDeploymentAssignment) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidFotaDeploymentAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -83,15 +96,36 @@ func (m *AndroidFotaDeploymentAssignment) GetFieldDeserializers()(map[string]fun
 }
 // GetId gets the id property value. A unique identifier assigned to each Android FOTA Assignment entity
 func (m *AndroidFotaDeploymentAssignment) GetId()(*string) {
-    return m.id
+    val, err := m.GetBackingStore().Get("id")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AndroidFotaDeploymentAssignment) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTarget gets the target property value. The AAD Group we are deploying firmware updates to
 func (m *AndroidFotaDeploymentAssignment) GetTarget()(AndroidFotaDeploymentAssignmentTargetable) {
-    return m.target
+    val, err := m.GetBackingStore().Get("target")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AndroidFotaDeploymentAssignmentTargetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidFotaDeploymentAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -129,21 +163,56 @@ func (m *AndroidFotaDeploymentAssignment) Serialize(writer i878a80d2330e89d26896
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AndroidFotaDeploymentAssignment) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *AndroidFotaDeploymentAssignment) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDisplayName sets the displayName property value. The display name of the Azure AD security group used for the assignment.
 func (m *AndroidFotaDeploymentAssignment) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetId sets the id property value. A unique identifier assigned to each Android FOTA Assignment entity
 func (m *AndroidFotaDeploymentAssignment) SetId(value *string)() {
-    m.id = value
+    err := m.GetBackingStore().Set("id", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AndroidFotaDeploymentAssignment) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTarget sets the target property value. The AAD Group we are deploying firmware updates to
 func (m *AndroidFotaDeploymentAssignment) SetTarget(value AndroidFotaDeploymentAssignmentTargetable)() {
-    m.target = value
+    err := m.GetBackingStore().Set("target", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidFotaDeploymentAssignmentable 
+type AndroidFotaDeploymentAssignmentable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDisplayName()(*string)
+    GetId()(*string)
+    GetOdataType()(*string)
+    GetTarget()(AndroidFotaDeploymentAssignmentTargetable)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDisplayName(value *string)()
+    SetId(value *string)()
+    SetOdataType(value *string)()
+    SetTarget(value AndroidFotaDeploymentAssignmentTargetable)()
 }

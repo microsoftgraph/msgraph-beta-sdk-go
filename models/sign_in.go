@@ -8,134 +8,8 @@ import (
 // SignIn 
 type SignIn struct {
     Entity
-    // The application name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
-    appDisplayName *string
-    // The application identifier in Azure Active Directory. Supports $filter (eq operator only).
-    appId *string
-    // A list of conditional access policies that are triggered by the corresponding sign-in activity.
-    appliedConditionalAccessPolicies []AppliedConditionalAccessPolicyable
-    // The appliedEventListeners property
-    appliedEventListeners []AppliedAuthenticationEventListenerable
-    // Provides details about the app and device used during an Azure AD authentication step.
-    authenticationAppDeviceDetails AuthenticationAppDeviceDetailsable
-    // Provides details of the Azure AD policies applied to a user and client authentication app during an authentication step.
-    authenticationAppPolicyEvaluationDetails []AuthenticationAppPolicyDetailsable
-    // Contains a collection of values that represent the conditional access authentication contexts applied to the sign-in.
-    authenticationContextClassReferences []AuthenticationContextable
-    // The result of the authentication attempt and additional details on the authentication method.
-    authenticationDetails []AuthenticationDetailable
-    // The authentication methods used. Possible values: SMS, Authenticator App, App Verification code, Password, FIDO, PTA, or PHS.
-    authenticationMethodsUsed []string
-    // Additional authentication processing details, such as the agent name in case of PTA/PHS or Server/farm name in case of federated authentication.
-    authenticationProcessingDetails []KeyValueable
-    // Lists the protocol type or grant type used in the authentication. The possible values are: none, oAuth2, ropc, wsFederation, saml20, deviceCode, unknownFutureValue. For authentications that use protocols other than the possible values listed, the protocol type is listed as none.
-    authenticationProtocol *ProtocolType
-    // This holds the highest level of authentication needed through all the sign-in steps, for sign-in to succeed. Supports $filter (eq and startsWith operators only).
-    authenticationRequirement *string
-    // Sources of authentication requirement, such as conditional access, per-user MFA, identity protection, and security defaults.
-    authenticationRequirementPolicies []AuthenticationRequirementPolicyable
-    // The Autonomous System Number (ASN) of the network used by the actor.
-    autonomousSystemNumber *int32
-    // Contains a fully qualified Azure Resource Manager ID of an Azure resource accessed during the sign-in.
-    azureResourceId *string
-    // The legacy client used for sign-in activity. For example: Browser, Exchange ActiveSync, Modern clients, IMAP, MAPI, SMTP, or POP. Supports $filter (eq operator only).
-    clientAppUsed *string
-    // Describes the credential type that a user client or service principal provided to Azure AD to authenticate itself. You may wish to review clientCredentialType to track and eliminate less secure credential types or to watch for clients and service principals using anomalous credential types. The possible values are: none, clientSecret, clientAssertion, federatedIdentityCredential, managedIdentity, certificate, unknownFutureValue.
-    clientCredentialType *ClientCredentialType
-    // The status of the conditional access policy triggered. Possible values: success, failure, notApplied, or unknownFutureValue. Supports $filter (eq operator only).
-    conditionalAccessStatus *ConditionalAccessStatus
-    // The identifier that's sent from the client when sign-in is initiated. This is used for troubleshooting the corresponding sign-in activity when calling for support. Supports $filter (eq operator only).
-    correlationId *string
-    // The date and time the sign-in was initiated. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $orderby and $filter (eq, le, and ge operators only).
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue. If the sign in did not cross tenant boundaries, the value is none.
-    crossTenantAccessType *SignInAccessType
-    // The device information from where the sign-in occurred. Includes information such as deviceId, OS, and browser. Supports $filter (eq and startsWith operators only) on browser and operatingSystem properties.
-    deviceDetail DeviceDetailable
-    // Contains the identifier of an application's federated identity credential, if a federated identity credential was used to sign in.
-    federatedCredentialId *string
-    // During a failed sign in, a user may click a button in the Azure portal to mark the failed event for tenant admins. If a user clicked the button to flag the failed sign in, this value is true.
-    flaggedForReview *bool
-    // The tenant identifier of the user initiating the sign in. Not applicable in Managed Identity or service principal sign ins.
-    homeTenantId *string
-    // For user sign ins, the identifier of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.
-    homeTenantName *string
-    // Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Do not infer the lack of a token if it is not one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.
-    incomingTokenType *IncomingTokenType
-    // The IP address of the client from where the sign-in occurred. Supports $filter (eq and startsWith operators only).
-    ipAddress *string
-    // The IP address a user used to reach a resource provider, used to determine Conditional Access compliance for some policies. For example, when a user interacts with Exchange Online, the IP address Exchange receives from the user may be recorded here. This value is often null.
-    ipAddressFromResourceProvider *string
-    // Indicates whether a user sign in is interactive. In interactive sign in, the user provides an authentication factor to Azure AD. These factors include passwords, responses to MFA challenges, biometric factors, or QR codes that a user provides to Azure AD or an associated app. In non-interactive sign in, the user doesn't provide an authentication factor. Instead, the client app uses a token or code to authenticate or access a resource on behalf of a user. Non-interactive sign ins are commonly used for a client to sign in on a user's behalf in a process transparent to the user.
-    isInteractive *bool
-    // Shows whether the sign in event was subject to an Azure AD tenant restriction policy.
-    isTenantRestricted *bool
-    // The city, state, and 2 letter country code from where the sign-in occurred. Supports $filter (eq and startsWith operators only) on city, state, and countryOrRegion properties.
-    location SignInLocationable
-    // The mfaDetail property
-    mfaDetail MfaDetailable
-    // The network location details including the type of network used and its names.
-    networkLocationDetails []NetworkLocationDetailable
-    // The request identifier of the first request in the authentication sequence. Supports $filter (eq operator only).
-    originalRequestId *string
-    // Contains information about the Azure AD Private Link policy that is associated with the sign in event.
-    privateLinkDetails PrivateLinkDetailsable
-    // The request processing time in milliseconds in AD STS.
-    processingTimeInMilliseconds *int32
-    // The name of the resource that the user signed in to. Supports $filter (eq operator only).
-    resourceDisplayName *string
-    // The identifier of the resource that the user signed in to. Supports $filter (eq operator only).
-    resourceId *string
-    // The identifier of the service principal representing the target resource in the sign-in event.
-    resourceServicePrincipalId *string
-    // The tenant identifier of the resource referenced in the sign in.
-    resourceTenantId *string
-    // The reason behind a specific state of a risky user, sign-in, or a risk event. Possible values: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, or unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
-    riskDetail *RiskDetail
-    // The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).
-    riskEventTypes_v2 []string
-    // The aggregated risk level. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
-    riskLevelAggregated *RiskLevel
-    // The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
-    riskLevelDuringSignIn *RiskLevel
-    // The risk state of a risky user, sign-in, or a risk event. Possible values: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, or unknownFutureValue. Supports $filter (eq operator only).
-    riskState *RiskState
-    // The unique identifier of the key credential used by the service principal to authenticate.
-    servicePrincipalCredentialKeyId *string
-    // The certificate thumbprint of the certificate used by the service principal to authenticate.
-    servicePrincipalCredentialThumbprint *string
-    // The application identifier used for sign-in. This field is populated when you are signing in using an application. Supports $filter (eq and startsWith operators only).
-    servicePrincipalId *string
-    // The application name used for sign-in. This field is populated when you are signing in using an application. Supports $filter (eq and startsWith operators only).
-    servicePrincipalName *string
-    // Any conditional access session management policies that were applied during the sign-in event.
-    sessionLifetimePolicies []SessionLifetimePolicyable
-    // Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue. Supports $filter (eq, ne).
-    signInEventTypes []string
-    // The identification that the user provided to sign in. It may be the userPrincipalName but it's also populated when a user signs in using other identifiers.
-    signInIdentifier *string
-    // The type of sign in identifier. Possible values are: userPrincipalName, phoneNumber, proxyAddress, qrCode, onPremisesUserPrincipalName, unknownFutureValue.
-    signInIdentifierType *SignInIdentifierType
-    // The sign-in status. Includes the error code and description of the error (in case of a sign-in failure). Supports $filter (eq operator only) on errorCode property.
-    status SignInStatusable
-    // The name of the identity provider. For example, sts.microsoft.com. Supports $filter (eq operator only).
-    tokenIssuerName *string
-    // The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth, ADFederationServicesMFAAdapter, NPSExtension. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: AzureADBackupAuth , ADFederationServicesMFAAdapter , NPSExtension.
-    tokenIssuerType *TokenIssuerType
-    // A unique base64 encoded request identifier used to track tokens issued by Azure AD as they are redeemed at resource providers.
-    uniqueTokenIdentifier *string
-    // The user agent information related to sign-in. Supports $filter (eq and startsWith operators only).
-    userAgent *string
-    // The display name of the user. Supports $filter (eq and startsWith operators only).
-    userDisplayName *string
-    // The identifier of the user. Supports $filter (eq operator only).
-    userId *string
-    // The UPN of the user. Supports $filter (eq and startsWith operators only).
-    userPrincipalName *string
-    // Identifies whether the user is a member or guest in the tenant. Possible values are: member, guest, unknownFutureValue.
-    userType *SignInUserType
 }
-// NewSignIn instantiates a new SignIn and sets the default values.
+// NewSignIn instantiates a new signIn and sets the default values.
 func NewSignIn()(*SignIn) {
     m := &SignIn{
         Entity: *NewEntity(),
@@ -148,95 +22,256 @@ func CreateSignInFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 }
 // GetAppDisplayName gets the appDisplayName property value. The application name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) GetAppDisplayName()(*string) {
-    return m.appDisplayName
+    val, err := m.GetBackingStore().Get("appDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAppId gets the appId property value. The application identifier in Azure Active Directory. Supports $filter (eq operator only).
 func (m *SignIn) GetAppId()(*string) {
-    return m.appId
+    val, err := m.GetBackingStore().Get("appId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAppliedConditionalAccessPolicies gets the appliedConditionalAccessPolicies property value. A list of conditional access policies that are triggered by the corresponding sign-in activity.
 func (m *SignIn) GetAppliedConditionalAccessPolicies()([]AppliedConditionalAccessPolicyable) {
-    return m.appliedConditionalAccessPolicies
+    val, err := m.GetBackingStore().Get("appliedConditionalAccessPolicies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AppliedConditionalAccessPolicyable)
+    }
+    return nil
 }
-// GetAppliedEventListeners gets the appliedEventListeners property value. The appliedEventListeners property
+// GetAppliedEventListeners gets the appliedEventListeners property value. Detailed information about the listeners, such as Azure Logic Apps and Azure Functions, that were triggered by the corresponding events in the sign-in event.
 func (m *SignIn) GetAppliedEventListeners()([]AppliedAuthenticationEventListenerable) {
-    return m.appliedEventListeners
+    val, err := m.GetBackingStore().Get("appliedEventListeners")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AppliedAuthenticationEventListenerable)
+    }
+    return nil
 }
 // GetAuthenticationAppDeviceDetails gets the authenticationAppDeviceDetails property value. Provides details about the app and device used during an Azure AD authentication step.
 func (m *SignIn) GetAuthenticationAppDeviceDetails()(AuthenticationAppDeviceDetailsable) {
-    return m.authenticationAppDeviceDetails
+    val, err := m.GetBackingStore().Get("authenticationAppDeviceDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AuthenticationAppDeviceDetailsable)
+    }
+    return nil
 }
 // GetAuthenticationAppPolicyEvaluationDetails gets the authenticationAppPolicyEvaluationDetails property value. Provides details of the Azure AD policies applied to a user and client authentication app during an authentication step.
 func (m *SignIn) GetAuthenticationAppPolicyEvaluationDetails()([]AuthenticationAppPolicyDetailsable) {
-    return m.authenticationAppPolicyEvaluationDetails
+    val, err := m.GetBackingStore().Get("authenticationAppPolicyEvaluationDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AuthenticationAppPolicyDetailsable)
+    }
+    return nil
 }
 // GetAuthenticationContextClassReferences gets the authenticationContextClassReferences property value. Contains a collection of values that represent the conditional access authentication contexts applied to the sign-in.
 func (m *SignIn) GetAuthenticationContextClassReferences()([]AuthenticationContextable) {
-    return m.authenticationContextClassReferences
+    val, err := m.GetBackingStore().Get("authenticationContextClassReferences")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AuthenticationContextable)
+    }
+    return nil
 }
 // GetAuthenticationDetails gets the authenticationDetails property value. The result of the authentication attempt and additional details on the authentication method.
 func (m *SignIn) GetAuthenticationDetails()([]AuthenticationDetailable) {
-    return m.authenticationDetails
+    val, err := m.GetBackingStore().Get("authenticationDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AuthenticationDetailable)
+    }
+    return nil
 }
 // GetAuthenticationMethodsUsed gets the authenticationMethodsUsed property value. The authentication methods used. Possible values: SMS, Authenticator App, App Verification code, Password, FIDO, PTA, or PHS.
 func (m *SignIn) GetAuthenticationMethodsUsed()([]string) {
-    return m.authenticationMethodsUsed
+    val, err := m.GetBackingStore().Get("authenticationMethodsUsed")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetAuthenticationProcessingDetails gets the authenticationProcessingDetails property value. Additional authentication processing details, such as the agent name in case of PTA/PHS or Server/farm name in case of federated authentication.
 func (m *SignIn) GetAuthenticationProcessingDetails()([]KeyValueable) {
-    return m.authenticationProcessingDetails
+    val, err := m.GetBackingStore().Get("authenticationProcessingDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]KeyValueable)
+    }
+    return nil
 }
 // GetAuthenticationProtocol gets the authenticationProtocol property value. Lists the protocol type or grant type used in the authentication. The possible values are: none, oAuth2, ropc, wsFederation, saml20, deviceCode, unknownFutureValue. For authentications that use protocols other than the possible values listed, the protocol type is listed as none.
 func (m *SignIn) GetAuthenticationProtocol()(*ProtocolType) {
-    return m.authenticationProtocol
+    val, err := m.GetBackingStore().Get("authenticationProtocol")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ProtocolType)
+    }
+    return nil
 }
 // GetAuthenticationRequirement gets the authenticationRequirement property value. This holds the highest level of authentication needed through all the sign-in steps, for sign-in to succeed. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) GetAuthenticationRequirement()(*string) {
-    return m.authenticationRequirement
+    val, err := m.GetBackingStore().Get("authenticationRequirement")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAuthenticationRequirementPolicies gets the authenticationRequirementPolicies property value. Sources of authentication requirement, such as conditional access, per-user MFA, identity protection, and security defaults.
 func (m *SignIn) GetAuthenticationRequirementPolicies()([]AuthenticationRequirementPolicyable) {
-    return m.authenticationRequirementPolicies
+    val, err := m.GetBackingStore().Get("authenticationRequirementPolicies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AuthenticationRequirementPolicyable)
+    }
+    return nil
 }
 // GetAutonomousSystemNumber gets the autonomousSystemNumber property value. The Autonomous System Number (ASN) of the network used by the actor.
 func (m *SignIn) GetAutonomousSystemNumber()(*int32) {
-    return m.autonomousSystemNumber
+    val, err := m.GetBackingStore().Get("autonomousSystemNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetAzureResourceId gets the azureResourceId property value. Contains a fully qualified Azure Resource Manager ID of an Azure resource accessed during the sign-in.
 func (m *SignIn) GetAzureResourceId()(*string) {
-    return m.azureResourceId
+    val, err := m.GetBackingStore().Get("azureResourceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetClientAppUsed gets the clientAppUsed property value. The legacy client used for sign-in activity. For example: Browser, Exchange ActiveSync, Modern clients, IMAP, MAPI, SMTP, or POP. Supports $filter (eq operator only).
 func (m *SignIn) GetClientAppUsed()(*string) {
-    return m.clientAppUsed
+    val, err := m.GetBackingStore().Get("clientAppUsed")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetClientCredentialType gets the clientCredentialType property value. Describes the credential type that a user client or service principal provided to Azure AD to authenticate itself. You may wish to review clientCredentialType to track and eliminate less secure credential types or to watch for clients and service principals using anomalous credential types. The possible values are: none, clientSecret, clientAssertion, federatedIdentityCredential, managedIdentity, certificate, unknownFutureValue.
 func (m *SignIn) GetClientCredentialType()(*ClientCredentialType) {
-    return m.clientCredentialType
+    val, err := m.GetBackingStore().Get("clientCredentialType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ClientCredentialType)
+    }
+    return nil
 }
 // GetConditionalAccessStatus gets the conditionalAccessStatus property value. The status of the conditional access policy triggered. Possible values: success, failure, notApplied, or unknownFutureValue. Supports $filter (eq operator only).
 func (m *SignIn) GetConditionalAccessStatus()(*ConditionalAccessStatus) {
-    return m.conditionalAccessStatus
+    val, err := m.GetBackingStore().Get("conditionalAccessStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ConditionalAccessStatus)
+    }
+    return nil
 }
 // GetCorrelationId gets the correlationId property value. The identifier that's sent from the client when sign-in is initiated. This is used for troubleshooting the corresponding sign-in activity when calling for support. Supports $filter (eq operator only).
 func (m *SignIn) GetCorrelationId()(*string) {
-    return m.correlationId
+    val, err := m.GetBackingStore().Get("correlationId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time the sign-in was initiated. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $orderby and $filter (eq, le, and ge operators only).
 func (m *SignIn) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetCrossTenantAccessType gets the crossTenantAccessType property value. Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue. If the sign in did not cross tenant boundaries, the value is none.
 func (m *SignIn) GetCrossTenantAccessType()(*SignInAccessType) {
-    return m.crossTenantAccessType
+    val, err := m.GetBackingStore().Get("crossTenantAccessType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SignInAccessType)
+    }
+    return nil
 }
 // GetDeviceDetail gets the deviceDetail property value. The device information from where the sign-in occurred. Includes information such as deviceId, OS, and browser. Supports $filter (eq and startsWith operators only) on browser and operatingSystem properties.
 func (m *SignIn) GetDeviceDetail()(DeviceDetailable) {
-    return m.deviceDetail
+    val, err := m.GetBackingStore().Get("deviceDetail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceDetailable)
+    }
+    return nil
 }
 // GetFederatedCredentialId gets the federatedCredentialId property value. Contains the identifier of an application's federated identity credential, if a federated identity credential was used to sign in.
 func (m *SignIn) GetFederatedCredentialId()(*string) {
-    return m.federatedCredentialId
+    val, err := m.GetBackingStore().Get("federatedCredentialId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -707,7 +742,7 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
             for i, v := range val {
                 res[i] = *(v.(*string))
             }
-            m.SetRiskEventTypes_v2(res)
+            m.SetRiskEventTypesV2(res)
         }
         return nil
     }
@@ -923,163 +958,443 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
 }
 // GetFlaggedForReview gets the flaggedForReview property value. During a failed sign in, a user may click a button in the Azure portal to mark the failed event for tenant admins. If a user clicked the button to flag the failed sign in, this value is true.
 func (m *SignIn) GetFlaggedForReview()(*bool) {
-    return m.flaggedForReview
+    val, err := m.GetBackingStore().Get("flaggedForReview")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetHomeTenantId gets the homeTenantId property value. The tenant identifier of the user initiating the sign in. Not applicable in Managed Identity or service principal sign ins.
 func (m *SignIn) GetHomeTenantId()(*string) {
-    return m.homeTenantId
+    val, err := m.GetBackingStore().Get("homeTenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetHomeTenantName gets the homeTenantName property value. For user sign ins, the identifier of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.
 func (m *SignIn) GetHomeTenantName()(*string) {
-    return m.homeTenantName
+    val, err := m.GetBackingStore().Get("homeTenantName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIncomingTokenType gets the incomingTokenType property value. Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Do not infer the lack of a token if it is not one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.
 func (m *SignIn) GetIncomingTokenType()(*IncomingTokenType) {
-    return m.incomingTokenType
+    val, err := m.GetBackingStore().Get("incomingTokenType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*IncomingTokenType)
+    }
+    return nil
 }
 // GetIpAddress gets the ipAddress property value. The IP address of the client from where the sign-in occurred. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) GetIpAddress()(*string) {
-    return m.ipAddress
+    val, err := m.GetBackingStore().Get("ipAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIpAddressFromResourceProvider gets the ipAddressFromResourceProvider property value. The IP address a user used to reach a resource provider, used to determine Conditional Access compliance for some policies. For example, when a user interacts with Exchange Online, the IP address Exchange receives from the user may be recorded here. This value is often null.
 func (m *SignIn) GetIpAddressFromResourceProvider()(*string) {
-    return m.ipAddressFromResourceProvider
+    val, err := m.GetBackingStore().Get("ipAddressFromResourceProvider")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIsInteractive gets the isInteractive property value. Indicates whether a user sign in is interactive. In interactive sign in, the user provides an authentication factor to Azure AD. These factors include passwords, responses to MFA challenges, biometric factors, or QR codes that a user provides to Azure AD or an associated app. In non-interactive sign in, the user doesn't provide an authentication factor. Instead, the client app uses a token or code to authenticate or access a resource on behalf of a user. Non-interactive sign ins are commonly used for a client to sign in on a user's behalf in a process transparent to the user.
 func (m *SignIn) GetIsInteractive()(*bool) {
-    return m.isInteractive
+    val, err := m.GetBackingStore().Get("isInteractive")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsTenantRestricted gets the isTenantRestricted property value. Shows whether the sign in event was subject to an Azure AD tenant restriction policy.
 func (m *SignIn) GetIsTenantRestricted()(*bool) {
-    return m.isTenantRestricted
+    val, err := m.GetBackingStore().Get("isTenantRestricted")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocation gets the location property value. The city, state, and 2 letter country code from where the sign-in occurred. Supports $filter (eq and startsWith operators only) on city, state, and countryOrRegion properties.
 func (m *SignIn) GetLocation()(SignInLocationable) {
-    return m.location
+    val, err := m.GetBackingStore().Get("location")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SignInLocationable)
+    }
+    return nil
 }
 // GetMfaDetail gets the mfaDetail property value. The mfaDetail property
 func (m *SignIn) GetMfaDetail()(MfaDetailable) {
-    return m.mfaDetail
+    val, err := m.GetBackingStore().Get("mfaDetail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(MfaDetailable)
+    }
+    return nil
 }
 // GetNetworkLocationDetails gets the networkLocationDetails property value. The network location details including the type of network used and its names.
 func (m *SignIn) GetNetworkLocationDetails()([]NetworkLocationDetailable) {
-    return m.networkLocationDetails
+    val, err := m.GetBackingStore().Get("networkLocationDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]NetworkLocationDetailable)
+    }
+    return nil
 }
 // GetOriginalRequestId gets the originalRequestId property value. The request identifier of the first request in the authentication sequence. Supports $filter (eq operator only).
 func (m *SignIn) GetOriginalRequestId()(*string) {
-    return m.originalRequestId
+    val, err := m.GetBackingStore().Get("originalRequestId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPrivateLinkDetails gets the privateLinkDetails property value. Contains information about the Azure AD Private Link policy that is associated with the sign in event.
 func (m *SignIn) GetPrivateLinkDetails()(PrivateLinkDetailsable) {
-    return m.privateLinkDetails
+    val, err := m.GetBackingStore().Get("privateLinkDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PrivateLinkDetailsable)
+    }
+    return nil
 }
 // GetProcessingTimeInMilliseconds gets the processingTimeInMilliseconds property value. The request processing time in milliseconds in AD STS.
 func (m *SignIn) GetProcessingTimeInMilliseconds()(*int32) {
-    return m.processingTimeInMilliseconds
+    val, err := m.GetBackingStore().Get("processingTimeInMilliseconds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetResourceDisplayName gets the resourceDisplayName property value. The name of the resource that the user signed in to. Supports $filter (eq operator only).
 func (m *SignIn) GetResourceDisplayName()(*string) {
-    return m.resourceDisplayName
+    val, err := m.GetBackingStore().Get("resourceDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetResourceId gets the resourceId property value. The identifier of the resource that the user signed in to. Supports $filter (eq operator only).
 func (m *SignIn) GetResourceId()(*string) {
-    return m.resourceId
+    val, err := m.GetBackingStore().Get("resourceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetResourceServicePrincipalId gets the resourceServicePrincipalId property value. The identifier of the service principal representing the target resource in the sign-in event.
 func (m *SignIn) GetResourceServicePrincipalId()(*string) {
-    return m.resourceServicePrincipalId
+    val, err := m.GetBackingStore().Get("resourceServicePrincipalId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetResourceTenantId gets the resourceTenantId property value. The tenant identifier of the resource referenced in the sign in.
 func (m *SignIn) GetResourceTenantId()(*string) {
-    return m.resourceTenantId
+    val, err := m.GetBackingStore().Get("resourceTenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRiskDetail gets the riskDetail property value. The reason behind a specific state of a risky user, sign-in, or a risk event. Possible values: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, or unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
 func (m *SignIn) GetRiskDetail()(*RiskDetail) {
-    return m.riskDetail
+    val, err := m.GetBackingStore().Get("riskDetail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RiskDetail)
+    }
+    return nil
 }
-// GetRiskEventTypes_v2 gets the riskEventTypes_v2 property value. The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).
-func (m *SignIn) GetRiskEventTypes_v2()([]string) {
-    return m.riskEventTypes_v2
+// GetRiskEventTypesV2 gets the riskEventTypes_v2 property value. The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).
+func (m *SignIn) GetRiskEventTypesV2()([]string) {
+    val, err := m.GetBackingStore().Get("riskEventTypes_v2")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetRiskLevelAggregated gets the riskLevelAggregated property value. The aggregated risk level. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
 func (m *SignIn) GetRiskLevelAggregated()(*RiskLevel) {
-    return m.riskLevelAggregated
+    val, err := m.GetBackingStore().Get("riskLevelAggregated")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RiskLevel)
+    }
+    return nil
 }
 // GetRiskLevelDuringSignIn gets the riskLevelDuringSignIn property value. The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
 func (m *SignIn) GetRiskLevelDuringSignIn()(*RiskLevel) {
-    return m.riskLevelDuringSignIn
+    val, err := m.GetBackingStore().Get("riskLevelDuringSignIn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RiskLevel)
+    }
+    return nil
 }
 // GetRiskState gets the riskState property value. The risk state of a risky user, sign-in, or a risk event. Possible values: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, or unknownFutureValue. Supports $filter (eq operator only).
 func (m *SignIn) GetRiskState()(*RiskState) {
-    return m.riskState
+    val, err := m.GetBackingStore().Get("riskState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RiskState)
+    }
+    return nil
 }
 // GetServicePrincipalCredentialKeyId gets the servicePrincipalCredentialKeyId property value. The unique identifier of the key credential used by the service principal to authenticate.
 func (m *SignIn) GetServicePrincipalCredentialKeyId()(*string) {
-    return m.servicePrincipalCredentialKeyId
+    val, err := m.GetBackingStore().Get("servicePrincipalCredentialKeyId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetServicePrincipalCredentialThumbprint gets the servicePrincipalCredentialThumbprint property value. The certificate thumbprint of the certificate used by the service principal to authenticate.
 func (m *SignIn) GetServicePrincipalCredentialThumbprint()(*string) {
-    return m.servicePrincipalCredentialThumbprint
+    val, err := m.GetBackingStore().Get("servicePrincipalCredentialThumbprint")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetServicePrincipalId gets the servicePrincipalId property value. The application identifier used for sign-in. This field is populated when you are signing in using an application. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) GetServicePrincipalId()(*string) {
-    return m.servicePrincipalId
+    val, err := m.GetBackingStore().Get("servicePrincipalId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetServicePrincipalName gets the servicePrincipalName property value. The application name used for sign-in. This field is populated when you are signing in using an application. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) GetServicePrincipalName()(*string) {
-    return m.servicePrincipalName
+    val, err := m.GetBackingStore().Get("servicePrincipalName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSessionLifetimePolicies gets the sessionLifetimePolicies property value. Any conditional access session management policies that were applied during the sign-in event.
 func (m *SignIn) GetSessionLifetimePolicies()([]SessionLifetimePolicyable) {
-    return m.sessionLifetimePolicies
+    val, err := m.GetBackingStore().Get("sessionLifetimePolicies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SessionLifetimePolicyable)
+    }
+    return nil
 }
 // GetSignInEventTypes gets the signInEventTypes property value. Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue. Supports $filter (eq, ne).
 func (m *SignIn) GetSignInEventTypes()([]string) {
-    return m.signInEventTypes
+    val, err := m.GetBackingStore().Get("signInEventTypes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetSignInIdentifier gets the signInIdentifier property value. The identification that the user provided to sign in. It may be the userPrincipalName but it's also populated when a user signs in using other identifiers.
 func (m *SignIn) GetSignInIdentifier()(*string) {
-    return m.signInIdentifier
+    val, err := m.GetBackingStore().Get("signInIdentifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSignInIdentifierType gets the signInIdentifierType property value. The type of sign in identifier. Possible values are: userPrincipalName, phoneNumber, proxyAddress, qrCode, onPremisesUserPrincipalName, unknownFutureValue.
 func (m *SignIn) GetSignInIdentifierType()(*SignInIdentifierType) {
-    return m.signInIdentifierType
+    val, err := m.GetBackingStore().Get("signInIdentifierType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SignInIdentifierType)
+    }
+    return nil
 }
 // GetStatus gets the status property value. The sign-in status. Includes the error code and description of the error (in case of a sign-in failure). Supports $filter (eq operator only) on errorCode property.
 func (m *SignIn) GetStatus()(SignInStatusable) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SignInStatusable)
+    }
+    return nil
 }
 // GetTokenIssuerName gets the tokenIssuerName property value. The name of the identity provider. For example, sts.microsoft.com. Supports $filter (eq operator only).
 func (m *SignIn) GetTokenIssuerName()(*string) {
-    return m.tokenIssuerName
+    val, err := m.GetBackingStore().Get("tokenIssuerName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTokenIssuerType gets the tokenIssuerType property value. The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth, ADFederationServicesMFAAdapter, NPSExtension. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: AzureADBackupAuth , ADFederationServicesMFAAdapter , NPSExtension.
 func (m *SignIn) GetTokenIssuerType()(*TokenIssuerType) {
-    return m.tokenIssuerType
+    val, err := m.GetBackingStore().Get("tokenIssuerType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*TokenIssuerType)
+    }
+    return nil
 }
 // GetUniqueTokenIdentifier gets the uniqueTokenIdentifier property value. A unique base64 encoded request identifier used to track tokens issued by Azure AD as they are redeemed at resource providers.
 func (m *SignIn) GetUniqueTokenIdentifier()(*string) {
-    return m.uniqueTokenIdentifier
+    val, err := m.GetBackingStore().Get("uniqueTokenIdentifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserAgent gets the userAgent property value. The user agent information related to sign-in. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) GetUserAgent()(*string) {
-    return m.userAgent
+    val, err := m.GetBackingStore().Get("userAgent")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserDisplayName gets the userDisplayName property value. The display name of the user. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) GetUserDisplayName()(*string) {
-    return m.userDisplayName
+    val, err := m.GetBackingStore().Get("userDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserId gets the userId property value. The identifier of the user. Supports $filter (eq operator only).
 func (m *SignIn) GetUserId()(*string) {
-    return m.userId
+    val, err := m.GetBackingStore().Get("userId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The UPN of the user. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) GetUserPrincipalName()(*string) {
-    return m.userPrincipalName
+    val, err := m.GetBackingStore().Get("userPrincipalName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserType gets the userType property value. Identifies whether the user is a member or guest in the tenant. Possible values are: member, guest, unknownFutureValue.
 func (m *SignIn) GetUserType()(*SignInUserType) {
-    return m.userType
+    val, err := m.GetBackingStore().Get("userType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SignInUserType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -1377,8 +1692,8 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
             return err
         }
     }
-    if m.GetRiskEventTypes_v2() != nil {
-        err = writer.WriteCollectionOfStringValues("riskEventTypes_v2", m.GetRiskEventTypes_v2())
+    if m.GetRiskEventTypesV2() != nil {
+        err = writer.WriteCollectionOfStringValues("riskEventTypes_v2", m.GetRiskEventTypesV2())
         if err != nil {
             return err
         }
@@ -1517,253 +1832,573 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
 }
 // SetAppDisplayName sets the appDisplayName property value. The application name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) SetAppDisplayName(value *string)() {
-    m.appDisplayName = value
+    err := m.GetBackingStore().Set("appDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppId sets the appId property value. The application identifier in Azure Active Directory. Supports $filter (eq operator only).
 func (m *SignIn) SetAppId(value *string)() {
-    m.appId = value
+    err := m.GetBackingStore().Set("appId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppliedConditionalAccessPolicies sets the appliedConditionalAccessPolicies property value. A list of conditional access policies that are triggered by the corresponding sign-in activity.
 func (m *SignIn) SetAppliedConditionalAccessPolicies(value []AppliedConditionalAccessPolicyable)() {
-    m.appliedConditionalAccessPolicies = value
+    err := m.GetBackingStore().Set("appliedConditionalAccessPolicies", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetAppliedEventListeners sets the appliedEventListeners property value. The appliedEventListeners property
+// SetAppliedEventListeners sets the appliedEventListeners property value. Detailed information about the listeners, such as Azure Logic Apps and Azure Functions, that were triggered by the corresponding events in the sign-in event.
 func (m *SignIn) SetAppliedEventListeners(value []AppliedAuthenticationEventListenerable)() {
-    m.appliedEventListeners = value
+    err := m.GetBackingStore().Set("appliedEventListeners", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAuthenticationAppDeviceDetails sets the authenticationAppDeviceDetails property value. Provides details about the app and device used during an Azure AD authentication step.
 func (m *SignIn) SetAuthenticationAppDeviceDetails(value AuthenticationAppDeviceDetailsable)() {
-    m.authenticationAppDeviceDetails = value
+    err := m.GetBackingStore().Set("authenticationAppDeviceDetails", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAuthenticationAppPolicyEvaluationDetails sets the authenticationAppPolicyEvaluationDetails property value. Provides details of the Azure AD policies applied to a user and client authentication app during an authentication step.
 func (m *SignIn) SetAuthenticationAppPolicyEvaluationDetails(value []AuthenticationAppPolicyDetailsable)() {
-    m.authenticationAppPolicyEvaluationDetails = value
+    err := m.GetBackingStore().Set("authenticationAppPolicyEvaluationDetails", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAuthenticationContextClassReferences sets the authenticationContextClassReferences property value. Contains a collection of values that represent the conditional access authentication contexts applied to the sign-in.
 func (m *SignIn) SetAuthenticationContextClassReferences(value []AuthenticationContextable)() {
-    m.authenticationContextClassReferences = value
+    err := m.GetBackingStore().Set("authenticationContextClassReferences", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAuthenticationDetails sets the authenticationDetails property value. The result of the authentication attempt and additional details on the authentication method.
 func (m *SignIn) SetAuthenticationDetails(value []AuthenticationDetailable)() {
-    m.authenticationDetails = value
+    err := m.GetBackingStore().Set("authenticationDetails", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAuthenticationMethodsUsed sets the authenticationMethodsUsed property value. The authentication methods used. Possible values: SMS, Authenticator App, App Verification code, Password, FIDO, PTA, or PHS.
 func (m *SignIn) SetAuthenticationMethodsUsed(value []string)() {
-    m.authenticationMethodsUsed = value
+    err := m.GetBackingStore().Set("authenticationMethodsUsed", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAuthenticationProcessingDetails sets the authenticationProcessingDetails property value. Additional authentication processing details, such as the agent name in case of PTA/PHS or Server/farm name in case of federated authentication.
 func (m *SignIn) SetAuthenticationProcessingDetails(value []KeyValueable)() {
-    m.authenticationProcessingDetails = value
+    err := m.GetBackingStore().Set("authenticationProcessingDetails", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAuthenticationProtocol sets the authenticationProtocol property value. Lists the protocol type or grant type used in the authentication. The possible values are: none, oAuth2, ropc, wsFederation, saml20, deviceCode, unknownFutureValue. For authentications that use protocols other than the possible values listed, the protocol type is listed as none.
 func (m *SignIn) SetAuthenticationProtocol(value *ProtocolType)() {
-    m.authenticationProtocol = value
+    err := m.GetBackingStore().Set("authenticationProtocol", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAuthenticationRequirement sets the authenticationRequirement property value. This holds the highest level of authentication needed through all the sign-in steps, for sign-in to succeed. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) SetAuthenticationRequirement(value *string)() {
-    m.authenticationRequirement = value
+    err := m.GetBackingStore().Set("authenticationRequirement", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAuthenticationRequirementPolicies sets the authenticationRequirementPolicies property value. Sources of authentication requirement, such as conditional access, per-user MFA, identity protection, and security defaults.
 func (m *SignIn) SetAuthenticationRequirementPolicies(value []AuthenticationRequirementPolicyable)() {
-    m.authenticationRequirementPolicies = value
+    err := m.GetBackingStore().Set("authenticationRequirementPolicies", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAutonomousSystemNumber sets the autonomousSystemNumber property value. The Autonomous System Number (ASN) of the network used by the actor.
 func (m *SignIn) SetAutonomousSystemNumber(value *int32)() {
-    m.autonomousSystemNumber = value
+    err := m.GetBackingStore().Set("autonomousSystemNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAzureResourceId sets the azureResourceId property value. Contains a fully qualified Azure Resource Manager ID of an Azure resource accessed during the sign-in.
 func (m *SignIn) SetAzureResourceId(value *string)() {
-    m.azureResourceId = value
+    err := m.GetBackingStore().Set("azureResourceId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetClientAppUsed sets the clientAppUsed property value. The legacy client used for sign-in activity. For example: Browser, Exchange ActiveSync, Modern clients, IMAP, MAPI, SMTP, or POP. Supports $filter (eq operator only).
 func (m *SignIn) SetClientAppUsed(value *string)() {
-    m.clientAppUsed = value
+    err := m.GetBackingStore().Set("clientAppUsed", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetClientCredentialType sets the clientCredentialType property value. Describes the credential type that a user client or service principal provided to Azure AD to authenticate itself. You may wish to review clientCredentialType to track and eliminate less secure credential types or to watch for clients and service principals using anomalous credential types. The possible values are: none, clientSecret, clientAssertion, federatedIdentityCredential, managedIdentity, certificate, unknownFutureValue.
 func (m *SignIn) SetClientCredentialType(value *ClientCredentialType)() {
-    m.clientCredentialType = value
+    err := m.GetBackingStore().Set("clientCredentialType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConditionalAccessStatus sets the conditionalAccessStatus property value. The status of the conditional access policy triggered. Possible values: success, failure, notApplied, or unknownFutureValue. Supports $filter (eq operator only).
 func (m *SignIn) SetConditionalAccessStatus(value *ConditionalAccessStatus)() {
-    m.conditionalAccessStatus = value
+    err := m.GetBackingStore().Set("conditionalAccessStatus", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCorrelationId sets the correlationId property value. The identifier that's sent from the client when sign-in is initiated. This is used for troubleshooting the corresponding sign-in activity when calling for support. Supports $filter (eq operator only).
 func (m *SignIn) SetCorrelationId(value *string)() {
-    m.correlationId = value
+    err := m.GetBackingStore().Set("correlationId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time the sign-in was initiated. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $orderby and $filter (eq, le, and ge operators only).
 func (m *SignIn) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCrossTenantAccessType sets the crossTenantAccessType property value. Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue. If the sign in did not cross tenant boundaries, the value is none.
 func (m *SignIn) SetCrossTenantAccessType(value *SignInAccessType)() {
-    m.crossTenantAccessType = value
+    err := m.GetBackingStore().Set("crossTenantAccessType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceDetail sets the deviceDetail property value. The device information from where the sign-in occurred. Includes information such as deviceId, OS, and browser. Supports $filter (eq and startsWith operators only) on browser and operatingSystem properties.
 func (m *SignIn) SetDeviceDetail(value DeviceDetailable)() {
-    m.deviceDetail = value
+    err := m.GetBackingStore().Set("deviceDetail", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFederatedCredentialId sets the federatedCredentialId property value. Contains the identifier of an application's federated identity credential, if a federated identity credential was used to sign in.
 func (m *SignIn) SetFederatedCredentialId(value *string)() {
-    m.federatedCredentialId = value
+    err := m.GetBackingStore().Set("federatedCredentialId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFlaggedForReview sets the flaggedForReview property value. During a failed sign in, a user may click a button in the Azure portal to mark the failed event for tenant admins. If a user clicked the button to flag the failed sign in, this value is true.
 func (m *SignIn) SetFlaggedForReview(value *bool)() {
-    m.flaggedForReview = value
+    err := m.GetBackingStore().Set("flaggedForReview", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHomeTenantId sets the homeTenantId property value. The tenant identifier of the user initiating the sign in. Not applicable in Managed Identity or service principal sign ins.
 func (m *SignIn) SetHomeTenantId(value *string)() {
-    m.homeTenantId = value
+    err := m.GetBackingStore().Set("homeTenantId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHomeTenantName sets the homeTenantName property value. For user sign ins, the identifier of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.
 func (m *SignIn) SetHomeTenantName(value *string)() {
-    m.homeTenantName = value
+    err := m.GetBackingStore().Set("homeTenantName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIncomingTokenType sets the incomingTokenType property value. Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Do not infer the lack of a token if it is not one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.
 func (m *SignIn) SetIncomingTokenType(value *IncomingTokenType)() {
-    m.incomingTokenType = value
+    err := m.GetBackingStore().Set("incomingTokenType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIpAddress sets the ipAddress property value. The IP address of the client from where the sign-in occurred. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) SetIpAddress(value *string)() {
-    m.ipAddress = value
+    err := m.GetBackingStore().Set("ipAddress", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIpAddressFromResourceProvider sets the ipAddressFromResourceProvider property value. The IP address a user used to reach a resource provider, used to determine Conditional Access compliance for some policies. For example, when a user interacts with Exchange Online, the IP address Exchange receives from the user may be recorded here. This value is often null.
 func (m *SignIn) SetIpAddressFromResourceProvider(value *string)() {
-    m.ipAddressFromResourceProvider = value
+    err := m.GetBackingStore().Set("ipAddressFromResourceProvider", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsInteractive sets the isInteractive property value. Indicates whether a user sign in is interactive. In interactive sign in, the user provides an authentication factor to Azure AD. These factors include passwords, responses to MFA challenges, biometric factors, or QR codes that a user provides to Azure AD or an associated app. In non-interactive sign in, the user doesn't provide an authentication factor. Instead, the client app uses a token or code to authenticate or access a resource on behalf of a user. Non-interactive sign ins are commonly used for a client to sign in on a user's behalf in a process transparent to the user.
 func (m *SignIn) SetIsInteractive(value *bool)() {
-    m.isInteractive = value
+    err := m.GetBackingStore().Set("isInteractive", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsTenantRestricted sets the isTenantRestricted property value. Shows whether the sign in event was subject to an Azure AD tenant restriction policy.
 func (m *SignIn) SetIsTenantRestricted(value *bool)() {
-    m.isTenantRestricted = value
+    err := m.GetBackingStore().Set("isTenantRestricted", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocation sets the location property value. The city, state, and 2 letter country code from where the sign-in occurred. Supports $filter (eq and startsWith operators only) on city, state, and countryOrRegion properties.
 func (m *SignIn) SetLocation(value SignInLocationable)() {
-    m.location = value
+    err := m.GetBackingStore().Set("location", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMfaDetail sets the mfaDetail property value. The mfaDetail property
 func (m *SignIn) SetMfaDetail(value MfaDetailable)() {
-    m.mfaDetail = value
+    err := m.GetBackingStore().Set("mfaDetail", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNetworkLocationDetails sets the networkLocationDetails property value. The network location details including the type of network used and its names.
 func (m *SignIn) SetNetworkLocationDetails(value []NetworkLocationDetailable)() {
-    m.networkLocationDetails = value
+    err := m.GetBackingStore().Set("networkLocationDetails", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOriginalRequestId sets the originalRequestId property value. The request identifier of the first request in the authentication sequence. Supports $filter (eq operator only).
 func (m *SignIn) SetOriginalRequestId(value *string)() {
-    m.originalRequestId = value
+    err := m.GetBackingStore().Set("originalRequestId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPrivateLinkDetails sets the privateLinkDetails property value. Contains information about the Azure AD Private Link policy that is associated with the sign in event.
 func (m *SignIn) SetPrivateLinkDetails(value PrivateLinkDetailsable)() {
-    m.privateLinkDetails = value
+    err := m.GetBackingStore().Set("privateLinkDetails", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProcessingTimeInMilliseconds sets the processingTimeInMilliseconds property value. The request processing time in milliseconds in AD STS.
 func (m *SignIn) SetProcessingTimeInMilliseconds(value *int32)() {
-    m.processingTimeInMilliseconds = value
+    err := m.GetBackingStore().Set("processingTimeInMilliseconds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResourceDisplayName sets the resourceDisplayName property value. The name of the resource that the user signed in to. Supports $filter (eq operator only).
 func (m *SignIn) SetResourceDisplayName(value *string)() {
-    m.resourceDisplayName = value
+    err := m.GetBackingStore().Set("resourceDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResourceId sets the resourceId property value. The identifier of the resource that the user signed in to. Supports $filter (eq operator only).
 func (m *SignIn) SetResourceId(value *string)() {
-    m.resourceId = value
+    err := m.GetBackingStore().Set("resourceId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResourceServicePrincipalId sets the resourceServicePrincipalId property value. The identifier of the service principal representing the target resource in the sign-in event.
 func (m *SignIn) SetResourceServicePrincipalId(value *string)() {
-    m.resourceServicePrincipalId = value
+    err := m.GetBackingStore().Set("resourceServicePrincipalId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResourceTenantId sets the resourceTenantId property value. The tenant identifier of the resource referenced in the sign in.
 func (m *SignIn) SetResourceTenantId(value *string)() {
-    m.resourceTenantId = value
+    err := m.GetBackingStore().Set("resourceTenantId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRiskDetail sets the riskDetail property value. The reason behind a specific state of a risky user, sign-in, or a risk event. Possible values: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, or unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
 func (m *SignIn) SetRiskDetail(value *RiskDetail)() {
-    m.riskDetail = value
+    err := m.GetBackingStore().Set("riskDetail", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetRiskEventTypes_v2 sets the riskEventTypes_v2 property value. The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).
-func (m *SignIn) SetRiskEventTypes_v2(value []string)() {
-    m.riskEventTypes_v2 = value
+// SetRiskEventTypesV2 sets the riskEventTypes_v2 property value. The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).
+func (m *SignIn) SetRiskEventTypesV2(value []string)() {
+    err := m.GetBackingStore().Set("riskEventTypes_v2", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRiskLevelAggregated sets the riskLevelAggregated property value. The aggregated risk level. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
 func (m *SignIn) SetRiskLevelAggregated(value *RiskLevel)() {
-    m.riskLevelAggregated = value
+    err := m.GetBackingStore().Set("riskLevelAggregated", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRiskLevelDuringSignIn sets the riskLevelDuringSignIn property value. The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
 func (m *SignIn) SetRiskLevelDuringSignIn(value *RiskLevel)() {
-    m.riskLevelDuringSignIn = value
+    err := m.GetBackingStore().Set("riskLevelDuringSignIn", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRiskState sets the riskState property value. The risk state of a risky user, sign-in, or a risk event. Possible values: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, or unknownFutureValue. Supports $filter (eq operator only).
 func (m *SignIn) SetRiskState(value *RiskState)() {
-    m.riskState = value
+    err := m.GetBackingStore().Set("riskState", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetServicePrincipalCredentialKeyId sets the servicePrincipalCredentialKeyId property value. The unique identifier of the key credential used by the service principal to authenticate.
 func (m *SignIn) SetServicePrincipalCredentialKeyId(value *string)() {
-    m.servicePrincipalCredentialKeyId = value
+    err := m.GetBackingStore().Set("servicePrincipalCredentialKeyId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetServicePrincipalCredentialThumbprint sets the servicePrincipalCredentialThumbprint property value. The certificate thumbprint of the certificate used by the service principal to authenticate.
 func (m *SignIn) SetServicePrincipalCredentialThumbprint(value *string)() {
-    m.servicePrincipalCredentialThumbprint = value
+    err := m.GetBackingStore().Set("servicePrincipalCredentialThumbprint", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetServicePrincipalId sets the servicePrincipalId property value. The application identifier used for sign-in. This field is populated when you are signing in using an application. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) SetServicePrincipalId(value *string)() {
-    m.servicePrincipalId = value
+    err := m.GetBackingStore().Set("servicePrincipalId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetServicePrincipalName sets the servicePrincipalName property value. The application name used for sign-in. This field is populated when you are signing in using an application. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) SetServicePrincipalName(value *string)() {
-    m.servicePrincipalName = value
+    err := m.GetBackingStore().Set("servicePrincipalName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSessionLifetimePolicies sets the sessionLifetimePolicies property value. Any conditional access session management policies that were applied during the sign-in event.
 func (m *SignIn) SetSessionLifetimePolicies(value []SessionLifetimePolicyable)() {
-    m.sessionLifetimePolicies = value
+    err := m.GetBackingStore().Set("sessionLifetimePolicies", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSignInEventTypes sets the signInEventTypes property value. Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue. Supports $filter (eq, ne).
 func (m *SignIn) SetSignInEventTypes(value []string)() {
-    m.signInEventTypes = value
+    err := m.GetBackingStore().Set("signInEventTypes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSignInIdentifier sets the signInIdentifier property value. The identification that the user provided to sign in. It may be the userPrincipalName but it's also populated when a user signs in using other identifiers.
 func (m *SignIn) SetSignInIdentifier(value *string)() {
-    m.signInIdentifier = value
+    err := m.GetBackingStore().Set("signInIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSignInIdentifierType sets the signInIdentifierType property value. The type of sign in identifier. Possible values are: userPrincipalName, phoneNumber, proxyAddress, qrCode, onPremisesUserPrincipalName, unknownFutureValue.
 func (m *SignIn) SetSignInIdentifierType(value *SignInIdentifierType)() {
-    m.signInIdentifierType = value
+    err := m.GetBackingStore().Set("signInIdentifierType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. The sign-in status. Includes the error code and description of the error (in case of a sign-in failure). Supports $filter (eq operator only) on errorCode property.
 func (m *SignIn) SetStatus(value SignInStatusable)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTokenIssuerName sets the tokenIssuerName property value. The name of the identity provider. For example, sts.microsoft.com. Supports $filter (eq operator only).
 func (m *SignIn) SetTokenIssuerName(value *string)() {
-    m.tokenIssuerName = value
+    err := m.GetBackingStore().Set("tokenIssuerName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTokenIssuerType sets the tokenIssuerType property value. The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth, ADFederationServicesMFAAdapter, NPSExtension. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: AzureADBackupAuth , ADFederationServicesMFAAdapter , NPSExtension.
 func (m *SignIn) SetTokenIssuerType(value *TokenIssuerType)() {
-    m.tokenIssuerType = value
+    err := m.GetBackingStore().Set("tokenIssuerType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUniqueTokenIdentifier sets the uniqueTokenIdentifier property value. A unique base64 encoded request identifier used to track tokens issued by Azure AD as they are redeemed at resource providers.
 func (m *SignIn) SetUniqueTokenIdentifier(value *string)() {
-    m.uniqueTokenIdentifier = value
+    err := m.GetBackingStore().Set("uniqueTokenIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserAgent sets the userAgent property value. The user agent information related to sign-in. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) SetUserAgent(value *string)() {
-    m.userAgent = value
+    err := m.GetBackingStore().Set("userAgent", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserDisplayName sets the userDisplayName property value. The display name of the user. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) SetUserDisplayName(value *string)() {
-    m.userDisplayName = value
+    err := m.GetBackingStore().Set("userDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserId sets the userId property value. The identifier of the user. Supports $filter (eq operator only).
 func (m *SignIn) SetUserId(value *string)() {
-    m.userId = value
+    err := m.GetBackingStore().Set("userId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The UPN of the user. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    err := m.GetBackingStore().Set("userPrincipalName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserType sets the userType property value. Identifies whether the user is a member or guest in the tenant. Possible values are: member, guest, unknownFutureValue.
 func (m *SignIn) SetUserType(value *SignInUserType)() {
-    m.userType = value
+    err := m.GetBackingStore().Set("userType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SignInable 
+type SignInable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppDisplayName()(*string)
+    GetAppId()(*string)
+    GetAppliedConditionalAccessPolicies()([]AppliedConditionalAccessPolicyable)
+    GetAppliedEventListeners()([]AppliedAuthenticationEventListenerable)
+    GetAuthenticationAppDeviceDetails()(AuthenticationAppDeviceDetailsable)
+    GetAuthenticationAppPolicyEvaluationDetails()([]AuthenticationAppPolicyDetailsable)
+    GetAuthenticationContextClassReferences()([]AuthenticationContextable)
+    GetAuthenticationDetails()([]AuthenticationDetailable)
+    GetAuthenticationMethodsUsed()([]string)
+    GetAuthenticationProcessingDetails()([]KeyValueable)
+    GetAuthenticationProtocol()(*ProtocolType)
+    GetAuthenticationRequirement()(*string)
+    GetAuthenticationRequirementPolicies()([]AuthenticationRequirementPolicyable)
+    GetAutonomousSystemNumber()(*int32)
+    GetAzureResourceId()(*string)
+    GetClientAppUsed()(*string)
+    GetClientCredentialType()(*ClientCredentialType)
+    GetConditionalAccessStatus()(*ConditionalAccessStatus)
+    GetCorrelationId()(*string)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetCrossTenantAccessType()(*SignInAccessType)
+    GetDeviceDetail()(DeviceDetailable)
+    GetFederatedCredentialId()(*string)
+    GetFlaggedForReview()(*bool)
+    GetHomeTenantId()(*string)
+    GetHomeTenantName()(*string)
+    GetIncomingTokenType()(*IncomingTokenType)
+    GetIpAddress()(*string)
+    GetIpAddressFromResourceProvider()(*string)
+    GetIsInteractive()(*bool)
+    GetIsTenantRestricted()(*bool)
+    GetLocation()(SignInLocationable)
+    GetMfaDetail()(MfaDetailable)
+    GetNetworkLocationDetails()([]NetworkLocationDetailable)
+    GetOriginalRequestId()(*string)
+    GetPrivateLinkDetails()(PrivateLinkDetailsable)
+    GetProcessingTimeInMilliseconds()(*int32)
+    GetResourceDisplayName()(*string)
+    GetResourceId()(*string)
+    GetResourceServicePrincipalId()(*string)
+    GetResourceTenantId()(*string)
+    GetRiskDetail()(*RiskDetail)
+    GetRiskEventTypesV2()([]string)
+    GetRiskLevelAggregated()(*RiskLevel)
+    GetRiskLevelDuringSignIn()(*RiskLevel)
+    GetRiskState()(*RiskState)
+    GetServicePrincipalCredentialKeyId()(*string)
+    GetServicePrincipalCredentialThumbprint()(*string)
+    GetServicePrincipalId()(*string)
+    GetServicePrincipalName()(*string)
+    GetSessionLifetimePolicies()([]SessionLifetimePolicyable)
+    GetSignInEventTypes()([]string)
+    GetSignInIdentifier()(*string)
+    GetSignInIdentifierType()(*SignInIdentifierType)
+    GetStatus()(SignInStatusable)
+    GetTokenIssuerName()(*string)
+    GetTokenIssuerType()(*TokenIssuerType)
+    GetUniqueTokenIdentifier()(*string)
+    GetUserAgent()(*string)
+    GetUserDisplayName()(*string)
+    GetUserId()(*string)
+    GetUserPrincipalName()(*string)
+    GetUserType()(*SignInUserType)
+    SetAppDisplayName(value *string)()
+    SetAppId(value *string)()
+    SetAppliedConditionalAccessPolicies(value []AppliedConditionalAccessPolicyable)()
+    SetAppliedEventListeners(value []AppliedAuthenticationEventListenerable)()
+    SetAuthenticationAppDeviceDetails(value AuthenticationAppDeviceDetailsable)()
+    SetAuthenticationAppPolicyEvaluationDetails(value []AuthenticationAppPolicyDetailsable)()
+    SetAuthenticationContextClassReferences(value []AuthenticationContextable)()
+    SetAuthenticationDetails(value []AuthenticationDetailable)()
+    SetAuthenticationMethodsUsed(value []string)()
+    SetAuthenticationProcessingDetails(value []KeyValueable)()
+    SetAuthenticationProtocol(value *ProtocolType)()
+    SetAuthenticationRequirement(value *string)()
+    SetAuthenticationRequirementPolicies(value []AuthenticationRequirementPolicyable)()
+    SetAutonomousSystemNumber(value *int32)()
+    SetAzureResourceId(value *string)()
+    SetClientAppUsed(value *string)()
+    SetClientCredentialType(value *ClientCredentialType)()
+    SetConditionalAccessStatus(value *ConditionalAccessStatus)()
+    SetCorrelationId(value *string)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetCrossTenantAccessType(value *SignInAccessType)()
+    SetDeviceDetail(value DeviceDetailable)()
+    SetFederatedCredentialId(value *string)()
+    SetFlaggedForReview(value *bool)()
+    SetHomeTenantId(value *string)()
+    SetHomeTenantName(value *string)()
+    SetIncomingTokenType(value *IncomingTokenType)()
+    SetIpAddress(value *string)()
+    SetIpAddressFromResourceProvider(value *string)()
+    SetIsInteractive(value *bool)()
+    SetIsTenantRestricted(value *bool)()
+    SetLocation(value SignInLocationable)()
+    SetMfaDetail(value MfaDetailable)()
+    SetNetworkLocationDetails(value []NetworkLocationDetailable)()
+    SetOriginalRequestId(value *string)()
+    SetPrivateLinkDetails(value PrivateLinkDetailsable)()
+    SetProcessingTimeInMilliseconds(value *int32)()
+    SetResourceDisplayName(value *string)()
+    SetResourceId(value *string)()
+    SetResourceServicePrincipalId(value *string)()
+    SetResourceTenantId(value *string)()
+    SetRiskDetail(value *RiskDetail)()
+    SetRiskEventTypesV2(value []string)()
+    SetRiskLevelAggregated(value *RiskLevel)()
+    SetRiskLevelDuringSignIn(value *RiskLevel)()
+    SetRiskState(value *RiskState)()
+    SetServicePrincipalCredentialKeyId(value *string)()
+    SetServicePrincipalCredentialThumbprint(value *string)()
+    SetServicePrincipalId(value *string)()
+    SetServicePrincipalName(value *string)()
+    SetSessionLifetimePolicies(value []SessionLifetimePolicyable)()
+    SetSignInEventTypes(value []string)()
+    SetSignInIdentifier(value *string)()
+    SetSignInIdentifierType(value *SignInIdentifierType)()
+    SetStatus(value SignInStatusable)()
+    SetTokenIssuerName(value *string)()
+    SetTokenIssuerType(value *TokenIssuerType)()
+    SetUniqueTokenIdentifier(value *string)()
+    SetUserAgent(value *string)()
+    SetUserDisplayName(value *string)()
+    SetUserId(value *string)()
+    SetUserPrincipalName(value *string)()
+    SetUserType(value *SignInUserType)()
 }

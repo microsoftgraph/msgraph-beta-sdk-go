@@ -7,8 +7,6 @@ import (
 // DepMacOSEnrollmentProfileCollectionResponse 
 type DepMacOSEnrollmentProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DepMacOSEnrollmentProfileable
 }
 // NewDepMacOSEnrollmentProfileCollectionResponse instantiates a new DepMacOSEnrollmentProfileCollectionResponse and sets the default values.
 func NewDepMacOSEnrollmentProfileCollectionResponse()(*DepMacOSEnrollmentProfileCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DepMacOSEnrollmentProfileCollectionResponse) GetFieldDeserializers()(ma
 }
 // GetValue gets the value property value. The value property
 func (m *DepMacOSEnrollmentProfileCollectionResponse) GetValue()([]DepMacOSEnrollmentProfileable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DepMacOSEnrollmentProfileable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DepMacOSEnrollmentProfileCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DepMacOSEnrollmentProfileCollectionResponse) Serialize(writer i878a80d2
 }
 // SetValue sets the value property value. The value property
 func (m *DepMacOSEnrollmentProfileCollectionResponse) SetValue(value []DepMacOSEnrollmentProfileable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DepMacOSEnrollmentProfileCollectionResponseable 
+type DepMacOSEnrollmentProfileCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DepMacOSEnrollmentProfileable)
+    SetValue(value []DepMacOSEnrollmentProfileable)()
 }

@@ -26,7 +26,7 @@ type ReportsGetTeamsUserActivityUserCountsWithPeriodRequestBuilderGetRequestConf
 func NewReportsGetTeamsUserActivityUserCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, period *string)(*ReportsGetTeamsUserActivityUserCountsWithPeriodRequestBuilder) {
     m := &ReportsGetTeamsUserActivityUserCountsWithPeriodRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/print/reports/microsoft.graph.getTeamsUserActivityUserCounts(period='{period}')";
+    m.urlTemplate = "{+baseurl}/print/reports/getTeamsUserActivityUserCounts(period='{period}')";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -34,8 +34,8 @@ func NewReportsGetTeamsUserActivityUserCountsWithPeriodRequestBuilderInternal(pa
     if period != nil {
         urlTplParams["period"] = *period
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewReportsGetTeamsUserActivityUserCountsWithPeriodRequestBuilder instantiates a new GetTeamsUserActivityUserCountsWithPeriodRequestBuilder and sets the default values.

@@ -7,8 +7,6 @@ import (
 // WindowsDefenderApplicationControlSupplementalPolicyAssignment a class containing the properties used for assignment of a WindowsDefenderApplicationControl supplemental policy to a group.
 type WindowsDefenderApplicationControlSupplementalPolicyAssignment struct {
     Entity
-    // The target group assignment defined by the admin.
-    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewWindowsDefenderApplicationControlSupplementalPolicyAssignment instantiates a new windowsDefenderApplicationControlSupplementalPolicyAssignment and sets the default values.
 func NewWindowsDefenderApplicationControlSupplementalPolicyAssignment()(*WindowsDefenderApplicationControlSupplementalPolicyAssignment) {
@@ -38,7 +36,14 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyAssignment) GetField
 }
 // GetTarget gets the target property value. The target group assignment defined by the admin.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
-    return m.target
+    val, err := m.GetBackingStore().Get("target")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceAndAppManagementAssignmentTargetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsDefenderApplicationControlSupplementalPolicyAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyAssignment) Serializ
 }
 // SetTarget sets the target property value. The target group assignment defined by the admin.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
-    m.target = value
+    err := m.GetBackingStore().Set("target", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsDefenderApplicationControlSupplementalPolicyAssignmentable 
+type WindowsDefenderApplicationControlSupplementalPolicyAssignmentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetTarget()(DeviceAndAppManagementAssignmentTargetable)
+    SetTarget(value DeviceAndAppManagementAssignmentTargetable)()
 }

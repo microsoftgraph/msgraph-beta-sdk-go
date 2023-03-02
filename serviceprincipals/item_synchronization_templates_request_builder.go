@@ -60,8 +60,8 @@ func NewItemSynchronizationTemplatesRequestBuilderInternal(pathParameters map[st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSynchronizationTemplatesRequestBuilder instantiates a new TemplatesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemSynchronizationTemplatesRequestBuilder(rawUrl string, requestAdapter
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemSynchronizationTemplatesRequestBuilder) Count()(*ItemSynchronizationTemplatesCountRequestBuilder) {
-    return NewItemSynchronizationTemplatesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSynchronizationTemplatesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list the synchronization templates associated with a given application or service principal.
 // [Find more info here]
@@ -138,7 +138,10 @@ func (m *ItemSynchronizationTemplatesRequestBuilder) ToPostRequestInformation(ct
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

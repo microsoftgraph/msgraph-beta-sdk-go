@@ -2,28 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // AuthenticationAppDeviceDetails 
 type AuthenticationAppDeviceDetails struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The version of the client authentication app used during the authentication step.
-    appVersion *string
-    // The name of the client authentication app used during the authentication step.
-    clientApp *string
-    // ID of the device used during the authentication step.
-    deviceId *string
-    // The OdataType property
-    odataType *string
-    // The operating system running on the device used for the authentication step.
-    operatingSystem *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewAuthenticationAppDeviceDetails instantiates a new authenticationAppDeviceDetails and sets the default values.
 func NewAuthenticationAppDeviceDetails()(*AuthenticationAppDeviceDetails) {
     m := &AuthenticationAppDeviceDetails{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAuthenticationAppDeviceDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,19 +24,52 @@ func CreateAuthenticationAppDeviceDetailsFromDiscriminatorValue(parseNode i878a8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuthenticationAppDeviceDetails) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAppVersion gets the appVersion property value. The version of the client authentication app used during the authentication step.
 func (m *AuthenticationAppDeviceDetails) GetAppVersion()(*string) {
-    return m.appVersion
+    val, err := m.GetBackingStore().Get("appVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *AuthenticationAppDeviceDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetClientApp gets the clientApp property value. The name of the client authentication app used during the authentication step.
 func (m *AuthenticationAppDeviceDetails) GetClientApp()(*string) {
-    return m.clientApp
+    val, err := m.GetBackingStore().Get("clientApp")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDeviceId gets the deviceId property value. ID of the device used during the authentication step.
 func (m *AuthenticationAppDeviceDetails) GetDeviceId()(*string) {
-    return m.deviceId
+    val, err := m.GetBackingStore().Get("deviceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuthenticationAppDeviceDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -103,11 +128,25 @@ func (m *AuthenticationAppDeviceDetails) GetFieldDeserializers()(map[string]func
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AuthenticationAppDeviceDetails) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOperatingSystem gets the operatingSystem property value. The operating system running on the device used for the authentication step.
 func (m *AuthenticationAppDeviceDetails) GetOperatingSystem()(*string) {
-    return m.operatingSystem
+    val, err := m.GetBackingStore().Get("operatingSystem")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AuthenticationAppDeviceDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,25 +190,65 @@ func (m *AuthenticationAppDeviceDetails) Serialize(writer i878a80d2330e89d268963
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuthenticationAppDeviceDetails) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppVersion sets the appVersion property value. The version of the client authentication app used during the authentication step.
 func (m *AuthenticationAppDeviceDetails) SetAppVersion(value *string)() {
-    m.appVersion = value
+    err := m.GetBackingStore().Set("appVersion", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *AuthenticationAppDeviceDetails) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetClientApp sets the clientApp property value. The name of the client authentication app used during the authentication step.
 func (m *AuthenticationAppDeviceDetails) SetClientApp(value *string)() {
-    m.clientApp = value
+    err := m.GetBackingStore().Set("clientApp", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceId sets the deviceId property value. ID of the device used during the authentication step.
 func (m *AuthenticationAppDeviceDetails) SetDeviceId(value *string)() {
-    m.deviceId = value
+    err := m.GetBackingStore().Set("deviceId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AuthenticationAppDeviceDetails) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOperatingSystem sets the operatingSystem property value. The operating system running on the device used for the authentication step.
 func (m *AuthenticationAppDeviceDetails) SetOperatingSystem(value *string)() {
-    m.operatingSystem = value
+    err := m.GetBackingStore().Set("operatingSystem", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AuthenticationAppDeviceDetailsable 
+type AuthenticationAppDeviceDetailsable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppVersion()(*string)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetClientApp()(*string)
+    GetDeviceId()(*string)
+    GetOdataType()(*string)
+    GetOperatingSystem()(*string)
+    SetAppVersion(value *string)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetClientApp(value *string)()
+    SetDeviceId(value *string)()
+    SetOdataType(value *string)()
+    SetOperatingSystem(value *string)()
 }

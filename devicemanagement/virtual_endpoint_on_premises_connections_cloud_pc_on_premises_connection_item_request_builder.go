@@ -55,8 +55,8 @@ func NewVirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemReque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewVirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilder instantiates a new CloudPcOnPremisesConnectionItemRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequ
 }
 // RunHealthChecks provides operations to call the runHealthChecks method.
 func (m *VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilder) RunHealthChecks()(*VirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilder) {
-    return NewVirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property onPremisesConnections for deviceManagement
 func (m *VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +158,10 @@ func (m *VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -167,5 +170,5 @@ func (m *VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequ
 }
 // UpdateAdDomainPassword provides operations to call the updateAdDomainPassword method.
 func (m *VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilder) UpdateAdDomainPassword()(*VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordRequestBuilder) {
-    return NewVirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

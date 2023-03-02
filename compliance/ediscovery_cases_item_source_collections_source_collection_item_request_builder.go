@@ -48,7 +48,7 @@ type EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilderPatch
 }
 // AdditionalSources provides operations to manage the additionalSources property of the microsoft.graph.ediscovery.sourceCollection entity.
 func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) AdditionalSources()(*EdiscoveryCasesItemSourceCollectionsItemAdditionalSourcesRequestBuilder) {
-    return NewEdiscoveryCasesItemSourceCollectionsItemAdditionalSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesItemSourceCollectionsItemAdditionalSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AdditionalSourcesById provides operations to manage the additionalSources property of the microsoft.graph.ediscovery.sourceCollection entity.
 func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) AdditionalSourcesById(id string)(*EdiscoveryCasesItemSourceCollectionsItemAdditionalSourcesDataSourceItemRequestBuilder) {
@@ -59,11 +59,11 @@ func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder)
     if id != "" {
         urlTplParams["dataSource%2Did"] = id
     }
-    return NewEdiscoveryCasesItemSourceCollectionsItemAdditionalSourcesDataSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEdiscoveryCasesItemSourceCollectionsItemAdditionalSourcesDataSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // AddToReviewSetOperation provides operations to manage the addToReviewSetOperation property of the microsoft.graph.ediscovery.sourceCollection entity.
 func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) AddToReviewSetOperation()(*EdiscoveryCasesItemSourceCollectionsItemAddToReviewSetOperationRequestBuilder) {
-    return NewEdiscoveryCasesItemSourceCollectionsItemAddToReviewSetOperationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesItemSourceCollectionsItemAddToReviewSetOperationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewEdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilderInternal instantiates a new SourceCollectionItemRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) {
@@ -74,8 +74,8 @@ func NewEdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilderIn
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder instantiates a new SourceCollectionItemRequestBuilder and sets the default values.
@@ -86,7 +86,7 @@ func NewEdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder(r
 }
 // CustodianSources provides operations to manage the custodianSources property of the microsoft.graph.ediscovery.sourceCollection entity.
 func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) CustodianSources()(*EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilder) {
-    return NewEdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CustodianSourcesById provides operations to manage the custodianSources property of the microsoft.graph.ediscovery.sourceCollection entity.
 func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) CustodianSourcesById(id string)(*EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesDataSourceItemRequestBuilder) {
@@ -97,7 +97,7 @@ func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder)
     if id != "" {
         urlTplParams["dataSource%2Did"] = id
     }
-    return NewEdiscoveryCasesItemSourceCollectionsItemCustodianSourcesDataSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEdiscoveryCasesItemSourceCollectionsItemCustodianSourcesDataSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Delete delete navigation property sourceCollections for compliance
 func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -115,9 +115,13 @@ func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder)
     }
     return nil
 }
-// EstimateStatistics provides operations to call the estimateStatistics method.
-func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) EstimateStatistics()(*EdiscoveryCasesItemSourceCollectionsItemEstimateStatisticsRequestBuilder) {
-    return NewEdiscoveryCasesItemSourceCollectionsItemEstimateStatisticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// EdiscoveryEstimateStatistics provides operations to call the estimateStatistics method.
+func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) EdiscoveryEstimateStatistics()(*EdiscoveryCasesItemSourceCollectionsItemEdiscoveryEstimateStatisticsRequestBuilder) {
+    return NewEdiscoveryCasesItemSourceCollectionsItemEdiscoveryEstimateStatisticsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// EdiscoveryPurgeData provides operations to call the purgeData method.
+func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) EdiscoveryPurgeData()(*EdiscoveryCasesItemSourceCollectionsItemEdiscoveryPurgeDataRequestBuilder) {
+    return NewEdiscoveryCasesItemSourceCollectionsItemEdiscoveryPurgeDataRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get returns a list of sourceCollection objects associated with this case.
 func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SourceCollectionable, error) {
@@ -140,11 +144,11 @@ func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder)
 }
 // LastEstimateStatisticsOperation provides operations to manage the lastEstimateStatisticsOperation property of the microsoft.graph.ediscovery.sourceCollection entity.
 func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) LastEstimateStatisticsOperation()(*EdiscoveryCasesItemSourceCollectionsItemLastEstimateStatisticsOperationRequestBuilder) {
-    return NewEdiscoveryCasesItemSourceCollectionsItemLastEstimateStatisticsOperationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesItemSourceCollectionsItemLastEstimateStatisticsOperationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NoncustodialSources provides operations to manage the noncustodialSources property of the microsoft.graph.ediscovery.sourceCollection entity.
 func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) NoncustodialSources()(*EdiscoveryCasesItemSourceCollectionsItemNoncustodialSourcesRequestBuilder) {
-    return NewEdiscoveryCasesItemSourceCollectionsItemNoncustodialSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesItemSourceCollectionsItemNoncustodialSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NoncustodialSourcesById provides operations to manage the noncustodialSources property of the microsoft.graph.ediscovery.sourceCollection entity.
 func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) NoncustodialSourcesById(id string)(*EdiscoveryCasesItemSourceCollectionsItemNoncustodialSourcesNoncustodialDataSourceItemRequestBuilder) {
@@ -155,7 +159,7 @@ func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder)
     if id != "" {
         urlTplParams["noncustodialDataSource%2Did"] = id
     }
-    return NewEdiscoveryCasesItemSourceCollectionsItemNoncustodialSourcesNoncustodialDataSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEdiscoveryCasesItemSourceCollectionsItemNoncustodialSourcesNoncustodialDataSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch update the navigation property sourceCollections in compliance
 func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) Patch(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SourceCollectionable, requestConfiguration *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilderPatchRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SourceCollectionable, error) {
@@ -175,10 +179,6 @@ func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder)
         return nil, nil
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SourceCollectionable), nil
-}
-// PurgeData provides operations to call the purgeData method.
-func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) PurgeData()(*EdiscoveryCasesItemSourceCollectionsItemPurgeDataRequestBuilder) {
-    return NewEdiscoveryCasesItemSourceCollectionsItemPurgeDataRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property sourceCollections for compliance
 func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -215,7 +215,10 @@ func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder)
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

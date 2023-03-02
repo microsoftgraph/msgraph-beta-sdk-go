@@ -7,12 +7,6 @@ import (
 // DeviceConfigurationConflictSummary conflict summary for a set of device configuration policies.
 type DeviceConfigurationConflictSummary struct {
     Entity
-    // The set of policies in conflict with the given setting
-    conflictingDeviceConfigurations []SettingSourceable
-    // The set of settings in conflict with the given policies
-    contributingSettings []string
-    // The count of checkins impacted by the conflicting policies and settings
-    deviceCheckinsImpacted *int32
 }
 // NewDeviceConfigurationConflictSummary instantiates a new deviceConfigurationConflictSummary and sets the default values.
 func NewDeviceConfigurationConflictSummary()(*DeviceConfigurationConflictSummary) {
@@ -27,15 +21,36 @@ func CreateDeviceConfigurationConflictSummaryFromDiscriminatorValue(parseNode i8
 }
 // GetConflictingDeviceConfigurations gets the conflictingDeviceConfigurations property value. The set of policies in conflict with the given setting
 func (m *DeviceConfigurationConflictSummary) GetConflictingDeviceConfigurations()([]SettingSourceable) {
-    return m.conflictingDeviceConfigurations
+    val, err := m.GetBackingStore().Get("conflictingDeviceConfigurations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SettingSourceable)
+    }
+    return nil
 }
 // GetContributingSettings gets the contributingSettings property value. The set of settings in conflict with the given policies
 func (m *DeviceConfigurationConflictSummary) GetContributingSettings()([]string) {
-    return m.contributingSettings
+    val, err := m.GetBackingStore().Get("contributingSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetDeviceCheckinsImpacted gets the deviceCheckinsImpacted property value. The count of checkins impacted by the conflicting policies and settings
 func (m *DeviceConfigurationConflictSummary) GetDeviceCheckinsImpacted()(*int32) {
-    return m.deviceCheckinsImpacted
+    val, err := m.GetBackingStore().Get("deviceCheckinsImpacted")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceConfigurationConflictSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -112,13 +127,33 @@ func (m *DeviceConfigurationConflictSummary) Serialize(writer i878a80d2330e89d26
 }
 // SetConflictingDeviceConfigurations sets the conflictingDeviceConfigurations property value. The set of policies in conflict with the given setting
 func (m *DeviceConfigurationConflictSummary) SetConflictingDeviceConfigurations(value []SettingSourceable)() {
-    m.conflictingDeviceConfigurations = value
+    err := m.GetBackingStore().Set("conflictingDeviceConfigurations", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetContributingSettings sets the contributingSettings property value. The set of settings in conflict with the given policies
 func (m *DeviceConfigurationConflictSummary) SetContributingSettings(value []string)() {
-    m.contributingSettings = value
+    err := m.GetBackingStore().Set("contributingSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceCheckinsImpacted sets the deviceCheckinsImpacted property value. The count of checkins impacted by the conflicting policies and settings
 func (m *DeviceConfigurationConflictSummary) SetDeviceCheckinsImpacted(value *int32)() {
-    m.deviceCheckinsImpacted = value
+    err := m.GetBackingStore().Set("deviceCheckinsImpacted", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceConfigurationConflictSummaryable 
+type DeviceConfigurationConflictSummaryable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetConflictingDeviceConfigurations()([]SettingSourceable)
+    GetContributingSettings()([]string)
+    GetDeviceCheckinsImpacted()(*int32)
+    SetConflictingDeviceConfigurations(value []SettingSourceable)()
+    SetContributingSettings(value []string)()
+    SetDeviceCheckinsImpacted(value *int32)()
 }

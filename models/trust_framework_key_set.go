@@ -7,8 +7,6 @@ import (
 // TrustFrameworkKeySet 
 type TrustFrameworkKeySet struct {
     Entity
-    // A collection of the keys.
-    keys []TrustFrameworkKeyable
 }
 // NewTrustFrameworkKeySet instantiates a new TrustFrameworkKeySet and sets the default values.
 func NewTrustFrameworkKeySet()(*TrustFrameworkKeySet) {
@@ -42,7 +40,14 @@ func (m *TrustFrameworkKeySet) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetKeys gets the keys property value. A collection of the keys.
 func (m *TrustFrameworkKeySet) GetKeys()([]TrustFrameworkKeyable) {
-    return m.keys
+    val, err := m.GetBackingStore().Get("keys")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TrustFrameworkKeyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TrustFrameworkKeySet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *TrustFrameworkKeySet) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetKeys sets the keys property value. A collection of the keys.
 func (m *TrustFrameworkKeySet) SetKeys(value []TrustFrameworkKeyable)() {
-    m.keys = value
+    err := m.GetBackingStore().Set("keys", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TrustFrameworkKeySetable 
+type TrustFrameworkKeySetable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetKeys()([]TrustFrameworkKeyable)
+    SetKeys(value []TrustFrameworkKeyable)()
 }

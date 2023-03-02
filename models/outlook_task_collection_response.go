@@ -7,8 +7,6 @@ import (
 // OutlookTaskCollectionResponse 
 type OutlookTaskCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []OutlookTaskable
 }
 // NewOutlookTaskCollectionResponse instantiates a new OutlookTaskCollectionResponse and sets the default values.
 func NewOutlookTaskCollectionResponse()(*OutlookTaskCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *OutlookTaskCollectionResponse) GetFieldDeserializers()(map[string]func(
 }
 // GetValue gets the value property value. The value property
 func (m *OutlookTaskCollectionResponse) GetValue()([]OutlookTaskable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OutlookTaskable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OutlookTaskCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *OutlookTaskCollectionResponse) Serialize(writer i878a80d2330e89d2689638
 }
 // SetValue sets the value property value. The value property
 func (m *OutlookTaskCollectionResponse) SetValue(value []OutlookTaskable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OutlookTaskCollectionResponseable 
+type OutlookTaskCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]OutlookTaskable)
+    SetValue(value []OutlookTaskable)()
 }

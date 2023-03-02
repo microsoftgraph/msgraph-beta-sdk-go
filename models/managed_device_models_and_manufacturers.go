@@ -2,24 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ManagedDeviceModelsAndManufacturers models and Manufactures meatadata for managed devices in the account
 type ManagedDeviceModelsAndManufacturers struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // List of Manufactures for managed devices in the account
-    deviceManufacturers []string
-    // List of Models for managed devices in the account
-    deviceModels []string
-    // The OdataType property
-    odataType *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewManagedDeviceModelsAndManufacturers instantiates a new managedDeviceModelsAndManufacturers and sets the default values.
 func NewManagedDeviceModelsAndManufacturers()(*ManagedDeviceModelsAndManufacturers) {
     m := &ManagedDeviceModelsAndManufacturers{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateManagedDeviceModelsAndManufacturersFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,15 +24,41 @@ func CreateManagedDeviceModelsAndManufacturersFromDiscriminatorValue(parseNode i
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagedDeviceModelsAndManufacturers) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ManagedDeviceModelsAndManufacturers) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDeviceManufacturers gets the deviceManufacturers property value. List of Manufactures for managed devices in the account
 func (m *ManagedDeviceModelsAndManufacturers) GetDeviceManufacturers()([]string) {
-    return m.deviceManufacturers
+    val, err := m.GetBackingStore().Get("deviceManufacturers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetDeviceModels gets the deviceModels property value. List of Models for managed devices in the account
 func (m *ManagedDeviceModelsAndManufacturers) GetDeviceModels()([]string) {
-    return m.deviceModels
+    val, err := m.GetBackingStore().Get("deviceModels")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedDeviceModelsAndManufacturers) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -83,7 +105,14 @@ func (m *ManagedDeviceModelsAndManufacturers) GetFieldDeserializers()(map[string
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ManagedDeviceModelsAndManufacturers) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagedDeviceModelsAndManufacturers) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -115,17 +144,47 @@ func (m *ManagedDeviceModelsAndManufacturers) Serialize(writer i878a80d2330e89d2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagedDeviceModelsAndManufacturers) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ManagedDeviceModelsAndManufacturers) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDeviceManufacturers sets the deviceManufacturers property value. List of Manufactures for managed devices in the account
 func (m *ManagedDeviceModelsAndManufacturers) SetDeviceManufacturers(value []string)() {
-    m.deviceManufacturers = value
+    err := m.GetBackingStore().Set("deviceManufacturers", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceModels sets the deviceModels property value. List of Models for managed devices in the account
 func (m *ManagedDeviceModelsAndManufacturers) SetDeviceModels(value []string)() {
-    m.deviceModels = value
+    err := m.GetBackingStore().Set("deviceModels", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ManagedDeviceModelsAndManufacturers) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagedDeviceModelsAndManufacturersable 
+type ManagedDeviceModelsAndManufacturersable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDeviceManufacturers()([]string)
+    GetDeviceModels()([]string)
+    GetOdataType()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDeviceManufacturers(value []string)()
+    SetDeviceModels(value []string)()
+    SetOdataType(value *string)()
 }

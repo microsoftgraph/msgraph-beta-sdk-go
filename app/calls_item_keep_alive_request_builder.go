@@ -26,13 +26,13 @@ type CallsItemKeepAliveRequestBuilderPostRequestConfiguration struct {
 func NewCallsItemKeepAliveRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsItemKeepAliveRequestBuilder) {
     m := &CallsItemKeepAliveRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/app/calls/{call%2Did}/microsoft.graph.keepAlive";
+    m.urlTemplate = "{+baseurl}/app/calls/{call%2Did}/keepAlive";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCallsItemKeepAliveRequestBuilder instantiates a new KeepAliveRequestBuilder and sets the default values.

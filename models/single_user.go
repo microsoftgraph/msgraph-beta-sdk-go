@@ -7,18 +7,14 @@ import (
 // SingleUser 
 type SingleUser struct {
     UserSet
-    // The name of the user in Azure AD. Read only.
-    description *string
-    // The ID of the user in Azure AD.
-    id *string
 }
 // NewSingleUser instantiates a new SingleUser and sets the default values.
 func NewSingleUser()(*SingleUser) {
     m := &SingleUser{
         UserSet: *NewUserSet(),
     }
-    odataTypeValue := "#microsoft.graph.singleUser";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.singleUser"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateSingleUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +23,14 @@ func CreateSingleUserFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetDescription gets the description property value. The name of the user in Azure AD. Read only.
 func (m *SingleUser) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SingleUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,7 +59,14 @@ func (m *SingleUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetId gets the id property value. The ID of the user in Azure AD.
 func (m *SingleUser) GetId()(*string) {
-    return m.id
+    val, err := m.GetBackingStore().Get("id")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SingleUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *SingleUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetDescription sets the description property value. The name of the user in Azure AD. Read only.
 func (m *SingleUser) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetId sets the id property value. The ID of the user in Azure AD.
 func (m *SingleUser) SetId(value *string)() {
-    m.id = value
+    err := m.GetBackingStore().Set("id", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SingleUserable 
+type SingleUserable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    UserSetable
+    GetDescription()(*string)
+    GetId()(*string)
+    SetDescription(value *string)()
+    SetId(value *string)()
 }

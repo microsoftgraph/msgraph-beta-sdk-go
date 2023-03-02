@@ -7,44 +7,6 @@ import (
 // Profile 
 type Profile struct {
     Entity
-    // The account property
-    account []UserAccountInformationable
-    // Represents details of addresses associated with the user.
-    addresses []ItemAddressable
-    // Represents the details of meaningful dates associated with a person.
-    anniversaries []PersonAnnualEventable
-    // Represents the details of awards or honors associated with a person.
-    awards []PersonAwardable
-    // Represents the details of certifications associated with a person.
-    certifications []PersonCertificationable
-    // Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
-    educationalActivities []EducationalActivityable
-    // Represents detailed information about email addresses associated with the user.
-    emails []ItemEmailable
-    // Provides detailed information about interests the user has associated with themselves in various services.
-    interests []PersonInterestable
-    // Represents detailed information about languages that a user has added to their profile.
-    languages []LanguageProficiencyable
-    // Represents the names a user has added to their profile.
-    names []PersonNameable
-    // Represents notes that a user has added to their profile.
-    notes []PersonAnnotationable
-    // Represents patents that a user has added to their profile.
-    patents []ItemPatentable
-    // Represents detailed information about phone numbers associated with a user in various services.
-    phones []ItemPhoneable
-    // Represents detailed information about work positions associated with a user's profile.
-    positions []WorkPositionable
-    // Represents detailed information about projects associated with a user.
-    projects []ProjectParticipationable
-    // Represents details of any publications a user has added to their profile.
-    publications []ItemPublicationable
-    // Represents detailed information about skills associated with a user in various services.
-    skills []SkillProficiencyable
-    // Represents web accounts the user has indicated they use or has added to their user profile.
-    webAccounts []WebAccountable
-    // Represents detailed information about websites associated with a user in various services.
-    websites []PersonWebsiteable
 }
 // NewProfile instantiates a new profile and sets the default values.
 func NewProfile()(*Profile) {
@@ -59,31 +21,80 @@ func CreateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
 }
 // GetAccount gets the account property value. The account property
 func (m *Profile) GetAccount()([]UserAccountInformationable) {
-    return m.account
+    val, err := m.GetBackingStore().Get("account")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserAccountInformationable)
+    }
+    return nil
 }
 // GetAddresses gets the addresses property value. Represents details of addresses associated with the user.
 func (m *Profile) GetAddresses()([]ItemAddressable) {
-    return m.addresses
+    val, err := m.GetBackingStore().Get("addresses")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ItemAddressable)
+    }
+    return nil
 }
 // GetAnniversaries gets the anniversaries property value. Represents the details of meaningful dates associated with a person.
 func (m *Profile) GetAnniversaries()([]PersonAnnualEventable) {
-    return m.anniversaries
+    val, err := m.GetBackingStore().Get("anniversaries")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PersonAnnualEventable)
+    }
+    return nil
 }
 // GetAwards gets the awards property value. Represents the details of awards or honors associated with a person.
 func (m *Profile) GetAwards()([]PersonAwardable) {
-    return m.awards
+    val, err := m.GetBackingStore().Get("awards")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PersonAwardable)
+    }
+    return nil
 }
 // GetCertifications gets the certifications property value. Represents the details of certifications associated with a person.
 func (m *Profile) GetCertifications()([]PersonCertificationable) {
-    return m.certifications
+    val, err := m.GetBackingStore().Get("certifications")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PersonCertificationable)
+    }
+    return nil
 }
 // GetEducationalActivities gets the educationalActivities property value. Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
 func (m *Profile) GetEducationalActivities()([]EducationalActivityable) {
-    return m.educationalActivities
+    val, err := m.GetBackingStore().Get("educationalActivities")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EducationalActivityable)
+    }
+    return nil
 }
 // GetEmails gets the emails property value. Represents detailed information about email addresses associated with the user.
 func (m *Profile) GetEmails()([]ItemEmailable) {
-    return m.emails
+    val, err := m.GetBackingStore().Get("emails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ItemEmailable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Profile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -358,51 +369,135 @@ func (m *Profile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
 }
 // GetInterests gets the interests property value. Provides detailed information about interests the user has associated with themselves in various services.
 func (m *Profile) GetInterests()([]PersonInterestable) {
-    return m.interests
+    val, err := m.GetBackingStore().Get("interests")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PersonInterestable)
+    }
+    return nil
 }
 // GetLanguages gets the languages property value. Represents detailed information about languages that a user has added to their profile.
 func (m *Profile) GetLanguages()([]LanguageProficiencyable) {
-    return m.languages
+    val, err := m.GetBackingStore().Get("languages")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]LanguageProficiencyable)
+    }
+    return nil
 }
 // GetNames gets the names property value. Represents the names a user has added to their profile.
 func (m *Profile) GetNames()([]PersonNameable) {
-    return m.names
+    val, err := m.GetBackingStore().Get("names")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PersonNameable)
+    }
+    return nil
 }
 // GetNotes gets the notes property value. Represents notes that a user has added to their profile.
 func (m *Profile) GetNotes()([]PersonAnnotationable) {
-    return m.notes
+    val, err := m.GetBackingStore().Get("notes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PersonAnnotationable)
+    }
+    return nil
 }
 // GetPatents gets the patents property value. Represents patents that a user has added to their profile.
 func (m *Profile) GetPatents()([]ItemPatentable) {
-    return m.patents
+    val, err := m.GetBackingStore().Get("patents")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ItemPatentable)
+    }
+    return nil
 }
 // GetPhones gets the phones property value. Represents detailed information about phone numbers associated with a user in various services.
 func (m *Profile) GetPhones()([]ItemPhoneable) {
-    return m.phones
+    val, err := m.GetBackingStore().Get("phones")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ItemPhoneable)
+    }
+    return nil
 }
 // GetPositions gets the positions property value. Represents detailed information about work positions associated with a user's profile.
 func (m *Profile) GetPositions()([]WorkPositionable) {
-    return m.positions
+    val, err := m.GetBackingStore().Get("positions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WorkPositionable)
+    }
+    return nil
 }
 // GetProjects gets the projects property value. Represents detailed information about projects associated with a user.
 func (m *Profile) GetProjects()([]ProjectParticipationable) {
-    return m.projects
+    val, err := m.GetBackingStore().Get("projects")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ProjectParticipationable)
+    }
+    return nil
 }
 // GetPublications gets the publications property value. Represents details of any publications a user has added to their profile.
 func (m *Profile) GetPublications()([]ItemPublicationable) {
-    return m.publications
+    val, err := m.GetBackingStore().Get("publications")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ItemPublicationable)
+    }
+    return nil
 }
 // GetSkills gets the skills property value. Represents detailed information about skills associated with a user in various services.
 func (m *Profile) GetSkills()([]SkillProficiencyable) {
-    return m.skills
+    val, err := m.GetBackingStore().Get("skills")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SkillProficiencyable)
+    }
+    return nil
 }
 // GetWebAccounts gets the webAccounts property value. Represents web accounts the user has indicated they use or has added to their user profile.
 func (m *Profile) GetWebAccounts()([]WebAccountable) {
-    return m.webAccounts
+    val, err := m.GetBackingStore().Get("webAccounts")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WebAccountable)
+    }
+    return nil
 }
 // GetWebsites gets the websites property value. Represents detailed information about websites associated with a user in various services.
 func (m *Profile) GetWebsites()([]PersonWebsiteable) {
-    return m.websites
+    val, err := m.GetBackingStore().Get("websites")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PersonWebsiteable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Profile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -604,77 +699,177 @@ func (m *Profile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 }
 // SetAccount sets the account property value. The account property
 func (m *Profile) SetAccount(value []UserAccountInformationable)() {
-    m.account = value
+    err := m.GetBackingStore().Set("account", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAddresses sets the addresses property value. Represents details of addresses associated with the user.
 func (m *Profile) SetAddresses(value []ItemAddressable)() {
-    m.addresses = value
+    err := m.GetBackingStore().Set("addresses", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAnniversaries sets the anniversaries property value. Represents the details of meaningful dates associated with a person.
 func (m *Profile) SetAnniversaries(value []PersonAnnualEventable)() {
-    m.anniversaries = value
+    err := m.GetBackingStore().Set("anniversaries", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAwards sets the awards property value. Represents the details of awards or honors associated with a person.
 func (m *Profile) SetAwards(value []PersonAwardable)() {
-    m.awards = value
+    err := m.GetBackingStore().Set("awards", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCertifications sets the certifications property value. Represents the details of certifications associated with a person.
 func (m *Profile) SetCertifications(value []PersonCertificationable)() {
-    m.certifications = value
+    err := m.GetBackingStore().Set("certifications", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEducationalActivities sets the educationalActivities property value. Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
 func (m *Profile) SetEducationalActivities(value []EducationalActivityable)() {
-    m.educationalActivities = value
+    err := m.GetBackingStore().Set("educationalActivities", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEmails sets the emails property value. Represents detailed information about email addresses associated with the user.
 func (m *Profile) SetEmails(value []ItemEmailable)() {
-    m.emails = value
+    err := m.GetBackingStore().Set("emails", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInterests sets the interests property value. Provides detailed information about interests the user has associated with themselves in various services.
 func (m *Profile) SetInterests(value []PersonInterestable)() {
-    m.interests = value
+    err := m.GetBackingStore().Set("interests", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLanguages sets the languages property value. Represents detailed information about languages that a user has added to their profile.
 func (m *Profile) SetLanguages(value []LanguageProficiencyable)() {
-    m.languages = value
+    err := m.GetBackingStore().Set("languages", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNames sets the names property value. Represents the names a user has added to their profile.
 func (m *Profile) SetNames(value []PersonNameable)() {
-    m.names = value
+    err := m.GetBackingStore().Set("names", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotes sets the notes property value. Represents notes that a user has added to their profile.
 func (m *Profile) SetNotes(value []PersonAnnotationable)() {
-    m.notes = value
+    err := m.GetBackingStore().Set("notes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPatents sets the patents property value. Represents patents that a user has added to their profile.
 func (m *Profile) SetPatents(value []ItemPatentable)() {
-    m.patents = value
+    err := m.GetBackingStore().Set("patents", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPhones sets the phones property value. Represents detailed information about phone numbers associated with a user in various services.
 func (m *Profile) SetPhones(value []ItemPhoneable)() {
-    m.phones = value
+    err := m.GetBackingStore().Set("phones", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPositions sets the positions property value. Represents detailed information about work positions associated with a user's profile.
 func (m *Profile) SetPositions(value []WorkPositionable)() {
-    m.positions = value
+    err := m.GetBackingStore().Set("positions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProjects sets the projects property value. Represents detailed information about projects associated with a user.
 func (m *Profile) SetProjects(value []ProjectParticipationable)() {
-    m.projects = value
+    err := m.GetBackingStore().Set("projects", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPublications sets the publications property value. Represents details of any publications a user has added to their profile.
 func (m *Profile) SetPublications(value []ItemPublicationable)() {
-    m.publications = value
+    err := m.GetBackingStore().Set("publications", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSkills sets the skills property value. Represents detailed information about skills associated with a user in various services.
 func (m *Profile) SetSkills(value []SkillProficiencyable)() {
-    m.skills = value
+    err := m.GetBackingStore().Set("skills", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWebAccounts sets the webAccounts property value. Represents web accounts the user has indicated they use or has added to their user profile.
 func (m *Profile) SetWebAccounts(value []WebAccountable)() {
-    m.webAccounts = value
+    err := m.GetBackingStore().Set("webAccounts", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWebsites sets the websites property value. Represents detailed information about websites associated with a user in various services.
 func (m *Profile) SetWebsites(value []PersonWebsiteable)() {
-    m.websites = value
+    err := m.GetBackingStore().Set("websites", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Profileable 
+type Profileable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAccount()([]UserAccountInformationable)
+    GetAddresses()([]ItemAddressable)
+    GetAnniversaries()([]PersonAnnualEventable)
+    GetAwards()([]PersonAwardable)
+    GetCertifications()([]PersonCertificationable)
+    GetEducationalActivities()([]EducationalActivityable)
+    GetEmails()([]ItemEmailable)
+    GetInterests()([]PersonInterestable)
+    GetLanguages()([]LanguageProficiencyable)
+    GetNames()([]PersonNameable)
+    GetNotes()([]PersonAnnotationable)
+    GetPatents()([]ItemPatentable)
+    GetPhones()([]ItemPhoneable)
+    GetPositions()([]WorkPositionable)
+    GetProjects()([]ProjectParticipationable)
+    GetPublications()([]ItemPublicationable)
+    GetSkills()([]SkillProficiencyable)
+    GetWebAccounts()([]WebAccountable)
+    GetWebsites()([]PersonWebsiteable)
+    SetAccount(value []UserAccountInformationable)()
+    SetAddresses(value []ItemAddressable)()
+    SetAnniversaries(value []PersonAnnualEventable)()
+    SetAwards(value []PersonAwardable)()
+    SetCertifications(value []PersonCertificationable)()
+    SetEducationalActivities(value []EducationalActivityable)()
+    SetEmails(value []ItemEmailable)()
+    SetInterests(value []PersonInterestable)()
+    SetLanguages(value []LanguageProficiencyable)()
+    SetNames(value []PersonNameable)()
+    SetNotes(value []PersonAnnotationable)()
+    SetPatents(value []ItemPatentable)()
+    SetPhones(value []ItemPhoneable)()
+    SetPositions(value []WorkPositionable)()
+    SetProjects(value []ProjectParticipationable)()
+    SetPublications(value []ItemPublicationable)()
+    SetSkills(value []SkillProficiencyable)()
+    SetWebAccounts(value []WebAccountable)()
+    SetWebsites(value []PersonWebsiteable)()
 }

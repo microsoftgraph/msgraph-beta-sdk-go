@@ -7,16 +7,14 @@ import (
 // BookingPerson represents a booking customer or staff member.
 type BookingPerson struct {
     BookingNamedEntity
-    // The email address of the person.
-    emailAddress *string
 }
 // NewBookingPerson instantiates a new bookingPerson and sets the default values.
 func NewBookingPerson()(*BookingPerson) {
     m := &BookingPerson{
         BookingNamedEntity: *NewBookingNamedEntity(),
     }
-    odataTypeValue := "#microsoft.graph.bookingPerson";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.bookingPerson"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateBookingPersonFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +43,14 @@ func CreateBookingPersonFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetEmailAddress gets the emailAddress property value. The email address of the person.
 func (m *BookingPerson) GetEmailAddress()(*string) {
-    return m.emailAddress
+    val, err := m.GetBackingStore().Get("emailAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BookingPerson) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -78,5 +83,15 @@ func (m *BookingPerson) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetEmailAddress sets the emailAddress property value. The email address of the person.
 func (m *BookingPerson) SetEmailAddress(value *string)() {
-    m.emailAddress = value
+    err := m.GetBackingStore().Set("emailAddress", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// BookingPersonable 
+type BookingPersonable interface {
+    BookingNamedEntityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetEmailAddress()(*string)
+    SetEmailAddress(value *string)()
 }

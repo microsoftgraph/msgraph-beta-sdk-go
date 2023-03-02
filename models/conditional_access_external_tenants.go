@@ -2,22 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ConditionalAccessExternalTenants 
 type ConditionalAccessExternalTenants struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Represents the membership kind. The possible values are: all, enumerated, unknownFutureValue. enumerated references an object of conditionalAccessEnumeratedExternalTenants derived type.
-    membershipKind *ConditionalAccessExternalTenantsMembershipKind
-    // The OdataType property
-    odataType *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewConditionalAccessExternalTenants instantiates a new conditionalAccessExternalTenants and sets the default values.
 func NewConditionalAccessExternalTenants()(*ConditionalAccessExternalTenants) {
     m := &ConditionalAccessExternalTenants{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateConditionalAccessExternalTenantsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -46,7 +44,19 @@ func CreateConditionalAccessExternalTenantsFromDiscriminatorValue(parseNode i878
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessExternalTenants) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ConditionalAccessExternalTenants) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConditionalAccessExternalTenants) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -75,11 +85,25 @@ func (m *ConditionalAccessExternalTenants) GetFieldDeserializers()(map[string]fu
 }
 // GetMembershipKind gets the membershipKind property value. Represents the membership kind. The possible values are: all, enumerated, unknownFutureValue. enumerated references an object of conditionalAccessEnumeratedExternalTenants derived type.
 func (m *ConditionalAccessExternalTenants) GetMembershipKind()(*ConditionalAccessExternalTenantsMembershipKind) {
-    return m.membershipKind
+    val, err := m.GetBackingStore().Get("membershipKind")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ConditionalAccessExternalTenantsMembershipKind)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ConditionalAccessExternalTenants) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ConditionalAccessExternalTenants) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -106,13 +130,38 @@ func (m *ConditionalAccessExternalTenants) Serialize(writer i878a80d2330e89d2689
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessExternalTenants) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ConditionalAccessExternalTenants) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetMembershipKind sets the membershipKind property value. Represents the membership kind. The possible values are: all, enumerated, unknownFutureValue. enumerated references an object of conditionalAccessEnumeratedExternalTenants derived type.
 func (m *ConditionalAccessExternalTenants) SetMembershipKind(value *ConditionalAccessExternalTenantsMembershipKind)() {
-    m.membershipKind = value
+    err := m.GetBackingStore().Set("membershipKind", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ConditionalAccessExternalTenants) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ConditionalAccessExternalTenantsable 
+type ConditionalAccessExternalTenantsable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetMembershipKind()(*ConditionalAccessExternalTenantsMembershipKind)
+    GetOdataType()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetMembershipKind(value *ConditionalAccessExternalTenantsMembershipKind)()
+    SetOdataType(value *string)()
 }

@@ -7,18 +7,14 @@ import (
 // DeviceManagementSettingProfileConstraint 
 type DeviceManagementSettingProfileConstraint struct {
     DeviceManagementConstraint
-    // The source of the entity
-    source *string
-    // A collection of types this entity carries
-    types []string
 }
 // NewDeviceManagementSettingProfileConstraint instantiates a new DeviceManagementSettingProfileConstraint and sets the default values.
 func NewDeviceManagementSettingProfileConstraint()(*DeviceManagementSettingProfileConstraint) {
     m := &DeviceManagementSettingProfileConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementSettingProfileConstraint";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementSettingProfileConstraint"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementSettingProfileConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -56,11 +52,25 @@ func (m *DeviceManagementSettingProfileConstraint) GetFieldDeserializers()(map[s
 }
 // GetSource gets the source property value. The source of the entity
 func (m *DeviceManagementSettingProfileConstraint) GetSource()(*string) {
-    return m.source
+    val, err := m.GetBackingStore().Get("source")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTypes gets the types property value. A collection of types this entity carries
 func (m *DeviceManagementSettingProfileConstraint) GetTypes()([]string) {
-    return m.types
+    val, err := m.GetBackingStore().Get("types")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementSettingProfileConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -84,9 +94,24 @@ func (m *DeviceManagementSettingProfileConstraint) Serialize(writer i878a80d2330
 }
 // SetSource sets the source property value. The source of the entity
 func (m *DeviceManagementSettingProfileConstraint) SetSource(value *string)() {
-    m.source = value
+    err := m.GetBackingStore().Set("source", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTypes sets the types property value. A collection of types this entity carries
 func (m *DeviceManagementSettingProfileConstraint) SetTypes(value []string)() {
-    m.types = value
+    err := m.GetBackingStore().Set("types", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementSettingProfileConstraintable 
+type DeviceManagementSettingProfileConstraintable interface {
+    DeviceManagementConstraintable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetSource()(*string)
+    GetTypes()([]string)
+    SetSource(value *string)()
+    SetTypes(value []string)()
 }

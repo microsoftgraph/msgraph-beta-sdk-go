@@ -7,8 +7,6 @@ import (
 // PlannerPlanConfigurationLocalizationCollectionResponse 
 type PlannerPlanConfigurationLocalizationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PlannerPlanConfigurationLocalizationable
 }
 // NewPlannerPlanConfigurationLocalizationCollectionResponse instantiates a new PlannerPlanConfigurationLocalizationCollectionResponse and sets the default values.
 func NewPlannerPlanConfigurationLocalizationCollectionResponse()(*PlannerPlanConfigurationLocalizationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PlannerPlanConfigurationLocalizationCollectionResponse) GetFieldDeseria
 }
 // GetValue gets the value property value. The value property
 func (m *PlannerPlanConfigurationLocalizationCollectionResponse) GetValue()([]PlannerPlanConfigurationLocalizationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerPlanConfigurationLocalizationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PlannerPlanConfigurationLocalizationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PlannerPlanConfigurationLocalizationCollectionResponse) Serialize(write
 }
 // SetValue sets the value property value. The value property
 func (m *PlannerPlanConfigurationLocalizationCollectionResponse) SetValue(value []PlannerPlanConfigurationLocalizationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PlannerPlanConfigurationLocalizationCollectionResponseable 
+type PlannerPlanConfigurationLocalizationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PlannerPlanConfigurationLocalizationable)
+    SetValue(value []PlannerPlanConfigurationLocalizationable)()
 }

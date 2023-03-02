@@ -60,8 +60,8 @@ func NewAdministrativeUnitsRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAdministrativeUnitsRequestBuilder instantiates a new AdministrativeUnitsRequestBuilder and sets the default values.
@@ -72,11 +72,11 @@ func NewAdministrativeUnitsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 }
 // Count provides operations to count the resources in the collection.
 func (m *AdministrativeUnitsRequestBuilder) Count()(*CountRequestBuilder) {
-    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delta provides operations to call the delta method.
 func (m *AdministrativeUnitsRequestBuilder) Delta()(*DeltaRequestBuilder) {
-    return NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of administrativeUnit objects.
 // [Find more info here]
@@ -102,11 +102,11 @@ func (m *AdministrativeUnitsRequestBuilder) Get(ctx context.Context, requestConf
 }
 // GetByIds provides operations to call the getByIds method.
 func (m *AdministrativeUnitsRequestBuilder) GetByIds()(*GetByIdsRequestBuilder) {
-    return NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
 func (m *AdministrativeUnitsRequestBuilder) GetUserOwnedObjects()(*GetUserOwnedObjectsRequestBuilder) {
-    return NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post use this API to create a new administrativeUnit.
 // [Find more info here]
@@ -153,7 +153,10 @@ func (m *AdministrativeUnitsRequestBuilder) ToPostRequestInformation(ctx context
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -162,5 +165,5 @@ func (m *AdministrativeUnitsRequestBuilder) ToPostRequestInformation(ctx context
 }
 // ValidateProperties provides operations to call the validateProperties method.
 func (m *AdministrativeUnitsRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
-    return NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

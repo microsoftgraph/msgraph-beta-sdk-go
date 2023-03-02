@@ -7,16 +7,14 @@ import (
 // WindowsPhone81AppXBundle 
 type WindowsPhone81AppXBundle struct {
     WindowsPhone81AppX
-    // The list of AppX Package Information.
-    appXPackageInformationList []WindowsPackageInformationable
 }
 // NewWindowsPhone81AppXBundle instantiates a new WindowsPhone81AppXBundle and sets the default values.
 func NewWindowsPhone81AppXBundle()(*WindowsPhone81AppXBundle) {
     m := &WindowsPhone81AppXBundle{
         WindowsPhone81AppX: *NewWindowsPhone81AppX(),
     }
-    odataTypeValue := "#microsoft.graph.windowsPhone81AppXBundle";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsPhone81AppXBundle"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsPhone81AppXBundleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +23,14 @@ func CreateWindowsPhone81AppXBundleFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAppXPackageInformationList gets the appXPackageInformationList property value. The list of AppX Package Information.
 func (m *WindowsPhone81AppXBundle) GetAppXPackageInformationList()([]WindowsPackageInformationable) {
-    return m.appXPackageInformationList
+    val, err := m.GetBackingStore().Get("appXPackageInformationList")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsPackageInformationable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsPhone81AppXBundle) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -66,5 +71,15 @@ func (m *WindowsPhone81AppXBundle) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAppXPackageInformationList sets the appXPackageInformationList property value. The list of AppX Package Information.
 func (m *WindowsPhone81AppXBundle) SetAppXPackageInformationList(value []WindowsPackageInformationable)() {
-    m.appXPackageInformationList = value
+    err := m.GetBackingStore().Set("appXPackageInformationList", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsPhone81AppXBundleable 
+type WindowsPhone81AppXBundleable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    WindowsPhone81AppXable
+    GetAppXPackageInformationList()([]WindowsPackageInformationable)
+    SetAppXPackageInformationList(value []WindowsPackageInformationable)()
 }

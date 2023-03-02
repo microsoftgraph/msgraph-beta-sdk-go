@@ -7,16 +7,14 @@ import (
 // DeliveryOptimizationMaxCacheSizePercentage 
 type DeliveryOptimizationMaxCacheSizePercentage struct {
     DeliveryOptimizationMaxCacheSize
-    // Specifies the maximum cache size that Delivery Optimization can utilize, as a percentage of disk size (1-100). Valid values 1 to 100
-    maximumCacheSizePercentage *int32
 }
 // NewDeliveryOptimizationMaxCacheSizePercentage instantiates a new DeliveryOptimizationMaxCacheSizePercentage and sets the default values.
 func NewDeliveryOptimizationMaxCacheSizePercentage()(*DeliveryOptimizationMaxCacheSizePercentage) {
     m := &DeliveryOptimizationMaxCacheSizePercentage{
         DeliveryOptimizationMaxCacheSize: *NewDeliveryOptimizationMaxCacheSize(),
     }
-    odataTypeValue := "#microsoft.graph.deliveryOptimizationMaxCacheSizePercentage";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deliveryOptimizationMaxCacheSizePercentage"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeliveryOptimizationMaxCacheSizePercentageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *DeliveryOptimizationMaxCacheSizePercentage) GetFieldDeserializers()(map
 }
 // GetMaximumCacheSizePercentage gets the maximumCacheSizePercentage property value. Specifies the maximum cache size that Delivery Optimization can utilize, as a percentage of disk size (1-100). Valid values 1 to 100
 func (m *DeliveryOptimizationMaxCacheSizePercentage) GetMaximumCacheSizePercentage()(*int32) {
-    return m.maximumCacheSizePercentage
+    val, err := m.GetBackingStore().Get("maximumCacheSizePercentage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeliveryOptimizationMaxCacheSizePercentage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *DeliveryOptimizationMaxCacheSizePercentage) Serialize(writer i878a80d23
 }
 // SetMaximumCacheSizePercentage sets the maximumCacheSizePercentage property value. Specifies the maximum cache size that Delivery Optimization can utilize, as a percentage of disk size (1-100). Valid values 1 to 100
 func (m *DeliveryOptimizationMaxCacheSizePercentage) SetMaximumCacheSizePercentage(value *int32)() {
-    m.maximumCacheSizePercentage = value
+    err := m.GetBackingStore().Set("maximumCacheSizePercentage", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeliveryOptimizationMaxCacheSizePercentageable 
+type DeliveryOptimizationMaxCacheSizePercentageable interface {
+    DeliveryOptimizationMaxCacheSizeable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetMaximumCacheSizePercentage()(*int32)
+    SetMaximumCacheSizePercentage(value *int32)()
 }

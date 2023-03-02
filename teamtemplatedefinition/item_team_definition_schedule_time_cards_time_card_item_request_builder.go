@@ -48,11 +48,11 @@ type ItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilderPatchRequestCo
 }
 // ClockOut provides operations to call the clockOut method.
 func (m *ItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) ClockOut()(*ItemTeamDefinitionScheduleTimeCardsItemClockOutRequestBuilder) {
-    return NewItemTeamDefinitionScheduleTimeCardsItemClockOutRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTeamDefinitionScheduleTimeCardsItemClockOutRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Confirm provides operations to call the confirm method.
 func (m *ItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) Confirm()(*ItemTeamDefinitionScheduleTimeCardsItemConfirmRequestBuilder) {
-    return NewItemTeamDefinitionScheduleTimeCardsItemConfirmRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTeamDefinitionScheduleTimeCardsItemConfirmRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilderInternal instantiates a new TimeCardItemRequestBuilder and sets the default values.
 func NewItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) {
@@ -63,8 +63,8 @@ func NewItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder instantiates a new TimeCardItemRequestBuilder and sets the default values.
@@ -91,7 +91,7 @@ func (m *ItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) Delete(c
 }
 // EndBreak provides operations to call the endBreak method.
 func (m *ItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) EndBreak()(*ItemTeamDefinitionScheduleTimeCardsItemEndBreakRequestBuilder) {
-    return NewItemTeamDefinitionScheduleTimeCardsItemEndBreakRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTeamDefinitionScheduleTimeCardsItemEndBreakRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get timeCards from teamTemplateDefinition
 func (m *ItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
@@ -133,7 +133,7 @@ func (m *ItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) Patch(ct
 }
 // StartBreak provides operations to call the startBreak method.
 func (m *ItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) StartBreak()(*ItemTeamDefinitionScheduleTimeCardsItemStartBreakRequestBuilder) {
-    return NewItemTeamDefinitionScheduleTimeCardsItemStartBreakRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTeamDefinitionScheduleTimeCardsItemStartBreakRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property timeCards for teamTemplateDefinition
 func (m *ItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -170,7 +170,10 @@ func (m *ItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) ToPatchR
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

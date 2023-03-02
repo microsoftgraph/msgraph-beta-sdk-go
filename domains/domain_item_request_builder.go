@@ -55,8 +55,8 @@ func NewDomainItemRequestBuilderInternal(pathParameters map[string]string, reque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDomainItemRequestBuilder instantiates a new DomainItemRequestBuilder and sets the default values.
@@ -86,7 +86,7 @@ func (m *DomainItemRequestBuilder) Delete(ctx context.Context, requestConfigurat
 }
 // DomainNameReferences provides operations to manage the domainNameReferences property of the microsoft.graph.domain entity.
 func (m *DomainItemRequestBuilder) DomainNameReferences()(*ItemDomainNameReferencesRequestBuilder) {
-    return NewItemDomainNameReferencesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemDomainNameReferencesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DomainNameReferencesById provides operations to manage the domainNameReferences property of the microsoft.graph.domain entity.
 func (m *DomainItemRequestBuilder) DomainNameReferencesById(id string)(*ItemDomainNameReferencesDirectoryObjectItemRequestBuilder) {
@@ -97,11 +97,11 @@ func (m *DomainItemRequestBuilder) DomainNameReferencesById(id string)(*ItemDoma
     if id != "" {
         urlTplParams["directoryObject%2Did"] = id
     }
-    return NewItemDomainNameReferencesDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemDomainNameReferencesDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // FederationConfiguration provides operations to manage the federationConfiguration property of the microsoft.graph.domain entity.
 func (m *DomainItemRequestBuilder) FederationConfiguration()(*ItemFederationConfigurationRequestBuilder) {
-    return NewItemFederationConfigurationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemFederationConfigurationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // FederationConfigurationById provides operations to manage the federationConfiguration property of the microsoft.graph.domain entity.
 func (m *DomainItemRequestBuilder) FederationConfigurationById(id string)(*ItemFederationConfigurationInternalDomainFederationItemRequestBuilder) {
@@ -112,11 +112,11 @@ func (m *DomainItemRequestBuilder) FederationConfigurationById(id string)(*ItemF
     if id != "" {
         urlTplParams["internalDomainFederation%2Did"] = id
     }
-    return NewItemFederationConfigurationInternalDomainFederationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemFederationConfigurationInternalDomainFederationItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ForceDelete provides operations to call the forceDelete method.
 func (m *DomainItemRequestBuilder) ForceDelete()(*ItemForceDeleteRequestBuilder) {
-    return NewItemForceDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemForceDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve the properties and relationships of domain object.
 // [Find more info here]
@@ -164,11 +164,11 @@ func (m *DomainItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29
 }
 // Promote provides operations to call the promote method.
 func (m *DomainItemRequestBuilder) Promote()(*ItemPromoteRequestBuilder) {
-    return NewItemPromoteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemPromoteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ServiceConfigurationRecords provides operations to manage the serviceConfigurationRecords property of the microsoft.graph.domain entity.
 func (m *DomainItemRequestBuilder) ServiceConfigurationRecords()(*ItemServiceConfigurationRecordsRequestBuilder) {
-    return NewItemServiceConfigurationRecordsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemServiceConfigurationRecordsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ServiceConfigurationRecordsById provides operations to manage the serviceConfigurationRecords property of the microsoft.graph.domain entity.
 func (m *DomainItemRequestBuilder) ServiceConfigurationRecordsById(id string)(*ItemServiceConfigurationRecordsDomainDnsRecordItemRequestBuilder) {
@@ -179,11 +179,11 @@ func (m *DomainItemRequestBuilder) ServiceConfigurationRecordsById(id string)(*I
     if id != "" {
         urlTplParams["domainDnsRecord%2Did"] = id
     }
-    return NewItemServiceConfigurationRecordsDomainDnsRecordItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemServiceConfigurationRecordsDomainDnsRecordItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // SharedEmailDomainInvitations provides operations to manage the sharedEmailDomainInvitations property of the microsoft.graph.domain entity.
 func (m *DomainItemRequestBuilder) SharedEmailDomainInvitations()(*ItemSharedEmailDomainInvitationsRequestBuilder) {
-    return NewItemSharedEmailDomainInvitationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSharedEmailDomainInvitationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SharedEmailDomainInvitationsById provides operations to manage the sharedEmailDomainInvitations property of the microsoft.graph.domain entity.
 func (m *DomainItemRequestBuilder) SharedEmailDomainInvitationsById(id string)(*ItemSharedEmailDomainInvitationsSharedEmailDomainInvitationItemRequestBuilder) {
@@ -194,7 +194,7 @@ func (m *DomainItemRequestBuilder) SharedEmailDomainInvitationsById(id string)(*
     if id != "" {
         urlTplParams["sharedEmailDomainInvitation%2Did"] = id
     }
-    return NewItemSharedEmailDomainInvitationsSharedEmailDomainInvitationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSharedEmailDomainInvitationsSharedEmailDomainInvitationItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation deletes a domain from a tenant.
 func (m *DomainItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DomainItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -231,7 +231,10 @@ func (m *DomainItemRequestBuilder) ToPatchRequestInformation(ctx context.Context
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -240,7 +243,7 @@ func (m *DomainItemRequestBuilder) ToPatchRequestInformation(ctx context.Context
 }
 // VerificationDnsRecords provides operations to manage the verificationDnsRecords property of the microsoft.graph.domain entity.
 func (m *DomainItemRequestBuilder) VerificationDnsRecords()(*ItemVerificationDnsRecordsRequestBuilder) {
-    return NewItemVerificationDnsRecordsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemVerificationDnsRecordsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // VerificationDnsRecordsById provides operations to manage the verificationDnsRecords property of the microsoft.graph.domain entity.
 func (m *DomainItemRequestBuilder) VerificationDnsRecordsById(id string)(*ItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilder) {
@@ -251,9 +254,9 @@ func (m *DomainItemRequestBuilder) VerificationDnsRecordsById(id string)(*ItemVe
     if id != "" {
         urlTplParams["domainDnsRecord%2Did"] = id
     }
-    return NewItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Verify provides operations to call the verify method.
 func (m *DomainItemRequestBuilder) Verify()(*ItemVerifyRequestBuilder) {
-    return NewItemVerifyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemVerifyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

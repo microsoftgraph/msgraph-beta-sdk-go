@@ -26,13 +26,13 @@ type ItemScheduleShareRequestBuilderPostRequestConfiguration struct {
 func NewItemScheduleShareRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemScheduleShareRequestBuilder) {
     m := &ItemScheduleShareRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/teams/{team%2Did}/schedule/microsoft.graph.share";
+    m.urlTemplate = "{+baseurl}/teams/{team%2Did}/schedule/share";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemScheduleShareRequestBuilder instantiates a new ShareRequestBuilder and sets the default values.
@@ -66,7 +66,10 @@ func (m *ItemScheduleShareRequestBuilder) ToPostRequestInformation(ctx context.C
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

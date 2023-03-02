@@ -6,93 +6,111 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Vendor_escaped 
-type Vendor_escaped struct {
+// VendorEscaped 
+type VendorEscaped struct {
     Entity
-    // The address property
-    address PostalAddressTypeable
-    // The balance property
-    balance *float64
-    // The blocked property
-    blocked *string
-    // The currency property
-    currency Currencyable
-    // The currencyCode property
-    currencyCode *string
-    // The currencyId property
-    currencyId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
-    // The displayName property
-    displayName *string
-    // The email property
-    email *string
-    // The lastModifiedDateTime property
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The number property
-    number *string
-    // The paymentMethod property
-    paymentMethod PaymentMethodable
-    // The paymentMethodId property
-    paymentMethodId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
-    // The paymentTerm property
-    paymentTerm PaymentTermable
-    // The paymentTermsId property
-    paymentTermsId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
-    // The phoneNumber property
-    phoneNumber *string
-    // The picture property
-    picture []Pictureable
-    // The taxLiable property
-    taxLiable *bool
-    // The taxRegistrationNumber property
-    taxRegistrationNumber *string
-    // The website property
-    website *string
 }
-// NewVendor_escaped instantiates a new vendor_escaped and sets the default values.
-func NewVendor_escaped()(*Vendor_escaped) {
-    m := &Vendor_escaped{
+// NewVendorEscaped instantiates a new vendorEscaped and sets the default values.
+func NewVendorEscaped()(*VendorEscaped) {
+    m := &VendorEscaped{
         Entity: *NewEntity(),
     }
     return m
 }
-// CreateVendor_escapedFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateVendor_escapedFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewVendor_escaped(), nil
+// CreateVendorEscapedFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateVendorEscapedFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewVendorEscaped(), nil
 }
 // GetAddress gets the address property value. The address property
-func (m *Vendor_escaped) GetAddress()(PostalAddressTypeable) {
-    return m.address
+func (m *VendorEscaped) GetAddress()(PostalAddressTypeable) {
+    val, err := m.GetBackingStore().Get("address")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PostalAddressTypeable)
+    }
+    return nil
 }
 // GetBalance gets the balance property value. The balance property
-func (m *Vendor_escaped) GetBalance()(*float64) {
-    return m.balance
+func (m *VendorEscaped) GetBalance()(*float64) {
+    val, err := m.GetBackingStore().Get("balance")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetBlocked gets the blocked property value. The blocked property
-func (m *Vendor_escaped) GetBlocked()(*string) {
-    return m.blocked
+func (m *VendorEscaped) GetBlocked()(*string) {
+    val, err := m.GetBackingStore().Get("blocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCurrency gets the currency property value. The currency property
-func (m *Vendor_escaped) GetCurrency()(Currencyable) {
-    return m.currency
+func (m *VendorEscaped) GetCurrency()(Currencyable) {
+    val, err := m.GetBackingStore().Get("currency")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Currencyable)
+    }
+    return nil
 }
 // GetCurrencyCode gets the currencyCode property value. The currencyCode property
-func (m *Vendor_escaped) GetCurrencyCode()(*string) {
-    return m.currencyCode
+func (m *VendorEscaped) GetCurrencyCode()(*string) {
+    val, err := m.GetBackingStore().Get("currencyCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCurrencyId gets the currencyId property value. The currencyId property
-func (m *Vendor_escaped) GetCurrencyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
-    return m.currencyId
+func (m *VendorEscaped) GetCurrencyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
+    val, err := m.GetBackingStore().Get("currencyId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
-func (m *Vendor_escaped) GetDisplayName()(*string) {
-    return m.displayName
+func (m *VendorEscaped) GetDisplayName()(*string) {
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetEmail gets the email property value. The email property
-func (m *Vendor_escaped) GetEmail()(*string) {
-    return m.email
+func (m *VendorEscaped) GetEmail()(*string) {
+    val, err := m.GetBackingStore().Get("email")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Vendor_escaped) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *VendorEscaped) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["address"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePostalAddressTypeFromDiscriminatorValue)
@@ -291,51 +309,128 @@ func (m *Vendor_escaped) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
-func (m *Vendor_escaped) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+func (m *VendorEscaped) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetNumber gets the number property value. The number property
-func (m *Vendor_escaped) GetNumber()(*string) {
-    return m.number
+func (m *VendorEscaped) GetNumber()(*string) {
+    val, err := m.GetBackingStore().Get("number")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPaymentMethod gets the paymentMethod property value. The paymentMethod property
-func (m *Vendor_escaped) GetPaymentMethod()(PaymentMethodable) {
-    return m.paymentMethod
+func (m *VendorEscaped) GetPaymentMethod()(PaymentMethodable) {
+    val, err := m.GetBackingStore().Get("paymentMethod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PaymentMethodable)
+    }
+    return nil
 }
 // GetPaymentMethodId gets the paymentMethodId property value. The paymentMethodId property
-func (m *Vendor_escaped) GetPaymentMethodId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
-    return m.paymentMethodId
+func (m *VendorEscaped) GetPaymentMethodId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
+    val, err := m.GetBackingStore().Get("paymentMethodId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
 }
 // GetPaymentTerm gets the paymentTerm property value. The paymentTerm property
-func (m *Vendor_escaped) GetPaymentTerm()(PaymentTermable) {
-    return m.paymentTerm
+func (m *VendorEscaped) GetPaymentTerm()(PaymentTermable) {
+    val, err := m.GetBackingStore().Get("paymentTerm")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PaymentTermable)
+    }
+    return nil
 }
 // GetPaymentTermsId gets the paymentTermsId property value. The paymentTermsId property
-func (m *Vendor_escaped) GetPaymentTermsId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
-    return m.paymentTermsId
+func (m *VendorEscaped) GetPaymentTermsId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
+    val, err := m.GetBackingStore().Get("paymentTermsId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
 }
 // GetPhoneNumber gets the phoneNumber property value. The phoneNumber property
-func (m *Vendor_escaped) GetPhoneNumber()(*string) {
-    return m.phoneNumber
+func (m *VendorEscaped) GetPhoneNumber()(*string) {
+    val, err := m.GetBackingStore().Get("phoneNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPicture gets the picture property value. The picture property
-func (m *Vendor_escaped) GetPicture()([]Pictureable) {
-    return m.picture
+func (m *VendorEscaped) GetPicture()([]Pictureable) {
+    val, err := m.GetBackingStore().Get("picture")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Pictureable)
+    }
+    return nil
 }
 // GetTaxLiable gets the taxLiable property value. The taxLiable property
-func (m *Vendor_escaped) GetTaxLiable()(*bool) {
-    return m.taxLiable
+func (m *VendorEscaped) GetTaxLiable()(*bool) {
+    val, err := m.GetBackingStore().Get("taxLiable")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetTaxRegistrationNumber gets the taxRegistrationNumber property value. The taxRegistrationNumber property
-func (m *Vendor_escaped) GetTaxRegistrationNumber()(*string) {
-    return m.taxRegistrationNumber
+func (m *VendorEscaped) GetTaxRegistrationNumber()(*string) {
+    val, err := m.GetBackingStore().Get("taxRegistrationNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetWebsite gets the website property value. The website property
-func (m *Vendor_escaped) GetWebsite()(*string) {
-    return m.website
+func (m *VendorEscaped) GetWebsite()(*string) {
+    val, err := m.GetBackingStore().Get("website")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
-func (m *Vendor_escaped) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+func (m *VendorEscaped) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
         return err
@@ -461,78 +556,135 @@ func (m *Vendor_escaped) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     return nil
 }
 // SetAddress sets the address property value. The address property
-func (m *Vendor_escaped) SetAddress(value PostalAddressTypeable)() {
-    m.address = value
+func (m *VendorEscaped) SetAddress(value PostalAddressTypeable)() {
+    err := m.GetBackingStore().Set("address", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBalance sets the balance property value. The balance property
-func (m *Vendor_escaped) SetBalance(value *float64)() {
-    m.balance = value
+func (m *VendorEscaped) SetBalance(value *float64)() {
+    err := m.GetBackingStore().Set("balance", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBlocked sets the blocked property value. The blocked property
-func (m *Vendor_escaped) SetBlocked(value *string)() {
-    m.blocked = value
+func (m *VendorEscaped) SetBlocked(value *string)() {
+    err := m.GetBackingStore().Set("blocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCurrency sets the currency property value. The currency property
-func (m *Vendor_escaped) SetCurrency(value Currencyable)() {
-    m.currency = value
+func (m *VendorEscaped) SetCurrency(value Currencyable)() {
+    err := m.GetBackingStore().Set("currency", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCurrencyCode sets the currencyCode property value. The currencyCode property
-func (m *Vendor_escaped) SetCurrencyCode(value *string)() {
-    m.currencyCode = value
+func (m *VendorEscaped) SetCurrencyCode(value *string)() {
+    err := m.GetBackingStore().Set("currencyCode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCurrencyId sets the currencyId property value. The currencyId property
-func (m *Vendor_escaped) SetCurrencyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
-    m.currencyId = value
+func (m *VendorEscaped) SetCurrencyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
+    err := m.GetBackingStore().Set("currencyId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The displayName property
-func (m *Vendor_escaped) SetDisplayName(value *string)() {
-    m.displayName = value
+func (m *VendorEscaped) SetDisplayName(value *string)() {
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEmail sets the email property value. The email property
-func (m *Vendor_escaped) SetEmail(value *string)() {
-    m.email = value
+func (m *VendorEscaped) SetEmail(value *string)() {
+    err := m.GetBackingStore().Set("email", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
-func (m *Vendor_escaped) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+func (m *VendorEscaped) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNumber sets the number property value. The number property
-func (m *Vendor_escaped) SetNumber(value *string)() {
-    m.number = value
+func (m *VendorEscaped) SetNumber(value *string)() {
+    err := m.GetBackingStore().Set("number", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPaymentMethod sets the paymentMethod property value. The paymentMethod property
-func (m *Vendor_escaped) SetPaymentMethod(value PaymentMethodable)() {
-    m.paymentMethod = value
+func (m *VendorEscaped) SetPaymentMethod(value PaymentMethodable)() {
+    err := m.GetBackingStore().Set("paymentMethod", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPaymentMethodId sets the paymentMethodId property value. The paymentMethodId property
-func (m *Vendor_escaped) SetPaymentMethodId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
-    m.paymentMethodId = value
+func (m *VendorEscaped) SetPaymentMethodId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
+    err := m.GetBackingStore().Set("paymentMethodId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPaymentTerm sets the paymentTerm property value. The paymentTerm property
-func (m *Vendor_escaped) SetPaymentTerm(value PaymentTermable)() {
-    m.paymentTerm = value
+func (m *VendorEscaped) SetPaymentTerm(value PaymentTermable)() {
+    err := m.GetBackingStore().Set("paymentTerm", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPaymentTermsId sets the paymentTermsId property value. The paymentTermsId property
-func (m *Vendor_escaped) SetPaymentTermsId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
-    m.paymentTermsId = value
+func (m *VendorEscaped) SetPaymentTermsId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
+    err := m.GetBackingStore().Set("paymentTermsId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPhoneNumber sets the phoneNumber property value. The phoneNumber property
-func (m *Vendor_escaped) SetPhoneNumber(value *string)() {
-    m.phoneNumber = value
+func (m *VendorEscaped) SetPhoneNumber(value *string)() {
+    err := m.GetBackingStore().Set("phoneNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPicture sets the picture property value. The picture property
-func (m *Vendor_escaped) SetPicture(value []Pictureable)() {
-    m.picture = value
+func (m *VendorEscaped) SetPicture(value []Pictureable)() {
+    err := m.GetBackingStore().Set("picture", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTaxLiable sets the taxLiable property value. The taxLiable property
-func (m *Vendor_escaped) SetTaxLiable(value *bool)() {
-    m.taxLiable = value
+func (m *VendorEscaped) SetTaxLiable(value *bool)() {
+    err := m.GetBackingStore().Set("taxLiable", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTaxRegistrationNumber sets the taxRegistrationNumber property value. The taxRegistrationNumber property
-func (m *Vendor_escaped) SetTaxRegistrationNumber(value *string)() {
-    m.taxRegistrationNumber = value
+func (m *VendorEscaped) SetTaxRegistrationNumber(value *string)() {
+    err := m.GetBackingStore().Set("taxRegistrationNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWebsite sets the website property value. The website property
-func (m *Vendor_escaped) SetWebsite(value *string)() {
-    m.website = value
+func (m *VendorEscaped) SetWebsite(value *string)() {
+    err := m.GetBackingStore().Set("website", value)
+    if err != nil {
+        panic(err)
+    }
 }

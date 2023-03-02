@@ -7,8 +7,6 @@ import (
 // MobileAppInstallStatusCollectionResponse 
 type MobileAppInstallStatusCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MobileAppInstallStatusable
 }
 // NewMobileAppInstallStatusCollectionResponse instantiates a new MobileAppInstallStatusCollectionResponse and sets the default values.
 func NewMobileAppInstallStatusCollectionResponse()(*MobileAppInstallStatusCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MobileAppInstallStatusCollectionResponse) GetFieldDeserializers()(map[s
 }
 // GetValue gets the value property value. The value property
 func (m *MobileAppInstallStatusCollectionResponse) GetValue()([]MobileAppInstallStatusable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MobileAppInstallStatusable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MobileAppInstallStatusCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MobileAppInstallStatusCollectionResponse) Serialize(writer i878a80d2330
 }
 // SetValue sets the value property value. The value property
 func (m *MobileAppInstallStatusCollectionResponse) SetValue(value []MobileAppInstallStatusable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MobileAppInstallStatusCollectionResponseable 
+type MobileAppInstallStatusCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MobileAppInstallStatusable)
+    SetValue(value []MobileAppInstallStatusable)()
 }

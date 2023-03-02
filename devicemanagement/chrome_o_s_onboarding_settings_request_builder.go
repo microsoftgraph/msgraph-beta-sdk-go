@@ -53,7 +53,7 @@ type ChromeOSOnboardingSettingsRequestBuilderPostRequestConfiguration struct {
 }
 // Connect provides operations to call the connect method.
 func (m *ChromeOSOnboardingSettingsRequestBuilder) Connect()(*ChromeOSOnboardingSettingsConnectRequestBuilder) {
-    return NewChromeOSOnboardingSettingsConnectRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewChromeOSOnboardingSettingsConnectRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewChromeOSOnboardingSettingsRequestBuilderInternal instantiates a new ChromeOSOnboardingSettingsRequestBuilder and sets the default values.
 func NewChromeOSOnboardingSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ChromeOSOnboardingSettingsRequestBuilder) {
@@ -64,8 +64,8 @@ func NewChromeOSOnboardingSettingsRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewChromeOSOnboardingSettingsRequestBuilder instantiates a new ChromeOSOnboardingSettingsRequestBuilder and sets the default values.
@@ -76,11 +76,11 @@ func NewChromeOSOnboardingSettingsRequestBuilder(rawUrl string, requestAdapter i
 }
 // Count provides operations to count the resources in the collection.
 func (m *ChromeOSOnboardingSettingsRequestBuilder) Count()(*ChromeOSOnboardingSettingsCountRequestBuilder) {
-    return NewChromeOSOnboardingSettingsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewChromeOSOnboardingSettingsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Disconnect provides operations to call the disconnect method.
 func (m *ChromeOSOnboardingSettingsRequestBuilder) Disconnect()(*ChromeOSOnboardingSettingsDisconnectRequestBuilder) {
-    return NewChromeOSOnboardingSettingsDisconnectRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewChromeOSOnboardingSettingsDisconnectRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get collection of ChromeOSOnboardingSettings settings associated with account.
 func (m *ChromeOSOnboardingSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *ChromeOSOnboardingSettingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChromeOSOnboardingSettingsCollectionResponseable, error) {
@@ -143,7 +143,10 @@ func (m *ChromeOSOnboardingSettingsRequestBuilder) ToPostRequestInformation(ctx 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

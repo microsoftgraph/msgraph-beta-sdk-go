@@ -60,8 +60,8 @@ func NewDirectoryTransitiveRoleAssignmentsRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDirectoryTransitiveRoleAssignmentsRequestBuilder instantiates a new TransitiveRoleAssignmentsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewDirectoryTransitiveRoleAssignmentsRequestBuilder(rawUrl string, requestA
 }
 // Count provides operations to count the resources in the collection.
 func (m *DirectoryTransitiveRoleAssignmentsRequestBuilder) Count()(*DirectoryTransitiveRoleAssignmentsCountRequestBuilder) {
-    return NewDirectoryTransitiveRoleAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDirectoryTransitiveRoleAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the list of direct and transitive unifiedRoleAssignment objects for a specific principal. For example, if a user is assigned an Azure AD role through group membership, the role assignment is transitive, and this request will list the group's ID as the **principalId**. Results can also be filtered by the **roleDefinitionId** and **directoryScopeId**. Supported only for directory (Azure AD) provider. For more information, see Use Azure AD groups to manage role assignments.
 // [Find more info here]
@@ -138,7 +138,10 @@ func (m *DirectoryTransitiveRoleAssignmentsRequestBuilder) ToPostRequestInformat
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

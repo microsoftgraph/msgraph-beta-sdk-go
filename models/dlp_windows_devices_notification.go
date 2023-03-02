@@ -7,18 +7,14 @@ import (
 // DlpWindowsDevicesNotification 
 type DlpWindowsDevicesNotification struct {
     DlpNotification
-    // The contentName property
-    contentName *string
-    // The lastModfiedBy property
-    lastModfiedBy *string
 }
 // NewDlpWindowsDevicesNotification instantiates a new DlpWindowsDevicesNotification and sets the default values.
 func NewDlpWindowsDevicesNotification()(*DlpWindowsDevicesNotification) {
     m := &DlpWindowsDevicesNotification{
         DlpNotification: *NewDlpNotification(),
     }
-    odataTypeValue := "#microsoft.graph.dlpWindowsDevicesNotification";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.dlpWindowsDevicesNotification"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDlpWindowsDevicesNotificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +23,14 @@ func CreateDlpWindowsDevicesNotificationFromDiscriminatorValue(parseNode i878a80
 }
 // GetContentName gets the contentName property value. The contentName property
 func (m *DlpWindowsDevicesNotification) GetContentName()(*string) {
-    return m.contentName
+    val, err := m.GetBackingStore().Get("contentName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DlpWindowsDevicesNotification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,7 +59,14 @@ func (m *DlpWindowsDevicesNotification) GetFieldDeserializers()(map[string]func(
 }
 // GetLastModfiedBy gets the lastModfiedBy property value. The lastModfiedBy property
 func (m *DlpWindowsDevicesNotification) GetLastModfiedBy()(*string) {
-    return m.lastModfiedBy
+    val, err := m.GetBackingStore().Get("lastModfiedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DlpWindowsDevicesNotification) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *DlpWindowsDevicesNotification) Serialize(writer i878a80d2330e89d2689638
 }
 // SetContentName sets the contentName property value. The contentName property
 func (m *DlpWindowsDevicesNotification) SetContentName(value *string)() {
-    m.contentName = value
+    err := m.GetBackingStore().Set("contentName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModfiedBy sets the lastModfiedBy property value. The lastModfiedBy property
 func (m *DlpWindowsDevicesNotification) SetLastModfiedBy(value *string)() {
-    m.lastModfiedBy = value
+    err := m.GetBackingStore().Set("lastModfiedBy", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DlpWindowsDevicesNotificationable 
+type DlpWindowsDevicesNotificationable interface {
+    DlpNotificationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetContentName()(*string)
+    GetLastModfiedBy()(*string)
+    SetContentName(value *string)()
+    SetLastModfiedBy(value *string)()
 }

@@ -7,8 +7,6 @@ import (
 // ExactMatchUploadAgentCollectionResponse 
 type ExactMatchUploadAgentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ExactMatchUploadAgentable
 }
 // NewExactMatchUploadAgentCollectionResponse instantiates a new ExactMatchUploadAgentCollectionResponse and sets the default values.
 func NewExactMatchUploadAgentCollectionResponse()(*ExactMatchUploadAgentCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ExactMatchUploadAgentCollectionResponse) GetFieldDeserializers()(map[st
 }
 // GetValue gets the value property value. The value property
 func (m *ExactMatchUploadAgentCollectionResponse) GetValue()([]ExactMatchUploadAgentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ExactMatchUploadAgentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ExactMatchUploadAgentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ExactMatchUploadAgentCollectionResponse) Serialize(writer i878a80d2330e
 }
 // SetValue sets the value property value. The value property
 func (m *ExactMatchUploadAgentCollectionResponse) SetValue(value []ExactMatchUploadAgentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ExactMatchUploadAgentCollectionResponseable 
+type ExactMatchUploadAgentCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ExactMatchUploadAgentable)
+    SetValue(value []ExactMatchUploadAgentable)()
 }

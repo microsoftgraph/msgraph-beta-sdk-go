@@ -7,26 +7,6 @@ import (
 // MobileAppInstallSummary 
 type MobileAppInstallSummary struct {
     Entity
-    // Number of Devices that have failed to install this app.
-    failedDeviceCount *int32
-    // Number of Users that have 1 or more device that failed to install this app.
-    failedUserCount *int32
-    // Number of Devices that have successfully installed this app.
-    installedDeviceCount *int32
-    // Number of Users whose devices have all succeeded to install this app.
-    installedUserCount *int32
-    // Number of Devices that are not applicable for this app.
-    notApplicableDeviceCount *int32
-    // Number of Users whose devices were all not applicable for this app.
-    notApplicableUserCount *int32
-    // Number of Devices that does not have this app installed.
-    notInstalledDeviceCount *int32
-    // Number of Users that have 1 or more devices that did not install this app.
-    notInstalledUserCount *int32
-    // Number of Devices that have been notified to install this app.
-    pendingInstallDeviceCount *int32
-    // Number of Users that have 1 or more device that have been notified to install this app and have 0 devices with failures.
-    pendingInstallUserCount *int32
 }
 // NewMobileAppInstallSummary instantiates a new mobileAppInstallSummary and sets the default values.
 func NewMobileAppInstallSummary()(*MobileAppInstallSummary) {
@@ -41,11 +21,25 @@ func CreateMobileAppInstallSummaryFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetFailedDeviceCount gets the failedDeviceCount property value. Number of Devices that have failed to install this app.
 func (m *MobileAppInstallSummary) GetFailedDeviceCount()(*int32) {
-    return m.failedDeviceCount
+    val, err := m.GetBackingStore().Get("failedDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFailedUserCount gets the failedUserCount property value. Number of Users that have 1 or more device that failed to install this app.
 func (m *MobileAppInstallSummary) GetFailedUserCount()(*int32) {
-    return m.failedUserCount
+    val, err := m.GetBackingStore().Get("failedUserCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MobileAppInstallSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -154,35 +148,91 @@ func (m *MobileAppInstallSummary) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetInstalledDeviceCount gets the installedDeviceCount property value. Number of Devices that have successfully installed this app.
 func (m *MobileAppInstallSummary) GetInstalledDeviceCount()(*int32) {
-    return m.installedDeviceCount
+    val, err := m.GetBackingStore().Get("installedDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetInstalledUserCount gets the installedUserCount property value. Number of Users whose devices have all succeeded to install this app.
 func (m *MobileAppInstallSummary) GetInstalledUserCount()(*int32) {
-    return m.installedUserCount
+    val, err := m.GetBackingStore().Get("installedUserCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetNotApplicableDeviceCount gets the notApplicableDeviceCount property value. Number of Devices that are not applicable for this app.
 func (m *MobileAppInstallSummary) GetNotApplicableDeviceCount()(*int32) {
-    return m.notApplicableDeviceCount
+    val, err := m.GetBackingStore().Get("notApplicableDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetNotApplicableUserCount gets the notApplicableUserCount property value. Number of Users whose devices were all not applicable for this app.
 func (m *MobileAppInstallSummary) GetNotApplicableUserCount()(*int32) {
-    return m.notApplicableUserCount
+    val, err := m.GetBackingStore().Get("notApplicableUserCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetNotInstalledDeviceCount gets the notInstalledDeviceCount property value. Number of Devices that does not have this app installed.
 func (m *MobileAppInstallSummary) GetNotInstalledDeviceCount()(*int32) {
-    return m.notInstalledDeviceCount
+    val, err := m.GetBackingStore().Get("notInstalledDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetNotInstalledUserCount gets the notInstalledUserCount property value. Number of Users that have 1 or more devices that did not install this app.
 func (m *MobileAppInstallSummary) GetNotInstalledUserCount()(*int32) {
-    return m.notInstalledUserCount
+    val, err := m.GetBackingStore().Get("notInstalledUserCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPendingInstallDeviceCount gets the pendingInstallDeviceCount property value. Number of Devices that have been notified to install this app.
 func (m *MobileAppInstallSummary) GetPendingInstallDeviceCount()(*int32) {
-    return m.pendingInstallDeviceCount
+    val, err := m.GetBackingStore().Get("pendingInstallDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPendingInstallUserCount gets the pendingInstallUserCount property value. Number of Users that have 1 or more device that have been notified to install this app and have 0 devices with failures.
 func (m *MobileAppInstallSummary) GetPendingInstallUserCount()(*int32) {
-    return m.pendingInstallUserCount
+    val, err := m.GetBackingStore().Get("pendingInstallUserCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MobileAppInstallSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -254,41 +304,96 @@ func (m *MobileAppInstallSummary) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetFailedDeviceCount sets the failedDeviceCount property value. Number of Devices that have failed to install this app.
 func (m *MobileAppInstallSummary) SetFailedDeviceCount(value *int32)() {
-    m.failedDeviceCount = value
+    err := m.GetBackingStore().Set("failedDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFailedUserCount sets the failedUserCount property value. Number of Users that have 1 or more device that failed to install this app.
 func (m *MobileAppInstallSummary) SetFailedUserCount(value *int32)() {
-    m.failedUserCount = value
+    err := m.GetBackingStore().Set("failedUserCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInstalledDeviceCount sets the installedDeviceCount property value. Number of Devices that have successfully installed this app.
 func (m *MobileAppInstallSummary) SetInstalledDeviceCount(value *int32)() {
-    m.installedDeviceCount = value
+    err := m.GetBackingStore().Set("installedDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInstalledUserCount sets the installedUserCount property value. Number of Users whose devices have all succeeded to install this app.
 func (m *MobileAppInstallSummary) SetInstalledUserCount(value *int32)() {
-    m.installedUserCount = value
+    err := m.GetBackingStore().Set("installedUserCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotApplicableDeviceCount sets the notApplicableDeviceCount property value. Number of Devices that are not applicable for this app.
 func (m *MobileAppInstallSummary) SetNotApplicableDeviceCount(value *int32)() {
-    m.notApplicableDeviceCount = value
+    err := m.GetBackingStore().Set("notApplicableDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotApplicableUserCount sets the notApplicableUserCount property value. Number of Users whose devices were all not applicable for this app.
 func (m *MobileAppInstallSummary) SetNotApplicableUserCount(value *int32)() {
-    m.notApplicableUserCount = value
+    err := m.GetBackingStore().Set("notApplicableUserCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotInstalledDeviceCount sets the notInstalledDeviceCount property value. Number of Devices that does not have this app installed.
 func (m *MobileAppInstallSummary) SetNotInstalledDeviceCount(value *int32)() {
-    m.notInstalledDeviceCount = value
+    err := m.GetBackingStore().Set("notInstalledDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotInstalledUserCount sets the notInstalledUserCount property value. Number of Users that have 1 or more devices that did not install this app.
 func (m *MobileAppInstallSummary) SetNotInstalledUserCount(value *int32)() {
-    m.notInstalledUserCount = value
+    err := m.GetBackingStore().Set("notInstalledUserCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPendingInstallDeviceCount sets the pendingInstallDeviceCount property value. Number of Devices that have been notified to install this app.
 func (m *MobileAppInstallSummary) SetPendingInstallDeviceCount(value *int32)() {
-    m.pendingInstallDeviceCount = value
+    err := m.GetBackingStore().Set("pendingInstallDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPendingInstallUserCount sets the pendingInstallUserCount property value. Number of Users that have 1 or more device that have been notified to install this app and have 0 devices with failures.
 func (m *MobileAppInstallSummary) SetPendingInstallUserCount(value *int32)() {
-    m.pendingInstallUserCount = value
+    err := m.GetBackingStore().Set("pendingInstallUserCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MobileAppInstallSummaryable 
+type MobileAppInstallSummaryable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetFailedDeviceCount()(*int32)
+    GetFailedUserCount()(*int32)
+    GetInstalledDeviceCount()(*int32)
+    GetInstalledUserCount()(*int32)
+    GetNotApplicableDeviceCount()(*int32)
+    GetNotApplicableUserCount()(*int32)
+    GetNotInstalledDeviceCount()(*int32)
+    GetNotInstalledUserCount()(*int32)
+    GetPendingInstallDeviceCount()(*int32)
+    GetPendingInstallUserCount()(*int32)
+    SetFailedDeviceCount(value *int32)()
+    SetFailedUserCount(value *int32)()
+    SetInstalledDeviceCount(value *int32)()
+    SetInstalledUserCount(value *int32)()
+    SetNotApplicableDeviceCount(value *int32)()
+    SetNotApplicableUserCount(value *int32)()
+    SetNotInstalledDeviceCount(value *int32)()
+    SetNotInstalledUserCount(value *int32)()
+    SetPendingInstallDeviceCount(value *int32)()
+    SetPendingInstallUserCount(value *int32)()
 }

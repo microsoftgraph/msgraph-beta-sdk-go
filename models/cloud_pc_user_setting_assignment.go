@@ -8,10 +8,6 @@ import (
 // CloudPcUserSettingAssignment 
 type CloudPcUserSettingAssignment struct {
     Entity
-    // The date and time this assignment was created. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The assignment target for the user setting. Currently, the only target supported for this user setting is a user group. For details, see cloudPcManagementGroupAssignmentTarget.
-    target CloudPcManagementAssignmentTargetable
 }
 // NewCloudPcUserSettingAssignment instantiates a new cloudPcUserSettingAssignment and sets the default values.
 func NewCloudPcUserSettingAssignment()(*CloudPcUserSettingAssignment) {
@@ -26,7 +22,14 @@ func CreateCloudPcUserSettingAssignmentFromDiscriminatorValue(parseNode i878a80d
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time this assignment was created. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
 func (m *CloudPcUserSettingAssignment) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcUserSettingAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -55,7 +58,14 @@ func (m *CloudPcUserSettingAssignment) GetFieldDeserializers()(map[string]func(i
 }
 // GetTarget gets the target property value. The assignment target for the user setting. Currently, the only target supported for this user setting is a user group. For details, see cloudPcManagementGroupAssignmentTarget.
 func (m *CloudPcUserSettingAssignment) GetTarget()(CloudPcManagementAssignmentTargetable) {
-    return m.target
+    val, err := m.GetBackingStore().Get("target")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudPcManagementAssignmentTargetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CloudPcUserSettingAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -79,9 +89,24 @@ func (m *CloudPcUserSettingAssignment) Serialize(writer i878a80d2330e89d26896388
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time this assignment was created. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
 func (m *CloudPcUserSettingAssignment) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTarget sets the target property value. The assignment target for the user setting. Currently, the only target supported for this user setting is a user group. For details, see cloudPcManagementGroupAssignmentTarget.
 func (m *CloudPcUserSettingAssignment) SetTarget(value CloudPcManagementAssignmentTargetable)() {
-    m.target = value
+    err := m.GetBackingStore().Set("target", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CloudPcUserSettingAssignmentable 
+type CloudPcUserSettingAssignmentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetTarget()(CloudPcManagementAssignmentTargetable)
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetTarget(value CloudPcManagementAssignmentTargetable)()
 }

@@ -2,30 +2,20 @@ package managedtenants
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // TemplateParameter 
 type TemplateParameter struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The description for the template parameter. Optional. Read-only.
-    description *string
-    // The display name for the template parameter. Required. Read-only.
-    displayName *string
-    // The allowed values for the template parameter represented by a serialized string of JSON. Optional. Read-only.
-    jsonAllowedValues *string
-    // The default value for the template parameter represented by a serialized string of JSON. Required. Read-only.
-    jsonDefaultValue *string
-    // The OdataType property
-    odataType *string
-    // The valueType property
-    valueType *ManagementParameterValueType
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewTemplateParameter instantiates a new templateParameter and sets the default values.
 func NewTemplateParameter()(*TemplateParameter) {
     m := &TemplateParameter{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTemplateParameterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -34,15 +24,41 @@ func CreateTemplateParameterFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TemplateParameter) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *TemplateParameter) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDescription gets the description property value. The description for the template parameter. Optional. Read-only.
 func (m *TemplateParameter) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The display name for the template parameter. Required. Read-only.
 func (m *TemplateParameter) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TemplateParameter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -111,19 +127,47 @@ func (m *TemplateParameter) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetJsonAllowedValues gets the jsonAllowedValues property value. The allowed values for the template parameter represented by a serialized string of JSON. Optional. Read-only.
 func (m *TemplateParameter) GetJsonAllowedValues()(*string) {
-    return m.jsonAllowedValues
+    val, err := m.GetBackingStore().Get("jsonAllowedValues")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetJsonDefaultValue gets the jsonDefaultValue property value. The default value for the template parameter represented by a serialized string of JSON. Required. Read-only.
 func (m *TemplateParameter) GetJsonDefaultValue()(*string) {
-    return m.jsonDefaultValue
+    val, err := m.GetBackingStore().Get("jsonDefaultValue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TemplateParameter) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetValueType gets the valueType property value. The valueType property
 func (m *TemplateParameter) GetValueType()(*ManagementParameterValueType) {
-    return m.valueType
+    val, err := m.GetBackingStore().Get("valueType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ManagementParameterValueType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TemplateParameter) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -174,29 +218,74 @@ func (m *TemplateParameter) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TemplateParameter) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *TemplateParameter) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDescription sets the description property value. The description for the template parameter. Optional. Read-only.
 func (m *TemplateParameter) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The display name for the template parameter. Required. Read-only.
 func (m *TemplateParameter) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetJsonAllowedValues sets the jsonAllowedValues property value. The allowed values for the template parameter represented by a serialized string of JSON. Optional. Read-only.
 func (m *TemplateParameter) SetJsonAllowedValues(value *string)() {
-    m.jsonAllowedValues = value
+    err := m.GetBackingStore().Set("jsonAllowedValues", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetJsonDefaultValue sets the jsonDefaultValue property value. The default value for the template parameter represented by a serialized string of JSON. Required. Read-only.
 func (m *TemplateParameter) SetJsonDefaultValue(value *string)() {
-    m.jsonDefaultValue = value
+    err := m.GetBackingStore().Set("jsonDefaultValue", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TemplateParameter) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetValueType sets the valueType property value. The valueType property
 func (m *TemplateParameter) SetValueType(value *ManagementParameterValueType)() {
-    m.valueType = value
+    err := m.GetBackingStore().Set("valueType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TemplateParameterable 
+type TemplateParameterable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetJsonAllowedValues()(*string)
+    GetJsonDefaultValue()(*string)
+    GetOdataType()(*string)
+    GetValueType()(*ManagementParameterValueType)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetJsonAllowedValues(value *string)()
+    SetJsonDefaultValue(value *string)()
+    SetOdataType(value *string)()
+    SetValueType(value *ManagementParameterValueType)()
 }

@@ -7,18 +7,6 @@ import (
 // EnrollmentProfile the enrollmentProfile resource represents a collection of configurations which must be provided pre-enrollment to enable enrolling certain devices whose identities have been pre-staged. Pre-staged device identities are assigned to this type of profile to apply the profile's configurations at enrollment of the corresponding device.
 type EnrollmentProfile struct {
     Entity
-    // Configuration endpoint url to use for Enrollment
-    configurationEndpointUrl *string
-    // Description of the profile
-    description *string
-    // Name of the profile
-    displayName *string
-    // Indicates to authenticate with Apple Setup Assistant instead of Company Portal.
-    enableAuthenticationViaCompanyPortal *bool
-    // Indicates that Company Portal is required on setup assistant enrolled devices
-    requireCompanyPortalOnSetupAssistantEnrolledDevices *bool
-    // Indicates if the profile requires user authentication
-    requiresUserAuthentication *bool
 }
 // NewEnrollmentProfile instantiates a new enrollmentProfile and sets the default values.
 func NewEnrollmentProfile()(*EnrollmentProfile) {
@@ -57,19 +45,47 @@ func CreateEnrollmentProfileFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetConfigurationEndpointUrl gets the configurationEndpointUrl property value. Configuration endpoint url to use for Enrollment
 func (m *EnrollmentProfile) GetConfigurationEndpointUrl()(*string) {
-    return m.configurationEndpointUrl
+    val, err := m.GetBackingStore().Get("configurationEndpointUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDescription gets the description property value. Description of the profile
 func (m *EnrollmentProfile) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. Name of the profile
 func (m *EnrollmentProfile) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetEnableAuthenticationViaCompanyPortal gets the enableAuthenticationViaCompanyPortal property value. Indicates to authenticate with Apple Setup Assistant instead of Company Portal.
 func (m *EnrollmentProfile) GetEnableAuthenticationViaCompanyPortal()(*bool) {
-    return m.enableAuthenticationViaCompanyPortal
+    val, err := m.GetBackingStore().Get("enableAuthenticationViaCompanyPortal")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EnrollmentProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -138,11 +154,25 @@ func (m *EnrollmentProfile) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetRequireCompanyPortalOnSetupAssistantEnrolledDevices gets the requireCompanyPortalOnSetupAssistantEnrolledDevices property value. Indicates that Company Portal is required on setup assistant enrolled devices
 func (m *EnrollmentProfile) GetRequireCompanyPortalOnSetupAssistantEnrolledDevices()(*bool) {
-    return m.requireCompanyPortalOnSetupAssistantEnrolledDevices
+    val, err := m.GetBackingStore().Get("requireCompanyPortalOnSetupAssistantEnrolledDevices")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetRequiresUserAuthentication gets the requiresUserAuthentication property value. Indicates if the profile requires user authentication
 func (m *EnrollmentProfile) GetRequiresUserAuthentication()(*bool) {
-    return m.requiresUserAuthentication
+    val, err := m.GetBackingStore().Get("requiresUserAuthentication")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EnrollmentProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -190,25 +220,60 @@ func (m *EnrollmentProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetConfigurationEndpointUrl sets the configurationEndpointUrl property value. Configuration endpoint url to use for Enrollment
 func (m *EnrollmentProfile) SetConfigurationEndpointUrl(value *string)() {
-    m.configurationEndpointUrl = value
+    err := m.GetBackingStore().Set("configurationEndpointUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. Description of the profile
 func (m *EnrollmentProfile) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. Name of the profile
 func (m *EnrollmentProfile) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnableAuthenticationViaCompanyPortal sets the enableAuthenticationViaCompanyPortal property value. Indicates to authenticate with Apple Setup Assistant instead of Company Portal.
 func (m *EnrollmentProfile) SetEnableAuthenticationViaCompanyPortal(value *bool)() {
-    m.enableAuthenticationViaCompanyPortal = value
+    err := m.GetBackingStore().Set("enableAuthenticationViaCompanyPortal", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRequireCompanyPortalOnSetupAssistantEnrolledDevices sets the requireCompanyPortalOnSetupAssistantEnrolledDevices property value. Indicates that Company Portal is required on setup assistant enrolled devices
 func (m *EnrollmentProfile) SetRequireCompanyPortalOnSetupAssistantEnrolledDevices(value *bool)() {
-    m.requireCompanyPortalOnSetupAssistantEnrolledDevices = value
+    err := m.GetBackingStore().Set("requireCompanyPortalOnSetupAssistantEnrolledDevices", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRequiresUserAuthentication sets the requiresUserAuthentication property value. Indicates if the profile requires user authentication
 func (m *EnrollmentProfile) SetRequiresUserAuthentication(value *bool)() {
-    m.requiresUserAuthentication = value
+    err := m.GetBackingStore().Set("requiresUserAuthentication", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EnrollmentProfileable 
+type EnrollmentProfileable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetConfigurationEndpointUrl()(*string)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetEnableAuthenticationViaCompanyPortal()(*bool)
+    GetRequireCompanyPortalOnSetupAssistantEnrolledDevices()(*bool)
+    GetRequiresUserAuthentication()(*bool)
+    SetConfigurationEndpointUrl(value *string)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetEnableAuthenticationViaCompanyPortal(value *bool)()
+    SetRequireCompanyPortalOnSetupAssistantEnrolledDevices(value *bool)()
+    SetRequiresUserAuthentication(value *bool)()
 }

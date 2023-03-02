@@ -8,16 +8,6 @@ import (
 // ApplicationSignInDetailedSummary 
 type ApplicationSignInDetailedSummary struct {
     Entity
-    // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    aggregatedEventDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Name of the application that the user signed in to.
-    appDisplayName *string
-    // ID of the application that the user signed in to.
-    appId *string
-    // Count of sign-ins made by the application.
-    signInCount *int64
-    // Details of the sign-in status.
-    status SignInStatusable
 }
 // NewApplicationSignInDetailedSummary instantiates a new ApplicationSignInDetailedSummary and sets the default values.
 func NewApplicationSignInDetailedSummary()(*ApplicationSignInDetailedSummary) {
@@ -32,15 +22,36 @@ func CreateApplicationSignInDetailedSummaryFromDiscriminatorValue(parseNode i878
 }
 // GetAggregatedEventDateTime gets the aggregatedEventDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ApplicationSignInDetailedSummary) GetAggregatedEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.aggregatedEventDateTime
+    val, err := m.GetBackingStore().Get("aggregatedEventDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetAppDisplayName gets the appDisplayName property value. Name of the application that the user signed in to.
 func (m *ApplicationSignInDetailedSummary) GetAppDisplayName()(*string) {
-    return m.appDisplayName
+    val, err := m.GetBackingStore().Get("appDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAppId gets the appId property value. ID of the application that the user signed in to.
 func (m *ApplicationSignInDetailedSummary) GetAppId()(*string) {
-    return m.appId
+    val, err := m.GetBackingStore().Get("appId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ApplicationSignInDetailedSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -99,11 +110,25 @@ func (m *ApplicationSignInDetailedSummary) GetFieldDeserializers()(map[string]fu
 }
 // GetSignInCount gets the signInCount property value. Count of sign-ins made by the application.
 func (m *ApplicationSignInDetailedSummary) GetSignInCount()(*int64) {
-    return m.signInCount
+    val, err := m.GetBackingStore().Get("signInCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetStatus gets the status property value. Details of the sign-in status.
 func (m *ApplicationSignInDetailedSummary) GetStatus()(SignInStatusable) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SignInStatusable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ApplicationSignInDetailedSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -145,21 +170,51 @@ func (m *ApplicationSignInDetailedSummary) Serialize(writer i878a80d2330e89d2689
 }
 // SetAggregatedEventDateTime sets the aggregatedEventDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ApplicationSignInDetailedSummary) SetAggregatedEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.aggregatedEventDateTime = value
+    err := m.GetBackingStore().Set("aggregatedEventDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppDisplayName sets the appDisplayName property value. Name of the application that the user signed in to.
 func (m *ApplicationSignInDetailedSummary) SetAppDisplayName(value *string)() {
-    m.appDisplayName = value
+    err := m.GetBackingStore().Set("appDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppId sets the appId property value. ID of the application that the user signed in to.
 func (m *ApplicationSignInDetailedSummary) SetAppId(value *string)() {
-    m.appId = value
+    err := m.GetBackingStore().Set("appId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSignInCount sets the signInCount property value. Count of sign-ins made by the application.
 func (m *ApplicationSignInDetailedSummary) SetSignInCount(value *int64)() {
-    m.signInCount = value
+    err := m.GetBackingStore().Set("signInCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. Details of the sign-in status.
 func (m *ApplicationSignInDetailedSummary) SetStatus(value SignInStatusable)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ApplicationSignInDetailedSummaryable 
+type ApplicationSignInDetailedSummaryable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAggregatedEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetAppDisplayName()(*string)
+    GetAppId()(*string)
+    GetSignInCount()(*int64)
+    GetStatus()(SignInStatusable)
+    SetAggregatedEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetAppDisplayName(value *string)()
+    SetAppId(value *string)()
+    SetSignInCount(value *int64)()
+    SetStatus(value SignInStatusable)()
 }

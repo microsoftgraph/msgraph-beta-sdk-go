@@ -26,13 +26,13 @@ type VirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilderPostRe
 func NewVirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilder) {
     m := &VirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/onPremisesConnections/{cloudPcOnPremisesConnection%2Did}/microsoft.graph.runHealthChecks";
+    m.urlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/onPremisesConnections/{cloudPcOnPremisesConnection%2Did}/runHealthChecks";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewVirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilder instantiates a new RunHealthChecksRequestBuilder and sets the default values.

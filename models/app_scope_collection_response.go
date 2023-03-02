@@ -7,8 +7,6 @@ import (
 // AppScopeCollectionResponse 
 type AppScopeCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AppScopeable
 }
 // NewAppScopeCollectionResponse instantiates a new AppScopeCollectionResponse and sets the default values.
 func NewAppScopeCollectionResponse()(*AppScopeCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AppScopeCollectionResponse) GetFieldDeserializers()(map[string]func(i87
 }
 // GetValue gets the value property value. The value property
 func (m *AppScopeCollectionResponse) GetValue()([]AppScopeable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AppScopeable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AppScopeCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AppScopeCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetValue sets the value property value. The value property
 func (m *AppScopeCollectionResponse) SetValue(value []AppScopeable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AppScopeCollectionResponseable 
+type AppScopeCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AppScopeable)
+    SetValue(value []AppScopeable)()
 }

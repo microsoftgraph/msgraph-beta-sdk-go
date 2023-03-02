@@ -46,14 +46,6 @@ type EdiscoveryCasesItemCustodiansCustodianItemRequestBuilderPatchRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Activate provides operations to call the activate method.
-func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) Activate()(*EdiscoveryCasesItemCustodiansItemActivateRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansItemActivateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ApplyHold provides operations to call the applyHold method.
-func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) ApplyHold()(*EdiscoveryCasesItemCustodiansItemApplyHoldRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansItemApplyHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewEdiscoveryCasesItemCustodiansCustodianItemRequestBuilderInternal instantiates a new CustodianItemRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemCustodiansCustodianItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) {
     m := &EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder{
@@ -63,8 +55,8 @@ func NewEdiscoveryCasesItemCustodiansCustodianItemRequestBuilderInternal(pathPar
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEdiscoveryCasesItemCustodiansCustodianItemRequestBuilder instantiates a new CustodianItemRequestBuilder and sets the default values.
@@ -88,6 +80,26 @@ func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) Delete(ctx co
         return err
     }
     return nil
+}
+// EdiscoveryActivate provides operations to call the activate method.
+func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) EdiscoveryActivate()(*EdiscoveryCasesItemCustodiansItemEdiscoveryActivateRequestBuilder) {
+    return NewEdiscoveryCasesItemCustodiansItemEdiscoveryActivateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// EdiscoveryApplyHold provides operations to call the applyHold method.
+func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) EdiscoveryApplyHold()(*EdiscoveryCasesItemCustodiansItemEdiscoveryApplyHoldRequestBuilder) {
+    return NewEdiscoveryCasesItemCustodiansItemEdiscoveryApplyHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// EdiscoveryRelease provides operations to call the release method.
+func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) EdiscoveryRelease()(*EdiscoveryCasesItemCustodiansItemEdiscoveryReleaseRequestBuilder) {
+    return NewEdiscoveryCasesItemCustodiansItemEdiscoveryReleaseRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// EdiscoveryRemoveHold provides operations to call the removeHold method.
+func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) EdiscoveryRemoveHold()(*EdiscoveryCasesItemCustodiansItemEdiscoveryRemoveHoldRequestBuilder) {
+    return NewEdiscoveryCasesItemCustodiansItemEdiscoveryRemoveHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// EdiscoveryUpdateIndex provides operations to call the updateIndex method.
+func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) EdiscoveryUpdateIndex()(*EdiscoveryCasesItemCustodiansItemEdiscoveryUpdateIndexRequestBuilder) {
+    return NewEdiscoveryCasesItemCustodiansItemEdiscoveryUpdateIndexRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get returns a list of case custodian objects for this case.  Nullable.
 func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Custodianable, error) {
@@ -127,17 +139,9 @@ func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) Patch(ctx con
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Custodianable), nil
 }
-// Release provides operations to call the release method.
-func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) Release()(*EdiscoveryCasesItemCustodiansItemReleaseRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansItemReleaseRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// RemoveHold provides operations to call the removeHold method.
-func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) RemoveHold()(*EdiscoveryCasesItemCustodiansItemRemoveHoldRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansItemRemoveHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // SiteSources provides operations to manage the siteSources property of the microsoft.graph.ediscovery.custodian entity.
 func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) SiteSources()(*EdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SiteSourcesById provides operations to manage the siteSources property of the microsoft.graph.ediscovery.custodian entity.
 func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) SiteSourcesById(id string)(*EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilder) {
@@ -148,7 +152,7 @@ func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) SiteSourcesBy
     if id != "" {
         urlTplParams["siteSource%2Did"] = id
     }
-    return NewEdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property custodians for compliance
 func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -185,7 +189,10 @@ func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) ToPatchReques
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -194,7 +201,7 @@ func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) ToPatchReques
 }
 // UnifiedGroupSources provides operations to manage the unifiedGroupSources property of the microsoft.graph.ediscovery.custodian entity.
 func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) UnifiedGroupSources()(*EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UnifiedGroupSourcesById provides operations to manage the unifiedGroupSources property of the microsoft.graph.ediscovery.custodian entity.
 func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) UnifiedGroupSourcesById(id string)(*EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesUnifiedGroupSourceItemRequestBuilder) {
@@ -205,15 +212,11 @@ func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) UnifiedGroupS
     if id != "" {
         urlTplParams["unifiedGroupSource%2Did"] = id
     }
-    return NewEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesUnifiedGroupSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// UpdateIndex provides operations to call the updateIndex method.
-func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) UpdateIndex()(*EdiscoveryCasesItemCustodiansItemUpdateIndexRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansItemUpdateIndexRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesUnifiedGroupSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserSources provides operations to manage the userSources property of the microsoft.graph.ediscovery.custodian entity.
 func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) UserSources()(*EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserSourcesById provides operations to manage the userSources property of the microsoft.graph.ediscovery.custodian entity.
 func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) UserSourcesById(id string)(*EdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilder) {
@@ -224,5 +227,5 @@ func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) UserSourcesBy
     if id != "" {
         urlTplParams["userSource%2Did"] = id
     }
-    return NewEdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }

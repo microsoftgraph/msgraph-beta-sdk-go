@@ -7,18 +7,6 @@ import (
 // PrivilegedAccess 
 type PrivilegedAccess struct {
     Entity
-    // The display name of the provider managed by PIM.
-    displayName *string
-    // A collection of resources for the provider.
-    resources []GovernanceResourceable
-    // A collection of role assignment requests for the provider.
-    roleAssignmentRequests []GovernanceRoleAssignmentRequestable
-    // A collection of role assignments for the provider.
-    roleAssignments []GovernanceRoleAssignmentable
-    // A collection of role defintions for the provider.
-    roleDefinitions []GovernanceRoleDefinitionable
-    // A collection of role settings for the provider.
-    roleSettings []GovernanceRoleSettingable
 }
 // NewPrivilegedAccess instantiates a new PrivilegedAccess and sets the default values.
 func NewPrivilegedAccess()(*PrivilegedAccess) {
@@ -33,7 +21,14 @@ func CreatePrivilegedAccessFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetDisplayName gets the displayName property value. The display name of the provider managed by PIM.
 func (m *PrivilegedAccess) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrivilegedAccess) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -122,23 +117,58 @@ func (m *PrivilegedAccess) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetResources gets the resources property value. A collection of resources for the provider.
 func (m *PrivilegedAccess) GetResources()([]GovernanceResourceable) {
-    return m.resources
+    val, err := m.GetBackingStore().Get("resources")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GovernanceResourceable)
+    }
+    return nil
 }
 // GetRoleAssignmentRequests gets the roleAssignmentRequests property value. A collection of role assignment requests for the provider.
 func (m *PrivilegedAccess) GetRoleAssignmentRequests()([]GovernanceRoleAssignmentRequestable) {
-    return m.roleAssignmentRequests
+    val, err := m.GetBackingStore().Get("roleAssignmentRequests")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GovernanceRoleAssignmentRequestable)
+    }
+    return nil
 }
 // GetRoleAssignments gets the roleAssignments property value. A collection of role assignments for the provider.
 func (m *PrivilegedAccess) GetRoleAssignments()([]GovernanceRoleAssignmentable) {
-    return m.roleAssignments
+    val, err := m.GetBackingStore().Get("roleAssignments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GovernanceRoleAssignmentable)
+    }
+    return nil
 }
 // GetRoleDefinitions gets the roleDefinitions property value. A collection of role defintions for the provider.
 func (m *PrivilegedAccess) GetRoleDefinitions()([]GovernanceRoleDefinitionable) {
-    return m.roleDefinitions
+    val, err := m.GetBackingStore().Get("roleDefinitions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GovernanceRoleDefinitionable)
+    }
+    return nil
 }
 // GetRoleSettings gets the roleSettings property value. A collection of role settings for the provider.
 func (m *PrivilegedAccess) GetRoleSettings()([]GovernanceRoleSettingable) {
-    return m.roleSettings
+    val, err := m.GetBackingStore().Get("roleSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GovernanceRoleSettingable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrivilegedAccess) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -206,25 +236,60 @@ func (m *PrivilegedAccess) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetDisplayName sets the displayName property value. The display name of the provider managed by PIM.
 func (m *PrivilegedAccess) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResources sets the resources property value. A collection of resources for the provider.
 func (m *PrivilegedAccess) SetResources(value []GovernanceResourceable)() {
-    m.resources = value
+    err := m.GetBackingStore().Set("resources", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleAssignmentRequests sets the roleAssignmentRequests property value. A collection of role assignment requests for the provider.
 func (m *PrivilegedAccess) SetRoleAssignmentRequests(value []GovernanceRoleAssignmentRequestable)() {
-    m.roleAssignmentRequests = value
+    err := m.GetBackingStore().Set("roleAssignmentRequests", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleAssignments sets the roleAssignments property value. A collection of role assignments for the provider.
 func (m *PrivilegedAccess) SetRoleAssignments(value []GovernanceRoleAssignmentable)() {
-    m.roleAssignments = value
+    err := m.GetBackingStore().Set("roleAssignments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleDefinitions sets the roleDefinitions property value. A collection of role defintions for the provider.
 func (m *PrivilegedAccess) SetRoleDefinitions(value []GovernanceRoleDefinitionable)() {
-    m.roleDefinitions = value
+    err := m.GetBackingStore().Set("roleDefinitions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleSettings sets the roleSettings property value. A collection of role settings for the provider.
 func (m *PrivilegedAccess) SetRoleSettings(value []GovernanceRoleSettingable)() {
-    m.roleSettings = value
+    err := m.GetBackingStore().Set("roleSettings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrivilegedAccessable 
+type PrivilegedAccessable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDisplayName()(*string)
+    GetResources()([]GovernanceResourceable)
+    GetRoleAssignmentRequests()([]GovernanceRoleAssignmentRequestable)
+    GetRoleAssignments()([]GovernanceRoleAssignmentable)
+    GetRoleDefinitions()([]GovernanceRoleDefinitionable)
+    GetRoleSettings()([]GovernanceRoleSettingable)
+    SetDisplayName(value *string)()
+    SetResources(value []GovernanceResourceable)()
+    SetRoleAssignmentRequests(value []GovernanceRoleAssignmentRequestable)()
+    SetRoleAssignments(value []GovernanceRoleAssignmentable)()
+    SetRoleDefinitions(value []GovernanceRoleDefinitionable)()
+    SetRoleSettings(value []GovernanceRoleSettingable)()
 }

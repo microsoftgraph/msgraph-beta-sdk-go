@@ -41,8 +41,8 @@ func NewManagedTenantsManagementTemplateCollectionsItemManagementTemplatesManage
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedTenantsManagementTemplateCollectionsItemManagementTemplatesManagementTemplateItemRequestBuilder instantiates a new ManagementTemplateItemRequestBuilder and sets the default values.

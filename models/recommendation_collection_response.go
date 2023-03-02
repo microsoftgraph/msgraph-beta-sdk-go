@@ -7,8 +7,6 @@ import (
 // RecommendationCollectionResponse 
 type RecommendationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Recommendationable
 }
 // NewRecommendationCollectionResponse instantiates a new RecommendationCollectionResponse and sets the default values.
 func NewRecommendationCollectionResponse()(*RecommendationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *RecommendationCollectionResponse) GetFieldDeserializers()(map[string]fu
 }
 // GetValue gets the value property value. The value property
 func (m *RecommendationCollectionResponse) GetValue()([]Recommendationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Recommendationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RecommendationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *RecommendationCollectionResponse) Serialize(writer i878a80d2330e89d2689
 }
 // SetValue sets the value property value. The value property
 func (m *RecommendationCollectionResponse) SetValue(value []Recommendationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RecommendationCollectionResponseable 
+type RecommendationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Recommendationable)
+    SetValue(value []Recommendationable)()
 }

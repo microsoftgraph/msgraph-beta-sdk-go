@@ -7,10 +7,6 @@ import (
 // CloudPcForensicStorageAccount 
 type CloudPcForensicStorageAccount struct {
     Entity
-    // The ID of the storage account.
-    storageAccountId *string
-    // The name of the storage account.
-    storageAccountName *string
 }
 // NewCloudPcForensicStorageAccount instantiates a new cloudPcForensicStorageAccount and sets the default values.
 func NewCloudPcForensicStorageAccount()(*CloudPcForensicStorageAccount) {
@@ -50,11 +46,25 @@ func (m *CloudPcForensicStorageAccount) GetFieldDeserializers()(map[string]func(
 }
 // GetStorageAccountId gets the storageAccountId property value. The ID of the storage account.
 func (m *CloudPcForensicStorageAccount) GetStorageAccountId()(*string) {
-    return m.storageAccountId
+    val, err := m.GetBackingStore().Get("storageAccountId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetStorageAccountName gets the storageAccountName property value. The name of the storage account.
 func (m *CloudPcForensicStorageAccount) GetStorageAccountName()(*string) {
-    return m.storageAccountName
+    val, err := m.GetBackingStore().Get("storageAccountName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CloudPcForensicStorageAccount) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -78,9 +88,24 @@ func (m *CloudPcForensicStorageAccount) Serialize(writer i878a80d2330e89d2689638
 }
 // SetStorageAccountId sets the storageAccountId property value. The ID of the storage account.
 func (m *CloudPcForensicStorageAccount) SetStorageAccountId(value *string)() {
-    m.storageAccountId = value
+    err := m.GetBackingStore().Set("storageAccountId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStorageAccountName sets the storageAccountName property value. The name of the storage account.
 func (m *CloudPcForensicStorageAccount) SetStorageAccountName(value *string)() {
-    m.storageAccountName = value
+    err := m.GetBackingStore().Set("storageAccountName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CloudPcForensicStorageAccountable 
+type CloudPcForensicStorageAccountable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetStorageAccountId()(*string)
+    GetStorageAccountName()(*string)
+    SetStorageAccountId(value *string)()
+    SetStorageAccountName(value *string)()
 }

@@ -27,13 +27,13 @@ type ItemItemsItemFollowRequestBuilderPostRequestConfiguration struct {
 func NewItemItemsItemFollowRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemFollowRequestBuilder) {
     m := &ItemItemsItemFollowRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/microsoft.graph.follow";
+    m.urlTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/follow";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemItemsItemFollowRequestBuilder instantiates a new FollowRequestBuilder and sets the default values.

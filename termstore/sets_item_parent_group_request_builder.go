@@ -55,8 +55,8 @@ func NewSetsItemParentGroupRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewSetsItemParentGroupRequestBuilder instantiates a new ParentGroupRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *SetsItemParentGroupRequestBuilder) Patch(ctx context.Context, body i45f
 }
 // Sets provides operations to manage the sets property of the microsoft.graph.termStore.group entity.
 func (m *SetsItemParentGroupRequestBuilder) Sets()(*SetsItemParentGroupSetsRequestBuilder) {
-    return NewSetsItemParentGroupSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSetsItemParentGroupSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SetsById provides operations to manage the sets property of the microsoft.graph.termStore.group entity.
 func (m *SetsItemParentGroupRequestBuilder) SetsById(id string)(*SetsItemParentGroupSetsSetItemRequestBuilder) {
@@ -132,7 +132,7 @@ func (m *SetsItemParentGroupRequestBuilder) SetsById(id string)(*SetsItemParentG
     if id != "" {
         urlTplParams["set%2Did1"] = id
     }
-    return NewSetsItemParentGroupSetsSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSetsItemParentGroupSetsSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property parentGroup for termStore
 func (m *SetsItemParentGroupRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SetsItemParentGroupRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +169,10 @@ func (m *SetsItemParentGroupRequestBuilder) ToPatchRequestInformation(ctx contex
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

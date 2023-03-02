@@ -2,26 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // EvaluateLabelJobResult 
 type EvaluateLabelJobResult struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The OdataType property
-    odataType *string
-    // The responsiblePolicy property
-    responsiblePolicy ResponsiblePolicyable
-    // The responsibleSensitiveTypes property
-    responsibleSensitiveTypes []ResponsibleSensitiveTypeable
-    // The sensitivityLabel property
-    sensitivityLabel MatchingLabelable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewEvaluateLabelJobResult instantiates a new evaluateLabelJobResult and sets the default values.
 func NewEvaluateLabelJobResult()(*EvaluateLabelJobResult) {
     m := &EvaluateLabelJobResult{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateEvaluateLabelJobResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +24,19 @@ func CreateEvaluateLabelJobResultFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EvaluateLabelJobResult) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *EvaluateLabelJobResult) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EvaluateLabelJobResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -83,19 +89,47 @@ func (m *EvaluateLabelJobResult) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *EvaluateLabelJobResult) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetResponsiblePolicy gets the responsiblePolicy property value. The responsiblePolicy property
 func (m *EvaluateLabelJobResult) GetResponsiblePolicy()(ResponsiblePolicyable) {
-    return m.responsiblePolicy
+    val, err := m.GetBackingStore().Get("responsiblePolicy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ResponsiblePolicyable)
+    }
+    return nil
 }
 // GetResponsibleSensitiveTypes gets the responsibleSensitiveTypes property value. The responsibleSensitiveTypes property
 func (m *EvaluateLabelJobResult) GetResponsibleSensitiveTypes()([]ResponsibleSensitiveTypeable) {
-    return m.responsibleSensitiveTypes
+    val, err := m.GetBackingStore().Get("responsibleSensitiveTypes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ResponsibleSensitiveTypeable)
+    }
+    return nil
 }
 // GetSensitivityLabel gets the sensitivityLabel property value. The sensitivityLabel property
 func (m *EvaluateLabelJobResult) GetSensitivityLabel()(MatchingLabelable) {
-    return m.sensitivityLabel
+    val, err := m.GetBackingStore().Get("sensitivityLabel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(MatchingLabelable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EvaluateLabelJobResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -137,21 +171,56 @@ func (m *EvaluateLabelJobResult) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EvaluateLabelJobResult) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *EvaluateLabelJobResult) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *EvaluateLabelJobResult) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResponsiblePolicy sets the responsiblePolicy property value. The responsiblePolicy property
 func (m *EvaluateLabelJobResult) SetResponsiblePolicy(value ResponsiblePolicyable)() {
-    m.responsiblePolicy = value
+    err := m.GetBackingStore().Set("responsiblePolicy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResponsibleSensitiveTypes sets the responsibleSensitiveTypes property value. The responsibleSensitiveTypes property
 func (m *EvaluateLabelJobResult) SetResponsibleSensitiveTypes(value []ResponsibleSensitiveTypeable)() {
-    m.responsibleSensitiveTypes = value
+    err := m.GetBackingStore().Set("responsibleSensitiveTypes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSensitivityLabel sets the sensitivityLabel property value. The sensitivityLabel property
 func (m *EvaluateLabelJobResult) SetSensitivityLabel(value MatchingLabelable)() {
-    m.sensitivityLabel = value
+    err := m.GetBackingStore().Set("sensitivityLabel", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EvaluateLabelJobResultable 
+type EvaluateLabelJobResultable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetOdataType()(*string)
+    GetResponsiblePolicy()(ResponsiblePolicyable)
+    GetResponsibleSensitiveTypes()([]ResponsibleSensitiveTypeable)
+    GetSensitivityLabel()(MatchingLabelable)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetOdataType(value *string)()
+    SetResponsiblePolicy(value ResponsiblePolicyable)()
+    SetResponsibleSensitiveTypes(value []ResponsibleSensitiveTypeable)()
+    SetSensitivityLabel(value MatchingLabelable)()
 }

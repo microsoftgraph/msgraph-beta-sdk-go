@@ -44,10 +44,6 @@ type ItemMembersRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemMembersRequestBuilderGetQueryParameters
 }
-// Application casts the previous resource to application.
-func (m *ItemMembersRequestBuilder) Application()(*ItemMembersApplicationRequestBuilder) {
-    return NewItemMembersApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewItemMembersRequestBuilderInternal instantiates a new MembersRequestBuilder and sets the default values.
 func NewItemMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMembersRequestBuilder) {
     m := &ItemMembersRequestBuilder{
@@ -57,8 +53,8 @@ func NewItemMembersRequestBuilderInternal(pathParameters map[string]string, requ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemMembersRequestBuilder instantiates a new MembersRequestBuilder and sets the default values.
@@ -69,11 +65,7 @@ func NewItemMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemMembersRequestBuilder) Count()(*ItemMembersCountRequestBuilder) {
-    return NewItemMembersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Device casts the previous resource to device.
-func (m *ItemMembersRequestBuilder) Device()(*ItemMembersDeviceRequestBuilder) {
-    return NewItemMembersDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemMembersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get users and groups that are members of this administrative unit. Supports $expand.
 func (m *ItemMembersRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMembersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
@@ -94,21 +86,33 @@ func (m *ItemMembersRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
-// Group casts the previous resource to group.
-func (m *ItemMembersRequestBuilder) Group()(*ItemMembersGroupRequestBuilder) {
-    return NewItemMembersGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// GraphApplication casts the previous resource to application.
+func (m *ItemMembersRequestBuilder) GraphApplication()(*ItemMembersGraphApplicationRequestBuilder) {
+    return NewItemMembersGraphApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// OrgContact casts the previous resource to orgContact.
-func (m *ItemMembersRequestBuilder) OrgContact()(*ItemMembersOrgContactRequestBuilder) {
-    return NewItemMembersOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// GraphDevice casts the previous resource to device.
+func (m *ItemMembersRequestBuilder) GraphDevice()(*ItemMembersGraphDeviceRequestBuilder) {
+    return NewItemMembersGraphDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// GraphGroup casts the previous resource to group.
+func (m *ItemMembersRequestBuilder) GraphGroup()(*ItemMembersGraphGroupRequestBuilder) {
+    return NewItemMembersGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// GraphOrgContact casts the previous resource to orgContact.
+func (m *ItemMembersRequestBuilder) GraphOrgContact()(*ItemMembersGraphOrgContactRequestBuilder) {
+    return NewItemMembersGraphOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// GraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *ItemMembersRequestBuilder) GraphServicePrincipal()(*ItemMembersGraphServicePrincipalRequestBuilder) {
+    return NewItemMembersGraphServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// GraphUser casts the previous resource to user.
+func (m *ItemMembersRequestBuilder) GraphUser()(*ItemMembersGraphUserRequestBuilder) {
+    return NewItemMembersGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Ref provides operations to manage the collection of administrativeUnit entities.
 func (m *ItemMembersRequestBuilder) Ref()(*ItemMembersRefRequestBuilder) {
-    return NewItemMembersRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ServicePrincipal casts the previous resource to servicePrincipal.
-func (m *ItemMembersRequestBuilder) ServicePrincipal()(*ItemMembersServicePrincipalRequestBuilder) {
-    return NewItemMembersServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemMembersRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation users and groups that are members of this administrative unit. Supports $expand.
 func (m *ItemMembersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -125,8 +129,4 @@ func (m *ItemMembersRequestBuilder) ToGetRequestInformation(ctx context.Context,
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// User casts the previous resource to user.
-func (m *ItemMembersRequestBuilder) User()(*ItemMembersUserRequestBuilder) {
-    return NewItemMembersUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

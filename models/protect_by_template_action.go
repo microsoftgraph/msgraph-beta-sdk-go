@@ -7,16 +7,14 @@ import (
 // ProtectByTemplateAction 
 type ProtectByTemplateAction struct {
     InformationProtectionAction
-    // The GUID of the Azure Information Protection template to apply to the information.
-    templateId *string
 }
 // NewProtectByTemplateAction instantiates a new ProtectByTemplateAction and sets the default values.
 func NewProtectByTemplateAction()(*ProtectByTemplateAction) {
     m := &ProtectByTemplateAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
     }
-    odataTypeValue := "#microsoft.graph.protectByTemplateAction";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.protectByTemplateAction"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateProtectByTemplateActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *ProtectByTemplateAction) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetTemplateId gets the templateId property value. The GUID of the Azure Information Protection template to apply to the information.
 func (m *ProtectByTemplateAction) GetTemplateId()(*string) {
-    return m.templateId
+    val, err := m.GetBackingStore().Get("templateId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ProtectByTemplateAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *ProtectByTemplateAction) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetTemplateId sets the templateId property value. The GUID of the Azure Information Protection template to apply to the information.
 func (m *ProtectByTemplateAction) SetTemplateId(value *string)() {
-    m.templateId = value
+    err := m.GetBackingStore().Set("templateId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ProtectByTemplateActionable 
+type ProtectByTemplateActionable interface {
+    InformationProtectionActionable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetTemplateId()(*string)
+    SetTemplateId(value *string)()
 }

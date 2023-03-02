@@ -7,28 +7,14 @@ import (
 // WindowsDefenderAdvancedThreatProtectionConfiguration 
 type WindowsDefenderAdvancedThreatProtectionConfiguration struct {
     DeviceConfiguration
-    // Auto populate onboarding blob programmatically from Advanced Threat protection service
-    advancedThreatProtectionAutoPopulateOnboardingBlob *bool
-    // Windows Defender AdvancedThreatProtection Offboarding Blob.
-    advancedThreatProtectionOffboardingBlob *string
-    // Name of the file from which AdvancedThreatProtectionOffboardingBlob was obtained.
-    advancedThreatProtectionOffboardingFilename *string
-    // Windows Defender AdvancedThreatProtection Onboarding Blob.
-    advancedThreatProtectionOnboardingBlob *string
-    // Name of the file from which AdvancedThreatProtectionOnboardingBlob was obtained.
-    advancedThreatProtectionOnboardingFilename *string
-    // Windows Defender AdvancedThreatProtection 'Allow Sample Sharing' Rule
-    allowSampleSharing *bool
-    // Expedite Windows Defender Advanced Threat Protection telemetry reporting frequency.
-    enableExpeditedTelemetryReporting *bool
 }
 // NewWindowsDefenderAdvancedThreatProtectionConfiguration instantiates a new WindowsDefenderAdvancedThreatProtectionConfiguration and sets the default values.
 func NewWindowsDefenderAdvancedThreatProtectionConfiguration()(*WindowsDefenderAdvancedThreatProtectionConfiguration) {
     m := &WindowsDefenderAdvancedThreatProtectionConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.windowsDefenderAdvancedThreatProtectionConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsDefenderAdvancedThreatProtectionConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsDefenderAdvancedThreatProtectionConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,31 +23,80 @@ func CreateWindowsDefenderAdvancedThreatProtectionConfigurationFromDiscriminator
 }
 // GetAdvancedThreatProtectionAutoPopulateOnboardingBlob gets the advancedThreatProtectionAutoPopulateOnboardingBlob property value. Auto populate onboarding blob programmatically from Advanced Threat protection service
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) GetAdvancedThreatProtectionAutoPopulateOnboardingBlob()(*bool) {
-    return m.advancedThreatProtectionAutoPopulateOnboardingBlob
+    val, err := m.GetBackingStore().Get("advancedThreatProtectionAutoPopulateOnboardingBlob")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetAdvancedThreatProtectionOffboardingBlob gets the advancedThreatProtectionOffboardingBlob property value. Windows Defender AdvancedThreatProtection Offboarding Blob.
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) GetAdvancedThreatProtectionOffboardingBlob()(*string) {
-    return m.advancedThreatProtectionOffboardingBlob
+    val, err := m.GetBackingStore().Get("advancedThreatProtectionOffboardingBlob")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAdvancedThreatProtectionOffboardingFilename gets the advancedThreatProtectionOffboardingFilename property value. Name of the file from which AdvancedThreatProtectionOffboardingBlob was obtained.
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) GetAdvancedThreatProtectionOffboardingFilename()(*string) {
-    return m.advancedThreatProtectionOffboardingFilename
+    val, err := m.GetBackingStore().Get("advancedThreatProtectionOffboardingFilename")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAdvancedThreatProtectionOnboardingBlob gets the advancedThreatProtectionOnboardingBlob property value. Windows Defender AdvancedThreatProtection Onboarding Blob.
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) GetAdvancedThreatProtectionOnboardingBlob()(*string) {
-    return m.advancedThreatProtectionOnboardingBlob
+    val, err := m.GetBackingStore().Get("advancedThreatProtectionOnboardingBlob")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAdvancedThreatProtectionOnboardingFilename gets the advancedThreatProtectionOnboardingFilename property value. Name of the file from which AdvancedThreatProtectionOnboardingBlob was obtained.
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) GetAdvancedThreatProtectionOnboardingFilename()(*string) {
-    return m.advancedThreatProtectionOnboardingFilename
+    val, err := m.GetBackingStore().Get("advancedThreatProtectionOnboardingFilename")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAllowSampleSharing gets the allowSampleSharing property value. Windows Defender AdvancedThreatProtection 'Allow Sample Sharing' Rule
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) GetAllowSampleSharing()(*bool) {
-    return m.allowSampleSharing
+    val, err := m.GetBackingStore().Get("allowSampleSharing")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEnableExpeditedTelemetryReporting gets the enableExpeditedTelemetryReporting property value. Expedite Windows Defender Advanced Threat Protection telemetry reporting frequency.
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) GetEnableExpeditedTelemetryReporting()(*bool) {
-    return m.enableExpeditedTelemetryReporting
+    val, err := m.GetBackingStore().Get("enableExpeditedTelemetryReporting")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -190,29 +225,69 @@ func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) Serialize(writer 
 }
 // SetAdvancedThreatProtectionAutoPopulateOnboardingBlob sets the advancedThreatProtectionAutoPopulateOnboardingBlob property value. Auto populate onboarding blob programmatically from Advanced Threat protection service
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) SetAdvancedThreatProtectionAutoPopulateOnboardingBlob(value *bool)() {
-    m.advancedThreatProtectionAutoPopulateOnboardingBlob = value
+    err := m.GetBackingStore().Set("advancedThreatProtectionAutoPopulateOnboardingBlob", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAdvancedThreatProtectionOffboardingBlob sets the advancedThreatProtectionOffboardingBlob property value. Windows Defender AdvancedThreatProtection Offboarding Blob.
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) SetAdvancedThreatProtectionOffboardingBlob(value *string)() {
-    m.advancedThreatProtectionOffboardingBlob = value
+    err := m.GetBackingStore().Set("advancedThreatProtectionOffboardingBlob", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAdvancedThreatProtectionOffboardingFilename sets the advancedThreatProtectionOffboardingFilename property value. Name of the file from which AdvancedThreatProtectionOffboardingBlob was obtained.
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) SetAdvancedThreatProtectionOffboardingFilename(value *string)() {
-    m.advancedThreatProtectionOffboardingFilename = value
+    err := m.GetBackingStore().Set("advancedThreatProtectionOffboardingFilename", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAdvancedThreatProtectionOnboardingBlob sets the advancedThreatProtectionOnboardingBlob property value. Windows Defender AdvancedThreatProtection Onboarding Blob.
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) SetAdvancedThreatProtectionOnboardingBlob(value *string)() {
-    m.advancedThreatProtectionOnboardingBlob = value
+    err := m.GetBackingStore().Set("advancedThreatProtectionOnboardingBlob", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAdvancedThreatProtectionOnboardingFilename sets the advancedThreatProtectionOnboardingFilename property value. Name of the file from which AdvancedThreatProtectionOnboardingBlob was obtained.
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) SetAdvancedThreatProtectionOnboardingFilename(value *string)() {
-    m.advancedThreatProtectionOnboardingFilename = value
+    err := m.GetBackingStore().Set("advancedThreatProtectionOnboardingFilename", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAllowSampleSharing sets the allowSampleSharing property value. Windows Defender AdvancedThreatProtection 'Allow Sample Sharing' Rule
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) SetAllowSampleSharing(value *bool)() {
-    m.allowSampleSharing = value
+    err := m.GetBackingStore().Set("allowSampleSharing", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnableExpeditedTelemetryReporting sets the enableExpeditedTelemetryReporting property value. Expedite Windows Defender Advanced Threat Protection telemetry reporting frequency.
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) SetEnableExpeditedTelemetryReporting(value *bool)() {
-    m.enableExpeditedTelemetryReporting = value
+    err := m.GetBackingStore().Set("enableExpeditedTelemetryReporting", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsDefenderAdvancedThreatProtectionConfigurationable 
+type WindowsDefenderAdvancedThreatProtectionConfigurationable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAdvancedThreatProtectionAutoPopulateOnboardingBlob()(*bool)
+    GetAdvancedThreatProtectionOffboardingBlob()(*string)
+    GetAdvancedThreatProtectionOffboardingFilename()(*string)
+    GetAdvancedThreatProtectionOnboardingBlob()(*string)
+    GetAdvancedThreatProtectionOnboardingFilename()(*string)
+    GetAllowSampleSharing()(*bool)
+    GetEnableExpeditedTelemetryReporting()(*bool)
+    SetAdvancedThreatProtectionAutoPopulateOnboardingBlob(value *bool)()
+    SetAdvancedThreatProtectionOffboardingBlob(value *string)()
+    SetAdvancedThreatProtectionOffboardingFilename(value *string)()
+    SetAdvancedThreatProtectionOnboardingBlob(value *string)()
+    SetAdvancedThreatProtectionOnboardingFilename(value *string)()
+    SetAllowSampleSharing(value *bool)()
+    SetEnableExpeditedTelemetryReporting(value *bool)()
 }

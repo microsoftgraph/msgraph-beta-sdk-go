@@ -48,11 +48,11 @@ type IntentsDeviceManagementIntentItemRequestBuilderPatchRequestConfiguration st
 }
 // Assign provides operations to call the assign method.
 func (m *IntentsDeviceManagementIntentItemRequestBuilder) Assign()(*IntentsItemAssignRequestBuilder) {
-    return NewIntentsItemAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIntentsItemAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Assignments provides operations to manage the assignments property of the microsoft.graph.deviceManagementIntent entity.
 func (m *IntentsDeviceManagementIntentItemRequestBuilder) Assignments()(*IntentsItemAssignmentsRequestBuilder) {
-    return NewIntentsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIntentsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.deviceManagementIntent entity.
 func (m *IntentsDeviceManagementIntentItemRequestBuilder) AssignmentsById(id string)(*IntentsItemAssignmentsDeviceManagementIntentAssignmentItemRequestBuilder) {
@@ -63,11 +63,11 @@ func (m *IntentsDeviceManagementIntentItemRequestBuilder) AssignmentsById(id str
     if id != "" {
         urlTplParams["deviceManagementIntentAssignment%2Did"] = id
     }
-    return NewIntentsItemAssignmentsDeviceManagementIntentAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewIntentsItemAssignmentsDeviceManagementIntentAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Categories provides operations to manage the categories property of the microsoft.graph.deviceManagementIntent entity.
 func (m *IntentsDeviceManagementIntentItemRequestBuilder) Categories()(*IntentsItemCategoriesRequestBuilder) {
-    return NewIntentsItemCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIntentsItemCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CategoriesById provides operations to manage the categories property of the microsoft.graph.deviceManagementIntent entity.
 func (m *IntentsDeviceManagementIntentItemRequestBuilder) CategoriesById(id string)(*IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilder) {
@@ -78,11 +78,11 @@ func (m *IntentsDeviceManagementIntentItemRequestBuilder) CategoriesById(id stri
     if id != "" {
         urlTplParams["deviceManagementIntentSettingCategory%2Did"] = id
     }
-    return NewIntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewIntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // CompareWithTemplateId provides operations to call the compare method.
 func (m *IntentsDeviceManagementIntentItemRequestBuilder) CompareWithTemplateId(templateId *string)(*IntentsItemCompareWithTemplateIdRequestBuilder) {
-    return NewIntentsItemCompareWithTemplateIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, templateId);
+    return NewIntentsItemCompareWithTemplateIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, templateId)
 }
 // NewIntentsDeviceManagementIntentItemRequestBuilderInternal instantiates a new DeviceManagementIntentItemRequestBuilder and sets the default values.
 func NewIntentsDeviceManagementIntentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IntentsDeviceManagementIntentItemRequestBuilder) {
@@ -93,8 +93,8 @@ func NewIntentsDeviceManagementIntentItemRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewIntentsDeviceManagementIntentItemRequestBuilder instantiates a new DeviceManagementIntentItemRequestBuilder and sets the default values.
@@ -105,7 +105,7 @@ func NewIntentsDeviceManagementIntentItemRequestBuilder(rawUrl string, requestAd
 }
 // CreateCopy provides operations to call the createCopy method.
 func (m *IntentsDeviceManagementIntentItemRequestBuilder) CreateCopy()(*IntentsItemCreateCopyRequestBuilder) {
-    return NewIntentsItemCreateCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIntentsItemCreateCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property intents for deviceManagement
 func (m *IntentsDeviceManagementIntentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *IntentsDeviceManagementIntentItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -125,7 +125,7 @@ func (m *IntentsDeviceManagementIntentItemRequestBuilder) Delete(ctx context.Con
 }
 // DeviceSettingStateSummaries provides operations to manage the deviceSettingStateSummaries property of the microsoft.graph.deviceManagementIntent entity.
 func (m *IntentsDeviceManagementIntentItemRequestBuilder) DeviceSettingStateSummaries()(*IntentsItemDeviceSettingStateSummariesRequestBuilder) {
-    return NewIntentsItemDeviceSettingStateSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIntentsItemDeviceSettingStateSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeviceSettingStateSummariesById provides operations to manage the deviceSettingStateSummaries property of the microsoft.graph.deviceManagementIntent entity.
 func (m *IntentsDeviceManagementIntentItemRequestBuilder) DeviceSettingStateSummariesById(id string)(*IntentsItemDeviceSettingStateSummariesDeviceManagementIntentDeviceSettingStateSummaryItemRequestBuilder) {
@@ -136,11 +136,11 @@ func (m *IntentsDeviceManagementIntentItemRequestBuilder) DeviceSettingStateSumm
     if id != "" {
         urlTplParams["deviceManagementIntentDeviceSettingStateSummary%2Did"] = id
     }
-    return NewIntentsItemDeviceSettingStateSummariesDeviceManagementIntentDeviceSettingStateSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewIntentsItemDeviceSettingStateSummariesDeviceManagementIntentDeviceSettingStateSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // DeviceStates provides operations to manage the deviceStates property of the microsoft.graph.deviceManagementIntent entity.
 func (m *IntentsDeviceManagementIntentItemRequestBuilder) DeviceStates()(*IntentsItemDeviceStatesRequestBuilder) {
-    return NewIntentsItemDeviceStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIntentsItemDeviceStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeviceStatesById provides operations to manage the deviceStates property of the microsoft.graph.deviceManagementIntent entity.
 func (m *IntentsDeviceManagementIntentItemRequestBuilder) DeviceStatesById(id string)(*IntentsItemDeviceStatesDeviceManagementIntentDeviceStateItemRequestBuilder) {
@@ -151,11 +151,11 @@ func (m *IntentsDeviceManagementIntentItemRequestBuilder) DeviceStatesById(id st
     if id != "" {
         urlTplParams["deviceManagementIntentDeviceState%2Did"] = id
     }
-    return NewIntentsItemDeviceStatesDeviceManagementIntentDeviceStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewIntentsItemDeviceStatesDeviceManagementIntentDeviceStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // DeviceStateSummary provides operations to manage the deviceStateSummary property of the microsoft.graph.deviceManagementIntent entity.
 func (m *IntentsDeviceManagementIntentItemRequestBuilder) DeviceStateSummary()(*IntentsItemDeviceStateSummaryRequestBuilder) {
-    return NewIntentsItemDeviceStateSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIntentsItemDeviceStateSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the device management intents
 func (m *IntentsDeviceManagementIntentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IntentsDeviceManagementIntentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementIntentable, error) {
@@ -178,7 +178,7 @@ func (m *IntentsDeviceManagementIntentItemRequestBuilder) Get(ctx context.Contex
 }
 // MigrateToTemplate provides operations to call the migrateToTemplate method.
 func (m *IntentsDeviceManagementIntentItemRequestBuilder) MigrateToTemplate()(*IntentsItemMigrateToTemplateRequestBuilder) {
-    return NewIntentsItemMigrateToTemplateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIntentsItemMigrateToTemplateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property intents in deviceManagement
 func (m *IntentsDeviceManagementIntentItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementIntentable, requestConfiguration *IntentsDeviceManagementIntentItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementIntentable, error) {
@@ -201,7 +201,7 @@ func (m *IntentsDeviceManagementIntentItemRequestBuilder) Patch(ctx context.Cont
 }
 // Settings provides operations to manage the settings property of the microsoft.graph.deviceManagementIntent entity.
 func (m *IntentsDeviceManagementIntentItemRequestBuilder) Settings()(*IntentsItemSettingsRequestBuilder) {
-    return NewIntentsItemSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIntentsItemSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SettingsById provides operations to manage the settings property of the microsoft.graph.deviceManagementIntent entity.
 func (m *IntentsDeviceManagementIntentItemRequestBuilder) SettingsById(id string)(*IntentsItemSettingsDeviceManagementSettingInstanceItemRequestBuilder) {
@@ -212,7 +212,7 @@ func (m *IntentsDeviceManagementIntentItemRequestBuilder) SettingsById(id string
     if id != "" {
         urlTplParams["deviceManagementSettingInstance%2Did"] = id
     }
-    return NewIntentsItemSettingsDeviceManagementSettingInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewIntentsItemSettingsDeviceManagementSettingInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property intents for deviceManagement
 func (m *IntentsDeviceManagementIntentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *IntentsDeviceManagementIntentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -249,7 +249,10 @@ func (m *IntentsDeviceManagementIntentItemRequestBuilder) ToPatchRequestInformat
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -258,11 +261,11 @@ func (m *IntentsDeviceManagementIntentItemRequestBuilder) ToPatchRequestInformat
 }
 // UpdateSettings provides operations to call the updateSettings method.
 func (m *IntentsDeviceManagementIntentItemRequestBuilder) UpdateSettings()(*IntentsItemUpdateSettingsRequestBuilder) {
-    return NewIntentsItemUpdateSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIntentsItemUpdateSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserStates provides operations to manage the userStates property of the microsoft.graph.deviceManagementIntent entity.
 func (m *IntentsDeviceManagementIntentItemRequestBuilder) UserStates()(*IntentsItemUserStatesRequestBuilder) {
-    return NewIntentsItemUserStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIntentsItemUserStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserStatesById provides operations to manage the userStates property of the microsoft.graph.deviceManagementIntent entity.
 func (m *IntentsDeviceManagementIntentItemRequestBuilder) UserStatesById(id string)(*IntentsItemUserStatesDeviceManagementIntentUserStateItemRequestBuilder) {
@@ -273,9 +276,9 @@ func (m *IntentsDeviceManagementIntentItemRequestBuilder) UserStatesById(id stri
     if id != "" {
         urlTplParams["deviceManagementIntentUserState%2Did"] = id
     }
-    return NewIntentsItemUserStatesDeviceManagementIntentUserStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewIntentsItemUserStatesDeviceManagementIntentUserStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UserStateSummary provides operations to manage the userStateSummary property of the microsoft.graph.deviceManagementIntent entity.
 func (m *IntentsDeviceManagementIntentItemRequestBuilder) UserStateSummary()(*IntentsItemUserStateSummaryRequestBuilder) {
-    return NewIntentsItemUserStateSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIntentsItemUserStateSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

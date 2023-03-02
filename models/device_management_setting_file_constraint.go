@@ -7,16 +7,14 @@ import (
 // DeviceManagementSettingFileConstraint 
 type DeviceManagementSettingFileConstraint struct {
     DeviceManagementConstraint
-    // Acceptable file extensions to upload for this setting
-    supportedExtensions []string
 }
 // NewDeviceManagementSettingFileConstraint instantiates a new DeviceManagementSettingFileConstraint and sets the default values.
 func NewDeviceManagementSettingFileConstraint()(*DeviceManagementSettingFileConstraint) {
     m := &DeviceManagementSettingFileConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementSettingFileConstraint";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementSettingFileConstraint"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementSettingFileConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,7 +42,14 @@ func (m *DeviceManagementSettingFileConstraint) GetFieldDeserializers()(map[stri
 }
 // GetSupportedExtensions gets the supportedExtensions property value. Acceptable file extensions to upload for this setting
 func (m *DeviceManagementSettingFileConstraint) GetSupportedExtensions()([]string) {
-    return m.supportedExtensions
+    val, err := m.GetBackingStore().Get("supportedExtensions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementSettingFileConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,5 +67,15 @@ func (m *DeviceManagementSettingFileConstraint) Serialize(writer i878a80d2330e89
 }
 // SetSupportedExtensions sets the supportedExtensions property value. Acceptable file extensions to upload for this setting
 func (m *DeviceManagementSettingFileConstraint) SetSupportedExtensions(value []string)() {
-    m.supportedExtensions = value
+    err := m.GetBackingStore().Set("supportedExtensions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementSettingFileConstraintable 
+type DeviceManagementSettingFileConstraintable interface {
+    DeviceManagementConstraintable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetSupportedExtensions()([]string)
+    SetSupportedExtensions(value []string)()
 }

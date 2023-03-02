@@ -7,8 +7,6 @@ import (
 // AndroidDeviceOwnerKioskModeManagedFolderCollectionResponse 
 type AndroidDeviceOwnerKioskModeManagedFolderCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidDeviceOwnerKioskModeManagedFolderable
 }
 // NewAndroidDeviceOwnerKioskModeManagedFolderCollectionResponse instantiates a new AndroidDeviceOwnerKioskModeManagedFolderCollectionResponse and sets the default values.
 func NewAndroidDeviceOwnerKioskModeManagedFolderCollectionResponse()(*AndroidDeviceOwnerKioskModeManagedFolderCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidDeviceOwnerKioskModeManagedFolderCollectionResponse) GetFieldDes
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidDeviceOwnerKioskModeManagedFolderCollectionResponse) GetValue()([]AndroidDeviceOwnerKioskModeManagedFolderable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidDeviceOwnerKioskModeManagedFolderable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerKioskModeManagedFolderCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidDeviceOwnerKioskModeManagedFolderCollectionResponse) Serialize(w
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidDeviceOwnerKioskModeManagedFolderCollectionResponse) SetValue(value []AndroidDeviceOwnerKioskModeManagedFolderable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidDeviceOwnerKioskModeManagedFolderCollectionResponseable 
+type AndroidDeviceOwnerKioskModeManagedFolderCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidDeviceOwnerKioskModeManagedFolderable)
+    SetValue(value []AndroidDeviceOwnerKioskModeManagedFolderable)()
 }

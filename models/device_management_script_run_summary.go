@@ -7,14 +7,6 @@ import (
 // DeviceManagementScriptRunSummary 
 type DeviceManagementScriptRunSummary struct {
     Entity
-    // Error device count.
-    errorDeviceCount *int32
-    // Error user count.
-    errorUserCount *int32
-    // Success device count.
-    successDeviceCount *int32
-    // Success user count.
-    successUserCount *int32
 }
 // NewDeviceManagementScriptRunSummary instantiates a new deviceManagementScriptRunSummary and sets the default values.
 func NewDeviceManagementScriptRunSummary()(*DeviceManagementScriptRunSummary) {
@@ -29,11 +21,25 @@ func CreateDeviceManagementScriptRunSummaryFromDiscriminatorValue(parseNode i878
 }
 // GetErrorDeviceCount gets the errorDeviceCount property value. Error device count.
 func (m *DeviceManagementScriptRunSummary) GetErrorDeviceCount()(*int32) {
-    return m.errorDeviceCount
+    val, err := m.GetBackingStore().Get("errorDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetErrorUserCount gets the errorUserCount property value. Error user count.
 func (m *DeviceManagementScriptRunSummary) GetErrorUserCount()(*int32) {
-    return m.errorUserCount
+    val, err := m.GetBackingStore().Get("errorUserCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementScriptRunSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -82,11 +88,25 @@ func (m *DeviceManagementScriptRunSummary) GetFieldDeserializers()(map[string]fu
 }
 // GetSuccessDeviceCount gets the successDeviceCount property value. Success device count.
 func (m *DeviceManagementScriptRunSummary) GetSuccessDeviceCount()(*int32) {
-    return m.successDeviceCount
+    val, err := m.GetBackingStore().Get("successDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetSuccessUserCount gets the successUserCount property value. Success user count.
 func (m *DeviceManagementScriptRunSummary) GetSuccessUserCount()(*int32) {
-    return m.successUserCount
+    val, err := m.GetBackingStore().Get("successUserCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementScriptRunSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -122,17 +142,42 @@ func (m *DeviceManagementScriptRunSummary) Serialize(writer i878a80d2330e89d2689
 }
 // SetErrorDeviceCount sets the errorDeviceCount property value. Error device count.
 func (m *DeviceManagementScriptRunSummary) SetErrorDeviceCount(value *int32)() {
-    m.errorDeviceCount = value
+    err := m.GetBackingStore().Set("errorDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetErrorUserCount sets the errorUserCount property value. Error user count.
 func (m *DeviceManagementScriptRunSummary) SetErrorUserCount(value *int32)() {
-    m.errorUserCount = value
+    err := m.GetBackingStore().Set("errorUserCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSuccessDeviceCount sets the successDeviceCount property value. Success device count.
 func (m *DeviceManagementScriptRunSummary) SetSuccessDeviceCount(value *int32)() {
-    m.successDeviceCount = value
+    err := m.GetBackingStore().Set("successDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSuccessUserCount sets the successUserCount property value. Success user count.
 func (m *DeviceManagementScriptRunSummary) SetSuccessUserCount(value *int32)() {
-    m.successUserCount = value
+    err := m.GetBackingStore().Set("successUserCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementScriptRunSummaryable 
+type DeviceManagementScriptRunSummaryable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetErrorDeviceCount()(*int32)
+    GetErrorUserCount()(*int32)
+    GetSuccessDeviceCount()(*int32)
+    GetSuccessUserCount()(*int32)
+    SetErrorDeviceCount(value *int32)()
+    SetErrorUserCount(value *int32)()
+    SetSuccessDeviceCount(value *int32)()
+    SetSuccessUserCount(value *int32)()
 }

@@ -60,8 +60,8 @@ func NewEntitlementManagementRoleAssignmentScheduleInstancesRequestBuilderIntern
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementRoleAssignmentScheduleInstancesRequestBuilder instantiates a new RoleAssignmentScheduleInstancesRequestBuilder and sets the default values.
@@ -72,11 +72,11 @@ func NewEntitlementManagementRoleAssignmentScheduleInstancesRequestBuilder(rawUr
 }
 // Count provides operations to count the resources in the collection.
 func (m *EntitlementManagementRoleAssignmentScheduleInstancesRequestBuilder) Count()(*EntitlementManagementRoleAssignmentScheduleInstancesCountRequestBuilder) {
-    return NewEntitlementManagementRoleAssignmentScheduleInstancesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementRoleAssignmentScheduleInstancesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
 func (m *EntitlementManagementRoleAssignmentScheduleInstancesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*EntitlementManagementRoleAssignmentScheduleInstancesFilterByCurrentUserWithOnRequestBuilder) {
-    return NewEntitlementManagementRoleAssignmentScheduleInstancesFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
+    return NewEntitlementManagementRoleAssignmentScheduleInstancesFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Get get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API.
 // [Find more info here]
@@ -142,7 +142,10 @@ func (m *EntitlementManagementRoleAssignmentScheduleInstancesRequestBuilder) ToP
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

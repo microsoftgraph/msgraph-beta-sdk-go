@@ -7,16 +7,14 @@ import (
 // DeviceManagementSettingRequiredConstraint 
 type DeviceManagementSettingRequiredConstraint struct {
     DeviceManagementConstraint
-    // List of value which means not configured for the setting
-    notConfiguredValue *string
 }
 // NewDeviceManagementSettingRequiredConstraint instantiates a new DeviceManagementSettingRequiredConstraint and sets the default values.
 func NewDeviceManagementSettingRequiredConstraint()(*DeviceManagementSettingRequiredConstraint) {
     m := &DeviceManagementSettingRequiredConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementSettingRequiredConstraint";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementSettingRequiredConstraint"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementSettingRequiredConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *DeviceManagementSettingRequiredConstraint) GetFieldDeserializers()(map[
 }
 // GetNotConfiguredValue gets the notConfiguredValue property value. List of value which means not configured for the setting
 func (m *DeviceManagementSettingRequiredConstraint) GetNotConfiguredValue()(*string) {
-    return m.notConfiguredValue
+    val, err := m.GetBackingStore().Get("notConfiguredValue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementSettingRequiredConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *DeviceManagementSettingRequiredConstraint) Serialize(writer i878a80d233
 }
 // SetNotConfiguredValue sets the notConfiguredValue property value. List of value which means not configured for the setting
 func (m *DeviceManagementSettingRequiredConstraint) SetNotConfiguredValue(value *string)() {
-    m.notConfiguredValue = value
+    err := m.GetBackingStore().Set("notConfiguredValue", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementSettingRequiredConstraintable 
+type DeviceManagementSettingRequiredConstraintable interface {
+    DeviceManagementConstraintable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetNotConfiguredValue()(*string)
+    SetNotConfiguredValue(value *string)()
 }

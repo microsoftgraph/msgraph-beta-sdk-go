@@ -7,18 +7,6 @@ import (
 // TenantSetupInfo 
 type TenantSetupInfo struct {
     Entity
-    // The defaultRolesSettings property
-    defaultRolesSettings PrivilegedRoleSettingsable
-    // The firstTimeSetup property
-    firstTimeSetup *bool
-    // The relevantRolesSettings property
-    relevantRolesSettings []string
-    // The setupStatus property
-    setupStatus *SetupStatus
-    // The skipSetup property
-    skipSetup *bool
-    // The userRolesActions property
-    userRolesActions *string
 }
 // NewTenantSetupInfo instantiates a new TenantSetupInfo and sets the default values.
 func NewTenantSetupInfo()(*TenantSetupInfo) {
@@ -33,7 +21,14 @@ func CreateTenantSetupInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetDefaultRolesSettings gets the defaultRolesSettings property value. The defaultRolesSettings property
 func (m *TenantSetupInfo) GetDefaultRolesSettings()(PrivilegedRoleSettingsable) {
-    return m.defaultRolesSettings
+    val, err := m.GetBackingStore().Get("defaultRolesSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PrivilegedRoleSettingsable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TenantSetupInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -106,23 +101,58 @@ func (m *TenantSetupInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetFirstTimeSetup gets the firstTimeSetup property value. The firstTimeSetup property
 func (m *TenantSetupInfo) GetFirstTimeSetup()(*bool) {
-    return m.firstTimeSetup
+    val, err := m.GetBackingStore().Get("firstTimeSetup")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetRelevantRolesSettings gets the relevantRolesSettings property value. The relevantRolesSettings property
 func (m *TenantSetupInfo) GetRelevantRolesSettings()([]string) {
-    return m.relevantRolesSettings
+    val, err := m.GetBackingStore().Get("relevantRolesSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetSetupStatus gets the setupStatus property value. The setupStatus property
 func (m *TenantSetupInfo) GetSetupStatus()(*SetupStatus) {
-    return m.setupStatus
+    val, err := m.GetBackingStore().Get("setupStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SetupStatus)
+    }
+    return nil
 }
 // GetSkipSetup gets the skipSetup property value. The skipSetup property
 func (m *TenantSetupInfo) GetSkipSetup()(*bool) {
-    return m.skipSetup
+    val, err := m.GetBackingStore().Get("skipSetup")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetUserRolesActions gets the userRolesActions property value. The userRolesActions property
 func (m *TenantSetupInfo) GetUserRolesActions()(*string) {
-    return m.userRolesActions
+    val, err := m.GetBackingStore().Get("userRolesActions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TenantSetupInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -171,25 +201,60 @@ func (m *TenantSetupInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetDefaultRolesSettings sets the defaultRolesSettings property value. The defaultRolesSettings property
 func (m *TenantSetupInfo) SetDefaultRolesSettings(value PrivilegedRoleSettingsable)() {
-    m.defaultRolesSettings = value
+    err := m.GetBackingStore().Set("defaultRolesSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFirstTimeSetup sets the firstTimeSetup property value. The firstTimeSetup property
 func (m *TenantSetupInfo) SetFirstTimeSetup(value *bool)() {
-    m.firstTimeSetup = value
+    err := m.GetBackingStore().Set("firstTimeSetup", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRelevantRolesSettings sets the relevantRolesSettings property value. The relevantRolesSettings property
 func (m *TenantSetupInfo) SetRelevantRolesSettings(value []string)() {
-    m.relevantRolesSettings = value
+    err := m.GetBackingStore().Set("relevantRolesSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSetupStatus sets the setupStatus property value. The setupStatus property
 func (m *TenantSetupInfo) SetSetupStatus(value *SetupStatus)() {
-    m.setupStatus = value
+    err := m.GetBackingStore().Set("setupStatus", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSkipSetup sets the skipSetup property value. The skipSetup property
 func (m *TenantSetupInfo) SetSkipSetup(value *bool)() {
-    m.skipSetup = value
+    err := m.GetBackingStore().Set("skipSetup", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRolesActions sets the userRolesActions property value. The userRolesActions property
 func (m *TenantSetupInfo) SetUserRolesActions(value *string)() {
-    m.userRolesActions = value
+    err := m.GetBackingStore().Set("userRolesActions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TenantSetupInfoable 
+type TenantSetupInfoable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDefaultRolesSettings()(PrivilegedRoleSettingsable)
+    GetFirstTimeSetup()(*bool)
+    GetRelevantRolesSettings()([]string)
+    GetSetupStatus()(*SetupStatus)
+    GetSkipSetup()(*bool)
+    GetUserRolesActions()(*string)
+    SetDefaultRolesSettings(value PrivilegedRoleSettingsable)()
+    SetFirstTimeSetup(value *bool)()
+    SetRelevantRolesSettings(value []string)()
+    SetSetupStatus(value *SetupStatus)()
+    SetSkipSetup(value *bool)()
+    SetUserRolesActions(value *string)()
 }

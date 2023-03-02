@@ -48,7 +48,7 @@ type AppleUserInitiatedEnrollmentProfilesAppleUserInitiatedEnrollmentProfileItem
 }
 // Assignments provides operations to manage the assignments property of the microsoft.graph.appleUserInitiatedEnrollmentProfile entity.
 func (m *AppleUserInitiatedEnrollmentProfilesAppleUserInitiatedEnrollmentProfileItemRequestBuilder) Assignments()(*AppleUserInitiatedEnrollmentProfilesItemAssignmentsRequestBuilder) {
-    return NewAppleUserInitiatedEnrollmentProfilesItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAppleUserInitiatedEnrollmentProfilesItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.appleUserInitiatedEnrollmentProfile entity.
 func (m *AppleUserInitiatedEnrollmentProfilesAppleUserInitiatedEnrollmentProfileItemRequestBuilder) AssignmentsById(id string)(*AppleUserInitiatedEnrollmentProfilesItemAssignmentsAppleEnrollmentProfileAssignmentItemRequestBuilder) {
@@ -59,7 +59,7 @@ func (m *AppleUserInitiatedEnrollmentProfilesAppleUserInitiatedEnrollmentProfile
     if id != "" {
         urlTplParams["appleEnrollmentProfileAssignment%2Did"] = id
     }
-    return NewAppleUserInitiatedEnrollmentProfilesItemAssignmentsAppleEnrollmentProfileAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAppleUserInitiatedEnrollmentProfilesItemAssignmentsAppleEnrollmentProfileAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewAppleUserInitiatedEnrollmentProfilesAppleUserInitiatedEnrollmentProfileItemRequestBuilderInternal instantiates a new AppleUserInitiatedEnrollmentProfileItemRequestBuilder and sets the default values.
 func NewAppleUserInitiatedEnrollmentProfilesAppleUserInitiatedEnrollmentProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppleUserInitiatedEnrollmentProfilesAppleUserInitiatedEnrollmentProfileItemRequestBuilder) {
@@ -70,8 +70,8 @@ func NewAppleUserInitiatedEnrollmentProfilesAppleUserInitiatedEnrollmentProfileI
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAppleUserInitiatedEnrollmentProfilesAppleUserInitiatedEnrollmentProfileItemRequestBuilder instantiates a new AppleUserInitiatedEnrollmentProfileItemRequestBuilder and sets the default values.
@@ -136,7 +136,7 @@ func (m *AppleUserInitiatedEnrollmentProfilesAppleUserInitiatedEnrollmentProfile
 }
 // SetPriority provides operations to call the setPriority method.
 func (m *AppleUserInitiatedEnrollmentProfilesAppleUserInitiatedEnrollmentProfileItemRequestBuilder) SetPriority()(*AppleUserInitiatedEnrollmentProfilesItemSetPriorityRequestBuilder) {
-    return NewAppleUserInitiatedEnrollmentProfilesItemSetPriorityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAppleUserInitiatedEnrollmentProfilesItemSetPriorityRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property appleUserInitiatedEnrollmentProfiles for deviceManagement
 func (m *AppleUserInitiatedEnrollmentProfilesAppleUserInitiatedEnrollmentProfileItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AppleUserInitiatedEnrollmentProfilesAppleUserInitiatedEnrollmentProfileItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -173,7 +173,10 @@ func (m *AppleUserInitiatedEnrollmentProfilesAppleUserInitiatedEnrollmentProfile
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

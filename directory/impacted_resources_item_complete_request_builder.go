@@ -27,13 +27,13 @@ type ImpactedResourcesItemCompleteRequestBuilderPostRequestConfiguration struct 
 func NewImpactedResourcesItemCompleteRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ImpactedResourcesItemCompleteRequestBuilder) {
     m := &ImpactedResourcesItemCompleteRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/directory/impactedResources/{impactedResource%2Did}/microsoft.graph.complete";
+    m.urlTemplate = "{+baseurl}/directory/impactedResources/{impactedResource%2Did}/complete";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewImpactedResourcesItemCompleteRequestBuilder instantiates a new CompleteRequestBuilder and sets the default values.

@@ -44,10 +44,6 @@ type ItemOwnedObjectsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemOwnedObjectsRequestBuilderGetQueryParameters
 }
-// Application casts the previous resource to application.
-func (m *ItemOwnedObjectsRequestBuilder) Application()(*ItemOwnedObjectsApplicationRequestBuilder) {
-    return NewItemOwnedObjectsApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewItemOwnedObjectsRequestBuilderInternal instantiates a new OwnedObjectsRequestBuilder and sets the default values.
 func NewItemOwnedObjectsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOwnedObjectsRequestBuilder) {
     m := &ItemOwnedObjectsRequestBuilder{
@@ -57,8 +53,8 @@ func NewItemOwnedObjectsRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemOwnedObjectsRequestBuilder instantiates a new OwnedObjectsRequestBuilder and sets the default values.
@@ -69,7 +65,7 @@ func NewItemOwnedObjectsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemOwnedObjectsRequestBuilder) Count()(*ItemOwnedObjectsCountRequestBuilder) {
-    return NewItemOwnedObjectsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOwnedObjectsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get directory objects that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 // [Find more info here]
@@ -93,13 +89,17 @@ func (m *ItemOwnedObjectsRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
-// Group casts the previous resource to group.
-func (m *ItemOwnedObjectsRequestBuilder) Group()(*ItemOwnedObjectsGroupRequestBuilder) {
-    return NewItemOwnedObjectsGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// GraphApplication casts the previous resource to application.
+func (m *ItemOwnedObjectsRequestBuilder) GraphApplication()(*ItemOwnedObjectsGraphApplicationRequestBuilder) {
+    return NewItemOwnedObjectsGraphApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// ServicePrincipal casts the previous resource to servicePrincipal.
-func (m *ItemOwnedObjectsRequestBuilder) ServicePrincipal()(*ItemOwnedObjectsServicePrincipalRequestBuilder) {
-    return NewItemOwnedObjectsServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// GraphGroup casts the previous resource to group.
+func (m *ItemOwnedObjectsRequestBuilder) GraphGroup()(*ItemOwnedObjectsGraphGroupRequestBuilder) {
+    return NewItemOwnedObjectsGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// GraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *ItemOwnedObjectsRequestBuilder) GraphServicePrincipal()(*ItemOwnedObjectsGraphServicePrincipalRequestBuilder) {
+    return NewItemOwnedObjectsGraphServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation directory objects that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *ItemOwnedObjectsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOwnedObjectsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

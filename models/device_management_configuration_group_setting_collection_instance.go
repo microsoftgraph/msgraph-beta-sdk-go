@@ -7,16 +7,14 @@ import (
 // DeviceManagementConfigurationGroupSettingCollectionInstance 
 type DeviceManagementConfigurationGroupSettingCollectionInstance struct {
     DeviceManagementConfigurationSettingInstance
-    // A collection of GroupSetting values
-    groupSettingCollectionValue []DeviceManagementConfigurationGroupSettingValueable
 }
 // NewDeviceManagementConfigurationGroupSettingCollectionInstance instantiates a new DeviceManagementConfigurationGroupSettingCollectionInstance and sets the default values.
 func NewDeviceManagementConfigurationGroupSettingCollectionInstance()(*DeviceManagementConfigurationGroupSettingCollectionInstance) {
     m := &DeviceManagementConfigurationGroupSettingCollectionInstance{
         DeviceManagementConfigurationSettingInstance: *NewDeviceManagementConfigurationSettingInstance(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationGroupSettingCollectionInstance";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationGroupSettingCollectionInstance"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementConfigurationGroupSettingCollectionInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,7 +42,14 @@ func (m *DeviceManagementConfigurationGroupSettingCollectionInstance) GetFieldDe
 }
 // GetGroupSettingCollectionValue gets the groupSettingCollectionValue property value. A collection of GroupSetting values
 func (m *DeviceManagementConfigurationGroupSettingCollectionInstance) GetGroupSettingCollectionValue()([]DeviceManagementConfigurationGroupSettingValueable) {
-    return m.groupSettingCollectionValue
+    val, err := m.GetBackingStore().Get("groupSettingCollectionValue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementConfigurationGroupSettingValueable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationGroupSettingCollectionInstance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -66,5 +71,15 @@ func (m *DeviceManagementConfigurationGroupSettingCollectionInstance) Serialize(
 }
 // SetGroupSettingCollectionValue sets the groupSettingCollectionValue property value. A collection of GroupSetting values
 func (m *DeviceManagementConfigurationGroupSettingCollectionInstance) SetGroupSettingCollectionValue(value []DeviceManagementConfigurationGroupSettingValueable)() {
-    m.groupSettingCollectionValue = value
+    err := m.GetBackingStore().Set("groupSettingCollectionValue", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationGroupSettingCollectionInstanceable 
+type DeviceManagementConfigurationGroupSettingCollectionInstanceable interface {
+    DeviceManagementConfigurationSettingInstanceable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetGroupSettingCollectionValue()([]DeviceManagementConfigurationGroupSettingValueable)
+    SetGroupSettingCollectionValue(value []DeviceManagementConfigurationGroupSettingValueable)()
 }

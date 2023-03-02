@@ -7,8 +7,6 @@ import (
 // AccessPackageResourceAttributeCollectionResponse 
 type AccessPackageResourceAttributeCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AccessPackageResourceAttributeable
 }
 // NewAccessPackageResourceAttributeCollectionResponse instantiates a new AccessPackageResourceAttributeCollectionResponse and sets the default values.
 func NewAccessPackageResourceAttributeCollectionResponse()(*AccessPackageResourceAttributeCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AccessPackageResourceAttributeCollectionResponse) GetFieldDeserializers
 }
 // GetValue gets the value property value. The value property
 func (m *AccessPackageResourceAttributeCollectionResponse) GetValue()([]AccessPackageResourceAttributeable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AccessPackageResourceAttributeable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AccessPackageResourceAttributeCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AccessPackageResourceAttributeCollectionResponse) Serialize(writer i878
 }
 // SetValue sets the value property value. The value property
 func (m *AccessPackageResourceAttributeCollectionResponse) SetValue(value []AccessPackageResourceAttributeable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AccessPackageResourceAttributeCollectionResponseable 
+type AccessPackageResourceAttributeCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AccessPackageResourceAttributeable)
+    SetValue(value []AccessPackageResourceAttributeable)()
 }

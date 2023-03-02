@@ -41,8 +41,8 @@ func NewItemConnectorGroupRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemConnectorGroupRequestBuilder instantiates a new ConnectorGroupRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func (m *ItemConnectorGroupRequestBuilder) Get(ctx context.Context, requestConfi
 }
 // Ref provides operations to manage the collection of application entities.
 func (m *ItemConnectorGroupRequestBuilder) Ref()(*ItemConnectorGroupRefRequestBuilder) {
-    return NewItemConnectorGroupRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemConnectorGroupRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation the connectorGroup the application is using with Azure AD Application Proxy. Nullable.
 func (m *ItemConnectorGroupRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemConnectorGroupRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

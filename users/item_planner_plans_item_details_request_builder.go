@@ -55,8 +55,8 @@ func NewItemPlannerPlansItemDetailsRequestBuilderInternal(pathParameters map[str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemPlannerPlansItemDetailsRequestBuilder instantiates a new DetailsRequestBuilder and sets the default values.
@@ -103,7 +103,7 @@ func (m *ItemPlannerPlansItemDetailsRequestBuilder) Get(ctx context.Context, req
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanDetailsable), nil
 }
-// Patch update the properties of **plannerplandetails** object.
+// Patch update the navigation property details in users
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/plannerplandetails-update?view=graph-rest-1.0
@@ -153,14 +153,17 @@ func (m *ItemPlannerPlansItemDetailsRequestBuilder) ToGetRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of **plannerplandetails** object.
+// ToPatchRequestInformation update the navigation property details in users
 func (m *ItemPlannerPlansItemDetailsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanDetailsable, requestConfiguration *ItemPlannerPlansItemDetailsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

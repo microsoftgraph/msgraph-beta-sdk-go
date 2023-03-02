@@ -2,32 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // DeviceComplianceScriptRule 
 type DeviceComplianceScriptRule struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Data types for rules.
-    dataType *DataType
-    // Data types for rules.
-    deviceComplianceScriptRuleDataType *DeviceComplianceScriptRuleDataType
-    // Operator for rules.
-    deviceComplianceScriptRulOperator *DeviceComplianceScriptRulOperator
-    // The OdataType property
-    odataType *string
-    // Operand specified in the rule.
-    operand *string
-    // Operator for rules.
-    operator *Operator
-    // Setting name specified in the rule.
-    settingName *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewDeviceComplianceScriptRule instantiates a new deviceComplianceScriptRule and sets the default values.
 func NewDeviceComplianceScriptRule()(*DeviceComplianceScriptRule) {
     m := &DeviceComplianceScriptRule{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceComplianceScriptRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,19 +24,52 @@ func CreateDeviceComplianceScriptRuleFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceComplianceScriptRule) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *DeviceComplianceScriptRule) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDataType gets the dataType property value. Data types for rules.
 func (m *DeviceComplianceScriptRule) GetDataType()(*DataType) {
-    return m.dataType
+    val, err := m.GetBackingStore().Get("dataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DataType)
+    }
+    return nil
 }
 // GetDeviceComplianceScriptRuleDataType gets the deviceComplianceScriptRuleDataType property value. Data types for rules.
 func (m *DeviceComplianceScriptRule) GetDeviceComplianceScriptRuleDataType()(*DeviceComplianceScriptRuleDataType) {
-    return m.deviceComplianceScriptRuleDataType
+    val, err := m.GetBackingStore().Get("deviceComplianceScriptRuleDataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceComplianceScriptRuleDataType)
+    }
+    return nil
 }
 // GetDeviceComplianceScriptRulOperator gets the deviceComplianceScriptRulOperator property value. Operator for rules.
 func (m *DeviceComplianceScriptRule) GetDeviceComplianceScriptRulOperator()(*DeviceComplianceScriptRulOperator) {
-    return m.deviceComplianceScriptRulOperator
+    val, err := m.GetBackingStore().Get("deviceComplianceScriptRulOperator")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceComplianceScriptRulOperator)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceComplianceScriptRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -127,19 +148,47 @@ func (m *DeviceComplianceScriptRule) GetFieldDeserializers()(map[string]func(i87
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceComplianceScriptRule) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOperand gets the operand property value. Operand specified in the rule.
 func (m *DeviceComplianceScriptRule) GetOperand()(*string) {
-    return m.operand
+    val, err := m.GetBackingStore().Get("operand")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOperator gets the operator property value. Operator for rules.
 func (m *DeviceComplianceScriptRule) GetOperator()(*Operator) {
-    return m.operator
+    val, err := m.GetBackingStore().Get("operator")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Operator)
+    }
+    return nil
 }
 // GetSettingName gets the settingName property value. Setting name specified in the rule.
 func (m *DeviceComplianceScriptRule) GetSettingName()(*string) {
-    return m.settingName
+    val, err := m.GetBackingStore().Get("settingName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceComplianceScriptRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -199,33 +248,83 @@ func (m *DeviceComplianceScriptRule) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceComplianceScriptRule) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *DeviceComplianceScriptRule) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDataType sets the dataType property value. Data types for rules.
 func (m *DeviceComplianceScriptRule) SetDataType(value *DataType)() {
-    m.dataType = value
+    err := m.GetBackingStore().Set("dataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceComplianceScriptRuleDataType sets the deviceComplianceScriptRuleDataType property value. Data types for rules.
 func (m *DeviceComplianceScriptRule) SetDeviceComplianceScriptRuleDataType(value *DeviceComplianceScriptRuleDataType)() {
-    m.deviceComplianceScriptRuleDataType = value
+    err := m.GetBackingStore().Set("deviceComplianceScriptRuleDataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceComplianceScriptRulOperator sets the deviceComplianceScriptRulOperator property value. Operator for rules.
 func (m *DeviceComplianceScriptRule) SetDeviceComplianceScriptRulOperator(value *DeviceComplianceScriptRulOperator)() {
-    m.deviceComplianceScriptRulOperator = value
+    err := m.GetBackingStore().Set("deviceComplianceScriptRulOperator", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceComplianceScriptRule) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOperand sets the operand property value. Operand specified in the rule.
 func (m *DeviceComplianceScriptRule) SetOperand(value *string)() {
-    m.operand = value
+    err := m.GetBackingStore().Set("operand", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOperator sets the operator property value. Operator for rules.
 func (m *DeviceComplianceScriptRule) SetOperator(value *Operator)() {
-    m.operator = value
+    err := m.GetBackingStore().Set("operator", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingName sets the settingName property value. Setting name specified in the rule.
 func (m *DeviceComplianceScriptRule) SetSettingName(value *string)() {
-    m.settingName = value
+    err := m.GetBackingStore().Set("settingName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceComplianceScriptRuleable 
+type DeviceComplianceScriptRuleable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDataType()(*DataType)
+    GetDeviceComplianceScriptRuleDataType()(*DeviceComplianceScriptRuleDataType)
+    GetDeviceComplianceScriptRulOperator()(*DeviceComplianceScriptRulOperator)
+    GetOdataType()(*string)
+    GetOperand()(*string)
+    GetOperator()(*Operator)
+    GetSettingName()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDataType(value *DataType)()
+    SetDeviceComplianceScriptRuleDataType(value *DeviceComplianceScriptRuleDataType)()
+    SetDeviceComplianceScriptRulOperator(value *DeviceComplianceScriptRulOperator)()
+    SetOdataType(value *string)()
+    SetOperand(value *string)()
+    SetOperator(value *Operator)()
+    SetSettingName(value *string)()
 }

@@ -2,32 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // PrinterStatus 
 type PrinterStatus struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // A human-readable description of the printer's current processing state. Read-only.
-    description *string
-    // The list of details describing why the printer is in the current state. Valid values are described in the following table. Read-only.
-    details []PrinterProcessingStateDetail
-    // The OdataType property
-    odataType *string
-    // The processingState property
-    processingState *PrinterProcessingState
-    // The processingStateDescription property
-    processingStateDescription *string
-    // The processingStateReasons property
-    processingStateReasons []PrinterProcessingStateReason
-    // The state property
-    state *PrinterProcessingState
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewPrinterStatus instantiates a new printerStatus and sets the default values.
 func NewPrinterStatus()(*PrinterStatus) {
     m := &PrinterStatus{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePrinterStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,15 +24,41 @@ func CreatePrinterStatusFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrinterStatus) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *PrinterStatus) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDescription gets the description property value. A human-readable description of the printer's current processing state. Read-only.
 func (m *PrinterStatus) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDetails gets the details property value. The list of details describing why the printer is in the current state. Valid values are described in the following table. Read-only.
 func (m *PrinterStatus) GetDetails()([]PrinterProcessingStateDetail) {
-    return m.details
+    val, err := m.GetBackingStore().Get("details")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrinterProcessingStateDetail)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrinterStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -131,23 +145,58 @@ func (m *PrinterStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PrinterStatus) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProcessingState gets the processingState property value. The processingState property
 func (m *PrinterStatus) GetProcessingState()(*PrinterProcessingState) {
-    return m.processingState
+    val, err := m.GetBackingStore().Get("processingState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PrinterProcessingState)
+    }
+    return nil
 }
 // GetProcessingStateDescription gets the processingStateDescription property value. The processingStateDescription property
 func (m *PrinterStatus) GetProcessingStateDescription()(*string) {
-    return m.processingStateDescription
+    val, err := m.GetBackingStore().Get("processingStateDescription")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProcessingStateReasons gets the processingStateReasons property value. The processingStateReasons property
 func (m *PrinterStatus) GetProcessingStateReasons()([]PrinterProcessingStateReason) {
-    return m.processingStateReasons
+    val, err := m.GetBackingStore().Get("processingStateReasons")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrinterProcessingStateReason)
+    }
+    return nil
 }
 // GetState gets the state property value. The state property
 func (m *PrinterStatus) GetState()(*PrinterProcessingState) {
-    return m.state
+    val, err := m.GetBackingStore().Get("state")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PrinterProcessingState)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrinterStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -205,33 +254,83 @@ func (m *PrinterStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrinterStatus) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *PrinterStatus) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDescription sets the description property value. A human-readable description of the printer's current processing state. Read-only.
 func (m *PrinterStatus) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDetails sets the details property value. The list of details describing why the printer is in the current state. Valid values are described in the following table. Read-only.
 func (m *PrinterStatus) SetDetails(value []PrinterProcessingStateDetail)() {
-    m.details = value
+    err := m.GetBackingStore().Set("details", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PrinterStatus) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProcessingState sets the processingState property value. The processingState property
 func (m *PrinterStatus) SetProcessingState(value *PrinterProcessingState)() {
-    m.processingState = value
+    err := m.GetBackingStore().Set("processingState", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProcessingStateDescription sets the processingStateDescription property value. The processingStateDescription property
 func (m *PrinterStatus) SetProcessingStateDescription(value *string)() {
-    m.processingStateDescription = value
+    err := m.GetBackingStore().Set("processingStateDescription", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProcessingStateReasons sets the processingStateReasons property value. The processingStateReasons property
 func (m *PrinterStatus) SetProcessingStateReasons(value []PrinterProcessingStateReason)() {
-    m.processingStateReasons = value
+    err := m.GetBackingStore().Set("processingStateReasons", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetState sets the state property value. The state property
 func (m *PrinterStatus) SetState(value *PrinterProcessingState)() {
-    m.state = value
+    err := m.GetBackingStore().Set("state", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrinterStatusable 
+type PrinterStatusable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDescription()(*string)
+    GetDetails()([]PrinterProcessingStateDetail)
+    GetOdataType()(*string)
+    GetProcessingState()(*PrinterProcessingState)
+    GetProcessingStateDescription()(*string)
+    GetProcessingStateReasons()([]PrinterProcessingStateReason)
+    GetState()(*PrinterProcessingState)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDescription(value *string)()
+    SetDetails(value []PrinterProcessingStateDetail)()
+    SetOdataType(value *string)()
+    SetProcessingState(value *PrinterProcessingState)()
+    SetProcessingStateDescription(value *string)()
+    SetProcessingStateReasons(value []PrinterProcessingStateReason)()
+    SetState(value *PrinterProcessingState)()
 }

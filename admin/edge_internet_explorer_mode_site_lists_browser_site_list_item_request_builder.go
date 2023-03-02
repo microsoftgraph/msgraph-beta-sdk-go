@@ -55,8 +55,8 @@ func NewEdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilderIntern
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilder instantiates a new BrowserSiteListItemRequestBuilder and sets the default values.
@@ -121,11 +121,11 @@ func (m *EdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilder) Pat
 }
 // Publish provides operations to call the publish method.
 func (m *EdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilder) Publish()(*EdgeInternetExplorerModeSiteListsItemPublishRequestBuilder) {
-    return NewEdgeInternetExplorerModeSiteListsItemPublishRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdgeInternetExplorerModeSiteListsItemPublishRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SharedCookies provides operations to manage the sharedCookies property of the microsoft.graph.browserSiteList entity.
 func (m *EdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilder) SharedCookies()(*EdgeInternetExplorerModeSiteListsItemSharedCookiesRequestBuilder) {
-    return NewEdgeInternetExplorerModeSiteListsItemSharedCookiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdgeInternetExplorerModeSiteListsItemSharedCookiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SharedCookiesById provides operations to manage the sharedCookies property of the microsoft.graph.browserSiteList entity.
 func (m *EdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilder) SharedCookiesById(id string)(*EdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieItemRequestBuilder) {
@@ -136,11 +136,11 @@ func (m *EdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilder) Sha
     if id != "" {
         urlTplParams["browserSharedCookie%2Did"] = id
     }
-    return NewEdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Sites provides operations to manage the sites property of the microsoft.graph.browserSiteList entity.
 func (m *EdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilder) Sites()(*EdgeInternetExplorerModeSiteListsItemSitesRequestBuilder) {
-    return NewEdgeInternetExplorerModeSiteListsItemSitesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdgeInternetExplorerModeSiteListsItemSitesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SitesById provides operations to manage the sites property of the microsoft.graph.browserSiteList entity.
 func (m *EdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilder) SitesById(id string)(*EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilder) {
@@ -151,7 +151,7 @@ func (m *EdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilder) Sit
     if id != "" {
         urlTplParams["browserSite%2Did"] = id
     }
-    return NewEdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property siteLists for admin
 func (m *EdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -188,7 +188,10 @@ func (m *EdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilder) ToP
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

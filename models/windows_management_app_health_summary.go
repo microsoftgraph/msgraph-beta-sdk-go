@@ -7,12 +7,6 @@ import (
 // WindowsManagementAppHealthSummary 
 type WindowsManagementAppHealthSummary struct {
     Entity
-    // Healthy device count.
-    healthyDeviceCount *int32
-    // Unhealthy device count.
-    unhealthyDeviceCount *int32
-    // Unknown device count.
-    unknownDeviceCount *int32
 }
 // NewWindowsManagementAppHealthSummary instantiates a new WindowsManagementAppHealthSummary and sets the default values.
 func NewWindowsManagementAppHealthSummary()(*WindowsManagementAppHealthSummary) {
@@ -62,15 +56,36 @@ func (m *WindowsManagementAppHealthSummary) GetFieldDeserializers()(map[string]f
 }
 // GetHealthyDeviceCount gets the healthyDeviceCount property value. Healthy device count.
 func (m *WindowsManagementAppHealthSummary) GetHealthyDeviceCount()(*int32) {
-    return m.healthyDeviceCount
+    val, err := m.GetBackingStore().Get("healthyDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetUnhealthyDeviceCount gets the unhealthyDeviceCount property value. Unhealthy device count.
 func (m *WindowsManagementAppHealthSummary) GetUnhealthyDeviceCount()(*int32) {
-    return m.unhealthyDeviceCount
+    val, err := m.GetBackingStore().Get("unhealthyDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetUnknownDeviceCount gets the unknownDeviceCount property value. Unknown device count.
 func (m *WindowsManagementAppHealthSummary) GetUnknownDeviceCount()(*int32) {
-    return m.unknownDeviceCount
+    val, err := m.GetBackingStore().Get("unknownDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsManagementAppHealthSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -100,13 +115,33 @@ func (m *WindowsManagementAppHealthSummary) Serialize(writer i878a80d2330e89d268
 }
 // SetHealthyDeviceCount sets the healthyDeviceCount property value. Healthy device count.
 func (m *WindowsManagementAppHealthSummary) SetHealthyDeviceCount(value *int32)() {
-    m.healthyDeviceCount = value
+    err := m.GetBackingStore().Set("healthyDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUnhealthyDeviceCount sets the unhealthyDeviceCount property value. Unhealthy device count.
 func (m *WindowsManagementAppHealthSummary) SetUnhealthyDeviceCount(value *int32)() {
-    m.unhealthyDeviceCount = value
+    err := m.GetBackingStore().Set("unhealthyDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUnknownDeviceCount sets the unknownDeviceCount property value. Unknown device count.
 func (m *WindowsManagementAppHealthSummary) SetUnknownDeviceCount(value *int32)() {
-    m.unknownDeviceCount = value
+    err := m.GetBackingStore().Set("unknownDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsManagementAppHealthSummaryable 
+type WindowsManagementAppHealthSummaryable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetHealthyDeviceCount()(*int32)
+    GetUnhealthyDeviceCount()(*int32)
+    GetUnknownDeviceCount()(*int32)
+    SetHealthyDeviceCount(value *int32)()
+    SetUnhealthyDeviceCount(value *int32)()
+    SetUnknownDeviceCount(value *int32)()
 }

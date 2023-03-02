@@ -8,26 +8,14 @@ import (
 // MeetingRegistrant 
 type MeetingRegistrant struct {
     MeetingRegistrantBase
-    // The registrant's answer to custom questions.
-    customQuestionAnswers []CustomQuestionAnswerable
-    // The email address of the registrant.
-    email *string
-    // The first name of the registrant.
-    firstName *string
-    // The last name of the registrant.
-    lastName *string
-    // Time in UTC when the registrant registers for the meeting. Read-only.
-    registrationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The registration status of the registrant. Read-only.
-    status *MeetingRegistrantStatus
 }
 // NewMeetingRegistrant instantiates a new MeetingRegistrant and sets the default values.
 func NewMeetingRegistrant()(*MeetingRegistrant) {
     m := &MeetingRegistrant{
         MeetingRegistrantBase: *NewMeetingRegistrantBase(),
     }
-    odataTypeValue := "#microsoft.graph.meetingRegistrant";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.meetingRegistrant"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMeetingRegistrantFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,11 +24,25 @@ func CreateMeetingRegistrantFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetCustomQuestionAnswers gets the customQuestionAnswers property value. The registrant's answer to custom questions.
 func (m *MeetingRegistrant) GetCustomQuestionAnswers()([]CustomQuestionAnswerable) {
-    return m.customQuestionAnswers
+    val, err := m.GetBackingStore().Get("customQuestionAnswers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CustomQuestionAnswerable)
+    }
+    return nil
 }
 // GetEmail gets the email property value. The email address of the registrant.
 func (m *MeetingRegistrant) GetEmail()(*string) {
-    return m.email
+    val, err := m.GetBackingStore().Get("email")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MeetingRegistrant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -113,19 +115,47 @@ func (m *MeetingRegistrant) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetFirstName gets the firstName property value. The first name of the registrant.
 func (m *MeetingRegistrant) GetFirstName()(*string) {
-    return m.firstName
+    val, err := m.GetBackingStore().Get("firstName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLastName gets the lastName property value. The last name of the registrant.
 func (m *MeetingRegistrant) GetLastName()(*string) {
-    return m.lastName
+    val, err := m.GetBackingStore().Get("lastName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRegistrationDateTime gets the registrationDateTime property value. Time in UTC when the registrant registers for the meeting. Read-only.
 func (m *MeetingRegistrant) GetRegistrationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.registrationDateTime
+    val, err := m.GetBackingStore().Get("registrationDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetStatus gets the status property value. The registration status of the registrant. Read-only.
 func (m *MeetingRegistrant) GetStatus()(*MeetingRegistrantStatus) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MeetingRegistrantStatus)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MeetingRegistrant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -178,25 +208,60 @@ func (m *MeetingRegistrant) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetCustomQuestionAnswers sets the customQuestionAnswers property value. The registrant's answer to custom questions.
 func (m *MeetingRegistrant) SetCustomQuestionAnswers(value []CustomQuestionAnswerable)() {
-    m.customQuestionAnswers = value
+    err := m.GetBackingStore().Set("customQuestionAnswers", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEmail sets the email property value. The email address of the registrant.
 func (m *MeetingRegistrant) SetEmail(value *string)() {
-    m.email = value
+    err := m.GetBackingStore().Set("email", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFirstName sets the firstName property value. The first name of the registrant.
 func (m *MeetingRegistrant) SetFirstName(value *string)() {
-    m.firstName = value
+    err := m.GetBackingStore().Set("firstName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastName sets the lastName property value. The last name of the registrant.
 func (m *MeetingRegistrant) SetLastName(value *string)() {
-    m.lastName = value
+    err := m.GetBackingStore().Set("lastName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRegistrationDateTime sets the registrationDateTime property value. Time in UTC when the registrant registers for the meeting. Read-only.
 func (m *MeetingRegistrant) SetRegistrationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.registrationDateTime = value
+    err := m.GetBackingStore().Set("registrationDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. The registration status of the registrant. Read-only.
 func (m *MeetingRegistrant) SetStatus(value *MeetingRegistrantStatus)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MeetingRegistrantable 
+type MeetingRegistrantable interface {
+    MeetingRegistrantBaseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCustomQuestionAnswers()([]CustomQuestionAnswerable)
+    GetEmail()(*string)
+    GetFirstName()(*string)
+    GetLastName()(*string)
+    GetRegistrationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetStatus()(*MeetingRegistrantStatus)
+    SetCustomQuestionAnswers(value []CustomQuestionAnswerable)()
+    SetEmail(value *string)()
+    SetFirstName(value *string)()
+    SetLastName(value *string)()
+    SetRegistrationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetStatus(value *MeetingRegistrantStatus)()
 }

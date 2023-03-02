@@ -64,10 +64,12 @@ const (
     MOVEDEVICETOORGANIZATIONALUNIT_REMOTEACTION
     // Add device action of InitiateMobileDeviceManagementKeyRecovery
     INITIATEMOBILEDEVICEMANAGEMENTKEYRECOVERY_REMOTEACTION
+    // Add device action of InitiateOnDemandProactiveRemediation
+    INITIATEONDEMANDPROACTIVEREMEDIATION_REMOTEACTION
 )
 
 func (i RemoteAction) String() string {
-    return []string{"unknown", "factoryReset", "removeCompanyData", "resetPasscode", "remoteLock", "enableLostMode", "disableLostMode", "locateDevice", "rebootNow", "recoverPasscode", "cleanWindowsDevice", "logoutSharedAppleDeviceActiveUser", "quickScan", "fullScan", "windowsDefenderUpdateSignatures", "factoryResetKeepEnrollmentData", "updateDeviceAccount", "automaticRedeployment", "shutDown", "rotateBitLockerKeys", "rotateFileVaultKey", "getFileVaultKey", "setDeviceName", "activateDeviceEsim", "deprovision", "disable", "reenable", "moveDeviceToOrganizationalUnit", "initiateMobileDeviceManagementKeyRecovery"}[i]
+    return []string{"unknown", "factoryReset", "removeCompanyData", "resetPasscode", "remoteLock", "enableLostMode", "disableLostMode", "locateDevice", "rebootNow", "recoverPasscode", "cleanWindowsDevice", "logoutSharedAppleDeviceActiveUser", "quickScan", "fullScan", "windowsDefenderUpdateSignatures", "factoryResetKeepEnrollmentData", "updateDeviceAccount", "automaticRedeployment", "shutDown", "rotateBitLockerKeys", "rotateFileVaultKey", "getFileVaultKey", "setDeviceName", "activateDeviceEsim", "deprovision", "disable", "reenable", "moveDeviceToOrganizationalUnit", "initiateMobileDeviceManagementKeyRecovery", "initiateOnDemandProactiveRemediation"}[i]
 }
 func ParseRemoteAction(v string) (any, error) {
     result := UNKNOWN_REMOTEACTION
@@ -130,6 +132,8 @@ func ParseRemoteAction(v string) (any, error) {
             result = MOVEDEVICETOORGANIZATIONALUNIT_REMOTEACTION
         case "initiateMobileDeviceManagementKeyRecovery":
             result = INITIATEMOBILEDEVICEMANAGEMENTKEYRECOVERY_REMOTEACTION
+        case "initiateOnDemandProactiveRemediation":
+            result = INITIATEONDEMANDPROACTIVEREMEDIATION_REMOTEACTION
         default:
             return 0, errors.New("Unknown RemoteAction value: " + v)
     }

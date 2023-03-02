@@ -7,10 +7,6 @@ import (
 // AuthenticationListener 
 type AuthenticationListener struct {
     Entity
-    // The priority of the listener. Determines the order of evaluation when an event has multiple listeners. The priority is evaluated from low to high.
-    priority *int32
-    // Filter based on the source of the authentication that is used to determine whether the listener is evaluated. This is currently limited to evaluations based on application the user is authenticating to.
-    sourceFilter AuthenticationSourceFilterable
 }
 // NewAuthenticationListener instantiates a new authenticationListener and sets the default values.
 func NewAuthenticationListener()(*AuthenticationListener) {
@@ -68,11 +64,25 @@ func (m *AuthenticationListener) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetPriority gets the priority property value. The priority of the listener. Determines the order of evaluation when an event has multiple listeners. The priority is evaluated from low to high.
 func (m *AuthenticationListener) GetPriority()(*int32) {
-    return m.priority
+    val, err := m.GetBackingStore().Get("priority")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetSourceFilter gets the sourceFilter property value. Filter based on the source of the authentication that is used to determine whether the listener is evaluated. This is currently limited to evaluations based on application the user is authenticating to.
 func (m *AuthenticationListener) GetSourceFilter()(AuthenticationSourceFilterable) {
-    return m.sourceFilter
+    val, err := m.GetBackingStore().Get("sourceFilter")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AuthenticationSourceFilterable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AuthenticationListener) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -96,9 +106,24 @@ func (m *AuthenticationListener) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetPriority sets the priority property value. The priority of the listener. Determines the order of evaluation when an event has multiple listeners. The priority is evaluated from low to high.
 func (m *AuthenticationListener) SetPriority(value *int32)() {
-    m.priority = value
+    err := m.GetBackingStore().Set("priority", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSourceFilter sets the sourceFilter property value. Filter based on the source of the authentication that is used to determine whether the listener is evaluated. This is currently limited to evaluations based on application the user is authenticating to.
 func (m *AuthenticationListener) SetSourceFilter(value AuthenticationSourceFilterable)() {
-    m.sourceFilter = value
+    err := m.GetBackingStore().Set("sourceFilter", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AuthenticationListenerable 
+type AuthenticationListenerable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetPriority()(*int32)
+    GetSourceFilter()(AuthenticationSourceFilterable)
+    SetPriority(value *int32)()
+    SetSourceFilter(value AuthenticationSourceFilterable)()
 }

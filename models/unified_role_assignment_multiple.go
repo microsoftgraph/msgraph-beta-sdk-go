@@ -7,28 +7,6 @@ import (
 // UnifiedRoleAssignmentMultiple 
 type UnifiedRoleAssignmentMultiple struct {
     Entity
-    // Ids of the app specific scopes when the assignment scopes are app specific. The scopes of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.
-    appScopeIds []string
-    // Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
-    appScopes []AppScopeable
-    // The condition property
-    condition *string
-    // Description of the role assignment.
-    description *string
-    // Ids of the directory objects representing the scopes of the assignment. The scopes of an assignment determine the set of resources for which the principals have been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.
-    directoryScopeIds []string
-    // Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
-    directoryScopes []DirectoryObjectable
-    // Name of the role assignment. Required.
-    displayName *string
-    // Identifiers of the principals to which the assignment is granted.  Supports $filter (any operator only).
-    principalIds []string
-    // Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
-    principals []DirectoryObjectable
-    // Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.  Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.
-    roleDefinition UnifiedRoleDefinitionable
-    // Identifier of the unifiedRoleDefinition the assignment is for.
-    roleDefinitionId *string
 }
 // NewUnifiedRoleAssignmentMultiple instantiates a new unifiedRoleAssignmentMultiple and sets the default values.
 func NewUnifiedRoleAssignmentMultiple()(*UnifiedRoleAssignmentMultiple) {
@@ -43,31 +21,80 @@ func CreateUnifiedRoleAssignmentMultipleFromDiscriminatorValue(parseNode i878a80
 }
 // GetAppScopeIds gets the appScopeIds property value. Ids of the app specific scopes when the assignment scopes are app specific. The scopes of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.
 func (m *UnifiedRoleAssignmentMultiple) GetAppScopeIds()([]string) {
-    return m.appScopeIds
+    val, err := m.GetBackingStore().Get("appScopeIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetAppScopes gets the appScopes property value. Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
 func (m *UnifiedRoleAssignmentMultiple) GetAppScopes()([]AppScopeable) {
-    return m.appScopes
+    val, err := m.GetBackingStore().Get("appScopes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AppScopeable)
+    }
+    return nil
 }
 // GetCondition gets the condition property value. The condition property
 func (m *UnifiedRoleAssignmentMultiple) GetCondition()(*string) {
-    return m.condition
+    val, err := m.GetBackingStore().Get("condition")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDescription gets the description property value. Description of the role assignment.
 func (m *UnifiedRoleAssignmentMultiple) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDirectoryScopeIds gets the directoryScopeIds property value. Ids of the directory objects representing the scopes of the assignment. The scopes of an assignment determine the set of resources for which the principals have been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.
 func (m *UnifiedRoleAssignmentMultiple) GetDirectoryScopeIds()([]string) {
-    return m.directoryScopeIds
+    val, err := m.GetBackingStore().Get("directoryScopeIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetDirectoryScopes gets the directoryScopes property value. Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
 func (m *UnifiedRoleAssignmentMultiple) GetDirectoryScopes()([]DirectoryObjectable) {
-    return m.directoryScopes
+    val, err := m.GetBackingStore().Get("directoryScopes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DirectoryObjectable)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. Name of the role assignment. Required.
 func (m *UnifiedRoleAssignmentMultiple) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedRoleAssignmentMultiple) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -210,19 +237,47 @@ func (m *UnifiedRoleAssignmentMultiple) GetFieldDeserializers()(map[string]func(
 }
 // GetPrincipalIds gets the principalIds property value. Identifiers of the principals to which the assignment is granted.  Supports $filter (any operator only).
 func (m *UnifiedRoleAssignmentMultiple) GetPrincipalIds()([]string) {
-    return m.principalIds
+    val, err := m.GetBackingStore().Get("principalIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetPrincipals gets the principals property value. Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
 func (m *UnifiedRoleAssignmentMultiple) GetPrincipals()([]DirectoryObjectable) {
-    return m.principals
+    val, err := m.GetBackingStore().Get("principals")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DirectoryObjectable)
+    }
+    return nil
 }
 // GetRoleDefinition gets the roleDefinition property value. Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.  Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.
 func (m *UnifiedRoleAssignmentMultiple) GetRoleDefinition()(UnifiedRoleDefinitionable) {
-    return m.roleDefinition
+    val, err := m.GetBackingStore().Get("roleDefinition")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(UnifiedRoleDefinitionable)
+    }
+    return nil
 }
 // GetRoleDefinitionId gets the roleDefinitionId property value. Identifier of the unifiedRoleDefinition the assignment is for.
 func (m *UnifiedRoleAssignmentMultiple) GetRoleDefinitionId()(*string) {
-    return m.roleDefinitionId
+    val, err := m.GetBackingStore().Get("roleDefinitionId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UnifiedRoleAssignmentMultiple) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -312,45 +367,105 @@ func (m *UnifiedRoleAssignmentMultiple) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAppScopeIds sets the appScopeIds property value. Ids of the app specific scopes when the assignment scopes are app specific. The scopes of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.
 func (m *UnifiedRoleAssignmentMultiple) SetAppScopeIds(value []string)() {
-    m.appScopeIds = value
+    err := m.GetBackingStore().Set("appScopeIds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppScopes sets the appScopes property value. Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
 func (m *UnifiedRoleAssignmentMultiple) SetAppScopes(value []AppScopeable)() {
-    m.appScopes = value
+    err := m.GetBackingStore().Set("appScopes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCondition sets the condition property value. The condition property
 func (m *UnifiedRoleAssignmentMultiple) SetCondition(value *string)() {
-    m.condition = value
+    err := m.GetBackingStore().Set("condition", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. Description of the role assignment.
 func (m *UnifiedRoleAssignmentMultiple) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDirectoryScopeIds sets the directoryScopeIds property value. Ids of the directory objects representing the scopes of the assignment. The scopes of an assignment determine the set of resources for which the principals have been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.
 func (m *UnifiedRoleAssignmentMultiple) SetDirectoryScopeIds(value []string)() {
-    m.directoryScopeIds = value
+    err := m.GetBackingStore().Set("directoryScopeIds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDirectoryScopes sets the directoryScopes property value. Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
 func (m *UnifiedRoleAssignmentMultiple) SetDirectoryScopes(value []DirectoryObjectable)() {
-    m.directoryScopes = value
+    err := m.GetBackingStore().Set("directoryScopes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. Name of the role assignment. Required.
 func (m *UnifiedRoleAssignmentMultiple) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPrincipalIds sets the principalIds property value. Identifiers of the principals to which the assignment is granted.  Supports $filter (any operator only).
 func (m *UnifiedRoleAssignmentMultiple) SetPrincipalIds(value []string)() {
-    m.principalIds = value
+    err := m.GetBackingStore().Set("principalIds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPrincipals sets the principals property value. Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
 func (m *UnifiedRoleAssignmentMultiple) SetPrincipals(value []DirectoryObjectable)() {
-    m.principals = value
+    err := m.GetBackingStore().Set("principals", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleDefinition sets the roleDefinition property value. Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.  Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.
 func (m *UnifiedRoleAssignmentMultiple) SetRoleDefinition(value UnifiedRoleDefinitionable)() {
-    m.roleDefinition = value
+    err := m.GetBackingStore().Set("roleDefinition", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleDefinitionId sets the roleDefinitionId property value. Identifier of the unifiedRoleDefinition the assignment is for.
 func (m *UnifiedRoleAssignmentMultiple) SetRoleDefinitionId(value *string)() {
-    m.roleDefinitionId = value
+    err := m.GetBackingStore().Set("roleDefinitionId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UnifiedRoleAssignmentMultipleable 
+type UnifiedRoleAssignmentMultipleable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppScopeIds()([]string)
+    GetAppScopes()([]AppScopeable)
+    GetCondition()(*string)
+    GetDescription()(*string)
+    GetDirectoryScopeIds()([]string)
+    GetDirectoryScopes()([]DirectoryObjectable)
+    GetDisplayName()(*string)
+    GetPrincipalIds()([]string)
+    GetPrincipals()([]DirectoryObjectable)
+    GetRoleDefinition()(UnifiedRoleDefinitionable)
+    GetRoleDefinitionId()(*string)
+    SetAppScopeIds(value []string)()
+    SetAppScopes(value []AppScopeable)()
+    SetCondition(value *string)()
+    SetDescription(value *string)()
+    SetDirectoryScopeIds(value []string)()
+    SetDirectoryScopes(value []DirectoryObjectable)()
+    SetDisplayName(value *string)()
+    SetPrincipalIds(value []string)()
+    SetPrincipals(value []DirectoryObjectable)()
+    SetRoleDefinition(value UnifiedRoleDefinitionable)()
+    SetRoleDefinitionId(value *string)()
 }

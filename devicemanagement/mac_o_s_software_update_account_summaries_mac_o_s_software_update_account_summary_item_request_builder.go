@@ -48,7 +48,7 @@ type MacOSSoftwareUpdateAccountSummariesMacOSSoftwareUpdateAccountSummaryItemReq
 }
 // CategorySummaries provides operations to manage the categorySummaries property of the microsoft.graph.macOSSoftwareUpdateAccountSummary entity.
 func (m *MacOSSoftwareUpdateAccountSummariesMacOSSoftwareUpdateAccountSummaryItemRequestBuilder) CategorySummaries()(*MacOSSoftwareUpdateAccountSummariesItemCategorySummariesRequestBuilder) {
-    return NewMacOSSoftwareUpdateAccountSummariesItemCategorySummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMacOSSoftwareUpdateAccountSummariesItemCategorySummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CategorySummariesById provides operations to manage the categorySummaries property of the microsoft.graph.macOSSoftwareUpdateAccountSummary entity.
 func (m *MacOSSoftwareUpdateAccountSummariesMacOSSoftwareUpdateAccountSummaryItemRequestBuilder) CategorySummariesById(id string)(*MacOSSoftwareUpdateAccountSummariesItemCategorySummariesMacOSSoftwareUpdateCategorySummaryItemRequestBuilder) {
@@ -59,7 +59,7 @@ func (m *MacOSSoftwareUpdateAccountSummariesMacOSSoftwareUpdateAccountSummaryIte
     if id != "" {
         urlTplParams["macOSSoftwareUpdateCategorySummary%2Did"] = id
     }
-    return NewMacOSSoftwareUpdateAccountSummariesItemCategorySummariesMacOSSoftwareUpdateCategorySummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMacOSSoftwareUpdateAccountSummariesItemCategorySummariesMacOSSoftwareUpdateCategorySummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewMacOSSoftwareUpdateAccountSummariesMacOSSoftwareUpdateAccountSummaryItemRequestBuilderInternal instantiates a new MacOSSoftwareUpdateAccountSummaryItemRequestBuilder and sets the default values.
 func NewMacOSSoftwareUpdateAccountSummariesMacOSSoftwareUpdateAccountSummaryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MacOSSoftwareUpdateAccountSummariesMacOSSoftwareUpdateAccountSummaryItemRequestBuilder) {
@@ -70,8 +70,8 @@ func NewMacOSSoftwareUpdateAccountSummariesMacOSSoftwareUpdateAccountSummaryItem
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMacOSSoftwareUpdateAccountSummariesMacOSSoftwareUpdateAccountSummaryItemRequestBuilder instantiates a new MacOSSoftwareUpdateAccountSummaryItemRequestBuilder and sets the default values.
@@ -169,7 +169,10 @@ func (m *MacOSSoftwareUpdateAccountSummariesMacOSSoftwareUpdateAccountSummaryIte
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

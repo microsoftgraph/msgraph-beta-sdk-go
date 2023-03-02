@@ -7,8 +7,6 @@ import (
 // DeviceManagementConfigurationChoiceSettingValueTemplateCollectionResponse 
 type DeviceManagementConfigurationChoiceSettingValueTemplateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementConfigurationChoiceSettingValueTemplateable
 }
 // NewDeviceManagementConfigurationChoiceSettingValueTemplateCollectionResponse instantiates a new DeviceManagementConfigurationChoiceSettingValueTemplateCollectionResponse and sets the default values.
 func NewDeviceManagementConfigurationChoiceSettingValueTemplateCollectionResponse()(*DeviceManagementConfigurationChoiceSettingValueTemplateCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementConfigurationChoiceSettingValueTemplateCollectionRespon
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplateCollectionResponse) GetValue()([]DeviceManagementConfigurationChoiceSettingValueTemplateable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementConfigurationChoiceSettingValueTemplateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplateCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementConfigurationChoiceSettingValueTemplateCollectionRespon
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplateCollectionResponse) SetValue(value []DeviceManagementConfigurationChoiceSettingValueTemplateable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationChoiceSettingValueTemplateCollectionResponseable 
+type DeviceManagementConfigurationChoiceSettingValueTemplateCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementConfigurationChoiceSettingValueTemplateable)
+    SetValue(value []DeviceManagementConfigurationChoiceSettingValueTemplateable)()
 }

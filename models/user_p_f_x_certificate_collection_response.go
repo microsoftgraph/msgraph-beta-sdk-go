@@ -7,8 +7,6 @@ import (
 // UserPFXCertificateCollectionResponse 
 type UserPFXCertificateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UserPFXCertificateable
 }
 // NewUserPFXCertificateCollectionResponse instantiates a new UserPFXCertificateCollectionResponse and sets the default values.
 func NewUserPFXCertificateCollectionResponse()(*UserPFXCertificateCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UserPFXCertificateCollectionResponse) GetFieldDeserializers()(map[strin
 }
 // GetValue gets the value property value. The value property
 func (m *UserPFXCertificateCollectionResponse) GetValue()([]UserPFXCertificateable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserPFXCertificateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserPFXCertificateCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UserPFXCertificateCollectionResponse) Serialize(writer i878a80d2330e89d
 }
 // SetValue sets the value property value. The value property
 func (m *UserPFXCertificateCollectionResponse) SetValue(value []UserPFXCertificateable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserPFXCertificateCollectionResponseable 
+type UserPFXCertificateCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UserPFXCertificateable)
+    SetValue(value []UserPFXCertificateable)()
 }

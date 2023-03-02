@@ -7,26 +7,8 @@ import (
 // AccessPackageSubject 
 type AccessPackageSubject struct {
     Entity
-    // The altSecId property
-    altSecId *string
-    // The connected organization of the subject. Read-only. Nullable.
-    connectedOrganization ConnectedOrganizationable
-    // The identifier of the connected organization of the subject.
-    connectedOrganizationId *string
-    // The display name of the subject.
-    displayName *string
-    // The email address of the subject.
-    email *string
-    // The object identifier of the subject. null if the subject is not yet a user in the tenant.
-    objectId *string
-    // The onPremisesSecurityIdentifier property
-    onPremisesSecurityIdentifier *string
-    // The principal name, if known, of the subject.
-    principalName *string
-    // The subjectLifecycle property
-    subjectLifecycle *AccessPackageSubjectLifecycle
     // The resource type of the subject.
-    type_escaped *string
+    TypeEscaped *string
 }
 // NewAccessPackageSubject instantiates a new accessPackageSubject and sets the default values.
 func NewAccessPackageSubject()(*AccessPackageSubject) {
@@ -41,23 +23,58 @@ func CreateAccessPackageSubjectFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetAltSecId gets the altSecId property value. The altSecId property
 func (m *AccessPackageSubject) GetAltSecId()(*string) {
-    return m.altSecId
+    val, err := m.GetBackingStore().Get("altSecId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetConnectedOrganization gets the connectedOrganization property value. The connected organization of the subject. Read-only. Nullable.
 func (m *AccessPackageSubject) GetConnectedOrganization()(ConnectedOrganizationable) {
-    return m.connectedOrganization
+    val, err := m.GetBackingStore().Get("connectedOrganization")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ConnectedOrganizationable)
+    }
+    return nil
 }
 // GetConnectedOrganizationId gets the connectedOrganizationId property value. The identifier of the connected organization of the subject.
 func (m *AccessPackageSubject) GetConnectedOrganizationId()(*string) {
-    return m.connectedOrganizationId
+    val, err := m.GetBackingStore().Get("connectedOrganizationId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the subject.
 func (m *AccessPackageSubject) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetEmail gets the email property value. The email address of the subject.
 func (m *AccessPackageSubject) GetEmail()(*string) {
-    return m.email
+    val, err := m.GetBackingStore().Get("email")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageSubject) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -166,23 +183,58 @@ func (m *AccessPackageSubject) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetObjectId gets the objectId property value. The object identifier of the subject. null if the subject is not yet a user in the tenant.
 func (m *AccessPackageSubject) GetObjectId()(*string) {
-    return m.objectId
+    val, err := m.GetBackingStore().Get("objectId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. The onPremisesSecurityIdentifier property
 func (m *AccessPackageSubject) GetOnPremisesSecurityIdentifier()(*string) {
-    return m.onPremisesSecurityIdentifier
+    val, err := m.GetBackingStore().Get("onPremisesSecurityIdentifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPrincipalName gets the principalName property value. The principal name, if known, of the subject.
 func (m *AccessPackageSubject) GetPrincipalName()(*string) {
-    return m.principalName
+    val, err := m.GetBackingStore().Get("principalName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSubjectLifecycle gets the subjectLifecycle property value. The subjectLifecycle property
 func (m *AccessPackageSubject) GetSubjectLifecycle()(*AccessPackageSubjectLifecycle) {
-    return m.subjectLifecycle
+    val, err := m.GetBackingStore().Get("subjectLifecycle")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AccessPackageSubjectLifecycle)
+    }
+    return nil
 }
 // GetType gets the type property value. The resource type of the subject.
 func (m *AccessPackageSubject) GetType()(*string) {
-    return m.type_escaped
+    val, err := m.GetBackingStore().Get("typeEscaped")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AccessPackageSubject) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -255,41 +307,96 @@ func (m *AccessPackageSubject) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetAltSecId sets the altSecId property value. The altSecId property
 func (m *AccessPackageSubject) SetAltSecId(value *string)() {
-    m.altSecId = value
+    err := m.GetBackingStore().Set("altSecId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConnectedOrganization sets the connectedOrganization property value. The connected organization of the subject. Read-only. Nullable.
 func (m *AccessPackageSubject) SetConnectedOrganization(value ConnectedOrganizationable)() {
-    m.connectedOrganization = value
+    err := m.GetBackingStore().Set("connectedOrganization", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConnectedOrganizationId sets the connectedOrganizationId property value. The identifier of the connected organization of the subject.
 func (m *AccessPackageSubject) SetConnectedOrganizationId(value *string)() {
-    m.connectedOrganizationId = value
+    err := m.GetBackingStore().Set("connectedOrganizationId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the subject.
 func (m *AccessPackageSubject) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEmail sets the email property value. The email address of the subject.
 func (m *AccessPackageSubject) SetEmail(value *string)() {
-    m.email = value
+    err := m.GetBackingStore().Set("email", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetObjectId sets the objectId property value. The object identifier of the subject. null if the subject is not yet a user in the tenant.
 func (m *AccessPackageSubject) SetObjectId(value *string)() {
-    m.objectId = value
+    err := m.GetBackingStore().Set("objectId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOnPremisesSecurityIdentifier sets the onPremisesSecurityIdentifier property value. The onPremisesSecurityIdentifier property
 func (m *AccessPackageSubject) SetOnPremisesSecurityIdentifier(value *string)() {
-    m.onPremisesSecurityIdentifier = value
+    err := m.GetBackingStore().Set("onPremisesSecurityIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPrincipalName sets the principalName property value. The principal name, if known, of the subject.
 func (m *AccessPackageSubject) SetPrincipalName(value *string)() {
-    m.principalName = value
+    err := m.GetBackingStore().Set("principalName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubjectLifecycle sets the subjectLifecycle property value. The subjectLifecycle property
 func (m *AccessPackageSubject) SetSubjectLifecycle(value *AccessPackageSubjectLifecycle)() {
-    m.subjectLifecycle = value
+    err := m.GetBackingStore().Set("subjectLifecycle", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetType sets the type property value. The resource type of the subject.
 func (m *AccessPackageSubject) SetType(value *string)() {
-    m.type_escaped = value
+    err := m.GetBackingStore().Set("typeEscaped", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AccessPackageSubjectable 
+type AccessPackageSubjectable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAltSecId()(*string)
+    GetConnectedOrganization()(ConnectedOrganizationable)
+    GetConnectedOrganizationId()(*string)
+    GetDisplayName()(*string)
+    GetEmail()(*string)
+    GetObjectId()(*string)
+    GetOnPremisesSecurityIdentifier()(*string)
+    GetPrincipalName()(*string)
+    GetSubjectLifecycle()(*AccessPackageSubjectLifecycle)
+    GetType()(*string)
+    SetAltSecId(value *string)()
+    SetConnectedOrganization(value ConnectedOrganizationable)()
+    SetConnectedOrganizationId(value *string)()
+    SetDisplayName(value *string)()
+    SetEmail(value *string)()
+    SetObjectId(value *string)()
+    SetOnPremisesSecurityIdentifier(value *string)()
+    SetPrincipalName(value *string)()
+    SetSubjectLifecycle(value *AccessPackageSubjectLifecycle)()
+    SetType(value *string)()
 }

@@ -7,8 +7,6 @@ import (
 // AppManagementPolicyCollectionResponse 
 type AppManagementPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AppManagementPolicyable
 }
 // NewAppManagementPolicyCollectionResponse instantiates a new AppManagementPolicyCollectionResponse and sets the default values.
 func NewAppManagementPolicyCollectionResponse()(*AppManagementPolicyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AppManagementPolicyCollectionResponse) GetFieldDeserializers()(map[stri
 }
 // GetValue gets the value property value. The value property
 func (m *AppManagementPolicyCollectionResponse) GetValue()([]AppManagementPolicyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AppManagementPolicyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AppManagementPolicyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AppManagementPolicyCollectionResponse) Serialize(writer i878a80d2330e89
 }
 // SetValue sets the value property value. The value property
 func (m *AppManagementPolicyCollectionResponse) SetValue(value []AppManagementPolicyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AppManagementPolicyCollectionResponseable 
+type AppManagementPolicyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AppManagementPolicyable)
+    SetValue(value []AppManagementPolicyable)()
 }

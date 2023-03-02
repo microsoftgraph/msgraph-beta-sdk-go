@@ -8,8 +8,6 @@ import (
 // ItemCloudPCsItemGetSupportedCloudPcRemoteActionsResponse 
 type ItemCloudPCsItemGetSupportedCloudPcRemoteActionsResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
-    // The value property
-    value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcRemoteActionCapabilityable
 }
 // NewItemCloudPCsItemGetSupportedCloudPcRemoteActionsResponse instantiates a new ItemCloudPCsItemGetSupportedCloudPcRemoteActionsResponse and sets the default values.
 func NewItemCloudPCsItemGetSupportedCloudPcRemoteActionsResponse()(*ItemCloudPCsItemGetSupportedCloudPcRemoteActionsResponse) {
@@ -43,7 +41,14 @@ func (m *ItemCloudPCsItemGetSupportedCloudPcRemoteActionsResponse) GetFieldDeser
 }
 // GetValue gets the value property value. The value property
 func (m *ItemCloudPCsItemGetSupportedCloudPcRemoteActionsResponse) GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcRemoteActionCapabilityable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcRemoteActionCapabilityable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemCloudPCsItemGetSupportedCloudPcRemoteActionsResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *ItemCloudPCsItemGetSupportedCloudPcRemoteActionsResponse) Serialize(wri
 }
 // SetValue sets the value property value. The value property
 func (m *ItemCloudPCsItemGetSupportedCloudPcRemoteActionsResponse) SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcRemoteActionCapabilityable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemCloudPCsItemGetSupportedCloudPcRemoteActionsResponseable 
+type ItemCloudPCsItemGetSupportedCloudPcRemoteActionsResponseable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcRemoteActionCapabilityable)
+    SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcRemoteActionCapabilityable)()
 }

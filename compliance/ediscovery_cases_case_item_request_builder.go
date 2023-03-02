@@ -46,10 +46,6 @@ type EdiscoveryCasesCaseItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Close provides operations to call the close method.
-func (m *EdiscoveryCasesCaseItemRequestBuilder) Close()(*EdiscoveryCasesItemCloseRequestBuilder) {
-    return NewEdiscoveryCasesItemCloseRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewEdiscoveryCasesCaseItemRequestBuilderInternal instantiates a new CaseItemRequestBuilder and sets the default values.
 func NewEdiscoveryCasesCaseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesCaseItemRequestBuilder) {
     m := &EdiscoveryCasesCaseItemRequestBuilder{
@@ -59,8 +55,8 @@ func NewEdiscoveryCasesCaseItemRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEdiscoveryCasesCaseItemRequestBuilder instantiates a new CaseItemRequestBuilder and sets the default values.
@@ -71,7 +67,7 @@ func NewEdiscoveryCasesCaseItemRequestBuilder(rawUrl string, requestAdapter i2ae
 }
 // Custodians provides operations to manage the custodians property of the microsoft.graph.ediscovery.case entity.
 func (m *EdiscoveryCasesCaseItemRequestBuilder) Custodians()(*EdiscoveryCasesItemCustodiansRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesItemCustodiansRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CustodiansById provides operations to manage the custodians property of the microsoft.graph.ediscovery.case entity.
 func (m *EdiscoveryCasesCaseItemRequestBuilder) CustodiansById(id string)(*EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) {
@@ -82,7 +78,7 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) CustodiansById(id string)(*Edisc
     if id != "" {
         urlTplParams["custodian%2Did"] = id
     }
-    return NewEdiscoveryCasesItemCustodiansCustodianItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEdiscoveryCasesItemCustodiansCustodianItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Delete delete navigation property cases for compliance
 func (m *EdiscoveryCasesCaseItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EdiscoveryCasesCaseItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -100,8 +96,16 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) Delete(ctx context.Context, requ
     }
     return nil
 }
+// EdiscoveryClose provides operations to call the close method.
+func (m *EdiscoveryCasesCaseItemRequestBuilder) EdiscoveryClose()(*EdiscoveryCasesItemEdiscoveryCloseRequestBuilder) {
+    return NewEdiscoveryCasesItemEdiscoveryCloseRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// EdiscoveryReopen provides operations to call the reopen method.
+func (m *EdiscoveryCasesCaseItemRequestBuilder) EdiscoveryReopen()(*EdiscoveryCasesItemEdiscoveryReopenRequestBuilder) {
+    return NewEdiscoveryCasesItemEdiscoveryReopenRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get get cases from compliance
-func (m *EdiscoveryCasesCaseItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesCaseItemRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Case_escapedable, error) {
+func (m *EdiscoveryCasesCaseItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesCaseItemRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseEscapedable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -110,18 +114,18 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) Get(ctx context.Context, request
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CreateCase_escapedFromDiscriminatorValue, errorMapping)
+    res, err := m.requestAdapter.Send(ctx, requestInfo, ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CreateCaseEscapedFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Case_escapedable), nil
+    return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseEscapedable), nil
 }
 // LegalHolds provides operations to manage the legalHolds property of the microsoft.graph.ediscovery.case entity.
 func (m *EdiscoveryCasesCaseItemRequestBuilder) LegalHolds()(*EdiscoveryCasesItemLegalHoldsRequestBuilder) {
-    return NewEdiscoveryCasesItemLegalHoldsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesItemLegalHoldsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // LegalHoldsById provides operations to manage the legalHolds property of the microsoft.graph.ediscovery.case entity.
 func (m *EdiscoveryCasesCaseItemRequestBuilder) LegalHoldsById(id string)(*EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) {
@@ -132,11 +136,11 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) LegalHoldsById(id string)(*Edisc
     if id != "" {
         urlTplParams["legalHold%2Did"] = id
     }
-    return NewEdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NoncustodialDataSources provides operations to manage the noncustodialDataSources property of the microsoft.graph.ediscovery.case entity.
 func (m *EdiscoveryCasesCaseItemRequestBuilder) NoncustodialDataSources()(*EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) {
-    return NewEdiscoveryCasesItemNoncustodialDataSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesItemNoncustodialDataSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NoncustodialDataSourcesById provides operations to manage the noncustodialDataSources property of the microsoft.graph.ediscovery.case entity.
 func (m *EdiscoveryCasesCaseItemRequestBuilder) NoncustodialDataSourcesById(id string)(*EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilder) {
@@ -147,11 +151,11 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) NoncustodialDataSourcesById(id s
     if id != "" {
         urlTplParams["noncustodialDataSource%2Did"] = id
     }
-    return NewEdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Operations provides operations to manage the operations property of the microsoft.graph.ediscovery.case entity.
 func (m *EdiscoveryCasesCaseItemRequestBuilder) Operations()(*EdiscoveryCasesItemOperationsRequestBuilder) {
-    return NewEdiscoveryCasesItemOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesItemOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // OperationsById provides operations to manage the operations property of the microsoft.graph.ediscovery.case entity.
 func (m *EdiscoveryCasesCaseItemRequestBuilder) OperationsById(id string)(*EdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder) {
@@ -162,10 +166,10 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) OperationsById(id string)(*Edisc
     if id != "" {
         urlTplParams["caseOperation%2Did"] = id
     }
-    return NewEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch update the navigation property cases in compliance
-func (m *EdiscoveryCasesCaseItemRequestBuilder) Patch(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Case_escapedable, requestConfiguration *EdiscoveryCasesCaseItemRequestBuilderPatchRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Case_escapedable, error) {
+func (m *EdiscoveryCasesCaseItemRequestBuilder) Patch(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseEscapedable, requestConfiguration *EdiscoveryCasesCaseItemRequestBuilderPatchRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseEscapedable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -174,22 +178,18 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) Patch(ctx context.Context, body 
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CreateCase_escapedFromDiscriminatorValue, errorMapping)
+    res, err := m.requestAdapter.Send(ctx, requestInfo, ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CreateCaseEscapedFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Case_escapedable), nil
-}
-// Reopen provides operations to call the reopen method.
-func (m *EdiscoveryCasesCaseItemRequestBuilder) Reopen()(*EdiscoveryCasesItemReopenRequestBuilder) {
-    return NewEdiscoveryCasesItemReopenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseEscapedable), nil
 }
 // ReviewSets provides operations to manage the reviewSets property of the microsoft.graph.ediscovery.case entity.
 func (m *EdiscoveryCasesCaseItemRequestBuilder) ReviewSets()(*EdiscoveryCasesItemReviewSetsRequestBuilder) {
-    return NewEdiscoveryCasesItemReviewSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesItemReviewSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ReviewSetsById provides operations to manage the reviewSets property of the microsoft.graph.ediscovery.case entity.
 func (m *EdiscoveryCasesCaseItemRequestBuilder) ReviewSetsById(id string)(*EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilder) {
@@ -200,15 +200,15 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) ReviewSetsById(id string)(*Edisc
     if id != "" {
         urlTplParams["reviewSet%2Did"] = id
     }
-    return NewEdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Settings provides operations to manage the settings property of the microsoft.graph.ediscovery.case entity.
 func (m *EdiscoveryCasesCaseItemRequestBuilder) Settings()(*EdiscoveryCasesItemSettingsRequestBuilder) {
-    return NewEdiscoveryCasesItemSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesItemSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SourceCollections provides operations to manage the sourceCollections property of the microsoft.graph.ediscovery.case entity.
 func (m *EdiscoveryCasesCaseItemRequestBuilder) SourceCollections()(*EdiscoveryCasesItemSourceCollectionsRequestBuilder) {
-    return NewEdiscoveryCasesItemSourceCollectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesItemSourceCollectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SourceCollectionsById provides operations to manage the sourceCollections property of the microsoft.graph.ediscovery.case entity.
 func (m *EdiscoveryCasesCaseItemRequestBuilder) SourceCollectionsById(id string)(*EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) {
@@ -219,11 +219,11 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) SourceCollectionsById(id string)
     if id != "" {
         urlTplParams["sourceCollection%2Did"] = id
     }
-    return NewEdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Tags provides operations to manage the tags property of the microsoft.graph.ediscovery.case entity.
 func (m *EdiscoveryCasesCaseItemRequestBuilder) Tags()(*EdiscoveryCasesItemTagsRequestBuilder) {
-    return NewEdiscoveryCasesItemTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesItemTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TagsById provides operations to manage the tags property of the microsoft.graph.ediscovery.case entity.
 func (m *EdiscoveryCasesCaseItemRequestBuilder) TagsById(id string)(*EdiscoveryCasesItemTagsTagItemRequestBuilder) {
@@ -234,7 +234,7 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) TagsById(id string)(*EdiscoveryC
     if id != "" {
         urlTplParams["tag%2Did"] = id
     }
-    return NewEdiscoveryCasesItemTagsTagItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEdiscoveryCasesItemTagsTagItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property cases for compliance
 func (m *EdiscoveryCasesCaseItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesCaseItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -265,13 +265,16 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) ToGetRequestInformation(ctx cont
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property cases in compliance
-func (m *EdiscoveryCasesCaseItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Case_escapedable, requestConfiguration *EdiscoveryCasesCaseItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *EdiscoveryCasesCaseItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseEscapedable, requestConfiguration *EdiscoveryCasesCaseItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

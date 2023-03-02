@@ -2,22 +2,20 @@ package devicemanagement
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // WindowsAutopilotDeviceIdentitiesItemAssignUserToDevicePostRequestBody 
 type WindowsAutopilotDeviceIdentitiesItemAssignUserToDevicePostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The addressableUserName property
-    addressableUserName *string
-    // The userPrincipalName property
-    userPrincipalName *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewWindowsAutopilotDeviceIdentitiesItemAssignUserToDevicePostRequestBody instantiates a new WindowsAutopilotDeviceIdentitiesItemAssignUserToDevicePostRequestBody and sets the default values.
 func NewWindowsAutopilotDeviceIdentitiesItemAssignUserToDevicePostRequestBody()(*WindowsAutopilotDeviceIdentitiesItemAssignUserToDevicePostRequestBody) {
     m := &WindowsAutopilotDeviceIdentitiesItemAssignUserToDevicePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWindowsAutopilotDeviceIdentitiesItemAssignUserToDevicePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,11 +24,30 @@ func CreateWindowsAutopilotDeviceIdentitiesItemAssignUserToDevicePostRequestBody
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsAutopilotDeviceIdentitiesItemAssignUserToDevicePostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAddressableUserName gets the addressableUserName property value. The addressableUserName property
 func (m *WindowsAutopilotDeviceIdentitiesItemAssignUserToDevicePostRequestBody) GetAddressableUserName()(*string) {
-    return m.addressableUserName
+    val, err := m.GetBackingStore().Get("addressableUserName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *WindowsAutopilotDeviceIdentitiesItemAssignUserToDevicePostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsAutopilotDeviceIdentitiesItemAssignUserToDevicePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -59,7 +76,14 @@ func (m *WindowsAutopilotDeviceIdentitiesItemAssignUserToDevicePostRequestBody) 
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The userPrincipalName property
 func (m *WindowsAutopilotDeviceIdentitiesItemAssignUserToDevicePostRequestBody) GetUserPrincipalName()(*string) {
-    return m.userPrincipalName
+    val, err := m.GetBackingStore().Get("userPrincipalName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsAutopilotDeviceIdentitiesItemAssignUserToDevicePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -85,13 +109,38 @@ func (m *WindowsAutopilotDeviceIdentitiesItemAssignUserToDevicePostRequestBody) 
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsAutopilotDeviceIdentitiesItemAssignUserToDevicePostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAddressableUserName sets the addressableUserName property value. The addressableUserName property
 func (m *WindowsAutopilotDeviceIdentitiesItemAssignUserToDevicePostRequestBody) SetAddressableUserName(value *string)() {
-    m.addressableUserName = value
+    err := m.GetBackingStore().Set("addressableUserName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *WindowsAutopilotDeviceIdentitiesItemAssignUserToDevicePostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The userPrincipalName property
 func (m *WindowsAutopilotDeviceIdentitiesItemAssignUserToDevicePostRequestBody) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    err := m.GetBackingStore().Set("userPrincipalName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsAutopilotDeviceIdentitiesItemAssignUserToDevicePostRequestBodyable 
+type WindowsAutopilotDeviceIdentitiesItemAssignUserToDevicePostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAddressableUserName()(*string)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetUserPrincipalName()(*string)
+    SetAddressableUserName(value *string)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetUserPrincipalName(value *string)()
 }

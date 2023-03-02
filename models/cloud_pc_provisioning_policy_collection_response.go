@@ -7,8 +7,6 @@ import (
 // CloudPcProvisioningPolicyCollectionResponse 
 type CloudPcProvisioningPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []CloudPcProvisioningPolicyable
 }
 // NewCloudPcProvisioningPolicyCollectionResponse instantiates a new CloudPcProvisioningPolicyCollectionResponse and sets the default values.
 func NewCloudPcProvisioningPolicyCollectionResponse()(*CloudPcProvisioningPolicyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *CloudPcProvisioningPolicyCollectionResponse) GetFieldDeserializers()(ma
 }
 // GetValue gets the value property value. The value property
 func (m *CloudPcProvisioningPolicyCollectionResponse) GetValue()([]CloudPcProvisioningPolicyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CloudPcProvisioningPolicyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CloudPcProvisioningPolicyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *CloudPcProvisioningPolicyCollectionResponse) Serialize(writer i878a80d2
 }
 // SetValue sets the value property value. The value property
 func (m *CloudPcProvisioningPolicyCollectionResponse) SetValue(value []CloudPcProvisioningPolicyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CloudPcProvisioningPolicyCollectionResponseable 
+type CloudPcProvisioningPolicyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]CloudPcProvisioningPolicyable)
+    SetValue(value []CloudPcProvisioningPolicyable)()
 }

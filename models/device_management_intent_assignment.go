@@ -7,8 +7,6 @@ import (
 // DeviceManagementIntentAssignment intent assignment entity
 type DeviceManagementIntentAssignment struct {
     Entity
-    // The assignment target
-    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewDeviceManagementIntentAssignment instantiates a new deviceManagementIntentAssignment and sets the default values.
 func NewDeviceManagementIntentAssignment()(*DeviceManagementIntentAssignment) {
@@ -38,7 +36,14 @@ func (m *DeviceManagementIntentAssignment) GetFieldDeserializers()(map[string]fu
 }
 // GetTarget gets the target property value. The assignment target
 func (m *DeviceManagementIntentAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
-    return m.target
+    val, err := m.GetBackingStore().Get("target")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceAndAppManagementAssignmentTargetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementIntentAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *DeviceManagementIntentAssignment) Serialize(writer i878a80d2330e89d2689
 }
 // SetTarget sets the target property value. The assignment target
 func (m *DeviceManagementIntentAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
-    m.target = value
+    err := m.GetBackingStore().Set("target", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementIntentAssignmentable 
+type DeviceManagementIntentAssignmentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetTarget()(DeviceAndAppManagementAssignmentTargetable)
+    SetTarget(value DeviceAndAppManagementAssignmentTargetable)()
 }

@@ -7,8 +7,6 @@ import (
 // PlannerProgressTaskBoardTaskFormatCollectionResponse 
 type PlannerProgressTaskBoardTaskFormatCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PlannerProgressTaskBoardTaskFormatable
 }
 // NewPlannerProgressTaskBoardTaskFormatCollectionResponse instantiates a new PlannerProgressTaskBoardTaskFormatCollectionResponse and sets the default values.
 func NewPlannerProgressTaskBoardTaskFormatCollectionResponse()(*PlannerProgressTaskBoardTaskFormatCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PlannerProgressTaskBoardTaskFormatCollectionResponse) GetFieldDeseriali
 }
 // GetValue gets the value property value. The value property
 func (m *PlannerProgressTaskBoardTaskFormatCollectionResponse) GetValue()([]PlannerProgressTaskBoardTaskFormatable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerProgressTaskBoardTaskFormatable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PlannerProgressTaskBoardTaskFormatCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PlannerProgressTaskBoardTaskFormatCollectionResponse) Serialize(writer 
 }
 // SetValue sets the value property value. The value property
 func (m *PlannerProgressTaskBoardTaskFormatCollectionResponse) SetValue(value []PlannerProgressTaskBoardTaskFormatable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PlannerProgressTaskBoardTaskFormatCollectionResponseable 
+type PlannerProgressTaskBoardTaskFormatCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PlannerProgressTaskBoardTaskFormatable)
+    SetValue(value []PlannerProgressTaskBoardTaskFormatable)()
 }

@@ -26,13 +26,13 @@ type MicrosoftTunnelSitesItemRequestUpgradeRequestBuilderPostRequestConfiguratio
 func NewMicrosoftTunnelSitesItemRequestUpgradeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MicrosoftTunnelSitesItemRequestUpgradeRequestBuilder) {
     m := &MicrosoftTunnelSitesItemRequestUpgradeRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/microsoftTunnelSites/{microsoftTunnelSite%2Did}/microsoft.graph.requestUpgrade";
+    m.urlTemplate = "{+baseurl}/deviceManagement/microsoftTunnelSites/{microsoftTunnelSite%2Did}/requestUpgrade";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMicrosoftTunnelSitesItemRequestUpgradeRequestBuilder instantiates a new RequestUpgradeRequestBuilder and sets the default values.

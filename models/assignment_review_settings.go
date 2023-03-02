@@ -3,38 +3,20 @@ package models
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // AssignmentReviewSettings 
 type AssignmentReviewSettings struct {
-    // The default decision to apply if the request is not reviewed within the period specified in durationInDays. The possible values are: acceptAccessRecommendation, keepAccess, removeAccess, and unknownFutureValue.
-    accessReviewTimeoutBehavior *AccessReviewTimeoutBehavior
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The number of days within which reviewers should provide input.
-    durationInDays *int32
-    // Specifies whether to display recommendations to the reviewer. The default value is true
-    isAccessRecommendationEnabled *bool
-    // Specifies whether the reviewer must provide justification for the approval. The default value is true.
-    isApprovalJustificationRequired *bool
-    // If true, access reviews are required for assignments from this policy.
-    isEnabled *bool
-    // The OdataType property
-    odataType *string
-    // The interval for recurrence, such as monthly or quarterly.
-    recurrenceType *string
-    // If the reviewerType is Reviewers, this collection specifies the users who will be reviewers, either by ID or as members of a group, using a collection of singleUser and groupMembers.
-    reviewers []UserSetable
-    // Who should be asked to do the review, either Self or Reviewers.
-    reviewerType *string
-    // When the first review should start.
-    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewAssignmentReviewSettings instantiates a new assignmentReviewSettings and sets the default values.
 func NewAssignmentReviewSettings()(*AssignmentReviewSettings) {
     m := &AssignmentReviewSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAssignmentReviewSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,15 +25,41 @@ func CreateAssignmentReviewSettingsFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAccessReviewTimeoutBehavior gets the accessReviewTimeoutBehavior property value. The default decision to apply if the request is not reviewed within the period specified in durationInDays. The possible values are: acceptAccessRecommendation, keepAccess, removeAccess, and unknownFutureValue.
 func (m *AssignmentReviewSettings) GetAccessReviewTimeoutBehavior()(*AccessReviewTimeoutBehavior) {
-    return m.accessReviewTimeoutBehavior
+    val, err := m.GetBackingStore().Get("accessReviewTimeoutBehavior")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AccessReviewTimeoutBehavior)
+    }
+    return nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignmentReviewSettings) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *AssignmentReviewSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDurationInDays gets the durationInDays property value. The number of days within which reviewers should provide input.
 func (m *AssignmentReviewSettings) GetDurationInDays()(*int32) {
-    return m.durationInDays
+    val, err := m.GetBackingStore().Get("durationInDays")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -164,35 +172,91 @@ func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetIsAccessRecommendationEnabled gets the isAccessRecommendationEnabled property value. Specifies whether to display recommendations to the reviewer. The default value is true
 func (m *AssignmentReviewSettings) GetIsAccessRecommendationEnabled()(*bool) {
-    return m.isAccessRecommendationEnabled
+    val, err := m.GetBackingStore().Get("isAccessRecommendationEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsApprovalJustificationRequired gets the isApprovalJustificationRequired property value. Specifies whether the reviewer must provide justification for the approval. The default value is true.
 func (m *AssignmentReviewSettings) GetIsApprovalJustificationRequired()(*bool) {
-    return m.isApprovalJustificationRequired
+    val, err := m.GetBackingStore().Get("isApprovalJustificationRequired")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsEnabled gets the isEnabled property value. If true, access reviews are required for assignments from this policy.
 func (m *AssignmentReviewSettings) GetIsEnabled()(*bool) {
-    return m.isEnabled
+    val, err := m.GetBackingStore().Get("isEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AssignmentReviewSettings) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRecurrenceType gets the recurrenceType property value. The interval for recurrence, such as monthly or quarterly.
 func (m *AssignmentReviewSettings) GetRecurrenceType()(*string) {
-    return m.recurrenceType
+    val, err := m.GetBackingStore().Get("recurrenceType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetReviewers gets the reviewers property value. If the reviewerType is Reviewers, this collection specifies the users who will be reviewers, either by ID or as members of a group, using a collection of singleUser and groupMembers.
 func (m *AssignmentReviewSettings) GetReviewers()([]UserSetable) {
-    return m.reviewers
+    val, err := m.GetBackingStore().Get("reviewers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserSetable)
+    }
+    return nil
 }
 // GetReviewerType gets the reviewerType property value. Who should be asked to do the review, either Self or Reviewers.
 func (m *AssignmentReviewSettings) GetReviewerType()(*string) {
-    return m.reviewerType
+    val, err := m.GetBackingStore().Get("reviewerType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetStartDateTime gets the startDateTime property value. When the first review should start.
 func (m *AssignmentReviewSettings) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.startDateTime
+    val, err := m.GetBackingStore().Get("startDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AssignmentReviewSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -271,45 +335,110 @@ func (m *AssignmentReviewSettings) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAccessReviewTimeoutBehavior sets the accessReviewTimeoutBehavior property value. The default decision to apply if the request is not reviewed within the period specified in durationInDays. The possible values are: acceptAccessRecommendation, keepAccess, removeAccess, and unknownFutureValue.
 func (m *AssignmentReviewSettings) SetAccessReviewTimeoutBehavior(value *AccessReviewTimeoutBehavior)() {
-    m.accessReviewTimeoutBehavior = value
+    err := m.GetBackingStore().Set("accessReviewTimeoutBehavior", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignmentReviewSettings) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *AssignmentReviewSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDurationInDays sets the durationInDays property value. The number of days within which reviewers should provide input.
 func (m *AssignmentReviewSettings) SetDurationInDays(value *int32)() {
-    m.durationInDays = value
+    err := m.GetBackingStore().Set("durationInDays", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsAccessRecommendationEnabled sets the isAccessRecommendationEnabled property value. Specifies whether to display recommendations to the reviewer. The default value is true
 func (m *AssignmentReviewSettings) SetIsAccessRecommendationEnabled(value *bool)() {
-    m.isAccessRecommendationEnabled = value
+    err := m.GetBackingStore().Set("isAccessRecommendationEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsApprovalJustificationRequired sets the isApprovalJustificationRequired property value. Specifies whether the reviewer must provide justification for the approval. The default value is true.
 func (m *AssignmentReviewSettings) SetIsApprovalJustificationRequired(value *bool)() {
-    m.isApprovalJustificationRequired = value
+    err := m.GetBackingStore().Set("isApprovalJustificationRequired", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsEnabled sets the isEnabled property value. If true, access reviews are required for assignments from this policy.
 func (m *AssignmentReviewSettings) SetIsEnabled(value *bool)() {
-    m.isEnabled = value
+    err := m.GetBackingStore().Set("isEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AssignmentReviewSettings) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRecurrenceType sets the recurrenceType property value. The interval for recurrence, such as monthly or quarterly.
 func (m *AssignmentReviewSettings) SetRecurrenceType(value *string)() {
-    m.recurrenceType = value
+    err := m.GetBackingStore().Set("recurrenceType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReviewers sets the reviewers property value. If the reviewerType is Reviewers, this collection specifies the users who will be reviewers, either by ID or as members of a group, using a collection of singleUser and groupMembers.
 func (m *AssignmentReviewSettings) SetReviewers(value []UserSetable)() {
-    m.reviewers = value
+    err := m.GetBackingStore().Set("reviewers", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReviewerType sets the reviewerType property value. Who should be asked to do the review, either Self or Reviewers.
 func (m *AssignmentReviewSettings) SetReviewerType(value *string)() {
-    m.reviewerType = value
+    err := m.GetBackingStore().Set("reviewerType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartDateTime sets the startDateTime property value. When the first review should start.
 func (m *AssignmentReviewSettings) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.startDateTime = value
+    err := m.GetBackingStore().Set("startDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AssignmentReviewSettingsable 
+type AssignmentReviewSettingsable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAccessReviewTimeoutBehavior()(*AccessReviewTimeoutBehavior)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDurationInDays()(*int32)
+    GetIsAccessRecommendationEnabled()(*bool)
+    GetIsApprovalJustificationRequired()(*bool)
+    GetIsEnabled()(*bool)
+    GetOdataType()(*string)
+    GetRecurrenceType()(*string)
+    GetReviewers()([]UserSetable)
+    GetReviewerType()(*string)
+    GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    SetAccessReviewTimeoutBehavior(value *AccessReviewTimeoutBehavior)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDurationInDays(value *int32)()
+    SetIsAccessRecommendationEnabled(value *bool)()
+    SetIsApprovalJustificationRequired(value *bool)()
+    SetIsEnabled(value *bool)()
+    SetOdataType(value *string)()
+    SetRecurrenceType(value *string)()
+    SetReviewers(value []UserSetable)()
+    SetReviewerType(value *string)()
+    SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
 }

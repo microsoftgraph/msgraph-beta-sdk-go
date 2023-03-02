@@ -7,20 +7,14 @@ import (
 // MarkContent 
 type MarkContent struct {
     LabelActionBase
-    // The fontColor property
-    fontColor *string
-    // The fontSize property
-    fontSize *int64
-    // The text property
-    text *string
 }
 // NewMarkContent instantiates a new MarkContent and sets the default values.
 func NewMarkContent()(*MarkContent) {
     m := &MarkContent{
         LabelActionBase: *NewLabelActionBase(),
     }
-    odataTypeValue := "#microsoft.graph.markContent";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.markContent"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMarkContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -86,15 +80,36 @@ func (m *MarkContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetFontColor gets the fontColor property value. The fontColor property
 func (m *MarkContent) GetFontColor()(*string) {
-    return m.fontColor
+    val, err := m.GetBackingStore().Get("fontColor")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFontSize gets the fontSize property value. The fontSize property
 func (m *MarkContent) GetFontSize()(*int64) {
-    return m.fontSize
+    val, err := m.GetBackingStore().Get("fontSize")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetText gets the text property value. The text property
 func (m *MarkContent) GetText()(*string) {
-    return m.text
+    val, err := m.GetBackingStore().Get("text")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MarkContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -124,13 +139,33 @@ func (m *MarkContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetFontColor sets the fontColor property value. The fontColor property
 func (m *MarkContent) SetFontColor(value *string)() {
-    m.fontColor = value
+    err := m.GetBackingStore().Set("fontColor", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFontSize sets the fontSize property value. The fontSize property
 func (m *MarkContent) SetFontSize(value *int64)() {
-    m.fontSize = value
+    err := m.GetBackingStore().Set("fontSize", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetText sets the text property value. The text property
 func (m *MarkContent) SetText(value *string)() {
-    m.text = value
+    err := m.GetBackingStore().Set("text", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MarkContentable 
+type MarkContentable interface {
+    LabelActionBaseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetFontColor()(*string)
+    GetFontSize()(*int64)
+    GetText()(*string)
+    SetFontColor(value *string)()
+    SetFontSize(value *int64)()
+    SetText(value *string)()
 }

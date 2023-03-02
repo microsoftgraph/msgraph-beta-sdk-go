@@ -7,24 +7,14 @@ import (
 // VpnConfiguration 
 type VpnConfiguration struct {
     DeviceConfiguration
-    // VPN Authentication Method.
-    authenticationMethod *VpnAuthenticationMethod
-    // Connection name displayed to the user.
-    connectionName *string
-    // Realm when connection type is set to Pulse Secure.
-    realm *string
-    // Role when connection type is set to Pulse Secure.
-    role *string
-    // List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.
-    servers []VpnServerable
 }
 // NewVpnConfiguration instantiates a new VpnConfiguration and sets the default values.
 func NewVpnConfiguration()(*VpnConfiguration) {
     m := &VpnConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.vpnConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.vpnConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateVpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -51,11 +41,25 @@ func CreateVpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. VPN Authentication Method.
 func (m *VpnConfiguration) GetAuthenticationMethod()(*VpnAuthenticationMethod) {
-    return m.authenticationMethod
+    val, err := m.GetBackingStore().Get("authenticationMethod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*VpnAuthenticationMethod)
+    }
+    return nil
 }
 // GetConnectionName gets the connectionName property value. Connection name displayed to the user.
 func (m *VpnConfiguration) GetConnectionName()(*string) {
-    return m.connectionName
+    val, err := m.GetBackingStore().Get("connectionName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *VpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -118,15 +122,36 @@ func (m *VpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetRealm gets the realm property value. Realm when connection type is set to Pulse Secure.
 func (m *VpnConfiguration) GetRealm()(*string) {
-    return m.realm
+    val, err := m.GetBackingStore().Get("realm")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRole gets the role property value. Role when connection type is set to Pulse Secure.
 func (m *VpnConfiguration) GetRole()(*string) {
-    return m.role
+    val, err := m.GetBackingStore().Get("role")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetServers gets the servers property value. List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.
 func (m *VpnConfiguration) GetServers()([]VpnServerable) {
-    return m.servers
+    val, err := m.GetBackingStore().Get("servers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]VpnServerable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *VpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -173,21 +198,51 @@ func (m *VpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAuthenticationMethod sets the authenticationMethod property value. VPN Authentication Method.
 func (m *VpnConfiguration) SetAuthenticationMethod(value *VpnAuthenticationMethod)() {
-    m.authenticationMethod = value
+    err := m.GetBackingStore().Set("authenticationMethod", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConnectionName sets the connectionName property value. Connection name displayed to the user.
 func (m *VpnConfiguration) SetConnectionName(value *string)() {
-    m.connectionName = value
+    err := m.GetBackingStore().Set("connectionName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRealm sets the realm property value. Realm when connection type is set to Pulse Secure.
 func (m *VpnConfiguration) SetRealm(value *string)() {
-    m.realm = value
+    err := m.GetBackingStore().Set("realm", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRole sets the role property value. Role when connection type is set to Pulse Secure.
 func (m *VpnConfiguration) SetRole(value *string)() {
-    m.role = value
+    err := m.GetBackingStore().Set("role", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetServers sets the servers property value. List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.
 func (m *VpnConfiguration) SetServers(value []VpnServerable)() {
-    m.servers = value
+    err := m.GetBackingStore().Set("servers", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// VpnConfigurationable 
+type VpnConfigurationable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAuthenticationMethod()(*VpnAuthenticationMethod)
+    GetConnectionName()(*string)
+    GetRealm()(*string)
+    GetRole()(*string)
+    GetServers()([]VpnServerable)
+    SetAuthenticationMethod(value *VpnAuthenticationMethod)()
+    SetConnectionName(value *string)()
+    SetRealm(value *string)()
+    SetRole(value *string)()
+    SetServers(value []VpnServerable)()
 }

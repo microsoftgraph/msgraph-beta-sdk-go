@@ -7,16 +7,14 @@ import (
 // DeviceManagementBooleanSettingInstance 
 type DeviceManagementBooleanSettingInstance struct {
     DeviceManagementSettingInstance
-    // The boolean value
-    value *bool
 }
 // NewDeviceManagementBooleanSettingInstance instantiates a new DeviceManagementBooleanSettingInstance and sets the default values.
 func NewDeviceManagementBooleanSettingInstance()(*DeviceManagementBooleanSettingInstance) {
     m := &DeviceManagementBooleanSettingInstance{
         DeviceManagementSettingInstance: *NewDeviceManagementSettingInstance(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementBooleanSettingInstance";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementBooleanSettingInstance"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementBooleanSettingInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *DeviceManagementBooleanSettingInstance) GetFieldDeserializers()(map[str
 }
 // GetValue gets the value property value. The boolean value
 func (m *DeviceManagementBooleanSettingInstance) GetValue()(*bool) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementBooleanSettingInstance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *DeviceManagementBooleanSettingInstance) Serialize(writer i878a80d2330e8
 }
 // SetValue sets the value property value. The boolean value
 func (m *DeviceManagementBooleanSettingInstance) SetValue(value *bool)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementBooleanSettingInstanceable 
+type DeviceManagementBooleanSettingInstanceable interface {
+    DeviceManagementSettingInstanceable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()(*bool)
+    SetValue(value *bool)()
 }

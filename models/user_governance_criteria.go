@@ -7,16 +7,14 @@ import (
 // UserGovernanceCriteria 
 type UserGovernanceCriteria struct {
     GovernanceCriteria
-    // The userId property
-    userId *string
 }
 // NewUserGovernanceCriteria instantiates a new UserGovernanceCriteria and sets the default values.
 func NewUserGovernanceCriteria()(*UserGovernanceCriteria) {
     m := &UserGovernanceCriteria{
         GovernanceCriteria: *NewGovernanceCriteria(),
     }
-    odataTypeValue := "#microsoft.graph.userGovernanceCriteria";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.userGovernanceCriteria"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateUserGovernanceCriteriaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *UserGovernanceCriteria) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetUserId gets the userId property value. The userId property
 func (m *UserGovernanceCriteria) GetUserId()(*string) {
-    return m.userId
+    val, err := m.GetBackingStore().Get("userId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserGovernanceCriteria) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *UserGovernanceCriteria) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetUserId sets the userId property value. The userId property
 func (m *UserGovernanceCriteria) SetUserId(value *string)() {
-    m.userId = value
+    err := m.GetBackingStore().Set("userId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserGovernanceCriteriaable 
+type UserGovernanceCriteriaable interface {
+    GovernanceCriteriaable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetUserId()(*string)
+    SetUserId(value *string)()
 }

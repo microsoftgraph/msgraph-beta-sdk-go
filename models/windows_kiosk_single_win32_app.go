@@ -7,16 +7,14 @@ import (
 // WindowsKioskSingleWin32App 
 type WindowsKioskSingleWin32App struct {
     WindowsKioskAppConfiguration
-    // The win32App property
-    win32App WindowsKioskWin32Appable
 }
 // NewWindowsKioskSingleWin32App instantiates a new WindowsKioskSingleWin32App and sets the default values.
 func NewWindowsKioskSingleWin32App()(*WindowsKioskSingleWin32App) {
     m := &WindowsKioskSingleWin32App{
         WindowsKioskAppConfiguration: *NewWindowsKioskAppConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.windowsKioskSingleWin32App";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsKioskSingleWin32App"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsKioskSingleWin32AppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *WindowsKioskSingleWin32App) GetFieldDeserializers()(map[string]func(i87
 }
 // GetWin32App gets the win32App property value. The win32App property
 func (m *WindowsKioskSingleWin32App) GetWin32App()(WindowsKioskWin32Appable) {
-    return m.win32App
+    val, err := m.GetBackingStore().Get("win32App")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WindowsKioskWin32Appable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsKioskSingleWin32App) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *WindowsKioskSingleWin32App) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetWin32App sets the win32App property value. The win32App property
 func (m *WindowsKioskSingleWin32App) SetWin32App(value WindowsKioskWin32Appable)() {
-    m.win32App = value
+    err := m.GetBackingStore().Set("win32App", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsKioskSingleWin32Appable 
+type WindowsKioskSingleWin32Appable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    WindowsKioskAppConfigurationable
+    GetWin32App()(WindowsKioskWin32Appable)
+    SetWin32App(value WindowsKioskWin32Appable)()
 }

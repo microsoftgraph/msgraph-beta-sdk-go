@@ -2,30 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // TeamworkSpeakerConfiguration 
 type TeamworkSpeakerConfiguration struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The defaultCommunicationSpeaker property
-    defaultCommunicationSpeaker TeamworkPeripheralable
-    // The defaultSpeaker property
-    defaultSpeaker TeamworkPeripheralable
-    // True if the communication speaker is optional. Used to compute the health state if the communication speaker is not optional.
-    isCommunicationSpeakerOptional *bool
-    // True if the configured speaker is optional. Used to compute the health state if the speaker is not optional.
-    isSpeakerOptional *bool
-    // The OdataType property
-    odataType *string
-    // The speakers property
-    speakers []TeamworkPeripheralable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewTeamworkSpeakerConfiguration instantiates a new teamworkSpeakerConfiguration and sets the default values.
 func NewTeamworkSpeakerConfiguration()(*TeamworkSpeakerConfiguration) {
     m := &TeamworkSpeakerConfiguration{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTeamworkSpeakerConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -34,15 +24,41 @@ func CreateTeamworkSpeakerConfigurationFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkSpeakerConfiguration) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *TeamworkSpeakerConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDefaultCommunicationSpeaker gets the defaultCommunicationSpeaker property value. The defaultCommunicationSpeaker property
 func (m *TeamworkSpeakerConfiguration) GetDefaultCommunicationSpeaker()(TeamworkPeripheralable) {
-    return m.defaultCommunicationSpeaker
+    val, err := m.GetBackingStore().Get("defaultCommunicationSpeaker")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamworkPeripheralable)
+    }
+    return nil
 }
 // GetDefaultSpeaker gets the defaultSpeaker property value. The defaultSpeaker property
 func (m *TeamworkSpeakerConfiguration) GetDefaultSpeaker()(TeamworkPeripheralable) {
-    return m.defaultSpeaker
+    val, err := m.GetBackingStore().Get("defaultSpeaker")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamworkPeripheralable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkSpeakerConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -115,19 +131,47 @@ func (m *TeamworkSpeakerConfiguration) GetFieldDeserializers()(map[string]func(i
 }
 // GetIsCommunicationSpeakerOptional gets the isCommunicationSpeakerOptional property value. True if the communication speaker is optional. Used to compute the health state if the communication speaker is not optional.
 func (m *TeamworkSpeakerConfiguration) GetIsCommunicationSpeakerOptional()(*bool) {
-    return m.isCommunicationSpeakerOptional
+    val, err := m.GetBackingStore().Get("isCommunicationSpeakerOptional")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsSpeakerOptional gets the isSpeakerOptional property value. True if the configured speaker is optional. Used to compute the health state if the speaker is not optional.
 func (m *TeamworkSpeakerConfiguration) GetIsSpeakerOptional()(*bool) {
-    return m.isSpeakerOptional
+    val, err := m.GetBackingStore().Get("isSpeakerOptional")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TeamworkSpeakerConfiguration) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSpeakers gets the speakers property value. The speakers property
 func (m *TeamworkSpeakerConfiguration) GetSpeakers()([]TeamworkPeripheralable) {
-    return m.speakers
+    val, err := m.GetBackingStore().Get("speakers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TeamworkPeripheralable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TeamworkSpeakerConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -181,29 +225,74 @@ func (m *TeamworkSpeakerConfiguration) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkSpeakerConfiguration) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *TeamworkSpeakerConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDefaultCommunicationSpeaker sets the defaultCommunicationSpeaker property value. The defaultCommunicationSpeaker property
 func (m *TeamworkSpeakerConfiguration) SetDefaultCommunicationSpeaker(value TeamworkPeripheralable)() {
-    m.defaultCommunicationSpeaker = value
+    err := m.GetBackingStore().Set("defaultCommunicationSpeaker", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefaultSpeaker sets the defaultSpeaker property value. The defaultSpeaker property
 func (m *TeamworkSpeakerConfiguration) SetDefaultSpeaker(value TeamworkPeripheralable)() {
-    m.defaultSpeaker = value
+    err := m.GetBackingStore().Set("defaultSpeaker", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsCommunicationSpeakerOptional sets the isCommunicationSpeakerOptional property value. True if the communication speaker is optional. Used to compute the health state if the communication speaker is not optional.
 func (m *TeamworkSpeakerConfiguration) SetIsCommunicationSpeakerOptional(value *bool)() {
-    m.isCommunicationSpeakerOptional = value
+    err := m.GetBackingStore().Set("isCommunicationSpeakerOptional", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsSpeakerOptional sets the isSpeakerOptional property value. True if the configured speaker is optional. Used to compute the health state if the speaker is not optional.
 func (m *TeamworkSpeakerConfiguration) SetIsSpeakerOptional(value *bool)() {
-    m.isSpeakerOptional = value
+    err := m.GetBackingStore().Set("isSpeakerOptional", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TeamworkSpeakerConfiguration) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSpeakers sets the speakers property value. The speakers property
 func (m *TeamworkSpeakerConfiguration) SetSpeakers(value []TeamworkPeripheralable)() {
-    m.speakers = value
+    err := m.GetBackingStore().Set("speakers", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TeamworkSpeakerConfigurationable 
+type TeamworkSpeakerConfigurationable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDefaultCommunicationSpeaker()(TeamworkPeripheralable)
+    GetDefaultSpeaker()(TeamworkPeripheralable)
+    GetIsCommunicationSpeakerOptional()(*bool)
+    GetIsSpeakerOptional()(*bool)
+    GetOdataType()(*string)
+    GetSpeakers()([]TeamworkPeripheralable)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDefaultCommunicationSpeaker(value TeamworkPeripheralable)()
+    SetDefaultSpeaker(value TeamworkPeripheralable)()
+    SetIsCommunicationSpeakerOptional(value *bool)()
+    SetIsSpeakerOptional(value *bool)()
+    SetOdataType(value *string)()
+    SetSpeakers(value []TeamworkPeripheralable)()
 }

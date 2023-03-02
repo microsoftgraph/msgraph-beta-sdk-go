@@ -7,16 +7,14 @@ import (
 // ConditionalAccessEnumeratedExternalTenants 
 type ConditionalAccessEnumeratedExternalTenants struct {
     ConditionalAccessExternalTenants
-    // Represents a collection of tenant ids in the scope of Conditional Access for guests and external users policy targeting.
-    members []string
 }
 // NewConditionalAccessEnumeratedExternalTenants instantiates a new ConditionalAccessEnumeratedExternalTenants and sets the default values.
 func NewConditionalAccessEnumeratedExternalTenants()(*ConditionalAccessEnumeratedExternalTenants) {
     m := &ConditionalAccessEnumeratedExternalTenants{
         ConditionalAccessExternalTenants: *NewConditionalAccessExternalTenants(),
     }
-    odataTypeValue := "#microsoft.graph.conditionalAccessEnumeratedExternalTenants";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.conditionalAccessEnumeratedExternalTenants"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateConditionalAccessEnumeratedExternalTenantsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,7 +42,14 @@ func (m *ConditionalAccessEnumeratedExternalTenants) GetFieldDeserializers()(map
 }
 // GetMembers gets the members property value. Represents a collection of tenant ids in the scope of Conditional Access for guests and external users policy targeting.
 func (m *ConditionalAccessEnumeratedExternalTenants) GetMembers()([]string) {
-    return m.members
+    val, err := m.GetBackingStore().Get("members")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ConditionalAccessEnumeratedExternalTenants) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,5 +67,15 @@ func (m *ConditionalAccessEnumeratedExternalTenants) Serialize(writer i878a80d23
 }
 // SetMembers sets the members property value. Represents a collection of tenant ids in the scope of Conditional Access for guests and external users policy targeting.
 func (m *ConditionalAccessEnumeratedExternalTenants) SetMembers(value []string)() {
-    m.members = value
+    err := m.GetBackingStore().Set("members", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ConditionalAccessEnumeratedExternalTenantsable 
+type ConditionalAccessEnumeratedExternalTenantsable interface {
+    ConditionalAccessExternalTenantsable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetMembers()([]string)
+    SetMembers(value []string)()
 }

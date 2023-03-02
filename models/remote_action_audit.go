@@ -8,24 +8,6 @@ import (
 // RemoteActionAudit report of remote actions initiated on the devices belonging to a certain tenant.
 type RemoteActionAudit struct {
     Entity
-    // Remote actions Intune supports.
-    action *RemoteAction
-    // The actionState property
-    actionState *ActionState
-    // Intune device name.
-    deviceDisplayName *string
-    // IMEI of the device.
-    deviceIMEI *string
-    // Upn of the device owner.
-    deviceOwnerUserPrincipalName *string
-    // User who initiated the device action, format is UPN.
-    initiatedByUserPrincipalName *string
-    // Action target.
-    managedDeviceId *string
-    // Time when the action was issued, given in UTC.
-    requestDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // [deprecated] Please use InitiatedByUserPrincipalName instead.
-    userName *string
 }
 // NewRemoteActionAudit instantiates a new remoteActionAudit and sets the default values.
 func NewRemoteActionAudit()(*RemoteActionAudit) {
@@ -40,23 +22,58 @@ func CreateRemoteActionAuditFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAction gets the action property value. Remote actions Intune supports.
 func (m *RemoteActionAudit) GetAction()(*RemoteAction) {
-    return m.action
+    val, err := m.GetBackingStore().Get("action")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RemoteAction)
+    }
+    return nil
 }
 // GetActionState gets the actionState property value. The actionState property
 func (m *RemoteActionAudit) GetActionState()(*ActionState) {
-    return m.actionState
+    val, err := m.GetBackingStore().Get("actionState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ActionState)
+    }
+    return nil
 }
 // GetDeviceDisplayName gets the deviceDisplayName property value. Intune device name.
 func (m *RemoteActionAudit) GetDeviceDisplayName()(*string) {
-    return m.deviceDisplayName
+    val, err := m.GetBackingStore().Get("deviceDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDeviceIMEI gets the deviceIMEI property value. IMEI of the device.
 func (m *RemoteActionAudit) GetDeviceIMEI()(*string) {
-    return m.deviceIMEI
+    val, err := m.GetBackingStore().Get("deviceIMEI")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDeviceOwnerUserPrincipalName gets the deviceOwnerUserPrincipalName property value. Upn of the device owner.
 func (m *RemoteActionAudit) GetDeviceOwnerUserPrincipalName()(*string) {
-    return m.deviceOwnerUserPrincipalName
+    val, err := m.GetBackingStore().Get("deviceOwnerUserPrincipalName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -155,19 +172,47 @@ func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetInitiatedByUserPrincipalName gets the initiatedByUserPrincipalName property value. User who initiated the device action, format is UPN.
 func (m *RemoteActionAudit) GetInitiatedByUserPrincipalName()(*string) {
-    return m.initiatedByUserPrincipalName
+    val, err := m.GetBackingStore().Get("initiatedByUserPrincipalName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetManagedDeviceId gets the managedDeviceId property value. Action target.
 func (m *RemoteActionAudit) GetManagedDeviceId()(*string) {
-    return m.managedDeviceId
+    val, err := m.GetBackingStore().Get("managedDeviceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRequestDateTime gets the requestDateTime property value. Time when the action was issued, given in UTC.
 func (m *RemoteActionAudit) GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.requestDateTime
+    val, err := m.GetBackingStore().Get("requestDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetUserName gets the userName property value. [deprecated] Please use InitiatedByUserPrincipalName instead.
 func (m *RemoteActionAudit) GetUserName()(*string) {
-    return m.userName
+    val, err := m.GetBackingStore().Get("userName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RemoteActionAudit) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -235,37 +280,87 @@ func (m *RemoteActionAudit) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAction sets the action property value. Remote actions Intune supports.
 func (m *RemoteActionAudit) SetAction(value *RemoteAction)() {
-    m.action = value
+    err := m.GetBackingStore().Set("action", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetActionState sets the actionState property value. The actionState property
 func (m *RemoteActionAudit) SetActionState(value *ActionState)() {
-    m.actionState = value
+    err := m.GetBackingStore().Set("actionState", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceDisplayName sets the deviceDisplayName property value. Intune device name.
 func (m *RemoteActionAudit) SetDeviceDisplayName(value *string)() {
-    m.deviceDisplayName = value
+    err := m.GetBackingStore().Set("deviceDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceIMEI sets the deviceIMEI property value. IMEI of the device.
 func (m *RemoteActionAudit) SetDeviceIMEI(value *string)() {
-    m.deviceIMEI = value
+    err := m.GetBackingStore().Set("deviceIMEI", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceOwnerUserPrincipalName sets the deviceOwnerUserPrincipalName property value. Upn of the device owner.
 func (m *RemoteActionAudit) SetDeviceOwnerUserPrincipalName(value *string)() {
-    m.deviceOwnerUserPrincipalName = value
+    err := m.GetBackingStore().Set("deviceOwnerUserPrincipalName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInitiatedByUserPrincipalName sets the initiatedByUserPrincipalName property value. User who initiated the device action, format is UPN.
 func (m *RemoteActionAudit) SetInitiatedByUserPrincipalName(value *string)() {
-    m.initiatedByUserPrincipalName = value
+    err := m.GetBackingStore().Set("initiatedByUserPrincipalName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedDeviceId sets the managedDeviceId property value. Action target.
 func (m *RemoteActionAudit) SetManagedDeviceId(value *string)() {
-    m.managedDeviceId = value
+    err := m.GetBackingStore().Set("managedDeviceId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRequestDateTime sets the requestDateTime property value. Time when the action was issued, given in UTC.
 func (m *RemoteActionAudit) SetRequestDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.requestDateTime = value
+    err := m.GetBackingStore().Set("requestDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserName sets the userName property value. [deprecated] Please use InitiatedByUserPrincipalName instead.
 func (m *RemoteActionAudit) SetUserName(value *string)() {
-    m.userName = value
+    err := m.GetBackingStore().Set("userName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RemoteActionAuditable 
+type RemoteActionAuditable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAction()(*RemoteAction)
+    GetActionState()(*ActionState)
+    GetDeviceDisplayName()(*string)
+    GetDeviceIMEI()(*string)
+    GetDeviceOwnerUserPrincipalName()(*string)
+    GetInitiatedByUserPrincipalName()(*string)
+    GetManagedDeviceId()(*string)
+    GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetUserName()(*string)
+    SetAction(value *RemoteAction)()
+    SetActionState(value *ActionState)()
+    SetDeviceDisplayName(value *string)()
+    SetDeviceIMEI(value *string)()
+    SetDeviceOwnerUserPrincipalName(value *string)()
+    SetInitiatedByUserPrincipalName(value *string)()
+    SetManagedDeviceId(value *string)()
+    SetRequestDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetUserName(value *string)()
 }

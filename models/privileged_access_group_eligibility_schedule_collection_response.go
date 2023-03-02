@@ -7,8 +7,6 @@ import (
 // PrivilegedAccessGroupEligibilityScheduleCollectionResponse 
 type PrivilegedAccessGroupEligibilityScheduleCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PrivilegedAccessGroupEligibilityScheduleable
 }
 // NewPrivilegedAccessGroupEligibilityScheduleCollectionResponse instantiates a new PrivilegedAccessGroupEligibilityScheduleCollectionResponse and sets the default values.
 func NewPrivilegedAccessGroupEligibilityScheduleCollectionResponse()(*PrivilegedAccessGroupEligibilityScheduleCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PrivilegedAccessGroupEligibilityScheduleCollectionResponse) GetFieldDes
 }
 // GetValue gets the value property value. The value property
 func (m *PrivilegedAccessGroupEligibilityScheduleCollectionResponse) GetValue()([]PrivilegedAccessGroupEligibilityScheduleable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrivilegedAccessGroupEligibilityScheduleable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrivilegedAccessGroupEligibilityScheduleCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PrivilegedAccessGroupEligibilityScheduleCollectionResponse) Serialize(w
 }
 // SetValue sets the value property value. The value property
 func (m *PrivilegedAccessGroupEligibilityScheduleCollectionResponse) SetValue(value []PrivilegedAccessGroupEligibilityScheduleable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrivilegedAccessGroupEligibilityScheduleCollectionResponseable 
+type PrivilegedAccessGroupEligibilityScheduleCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PrivilegedAccessGroupEligibilityScheduleable)
+    SetValue(value []PrivilegedAccessGroupEligibilityScheduleable)()
 }

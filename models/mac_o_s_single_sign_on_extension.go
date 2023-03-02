@@ -13,8 +13,8 @@ func NewMacOSSingleSignOnExtension()(*MacOSSingleSignOnExtension) {
     m := &MacOSSingleSignOnExtension{
         SingleSignOnExtension: *NewSingleSignOnExtension(),
     }
-    odataTypeValue := "#microsoft.graph.macOSSingleSignOnExtension";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.macOSSingleSignOnExtension"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMacOSSingleSignOnExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,4 +57,9 @@ func (m *MacOSSingleSignOnExtension) Serialize(writer i878a80d2330e89d26896388a3
         return err
     }
     return nil
+}
+// MacOSSingleSignOnExtensionable 
+type MacOSSingleSignOnExtensionable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    SingleSignOnExtensionable
 }

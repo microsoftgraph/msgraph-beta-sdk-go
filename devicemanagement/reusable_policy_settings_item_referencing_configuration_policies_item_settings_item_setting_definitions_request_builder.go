@@ -53,8 +53,8 @@ func NewReusablePolicySettingsItemReferencingConfigurationPoliciesItemSettingsIt
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewReusablePolicySettingsItemReferencingConfigurationPoliciesItemSettingsItemSettingDefinitionsRequestBuilder instantiates a new SettingDefinitionsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewReusablePolicySettingsItemReferencingConfigurationPoliciesItemSettingsIt
 }
 // Count provides operations to count the resources in the collection.
 func (m *ReusablePolicySettingsItemReferencingConfigurationPoliciesItemSettingsItemSettingDefinitionsRequestBuilder) Count()(*ReusablePolicySettingsItemReferencingConfigurationPoliciesItemSettingsItemSettingDefinitionsCountRequestBuilder) {
-    return NewReusablePolicySettingsItemReferencingConfigurationPoliciesItemSettingsItemSettingDefinitionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewReusablePolicySettingsItemReferencingConfigurationPoliciesItemSettingsItemSettingDefinitionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list of related Setting Definitions. This property is read-only.
 func (m *ReusablePolicySettingsItemReferencingConfigurationPoliciesItemSettingsItemSettingDefinitionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ReusablePolicySettingsItemReferencingConfigurationPoliciesItemSettingsItemSettingDefinitionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationSettingDefinitionCollectionResponseable, error) {

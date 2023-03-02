@@ -7,8 +7,6 @@ import (
 // ManagedAppProtectionPolicySetItemCollectionResponse 
 type ManagedAppProtectionPolicySetItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ManagedAppProtectionPolicySetItemable
 }
 // NewManagedAppProtectionPolicySetItemCollectionResponse instantiates a new ManagedAppProtectionPolicySetItemCollectionResponse and sets the default values.
 func NewManagedAppProtectionPolicySetItemCollectionResponse()(*ManagedAppProtectionPolicySetItemCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ManagedAppProtectionPolicySetItemCollectionResponse) GetFieldDeserializ
 }
 // GetValue gets the value property value. The value property
 func (m *ManagedAppProtectionPolicySetItemCollectionResponse) GetValue()([]ManagedAppProtectionPolicySetItemable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedAppProtectionPolicySetItemable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagedAppProtectionPolicySetItemCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ManagedAppProtectionPolicySetItemCollectionResponse) Serialize(writer i
 }
 // SetValue sets the value property value. The value property
 func (m *ManagedAppProtectionPolicySetItemCollectionResponse) SetValue(value []ManagedAppProtectionPolicySetItemable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagedAppProtectionPolicySetItemCollectionResponseable 
+type ManagedAppProtectionPolicySetItemCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ManagedAppProtectionPolicySetItemable)
+    SetValue(value []ManagedAppProtectionPolicySetItemable)()
 }

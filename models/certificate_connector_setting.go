@@ -3,32 +3,20 @@ package models
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // CertificateConnectorSetting certificate connector settings.
 type CertificateConnectorSetting struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Certificate expire time
-    certExpiryTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Version of certificate connector
-    connectorVersion *string
-    // Certificate connector enrollment error
-    enrollmentError *string
-    // Last time certificate connector connected
-    lastConnectorConnectionTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Version of last uploaded certificate connector
-    lastUploadVersion *int64
-    // The OdataType property
-    odataType *string
-    // Certificate connector status
-    status *int32
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewCertificateConnectorSetting instantiates a new certificateConnectorSetting and sets the default values.
 func NewCertificateConnectorSetting()(*CertificateConnectorSetting) {
     m := &CertificateConnectorSetting{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCertificateConnectorSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,19 +25,52 @@ func CreateCertificateConnectorSettingFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CertificateConnectorSetting) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *CertificateConnectorSetting) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetCertExpiryTime gets the certExpiryTime property value. Certificate expire time
 func (m *CertificateConnectorSetting) GetCertExpiryTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.certExpiryTime
+    val, err := m.GetBackingStore().Get("certExpiryTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetConnectorVersion gets the connectorVersion property value. Version of certificate connector
 func (m *CertificateConnectorSetting) GetConnectorVersion()(*string) {
-    return m.connectorVersion
+    val, err := m.GetBackingStore().Get("connectorVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetEnrollmentError gets the enrollmentError property value. Certificate connector enrollment error
 func (m *CertificateConnectorSetting) GetEnrollmentError()(*string) {
-    return m.enrollmentError
+    val, err := m.GetBackingStore().Get("enrollmentError")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CertificateConnectorSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -128,19 +149,47 @@ func (m *CertificateConnectorSetting) GetFieldDeserializers()(map[string]func(i8
 }
 // GetLastConnectorConnectionTime gets the lastConnectorConnectionTime property value. Last time certificate connector connected
 func (m *CertificateConnectorSetting) GetLastConnectorConnectionTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastConnectorConnectionTime
+    val, err := m.GetBackingStore().Get("lastConnectorConnectionTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetLastUploadVersion gets the lastUploadVersion property value. Version of last uploaded certificate connector
 func (m *CertificateConnectorSetting) GetLastUploadVersion()(*int64) {
-    return m.lastUploadVersion
+    val, err := m.GetBackingStore().Get("lastUploadVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CertificateConnectorSetting) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetStatus gets the status property value. Certificate connector status
 func (m *CertificateConnectorSetting) GetStatus()(*int32) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CertificateConnectorSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -196,33 +245,83 @@ func (m *CertificateConnectorSetting) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CertificateConnectorSetting) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *CertificateConnectorSetting) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetCertExpiryTime sets the certExpiryTime property value. Certificate expire time
 func (m *CertificateConnectorSetting) SetCertExpiryTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.certExpiryTime = value
+    err := m.GetBackingStore().Set("certExpiryTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConnectorVersion sets the connectorVersion property value. Version of certificate connector
 func (m *CertificateConnectorSetting) SetConnectorVersion(value *string)() {
-    m.connectorVersion = value
+    err := m.GetBackingStore().Set("connectorVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnrollmentError sets the enrollmentError property value. Certificate connector enrollment error
 func (m *CertificateConnectorSetting) SetEnrollmentError(value *string)() {
-    m.enrollmentError = value
+    err := m.GetBackingStore().Set("enrollmentError", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastConnectorConnectionTime sets the lastConnectorConnectionTime property value. Last time certificate connector connected
 func (m *CertificateConnectorSetting) SetLastConnectorConnectionTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastConnectorConnectionTime = value
+    err := m.GetBackingStore().Set("lastConnectorConnectionTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastUploadVersion sets the lastUploadVersion property value. Version of last uploaded certificate connector
 func (m *CertificateConnectorSetting) SetLastUploadVersion(value *int64)() {
-    m.lastUploadVersion = value
+    err := m.GetBackingStore().Set("lastUploadVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CertificateConnectorSetting) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. Certificate connector status
 func (m *CertificateConnectorSetting) SetStatus(value *int32)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CertificateConnectorSettingable 
+type CertificateConnectorSettingable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCertExpiryTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetConnectorVersion()(*string)
+    GetEnrollmentError()(*string)
+    GetLastConnectorConnectionTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetLastUploadVersion()(*int64)
+    GetOdataType()(*string)
+    GetStatus()(*int32)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCertExpiryTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetConnectorVersion(value *string)()
+    SetEnrollmentError(value *string)()
+    SetLastConnectorConnectionTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetLastUploadVersion(value *int64)()
+    SetOdataType(value *string)()
+    SetStatus(value *int32)()
 }

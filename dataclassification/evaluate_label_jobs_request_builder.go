@@ -60,8 +60,8 @@ func NewEvaluateLabelJobsRequestBuilderInternal(pathParameters map[string]string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEvaluateLabelJobsRequestBuilder instantiates a new EvaluateLabelJobsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewEvaluateLabelJobsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 }
 // Count provides operations to count the resources in the collection.
 func (m *EvaluateLabelJobsRequestBuilder) Count()(*EvaluateLabelJobsCountRequestBuilder) {
-    return NewEvaluateLabelJobsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEvaluateLabelJobsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get evaluateLabelJobs from dataClassification
 func (m *EvaluateLabelJobsRequestBuilder) Get(ctx context.Context, requestConfiguration *EvaluateLabelJobsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.JobResponseBaseCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *EvaluateLabelJobsRequestBuilder) ToPostRequestInformation(ctx context.C
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

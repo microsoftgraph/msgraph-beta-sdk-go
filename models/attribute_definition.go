@@ -2,44 +2,22 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // AttributeDefinition 
 type AttributeDefinition struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object's attributes must be designated as the anchor to support synchronization.
-    anchor *bool
-    // The apiExpressions property
-    apiExpressions []StringKeyStringValuePairable
-    // true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
-    caseExact *bool
-    // The defaultValue property
-    defaultValue *string
-    // 'true' to allow null values for attributes.
-    flowNullValues *bool
-    // Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
-    metadata []MetadataEntryable
-    // true if an attribute can have multiple values. Default is false.
-    multivalued *bool
-    // The mutability property
-    mutability *Mutability
-    // Name of the attribute. Must be unique within the object definition. Not nullable.
-    name *string
-    // The OdataType property
-    odataType *string
-    // For attributes with reference type, lists referenced objects (for example, the manager attribute would list User as the referenced object).
-    referencedObjects []ReferencedObjectable
-    // true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
-    required *bool
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
     // The type property
-    type_escaped *AttributeType
+    TypeEscaped *AttributeType
 }
 // NewAttributeDefinition instantiates a new attributeDefinition and sets the default values.
 func NewAttributeDefinition()(*AttributeDefinition) {
     m := &AttributeDefinition{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAttributeDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -48,23 +26,63 @@ func CreateAttributeDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttributeDefinition) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAnchor gets the anchor property value. true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object's attributes must be designated as the anchor to support synchronization.
 func (m *AttributeDefinition) GetAnchor()(*bool) {
-    return m.anchor
+    val, err := m.GetBackingStore().Get("anchor")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetApiExpressions gets the apiExpressions property value. The apiExpressions property
 func (m *AttributeDefinition) GetApiExpressions()([]StringKeyStringValuePairable) {
-    return m.apiExpressions
+    val, err := m.GetBackingStore().Get("apiExpressions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]StringKeyStringValuePairable)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *AttributeDefinition) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetCaseExact gets the caseExact property value. true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
 func (m *AttributeDefinition) GetCaseExact()(*bool) {
-    return m.caseExact
+    val, err := m.GetBackingStore().Get("caseExact")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefaultValue gets the defaultValue property value. The defaultValue property
 func (m *AttributeDefinition) GetDefaultValue()(*string) {
-    return m.defaultValue
+    val, err := m.GetBackingStore().Get("defaultValue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -215,39 +233,102 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetFlowNullValues gets the flowNullValues property value. 'true' to allow null values for attributes.
 func (m *AttributeDefinition) GetFlowNullValues()(*bool) {
-    return m.flowNullValues
+    val, err := m.GetBackingStore().Get("flowNullValues")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetMetadata gets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
 func (m *AttributeDefinition) GetMetadata()([]MetadataEntryable) {
-    return m.metadata
+    val, err := m.GetBackingStore().Get("metadata")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MetadataEntryable)
+    }
+    return nil
 }
 // GetMultivalued gets the multivalued property value. true if an attribute can have multiple values. Default is false.
 func (m *AttributeDefinition) GetMultivalued()(*bool) {
-    return m.multivalued
+    val, err := m.GetBackingStore().Get("multivalued")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetMutability gets the mutability property value. The mutability property
 func (m *AttributeDefinition) GetMutability()(*Mutability) {
-    return m.mutability
+    val, err := m.GetBackingStore().Get("mutability")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Mutability)
+    }
+    return nil
 }
 // GetName gets the name property value. Name of the attribute. Must be unique within the object definition. Not nullable.
 func (m *AttributeDefinition) GetName()(*string) {
-    return m.name
+    val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AttributeDefinition) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetReferencedObjects gets the referencedObjects property value. For attributes with reference type, lists referenced objects (for example, the manager attribute would list User as the referenced object).
 func (m *AttributeDefinition) GetReferencedObjects()([]ReferencedObjectable) {
-    return m.referencedObjects
+    val, err := m.GetBackingStore().Get("referencedObjects")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ReferencedObjectable)
+    }
+    return nil
 }
 // GetRequired gets the required property value. true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
 func (m *AttributeDefinition) GetRequired()(*bool) {
-    return m.required
+    val, err := m.GetBackingStore().Get("required")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetType gets the type property value. The type property
 func (m *AttributeDefinition) GetType()(*AttributeType) {
-    return m.type_escaped
+    val, err := m.GetBackingStore().Get("typeEscaped")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AttributeType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AttributeDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -353,57 +434,137 @@ func (m *AttributeDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttributeDefinition) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAnchor sets the anchor property value. true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object's attributes must be designated as the anchor to support synchronization.
 func (m *AttributeDefinition) SetAnchor(value *bool)() {
-    m.anchor = value
+    err := m.GetBackingStore().Set("anchor", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApiExpressions sets the apiExpressions property value. The apiExpressions property
 func (m *AttributeDefinition) SetApiExpressions(value []StringKeyStringValuePairable)() {
-    m.apiExpressions = value
+    err := m.GetBackingStore().Set("apiExpressions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *AttributeDefinition) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetCaseExact sets the caseExact property value. true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
 func (m *AttributeDefinition) SetCaseExact(value *bool)() {
-    m.caseExact = value
+    err := m.GetBackingStore().Set("caseExact", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefaultValue sets the defaultValue property value. The defaultValue property
 func (m *AttributeDefinition) SetDefaultValue(value *string)() {
-    m.defaultValue = value
+    err := m.GetBackingStore().Set("defaultValue", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFlowNullValues sets the flowNullValues property value. 'true' to allow null values for attributes.
 func (m *AttributeDefinition) SetFlowNullValues(value *bool)() {
-    m.flowNullValues = value
+    err := m.GetBackingStore().Set("flowNullValues", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMetadata sets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
 func (m *AttributeDefinition) SetMetadata(value []MetadataEntryable)() {
-    m.metadata = value
+    err := m.GetBackingStore().Set("metadata", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMultivalued sets the multivalued property value. true if an attribute can have multiple values. Default is false.
 func (m *AttributeDefinition) SetMultivalued(value *bool)() {
-    m.multivalued = value
+    err := m.GetBackingStore().Set("multivalued", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMutability sets the mutability property value. The mutability property
 func (m *AttributeDefinition) SetMutability(value *Mutability)() {
-    m.mutability = value
+    err := m.GetBackingStore().Set("mutability", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetName sets the name property value. Name of the attribute. Must be unique within the object definition. Not nullable.
 func (m *AttributeDefinition) SetName(value *string)() {
-    m.name = value
+    err := m.GetBackingStore().Set("name", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AttributeDefinition) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReferencedObjects sets the referencedObjects property value. For attributes with reference type, lists referenced objects (for example, the manager attribute would list User as the referenced object).
 func (m *AttributeDefinition) SetReferencedObjects(value []ReferencedObjectable)() {
-    m.referencedObjects = value
+    err := m.GetBackingStore().Set("referencedObjects", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRequired sets the required property value. true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
 func (m *AttributeDefinition) SetRequired(value *bool)() {
-    m.required = value
+    err := m.GetBackingStore().Set("required", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetType sets the type property value. The type property
 func (m *AttributeDefinition) SetType(value *AttributeType)() {
-    m.type_escaped = value
+    err := m.GetBackingStore().Set("typeEscaped", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AttributeDefinitionable 
+type AttributeDefinitionable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAnchor()(*bool)
+    GetApiExpressions()([]StringKeyStringValuePairable)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCaseExact()(*bool)
+    GetDefaultValue()(*string)
+    GetFlowNullValues()(*bool)
+    GetMetadata()([]MetadataEntryable)
+    GetMultivalued()(*bool)
+    GetMutability()(*Mutability)
+    GetName()(*string)
+    GetOdataType()(*string)
+    GetReferencedObjects()([]ReferencedObjectable)
+    GetRequired()(*bool)
+    GetType()(*AttributeType)
+    SetAnchor(value *bool)()
+    SetApiExpressions(value []StringKeyStringValuePairable)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCaseExact(value *bool)()
+    SetDefaultValue(value *string)()
+    SetFlowNullValues(value *bool)()
+    SetMetadata(value []MetadataEntryable)()
+    SetMultivalued(value *bool)()
+    SetMutability(value *Mutability)()
+    SetName(value *string)()
+    SetOdataType(value *string)()
+    SetReferencedObjects(value []ReferencedObjectable)()
+    SetRequired(value *bool)()
+    SetType(value *AttributeType)()
 }

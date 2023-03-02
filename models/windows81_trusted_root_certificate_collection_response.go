@@ -7,8 +7,6 @@ import (
 // Windows81TrustedRootCertificateCollectionResponse 
 type Windows81TrustedRootCertificateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Windows81TrustedRootCertificateable
 }
 // NewWindows81TrustedRootCertificateCollectionResponse instantiates a new Windows81TrustedRootCertificateCollectionResponse and sets the default values.
 func NewWindows81TrustedRootCertificateCollectionResponse()(*Windows81TrustedRootCertificateCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *Windows81TrustedRootCertificateCollectionResponse) GetFieldDeserializer
 }
 // GetValue gets the value property value. The value property
 func (m *Windows81TrustedRootCertificateCollectionResponse) GetValue()([]Windows81TrustedRootCertificateable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Windows81TrustedRootCertificateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Windows81TrustedRootCertificateCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *Windows81TrustedRootCertificateCollectionResponse) Serialize(writer i87
 }
 // SetValue sets the value property value. The value property
 func (m *Windows81TrustedRootCertificateCollectionResponse) SetValue(value []Windows81TrustedRootCertificateable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Windows81TrustedRootCertificateCollectionResponseable 
+type Windows81TrustedRootCertificateCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Windows81TrustedRootCertificateable)
+    SetValue(value []Windows81TrustedRootCertificateable)()
 }

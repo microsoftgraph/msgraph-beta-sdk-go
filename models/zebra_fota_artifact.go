@@ -7,18 +7,6 @@ import (
 // ZebraFotaArtifact describes a single artifact for a specific device model.
 type ZebraFotaArtifact struct {
     Entity
-    // The version of the Board Support Package (BSP. E.g.: 01.18.02.00)
-    boardSupportPackageVersion *string
-    // Artifact description. (e.g.: `LifeGuard Update 98 (released 24-September-2021)
-    description *string
-    // Applicable device model (e.g.: TC8300)
-    deviceModel *string
-    // Artifact OS version (e.g.: 8.1.0)
-    osVersion *string
-    // Artifact patch version (e.g.: U00)
-    patchVersion *string
-    // Artifact release notes URL (e.g.: https://www.zebra.com/<filename.pdf>)
-    releaseNotesUrl *string
 }
 // NewZebraFotaArtifact instantiates a new zebraFotaArtifact and sets the default values.
 func NewZebraFotaArtifact()(*ZebraFotaArtifact) {
@@ -33,15 +21,36 @@ func CreateZebraFotaArtifactFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetBoardSupportPackageVersion gets the boardSupportPackageVersion property value. The version of the Board Support Package (BSP. E.g.: 01.18.02.00)
 func (m *ZebraFotaArtifact) GetBoardSupportPackageVersion()(*string) {
-    return m.boardSupportPackageVersion
+    val, err := m.GetBackingStore().Get("boardSupportPackageVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDescription gets the description property value. Artifact description. (e.g.: `LifeGuard Update 98 (released 24-September-2021)
 func (m *ZebraFotaArtifact) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDeviceModel gets the deviceModel property value. Applicable device model (e.g.: TC8300)
 func (m *ZebraFotaArtifact) GetDeviceModel()(*string) {
-    return m.deviceModel
+    val, err := m.GetBackingStore().Get("deviceModel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ZebraFotaArtifact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -110,15 +119,36 @@ func (m *ZebraFotaArtifact) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetOsVersion gets the osVersion property value. Artifact OS version (e.g.: 8.1.0)
 func (m *ZebraFotaArtifact) GetOsVersion()(*string) {
-    return m.osVersion
+    val, err := m.GetBackingStore().Get("osVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPatchVersion gets the patchVersion property value. Artifact patch version (e.g.: U00)
 func (m *ZebraFotaArtifact) GetPatchVersion()(*string) {
-    return m.patchVersion
+    val, err := m.GetBackingStore().Get("patchVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetReleaseNotesUrl gets the releaseNotesUrl property value. Artifact release notes URL (e.g.: https://www.zebra.com/<filename.pdf>)
 func (m *ZebraFotaArtifact) GetReleaseNotesUrl()(*string) {
-    return m.releaseNotesUrl
+    val, err := m.GetBackingStore().Get("releaseNotesUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ZebraFotaArtifact) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -166,25 +196,60 @@ func (m *ZebraFotaArtifact) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetBoardSupportPackageVersion sets the boardSupportPackageVersion property value. The version of the Board Support Package (BSP. E.g.: 01.18.02.00)
 func (m *ZebraFotaArtifact) SetBoardSupportPackageVersion(value *string)() {
-    m.boardSupportPackageVersion = value
+    err := m.GetBackingStore().Set("boardSupportPackageVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. Artifact description. (e.g.: `LifeGuard Update 98 (released 24-September-2021)
 func (m *ZebraFotaArtifact) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceModel sets the deviceModel property value. Applicable device model (e.g.: TC8300)
 func (m *ZebraFotaArtifact) SetDeviceModel(value *string)() {
-    m.deviceModel = value
+    err := m.GetBackingStore().Set("deviceModel", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOsVersion sets the osVersion property value. Artifact OS version (e.g.: 8.1.0)
 func (m *ZebraFotaArtifact) SetOsVersion(value *string)() {
-    m.osVersion = value
+    err := m.GetBackingStore().Set("osVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPatchVersion sets the patchVersion property value. Artifact patch version (e.g.: U00)
 func (m *ZebraFotaArtifact) SetPatchVersion(value *string)() {
-    m.patchVersion = value
+    err := m.GetBackingStore().Set("patchVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReleaseNotesUrl sets the releaseNotesUrl property value. Artifact release notes URL (e.g.: https://www.zebra.com/<filename.pdf>)
 func (m *ZebraFotaArtifact) SetReleaseNotesUrl(value *string)() {
-    m.releaseNotesUrl = value
+    err := m.GetBackingStore().Set("releaseNotesUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ZebraFotaArtifactable 
+type ZebraFotaArtifactable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBoardSupportPackageVersion()(*string)
+    GetDescription()(*string)
+    GetDeviceModel()(*string)
+    GetOsVersion()(*string)
+    GetPatchVersion()(*string)
+    GetReleaseNotesUrl()(*string)
+    SetBoardSupportPackageVersion(value *string)()
+    SetDescription(value *string)()
+    SetDeviceModel(value *string)()
+    SetOsVersion(value *string)()
+    SetPatchVersion(value *string)()
+    SetReleaseNotesUrl(value *string)()
 }

@@ -8,8 +8,6 @@ import (
 // ItemCalendarsItemGetScheduleResponse 
 type ItemCalendarsItemGetScheduleResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
-    // The value property
-    value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ScheduleInformationable
 }
 // NewItemCalendarsItemGetScheduleResponse instantiates a new ItemCalendarsItemGetScheduleResponse and sets the default values.
 func NewItemCalendarsItemGetScheduleResponse()(*ItemCalendarsItemGetScheduleResponse) {
@@ -43,7 +41,14 @@ func (m *ItemCalendarsItemGetScheduleResponse) GetFieldDeserializers()(map[strin
 }
 // GetValue gets the value property value. The value property
 func (m *ItemCalendarsItemGetScheduleResponse) GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ScheduleInformationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ScheduleInformationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemCalendarsItemGetScheduleResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *ItemCalendarsItemGetScheduleResponse) Serialize(writer i878a80d2330e89d
 }
 // SetValue sets the value property value. The value property
 func (m *ItemCalendarsItemGetScheduleResponse) SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ScheduleInformationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemCalendarsItemGetScheduleResponseable 
+type ItemCalendarsItemGetScheduleResponseable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ScheduleInformationable)
+    SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ScheduleInformationable)()
 }

@@ -60,8 +60,8 @@ func NewAccessReviewsDecisionsItemInstanceDecisionsRequestBuilderInternal(pathPa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAccessReviewsDecisionsItemInstanceDecisionsRequestBuilder instantiates a new DecisionsRequestBuilder and sets the default values.
@@ -72,11 +72,11 @@ func NewAccessReviewsDecisionsItemInstanceDecisionsRequestBuilder(rawUrl string,
 }
 // Count provides operations to count the resources in the collection.
 func (m *AccessReviewsDecisionsItemInstanceDecisionsRequestBuilder) Count()(*AccessReviewsDecisionsItemInstanceDecisionsCountRequestBuilder) {
-    return NewAccessReviewsDecisionsItemInstanceDecisionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAccessReviewsDecisionsItemInstanceDecisionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
 func (m *AccessReviewsDecisionsItemInstanceDecisionsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*AccessReviewsDecisionsItemInstanceDecisionsFilterByCurrentUserWithOnRequestBuilder) {
-    return NewAccessReviewsDecisionsItemInstanceDecisionsFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
+    return NewAccessReviewsDecisionsItemInstanceDecisionsFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Get retrieve the accessReviewInstanceDecisionItem objects for a specific accessReviewInstance. A list of zero or more accessReviewInstanceDecisionItem objects are returned, including all of their nested properties.
 // [Find more info here]
@@ -121,7 +121,7 @@ func (m *AccessReviewsDecisionsItemInstanceDecisionsRequestBuilder) Post(ctx con
 }
 // RecordAllDecisions provides operations to call the recordAllDecisions method.
 func (m *AccessReviewsDecisionsItemInstanceDecisionsRequestBuilder) RecordAllDecisions()(*AccessReviewsDecisionsItemInstanceDecisionsRecordAllDecisionsRequestBuilder) {
-    return NewAccessReviewsDecisionsItemInstanceDecisionsRecordAllDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAccessReviewsDecisionsItemInstanceDecisionsRecordAllDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation retrieve the accessReviewInstanceDecisionItem objects for a specific accessReviewInstance. A list of zero or more accessReviewInstanceDecisionItem objects are returned, including all of their nested properties.
 func (m *AccessReviewsDecisionsItemInstanceDecisionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsDecisionsItemInstanceDecisionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -146,7 +146,10 @@ func (m *AccessReviewsDecisionsItemInstanceDecisionsRequestBuilder) ToPostReques
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

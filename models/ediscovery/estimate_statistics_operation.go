@@ -7,20 +7,6 @@ import (
 // EstimateStatisticsOperation 
 type EstimateStatisticsOperation struct {
     CaseOperation
-    // The estimated count of items for the sourceCollection that matched the content query.
-    indexedItemCount *int64
-    // The estimated size of items for the sourceCollection that matched the content query.
-    indexedItemsSize *int64
-    // The number of mailboxes that had search hits.
-    mailboxCount *int32
-    // The number of mailboxes that had search hits.
-    siteCount *int32
-    // eDiscovery collection, commonly known as a search.
-    sourceCollection SourceCollectionable
-    // The estimated count of unindexed items for the collection.
-    unindexedItemCount *int64
-    // The estimated size of unindexed items for the collection.
-    unindexedItemsSize *int64
 }
 // NewEstimateStatisticsOperation instantiates a new estimateStatisticsOperation and sets the default values.
 func NewEstimateStatisticsOperation()(*EstimateStatisticsOperation) {
@@ -110,31 +96,80 @@ func (m *EstimateStatisticsOperation) GetFieldDeserializers()(map[string]func(i8
 }
 // GetIndexedItemCount gets the indexedItemCount property value. The estimated count of items for the sourceCollection that matched the content query.
 func (m *EstimateStatisticsOperation) GetIndexedItemCount()(*int64) {
-    return m.indexedItemCount
+    val, err := m.GetBackingStore().Get("indexedItemCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetIndexedItemsSize gets the indexedItemsSize property value. The estimated size of items for the sourceCollection that matched the content query.
 func (m *EstimateStatisticsOperation) GetIndexedItemsSize()(*int64) {
-    return m.indexedItemsSize
+    val, err := m.GetBackingStore().Get("indexedItemsSize")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetMailboxCount gets the mailboxCount property value. The number of mailboxes that had search hits.
 func (m *EstimateStatisticsOperation) GetMailboxCount()(*int32) {
-    return m.mailboxCount
+    val, err := m.GetBackingStore().Get("mailboxCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetSiteCount gets the siteCount property value. The number of mailboxes that had search hits.
 func (m *EstimateStatisticsOperation) GetSiteCount()(*int32) {
-    return m.siteCount
+    val, err := m.GetBackingStore().Get("siteCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetSourceCollection gets the sourceCollection property value. eDiscovery collection, commonly known as a search.
 func (m *EstimateStatisticsOperation) GetSourceCollection()(SourceCollectionable) {
-    return m.sourceCollection
+    val, err := m.GetBackingStore().Get("sourceCollection")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SourceCollectionable)
+    }
+    return nil
 }
 // GetUnindexedItemCount gets the unindexedItemCount property value. The estimated count of unindexed items for the collection.
 func (m *EstimateStatisticsOperation) GetUnindexedItemCount()(*int64) {
-    return m.unindexedItemCount
+    val, err := m.GetBackingStore().Get("unindexedItemCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetUnindexedItemsSize gets the unindexedItemsSize property value. The estimated size of unindexed items for the collection.
 func (m *EstimateStatisticsOperation) GetUnindexedItemsSize()(*int64) {
-    return m.unindexedItemsSize
+    val, err := m.GetBackingStore().Get("unindexedItemsSize")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EstimateStatisticsOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -188,29 +223,69 @@ func (m *EstimateStatisticsOperation) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetIndexedItemCount sets the indexedItemCount property value. The estimated count of items for the sourceCollection that matched the content query.
 func (m *EstimateStatisticsOperation) SetIndexedItemCount(value *int64)() {
-    m.indexedItemCount = value
+    err := m.GetBackingStore().Set("indexedItemCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIndexedItemsSize sets the indexedItemsSize property value. The estimated size of items for the sourceCollection that matched the content query.
 func (m *EstimateStatisticsOperation) SetIndexedItemsSize(value *int64)() {
-    m.indexedItemsSize = value
+    err := m.GetBackingStore().Set("indexedItemsSize", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMailboxCount sets the mailboxCount property value. The number of mailboxes that had search hits.
 func (m *EstimateStatisticsOperation) SetMailboxCount(value *int32)() {
-    m.mailboxCount = value
+    err := m.GetBackingStore().Set("mailboxCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSiteCount sets the siteCount property value. The number of mailboxes that had search hits.
 func (m *EstimateStatisticsOperation) SetSiteCount(value *int32)() {
-    m.siteCount = value
+    err := m.GetBackingStore().Set("siteCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSourceCollection sets the sourceCollection property value. eDiscovery collection, commonly known as a search.
 func (m *EstimateStatisticsOperation) SetSourceCollection(value SourceCollectionable)() {
-    m.sourceCollection = value
+    err := m.GetBackingStore().Set("sourceCollection", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUnindexedItemCount sets the unindexedItemCount property value. The estimated count of unindexed items for the collection.
 func (m *EstimateStatisticsOperation) SetUnindexedItemCount(value *int64)() {
-    m.unindexedItemCount = value
+    err := m.GetBackingStore().Set("unindexedItemCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUnindexedItemsSize sets the unindexedItemsSize property value. The estimated size of unindexed items for the collection.
 func (m *EstimateStatisticsOperation) SetUnindexedItemsSize(value *int64)() {
-    m.unindexedItemsSize = value
+    err := m.GetBackingStore().Set("unindexedItemsSize", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EstimateStatisticsOperationable 
+type EstimateStatisticsOperationable interface {
+    CaseOperationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetIndexedItemCount()(*int64)
+    GetIndexedItemsSize()(*int64)
+    GetMailboxCount()(*int32)
+    GetSiteCount()(*int32)
+    GetSourceCollection()(SourceCollectionable)
+    GetUnindexedItemCount()(*int64)
+    GetUnindexedItemsSize()(*int64)
+    SetIndexedItemCount(value *int64)()
+    SetIndexedItemsSize(value *int64)()
+    SetMailboxCount(value *int32)()
+    SetSiteCount(value *int32)()
+    SetSourceCollection(value SourceCollectionable)()
+    SetUnindexedItemCount(value *int64)()
+    SetUnindexedItemsSize(value *int64)()
 }

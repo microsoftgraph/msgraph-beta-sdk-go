@@ -26,7 +26,7 @@ type GetMailboxUsageStorageWithPeriodRequestBuilderGetRequestConfiguration struc
 func NewGetMailboxUsageStorageWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, period *string)(*GetMailboxUsageStorageWithPeriodRequestBuilder) {
     m := &GetMailboxUsageStorageWithPeriodRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/reports/microsoft.graph.getMailboxUsageStorage(period='{period}')";
+    m.urlTemplate = "{+baseurl}/reports/getMailboxUsageStorage(period='{period}')";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -34,8 +34,8 @@ func NewGetMailboxUsageStorageWithPeriodRequestBuilderInternal(pathParameters ma
     if period != nil {
         urlTplParams["period"] = *period
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGetMailboxUsageStorageWithPeriodRequestBuilder instantiates a new GetMailboxUsageStorageWithPeriodRequestBuilder and sets the default values.

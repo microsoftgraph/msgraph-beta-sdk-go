@@ -26,13 +26,13 @@ type ItemIsManagedAppUserBlockedRequestBuilderGetRequestConfiguration struct {
 func NewItemIsManagedAppUserBlockedRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemIsManagedAppUserBlockedRequestBuilder) {
     m := &ItemIsManagedAppUserBlockedRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/microsoft.graph.isManagedAppUserBlocked()";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/isManagedAppUserBlocked()";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemIsManagedAppUserBlockedRequestBuilder instantiates a new IsManagedAppUserBlockedRequestBuilder and sets the default values.

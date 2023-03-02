@@ -7,16 +7,14 @@ import (
 // AddWatermark 
 type AddWatermark struct {
     MarkContent
-    // The orientation property
-    orientation *PageOrientation
 }
 // NewAddWatermark instantiates a new AddWatermark and sets the default values.
 func NewAddWatermark()(*AddWatermark) {
     m := &AddWatermark{
         MarkContent: *NewMarkContent(),
     }
-    odataTypeValue := "#microsoft.graph.addWatermark";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.addWatermark"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAddWatermarkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *AddWatermark) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetOrientation gets the orientation property value. The orientation property
 func (m *AddWatermark) GetOrientation()(*PageOrientation) {
-    return m.orientation
+    val, err := m.GetBackingStore().Get("orientation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PageOrientation)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AddWatermark) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -59,5 +64,15 @@ func (m *AddWatermark) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetOrientation sets the orientation property value. The orientation property
 func (m *AddWatermark) SetOrientation(value *PageOrientation)() {
-    m.orientation = value
+    err := m.GetBackingStore().Set("orientation", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AddWatermarkable 
+type AddWatermarkable interface {
+    MarkContentable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOrientation()(*PageOrientation)
+    SetOrientation(value *PageOrientation)()
 }

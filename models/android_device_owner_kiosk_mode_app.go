@@ -7,18 +7,16 @@ import (
 // AndroidDeviceOwnerKioskModeApp 
 type AndroidDeviceOwnerKioskModeApp struct {
     AndroidDeviceOwnerKioskModeFolderItem
-    // Class name of application
-    className *string
     // Package name of application
-    package_escaped *string
+    PackageEscaped *string
 }
 // NewAndroidDeviceOwnerKioskModeApp instantiates a new AndroidDeviceOwnerKioskModeApp and sets the default values.
 func NewAndroidDeviceOwnerKioskModeApp()(*AndroidDeviceOwnerKioskModeApp) {
     m := &AndroidDeviceOwnerKioskModeApp{
         AndroidDeviceOwnerKioskModeFolderItem: *NewAndroidDeviceOwnerKioskModeFolderItem(),
     }
-    odataTypeValue := "#microsoft.graph.androidDeviceOwnerKioskModeApp";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidDeviceOwnerKioskModeApp"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidDeviceOwnerKioskModeAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +25,14 @@ func CreateAndroidDeviceOwnerKioskModeAppFromDiscriminatorValue(parseNode i878a8
 }
 // GetClassName gets the className property value. Class name of application
 func (m *AndroidDeviceOwnerKioskModeApp) GetClassName()(*string) {
-    return m.className
+    val, err := m.GetBackingStore().Get("className")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidDeviceOwnerKioskModeApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,7 +61,14 @@ func (m *AndroidDeviceOwnerKioskModeApp) GetFieldDeserializers()(map[string]func
 }
 // GetPackage gets the package property value. Package name of application
 func (m *AndroidDeviceOwnerKioskModeApp) GetPackage()(*string) {
-    return m.package_escaped
+    val, err := m.GetBackingStore().Get("packageEscaped")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerKioskModeApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +92,24 @@ func (m *AndroidDeviceOwnerKioskModeApp) Serialize(writer i878a80d2330e89d268963
 }
 // SetClassName sets the className property value. Class name of application
 func (m *AndroidDeviceOwnerKioskModeApp) SetClassName(value *string)() {
-    m.className = value
+    err := m.GetBackingStore().Set("className", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPackage sets the package property value. Package name of application
 func (m *AndroidDeviceOwnerKioskModeApp) SetPackage(value *string)() {
-    m.package_escaped = value
+    err := m.GetBackingStore().Set("packageEscaped", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidDeviceOwnerKioskModeAppable 
+type AndroidDeviceOwnerKioskModeAppable interface {
+    AndroidDeviceOwnerKioskModeFolderItemable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetClassName()(*string)
+    GetPackage()(*string)
+    SetClassName(value *string)()
+    SetPackage(value *string)()
 }

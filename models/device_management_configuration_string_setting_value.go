@@ -7,16 +7,14 @@ import (
 // DeviceManagementConfigurationStringSettingValue 
 type DeviceManagementConfigurationStringSettingValue struct {
     DeviceManagementConfigurationSimpleSettingValue
-    // Value of the string setting.
-    value *string
 }
 // NewDeviceManagementConfigurationStringSettingValue instantiates a new DeviceManagementConfigurationStringSettingValue and sets the default values.
 func NewDeviceManagementConfigurationStringSettingValue()(*DeviceManagementConfigurationStringSettingValue) {
     m := &DeviceManagementConfigurationStringSettingValue{
         DeviceManagementConfigurationSimpleSettingValue: *NewDeviceManagementConfigurationSimpleSettingValue(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationStringSettingValue";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationStringSettingValue"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementConfigurationStringSettingValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -58,7 +56,14 @@ func (m *DeviceManagementConfigurationStringSettingValue) GetFieldDeserializers(
 }
 // GetValue gets the value property value. Value of the string setting.
 func (m *DeviceManagementConfigurationStringSettingValue) GetValue()(*string) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationStringSettingValue) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -76,5 +81,15 @@ func (m *DeviceManagementConfigurationStringSettingValue) Serialize(writer i878a
 }
 // SetValue sets the value property value. Value of the string setting.
 func (m *DeviceManagementConfigurationStringSettingValue) SetValue(value *string)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationStringSettingValueable 
+type DeviceManagementConfigurationStringSettingValueable interface {
+    DeviceManagementConfigurationSimpleSettingValueable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()(*string)
+    SetValue(value *string)()
 }

@@ -2,30 +2,20 @@ package managedtenants
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ManagementActionDeploymentStatus 
 type ManagementActionDeploymentStatus struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The identifier for the management action. Required. Read-only.
-    managementActionId *string
-    // The management template identifier that was used to generate the management action. Required. Read-only.
-    managementTemplateId *string
-    // The managementTemplateVersion property
-    managementTemplateVersion *int32
-    // The OdataType property
-    odataType *string
-    // The status property
-    status *ManagementActionStatus
-    // The collection of workload action deployment statues for the given management action. Optional.
-    workloadActionDeploymentStatuses []WorkloadActionDeploymentStatusable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewManagementActionDeploymentStatus instantiates a new managementActionDeploymentStatus and sets the default values.
 func NewManagementActionDeploymentStatus()(*ManagementActionDeploymentStatus) {
     m := &ManagementActionDeploymentStatus{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateManagementActionDeploymentStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -34,7 +24,19 @@ func CreateManagementActionDeploymentStatusFromDiscriminatorValue(parseNode i878
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagementActionDeploymentStatus) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ManagementActionDeploymentStatus) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagementActionDeploymentStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -107,27 +109,69 @@ func (m *ManagementActionDeploymentStatus) GetFieldDeserializers()(map[string]fu
 }
 // GetManagementActionId gets the managementActionId property value. The identifier for the management action. Required. Read-only.
 func (m *ManagementActionDeploymentStatus) GetManagementActionId()(*string) {
-    return m.managementActionId
+    val, err := m.GetBackingStore().Get("managementActionId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetManagementTemplateId gets the managementTemplateId property value. The management template identifier that was used to generate the management action. Required. Read-only.
 func (m *ManagementActionDeploymentStatus) GetManagementTemplateId()(*string) {
-    return m.managementTemplateId
+    val, err := m.GetBackingStore().Get("managementTemplateId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetManagementTemplateVersion gets the managementTemplateVersion property value. The managementTemplateVersion property
 func (m *ManagementActionDeploymentStatus) GetManagementTemplateVersion()(*int32) {
-    return m.managementTemplateVersion
+    val, err := m.GetBackingStore().Get("managementTemplateVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ManagementActionDeploymentStatus) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetStatus gets the status property value. The status property
 func (m *ManagementActionDeploymentStatus) GetStatus()(*ManagementActionStatus) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ManagementActionStatus)
+    }
+    return nil
 }
 // GetWorkloadActionDeploymentStatuses gets the workloadActionDeploymentStatuses property value. The collection of workload action deployment statues for the given management action. Optional.
 func (m *ManagementActionDeploymentStatus) GetWorkloadActionDeploymentStatuses()([]WorkloadActionDeploymentStatusable) {
-    return m.workloadActionDeploymentStatuses
+    val, err := m.GetBackingStore().Get("workloadActionDeploymentStatuses")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WorkloadActionDeploymentStatusable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagementActionDeploymentStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -182,29 +226,74 @@ func (m *ManagementActionDeploymentStatus) Serialize(writer i878a80d2330e89d2689
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagementActionDeploymentStatus) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ManagementActionDeploymentStatus) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetManagementActionId sets the managementActionId property value. The identifier for the management action. Required. Read-only.
 func (m *ManagementActionDeploymentStatus) SetManagementActionId(value *string)() {
-    m.managementActionId = value
+    err := m.GetBackingStore().Set("managementActionId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagementTemplateId sets the managementTemplateId property value. The management template identifier that was used to generate the management action. Required. Read-only.
 func (m *ManagementActionDeploymentStatus) SetManagementTemplateId(value *string)() {
-    m.managementTemplateId = value
+    err := m.GetBackingStore().Set("managementTemplateId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagementTemplateVersion sets the managementTemplateVersion property value. The managementTemplateVersion property
 func (m *ManagementActionDeploymentStatus) SetManagementTemplateVersion(value *int32)() {
-    m.managementTemplateVersion = value
+    err := m.GetBackingStore().Set("managementTemplateVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ManagementActionDeploymentStatus) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. The status property
 func (m *ManagementActionDeploymentStatus) SetStatus(value *ManagementActionStatus)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkloadActionDeploymentStatuses sets the workloadActionDeploymentStatuses property value. The collection of workload action deployment statues for the given management action. Optional.
 func (m *ManagementActionDeploymentStatus) SetWorkloadActionDeploymentStatuses(value []WorkloadActionDeploymentStatusable)() {
-    m.workloadActionDeploymentStatuses = value
+    err := m.GetBackingStore().Set("workloadActionDeploymentStatuses", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagementActionDeploymentStatusable 
+type ManagementActionDeploymentStatusable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetManagementActionId()(*string)
+    GetManagementTemplateId()(*string)
+    GetManagementTemplateVersion()(*int32)
+    GetOdataType()(*string)
+    GetStatus()(*ManagementActionStatus)
+    GetWorkloadActionDeploymentStatuses()([]WorkloadActionDeploymentStatusable)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetManagementActionId(value *string)()
+    SetManagementTemplateId(value *string)()
+    SetManagementTemplateVersion(value *int32)()
+    SetOdataType(value *string)()
+    SetStatus(value *ManagementActionStatus)()
+    SetWorkloadActionDeploymentStatuses(value []WorkloadActionDeploymentStatusable)()
 }

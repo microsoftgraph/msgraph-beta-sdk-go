@@ -41,8 +41,8 @@ func NewItemTeamDefinitionTemplateDefinitionRequestBuilderInternal(pathParameter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTeamDefinitionTemplateDefinitionRequestBuilder instantiates a new TemplateDefinitionRequestBuilder and sets the default values.

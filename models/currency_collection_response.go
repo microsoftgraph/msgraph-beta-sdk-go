@@ -7,8 +7,6 @@ import (
 // CurrencyCollectionResponse 
 type CurrencyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Currencyable
 }
 // NewCurrencyCollectionResponse instantiates a new CurrencyCollectionResponse and sets the default values.
 func NewCurrencyCollectionResponse()(*CurrencyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *CurrencyCollectionResponse) GetFieldDeserializers()(map[string]func(i87
 }
 // GetValue gets the value property value. The value property
 func (m *CurrencyCollectionResponse) GetValue()([]Currencyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Currencyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CurrencyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *CurrencyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetValue sets the value property value. The value property
 func (m *CurrencyCollectionResponse) SetValue(value []Currencyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CurrencyCollectionResponseable 
+type CurrencyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Currencyable)
+    SetValue(value []Currencyable)()
 }

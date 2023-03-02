@@ -27,13 +27,13 @@ type DeviceConfigurationUserActivityRequestBuilderGetRequestConfiguration struct
 func NewDeviceConfigurationUserActivityRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceConfigurationUserActivityRequestBuilder) {
     m := &DeviceConfigurationUserActivityRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/reports/microsoft.graph.deviceConfigurationUserActivity()";
+    m.urlTemplate = "{+baseurl}/reports/deviceConfigurationUserActivity()";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceConfigurationUserActivityRequestBuilder instantiates a new DeviceConfigurationUserActivityRequestBuilder and sets the default values.

@@ -55,8 +55,8 @@ func NewAccessReviewsDecisionsItemInstanceStagesAccessReviewStageItemRequestBuil
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAccessReviewsDecisionsItemInstanceStagesAccessReviewStageItemRequestBuilder instantiates a new AccessReviewStageItemRequestBuilder and sets the default values.
@@ -67,7 +67,7 @@ func NewAccessReviewsDecisionsItemInstanceStagesAccessReviewStageItemRequestBuil
 }
 // Decisions provides operations to manage the decisions property of the microsoft.graph.accessReviewStage entity.
 func (m *AccessReviewsDecisionsItemInstanceStagesAccessReviewStageItemRequestBuilder) Decisions()(*AccessReviewsDecisionsItemInstanceStagesItemDecisionsRequestBuilder) {
-    return NewAccessReviewsDecisionsItemInstanceStagesItemDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAccessReviewsDecisionsItemInstanceStagesItemDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DecisionsById provides operations to manage the decisions property of the microsoft.graph.accessReviewStage entity.
 func (m *AccessReviewsDecisionsItemInstanceStagesAccessReviewStageItemRequestBuilder) DecisionsById(id string)(*AccessReviewsDecisionsItemInstanceStagesItemDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder) {
@@ -78,7 +78,7 @@ func (m *AccessReviewsDecisionsItemInstanceStagesAccessReviewStageItemRequestBui
     if id != "" {
         urlTplParams["accessReviewInstanceDecisionItem%2Did1"] = id
     }
-    return NewAccessReviewsDecisionsItemInstanceStagesItemDecisionsAccessReviewInstanceDecisionItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAccessReviewsDecisionsItemInstanceStagesItemDecisionsAccessReviewInstanceDecisionItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Delete delete navigation property stages for identityGovernance
 func (m *AccessReviewsDecisionsItemInstanceStagesAccessReviewStageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AccessReviewsDecisionsItemInstanceStagesAccessReviewStageItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -136,7 +136,7 @@ func (m *AccessReviewsDecisionsItemInstanceStagesAccessReviewStageItemRequestBui
 }
 // Stop provides operations to call the stop method.
 func (m *AccessReviewsDecisionsItemInstanceStagesAccessReviewStageItemRequestBuilder) Stop()(*AccessReviewsDecisionsItemInstanceStagesItemStopRequestBuilder) {
-    return NewAccessReviewsDecisionsItemInstanceStagesItemStopRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAccessReviewsDecisionsItemInstanceStagesItemStopRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property stages for identityGovernance
 func (m *AccessReviewsDecisionsItemInstanceStagesAccessReviewStageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsDecisionsItemInstanceStagesAccessReviewStageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -173,7 +173,10 @@ func (m *AccessReviewsDecisionsItemInstanceStagesAccessReviewStageItemRequestBui
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

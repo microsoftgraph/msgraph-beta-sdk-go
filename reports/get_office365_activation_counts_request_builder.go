@@ -26,13 +26,13 @@ type GetOffice365ActivationCountsRequestBuilderGetRequestConfiguration struct {
 func NewGetOffice365ActivationCountsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GetOffice365ActivationCountsRequestBuilder) {
     m := &GetOffice365ActivationCountsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/reports/microsoft.graph.getOffice365ActivationCounts()";
+    m.urlTemplate = "{+baseurl}/reports/getOffice365ActivationCounts()";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGetOffice365ActivationCountsRequestBuilder instantiates a new GetOffice365ActivationCountsRequestBuilder and sets the default values.

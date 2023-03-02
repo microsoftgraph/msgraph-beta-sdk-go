@@ -60,8 +60,8 @@ func NewEntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesRequ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesRequestBuilder instantiates a new AccessPackageResourcesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewEntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesRequ
 }
 // Count provides operations to count the resources in the collection.
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesRequestBuilder) Count()(*EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesCountRequestBuilder) {
-    return NewEntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of accessPackageResource objects in an accessPackageCatalog.  To request to add or remove an accessPackageResource, use create accessPackageResourceRequest.
 // [Find more info here]
@@ -138,7 +138,10 @@ func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesReq
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

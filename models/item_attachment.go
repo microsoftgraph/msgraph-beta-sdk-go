@@ -7,16 +7,14 @@ import (
 // ItemAttachment 
 type ItemAttachment struct {
     Attachment
-    // The attached contact, message or event. Navigation property.
-    item OutlookItemable
 }
 // NewItemAttachment instantiates a new ItemAttachment and sets the default values.
 func NewItemAttachment()(*ItemAttachment) {
     m := &ItemAttachment{
         Attachment: *NewAttachment(),
     }
-    odataTypeValue := "#microsoft.graph.itemAttachment";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.itemAttachment"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateItemAttachmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *ItemAttachment) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetItem gets the item property value. The attached contact, message or event. Navigation property.
 func (m *ItemAttachment) GetItem()(OutlookItemable) {
-    return m.item
+    val, err := m.GetBackingStore().Get("item")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(OutlookItemable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemAttachment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *ItemAttachment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetItem sets the item property value. The attached contact, message or event. Navigation property.
 func (m *ItemAttachment) SetItem(value OutlookItemable)() {
-    m.item = value
+    err := m.GetBackingStore().Set("item", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemAttachmentable 
+type ItemAttachmentable interface {
+    Attachmentable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetItem()(OutlookItemable)
+    SetItem(value OutlookItemable)()
 }

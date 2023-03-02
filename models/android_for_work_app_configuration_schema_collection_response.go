@@ -7,8 +7,6 @@ import (
 // AndroidForWorkAppConfigurationSchemaCollectionResponse 
 type AndroidForWorkAppConfigurationSchemaCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidForWorkAppConfigurationSchemaable
 }
 // NewAndroidForWorkAppConfigurationSchemaCollectionResponse instantiates a new AndroidForWorkAppConfigurationSchemaCollectionResponse and sets the default values.
 func NewAndroidForWorkAppConfigurationSchemaCollectionResponse()(*AndroidForWorkAppConfigurationSchemaCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidForWorkAppConfigurationSchemaCollectionResponse) GetFieldDeseria
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidForWorkAppConfigurationSchemaCollectionResponse) GetValue()([]AndroidForWorkAppConfigurationSchemaable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidForWorkAppConfigurationSchemaable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidForWorkAppConfigurationSchemaCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidForWorkAppConfigurationSchemaCollectionResponse) Serialize(write
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidForWorkAppConfigurationSchemaCollectionResponse) SetValue(value []AndroidForWorkAppConfigurationSchemaable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidForWorkAppConfigurationSchemaCollectionResponseable 
+type AndroidForWorkAppConfigurationSchemaCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidForWorkAppConfigurationSchemaable)
+    SetValue(value []AndroidForWorkAppConfigurationSchemaable)()
 }

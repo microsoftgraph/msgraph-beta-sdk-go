@@ -41,11 +41,11 @@ type BrandingRequestBuilderPatchRequestConfiguration struct {
 }
 // BackgroundImage provides operations to manage the media for the organizationalBranding entity.
 func (m *BrandingRequestBuilder) BackgroundImage()(*BackgroundImageRequestBuilder) {
-    return NewBackgroundImageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewBackgroundImageRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // BannerLogo provides operations to manage the media for the organizationalBranding entity.
 func (m *BrandingRequestBuilder) BannerLogo()(*BannerLogoRequestBuilder) {
-    return NewBannerLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewBannerLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewBrandingRequestBuilderInternal instantiates a new BrandingRequestBuilder and sets the default values.
 func NewBrandingRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BrandingRequestBuilder) {
@@ -56,8 +56,8 @@ func NewBrandingRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewBrandingRequestBuilder instantiates a new BrandingRequestBuilder and sets the default values.
@@ -68,11 +68,11 @@ func NewBrandingRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 }
 // CustomCSS provides operations to manage the media for the organizationalBranding entity.
 func (m *BrandingRequestBuilder) CustomCSS()(*CustomCSSRequestBuilder) {
-    return NewCustomCSSRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCustomCSSRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Favicon provides operations to manage the media for the organizationalBranding entity.
 func (m *BrandingRequestBuilder) Favicon()(*FaviconRequestBuilder) {
-    return NewFaviconRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewFaviconRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get branding
 func (m *BrandingRequestBuilder) Get(ctx context.Context, requestConfiguration *BrandingRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingable, error) {
@@ -95,11 +95,11 @@ func (m *BrandingRequestBuilder) Get(ctx context.Context, requestConfiguration *
 }
 // HeaderLogo provides operations to manage the media for the organizationalBranding entity.
 func (m *BrandingRequestBuilder) HeaderLogo()(*HeaderLogoRequestBuilder) {
-    return NewHeaderLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewHeaderLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Localizations provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.
 func (m *BrandingRequestBuilder) Localizations()(*LocalizationsRequestBuilder) {
-    return NewLocalizationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewLocalizationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // LocalizationsById provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.
 func (m *BrandingRequestBuilder) LocalizationsById(id string)(*LocalizationsOrganizationalBrandingLocalizationItemRequestBuilder) {
@@ -110,7 +110,7 @@ func (m *BrandingRequestBuilder) LocalizationsById(id string)(*LocalizationsOrga
     if id != "" {
         urlTplParams["organizationalBrandingLocalization%2Did"] = id
     }
-    return NewLocalizationsOrganizationalBrandingLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewLocalizationsOrganizationalBrandingLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch update branding
 func (m *BrandingRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingable, requestConfiguration *BrandingRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingable, error) {
@@ -133,11 +133,11 @@ func (m *BrandingRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4
 }
 // SquareLogo provides operations to manage the media for the organizationalBranding entity.
 func (m *BrandingRequestBuilder) SquareLogo()(*SquareLogoRequestBuilder) {
-    return NewSquareLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSquareLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SquareLogoDark provides operations to manage the media for the organizationalBranding entity.
 func (m *BrandingRequestBuilder) SquareLogoDark()(*SquareLogoDarkRequestBuilder) {
-    return NewSquareLogoDarkRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSquareLogoDarkRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation get branding
 func (m *BrandingRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BrandingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -162,7 +162,10 @@ func (m *BrandingRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

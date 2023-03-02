@@ -7,8 +7,6 @@ import (
 // GroupPolicyPresentationValueMultiTextCollectionResponse 
 type GroupPolicyPresentationValueMultiTextCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []GroupPolicyPresentationValueMultiTextable
 }
 // NewGroupPolicyPresentationValueMultiTextCollectionResponse instantiates a new GroupPolicyPresentationValueMultiTextCollectionResponse and sets the default values.
 func NewGroupPolicyPresentationValueMultiTextCollectionResponse()(*GroupPolicyPresentationValueMultiTextCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *GroupPolicyPresentationValueMultiTextCollectionResponse) GetFieldDeseri
 }
 // GetValue gets the value property value. The value property
 func (m *GroupPolicyPresentationValueMultiTextCollectionResponse) GetValue()([]GroupPolicyPresentationValueMultiTextable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GroupPolicyPresentationValueMultiTextable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyPresentationValueMultiTextCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *GroupPolicyPresentationValueMultiTextCollectionResponse) Serialize(writ
 }
 // SetValue sets the value property value. The value property
 func (m *GroupPolicyPresentationValueMultiTextCollectionResponse) SetValue(value []GroupPolicyPresentationValueMultiTextable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GroupPolicyPresentationValueMultiTextCollectionResponseable 
+type GroupPolicyPresentationValueMultiTextCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]GroupPolicyPresentationValueMultiTextable)
+    SetValue(value []GroupPolicyPresentationValueMultiTextable)()
 }

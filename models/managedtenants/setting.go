@@ -2,30 +2,20 @@ package managedtenants
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // Setting 
 type Setting struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The display name for the setting. Required. Read-only.
-    displayName *string
-    // The value for the setting serialized as string of JSON. Required. Read-only.
-    jsonValue *string
-    // The OdataType property
-    odataType *string
-    // A flag indicating whether the setting can be override existing configurations when applied. Required. Read-only.
-    overwriteAllowed *bool
-    // The settingId property
-    settingId *string
-    // The valueType property
-    valueType *ManagementParameterValueType
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewSetting instantiates a new setting and sets the default values.
 func NewSetting()(*Setting) {
     m := &Setting{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -34,11 +24,30 @@ func CreateSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Setting) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *Setting) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDisplayName gets the displayName property value. The display name for the setting. Required. Read-only.
 func (m *Setting) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Setting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -107,23 +116,58 @@ func (m *Setting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
 }
 // GetJsonValue gets the jsonValue property value. The value for the setting serialized as string of JSON. Required. Read-only.
 func (m *Setting) GetJsonValue()(*string) {
-    return m.jsonValue
+    val, err := m.GetBackingStore().Get("jsonValue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Setting) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOverwriteAllowed gets the overwriteAllowed property value. A flag indicating whether the setting can be override existing configurations when applied. Required. Read-only.
 func (m *Setting) GetOverwriteAllowed()(*bool) {
-    return m.overwriteAllowed
+    val, err := m.GetBackingStore().Get("overwriteAllowed")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSettingId gets the settingId property value. The settingId property
 func (m *Setting) GetSettingId()(*string) {
-    return m.settingId
+    val, err := m.GetBackingStore().Get("settingId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetValueType gets the valueType property value. The valueType property
 func (m *Setting) GetValueType()(*ManagementParameterValueType) {
-    return m.valueType
+    val, err := m.GetBackingStore().Get("valueType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ManagementParameterValueType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Setting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -174,29 +218,74 @@ func (m *Setting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Setting) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *Setting) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDisplayName sets the displayName property value. The display name for the setting. Required. Read-only.
 func (m *Setting) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetJsonValue sets the jsonValue property value. The value for the setting serialized as string of JSON. Required. Read-only.
 func (m *Setting) SetJsonValue(value *string)() {
-    m.jsonValue = value
+    err := m.GetBackingStore().Set("jsonValue", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Setting) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOverwriteAllowed sets the overwriteAllowed property value. A flag indicating whether the setting can be override existing configurations when applied. Required. Read-only.
 func (m *Setting) SetOverwriteAllowed(value *bool)() {
-    m.overwriteAllowed = value
+    err := m.GetBackingStore().Set("overwriteAllowed", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingId sets the settingId property value. The settingId property
 func (m *Setting) SetSettingId(value *string)() {
-    m.settingId = value
+    err := m.GetBackingStore().Set("settingId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetValueType sets the valueType property value. The valueType property
 func (m *Setting) SetValueType(value *ManagementParameterValueType)() {
-    m.valueType = value
+    err := m.GetBackingStore().Set("valueType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Settingable 
+type Settingable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDisplayName()(*string)
+    GetJsonValue()(*string)
+    GetOdataType()(*string)
+    GetOverwriteAllowed()(*bool)
+    GetSettingId()(*string)
+    GetValueType()(*ManagementParameterValueType)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDisplayName(value *string)()
+    SetJsonValue(value *string)()
+    SetOdataType(value *string)()
+    SetOverwriteAllowed(value *bool)()
+    SetSettingId(value *string)()
+    SetValueType(value *ManagementParameterValueType)()
 }

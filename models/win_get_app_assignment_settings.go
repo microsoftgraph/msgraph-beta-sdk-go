@@ -7,20 +7,14 @@ import (
 // WinGetAppAssignmentSettings 
 type WinGetAppAssignmentSettings struct {
     MobileAppAssignmentSettings
-    // The install time settings to apply for this app assignment.
-    installTimeSettings WinGetAppInstallTimeSettingsable
-    // Contains value for notification status.
-    notifications *WinGetAppNotification
-    // The reboot settings to apply for this app assignment.
-    restartSettings WinGetAppRestartSettingsable
 }
 // NewWinGetAppAssignmentSettings instantiates a new WinGetAppAssignmentSettings and sets the default values.
 func NewWinGetAppAssignmentSettings()(*WinGetAppAssignmentSettings) {
     m := &WinGetAppAssignmentSettings{
         MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),
     }
-    odataTypeValue := "#microsoft.graph.winGetAppAssignmentSettings";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.winGetAppAssignmentSettings"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWinGetAppAssignmentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -64,15 +58,36 @@ func (m *WinGetAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i8
 }
 // GetInstallTimeSettings gets the installTimeSettings property value. The install time settings to apply for this app assignment.
 func (m *WinGetAppAssignmentSettings) GetInstallTimeSettings()(WinGetAppInstallTimeSettingsable) {
-    return m.installTimeSettings
+    val, err := m.GetBackingStore().Get("installTimeSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WinGetAppInstallTimeSettingsable)
+    }
+    return nil
 }
 // GetNotifications gets the notifications property value. Contains value for notification status.
 func (m *WinGetAppAssignmentSettings) GetNotifications()(*WinGetAppNotification) {
-    return m.notifications
+    val, err := m.GetBackingStore().Get("notifications")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WinGetAppNotification)
+    }
+    return nil
 }
 // GetRestartSettings gets the restartSettings property value. The reboot settings to apply for this app assignment.
 func (m *WinGetAppAssignmentSettings) GetRestartSettings()(WinGetAppRestartSettingsable) {
-    return m.restartSettings
+    val, err := m.GetBackingStore().Get("restartSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WinGetAppRestartSettingsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WinGetAppAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -103,13 +118,33 @@ func (m *WinGetAppAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetInstallTimeSettings sets the installTimeSettings property value. The install time settings to apply for this app assignment.
 func (m *WinGetAppAssignmentSettings) SetInstallTimeSettings(value WinGetAppInstallTimeSettingsable)() {
-    m.installTimeSettings = value
+    err := m.GetBackingStore().Set("installTimeSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotifications sets the notifications property value. Contains value for notification status.
 func (m *WinGetAppAssignmentSettings) SetNotifications(value *WinGetAppNotification)() {
-    m.notifications = value
+    err := m.GetBackingStore().Set("notifications", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRestartSettings sets the restartSettings property value. The reboot settings to apply for this app assignment.
 func (m *WinGetAppAssignmentSettings) SetRestartSettings(value WinGetAppRestartSettingsable)() {
-    m.restartSettings = value
+    err := m.GetBackingStore().Set("restartSettings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WinGetAppAssignmentSettingsable 
+type WinGetAppAssignmentSettingsable interface {
+    MobileAppAssignmentSettingsable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetInstallTimeSettings()(WinGetAppInstallTimeSettingsable)
+    GetNotifications()(*WinGetAppNotification)
+    GetRestartSettings()(WinGetAppRestartSettingsable)
+    SetInstallTimeSettings(value WinGetAppInstallTimeSettingsable)()
+    SetNotifications(value *WinGetAppNotification)()
+    SetRestartSettings(value WinGetAppRestartSettingsable)()
 }

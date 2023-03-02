@@ -7,14 +7,6 @@ import (
 // SensitivityPolicySettings 
 type SensitivityPolicySettings struct {
     Entity
-    // The applicableTo property
-    applicableTo *SensitivityLabelTarget
-    // The downgradeSensitivityRequiresJustification property
-    downgradeSensitivityRequiresJustification *bool
-    // The helpWebUrl property
-    helpWebUrl *string
-    // The isMandatory property
-    isMandatory *bool
 }
 // NewSensitivityPolicySettings instantiates a new sensitivityPolicySettings and sets the default values.
 func NewSensitivityPolicySettings()(*SensitivityPolicySettings) {
@@ -29,11 +21,25 @@ func CreateSensitivityPolicySettingsFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetApplicableTo gets the applicableTo property value. The applicableTo property
 func (m *SensitivityPolicySettings) GetApplicableTo()(*SensitivityLabelTarget) {
-    return m.applicableTo
+    val, err := m.GetBackingStore().Get("applicableTo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SensitivityLabelTarget)
+    }
+    return nil
 }
 // GetDowngradeSensitivityRequiresJustification gets the downgradeSensitivityRequiresJustification property value. The downgradeSensitivityRequiresJustification property
 func (m *SensitivityPolicySettings) GetDowngradeSensitivityRequiresJustification()(*bool) {
-    return m.downgradeSensitivityRequiresJustification
+    val, err := m.GetBackingStore().Get("downgradeSensitivityRequiresJustification")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SensitivityPolicySettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -82,11 +88,25 @@ func (m *SensitivityPolicySettings) GetFieldDeserializers()(map[string]func(i878
 }
 // GetHelpWebUrl gets the helpWebUrl property value. The helpWebUrl property
 func (m *SensitivityPolicySettings) GetHelpWebUrl()(*string) {
-    return m.helpWebUrl
+    val, err := m.GetBackingStore().Get("helpWebUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIsMandatory gets the isMandatory property value. The isMandatory property
 func (m *SensitivityPolicySettings) GetIsMandatory()(*bool) {
-    return m.isMandatory
+    val, err := m.GetBackingStore().Get("isMandatory")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SensitivityPolicySettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -123,17 +143,42 @@ func (m *SensitivityPolicySettings) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetApplicableTo sets the applicableTo property value. The applicableTo property
 func (m *SensitivityPolicySettings) SetApplicableTo(value *SensitivityLabelTarget)() {
-    m.applicableTo = value
+    err := m.GetBackingStore().Set("applicableTo", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDowngradeSensitivityRequiresJustification sets the downgradeSensitivityRequiresJustification property value. The downgradeSensitivityRequiresJustification property
 func (m *SensitivityPolicySettings) SetDowngradeSensitivityRequiresJustification(value *bool)() {
-    m.downgradeSensitivityRequiresJustification = value
+    err := m.GetBackingStore().Set("downgradeSensitivityRequiresJustification", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHelpWebUrl sets the helpWebUrl property value. The helpWebUrl property
 func (m *SensitivityPolicySettings) SetHelpWebUrl(value *string)() {
-    m.helpWebUrl = value
+    err := m.GetBackingStore().Set("helpWebUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsMandatory sets the isMandatory property value. The isMandatory property
 func (m *SensitivityPolicySettings) SetIsMandatory(value *bool)() {
-    m.isMandatory = value
+    err := m.GetBackingStore().Set("isMandatory", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SensitivityPolicySettingsable 
+type SensitivityPolicySettingsable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetApplicableTo()(*SensitivityLabelTarget)
+    GetDowngradeSensitivityRequiresJustification()(*bool)
+    GetHelpWebUrl()(*string)
+    GetIsMandatory()(*bool)
+    SetApplicableTo(value *SensitivityLabelTarget)()
+    SetDowngradeSensitivityRequiresJustification(value *bool)()
+    SetHelpWebUrl(value *string)()
+    SetIsMandatory(value *bool)()
 }

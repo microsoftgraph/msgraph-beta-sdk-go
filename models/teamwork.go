@@ -7,16 +7,6 @@ import (
 // Teamwork 
 type Teamwork struct {
     Entity
-    // A collection of deleted teams.
-    deletedTeams []DeletedTeamable
-    // The Teams devices provisioned for the tenant.
-    devices []TeamworkDeviceable
-    // Represents tenant-wide settings for all Teams apps in the tenant.
-    teamsAppSettings TeamsAppSettingsable
-    // The templates associated with a team.
-    teamTemplates []TeamTemplateable
-    // A workforce integration with shifts.
-    workforceIntegrations []WorkforceIntegrationable
 }
 // NewTeamwork instantiates a new Teamwork and sets the default values.
 func NewTeamwork()(*Teamwork) {
@@ -31,11 +21,25 @@ func CreateTeamworkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetDeletedTeams gets the deletedTeams property value. A collection of deleted teams.
 func (m *Teamwork) GetDeletedTeams()([]DeletedTeamable) {
-    return m.deletedTeams
+    val, err := m.GetBackingStore().Get("deletedTeams")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeletedTeamable)
+    }
+    return nil
 }
 // GetDevices gets the devices property value. The Teams devices provisioned for the tenant.
 func (m *Teamwork) GetDevices()([]TeamworkDeviceable) {
-    return m.devices
+    val, err := m.GetBackingStore().Get("devices")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TeamworkDeviceable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Teamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -110,15 +114,36 @@ func (m *Teamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetTeamsAppSettings gets the teamsAppSettings property value. Represents tenant-wide settings for all Teams apps in the tenant.
 func (m *Teamwork) GetTeamsAppSettings()(TeamsAppSettingsable) {
-    return m.teamsAppSettings
+    val, err := m.GetBackingStore().Get("teamsAppSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamsAppSettingsable)
+    }
+    return nil
 }
 // GetTeamTemplates gets the teamTemplates property value. The templates associated with a team.
 func (m *Teamwork) GetTeamTemplates()([]TeamTemplateable) {
-    return m.teamTemplates
+    val, err := m.GetBackingStore().Get("teamTemplates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TeamTemplateable)
+    }
+    return nil
 }
 // GetWorkforceIntegrations gets the workforceIntegrations property value. A workforce integration with shifts.
 func (m *Teamwork) GetWorkforceIntegrations()([]WorkforceIntegrationable) {
-    return m.workforceIntegrations
+    val, err := m.GetBackingStore().Get("workforceIntegrations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WorkforceIntegrationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Teamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -176,21 +201,51 @@ func (m *Teamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetDeletedTeams sets the deletedTeams property value. A collection of deleted teams.
 func (m *Teamwork) SetDeletedTeams(value []DeletedTeamable)() {
-    m.deletedTeams = value
+    err := m.GetBackingStore().Set("deletedTeams", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDevices sets the devices property value. The Teams devices provisioned for the tenant.
 func (m *Teamwork) SetDevices(value []TeamworkDeviceable)() {
-    m.devices = value
+    err := m.GetBackingStore().Set("devices", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTeamsAppSettings sets the teamsAppSettings property value. Represents tenant-wide settings for all Teams apps in the tenant.
 func (m *Teamwork) SetTeamsAppSettings(value TeamsAppSettingsable)() {
-    m.teamsAppSettings = value
+    err := m.GetBackingStore().Set("teamsAppSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTeamTemplates sets the teamTemplates property value. The templates associated with a team.
 func (m *Teamwork) SetTeamTemplates(value []TeamTemplateable)() {
-    m.teamTemplates = value
+    err := m.GetBackingStore().Set("teamTemplates", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkforceIntegrations sets the workforceIntegrations property value. A workforce integration with shifts.
 func (m *Teamwork) SetWorkforceIntegrations(value []WorkforceIntegrationable)() {
-    m.workforceIntegrations = value
+    err := m.GetBackingStore().Set("workforceIntegrations", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Teamworkable 
+type Teamworkable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDeletedTeams()([]DeletedTeamable)
+    GetDevices()([]TeamworkDeviceable)
+    GetTeamsAppSettings()(TeamsAppSettingsable)
+    GetTeamTemplates()([]TeamTemplateable)
+    GetWorkforceIntegrations()([]WorkforceIntegrationable)
+    SetDeletedTeams(value []DeletedTeamable)()
+    SetDevices(value []TeamworkDeviceable)()
+    SetTeamsAppSettings(value TeamsAppSettingsable)()
+    SetTeamTemplates(value []TeamTemplateable)()
+    SetWorkforceIntegrations(value []WorkforceIntegrationable)()
 }

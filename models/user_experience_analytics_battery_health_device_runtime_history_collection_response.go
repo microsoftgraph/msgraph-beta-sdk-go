@@ -7,8 +7,6 @@ import (
 // UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryCollectionResponse 
 type UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryable
 }
 // NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryCollectionResponse instantiates a new UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryCollectionResponse and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryCollectionResponse()(*UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryCollectionRespo
 }
 // GetValue gets the value property value. The value property
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryCollectionResponse) GetValue()([]UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryCollectionRespo
 }
 // SetValue sets the value property value. The value property
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryCollectionResponse) SetValue(value []UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryCollectionResponseable 
+type UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryable)
+    SetValue(value []UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryable)()
 }

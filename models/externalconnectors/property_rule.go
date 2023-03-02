@@ -3,28 +3,20 @@ package externalconnectors
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // PropertyRule 
 type PropertyRule struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The OdataType property
-    odataType *string
-    // The operation property
-    operation *RuleOperation
-    // The property from the externalItem schema. Required.
-    property *string
-    // A collection with one or many strings. The specified string(s) will be matched with the specified property using the specified operation. Required.
-    values []string
-    // The valuesJoinedBy property
-    valuesJoinedBy *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BinaryOperator
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewPropertyRule instantiates a new propertyRule and sets the default values.
 func NewPropertyRule()(*PropertyRule) {
     m := &PropertyRule{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePropertyRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +25,19 @@ func CreatePropertyRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PropertyRule) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *PropertyRule) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PropertyRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -96,23 +100,58 @@ func (m *PropertyRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PropertyRule) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOperation gets the operation property value. The operation property
 func (m *PropertyRule) GetOperation()(*RuleOperation) {
-    return m.operation
+    val, err := m.GetBackingStore().Get("operation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RuleOperation)
+    }
+    return nil
 }
 // GetProperty gets the property property value. The property from the externalItem schema. Required.
 func (m *PropertyRule) GetProperty()(*string) {
-    return m.property
+    val, err := m.GetBackingStore().Get("property")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetValues gets the values property value. A collection with one or many strings. The specified string(s) will be matched with the specified property using the specified operation. Required.
 func (m *PropertyRule) GetValues()([]string) {
-    return m.values
+    val, err := m.GetBackingStore().Get("values")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetValuesJoinedBy gets the valuesJoinedBy property value. The valuesJoinedBy property
 func (m *PropertyRule) GetValuesJoinedBy()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BinaryOperator) {
-    return m.valuesJoinedBy
+    val, err := m.GetBackingStore().Get("valuesJoinedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BinaryOperator)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PropertyRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -158,25 +197,65 @@ func (m *PropertyRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PropertyRule) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *PropertyRule) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PropertyRule) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOperation sets the operation property value. The operation property
 func (m *PropertyRule) SetOperation(value *RuleOperation)() {
-    m.operation = value
+    err := m.GetBackingStore().Set("operation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProperty sets the property property value. The property from the externalItem schema. Required.
 func (m *PropertyRule) SetProperty(value *string)() {
-    m.property = value
+    err := m.GetBackingStore().Set("property", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetValues sets the values property value. A collection with one or many strings. The specified string(s) will be matched with the specified property using the specified operation. Required.
 func (m *PropertyRule) SetValues(value []string)() {
-    m.values = value
+    err := m.GetBackingStore().Set("values", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetValuesJoinedBy sets the valuesJoinedBy property value. The valuesJoinedBy property
 func (m *PropertyRule) SetValuesJoinedBy(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BinaryOperator)() {
-    m.valuesJoinedBy = value
+    err := m.GetBackingStore().Set("valuesJoinedBy", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PropertyRuleable 
+type PropertyRuleable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetOdataType()(*string)
+    GetOperation()(*RuleOperation)
+    GetProperty()(*string)
+    GetValues()([]string)
+    GetValuesJoinedBy()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BinaryOperator)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetOdataType(value *string)()
+    SetOperation(value *RuleOperation)()
+    SetProperty(value *string)()
+    SetValues(value []string)()
+    SetValuesJoinedBy(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BinaryOperator)()
 }

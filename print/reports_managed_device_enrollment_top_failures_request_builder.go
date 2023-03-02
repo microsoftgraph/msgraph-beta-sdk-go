@@ -27,13 +27,13 @@ type ReportsManagedDeviceEnrollmentTopFailuresRequestBuilderGetRequestConfigurat
 func NewReportsManagedDeviceEnrollmentTopFailuresRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsManagedDeviceEnrollmentTopFailuresRequestBuilder) {
     m := &ReportsManagedDeviceEnrollmentTopFailuresRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/print/reports/microsoft.graph.managedDeviceEnrollmentTopFailures()";
+    m.urlTemplate = "{+baseurl}/print/reports/managedDeviceEnrollmentTopFailures()";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewReportsManagedDeviceEnrollmentTopFailuresRequestBuilder instantiates a new ManagedDeviceEnrollmentTopFailuresRequestBuilder and sets the default values.

@@ -2,24 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // EducationSynchronizationLicenseAssignment 
 type EducationSynchronizationLicenseAssignment struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The user role type to assign to license. Possible values are: student, teacher, faculty.
-    appliesTo *EducationUserRole
-    // The OdataType property
-    odataType *string
-    // Represents the SKU identifiers of the licenses to assign.
-    skuIds []string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewEducationSynchronizationLicenseAssignment instantiates a new educationSynchronizationLicenseAssignment and sets the default values.
 func NewEducationSynchronizationLicenseAssignment()(*EducationSynchronizationLicenseAssignment) {
     m := &EducationSynchronizationLicenseAssignment{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateEducationSynchronizationLicenseAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,11 +24,30 @@ func CreateEducationSynchronizationLicenseAssignmentFromDiscriminatorValue(parse
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationSynchronizationLicenseAssignment) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAppliesTo gets the appliesTo property value. The user role type to assign to license. Possible values are: student, teacher, faculty.
 func (m *EducationSynchronizationLicenseAssignment) GetAppliesTo()(*EducationUserRole) {
-    return m.appliesTo
+    val, err := m.GetBackingStore().Get("appliesTo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*EducationUserRole)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *EducationSynchronizationLicenseAssignment) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationSynchronizationLicenseAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -75,11 +90,25 @@ func (m *EducationSynchronizationLicenseAssignment) GetFieldDeserializers()(map[
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *EducationSynchronizationLicenseAssignment) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSkuIds gets the skuIds property value. Represents the SKU identifiers of the licenses to assign.
 func (m *EducationSynchronizationLicenseAssignment) GetSkuIds()([]string) {
-    return m.skuIds
+    val, err := m.GetBackingStore().Get("skuIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EducationSynchronizationLicenseAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -112,17 +141,47 @@ func (m *EducationSynchronizationLicenseAssignment) Serialize(writer i878a80d233
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationSynchronizationLicenseAssignment) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppliesTo sets the appliesTo property value. The user role type to assign to license. Possible values are: student, teacher, faculty.
 func (m *EducationSynchronizationLicenseAssignment) SetAppliesTo(value *EducationUserRole)() {
-    m.appliesTo = value
+    err := m.GetBackingStore().Set("appliesTo", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *EducationSynchronizationLicenseAssignment) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *EducationSynchronizationLicenseAssignment) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSkuIds sets the skuIds property value. Represents the SKU identifiers of the licenses to assign.
 func (m *EducationSynchronizationLicenseAssignment) SetSkuIds(value []string)() {
-    m.skuIds = value
+    err := m.GetBackingStore().Set("skuIds", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EducationSynchronizationLicenseAssignmentable 
+type EducationSynchronizationLicenseAssignmentable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppliesTo()(*EducationUserRole)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetOdataType()(*string)
+    GetSkuIds()([]string)
+    SetAppliesTo(value *EducationUserRole)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetOdataType(value *string)()
+    SetSkuIds(value []string)()
 }

@@ -7,24 +7,14 @@ import (
 // ProtectOnlineMeetingAction 
 type ProtectOnlineMeetingAction struct {
     LabelActionBase
-    // The allowedForwarders property
-    allowedForwarders *OnlineMeetingForwarders
-    // The allowedPresenters property
-    allowedPresenters *OnlineMeetingPresenters
-    // The isCopyToClipboardEnabled property
-    isCopyToClipboardEnabled *bool
-    // The isLobbyEnabled property
-    isLobbyEnabled *bool
-    // The lobbyBypassSettings property
-    lobbyBypassSettings LobbyBypassSettingsable
 }
 // NewProtectOnlineMeetingAction instantiates a new ProtectOnlineMeetingAction and sets the default values.
 func NewProtectOnlineMeetingAction()(*ProtectOnlineMeetingAction) {
     m := &ProtectOnlineMeetingAction{
         LabelActionBase: *NewLabelActionBase(),
     }
-    odataTypeValue := "#microsoft.graph.protectOnlineMeetingAction";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.protectOnlineMeetingAction"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateProtectOnlineMeetingActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,11 +23,25 @@ func CreateProtectOnlineMeetingActionFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAllowedForwarders gets the allowedForwarders property value. The allowedForwarders property
 func (m *ProtectOnlineMeetingAction) GetAllowedForwarders()(*OnlineMeetingForwarders) {
-    return m.allowedForwarders
+    val, err := m.GetBackingStore().Get("allowedForwarders")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*OnlineMeetingForwarders)
+    }
+    return nil
 }
 // GetAllowedPresenters gets the allowedPresenters property value. The allowedPresenters property
 func (m *ProtectOnlineMeetingAction) GetAllowedPresenters()(*OnlineMeetingPresenters) {
-    return m.allowedPresenters
+    val, err := m.GetBackingStore().Get("allowedPresenters")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*OnlineMeetingPresenters)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ProtectOnlineMeetingAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -96,15 +100,36 @@ func (m *ProtectOnlineMeetingAction) GetFieldDeserializers()(map[string]func(i87
 }
 // GetIsCopyToClipboardEnabled gets the isCopyToClipboardEnabled property value. The isCopyToClipboardEnabled property
 func (m *ProtectOnlineMeetingAction) GetIsCopyToClipboardEnabled()(*bool) {
-    return m.isCopyToClipboardEnabled
+    val, err := m.GetBackingStore().Get("isCopyToClipboardEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsLobbyEnabled gets the isLobbyEnabled property value. The isLobbyEnabled property
 func (m *ProtectOnlineMeetingAction) GetIsLobbyEnabled()(*bool) {
-    return m.isLobbyEnabled
+    val, err := m.GetBackingStore().Get("isLobbyEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLobbyBypassSettings gets the lobbyBypassSettings property value. The lobbyBypassSettings property
 func (m *ProtectOnlineMeetingAction) GetLobbyBypassSettings()(LobbyBypassSettingsable) {
-    return m.lobbyBypassSettings
+    val, err := m.GetBackingStore().Get("lobbyBypassSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(LobbyBypassSettingsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ProtectOnlineMeetingAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -148,21 +173,51 @@ func (m *ProtectOnlineMeetingAction) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAllowedForwarders sets the allowedForwarders property value. The allowedForwarders property
 func (m *ProtectOnlineMeetingAction) SetAllowedForwarders(value *OnlineMeetingForwarders)() {
-    m.allowedForwarders = value
+    err := m.GetBackingStore().Set("allowedForwarders", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAllowedPresenters sets the allowedPresenters property value. The allowedPresenters property
 func (m *ProtectOnlineMeetingAction) SetAllowedPresenters(value *OnlineMeetingPresenters)() {
-    m.allowedPresenters = value
+    err := m.GetBackingStore().Set("allowedPresenters", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsCopyToClipboardEnabled sets the isCopyToClipboardEnabled property value. The isCopyToClipboardEnabled property
 func (m *ProtectOnlineMeetingAction) SetIsCopyToClipboardEnabled(value *bool)() {
-    m.isCopyToClipboardEnabled = value
+    err := m.GetBackingStore().Set("isCopyToClipboardEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsLobbyEnabled sets the isLobbyEnabled property value. The isLobbyEnabled property
 func (m *ProtectOnlineMeetingAction) SetIsLobbyEnabled(value *bool)() {
-    m.isLobbyEnabled = value
+    err := m.GetBackingStore().Set("isLobbyEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLobbyBypassSettings sets the lobbyBypassSettings property value. The lobbyBypassSettings property
 func (m *ProtectOnlineMeetingAction) SetLobbyBypassSettings(value LobbyBypassSettingsable)() {
-    m.lobbyBypassSettings = value
+    err := m.GetBackingStore().Set("lobbyBypassSettings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ProtectOnlineMeetingActionable 
+type ProtectOnlineMeetingActionable interface {
+    LabelActionBaseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllowedForwarders()(*OnlineMeetingForwarders)
+    GetAllowedPresenters()(*OnlineMeetingPresenters)
+    GetIsCopyToClipboardEnabled()(*bool)
+    GetIsLobbyEnabled()(*bool)
+    GetLobbyBypassSettings()(LobbyBypassSettingsable)
+    SetAllowedForwarders(value *OnlineMeetingForwarders)()
+    SetAllowedPresenters(value *OnlineMeetingPresenters)()
+    SetIsCopyToClipboardEnabled(value *bool)()
+    SetIsLobbyEnabled(value *bool)()
+    SetLobbyBypassSettings(value LobbyBypassSettingsable)()
 }

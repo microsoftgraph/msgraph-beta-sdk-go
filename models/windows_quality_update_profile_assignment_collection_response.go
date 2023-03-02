@@ -7,8 +7,6 @@ import (
 // WindowsQualityUpdateProfileAssignmentCollectionResponse 
 type WindowsQualityUpdateProfileAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WindowsQualityUpdateProfileAssignmentable
 }
 // NewWindowsQualityUpdateProfileAssignmentCollectionResponse instantiates a new WindowsQualityUpdateProfileAssignmentCollectionResponse and sets the default values.
 func NewWindowsQualityUpdateProfileAssignmentCollectionResponse()(*WindowsQualityUpdateProfileAssignmentCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WindowsQualityUpdateProfileAssignmentCollectionResponse) GetFieldDeseri
 }
 // GetValue gets the value property value. The value property
 func (m *WindowsQualityUpdateProfileAssignmentCollectionResponse) GetValue()([]WindowsQualityUpdateProfileAssignmentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsQualityUpdateProfileAssignmentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsQualityUpdateProfileAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WindowsQualityUpdateProfileAssignmentCollectionResponse) Serialize(writ
 }
 // SetValue sets the value property value. The value property
 func (m *WindowsQualityUpdateProfileAssignmentCollectionResponse) SetValue(value []WindowsQualityUpdateProfileAssignmentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsQualityUpdateProfileAssignmentCollectionResponseable 
+type WindowsQualityUpdateProfileAssignmentCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WindowsQualityUpdateProfileAssignmentable)
+    SetValue(value []WindowsQualityUpdateProfileAssignmentable)()
 }

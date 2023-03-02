@@ -7,8 +7,6 @@ import (
 // DeviceComanagementAuthorityConfigurationCollectionResponse 
 type DeviceComanagementAuthorityConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceComanagementAuthorityConfigurationable
 }
 // NewDeviceComanagementAuthorityConfigurationCollectionResponse instantiates a new DeviceComanagementAuthorityConfigurationCollectionResponse and sets the default values.
 func NewDeviceComanagementAuthorityConfigurationCollectionResponse()(*DeviceComanagementAuthorityConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceComanagementAuthorityConfigurationCollectionResponse) GetFieldDes
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceComanagementAuthorityConfigurationCollectionResponse) GetValue()([]DeviceComanagementAuthorityConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceComanagementAuthorityConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceComanagementAuthorityConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceComanagementAuthorityConfigurationCollectionResponse) Serialize(w
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceComanagementAuthorityConfigurationCollectionResponse) SetValue(value []DeviceComanagementAuthorityConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceComanagementAuthorityConfigurationCollectionResponseable 
+type DeviceComanagementAuthorityConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceComanagementAuthorityConfigurationable)
+    SetValue(value []DeviceComanagementAuthorityConfigurationable)()
 }

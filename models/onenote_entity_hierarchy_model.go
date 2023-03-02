@@ -8,22 +8,14 @@ import (
 // OnenoteEntityHierarchyModel 
 type OnenoteEntityHierarchyModel struct {
     OnenoteEntitySchemaObjectModel
-    // The createdBy property
-    createdBy IdentitySetable
-    // The displayName property
-    displayName *string
-    // The lastModifiedBy property
-    lastModifiedBy IdentitySetable
-    // The lastModifiedDateTime property
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewOnenoteEntityHierarchyModel instantiates a new OnenoteEntityHierarchyModel and sets the default values.
 func NewOnenoteEntityHierarchyModel()(*OnenoteEntityHierarchyModel) {
     m := &OnenoteEntityHierarchyModel{
         OnenoteEntitySchemaObjectModel: *NewOnenoteEntitySchemaObjectModel(),
     }
-    odataTypeValue := "#microsoft.graph.onenoteEntityHierarchyModel";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.onenoteEntityHierarchyModel"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateOnenoteEntityHierarchyModelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -54,11 +46,25 @@ func CreateOnenoteEntityHierarchyModelFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetCreatedBy gets the createdBy property value. The createdBy property
 func (m *OnenoteEntityHierarchyModel) GetCreatedBy()(IdentitySetable) {
-    return m.createdBy
+    val, err := m.GetBackingStore().Get("createdBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *OnenoteEntityHierarchyModel) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OnenoteEntityHierarchyModel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -107,11 +113,25 @@ func (m *OnenoteEntityHierarchyModel) GetFieldDeserializers()(map[string]func(i8
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
 func (m *OnenoteEntityHierarchyModel) GetLastModifiedBy()(IdentitySetable) {
-    return m.lastModifiedBy
+    val, err := m.GetBackingStore().Get("lastModifiedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *OnenoteEntityHierarchyModel) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OnenoteEntityHierarchyModel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -147,17 +167,42 @@ func (m *OnenoteEntityHierarchyModel) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetCreatedBy sets the createdBy property value. The createdBy property
 func (m *OnenoteEntityHierarchyModel) SetCreatedBy(value IdentitySetable)() {
-    m.createdBy = value
+    err := m.GetBackingStore().Set("createdBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *OnenoteEntityHierarchyModel) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
 func (m *OnenoteEntityHierarchyModel) SetLastModifiedBy(value IdentitySetable)() {
-    m.lastModifiedBy = value
+    err := m.GetBackingStore().Set("lastModifiedBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *OnenoteEntityHierarchyModel) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OnenoteEntityHierarchyModelable 
+type OnenoteEntityHierarchyModelable interface {
+    OnenoteEntitySchemaObjectModelable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCreatedBy()(IdentitySetable)
+    GetDisplayName()(*string)
+    GetLastModifiedBy()(IdentitySetable)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    SetCreatedBy(value IdentitySetable)()
+    SetDisplayName(value *string)()
+    SetLastModifiedBy(value IdentitySetable)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
 }

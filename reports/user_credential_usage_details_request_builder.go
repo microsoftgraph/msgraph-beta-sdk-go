@@ -60,8 +60,8 @@ func NewUserCredentialUsageDetailsRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewUserCredentialUsageDetailsRequestBuilder instantiates a new UserCredentialUsageDetailsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewUserCredentialUsageDetailsRequestBuilder(rawUrl string, requestAdapter i
 }
 // Count provides operations to count the resources in the collection.
 func (m *UserCredentialUsageDetailsRequestBuilder) Count()(*UserCredentialUsageDetailsCountRequestBuilder) {
-    return NewUserCredentialUsageDetailsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserCredentialUsageDetailsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of userCredentialUsageDetails objects for a given tenant. Details include user information, status of the reset, and the reason for failure.
 // [Find more info here]
@@ -138,7 +138,10 @@ func (m *UserCredentialUsageDetailsRequestBuilder) ToPostRequestInformation(ctx 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

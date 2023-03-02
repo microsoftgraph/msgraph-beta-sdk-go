@@ -7,16 +7,14 @@ import (
 // DeviceManagementSettingRegexConstraint 
 type DeviceManagementSettingRegexConstraint struct {
     DeviceManagementConstraint
-    // The RegEx pattern to match against
-    regex *string
 }
 // NewDeviceManagementSettingRegexConstraint instantiates a new DeviceManagementSettingRegexConstraint and sets the default values.
 func NewDeviceManagementSettingRegexConstraint()(*DeviceManagementSettingRegexConstraint) {
     m := &DeviceManagementSettingRegexConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementSettingRegexConstraint";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementSettingRegexConstraint"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementSettingRegexConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *DeviceManagementSettingRegexConstraint) GetFieldDeserializers()(map[str
 }
 // GetRegex gets the regex property value. The RegEx pattern to match against
 func (m *DeviceManagementSettingRegexConstraint) GetRegex()(*string) {
-    return m.regex
+    val, err := m.GetBackingStore().Get("regex")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementSettingRegexConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *DeviceManagementSettingRegexConstraint) Serialize(writer i878a80d2330e8
 }
 // SetRegex sets the regex property value. The RegEx pattern to match against
 func (m *DeviceManagementSettingRegexConstraint) SetRegex(value *string)() {
-    m.regex = value
+    err := m.GetBackingStore().Set("regex", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementSettingRegexConstraintable 
+type DeviceManagementSettingRegexConstraintable interface {
+    DeviceManagementConstraintable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetRegex()(*string)
+    SetRegex(value *string)()
 }

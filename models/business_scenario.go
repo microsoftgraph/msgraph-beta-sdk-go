@@ -8,22 +8,6 @@ import (
 // BusinessScenario 
 type BusinessScenario struct {
     Entity
-    // The identity of the user who created the scenario.
-    createdBy IdentitySetable
-    // The date and time when the scenario was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Display name of the scenario.
-    displayName *string
-    // The identity of the user who last modified the scenario.
-    lastModifiedBy IdentitySetable
-    // The date and time when the scenario was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Identifiers of applications that are authorized to work with this scenario.
-    ownerAppIds []string
-    // Planner content related to the scenario.
-    planner BusinessScenarioPlannerable
-    // Unique name of the scenario. To avoid conflicts, the recommended value for the unique name is a reverse domain name format, owned by the author of the scenario. For example, a scenario authored by Contoso.com would have a unique name that starts with com.contoso.
-    uniqueName *string
 }
 // NewBusinessScenario instantiates a new BusinessScenario and sets the default values.
 func NewBusinessScenario()(*BusinessScenario) {
@@ -38,15 +22,36 @@ func CreateBusinessScenarioFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetCreatedBy gets the createdBy property value. The identity of the user who created the scenario.
 func (m *BusinessScenario) GetCreatedBy()(IdentitySetable) {
-    return m.createdBy
+    val, err := m.GetBackingStore().Get("createdBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when the scenario was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *BusinessScenario) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. Display name of the scenario.
 func (m *BusinessScenario) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BusinessScenario) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -139,23 +144,58 @@ func (m *BusinessScenario) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The identity of the user who last modified the scenario.
 func (m *BusinessScenario) GetLastModifiedBy()(IdentitySetable) {
-    return m.lastModifiedBy
+    val, err := m.GetBackingStore().Get("lastModifiedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the scenario was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *BusinessScenario) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetOwnerAppIds gets the ownerAppIds property value. Identifiers of applications that are authorized to work with this scenario.
 func (m *BusinessScenario) GetOwnerAppIds()([]string) {
-    return m.ownerAppIds
+    val, err := m.GetBackingStore().Get("ownerAppIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetPlanner gets the planner property value. Planner content related to the scenario.
 func (m *BusinessScenario) GetPlanner()(BusinessScenarioPlannerable) {
-    return m.planner
+    val, err := m.GetBackingStore().Get("planner")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(BusinessScenarioPlannerable)
+    }
+    return nil
 }
 // GetUniqueName gets the uniqueName property value. Unique name of the scenario. To avoid conflicts, the recommended value for the unique name is a reverse domain name format, owned by the author of the scenario. For example, a scenario authored by Contoso.com would have a unique name that starts with com.contoso.
 func (m *BusinessScenario) GetUniqueName()(*string) {
-    return m.uniqueName
+    val, err := m.GetBackingStore().Get("uniqueName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *BusinessScenario) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -215,33 +255,78 @@ func (m *BusinessScenario) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetCreatedBy sets the createdBy property value. The identity of the user who created the scenario.
 func (m *BusinessScenario) SetCreatedBy(value IdentitySetable)() {
-    m.createdBy = value
+    err := m.GetBackingStore().Set("createdBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time when the scenario was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *BusinessScenario) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. Display name of the scenario.
 func (m *BusinessScenario) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. The identity of the user who last modified the scenario.
 func (m *BusinessScenario) SetLastModifiedBy(value IdentitySetable)() {
-    m.lastModifiedBy = value
+    err := m.GetBackingStore().Set("lastModifiedBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the scenario was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *BusinessScenario) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOwnerAppIds sets the ownerAppIds property value. Identifiers of applications that are authorized to work with this scenario.
 func (m *BusinessScenario) SetOwnerAppIds(value []string)() {
-    m.ownerAppIds = value
+    err := m.GetBackingStore().Set("ownerAppIds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPlanner sets the planner property value. Planner content related to the scenario.
 func (m *BusinessScenario) SetPlanner(value BusinessScenarioPlannerable)() {
-    m.planner = value
+    err := m.GetBackingStore().Set("planner", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUniqueName sets the uniqueName property value. Unique name of the scenario. To avoid conflicts, the recommended value for the unique name is a reverse domain name format, owned by the author of the scenario. For example, a scenario authored by Contoso.com would have a unique name that starts with com.contoso.
 func (m *BusinessScenario) SetUniqueName(value *string)() {
-    m.uniqueName = value
+    err := m.GetBackingStore().Set("uniqueName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// BusinessScenarioable 
+type BusinessScenarioable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCreatedBy()(IdentitySetable)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDisplayName()(*string)
+    GetLastModifiedBy()(IdentitySetable)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOwnerAppIds()([]string)
+    GetPlanner()(BusinessScenarioPlannerable)
+    GetUniqueName()(*string)
+    SetCreatedBy(value IdentitySetable)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDisplayName(value *string)()
+    SetLastModifiedBy(value IdentitySetable)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOwnerAppIds(value []string)()
+    SetPlanner(value BusinessScenarioPlannerable)()
+    SetUniqueName(value *string)()
 }

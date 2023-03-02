@@ -7,28 +7,14 @@ import (
 // AddContentHeaderAction 
 type AddContentHeaderAction struct {
     InformationProtectionAction
-    // The alignment property
-    alignment *ContentAlignment
-    // Color of the font to use for the header.
-    fontColor *string
-    // Name of the font to use for the header.
-    fontName *string
-    // Font size to use for the header.
-    fontSize *int32
-    // The margin of the header from the top of the document.
-    margin *int32
-    // The contents of the header itself.
-    text *string
-    // The name of the UI element where the header should be placed.
-    uiElementName *string
 }
 // NewAddContentHeaderAction instantiates a new AddContentHeaderAction and sets the default values.
 func NewAddContentHeaderAction()(*AddContentHeaderAction) {
     m := &AddContentHeaderAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
     }
-    odataTypeValue := "#microsoft.graph.addContentHeaderAction";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.addContentHeaderAction"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAddContentHeaderActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,7 +23,14 @@ func CreateAddContentHeaderActionFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAlignment gets the alignment property value. The alignment property
 func (m *AddContentHeaderAction) GetAlignment()(*ContentAlignment) {
-    return m.alignment
+    val, err := m.GetBackingStore().Get("alignment")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ContentAlignment)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AddContentHeaderAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -116,27 +109,69 @@ func (m *AddContentHeaderAction) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetFontColor gets the fontColor property value. Color of the font to use for the header.
 func (m *AddContentHeaderAction) GetFontColor()(*string) {
-    return m.fontColor
+    val, err := m.GetBackingStore().Get("fontColor")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFontName gets the fontName property value. Name of the font to use for the header.
 func (m *AddContentHeaderAction) GetFontName()(*string) {
-    return m.fontName
+    val, err := m.GetBackingStore().Get("fontName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFontSize gets the fontSize property value. Font size to use for the header.
 func (m *AddContentHeaderAction) GetFontSize()(*int32) {
-    return m.fontSize
+    val, err := m.GetBackingStore().Get("fontSize")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetMargin gets the margin property value. The margin of the header from the top of the document.
 func (m *AddContentHeaderAction) GetMargin()(*int32) {
-    return m.margin
+    val, err := m.GetBackingStore().Get("margin")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetText gets the text property value. The contents of the header itself.
 func (m *AddContentHeaderAction) GetText()(*string) {
-    return m.text
+    val, err := m.GetBackingStore().Get("text")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUiElementName gets the uiElementName property value. The name of the UI element where the header should be placed.
 func (m *AddContentHeaderAction) GetUiElementName()(*string) {
-    return m.uiElementName
+    val, err := m.GetBackingStore().Get("uiElementName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AddContentHeaderAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -191,29 +226,69 @@ func (m *AddContentHeaderAction) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAlignment sets the alignment property value. The alignment property
 func (m *AddContentHeaderAction) SetAlignment(value *ContentAlignment)() {
-    m.alignment = value
+    err := m.GetBackingStore().Set("alignment", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFontColor sets the fontColor property value. Color of the font to use for the header.
 func (m *AddContentHeaderAction) SetFontColor(value *string)() {
-    m.fontColor = value
+    err := m.GetBackingStore().Set("fontColor", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFontName sets the fontName property value. Name of the font to use for the header.
 func (m *AddContentHeaderAction) SetFontName(value *string)() {
-    m.fontName = value
+    err := m.GetBackingStore().Set("fontName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFontSize sets the fontSize property value. Font size to use for the header.
 func (m *AddContentHeaderAction) SetFontSize(value *int32)() {
-    m.fontSize = value
+    err := m.GetBackingStore().Set("fontSize", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMargin sets the margin property value. The margin of the header from the top of the document.
 func (m *AddContentHeaderAction) SetMargin(value *int32)() {
-    m.margin = value
+    err := m.GetBackingStore().Set("margin", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetText sets the text property value. The contents of the header itself.
 func (m *AddContentHeaderAction) SetText(value *string)() {
-    m.text = value
+    err := m.GetBackingStore().Set("text", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUiElementName sets the uiElementName property value. The name of the UI element where the header should be placed.
 func (m *AddContentHeaderAction) SetUiElementName(value *string)() {
-    m.uiElementName = value
+    err := m.GetBackingStore().Set("uiElementName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AddContentHeaderActionable 
+type AddContentHeaderActionable interface {
+    InformationProtectionActionable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAlignment()(*ContentAlignment)
+    GetFontColor()(*string)
+    GetFontName()(*string)
+    GetFontSize()(*int32)
+    GetMargin()(*int32)
+    GetText()(*string)
+    GetUiElementName()(*string)
+    SetAlignment(value *ContentAlignment)()
+    SetFontColor(value *string)()
+    SetFontName(value *string)()
+    SetFontSize(value *int32)()
+    SetMargin(value *int32)()
+    SetText(value *string)()
+    SetUiElementName(value *string)()
 }

@@ -60,8 +60,8 @@ func NewEdiscoveryCasesRequestBuilderInternal(pathParameters map[string]string, 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEdiscoveryCasesRequestBuilder instantiates a new CasesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewEdiscoveryCasesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 }
 // Count provides operations to count the resources in the collection.
 func (m *EdiscoveryCasesRequestBuilder) Count()(*EdiscoveryCasesCountRequestBuilder) {
-    return NewEdiscoveryCasesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of case objects.
 // [Find more info here]
@@ -100,7 +100,7 @@ func (m *EdiscoveryCasesRequestBuilder) Get(ctx context.Context, requestConfigur
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-case-post?view=graph-rest-1.0
-func (m *EdiscoveryCasesRequestBuilder) Post(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Case_escapedable, requestConfiguration *EdiscoveryCasesRequestBuilderPostRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Case_escapedable, error) {
+func (m *EdiscoveryCasesRequestBuilder) Post(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseEscapedable, requestConfiguration *EdiscoveryCasesRequestBuilderPostRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseEscapedable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -109,14 +109,14 @@ func (m *EdiscoveryCasesRequestBuilder) Post(ctx context.Context, body ic154d683
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CreateCase_escapedFromDiscriminatorValue, errorMapping)
+    res, err := m.requestAdapter.Send(ctx, requestInfo, ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CreateCaseEscapedFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Case_escapedable), nil
+    return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseEscapedable), nil
 }
 // ToGetRequestInformation retrieve a list of case objects.
 func (m *EdiscoveryCasesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -135,13 +135,16 @@ func (m *EdiscoveryCasesRequestBuilder) ToGetRequestInformation(ctx context.Cont
     return requestInfo, nil
 }
 // ToPostRequestInformation create a new case object.
-func (m *EdiscoveryCasesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Case_escapedable, requestConfiguration *EdiscoveryCasesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *EdiscoveryCasesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseEscapedable, requestConfiguration *EdiscoveryCasesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

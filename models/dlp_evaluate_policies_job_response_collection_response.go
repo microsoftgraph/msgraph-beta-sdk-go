@@ -7,8 +7,6 @@ import (
 // DlpEvaluatePoliciesJobResponseCollectionResponse 
 type DlpEvaluatePoliciesJobResponseCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DlpEvaluatePoliciesJobResponseable
 }
 // NewDlpEvaluatePoliciesJobResponseCollectionResponse instantiates a new DlpEvaluatePoliciesJobResponseCollectionResponse and sets the default values.
 func NewDlpEvaluatePoliciesJobResponseCollectionResponse()(*DlpEvaluatePoliciesJobResponseCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DlpEvaluatePoliciesJobResponseCollectionResponse) GetFieldDeserializers
 }
 // GetValue gets the value property value. The value property
 func (m *DlpEvaluatePoliciesJobResponseCollectionResponse) GetValue()([]DlpEvaluatePoliciesJobResponseable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DlpEvaluatePoliciesJobResponseable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DlpEvaluatePoliciesJobResponseCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DlpEvaluatePoliciesJobResponseCollectionResponse) Serialize(writer i878
 }
 // SetValue sets the value property value. The value property
 func (m *DlpEvaluatePoliciesJobResponseCollectionResponse) SetValue(value []DlpEvaluatePoliciesJobResponseable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DlpEvaluatePoliciesJobResponseCollectionResponseable 
+type DlpEvaluatePoliciesJobResponseCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DlpEvaluatePoliciesJobResponseable)
+    SetValue(value []DlpEvaluatePoliciesJobResponseable)()
 }

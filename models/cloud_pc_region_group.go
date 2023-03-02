@@ -6,7 +6,7 @@ import (
 type CloudPcRegionGroup int
 
 const (
-    DEFAULT_ESCAPED_CLOUDPCREGIONGROUP CloudPcRegionGroup = iota
+    DEFAULTESCAPED_CLOUDPCREGIONGROUP CloudPcRegionGroup = iota
     AUSTRALIA_CLOUDPCREGIONGROUP
     CANADA_CLOUDPCREGIONGROUP
     USCENTRAL_CLOUDPCREGIONGROUP
@@ -33,10 +33,10 @@ func (i CloudPcRegionGroup) String() string {
     return []string{"default", "australia", "canada", "usCentral", "usEast", "usWest", "france", "germany", "europeUnion", "unitedKingdom", "japan", "asia", "india", "southAmerica", "euap", "usGovernment", "usGovernmentDOD", "unknownFutureValue", "norway", "switzerland", "southKorea"}[i]
 }
 func ParseCloudPcRegionGroup(v string) (any, error) {
-    result := DEFAULT_ESCAPED_CLOUDPCREGIONGROUP
+    result := DEFAULTESCAPED_CLOUDPCREGIONGROUP
     switch v {
         case "default":
-            result = DEFAULT_ESCAPED_CLOUDPCREGIONGROUP
+            result = DEFAULTESCAPED_CLOUDPCREGIONGROUP
         case "australia":
             result = AUSTRALIA_CLOUDPCREGIONGROUP
         case "canada":

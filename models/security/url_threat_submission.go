@@ -7,16 +7,14 @@ import (
 // UrlThreatSubmission 
 type UrlThreatSubmission struct {
     ThreatSubmission
-    // Denotes the webUrl that needs to be submitted.
-    webUrl *string
 }
 // NewUrlThreatSubmission instantiates a new UrlThreatSubmission and sets the default values.
 func NewUrlThreatSubmission()(*UrlThreatSubmission) {
     m := &UrlThreatSubmission{
         ThreatSubmission: *NewThreatSubmission(),
     }
-    odataTypeValue := "#microsoft.graph.security.urlThreatSubmission";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.security.urlThreatSubmission"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateUrlThreatSubmissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *UrlThreatSubmission) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetWebUrl gets the webUrl property value. Denotes the webUrl that needs to be submitted.
 func (m *UrlThreatSubmission) GetWebUrl()(*string) {
-    return m.webUrl
+    val, err := m.GetBackingStore().Get("webUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UrlThreatSubmission) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *UrlThreatSubmission) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetWebUrl sets the webUrl property value. Denotes the webUrl that needs to be submitted.
 func (m *UrlThreatSubmission) SetWebUrl(value *string)() {
-    m.webUrl = value
+    err := m.GetBackingStore().Set("webUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UrlThreatSubmissionable 
+type UrlThreatSubmissionable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    ThreatSubmissionable
+    GetWebUrl()(*string)
+    SetWebUrl(value *string)()
 }

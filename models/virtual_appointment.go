@@ -7,16 +7,6 @@ import (
 // VirtualAppointment 
 type VirtualAppointment struct {
     Entity
-    // The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
-    appointmentClientJoinWebUrl *string
-    // The client information for the virtual appointment, including name, email, and SMS phone number. Optional.
-    appointmentClients []VirtualAppointmentUserable
-    // The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.
-    externalAppointmentId *string
-    // The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.
-    externalAppointmentUrl *string
-    // The settings associated with the virtual appointment resource. Optional.
-    settings VirtualAppointmentSettingsable
 }
 // NewVirtualAppointment instantiates a new virtualAppointment and sets the default values.
 func NewVirtualAppointment()(*VirtualAppointment) {
@@ -31,19 +21,47 @@ func CreateVirtualAppointmentFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetAppointmentClientJoinWebUrl gets the appointmentClientJoinWebUrl property value. The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
 func (m *VirtualAppointment) GetAppointmentClientJoinWebUrl()(*string) {
-    return m.appointmentClientJoinWebUrl
+    val, err := m.GetBackingStore().Get("appointmentClientJoinWebUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAppointmentClients gets the appointmentClients property value. The client information for the virtual appointment, including name, email, and SMS phone number. Optional.
 func (m *VirtualAppointment) GetAppointmentClients()([]VirtualAppointmentUserable) {
-    return m.appointmentClients
+    val, err := m.GetBackingStore().Get("appointmentClients")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]VirtualAppointmentUserable)
+    }
+    return nil
 }
 // GetExternalAppointmentId gets the externalAppointmentId property value. The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.
 func (m *VirtualAppointment) GetExternalAppointmentId()(*string) {
-    return m.externalAppointmentId
+    val, err := m.GetBackingStore().Get("externalAppointmentId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetExternalAppointmentUrl gets the externalAppointmentUrl property value. The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.
 func (m *VirtualAppointment) GetExternalAppointmentUrl()(*string) {
-    return m.externalAppointmentUrl
+    val, err := m.GetBackingStore().Get("externalAppointmentUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *VirtualAppointment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -106,7 +124,14 @@ func (m *VirtualAppointment) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetSettings gets the settings property value. The settings associated with the virtual appointment resource. Optional.
 func (m *VirtualAppointment) GetSettings()(VirtualAppointmentSettingsable) {
-    return m.settings
+    val, err := m.GetBackingStore().Get("settings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(VirtualAppointmentSettingsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *VirtualAppointment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -152,21 +177,51 @@ func (m *VirtualAppointment) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetAppointmentClientJoinWebUrl sets the appointmentClientJoinWebUrl property value. The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
 func (m *VirtualAppointment) SetAppointmentClientJoinWebUrl(value *string)() {
-    m.appointmentClientJoinWebUrl = value
+    err := m.GetBackingStore().Set("appointmentClientJoinWebUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppointmentClients sets the appointmentClients property value. The client information for the virtual appointment, including name, email, and SMS phone number. Optional.
 func (m *VirtualAppointment) SetAppointmentClients(value []VirtualAppointmentUserable)() {
-    m.appointmentClients = value
+    err := m.GetBackingStore().Set("appointmentClients", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExternalAppointmentId sets the externalAppointmentId property value. The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.
 func (m *VirtualAppointment) SetExternalAppointmentId(value *string)() {
-    m.externalAppointmentId = value
+    err := m.GetBackingStore().Set("externalAppointmentId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExternalAppointmentUrl sets the externalAppointmentUrl property value. The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.
 func (m *VirtualAppointment) SetExternalAppointmentUrl(value *string)() {
-    m.externalAppointmentUrl = value
+    err := m.GetBackingStore().Set("externalAppointmentUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettings sets the settings property value. The settings associated with the virtual appointment resource. Optional.
 func (m *VirtualAppointment) SetSettings(value VirtualAppointmentSettingsable)() {
-    m.settings = value
+    err := m.GetBackingStore().Set("settings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// VirtualAppointmentable 
+type VirtualAppointmentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppointmentClientJoinWebUrl()(*string)
+    GetAppointmentClients()([]VirtualAppointmentUserable)
+    GetExternalAppointmentId()(*string)
+    GetExternalAppointmentUrl()(*string)
+    GetSettings()(VirtualAppointmentSettingsable)
+    SetAppointmentClientJoinWebUrl(value *string)()
+    SetAppointmentClients(value []VirtualAppointmentUserable)()
+    SetExternalAppointmentId(value *string)()
+    SetExternalAppointmentUrl(value *string)()
+    SetSettings(value VirtualAppointmentSettingsable)()
 }

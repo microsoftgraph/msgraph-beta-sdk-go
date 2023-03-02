@@ -2,34 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // WindowsEnrollmentStatusScreenSettings enrollment status screen setting
 type WindowsEnrollmentStatusScreenSettings struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Allow or block user to use device before profile and app installation complete
-    allowDeviceUseBeforeProfileAndAppInstallComplete *bool
-    // Allow the user to continue using the device on installation failure
-    allowDeviceUseOnInstallFailure *bool
-    // Allow or block log collection on installation failure
-    allowLogCollectionOnInstallFailure *bool
-    // Allow the user to retry the setup on installation failure
-    blockDeviceSetupRetryByUser *bool
-    // Set custom error message to show upon installation failure
-    customErrorMessage *string
-    // Show or hide installation progress to user
-    hideInstallationProgress *bool
-    // Set installation progress timeout in minutes
-    installProgressTimeoutInMinutes *int32
-    // The OdataType property
-    odataType *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewWindowsEnrollmentStatusScreenSettings instantiates a new windowsEnrollmentStatusScreenSettings and sets the default values.
 func NewWindowsEnrollmentStatusScreenSettings()(*WindowsEnrollmentStatusScreenSettings) {
     m := &WindowsEnrollmentStatusScreenSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWindowsEnrollmentStatusScreenSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -38,27 +24,74 @@ func CreateWindowsEnrollmentStatusScreenSettingsFromDiscriminatorValue(parseNode
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsEnrollmentStatusScreenSettings) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAllowDeviceUseBeforeProfileAndAppInstallComplete gets the allowDeviceUseBeforeProfileAndAppInstallComplete property value. Allow or block user to use device before profile and app installation complete
 func (m *WindowsEnrollmentStatusScreenSettings) GetAllowDeviceUseBeforeProfileAndAppInstallComplete()(*bool) {
-    return m.allowDeviceUseBeforeProfileAndAppInstallComplete
+    val, err := m.GetBackingStore().Get("allowDeviceUseBeforeProfileAndAppInstallComplete")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetAllowDeviceUseOnInstallFailure gets the allowDeviceUseOnInstallFailure property value. Allow the user to continue using the device on installation failure
 func (m *WindowsEnrollmentStatusScreenSettings) GetAllowDeviceUseOnInstallFailure()(*bool) {
-    return m.allowDeviceUseOnInstallFailure
+    val, err := m.GetBackingStore().Get("allowDeviceUseOnInstallFailure")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetAllowLogCollectionOnInstallFailure gets the allowLogCollectionOnInstallFailure property value. Allow or block log collection on installation failure
 func (m *WindowsEnrollmentStatusScreenSettings) GetAllowLogCollectionOnInstallFailure()(*bool) {
-    return m.allowLogCollectionOnInstallFailure
+    val, err := m.GetBackingStore().Get("allowLogCollectionOnInstallFailure")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *WindowsEnrollmentStatusScreenSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetBlockDeviceSetupRetryByUser gets the blockDeviceSetupRetryByUser property value. Allow the user to retry the setup on installation failure
 func (m *WindowsEnrollmentStatusScreenSettings) GetBlockDeviceSetupRetryByUser()(*bool) {
-    return m.blockDeviceSetupRetryByUser
+    val, err := m.GetBackingStore().Get("blockDeviceSetupRetryByUser")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetCustomErrorMessage gets the customErrorMessage property value. Set custom error message to show upon installation failure
 func (m *WindowsEnrollmentStatusScreenSettings) GetCustomErrorMessage()(*string) {
-    return m.customErrorMessage
+    val, err := m.GetBackingStore().Get("customErrorMessage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsEnrollmentStatusScreenSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -147,15 +180,36 @@ func (m *WindowsEnrollmentStatusScreenSettings) GetFieldDeserializers()(map[stri
 }
 // GetHideInstallationProgress gets the hideInstallationProgress property value. Show or hide installation progress to user
 func (m *WindowsEnrollmentStatusScreenSettings) GetHideInstallationProgress()(*bool) {
-    return m.hideInstallationProgress
+    val, err := m.GetBackingStore().Get("hideInstallationProgress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetInstallProgressTimeoutInMinutes gets the installProgressTimeoutInMinutes property value. Set installation progress timeout in minutes
 func (m *WindowsEnrollmentStatusScreenSettings) GetInstallProgressTimeoutInMinutes()(*int32) {
-    return m.installProgressTimeoutInMinutes
+    val, err := m.GetBackingStore().Get("installProgressTimeoutInMinutes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *WindowsEnrollmentStatusScreenSettings) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsEnrollmentStatusScreenSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -217,37 +271,92 @@ func (m *WindowsEnrollmentStatusScreenSettings) Serialize(writer i878a80d2330e89
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsEnrollmentStatusScreenSettings) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAllowDeviceUseBeforeProfileAndAppInstallComplete sets the allowDeviceUseBeforeProfileAndAppInstallComplete property value. Allow or block user to use device before profile and app installation complete
 func (m *WindowsEnrollmentStatusScreenSettings) SetAllowDeviceUseBeforeProfileAndAppInstallComplete(value *bool)() {
-    m.allowDeviceUseBeforeProfileAndAppInstallComplete = value
+    err := m.GetBackingStore().Set("allowDeviceUseBeforeProfileAndAppInstallComplete", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAllowDeviceUseOnInstallFailure sets the allowDeviceUseOnInstallFailure property value. Allow the user to continue using the device on installation failure
 func (m *WindowsEnrollmentStatusScreenSettings) SetAllowDeviceUseOnInstallFailure(value *bool)() {
-    m.allowDeviceUseOnInstallFailure = value
+    err := m.GetBackingStore().Set("allowDeviceUseOnInstallFailure", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAllowLogCollectionOnInstallFailure sets the allowLogCollectionOnInstallFailure property value. Allow or block log collection on installation failure
 func (m *WindowsEnrollmentStatusScreenSettings) SetAllowLogCollectionOnInstallFailure(value *bool)() {
-    m.allowLogCollectionOnInstallFailure = value
+    err := m.GetBackingStore().Set("allowLogCollectionOnInstallFailure", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *WindowsEnrollmentStatusScreenSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetBlockDeviceSetupRetryByUser sets the blockDeviceSetupRetryByUser property value. Allow the user to retry the setup on installation failure
 func (m *WindowsEnrollmentStatusScreenSettings) SetBlockDeviceSetupRetryByUser(value *bool)() {
-    m.blockDeviceSetupRetryByUser = value
+    err := m.GetBackingStore().Set("blockDeviceSetupRetryByUser", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomErrorMessage sets the customErrorMessage property value. Set custom error message to show upon installation failure
 func (m *WindowsEnrollmentStatusScreenSettings) SetCustomErrorMessage(value *string)() {
-    m.customErrorMessage = value
+    err := m.GetBackingStore().Set("customErrorMessage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHideInstallationProgress sets the hideInstallationProgress property value. Show or hide installation progress to user
 func (m *WindowsEnrollmentStatusScreenSettings) SetHideInstallationProgress(value *bool)() {
-    m.hideInstallationProgress = value
+    err := m.GetBackingStore().Set("hideInstallationProgress", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInstallProgressTimeoutInMinutes sets the installProgressTimeoutInMinutes property value. Set installation progress timeout in minutes
 func (m *WindowsEnrollmentStatusScreenSettings) SetInstallProgressTimeoutInMinutes(value *int32)() {
-    m.installProgressTimeoutInMinutes = value
+    err := m.GetBackingStore().Set("installProgressTimeoutInMinutes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *WindowsEnrollmentStatusScreenSettings) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsEnrollmentStatusScreenSettingsable 
+type WindowsEnrollmentStatusScreenSettingsable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllowDeviceUseBeforeProfileAndAppInstallComplete()(*bool)
+    GetAllowDeviceUseOnInstallFailure()(*bool)
+    GetAllowLogCollectionOnInstallFailure()(*bool)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetBlockDeviceSetupRetryByUser()(*bool)
+    GetCustomErrorMessage()(*string)
+    GetHideInstallationProgress()(*bool)
+    GetInstallProgressTimeoutInMinutes()(*int32)
+    GetOdataType()(*string)
+    SetAllowDeviceUseBeforeProfileAndAppInstallComplete(value *bool)()
+    SetAllowDeviceUseOnInstallFailure(value *bool)()
+    SetAllowLogCollectionOnInstallFailure(value *bool)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetBlockDeviceSetupRetryByUser(value *bool)()
+    SetCustomErrorMessage(value *string)()
+    SetHideInstallationProgress(value *bool)()
+    SetInstallProgressTimeoutInMinutes(value *int32)()
+    SetOdataType(value *string)()
 }

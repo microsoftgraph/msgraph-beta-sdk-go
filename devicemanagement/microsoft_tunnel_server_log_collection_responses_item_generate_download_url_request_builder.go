@@ -26,13 +26,13 @@ type MicrosoftTunnelServerLogCollectionResponsesItemGenerateDownloadUrlRequestBu
 func NewMicrosoftTunnelServerLogCollectionResponsesItemGenerateDownloadUrlRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MicrosoftTunnelServerLogCollectionResponsesItemGenerateDownloadUrlRequestBuilder) {
     m := &MicrosoftTunnelServerLogCollectionResponsesItemGenerateDownloadUrlRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/microsoftTunnelServerLogCollectionResponses/{microsoftTunnelServerLogCollectionResponse%2Did}/microsoft.graph.generateDownloadUrl";
+    m.urlTemplate = "{+baseurl}/deviceManagement/microsoftTunnelServerLogCollectionResponses/{microsoftTunnelServerLogCollectionResponse%2Did}/generateDownloadUrl";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMicrosoftTunnelServerLogCollectionResponsesItemGenerateDownloadUrlRequestBuilder instantiates a new GenerateDownloadUrlRequestBuilder and sets the default values.

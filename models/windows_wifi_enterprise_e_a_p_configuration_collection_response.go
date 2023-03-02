@@ -7,8 +7,6 @@ import (
 // WindowsWifiEnterpriseEAPConfigurationCollectionResponse 
 type WindowsWifiEnterpriseEAPConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WindowsWifiEnterpriseEAPConfigurationable
 }
 // NewWindowsWifiEnterpriseEAPConfigurationCollectionResponse instantiates a new WindowsWifiEnterpriseEAPConfigurationCollectionResponse and sets the default values.
 func NewWindowsWifiEnterpriseEAPConfigurationCollectionResponse()(*WindowsWifiEnterpriseEAPConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WindowsWifiEnterpriseEAPConfigurationCollectionResponse) GetFieldDeseri
 }
 // GetValue gets the value property value. The value property
 func (m *WindowsWifiEnterpriseEAPConfigurationCollectionResponse) GetValue()([]WindowsWifiEnterpriseEAPConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsWifiEnterpriseEAPConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsWifiEnterpriseEAPConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WindowsWifiEnterpriseEAPConfigurationCollectionResponse) Serialize(writ
 }
 // SetValue sets the value property value. The value property
 func (m *WindowsWifiEnterpriseEAPConfigurationCollectionResponse) SetValue(value []WindowsWifiEnterpriseEAPConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsWifiEnterpriseEAPConfigurationCollectionResponseable 
+type WindowsWifiEnterpriseEAPConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WindowsWifiEnterpriseEAPConfigurationable)
+    SetValue(value []WindowsWifiEnterpriseEAPConfigurationable)()
 }

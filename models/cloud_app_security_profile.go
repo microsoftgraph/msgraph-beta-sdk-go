@@ -8,40 +8,8 @@ import (
 // CloudAppSecurityProfile 
 type CloudAppSecurityProfile struct {
     Entity
-    // The azureSubscriptionId property
-    azureSubscriptionId *string
-    // The azureTenantId property
-    azureTenantId *string
-    // The createdDateTime property
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The deploymentPackageUrl property
-    deploymentPackageUrl *string
-    // The destinationServiceName property
-    destinationServiceName *string
-    // The isSigned property
-    isSigned *bool
-    // The lastModifiedDateTime property
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The manifest property
-    manifest *string
-    // The name property
-    name *string
-    // The permissionsRequired property
-    permissionsRequired *ApplicationPermissionsRequired
-    // The platform property
-    platform *string
-    // The policyName property
-    policyName *string
-    // The publisher property
-    publisher *string
-    // The riskScore property
-    riskScore *string
-    // The tags property
-    tags []string
     // The type property
-    type_escaped *string
-    // The vendorInformation property
-    vendorInformation SecurityVendorInformationable
+    TypeEscaped *string
 }
 // NewCloudAppSecurityProfile instantiates a new cloudAppSecurityProfile and sets the default values.
 func NewCloudAppSecurityProfile()(*CloudAppSecurityProfile) {
@@ -56,23 +24,58 @@ func CreateCloudAppSecurityProfileFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAzureSubscriptionId gets the azureSubscriptionId property value. The azureSubscriptionId property
 func (m *CloudAppSecurityProfile) GetAzureSubscriptionId()(*string) {
-    return m.azureSubscriptionId
+    val, err := m.GetBackingStore().Get("azureSubscriptionId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAzureTenantId gets the azureTenantId property value. The azureTenantId property
 func (m *CloudAppSecurityProfile) GetAzureTenantId()(*string) {
-    return m.azureTenantId
+    val, err := m.GetBackingStore().Get("azureTenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
 func (m *CloudAppSecurityProfile) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDeploymentPackageUrl gets the deploymentPackageUrl property value. The deploymentPackageUrl property
 func (m *CloudAppSecurityProfile) GetDeploymentPackageUrl()(*string) {
-    return m.deploymentPackageUrl
+    val, err := m.GetBackingStore().Get("deploymentPackageUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDestinationServiceName gets the destinationServiceName property value. The destinationServiceName property
 func (m *CloudAppSecurityProfile) GetDestinationServiceName()(*string) {
-    return m.destinationServiceName
+    val, err := m.GetBackingStore().Get("destinationServiceName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -255,51 +258,135 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetIsSigned gets the isSigned property value. The isSigned property
 func (m *CloudAppSecurityProfile) GetIsSigned()(*bool) {
-    return m.isSigned
+    val, err := m.GetBackingStore().Get("isSigned")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *CloudAppSecurityProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetManifest gets the manifest property value. The manifest property
 func (m *CloudAppSecurityProfile) GetManifest()(*string) {
-    return m.manifest
+    val, err := m.GetBackingStore().Get("manifest")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetName gets the name property value. The name property
 func (m *CloudAppSecurityProfile) GetName()(*string) {
-    return m.name
+    val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPermissionsRequired gets the permissionsRequired property value. The permissionsRequired property
 func (m *CloudAppSecurityProfile) GetPermissionsRequired()(*ApplicationPermissionsRequired) {
-    return m.permissionsRequired
+    val, err := m.GetBackingStore().Get("permissionsRequired")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ApplicationPermissionsRequired)
+    }
+    return nil
 }
 // GetPlatform gets the platform property value. The platform property
 func (m *CloudAppSecurityProfile) GetPlatform()(*string) {
-    return m.platform
+    val, err := m.GetBackingStore().Get("platform")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPolicyName gets the policyName property value. The policyName property
 func (m *CloudAppSecurityProfile) GetPolicyName()(*string) {
-    return m.policyName
+    val, err := m.GetBackingStore().Get("policyName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPublisher gets the publisher property value. The publisher property
 func (m *CloudAppSecurityProfile) GetPublisher()(*string) {
-    return m.publisher
+    val, err := m.GetBackingStore().Get("publisher")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRiskScore gets the riskScore property value. The riskScore property
 func (m *CloudAppSecurityProfile) GetRiskScore()(*string) {
-    return m.riskScore
+    val, err := m.GetBackingStore().Get("riskScore")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTags gets the tags property value. The tags property
 func (m *CloudAppSecurityProfile) GetTags()([]string) {
-    return m.tags
+    val, err := m.GetBackingStore().Get("tags")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetType gets the type property value. The type property
 func (m *CloudAppSecurityProfile) GetType()(*string) {
-    return m.type_escaped
+    val, err := m.GetBackingStore().Get("typeEscaped")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetVendorInformation gets the vendorInformation property value. The vendorInformation property
 func (m *CloudAppSecurityProfile) GetVendorInformation()(SecurityVendorInformationable) {
-    return m.vendorInformation
+    val, err := m.GetBackingStore().Get("vendorInformation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SecurityVendorInformationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CloudAppSecurityProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -414,69 +501,159 @@ func (m *CloudAppSecurityProfile) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAzureSubscriptionId sets the azureSubscriptionId property value. The azureSubscriptionId property
 func (m *CloudAppSecurityProfile) SetAzureSubscriptionId(value *string)() {
-    m.azureSubscriptionId = value
+    err := m.GetBackingStore().Set("azureSubscriptionId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAzureTenantId sets the azureTenantId property value. The azureTenantId property
 func (m *CloudAppSecurityProfile) SetAzureTenantId(value *string)() {
-    m.azureTenantId = value
+    err := m.GetBackingStore().Set("azureTenantId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
 func (m *CloudAppSecurityProfile) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeploymentPackageUrl sets the deploymentPackageUrl property value. The deploymentPackageUrl property
 func (m *CloudAppSecurityProfile) SetDeploymentPackageUrl(value *string)() {
-    m.deploymentPackageUrl = value
+    err := m.GetBackingStore().Set("deploymentPackageUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDestinationServiceName sets the destinationServiceName property value. The destinationServiceName property
 func (m *CloudAppSecurityProfile) SetDestinationServiceName(value *string)() {
-    m.destinationServiceName = value
+    err := m.GetBackingStore().Set("destinationServiceName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsSigned sets the isSigned property value. The isSigned property
 func (m *CloudAppSecurityProfile) SetIsSigned(value *bool)() {
-    m.isSigned = value
+    err := m.GetBackingStore().Set("isSigned", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *CloudAppSecurityProfile) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManifest sets the manifest property value. The manifest property
 func (m *CloudAppSecurityProfile) SetManifest(value *string)() {
-    m.manifest = value
+    err := m.GetBackingStore().Set("manifest", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetName sets the name property value. The name property
 func (m *CloudAppSecurityProfile) SetName(value *string)() {
-    m.name = value
+    err := m.GetBackingStore().Set("name", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPermissionsRequired sets the permissionsRequired property value. The permissionsRequired property
 func (m *CloudAppSecurityProfile) SetPermissionsRequired(value *ApplicationPermissionsRequired)() {
-    m.permissionsRequired = value
+    err := m.GetBackingStore().Set("permissionsRequired", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPlatform sets the platform property value. The platform property
 func (m *CloudAppSecurityProfile) SetPlatform(value *string)() {
-    m.platform = value
+    err := m.GetBackingStore().Set("platform", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPolicyName sets the policyName property value. The policyName property
 func (m *CloudAppSecurityProfile) SetPolicyName(value *string)() {
-    m.policyName = value
+    err := m.GetBackingStore().Set("policyName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPublisher sets the publisher property value. The publisher property
 func (m *CloudAppSecurityProfile) SetPublisher(value *string)() {
-    m.publisher = value
+    err := m.GetBackingStore().Set("publisher", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRiskScore sets the riskScore property value. The riskScore property
 func (m *CloudAppSecurityProfile) SetRiskScore(value *string)() {
-    m.riskScore = value
+    err := m.GetBackingStore().Set("riskScore", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTags sets the tags property value. The tags property
 func (m *CloudAppSecurityProfile) SetTags(value []string)() {
-    m.tags = value
+    err := m.GetBackingStore().Set("tags", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetType sets the type property value. The type property
 func (m *CloudAppSecurityProfile) SetType(value *string)() {
-    m.type_escaped = value
+    err := m.GetBackingStore().Set("typeEscaped", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVendorInformation sets the vendorInformation property value. The vendorInformation property
 func (m *CloudAppSecurityProfile) SetVendorInformation(value SecurityVendorInformationable)() {
-    m.vendorInformation = value
+    err := m.GetBackingStore().Set("vendorInformation", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CloudAppSecurityProfileable 
+type CloudAppSecurityProfileable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAzureSubscriptionId()(*string)
+    GetAzureTenantId()(*string)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDeploymentPackageUrl()(*string)
+    GetDestinationServiceName()(*string)
+    GetIsSigned()(*bool)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetManifest()(*string)
+    GetName()(*string)
+    GetPermissionsRequired()(*ApplicationPermissionsRequired)
+    GetPlatform()(*string)
+    GetPolicyName()(*string)
+    GetPublisher()(*string)
+    GetRiskScore()(*string)
+    GetTags()([]string)
+    GetType()(*string)
+    GetVendorInformation()(SecurityVendorInformationable)
+    SetAzureSubscriptionId(value *string)()
+    SetAzureTenantId(value *string)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDeploymentPackageUrl(value *string)()
+    SetDestinationServiceName(value *string)()
+    SetIsSigned(value *bool)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetManifest(value *string)()
+    SetName(value *string)()
+    SetPermissionsRequired(value *ApplicationPermissionsRequired)()
+    SetPlatform(value *string)()
+    SetPolicyName(value *string)()
+    SetPublisher(value *string)()
+    SetRiskScore(value *string)()
+    SetTags(value []string)()
+    SetType(value *string)()
+    SetVendorInformation(value SecurityVendorInformationable)()
 }

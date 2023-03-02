@@ -8,26 +8,6 @@ import (
 // BrowserSiteList a singleton entity which is used to specify IE mode site list metadata
 type BrowserSiteList struct {
     Entity
-    // The description of the site list.
-    description *string
-    // The name of the site list.
-    displayName *string
-    // The user who last modified the site list.
-    lastModifiedBy IdentitySetable
-    // The date and time when the site list was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The user who published the site list.
-    publishedBy IdentitySetable
-    // The date and time when the site list was published.
-    publishedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The current revision of the site list.
-    revision *string
-    // A collection of shared cookies defined for the site list.
-    sharedCookies []BrowserSharedCookieable
-    // A collection of sites defined for the site list.
-    sites []BrowserSiteable
-    // The status property
-    status *BrowserSiteListStatus
 }
 // NewBrowserSiteList instantiates a new browserSiteList and sets the default values.
 func NewBrowserSiteList()(*BrowserSiteList) {
@@ -42,11 +22,25 @@ func CreateBrowserSiteListFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetDescription gets the description property value. The description of the site list.
 func (m *BrowserSiteList) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The name of the site list.
 func (m *BrowserSiteList) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BrowserSiteList) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -163,35 +157,91 @@ func (m *BrowserSiteList) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The user who last modified the site list.
 func (m *BrowserSiteList) GetLastModifiedBy()(IdentitySetable) {
-    return m.lastModifiedBy
+    val, err := m.GetBackingStore().Get("lastModifiedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the site list was last modified.
 func (m *BrowserSiteList) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetPublishedBy gets the publishedBy property value. The user who published the site list.
 func (m *BrowserSiteList) GetPublishedBy()(IdentitySetable) {
-    return m.publishedBy
+    val, err := m.GetBackingStore().Get("publishedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
 }
 // GetPublishedDateTime gets the publishedDateTime property value. The date and time when the site list was published.
 func (m *BrowserSiteList) GetPublishedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.publishedDateTime
+    val, err := m.GetBackingStore().Get("publishedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetRevision gets the revision property value. The current revision of the site list.
 func (m *BrowserSiteList) GetRevision()(*string) {
-    return m.revision
+    val, err := m.GetBackingStore().Get("revision")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSharedCookies gets the sharedCookies property value. A collection of shared cookies defined for the site list.
 func (m *BrowserSiteList) GetSharedCookies()([]BrowserSharedCookieable) {
-    return m.sharedCookies
+    val, err := m.GetBackingStore().Get("sharedCookies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]BrowserSharedCookieable)
+    }
+    return nil
 }
 // GetSites gets the sites property value. A collection of sites defined for the site list.
 func (m *BrowserSiteList) GetSites()([]BrowserSiteable) {
-    return m.sites
+    val, err := m.GetBackingStore().Get("sites")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]BrowserSiteable)
+    }
+    return nil
 }
 // GetStatus gets the status property value. The status property
 func (m *BrowserSiteList) GetStatus()(*BrowserSiteListStatus) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*BrowserSiteListStatus)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *BrowserSiteList) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -272,41 +322,96 @@ func (m *BrowserSiteList) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetDescription sets the description property value. The description of the site list.
 func (m *BrowserSiteList) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the site list.
 func (m *BrowserSiteList) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. The user who last modified the site list.
 func (m *BrowserSiteList) SetLastModifiedBy(value IdentitySetable)() {
-    m.lastModifiedBy = value
+    err := m.GetBackingStore().Set("lastModifiedBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the site list was last modified.
 func (m *BrowserSiteList) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPublishedBy sets the publishedBy property value. The user who published the site list.
 func (m *BrowserSiteList) SetPublishedBy(value IdentitySetable)() {
-    m.publishedBy = value
+    err := m.GetBackingStore().Set("publishedBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPublishedDateTime sets the publishedDateTime property value. The date and time when the site list was published.
 func (m *BrowserSiteList) SetPublishedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.publishedDateTime = value
+    err := m.GetBackingStore().Set("publishedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRevision sets the revision property value. The current revision of the site list.
 func (m *BrowserSiteList) SetRevision(value *string)() {
-    m.revision = value
+    err := m.GetBackingStore().Set("revision", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSharedCookies sets the sharedCookies property value. A collection of shared cookies defined for the site list.
 func (m *BrowserSiteList) SetSharedCookies(value []BrowserSharedCookieable)() {
-    m.sharedCookies = value
+    err := m.GetBackingStore().Set("sharedCookies", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSites sets the sites property value. A collection of sites defined for the site list.
 func (m *BrowserSiteList) SetSites(value []BrowserSiteable)() {
-    m.sites = value
+    err := m.GetBackingStore().Set("sites", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. The status property
 func (m *BrowserSiteList) SetStatus(value *BrowserSiteListStatus)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// BrowserSiteListable 
+type BrowserSiteListable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetLastModifiedBy()(IdentitySetable)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetPublishedBy()(IdentitySetable)
+    GetPublishedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetRevision()(*string)
+    GetSharedCookies()([]BrowserSharedCookieable)
+    GetSites()([]BrowserSiteable)
+    GetStatus()(*BrowserSiteListStatus)
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetLastModifiedBy(value IdentitySetable)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetPublishedBy(value IdentitySetable)()
+    SetPublishedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetRevision(value *string)()
+    SetSharedCookies(value []BrowserSharedCookieable)()
+    SetSites(value []BrowserSiteable)()
+    SetStatus(value *BrowserSiteListStatus)()
 }

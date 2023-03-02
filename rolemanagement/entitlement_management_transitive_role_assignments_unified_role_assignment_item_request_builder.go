@@ -48,7 +48,7 @@ type EntitlementManagementTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequ
 }
 // AppScope provides operations to manage the appScope property of the microsoft.graph.unifiedRoleAssignment entity.
 func (m *EntitlementManagementTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) AppScope()(*EntitlementManagementTransitiveRoleAssignmentsItemAppScopeRequestBuilder) {
-    return NewEntitlementManagementTransitiveRoleAssignmentsItemAppScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementTransitiveRoleAssignmentsItemAppScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewEntitlementManagementTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderInternal instantiates a new UnifiedRoleAssignmentItemRequestBuilder and sets the default values.
 func NewEntitlementManagementTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) {
@@ -59,8 +59,8 @@ func NewEntitlementManagementTransitiveRoleAssignmentsUnifiedRoleAssignmentItemR
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder instantiates a new UnifiedRoleAssignmentItemRequestBuilder and sets the default values.
@@ -87,7 +87,7 @@ func (m *EntitlementManagementTransitiveRoleAssignmentsUnifiedRoleAssignmentItem
 }
 // DirectoryScope provides operations to manage the directoryScope property of the microsoft.graph.unifiedRoleAssignment entity.
 func (m *EntitlementManagementTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) DirectoryScope()(*EntitlementManagementTransitiveRoleAssignmentsItemDirectoryScopeRequestBuilder) {
-    return NewEntitlementManagementTransitiveRoleAssignmentsItemDirectoryScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementTransitiveRoleAssignmentsItemDirectoryScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get transitiveRoleAssignments from roleManagement
 func (m *EntitlementManagementTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentable, error) {
@@ -129,11 +129,11 @@ func (m *EntitlementManagementTransitiveRoleAssignmentsUnifiedRoleAssignmentItem
 }
 // Principal provides operations to manage the principal property of the microsoft.graph.unifiedRoleAssignment entity.
 func (m *EntitlementManagementTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) Principal()(*EntitlementManagementTransitiveRoleAssignmentsItemPrincipalRequestBuilder) {
-    return NewEntitlementManagementTransitiveRoleAssignmentsItemPrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementTransitiveRoleAssignmentsItemPrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RoleDefinition provides operations to manage the roleDefinition property of the microsoft.graph.unifiedRoleAssignment entity.
 func (m *EntitlementManagementTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) RoleDefinition()(*EntitlementManagementTransitiveRoleAssignmentsItemRoleDefinitionRequestBuilder) {
-    return NewEntitlementManagementTransitiveRoleAssignmentsItemRoleDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementTransitiveRoleAssignmentsItemRoleDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property transitiveRoleAssignments for roleManagement
 func (m *EntitlementManagementTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -170,7 +170,10 @@ func (m *EntitlementManagementTransitiveRoleAssignmentsUnifiedRoleAssignmentItem
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

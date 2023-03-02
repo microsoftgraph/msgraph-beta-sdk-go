@@ -7,8 +7,6 @@ import (
 // DeviceManagementConfigurationSimpleSettingDefinitionCollectionResponse 
 type DeviceManagementConfigurationSimpleSettingDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementConfigurationSimpleSettingDefinitionable
 }
 // NewDeviceManagementConfigurationSimpleSettingDefinitionCollectionResponse instantiates a new DeviceManagementConfigurationSimpleSettingDefinitionCollectionResponse and sets the default values.
 func NewDeviceManagementConfigurationSimpleSettingDefinitionCollectionResponse()(*DeviceManagementConfigurationSimpleSettingDefinitionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementConfigurationSimpleSettingDefinitionCollectionResponse)
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementConfigurationSimpleSettingDefinitionCollectionResponse) GetValue()([]DeviceManagementConfigurationSimpleSettingDefinitionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementConfigurationSimpleSettingDefinitionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSimpleSettingDefinitionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementConfigurationSimpleSettingDefinitionCollectionResponse)
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementConfigurationSimpleSettingDefinitionCollectionResponse) SetValue(value []DeviceManagementConfigurationSimpleSettingDefinitionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationSimpleSettingDefinitionCollectionResponseable 
+type DeviceManagementConfigurationSimpleSettingDefinitionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementConfigurationSimpleSettingDefinitionable)
+    SetValue(value []DeviceManagementConfigurationSimpleSettingDefinitionable)()
 }

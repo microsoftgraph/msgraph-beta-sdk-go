@@ -7,8 +7,6 @@ import (
 // UserExperienceAnalyticsAnomalyCollectionResponse 
 type UserExperienceAnalyticsAnomalyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UserExperienceAnalyticsAnomalyable
 }
 // NewUserExperienceAnalyticsAnomalyCollectionResponse instantiates a new UserExperienceAnalyticsAnomalyCollectionResponse and sets the default values.
 func NewUserExperienceAnalyticsAnomalyCollectionResponse()(*UserExperienceAnalyticsAnomalyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UserExperienceAnalyticsAnomalyCollectionResponse) GetFieldDeserializers
 }
 // GetValue gets the value property value. The value property
 func (m *UserExperienceAnalyticsAnomalyCollectionResponse) GetValue()([]UserExperienceAnalyticsAnomalyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserExperienceAnalyticsAnomalyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsAnomalyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UserExperienceAnalyticsAnomalyCollectionResponse) Serialize(writer i878
 }
 // SetValue sets the value property value. The value property
 func (m *UserExperienceAnalyticsAnomalyCollectionResponse) SetValue(value []UserExperienceAnalyticsAnomalyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsAnomalyCollectionResponseable 
+type UserExperienceAnalyticsAnomalyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UserExperienceAnalyticsAnomalyable)
+    SetValue(value []UserExperienceAnalyticsAnomalyable)()
 }

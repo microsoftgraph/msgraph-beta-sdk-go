@@ -2,28 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // HasPayloadLinkResultItem a class containing the result of HasPayloadLinks action.
 type HasPayloadLinkResultItem struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Exception information indicates if check for this item was successful or not.Empty string for no error.
-    error *string
-    // Indicate whether a payload has any link or not.
-    hasLink *bool
-    // The OdataType property
-    odataType *string
-    // Key of the Payload, In the format of Guid.
-    payloadId *string
-    // The reason where the link comes from.
-    sources []DeviceAndAppManagementAssignmentSource
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewHasPayloadLinkResultItem instantiates a new hasPayloadLinkResultItem and sets the default values.
 func NewHasPayloadLinkResultItem()(*HasPayloadLinkResultItem) {
     m := &HasPayloadLinkResultItem{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateHasPayloadLinkResultItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,11 +24,30 @@ func CreateHasPayloadLinkResultItemFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *HasPayloadLinkResultItem) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *HasPayloadLinkResultItem) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetError gets the error property value. Exception information indicates if check for this item was successful or not.Empty string for no error.
 func (m *HasPayloadLinkResultItem) GetError()(*string) {
-    return m.error
+    val, err := m.GetBackingStore().Get("error")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *HasPayloadLinkResultItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -99,19 +110,47 @@ func (m *HasPayloadLinkResultItem) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetHasLink gets the hasLink property value. Indicate whether a payload has any link or not.
 func (m *HasPayloadLinkResultItem) GetHasLink()(*bool) {
-    return m.hasLink
+    val, err := m.GetBackingStore().Get("hasLink")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *HasPayloadLinkResultItem) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPayloadId gets the payloadId property value. Key of the Payload, In the format of Guid.
 func (m *HasPayloadLinkResultItem) GetPayloadId()(*string) {
-    return m.payloadId
+    val, err := m.GetBackingStore().Get("payloadId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSources gets the sources property value. The reason where the link comes from.
 func (m *HasPayloadLinkResultItem) GetSources()([]DeviceAndAppManagementAssignmentSource) {
-    return m.sources
+    val, err := m.GetBackingStore().Get("sources")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceAndAppManagementAssignmentSource)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *HasPayloadLinkResultItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -155,25 +194,65 @@ func (m *HasPayloadLinkResultItem) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *HasPayloadLinkResultItem) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *HasPayloadLinkResultItem) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetError sets the error property value. Exception information indicates if check for this item was successful or not.Empty string for no error.
 func (m *HasPayloadLinkResultItem) SetError(value *string)() {
-    m.error = value
+    err := m.GetBackingStore().Set("error", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHasLink sets the hasLink property value. Indicate whether a payload has any link or not.
 func (m *HasPayloadLinkResultItem) SetHasLink(value *bool)() {
-    m.hasLink = value
+    err := m.GetBackingStore().Set("hasLink", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *HasPayloadLinkResultItem) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPayloadId sets the payloadId property value. Key of the Payload, In the format of Guid.
 func (m *HasPayloadLinkResultItem) SetPayloadId(value *string)() {
-    m.payloadId = value
+    err := m.GetBackingStore().Set("payloadId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSources sets the sources property value. The reason where the link comes from.
 func (m *HasPayloadLinkResultItem) SetSources(value []DeviceAndAppManagementAssignmentSource)() {
-    m.sources = value
+    err := m.GetBackingStore().Set("sources", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// HasPayloadLinkResultItemable 
+type HasPayloadLinkResultItemable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetError()(*string)
+    GetHasLink()(*bool)
+    GetOdataType()(*string)
+    GetPayloadId()(*string)
+    GetSources()([]DeviceAndAppManagementAssignmentSource)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetError(value *string)()
+    SetHasLink(value *bool)()
+    SetOdataType(value *string)()
+    SetPayloadId(value *string)()
+    SetSources(value []DeviceAndAppManagementAssignmentSource)()
 }

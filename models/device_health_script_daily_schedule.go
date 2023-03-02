@@ -13,8 +13,8 @@ func NewDeviceHealthScriptDailySchedule()(*DeviceHealthScriptDailySchedule) {
     m := &DeviceHealthScriptDailySchedule{
         DeviceHealthScriptTimeSchedule: *NewDeviceHealthScriptTimeSchedule(),
     }
-    odataTypeValue := "#microsoft.graph.deviceHealthScriptDailySchedule";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceHealthScriptDailySchedule"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceHealthScriptDailyScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,4 +33,9 @@ func (m *DeviceHealthScriptDailySchedule) Serialize(writer i878a80d2330e89d26896
         return err
     }
     return nil
+}
+// DeviceHealthScriptDailyScheduleable 
+type DeviceHealthScriptDailyScheduleable interface {
+    DeviceHealthScriptTimeScheduleable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

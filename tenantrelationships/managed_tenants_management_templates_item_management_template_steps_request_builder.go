@@ -53,8 +53,8 @@ func NewManagedTenantsManagementTemplatesItemManagementTemplateStepsRequestBuild
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedTenantsManagementTemplatesItemManagementTemplateStepsRequestBuilder instantiates a new ManagementTemplateStepsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewManagedTenantsManagementTemplatesItemManagementTemplateStepsRequestBuild
 }
 // Count provides operations to count the resources in the collection.
 func (m *ManagedTenantsManagementTemplatesItemManagementTemplateStepsRequestBuilder) Count()(*ManagedTenantsManagementTemplatesItemManagementTemplateStepsCountRequestBuilder) {
-    return NewManagedTenantsManagementTemplatesItemManagementTemplateStepsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedTenantsManagementTemplatesItemManagementTemplateStepsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get managementTemplateSteps from tenantRelationships
 func (m *ManagedTenantsManagementTemplatesItemManagementTemplateStepsRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsManagementTemplatesItemManagementTemplateStepsRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepCollectionResponseable, error) {

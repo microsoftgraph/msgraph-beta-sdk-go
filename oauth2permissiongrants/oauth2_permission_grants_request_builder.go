@@ -60,8 +60,8 @@ func NewOauth2PermissionGrantsRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewOauth2PermissionGrantsRequestBuilder instantiates a new Oauth2PermissionGrantsRequestBuilder and sets the default values.
@@ -72,11 +72,11 @@ func NewOauth2PermissionGrantsRequestBuilder(rawUrl string, requestAdapter i2ae4
 }
 // Count provides operations to count the resources in the collection.
 func (m *Oauth2PermissionGrantsRequestBuilder) Count()(*CountRequestBuilder) {
-    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delta provides operations to call the delta method.
 func (m *Oauth2PermissionGrantsRequestBuilder) Delta()(*DeltaRequestBuilder) {
-    return NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of oAuth2PermissionGrant objects, representing delegated permissions which have been granted for client applications to access APIs on behalf of signed-in users.
 // [Find more info here]
@@ -145,7 +145,10 @@ func (m *Oauth2PermissionGrantsRequestBuilder) ToPostRequestInformation(ctx cont
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

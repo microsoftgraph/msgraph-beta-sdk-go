@@ -7,16 +7,14 @@ import (
 // Windows10VpnProxyServer 
 type Windows10VpnProxyServer struct {
     VpnProxyServer
-    // Bypass proxy server for local address.
-    bypassProxyServerForLocalAddress *bool
 }
 // NewWindows10VpnProxyServer instantiates a new Windows10VpnProxyServer and sets the default values.
 func NewWindows10VpnProxyServer()(*Windows10VpnProxyServer) {
     m := &Windows10VpnProxyServer{
         VpnProxyServer: *NewVpnProxyServer(),
     }
-    odataTypeValue := "#microsoft.graph.windows10VpnProxyServer";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windows10VpnProxyServer"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindows10VpnProxyServerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +23,14 @@ func CreateWindows10VpnProxyServerFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetBypassProxyServerForLocalAddress gets the bypassProxyServerForLocalAddress property value. Bypass proxy server for local address.
 func (m *Windows10VpnProxyServer) GetBypassProxyServerForLocalAddress()(*bool) {
-    return m.bypassProxyServerForLocalAddress
+    val, err := m.GetBackingStore().Get("bypassProxyServerForLocalAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows10VpnProxyServer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -58,5 +63,15 @@ func (m *Windows10VpnProxyServer) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetBypassProxyServerForLocalAddress sets the bypassProxyServerForLocalAddress property value. Bypass proxy server for local address.
 func (m *Windows10VpnProxyServer) SetBypassProxyServerForLocalAddress(value *bool)() {
-    m.bypassProxyServerForLocalAddress = value
+    err := m.GetBackingStore().Set("bypassProxyServerForLocalAddress", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Windows10VpnProxyServerable 
+type Windows10VpnProxyServerable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    VpnProxyServerable
+    GetBypassProxyServerForLocalAddress()(*bool)
+    SetBypassProxyServerForLocalAddress(value *bool)()
 }

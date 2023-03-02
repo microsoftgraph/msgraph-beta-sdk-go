@@ -7,18 +7,14 @@ import (
 // RoleMembershipGovernanceCriteria 
 type RoleMembershipGovernanceCriteria struct {
     GovernanceCriteria
-    // The roleId property
-    roleId *string
-    // The roleTemplateId property
-    roleTemplateId *string
 }
 // NewRoleMembershipGovernanceCriteria instantiates a new RoleMembershipGovernanceCriteria and sets the default values.
 func NewRoleMembershipGovernanceCriteria()(*RoleMembershipGovernanceCriteria) {
     m := &RoleMembershipGovernanceCriteria{
         GovernanceCriteria: *NewGovernanceCriteria(),
     }
-    odataTypeValue := "#microsoft.graph.roleMembershipGovernanceCriteria";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.roleMembershipGovernanceCriteria"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateRoleMembershipGovernanceCriteriaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -52,11 +48,25 @@ func (m *RoleMembershipGovernanceCriteria) GetFieldDeserializers()(map[string]fu
 }
 // GetRoleId gets the roleId property value. The roleId property
 func (m *RoleMembershipGovernanceCriteria) GetRoleId()(*string) {
-    return m.roleId
+    val, err := m.GetBackingStore().Get("roleId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRoleTemplateId gets the roleTemplateId property value. The roleTemplateId property
 func (m *RoleMembershipGovernanceCriteria) GetRoleTemplateId()(*string) {
-    return m.roleTemplateId
+    val, err := m.GetBackingStore().Get("roleTemplateId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RoleMembershipGovernanceCriteria) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *RoleMembershipGovernanceCriteria) Serialize(writer i878a80d2330e89d2689
 }
 // SetRoleId sets the roleId property value. The roleId property
 func (m *RoleMembershipGovernanceCriteria) SetRoleId(value *string)() {
-    m.roleId = value
+    err := m.GetBackingStore().Set("roleId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleTemplateId sets the roleTemplateId property value. The roleTemplateId property
 func (m *RoleMembershipGovernanceCriteria) SetRoleTemplateId(value *string)() {
-    m.roleTemplateId = value
+    err := m.GetBackingStore().Set("roleTemplateId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RoleMembershipGovernanceCriteriaable 
+type RoleMembershipGovernanceCriteriaable interface {
+    GovernanceCriteriaable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetRoleId()(*string)
+    GetRoleTemplateId()(*string)
+    SetRoleId(value *string)()
+    SetRoleTemplateId(value *string)()
 }

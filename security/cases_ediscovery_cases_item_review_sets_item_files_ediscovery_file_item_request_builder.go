@@ -55,8 +55,8 @@ func NewCasesEdiscoveryCasesItemReviewSetsItemFilesEdiscoveryFileItemRequestBuil
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCasesEdiscoveryCasesItemReviewSetsItemFilesEdiscoveryFileItemRequestBuilder instantiates a new EdiscoveryFileItemRequestBuilder and sets the default values.
@@ -67,11 +67,11 @@ func NewCasesEdiscoveryCasesItemReviewSetsItemFilesEdiscoveryFileItemRequestBuil
 }
 // Content provides operations to manage the media for the security entity.
 func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesEdiscoveryFileItemRequestBuilder) Content()(*CasesEdiscoveryCasesItemReviewSetsItemFilesItemContentRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemReviewSetsItemFilesItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCasesEdiscoveryCasesItemReviewSetsItemFilesItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Custodian provides operations to manage the custodian property of the microsoft.graph.security.ediscoveryFile entity.
 func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesEdiscoveryFileItemRequestBuilder) Custodian()(*CasesEdiscoveryCasesItemReviewSetsItemFilesItemCustodianRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemReviewSetsItemFilesItemCustodianRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCasesEdiscoveryCasesItemReviewSetsItemFilesItemCustodianRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property files for security
 func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesEdiscoveryFileItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsItemFilesEdiscoveryFileItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -91,7 +91,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesEdiscoveryFileItemRequestBui
 }
 // ExtractedTextContent provides operations to manage the media for the security entity.
 func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesEdiscoveryFileItemRequestBuilder) ExtractedTextContent()(*CasesEdiscoveryCasesItemReviewSetsItemFilesItemExtractedTextContentRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemReviewSetsItemFilesItemExtractedTextContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCasesEdiscoveryCasesItemReviewSetsItemFilesItemExtractedTextContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get represents files within the review set.
 func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesEdiscoveryFileItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsItemFilesEdiscoveryFileItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryFileable, error) {
@@ -133,7 +133,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesEdiscoveryFileItemRequestBui
 }
 // Tags provides operations to manage the tags property of the microsoft.graph.security.ediscoveryFile entity.
 func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesEdiscoveryFileItemRequestBuilder) Tags()(*CasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TagsById provides operations to manage the tags property of the microsoft.graph.security.ediscoveryFile entity.
 func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesEdiscoveryFileItemRequestBuilder) TagsById(id string)(*CasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsEdiscoveryReviewTagItemRequestBuilder) {
@@ -144,7 +144,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesEdiscoveryFileItemRequestBui
     if id != "" {
         urlTplParams["ediscoveryReviewTag%2Did"] = id
     }
-    return NewCasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsEdiscoveryReviewTagItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsEdiscoveryReviewTagItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property files for security
 func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesEdiscoveryFileItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsItemFilesEdiscoveryFileItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -181,7 +181,10 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesEdiscoveryFileItemRequestBui
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

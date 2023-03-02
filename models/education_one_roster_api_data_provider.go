@@ -7,26 +7,14 @@ import (
 // EducationOneRosterApiDataProvider 
 type EducationOneRosterApiDataProvider struct {
     EducationSynchronizationDataProvider
-    // The connectionSettings property
-    connectionSettings EducationSynchronizationConnectionSettingsable
-    // The connectionUrl property
-    connectionUrl *string
-    // The customizations property
-    customizations EducationSynchronizationCustomizationsable
-    // The providerName property
-    providerName *string
-    // The schoolsIds property
-    schoolsIds []string
-    // The termIds property
-    termIds []string
 }
 // NewEducationOneRosterApiDataProvider instantiates a new EducationOneRosterApiDataProvider and sets the default values.
 func NewEducationOneRosterApiDataProvider()(*EducationOneRosterApiDataProvider) {
     m := &EducationOneRosterApiDataProvider{
         EducationSynchronizationDataProvider: *NewEducationSynchronizationDataProvider(),
     }
-    odataTypeValue := "#microsoft.graph.educationOneRosterApiDataProvider";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.educationOneRosterApiDataProvider"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEducationOneRosterApiDataProviderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,15 +23,36 @@ func CreateEducationOneRosterApiDataProviderFromDiscriminatorValue(parseNode i87
 }
 // GetConnectionSettings gets the connectionSettings property value. The connectionSettings property
 func (m *EducationOneRosterApiDataProvider) GetConnectionSettings()(EducationSynchronizationConnectionSettingsable) {
-    return m.connectionSettings
+    val, err := m.GetBackingStore().Get("connectionSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EducationSynchronizationConnectionSettingsable)
+    }
+    return nil
 }
 // GetConnectionUrl gets the connectionUrl property value. The connectionUrl property
 func (m *EducationOneRosterApiDataProvider) GetConnectionUrl()(*string) {
-    return m.connectionUrl
+    val, err := m.GetBackingStore().Get("connectionUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCustomizations gets the customizations property value. The customizations property
 func (m *EducationOneRosterApiDataProvider) GetCustomizations()(EducationSynchronizationCustomizationsable) {
-    return m.customizations
+    val, err := m.GetBackingStore().Get("customizations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EducationSynchronizationCustomizationsable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationOneRosterApiDataProvider) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -120,15 +129,36 @@ func (m *EducationOneRosterApiDataProvider) GetFieldDeserializers()(map[string]f
 }
 // GetProviderName gets the providerName property value. The providerName property
 func (m *EducationOneRosterApiDataProvider) GetProviderName()(*string) {
-    return m.providerName
+    val, err := m.GetBackingStore().Get("providerName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSchoolsIds gets the schoolsIds property value. The schoolsIds property
 func (m *EducationOneRosterApiDataProvider) GetSchoolsIds()([]string) {
-    return m.schoolsIds
+    val, err := m.GetBackingStore().Get("schoolsIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetTermIds gets the termIds property value. The termIds property
 func (m *EducationOneRosterApiDataProvider) GetTermIds()([]string) {
-    return m.termIds
+    val, err := m.GetBackingStore().Get("termIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EducationOneRosterApiDataProvider) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -176,25 +206,60 @@ func (m *EducationOneRosterApiDataProvider) Serialize(writer i878a80d2330e89d268
 }
 // SetConnectionSettings sets the connectionSettings property value. The connectionSettings property
 func (m *EducationOneRosterApiDataProvider) SetConnectionSettings(value EducationSynchronizationConnectionSettingsable)() {
-    m.connectionSettings = value
+    err := m.GetBackingStore().Set("connectionSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConnectionUrl sets the connectionUrl property value. The connectionUrl property
 func (m *EducationOneRosterApiDataProvider) SetConnectionUrl(value *string)() {
-    m.connectionUrl = value
+    err := m.GetBackingStore().Set("connectionUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomizations sets the customizations property value. The customizations property
 func (m *EducationOneRosterApiDataProvider) SetCustomizations(value EducationSynchronizationCustomizationsable)() {
-    m.customizations = value
+    err := m.GetBackingStore().Set("customizations", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProviderName sets the providerName property value. The providerName property
 func (m *EducationOneRosterApiDataProvider) SetProviderName(value *string)() {
-    m.providerName = value
+    err := m.GetBackingStore().Set("providerName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSchoolsIds sets the schoolsIds property value. The schoolsIds property
 func (m *EducationOneRosterApiDataProvider) SetSchoolsIds(value []string)() {
-    m.schoolsIds = value
+    err := m.GetBackingStore().Set("schoolsIds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTermIds sets the termIds property value. The termIds property
 func (m *EducationOneRosterApiDataProvider) SetTermIds(value []string)() {
-    m.termIds = value
+    err := m.GetBackingStore().Set("termIds", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EducationOneRosterApiDataProviderable 
+type EducationOneRosterApiDataProviderable interface {
+    EducationSynchronizationDataProviderable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetConnectionSettings()(EducationSynchronizationConnectionSettingsable)
+    GetConnectionUrl()(*string)
+    GetCustomizations()(EducationSynchronizationCustomizationsable)
+    GetProviderName()(*string)
+    GetSchoolsIds()([]string)
+    GetTermIds()([]string)
+    SetConnectionSettings(value EducationSynchronizationConnectionSettingsable)()
+    SetConnectionUrl(value *string)()
+    SetCustomizations(value EducationSynchronizationCustomizationsable)()
+    SetProviderName(value *string)()
+    SetSchoolsIds(value []string)()
+    SetTermIds(value []string)()
 }

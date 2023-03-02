@@ -7,22 +7,6 @@ import (
 // UserExperienceAnalyticsDeviceStartupProcessPerformance the user experience analytics device startup process performance.
 type UserExperienceAnalyticsDeviceStartupProcessPerformance struct {
     Entity
-    // User experience analytics device startup process summarized count.
-    deviceCount *int64
-    // User experience analytics device startup process median impact in milliseconds.
-    medianImpactInMs *int32
-    // User experience analytics device startup process median impact in milliseconds.
-    medianImpactInMs2 *int64
-    // User experience analytics device startup process name.
-    processName *string
-    // The user experience analytics device startup process product name.
-    productName *string
-    // The User experience analytics device startup process publisher.
-    publisher *string
-    // User experience analytics device startup process total impact in milliseconds.
-    totalImpactInMs *int32
-    // User experience analytics device startup process total impact in milliseconds.
-    totalImpactInMs2 *int64
 }
 // NewUserExperienceAnalyticsDeviceStartupProcessPerformance instantiates a new userExperienceAnalyticsDeviceStartupProcessPerformance and sets the default values.
 func NewUserExperienceAnalyticsDeviceStartupProcessPerformance()(*UserExperienceAnalyticsDeviceStartupProcessPerformance) {
@@ -37,7 +21,14 @@ func CreateUserExperienceAnalyticsDeviceStartupProcessPerformanceFromDiscriminat
 }
 // GetDeviceCount gets the deviceCount property value. User experience analytics device startup process summarized count.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetDeviceCount()(*int64) {
-    return m.deviceCount
+    val, err := m.GetBackingStore().Get("deviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -126,31 +117,80 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetFieldDeseria
 }
 // GetMedianImpactInMs gets the medianImpactInMs property value. User experience analytics device startup process median impact in milliseconds.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetMedianImpactInMs()(*int32) {
-    return m.medianImpactInMs
+    val, err := m.GetBackingStore().Get("medianImpactInMs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetMedianImpactInMs2 gets the medianImpactInMs2 property value. User experience analytics device startup process median impact in milliseconds.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetMedianImpactInMs2()(*int64) {
-    return m.medianImpactInMs2
+    val, err := m.GetBackingStore().Get("medianImpactInMs2")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetProcessName gets the processName property value. User experience analytics device startup process name.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetProcessName()(*string) {
-    return m.processName
+    val, err := m.GetBackingStore().Get("processName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProductName gets the productName property value. The user experience analytics device startup process product name.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetProductName()(*string) {
-    return m.productName
+    val, err := m.GetBackingStore().Get("productName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPublisher gets the publisher property value. The User experience analytics device startup process publisher.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetPublisher()(*string) {
-    return m.publisher
+    val, err := m.GetBackingStore().Get("publisher")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTotalImpactInMs gets the totalImpactInMs property value. User experience analytics device startup process total impact in milliseconds.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetTotalImpactInMs()(*int32) {
-    return m.totalImpactInMs
+    val, err := m.GetBackingStore().Get("totalImpactInMs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetTotalImpactInMs2 gets the totalImpactInMs2 property value. User experience analytics device startup process total impact in milliseconds.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetTotalImpactInMs2()(*int64) {
-    return m.totalImpactInMs2
+    val, err := m.GetBackingStore().Get("totalImpactInMs2")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -210,33 +250,78 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) Serialize(write
 }
 // SetDeviceCount sets the deviceCount property value. User experience analytics device startup process summarized count.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetDeviceCount(value *int64)() {
-    m.deviceCount = value
+    err := m.GetBackingStore().Set("deviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMedianImpactInMs sets the medianImpactInMs property value. User experience analytics device startup process median impact in milliseconds.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetMedianImpactInMs(value *int32)() {
-    m.medianImpactInMs = value
+    err := m.GetBackingStore().Set("medianImpactInMs", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMedianImpactInMs2 sets the medianImpactInMs2 property value. User experience analytics device startup process median impact in milliseconds.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetMedianImpactInMs2(value *int64)() {
-    m.medianImpactInMs2 = value
+    err := m.GetBackingStore().Set("medianImpactInMs2", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProcessName sets the processName property value. User experience analytics device startup process name.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetProcessName(value *string)() {
-    m.processName = value
+    err := m.GetBackingStore().Set("processName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProductName sets the productName property value. The user experience analytics device startup process product name.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetProductName(value *string)() {
-    m.productName = value
+    err := m.GetBackingStore().Set("productName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPublisher sets the publisher property value. The User experience analytics device startup process publisher.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetPublisher(value *string)() {
-    m.publisher = value
+    err := m.GetBackingStore().Set("publisher", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTotalImpactInMs sets the totalImpactInMs property value. User experience analytics device startup process total impact in milliseconds.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetTotalImpactInMs(value *int32)() {
-    m.totalImpactInMs = value
+    err := m.GetBackingStore().Set("totalImpactInMs", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTotalImpactInMs2 sets the totalImpactInMs2 property value. User experience analytics device startup process total impact in milliseconds.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetTotalImpactInMs2(value *int64)() {
-    m.totalImpactInMs2 = value
+    err := m.GetBackingStore().Set("totalImpactInMs2", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsDeviceStartupProcessPerformanceable 
+type UserExperienceAnalyticsDeviceStartupProcessPerformanceable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDeviceCount()(*int64)
+    GetMedianImpactInMs()(*int32)
+    GetMedianImpactInMs2()(*int64)
+    GetProcessName()(*string)
+    GetProductName()(*string)
+    GetPublisher()(*string)
+    GetTotalImpactInMs()(*int32)
+    GetTotalImpactInMs2()(*int64)
+    SetDeviceCount(value *int64)()
+    SetMedianImpactInMs(value *int32)()
+    SetMedianImpactInMs2(value *int64)()
+    SetProcessName(value *string)()
+    SetProductName(value *string)()
+    SetPublisher(value *string)()
+    SetTotalImpactInMs(value *int32)()
+    SetTotalImpactInMs2(value *int64)()
 }

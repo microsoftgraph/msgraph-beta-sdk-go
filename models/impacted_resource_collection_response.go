@@ -7,8 +7,6 @@ import (
 // ImpactedResourceCollectionResponse 
 type ImpactedResourceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ImpactedResourceable
 }
 // NewImpactedResourceCollectionResponse instantiates a new ImpactedResourceCollectionResponse and sets the default values.
 func NewImpactedResourceCollectionResponse()(*ImpactedResourceCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ImpactedResourceCollectionResponse) GetFieldDeserializers()(map[string]
 }
 // GetValue gets the value property value. The value property
 func (m *ImpactedResourceCollectionResponse) GetValue()([]ImpactedResourceable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ImpactedResourceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ImpactedResourceCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ImpactedResourceCollectionResponse) Serialize(writer i878a80d2330e89d26
 }
 // SetValue sets the value property value. The value property
 func (m *ImpactedResourceCollectionResponse) SetValue(value []ImpactedResourceable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ImpactedResourceCollectionResponseable 
+type ImpactedResourceCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ImpactedResourceable)
+    SetValue(value []ImpactedResourceable)()
 }

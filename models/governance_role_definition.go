@@ -7,18 +7,6 @@ import (
 // GovernanceRoleDefinition 
 type GovernanceRoleDefinition struct {
     Entity
-    // The display name of the role definition.
-    displayName *string
-    // The external id of the role definition.
-    externalId *string
-    // Read-only. The associated resource for the role definition.
-    resource GovernanceResourceable
-    // Required. The id of the resource associated with the role definition.
-    resourceId *string
-    // The associated role setting for the role definition.
-    roleSetting GovernanceRoleSettingable
-    // The templateId property
-    templateId *string
 }
 // NewGovernanceRoleDefinition instantiates a new governanceRoleDefinition and sets the default values.
 func NewGovernanceRoleDefinition()(*GovernanceRoleDefinition) {
@@ -33,11 +21,25 @@ func CreateGovernanceRoleDefinitionFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetDisplayName gets the displayName property value. The display name of the role definition.
 func (m *GovernanceRoleDefinition) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetExternalId gets the externalId property value. The external id of the role definition.
 func (m *GovernanceRoleDefinition) GetExternalId()(*string) {
-    return m.externalId
+    val, err := m.GetBackingStore().Get("externalId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GovernanceRoleDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -106,19 +108,47 @@ func (m *GovernanceRoleDefinition) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetResource gets the resource property value. Read-only. The associated resource for the role definition.
 func (m *GovernanceRoleDefinition) GetResource()(GovernanceResourceable) {
-    return m.resource
+    val, err := m.GetBackingStore().Get("resource")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(GovernanceResourceable)
+    }
+    return nil
 }
 // GetResourceId gets the resourceId property value. Required. The id of the resource associated with the role definition.
 func (m *GovernanceRoleDefinition) GetResourceId()(*string) {
-    return m.resourceId
+    val, err := m.GetBackingStore().Get("resourceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRoleSetting gets the roleSetting property value. The associated role setting for the role definition.
 func (m *GovernanceRoleDefinition) GetRoleSetting()(GovernanceRoleSettingable) {
-    return m.roleSetting
+    val, err := m.GetBackingStore().Get("roleSetting")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(GovernanceRoleSettingable)
+    }
+    return nil
 }
 // GetTemplateId gets the templateId property value. The templateId property
 func (m *GovernanceRoleDefinition) GetTemplateId()(*string) {
-    return m.templateId
+    val, err := m.GetBackingStore().Get("templateId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GovernanceRoleDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -166,25 +196,60 @@ func (m *GovernanceRoleDefinition) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetDisplayName sets the displayName property value. The display name of the role definition.
 func (m *GovernanceRoleDefinition) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExternalId sets the externalId property value. The external id of the role definition.
 func (m *GovernanceRoleDefinition) SetExternalId(value *string)() {
-    m.externalId = value
+    err := m.GetBackingStore().Set("externalId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResource sets the resource property value. Read-only. The associated resource for the role definition.
 func (m *GovernanceRoleDefinition) SetResource(value GovernanceResourceable)() {
-    m.resource = value
+    err := m.GetBackingStore().Set("resource", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResourceId sets the resourceId property value. Required. The id of the resource associated with the role definition.
 func (m *GovernanceRoleDefinition) SetResourceId(value *string)() {
-    m.resourceId = value
+    err := m.GetBackingStore().Set("resourceId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleSetting sets the roleSetting property value. The associated role setting for the role definition.
 func (m *GovernanceRoleDefinition) SetRoleSetting(value GovernanceRoleSettingable)() {
-    m.roleSetting = value
+    err := m.GetBackingStore().Set("roleSetting", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTemplateId sets the templateId property value. The templateId property
 func (m *GovernanceRoleDefinition) SetTemplateId(value *string)() {
-    m.templateId = value
+    err := m.GetBackingStore().Set("templateId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GovernanceRoleDefinitionable 
+type GovernanceRoleDefinitionable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDisplayName()(*string)
+    GetExternalId()(*string)
+    GetResource()(GovernanceResourceable)
+    GetResourceId()(*string)
+    GetRoleSetting()(GovernanceRoleSettingable)
+    GetTemplateId()(*string)
+    SetDisplayName(value *string)()
+    SetExternalId(value *string)()
+    SetResource(value GovernanceResourceable)()
+    SetResourceId(value *string)()
+    SetRoleSetting(value GovernanceRoleSettingable)()
+    SetTemplateId(value *string)()
 }

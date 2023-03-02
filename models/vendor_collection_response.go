@@ -7,8 +7,6 @@ import (
 // VendorCollectionResponse 
 type VendorCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Vendor_escapedable
 }
 // NewVendorCollectionResponse instantiates a new VendorCollectionResponse and sets the default values.
 func NewVendorCollectionResponse()(*VendorCollectionResponse) {
@@ -25,14 +23,14 @@ func CreateVendorCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330
 func (m *VendorCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateVendor_escapedFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(CreateVendorEscapedFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Vendor_escapedable, len(val))
+            res := make([]VendorEscapedable, len(val))
             for i, v := range val {
-                res[i] = v.(Vendor_escapedable)
+                res[i] = v.(VendorEscapedable)
             }
             m.SetValue(res)
         }
@@ -41,8 +39,15 @@ func (m *VendorCollectionResponse) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetValue gets the value property value. The value property
-func (m *VendorCollectionResponse) GetValue()([]Vendor_escapedable) {
-    return m.value
+func (m *VendorCollectionResponse) GetValue()([]VendorEscapedable) {
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]VendorEscapedable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *VendorCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -63,6 +68,16 @@ func (m *VendorCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f4
     return nil
 }
 // SetValue sets the value property value. The value property
-func (m *VendorCollectionResponse) SetValue(value []Vendor_escapedable)() {
-    m.value = value
+func (m *VendorCollectionResponse) SetValue(value []VendorEscapedable)() {
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// VendorCollectionResponseable 
+type VendorCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]VendorEscapedable)
+    SetValue(value []VendorEscapedable)()
 }

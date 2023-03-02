@@ -7,32 +7,14 @@ import (
 // PrivilegedAccessGroupAssignmentScheduleInstance 
 type PrivilegedAccessGroupAssignmentScheduleInstance struct {
     PrivilegedAccessScheduleInstance
-    // The accessId property
-    accessId *PrivilegedAccessGroupRelationships
-    // The activatedUsing property
-    activatedUsing PrivilegedAccessGroupEligibilityScheduleInstanceable
-    // The assignmentScheduleId property
-    assignmentScheduleId *string
-    // The assignmentType property
-    assignmentType *PrivilegedAccessGroupAssignmentType
-    // The group property
-    group Groupable
-    // The groupId property
-    groupId *string
-    // The memberType property
-    memberType *PrivilegedAccessGroupMemberType
-    // The principal property
-    principal DirectoryObjectable
-    // The principalId property
-    principalId *string
 }
 // NewPrivilegedAccessGroupAssignmentScheduleInstance instantiates a new PrivilegedAccessGroupAssignmentScheduleInstance and sets the default values.
 func NewPrivilegedAccessGroupAssignmentScheduleInstance()(*PrivilegedAccessGroupAssignmentScheduleInstance) {
     m := &PrivilegedAccessGroupAssignmentScheduleInstance{
         PrivilegedAccessScheduleInstance: *NewPrivilegedAccessScheduleInstance(),
     }
-    odataTypeValue := "#microsoft.graph.privilegedAccessGroupAssignmentScheduleInstance";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.privilegedAccessGroupAssignmentScheduleInstance"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreatePrivilegedAccessGroupAssignmentScheduleInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,19 +23,47 @@ func CreatePrivilegedAccessGroupAssignmentScheduleInstanceFromDiscriminatorValue
 }
 // GetAccessId gets the accessId property value. The accessId property
 func (m *PrivilegedAccessGroupAssignmentScheduleInstance) GetAccessId()(*PrivilegedAccessGroupRelationships) {
-    return m.accessId
+    val, err := m.GetBackingStore().Get("accessId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PrivilegedAccessGroupRelationships)
+    }
+    return nil
 }
 // GetActivatedUsing gets the activatedUsing property value. The activatedUsing property
 func (m *PrivilegedAccessGroupAssignmentScheduleInstance) GetActivatedUsing()(PrivilegedAccessGroupEligibilityScheduleInstanceable) {
-    return m.activatedUsing
+    val, err := m.GetBackingStore().Get("activatedUsing")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PrivilegedAccessGroupEligibilityScheduleInstanceable)
+    }
+    return nil
 }
 // GetAssignmentScheduleId gets the assignmentScheduleId property value. The assignmentScheduleId property
 func (m *PrivilegedAccessGroupAssignmentScheduleInstance) GetAssignmentScheduleId()(*string) {
-    return m.assignmentScheduleId
+    val, err := m.GetBackingStore().Get("assignmentScheduleId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAssignmentType gets the assignmentType property value. The assignmentType property
 func (m *PrivilegedAccessGroupAssignmentScheduleInstance) GetAssignmentType()(*PrivilegedAccessGroupAssignmentType) {
-    return m.assignmentType
+    val, err := m.GetBackingStore().Get("assignmentType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PrivilegedAccessGroupAssignmentType)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrivilegedAccessGroupAssignmentScheduleInstance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -152,23 +162,58 @@ func (m *PrivilegedAccessGroupAssignmentScheduleInstance) GetFieldDeserializers(
 }
 // GetGroup gets the group property value. The group property
 func (m *PrivilegedAccessGroupAssignmentScheduleInstance) GetGroup()(Groupable) {
-    return m.group
+    val, err := m.GetBackingStore().Get("group")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Groupable)
+    }
+    return nil
 }
 // GetGroupId gets the groupId property value. The groupId property
 func (m *PrivilegedAccessGroupAssignmentScheduleInstance) GetGroupId()(*string) {
-    return m.groupId
+    val, err := m.GetBackingStore().Get("groupId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetMemberType gets the memberType property value. The memberType property
 func (m *PrivilegedAccessGroupAssignmentScheduleInstance) GetMemberType()(*PrivilegedAccessGroupMemberType) {
-    return m.memberType
+    val, err := m.GetBackingStore().Get("memberType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PrivilegedAccessGroupMemberType)
+    }
+    return nil
 }
 // GetPrincipal gets the principal property value. The principal property
 func (m *PrivilegedAccessGroupAssignmentScheduleInstance) GetPrincipal()(DirectoryObjectable) {
-    return m.principal
+    val, err := m.GetBackingStore().Get("principal")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DirectoryObjectable)
+    }
+    return nil
 }
 // GetPrincipalId gets the principalId property value. The principalId property
 func (m *PrivilegedAccessGroupAssignmentScheduleInstance) GetPrincipalId()(*string) {
-    return m.principalId
+    val, err := m.GetBackingStore().Get("principalId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrivilegedAccessGroupAssignmentScheduleInstance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -237,37 +282,87 @@ func (m *PrivilegedAccessGroupAssignmentScheduleInstance) Serialize(writer i878a
 }
 // SetAccessId sets the accessId property value. The accessId property
 func (m *PrivilegedAccessGroupAssignmentScheduleInstance) SetAccessId(value *PrivilegedAccessGroupRelationships)() {
-    m.accessId = value
+    err := m.GetBackingStore().Set("accessId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetActivatedUsing sets the activatedUsing property value. The activatedUsing property
 func (m *PrivilegedAccessGroupAssignmentScheduleInstance) SetActivatedUsing(value PrivilegedAccessGroupEligibilityScheduleInstanceable)() {
-    m.activatedUsing = value
+    err := m.GetBackingStore().Set("activatedUsing", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAssignmentScheduleId sets the assignmentScheduleId property value. The assignmentScheduleId property
 func (m *PrivilegedAccessGroupAssignmentScheduleInstance) SetAssignmentScheduleId(value *string)() {
-    m.assignmentScheduleId = value
+    err := m.GetBackingStore().Set("assignmentScheduleId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAssignmentType sets the assignmentType property value. The assignmentType property
 func (m *PrivilegedAccessGroupAssignmentScheduleInstance) SetAssignmentType(value *PrivilegedAccessGroupAssignmentType)() {
-    m.assignmentType = value
+    err := m.GetBackingStore().Set("assignmentType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGroup sets the group property value. The group property
 func (m *PrivilegedAccessGroupAssignmentScheduleInstance) SetGroup(value Groupable)() {
-    m.group = value
+    err := m.GetBackingStore().Set("group", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGroupId sets the groupId property value. The groupId property
 func (m *PrivilegedAccessGroupAssignmentScheduleInstance) SetGroupId(value *string)() {
-    m.groupId = value
+    err := m.GetBackingStore().Set("groupId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMemberType sets the memberType property value. The memberType property
 func (m *PrivilegedAccessGroupAssignmentScheduleInstance) SetMemberType(value *PrivilegedAccessGroupMemberType)() {
-    m.memberType = value
+    err := m.GetBackingStore().Set("memberType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPrincipal sets the principal property value. The principal property
 func (m *PrivilegedAccessGroupAssignmentScheduleInstance) SetPrincipal(value DirectoryObjectable)() {
-    m.principal = value
+    err := m.GetBackingStore().Set("principal", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPrincipalId sets the principalId property value. The principalId property
 func (m *PrivilegedAccessGroupAssignmentScheduleInstance) SetPrincipalId(value *string)() {
-    m.principalId = value
+    err := m.GetBackingStore().Set("principalId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrivilegedAccessGroupAssignmentScheduleInstanceable 
+type PrivilegedAccessGroupAssignmentScheduleInstanceable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    PrivilegedAccessScheduleInstanceable
+    GetAccessId()(*PrivilegedAccessGroupRelationships)
+    GetActivatedUsing()(PrivilegedAccessGroupEligibilityScheduleInstanceable)
+    GetAssignmentScheduleId()(*string)
+    GetAssignmentType()(*PrivilegedAccessGroupAssignmentType)
+    GetGroup()(Groupable)
+    GetGroupId()(*string)
+    GetMemberType()(*PrivilegedAccessGroupMemberType)
+    GetPrincipal()(DirectoryObjectable)
+    GetPrincipalId()(*string)
+    SetAccessId(value *PrivilegedAccessGroupRelationships)()
+    SetActivatedUsing(value PrivilegedAccessGroupEligibilityScheduleInstanceable)()
+    SetAssignmentScheduleId(value *string)()
+    SetAssignmentType(value *PrivilegedAccessGroupAssignmentType)()
+    SetGroup(value Groupable)()
+    SetGroupId(value *string)()
+    SetMemberType(value *PrivilegedAccessGroupMemberType)()
+    SetPrincipal(value DirectoryObjectable)()
+    SetPrincipalId(value *string)()
 }

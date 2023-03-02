@@ -55,8 +55,8 @@ func NewLifecycleWorkflowsCustomTaskExtensionsCustomTaskExtensionItemRequestBuil
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewLifecycleWorkflowsCustomTaskExtensionsCustomTaskExtensionItemRequestBuilder instantiates a new CustomTaskExtensionItemRequestBuilder and sets the default values.
@@ -67,7 +67,7 @@ func NewLifecycleWorkflowsCustomTaskExtensionsCustomTaskExtensionItemRequestBuil
 }
 // CreatedBy provides operations to manage the createdBy property of the microsoft.graph.identityGovernance.customTaskExtension entity.
 func (m *LifecycleWorkflowsCustomTaskExtensionsCustomTaskExtensionItemRequestBuilder) CreatedBy()(*LifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilder) {
-    return NewLifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewLifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property customTaskExtensions for identityGovernance
 func (m *LifecycleWorkflowsCustomTaskExtensionsCustomTaskExtensionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *LifecycleWorkflowsCustomTaskExtensionsCustomTaskExtensionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -106,7 +106,7 @@ func (m *LifecycleWorkflowsCustomTaskExtensionsCustomTaskExtensionItemRequestBui
 }
 // LastModifiedBy provides operations to manage the lastModifiedBy property of the microsoft.graph.identityGovernance.customTaskExtension entity.
 func (m *LifecycleWorkflowsCustomTaskExtensionsCustomTaskExtensionItemRequestBuilder) LastModifiedBy()(*LifecycleWorkflowsCustomTaskExtensionsItemLastModifiedByRequestBuilder) {
-    return NewLifecycleWorkflowsCustomTaskExtensionsItemLastModifiedByRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewLifecycleWorkflowsCustomTaskExtensionsItemLastModifiedByRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property customTaskExtensions in identityGovernance
 func (m *LifecycleWorkflowsCustomTaskExtensionsCustomTaskExtensionItemRequestBuilder) Patch(ctx context.Context, body i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.CustomTaskExtensionable, requestConfiguration *LifecycleWorkflowsCustomTaskExtensionsCustomTaskExtensionItemRequestBuilderPatchRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.CustomTaskExtensionable, error) {
@@ -162,7 +162,10 @@ func (m *LifecycleWorkflowsCustomTaskExtensionsCustomTaskExtensionItemRequestBui
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

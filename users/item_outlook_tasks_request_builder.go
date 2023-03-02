@@ -56,8 +56,8 @@ func NewItemOutlookTasksRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemOutlookTasksRequestBuilder instantiates a new TasksRequestBuilder and sets the default values.
@@ -68,7 +68,7 @@ func NewItemOutlookTasksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemOutlookTasksRequestBuilder) Count()(*ItemOutlookTasksCountRequestBuilder) {
-    return NewItemOutlookTasksCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOutlookTasksCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get all the Outlook tasks in the user's mailbox. By default, this operation (and the POST, PATCH, and complete task operations) returns date-related properties in UTC.You can use the `Prefer: outlook.timezone` header to have all the date-related properties in the response represented in a time zonedifferent than UTC. See an example for getting a single task. You can apply the header similarly to get multiple tasks.
 // [Find more info here]
@@ -137,7 +137,10 @@ func (m *ItemOutlookTasksRequestBuilder) ToPostRequestInformation(ctx context.Co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

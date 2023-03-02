@@ -7,18 +7,14 @@ import (
 // ExternalIdentitiesPolicy 
 type ExternalIdentitiesPolicy struct {
     PolicyBase
-    // Reserved for future use.
-    allowDeletedIdentitiesDataRemoval *bool
-    // Defines whether external users can leave the guest tenant. If set to false, self-service controls are disabled, and the admin of the guest tenant must manually remove the external user from the guest tenant. When the external user leaves the tenant, their data in the guest tenant is first soft-deleted then permanently deleted in 30 days.
-    allowExternalIdentitiesToLeave *bool
 }
 // NewExternalIdentitiesPolicy instantiates a new ExternalIdentitiesPolicy and sets the default values.
 func NewExternalIdentitiesPolicy()(*ExternalIdentitiesPolicy) {
     m := &ExternalIdentitiesPolicy{
         PolicyBase: *NewPolicyBase(),
     }
-    odataTypeValue := "#microsoft.graph.externalIdentitiesPolicy";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.externalIdentitiesPolicy"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateExternalIdentitiesPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,11 +23,25 @@ func CreateExternalIdentitiesPolicyFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAllowDeletedIdentitiesDataRemoval gets the allowDeletedIdentitiesDataRemoval property value. Reserved for future use.
 func (m *ExternalIdentitiesPolicy) GetAllowDeletedIdentitiesDataRemoval()(*bool) {
-    return m.allowDeletedIdentitiesDataRemoval
+    val, err := m.GetBackingStore().Get("allowDeletedIdentitiesDataRemoval")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetAllowExternalIdentitiesToLeave gets the allowExternalIdentitiesToLeave property value. Defines whether external users can leave the guest tenant. If set to false, self-service controls are disabled, and the admin of the guest tenant must manually remove the external user from the guest tenant. When the external user leaves the tenant, their data in the guest tenant is first soft-deleted then permanently deleted in 30 days.
 func (m *ExternalIdentitiesPolicy) GetAllowExternalIdentitiesToLeave()(*bool) {
-    return m.allowExternalIdentitiesToLeave
+    val, err := m.GetBackingStore().Get("allowExternalIdentitiesToLeave")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExternalIdentitiesPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,9 +90,24 @@ func (m *ExternalIdentitiesPolicy) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAllowDeletedIdentitiesDataRemoval sets the allowDeletedIdentitiesDataRemoval property value. Reserved for future use.
 func (m *ExternalIdentitiesPolicy) SetAllowDeletedIdentitiesDataRemoval(value *bool)() {
-    m.allowDeletedIdentitiesDataRemoval = value
+    err := m.GetBackingStore().Set("allowDeletedIdentitiesDataRemoval", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAllowExternalIdentitiesToLeave sets the allowExternalIdentitiesToLeave property value. Defines whether external users can leave the guest tenant. If set to false, self-service controls are disabled, and the admin of the guest tenant must manually remove the external user from the guest tenant. When the external user leaves the tenant, their data in the guest tenant is first soft-deleted then permanently deleted in 30 days.
 func (m *ExternalIdentitiesPolicy) SetAllowExternalIdentitiesToLeave(value *bool)() {
-    m.allowExternalIdentitiesToLeave = value
+    err := m.GetBackingStore().Set("allowExternalIdentitiesToLeave", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ExternalIdentitiesPolicyable 
+type ExternalIdentitiesPolicyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    PolicyBaseable
+    GetAllowDeletedIdentitiesDataRemoval()(*bool)
+    GetAllowExternalIdentitiesToLeave()(*bool)
+    SetAllowDeletedIdentitiesDataRemoval(value *bool)()
+    SetAllowExternalIdentitiesToLeave(value *bool)()
 }

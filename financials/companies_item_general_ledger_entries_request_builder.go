@@ -53,8 +53,8 @@ func NewCompaniesItemGeneralLedgerEntriesRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemGeneralLedgerEntriesRequestBuilder instantiates a new GeneralLedgerEntriesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewCompaniesItemGeneralLedgerEntriesRequestBuilder(rawUrl string, requestAd
 }
 // Count provides operations to count the resources in the collection.
 func (m *CompaniesItemGeneralLedgerEntriesRequestBuilder) Count()(*CompaniesItemGeneralLedgerEntriesCountRequestBuilder) {
-    return NewCompaniesItemGeneralLedgerEntriesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemGeneralLedgerEntriesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get generalLedgerEntries from financials
 func (m *CompaniesItemGeneralLedgerEntriesRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemGeneralLedgerEntriesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GeneralLedgerEntryCollectionResponseable, error) {

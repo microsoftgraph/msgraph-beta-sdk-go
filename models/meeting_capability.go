@@ -2,26 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // MeetingCapability 
 type MeetingCapability struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Indicates whether anonymous users dialout is allowed in a meeting.
-    allowAnonymousUsersToDialOut *bool
-    // Indicates whether anonymous users are allowed to start a meeting.
-    allowAnonymousUsersToStartMeeting *bool
-    // The autoAdmittedUsers property
-    autoAdmittedUsers *AutoAdmittedUsersType
-    // The OdataType property
-    odataType *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewMeetingCapability instantiates a new meetingCapability and sets the default values.
 func NewMeetingCapability()(*MeetingCapability) {
     m := &MeetingCapability{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMeetingCapabilityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,19 +24,52 @@ func CreateMeetingCapabilityFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MeetingCapability) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAllowAnonymousUsersToDialOut gets the allowAnonymousUsersToDialOut property value. Indicates whether anonymous users dialout is allowed in a meeting.
 func (m *MeetingCapability) GetAllowAnonymousUsersToDialOut()(*bool) {
-    return m.allowAnonymousUsersToDialOut
+    val, err := m.GetBackingStore().Get("allowAnonymousUsersToDialOut")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetAllowAnonymousUsersToStartMeeting gets the allowAnonymousUsersToStartMeeting property value. Indicates whether anonymous users are allowed to start a meeting.
 func (m *MeetingCapability) GetAllowAnonymousUsersToStartMeeting()(*bool) {
-    return m.allowAnonymousUsersToStartMeeting
+    val, err := m.GetBackingStore().Get("allowAnonymousUsersToStartMeeting")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetAutoAdmittedUsers gets the autoAdmittedUsers property value. The autoAdmittedUsers property
 func (m *MeetingCapability) GetAutoAdmittedUsers()(*AutoAdmittedUsersType) {
-    return m.autoAdmittedUsers
+    val, err := m.GetBackingStore().Get("autoAdmittedUsers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AutoAdmittedUsersType)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *MeetingCapability) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MeetingCapability) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -91,7 +118,14 @@ func (m *MeetingCapability) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MeetingCapability) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MeetingCapability) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -130,21 +164,56 @@ func (m *MeetingCapability) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MeetingCapability) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAllowAnonymousUsersToDialOut sets the allowAnonymousUsersToDialOut property value. Indicates whether anonymous users dialout is allowed in a meeting.
 func (m *MeetingCapability) SetAllowAnonymousUsersToDialOut(value *bool)() {
-    m.allowAnonymousUsersToDialOut = value
+    err := m.GetBackingStore().Set("allowAnonymousUsersToDialOut", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAllowAnonymousUsersToStartMeeting sets the allowAnonymousUsersToStartMeeting property value. Indicates whether anonymous users are allowed to start a meeting.
 func (m *MeetingCapability) SetAllowAnonymousUsersToStartMeeting(value *bool)() {
-    m.allowAnonymousUsersToStartMeeting = value
+    err := m.GetBackingStore().Set("allowAnonymousUsersToStartMeeting", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAutoAdmittedUsers sets the autoAdmittedUsers property value. The autoAdmittedUsers property
 func (m *MeetingCapability) SetAutoAdmittedUsers(value *AutoAdmittedUsersType)() {
-    m.autoAdmittedUsers = value
+    err := m.GetBackingStore().Set("autoAdmittedUsers", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *MeetingCapability) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MeetingCapability) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MeetingCapabilityable 
+type MeetingCapabilityable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllowAnonymousUsersToDialOut()(*bool)
+    GetAllowAnonymousUsersToStartMeeting()(*bool)
+    GetAutoAdmittedUsers()(*AutoAdmittedUsersType)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetOdataType()(*string)
+    SetAllowAnonymousUsersToDialOut(value *bool)()
+    SetAllowAnonymousUsersToStartMeeting(value *bool)()
+    SetAutoAdmittedUsers(value *AutoAdmittedUsersType)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetOdataType(value *string)()
 }

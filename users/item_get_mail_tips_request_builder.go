@@ -26,13 +26,13 @@ type ItemGetMailTipsRequestBuilderPostRequestConfiguration struct {
 func NewItemGetMailTipsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGetMailTipsRequestBuilder) {
     m := &ItemGetMailTipsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/microsoft.graph.getMailTips";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/getMailTips";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemGetMailTipsRequestBuilder instantiates a new GetMailTipsRequestBuilder and sets the default values.
@@ -70,7 +70,10 @@ func (m *ItemGetMailTipsRequestBuilder) ToPostRequestInformation(ctx context.Con
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

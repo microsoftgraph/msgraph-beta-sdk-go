@@ -2,40 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ItemActionSet 
 type ItemActionSet struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // A comment was added to the item.
-    comment CommentActionable
-    // An item was created.
-    create CreateActionable
-    // An item was deleted.
-    delete DeleteActionable
-    // An item was edited.
-    edit EditActionable
-    // A user was mentioned in the item.
-    mention MentionActionable
-    // An item was moved.
-    move MoveActionable
-    // The OdataType property
-    odataType *string
-    // An item was renamed.
-    rename RenameActionable
-    // An item was restored.
-    restore RestoreActionable
-    // An item was shared.
-    share ShareActionable
-    // An item was versioned.
-    version VersionActionable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewItemActionSet instantiates a new itemActionSet and sets the default values.
 func NewItemActionSet()(*ItemActionSet) {
     m := &ItemActionSet{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateItemActionSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,23 +24,63 @@ func CreateItemActionSetFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemActionSet) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ItemActionSet) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetComment gets the comment property value. A comment was added to the item.
 func (m *ItemActionSet) GetComment()(CommentActionable) {
-    return m.comment
+    val, err := m.GetBackingStore().Get("comment")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CommentActionable)
+    }
+    return nil
 }
 // GetCreate gets the create property value. An item was created.
 func (m *ItemActionSet) GetCreate()(CreateActionable) {
-    return m.create
+    val, err := m.GetBackingStore().Get("create")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CreateActionable)
+    }
+    return nil
 }
 // GetDelete gets the delete property value. An item was deleted.
 func (m *ItemActionSet) GetDelete()(DeleteActionable) {
-    return m.delete
+    val, err := m.GetBackingStore().Get("delete")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeleteActionable)
+    }
+    return nil
 }
 // GetEdit gets the edit property value. An item was edited.
 func (m *ItemActionSet) GetEdit()(EditActionable) {
-    return m.edit
+    val, err := m.GetBackingStore().Get("edit")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EditActionable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemActionSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -179,31 +199,80 @@ func (m *ItemActionSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetMention gets the mention property value. A user was mentioned in the item.
 func (m *ItemActionSet) GetMention()(MentionActionable) {
-    return m.mention
+    val, err := m.GetBackingStore().Get("mention")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(MentionActionable)
+    }
+    return nil
 }
 // GetMove gets the move property value. An item was moved.
 func (m *ItemActionSet) GetMove()(MoveActionable) {
-    return m.move
+    val, err := m.GetBackingStore().Get("move")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(MoveActionable)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ItemActionSet) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRename gets the rename property value. An item was renamed.
 func (m *ItemActionSet) GetRename()(RenameActionable) {
-    return m.rename
+    val, err := m.GetBackingStore().Get("rename")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(RenameActionable)
+    }
+    return nil
 }
 // GetRestore gets the restore property value. An item was restored.
 func (m *ItemActionSet) GetRestore()(RestoreActionable) {
-    return m.restore
+    val, err := m.GetBackingStore().Get("restore")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(RestoreActionable)
+    }
+    return nil
 }
 // GetShare gets the share property value. An item was shared.
 func (m *ItemActionSet) GetShare()(ShareActionable) {
-    return m.share
+    val, err := m.GetBackingStore().Get("share")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ShareActionable)
+    }
+    return nil
 }
 // GetVersion gets the version property value. An item was versioned.
 func (m *ItemActionSet) GetVersion()(VersionActionable) {
-    return m.version
+    val, err := m.GetBackingStore().Get("version")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(VersionActionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemActionSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -283,49 +352,119 @@ func (m *ItemActionSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemActionSet) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ItemActionSet) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetComment sets the comment property value. A comment was added to the item.
 func (m *ItemActionSet) SetComment(value CommentActionable)() {
-    m.comment = value
+    err := m.GetBackingStore().Set("comment", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreate sets the create property value. An item was created.
 func (m *ItemActionSet) SetCreate(value CreateActionable)() {
-    m.create = value
+    err := m.GetBackingStore().Set("create", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDelete sets the delete property value. An item was deleted.
 func (m *ItemActionSet) SetDelete(value DeleteActionable)() {
-    m.delete = value
+    err := m.GetBackingStore().Set("delete", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdit sets the edit property value. An item was edited.
 func (m *ItemActionSet) SetEdit(value EditActionable)() {
-    m.edit = value
+    err := m.GetBackingStore().Set("edit", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMention sets the mention property value. A user was mentioned in the item.
 func (m *ItemActionSet) SetMention(value MentionActionable)() {
-    m.mention = value
+    err := m.GetBackingStore().Set("mention", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMove sets the move property value. An item was moved.
 func (m *ItemActionSet) SetMove(value MoveActionable)() {
-    m.move = value
+    err := m.GetBackingStore().Set("move", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ItemActionSet) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRename sets the rename property value. An item was renamed.
 func (m *ItemActionSet) SetRename(value RenameActionable)() {
-    m.rename = value
+    err := m.GetBackingStore().Set("rename", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRestore sets the restore property value. An item was restored.
 func (m *ItemActionSet) SetRestore(value RestoreActionable)() {
-    m.restore = value
+    err := m.GetBackingStore().Set("restore", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetShare sets the share property value. An item was shared.
 func (m *ItemActionSet) SetShare(value ShareActionable)() {
-    m.share = value
+    err := m.GetBackingStore().Set("share", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVersion sets the version property value. An item was versioned.
 func (m *ItemActionSet) SetVersion(value VersionActionable)() {
-    m.version = value
+    err := m.GetBackingStore().Set("version", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemActionSetable 
+type ItemActionSetable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetComment()(CommentActionable)
+    GetCreate()(CreateActionable)
+    GetDelete()(DeleteActionable)
+    GetEdit()(EditActionable)
+    GetMention()(MentionActionable)
+    GetMove()(MoveActionable)
+    GetOdataType()(*string)
+    GetRename()(RenameActionable)
+    GetRestore()(RestoreActionable)
+    GetShare()(ShareActionable)
+    GetVersion()(VersionActionable)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetComment(value CommentActionable)()
+    SetCreate(value CreateActionable)()
+    SetDelete(value DeleteActionable)()
+    SetEdit(value EditActionable)()
+    SetMention(value MentionActionable)()
+    SetMove(value MoveActionable)()
+    SetOdataType(value *string)()
+    SetRename(value RenameActionable)()
+    SetRestore(value RestoreActionable)()
+    SetShare(value ShareActionable)()
+    SetVersion(value VersionActionable)()
 }

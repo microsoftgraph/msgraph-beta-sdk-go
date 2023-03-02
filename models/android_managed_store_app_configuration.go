@@ -7,26 +7,14 @@ import (
 // AndroidManagedStoreAppConfiguration 
 type AndroidManagedStoreAppConfiguration struct {
     ManagedDeviceMobileAppConfiguration
-    // Whether or not this AppConfig is an OEMConfig policy.
-    appSupportsOemConfig *bool
-    // Setting to specify whether to allow ConnectedApps experience for this app.
-    connectedAppsEnabled *bool
-    // Android Enterprise app configuration package id.
-    packageId *string
-    // Android Enterprise app configuration JSON payload.
-    payloadJson *string
-    // List of Android app permissions and corresponding permission actions.
-    permissionActions []AndroidPermissionActionable
-    // Android profile applicability
-    profileApplicability *AndroidProfileApplicability
 }
 // NewAndroidManagedStoreAppConfiguration instantiates a new AndroidManagedStoreAppConfiguration and sets the default values.
 func NewAndroidManagedStoreAppConfiguration()(*AndroidManagedStoreAppConfiguration) {
     m := &AndroidManagedStoreAppConfiguration{
         ManagedDeviceMobileAppConfiguration: *NewManagedDeviceMobileAppConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.androidManagedStoreAppConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidManagedStoreAppConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidManagedStoreAppConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,11 +23,25 @@ func CreateAndroidManagedStoreAppConfigurationFromDiscriminatorValue(parseNode i
 }
 // GetAppSupportsOemConfig gets the appSupportsOemConfig property value. Whether or not this AppConfig is an OEMConfig policy.
 func (m *AndroidManagedStoreAppConfiguration) GetAppSupportsOemConfig()(*bool) {
-    return m.appSupportsOemConfig
+    val, err := m.GetBackingStore().Get("appSupportsOemConfig")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetConnectedAppsEnabled gets the connectedAppsEnabled property value. Setting to specify whether to allow ConnectedApps experience for this app.
 func (m *AndroidManagedStoreAppConfiguration) GetConnectedAppsEnabled()(*bool) {
-    return m.connectedAppsEnabled
+    val, err := m.GetBackingStore().Get("connectedAppsEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidManagedStoreAppConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -112,19 +114,47 @@ func (m *AndroidManagedStoreAppConfiguration) GetFieldDeserializers()(map[string
 }
 // GetPackageId gets the packageId property value. Android Enterprise app configuration package id.
 func (m *AndroidManagedStoreAppConfiguration) GetPackageId()(*string) {
-    return m.packageId
+    val, err := m.GetBackingStore().Get("packageId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPayloadJson gets the payloadJson property value. Android Enterprise app configuration JSON payload.
 func (m *AndroidManagedStoreAppConfiguration) GetPayloadJson()(*string) {
-    return m.payloadJson
+    val, err := m.GetBackingStore().Get("payloadJson")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPermissionActions gets the permissionActions property value. List of Android app permissions and corresponding permission actions.
 func (m *AndroidManagedStoreAppConfiguration) GetPermissionActions()([]AndroidPermissionActionable) {
-    return m.permissionActions
+    val, err := m.GetBackingStore().Get("permissionActions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidPermissionActionable)
+    }
+    return nil
 }
 // GetProfileApplicability gets the profileApplicability property value. Android profile applicability
 func (m *AndroidManagedStoreAppConfiguration) GetProfileApplicability()(*AndroidProfileApplicability) {
-    return m.profileApplicability
+    val, err := m.GetBackingStore().Get("profileApplicability")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AndroidProfileApplicability)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidManagedStoreAppConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -177,25 +207,60 @@ func (m *AndroidManagedStoreAppConfiguration) Serialize(writer i878a80d2330e89d2
 }
 // SetAppSupportsOemConfig sets the appSupportsOemConfig property value. Whether or not this AppConfig is an OEMConfig policy.
 func (m *AndroidManagedStoreAppConfiguration) SetAppSupportsOemConfig(value *bool)() {
-    m.appSupportsOemConfig = value
+    err := m.GetBackingStore().Set("appSupportsOemConfig", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConnectedAppsEnabled sets the connectedAppsEnabled property value. Setting to specify whether to allow ConnectedApps experience for this app.
 func (m *AndroidManagedStoreAppConfiguration) SetConnectedAppsEnabled(value *bool)() {
-    m.connectedAppsEnabled = value
+    err := m.GetBackingStore().Set("connectedAppsEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPackageId sets the packageId property value. Android Enterprise app configuration package id.
 func (m *AndroidManagedStoreAppConfiguration) SetPackageId(value *string)() {
-    m.packageId = value
+    err := m.GetBackingStore().Set("packageId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPayloadJson sets the payloadJson property value. Android Enterprise app configuration JSON payload.
 func (m *AndroidManagedStoreAppConfiguration) SetPayloadJson(value *string)() {
-    m.payloadJson = value
+    err := m.GetBackingStore().Set("payloadJson", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPermissionActions sets the permissionActions property value. List of Android app permissions and corresponding permission actions.
 func (m *AndroidManagedStoreAppConfiguration) SetPermissionActions(value []AndroidPermissionActionable)() {
-    m.permissionActions = value
+    err := m.GetBackingStore().Set("permissionActions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProfileApplicability sets the profileApplicability property value. Android profile applicability
 func (m *AndroidManagedStoreAppConfiguration) SetProfileApplicability(value *AndroidProfileApplicability)() {
-    m.profileApplicability = value
+    err := m.GetBackingStore().Set("profileApplicability", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidManagedStoreAppConfigurationable 
+type AndroidManagedStoreAppConfigurationable interface {
+    ManagedDeviceMobileAppConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppSupportsOemConfig()(*bool)
+    GetConnectedAppsEnabled()(*bool)
+    GetPackageId()(*string)
+    GetPayloadJson()(*string)
+    GetPermissionActions()([]AndroidPermissionActionable)
+    GetProfileApplicability()(*AndroidProfileApplicability)
+    SetAppSupportsOemConfig(value *bool)()
+    SetConnectedAppsEnabled(value *bool)()
+    SetPackageId(value *string)()
+    SetPayloadJson(value *string)()
+    SetPermissionActions(value []AndroidPermissionActionable)()
+    SetProfileApplicability(value *AndroidProfileApplicability)()
 }

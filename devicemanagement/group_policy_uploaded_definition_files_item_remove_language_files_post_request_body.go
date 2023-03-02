@@ -3,20 +3,20 @@ package devicemanagement
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // GroupPolicyUploadedDefinitionFilesItemRemoveLanguageFilesPostRequestBody 
 type GroupPolicyUploadedDefinitionFilesItemRemoveLanguageFilesPostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The groupPolicyUploadedLanguageFiles property
-    groupPolicyUploadedLanguageFiles []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyUploadedLanguageFileable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewGroupPolicyUploadedDefinitionFilesItemRemoveLanguageFilesPostRequestBody instantiates a new GroupPolicyUploadedDefinitionFilesItemRemoveLanguageFilesPostRequestBody and sets the default values.
 func NewGroupPolicyUploadedDefinitionFilesItemRemoveLanguageFilesPostRequestBody()(*GroupPolicyUploadedDefinitionFilesItemRemoveLanguageFilesPostRequestBody) {
     m := &GroupPolicyUploadedDefinitionFilesItemRemoveLanguageFilesPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateGroupPolicyUploadedDefinitionFilesItemRemoveLanguageFilesPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,19 @@ func CreateGroupPolicyUploadedDefinitionFilesItemRemoveLanguageFilesPostRequestB
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GroupPolicyUploadedDefinitionFilesItemRemoveLanguageFilesPostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *GroupPolicyUploadedDefinitionFilesItemRemoveLanguageFilesPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyUploadedDefinitionFilesItemRemoveLanguageFilesPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -48,7 +60,14 @@ func (m *GroupPolicyUploadedDefinitionFilesItemRemoveLanguageFilesPostRequestBod
 }
 // GetGroupPolicyUploadedLanguageFiles gets the groupPolicyUploadedLanguageFiles property value. The groupPolicyUploadedLanguageFiles property
 func (m *GroupPolicyUploadedDefinitionFilesItemRemoveLanguageFilesPostRequestBody) GetGroupPolicyUploadedLanguageFiles()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyUploadedLanguageFileable) {
-    return m.groupPolicyUploadedLanguageFiles
+    val, err := m.GetBackingStore().Get("groupPolicyUploadedLanguageFiles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyUploadedLanguageFileable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyUploadedDefinitionFilesItemRemoveLanguageFilesPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -72,9 +91,29 @@ func (m *GroupPolicyUploadedDefinitionFilesItemRemoveLanguageFilesPostRequestBod
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GroupPolicyUploadedDefinitionFilesItemRemoveLanguageFilesPostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *GroupPolicyUploadedDefinitionFilesItemRemoveLanguageFilesPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetGroupPolicyUploadedLanguageFiles sets the groupPolicyUploadedLanguageFiles property value. The groupPolicyUploadedLanguageFiles property
 func (m *GroupPolicyUploadedDefinitionFilesItemRemoveLanguageFilesPostRequestBody) SetGroupPolicyUploadedLanguageFiles(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyUploadedLanguageFileable)() {
-    m.groupPolicyUploadedLanguageFiles = value
+    err := m.GetBackingStore().Set("groupPolicyUploadedLanguageFiles", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GroupPolicyUploadedDefinitionFilesItemRemoveLanguageFilesPostRequestBodyable 
+type GroupPolicyUploadedDefinitionFilesItemRemoveLanguageFilesPostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetGroupPolicyUploadedLanguageFiles()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyUploadedLanguageFileable)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetGroupPolicyUploadedLanguageFiles(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyUploadedLanguageFileable)()
 }

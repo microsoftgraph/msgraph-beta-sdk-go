@@ -8,16 +8,6 @@ import (
 // TenantGroup 
 type TenantGroup struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // A flag indicating whether all managed tenant are included in the tenant group. Required. Read-only.
-    allTenantsIncluded *bool
-    // The display name for the tenant group. Optional. Read-only.
-    displayName *string
-    // The collection of management action associated with the tenant group. Optional. Read-only.
-    managementActions []ManagementActionInfoable
-    // The collection of management intents associated with the tenant group. Optional. Read-only.
-    managementIntents []ManagementIntentInfoable
-    // The collection of managed tenant identifiers include in the tenant group. Optional. Read-only.
-    tenantIds []string
 }
 // NewTenantGroup instantiates a new tenantGroup and sets the default values.
 func NewTenantGroup()(*TenantGroup) {
@@ -32,11 +22,25 @@ func CreateTenantGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAllTenantsIncluded gets the allTenantsIncluded property value. A flag indicating whether all managed tenant are included in the tenant group. Required. Read-only.
 func (m *TenantGroup) GetAllTenantsIncluded()(*bool) {
-    return m.allTenantsIncluded
+    val, err := m.GetBackingStore().Get("allTenantsIncluded")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The display name for the tenant group. Optional. Read-only.
 func (m *TenantGroup) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TenantGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -107,15 +111,36 @@ func (m *TenantGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetManagementActions gets the managementActions property value. The collection of management action associated with the tenant group. Optional. Read-only.
 func (m *TenantGroup) GetManagementActions()([]ManagementActionInfoable) {
-    return m.managementActions
+    val, err := m.GetBackingStore().Get("managementActions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagementActionInfoable)
+    }
+    return nil
 }
 // GetManagementIntents gets the managementIntents property value. The collection of management intents associated with the tenant group. Optional. Read-only.
 func (m *TenantGroup) GetManagementIntents()([]ManagementIntentInfoable) {
-    return m.managementIntents
+    val, err := m.GetBackingStore().Get("managementIntents")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagementIntentInfoable)
+    }
+    return nil
 }
 // GetTenantIds gets the tenantIds property value. The collection of managed tenant identifiers include in the tenant group. Optional. Read-only.
 func (m *TenantGroup) GetTenantIds()([]string) {
-    return m.tenantIds
+    val, err := m.GetBackingStore().Get("tenantIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TenantGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -165,21 +190,51 @@ func (m *TenantGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAllTenantsIncluded sets the allTenantsIncluded property value. A flag indicating whether all managed tenant are included in the tenant group. Required. Read-only.
 func (m *TenantGroup) SetAllTenantsIncluded(value *bool)() {
-    m.allTenantsIncluded = value
+    err := m.GetBackingStore().Set("allTenantsIncluded", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The display name for the tenant group. Optional. Read-only.
 func (m *TenantGroup) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagementActions sets the managementActions property value. The collection of management action associated with the tenant group. Optional. Read-only.
 func (m *TenantGroup) SetManagementActions(value []ManagementActionInfoable)() {
-    m.managementActions = value
+    err := m.GetBackingStore().Set("managementActions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagementIntents sets the managementIntents property value. The collection of management intents associated with the tenant group. Optional. Read-only.
 func (m *TenantGroup) SetManagementIntents(value []ManagementIntentInfoable)() {
-    m.managementIntents = value
+    err := m.GetBackingStore().Set("managementIntents", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantIds sets the tenantIds property value. The collection of managed tenant identifiers include in the tenant group. Optional. Read-only.
 func (m *TenantGroup) SetTenantIds(value []string)() {
-    m.tenantIds = value
+    err := m.GetBackingStore().Set("tenantIds", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TenantGroupable 
+type TenantGroupable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllTenantsIncluded()(*bool)
+    GetDisplayName()(*string)
+    GetManagementActions()([]ManagementActionInfoable)
+    GetManagementIntents()([]ManagementIntentInfoable)
+    GetTenantIds()([]string)
+    SetAllTenantsIncluded(value *bool)()
+    SetDisplayName(value *string)()
+    SetManagementActions(value []ManagementActionInfoable)()
+    SetManagementIntents(value []ManagementIntentInfoable)()
+    SetTenantIds(value []string)()
 }

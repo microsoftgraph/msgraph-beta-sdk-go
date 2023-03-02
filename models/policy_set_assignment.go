@@ -8,10 +8,6 @@ import (
 // PolicySetAssignment a class containing the properties used for PolicySet Assignment.
 type PolicySetAssignment struct {
     Entity
-    // Last modified time of the PolicySetAssignment.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The target group of PolicySetAssignment
-    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewPolicySetAssignment instantiates a new policySetAssignment and sets the default values.
 func NewPolicySetAssignment()(*PolicySetAssignment) {
@@ -51,11 +47,25 @@ func (m *PolicySetAssignment) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified time of the PolicySetAssignment.
 func (m *PolicySetAssignment) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetTarget gets the target property value. The target group of PolicySetAssignment
 func (m *PolicySetAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
-    return m.target
+    val, err := m.GetBackingStore().Get("target")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceAndAppManagementAssignmentTargetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PolicySetAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -79,9 +89,24 @@ func (m *PolicySetAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Last modified time of the PolicySetAssignment.
 func (m *PolicySetAssignment) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTarget sets the target property value. The target group of PolicySetAssignment
 func (m *PolicySetAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
-    m.target = value
+    err := m.GetBackingStore().Set("target", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PolicySetAssignmentable 
+type PolicySetAssignmentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetTarget()(DeviceAndAppManagementAssignmentTargetable)
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetTarget(value DeviceAndAppManagementAssignmentTargetable)()
 }

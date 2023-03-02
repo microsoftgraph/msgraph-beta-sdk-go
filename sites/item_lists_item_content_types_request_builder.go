@@ -53,11 +53,11 @@ type ItemListsItemContentTypesRequestBuilderPostRequestConfiguration struct {
 }
 // AddCopy provides operations to call the addCopy method.
 func (m *ItemListsItemContentTypesRequestBuilder) AddCopy()(*ItemListsItemContentTypesAddCopyRequestBuilder) {
-    return NewItemListsItemContentTypesAddCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemListsItemContentTypesAddCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AddCopyFromContentTypeHub provides operations to call the addCopyFromContentTypeHub method.
 func (m *ItemListsItemContentTypesRequestBuilder) AddCopyFromContentTypeHub()(*ItemListsItemContentTypesAddCopyFromContentTypeHubRequestBuilder) {
-    return NewItemListsItemContentTypesAddCopyFromContentTypeHubRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemListsItemContentTypesAddCopyFromContentTypeHubRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewItemListsItemContentTypesRequestBuilderInternal instantiates a new ContentTypesRequestBuilder and sets the default values.
 func NewItemListsItemContentTypesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsItemContentTypesRequestBuilder) {
@@ -68,8 +68,8 @@ func NewItemListsItemContentTypesRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemListsItemContentTypesRequestBuilder instantiates a new ContentTypesRequestBuilder and sets the default values.
@@ -80,7 +80,7 @@ func NewItemListsItemContentTypesRequestBuilder(rawUrl string, requestAdapter i2
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemListsItemContentTypesRequestBuilder) Count()(*ItemListsItemContentTypesCountRequestBuilder) {
-    return NewItemListsItemContentTypesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemListsItemContentTypesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the collection of [contentType][contentType] resources in a [list][].
 // [Find more info here]
@@ -106,7 +106,7 @@ func (m *ItemListsItemContentTypesRequestBuilder) Get(ctx context.Context, reque
 }
 // GetCompatibleHubContentTypes provides operations to call the getCompatibleHubContentTypes method.
 func (m *ItemListsItemContentTypesRequestBuilder) GetCompatibleHubContentTypes()(*ItemListsItemContentTypesGetCompatibleHubContentTypesRequestBuilder) {
-    return NewItemListsItemContentTypesGetCompatibleHubContentTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemListsItemContentTypesGetCompatibleHubContentTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to contentTypes for sites
 func (m *ItemListsItemContentTypesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentTypeable, requestConfiguration *ItemListsItemContentTypesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentTypeable, error) {
@@ -150,7 +150,10 @@ func (m *ItemListsItemContentTypesRequestBuilder) ToPostRequestInformation(ctx c
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

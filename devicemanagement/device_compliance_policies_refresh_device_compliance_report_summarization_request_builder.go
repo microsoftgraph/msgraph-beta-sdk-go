@@ -26,13 +26,13 @@ type DeviceCompliancePoliciesRefreshDeviceComplianceReportSummarizationRequestBu
 func NewDeviceCompliancePoliciesRefreshDeviceComplianceReportSummarizationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceCompliancePoliciesRefreshDeviceComplianceReportSummarizationRequestBuilder) {
     m := &DeviceCompliancePoliciesRefreshDeviceComplianceReportSummarizationRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/deviceCompliancePolicies/microsoft.graph.refreshDeviceComplianceReportSummarization";
+    m.urlTemplate = "{+baseurl}/deviceManagement/deviceCompliancePolicies/refreshDeviceComplianceReportSummarization";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceCompliancePoliciesRefreshDeviceComplianceReportSummarizationRequestBuilder instantiates a new RefreshDeviceComplianceReportSummarizationRequestBuilder and sets the default values.

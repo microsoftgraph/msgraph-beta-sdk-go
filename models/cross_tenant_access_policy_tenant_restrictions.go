@@ -7,16 +7,14 @@ import (
 // CrossTenantAccessPolicyTenantRestrictions 
 type CrossTenantAccessPolicyTenantRestrictions struct {
     CrossTenantAccessPolicyB2BSetting
-    // The devices property
-    devices DevicesFilterable
 }
 // NewCrossTenantAccessPolicyTenantRestrictions instantiates a new CrossTenantAccessPolicyTenantRestrictions and sets the default values.
 func NewCrossTenantAccessPolicyTenantRestrictions()(*CrossTenantAccessPolicyTenantRestrictions) {
     m := &CrossTenantAccessPolicyTenantRestrictions{
         CrossTenantAccessPolicyB2BSetting: *NewCrossTenantAccessPolicyB2BSetting(),
     }
-    odataTypeValue := "#microsoft.graph.crossTenantAccessPolicyTenantRestrictions";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.crossTenantAccessPolicyTenantRestrictions"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateCrossTenantAccessPolicyTenantRestrictionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +23,14 @@ func CreateCrossTenantAccessPolicyTenantRestrictionsFromDiscriminatorValue(parse
 }
 // GetDevices gets the devices property value. The devices property
 func (m *CrossTenantAccessPolicyTenantRestrictions) GetDevices()(DevicesFilterable) {
-    return m.devices
+    val, err := m.GetBackingStore().Get("devices")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DevicesFilterable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CrossTenantAccessPolicyTenantRestrictions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -58,5 +63,15 @@ func (m *CrossTenantAccessPolicyTenantRestrictions) Serialize(writer i878a80d233
 }
 // SetDevices sets the devices property value. The devices property
 func (m *CrossTenantAccessPolicyTenantRestrictions) SetDevices(value DevicesFilterable)() {
-    m.devices = value
+    err := m.GetBackingStore().Set("devices", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CrossTenantAccessPolicyTenantRestrictionsable 
+type CrossTenantAccessPolicyTenantRestrictionsable interface {
+    CrossTenantAccessPolicyB2BSettingable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDevices()(DevicesFilterable)
+    SetDevices(value DevicesFilterable)()
 }

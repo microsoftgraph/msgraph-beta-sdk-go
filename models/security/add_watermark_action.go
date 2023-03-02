@@ -7,26 +7,14 @@ import (
 // AddWatermarkAction 
 type AddWatermarkAction struct {
     InformationProtectionAction
-    // Color of the font to use for the watermark.
-    fontColor *string
-    // Name of the font to use for the watermark.
-    fontName *string
-    // Font size to use for the watermark.
-    fontSize *int32
-    // The layout property
-    layout *WatermarkLayout
-    // The contents of the watermark itself.
-    text *string
-    // The name of the UI element where the watermark should be placed.
-    uiElementName *string
 }
 // NewAddWatermarkAction instantiates a new AddWatermarkAction and sets the default values.
 func NewAddWatermarkAction()(*AddWatermarkAction) {
     m := &AddWatermarkAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
     }
-    odataTypeValue := "#microsoft.graph.security.addWatermarkAction";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.security.addWatermarkAction"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAddWatermarkActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -100,27 +88,69 @@ func (m *AddWatermarkAction) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetFontColor gets the fontColor property value. Color of the font to use for the watermark.
 func (m *AddWatermarkAction) GetFontColor()(*string) {
-    return m.fontColor
+    val, err := m.GetBackingStore().Get("fontColor")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFontName gets the fontName property value. Name of the font to use for the watermark.
 func (m *AddWatermarkAction) GetFontName()(*string) {
-    return m.fontName
+    val, err := m.GetBackingStore().Get("fontName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFontSize gets the fontSize property value. Font size to use for the watermark.
 func (m *AddWatermarkAction) GetFontSize()(*int32) {
-    return m.fontSize
+    val, err := m.GetBackingStore().Get("fontSize")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetLayout gets the layout property value. The layout property
 func (m *AddWatermarkAction) GetLayout()(*WatermarkLayout) {
-    return m.layout
+    val, err := m.GetBackingStore().Get("layout")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WatermarkLayout)
+    }
+    return nil
 }
 // GetText gets the text property value. The contents of the watermark itself.
 func (m *AddWatermarkAction) GetText()(*string) {
-    return m.text
+    val, err := m.GetBackingStore().Get("text")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUiElementName gets the uiElementName property value. The name of the UI element where the watermark should be placed.
 func (m *AddWatermarkAction) GetUiElementName()(*string) {
-    return m.uiElementName
+    val, err := m.GetBackingStore().Get("uiElementName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AddWatermarkAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -169,25 +199,60 @@ func (m *AddWatermarkAction) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetFontColor sets the fontColor property value. Color of the font to use for the watermark.
 func (m *AddWatermarkAction) SetFontColor(value *string)() {
-    m.fontColor = value
+    err := m.GetBackingStore().Set("fontColor", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFontName sets the fontName property value. Name of the font to use for the watermark.
 func (m *AddWatermarkAction) SetFontName(value *string)() {
-    m.fontName = value
+    err := m.GetBackingStore().Set("fontName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFontSize sets the fontSize property value. Font size to use for the watermark.
 func (m *AddWatermarkAction) SetFontSize(value *int32)() {
-    m.fontSize = value
+    err := m.GetBackingStore().Set("fontSize", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLayout sets the layout property value. The layout property
 func (m *AddWatermarkAction) SetLayout(value *WatermarkLayout)() {
-    m.layout = value
+    err := m.GetBackingStore().Set("layout", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetText sets the text property value. The contents of the watermark itself.
 func (m *AddWatermarkAction) SetText(value *string)() {
-    m.text = value
+    err := m.GetBackingStore().Set("text", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUiElementName sets the uiElementName property value. The name of the UI element where the watermark should be placed.
 func (m *AddWatermarkAction) SetUiElementName(value *string)() {
-    m.uiElementName = value
+    err := m.GetBackingStore().Set("uiElementName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AddWatermarkActionable 
+type AddWatermarkActionable interface {
+    InformationProtectionActionable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetFontColor()(*string)
+    GetFontName()(*string)
+    GetFontSize()(*int32)
+    GetLayout()(*WatermarkLayout)
+    GetText()(*string)
+    GetUiElementName()(*string)
+    SetFontColor(value *string)()
+    SetFontName(value *string)()
+    SetFontSize(value *int32)()
+    SetLayout(value *WatermarkLayout)()
+    SetText(value *string)()
+    SetUiElementName(value *string)()
 }

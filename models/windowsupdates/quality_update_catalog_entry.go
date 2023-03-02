@@ -7,18 +7,14 @@ import (
 // QualityUpdateCatalogEntry 
 type QualityUpdateCatalogEntry struct {
     SoftwareUpdateCatalogEntry
-    // Indicates whether the content can be deployed as an expedited quality update. Read-only.
-    isExpeditable *bool
-    // The qualityUpdateClassification property
-    qualityUpdateClassification *QualityUpdateClassification
 }
 // NewQualityUpdateCatalogEntry instantiates a new QualityUpdateCatalogEntry and sets the default values.
 func NewQualityUpdateCatalogEntry()(*QualityUpdateCatalogEntry) {
     m := &QualityUpdateCatalogEntry{
         SoftwareUpdateCatalogEntry: *NewSoftwareUpdateCatalogEntry(),
     }
-    odataTypeValue := "#microsoft.graph.windowsUpdates.qualityUpdateCatalogEntry";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsUpdates.qualityUpdateCatalogEntry"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateQualityUpdateCatalogEntryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -52,11 +48,25 @@ func (m *QualityUpdateCatalogEntry) GetFieldDeserializers()(map[string]func(i878
 }
 // GetIsExpeditable gets the isExpeditable property value. Indicates whether the content can be deployed as an expedited quality update. Read-only.
 func (m *QualityUpdateCatalogEntry) GetIsExpeditable()(*bool) {
-    return m.isExpeditable
+    val, err := m.GetBackingStore().Get("isExpeditable")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetQualityUpdateClassification gets the qualityUpdateClassification property value. The qualityUpdateClassification property
 func (m *QualityUpdateCatalogEntry) GetQualityUpdateClassification()(*QualityUpdateClassification) {
-    return m.qualityUpdateClassification
+    val, err := m.GetBackingStore().Get("qualityUpdateClassification")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*QualityUpdateClassification)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *QualityUpdateCatalogEntry) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -81,9 +91,24 @@ func (m *QualityUpdateCatalogEntry) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetIsExpeditable sets the isExpeditable property value. Indicates whether the content can be deployed as an expedited quality update. Read-only.
 func (m *QualityUpdateCatalogEntry) SetIsExpeditable(value *bool)() {
-    m.isExpeditable = value
+    err := m.GetBackingStore().Set("isExpeditable", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetQualityUpdateClassification sets the qualityUpdateClassification property value. The qualityUpdateClassification property
 func (m *QualityUpdateCatalogEntry) SetQualityUpdateClassification(value *QualityUpdateClassification)() {
-    m.qualityUpdateClassification = value
+    err := m.GetBackingStore().Set("qualityUpdateClassification", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// QualityUpdateCatalogEntryable 
+type QualityUpdateCatalogEntryable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    SoftwareUpdateCatalogEntryable
+    GetIsExpeditable()(*bool)
+    GetQualityUpdateClassification()(*QualityUpdateClassification)
+    SetIsExpeditable(value *bool)()
+    SetQualityUpdateClassification(value *QualityUpdateClassification)()
 }

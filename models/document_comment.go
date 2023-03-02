@@ -7,12 +7,8 @@ import (
 // DocumentComment 
 type DocumentComment struct {
     Entity
-    // The content property
-    content *string
-    // The replies property
-    replies []DocumentCommentReplyable
 }
-// NewDocumentComment instantiates a new DocumentComment and sets the default values.
+// NewDocumentComment instantiates a new documentComment and sets the default values.
 func NewDocumentComment()(*DocumentComment) {
     m := &DocumentComment{
         Entity: *NewEntity(),
@@ -25,7 +21,14 @@ func CreateDocumentCommentFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetContent gets the content property value. The content property
 func (m *DocumentComment) GetContent()(*string) {
-    return m.content
+    val, err := m.GetBackingStore().Get("content")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DocumentComment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -58,7 +61,14 @@ func (m *DocumentComment) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetReplies gets the replies property value. The replies property
 func (m *DocumentComment) GetReplies()([]DocumentCommentReplyable) {
-    return m.replies
+    val, err := m.GetBackingStore().Get("replies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DocumentCommentReplyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DocumentComment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -86,9 +96,24 @@ func (m *DocumentComment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetContent sets the content property value. The content property
 func (m *DocumentComment) SetContent(value *string)() {
-    m.content = value
+    err := m.GetBackingStore().Set("content", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReplies sets the replies property value. The replies property
 func (m *DocumentComment) SetReplies(value []DocumentCommentReplyable)() {
-    m.replies = value
+    err := m.GetBackingStore().Set("replies", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DocumentCommentable 
+type DocumentCommentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetContent()(*string)
+    GetReplies()([]DocumentCommentReplyable)
+    SetContent(value *string)()
+    SetReplies(value []DocumentCommentReplyable)()
 }

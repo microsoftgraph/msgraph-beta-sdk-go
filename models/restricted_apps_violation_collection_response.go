@@ -7,8 +7,6 @@ import (
 // RestrictedAppsViolationCollectionResponse 
 type RestrictedAppsViolationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []RestrictedAppsViolationable
 }
 // NewRestrictedAppsViolationCollectionResponse instantiates a new RestrictedAppsViolationCollectionResponse and sets the default values.
 func NewRestrictedAppsViolationCollectionResponse()(*RestrictedAppsViolationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *RestrictedAppsViolationCollectionResponse) GetFieldDeserializers()(map[
 }
 // GetValue gets the value property value. The value property
 func (m *RestrictedAppsViolationCollectionResponse) GetValue()([]RestrictedAppsViolationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]RestrictedAppsViolationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RestrictedAppsViolationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *RestrictedAppsViolationCollectionResponse) Serialize(writer i878a80d233
 }
 // SetValue sets the value property value. The value property
 func (m *RestrictedAppsViolationCollectionResponse) SetValue(value []RestrictedAppsViolationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RestrictedAppsViolationCollectionResponseable 
+type RestrictedAppsViolationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]RestrictedAppsViolationable)
+    SetValue(value []RestrictedAppsViolationable)()
 }

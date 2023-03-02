@@ -55,8 +55,8 @@ func NewAuthenticationMethodsRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAuthenticationMethodsRequestBuilder instantiates a new AuthenticationMethodsRequestBuilder and sets the default values.
@@ -154,7 +154,10 @@ func (m *AuthenticationMethodsRequestBuilder) ToPatchRequestInformation(ctx cont
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -163,7 +166,7 @@ func (m *AuthenticationMethodsRequestBuilder) ToPatchRequestInformation(ctx cont
 }
 // UserRegistrationDetails provides operations to manage the userRegistrationDetails property of the microsoft.graph.authenticationMethodsRoot entity.
 func (m *AuthenticationMethodsRequestBuilder) UserRegistrationDetails()(*AuthenticationMethodsUserRegistrationDetailsRequestBuilder) {
-    return NewAuthenticationMethodsUserRegistrationDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAuthenticationMethodsUserRegistrationDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserRegistrationDetailsById provides operations to manage the userRegistrationDetails property of the microsoft.graph.authenticationMethodsRoot entity.
 func (m *AuthenticationMethodsRequestBuilder) UserRegistrationDetailsById(id string)(*AuthenticationMethodsUserRegistrationDetailsUserRegistrationDetailsItemRequestBuilder) {
@@ -174,21 +177,21 @@ func (m *AuthenticationMethodsRequestBuilder) UserRegistrationDetailsById(id str
     if id != "" {
         urlTplParams["userRegistrationDetails%2Did"] = id
     }
-    return NewAuthenticationMethodsUserRegistrationDetailsUserRegistrationDetailsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAuthenticationMethodsUserRegistrationDetailsUserRegistrationDetailsItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // UsersRegisteredByFeature provides operations to call the usersRegisteredByFeature method.
 func (m *AuthenticationMethodsRequestBuilder) UsersRegisteredByFeature()(*AuthenticationMethodsUsersRegisteredByFeatureRequestBuilder) {
-    return NewAuthenticationMethodsUsersRegisteredByFeatureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAuthenticationMethodsUsersRegisteredByFeatureRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRoles provides operations to call the usersRegisteredByFeature method.
 func (m *AuthenticationMethodsRequestBuilder) UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRoles(includedUserRoles *string, includedUserTypes *string)(*AuthenticationMethodsUsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder) {
-    return NewAuthenticationMethodsUsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilderInternal(m.pathParameters, m.requestAdapter, includedUserRoles, includedUserTypes);
+    return NewAuthenticationMethodsUsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilderInternal(m.pathParameters, m.requestAdapter, includedUserRoles, includedUserTypes)
 }
 // UsersRegisteredByMethod provides operations to call the usersRegisteredByMethod method.
 func (m *AuthenticationMethodsRequestBuilder) UsersRegisteredByMethod()(*AuthenticationMethodsUsersRegisteredByMethodRequestBuilder) {
-    return NewAuthenticationMethodsUsersRegisteredByMethodRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAuthenticationMethodsUsersRegisteredByMethodRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRoles provides operations to call the usersRegisteredByMethod method.
 func (m *AuthenticationMethodsRequestBuilder) UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRoles(includedUserRoles *string, includedUserTypes *string)(*AuthenticationMethodsUsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder) {
-    return NewAuthenticationMethodsUsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilderInternal(m.pathParameters, m.requestAdapter, includedUserRoles, includedUserTypes);
+    return NewAuthenticationMethodsUsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilderInternal(m.pathParameters, m.requestAdapter, includedUserRoles, includedUserTypes)
 }

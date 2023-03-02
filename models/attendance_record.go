@@ -7,18 +7,6 @@ import (
 // AttendanceRecord 
 type AttendanceRecord struct {
     Entity
-    // List of time periods between joining and leaving a meeting.
-    attendanceIntervals []AttendanceIntervalable
-    // Email address of the user associated with this atttendance record.
-    emailAddress *string
-    // Identity of the user associated with this atttendance record. The specific type will be one of the following derived types of identity, depending on the type of the user: communicationsUserIdentity, azureCommunicationServicesUserIdentity.
-    identity Identityable
-    // Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
-    registrantId *string
-    // Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
-    role *string
-    // Total duration of the attendances in seconds.
-    totalAttendanceInSeconds *int32
 }
 // NewAttendanceRecord instantiates a new attendanceRecord and sets the default values.
 func NewAttendanceRecord()(*AttendanceRecord) {
@@ -33,11 +21,25 @@ func CreateAttendanceRecordFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAttendanceIntervals gets the attendanceIntervals property value. List of time periods between joining and leaving a meeting.
 func (m *AttendanceRecord) GetAttendanceIntervals()([]AttendanceIntervalable) {
-    return m.attendanceIntervals
+    val, err := m.GetBackingStore().Get("attendanceIntervals")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AttendanceIntervalable)
+    }
+    return nil
 }
 // GetEmailAddress gets the emailAddress property value. Email address of the user associated with this atttendance record.
 func (m *AttendanceRecord) GetEmailAddress()(*string) {
-    return m.emailAddress
+    val, err := m.GetBackingStore().Get("emailAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AttendanceRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -110,19 +112,47 @@ func (m *AttendanceRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetIdentity gets the identity property value. Identity of the user associated with this atttendance record. The specific type will be one of the following derived types of identity, depending on the type of the user: communicationsUserIdentity, azureCommunicationServicesUserIdentity.
 func (m *AttendanceRecord) GetIdentity()(Identityable) {
-    return m.identity
+    val, err := m.GetBackingStore().Get("identity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Identityable)
+    }
+    return nil
 }
 // GetRegistrantId gets the registrantId property value. Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
 func (m *AttendanceRecord) GetRegistrantId()(*string) {
-    return m.registrantId
+    val, err := m.GetBackingStore().Get("registrantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRole gets the role property value. Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
 func (m *AttendanceRecord) GetRole()(*string) {
-    return m.role
+    val, err := m.GetBackingStore().Get("role")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTotalAttendanceInSeconds gets the totalAttendanceInSeconds property value. Total duration of the attendances in seconds.
 func (m *AttendanceRecord) GetTotalAttendanceInSeconds()(*int32) {
-    return m.totalAttendanceInSeconds
+    val, err := m.GetBackingStore().Get("totalAttendanceInSeconds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AttendanceRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -174,25 +204,60 @@ func (m *AttendanceRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAttendanceIntervals sets the attendanceIntervals property value. List of time periods between joining and leaving a meeting.
 func (m *AttendanceRecord) SetAttendanceIntervals(value []AttendanceIntervalable)() {
-    m.attendanceIntervals = value
+    err := m.GetBackingStore().Set("attendanceIntervals", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEmailAddress sets the emailAddress property value. Email address of the user associated with this atttendance record.
 func (m *AttendanceRecord) SetEmailAddress(value *string)() {
-    m.emailAddress = value
+    err := m.GetBackingStore().Set("emailAddress", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentity sets the identity property value. Identity of the user associated with this atttendance record. The specific type will be one of the following derived types of identity, depending on the type of the user: communicationsUserIdentity, azureCommunicationServicesUserIdentity.
 func (m *AttendanceRecord) SetIdentity(value Identityable)() {
-    m.identity = value
+    err := m.GetBackingStore().Set("identity", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRegistrantId sets the registrantId property value. Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
 func (m *AttendanceRecord) SetRegistrantId(value *string)() {
-    m.registrantId = value
+    err := m.GetBackingStore().Set("registrantId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRole sets the role property value. Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
 func (m *AttendanceRecord) SetRole(value *string)() {
-    m.role = value
+    err := m.GetBackingStore().Set("role", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTotalAttendanceInSeconds sets the totalAttendanceInSeconds property value. Total duration of the attendances in seconds.
 func (m *AttendanceRecord) SetTotalAttendanceInSeconds(value *int32)() {
-    m.totalAttendanceInSeconds = value
+    err := m.GetBackingStore().Set("totalAttendanceInSeconds", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AttendanceRecordable 
+type AttendanceRecordable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAttendanceIntervals()([]AttendanceIntervalable)
+    GetEmailAddress()(*string)
+    GetIdentity()(Identityable)
+    GetRegistrantId()(*string)
+    GetRole()(*string)
+    GetTotalAttendanceInSeconds()(*int32)
+    SetAttendanceIntervals(value []AttendanceIntervalable)()
+    SetEmailAddress(value *string)()
+    SetIdentity(value Identityable)()
+    SetRegistrantId(value *string)()
+    SetRole(value *string)()
+    SetTotalAttendanceInSeconds(value *int32)()
 }

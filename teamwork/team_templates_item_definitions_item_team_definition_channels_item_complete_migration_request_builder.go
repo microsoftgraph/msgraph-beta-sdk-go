@@ -26,13 +26,13 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemCompleteMigration
 func NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemCompleteMigrationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemCompleteMigrationRequestBuilder) {
     m := &TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemCompleteMigrationRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/channels/{channel%2Did}/microsoft.graph.completeMigration";
+    m.urlTemplate = "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/channels/{channel%2Did}/completeMigration";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemCompleteMigrationRequestBuilder instantiates a new CompleteMigrationRequestBuilder and sets the default values.

@@ -53,8 +53,8 @@ func NewMobileAppManagementPoliciesItemIncludedGroupsRequestBuilderInternal(path
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMobileAppManagementPoliciesItemIncludedGroupsRequestBuilder instantiates a new IncludedGroupsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewMobileAppManagementPoliciesItemIncludedGroupsRequestBuilder(rawUrl strin
 }
 // Count provides operations to count the resources in the collection.
 func (m *MobileAppManagementPoliciesItemIncludedGroupsRequestBuilder) Count()(*MobileAppManagementPoliciesItemIncludedGroupsCountRequestBuilder) {
-    return NewMobileAppManagementPoliciesItemIncludedGroupsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMobileAppManagementPoliciesItemIncludedGroupsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the list of groups that are included in a mobile app management policy.
 // [Find more info here]
@@ -91,7 +91,7 @@ func (m *MobileAppManagementPoliciesItemIncludedGroupsRequestBuilder) Get(ctx co
 }
 // Ref provides operations to manage the collection of policyRoot entities.
 func (m *MobileAppManagementPoliciesItemIncludedGroupsRequestBuilder) Ref()(*MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) {
-    return NewMobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation get the list of groups that are included in a mobile app management policy.
 func (m *MobileAppManagementPoliciesItemIncludedGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppManagementPoliciesItemIncludedGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

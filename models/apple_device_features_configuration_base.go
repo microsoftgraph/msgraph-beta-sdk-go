@@ -7,16 +7,14 @@ import (
 // AppleDeviceFeaturesConfigurationBase 
 type AppleDeviceFeaturesConfigurationBase struct {
     DeviceConfiguration
-    // An array of AirPrint printers that should always be shown. This collection can contain a maximum of 500 elements.
-    airPrintDestinations []AirPrintDestinationable
 }
 // NewAppleDeviceFeaturesConfigurationBase instantiates a new AppleDeviceFeaturesConfigurationBase and sets the default values.
 func NewAppleDeviceFeaturesConfigurationBase()(*AppleDeviceFeaturesConfigurationBase) {
     m := &AppleDeviceFeaturesConfigurationBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.appleDeviceFeaturesConfigurationBase";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.appleDeviceFeaturesConfigurationBase"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAppleDeviceFeaturesConfigurationBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +43,14 @@ func CreateAppleDeviceFeaturesConfigurationBaseFromDiscriminatorValue(parseNode 
 }
 // GetAirPrintDestinations gets the airPrintDestinations property value. An array of AirPrint printers that should always be shown. This collection can contain a maximum of 500 elements.
 func (m *AppleDeviceFeaturesConfigurationBase) GetAirPrintDestinations()([]AirPrintDestinationable) {
-    return m.airPrintDestinations
+    val, err := m.GetBackingStore().Get("airPrintDestinations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AirPrintDestinationable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AppleDeviceFeaturesConfigurationBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -86,5 +91,15 @@ func (m *AppleDeviceFeaturesConfigurationBase) Serialize(writer i878a80d2330e89d
 }
 // SetAirPrintDestinations sets the airPrintDestinations property value. An array of AirPrint printers that should always be shown. This collection can contain a maximum of 500 elements.
 func (m *AppleDeviceFeaturesConfigurationBase) SetAirPrintDestinations(value []AirPrintDestinationable)() {
-    m.airPrintDestinations = value
+    err := m.GetBackingStore().Set("airPrintDestinations", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AppleDeviceFeaturesConfigurationBaseable 
+type AppleDeviceFeaturesConfigurationBaseable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAirPrintDestinations()([]AirPrintDestinationable)
+    SetAirPrintDestinations(value []AirPrintDestinationable)()
 }

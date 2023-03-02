@@ -27,7 +27,7 @@ type GetTeamsUserActivityUserDetailWithDateRequestBuilderGetRequestConfiguration
 func NewGetTeamsUserActivityUserDetailWithDateRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*GetTeamsUserActivityUserDetailWithDateRequestBuilder) {
     m := &GetTeamsUserActivityUserDetailWithDateRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/reports/microsoft.graph.getTeamsUserActivityUserDetail(date={date})";
+    m.urlTemplate = "{+baseurl}/reports/getTeamsUserActivityUserDetail(date={date})";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -35,8 +35,8 @@ func NewGetTeamsUserActivityUserDetailWithDateRequestBuilderInternal(pathParamet
     if date != nil {
         urlTplParams["date"] = (*date).String()
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGetTeamsUserActivityUserDetailWithDateRequestBuilder instantiates a new GetTeamsUserActivityUserDetailWithDateRequestBuilder and sets the default values.

@@ -7,8 +7,6 @@ import (
 // AndroidForWorkCertificateProfileBaseCollectionResponse 
 type AndroidForWorkCertificateProfileBaseCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidForWorkCertificateProfileBaseable
 }
 // NewAndroidForWorkCertificateProfileBaseCollectionResponse instantiates a new AndroidForWorkCertificateProfileBaseCollectionResponse and sets the default values.
 func NewAndroidForWorkCertificateProfileBaseCollectionResponse()(*AndroidForWorkCertificateProfileBaseCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidForWorkCertificateProfileBaseCollectionResponse) GetFieldDeseria
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidForWorkCertificateProfileBaseCollectionResponse) GetValue()([]AndroidForWorkCertificateProfileBaseable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidForWorkCertificateProfileBaseable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidForWorkCertificateProfileBaseCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidForWorkCertificateProfileBaseCollectionResponse) Serialize(write
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidForWorkCertificateProfileBaseCollectionResponse) SetValue(value []AndroidForWorkCertificateProfileBaseable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidForWorkCertificateProfileBaseCollectionResponseable 
+type AndroidForWorkCertificateProfileBaseCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidForWorkCertificateProfileBaseable)
+    SetValue(value []AndroidForWorkCertificateProfileBaseable)()
 }

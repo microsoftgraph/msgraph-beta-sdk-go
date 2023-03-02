@@ -7,8 +7,6 @@ import (
 // Windows81WifiImportConfigurationCollectionResponse 
 type Windows81WifiImportConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Windows81WifiImportConfigurationable
 }
 // NewWindows81WifiImportConfigurationCollectionResponse instantiates a new Windows81WifiImportConfigurationCollectionResponse and sets the default values.
 func NewWindows81WifiImportConfigurationCollectionResponse()(*Windows81WifiImportConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *Windows81WifiImportConfigurationCollectionResponse) GetFieldDeserialize
 }
 // GetValue gets the value property value. The value property
 func (m *Windows81WifiImportConfigurationCollectionResponse) GetValue()([]Windows81WifiImportConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Windows81WifiImportConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Windows81WifiImportConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *Windows81WifiImportConfigurationCollectionResponse) Serialize(writer i8
 }
 // SetValue sets the value property value. The value property
 func (m *Windows81WifiImportConfigurationCollectionResponse) SetValue(value []Windows81WifiImportConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Windows81WifiImportConfigurationCollectionResponseable 
+type Windows81WifiImportConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Windows81WifiImportConfigurationable)
+    SetValue(value []Windows81WifiImportConfigurationable)()
 }

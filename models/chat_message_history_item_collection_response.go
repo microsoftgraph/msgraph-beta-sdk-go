@@ -7,8 +7,6 @@ import (
 // ChatMessageHistoryItemCollectionResponse 
 type ChatMessageHistoryItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ChatMessageHistoryItemable
 }
 // NewChatMessageHistoryItemCollectionResponse instantiates a new ChatMessageHistoryItemCollectionResponse and sets the default values.
 func NewChatMessageHistoryItemCollectionResponse()(*ChatMessageHistoryItemCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ChatMessageHistoryItemCollectionResponse) GetFieldDeserializers()(map[s
 }
 // GetValue gets the value property value. The value property
 func (m *ChatMessageHistoryItemCollectionResponse) GetValue()([]ChatMessageHistoryItemable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ChatMessageHistoryItemable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ChatMessageHistoryItemCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ChatMessageHistoryItemCollectionResponse) Serialize(writer i878a80d2330
 }
 // SetValue sets the value property value. The value property
 func (m *ChatMessageHistoryItemCollectionResponse) SetValue(value []ChatMessageHistoryItemable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ChatMessageHistoryItemCollectionResponseable 
+type ChatMessageHistoryItemCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ChatMessageHistoryItemable)
+    SetValue(value []ChatMessageHistoryItemable)()
 }

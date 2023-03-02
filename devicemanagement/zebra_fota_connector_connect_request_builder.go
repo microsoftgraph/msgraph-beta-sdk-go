@@ -26,13 +26,13 @@ type ZebraFotaConnectorConnectRequestBuilderPostRequestConfiguration struct {
 func NewZebraFotaConnectorConnectRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ZebraFotaConnectorConnectRequestBuilder) {
     m := &ZebraFotaConnectorConnectRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/zebraFotaConnector/microsoft.graph.connect";
+    m.urlTemplate = "{+baseurl}/deviceManagement/zebraFotaConnector/connect";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewZebraFotaConnectorConnectRequestBuilder instantiates a new ConnectRequestBuilder and sets the default values.

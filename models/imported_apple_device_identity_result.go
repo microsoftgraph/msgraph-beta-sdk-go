@@ -7,8 +7,6 @@ import (
 // ImportedAppleDeviceIdentityResult 
 type ImportedAppleDeviceIdentityResult struct {
     ImportedAppleDeviceIdentity
-    // Status of imported device identity
-    status *bool
 }
 // NewImportedAppleDeviceIdentityResult instantiates a new ImportedAppleDeviceIdentityResult and sets the default values.
 func NewImportedAppleDeviceIdentityResult()(*ImportedAppleDeviceIdentityResult) {
@@ -38,7 +36,14 @@ func (m *ImportedAppleDeviceIdentityResult) GetFieldDeserializers()(map[string]f
 }
 // GetStatus gets the status property value. Status of imported device identity
 func (m *ImportedAppleDeviceIdentityResult) GetStatus()(*bool) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ImportedAppleDeviceIdentityResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *ImportedAppleDeviceIdentityResult) Serialize(writer i878a80d2330e89d268
 }
 // SetStatus sets the status property value. Status of imported device identity
 func (m *ImportedAppleDeviceIdentityResult) SetStatus(value *bool)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ImportedAppleDeviceIdentityResultable 
+type ImportedAppleDeviceIdentityResultable interface {
+    ImportedAppleDeviceIdentityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetStatus()(*bool)
+    SetStatus(value *bool)()
 }

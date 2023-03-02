@@ -7,8 +7,6 @@ import (
 // AuthenticationEventsPolicy 
 type AuthenticationEventsPolicy struct {
     Entity
-    // A list of applicable actions to be taken on sign-up.
-    onSignupStart []AuthenticationListenerable
 }
 // NewAuthenticationEventsPolicy instantiates a new AuthenticationEventsPolicy and sets the default values.
 func NewAuthenticationEventsPolicy()(*AuthenticationEventsPolicy) {
@@ -42,7 +40,14 @@ func (m *AuthenticationEventsPolicy) GetFieldDeserializers()(map[string]func(i87
 }
 // GetOnSignupStart gets the onSignupStart property value. A list of applicable actions to be taken on sign-up.
 func (m *AuthenticationEventsPolicy) GetOnSignupStart()([]AuthenticationListenerable) {
-    return m.onSignupStart
+    val, err := m.GetBackingStore().Get("onSignupStart")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AuthenticationListenerable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AuthenticationEventsPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AuthenticationEventsPolicy) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetOnSignupStart sets the onSignupStart property value. A list of applicable actions to be taken on sign-up.
 func (m *AuthenticationEventsPolicy) SetOnSignupStart(value []AuthenticationListenerable)() {
-    m.onSignupStart = value
+    err := m.GetBackingStore().Set("onSignupStart", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AuthenticationEventsPolicyable 
+type AuthenticationEventsPolicyable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOnSignupStart()([]AuthenticationListenerable)
+    SetOnSignupStart(value []AuthenticationListenerable)()
 }

@@ -48,7 +48,7 @@ type ConditionalAccessAuthenticationStrengthsRequestBuilderPatchRequestConfigura
 }
 // AuthenticationMethodModes provides operations to manage the authenticationMethodModes property of the microsoft.graph.authenticationStrengthRoot entity.
 func (m *ConditionalAccessAuthenticationStrengthsRequestBuilder) AuthenticationMethodModes()(*ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilder) {
-    return NewConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AuthenticationMethodModesById provides operations to manage the authenticationMethodModes property of the microsoft.graph.authenticationStrengthRoot entity.
 func (m *ConditionalAccessAuthenticationStrengthsRequestBuilder) AuthenticationMethodModesById(id string)(*ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesAuthenticationMethodModeDetailItemRequestBuilder) {
@@ -59,7 +59,7 @@ func (m *ConditionalAccessAuthenticationStrengthsRequestBuilder) AuthenticationM
     if id != "" {
         urlTplParams["authenticationMethodModeDetail%2Did"] = id
     }
-    return NewConditionalAccessAuthenticationStrengthsAuthenticationMethodModesAuthenticationMethodModeDetailItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewConditionalAccessAuthenticationStrengthsAuthenticationMethodModesAuthenticationMethodModeDetailItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewConditionalAccessAuthenticationStrengthsRequestBuilderInternal instantiates a new AuthenticationStrengthsRequestBuilder and sets the default values.
 func NewConditionalAccessAuthenticationStrengthsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConditionalAccessAuthenticationStrengthsRequestBuilder) {
@@ -70,8 +70,8 @@ func NewConditionalAccessAuthenticationStrengthsRequestBuilderInternal(pathParam
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewConditionalAccessAuthenticationStrengthsRequestBuilder instantiates a new AuthenticationStrengthsRequestBuilder and sets the default values.
@@ -136,7 +136,7 @@ func (m *ConditionalAccessAuthenticationStrengthsRequestBuilder) Patch(ctx conte
 }
 // Policies provides operations to manage the policies property of the microsoft.graph.authenticationStrengthRoot entity.
 func (m *ConditionalAccessAuthenticationStrengthsRequestBuilder) Policies()(*ConditionalAccessAuthenticationStrengthsPoliciesRequestBuilder) {
-    return NewConditionalAccessAuthenticationStrengthsPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewConditionalAccessAuthenticationStrengthsPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PoliciesById provides operations to manage the policies property of the microsoft.graph.authenticationStrengthRoot entity.
 func (m *ConditionalAccessAuthenticationStrengthsRequestBuilder) PoliciesById(id string)(*ConditionalAccessAuthenticationStrengthsPoliciesAuthenticationStrengthPolicyItemRequestBuilder) {
@@ -147,7 +147,7 @@ func (m *ConditionalAccessAuthenticationStrengthsRequestBuilder) PoliciesById(id
     if id != "" {
         urlTplParams["authenticationStrengthPolicy%2Did"] = id
     }
-    return NewConditionalAccessAuthenticationStrengthsPoliciesAuthenticationStrengthPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewConditionalAccessAuthenticationStrengthsPoliciesAuthenticationStrengthPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property authenticationStrengths for identity
 func (m *ConditionalAccessAuthenticationStrengthsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationStrengthsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -184,7 +184,10 @@ func (m *ConditionalAccessAuthenticationStrengthsRequestBuilder) ToPatchRequestI
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

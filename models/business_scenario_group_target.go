@@ -7,16 +7,14 @@ import (
 // BusinessScenarioGroupTarget 
 type BusinessScenarioGroupTarget struct {
     BusinessScenarioTaskTargetBase
-    // The unique identifier for the group.
-    groupId *string
 }
 // NewBusinessScenarioGroupTarget instantiates a new BusinessScenarioGroupTarget and sets the default values.
 func NewBusinessScenarioGroupTarget()(*BusinessScenarioGroupTarget) {
     m := &BusinessScenarioGroupTarget{
         BusinessScenarioTaskTargetBase: *NewBusinessScenarioTaskTargetBase(),
     }
-    odataTypeValue := "#microsoft.graph.businessScenarioGroupTarget";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.businessScenarioGroupTarget"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateBusinessScenarioGroupTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *BusinessScenarioGroupTarget) GetFieldDeserializers()(map[string]func(i8
 }
 // GetGroupId gets the groupId property value. The unique identifier for the group.
 func (m *BusinessScenarioGroupTarget) GetGroupId()(*string) {
-    return m.groupId
+    val, err := m.GetBackingStore().Get("groupId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *BusinessScenarioGroupTarget) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *BusinessScenarioGroupTarget) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetGroupId sets the groupId property value. The unique identifier for the group.
 func (m *BusinessScenarioGroupTarget) SetGroupId(value *string)() {
-    m.groupId = value
+    err := m.GetBackingStore().Set("groupId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// BusinessScenarioGroupTargetable 
+type BusinessScenarioGroupTargetable interface {
+    BusinessScenarioTaskTargetBaseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetGroupId()(*string)
+    SetGroupId(value *string)()
 }

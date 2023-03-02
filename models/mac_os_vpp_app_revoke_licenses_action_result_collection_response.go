@@ -7,8 +7,6 @@ import (
 // MacOsVppAppRevokeLicensesActionResultCollectionResponse 
 type MacOsVppAppRevokeLicensesActionResultCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MacOsVppAppRevokeLicensesActionResultable
 }
 // NewMacOsVppAppRevokeLicensesActionResultCollectionResponse instantiates a new MacOsVppAppRevokeLicensesActionResultCollectionResponse and sets the default values.
 func NewMacOsVppAppRevokeLicensesActionResultCollectionResponse()(*MacOsVppAppRevokeLicensesActionResultCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MacOsVppAppRevokeLicensesActionResultCollectionResponse) GetFieldDeseri
 }
 // GetValue gets the value property value. The value property
 func (m *MacOsVppAppRevokeLicensesActionResultCollectionResponse) GetValue()([]MacOsVppAppRevokeLicensesActionResultable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MacOsVppAppRevokeLicensesActionResultable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MacOsVppAppRevokeLicensesActionResultCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MacOsVppAppRevokeLicensesActionResultCollectionResponse) Serialize(writ
 }
 // SetValue sets the value property value. The value property
 func (m *MacOsVppAppRevokeLicensesActionResultCollectionResponse) SetValue(value []MacOsVppAppRevokeLicensesActionResultable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MacOsVppAppRevokeLicensesActionResultCollectionResponseable 
+type MacOsVppAppRevokeLicensesActionResultCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MacOsVppAppRevokeLicensesActionResultable)
+    SetValue(value []MacOsVppAppRevokeLicensesActionResultable)()
 }

@@ -26,13 +26,13 @@ type DeviceManagementPartnersItemTerminateRequestBuilderPostRequestConfiguration
 func NewDeviceManagementPartnersItemTerminateRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceManagementPartnersItemTerminateRequestBuilder) {
     m := &DeviceManagementPartnersItemTerminateRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/deviceManagementPartners/{deviceManagementPartner%2Did}/microsoft.graph.terminate";
+    m.urlTemplate = "{+baseurl}/deviceManagement/deviceManagementPartners/{deviceManagementPartner%2Did}/terminate";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceManagementPartnersItemTerminateRequestBuilder instantiates a new TerminateRequestBuilder and sets the default values.

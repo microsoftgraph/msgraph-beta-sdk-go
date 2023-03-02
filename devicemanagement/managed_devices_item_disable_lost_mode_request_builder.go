@@ -26,13 +26,13 @@ type ManagedDevicesItemDisableLostModeRequestBuilderPostRequestConfiguration str
 func NewManagedDevicesItemDisableLostModeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedDevicesItemDisableLostModeRequestBuilder) {
     m := &ManagedDevicesItemDisableLostModeRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/microsoft.graph.disableLostMode";
+    m.urlTemplate = "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/disableLostMode";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedDevicesItemDisableLostModeRequestBuilder instantiates a new DisableLostModeRequestBuilder and sets the default values.

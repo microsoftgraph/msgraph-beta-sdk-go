@@ -7,8 +7,6 @@ import (
 // DeviceManagementAbstractComplexSettingDefinition 
 type DeviceManagementAbstractComplexSettingDefinition struct {
     DeviceManagementSettingDefinition
-    // List of definition IDs for all possible implementations of this abstract complex setting
-    implementations []string
 }
 // NewDeviceManagementAbstractComplexSettingDefinition instantiates a new DeviceManagementAbstractComplexSettingDefinition and sets the default values.
 func NewDeviceManagementAbstractComplexSettingDefinition()(*DeviceManagementAbstractComplexSettingDefinition) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementAbstractComplexSettingDefinition) GetFieldDeserializers
 }
 // GetImplementations gets the implementations property value. List of definition IDs for all possible implementations of this abstract complex setting
 func (m *DeviceManagementAbstractComplexSettingDefinition) GetImplementations()([]string) {
-    return m.implementations
+    val, err := m.GetBackingStore().Get("implementations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementAbstractComplexSettingDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -60,5 +65,15 @@ func (m *DeviceManagementAbstractComplexSettingDefinition) Serialize(writer i878
 }
 // SetImplementations sets the implementations property value. List of definition IDs for all possible implementations of this abstract complex setting
 func (m *DeviceManagementAbstractComplexSettingDefinition) SetImplementations(value []string)() {
-    m.implementations = value
+    err := m.GetBackingStore().Set("implementations", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementAbstractComplexSettingDefinitionable 
+type DeviceManagementAbstractComplexSettingDefinitionable interface {
+    DeviceManagementSettingDefinitionable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetImplementations()([]string)
+    SetImplementations(value []string)()
 }

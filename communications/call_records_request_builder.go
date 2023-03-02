@@ -52,6 +52,14 @@ type CallRecordsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// CallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTime provides operations to call the getDirectRoutingCalls method.
+func (m *CallRecordsRequestBuilder) CallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTime(fromDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, toDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*CallRecordsCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder) {
+    return NewCallRecordsCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, fromDateTime, toDateTime)
+}
+// CallRecordsGetPstnCallsWithFromDateTimeWithToDateTime provides operations to call the getPstnCalls method.
+func (m *CallRecordsRequestBuilder) CallRecordsGetPstnCallsWithFromDateTimeWithToDateTime(fromDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, toDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*CallRecordsCallRecordsGetPstnCallsWithFromDateTimeWithToDateTimeRequestBuilder) {
+    return NewCallRecordsCallRecordsGetPstnCallsWithFromDateTimeWithToDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, fromDateTime, toDateTime)
+}
 // NewCallRecordsRequestBuilderInternal instantiates a new CallRecordsRequestBuilder and sets the default values.
 func NewCallRecordsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallRecordsRequestBuilder) {
     m := &CallRecordsRequestBuilder{
@@ -61,8 +69,8 @@ func NewCallRecordsRequestBuilderInternal(pathParameters map[string]string, requ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCallRecordsRequestBuilder instantiates a new CallRecordsRequestBuilder and sets the default values.
@@ -73,7 +81,7 @@ func NewCallRecordsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 }
 // Count provides operations to count the resources in the collection.
 func (m *CallRecordsRequestBuilder) Count()(*CallRecordsCountRequestBuilder) {
-    return NewCallRecordsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCallRecordsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get callRecords from communications
 func (m *CallRecordsRequestBuilder) Get(ctx context.Context, requestConfiguration *CallRecordsRequestBuilderGetRequestConfiguration)(iabe42a55de44a0960e4cc683a105812061defb936fe89e1bc4ab83c390c3839f.CallRecordCollectionResponseable, error) {
@@ -93,14 +101,6 @@ func (m *CallRecordsRequestBuilder) Get(ctx context.Context, requestConfiguratio
         return nil, nil
     }
     return res.(iabe42a55de44a0960e4cc683a105812061defb936fe89e1bc4ab83c390c3839f.CallRecordCollectionResponseable), nil
-}
-// GetDirectRoutingCallsWithFromDateTimeWithToDateTime provides operations to call the getDirectRoutingCalls method.
-func (m *CallRecordsRequestBuilder) GetDirectRoutingCallsWithFromDateTimeWithToDateTime(fromDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, toDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*CallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder) {
-    return NewCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, fromDateTime, toDateTime);
-}
-// GetPstnCallsWithFromDateTimeWithToDateTime provides operations to call the getPstnCalls method.
-func (m *CallRecordsRequestBuilder) GetPstnCallsWithFromDateTimeWithToDateTime(fromDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, toDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*CallRecordsGetPstnCallsWithFromDateTimeWithToDateTimeRequestBuilder) {
-    return NewCallRecordsGetPstnCallsWithFromDateTimeWithToDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, fromDateTime, toDateTime);
 }
 // Post create new navigation property to callRecords for communications
 func (m *CallRecordsRequestBuilder) Post(ctx context.Context, body iabe42a55de44a0960e4cc683a105812061defb936fe89e1bc4ab83c390c3839f.CallRecordable, requestConfiguration *CallRecordsRequestBuilderPostRequestConfiguration)(iabe42a55de44a0960e4cc683a105812061defb936fe89e1bc4ab83c390c3839f.CallRecordable, error) {
@@ -144,7 +144,10 @@ func (m *CallRecordsRequestBuilder) ToPostRequestInformation(ctx context.Context
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

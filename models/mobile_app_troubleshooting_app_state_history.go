@@ -7,12 +7,6 @@ import (
 // MobileAppTroubleshootingAppStateHistory 
 type MobileAppTroubleshootingAppStateHistory struct {
     MobileAppTroubleshootingHistoryItem
-    // Defines the Action Types for an Intune Application.
-    actionType *MobileAppActionType
-    // Error code for the failure, empty if no failure.
-    errorCode *string
-    // Indicates the type of execution status of the device management script.
-    runState *RunState
 }
 // NewMobileAppTroubleshootingAppStateHistory instantiates a new MobileAppTroubleshootingAppStateHistory and sets the default values.
 func NewMobileAppTroubleshootingAppStateHistory()(*MobileAppTroubleshootingAppStateHistory) {
@@ -27,11 +21,25 @@ func CreateMobileAppTroubleshootingAppStateHistoryFromDiscriminatorValue(parseNo
 }
 // GetActionType gets the actionType property value. Defines the Action Types for an Intune Application.
 func (m *MobileAppTroubleshootingAppStateHistory) GetActionType()(*MobileAppActionType) {
-    return m.actionType
+    val, err := m.GetBackingStore().Get("actionType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MobileAppActionType)
+    }
+    return nil
 }
 // GetErrorCode gets the errorCode property value. Error code for the failure, empty if no failure.
 func (m *MobileAppTroubleshootingAppStateHistory) GetErrorCode()(*string) {
-    return m.errorCode
+    val, err := m.GetBackingStore().Get("errorCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MobileAppTroubleshootingAppStateHistory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -70,7 +78,14 @@ func (m *MobileAppTroubleshootingAppStateHistory) GetFieldDeserializers()(map[st
 }
 // GetRunState gets the runState property value. Indicates the type of execution status of the device management script.
 func (m *MobileAppTroubleshootingAppStateHistory) GetRunState()(*RunState) {
-    return m.runState
+    val, err := m.GetBackingStore().Get("runState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RunState)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MobileAppTroubleshootingAppStateHistory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -102,13 +117,33 @@ func (m *MobileAppTroubleshootingAppStateHistory) Serialize(writer i878a80d2330e
 }
 // SetActionType sets the actionType property value. Defines the Action Types for an Intune Application.
 func (m *MobileAppTroubleshootingAppStateHistory) SetActionType(value *MobileAppActionType)() {
-    m.actionType = value
+    err := m.GetBackingStore().Set("actionType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetErrorCode sets the errorCode property value. Error code for the failure, empty if no failure.
 func (m *MobileAppTroubleshootingAppStateHistory) SetErrorCode(value *string)() {
-    m.errorCode = value
+    err := m.GetBackingStore().Set("errorCode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRunState sets the runState property value. Indicates the type of execution status of the device management script.
 func (m *MobileAppTroubleshootingAppStateHistory) SetRunState(value *RunState)() {
-    m.runState = value
+    err := m.GetBackingStore().Set("runState", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MobileAppTroubleshootingAppStateHistoryable 
+type MobileAppTroubleshootingAppStateHistoryable interface {
+    MobileAppTroubleshootingHistoryItemable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActionType()(*MobileAppActionType)
+    GetErrorCode()(*string)
+    GetRunState()(*RunState)
+    SetActionType(value *MobileAppActionType)()
+    SetErrorCode(value *string)()
+    SetRunState(value *RunState)()
 }

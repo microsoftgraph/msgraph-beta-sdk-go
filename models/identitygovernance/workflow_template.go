@@ -8,16 +8,6 @@ import (
 // WorkflowTemplate 
 type WorkflowTemplate struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The category property
-    category *LifecycleWorkflowCategory
-    // The description of the workflowTemplate.
-    description *string
-    // The display name of the workflowTemplate.Supports $filter(eq, ne) and $orderby.
-    displayName *string
-    // Conditions describing when to execute the workflow and the criteria to identify in-scope subject set.
-    executionConditions WorkflowExecutionConditionsable
-    // Represents the configured tasks to execute and their execution sequence within a workflow. This relationship is expanded by default.
-    tasks []Taskable
 }
 // NewWorkflowTemplate instantiates a new workflowTemplate and sets the default values.
 func NewWorkflowTemplate()(*WorkflowTemplate) {
@@ -32,19 +22,47 @@ func CreateWorkflowTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetCategory gets the category property value. The category property
 func (m *WorkflowTemplate) GetCategory()(*LifecycleWorkflowCategory) {
-    return m.category
+    val, err := m.GetBackingStore().Get("category")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*LifecycleWorkflowCategory)
+    }
+    return nil
 }
 // GetDescription gets the description property value. The description of the workflowTemplate.
 func (m *WorkflowTemplate) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the workflowTemplate.Supports $filter(eq, ne) and $orderby.
 func (m *WorkflowTemplate) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetExecutionConditions gets the executionConditions property value. Conditions describing when to execute the workflow and the criteria to identify in-scope subject set.
 func (m *WorkflowTemplate) GetExecutionConditions()(WorkflowExecutionConditionsable) {
-    return m.executionConditions
+    val, err := m.GetBackingStore().Get("executionConditions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WorkflowExecutionConditionsable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkflowTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -107,7 +125,14 @@ func (m *WorkflowTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetTasks gets the tasks property value. Represents the configured tasks to execute and their execution sequence within a workflow. This relationship is expanded by default.
 func (m *WorkflowTemplate) GetTasks()([]Taskable) {
-    return m.tasks
+    val, err := m.GetBackingStore().Get("tasks")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Taskable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WorkflowTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -154,21 +179,51 @@ func (m *WorkflowTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetCategory sets the category property value. The category property
 func (m *WorkflowTemplate) SetCategory(value *LifecycleWorkflowCategory)() {
-    m.category = value
+    err := m.GetBackingStore().Set("category", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. The description of the workflowTemplate.
 func (m *WorkflowTemplate) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the workflowTemplate.Supports $filter(eq, ne) and $orderby.
 func (m *WorkflowTemplate) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExecutionConditions sets the executionConditions property value. Conditions describing when to execute the workflow and the criteria to identify in-scope subject set.
 func (m *WorkflowTemplate) SetExecutionConditions(value WorkflowExecutionConditionsable)() {
-    m.executionConditions = value
+    err := m.GetBackingStore().Set("executionConditions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTasks sets the tasks property value. Represents the configured tasks to execute and their execution sequence within a workflow. This relationship is expanded by default.
 func (m *WorkflowTemplate) SetTasks(value []Taskable)() {
-    m.tasks = value
+    err := m.GetBackingStore().Set("tasks", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WorkflowTemplateable 
+type WorkflowTemplateable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCategory()(*LifecycleWorkflowCategory)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetExecutionConditions()(WorkflowExecutionConditionsable)
+    GetTasks()([]Taskable)
+    SetCategory(value *LifecycleWorkflowCategory)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetExecutionConditions(value WorkflowExecutionConditionsable)()
+    SetTasks(value []Taskable)()
 }

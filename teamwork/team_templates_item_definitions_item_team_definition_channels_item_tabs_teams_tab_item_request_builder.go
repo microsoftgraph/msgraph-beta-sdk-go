@@ -55,8 +55,8 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemTabsTeamsTabIt
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemTabsTeamsTabItemRequestBuilder instantiates a new TeamsTabItemRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemTabsTeamsTabI
 }
 // TeamsApp provides operations to manage the teamsApp property of the microsoft.graph.teamsTab entity.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemTabsTeamsTabItemRequestBuilder) TeamsApp()(*TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemTabsItemTeamsAppRequestBuilder) {
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemTabsItemTeamsAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemTabsItemTeamsAppRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property tabs for teamwork
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemTabsTeamsTabItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemTabsTeamsTabItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +158,10 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemTabsTeamsTabI
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

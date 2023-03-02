@@ -48,7 +48,7 @@ type ConditionalAccessAuthenticationStrengthsPoliciesAuthenticationStrengthPolic
 }
 // CombinationConfigurations provides operations to manage the combinationConfigurations property of the microsoft.graph.authenticationStrengthPolicy entity.
 func (m *ConditionalAccessAuthenticationStrengthsPoliciesAuthenticationStrengthPolicyItemRequestBuilder) CombinationConfigurations()(*ConditionalAccessAuthenticationStrengthsPoliciesItemCombinationConfigurationsRequestBuilder) {
-    return NewConditionalAccessAuthenticationStrengthsPoliciesItemCombinationConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewConditionalAccessAuthenticationStrengthsPoliciesItemCombinationConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CombinationConfigurationsById provides operations to manage the combinationConfigurations property of the microsoft.graph.authenticationStrengthPolicy entity.
 func (m *ConditionalAccessAuthenticationStrengthsPoliciesAuthenticationStrengthPolicyItemRequestBuilder) CombinationConfigurationsById(id string)(*ConditionalAccessAuthenticationStrengthsPoliciesItemCombinationConfigurationsAuthenticationCombinationConfigurationItemRequestBuilder) {
@@ -59,7 +59,7 @@ func (m *ConditionalAccessAuthenticationStrengthsPoliciesAuthenticationStrengthP
     if id != "" {
         urlTplParams["authenticationCombinationConfiguration%2Did"] = id
     }
-    return NewConditionalAccessAuthenticationStrengthsPoliciesItemCombinationConfigurationsAuthenticationCombinationConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewConditionalAccessAuthenticationStrengthsPoliciesItemCombinationConfigurationsAuthenticationCombinationConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewConditionalAccessAuthenticationStrengthsPoliciesAuthenticationStrengthPolicyItemRequestBuilderInternal instantiates a new AuthenticationStrengthPolicyItemRequestBuilder and sets the default values.
 func NewConditionalAccessAuthenticationStrengthsPoliciesAuthenticationStrengthPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConditionalAccessAuthenticationStrengthsPoliciesAuthenticationStrengthPolicyItemRequestBuilder) {
@@ -70,8 +70,8 @@ func NewConditionalAccessAuthenticationStrengthsPoliciesAuthenticationStrengthPo
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewConditionalAccessAuthenticationStrengthsPoliciesAuthenticationStrengthPolicyItemRequestBuilder instantiates a new AuthenticationStrengthPolicyItemRequestBuilder and sets the default values.
@@ -169,7 +169,10 @@ func (m *ConditionalAccessAuthenticationStrengthsPoliciesAuthenticationStrengthP
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -178,9 +181,9 @@ func (m *ConditionalAccessAuthenticationStrengthsPoliciesAuthenticationStrengthP
 }
 // UpdateAllowedCombinations provides operations to call the updateAllowedCombinations method.
 func (m *ConditionalAccessAuthenticationStrengthsPoliciesAuthenticationStrengthPolicyItemRequestBuilder) UpdateAllowedCombinations()(*ConditionalAccessAuthenticationStrengthsPoliciesItemUpdateAllowedCombinationsRequestBuilder) {
-    return NewConditionalAccessAuthenticationStrengthsPoliciesItemUpdateAllowedCombinationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewConditionalAccessAuthenticationStrengthsPoliciesItemUpdateAllowedCombinationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Usage provides operations to call the usage method.
 func (m *ConditionalAccessAuthenticationStrengthsPoliciesAuthenticationStrengthPolicyItemRequestBuilder) Usage()(*ConditionalAccessAuthenticationStrengthsPoliciesItemUsageRequestBuilder) {
-    return NewConditionalAccessAuthenticationStrengthsPoliciesItemUsageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewConditionalAccessAuthenticationStrengthsPoliciesItemUsageRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

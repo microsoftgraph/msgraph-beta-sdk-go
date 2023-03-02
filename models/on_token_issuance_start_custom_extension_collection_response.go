@@ -7,8 +7,6 @@ import (
 // OnTokenIssuanceStartCustomExtensionCollectionResponse 
 type OnTokenIssuanceStartCustomExtensionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []OnTokenIssuanceStartCustomExtensionable
 }
 // NewOnTokenIssuanceStartCustomExtensionCollectionResponse instantiates a new OnTokenIssuanceStartCustomExtensionCollectionResponse and sets the default values.
 func NewOnTokenIssuanceStartCustomExtensionCollectionResponse()(*OnTokenIssuanceStartCustomExtensionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *OnTokenIssuanceStartCustomExtensionCollectionResponse) GetFieldDeserial
 }
 // GetValue gets the value property value. The value property
 func (m *OnTokenIssuanceStartCustomExtensionCollectionResponse) GetValue()([]OnTokenIssuanceStartCustomExtensionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OnTokenIssuanceStartCustomExtensionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OnTokenIssuanceStartCustomExtensionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *OnTokenIssuanceStartCustomExtensionCollectionResponse) Serialize(writer
 }
 // SetValue sets the value property value. The value property
 func (m *OnTokenIssuanceStartCustomExtensionCollectionResponse) SetValue(value []OnTokenIssuanceStartCustomExtensionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OnTokenIssuanceStartCustomExtensionCollectionResponseable 
+type OnTokenIssuanceStartCustomExtensionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]OnTokenIssuanceStartCustomExtensionable)
+    SetValue(value []OnTokenIssuanceStartCustomExtensionable)()
 }

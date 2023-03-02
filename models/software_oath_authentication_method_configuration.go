@@ -7,16 +7,14 @@ import (
 // SoftwareOathAuthenticationMethodConfiguration 
 type SoftwareOathAuthenticationMethodConfiguration struct {
     AuthenticationMethodConfiguration
-    // A collection of groups that are enabled to use the authentication method. Expanded by default.
-    includeTargets []AuthenticationMethodTargetable
 }
 // NewSoftwareOathAuthenticationMethodConfiguration instantiates a new SoftwareOathAuthenticationMethodConfiguration and sets the default values.
 func NewSoftwareOathAuthenticationMethodConfiguration()(*SoftwareOathAuthenticationMethodConfiguration) {
     m := &SoftwareOathAuthenticationMethodConfiguration{
         AuthenticationMethodConfiguration: *NewAuthenticationMethodConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.softwareOathAuthenticationMethodConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.softwareOathAuthenticationMethodConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateSoftwareOathAuthenticationMethodConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,7 +42,14 @@ func (m *SoftwareOathAuthenticationMethodConfiguration) GetFieldDeserializers()(
 }
 // GetIncludeTargets gets the includeTargets property value. A collection of groups that are enabled to use the authentication method. Expanded by default.
 func (m *SoftwareOathAuthenticationMethodConfiguration) GetIncludeTargets()([]AuthenticationMethodTargetable) {
-    return m.includeTargets
+    val, err := m.GetBackingStore().Get("includeTargets")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AuthenticationMethodTargetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SoftwareOathAuthenticationMethodConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -66,5 +71,15 @@ func (m *SoftwareOathAuthenticationMethodConfiguration) Serialize(writer i878a80
 }
 // SetIncludeTargets sets the includeTargets property value. A collection of groups that are enabled to use the authentication method. Expanded by default.
 func (m *SoftwareOathAuthenticationMethodConfiguration) SetIncludeTargets(value []AuthenticationMethodTargetable)() {
-    m.includeTargets = value
+    err := m.GetBackingStore().Set("includeTargets", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SoftwareOathAuthenticationMethodConfigurationable 
+type SoftwareOathAuthenticationMethodConfigurationable interface {
+    AuthenticationMethodConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetIncludeTargets()([]AuthenticationMethodTargetable)
+    SetIncludeTargets(value []AuthenticationMethodTargetable)()
 }

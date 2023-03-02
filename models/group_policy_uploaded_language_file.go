@@ -3,30 +3,20 @@ package models
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // GroupPolicyUploadedLanguageFile the entity represents an ADML (Administrative Template language) XML file uploaded by Administrator.
 type GroupPolicyUploadedLanguageFile struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The contents of the uploaded ADML file.
-    content []byte
-    // The file name of the uploaded ADML file.
-    fileName *string
-    // Key of the entity.
-    id *string
-    // The language code of the uploaded ADML file.
-    languageCode *string
-    // The date and time the entity was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The OdataType property
-    odataType *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewGroupPolicyUploadedLanguageFile instantiates a new groupPolicyUploadedLanguageFile and sets the default values.
 func NewGroupPolicyUploadedLanguageFile()(*GroupPolicyUploadedLanguageFile) {
     m := &GroupPolicyUploadedLanguageFile{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateGroupPolicyUploadedLanguageFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,11 +25,30 @@ func CreateGroupPolicyUploadedLanguageFileFromDiscriminatorValue(parseNode i878a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GroupPolicyUploadedLanguageFile) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *GroupPolicyUploadedLanguageFile) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetContent gets the content property value. The contents of the uploaded ADML file.
 func (m *GroupPolicyUploadedLanguageFile) GetContent()([]byte) {
-    return m.content
+    val, err := m.GetBackingStore().Get("content")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyUploadedLanguageFile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -108,23 +117,58 @@ func (m *GroupPolicyUploadedLanguageFile) GetFieldDeserializers()(map[string]fun
 }
 // GetFileName gets the fileName property value. The file name of the uploaded ADML file.
 func (m *GroupPolicyUploadedLanguageFile) GetFileName()(*string) {
-    return m.fileName
+    val, err := m.GetBackingStore().Get("fileName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetId gets the id property value. Key of the entity.
 func (m *GroupPolicyUploadedLanguageFile) GetId()(*string) {
-    return m.id
+    val, err := m.GetBackingStore().Get("id")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLanguageCode gets the languageCode property value. The language code of the uploaded ADML file.
 func (m *GroupPolicyUploadedLanguageFile) GetLanguageCode()(*string) {
-    return m.languageCode
+    val, err := m.GetBackingStore().Get("languageCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
 func (m *GroupPolicyUploadedLanguageFile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *GroupPolicyUploadedLanguageFile) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyUploadedLanguageFile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -174,29 +218,74 @@ func (m *GroupPolicyUploadedLanguageFile) Serialize(writer i878a80d2330e89d26896
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GroupPolicyUploadedLanguageFile) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *GroupPolicyUploadedLanguageFile) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetContent sets the content property value. The contents of the uploaded ADML file.
 func (m *GroupPolicyUploadedLanguageFile) SetContent(value []byte)() {
-    m.content = value
+    err := m.GetBackingStore().Set("content", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFileName sets the fileName property value. The file name of the uploaded ADML file.
 func (m *GroupPolicyUploadedLanguageFile) SetFileName(value *string)() {
-    m.fileName = value
+    err := m.GetBackingStore().Set("fileName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetId sets the id property value. Key of the entity.
 func (m *GroupPolicyUploadedLanguageFile) SetId(value *string)() {
-    m.id = value
+    err := m.GetBackingStore().Set("id", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLanguageCode sets the languageCode property value. The language code of the uploaded ADML file.
 func (m *GroupPolicyUploadedLanguageFile) SetLanguageCode(value *string)() {
-    m.languageCode = value
+    err := m.GetBackingStore().Set("languageCode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the entity was last modified.
 func (m *GroupPolicyUploadedLanguageFile) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *GroupPolicyUploadedLanguageFile) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GroupPolicyUploadedLanguageFileable 
+type GroupPolicyUploadedLanguageFileable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetContent()([]byte)
+    GetFileName()(*string)
+    GetId()(*string)
+    GetLanguageCode()(*string)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetContent(value []byte)()
+    SetFileName(value *string)()
+    SetId(value *string)()
+    SetLanguageCode(value *string)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
 }

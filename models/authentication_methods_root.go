@@ -7,8 +7,6 @@ import (
 // AuthenticationMethodsRoot 
 type AuthenticationMethodsRoot struct {
     Entity
-    // Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
-    userRegistrationDetails []UserRegistrationDetailsable
 }
 // NewAuthenticationMethodsRoot instantiates a new AuthenticationMethodsRoot and sets the default values.
 func NewAuthenticationMethodsRoot()(*AuthenticationMethodsRoot) {
@@ -42,7 +40,14 @@ func (m *AuthenticationMethodsRoot) GetFieldDeserializers()(map[string]func(i878
 }
 // GetUserRegistrationDetails gets the userRegistrationDetails property value. Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
 func (m *AuthenticationMethodsRoot) GetUserRegistrationDetails()([]UserRegistrationDetailsable) {
-    return m.userRegistrationDetails
+    val, err := m.GetBackingStore().Get("userRegistrationDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserRegistrationDetailsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AuthenticationMethodsRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AuthenticationMethodsRoot) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetUserRegistrationDetails sets the userRegistrationDetails property value. Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
 func (m *AuthenticationMethodsRoot) SetUserRegistrationDetails(value []UserRegistrationDetailsable)() {
-    m.userRegistrationDetails = value
+    err := m.GetBackingStore().Set("userRegistrationDetails", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AuthenticationMethodsRootable 
+type AuthenticationMethodsRootable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetUserRegistrationDetails()([]UserRegistrationDetailsable)
+    SetUserRegistrationDetails(value []UserRegistrationDetailsable)()
 }

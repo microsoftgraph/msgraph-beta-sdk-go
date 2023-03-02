@@ -45,7 +45,7 @@ type UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWi
 func NewUserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, summarizeBy *string)(*UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder) {
     m := &UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsDevicePerformance/microsoft.graph.summarizeDevicePerformanceDevices(summarizeBy='{summarizeBy}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsDevicePerformance/summarizeDevicePerformanceDevices(summarizeBy='{summarizeBy}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -53,8 +53,8 @@ func NewUserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevice
     if summarizeBy != nil {
         urlTplParams["summarizeBy"] = *summarizeBy
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewUserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder instantiates a new SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder and sets the default values.

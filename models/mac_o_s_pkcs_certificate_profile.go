@@ -7,32 +7,14 @@ import (
 // MacOSPkcsCertificateProfile 
 type MacOSPkcsCertificateProfile struct {
     MacOSCertificateProfileBase
-    // AllowAllAppsAccess setting
-    allowAllAppsAccess *bool
-    // Target store certificate. Possible values are: user, machine.
-    certificateStore *CertificateStore
-    // PKCS certificate template name.
-    certificateTemplateName *string
-    // PKCS certification authority FQDN.
-    certificationAuthority *string
-    // PKCS certification authority Name.
-    certificationAuthorityName *string
-    // Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
-    customSubjectAlternativeNames []CustomSubjectAlternativeNameable
-    // Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
-    managedDeviceCertificateStates []ManagedDeviceCertificateStateable
-    // Format string that defines the subject alternative name.
-    subjectAlternativeNameFormatString *string
-    // Format string that defines the subject name. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
-    subjectNameFormatString *string
 }
 // NewMacOSPkcsCertificateProfile instantiates a new MacOSPkcsCertificateProfile and sets the default values.
 func NewMacOSPkcsCertificateProfile()(*MacOSPkcsCertificateProfile) {
     m := &MacOSPkcsCertificateProfile{
         MacOSCertificateProfileBase: *NewMacOSCertificateProfileBase(),
     }
-    odataTypeValue := "#microsoft.graph.macOSPkcsCertificateProfile";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.macOSPkcsCertificateProfile"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMacOSPkcsCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,27 +23,69 @@ func CreateMacOSPkcsCertificateProfileFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAllowAllAppsAccess gets the allowAllAppsAccess property value. AllowAllAppsAccess setting
 func (m *MacOSPkcsCertificateProfile) GetAllowAllAppsAccess()(*bool) {
-    return m.allowAllAppsAccess
+    val, err := m.GetBackingStore().Get("allowAllAppsAccess")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetCertificateStore gets the certificateStore property value. Target store certificate. Possible values are: user, machine.
 func (m *MacOSPkcsCertificateProfile) GetCertificateStore()(*CertificateStore) {
-    return m.certificateStore
+    val, err := m.GetBackingStore().Get("certificateStore")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CertificateStore)
+    }
+    return nil
 }
 // GetCertificateTemplateName gets the certificateTemplateName property value. PKCS certificate template name.
 func (m *MacOSPkcsCertificateProfile) GetCertificateTemplateName()(*string) {
-    return m.certificateTemplateName
+    val, err := m.GetBackingStore().Get("certificateTemplateName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCertificationAuthority gets the certificationAuthority property value. PKCS certification authority FQDN.
 func (m *MacOSPkcsCertificateProfile) GetCertificationAuthority()(*string) {
-    return m.certificationAuthority
+    val, err := m.GetBackingStore().Get("certificationAuthority")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCertificationAuthorityName gets the certificationAuthorityName property value. PKCS certification authority Name.
 func (m *MacOSPkcsCertificateProfile) GetCertificationAuthorityName()(*string) {
-    return m.certificationAuthorityName
+    val, err := m.GetBackingStore().Get("certificationAuthorityName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCustomSubjectAlternativeNames gets the customSubjectAlternativeNames property value. Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
 func (m *MacOSPkcsCertificateProfile) GetCustomSubjectAlternativeNames()([]CustomSubjectAlternativeNameable) {
-    return m.customSubjectAlternativeNames
+    val, err := m.GetBackingStore().Get("customSubjectAlternativeNames")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CustomSubjectAlternativeNameable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSPkcsCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -168,15 +192,36 @@ func (m *MacOSPkcsCertificateProfile) GetFieldDeserializers()(map[string]func(i8
 }
 // GetManagedDeviceCertificateStates gets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *MacOSPkcsCertificateProfile) GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable) {
-    return m.managedDeviceCertificateStates
+    val, err := m.GetBackingStore().Get("managedDeviceCertificateStates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedDeviceCertificateStateable)
+    }
+    return nil
 }
 // GetSubjectAlternativeNameFormatString gets the subjectAlternativeNameFormatString property value. Format string that defines the subject alternative name.
 func (m *MacOSPkcsCertificateProfile) GetSubjectAlternativeNameFormatString()(*string) {
-    return m.subjectAlternativeNameFormatString
+    val, err := m.GetBackingStore().Get("subjectAlternativeNameFormatString")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSubjectNameFormatString gets the subjectNameFormatString property value. Format string that defines the subject name. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
 func (m *MacOSPkcsCertificateProfile) GetSubjectNameFormatString()(*string) {
-    return m.subjectNameFormatString
+    val, err := m.GetBackingStore().Get("subjectNameFormatString")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MacOSPkcsCertificateProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -251,37 +296,87 @@ func (m *MacOSPkcsCertificateProfile) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAllowAllAppsAccess sets the allowAllAppsAccess property value. AllowAllAppsAccess setting
 func (m *MacOSPkcsCertificateProfile) SetAllowAllAppsAccess(value *bool)() {
-    m.allowAllAppsAccess = value
+    err := m.GetBackingStore().Set("allowAllAppsAccess", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCertificateStore sets the certificateStore property value. Target store certificate. Possible values are: user, machine.
 func (m *MacOSPkcsCertificateProfile) SetCertificateStore(value *CertificateStore)() {
-    m.certificateStore = value
+    err := m.GetBackingStore().Set("certificateStore", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCertificateTemplateName sets the certificateTemplateName property value. PKCS certificate template name.
 func (m *MacOSPkcsCertificateProfile) SetCertificateTemplateName(value *string)() {
-    m.certificateTemplateName = value
+    err := m.GetBackingStore().Set("certificateTemplateName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCertificationAuthority sets the certificationAuthority property value. PKCS certification authority FQDN.
 func (m *MacOSPkcsCertificateProfile) SetCertificationAuthority(value *string)() {
-    m.certificationAuthority = value
+    err := m.GetBackingStore().Set("certificationAuthority", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCertificationAuthorityName sets the certificationAuthorityName property value. PKCS certification authority Name.
 func (m *MacOSPkcsCertificateProfile) SetCertificationAuthorityName(value *string)() {
-    m.certificationAuthorityName = value
+    err := m.GetBackingStore().Set("certificationAuthorityName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomSubjectAlternativeNames sets the customSubjectAlternativeNames property value. Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
 func (m *MacOSPkcsCertificateProfile) SetCustomSubjectAlternativeNames(value []CustomSubjectAlternativeNameable)() {
-    m.customSubjectAlternativeNames = value
+    err := m.GetBackingStore().Set("customSubjectAlternativeNames", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedDeviceCertificateStates sets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *MacOSPkcsCertificateProfile) SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)() {
-    m.managedDeviceCertificateStates = value
+    err := m.GetBackingStore().Set("managedDeviceCertificateStates", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubjectAlternativeNameFormatString sets the subjectAlternativeNameFormatString property value. Format string that defines the subject alternative name.
 func (m *MacOSPkcsCertificateProfile) SetSubjectAlternativeNameFormatString(value *string)() {
-    m.subjectAlternativeNameFormatString = value
+    err := m.GetBackingStore().Set("subjectAlternativeNameFormatString", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubjectNameFormatString sets the subjectNameFormatString property value. Format string that defines the subject name. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
 func (m *MacOSPkcsCertificateProfile) SetSubjectNameFormatString(value *string)() {
-    m.subjectNameFormatString = value
+    err := m.GetBackingStore().Set("subjectNameFormatString", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MacOSPkcsCertificateProfileable 
+type MacOSPkcsCertificateProfileable interface {
+    MacOSCertificateProfileBaseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllowAllAppsAccess()(*bool)
+    GetCertificateStore()(*CertificateStore)
+    GetCertificateTemplateName()(*string)
+    GetCertificationAuthority()(*string)
+    GetCertificationAuthorityName()(*string)
+    GetCustomSubjectAlternativeNames()([]CustomSubjectAlternativeNameable)
+    GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable)
+    GetSubjectAlternativeNameFormatString()(*string)
+    GetSubjectNameFormatString()(*string)
+    SetAllowAllAppsAccess(value *bool)()
+    SetCertificateStore(value *CertificateStore)()
+    SetCertificateTemplateName(value *string)()
+    SetCertificationAuthority(value *string)()
+    SetCertificationAuthorityName(value *string)()
+    SetCustomSubjectAlternativeNames(value []CustomSubjectAlternativeNameable)()
+    SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)()
+    SetSubjectAlternativeNameFormatString(value *string)()
+    SetSubjectNameFormatString(value *string)()
 }

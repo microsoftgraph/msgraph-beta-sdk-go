@@ -2,72 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // MacOSPrivacyAccessControlItem represents per-process privacy preferences.
 type MacOSPrivacyAccessControlItem struct {
-    // Possible values of a property
-    accessibility *Enablement
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Possible values of a property
-    addressBook *Enablement
-    // Allow or deny the app or process to send a restricted Apple event to another app or process. You will need to know the identifier, identifier type, and code requirement of the receiving app or process. This collection can contain a maximum of 500 elements.
-    appleEventsAllowedReceivers []MacOSAppleEventReceiverable
-    // Block access to camera app.
-    blockCamera *bool
-    // Block the app or process from listening to events from input devices such as mouse, keyboard, and trackpad.Requires macOS 10.15 or later.
-    blockListenEvent *bool
-    // Block access to microphone.
-    blockMicrophone *bool
-    // Block app from capturing contents of system display. Requires macOS 10.15 or later.
-    blockScreenCapture *bool
-    // Possible values of a property
-    calendar *Enablement
-    // Enter the code requirement, which can be obtained with the command 'codesign –display -r –' in the Terminal app. Include everything after '=>'.
-    codeRequirement *string
-    // The display name of the app, process, or executable.
-    displayName *string
-    // Possible values of a property
-    fileProviderPresence *Enablement
-    // The bundle ID or path of the app, process, or executable.
-    identifier *string
-    // Process identifier types for MacOS Privacy Preferences
-    identifierType *MacOSProcessIdentifierType
-    // Possible values of a property
-    mediaLibrary *Enablement
-    // The OdataType property
-    odataType *string
-    // Possible values of a property
-    photos *Enablement
-    // Possible values of a property
-    postEvent *Enablement
-    // Possible values of a property
-    reminders *Enablement
-    // Possible values of a property
-    speechRecognition *Enablement
-    // Statically validates the code requirement. Use this setting if the process invalidates its dynamic code signature.
-    staticCodeValidation *bool
-    // Possible values of a property
-    systemPolicyAllFiles *Enablement
-    // Possible values of a property
-    systemPolicyDesktopFolder *Enablement
-    // Possible values of a property
-    systemPolicyDocumentsFolder *Enablement
-    // Possible values of a property
-    systemPolicyDownloadsFolder *Enablement
-    // Possible values of a property
-    systemPolicyNetworkVolumes *Enablement
-    // Possible values of a property
-    systemPolicyRemovableVolumes *Enablement
-    // Possible values of a property
-    systemPolicySystemAdminFiles *Enablement
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewMacOSPrivacyAccessControlItem instantiates a new macOSPrivacyAccessControlItem and sets the default values.
 func NewMacOSPrivacyAccessControlItem()(*MacOSPrivacyAccessControlItem) {
     m := &MacOSPrivacyAccessControlItem{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMacOSPrivacyAccessControlItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -76,47 +24,129 @@ func CreateMacOSPrivacyAccessControlItemFromDiscriminatorValue(parseNode i878a80
 }
 // GetAccessibility gets the accessibility property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetAccessibility()(*Enablement) {
-    return m.accessibility
+    val, err := m.GetBackingStore().Get("accessibility")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Enablement)
+    }
+    return nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MacOSPrivacyAccessControlItem) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAddressBook gets the addressBook property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetAddressBook()(*Enablement) {
-    return m.addressBook
+    val, err := m.GetBackingStore().Get("addressBook")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Enablement)
+    }
+    return nil
 }
 // GetAppleEventsAllowedReceivers gets the appleEventsAllowedReceivers property value. Allow or deny the app or process to send a restricted Apple event to another app or process. You will need to know the identifier, identifier type, and code requirement of the receiving app or process. This collection can contain a maximum of 500 elements.
 func (m *MacOSPrivacyAccessControlItem) GetAppleEventsAllowedReceivers()([]MacOSAppleEventReceiverable) {
-    return m.appleEventsAllowedReceivers
+    val, err := m.GetBackingStore().Get("appleEventsAllowedReceivers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MacOSAppleEventReceiverable)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *MacOSPrivacyAccessControlItem) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetBlockCamera gets the blockCamera property value. Block access to camera app.
 func (m *MacOSPrivacyAccessControlItem) GetBlockCamera()(*bool) {
-    return m.blockCamera
+    val, err := m.GetBackingStore().Get("blockCamera")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetBlockListenEvent gets the blockListenEvent property value. Block the app or process from listening to events from input devices such as mouse, keyboard, and trackpad.Requires macOS 10.15 or later.
 func (m *MacOSPrivacyAccessControlItem) GetBlockListenEvent()(*bool) {
-    return m.blockListenEvent
+    val, err := m.GetBackingStore().Get("blockListenEvent")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetBlockMicrophone gets the blockMicrophone property value. Block access to microphone.
 func (m *MacOSPrivacyAccessControlItem) GetBlockMicrophone()(*bool) {
-    return m.blockMicrophone
+    val, err := m.GetBackingStore().Get("blockMicrophone")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetBlockScreenCapture gets the blockScreenCapture property value. Block app from capturing contents of system display. Requires macOS 10.15 or later.
 func (m *MacOSPrivacyAccessControlItem) GetBlockScreenCapture()(*bool) {
-    return m.blockScreenCapture
+    val, err := m.GetBackingStore().Get("blockScreenCapture")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetCalendar gets the calendar property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetCalendar()(*Enablement) {
-    return m.calendar
+    val, err := m.GetBackingStore().Get("calendar")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Enablement)
+    }
+    return nil
 }
 // GetCodeRequirement gets the codeRequirement property value. Enter the code requirement, which can be obtained with the command 'codesign –display -r –' in the Terminal app. Include everything after '=>'.
 func (m *MacOSPrivacyAccessControlItem) GetCodeRequirement()(*string) {
-    return m.codeRequirement
+    val, err := m.GetBackingStore().Get("codeRequirement")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the app, process, or executable.
 func (m *MacOSPrivacyAccessControlItem) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSPrivacyAccessControlItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -399,71 +429,190 @@ func (m *MacOSPrivacyAccessControlItem) GetFieldDeserializers()(map[string]func(
 }
 // GetFileProviderPresence gets the fileProviderPresence property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetFileProviderPresence()(*Enablement) {
-    return m.fileProviderPresence
+    val, err := m.GetBackingStore().Get("fileProviderPresence")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Enablement)
+    }
+    return nil
 }
 // GetIdentifier gets the identifier property value. The bundle ID or path of the app, process, or executable.
 func (m *MacOSPrivacyAccessControlItem) GetIdentifier()(*string) {
-    return m.identifier
+    val, err := m.GetBackingStore().Get("identifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIdentifierType gets the identifierType property value. Process identifier types for MacOS Privacy Preferences
 func (m *MacOSPrivacyAccessControlItem) GetIdentifierType()(*MacOSProcessIdentifierType) {
-    return m.identifierType
+    val, err := m.GetBackingStore().Get("identifierType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MacOSProcessIdentifierType)
+    }
+    return nil
 }
 // GetMediaLibrary gets the mediaLibrary property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetMediaLibrary()(*Enablement) {
-    return m.mediaLibrary
+    val, err := m.GetBackingStore().Get("mediaLibrary")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Enablement)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MacOSPrivacyAccessControlItem) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPhotos gets the photos property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetPhotos()(*Enablement) {
-    return m.photos
+    val, err := m.GetBackingStore().Get("photos")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Enablement)
+    }
+    return nil
 }
 // GetPostEvent gets the postEvent property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetPostEvent()(*Enablement) {
-    return m.postEvent
+    val, err := m.GetBackingStore().Get("postEvent")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Enablement)
+    }
+    return nil
 }
 // GetReminders gets the reminders property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetReminders()(*Enablement) {
-    return m.reminders
+    val, err := m.GetBackingStore().Get("reminders")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Enablement)
+    }
+    return nil
 }
 // GetSpeechRecognition gets the speechRecognition property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetSpeechRecognition()(*Enablement) {
-    return m.speechRecognition
+    val, err := m.GetBackingStore().Get("speechRecognition")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Enablement)
+    }
+    return nil
 }
 // GetStaticCodeValidation gets the staticCodeValidation property value. Statically validates the code requirement. Use this setting if the process invalidates its dynamic code signature.
 func (m *MacOSPrivacyAccessControlItem) GetStaticCodeValidation()(*bool) {
-    return m.staticCodeValidation
+    val, err := m.GetBackingStore().Get("staticCodeValidation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSystemPolicyAllFiles gets the systemPolicyAllFiles property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetSystemPolicyAllFiles()(*Enablement) {
-    return m.systemPolicyAllFiles
+    val, err := m.GetBackingStore().Get("systemPolicyAllFiles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Enablement)
+    }
+    return nil
 }
 // GetSystemPolicyDesktopFolder gets the systemPolicyDesktopFolder property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetSystemPolicyDesktopFolder()(*Enablement) {
-    return m.systemPolicyDesktopFolder
+    val, err := m.GetBackingStore().Get("systemPolicyDesktopFolder")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Enablement)
+    }
+    return nil
 }
 // GetSystemPolicyDocumentsFolder gets the systemPolicyDocumentsFolder property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetSystemPolicyDocumentsFolder()(*Enablement) {
-    return m.systemPolicyDocumentsFolder
+    val, err := m.GetBackingStore().Get("systemPolicyDocumentsFolder")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Enablement)
+    }
+    return nil
 }
 // GetSystemPolicyDownloadsFolder gets the systemPolicyDownloadsFolder property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetSystemPolicyDownloadsFolder()(*Enablement) {
-    return m.systemPolicyDownloadsFolder
+    val, err := m.GetBackingStore().Get("systemPolicyDownloadsFolder")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Enablement)
+    }
+    return nil
 }
 // GetSystemPolicyNetworkVolumes gets the systemPolicyNetworkVolumes property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetSystemPolicyNetworkVolumes()(*Enablement) {
-    return m.systemPolicyNetworkVolumes
+    val, err := m.GetBackingStore().Get("systemPolicyNetworkVolumes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Enablement)
+    }
+    return nil
 }
 // GetSystemPolicyRemovableVolumes gets the systemPolicyRemovableVolumes property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetSystemPolicyRemovableVolumes()(*Enablement) {
-    return m.systemPolicyRemovableVolumes
+    val, err := m.GetBackingStore().Get("systemPolicyRemovableVolumes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Enablement)
+    }
+    return nil
 }
 // GetSystemPolicySystemAdminFiles gets the systemPolicySystemAdminFiles property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetSystemPolicySystemAdminFiles()(*Enablement) {
-    return m.systemPolicySystemAdminFiles
+    val, err := m.GetBackingStore().Get("systemPolicySystemAdminFiles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Enablement)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MacOSPrivacyAccessControlItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -660,113 +809,263 @@ func (m *MacOSPrivacyAccessControlItem) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAccessibility sets the accessibility property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetAccessibility(value *Enablement)() {
-    m.accessibility = value
+    err := m.GetBackingStore().Set("accessibility", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MacOSPrivacyAccessControlItem) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAddressBook sets the addressBook property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetAddressBook(value *Enablement)() {
-    m.addressBook = value
+    err := m.GetBackingStore().Set("addressBook", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppleEventsAllowedReceivers sets the appleEventsAllowedReceivers property value. Allow or deny the app or process to send a restricted Apple event to another app or process. You will need to know the identifier, identifier type, and code requirement of the receiving app or process. This collection can contain a maximum of 500 elements.
 func (m *MacOSPrivacyAccessControlItem) SetAppleEventsAllowedReceivers(value []MacOSAppleEventReceiverable)() {
-    m.appleEventsAllowedReceivers = value
+    err := m.GetBackingStore().Set("appleEventsAllowedReceivers", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *MacOSPrivacyAccessControlItem) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetBlockCamera sets the blockCamera property value. Block access to camera app.
 func (m *MacOSPrivacyAccessControlItem) SetBlockCamera(value *bool)() {
-    m.blockCamera = value
+    err := m.GetBackingStore().Set("blockCamera", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBlockListenEvent sets the blockListenEvent property value. Block the app or process from listening to events from input devices such as mouse, keyboard, and trackpad.Requires macOS 10.15 or later.
 func (m *MacOSPrivacyAccessControlItem) SetBlockListenEvent(value *bool)() {
-    m.blockListenEvent = value
+    err := m.GetBackingStore().Set("blockListenEvent", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBlockMicrophone sets the blockMicrophone property value. Block access to microphone.
 func (m *MacOSPrivacyAccessControlItem) SetBlockMicrophone(value *bool)() {
-    m.blockMicrophone = value
+    err := m.GetBackingStore().Set("blockMicrophone", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBlockScreenCapture sets the blockScreenCapture property value. Block app from capturing contents of system display. Requires macOS 10.15 or later.
 func (m *MacOSPrivacyAccessControlItem) SetBlockScreenCapture(value *bool)() {
-    m.blockScreenCapture = value
+    err := m.GetBackingStore().Set("blockScreenCapture", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCalendar sets the calendar property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetCalendar(value *Enablement)() {
-    m.calendar = value
+    err := m.GetBackingStore().Set("calendar", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCodeRequirement sets the codeRequirement property value. Enter the code requirement, which can be obtained with the command 'codesign –display -r –' in the Terminal app. Include everything after '=>'.
 func (m *MacOSPrivacyAccessControlItem) SetCodeRequirement(value *string)() {
-    m.codeRequirement = value
+    err := m.GetBackingStore().Set("codeRequirement", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the app, process, or executable.
 func (m *MacOSPrivacyAccessControlItem) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFileProviderPresence sets the fileProviderPresence property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetFileProviderPresence(value *Enablement)() {
-    m.fileProviderPresence = value
+    err := m.GetBackingStore().Set("fileProviderPresence", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentifier sets the identifier property value. The bundle ID or path of the app, process, or executable.
 func (m *MacOSPrivacyAccessControlItem) SetIdentifier(value *string)() {
-    m.identifier = value
+    err := m.GetBackingStore().Set("identifier", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentifierType sets the identifierType property value. Process identifier types for MacOS Privacy Preferences
 func (m *MacOSPrivacyAccessControlItem) SetIdentifierType(value *MacOSProcessIdentifierType)() {
-    m.identifierType = value
+    err := m.GetBackingStore().Set("identifierType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMediaLibrary sets the mediaLibrary property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetMediaLibrary(value *Enablement)() {
-    m.mediaLibrary = value
+    err := m.GetBackingStore().Set("mediaLibrary", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MacOSPrivacyAccessControlItem) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPhotos sets the photos property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetPhotos(value *Enablement)() {
-    m.photos = value
+    err := m.GetBackingStore().Set("photos", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPostEvent sets the postEvent property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetPostEvent(value *Enablement)() {
-    m.postEvent = value
+    err := m.GetBackingStore().Set("postEvent", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReminders sets the reminders property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetReminders(value *Enablement)() {
-    m.reminders = value
+    err := m.GetBackingStore().Set("reminders", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSpeechRecognition sets the speechRecognition property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetSpeechRecognition(value *Enablement)() {
-    m.speechRecognition = value
+    err := m.GetBackingStore().Set("speechRecognition", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStaticCodeValidation sets the staticCodeValidation property value. Statically validates the code requirement. Use this setting if the process invalidates its dynamic code signature.
 func (m *MacOSPrivacyAccessControlItem) SetStaticCodeValidation(value *bool)() {
-    m.staticCodeValidation = value
+    err := m.GetBackingStore().Set("staticCodeValidation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSystemPolicyAllFiles sets the systemPolicyAllFiles property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetSystemPolicyAllFiles(value *Enablement)() {
-    m.systemPolicyAllFiles = value
+    err := m.GetBackingStore().Set("systemPolicyAllFiles", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSystemPolicyDesktopFolder sets the systemPolicyDesktopFolder property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetSystemPolicyDesktopFolder(value *Enablement)() {
-    m.systemPolicyDesktopFolder = value
+    err := m.GetBackingStore().Set("systemPolicyDesktopFolder", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSystemPolicyDocumentsFolder sets the systemPolicyDocumentsFolder property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetSystemPolicyDocumentsFolder(value *Enablement)() {
-    m.systemPolicyDocumentsFolder = value
+    err := m.GetBackingStore().Set("systemPolicyDocumentsFolder", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSystemPolicyDownloadsFolder sets the systemPolicyDownloadsFolder property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetSystemPolicyDownloadsFolder(value *Enablement)() {
-    m.systemPolicyDownloadsFolder = value
+    err := m.GetBackingStore().Set("systemPolicyDownloadsFolder", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSystemPolicyNetworkVolumes sets the systemPolicyNetworkVolumes property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetSystemPolicyNetworkVolumes(value *Enablement)() {
-    m.systemPolicyNetworkVolumes = value
+    err := m.GetBackingStore().Set("systemPolicyNetworkVolumes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSystemPolicyRemovableVolumes sets the systemPolicyRemovableVolumes property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetSystemPolicyRemovableVolumes(value *Enablement)() {
-    m.systemPolicyRemovableVolumes = value
+    err := m.GetBackingStore().Set("systemPolicyRemovableVolumes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSystemPolicySystemAdminFiles sets the systemPolicySystemAdminFiles property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetSystemPolicySystemAdminFiles(value *Enablement)() {
-    m.systemPolicySystemAdminFiles = value
+    err := m.GetBackingStore().Set("systemPolicySystemAdminFiles", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MacOSPrivacyAccessControlItemable 
+type MacOSPrivacyAccessControlItemable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAccessibility()(*Enablement)
+    GetAddressBook()(*Enablement)
+    GetAppleEventsAllowedReceivers()([]MacOSAppleEventReceiverable)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetBlockCamera()(*bool)
+    GetBlockListenEvent()(*bool)
+    GetBlockMicrophone()(*bool)
+    GetBlockScreenCapture()(*bool)
+    GetCalendar()(*Enablement)
+    GetCodeRequirement()(*string)
+    GetDisplayName()(*string)
+    GetFileProviderPresence()(*Enablement)
+    GetIdentifier()(*string)
+    GetIdentifierType()(*MacOSProcessIdentifierType)
+    GetMediaLibrary()(*Enablement)
+    GetOdataType()(*string)
+    GetPhotos()(*Enablement)
+    GetPostEvent()(*Enablement)
+    GetReminders()(*Enablement)
+    GetSpeechRecognition()(*Enablement)
+    GetStaticCodeValidation()(*bool)
+    GetSystemPolicyAllFiles()(*Enablement)
+    GetSystemPolicyDesktopFolder()(*Enablement)
+    GetSystemPolicyDocumentsFolder()(*Enablement)
+    GetSystemPolicyDownloadsFolder()(*Enablement)
+    GetSystemPolicyNetworkVolumes()(*Enablement)
+    GetSystemPolicyRemovableVolumes()(*Enablement)
+    GetSystemPolicySystemAdminFiles()(*Enablement)
+    SetAccessibility(value *Enablement)()
+    SetAddressBook(value *Enablement)()
+    SetAppleEventsAllowedReceivers(value []MacOSAppleEventReceiverable)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetBlockCamera(value *bool)()
+    SetBlockListenEvent(value *bool)()
+    SetBlockMicrophone(value *bool)()
+    SetBlockScreenCapture(value *bool)()
+    SetCalendar(value *Enablement)()
+    SetCodeRequirement(value *string)()
+    SetDisplayName(value *string)()
+    SetFileProviderPresence(value *Enablement)()
+    SetIdentifier(value *string)()
+    SetIdentifierType(value *MacOSProcessIdentifierType)()
+    SetMediaLibrary(value *Enablement)()
+    SetOdataType(value *string)()
+    SetPhotos(value *Enablement)()
+    SetPostEvent(value *Enablement)()
+    SetReminders(value *Enablement)()
+    SetSpeechRecognition(value *Enablement)()
+    SetStaticCodeValidation(value *bool)()
+    SetSystemPolicyAllFiles(value *Enablement)()
+    SetSystemPolicyDesktopFolder(value *Enablement)()
+    SetSystemPolicyDocumentsFolder(value *Enablement)()
+    SetSystemPolicyDownloadsFolder(value *Enablement)()
+    SetSystemPolicyNetworkVolumes(value *Enablement)()
+    SetSystemPolicyRemovableVolumes(value *Enablement)()
+    SetSystemPolicySystemAdminFiles(value *Enablement)()
 }

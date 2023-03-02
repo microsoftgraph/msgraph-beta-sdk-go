@@ -2,30 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // SensitiveContentLocation 
 type SensitiveContentLocation struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The confidence property
-    confidence *int32
-    // The evidences property
-    evidences []SensitiveContentEvidenceable
-    // The idMatch property
-    idMatch *string
-    // The length property
-    length *int32
-    // The OdataType property
-    odataType *string
-    // The offset property
-    offset *int32
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewSensitiveContentLocation instantiates a new sensitiveContentLocation and sets the default values.
 func NewSensitiveContentLocation()(*SensitiveContentLocation) {
     m := &SensitiveContentLocation{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSensitiveContentLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -34,15 +24,41 @@ func CreateSensitiveContentLocationFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SensitiveContentLocation) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *SensitiveContentLocation) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetConfidence gets the confidence property value. The confidence property
 func (m *SensitiveContentLocation) GetConfidence()(*int32) {
-    return m.confidence
+    val, err := m.GetBackingStore().Get("confidence")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetEvidences gets the evidences property value. The evidences property
 func (m *SensitiveContentLocation) GetEvidences()([]SensitiveContentEvidenceable) {
-    return m.evidences
+    val, err := m.GetBackingStore().Get("evidences")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SensitiveContentEvidenceable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SensitiveContentLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -115,19 +131,47 @@ func (m *SensitiveContentLocation) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetIdMatch gets the idMatch property value. The idMatch property
 func (m *SensitiveContentLocation) GetIdMatch()(*string) {
-    return m.idMatch
+    val, err := m.GetBackingStore().Get("idMatch")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLength gets the length property value. The length property
 func (m *SensitiveContentLocation) GetLength()(*int32) {
-    return m.length
+    val, err := m.GetBackingStore().Get("length")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SensitiveContentLocation) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOffset gets the offset property value. The offset property
 func (m *SensitiveContentLocation) GetOffset()(*int32) {
-    return m.offset
+    val, err := m.GetBackingStore().Get("offset")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SensitiveContentLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -181,29 +225,74 @@ func (m *SensitiveContentLocation) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SensitiveContentLocation) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *SensitiveContentLocation) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetConfidence sets the confidence property value. The confidence property
 func (m *SensitiveContentLocation) SetConfidence(value *int32)() {
-    m.confidence = value
+    err := m.GetBackingStore().Set("confidence", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEvidences sets the evidences property value. The evidences property
 func (m *SensitiveContentLocation) SetEvidences(value []SensitiveContentEvidenceable)() {
-    m.evidences = value
+    err := m.GetBackingStore().Set("evidences", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdMatch sets the idMatch property value. The idMatch property
 func (m *SensitiveContentLocation) SetIdMatch(value *string)() {
-    m.idMatch = value
+    err := m.GetBackingStore().Set("idMatch", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLength sets the length property value. The length property
 func (m *SensitiveContentLocation) SetLength(value *int32)() {
-    m.length = value
+    err := m.GetBackingStore().Set("length", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SensitiveContentLocation) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOffset sets the offset property value. The offset property
 func (m *SensitiveContentLocation) SetOffset(value *int32)() {
-    m.offset = value
+    err := m.GetBackingStore().Set("offset", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SensitiveContentLocationable 
+type SensitiveContentLocationable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetConfidence()(*int32)
+    GetEvidences()([]SensitiveContentEvidenceable)
+    GetIdMatch()(*string)
+    GetLength()(*int32)
+    GetOdataType()(*string)
+    GetOffset()(*int32)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetConfidence(value *int32)()
+    SetEvidences(value []SensitiveContentEvidenceable)()
+    SetIdMatch(value *string)()
+    SetLength(value *int32)()
+    SetOdataType(value *string)()
+    SetOffset(value *int32)()
 }

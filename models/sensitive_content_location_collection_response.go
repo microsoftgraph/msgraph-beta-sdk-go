@@ -7,8 +7,6 @@ import (
 // SensitiveContentLocationCollectionResponse 
 type SensitiveContentLocationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []SensitiveContentLocationable
 }
 // NewSensitiveContentLocationCollectionResponse instantiates a new SensitiveContentLocationCollectionResponse and sets the default values.
 func NewSensitiveContentLocationCollectionResponse()(*SensitiveContentLocationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *SensitiveContentLocationCollectionResponse) GetFieldDeserializers()(map
 }
 // GetValue gets the value property value. The value property
 func (m *SensitiveContentLocationCollectionResponse) GetValue()([]SensitiveContentLocationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SensitiveContentLocationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SensitiveContentLocationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *SensitiveContentLocationCollectionResponse) Serialize(writer i878a80d23
 }
 // SetValue sets the value property value. The value property
 func (m *SensitiveContentLocationCollectionResponse) SetValue(value []SensitiveContentLocationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SensitiveContentLocationCollectionResponseable 
+type SensitiveContentLocationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]SensitiveContentLocationable)
+    SetValue(value []SensitiveContentLocationable)()
 }

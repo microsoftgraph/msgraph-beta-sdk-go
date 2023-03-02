@@ -7,36 +7,14 @@ import (
 // IosWiFiConfiguration 
 type IosWiFiConfiguration struct {
     DeviceConfiguration
-    // Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
-    connectAutomatically *bool
-    // Connect when the network is not broadcasting its name (SSID). When set to true, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices.
-    connectWhenNetworkNameIsHidden *bool
-    // If set to true, forces devices connecting using this Wi-Fi profile to present their actual Wi-Fi MAC address instead of a random MAC address. Applies to iOS 14 and later.
-    disableMacAddressRandomization *bool
-    // Network Name
-    networkName *string
-    // This is the pre-shared key for WPA Personal Wi-Fi network.
-    preSharedKey *string
-    // URL of the proxy server automatic configuration script when automatic configuration is selected. This URL is typically the location of PAC (Proxy Auto Configuration) file.
-    proxyAutomaticConfigurationUrl *string
-    // IP Address or DNS hostname of the proxy server when manual configuration is selected.
-    proxyManualAddress *string
-    // Port of the proxy server when manual configuration is selected.
-    proxyManualPort *int32
-    // Wi-Fi Proxy Settings.
-    proxySettings *WiFiProxySetting
-    // This is the name of the Wi-Fi network that is broadcast to all devices.
-    ssid *string
-    // Wi-Fi Security Types.
-    wiFiSecurityType *WiFiSecurityType
 }
 // NewIosWiFiConfiguration instantiates a new IosWiFiConfiguration and sets the default values.
 func NewIosWiFiConfiguration()(*IosWiFiConfiguration) {
     m := &IosWiFiConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.iosWiFiConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.iosWiFiConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateIosWiFiConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -63,15 +41,36 @@ func CreateIosWiFiConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetConnectAutomatically gets the connectAutomatically property value. Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
 func (m *IosWiFiConfiguration) GetConnectAutomatically()(*bool) {
-    return m.connectAutomatically
+    val, err := m.GetBackingStore().Get("connectAutomatically")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetConnectWhenNetworkNameIsHidden gets the connectWhenNetworkNameIsHidden property value. Connect when the network is not broadcasting its name (SSID). When set to true, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices.
 func (m *IosWiFiConfiguration) GetConnectWhenNetworkNameIsHidden()(*bool) {
-    return m.connectWhenNetworkNameIsHidden
+    val, err := m.GetBackingStore().Get("connectWhenNetworkNameIsHidden")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDisableMacAddressRandomization gets the disableMacAddressRandomization property value. If set to true, forces devices connecting using this Wi-Fi profile to present their actual Wi-Fi MAC address instead of a random MAC address. Applies to iOS 14 and later.
 func (m *IosWiFiConfiguration) GetDisableMacAddressRandomization()(*bool) {
-    return m.disableMacAddressRandomization
+    val, err := m.GetBackingStore().Get("disableMacAddressRandomization")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosWiFiConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -190,35 +189,91 @@ func (m *IosWiFiConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetNetworkName gets the networkName property value. Network Name
 func (m *IosWiFiConfiguration) GetNetworkName()(*string) {
-    return m.networkName
+    val, err := m.GetBackingStore().Get("networkName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPreSharedKey gets the preSharedKey property value. This is the pre-shared key for WPA Personal Wi-Fi network.
 func (m *IosWiFiConfiguration) GetPreSharedKey()(*string) {
-    return m.preSharedKey
+    val, err := m.GetBackingStore().Get("preSharedKey")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProxyAutomaticConfigurationUrl gets the proxyAutomaticConfigurationUrl property value. URL of the proxy server automatic configuration script when automatic configuration is selected. This URL is typically the location of PAC (Proxy Auto Configuration) file.
 func (m *IosWiFiConfiguration) GetProxyAutomaticConfigurationUrl()(*string) {
-    return m.proxyAutomaticConfigurationUrl
+    val, err := m.GetBackingStore().Get("proxyAutomaticConfigurationUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProxyManualAddress gets the proxyManualAddress property value. IP Address or DNS hostname of the proxy server when manual configuration is selected.
 func (m *IosWiFiConfiguration) GetProxyManualAddress()(*string) {
-    return m.proxyManualAddress
+    val, err := m.GetBackingStore().Get("proxyManualAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProxyManualPort gets the proxyManualPort property value. Port of the proxy server when manual configuration is selected.
 func (m *IosWiFiConfiguration) GetProxyManualPort()(*int32) {
-    return m.proxyManualPort
+    val, err := m.GetBackingStore().Get("proxyManualPort")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetProxySettings gets the proxySettings property value. Wi-Fi Proxy Settings.
 func (m *IosWiFiConfiguration) GetProxySettings()(*WiFiProxySetting) {
-    return m.proxySettings
+    val, err := m.GetBackingStore().Get("proxySettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WiFiProxySetting)
+    }
+    return nil
 }
 // GetSsid gets the ssid property value. This is the name of the Wi-Fi network that is broadcast to all devices.
 func (m *IosWiFiConfiguration) GetSsid()(*string) {
-    return m.ssid
+    val, err := m.GetBackingStore().Get("ssid")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetWiFiSecurityType gets the wiFiSecurityType property value. Wi-Fi Security Types.
 func (m *IosWiFiConfiguration) GetWiFiSecurityType()(*WiFiSecurityType) {
-    return m.wiFiSecurityType
+    val, err := m.GetBackingStore().Get("wiFiSecurityType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WiFiSecurityType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosWiFiConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -298,45 +353,105 @@ func (m *IosWiFiConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetConnectAutomatically sets the connectAutomatically property value. Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
 func (m *IosWiFiConfiguration) SetConnectAutomatically(value *bool)() {
-    m.connectAutomatically = value
+    err := m.GetBackingStore().Set("connectAutomatically", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConnectWhenNetworkNameIsHidden sets the connectWhenNetworkNameIsHidden property value. Connect when the network is not broadcasting its name (SSID). When set to true, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices.
 func (m *IosWiFiConfiguration) SetConnectWhenNetworkNameIsHidden(value *bool)() {
-    m.connectWhenNetworkNameIsHidden = value
+    err := m.GetBackingStore().Set("connectWhenNetworkNameIsHidden", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisableMacAddressRandomization sets the disableMacAddressRandomization property value. If set to true, forces devices connecting using this Wi-Fi profile to present their actual Wi-Fi MAC address instead of a random MAC address. Applies to iOS 14 and later.
 func (m *IosWiFiConfiguration) SetDisableMacAddressRandomization(value *bool)() {
-    m.disableMacAddressRandomization = value
+    err := m.GetBackingStore().Set("disableMacAddressRandomization", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNetworkName sets the networkName property value. Network Name
 func (m *IosWiFiConfiguration) SetNetworkName(value *string)() {
-    m.networkName = value
+    err := m.GetBackingStore().Set("networkName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPreSharedKey sets the preSharedKey property value. This is the pre-shared key for WPA Personal Wi-Fi network.
 func (m *IosWiFiConfiguration) SetPreSharedKey(value *string)() {
-    m.preSharedKey = value
+    err := m.GetBackingStore().Set("preSharedKey", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProxyAutomaticConfigurationUrl sets the proxyAutomaticConfigurationUrl property value. URL of the proxy server automatic configuration script when automatic configuration is selected. This URL is typically the location of PAC (Proxy Auto Configuration) file.
 func (m *IosWiFiConfiguration) SetProxyAutomaticConfigurationUrl(value *string)() {
-    m.proxyAutomaticConfigurationUrl = value
+    err := m.GetBackingStore().Set("proxyAutomaticConfigurationUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProxyManualAddress sets the proxyManualAddress property value. IP Address or DNS hostname of the proxy server when manual configuration is selected.
 func (m *IosWiFiConfiguration) SetProxyManualAddress(value *string)() {
-    m.proxyManualAddress = value
+    err := m.GetBackingStore().Set("proxyManualAddress", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProxyManualPort sets the proxyManualPort property value. Port of the proxy server when manual configuration is selected.
 func (m *IosWiFiConfiguration) SetProxyManualPort(value *int32)() {
-    m.proxyManualPort = value
+    err := m.GetBackingStore().Set("proxyManualPort", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProxySettings sets the proxySettings property value. Wi-Fi Proxy Settings.
 func (m *IosWiFiConfiguration) SetProxySettings(value *WiFiProxySetting)() {
-    m.proxySettings = value
+    err := m.GetBackingStore().Set("proxySettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSsid sets the ssid property value. This is the name of the Wi-Fi network that is broadcast to all devices.
 func (m *IosWiFiConfiguration) SetSsid(value *string)() {
-    m.ssid = value
+    err := m.GetBackingStore().Set("ssid", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWiFiSecurityType sets the wiFiSecurityType property value. Wi-Fi Security Types.
 func (m *IosWiFiConfiguration) SetWiFiSecurityType(value *WiFiSecurityType)() {
-    m.wiFiSecurityType = value
+    err := m.GetBackingStore().Set("wiFiSecurityType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosWiFiConfigurationable 
+type IosWiFiConfigurationable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetConnectAutomatically()(*bool)
+    GetConnectWhenNetworkNameIsHidden()(*bool)
+    GetDisableMacAddressRandomization()(*bool)
+    GetNetworkName()(*string)
+    GetPreSharedKey()(*string)
+    GetProxyAutomaticConfigurationUrl()(*string)
+    GetProxyManualAddress()(*string)
+    GetProxyManualPort()(*int32)
+    GetProxySettings()(*WiFiProxySetting)
+    GetSsid()(*string)
+    GetWiFiSecurityType()(*WiFiSecurityType)
+    SetConnectAutomatically(value *bool)()
+    SetConnectWhenNetworkNameIsHidden(value *bool)()
+    SetDisableMacAddressRandomization(value *bool)()
+    SetNetworkName(value *string)()
+    SetPreSharedKey(value *string)()
+    SetProxyAutomaticConfigurationUrl(value *string)()
+    SetProxyManualAddress(value *string)()
+    SetProxyManualPort(value *int32)()
+    SetProxySettings(value *WiFiProxySetting)()
+    SetSsid(value *string)()
+    SetWiFiSecurityType(value *WiFiSecurityType)()
 }

@@ -2,24 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // DeviceManagementConfigurationSettingOccurrence 
 type DeviceManagementConfigurationSettingOccurrence struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Maximum times setting can be set on device.
-    maxDeviceOccurrence *int32
-    // Minimum times setting can be set on device. A MinDeviceOccurrence of 0 means setting is optional
-    minDeviceOccurrence *int32
-    // The OdataType property
-    odataType *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewDeviceManagementConfigurationSettingOccurrence instantiates a new deviceManagementConfigurationSettingOccurrence and sets the default values.
 func NewDeviceManagementConfigurationSettingOccurrence()(*DeviceManagementConfigurationSettingOccurrence) {
     m := &DeviceManagementConfigurationSettingOccurrence{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceManagementConfigurationSettingOccurrenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,7 +24,19 @@ func CreateDeviceManagementConfigurationSettingOccurrenceFromDiscriminatorValue(
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationSettingOccurrence) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *DeviceManagementConfigurationSettingOccurrence) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationSettingOccurrence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -67,15 +75,36 @@ func (m *DeviceManagementConfigurationSettingOccurrence) GetFieldDeserializers()
 }
 // GetMaxDeviceOccurrence gets the maxDeviceOccurrence property value. Maximum times setting can be set on device.
 func (m *DeviceManagementConfigurationSettingOccurrence) GetMaxDeviceOccurrence()(*int32) {
-    return m.maxDeviceOccurrence
+    val, err := m.GetBackingStore().Get("maxDeviceOccurrence")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetMinDeviceOccurrence gets the minDeviceOccurrence property value. Minimum times setting can be set on device. A MinDeviceOccurrence of 0 means setting is optional
 func (m *DeviceManagementConfigurationSettingOccurrence) GetMinDeviceOccurrence()(*int32) {
-    return m.minDeviceOccurrence
+    val, err := m.GetBackingStore().Get("minDeviceOccurrence")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceManagementConfigurationSettingOccurrence) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSettingOccurrence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -107,17 +136,47 @@ func (m *DeviceManagementConfigurationSettingOccurrence) Serialize(writer i878a8
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationSettingOccurrence) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *DeviceManagementConfigurationSettingOccurrence) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetMaxDeviceOccurrence sets the maxDeviceOccurrence property value. Maximum times setting can be set on device.
 func (m *DeviceManagementConfigurationSettingOccurrence) SetMaxDeviceOccurrence(value *int32)() {
-    m.maxDeviceOccurrence = value
+    err := m.GetBackingStore().Set("maxDeviceOccurrence", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMinDeviceOccurrence sets the minDeviceOccurrence property value. Minimum times setting can be set on device. A MinDeviceOccurrence of 0 means setting is optional
 func (m *DeviceManagementConfigurationSettingOccurrence) SetMinDeviceOccurrence(value *int32)() {
-    m.minDeviceOccurrence = value
+    err := m.GetBackingStore().Set("minDeviceOccurrence", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceManagementConfigurationSettingOccurrence) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationSettingOccurrenceable 
+type DeviceManagementConfigurationSettingOccurrenceable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetMaxDeviceOccurrence()(*int32)
+    GetMinDeviceOccurrence()(*int32)
+    GetOdataType()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetMaxDeviceOccurrence(value *int32)()
+    SetMinDeviceOccurrence(value *int32)()
+    SetOdataType(value *string)()
 }

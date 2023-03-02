@@ -48,7 +48,7 @@ type AuthenticationStrengthPoliciesAuthenticationStrengthPolicyItemRequestBuilde
 }
 // CombinationConfigurations provides operations to manage the combinationConfigurations property of the microsoft.graph.authenticationStrengthPolicy entity.
 func (m *AuthenticationStrengthPoliciesAuthenticationStrengthPolicyItemRequestBuilder) CombinationConfigurations()(*AuthenticationStrengthPoliciesItemCombinationConfigurationsRequestBuilder) {
-    return NewAuthenticationStrengthPoliciesItemCombinationConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAuthenticationStrengthPoliciesItemCombinationConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CombinationConfigurationsById provides operations to manage the combinationConfigurations property of the microsoft.graph.authenticationStrengthPolicy entity.
 func (m *AuthenticationStrengthPoliciesAuthenticationStrengthPolicyItemRequestBuilder) CombinationConfigurationsById(id string)(*AuthenticationStrengthPoliciesItemCombinationConfigurationsAuthenticationCombinationConfigurationItemRequestBuilder) {
@@ -59,7 +59,7 @@ func (m *AuthenticationStrengthPoliciesAuthenticationStrengthPolicyItemRequestBu
     if id != "" {
         urlTplParams["authenticationCombinationConfiguration%2Did"] = id
     }
-    return NewAuthenticationStrengthPoliciesItemCombinationConfigurationsAuthenticationCombinationConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAuthenticationStrengthPoliciesItemCombinationConfigurationsAuthenticationCombinationConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewAuthenticationStrengthPoliciesAuthenticationStrengthPolicyItemRequestBuilderInternal instantiates a new AuthenticationStrengthPolicyItemRequestBuilder and sets the default values.
 func NewAuthenticationStrengthPoliciesAuthenticationStrengthPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthenticationStrengthPoliciesAuthenticationStrengthPolicyItemRequestBuilder) {
@@ -70,8 +70,8 @@ func NewAuthenticationStrengthPoliciesAuthenticationStrengthPolicyItemRequestBui
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAuthenticationStrengthPoliciesAuthenticationStrengthPolicyItemRequestBuilder instantiates a new AuthenticationStrengthPolicyItemRequestBuilder and sets the default values.
@@ -169,7 +169,10 @@ func (m *AuthenticationStrengthPoliciesAuthenticationStrengthPolicyItemRequestBu
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -178,9 +181,9 @@ func (m *AuthenticationStrengthPoliciesAuthenticationStrengthPolicyItemRequestBu
 }
 // UpdateAllowedCombinations provides operations to call the updateAllowedCombinations method.
 func (m *AuthenticationStrengthPoliciesAuthenticationStrengthPolicyItemRequestBuilder) UpdateAllowedCombinations()(*AuthenticationStrengthPoliciesItemUpdateAllowedCombinationsRequestBuilder) {
-    return NewAuthenticationStrengthPoliciesItemUpdateAllowedCombinationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAuthenticationStrengthPoliciesItemUpdateAllowedCombinationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Usage provides operations to call the usage method.
 func (m *AuthenticationStrengthPoliciesAuthenticationStrengthPolicyItemRequestBuilder) Usage()(*AuthenticationStrengthPoliciesItemUsageRequestBuilder) {
-    return NewAuthenticationStrengthPoliciesItemUsageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAuthenticationStrengthPoliciesItemUsageRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

@@ -26,7 +26,7 @@ type GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodRequestBuilderGetRe
 func NewGetSkypeForBusinessOrganizerActivityUserCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, period *string)(*GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodRequestBuilder) {
     m := &GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/reports/microsoft.graph.getSkypeForBusinessOrganizerActivityUserCounts(period='{period}')";
+    m.urlTemplate = "{+baseurl}/reports/getSkypeForBusinessOrganizerActivityUserCounts(period='{period}')";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -34,8 +34,8 @@ func NewGetSkypeForBusinessOrganizerActivityUserCountsWithPeriodRequestBuilderIn
     if period != nil {
         urlTplParams["period"] = *period
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGetSkypeForBusinessOrganizerActivityUserCountsWithPeriodRequestBuilder instantiates a new GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodRequestBuilder and sets the default values.

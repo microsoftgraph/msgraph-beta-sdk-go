@@ -7,8 +7,6 @@ import (
 // HostSecurityProfileCollectionResponse 
 type HostSecurityProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []HostSecurityProfileable
 }
 // NewHostSecurityProfileCollectionResponse instantiates a new HostSecurityProfileCollectionResponse and sets the default values.
 func NewHostSecurityProfileCollectionResponse()(*HostSecurityProfileCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *HostSecurityProfileCollectionResponse) GetFieldDeserializers()(map[stri
 }
 // GetValue gets the value property value. The value property
 func (m *HostSecurityProfileCollectionResponse) GetValue()([]HostSecurityProfileable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]HostSecurityProfileable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *HostSecurityProfileCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *HostSecurityProfileCollectionResponse) Serialize(writer i878a80d2330e89
 }
 // SetValue sets the value property value. The value property
 func (m *HostSecurityProfileCollectionResponse) SetValue(value []HostSecurityProfileable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// HostSecurityProfileCollectionResponseable 
+type HostSecurityProfileCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]HostSecurityProfileable)
+    SetValue(value []HostSecurityProfileable)()
 }

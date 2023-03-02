@@ -2,28 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ObjectDefinition 
 type ObjectDefinition struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The attributes property
-    attributes []AttributeDefinitionable
-    // The metadata property
-    metadata []MetadataEntryable
-    // The name property
-    name *string
-    // The OdataType property
-    odataType *string
-    // The supportedApis property
-    supportedApis []string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewObjectDefinition instantiates a new objectDefinition and sets the default values.
 func NewObjectDefinition()(*ObjectDefinition) {
     m := &ObjectDefinition{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateObjectDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,11 +24,30 @@ func CreateObjectDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ObjectDefinition) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAttributes gets the attributes property value. The attributes property
 func (m *ObjectDefinition) GetAttributes()([]AttributeDefinitionable) {
-    return m.attributes
+    val, err := m.GetBackingStore().Get("attributes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AttributeDefinitionable)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ObjectDefinition) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ObjectDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -107,19 +118,47 @@ func (m *ObjectDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetMetadata gets the metadata property value. The metadata property
 func (m *ObjectDefinition) GetMetadata()([]MetadataEntryable) {
-    return m.metadata
+    val, err := m.GetBackingStore().Get("metadata")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MetadataEntryable)
+    }
+    return nil
 }
 // GetName gets the name property value. The name property
 func (m *ObjectDefinition) GetName()(*string) {
-    return m.name
+    val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ObjectDefinition) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSupportedApis gets the supportedApis property value. The supportedApis property
 func (m *ObjectDefinition) GetSupportedApis()([]string) {
-    return m.supportedApis
+    val, err := m.GetBackingStore().Get("supportedApis")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ObjectDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -171,25 +210,65 @@ func (m *ObjectDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ObjectDefinition) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAttributes sets the attributes property value. The attributes property
 func (m *ObjectDefinition) SetAttributes(value []AttributeDefinitionable)() {
-    m.attributes = value
+    err := m.GetBackingStore().Set("attributes", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ObjectDefinition) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetMetadata sets the metadata property value. The metadata property
 func (m *ObjectDefinition) SetMetadata(value []MetadataEntryable)() {
-    m.metadata = value
+    err := m.GetBackingStore().Set("metadata", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetName sets the name property value. The name property
 func (m *ObjectDefinition) SetName(value *string)() {
-    m.name = value
+    err := m.GetBackingStore().Set("name", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ObjectDefinition) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSupportedApis sets the supportedApis property value. The supportedApis property
 func (m *ObjectDefinition) SetSupportedApis(value []string)() {
-    m.supportedApis = value
+    err := m.GetBackingStore().Set("supportedApis", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ObjectDefinitionable 
+type ObjectDefinitionable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAttributes()([]AttributeDefinitionable)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetMetadata()([]MetadataEntryable)
+    GetName()(*string)
+    GetOdataType()(*string)
+    GetSupportedApis()([]string)
+    SetAttributes(value []AttributeDefinitionable)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetMetadata(value []MetadataEntryable)()
+    SetName(value *string)()
+    SetOdataType(value *string)()
+    SetSupportedApis(value []string)()
 }

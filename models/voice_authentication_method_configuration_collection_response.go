@@ -7,8 +7,6 @@ import (
 // VoiceAuthenticationMethodConfigurationCollectionResponse 
 type VoiceAuthenticationMethodConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []VoiceAuthenticationMethodConfigurationable
 }
 // NewVoiceAuthenticationMethodConfigurationCollectionResponse instantiates a new VoiceAuthenticationMethodConfigurationCollectionResponse and sets the default values.
 func NewVoiceAuthenticationMethodConfigurationCollectionResponse()(*VoiceAuthenticationMethodConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *VoiceAuthenticationMethodConfigurationCollectionResponse) GetFieldDeser
 }
 // GetValue gets the value property value. The value property
 func (m *VoiceAuthenticationMethodConfigurationCollectionResponse) GetValue()([]VoiceAuthenticationMethodConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]VoiceAuthenticationMethodConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *VoiceAuthenticationMethodConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *VoiceAuthenticationMethodConfigurationCollectionResponse) Serialize(wri
 }
 // SetValue sets the value property value. The value property
 func (m *VoiceAuthenticationMethodConfigurationCollectionResponse) SetValue(value []VoiceAuthenticationMethodConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// VoiceAuthenticationMethodConfigurationCollectionResponseable 
+type VoiceAuthenticationMethodConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]VoiceAuthenticationMethodConfigurationable)
+    SetValue(value []VoiceAuthenticationMethodConfigurationable)()
 }

@@ -23,7 +23,7 @@ type AppRoleAssignmentItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AppRoleAssignmentItemRequestBuilderGetQueryParameters get entity from appRoleAssignments by key (id)
+// AppRoleAssignmentItemRequestBuilderGetQueryParameters get entity from appRoleAssignments by key
 type AppRoleAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -55,8 +55,8 @@ func NewAppRoleAssignmentItemRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAppRoleAssignmentItemRequestBuilder instantiates a new AppRoleAssignmentItemRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewAppRoleAssignmentItemRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewAppRoleAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from appRoleAssignments by key (id)
+// Delete delete entity from appRoleAssignments
 func (m *AppRoleAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AppRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,7 +81,7 @@ func (m *AppRoleAssignmentItemRequestBuilder) Delete(ctx context.Context, reques
     }
     return nil
 }
-// Get get entity from appRoleAssignments by key (id)
+// Get get entity from appRoleAssignments by key
 func (m *AppRoleAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AppRoleAssignmentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppRoleAssignmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,7 +100,7 @@ func (m *AppRoleAssignmentItemRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppRoleAssignmentable), nil
 }
-// Patch update entity in appRoleAssignments by key (id)
+// Patch update entity in appRoleAssignments
 func (m *AppRoleAssignmentItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppRoleAssignmentable, requestConfiguration *AppRoleAssignmentItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppRoleAssignmentable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +119,7 @@ func (m *AppRoleAssignmentItemRequestBuilder) Patch(ctx context.Context, body ie
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppRoleAssignmentable), nil
 }
-// ToDeleteRequestInformation delete entity from appRoleAssignments by key (id)
+// ToDeleteRequestInformation delete entity from appRoleAssignments
 func (m *AppRoleAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AppRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,7 +131,7 @@ func (m *AppRoleAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx con
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from appRoleAssignments by key (id)
+// ToGetRequestInformation get entity from appRoleAssignments by key
 func (m *AppRoleAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AppRoleAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,14 +147,17 @@ func (m *AppRoleAssignmentItemRequestBuilder) ToGetRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in appRoleAssignments by key (id)
+// ToPatchRequestInformation update entity in appRoleAssignments
 func (m *AppRoleAssignmentItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppRoleAssignmentable, requestConfiguration *AppRoleAssignmentItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

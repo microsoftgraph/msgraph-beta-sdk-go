@@ -26,13 +26,13 @@ type OemWarrantyInformationOnboardingItemDisableRequestBuilderPostRequestConfigu
 func NewOemWarrantyInformationOnboardingItemDisableRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OemWarrantyInformationOnboardingItemDisableRequestBuilder) {
     m := &OemWarrantyInformationOnboardingItemDisableRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/oemWarrantyInformationOnboarding/{oemWarrantyInformationOnboarding%2Did}/microsoft.graph.disable";
+    m.urlTemplate = "{+baseurl}/deviceManagement/oemWarrantyInformationOnboarding/{oemWarrantyInformationOnboarding%2Did}/disable";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewOemWarrantyInformationOnboardingItemDisableRequestBuilder instantiates a new DisableRequestBuilder and sets the default values.

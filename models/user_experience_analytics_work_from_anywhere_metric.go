@@ -7,8 +7,6 @@ import (
 // UserExperienceAnalyticsWorkFromAnywhereMetric the user experience analytics metric for work from anywhere report
 type UserExperienceAnalyticsWorkFromAnywhereMetric struct {
     Entity
-    // The work from anywhere metric devices.
-    metricDevices []UserExperienceAnalyticsWorkFromAnywhereDeviceable
 }
 // NewUserExperienceAnalyticsWorkFromAnywhereMetric instantiates a new userExperienceAnalyticsWorkFromAnywhereMetric and sets the default values.
 func NewUserExperienceAnalyticsWorkFromAnywhereMetric()(*UserExperienceAnalyticsWorkFromAnywhereMetric) {
@@ -42,7 +40,14 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereMetric) GetFieldDeserializers()(
 }
 // GetMetricDevices gets the metricDevices property value. The work from anywhere metric devices.
 func (m *UserExperienceAnalyticsWorkFromAnywhereMetric) GetMetricDevices()([]UserExperienceAnalyticsWorkFromAnywhereDeviceable) {
-    return m.metricDevices
+    val, err := m.GetBackingStore().Get("metricDevices")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserExperienceAnalyticsWorkFromAnywhereDeviceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsWorkFromAnywhereMetric) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereMetric) Serialize(writer i878a80
 }
 // SetMetricDevices sets the metricDevices property value. The work from anywhere metric devices.
 func (m *UserExperienceAnalyticsWorkFromAnywhereMetric) SetMetricDevices(value []UserExperienceAnalyticsWorkFromAnywhereDeviceable)() {
-    m.metricDevices = value
+    err := m.GetBackingStore().Set("metricDevices", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsWorkFromAnywhereMetricable 
+type UserExperienceAnalyticsWorkFromAnywhereMetricable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetMetricDevices()([]UserExperienceAnalyticsWorkFromAnywhereDeviceable)
+    SetMetricDevices(value []UserExperienceAnalyticsWorkFromAnywhereDeviceable)()
 }

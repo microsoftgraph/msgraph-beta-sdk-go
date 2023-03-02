@@ -13,8 +13,8 @@ func NewWindows10XCertificateProfile()(*Windows10XCertificateProfile) {
     m := &Windows10XCertificateProfile{
         DeviceManagementResourceAccessProfileBase: *NewDeviceManagementResourceAccessProfileBase(),
     }
-    odataTypeValue := "#microsoft.graph.windows10XCertificateProfile";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windows10XCertificateProfile"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindows10XCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -51,4 +51,9 @@ func (m *Windows10XCertificateProfile) Serialize(writer i878a80d2330e89d26896388
         return err
     }
     return nil
+}
+// Windows10XCertificateProfileable 
+type Windows10XCertificateProfileable interface {
+    DeviceManagementResourceAccessProfileBaseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

@@ -9,32 +9,6 @@ import (
 // LegalHold 
 type LegalHold struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.
-    contentQuery *string
-    // The user who created the legal hold.
-    createdBy ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable
-    // The date and time the legal hold was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The legal hold description.
-    description *string
-    // The display name of the legal hold.
-    displayName *string
-    // Lists any errors that happened while placing the hold.
-    errors []string
-    // Indicates whether the hold is enabled and actively holding content.
-    isEnabled *bool
-    // the user who last modified the legal hold.
-    lastModifiedBy ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable
-    // The date and time the legal hold was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Data source entity for SharePoint sites associated with the legal hold.
-    siteSources []SiteSourceable
-    // The status of the legal hold. Possible values are: Pending, Error, Success, UnknownFutureValue.
-    status *LegalHoldStatus
-    // The unifiedGroupSources property
-    unifiedGroupSources []UnifiedGroupSourceable
-    // Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
-    userSources []UserSourceable
 }
 // NewLegalHold instantiates a new legalHold and sets the default values.
 func NewLegalHold()(*LegalHold) {
@@ -49,27 +23,69 @@ func CreateLegalHoldFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetContentQuery gets the contentQuery property value. KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.
 func (m *LegalHold) GetContentQuery()(*string) {
-    return m.contentQuery
+    val, err := m.GetBackingStore().Get("contentQuery")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCreatedBy gets the createdBy property value. The user who created the legal hold.
 func (m *LegalHold) GetCreatedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable) {
-    return m.createdBy
+    val, err := m.GetBackingStore().Get("createdBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time the legal hold was created.
 func (m *LegalHold) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDescription gets the description property value. The legal hold description.
 func (m *LegalHold) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the legal hold.
 func (m *LegalHold) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetErrors gets the errors property value. Lists any errors that happened while placing the hold.
 func (m *LegalHold) GetErrors()([]string) {
-    return m.errors
+    val, err := m.GetBackingStore().Get("errors")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *LegalHold) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -224,31 +240,80 @@ func (m *LegalHold) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetIsEnabled gets the isEnabled property value. Indicates whether the hold is enabled and actively holding content.
 func (m *LegalHold) GetIsEnabled()(*bool) {
-    return m.isEnabled
+    val, err := m.GetBackingStore().Get("isEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. the user who last modified the legal hold.
 func (m *LegalHold) GetLastModifiedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable) {
-    return m.lastModifiedBy
+    val, err := m.GetBackingStore().Get("lastModifiedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)
+    }
+    return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the legal hold was last modified.
 func (m *LegalHold) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetSiteSources gets the siteSources property value. Data source entity for SharePoint sites associated with the legal hold.
 func (m *LegalHold) GetSiteSources()([]SiteSourceable) {
-    return m.siteSources
+    val, err := m.GetBackingStore().Get("siteSources")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SiteSourceable)
+    }
+    return nil
 }
 // GetStatus gets the status property value. The status of the legal hold. Possible values are: Pending, Error, Success, UnknownFutureValue.
 func (m *LegalHold) GetStatus()(*LegalHoldStatus) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*LegalHoldStatus)
+    }
+    return nil
 }
 // GetUnifiedGroupSources gets the unifiedGroupSources property value. The unifiedGroupSources property
 func (m *LegalHold) GetUnifiedGroupSources()([]UnifiedGroupSourceable) {
-    return m.unifiedGroupSources
+    val, err := m.GetBackingStore().Get("unifiedGroupSources")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnifiedGroupSourceable)
+    }
+    return nil
 }
 // GetUserSources gets the userSources property value. Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
 func (m *LegalHold) GetUserSources()([]UserSourceable) {
-    return m.userSources
+    val, err := m.GetBackingStore().Get("userSources")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserSourceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *LegalHold) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -351,53 +416,123 @@ func (m *LegalHold) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetContentQuery sets the contentQuery property value. KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.
 func (m *LegalHold) SetContentQuery(value *string)() {
-    m.contentQuery = value
+    err := m.GetBackingStore().Set("contentQuery", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedBy sets the createdBy property value. The user who created the legal hold.
 func (m *LegalHold) SetCreatedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)() {
-    m.createdBy = value
+    err := m.GetBackingStore().Set("createdBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time the legal hold was created.
 func (m *LegalHold) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. The legal hold description.
 func (m *LegalHold) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the legal hold.
 func (m *LegalHold) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetErrors sets the errors property value. Lists any errors that happened while placing the hold.
 func (m *LegalHold) SetErrors(value []string)() {
-    m.errors = value
+    err := m.GetBackingStore().Set("errors", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsEnabled sets the isEnabled property value. Indicates whether the hold is enabled and actively holding content.
 func (m *LegalHold) SetIsEnabled(value *bool)() {
-    m.isEnabled = value
+    err := m.GetBackingStore().Set("isEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. the user who last modified the legal hold.
 func (m *LegalHold) SetLastModifiedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)() {
-    m.lastModifiedBy = value
+    err := m.GetBackingStore().Set("lastModifiedBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the legal hold was last modified.
 func (m *LegalHold) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSiteSources sets the siteSources property value. Data source entity for SharePoint sites associated with the legal hold.
 func (m *LegalHold) SetSiteSources(value []SiteSourceable)() {
-    m.siteSources = value
+    err := m.GetBackingStore().Set("siteSources", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. The status of the legal hold. Possible values are: Pending, Error, Success, UnknownFutureValue.
 func (m *LegalHold) SetStatus(value *LegalHoldStatus)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUnifiedGroupSources sets the unifiedGroupSources property value. The unifiedGroupSources property
 func (m *LegalHold) SetUnifiedGroupSources(value []UnifiedGroupSourceable)() {
-    m.unifiedGroupSources = value
+    err := m.GetBackingStore().Set("unifiedGroupSources", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserSources sets the userSources property value. Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
 func (m *LegalHold) SetUserSources(value []UserSourceable)() {
-    m.userSources = value
+    err := m.GetBackingStore().Set("userSources", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// LegalHoldable 
+type LegalHoldable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetContentQuery()(*string)
+    GetCreatedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetErrors()([]string)
+    GetIsEnabled()(*bool)
+    GetLastModifiedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetSiteSources()([]SiteSourceable)
+    GetStatus()(*LegalHoldStatus)
+    GetUnifiedGroupSources()([]UnifiedGroupSourceable)
+    GetUserSources()([]UserSourceable)
+    SetContentQuery(value *string)()
+    SetCreatedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetErrors(value []string)()
+    SetIsEnabled(value *bool)()
+    SetLastModifiedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetSiteSources(value []SiteSourceable)()
+    SetStatus(value *LegalHoldStatus)()
+    SetUnifiedGroupSources(value []UnifiedGroupSourceable)()
+    SetUserSources(value []UserSourceable)()
 }

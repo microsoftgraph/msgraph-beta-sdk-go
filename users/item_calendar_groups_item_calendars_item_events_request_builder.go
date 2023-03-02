@@ -56,8 +56,8 @@ func NewItemCalendarGroupsItemCalendarsItemEventsRequestBuilderInternal(pathPara
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemCalendarGroupsItemCalendarsItemEventsRequestBuilder instantiates a new EventsRequestBuilder and sets the default values.
@@ -68,11 +68,11 @@ func NewItemCalendarGroupsItemCalendarsItemEventsRequestBuilder(rawUrl string, r
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemCalendarGroupsItemCalendarsItemEventsRequestBuilder) Count()(*ItemCalendarGroupsItemCalendarsItemEventsCountRequestBuilder) {
-    return NewItemCalendarGroupsItemCalendarsItemEventsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCalendarGroupsItemCalendarsItemEventsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delta provides operations to call the delta method.
 func (m *ItemCalendarGroupsItemCalendarsItemEventsRequestBuilder) Delta()(*ItemCalendarGroupsItemCalendarsItemEventsDeltaRequestBuilder) {
-    return NewItemCalendarGroupsItemCalendarsItemEventsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCalendarGroupsItemCalendarsItemEventsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of events in a calendar.  The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, orget the instances of an event.
 // [Find more info here]
@@ -141,7 +141,10 @@ func (m *ItemCalendarGroupsItemCalendarsItemEventsRequestBuilder) ToPostRequestI
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

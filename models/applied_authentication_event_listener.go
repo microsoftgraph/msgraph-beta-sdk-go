@@ -2,26 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // AppliedAuthenticationEventListener 
 type AppliedAuthenticationEventListener struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The eventType property
-    eventType *AuthenticationEventType
-    // The executedListenerId property
-    executedListenerId *string
-    // The handlerResult property
-    handlerResult AuthenticationEventHandlerResultable
-    // The OdataType property
-    odataType *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewAppliedAuthenticationEventListener instantiates a new appliedAuthenticationEventListener and sets the default values.
 func NewAppliedAuthenticationEventListener()(*AppliedAuthenticationEventListener) {
     m := &AppliedAuthenticationEventListener{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAppliedAuthenticationEventListenerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,15 +24,41 @@ func CreateAppliedAuthenticationEventListenerFromDiscriminatorValue(parseNode i8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppliedAuthenticationEventListener) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
-// GetEventType gets the eventType property value. The eventType property
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *AppliedAuthenticationEventListener) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetEventType gets the eventType property value. The type of authentication event that triggered the custom extension request. The possible values are: tokenIssuanceStart, pageRenderStart, unknownFutureValue.
 func (m *AppliedAuthenticationEventListener) GetEventType()(*AuthenticationEventType) {
-    return m.eventType
+    val, err := m.GetBackingStore().Get("eventType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AuthenticationEventType)
+    }
+    return nil
 }
-// GetExecutedListenerId gets the executedListenerId property value. The executedListenerId property
+// GetExecutedListenerId gets the executedListenerId property value. ID of the Event Listener that was executed.
 func (m *AppliedAuthenticationEventListener) GetExecutedListenerId()(*string) {
-    return m.executedListenerId
+    val, err := m.GetBackingStore().Get("executedListenerId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AppliedAuthenticationEventListener) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,13 +105,27 @@ func (m *AppliedAuthenticationEventListener) GetFieldDeserializers()(map[string]
     }
     return res
 }
-// GetHandlerResult gets the handlerResult property value. The handlerResult property
+// GetHandlerResult gets the handlerResult property value. The result from the listening client, such as an Azure Logic App and Azure Functions, of this authentication event.
 func (m *AppliedAuthenticationEventListener) GetHandlerResult()(AuthenticationEventHandlerResultable) {
-    return m.handlerResult
+    val, err := m.GetBackingStore().Get("handlerResult")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AuthenticationEventHandlerResultable)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AppliedAuthenticationEventListener) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AppliedAuthenticationEventListener) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -130,21 +164,56 @@ func (m *AppliedAuthenticationEventListener) Serialize(writer i878a80d2330e89d26
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppliedAuthenticationEventListener) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetEventType sets the eventType property value. The eventType property
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *AppliedAuthenticationEventListener) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetEventType sets the eventType property value. The type of authentication event that triggered the custom extension request. The possible values are: tokenIssuanceStart, pageRenderStart, unknownFutureValue.
 func (m *AppliedAuthenticationEventListener) SetEventType(value *AuthenticationEventType)() {
-    m.eventType = value
+    err := m.GetBackingStore().Set("eventType", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetExecutedListenerId sets the executedListenerId property value. The executedListenerId property
+// SetExecutedListenerId sets the executedListenerId property value. ID of the Event Listener that was executed.
 func (m *AppliedAuthenticationEventListener) SetExecutedListenerId(value *string)() {
-    m.executedListenerId = value
+    err := m.GetBackingStore().Set("executedListenerId", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetHandlerResult sets the handlerResult property value. The handlerResult property
+// SetHandlerResult sets the handlerResult property value. The result from the listening client, such as an Azure Logic App and Azure Functions, of this authentication event.
 func (m *AppliedAuthenticationEventListener) SetHandlerResult(value AuthenticationEventHandlerResultable)() {
-    m.handlerResult = value
+    err := m.GetBackingStore().Set("handlerResult", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AppliedAuthenticationEventListener) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AppliedAuthenticationEventListenerable 
+type AppliedAuthenticationEventListenerable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetEventType()(*AuthenticationEventType)
+    GetExecutedListenerId()(*string)
+    GetHandlerResult()(AuthenticationEventHandlerResultable)
+    GetOdataType()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetEventType(value *AuthenticationEventType)()
+    SetExecutedListenerId(value *string)()
+    SetHandlerResult(value AuthenticationEventHandlerResultable)()
+    SetOdataType(value *string)()
 }

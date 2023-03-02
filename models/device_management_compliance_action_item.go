@@ -7,14 +7,6 @@ import (
 // DeviceManagementComplianceActionItem scheduled Action for Rule
 type DeviceManagementComplianceActionItem struct {
     Entity
-    // Scheduled Action Type Enum
-    actionType *DeviceManagementComplianceActionType
-    // Number of hours to wait till the action will be enforced. Valid values 0 to 8760
-    gracePeriodHours *int32
-    // A list of group IDs to speicify who to CC this notification message to. This collection can contain a maximum of 100 elements.
-    notificationMessageCCList []string
-    // What notification Message template to use
-    notificationTemplateId *string
 }
 // NewDeviceManagementComplianceActionItem instantiates a new deviceManagementComplianceActionItem and sets the default values.
 func NewDeviceManagementComplianceActionItem()(*DeviceManagementComplianceActionItem) {
@@ -29,7 +21,14 @@ func CreateDeviceManagementComplianceActionItemFromDiscriminatorValue(parseNode 
 }
 // GetActionType gets the actionType property value. Scheduled Action Type Enum
 func (m *DeviceManagementComplianceActionItem) GetActionType()(*DeviceManagementComplianceActionType) {
-    return m.actionType
+    val, err := m.GetBackingStore().Get("actionType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceManagementComplianceActionType)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementComplianceActionItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -82,15 +81,36 @@ func (m *DeviceManagementComplianceActionItem) GetFieldDeserializers()(map[strin
 }
 // GetGracePeriodHours gets the gracePeriodHours property value. Number of hours to wait till the action will be enforced. Valid values 0 to 8760
 func (m *DeviceManagementComplianceActionItem) GetGracePeriodHours()(*int32) {
-    return m.gracePeriodHours
+    val, err := m.GetBackingStore().Get("gracePeriodHours")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetNotificationMessageCCList gets the notificationMessageCCList property value. A list of group IDs to speicify who to CC this notification message to. This collection can contain a maximum of 100 elements.
 func (m *DeviceManagementComplianceActionItem) GetNotificationMessageCCList()([]string) {
-    return m.notificationMessageCCList
+    val, err := m.GetBackingStore().Get("notificationMessageCCList")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetNotificationTemplateId gets the notificationTemplateId property value. What notification Message template to use
 func (m *DeviceManagementComplianceActionItem) GetNotificationTemplateId()(*string) {
-    return m.notificationTemplateId
+    val, err := m.GetBackingStore().Get("notificationTemplateId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementComplianceActionItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -127,17 +147,42 @@ func (m *DeviceManagementComplianceActionItem) Serialize(writer i878a80d2330e89d
 }
 // SetActionType sets the actionType property value. Scheduled Action Type Enum
 func (m *DeviceManagementComplianceActionItem) SetActionType(value *DeviceManagementComplianceActionType)() {
-    m.actionType = value
+    err := m.GetBackingStore().Set("actionType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGracePeriodHours sets the gracePeriodHours property value. Number of hours to wait till the action will be enforced. Valid values 0 to 8760
 func (m *DeviceManagementComplianceActionItem) SetGracePeriodHours(value *int32)() {
-    m.gracePeriodHours = value
+    err := m.GetBackingStore().Set("gracePeriodHours", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotificationMessageCCList sets the notificationMessageCCList property value. A list of group IDs to speicify who to CC this notification message to. This collection can contain a maximum of 100 elements.
 func (m *DeviceManagementComplianceActionItem) SetNotificationMessageCCList(value []string)() {
-    m.notificationMessageCCList = value
+    err := m.GetBackingStore().Set("notificationMessageCCList", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotificationTemplateId sets the notificationTemplateId property value. What notification Message template to use
 func (m *DeviceManagementComplianceActionItem) SetNotificationTemplateId(value *string)() {
-    m.notificationTemplateId = value
+    err := m.GetBackingStore().Set("notificationTemplateId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementComplianceActionItemable 
+type DeviceManagementComplianceActionItemable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActionType()(*DeviceManagementComplianceActionType)
+    GetGracePeriodHours()(*int32)
+    GetNotificationMessageCCList()([]string)
+    GetNotificationTemplateId()(*string)
+    SetActionType(value *DeviceManagementComplianceActionType)()
+    SetGracePeriodHours(value *int32)()
+    SetNotificationMessageCCList(value []string)()
+    SetNotificationTemplateId(value *string)()
 }

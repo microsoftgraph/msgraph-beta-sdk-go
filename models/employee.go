@@ -8,42 +8,6 @@ import (
 // Employee 
 type Employee struct {
     Entity
-    // The address property
-    address PostalAddressTypeable
-    // The birthDate property
-    birthDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // The displayName property
-    displayName *string
-    // The email property
-    email *string
-    // The employmentDate property
-    employmentDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // The givenName property
-    givenName *string
-    // The jobTitle property
-    jobTitle *string
-    // The lastModifiedDateTime property
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The middleName property
-    middleName *string
-    // The mobilePhone property
-    mobilePhone *string
-    // The number property
-    number *string
-    // The personalEmail property
-    personalEmail *string
-    // The phoneNumber property
-    phoneNumber *string
-    // The picture property
-    picture []Pictureable
-    // The statisticsGroupCode property
-    statisticsGroupCode *string
-    // The status property
-    status *string
-    // The surname property
-    surname *string
-    // The terminationDate property
-    terminationDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
 }
 // NewEmployee instantiates a new employee and sets the default values.
 func NewEmployee()(*Employee) {
@@ -58,23 +22,58 @@ func CreateEmployeeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetAddress gets the address property value. The address property
 func (m *Employee) GetAddress()(PostalAddressTypeable) {
-    return m.address
+    val, err := m.GetBackingStore().Get("address")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PostalAddressTypeable)
+    }
+    return nil
 }
 // GetBirthDate gets the birthDate property value. The birthDate property
 func (m *Employee) GetBirthDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.birthDate
+    val, err := m.GetBackingStore().Get("birthDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *Employee) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetEmail gets the email property value. The email property
 func (m *Employee) GetEmail()(*string) {
-    return m.email
+    val, err := m.GetBackingStore().Get("email")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetEmploymentDate gets the employmentDate property value. The employmentDate property
 func (m *Employee) GetEmploymentDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.employmentDate
+    val, err := m.GetBackingStore().Get("employmentDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Employee) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -267,55 +266,146 @@ func (m *Employee) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetGivenName gets the givenName property value. The givenName property
 func (m *Employee) GetGivenName()(*string) {
-    return m.givenName
+    val, err := m.GetBackingStore().Get("givenName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetJobTitle gets the jobTitle property value. The jobTitle property
 func (m *Employee) GetJobTitle()(*string) {
-    return m.jobTitle
+    val, err := m.GetBackingStore().Get("jobTitle")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Employee) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetMiddleName gets the middleName property value. The middleName property
 func (m *Employee) GetMiddleName()(*string) {
-    return m.middleName
+    val, err := m.GetBackingStore().Get("middleName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetMobilePhone gets the mobilePhone property value. The mobilePhone property
 func (m *Employee) GetMobilePhone()(*string) {
-    return m.mobilePhone
+    val, err := m.GetBackingStore().Get("mobilePhone")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetNumber gets the number property value. The number property
 func (m *Employee) GetNumber()(*string) {
-    return m.number
+    val, err := m.GetBackingStore().Get("number")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPersonalEmail gets the personalEmail property value. The personalEmail property
 func (m *Employee) GetPersonalEmail()(*string) {
-    return m.personalEmail
+    val, err := m.GetBackingStore().Get("personalEmail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPhoneNumber gets the phoneNumber property value. The phoneNumber property
 func (m *Employee) GetPhoneNumber()(*string) {
-    return m.phoneNumber
+    val, err := m.GetBackingStore().Get("phoneNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPicture gets the picture property value. The picture property
 func (m *Employee) GetPicture()([]Pictureable) {
-    return m.picture
+    val, err := m.GetBackingStore().Get("picture")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Pictureable)
+    }
+    return nil
 }
 // GetStatisticsGroupCode gets the statisticsGroupCode property value. The statisticsGroupCode property
 func (m *Employee) GetStatisticsGroupCode()(*string) {
-    return m.statisticsGroupCode
+    val, err := m.GetBackingStore().Get("statisticsGroupCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetStatus gets the status property value. The status property
 func (m *Employee) GetStatus()(*string) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSurname gets the surname property value. The surname property
 func (m *Employee) GetSurname()(*string) {
-    return m.surname
+    val, err := m.GetBackingStore().Get("surname")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTerminationDate gets the terminationDate property value. The terminationDate property
 func (m *Employee) GetTerminationDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.terminationDate
+    val, err := m.GetBackingStore().Get("terminationDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Employee) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -439,73 +529,168 @@ func (m *Employee) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetAddress sets the address property value. The address property
 func (m *Employee) SetAddress(value PostalAddressTypeable)() {
-    m.address = value
+    err := m.GetBackingStore().Set("address", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBirthDate sets the birthDate property value. The birthDate property
 func (m *Employee) SetBirthDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.birthDate = value
+    err := m.GetBackingStore().Set("birthDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *Employee) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEmail sets the email property value. The email property
 func (m *Employee) SetEmail(value *string)() {
-    m.email = value
+    err := m.GetBackingStore().Set("email", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEmploymentDate sets the employmentDate property value. The employmentDate property
 func (m *Employee) SetEmploymentDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.employmentDate = value
+    err := m.GetBackingStore().Set("employmentDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGivenName sets the givenName property value. The givenName property
 func (m *Employee) SetGivenName(value *string)() {
-    m.givenName = value
+    err := m.GetBackingStore().Set("givenName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetJobTitle sets the jobTitle property value. The jobTitle property
 func (m *Employee) SetJobTitle(value *string)() {
-    m.jobTitle = value
+    err := m.GetBackingStore().Set("jobTitle", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Employee) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMiddleName sets the middleName property value. The middleName property
 func (m *Employee) SetMiddleName(value *string)() {
-    m.middleName = value
+    err := m.GetBackingStore().Set("middleName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMobilePhone sets the mobilePhone property value. The mobilePhone property
 func (m *Employee) SetMobilePhone(value *string)() {
-    m.mobilePhone = value
+    err := m.GetBackingStore().Set("mobilePhone", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNumber sets the number property value. The number property
 func (m *Employee) SetNumber(value *string)() {
-    m.number = value
+    err := m.GetBackingStore().Set("number", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPersonalEmail sets the personalEmail property value. The personalEmail property
 func (m *Employee) SetPersonalEmail(value *string)() {
-    m.personalEmail = value
+    err := m.GetBackingStore().Set("personalEmail", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPhoneNumber sets the phoneNumber property value. The phoneNumber property
 func (m *Employee) SetPhoneNumber(value *string)() {
-    m.phoneNumber = value
+    err := m.GetBackingStore().Set("phoneNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPicture sets the picture property value. The picture property
 func (m *Employee) SetPicture(value []Pictureable)() {
-    m.picture = value
+    err := m.GetBackingStore().Set("picture", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatisticsGroupCode sets the statisticsGroupCode property value. The statisticsGroupCode property
 func (m *Employee) SetStatisticsGroupCode(value *string)() {
-    m.statisticsGroupCode = value
+    err := m.GetBackingStore().Set("statisticsGroupCode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. The status property
 func (m *Employee) SetStatus(value *string)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSurname sets the surname property value. The surname property
 func (m *Employee) SetSurname(value *string)() {
-    m.surname = value
+    err := m.GetBackingStore().Set("surname", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTerminationDate sets the terminationDate property value. The terminationDate property
 func (m *Employee) SetTerminationDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.terminationDate = value
+    err := m.GetBackingStore().Set("terminationDate", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Employeeable 
+type Employeeable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAddress()(PostalAddressTypeable)
+    GetBirthDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetDisplayName()(*string)
+    GetEmail()(*string)
+    GetEmploymentDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetGivenName()(*string)
+    GetJobTitle()(*string)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetMiddleName()(*string)
+    GetMobilePhone()(*string)
+    GetNumber()(*string)
+    GetPersonalEmail()(*string)
+    GetPhoneNumber()(*string)
+    GetPicture()([]Pictureable)
+    GetStatisticsGroupCode()(*string)
+    GetStatus()(*string)
+    GetSurname()(*string)
+    GetTerminationDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    SetAddress(value PostalAddressTypeable)()
+    SetBirthDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetDisplayName(value *string)()
+    SetEmail(value *string)()
+    SetEmploymentDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetGivenName(value *string)()
+    SetJobTitle(value *string)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetMiddleName(value *string)()
+    SetMobilePhone(value *string)()
+    SetNumber(value *string)()
+    SetPersonalEmail(value *string)()
+    SetPhoneNumber(value *string)()
+    SetPicture(value []Pictureable)()
+    SetStatisticsGroupCode(value *string)()
+    SetStatus(value *string)()
+    SetSurname(value *string)()
+    SetTerminationDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
 }

@@ -7,8 +7,6 @@ import (
 // MobileAppTroubleshootingHistoryItemCollectionResponse 
 type MobileAppTroubleshootingHistoryItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MobileAppTroubleshootingHistoryItemable
 }
 // NewMobileAppTroubleshootingHistoryItemCollectionResponse instantiates a new MobileAppTroubleshootingHistoryItemCollectionResponse and sets the default values.
 func NewMobileAppTroubleshootingHistoryItemCollectionResponse()(*MobileAppTroubleshootingHistoryItemCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MobileAppTroubleshootingHistoryItemCollectionResponse) GetFieldDeserial
 }
 // GetValue gets the value property value. The value property
 func (m *MobileAppTroubleshootingHistoryItemCollectionResponse) GetValue()([]MobileAppTroubleshootingHistoryItemable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MobileAppTroubleshootingHistoryItemable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MobileAppTroubleshootingHistoryItemCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MobileAppTroubleshootingHistoryItemCollectionResponse) Serialize(writer
 }
 // SetValue sets the value property value. The value property
 func (m *MobileAppTroubleshootingHistoryItemCollectionResponse) SetValue(value []MobileAppTroubleshootingHistoryItemable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MobileAppTroubleshootingHistoryItemCollectionResponseable 
+type MobileAppTroubleshootingHistoryItemCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MobileAppTroubleshootingHistoryItemable)
+    SetValue(value []MobileAppTroubleshootingHistoryItemable)()
 }

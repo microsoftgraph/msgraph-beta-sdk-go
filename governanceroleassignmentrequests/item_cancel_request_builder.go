@@ -26,13 +26,13 @@ type ItemCancelRequestBuilderPostRequestConfiguration struct {
 func NewItemCancelRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCancelRequestBuilder) {
     m := &ItemCancelRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/governanceRoleAssignmentRequests/{governanceRoleAssignmentRequest%2Did}/microsoft.graph.cancel";
+    m.urlTemplate = "{+baseurl}/governanceRoleAssignmentRequests/{governanceRoleAssignmentRequest%2Did}/cancel";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemCancelRequestBuilder instantiates a new CancelRequestBuilder and sets the default values.

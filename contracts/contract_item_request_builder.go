@@ -48,11 +48,11 @@ type ContractItemRequestBuilderPatchRequestConfiguration struct {
 }
 // CheckMemberGroups provides operations to call the checkMemberGroups method.
 func (m *ContractItemRequestBuilder) CheckMemberGroups()(*ItemCheckMemberGroupsRequestBuilder) {
-    return NewItemCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CheckMemberObjects provides operations to call the checkMemberObjects method.
 func (m *ContractItemRequestBuilder) CheckMemberObjects()(*ItemCheckMemberObjectsRequestBuilder) {
-    return NewItemCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewContractItemRequestBuilderInternal instantiates a new ContractItemRequestBuilder and sets the default values.
 func NewContractItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ContractItemRequestBuilder) {
@@ -63,8 +63,8 @@ func NewContractItemRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewContractItemRequestBuilder instantiates a new ContractItemRequestBuilder and sets the default values.
@@ -73,7 +73,7 @@ func NewContractItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewContractItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from contracts by key (id)
+// Delete delete entity from contracts
 func (m *ContractItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ContractItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -113,13 +113,13 @@ func (m *ContractItemRequestBuilder) Get(ctx context.Context, requestConfigurati
 }
 // GetMemberGroups provides operations to call the getMemberGroups method.
 func (m *ContractItemRequestBuilder) GetMemberGroups()(*ItemGetMemberGroupsRequestBuilder) {
-    return NewItemGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GetMemberObjects provides operations to call the getMemberObjects method.
 func (m *ContractItemRequestBuilder) GetMemberObjects()(*ItemGetMemberObjectsRequestBuilder) {
-    return NewItemGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// Patch update entity in contracts by key (id)
+// Patch update entity in contracts
 func (m *ContractItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contractable, requestConfiguration *ContractItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contractable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -140,9 +140,9 @@ func (m *ContractItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e
 }
 // Restore provides operations to call the restore method.
 func (m *ContractItemRequestBuilder) Restore()(*ItemRestoreRequestBuilder) {
-    return NewItemRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// ToDeleteRequestInformation delete entity from contracts by key (id)
+// ToDeleteRequestInformation delete entity from contracts
 func (m *ContractItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ContractItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -170,14 +170,17 @@ func (m *ContractItemRequestBuilder) ToGetRequestInformation(ctx context.Context
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in contracts by key (id)
+// ToPatchRequestInformation update entity in contracts
 func (m *ContractItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contractable, requestConfiguration *ContractItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

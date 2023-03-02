@@ -7,8 +7,6 @@ import (
 // TimeCardCollectionResponse 
 type TimeCardCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []TimeCardable
 }
 // NewTimeCardCollectionResponse instantiates a new TimeCardCollectionResponse and sets the default values.
 func NewTimeCardCollectionResponse()(*TimeCardCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *TimeCardCollectionResponse) GetFieldDeserializers()(map[string]func(i87
 }
 // GetValue gets the value property value. The value property
 func (m *TimeCardCollectionResponse) GetValue()([]TimeCardable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TimeCardable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TimeCardCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *TimeCardCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetValue sets the value property value. The value property
 func (m *TimeCardCollectionResponse) SetValue(value []TimeCardable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TimeCardCollectionResponseable 
+type TimeCardCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]TimeCardable)
+    SetValue(value []TimeCardable)()
 }

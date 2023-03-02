@@ -2,32 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // TeamworkPeripheralsHealth 
 type TeamworkPeripheralsHealth struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The health details about the communication speaker.
-    communicationSpeakerHealth TeamworkPeripheralHealthable
-    // The health details about the content camera.
-    contentCameraHealth TeamworkPeripheralHealthable
-    // The health details about displays.
-    displayHealthCollection []TeamworkPeripheralHealthable
-    // The health details about the microphone.
-    microphoneHealth TeamworkPeripheralHealthable
-    // The OdataType property
-    odataType *string
-    // The health details about the room camera.
-    roomCameraHealth TeamworkPeripheralHealthable
-    // The health details about the speaker.
-    speakerHealth TeamworkPeripheralHealthable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewTeamworkPeripheralsHealth instantiates a new teamworkPeripheralsHealth and sets the default values.
 func NewTeamworkPeripheralsHealth()(*TeamworkPeripheralsHealth) {
     m := &TeamworkPeripheralsHealth{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTeamworkPeripheralsHealthFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,19 +24,52 @@ func CreateTeamworkPeripheralsHealthFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkPeripheralsHealth) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *TeamworkPeripheralsHealth) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetCommunicationSpeakerHealth gets the communicationSpeakerHealth property value. The health details about the communication speaker.
 func (m *TeamworkPeripheralsHealth) GetCommunicationSpeakerHealth()(TeamworkPeripheralHealthable) {
-    return m.communicationSpeakerHealth
+    val, err := m.GetBackingStore().Get("communicationSpeakerHealth")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamworkPeripheralHealthable)
+    }
+    return nil
 }
 // GetContentCameraHealth gets the contentCameraHealth property value. The health details about the content camera.
 func (m *TeamworkPeripheralsHealth) GetContentCameraHealth()(TeamworkPeripheralHealthable) {
-    return m.contentCameraHealth
+    val, err := m.GetBackingStore().Get("contentCameraHealth")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamworkPeripheralHealthable)
+    }
+    return nil
 }
 // GetDisplayHealthCollection gets the displayHealthCollection property value. The health details about displays.
 func (m *TeamworkPeripheralsHealth) GetDisplayHealthCollection()([]TeamworkPeripheralHealthable) {
-    return m.displayHealthCollection
+    val, err := m.GetBackingStore().Get("displayHealthCollection")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TeamworkPeripheralHealthable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkPeripheralsHealth) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -131,19 +152,47 @@ func (m *TeamworkPeripheralsHealth) GetFieldDeserializers()(map[string]func(i878
 }
 // GetMicrophoneHealth gets the microphoneHealth property value. The health details about the microphone.
 func (m *TeamworkPeripheralsHealth) GetMicrophoneHealth()(TeamworkPeripheralHealthable) {
-    return m.microphoneHealth
+    val, err := m.GetBackingStore().Get("microphoneHealth")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamworkPeripheralHealthable)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TeamworkPeripheralsHealth) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRoomCameraHealth gets the roomCameraHealth property value. The health details about the room camera.
 func (m *TeamworkPeripheralsHealth) GetRoomCameraHealth()(TeamworkPeripheralHealthable) {
-    return m.roomCameraHealth
+    val, err := m.GetBackingStore().Get("roomCameraHealth")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamworkPeripheralHealthable)
+    }
+    return nil
 }
 // GetSpeakerHealth gets the speakerHealth property value. The health details about the speaker.
 func (m *TeamworkPeripheralsHealth) GetSpeakerHealth()(TeamworkPeripheralHealthable) {
-    return m.speakerHealth
+    val, err := m.GetBackingStore().Get("speakerHealth")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamworkPeripheralHealthable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TeamworkPeripheralsHealth) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -203,33 +252,83 @@ func (m *TeamworkPeripheralsHealth) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkPeripheralsHealth) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *TeamworkPeripheralsHealth) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetCommunicationSpeakerHealth sets the communicationSpeakerHealth property value. The health details about the communication speaker.
 func (m *TeamworkPeripheralsHealth) SetCommunicationSpeakerHealth(value TeamworkPeripheralHealthable)() {
-    m.communicationSpeakerHealth = value
+    err := m.GetBackingStore().Set("communicationSpeakerHealth", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetContentCameraHealth sets the contentCameraHealth property value. The health details about the content camera.
 func (m *TeamworkPeripheralsHealth) SetContentCameraHealth(value TeamworkPeripheralHealthable)() {
-    m.contentCameraHealth = value
+    err := m.GetBackingStore().Set("contentCameraHealth", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayHealthCollection sets the displayHealthCollection property value. The health details about displays.
 func (m *TeamworkPeripheralsHealth) SetDisplayHealthCollection(value []TeamworkPeripheralHealthable)() {
-    m.displayHealthCollection = value
+    err := m.GetBackingStore().Set("displayHealthCollection", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMicrophoneHealth sets the microphoneHealth property value. The health details about the microphone.
 func (m *TeamworkPeripheralsHealth) SetMicrophoneHealth(value TeamworkPeripheralHealthable)() {
-    m.microphoneHealth = value
+    err := m.GetBackingStore().Set("microphoneHealth", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TeamworkPeripheralsHealth) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoomCameraHealth sets the roomCameraHealth property value. The health details about the room camera.
 func (m *TeamworkPeripheralsHealth) SetRoomCameraHealth(value TeamworkPeripheralHealthable)() {
-    m.roomCameraHealth = value
+    err := m.GetBackingStore().Set("roomCameraHealth", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSpeakerHealth sets the speakerHealth property value. The health details about the speaker.
 func (m *TeamworkPeripheralsHealth) SetSpeakerHealth(value TeamworkPeripheralHealthable)() {
-    m.speakerHealth = value
+    err := m.GetBackingStore().Set("speakerHealth", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TeamworkPeripheralsHealthable 
+type TeamworkPeripheralsHealthable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCommunicationSpeakerHealth()(TeamworkPeripheralHealthable)
+    GetContentCameraHealth()(TeamworkPeripheralHealthable)
+    GetDisplayHealthCollection()([]TeamworkPeripheralHealthable)
+    GetMicrophoneHealth()(TeamworkPeripheralHealthable)
+    GetOdataType()(*string)
+    GetRoomCameraHealth()(TeamworkPeripheralHealthable)
+    GetSpeakerHealth()(TeamworkPeripheralHealthable)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCommunicationSpeakerHealth(value TeamworkPeripheralHealthable)()
+    SetContentCameraHealth(value TeamworkPeripheralHealthable)()
+    SetDisplayHealthCollection(value []TeamworkPeripheralHealthable)()
+    SetMicrophoneHealth(value TeamworkPeripheralHealthable)()
+    SetOdataType(value *string)()
+    SetRoomCameraHealth(value TeamworkPeripheralHealthable)()
+    SetSpeakerHealth(value TeamworkPeripheralHealthable)()
 }

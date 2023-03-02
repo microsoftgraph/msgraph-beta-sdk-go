@@ -7,8 +7,6 @@ import (
 // AndroidForWorkEnrollmentProfileCollectionResponse 
 type AndroidForWorkEnrollmentProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidForWorkEnrollmentProfileable
 }
 // NewAndroidForWorkEnrollmentProfileCollectionResponse instantiates a new AndroidForWorkEnrollmentProfileCollectionResponse and sets the default values.
 func NewAndroidForWorkEnrollmentProfileCollectionResponse()(*AndroidForWorkEnrollmentProfileCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidForWorkEnrollmentProfileCollectionResponse) GetFieldDeserializer
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidForWorkEnrollmentProfileCollectionResponse) GetValue()([]AndroidForWorkEnrollmentProfileable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidForWorkEnrollmentProfileable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidForWorkEnrollmentProfileCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidForWorkEnrollmentProfileCollectionResponse) Serialize(writer i87
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidForWorkEnrollmentProfileCollectionResponse) SetValue(value []AndroidForWorkEnrollmentProfileable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidForWorkEnrollmentProfileCollectionResponseable 
+type AndroidForWorkEnrollmentProfileCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidForWorkEnrollmentProfileable)
+    SetValue(value []AndroidForWorkEnrollmentProfileable)()
 }

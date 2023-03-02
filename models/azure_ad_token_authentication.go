@@ -7,16 +7,14 @@ import (
 // AzureAdTokenAuthentication 
 type AzureAdTokenAuthentication struct {
     CustomExtensionAuthenticationConfiguration
-    // The appID of the Azure AD application to use to authenticate a logic app with a custom access package workflow extension.
-    resourceId *string
 }
 // NewAzureAdTokenAuthentication instantiates a new AzureAdTokenAuthentication and sets the default values.
 func NewAzureAdTokenAuthentication()(*AzureAdTokenAuthentication) {
     m := &AzureAdTokenAuthentication{
         CustomExtensionAuthenticationConfiguration: *NewCustomExtensionAuthenticationConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.azureAdTokenAuthentication";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.azureAdTokenAuthentication"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAzureAdTokenAuthenticationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *AzureAdTokenAuthentication) GetFieldDeserializers()(map[string]func(i87
 }
 // GetResourceId gets the resourceId property value. The appID of the Azure AD application to use to authenticate a logic app with a custom access package workflow extension.
 func (m *AzureAdTokenAuthentication) GetResourceId()(*string) {
-    return m.resourceId
+    val, err := m.GetBackingStore().Get("resourceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AzureAdTokenAuthentication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *AzureAdTokenAuthentication) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetResourceId sets the resourceId property value. The appID of the Azure AD application to use to authenticate a logic app with a custom access package workflow extension.
 func (m *AzureAdTokenAuthentication) SetResourceId(value *string)() {
-    m.resourceId = value
+    err := m.GetBackingStore().Set("resourceId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AzureAdTokenAuthenticationable 
+type AzureAdTokenAuthenticationable interface {
+    CustomExtensionAuthenticationConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetResourceId()(*string)
+    SetResourceId(value *string)()
 }

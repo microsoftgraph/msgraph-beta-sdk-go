@@ -7,8 +7,6 @@ import (
 // AndroidDeviceOwnerImportedPFXCertificateProfileCollectionResponse 
 type AndroidDeviceOwnerImportedPFXCertificateProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidDeviceOwnerImportedPFXCertificateProfileable
 }
 // NewAndroidDeviceOwnerImportedPFXCertificateProfileCollectionResponse instantiates a new AndroidDeviceOwnerImportedPFXCertificateProfileCollectionResponse and sets the default values.
 func NewAndroidDeviceOwnerImportedPFXCertificateProfileCollectionResponse()(*AndroidDeviceOwnerImportedPFXCertificateProfileCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidDeviceOwnerImportedPFXCertificateProfileCollectionResponse) GetF
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidDeviceOwnerImportedPFXCertificateProfileCollectionResponse) GetValue()([]AndroidDeviceOwnerImportedPFXCertificateProfileable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidDeviceOwnerImportedPFXCertificateProfileable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerImportedPFXCertificateProfileCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidDeviceOwnerImportedPFXCertificateProfileCollectionResponse) Seri
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidDeviceOwnerImportedPFXCertificateProfileCollectionResponse) SetValue(value []AndroidDeviceOwnerImportedPFXCertificateProfileable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidDeviceOwnerImportedPFXCertificateProfileCollectionResponseable 
+type AndroidDeviceOwnerImportedPFXCertificateProfileCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidDeviceOwnerImportedPFXCertificateProfileable)
+    SetValue(value []AndroidDeviceOwnerImportedPFXCertificateProfileable)()
 }

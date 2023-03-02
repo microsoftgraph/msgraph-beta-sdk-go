@@ -7,8 +7,6 @@ import (
 // OnPremisesPublishingProfileCollectionResponse 
 type OnPremisesPublishingProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []OnPremisesPublishingProfileable
 }
 // NewOnPremisesPublishingProfileCollectionResponse instantiates a new OnPremisesPublishingProfileCollectionResponse and sets the default values.
 func NewOnPremisesPublishingProfileCollectionResponse()(*OnPremisesPublishingProfileCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *OnPremisesPublishingProfileCollectionResponse) GetFieldDeserializers()(
 }
 // GetValue gets the value property value. The value property
 func (m *OnPremisesPublishingProfileCollectionResponse) GetValue()([]OnPremisesPublishingProfileable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OnPremisesPublishingProfileable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OnPremisesPublishingProfileCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *OnPremisesPublishingProfileCollectionResponse) Serialize(writer i878a80
 }
 // SetValue sets the value property value. The value property
 func (m *OnPremisesPublishingProfileCollectionResponse) SetValue(value []OnPremisesPublishingProfileable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OnPremisesPublishingProfileCollectionResponseable 
+type OnPremisesPublishingProfileCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]OnPremisesPublishingProfileable)
+    SetValue(value []OnPremisesPublishingProfileable)()
 }

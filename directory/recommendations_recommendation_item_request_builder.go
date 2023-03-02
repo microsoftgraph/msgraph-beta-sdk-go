@@ -23,7 +23,7 @@ type RecommendationsRecommendationItemRequestBuilderDeleteRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RecommendationsRecommendationItemRequestBuilderGetQueryParameters get recommendations from directory
+// RecommendationsRecommendationItemRequestBuilderGetQueryParameters list of recommended improvements to improve tenant posture.
 type RecommendationsRecommendationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -48,7 +48,7 @@ type RecommendationsRecommendationItemRequestBuilderPatchRequestConfiguration st
 }
 // Complete provides operations to call the complete method.
 func (m *RecommendationsRecommendationItemRequestBuilder) Complete()(*RecommendationsItemCompleteRequestBuilder) {
-    return NewRecommendationsItemCompleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewRecommendationsItemCompleteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewRecommendationsRecommendationItemRequestBuilderInternal instantiates a new RecommendationItemRequestBuilder and sets the default values.
 func NewRecommendationsRecommendationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RecommendationsRecommendationItemRequestBuilder) {
@@ -59,8 +59,8 @@ func NewRecommendationsRecommendationItemRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewRecommendationsRecommendationItemRequestBuilder instantiates a new RecommendationItemRequestBuilder and sets the default values.
@@ -87,9 +87,9 @@ func (m *RecommendationsRecommendationItemRequestBuilder) Delete(ctx context.Con
 }
 // Dismiss provides operations to call the dismiss method.
 func (m *RecommendationsRecommendationItemRequestBuilder) Dismiss()(*RecommendationsItemDismissRequestBuilder) {
-    return NewRecommendationsItemDismissRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewRecommendationsItemDismissRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// Get get recommendations from directory
+// Get list of recommended improvements to improve tenant posture.
 func (m *RecommendationsRecommendationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RecommendationsRecommendationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Recommendationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -129,11 +129,11 @@ func (m *RecommendationsRecommendationItemRequestBuilder) Patch(ctx context.Cont
 }
 // Postpone provides operations to call the postpone method.
 func (m *RecommendationsRecommendationItemRequestBuilder) Postpone()(*RecommendationsItemPostponeRequestBuilder) {
-    return NewRecommendationsItemPostponeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewRecommendationsItemPostponeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Reactivate provides operations to call the reactivate method.
 func (m *RecommendationsRecommendationItemRequestBuilder) Reactivate()(*RecommendationsItemReactivateRequestBuilder) {
-    return NewRecommendationsItemReactivateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewRecommendationsItemReactivateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property recommendations for directory
 func (m *RecommendationsRecommendationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *RecommendationsRecommendationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -147,7 +147,7 @@ func (m *RecommendationsRecommendationItemRequestBuilder) ToDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get recommendations from directory
+// ToGetRequestInformation list of recommended improvements to improve tenant posture.
 func (m *RecommendationsRecommendationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RecommendationsRecommendationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -170,7 +170,10 @@ func (m *RecommendationsRecommendationItemRequestBuilder) ToPatchRequestInformat
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

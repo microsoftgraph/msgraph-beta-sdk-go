@@ -55,8 +55,8 @@ func NewItemItemsItemPermissionsPermissionItemRequestBuilderInternal(pathParamet
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemItemsItemPermissionsPermissionItemRequestBuilder instantiates a new PermissionItemRequestBuilder and sets the default values.
@@ -102,7 +102,7 @@ func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) Get(ctx context.C
 }
 // Grant provides operations to call the grant method.
 func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) Grant()(*ItemItemsItemPermissionsItemGrantRequestBuilder) {
-    return NewItemItemsItemPermissionsItemGrantRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemItemsItemPermissionsItemGrantRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property permissions in drives
 func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable, requestConfiguration *ItemItemsItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable, error) {
@@ -125,7 +125,7 @@ func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) Patch(ctx context
 }
 // RevokeGrants provides operations to call the revokeGrants method.
 func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) RevokeGrants()(*ItemItemsItemPermissionsItemRevokeGrantsRequestBuilder) {
-    return NewItemItemsItemPermissionsItemRevokeGrantsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemItemsItemPermissionsItemRevokeGrantsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property permissions for drives
 func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -162,7 +162,10 @@ func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) ToPatchRequestInf
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

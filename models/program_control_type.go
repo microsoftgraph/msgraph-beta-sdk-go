@@ -7,12 +7,8 @@ import (
 // ProgramControlType 
 type ProgramControlType struct {
     Entity
-    // The controlTypeGroupId property
-    controlTypeGroupId *string
-    // The name of the program control type
-    displayName *string
 }
-// NewProgramControlType instantiates a new ProgramControlType and sets the default values.
+// NewProgramControlType instantiates a new programControlType and sets the default values.
 func NewProgramControlType()(*ProgramControlType) {
     m := &ProgramControlType{
         Entity: *NewEntity(),
@@ -25,11 +21,25 @@ func CreateProgramControlTypeFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetControlTypeGroupId gets the controlTypeGroupId property value. The controlTypeGroupId property
 func (m *ProgramControlType) GetControlTypeGroupId()(*string) {
-    return m.controlTypeGroupId
+    val, err := m.GetBackingStore().Get("controlTypeGroupId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The name of the program control type
 func (m *ProgramControlType) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ProgramControlType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -78,9 +88,24 @@ func (m *ProgramControlType) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetControlTypeGroupId sets the controlTypeGroupId property value. The controlTypeGroupId property
 func (m *ProgramControlType) SetControlTypeGroupId(value *string)() {
-    m.controlTypeGroupId = value
+    err := m.GetBackingStore().Set("controlTypeGroupId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the program control type
 func (m *ProgramControlType) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ProgramControlTypeable 
+type ProgramControlTypeable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetControlTypeGroupId()(*string)
+    GetDisplayName()(*string)
+    SetControlTypeGroupId(value *string)()
+    SetDisplayName(value *string)()
 }

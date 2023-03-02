@@ -8,18 +8,6 @@ import (
 // GroupPolicyDefinitionValue the definition value entity stores the value for a single group policy definition.
 type GroupPolicyDefinitionValue struct {
     Entity
-    // Group Policy Configuration Type
-    configurationType *GroupPolicyConfigurationType
-    // The date and time the object was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The associated group policy definition with the value.
-    definition GroupPolicyDefinitionable
-    // Enables or disables the associated group policy definition.
-    enabled *bool
-    // The date and time the entity was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The associated group policy presentation values with the definition value.
-    presentationValues []GroupPolicyPresentationValueable
 }
 // NewGroupPolicyDefinitionValue instantiates a new groupPolicyDefinitionValue and sets the default values.
 func NewGroupPolicyDefinitionValue()(*GroupPolicyDefinitionValue) {
@@ -34,19 +22,47 @@ func CreateGroupPolicyDefinitionValueFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetConfigurationType gets the configurationType property value. Group Policy Configuration Type
 func (m *GroupPolicyDefinitionValue) GetConfigurationType()(*GroupPolicyConfigurationType) {
-    return m.configurationType
+    val, err := m.GetBackingStore().Get("configurationType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*GroupPolicyConfigurationType)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time the object was created.
 func (m *GroupPolicyDefinitionValue) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDefinition gets the definition property value. The associated group policy definition with the value.
 func (m *GroupPolicyDefinitionValue) GetDefinition()(GroupPolicyDefinitionable) {
-    return m.definition
+    val, err := m.GetBackingStore().Get("definition")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(GroupPolicyDefinitionable)
+    }
+    return nil
 }
 // GetEnabled gets the enabled property value. Enables or disables the associated group policy definition.
 func (m *GroupPolicyDefinitionValue) GetEnabled()(*bool) {
-    return m.enabled
+    val, err := m.GetBackingStore().Get("enabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyDefinitionValue) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -119,11 +135,25 @@ func (m *GroupPolicyDefinitionValue) GetFieldDeserializers()(map[string]func(i87
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
 func (m *GroupPolicyDefinitionValue) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetPresentationValues gets the presentationValues property value. The associated group policy presentation values with the definition value.
 func (m *GroupPolicyDefinitionValue) GetPresentationValues()([]GroupPolicyPresentationValueable) {
-    return m.presentationValues
+    val, err := m.GetBackingStore().Get("presentationValues")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GroupPolicyPresentationValueable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyDefinitionValue) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -176,25 +206,60 @@ func (m *GroupPolicyDefinitionValue) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetConfigurationType sets the configurationType property value. Group Policy Configuration Type
 func (m *GroupPolicyDefinitionValue) SetConfigurationType(value *GroupPolicyConfigurationType)() {
-    m.configurationType = value
+    err := m.GetBackingStore().Set("configurationType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time the object was created.
 func (m *GroupPolicyDefinitionValue) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefinition sets the definition property value. The associated group policy definition with the value.
 func (m *GroupPolicyDefinitionValue) SetDefinition(value GroupPolicyDefinitionable)() {
-    m.definition = value
+    err := m.GetBackingStore().Set("definition", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnabled sets the enabled property value. Enables or disables the associated group policy definition.
 func (m *GroupPolicyDefinitionValue) SetEnabled(value *bool)() {
-    m.enabled = value
+    err := m.GetBackingStore().Set("enabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the entity was last modified.
 func (m *GroupPolicyDefinitionValue) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPresentationValues sets the presentationValues property value. The associated group policy presentation values with the definition value.
 func (m *GroupPolicyDefinitionValue) SetPresentationValues(value []GroupPolicyPresentationValueable)() {
-    m.presentationValues = value
+    err := m.GetBackingStore().Set("presentationValues", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GroupPolicyDefinitionValueable 
+type GroupPolicyDefinitionValueable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetConfigurationType()(*GroupPolicyConfigurationType)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDefinition()(GroupPolicyDefinitionable)
+    GetEnabled()(*bool)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetPresentationValues()([]GroupPolicyPresentationValueable)
+    SetConfigurationType(value *GroupPolicyConfigurationType)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDefinition(value GroupPolicyDefinitionable)()
+    SetEnabled(value *bool)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetPresentationValues(value []GroupPolicyPresentationValueable)()
 }

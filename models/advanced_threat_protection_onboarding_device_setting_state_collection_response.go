@@ -7,8 +7,6 @@ import (
 // AdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse 
 type AdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AdvancedThreatProtectionOnboardingDeviceSettingStateable
 }
 // NewAdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse instantiates a new AdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse and sets the default values.
 func NewAdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse()(*AdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse)
 }
 // GetValue gets the value property value. The value property
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse) GetValue()([]AdvancedThreatProtectionOnboardingDeviceSettingStateable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AdvancedThreatProtectionOnboardingDeviceSettingStateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse)
 }
 // SetValue sets the value property value. The value property
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse) SetValue(value []AdvancedThreatProtectionOnboardingDeviceSettingStateable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponseable 
+type AdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AdvancedThreatProtectionOnboardingDeviceSettingStateable)
+    SetValue(value []AdvancedThreatProtectionOnboardingDeviceSettingStateable)()
 }

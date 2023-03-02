@@ -7,12 +7,6 @@ import (
 // PlannerRosterMember 
 type PlannerRosterMember struct {
     Entity
-    // Additional roles associated with the PlannerRosterMember, which determines permissions of the member in the plannerRoster. Currently there are no available roles to assign, and every member has full control over the contents of the plannerRoster.
-    roles []string
-    // Identifier of the tenant the user belongs to. Currently only the users from the same tenant can be added to a plannerRoster.
-    tenantId *string
-    // Identifier of the user.
-    userId *string
 }
 // NewPlannerRosterMember instantiates a new plannerRosterMember and sets the default values.
 func NewPlannerRosterMember()(*PlannerRosterMember) {
@@ -66,15 +60,36 @@ func (m *PlannerRosterMember) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetRoles gets the roles property value. Additional roles associated with the PlannerRosterMember, which determines permissions of the member in the plannerRoster. Currently there are no available roles to assign, and every member has full control over the contents of the plannerRoster.
 func (m *PlannerRosterMember) GetRoles()([]string) {
-    return m.roles
+    val, err := m.GetBackingStore().Get("roles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetTenantId gets the tenantId property value. Identifier of the tenant the user belongs to. Currently only the users from the same tenant can be added to a plannerRoster.
 func (m *PlannerRosterMember) GetTenantId()(*string) {
-    return m.tenantId
+    val, err := m.GetBackingStore().Get("tenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserId gets the userId property value. Identifier of the user.
 func (m *PlannerRosterMember) GetUserId()(*string) {
-    return m.userId
+    val, err := m.GetBackingStore().Get("userId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PlannerRosterMember) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -104,13 +119,33 @@ func (m *PlannerRosterMember) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetRoles sets the roles property value. Additional roles associated with the PlannerRosterMember, which determines permissions of the member in the plannerRoster. Currently there are no available roles to assign, and every member has full control over the contents of the plannerRoster.
 func (m *PlannerRosterMember) SetRoles(value []string)() {
-    m.roles = value
+    err := m.GetBackingStore().Set("roles", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantId sets the tenantId property value. Identifier of the tenant the user belongs to. Currently only the users from the same tenant can be added to a plannerRoster.
 func (m *PlannerRosterMember) SetTenantId(value *string)() {
-    m.tenantId = value
+    err := m.GetBackingStore().Set("tenantId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserId sets the userId property value. Identifier of the user.
 func (m *PlannerRosterMember) SetUserId(value *string)() {
-    m.userId = value
+    err := m.GetBackingStore().Set("userId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PlannerRosterMemberable 
+type PlannerRosterMemberable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetRoles()([]string)
+    GetTenantId()(*string)
+    GetUserId()(*string)
+    SetRoles(value []string)()
+    SetTenantId(value *string)()
+    SetUserId(value *string)()
 }

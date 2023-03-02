@@ -2,26 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // EmbeddedSIMActivationCode the embedded SIM activation code as provided by the mobile operator.
 type EmbeddedSIMActivationCode struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The Integrated Circuit Card Identifier (ICCID) for this embedded SIM activation code as provided by the mobile operator.
-    integratedCircuitCardIdentifier *string
-    // The MatchingIdentifier (MatchingID) as specified in the GSMA Association SGP.22 RSP Technical Specification section 4.1.
-    matchingIdentifier *string
-    // The OdataType property
-    odataType *string
-    // The fully qualified domain name of the SM-DP+ server as specified in the GSM Association SPG .22 RSP Technical Specification.
-    smdpPlusServerAddress *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewEmbeddedSIMActivationCode instantiates a new embeddedSIMActivationCode and sets the default values.
 func NewEmbeddedSIMActivationCode()(*EmbeddedSIMActivationCode) {
     m := &EmbeddedSIMActivationCode{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateEmbeddedSIMActivationCodeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +24,19 @@ func CreateEmbeddedSIMActivationCodeFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EmbeddedSIMActivationCode) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *EmbeddedSIMActivationCode) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EmbeddedSIMActivationCode) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -79,19 +85,47 @@ func (m *EmbeddedSIMActivationCode) GetFieldDeserializers()(map[string]func(i878
 }
 // GetIntegratedCircuitCardIdentifier gets the integratedCircuitCardIdentifier property value. The Integrated Circuit Card Identifier (ICCID) for this embedded SIM activation code as provided by the mobile operator.
 func (m *EmbeddedSIMActivationCode) GetIntegratedCircuitCardIdentifier()(*string) {
-    return m.integratedCircuitCardIdentifier
+    val, err := m.GetBackingStore().Get("integratedCircuitCardIdentifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetMatchingIdentifier gets the matchingIdentifier property value. The MatchingIdentifier (MatchingID) as specified in the GSMA Association SGP.22 RSP Technical Specification section 4.1.
 func (m *EmbeddedSIMActivationCode) GetMatchingIdentifier()(*string) {
-    return m.matchingIdentifier
+    val, err := m.GetBackingStore().Get("matchingIdentifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *EmbeddedSIMActivationCode) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSmdpPlusServerAddress gets the smdpPlusServerAddress property value. The fully qualified domain name of the SM-DP+ server as specified in the GSM Association SPG .22 RSP Technical Specification.
 func (m *EmbeddedSIMActivationCode) GetSmdpPlusServerAddress()(*string) {
-    return m.smdpPlusServerAddress
+    val, err := m.GetBackingStore().Get("smdpPlusServerAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EmbeddedSIMActivationCode) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -129,21 +163,56 @@ func (m *EmbeddedSIMActivationCode) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EmbeddedSIMActivationCode) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *EmbeddedSIMActivationCode) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetIntegratedCircuitCardIdentifier sets the integratedCircuitCardIdentifier property value. The Integrated Circuit Card Identifier (ICCID) for this embedded SIM activation code as provided by the mobile operator.
 func (m *EmbeddedSIMActivationCode) SetIntegratedCircuitCardIdentifier(value *string)() {
-    m.integratedCircuitCardIdentifier = value
+    err := m.GetBackingStore().Set("integratedCircuitCardIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMatchingIdentifier sets the matchingIdentifier property value. The MatchingIdentifier (MatchingID) as specified in the GSMA Association SGP.22 RSP Technical Specification section 4.1.
 func (m *EmbeddedSIMActivationCode) SetMatchingIdentifier(value *string)() {
-    m.matchingIdentifier = value
+    err := m.GetBackingStore().Set("matchingIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *EmbeddedSIMActivationCode) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSmdpPlusServerAddress sets the smdpPlusServerAddress property value. The fully qualified domain name of the SM-DP+ server as specified in the GSM Association SPG .22 RSP Technical Specification.
 func (m *EmbeddedSIMActivationCode) SetSmdpPlusServerAddress(value *string)() {
-    m.smdpPlusServerAddress = value
+    err := m.GetBackingStore().Set("smdpPlusServerAddress", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EmbeddedSIMActivationCodeable 
+type EmbeddedSIMActivationCodeable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetIntegratedCircuitCardIdentifier()(*string)
+    GetMatchingIdentifier()(*string)
+    GetOdataType()(*string)
+    GetSmdpPlusServerAddress()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetIntegratedCircuitCardIdentifier(value *string)()
+    SetMatchingIdentifier(value *string)()
+    SetOdataType(value *string)()
+    SetSmdpPlusServerAddress(value *string)()
 }

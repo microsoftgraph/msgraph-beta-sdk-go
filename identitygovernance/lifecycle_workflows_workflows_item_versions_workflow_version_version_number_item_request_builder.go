@@ -41,8 +41,8 @@ func NewLifecycleWorkflowsWorkflowsItemVersionsWorkflowVersionVersionNumberItemR
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewLifecycleWorkflowsWorkflowsItemVersionsWorkflowVersionVersionNumberItemRequestBuilder instantiates a new WorkflowVersionVersionNumberItemRequestBuilder and sets the default values.

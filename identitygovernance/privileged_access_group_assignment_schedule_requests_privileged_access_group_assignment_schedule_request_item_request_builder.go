@@ -48,11 +48,11 @@ type PrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAssignm
 }
 // ActivatedUsing provides operations to manage the activatedUsing property of the microsoft.graph.privilegedAccessGroupAssignmentScheduleRequest entity.
 func (m *PrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilder) ActivatedUsing()(*PrivilegedAccessGroupAssignmentScheduleRequestsItemActivatedUsingRequestBuilder) {
-    return NewPrivilegedAccessGroupAssignmentScheduleRequestsItemActivatedUsingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPrivilegedAccessGroupAssignmentScheduleRequestsItemActivatedUsingRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Cancel provides operations to call the cancel method.
 func (m *PrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilder) Cancel()(*PrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilder) {
-    return NewPrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewPrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilderInternal instantiates a new PrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilder and sets the default values.
 func NewPrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilder) {
@@ -63,8 +63,8 @@ func NewPrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAssi
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilder instantiates a new PrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilder and sets the default values.
@@ -110,7 +110,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAss
 }
 // Group provides operations to manage the group property of the microsoft.graph.privilegedAccessGroupAssignmentScheduleRequest entity.
 func (m *PrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilder) Group()(*PrivilegedAccessGroupAssignmentScheduleRequestsItemGroupRequestBuilder) {
-    return NewPrivilegedAccessGroupAssignmentScheduleRequestsItemGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPrivilegedAccessGroupAssignmentScheduleRequestsItemGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property assignmentScheduleRequests in identityGovernance
 func (m *PrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupAssignmentScheduleRequestable, requestConfiguration *PrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupAssignmentScheduleRequestable, error) {
@@ -133,11 +133,11 @@ func (m *PrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAss
 }
 // Principal provides operations to manage the principal property of the microsoft.graph.privilegedAccessGroupAssignmentScheduleRequest entity.
 func (m *PrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilder) Principal()(*PrivilegedAccessGroupAssignmentScheduleRequestsItemPrincipalRequestBuilder) {
-    return NewPrivilegedAccessGroupAssignmentScheduleRequestsItemPrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPrivilegedAccessGroupAssignmentScheduleRequestsItemPrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TargetSchedule provides operations to manage the targetSchedule property of the microsoft.graph.privilegedAccessGroupAssignmentScheduleRequest entity.
 func (m *PrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilder) TargetSchedule()(*PrivilegedAccessGroupAssignmentScheduleRequestsItemTargetScheduleRequestBuilder) {
-    return NewPrivilegedAccessGroupAssignmentScheduleRequestsItemTargetScheduleRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPrivilegedAccessGroupAssignmentScheduleRequestsItemTargetScheduleRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property assignmentScheduleRequests for identityGovernance
 func (m *PrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -174,7 +174,10 @@ func (m *PrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAss
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

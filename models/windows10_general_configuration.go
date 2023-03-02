@@ -7,580 +7,14 @@ import (
 // Windows10GeneralConfiguration 
 type Windows10GeneralConfiguration struct {
     DeviceConfiguration
-    // Indicates whether or not to Block the user from adding email accounts to the device that are not associated with a Microsoft account.
-    accountsBlockAddingNonMicrosoftAccountEmail *bool
-    // Possible values of a property
-    activateAppsWithVoice *Enablement
-    // Indicates whether or not to block the user from selecting an AntiTheft mode preference (Windows 10 Mobile only).
-    antiTheftModeBlocked *bool
-    // This policy setting permits users to change installation options that typically are available only to system administrators.
-    appManagementMSIAllowUserControlOverInstall *bool
-    // This policy setting directs Windows Installer to use elevated permissions when it installs any program on the system.
-    appManagementMSIAlwaysInstallWithElevatedPrivileges *bool
-    // List of semi-colon delimited Package Family Names of Windows apps. Listed Windows apps are to be launched after logon.​
-    appManagementPackageFamilyNamesToLaunchAfterLogOn []string
-    // State Management Setting.
-    appsAllowTrustedAppsSideloading *StateManagementSetting
-    // Indicates whether or not to disable the launch of all apps from Windows Store that came pre-installed or were downloaded.
-    appsBlockWindowsStoreOriginatedApps *bool
-    // Allows secondary authentication devices to work with Windows.
-    authenticationAllowSecondaryDevice *bool
-    // Specifies the preferred domain among available domains in the Azure AD tenant.
-    authenticationPreferredAzureADTenantDomainName *string
-    // Possible values of a property
-    authenticationWebSignIn *Enablement
-    // Specify a list of allowed Bluetooth services and profiles in hex formatted strings.
-    bluetoothAllowedServices []string
-    // Whether or not to Block the user from using bluetooth advertising.
-    bluetoothBlockAdvertising *bool
-    // Whether or not to Block the user from using bluetooth discoverable mode.
-    bluetoothBlockDiscoverableMode *bool
-    // Whether or not to Block the user from using bluetooth.
-    bluetoothBlocked *bool
-    // Whether or not to block specific bundled Bluetooth peripherals to automatically pair with the host device.
-    bluetoothBlockPrePairing *bool
-    // Whether or not to block the users from using Swift Pair and other proximity based scenarios.
-    bluetoothBlockPromptedProximalConnections *bool
-    // Whether or not to Block the user from accessing the camera of the device.
-    cameraBlocked *bool
-    // Whether or not to Block the user from using data over cellular while roaming.
-    cellularBlockDataWhenRoaming *bool
-    // Whether or not to Block the user from using VPN over cellular.
-    cellularBlockVpn *bool
-    // Whether or not to Block the user from using VPN when roaming over cellular.
-    cellularBlockVpnWhenRoaming *bool
-    // Possible values of the ConfigurationUsage list.
-    cellularData *ConfigurationUsage
-    // Whether or not to Block the user from doing manual root certificate installation.
-    certificatesBlockManualRootCertificateInstallation *bool
-    // Specifies the time zone to be applied to the device. This is the standard Windows name for the target time zone.
-    configureTimeZone *string
-    // Whether or not to block Connected Devices Service which enables discovery and connection to other devices, remote messaging, remote app sessions and other cross-device experiences.
-    connectedDevicesServiceBlocked *bool
-    // Whether or not to Block the user from using copy paste.
-    copyPasteBlocked *bool
-    // Whether or not to Block the user from using Cortana.
-    cortanaBlocked *bool
-    // Specify whether to allow or disallow the Federal Information Processing Standard (FIPS) policy.
-    cryptographyAllowFipsAlgorithmPolicy *bool
-    // This policy setting allows you to block direct memory access (DMA) for all hot pluggable PCI downstream ports until a user logs into Windows.
-    dataProtectionBlockDirectMemoryAccess *bool
-    // Whether or not to block end user access to Defender.
-    defenderBlockEndUserAccess *bool
-    // Allows or disallows Windows Defender On Access Protection functionality.
-    defenderBlockOnAccessProtection *bool
-    // Possible values of Cloud Block Level
-    defenderCloudBlockLevel *DefenderCloudBlockLevelType
-    // Timeout extension for file scanning by the cloud. Valid values 0 to 50
-    defenderCloudExtendedTimeout *int32
-    // Timeout extension for file scanning by the cloud. Valid values 0 to 50
-    defenderCloudExtendedTimeoutInSeconds *int32
-    // Number of days before deleting quarantined malware. Valid values 0 to 90
-    defenderDaysBeforeDeletingQuarantinedMalware *int32
-    // Gets or sets Defender’s actions to take on detected Malware per threat level.
-    defenderDetectedMalwareActions DefenderDetectedMalwareActionsable
-    // When blocked, catch-up scans for scheduled full scans will be turned off.
-    defenderDisableCatchupFullScan *bool
-    // When blocked, catch-up scans for scheduled quick scans will be turned off.
-    defenderDisableCatchupQuickScan *bool
-    // File extensions to exclude from scans and real time protection.
-    defenderFileExtensionsToExclude []string
-    // Files and folder to exclude from scans and real time protection.
-    defenderFilesAndFoldersToExclude []string
-    // Possible values for monitoring file activity.
-    defenderMonitorFileActivity *DefenderMonitorFileActivity
-    // Gets or sets Defender’s action to take on Potentially Unwanted Application (PUA), which includes software with behaviors of ad-injection, software bundling, persistent solicitation for payment or subscription, etc. Defender alerts user when PUA is being downloaded or attempts to install itself. Added in Windows 10 for desktop. Possible values are: deviceDefault, block, audit.
-    defenderPotentiallyUnwantedAppAction *DefenderPotentiallyUnwantedAppAction
-    // Possible values of Defender PUA Protection
-    defenderPotentiallyUnwantedAppActionSetting *DefenderProtectionType
-    // Processes to exclude from scans and real time protection.
-    defenderProcessesToExclude []string
-    // Possible values for prompting user for samples submission.
-    defenderPromptForSampleSubmission *DefenderPromptForSampleSubmission
-    // Indicates whether or not to require behavior monitoring.
-    defenderRequireBehaviorMonitoring *bool
-    // Indicates whether or not to require cloud protection.
-    defenderRequireCloudProtection *bool
-    // Indicates whether or not to require network inspection system.
-    defenderRequireNetworkInspectionSystem *bool
-    // Indicates whether or not to require real time monitoring.
-    defenderRequireRealTimeMonitoring *bool
-    // Indicates whether or not to scan archive files.
-    defenderScanArchiveFiles *bool
-    // Indicates whether or not to scan downloads.
-    defenderScanDownloads *bool
-    // Indicates whether or not to scan incoming mail messages.
-    defenderScanIncomingMail *bool
-    // Indicates whether or not to scan mapped network drives during full scan.
-    defenderScanMappedNetworkDrivesDuringFullScan *bool
-    // Max CPU usage percentage during scan. Valid values 0 to 100
-    defenderScanMaxCpu *int32
-    // Indicates whether or not to scan files opened from a network folder.
-    defenderScanNetworkFiles *bool
-    // Indicates whether or not to scan removable drives during full scan.
-    defenderScanRemovableDrivesDuringFullScan *bool
-    // Indicates whether or not to scan scripts loaded in Internet Explorer browser.
-    defenderScanScriptsLoadedInInternetExplorer *bool
-    // Possible values for system scan type.
-    defenderScanType *DefenderScanType
-    // The time to perform a daily quick scan.
-    defenderScheduledQuickScanTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
-    // The defender time for the system scan.
-    defenderScheduledScanTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
-    // When enabled, low CPU priority will be used during scheduled scans.
-    defenderScheduleScanEnableLowCpuPriority *bool
-    // The signature update interval in hours. Specify 0 not to check. Valid values 0 to 24
-    defenderSignatureUpdateIntervalInHours *int32
-    // Checks for the user consent level in Windows Defender to send data. Possible values are: sendSafeSamplesAutomatically, alwaysPrompt, neverSend, sendAllSamplesAutomatically.
-    defenderSubmitSamplesConsentType *DefenderSubmitSamplesConsentType
-    // Possible values for a weekly schedule.
-    defenderSystemScanSchedule *WeeklySchedule
-    // State Management Setting.
-    developerUnlockSetting *StateManagementSetting
-    // Indicates whether or not to Block the user from resetting their phone.
-    deviceManagementBlockFactoryResetOnMobile *bool
-    // Indicates whether or not to Block the user from doing manual un-enrollment from device management.
-    deviceManagementBlockManualUnenroll *bool
-    // Allow the device to send diagnostic and usage telemetry data, such as Watson.
-    diagnosticsDataSubmissionMode *DiagnosticDataSubmissionMode
-    // List of legacy applications that have GDI DPI Scaling turned off.
-    displayAppListWithGdiDPIScalingTurnedOff []string
-    // List of legacy applications that have GDI DPI Scaling turned on.
-    displayAppListWithGdiDPIScalingTurnedOn []string
-    // Allow users to change Start pages on Edge. Use the EdgeHomepageUrls to specify the Start pages that the user would see by default when they open Edge.
-    edgeAllowStartPagesModification *bool
-    // Indicates whether or not to prevent access to about flags on Edge browser.
-    edgeBlockAccessToAboutFlags *bool
-    // Block the address bar dropdown functionality in Microsoft Edge. Disable this settings to minimize network connections from Microsoft Edge to Microsoft services.
-    edgeBlockAddressBarDropdown *bool
-    // Indicates whether or not to block auto fill.
-    edgeBlockAutofill *bool
-    // Block Microsoft compatibility list in Microsoft Edge. This list from Microsoft helps Edge properly display sites with known compatibility issues.
-    edgeBlockCompatibilityList *bool
-    // Indicates whether or not to block developer tools in the Edge browser.
-    edgeBlockDeveloperTools *bool
-    // Indicates whether or not to Block the user from using the Edge browser.
-    edgeBlocked *bool
-    // Indicates whether or not to Block the user from making changes to Favorites.
-    edgeBlockEditFavorites *bool
-    // Indicates whether or not to block extensions in the Edge browser.
-    edgeBlockExtensions *bool
-    // Allow or prevent Edge from entering the full screen mode.
-    edgeBlockFullScreenMode *bool
-    // Indicates whether or not to block InPrivate browsing on corporate networks, in the Edge browser.
-    edgeBlockInPrivateBrowsing *bool
-    // Indicates whether or not to Block the user from using JavaScript.
-    edgeBlockJavaScript *bool
-    // Block the collection of information by Microsoft for live tile creation when users pin a site to Start from Microsoft Edge.
-    edgeBlockLiveTileDataCollection *bool
-    // Indicates whether or not to Block password manager.
-    edgeBlockPasswordManager *bool
-    // Indicates whether or not to block popups.
-    edgeBlockPopups *bool
-    // Decide whether Microsoft Edge is prelaunched at Windows startup.
-    edgeBlockPrelaunch *bool
-    // Configure Edge to allow or block printing.
-    edgeBlockPrinting *bool
-    // Configure Edge to allow browsing history to be saved or to never save browsing history.
-    edgeBlockSavingHistory *bool
-    // Indicates whether or not to block the user from adding new search engine or changing the default search engine.
-    edgeBlockSearchEngineCustomization *bool
-    // Indicates whether or not to block the user from using the search suggestions in the address bar.
-    edgeBlockSearchSuggestions *bool
-    // Indicates whether or not to Block the user from sending the do not track header.
-    edgeBlockSendingDoNotTrackHeader *bool
-    // Indicates whether or not to switch the intranet traffic from Edge to Internet Explorer. Note: the name of this property is misleading; the property is obsolete, use EdgeSendIntranetTrafficToInternetExplorer instead.
-    edgeBlockSendingIntranetTrafficToInternetExplorer *bool
-    // Indicates whether the user can sideload extensions.
-    edgeBlockSideloadingExtensions *bool
-    // Configure whether Edge preloads the new tab page at Windows startup.
-    edgeBlockTabPreloading *bool
-    // Configure to load a blank page in Edge instead of the default New tab page and prevent users from changing it.
-    edgeBlockWebContentOnNewTabPage *bool
-    // Clear browsing data on exiting Microsoft Edge.
-    edgeClearBrowsingDataOnExit *bool
-    // Possible values to specify which cookies are allowed in Microsoft Edge.
-    edgeCookiePolicy *EdgeCookiePolicy
-    // Block the Microsoft web page that opens on the first use of Microsoft Edge. This policy allows enterprises, like those enrolled in zero emissions configurations, to block this page.
-    edgeDisableFirstRunPage *bool
-    // Indicates the enterprise mode site list location. Could be a local file, local network or http location.
-    edgeEnterpriseModeSiteListLocation *string
-    // Generic visibility state.
-    edgeFavoritesBarVisibility *VisibilitySetting
-    // The location of the favorites list to provision. Could be a local file, local network or http location.
-    edgeFavoritesListLocation *string
-    // The first run URL for when Edge browser is opened for the first time.
-    edgeFirstRunUrl *string
-    // Causes the Home button to either hide, load the default Start page, load a New tab page, or a custom URL
-    edgeHomeButtonConfiguration EdgeHomeButtonConfigurationable
-    // Enable the Home button configuration.
-    edgeHomeButtonConfigurationEnabled *bool
-    // The list of URLs for homepages shodwn on MDM-enrolled devices on Edge browser.
-    edgeHomepageUrls []string
-    // Specify how the Microsoft Edge settings are restricted based on kiosk mode.
-    edgeKioskModeRestriction *EdgeKioskModeRestrictionType
-    // Specifies the time in minutes from the last user activity before Microsoft Edge kiosk resets.  Valid values are 0-1440. The default is 5. 0 indicates no reset. Valid values 0 to 1440
-    edgeKioskResetAfterIdleTimeInMinutes *int32
-    // Specify the page opened when new tabs are created.
-    edgeNewTabPageURL *string
-    // Possible values for the EdgeOpensWith setting.
-    edgeOpensWith *EdgeOpenOptions
-    // Allow or prevent users from overriding certificate errors.
-    edgePreventCertificateErrorOverride *bool
-    // Specify the list of package family names of browser extensions that are required and cannot be turned off by the user.
-    edgeRequiredExtensionPackageFamilyNames []string
-    // Indicates whether or not to Require the user to use the smart screen filter.
-    edgeRequireSmartScreen *bool
-    // Allows IT admins to set a default search engine for MDM-Controlled devices. Users can override this and change their default search engine provided the AllowSearchEngineCustomization policy is not set.
-    edgeSearchEngine EdgeSearchEngineBaseable
-    // Indicates whether or not to switch the intranet traffic from Edge to Internet Explorer.
-    edgeSendIntranetTrafficToInternetExplorer *bool
-    // What message will be displayed by Edge before switching to Internet Explorer.
-    edgeShowMessageWhenOpeningInternetExplorerSites *InternetExplorerMessageSetting
-    // Enable favorites sync between Internet Explorer and Microsoft Edge. Additions, deletions, modifications and order changes to favorites are shared between browsers.
-    edgeSyncFavoritesWithInternetExplorer *bool
-    // Type of browsing data sent to Microsoft 365 analytics
-    edgeTelemetryForMicrosoft365Analytics *EdgeTelemetryMode
-    // Allow users with administrative rights to delete all user data and settings using CTRL + Win + R at the device lock screen so that the device can be automatically re-configured and re-enrolled into management.
-    enableAutomaticRedeployment *bool
-    // This setting allows you to specify battery charge level at which Energy Saver is turned on. While on battery, Energy Saver is automatically turned on at (and below) the specified battery charge level. Valid input range (0-100). Valid values 0 to 100
-    energySaverOnBatteryThresholdPercentage *int32
-    // This setting allows you to specify battery charge level at which Energy Saver is turned on. While plugged in, Energy Saver is automatically turned on at (and below) the specified battery charge level. Valid input range (0-100). Valid values 0 to 100
-    energySaverPluggedInThresholdPercentage *int32
-    // Endpoint for discovering cloud printers.
-    enterpriseCloudPrintDiscoveryEndPoint *string
-    // Maximum number of printers that should be queried from a discovery endpoint. This is a mobile only setting. Valid values 1 to 65535
-    enterpriseCloudPrintDiscoveryMaxLimit *int32
-    // OAuth resource URI for printer discovery service as configured in Azure portal.
-    enterpriseCloudPrintMopriaDiscoveryResourceIdentifier *string
-    // Authentication endpoint for acquiring OAuth tokens.
-    enterpriseCloudPrintOAuthAuthority *string
-    // GUID of a client application authorized to retrieve OAuth tokens from the OAuth Authority.
-    enterpriseCloudPrintOAuthClientIdentifier *string
-    // OAuth resource URI for print service as configured in the Azure portal.
-    enterpriseCloudPrintResourceIdentifier *string
-    // Indicates whether or not to enable device discovery UX.
-    experienceBlockDeviceDiscovery *bool
-    // Indicates whether or not to allow the error dialog from displaying if no SIM card is detected.
-    experienceBlockErrorDialogWhenNoSIM *bool
-    // Indicates whether or not to enable task switching on the device.
-    experienceBlockTaskSwitcher *bool
-    // Allow(Not Configured) or prevent(Block) the syncing of Microsoft Edge Browser settings. Option to prevent syncing across devices, but allow user override.
-    experienceDoNotSyncBrowserSettings *BrowserSyncSetting
-    // Possible values of a property
-    findMyFiles *Enablement
-    // Indicates whether or not to block DVR and broadcasting.
-    gameDvrBlocked *bool
-    // Values for the InkWorkspaceAccess setting.
-    inkWorkspaceAccess *InkAccessSetting
-    // State Management Setting.
-    inkWorkspaceAccessState *StateManagementSetting
-    // Specify whether to show recommended app suggestions in the ink workspace.
-    inkWorkspaceBlockSuggestedApps *bool
-    // Indicates whether or not to Block the user from using internet sharing.
-    internetSharingBlocked *bool
-    // Indicates whether or not to Block the user from location services.
-    locationServicesBlocked *bool
-    // Possible values of a property
-    lockScreenActivateAppsWithVoice *Enablement
-    // Specify whether to show a user-configurable setting to control the screen timeout while on the lock screen of Windows 10 Mobile devices. If this policy is set to Allow, the value set by lockScreenTimeoutInSeconds is ignored.
-    lockScreenAllowTimeoutConfiguration *bool
-    // Indicates whether or not to block action center notifications over lock screen.
-    lockScreenBlockActionCenterNotifications *bool
-    // Indicates whether or not the user can interact with Cortana using speech while the system is locked.
-    lockScreenBlockCortana *bool
-    // Indicates whether to allow toast notifications above the device lock screen.
-    lockScreenBlockToastNotifications *bool
-    // Set the duration (in seconds) from the screen locking to the screen turning off for Windows 10 Mobile devices. Supported values are 11-1800. Valid values 11 to 1800
-    lockScreenTimeoutInSeconds *int32
-    // Disables the ability to quickly switch between users that are logged on simultaneously without logging off.
-    logonBlockFastUserSwitching *bool
-    // Indicates whether or not to block the MMS send/receive functionality on the device.
-    messagingBlockMMS *bool
-    // Indicates whether or not to block the RCS send/receive functionality on the device.
-    messagingBlockRichCommunicationServices *bool
-    // Indicates whether or not to block text message back up and restore and Messaging Everywhere.
-    messagingBlockSync *bool
-    // Indicates whether or not to Block a Microsoft account.
-    microsoftAccountBlocked *bool
-    // Indicates whether or not to Block Microsoft account settings sync.
-    microsoftAccountBlockSettingsSync *bool
-    // Values for the SignInAssistantSettings.
-    microsoftAccountSignInAssistantSettings *SignInAssistantOptions
-    // If set, proxy settings will be applied to all processes and accounts in the device. Otherwise, it will be applied to the user account that’s enrolled into MDM.
-    networkProxyApplySettingsDeviceWide *bool
-    // Address to the proxy auto-config (PAC) script you want to use.
-    networkProxyAutomaticConfigurationUrl *string
-    // Disable automatic detection of settings. If enabled, the system will try to find the path to a proxy auto-config (PAC) script.
-    networkProxyDisableAutoDetect *bool
-    // Specifies manual proxy server settings.
-    networkProxyServer Windows10NetworkProxyServerable
-    // Indicates whether or not to Block the user from using near field communication.
-    nfcBlocked *bool
-    // Gets or sets a value allowing IT admins to prevent apps and features from working with files on OneDrive.
-    oneDriveDisableFileSync *bool
-    // Specify whether PINs or passwords such as '1111' or '1234' are allowed. For Windows 10 desktops, it also controls the use of picture passwords.
-    passwordBlockSimple *bool
-    // The password expiration in days. Valid values 0 to 730
-    passwordExpirationDays *int32
-    // This security setting determines the period of time (in days) that a password must be used before the user can change it. Valid values 0 to 998
-    passwordMinimumAgeInDays *int32
-    // The number of character sets required in the password.
-    passwordMinimumCharacterSetCount *int32
-    // The minimum password length. Valid values 4 to 16
-    passwordMinimumLength *int32
-    // The minutes of inactivity before the screen times out.
-    passwordMinutesOfInactivityBeforeScreenTimeout *int32
-    // The number of previous passwords to prevent reuse of. Valid values 0 to 50
-    passwordPreviousPasswordBlockCount *int32
-    // Indicates whether or not to require the user to have a password.
-    passwordRequired *bool
-    // Possible values of required passwords.
-    passwordRequiredType *RequiredPasswordType
-    // Indicates whether or not to require a password upon resuming from an idle state.
-    passwordRequireWhenResumeFromIdleState *bool
-    // The number of sign in failures before factory reset. Valid values 0 to 999
-    passwordSignInFailureCountBeforeFactoryReset *int32
-    // A http or https Url to a jpg, jpeg or png image that needs to be downloaded and used as the Desktop Image or a file Url to a local image on the file system that needs to used as the Desktop Image.
-    personalizationDesktopImageUrl *string
-    // A http or https Url to a jpg, jpeg or png image that neeeds to be downloaded and used as the Lock Screen Image or a file Url to a local image on the file system that needs to be used as the Lock Screen Image.
-    personalizationLockScreenImageUrl *string
-    // Power action types
-    powerButtonActionOnBattery *PowerActionType
-    // Power action types
-    powerButtonActionPluggedIn *PowerActionType
-    // Possible values of a property
-    powerHybridSleepOnBattery *Enablement
-    // Possible values of a property
-    powerHybridSleepPluggedIn *Enablement
-    // Power action types
-    powerLidCloseActionOnBattery *PowerActionType
-    // Power action types
-    powerLidCloseActionPluggedIn *PowerActionType
-    // Power action types
-    powerSleepButtonActionOnBattery *PowerActionType
-    // Power action types
-    powerSleepButtonActionPluggedIn *PowerActionType
-    // Prevent user installation of additional printers from printers settings.
-    printerBlockAddition *bool
-    // Name (network host name) of an installed printer.
-    printerDefaultName *string
-    // Automatically provision printers based on their names (network host names).
-    printerNames []string
-    // Indicates a list of applications with their access control levels over privacy data categories, and/or the default access levels per category. This collection can contain a maximum of 500 elements.
-    privacyAccessControls []WindowsPrivacyDataAccessControlItemable
-    // State Management Setting.
-    privacyAdvertisingId *StateManagementSetting
-    // Indicates whether or not to allow the automatic acceptance of the pairing and privacy user consent dialog when launching apps.
-    privacyAutoAcceptPairingAndConsentPrompts *bool
-    // Blocks the usage of cloud based speech services for Cortana, Dictation, or Store applications.
-    privacyBlockActivityFeed *bool
-    // Indicates whether or not to block the usage of cloud based speech services for Cortana, Dictation, or Store applications.
-    privacyBlockInputPersonalization *bool
-    // Blocks the shared experiences/discovery of recently used resources in task switcher etc.
-    privacyBlockPublishUserActivities *bool
-    // This policy prevents the privacy experience from launching during user logon for new and upgraded users.​
-    privacyDisableLaunchExperience *bool
-    // Indicates whether or not to Block the user from reset protection mode.
-    resetProtectionModeBlocked *bool
-    // Specifies what level of safe search (filtering adult content) is required
-    safeSearchFilter *SafeSearchFilterType
-    // Indicates whether or not to Block the user from taking Screenshots.
-    screenCaptureBlocked *bool
-    // Specifies if search can use diacritics.
-    searchBlockDiacritics *bool
-    // Indicates whether or not to block the web search.
-    searchBlockWebResults *bool
-    // Specifies whether to use automatic language detection when indexing content and properties.
-    searchDisableAutoLanguageDetection *bool
-    // Indicates whether or not to disable the search indexer backoff feature.
-    searchDisableIndexerBackoff *bool
-    // Indicates whether or not to block indexing of WIP-protected items to prevent them from appearing in search results for Cortana or Explorer.
-    searchDisableIndexingEncryptedItems *bool
-    // Indicates whether or not to allow users to add locations on removable drives to libraries and to be indexed.
-    searchDisableIndexingRemovableDrive *bool
-    // Specifies if search can use location information.
-    searchDisableLocation *bool
-    // Specifies if search can use location information.
-    searchDisableUseLocation *bool
-    // Specifies minimum amount of hard drive space on the same drive as the index location before indexing stops.
-    searchEnableAutomaticIndexSizeManangement *bool
-    // Indicates whether or not to block remote queries of this computer’s index.
-    searchEnableRemoteQueries *bool
-    // Specify whether to allow automatic device encryption during OOBE when the device is Azure AD joined (desktop only).
-    securityBlockAzureADJoinedDevicesAutoEncryption *bool
-    // Indicates whether or not to block access to Accounts in Settings app.
-    settingsBlockAccountsPage *bool
-    // Indicates whether or not to block the user from installing provisioning packages.
-    settingsBlockAddProvisioningPackage *bool
-    // Indicates whether or not to block access to Apps in Settings app.
-    settingsBlockAppsPage *bool
-    // Indicates whether or not to block the user from changing the language settings.
-    settingsBlockChangeLanguage *bool
-    // Indicates whether or not to block the user from changing power and sleep settings.
-    settingsBlockChangePowerSleep *bool
-    // Indicates whether or not to block the user from changing the region settings.
-    settingsBlockChangeRegion *bool
-    // Indicates whether or not to block the user from changing date and time settings.
-    settingsBlockChangeSystemTime *bool
-    // Indicates whether or not to block access to Devices in Settings app.
-    settingsBlockDevicesPage *bool
-    // Indicates whether or not to block access to Ease of Access in Settings app.
-    settingsBlockEaseOfAccessPage *bool
-    // Indicates whether or not to block the user from editing the device name.
-    settingsBlockEditDeviceName *bool
-    // Indicates whether or not to block access to Gaming in Settings app.
-    settingsBlockGamingPage *bool
-    // Indicates whether or not to block access to Network & Internet in Settings app.
-    settingsBlockNetworkInternetPage *bool
-    // Indicates whether or not to block access to Personalization in Settings app.
-    settingsBlockPersonalizationPage *bool
-    // Indicates whether or not to block access to Privacy in Settings app.
-    settingsBlockPrivacyPage *bool
-    // Indicates whether or not to block the runtime configuration agent from removing provisioning packages.
-    settingsBlockRemoveProvisioningPackage *bool
-    // Indicates whether or not to block access to Settings app.
-    settingsBlockSettingsApp *bool
-    // Indicates whether or not to block access to System in Settings app.
-    settingsBlockSystemPage *bool
-    // Indicates whether or not to block access to Time & Language in Settings app.
-    settingsBlockTimeLanguagePage *bool
-    // Indicates whether or not to block access to Update & Security in Settings app.
-    settingsBlockUpdateSecurityPage *bool
-    // Indicates whether or not to block multiple users of the same app to share data.
-    sharedUserAppDataAllowed *bool
-    // App Install control Setting
-    smartScreenAppInstallControl *AppInstallControlType
-    // Indicates whether or not users can override SmartScreen Filter warnings about potentially malicious websites.
-    smartScreenBlockPromptOverride *bool
-    // Indicates whether or not users can override the SmartScreen Filter warnings about downloading unverified files
-    smartScreenBlockPromptOverrideForFiles *bool
-    // This property will be deprecated in July 2019 and will be replaced by property SmartScreenAppInstallControl. Allows IT Admins to control whether users are allowed to install apps from places other than the Store.
-    smartScreenEnableAppInstallControl *bool
-    // Indicates whether or not to block the user from unpinning apps from taskbar.
-    startBlockUnpinningAppsFromTaskbar *bool
-    // Type of start menu app list visibility.
-    startMenuAppListVisibility *WindowsStartMenuAppListVisibilityType
-    // Enabling this policy hides the change account setting from appearing in the user tile in the start menu.
-    startMenuHideChangeAccountSettings *bool
-    // Enabling this policy hides the most used apps from appearing on the start menu and disables the corresponding toggle in the Settings app.
-    startMenuHideFrequentlyUsedApps *bool
-    // Enabling this policy hides hibernate from appearing in the power button in the start menu.
-    startMenuHideHibernate *bool
-    // Enabling this policy hides lock from appearing in the user tile in the start menu.
-    startMenuHideLock *bool
-    // Enabling this policy hides the power button from appearing in the start menu.
-    startMenuHidePowerButton *bool
-    // Enabling this policy hides recent jump lists from appearing on the start menu/taskbar and disables the corresponding toggle in the Settings app.
-    startMenuHideRecentJumpLists *bool
-    // Enabling this policy hides recently added apps from appearing on the start menu and disables the corresponding toggle in the Settings app.
-    startMenuHideRecentlyAddedApps *bool
-    // Enabling this policy hides 'Restart/Update and Restart' from appearing in the power button in the start menu.
-    startMenuHideRestartOptions *bool
-    // Enabling this policy hides shut down/update and shut down from appearing in the power button in the start menu.
-    startMenuHideShutDown *bool
-    // Enabling this policy hides sign out from appearing in the user tile in the start menu.
-    startMenuHideSignOut *bool
-    // Enabling this policy hides sleep from appearing in the power button in the start menu.
-    startMenuHideSleep *bool
-    // Enabling this policy hides switch account from appearing in the user tile in the start menu.
-    startMenuHideSwitchAccount *bool
-    // Enabling this policy hides the user tile from appearing in the start menu.
-    startMenuHideUserTile *bool
-    // This policy setting allows you to import Edge assets to be used with startMenuLayoutXml policy. Start layout can contain secondary tile from Edge app which looks for Edge local asset file. Edge local asset would not exist and cause Edge secondary tile to appear empty in this case. This policy only gets applied when startMenuLayoutXml policy is modified. The value should be a UTF-8 Base64 encoded byte array.
-    startMenuLayoutEdgeAssetsXml []byte
-    // Allows admins to override the default Start menu layout and prevents the user from changing it. The layout is modified by specifying an XML file based on a layout modification schema. XML needs to be in a UTF8 encoded byte array format.
-    startMenuLayoutXml []byte
-    // Type of display modes for the start menu.
-    startMenuMode *WindowsStartMenuModeType
-    // Generic visibility state.
-    startMenuPinnedFolderDocuments *VisibilitySetting
-    // Generic visibility state.
-    startMenuPinnedFolderDownloads *VisibilitySetting
-    // Generic visibility state.
-    startMenuPinnedFolderFileExplorer *VisibilitySetting
-    // Generic visibility state.
-    startMenuPinnedFolderHomeGroup *VisibilitySetting
-    // Generic visibility state.
-    startMenuPinnedFolderMusic *VisibilitySetting
-    // Generic visibility state.
-    startMenuPinnedFolderNetwork *VisibilitySetting
-    // Generic visibility state.
-    startMenuPinnedFolderPersonalFolder *VisibilitySetting
-    // Generic visibility state.
-    startMenuPinnedFolderPictures *VisibilitySetting
-    // Generic visibility state.
-    startMenuPinnedFolderSettings *VisibilitySetting
-    // Generic visibility state.
-    startMenuPinnedFolderVideos *VisibilitySetting
-    // Indicates whether or not to Block the user from using removable storage.
-    storageBlockRemovableStorage *bool
-    // Indicating whether or not to require encryption on a mobile device.
-    storageRequireMobileDeviceEncryption *bool
-    // Indicates whether application data is restricted to the system drive.
-    storageRestrictAppDataToSystemVolume *bool
-    // Indicates whether the installation of applications is restricted to the system drive.
-    storageRestrictAppInstallToSystemVolume *bool
-    // Gets or sets the fully qualified domain name (FQDN) or IP address of a proxy server to forward Connected User Experiences and Telemetry requests.
-    systemTelemetryProxyServer *string
-    // Specify whether non-administrators can use Task Manager to end tasks.
-    taskManagerBlockEndTask *bool
-    // Whether the device is required to connect to the network.
-    tenantLockdownRequireNetworkDuringOutOfBoxExperience *bool
-    // Indicates whether or not to uninstall a fixed list of built-in Windows apps.
-    uninstallBuiltInApps *bool
-    // Indicates whether or not to Block the user from USB connection.
-    usbBlocked *bool
-    // Indicates whether or not to Block the user from voice recording.
-    voiceRecordingBlocked *bool
-    // Indicates whether or not user's localhost IP address is displayed while making phone calls using the WebRTC
-    webRtcBlockLocalhostIpAddress *bool
-    // Indicating whether or not to block automatically connecting to Wi-Fi hotspots. Has no impact if Wi-Fi is blocked.
-    wiFiBlockAutomaticConnectHotspots *bool
-    // Indicates whether or not to Block the user from using Wi-Fi.
-    wiFiBlocked *bool
-    // Indicates whether or not to Block the user from using Wi-Fi manual configuration.
-    wiFiBlockManualConfiguration *bool
-    // Specify how often devices scan for Wi-Fi networks. Supported values are 1-500, where 100 = default, and 500 = low frequency. Valid values 1 to 500
-    wiFiScanInterval *int32
-    // Windows 10 force update schedule for Apps.
-    windows10AppsForceUpdateSchedule Windows10AppsForceUpdateScheduleable
-    // Allows IT admins to block experiences that are typically for consumers only, such as Start suggestions, Membership notifications, Post-OOBE app install and redirect tiles.
-    windowsSpotlightBlockConsumerSpecificFeatures *bool
-    // Allows IT admins to turn off all Windows Spotlight features
-    windowsSpotlightBlocked *bool
-    // Block suggestions from Microsoft that show after each OS clean install, upgrade or in an on-going basis to introduce users to what is new or changed
-    windowsSpotlightBlockOnActionCenter *bool
-    // Block personalized content in Windows spotlight based on user’s device usage.
-    windowsSpotlightBlockTailoredExperiences *bool
-    // Block third party content delivered via Windows Spotlight
-    windowsSpotlightBlockThirdPartyNotifications *bool
-    // Block Windows Spotlight Windows welcome experience
-    windowsSpotlightBlockWelcomeExperience *bool
-    // Allows IT admins to turn off the popup of Windows Tips.
-    windowsSpotlightBlockWindowsTips *bool
-    // Allows IT admind to set a predefined default search engine for MDM-Controlled devices
-    windowsSpotlightConfigureOnLockScreen *WindowsSpotlightEnablementSettings
-    // Indicates whether or not to block automatic update of apps from Windows Store.
-    windowsStoreBlockAutoUpdate *bool
-    // Indicates whether or not to Block the user from using the Windows store.
-    windowsStoreBlocked *bool
-    // Indicates whether or not to enable Private Store Only.
-    windowsStoreEnablePrivateStoreOnly *bool
-    // Indicates whether or not to allow other devices from discovering this PC for projection.
-    wirelessDisplayBlockProjectionToThisDevice *bool
-    // Indicates whether or not to allow user input from wireless display receiver.
-    wirelessDisplayBlockUserInputFromReceiver *bool
-    // Indicates whether or not to require a PIN for new devices to initiate pairing.
-    wirelessDisplayRequirePinForPairing *bool
 }
 // NewWindows10GeneralConfiguration instantiates a new Windows10GeneralConfiguration and sets the default values.
 func NewWindows10GeneralConfiguration()(*Windows10GeneralConfiguration) {
     m := &Windows10GeneralConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.windows10GeneralConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windows10GeneralConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindows10GeneralConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -589,523 +23,1433 @@ func CreateWindows10GeneralConfigurationFromDiscriminatorValue(parseNode i878a80
 }
 // GetAccountsBlockAddingNonMicrosoftAccountEmail gets the accountsBlockAddingNonMicrosoftAccountEmail property value. Indicates whether or not to Block the user from adding email accounts to the device that are not associated with a Microsoft account.
 func (m *Windows10GeneralConfiguration) GetAccountsBlockAddingNonMicrosoftAccountEmail()(*bool) {
-    return m.accountsBlockAddingNonMicrosoftAccountEmail
+    val, err := m.GetBackingStore().Get("accountsBlockAddingNonMicrosoftAccountEmail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetActivateAppsWithVoice gets the activateAppsWithVoice property value. Possible values of a property
 func (m *Windows10GeneralConfiguration) GetActivateAppsWithVoice()(*Enablement) {
-    return m.activateAppsWithVoice
+    val, err := m.GetBackingStore().Get("activateAppsWithVoice")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Enablement)
+    }
+    return nil
 }
 // GetAntiTheftModeBlocked gets the antiTheftModeBlocked property value. Indicates whether or not to block the user from selecting an AntiTheft mode preference (Windows 10 Mobile only).
 func (m *Windows10GeneralConfiguration) GetAntiTheftModeBlocked()(*bool) {
-    return m.antiTheftModeBlocked
+    val, err := m.GetBackingStore().Get("antiTheftModeBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetAppManagementMSIAllowUserControlOverInstall gets the appManagementMSIAllowUserControlOverInstall property value. This policy setting permits users to change installation options that typically are available only to system administrators.
 func (m *Windows10GeneralConfiguration) GetAppManagementMSIAllowUserControlOverInstall()(*bool) {
-    return m.appManagementMSIAllowUserControlOverInstall
+    val, err := m.GetBackingStore().Get("appManagementMSIAllowUserControlOverInstall")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetAppManagementMSIAlwaysInstallWithElevatedPrivileges gets the appManagementMSIAlwaysInstallWithElevatedPrivileges property value. This policy setting directs Windows Installer to use elevated permissions when it installs any program on the system.
 func (m *Windows10GeneralConfiguration) GetAppManagementMSIAlwaysInstallWithElevatedPrivileges()(*bool) {
-    return m.appManagementMSIAlwaysInstallWithElevatedPrivileges
+    val, err := m.GetBackingStore().Get("appManagementMSIAlwaysInstallWithElevatedPrivileges")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetAppManagementPackageFamilyNamesToLaunchAfterLogOn gets the appManagementPackageFamilyNamesToLaunchAfterLogOn property value. List of semi-colon delimited Package Family Names of Windows apps. Listed Windows apps are to be launched after logon.​
 func (m *Windows10GeneralConfiguration) GetAppManagementPackageFamilyNamesToLaunchAfterLogOn()([]string) {
-    return m.appManagementPackageFamilyNamesToLaunchAfterLogOn
+    val, err := m.GetBackingStore().Get("appManagementPackageFamilyNamesToLaunchAfterLogOn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetAppsAllowTrustedAppsSideloading gets the appsAllowTrustedAppsSideloading property value. State Management Setting.
 func (m *Windows10GeneralConfiguration) GetAppsAllowTrustedAppsSideloading()(*StateManagementSetting) {
-    return m.appsAllowTrustedAppsSideloading
+    val, err := m.GetBackingStore().Get("appsAllowTrustedAppsSideloading")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*StateManagementSetting)
+    }
+    return nil
 }
 // GetAppsBlockWindowsStoreOriginatedApps gets the appsBlockWindowsStoreOriginatedApps property value. Indicates whether or not to disable the launch of all apps from Windows Store that came pre-installed or were downloaded.
 func (m *Windows10GeneralConfiguration) GetAppsBlockWindowsStoreOriginatedApps()(*bool) {
-    return m.appsBlockWindowsStoreOriginatedApps
+    val, err := m.GetBackingStore().Get("appsBlockWindowsStoreOriginatedApps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetAuthenticationAllowSecondaryDevice gets the authenticationAllowSecondaryDevice property value. Allows secondary authentication devices to work with Windows.
 func (m *Windows10GeneralConfiguration) GetAuthenticationAllowSecondaryDevice()(*bool) {
-    return m.authenticationAllowSecondaryDevice
+    val, err := m.GetBackingStore().Get("authenticationAllowSecondaryDevice")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetAuthenticationPreferredAzureADTenantDomainName gets the authenticationPreferredAzureADTenantDomainName property value. Specifies the preferred domain among available domains in the Azure AD tenant.
 func (m *Windows10GeneralConfiguration) GetAuthenticationPreferredAzureADTenantDomainName()(*string) {
-    return m.authenticationPreferredAzureADTenantDomainName
+    val, err := m.GetBackingStore().Get("authenticationPreferredAzureADTenantDomainName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAuthenticationWebSignIn gets the authenticationWebSignIn property value. Possible values of a property
 func (m *Windows10GeneralConfiguration) GetAuthenticationWebSignIn()(*Enablement) {
-    return m.authenticationWebSignIn
+    val, err := m.GetBackingStore().Get("authenticationWebSignIn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Enablement)
+    }
+    return nil
 }
 // GetBluetoothAllowedServices gets the bluetoothAllowedServices property value. Specify a list of allowed Bluetooth services and profiles in hex formatted strings.
 func (m *Windows10GeneralConfiguration) GetBluetoothAllowedServices()([]string) {
-    return m.bluetoothAllowedServices
+    val, err := m.GetBackingStore().Get("bluetoothAllowedServices")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetBluetoothBlockAdvertising gets the bluetoothBlockAdvertising property value. Whether or not to Block the user from using bluetooth advertising.
 func (m *Windows10GeneralConfiguration) GetBluetoothBlockAdvertising()(*bool) {
-    return m.bluetoothBlockAdvertising
+    val, err := m.GetBackingStore().Get("bluetoothBlockAdvertising")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetBluetoothBlockDiscoverableMode gets the bluetoothBlockDiscoverableMode property value. Whether or not to Block the user from using bluetooth discoverable mode.
 func (m *Windows10GeneralConfiguration) GetBluetoothBlockDiscoverableMode()(*bool) {
-    return m.bluetoothBlockDiscoverableMode
+    val, err := m.GetBackingStore().Get("bluetoothBlockDiscoverableMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetBluetoothBlocked gets the bluetoothBlocked property value. Whether or not to Block the user from using bluetooth.
 func (m *Windows10GeneralConfiguration) GetBluetoothBlocked()(*bool) {
-    return m.bluetoothBlocked
+    val, err := m.GetBackingStore().Get("bluetoothBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetBluetoothBlockPrePairing gets the bluetoothBlockPrePairing property value. Whether or not to block specific bundled Bluetooth peripherals to automatically pair with the host device.
 func (m *Windows10GeneralConfiguration) GetBluetoothBlockPrePairing()(*bool) {
-    return m.bluetoothBlockPrePairing
+    val, err := m.GetBackingStore().Get("bluetoothBlockPrePairing")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetBluetoothBlockPromptedProximalConnections gets the bluetoothBlockPromptedProximalConnections property value. Whether or not to block the users from using Swift Pair and other proximity based scenarios.
 func (m *Windows10GeneralConfiguration) GetBluetoothBlockPromptedProximalConnections()(*bool) {
-    return m.bluetoothBlockPromptedProximalConnections
+    val, err := m.GetBackingStore().Get("bluetoothBlockPromptedProximalConnections")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetCameraBlocked gets the cameraBlocked property value. Whether or not to Block the user from accessing the camera of the device.
 func (m *Windows10GeneralConfiguration) GetCameraBlocked()(*bool) {
-    return m.cameraBlocked
+    val, err := m.GetBackingStore().Get("cameraBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetCellularBlockDataWhenRoaming gets the cellularBlockDataWhenRoaming property value. Whether or not to Block the user from using data over cellular while roaming.
 func (m *Windows10GeneralConfiguration) GetCellularBlockDataWhenRoaming()(*bool) {
-    return m.cellularBlockDataWhenRoaming
+    val, err := m.GetBackingStore().Get("cellularBlockDataWhenRoaming")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetCellularBlockVpn gets the cellularBlockVpn property value. Whether or not to Block the user from using VPN over cellular.
 func (m *Windows10GeneralConfiguration) GetCellularBlockVpn()(*bool) {
-    return m.cellularBlockVpn
+    val, err := m.GetBackingStore().Get("cellularBlockVpn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetCellularBlockVpnWhenRoaming gets the cellularBlockVpnWhenRoaming property value. Whether or not to Block the user from using VPN when roaming over cellular.
 func (m *Windows10GeneralConfiguration) GetCellularBlockVpnWhenRoaming()(*bool) {
-    return m.cellularBlockVpnWhenRoaming
+    val, err := m.GetBackingStore().Get("cellularBlockVpnWhenRoaming")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetCellularData gets the cellularData property value. Possible values of the ConfigurationUsage list.
 func (m *Windows10GeneralConfiguration) GetCellularData()(*ConfigurationUsage) {
-    return m.cellularData
+    val, err := m.GetBackingStore().Get("cellularData")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ConfigurationUsage)
+    }
+    return nil
 }
 // GetCertificatesBlockManualRootCertificateInstallation gets the certificatesBlockManualRootCertificateInstallation property value. Whether or not to Block the user from doing manual root certificate installation.
 func (m *Windows10GeneralConfiguration) GetCertificatesBlockManualRootCertificateInstallation()(*bool) {
-    return m.certificatesBlockManualRootCertificateInstallation
+    val, err := m.GetBackingStore().Get("certificatesBlockManualRootCertificateInstallation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetConfigureTimeZone gets the configureTimeZone property value. Specifies the time zone to be applied to the device. This is the standard Windows name for the target time zone.
 func (m *Windows10GeneralConfiguration) GetConfigureTimeZone()(*string) {
-    return m.configureTimeZone
+    val, err := m.GetBackingStore().Get("configureTimeZone")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetConnectedDevicesServiceBlocked gets the connectedDevicesServiceBlocked property value. Whether or not to block Connected Devices Service which enables discovery and connection to other devices, remote messaging, remote app sessions and other cross-device experiences.
 func (m *Windows10GeneralConfiguration) GetConnectedDevicesServiceBlocked()(*bool) {
-    return m.connectedDevicesServiceBlocked
+    val, err := m.GetBackingStore().Get("connectedDevicesServiceBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetCopyPasteBlocked gets the copyPasteBlocked property value. Whether or not to Block the user from using copy paste.
 func (m *Windows10GeneralConfiguration) GetCopyPasteBlocked()(*bool) {
-    return m.copyPasteBlocked
+    val, err := m.GetBackingStore().Get("copyPasteBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetCortanaBlocked gets the cortanaBlocked property value. Whether or not to Block the user from using Cortana.
 func (m *Windows10GeneralConfiguration) GetCortanaBlocked()(*bool) {
-    return m.cortanaBlocked
+    val, err := m.GetBackingStore().Get("cortanaBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetCryptographyAllowFipsAlgorithmPolicy gets the cryptographyAllowFipsAlgorithmPolicy property value. Specify whether to allow or disallow the Federal Information Processing Standard (FIPS) policy.
 func (m *Windows10GeneralConfiguration) GetCryptographyAllowFipsAlgorithmPolicy()(*bool) {
-    return m.cryptographyAllowFipsAlgorithmPolicy
+    val, err := m.GetBackingStore().Get("cryptographyAllowFipsAlgorithmPolicy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDataProtectionBlockDirectMemoryAccess gets the dataProtectionBlockDirectMemoryAccess property value. This policy setting allows you to block direct memory access (DMA) for all hot pluggable PCI downstream ports until a user logs into Windows.
 func (m *Windows10GeneralConfiguration) GetDataProtectionBlockDirectMemoryAccess()(*bool) {
-    return m.dataProtectionBlockDirectMemoryAccess
+    val, err := m.GetBackingStore().Get("dataProtectionBlockDirectMemoryAccess")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderBlockEndUserAccess gets the defenderBlockEndUserAccess property value. Whether or not to block end user access to Defender.
 func (m *Windows10GeneralConfiguration) GetDefenderBlockEndUserAccess()(*bool) {
-    return m.defenderBlockEndUserAccess
+    val, err := m.GetBackingStore().Get("defenderBlockEndUserAccess")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderBlockOnAccessProtection gets the defenderBlockOnAccessProtection property value. Allows or disallows Windows Defender On Access Protection functionality.
 func (m *Windows10GeneralConfiguration) GetDefenderBlockOnAccessProtection()(*bool) {
-    return m.defenderBlockOnAccessProtection
+    val, err := m.GetBackingStore().Get("defenderBlockOnAccessProtection")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderCloudBlockLevel gets the defenderCloudBlockLevel property value. Possible values of Cloud Block Level
 func (m *Windows10GeneralConfiguration) GetDefenderCloudBlockLevel()(*DefenderCloudBlockLevelType) {
-    return m.defenderCloudBlockLevel
+    val, err := m.GetBackingStore().Get("defenderCloudBlockLevel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderCloudBlockLevelType)
+    }
+    return nil
 }
 // GetDefenderCloudExtendedTimeout gets the defenderCloudExtendedTimeout property value. Timeout extension for file scanning by the cloud. Valid values 0 to 50
 func (m *Windows10GeneralConfiguration) GetDefenderCloudExtendedTimeout()(*int32) {
-    return m.defenderCloudExtendedTimeout
+    val, err := m.GetBackingStore().Get("defenderCloudExtendedTimeout")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetDefenderCloudExtendedTimeoutInSeconds gets the defenderCloudExtendedTimeoutInSeconds property value. Timeout extension for file scanning by the cloud. Valid values 0 to 50
 func (m *Windows10GeneralConfiguration) GetDefenderCloudExtendedTimeoutInSeconds()(*int32) {
-    return m.defenderCloudExtendedTimeoutInSeconds
+    val, err := m.GetBackingStore().Get("defenderCloudExtendedTimeoutInSeconds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetDefenderDaysBeforeDeletingQuarantinedMalware gets the defenderDaysBeforeDeletingQuarantinedMalware property value. Number of days before deleting quarantined malware. Valid values 0 to 90
 func (m *Windows10GeneralConfiguration) GetDefenderDaysBeforeDeletingQuarantinedMalware()(*int32) {
-    return m.defenderDaysBeforeDeletingQuarantinedMalware
+    val, err := m.GetBackingStore().Get("defenderDaysBeforeDeletingQuarantinedMalware")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetDefenderDetectedMalwareActions gets the defenderDetectedMalwareActions property value. Gets or sets Defender’s actions to take on detected Malware per threat level.
 func (m *Windows10GeneralConfiguration) GetDefenderDetectedMalwareActions()(DefenderDetectedMalwareActionsable) {
-    return m.defenderDetectedMalwareActions
+    val, err := m.GetBackingStore().Get("defenderDetectedMalwareActions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DefenderDetectedMalwareActionsable)
+    }
+    return nil
 }
 // GetDefenderDisableCatchupFullScan gets the defenderDisableCatchupFullScan property value. When blocked, catch-up scans for scheduled full scans will be turned off.
 func (m *Windows10GeneralConfiguration) GetDefenderDisableCatchupFullScan()(*bool) {
-    return m.defenderDisableCatchupFullScan
+    val, err := m.GetBackingStore().Get("defenderDisableCatchupFullScan")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderDisableCatchupQuickScan gets the defenderDisableCatchupQuickScan property value. When blocked, catch-up scans for scheduled quick scans will be turned off.
 func (m *Windows10GeneralConfiguration) GetDefenderDisableCatchupQuickScan()(*bool) {
-    return m.defenderDisableCatchupQuickScan
+    val, err := m.GetBackingStore().Get("defenderDisableCatchupQuickScan")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderFileExtensionsToExclude gets the defenderFileExtensionsToExclude property value. File extensions to exclude from scans and real time protection.
 func (m *Windows10GeneralConfiguration) GetDefenderFileExtensionsToExclude()([]string) {
-    return m.defenderFileExtensionsToExclude
+    val, err := m.GetBackingStore().Get("defenderFileExtensionsToExclude")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetDefenderFilesAndFoldersToExclude gets the defenderFilesAndFoldersToExclude property value. Files and folder to exclude from scans and real time protection.
 func (m *Windows10GeneralConfiguration) GetDefenderFilesAndFoldersToExclude()([]string) {
-    return m.defenderFilesAndFoldersToExclude
+    val, err := m.GetBackingStore().Get("defenderFilesAndFoldersToExclude")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetDefenderMonitorFileActivity gets the defenderMonitorFileActivity property value. Possible values for monitoring file activity.
 func (m *Windows10GeneralConfiguration) GetDefenderMonitorFileActivity()(*DefenderMonitorFileActivity) {
-    return m.defenderMonitorFileActivity
+    val, err := m.GetBackingStore().Get("defenderMonitorFileActivity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderMonitorFileActivity)
+    }
+    return nil
 }
 // GetDefenderPotentiallyUnwantedAppAction gets the defenderPotentiallyUnwantedAppAction property value. Gets or sets Defender’s action to take on Potentially Unwanted Application (PUA), which includes software with behaviors of ad-injection, software bundling, persistent solicitation for payment or subscription, etc. Defender alerts user when PUA is being downloaded or attempts to install itself. Added in Windows 10 for desktop. Possible values are: deviceDefault, block, audit.
 func (m *Windows10GeneralConfiguration) GetDefenderPotentiallyUnwantedAppAction()(*DefenderPotentiallyUnwantedAppAction) {
-    return m.defenderPotentiallyUnwantedAppAction
+    val, err := m.GetBackingStore().Get("defenderPotentiallyUnwantedAppAction")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderPotentiallyUnwantedAppAction)
+    }
+    return nil
 }
 // GetDefenderPotentiallyUnwantedAppActionSetting gets the defenderPotentiallyUnwantedAppActionSetting property value. Possible values of Defender PUA Protection
 func (m *Windows10GeneralConfiguration) GetDefenderPotentiallyUnwantedAppActionSetting()(*DefenderProtectionType) {
-    return m.defenderPotentiallyUnwantedAppActionSetting
+    val, err := m.GetBackingStore().Get("defenderPotentiallyUnwantedAppActionSetting")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderProtectionType)
+    }
+    return nil
 }
 // GetDefenderProcessesToExclude gets the defenderProcessesToExclude property value. Processes to exclude from scans and real time protection.
 func (m *Windows10GeneralConfiguration) GetDefenderProcessesToExclude()([]string) {
-    return m.defenderProcessesToExclude
+    val, err := m.GetBackingStore().Get("defenderProcessesToExclude")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetDefenderPromptForSampleSubmission gets the defenderPromptForSampleSubmission property value. Possible values for prompting user for samples submission.
 func (m *Windows10GeneralConfiguration) GetDefenderPromptForSampleSubmission()(*DefenderPromptForSampleSubmission) {
-    return m.defenderPromptForSampleSubmission
+    val, err := m.GetBackingStore().Get("defenderPromptForSampleSubmission")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderPromptForSampleSubmission)
+    }
+    return nil
 }
 // GetDefenderRequireBehaviorMonitoring gets the defenderRequireBehaviorMonitoring property value. Indicates whether or not to require behavior monitoring.
 func (m *Windows10GeneralConfiguration) GetDefenderRequireBehaviorMonitoring()(*bool) {
-    return m.defenderRequireBehaviorMonitoring
+    val, err := m.GetBackingStore().Get("defenderRequireBehaviorMonitoring")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderRequireCloudProtection gets the defenderRequireCloudProtection property value. Indicates whether or not to require cloud protection.
 func (m *Windows10GeneralConfiguration) GetDefenderRequireCloudProtection()(*bool) {
-    return m.defenderRequireCloudProtection
+    val, err := m.GetBackingStore().Get("defenderRequireCloudProtection")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderRequireNetworkInspectionSystem gets the defenderRequireNetworkInspectionSystem property value. Indicates whether or not to require network inspection system.
 func (m *Windows10GeneralConfiguration) GetDefenderRequireNetworkInspectionSystem()(*bool) {
-    return m.defenderRequireNetworkInspectionSystem
+    val, err := m.GetBackingStore().Get("defenderRequireNetworkInspectionSystem")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderRequireRealTimeMonitoring gets the defenderRequireRealTimeMonitoring property value. Indicates whether or not to require real time monitoring.
 func (m *Windows10GeneralConfiguration) GetDefenderRequireRealTimeMonitoring()(*bool) {
-    return m.defenderRequireRealTimeMonitoring
+    val, err := m.GetBackingStore().Get("defenderRequireRealTimeMonitoring")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderScanArchiveFiles gets the defenderScanArchiveFiles property value. Indicates whether or not to scan archive files.
 func (m *Windows10GeneralConfiguration) GetDefenderScanArchiveFiles()(*bool) {
-    return m.defenderScanArchiveFiles
+    val, err := m.GetBackingStore().Get("defenderScanArchiveFiles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderScanDownloads gets the defenderScanDownloads property value. Indicates whether or not to scan downloads.
 func (m *Windows10GeneralConfiguration) GetDefenderScanDownloads()(*bool) {
-    return m.defenderScanDownloads
+    val, err := m.GetBackingStore().Get("defenderScanDownloads")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderScanIncomingMail gets the defenderScanIncomingMail property value. Indicates whether or not to scan incoming mail messages.
 func (m *Windows10GeneralConfiguration) GetDefenderScanIncomingMail()(*bool) {
-    return m.defenderScanIncomingMail
+    val, err := m.GetBackingStore().Get("defenderScanIncomingMail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderScanMappedNetworkDrivesDuringFullScan gets the defenderScanMappedNetworkDrivesDuringFullScan property value. Indicates whether or not to scan mapped network drives during full scan.
 func (m *Windows10GeneralConfiguration) GetDefenderScanMappedNetworkDrivesDuringFullScan()(*bool) {
-    return m.defenderScanMappedNetworkDrivesDuringFullScan
+    val, err := m.GetBackingStore().Get("defenderScanMappedNetworkDrivesDuringFullScan")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderScanMaxCpu gets the defenderScanMaxCpu property value. Max CPU usage percentage during scan. Valid values 0 to 100
 func (m *Windows10GeneralConfiguration) GetDefenderScanMaxCpu()(*int32) {
-    return m.defenderScanMaxCpu
+    val, err := m.GetBackingStore().Get("defenderScanMaxCpu")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetDefenderScanNetworkFiles gets the defenderScanNetworkFiles property value. Indicates whether or not to scan files opened from a network folder.
 func (m *Windows10GeneralConfiguration) GetDefenderScanNetworkFiles()(*bool) {
-    return m.defenderScanNetworkFiles
+    val, err := m.GetBackingStore().Get("defenderScanNetworkFiles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderScanRemovableDrivesDuringFullScan gets the defenderScanRemovableDrivesDuringFullScan property value. Indicates whether or not to scan removable drives during full scan.
 func (m *Windows10GeneralConfiguration) GetDefenderScanRemovableDrivesDuringFullScan()(*bool) {
-    return m.defenderScanRemovableDrivesDuringFullScan
+    val, err := m.GetBackingStore().Get("defenderScanRemovableDrivesDuringFullScan")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderScanScriptsLoadedInInternetExplorer gets the defenderScanScriptsLoadedInInternetExplorer property value. Indicates whether or not to scan scripts loaded in Internet Explorer browser.
 func (m *Windows10GeneralConfiguration) GetDefenderScanScriptsLoadedInInternetExplorer()(*bool) {
-    return m.defenderScanScriptsLoadedInInternetExplorer
+    val, err := m.GetBackingStore().Get("defenderScanScriptsLoadedInInternetExplorer")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderScanType gets the defenderScanType property value. Possible values for system scan type.
 func (m *Windows10GeneralConfiguration) GetDefenderScanType()(*DefenderScanType) {
-    return m.defenderScanType
+    val, err := m.GetBackingStore().Get("defenderScanType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderScanType)
+    }
+    return nil
 }
 // GetDefenderScheduledQuickScanTime gets the defenderScheduledQuickScanTime property value. The time to perform a daily quick scan.
 func (m *Windows10GeneralConfiguration) GetDefenderScheduledQuickScanTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
-    return m.defenderScheduledQuickScanTime
+    val, err := m.GetBackingStore().Get("defenderScheduledQuickScanTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
+    }
+    return nil
 }
 // GetDefenderScheduledScanTime gets the defenderScheduledScanTime property value. The defender time for the system scan.
 func (m *Windows10GeneralConfiguration) GetDefenderScheduledScanTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
-    return m.defenderScheduledScanTime
+    val, err := m.GetBackingStore().Get("defenderScheduledScanTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
+    }
+    return nil
 }
 // GetDefenderScheduleScanEnableLowCpuPriority gets the defenderScheduleScanEnableLowCpuPriority property value. When enabled, low CPU priority will be used during scheduled scans.
 func (m *Windows10GeneralConfiguration) GetDefenderScheduleScanEnableLowCpuPriority()(*bool) {
-    return m.defenderScheduleScanEnableLowCpuPriority
+    val, err := m.GetBackingStore().Get("defenderScheduleScanEnableLowCpuPriority")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderSignatureUpdateIntervalInHours gets the defenderSignatureUpdateIntervalInHours property value. The signature update interval in hours. Specify 0 not to check. Valid values 0 to 24
 func (m *Windows10GeneralConfiguration) GetDefenderSignatureUpdateIntervalInHours()(*int32) {
-    return m.defenderSignatureUpdateIntervalInHours
+    val, err := m.GetBackingStore().Get("defenderSignatureUpdateIntervalInHours")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetDefenderSubmitSamplesConsentType gets the defenderSubmitSamplesConsentType property value. Checks for the user consent level in Windows Defender to send data. Possible values are: sendSafeSamplesAutomatically, alwaysPrompt, neverSend, sendAllSamplesAutomatically.
 func (m *Windows10GeneralConfiguration) GetDefenderSubmitSamplesConsentType()(*DefenderSubmitSamplesConsentType) {
-    return m.defenderSubmitSamplesConsentType
+    val, err := m.GetBackingStore().Get("defenderSubmitSamplesConsentType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderSubmitSamplesConsentType)
+    }
+    return nil
 }
 // GetDefenderSystemScanSchedule gets the defenderSystemScanSchedule property value. Possible values for a weekly schedule.
 func (m *Windows10GeneralConfiguration) GetDefenderSystemScanSchedule()(*WeeklySchedule) {
-    return m.defenderSystemScanSchedule
+    val, err := m.GetBackingStore().Get("defenderSystemScanSchedule")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WeeklySchedule)
+    }
+    return nil
 }
 // GetDeveloperUnlockSetting gets the developerUnlockSetting property value. State Management Setting.
 func (m *Windows10GeneralConfiguration) GetDeveloperUnlockSetting()(*StateManagementSetting) {
-    return m.developerUnlockSetting
+    val, err := m.GetBackingStore().Get("developerUnlockSetting")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*StateManagementSetting)
+    }
+    return nil
 }
 // GetDeviceManagementBlockFactoryResetOnMobile gets the deviceManagementBlockFactoryResetOnMobile property value. Indicates whether or not to Block the user from resetting their phone.
 func (m *Windows10GeneralConfiguration) GetDeviceManagementBlockFactoryResetOnMobile()(*bool) {
-    return m.deviceManagementBlockFactoryResetOnMobile
+    val, err := m.GetBackingStore().Get("deviceManagementBlockFactoryResetOnMobile")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDeviceManagementBlockManualUnenroll gets the deviceManagementBlockManualUnenroll property value. Indicates whether or not to Block the user from doing manual un-enrollment from device management.
 func (m *Windows10GeneralConfiguration) GetDeviceManagementBlockManualUnenroll()(*bool) {
-    return m.deviceManagementBlockManualUnenroll
+    val, err := m.GetBackingStore().Get("deviceManagementBlockManualUnenroll")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDiagnosticsDataSubmissionMode gets the diagnosticsDataSubmissionMode property value. Allow the device to send diagnostic and usage telemetry data, such as Watson.
 func (m *Windows10GeneralConfiguration) GetDiagnosticsDataSubmissionMode()(*DiagnosticDataSubmissionMode) {
-    return m.diagnosticsDataSubmissionMode
+    val, err := m.GetBackingStore().Get("diagnosticsDataSubmissionMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DiagnosticDataSubmissionMode)
+    }
+    return nil
 }
 // GetDisplayAppListWithGdiDPIScalingTurnedOff gets the displayAppListWithGdiDPIScalingTurnedOff property value. List of legacy applications that have GDI DPI Scaling turned off.
 func (m *Windows10GeneralConfiguration) GetDisplayAppListWithGdiDPIScalingTurnedOff()([]string) {
-    return m.displayAppListWithGdiDPIScalingTurnedOff
+    val, err := m.GetBackingStore().Get("displayAppListWithGdiDPIScalingTurnedOff")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetDisplayAppListWithGdiDPIScalingTurnedOn gets the displayAppListWithGdiDPIScalingTurnedOn property value. List of legacy applications that have GDI DPI Scaling turned on.
 func (m *Windows10GeneralConfiguration) GetDisplayAppListWithGdiDPIScalingTurnedOn()([]string) {
-    return m.displayAppListWithGdiDPIScalingTurnedOn
+    val, err := m.GetBackingStore().Get("displayAppListWithGdiDPIScalingTurnedOn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetEdgeAllowStartPagesModification gets the edgeAllowStartPagesModification property value. Allow users to change Start pages on Edge. Use the EdgeHomepageUrls to specify the Start pages that the user would see by default when they open Edge.
 func (m *Windows10GeneralConfiguration) GetEdgeAllowStartPagesModification()(*bool) {
-    return m.edgeAllowStartPagesModification
+    val, err := m.GetBackingStore().Get("edgeAllowStartPagesModification")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeBlockAccessToAboutFlags gets the edgeBlockAccessToAboutFlags property value. Indicates whether or not to prevent access to about flags on Edge browser.
 func (m *Windows10GeneralConfiguration) GetEdgeBlockAccessToAboutFlags()(*bool) {
-    return m.edgeBlockAccessToAboutFlags
+    val, err := m.GetBackingStore().Get("edgeBlockAccessToAboutFlags")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeBlockAddressBarDropdown gets the edgeBlockAddressBarDropdown property value. Block the address bar dropdown functionality in Microsoft Edge. Disable this settings to minimize network connections from Microsoft Edge to Microsoft services.
 func (m *Windows10GeneralConfiguration) GetEdgeBlockAddressBarDropdown()(*bool) {
-    return m.edgeBlockAddressBarDropdown
+    val, err := m.GetBackingStore().Get("edgeBlockAddressBarDropdown")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeBlockAutofill gets the edgeBlockAutofill property value. Indicates whether or not to block auto fill.
 func (m *Windows10GeneralConfiguration) GetEdgeBlockAutofill()(*bool) {
-    return m.edgeBlockAutofill
+    val, err := m.GetBackingStore().Get("edgeBlockAutofill")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeBlockCompatibilityList gets the edgeBlockCompatibilityList property value. Block Microsoft compatibility list in Microsoft Edge. This list from Microsoft helps Edge properly display sites with known compatibility issues.
 func (m *Windows10GeneralConfiguration) GetEdgeBlockCompatibilityList()(*bool) {
-    return m.edgeBlockCompatibilityList
+    val, err := m.GetBackingStore().Get("edgeBlockCompatibilityList")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeBlockDeveloperTools gets the edgeBlockDeveloperTools property value. Indicates whether or not to block developer tools in the Edge browser.
 func (m *Windows10GeneralConfiguration) GetEdgeBlockDeveloperTools()(*bool) {
-    return m.edgeBlockDeveloperTools
+    val, err := m.GetBackingStore().Get("edgeBlockDeveloperTools")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeBlocked gets the edgeBlocked property value. Indicates whether or not to Block the user from using the Edge browser.
 func (m *Windows10GeneralConfiguration) GetEdgeBlocked()(*bool) {
-    return m.edgeBlocked
+    val, err := m.GetBackingStore().Get("edgeBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeBlockEditFavorites gets the edgeBlockEditFavorites property value. Indicates whether or not to Block the user from making changes to Favorites.
 func (m *Windows10GeneralConfiguration) GetEdgeBlockEditFavorites()(*bool) {
-    return m.edgeBlockEditFavorites
+    val, err := m.GetBackingStore().Get("edgeBlockEditFavorites")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeBlockExtensions gets the edgeBlockExtensions property value. Indicates whether or not to block extensions in the Edge browser.
 func (m *Windows10GeneralConfiguration) GetEdgeBlockExtensions()(*bool) {
-    return m.edgeBlockExtensions
+    val, err := m.GetBackingStore().Get("edgeBlockExtensions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeBlockFullScreenMode gets the edgeBlockFullScreenMode property value. Allow or prevent Edge from entering the full screen mode.
 func (m *Windows10GeneralConfiguration) GetEdgeBlockFullScreenMode()(*bool) {
-    return m.edgeBlockFullScreenMode
+    val, err := m.GetBackingStore().Get("edgeBlockFullScreenMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeBlockInPrivateBrowsing gets the edgeBlockInPrivateBrowsing property value. Indicates whether or not to block InPrivate browsing on corporate networks, in the Edge browser.
 func (m *Windows10GeneralConfiguration) GetEdgeBlockInPrivateBrowsing()(*bool) {
-    return m.edgeBlockInPrivateBrowsing
+    val, err := m.GetBackingStore().Get("edgeBlockInPrivateBrowsing")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeBlockJavaScript gets the edgeBlockJavaScript property value. Indicates whether or not to Block the user from using JavaScript.
 func (m *Windows10GeneralConfiguration) GetEdgeBlockJavaScript()(*bool) {
-    return m.edgeBlockJavaScript
+    val, err := m.GetBackingStore().Get("edgeBlockJavaScript")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeBlockLiveTileDataCollection gets the edgeBlockLiveTileDataCollection property value. Block the collection of information by Microsoft for live tile creation when users pin a site to Start from Microsoft Edge.
 func (m *Windows10GeneralConfiguration) GetEdgeBlockLiveTileDataCollection()(*bool) {
-    return m.edgeBlockLiveTileDataCollection
+    val, err := m.GetBackingStore().Get("edgeBlockLiveTileDataCollection")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeBlockPasswordManager gets the edgeBlockPasswordManager property value. Indicates whether or not to Block password manager.
 func (m *Windows10GeneralConfiguration) GetEdgeBlockPasswordManager()(*bool) {
-    return m.edgeBlockPasswordManager
+    val, err := m.GetBackingStore().Get("edgeBlockPasswordManager")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeBlockPopups gets the edgeBlockPopups property value. Indicates whether or not to block popups.
 func (m *Windows10GeneralConfiguration) GetEdgeBlockPopups()(*bool) {
-    return m.edgeBlockPopups
+    val, err := m.GetBackingStore().Get("edgeBlockPopups")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeBlockPrelaunch gets the edgeBlockPrelaunch property value. Decide whether Microsoft Edge is prelaunched at Windows startup.
 func (m *Windows10GeneralConfiguration) GetEdgeBlockPrelaunch()(*bool) {
-    return m.edgeBlockPrelaunch
+    val, err := m.GetBackingStore().Get("edgeBlockPrelaunch")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeBlockPrinting gets the edgeBlockPrinting property value. Configure Edge to allow or block printing.
 func (m *Windows10GeneralConfiguration) GetEdgeBlockPrinting()(*bool) {
-    return m.edgeBlockPrinting
+    val, err := m.GetBackingStore().Get("edgeBlockPrinting")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeBlockSavingHistory gets the edgeBlockSavingHistory property value. Configure Edge to allow browsing history to be saved or to never save browsing history.
 func (m *Windows10GeneralConfiguration) GetEdgeBlockSavingHistory()(*bool) {
-    return m.edgeBlockSavingHistory
+    val, err := m.GetBackingStore().Get("edgeBlockSavingHistory")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeBlockSearchEngineCustomization gets the edgeBlockSearchEngineCustomization property value. Indicates whether or not to block the user from adding new search engine or changing the default search engine.
 func (m *Windows10GeneralConfiguration) GetEdgeBlockSearchEngineCustomization()(*bool) {
-    return m.edgeBlockSearchEngineCustomization
+    val, err := m.GetBackingStore().Get("edgeBlockSearchEngineCustomization")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeBlockSearchSuggestions gets the edgeBlockSearchSuggestions property value. Indicates whether or not to block the user from using the search suggestions in the address bar.
 func (m *Windows10GeneralConfiguration) GetEdgeBlockSearchSuggestions()(*bool) {
-    return m.edgeBlockSearchSuggestions
+    val, err := m.GetBackingStore().Get("edgeBlockSearchSuggestions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeBlockSendingDoNotTrackHeader gets the edgeBlockSendingDoNotTrackHeader property value. Indicates whether or not to Block the user from sending the do not track header.
 func (m *Windows10GeneralConfiguration) GetEdgeBlockSendingDoNotTrackHeader()(*bool) {
-    return m.edgeBlockSendingDoNotTrackHeader
+    val, err := m.GetBackingStore().Get("edgeBlockSendingDoNotTrackHeader")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeBlockSendingIntranetTrafficToInternetExplorer gets the edgeBlockSendingIntranetTrafficToInternetExplorer property value. Indicates whether or not to switch the intranet traffic from Edge to Internet Explorer. Note: the name of this property is misleading; the property is obsolete, use EdgeSendIntranetTrafficToInternetExplorer instead.
 func (m *Windows10GeneralConfiguration) GetEdgeBlockSendingIntranetTrafficToInternetExplorer()(*bool) {
-    return m.edgeBlockSendingIntranetTrafficToInternetExplorer
+    val, err := m.GetBackingStore().Get("edgeBlockSendingIntranetTrafficToInternetExplorer")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeBlockSideloadingExtensions gets the edgeBlockSideloadingExtensions property value. Indicates whether the user can sideload extensions.
 func (m *Windows10GeneralConfiguration) GetEdgeBlockSideloadingExtensions()(*bool) {
-    return m.edgeBlockSideloadingExtensions
+    val, err := m.GetBackingStore().Get("edgeBlockSideloadingExtensions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeBlockTabPreloading gets the edgeBlockTabPreloading property value. Configure whether Edge preloads the new tab page at Windows startup.
 func (m *Windows10GeneralConfiguration) GetEdgeBlockTabPreloading()(*bool) {
-    return m.edgeBlockTabPreloading
+    val, err := m.GetBackingStore().Get("edgeBlockTabPreloading")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeBlockWebContentOnNewTabPage gets the edgeBlockWebContentOnNewTabPage property value. Configure to load a blank page in Edge instead of the default New tab page and prevent users from changing it.
 func (m *Windows10GeneralConfiguration) GetEdgeBlockWebContentOnNewTabPage()(*bool) {
-    return m.edgeBlockWebContentOnNewTabPage
+    val, err := m.GetBackingStore().Get("edgeBlockWebContentOnNewTabPage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeClearBrowsingDataOnExit gets the edgeClearBrowsingDataOnExit property value. Clear browsing data on exiting Microsoft Edge.
 func (m *Windows10GeneralConfiguration) GetEdgeClearBrowsingDataOnExit()(*bool) {
-    return m.edgeClearBrowsingDataOnExit
+    val, err := m.GetBackingStore().Get("edgeClearBrowsingDataOnExit")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeCookiePolicy gets the edgeCookiePolicy property value. Possible values to specify which cookies are allowed in Microsoft Edge.
 func (m *Windows10GeneralConfiguration) GetEdgeCookiePolicy()(*EdgeCookiePolicy) {
-    return m.edgeCookiePolicy
+    val, err := m.GetBackingStore().Get("edgeCookiePolicy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*EdgeCookiePolicy)
+    }
+    return nil
 }
 // GetEdgeDisableFirstRunPage gets the edgeDisableFirstRunPage property value. Block the Microsoft web page that opens on the first use of Microsoft Edge. This policy allows enterprises, like those enrolled in zero emissions configurations, to block this page.
 func (m *Windows10GeneralConfiguration) GetEdgeDisableFirstRunPage()(*bool) {
-    return m.edgeDisableFirstRunPage
+    val, err := m.GetBackingStore().Get("edgeDisableFirstRunPage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeEnterpriseModeSiteListLocation gets the edgeEnterpriseModeSiteListLocation property value. Indicates the enterprise mode site list location. Could be a local file, local network or http location.
 func (m *Windows10GeneralConfiguration) GetEdgeEnterpriseModeSiteListLocation()(*string) {
-    return m.edgeEnterpriseModeSiteListLocation
+    val, err := m.GetBackingStore().Get("edgeEnterpriseModeSiteListLocation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetEdgeFavoritesBarVisibility gets the edgeFavoritesBarVisibility property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) GetEdgeFavoritesBarVisibility()(*VisibilitySetting) {
-    return m.edgeFavoritesBarVisibility
+    val, err := m.GetBackingStore().Get("edgeFavoritesBarVisibility")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*VisibilitySetting)
+    }
+    return nil
 }
 // GetEdgeFavoritesListLocation gets the edgeFavoritesListLocation property value. The location of the favorites list to provision. Could be a local file, local network or http location.
 func (m *Windows10GeneralConfiguration) GetEdgeFavoritesListLocation()(*string) {
-    return m.edgeFavoritesListLocation
+    val, err := m.GetBackingStore().Get("edgeFavoritesListLocation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetEdgeFirstRunUrl gets the edgeFirstRunUrl property value. The first run URL for when Edge browser is opened for the first time.
 func (m *Windows10GeneralConfiguration) GetEdgeFirstRunUrl()(*string) {
-    return m.edgeFirstRunUrl
+    val, err := m.GetBackingStore().Get("edgeFirstRunUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetEdgeHomeButtonConfiguration gets the edgeHomeButtonConfiguration property value. Causes the Home button to either hide, load the default Start page, load a New tab page, or a custom URL
 func (m *Windows10GeneralConfiguration) GetEdgeHomeButtonConfiguration()(EdgeHomeButtonConfigurationable) {
-    return m.edgeHomeButtonConfiguration
+    val, err := m.GetBackingStore().Get("edgeHomeButtonConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EdgeHomeButtonConfigurationable)
+    }
+    return nil
 }
 // GetEdgeHomeButtonConfigurationEnabled gets the edgeHomeButtonConfigurationEnabled property value. Enable the Home button configuration.
 func (m *Windows10GeneralConfiguration) GetEdgeHomeButtonConfigurationEnabled()(*bool) {
-    return m.edgeHomeButtonConfigurationEnabled
+    val, err := m.GetBackingStore().Get("edgeHomeButtonConfigurationEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeHomepageUrls gets the edgeHomepageUrls property value. The list of URLs for homepages shodwn on MDM-enrolled devices on Edge browser.
 func (m *Windows10GeneralConfiguration) GetEdgeHomepageUrls()([]string) {
-    return m.edgeHomepageUrls
+    val, err := m.GetBackingStore().Get("edgeHomepageUrls")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetEdgeKioskModeRestriction gets the edgeKioskModeRestriction property value. Specify how the Microsoft Edge settings are restricted based on kiosk mode.
 func (m *Windows10GeneralConfiguration) GetEdgeKioskModeRestriction()(*EdgeKioskModeRestrictionType) {
-    return m.edgeKioskModeRestriction
+    val, err := m.GetBackingStore().Get("edgeKioskModeRestriction")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*EdgeKioskModeRestrictionType)
+    }
+    return nil
 }
 // GetEdgeKioskResetAfterIdleTimeInMinutes gets the edgeKioskResetAfterIdleTimeInMinutes property value. Specifies the time in minutes from the last user activity before Microsoft Edge kiosk resets.  Valid values are 0-1440. The default is 5. 0 indicates no reset. Valid values 0 to 1440
 func (m *Windows10GeneralConfiguration) GetEdgeKioskResetAfterIdleTimeInMinutes()(*int32) {
-    return m.edgeKioskResetAfterIdleTimeInMinutes
+    val, err := m.GetBackingStore().Get("edgeKioskResetAfterIdleTimeInMinutes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetEdgeNewTabPageURL gets the edgeNewTabPageURL property value. Specify the page opened when new tabs are created.
 func (m *Windows10GeneralConfiguration) GetEdgeNewTabPageURL()(*string) {
-    return m.edgeNewTabPageURL
+    val, err := m.GetBackingStore().Get("edgeNewTabPageURL")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetEdgeOpensWith gets the edgeOpensWith property value. Possible values for the EdgeOpensWith setting.
 func (m *Windows10GeneralConfiguration) GetEdgeOpensWith()(*EdgeOpenOptions) {
-    return m.edgeOpensWith
+    val, err := m.GetBackingStore().Get("edgeOpensWith")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*EdgeOpenOptions)
+    }
+    return nil
 }
 // GetEdgePreventCertificateErrorOverride gets the edgePreventCertificateErrorOverride property value. Allow or prevent users from overriding certificate errors.
 func (m *Windows10GeneralConfiguration) GetEdgePreventCertificateErrorOverride()(*bool) {
-    return m.edgePreventCertificateErrorOverride
+    val, err := m.GetBackingStore().Get("edgePreventCertificateErrorOverride")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeRequiredExtensionPackageFamilyNames gets the edgeRequiredExtensionPackageFamilyNames property value. Specify the list of package family names of browser extensions that are required and cannot be turned off by the user.
 func (m *Windows10GeneralConfiguration) GetEdgeRequiredExtensionPackageFamilyNames()([]string) {
-    return m.edgeRequiredExtensionPackageFamilyNames
+    val, err := m.GetBackingStore().Get("edgeRequiredExtensionPackageFamilyNames")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetEdgeRequireSmartScreen gets the edgeRequireSmartScreen property value. Indicates whether or not to Require the user to use the smart screen filter.
 func (m *Windows10GeneralConfiguration) GetEdgeRequireSmartScreen()(*bool) {
-    return m.edgeRequireSmartScreen
+    val, err := m.GetBackingStore().Get("edgeRequireSmartScreen")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeSearchEngine gets the edgeSearchEngine property value. Allows IT admins to set a default search engine for MDM-Controlled devices. Users can override this and change their default search engine provided the AllowSearchEngineCustomization policy is not set.
 func (m *Windows10GeneralConfiguration) GetEdgeSearchEngine()(EdgeSearchEngineBaseable) {
-    return m.edgeSearchEngine
+    val, err := m.GetBackingStore().Get("edgeSearchEngine")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EdgeSearchEngineBaseable)
+    }
+    return nil
 }
 // GetEdgeSendIntranetTrafficToInternetExplorer gets the edgeSendIntranetTrafficToInternetExplorer property value. Indicates whether or not to switch the intranet traffic from Edge to Internet Explorer.
 func (m *Windows10GeneralConfiguration) GetEdgeSendIntranetTrafficToInternetExplorer()(*bool) {
-    return m.edgeSendIntranetTrafficToInternetExplorer
+    val, err := m.GetBackingStore().Get("edgeSendIntranetTrafficToInternetExplorer")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeShowMessageWhenOpeningInternetExplorerSites gets the edgeShowMessageWhenOpeningInternetExplorerSites property value. What message will be displayed by Edge before switching to Internet Explorer.
 func (m *Windows10GeneralConfiguration) GetEdgeShowMessageWhenOpeningInternetExplorerSites()(*InternetExplorerMessageSetting) {
-    return m.edgeShowMessageWhenOpeningInternetExplorerSites
+    val, err := m.GetBackingStore().Get("edgeShowMessageWhenOpeningInternetExplorerSites")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*InternetExplorerMessageSetting)
+    }
+    return nil
 }
 // GetEdgeSyncFavoritesWithInternetExplorer gets the edgeSyncFavoritesWithInternetExplorer property value. Enable favorites sync between Internet Explorer and Microsoft Edge. Additions, deletions, modifications and order changes to favorites are shared between browsers.
 func (m *Windows10GeneralConfiguration) GetEdgeSyncFavoritesWithInternetExplorer()(*bool) {
-    return m.edgeSyncFavoritesWithInternetExplorer
+    val, err := m.GetBackingStore().Get("edgeSyncFavoritesWithInternetExplorer")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEdgeTelemetryForMicrosoft365Analytics gets the edgeTelemetryForMicrosoft365Analytics property value. Type of browsing data sent to Microsoft 365 analytics
 func (m *Windows10GeneralConfiguration) GetEdgeTelemetryForMicrosoft365Analytics()(*EdgeTelemetryMode) {
-    return m.edgeTelemetryForMicrosoft365Analytics
+    val, err := m.GetBackingStore().Get("edgeTelemetryForMicrosoft365Analytics")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*EdgeTelemetryMode)
+    }
+    return nil
 }
 // GetEnableAutomaticRedeployment gets the enableAutomaticRedeployment property value. Allow users with administrative rights to delete all user data and settings using CTRL + Win + R at the device lock screen so that the device can be automatically re-configured and re-enrolled into management.
 func (m *Windows10GeneralConfiguration) GetEnableAutomaticRedeployment()(*bool) {
-    return m.enableAutomaticRedeployment
+    val, err := m.GetBackingStore().Get("enableAutomaticRedeployment")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEnergySaverOnBatteryThresholdPercentage gets the energySaverOnBatteryThresholdPercentage property value. This setting allows you to specify battery charge level at which Energy Saver is turned on. While on battery, Energy Saver is automatically turned on at (and below) the specified battery charge level. Valid input range (0-100). Valid values 0 to 100
 func (m *Windows10GeneralConfiguration) GetEnergySaverOnBatteryThresholdPercentage()(*int32) {
-    return m.energySaverOnBatteryThresholdPercentage
+    val, err := m.GetBackingStore().Get("energySaverOnBatteryThresholdPercentage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetEnergySaverPluggedInThresholdPercentage gets the energySaverPluggedInThresholdPercentage property value. This setting allows you to specify battery charge level at which Energy Saver is turned on. While plugged in, Energy Saver is automatically turned on at (and below) the specified battery charge level. Valid input range (0-100). Valid values 0 to 100
 func (m *Windows10GeneralConfiguration) GetEnergySaverPluggedInThresholdPercentage()(*int32) {
-    return m.energySaverPluggedInThresholdPercentage
+    val, err := m.GetBackingStore().Get("energySaverPluggedInThresholdPercentage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetEnterpriseCloudPrintDiscoveryEndPoint gets the enterpriseCloudPrintDiscoveryEndPoint property value. Endpoint for discovering cloud printers.
 func (m *Windows10GeneralConfiguration) GetEnterpriseCloudPrintDiscoveryEndPoint()(*string) {
-    return m.enterpriseCloudPrintDiscoveryEndPoint
+    val, err := m.GetBackingStore().Get("enterpriseCloudPrintDiscoveryEndPoint")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetEnterpriseCloudPrintDiscoveryMaxLimit gets the enterpriseCloudPrintDiscoveryMaxLimit property value. Maximum number of printers that should be queried from a discovery endpoint. This is a mobile only setting. Valid values 1 to 65535
 func (m *Windows10GeneralConfiguration) GetEnterpriseCloudPrintDiscoveryMaxLimit()(*int32) {
-    return m.enterpriseCloudPrintDiscoveryMaxLimit
+    val, err := m.GetBackingStore().Get("enterpriseCloudPrintDiscoveryMaxLimit")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetEnterpriseCloudPrintMopriaDiscoveryResourceIdentifier gets the enterpriseCloudPrintMopriaDiscoveryResourceIdentifier property value. OAuth resource URI for printer discovery service as configured in Azure portal.
 func (m *Windows10GeneralConfiguration) GetEnterpriseCloudPrintMopriaDiscoveryResourceIdentifier()(*string) {
-    return m.enterpriseCloudPrintMopriaDiscoveryResourceIdentifier
+    val, err := m.GetBackingStore().Get("enterpriseCloudPrintMopriaDiscoveryResourceIdentifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetEnterpriseCloudPrintOAuthAuthority gets the enterpriseCloudPrintOAuthAuthority property value. Authentication endpoint for acquiring OAuth tokens.
 func (m *Windows10GeneralConfiguration) GetEnterpriseCloudPrintOAuthAuthority()(*string) {
-    return m.enterpriseCloudPrintOAuthAuthority
+    val, err := m.GetBackingStore().Get("enterpriseCloudPrintOAuthAuthority")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetEnterpriseCloudPrintOAuthClientIdentifier gets the enterpriseCloudPrintOAuthClientIdentifier property value. GUID of a client application authorized to retrieve OAuth tokens from the OAuth Authority.
 func (m *Windows10GeneralConfiguration) GetEnterpriseCloudPrintOAuthClientIdentifier()(*string) {
-    return m.enterpriseCloudPrintOAuthClientIdentifier
+    val, err := m.GetBackingStore().Get("enterpriseCloudPrintOAuthClientIdentifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetEnterpriseCloudPrintResourceIdentifier gets the enterpriseCloudPrintResourceIdentifier property value. OAuth resource URI for print service as configured in the Azure portal.
 func (m *Windows10GeneralConfiguration) GetEnterpriseCloudPrintResourceIdentifier()(*string) {
-    return m.enterpriseCloudPrintResourceIdentifier
+    val, err := m.GetBackingStore().Get("enterpriseCloudPrintResourceIdentifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetExperienceBlockDeviceDiscovery gets the experienceBlockDeviceDiscovery property value. Indicates whether or not to enable device discovery UX.
 func (m *Windows10GeneralConfiguration) GetExperienceBlockDeviceDiscovery()(*bool) {
-    return m.experienceBlockDeviceDiscovery
+    val, err := m.GetBackingStore().Get("experienceBlockDeviceDiscovery")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetExperienceBlockErrorDialogWhenNoSIM gets the experienceBlockErrorDialogWhenNoSIM property value. Indicates whether or not to allow the error dialog from displaying if no SIM card is detected.
 func (m *Windows10GeneralConfiguration) GetExperienceBlockErrorDialogWhenNoSIM()(*bool) {
-    return m.experienceBlockErrorDialogWhenNoSIM
+    val, err := m.GetBackingStore().Get("experienceBlockErrorDialogWhenNoSIM")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetExperienceBlockTaskSwitcher gets the experienceBlockTaskSwitcher property value. Indicates whether or not to enable task switching on the device.
 func (m *Windows10GeneralConfiguration) GetExperienceBlockTaskSwitcher()(*bool) {
-    return m.experienceBlockTaskSwitcher
+    val, err := m.GetBackingStore().Get("experienceBlockTaskSwitcher")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetExperienceDoNotSyncBrowserSettings gets the experienceDoNotSyncBrowserSettings property value. Allow(Not Configured) or prevent(Block) the syncing of Microsoft Edge Browser settings. Option to prevent syncing across devices, but allow user override.
 func (m *Windows10GeneralConfiguration) GetExperienceDoNotSyncBrowserSettings()(*BrowserSyncSetting) {
-    return m.experienceDoNotSyncBrowserSettings
+    val, err := m.GetBackingStore().Get("experienceDoNotSyncBrowserSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*BrowserSyncSetting)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows10GeneralConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -3988,615 +4332,1686 @@ func (m *Windows10GeneralConfiguration) GetFieldDeserializers()(map[string]func(
 }
 // GetFindMyFiles gets the findMyFiles property value. Possible values of a property
 func (m *Windows10GeneralConfiguration) GetFindMyFiles()(*Enablement) {
-    return m.findMyFiles
+    val, err := m.GetBackingStore().Get("findMyFiles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Enablement)
+    }
+    return nil
 }
 // GetGameDvrBlocked gets the gameDvrBlocked property value. Indicates whether or not to block DVR and broadcasting.
 func (m *Windows10GeneralConfiguration) GetGameDvrBlocked()(*bool) {
-    return m.gameDvrBlocked
+    val, err := m.GetBackingStore().Get("gameDvrBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetInkWorkspaceAccess gets the inkWorkspaceAccess property value. Values for the InkWorkspaceAccess setting.
 func (m *Windows10GeneralConfiguration) GetInkWorkspaceAccess()(*InkAccessSetting) {
-    return m.inkWorkspaceAccess
+    val, err := m.GetBackingStore().Get("inkWorkspaceAccess")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*InkAccessSetting)
+    }
+    return nil
 }
 // GetInkWorkspaceAccessState gets the inkWorkspaceAccessState property value. State Management Setting.
 func (m *Windows10GeneralConfiguration) GetInkWorkspaceAccessState()(*StateManagementSetting) {
-    return m.inkWorkspaceAccessState
+    val, err := m.GetBackingStore().Get("inkWorkspaceAccessState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*StateManagementSetting)
+    }
+    return nil
 }
 // GetInkWorkspaceBlockSuggestedApps gets the inkWorkspaceBlockSuggestedApps property value. Specify whether to show recommended app suggestions in the ink workspace.
 func (m *Windows10GeneralConfiguration) GetInkWorkspaceBlockSuggestedApps()(*bool) {
-    return m.inkWorkspaceBlockSuggestedApps
+    val, err := m.GetBackingStore().Get("inkWorkspaceBlockSuggestedApps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetInternetSharingBlocked gets the internetSharingBlocked property value. Indicates whether or not to Block the user from using internet sharing.
 func (m *Windows10GeneralConfiguration) GetInternetSharingBlocked()(*bool) {
-    return m.internetSharingBlocked
+    val, err := m.GetBackingStore().Get("internetSharingBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocationServicesBlocked gets the locationServicesBlocked property value. Indicates whether or not to Block the user from location services.
 func (m *Windows10GeneralConfiguration) GetLocationServicesBlocked()(*bool) {
-    return m.locationServicesBlocked
+    val, err := m.GetBackingStore().Get("locationServicesBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLockScreenActivateAppsWithVoice gets the lockScreenActivateAppsWithVoice property value. Possible values of a property
 func (m *Windows10GeneralConfiguration) GetLockScreenActivateAppsWithVoice()(*Enablement) {
-    return m.lockScreenActivateAppsWithVoice
+    val, err := m.GetBackingStore().Get("lockScreenActivateAppsWithVoice")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Enablement)
+    }
+    return nil
 }
 // GetLockScreenAllowTimeoutConfiguration gets the lockScreenAllowTimeoutConfiguration property value. Specify whether to show a user-configurable setting to control the screen timeout while on the lock screen of Windows 10 Mobile devices. If this policy is set to Allow, the value set by lockScreenTimeoutInSeconds is ignored.
 func (m *Windows10GeneralConfiguration) GetLockScreenAllowTimeoutConfiguration()(*bool) {
-    return m.lockScreenAllowTimeoutConfiguration
+    val, err := m.GetBackingStore().Get("lockScreenAllowTimeoutConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLockScreenBlockActionCenterNotifications gets the lockScreenBlockActionCenterNotifications property value. Indicates whether or not to block action center notifications over lock screen.
 func (m *Windows10GeneralConfiguration) GetLockScreenBlockActionCenterNotifications()(*bool) {
-    return m.lockScreenBlockActionCenterNotifications
+    val, err := m.GetBackingStore().Get("lockScreenBlockActionCenterNotifications")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLockScreenBlockCortana gets the lockScreenBlockCortana property value. Indicates whether or not the user can interact with Cortana using speech while the system is locked.
 func (m *Windows10GeneralConfiguration) GetLockScreenBlockCortana()(*bool) {
-    return m.lockScreenBlockCortana
+    val, err := m.GetBackingStore().Get("lockScreenBlockCortana")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLockScreenBlockToastNotifications gets the lockScreenBlockToastNotifications property value. Indicates whether to allow toast notifications above the device lock screen.
 func (m *Windows10GeneralConfiguration) GetLockScreenBlockToastNotifications()(*bool) {
-    return m.lockScreenBlockToastNotifications
+    val, err := m.GetBackingStore().Get("lockScreenBlockToastNotifications")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLockScreenTimeoutInSeconds gets the lockScreenTimeoutInSeconds property value. Set the duration (in seconds) from the screen locking to the screen turning off for Windows 10 Mobile devices. Supported values are 11-1800. Valid values 11 to 1800
 func (m *Windows10GeneralConfiguration) GetLockScreenTimeoutInSeconds()(*int32) {
-    return m.lockScreenTimeoutInSeconds
+    val, err := m.GetBackingStore().Get("lockScreenTimeoutInSeconds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetLogonBlockFastUserSwitching gets the logonBlockFastUserSwitching property value. Disables the ability to quickly switch between users that are logged on simultaneously without logging off.
 func (m *Windows10GeneralConfiguration) GetLogonBlockFastUserSwitching()(*bool) {
-    return m.logonBlockFastUserSwitching
+    val, err := m.GetBackingStore().Get("logonBlockFastUserSwitching")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetMessagingBlockMMS gets the messagingBlockMMS property value. Indicates whether or not to block the MMS send/receive functionality on the device.
 func (m *Windows10GeneralConfiguration) GetMessagingBlockMMS()(*bool) {
-    return m.messagingBlockMMS
+    val, err := m.GetBackingStore().Get("messagingBlockMMS")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetMessagingBlockRichCommunicationServices gets the messagingBlockRichCommunicationServices property value. Indicates whether or not to block the RCS send/receive functionality on the device.
 func (m *Windows10GeneralConfiguration) GetMessagingBlockRichCommunicationServices()(*bool) {
-    return m.messagingBlockRichCommunicationServices
+    val, err := m.GetBackingStore().Get("messagingBlockRichCommunicationServices")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetMessagingBlockSync gets the messagingBlockSync property value. Indicates whether or not to block text message back up and restore and Messaging Everywhere.
 func (m *Windows10GeneralConfiguration) GetMessagingBlockSync()(*bool) {
-    return m.messagingBlockSync
+    val, err := m.GetBackingStore().Get("messagingBlockSync")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetMicrosoftAccountBlocked gets the microsoftAccountBlocked property value. Indicates whether or not to Block a Microsoft account.
 func (m *Windows10GeneralConfiguration) GetMicrosoftAccountBlocked()(*bool) {
-    return m.microsoftAccountBlocked
+    val, err := m.GetBackingStore().Get("microsoftAccountBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetMicrosoftAccountBlockSettingsSync gets the microsoftAccountBlockSettingsSync property value. Indicates whether or not to Block Microsoft account settings sync.
 func (m *Windows10GeneralConfiguration) GetMicrosoftAccountBlockSettingsSync()(*bool) {
-    return m.microsoftAccountBlockSettingsSync
+    val, err := m.GetBackingStore().Get("microsoftAccountBlockSettingsSync")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetMicrosoftAccountSignInAssistantSettings gets the microsoftAccountSignInAssistantSettings property value. Values for the SignInAssistantSettings.
 func (m *Windows10GeneralConfiguration) GetMicrosoftAccountSignInAssistantSettings()(*SignInAssistantOptions) {
-    return m.microsoftAccountSignInAssistantSettings
+    val, err := m.GetBackingStore().Get("microsoftAccountSignInAssistantSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SignInAssistantOptions)
+    }
+    return nil
 }
 // GetNetworkProxyApplySettingsDeviceWide gets the networkProxyApplySettingsDeviceWide property value. If set, proxy settings will be applied to all processes and accounts in the device. Otherwise, it will be applied to the user account that’s enrolled into MDM.
 func (m *Windows10GeneralConfiguration) GetNetworkProxyApplySettingsDeviceWide()(*bool) {
-    return m.networkProxyApplySettingsDeviceWide
+    val, err := m.GetBackingStore().Get("networkProxyApplySettingsDeviceWide")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetNetworkProxyAutomaticConfigurationUrl gets the networkProxyAutomaticConfigurationUrl property value. Address to the proxy auto-config (PAC) script you want to use.
 func (m *Windows10GeneralConfiguration) GetNetworkProxyAutomaticConfigurationUrl()(*string) {
-    return m.networkProxyAutomaticConfigurationUrl
+    val, err := m.GetBackingStore().Get("networkProxyAutomaticConfigurationUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetNetworkProxyDisableAutoDetect gets the networkProxyDisableAutoDetect property value. Disable automatic detection of settings. If enabled, the system will try to find the path to a proxy auto-config (PAC) script.
 func (m *Windows10GeneralConfiguration) GetNetworkProxyDisableAutoDetect()(*bool) {
-    return m.networkProxyDisableAutoDetect
+    val, err := m.GetBackingStore().Get("networkProxyDisableAutoDetect")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetNetworkProxyServer gets the networkProxyServer property value. Specifies manual proxy server settings.
 func (m *Windows10GeneralConfiguration) GetNetworkProxyServer()(Windows10NetworkProxyServerable) {
-    return m.networkProxyServer
+    val, err := m.GetBackingStore().Get("networkProxyServer")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Windows10NetworkProxyServerable)
+    }
+    return nil
 }
 // GetNfcBlocked gets the nfcBlocked property value. Indicates whether or not to Block the user from using near field communication.
 func (m *Windows10GeneralConfiguration) GetNfcBlocked()(*bool) {
-    return m.nfcBlocked
+    val, err := m.GetBackingStore().Get("nfcBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetOneDriveDisableFileSync gets the oneDriveDisableFileSync property value. Gets or sets a value allowing IT admins to prevent apps and features from working with files on OneDrive.
 func (m *Windows10GeneralConfiguration) GetOneDriveDisableFileSync()(*bool) {
-    return m.oneDriveDisableFileSync
+    val, err := m.GetBackingStore().Get("oneDriveDisableFileSync")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPasswordBlockSimple gets the passwordBlockSimple property value. Specify whether PINs or passwords such as '1111' or '1234' are allowed. For Windows 10 desktops, it also controls the use of picture passwords.
 func (m *Windows10GeneralConfiguration) GetPasswordBlockSimple()(*bool) {
-    return m.passwordBlockSimple
+    val, err := m.GetBackingStore().Get("passwordBlockSimple")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPasswordExpirationDays gets the passwordExpirationDays property value. The password expiration in days. Valid values 0 to 730
 func (m *Windows10GeneralConfiguration) GetPasswordExpirationDays()(*int32) {
-    return m.passwordExpirationDays
+    val, err := m.GetBackingStore().Get("passwordExpirationDays")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPasswordMinimumAgeInDays gets the passwordMinimumAgeInDays property value. This security setting determines the period of time (in days) that a password must be used before the user can change it. Valid values 0 to 998
 func (m *Windows10GeneralConfiguration) GetPasswordMinimumAgeInDays()(*int32) {
-    return m.passwordMinimumAgeInDays
+    val, err := m.GetBackingStore().Get("passwordMinimumAgeInDays")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPasswordMinimumCharacterSetCount gets the passwordMinimumCharacterSetCount property value. The number of character sets required in the password.
 func (m *Windows10GeneralConfiguration) GetPasswordMinimumCharacterSetCount()(*int32) {
-    return m.passwordMinimumCharacterSetCount
+    val, err := m.GetBackingStore().Get("passwordMinimumCharacterSetCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPasswordMinimumLength gets the passwordMinimumLength property value. The minimum password length. Valid values 4 to 16
 func (m *Windows10GeneralConfiguration) GetPasswordMinimumLength()(*int32) {
-    return m.passwordMinimumLength
+    val, err := m.GetBackingStore().Get("passwordMinimumLength")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPasswordMinutesOfInactivityBeforeScreenTimeout gets the passwordMinutesOfInactivityBeforeScreenTimeout property value. The minutes of inactivity before the screen times out.
 func (m *Windows10GeneralConfiguration) GetPasswordMinutesOfInactivityBeforeScreenTimeout()(*int32) {
-    return m.passwordMinutesOfInactivityBeforeScreenTimeout
+    val, err := m.GetBackingStore().Get("passwordMinutesOfInactivityBeforeScreenTimeout")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPasswordPreviousPasswordBlockCount gets the passwordPreviousPasswordBlockCount property value. The number of previous passwords to prevent reuse of. Valid values 0 to 50
 func (m *Windows10GeneralConfiguration) GetPasswordPreviousPasswordBlockCount()(*int32) {
-    return m.passwordPreviousPasswordBlockCount
+    val, err := m.GetBackingStore().Get("passwordPreviousPasswordBlockCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPasswordRequired gets the passwordRequired property value. Indicates whether or not to require the user to have a password.
 func (m *Windows10GeneralConfiguration) GetPasswordRequired()(*bool) {
-    return m.passwordRequired
+    val, err := m.GetBackingStore().Get("passwordRequired")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPasswordRequiredType gets the passwordRequiredType property value. Possible values of required passwords.
 func (m *Windows10GeneralConfiguration) GetPasswordRequiredType()(*RequiredPasswordType) {
-    return m.passwordRequiredType
+    val, err := m.GetBackingStore().Get("passwordRequiredType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RequiredPasswordType)
+    }
+    return nil
 }
 // GetPasswordRequireWhenResumeFromIdleState gets the passwordRequireWhenResumeFromIdleState property value. Indicates whether or not to require a password upon resuming from an idle state.
 func (m *Windows10GeneralConfiguration) GetPasswordRequireWhenResumeFromIdleState()(*bool) {
-    return m.passwordRequireWhenResumeFromIdleState
+    val, err := m.GetBackingStore().Get("passwordRequireWhenResumeFromIdleState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPasswordSignInFailureCountBeforeFactoryReset gets the passwordSignInFailureCountBeforeFactoryReset property value. The number of sign in failures before factory reset. Valid values 0 to 999
 func (m *Windows10GeneralConfiguration) GetPasswordSignInFailureCountBeforeFactoryReset()(*int32) {
-    return m.passwordSignInFailureCountBeforeFactoryReset
+    val, err := m.GetBackingStore().Get("passwordSignInFailureCountBeforeFactoryReset")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPersonalizationDesktopImageUrl gets the personalizationDesktopImageUrl property value. A http or https Url to a jpg, jpeg or png image that needs to be downloaded and used as the Desktop Image or a file Url to a local image on the file system that needs to used as the Desktop Image.
 func (m *Windows10GeneralConfiguration) GetPersonalizationDesktopImageUrl()(*string) {
-    return m.personalizationDesktopImageUrl
+    val, err := m.GetBackingStore().Get("personalizationDesktopImageUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPersonalizationLockScreenImageUrl gets the personalizationLockScreenImageUrl property value. A http or https Url to a jpg, jpeg or png image that neeeds to be downloaded and used as the Lock Screen Image or a file Url to a local image on the file system that needs to be used as the Lock Screen Image.
 func (m *Windows10GeneralConfiguration) GetPersonalizationLockScreenImageUrl()(*string) {
-    return m.personalizationLockScreenImageUrl
+    val, err := m.GetBackingStore().Get("personalizationLockScreenImageUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPowerButtonActionOnBattery gets the powerButtonActionOnBattery property value. Power action types
 func (m *Windows10GeneralConfiguration) GetPowerButtonActionOnBattery()(*PowerActionType) {
-    return m.powerButtonActionOnBattery
+    val, err := m.GetBackingStore().Get("powerButtonActionOnBattery")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PowerActionType)
+    }
+    return nil
 }
 // GetPowerButtonActionPluggedIn gets the powerButtonActionPluggedIn property value. Power action types
 func (m *Windows10GeneralConfiguration) GetPowerButtonActionPluggedIn()(*PowerActionType) {
-    return m.powerButtonActionPluggedIn
+    val, err := m.GetBackingStore().Get("powerButtonActionPluggedIn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PowerActionType)
+    }
+    return nil
 }
 // GetPowerHybridSleepOnBattery gets the powerHybridSleepOnBattery property value. Possible values of a property
 func (m *Windows10GeneralConfiguration) GetPowerHybridSleepOnBattery()(*Enablement) {
-    return m.powerHybridSleepOnBattery
+    val, err := m.GetBackingStore().Get("powerHybridSleepOnBattery")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Enablement)
+    }
+    return nil
 }
 // GetPowerHybridSleepPluggedIn gets the powerHybridSleepPluggedIn property value. Possible values of a property
 func (m *Windows10GeneralConfiguration) GetPowerHybridSleepPluggedIn()(*Enablement) {
-    return m.powerHybridSleepPluggedIn
+    val, err := m.GetBackingStore().Get("powerHybridSleepPluggedIn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Enablement)
+    }
+    return nil
 }
 // GetPowerLidCloseActionOnBattery gets the powerLidCloseActionOnBattery property value. Power action types
 func (m *Windows10GeneralConfiguration) GetPowerLidCloseActionOnBattery()(*PowerActionType) {
-    return m.powerLidCloseActionOnBattery
+    val, err := m.GetBackingStore().Get("powerLidCloseActionOnBattery")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PowerActionType)
+    }
+    return nil
 }
 // GetPowerLidCloseActionPluggedIn gets the powerLidCloseActionPluggedIn property value. Power action types
 func (m *Windows10GeneralConfiguration) GetPowerLidCloseActionPluggedIn()(*PowerActionType) {
-    return m.powerLidCloseActionPluggedIn
+    val, err := m.GetBackingStore().Get("powerLidCloseActionPluggedIn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PowerActionType)
+    }
+    return nil
 }
 // GetPowerSleepButtonActionOnBattery gets the powerSleepButtonActionOnBattery property value. Power action types
 func (m *Windows10GeneralConfiguration) GetPowerSleepButtonActionOnBattery()(*PowerActionType) {
-    return m.powerSleepButtonActionOnBattery
+    val, err := m.GetBackingStore().Get("powerSleepButtonActionOnBattery")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PowerActionType)
+    }
+    return nil
 }
 // GetPowerSleepButtonActionPluggedIn gets the powerSleepButtonActionPluggedIn property value. Power action types
 func (m *Windows10GeneralConfiguration) GetPowerSleepButtonActionPluggedIn()(*PowerActionType) {
-    return m.powerSleepButtonActionPluggedIn
+    val, err := m.GetBackingStore().Get("powerSleepButtonActionPluggedIn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PowerActionType)
+    }
+    return nil
 }
 // GetPrinterBlockAddition gets the printerBlockAddition property value. Prevent user installation of additional printers from printers settings.
 func (m *Windows10GeneralConfiguration) GetPrinterBlockAddition()(*bool) {
-    return m.printerBlockAddition
+    val, err := m.GetBackingStore().Get("printerBlockAddition")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPrinterDefaultName gets the printerDefaultName property value. Name (network host name) of an installed printer.
 func (m *Windows10GeneralConfiguration) GetPrinterDefaultName()(*string) {
-    return m.printerDefaultName
+    val, err := m.GetBackingStore().Get("printerDefaultName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPrinterNames gets the printerNames property value. Automatically provision printers based on their names (network host names).
 func (m *Windows10GeneralConfiguration) GetPrinterNames()([]string) {
-    return m.printerNames
+    val, err := m.GetBackingStore().Get("printerNames")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetPrivacyAccessControls gets the privacyAccessControls property value. Indicates a list of applications with their access control levels over privacy data categories, and/or the default access levels per category. This collection can contain a maximum of 500 elements.
 func (m *Windows10GeneralConfiguration) GetPrivacyAccessControls()([]WindowsPrivacyDataAccessControlItemable) {
-    return m.privacyAccessControls
+    val, err := m.GetBackingStore().Get("privacyAccessControls")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsPrivacyDataAccessControlItemable)
+    }
+    return nil
 }
 // GetPrivacyAdvertisingId gets the privacyAdvertisingId property value. State Management Setting.
 func (m *Windows10GeneralConfiguration) GetPrivacyAdvertisingId()(*StateManagementSetting) {
-    return m.privacyAdvertisingId
+    val, err := m.GetBackingStore().Get("privacyAdvertisingId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*StateManagementSetting)
+    }
+    return nil
 }
 // GetPrivacyAutoAcceptPairingAndConsentPrompts gets the privacyAutoAcceptPairingAndConsentPrompts property value. Indicates whether or not to allow the automatic acceptance of the pairing and privacy user consent dialog when launching apps.
 func (m *Windows10GeneralConfiguration) GetPrivacyAutoAcceptPairingAndConsentPrompts()(*bool) {
-    return m.privacyAutoAcceptPairingAndConsentPrompts
+    val, err := m.GetBackingStore().Get("privacyAutoAcceptPairingAndConsentPrompts")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPrivacyBlockActivityFeed gets the privacyBlockActivityFeed property value. Blocks the usage of cloud based speech services for Cortana, Dictation, or Store applications.
 func (m *Windows10GeneralConfiguration) GetPrivacyBlockActivityFeed()(*bool) {
-    return m.privacyBlockActivityFeed
+    val, err := m.GetBackingStore().Get("privacyBlockActivityFeed")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPrivacyBlockInputPersonalization gets the privacyBlockInputPersonalization property value. Indicates whether or not to block the usage of cloud based speech services for Cortana, Dictation, or Store applications.
 func (m *Windows10GeneralConfiguration) GetPrivacyBlockInputPersonalization()(*bool) {
-    return m.privacyBlockInputPersonalization
+    val, err := m.GetBackingStore().Get("privacyBlockInputPersonalization")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPrivacyBlockPublishUserActivities gets the privacyBlockPublishUserActivities property value. Blocks the shared experiences/discovery of recently used resources in task switcher etc.
 func (m *Windows10GeneralConfiguration) GetPrivacyBlockPublishUserActivities()(*bool) {
-    return m.privacyBlockPublishUserActivities
+    val, err := m.GetBackingStore().Get("privacyBlockPublishUserActivities")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPrivacyDisableLaunchExperience gets the privacyDisableLaunchExperience property value. This policy prevents the privacy experience from launching during user logon for new and upgraded users.​
 func (m *Windows10GeneralConfiguration) GetPrivacyDisableLaunchExperience()(*bool) {
-    return m.privacyDisableLaunchExperience
+    val, err := m.GetBackingStore().Get("privacyDisableLaunchExperience")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetResetProtectionModeBlocked gets the resetProtectionModeBlocked property value. Indicates whether or not to Block the user from reset protection mode.
 func (m *Windows10GeneralConfiguration) GetResetProtectionModeBlocked()(*bool) {
-    return m.resetProtectionModeBlocked
+    val, err := m.GetBackingStore().Get("resetProtectionModeBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSafeSearchFilter gets the safeSearchFilter property value. Specifies what level of safe search (filtering adult content) is required
 func (m *Windows10GeneralConfiguration) GetSafeSearchFilter()(*SafeSearchFilterType) {
-    return m.safeSearchFilter
+    val, err := m.GetBackingStore().Get("safeSearchFilter")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SafeSearchFilterType)
+    }
+    return nil
 }
 // GetScreenCaptureBlocked gets the screenCaptureBlocked property value. Indicates whether or not to Block the user from taking Screenshots.
 func (m *Windows10GeneralConfiguration) GetScreenCaptureBlocked()(*bool) {
-    return m.screenCaptureBlocked
+    val, err := m.GetBackingStore().Get("screenCaptureBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSearchBlockDiacritics gets the searchBlockDiacritics property value. Specifies if search can use diacritics.
 func (m *Windows10GeneralConfiguration) GetSearchBlockDiacritics()(*bool) {
-    return m.searchBlockDiacritics
+    val, err := m.GetBackingStore().Get("searchBlockDiacritics")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSearchBlockWebResults gets the searchBlockWebResults property value. Indicates whether or not to block the web search.
 func (m *Windows10GeneralConfiguration) GetSearchBlockWebResults()(*bool) {
-    return m.searchBlockWebResults
+    val, err := m.GetBackingStore().Get("searchBlockWebResults")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSearchDisableAutoLanguageDetection gets the searchDisableAutoLanguageDetection property value. Specifies whether to use automatic language detection when indexing content and properties.
 func (m *Windows10GeneralConfiguration) GetSearchDisableAutoLanguageDetection()(*bool) {
-    return m.searchDisableAutoLanguageDetection
+    val, err := m.GetBackingStore().Get("searchDisableAutoLanguageDetection")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSearchDisableIndexerBackoff gets the searchDisableIndexerBackoff property value. Indicates whether or not to disable the search indexer backoff feature.
 func (m *Windows10GeneralConfiguration) GetSearchDisableIndexerBackoff()(*bool) {
-    return m.searchDisableIndexerBackoff
+    val, err := m.GetBackingStore().Get("searchDisableIndexerBackoff")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSearchDisableIndexingEncryptedItems gets the searchDisableIndexingEncryptedItems property value. Indicates whether or not to block indexing of WIP-protected items to prevent them from appearing in search results for Cortana or Explorer.
 func (m *Windows10GeneralConfiguration) GetSearchDisableIndexingEncryptedItems()(*bool) {
-    return m.searchDisableIndexingEncryptedItems
+    val, err := m.GetBackingStore().Get("searchDisableIndexingEncryptedItems")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSearchDisableIndexingRemovableDrive gets the searchDisableIndexingRemovableDrive property value. Indicates whether or not to allow users to add locations on removable drives to libraries and to be indexed.
 func (m *Windows10GeneralConfiguration) GetSearchDisableIndexingRemovableDrive()(*bool) {
-    return m.searchDisableIndexingRemovableDrive
+    val, err := m.GetBackingStore().Get("searchDisableIndexingRemovableDrive")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSearchDisableLocation gets the searchDisableLocation property value. Specifies if search can use location information.
 func (m *Windows10GeneralConfiguration) GetSearchDisableLocation()(*bool) {
-    return m.searchDisableLocation
+    val, err := m.GetBackingStore().Get("searchDisableLocation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSearchDisableUseLocation gets the searchDisableUseLocation property value. Specifies if search can use location information.
 func (m *Windows10GeneralConfiguration) GetSearchDisableUseLocation()(*bool) {
-    return m.searchDisableUseLocation
+    val, err := m.GetBackingStore().Get("searchDisableUseLocation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSearchEnableAutomaticIndexSizeManangement gets the searchEnableAutomaticIndexSizeManangement property value. Specifies minimum amount of hard drive space on the same drive as the index location before indexing stops.
 func (m *Windows10GeneralConfiguration) GetSearchEnableAutomaticIndexSizeManangement()(*bool) {
-    return m.searchEnableAutomaticIndexSizeManangement
+    val, err := m.GetBackingStore().Get("searchEnableAutomaticIndexSizeManangement")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSearchEnableRemoteQueries gets the searchEnableRemoteQueries property value. Indicates whether or not to block remote queries of this computer’s index.
 func (m *Windows10GeneralConfiguration) GetSearchEnableRemoteQueries()(*bool) {
-    return m.searchEnableRemoteQueries
+    val, err := m.GetBackingStore().Get("searchEnableRemoteQueries")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSecurityBlockAzureADJoinedDevicesAutoEncryption gets the securityBlockAzureADJoinedDevicesAutoEncryption property value. Specify whether to allow automatic device encryption during OOBE when the device is Azure AD joined (desktop only).
 func (m *Windows10GeneralConfiguration) GetSecurityBlockAzureADJoinedDevicesAutoEncryption()(*bool) {
-    return m.securityBlockAzureADJoinedDevicesAutoEncryption
+    val, err := m.GetBackingStore().Get("securityBlockAzureADJoinedDevicesAutoEncryption")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSettingsBlockAccountsPage gets the settingsBlockAccountsPage property value. Indicates whether or not to block access to Accounts in Settings app.
 func (m *Windows10GeneralConfiguration) GetSettingsBlockAccountsPage()(*bool) {
-    return m.settingsBlockAccountsPage
+    val, err := m.GetBackingStore().Get("settingsBlockAccountsPage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSettingsBlockAddProvisioningPackage gets the settingsBlockAddProvisioningPackage property value. Indicates whether or not to block the user from installing provisioning packages.
 func (m *Windows10GeneralConfiguration) GetSettingsBlockAddProvisioningPackage()(*bool) {
-    return m.settingsBlockAddProvisioningPackage
+    val, err := m.GetBackingStore().Get("settingsBlockAddProvisioningPackage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSettingsBlockAppsPage gets the settingsBlockAppsPage property value. Indicates whether or not to block access to Apps in Settings app.
 func (m *Windows10GeneralConfiguration) GetSettingsBlockAppsPage()(*bool) {
-    return m.settingsBlockAppsPage
+    val, err := m.GetBackingStore().Get("settingsBlockAppsPage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSettingsBlockChangeLanguage gets the settingsBlockChangeLanguage property value. Indicates whether or not to block the user from changing the language settings.
 func (m *Windows10GeneralConfiguration) GetSettingsBlockChangeLanguage()(*bool) {
-    return m.settingsBlockChangeLanguage
+    val, err := m.GetBackingStore().Get("settingsBlockChangeLanguage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSettingsBlockChangePowerSleep gets the settingsBlockChangePowerSleep property value. Indicates whether or not to block the user from changing power and sleep settings.
 func (m *Windows10GeneralConfiguration) GetSettingsBlockChangePowerSleep()(*bool) {
-    return m.settingsBlockChangePowerSleep
+    val, err := m.GetBackingStore().Get("settingsBlockChangePowerSleep")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSettingsBlockChangeRegion gets the settingsBlockChangeRegion property value. Indicates whether or not to block the user from changing the region settings.
 func (m *Windows10GeneralConfiguration) GetSettingsBlockChangeRegion()(*bool) {
-    return m.settingsBlockChangeRegion
+    val, err := m.GetBackingStore().Get("settingsBlockChangeRegion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSettingsBlockChangeSystemTime gets the settingsBlockChangeSystemTime property value. Indicates whether or not to block the user from changing date and time settings.
 func (m *Windows10GeneralConfiguration) GetSettingsBlockChangeSystemTime()(*bool) {
-    return m.settingsBlockChangeSystemTime
+    val, err := m.GetBackingStore().Get("settingsBlockChangeSystemTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSettingsBlockDevicesPage gets the settingsBlockDevicesPage property value. Indicates whether or not to block access to Devices in Settings app.
 func (m *Windows10GeneralConfiguration) GetSettingsBlockDevicesPage()(*bool) {
-    return m.settingsBlockDevicesPage
+    val, err := m.GetBackingStore().Get("settingsBlockDevicesPage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSettingsBlockEaseOfAccessPage gets the settingsBlockEaseOfAccessPage property value. Indicates whether or not to block access to Ease of Access in Settings app.
 func (m *Windows10GeneralConfiguration) GetSettingsBlockEaseOfAccessPage()(*bool) {
-    return m.settingsBlockEaseOfAccessPage
+    val, err := m.GetBackingStore().Get("settingsBlockEaseOfAccessPage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSettingsBlockEditDeviceName gets the settingsBlockEditDeviceName property value. Indicates whether or not to block the user from editing the device name.
 func (m *Windows10GeneralConfiguration) GetSettingsBlockEditDeviceName()(*bool) {
-    return m.settingsBlockEditDeviceName
+    val, err := m.GetBackingStore().Get("settingsBlockEditDeviceName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSettingsBlockGamingPage gets the settingsBlockGamingPage property value. Indicates whether or not to block access to Gaming in Settings app.
 func (m *Windows10GeneralConfiguration) GetSettingsBlockGamingPage()(*bool) {
-    return m.settingsBlockGamingPage
+    val, err := m.GetBackingStore().Get("settingsBlockGamingPage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSettingsBlockNetworkInternetPage gets the settingsBlockNetworkInternetPage property value. Indicates whether or not to block access to Network & Internet in Settings app.
 func (m *Windows10GeneralConfiguration) GetSettingsBlockNetworkInternetPage()(*bool) {
-    return m.settingsBlockNetworkInternetPage
+    val, err := m.GetBackingStore().Get("settingsBlockNetworkInternetPage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSettingsBlockPersonalizationPage gets the settingsBlockPersonalizationPage property value. Indicates whether or not to block access to Personalization in Settings app.
 func (m *Windows10GeneralConfiguration) GetSettingsBlockPersonalizationPage()(*bool) {
-    return m.settingsBlockPersonalizationPage
+    val, err := m.GetBackingStore().Get("settingsBlockPersonalizationPage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSettingsBlockPrivacyPage gets the settingsBlockPrivacyPage property value. Indicates whether or not to block access to Privacy in Settings app.
 func (m *Windows10GeneralConfiguration) GetSettingsBlockPrivacyPage()(*bool) {
-    return m.settingsBlockPrivacyPage
+    val, err := m.GetBackingStore().Get("settingsBlockPrivacyPage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSettingsBlockRemoveProvisioningPackage gets the settingsBlockRemoveProvisioningPackage property value. Indicates whether or not to block the runtime configuration agent from removing provisioning packages.
 func (m *Windows10GeneralConfiguration) GetSettingsBlockRemoveProvisioningPackage()(*bool) {
-    return m.settingsBlockRemoveProvisioningPackage
+    val, err := m.GetBackingStore().Get("settingsBlockRemoveProvisioningPackage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSettingsBlockSettingsApp gets the settingsBlockSettingsApp property value. Indicates whether or not to block access to Settings app.
 func (m *Windows10GeneralConfiguration) GetSettingsBlockSettingsApp()(*bool) {
-    return m.settingsBlockSettingsApp
+    val, err := m.GetBackingStore().Get("settingsBlockSettingsApp")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSettingsBlockSystemPage gets the settingsBlockSystemPage property value. Indicates whether or not to block access to System in Settings app.
 func (m *Windows10GeneralConfiguration) GetSettingsBlockSystemPage()(*bool) {
-    return m.settingsBlockSystemPage
+    val, err := m.GetBackingStore().Get("settingsBlockSystemPage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSettingsBlockTimeLanguagePage gets the settingsBlockTimeLanguagePage property value. Indicates whether or not to block access to Time & Language in Settings app.
 func (m *Windows10GeneralConfiguration) GetSettingsBlockTimeLanguagePage()(*bool) {
-    return m.settingsBlockTimeLanguagePage
+    val, err := m.GetBackingStore().Get("settingsBlockTimeLanguagePage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSettingsBlockUpdateSecurityPage gets the settingsBlockUpdateSecurityPage property value. Indicates whether or not to block access to Update & Security in Settings app.
 func (m *Windows10GeneralConfiguration) GetSettingsBlockUpdateSecurityPage()(*bool) {
-    return m.settingsBlockUpdateSecurityPage
+    val, err := m.GetBackingStore().Get("settingsBlockUpdateSecurityPage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSharedUserAppDataAllowed gets the sharedUserAppDataAllowed property value. Indicates whether or not to block multiple users of the same app to share data.
 func (m *Windows10GeneralConfiguration) GetSharedUserAppDataAllowed()(*bool) {
-    return m.sharedUserAppDataAllowed
+    val, err := m.GetBackingStore().Get("sharedUserAppDataAllowed")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSmartScreenAppInstallControl gets the smartScreenAppInstallControl property value. App Install control Setting
 func (m *Windows10GeneralConfiguration) GetSmartScreenAppInstallControl()(*AppInstallControlType) {
-    return m.smartScreenAppInstallControl
+    val, err := m.GetBackingStore().Get("smartScreenAppInstallControl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AppInstallControlType)
+    }
+    return nil
 }
 // GetSmartScreenBlockPromptOverride gets the smartScreenBlockPromptOverride property value. Indicates whether or not users can override SmartScreen Filter warnings about potentially malicious websites.
 func (m *Windows10GeneralConfiguration) GetSmartScreenBlockPromptOverride()(*bool) {
-    return m.smartScreenBlockPromptOverride
+    val, err := m.GetBackingStore().Get("smartScreenBlockPromptOverride")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSmartScreenBlockPromptOverrideForFiles gets the smartScreenBlockPromptOverrideForFiles property value. Indicates whether or not users can override the SmartScreen Filter warnings about downloading unverified files
 func (m *Windows10GeneralConfiguration) GetSmartScreenBlockPromptOverrideForFiles()(*bool) {
-    return m.smartScreenBlockPromptOverrideForFiles
+    val, err := m.GetBackingStore().Get("smartScreenBlockPromptOverrideForFiles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSmartScreenEnableAppInstallControl gets the smartScreenEnableAppInstallControl property value. This property will be deprecated in July 2019 and will be replaced by property SmartScreenAppInstallControl. Allows IT Admins to control whether users are allowed to install apps from places other than the Store.
 func (m *Windows10GeneralConfiguration) GetSmartScreenEnableAppInstallControl()(*bool) {
-    return m.smartScreenEnableAppInstallControl
+    val, err := m.GetBackingStore().Get("smartScreenEnableAppInstallControl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetStartBlockUnpinningAppsFromTaskbar gets the startBlockUnpinningAppsFromTaskbar property value. Indicates whether or not to block the user from unpinning apps from taskbar.
 func (m *Windows10GeneralConfiguration) GetStartBlockUnpinningAppsFromTaskbar()(*bool) {
-    return m.startBlockUnpinningAppsFromTaskbar
+    val, err := m.GetBackingStore().Get("startBlockUnpinningAppsFromTaskbar")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetStartMenuAppListVisibility gets the startMenuAppListVisibility property value. Type of start menu app list visibility.
 func (m *Windows10GeneralConfiguration) GetStartMenuAppListVisibility()(*WindowsStartMenuAppListVisibilityType) {
-    return m.startMenuAppListVisibility
+    val, err := m.GetBackingStore().Get("startMenuAppListVisibility")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WindowsStartMenuAppListVisibilityType)
+    }
+    return nil
 }
 // GetStartMenuHideChangeAccountSettings gets the startMenuHideChangeAccountSettings property value. Enabling this policy hides the change account setting from appearing in the user tile in the start menu.
 func (m *Windows10GeneralConfiguration) GetStartMenuHideChangeAccountSettings()(*bool) {
-    return m.startMenuHideChangeAccountSettings
+    val, err := m.GetBackingStore().Get("startMenuHideChangeAccountSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetStartMenuHideFrequentlyUsedApps gets the startMenuHideFrequentlyUsedApps property value. Enabling this policy hides the most used apps from appearing on the start menu and disables the corresponding toggle in the Settings app.
 func (m *Windows10GeneralConfiguration) GetStartMenuHideFrequentlyUsedApps()(*bool) {
-    return m.startMenuHideFrequentlyUsedApps
+    val, err := m.GetBackingStore().Get("startMenuHideFrequentlyUsedApps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetStartMenuHideHibernate gets the startMenuHideHibernate property value. Enabling this policy hides hibernate from appearing in the power button in the start menu.
 func (m *Windows10GeneralConfiguration) GetStartMenuHideHibernate()(*bool) {
-    return m.startMenuHideHibernate
+    val, err := m.GetBackingStore().Get("startMenuHideHibernate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetStartMenuHideLock gets the startMenuHideLock property value. Enabling this policy hides lock from appearing in the user tile in the start menu.
 func (m *Windows10GeneralConfiguration) GetStartMenuHideLock()(*bool) {
-    return m.startMenuHideLock
+    val, err := m.GetBackingStore().Get("startMenuHideLock")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetStartMenuHidePowerButton gets the startMenuHidePowerButton property value. Enabling this policy hides the power button from appearing in the start menu.
 func (m *Windows10GeneralConfiguration) GetStartMenuHidePowerButton()(*bool) {
-    return m.startMenuHidePowerButton
+    val, err := m.GetBackingStore().Get("startMenuHidePowerButton")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetStartMenuHideRecentJumpLists gets the startMenuHideRecentJumpLists property value. Enabling this policy hides recent jump lists from appearing on the start menu/taskbar and disables the corresponding toggle in the Settings app.
 func (m *Windows10GeneralConfiguration) GetStartMenuHideRecentJumpLists()(*bool) {
-    return m.startMenuHideRecentJumpLists
+    val, err := m.GetBackingStore().Get("startMenuHideRecentJumpLists")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetStartMenuHideRecentlyAddedApps gets the startMenuHideRecentlyAddedApps property value. Enabling this policy hides recently added apps from appearing on the start menu and disables the corresponding toggle in the Settings app.
 func (m *Windows10GeneralConfiguration) GetStartMenuHideRecentlyAddedApps()(*bool) {
-    return m.startMenuHideRecentlyAddedApps
+    val, err := m.GetBackingStore().Get("startMenuHideRecentlyAddedApps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetStartMenuHideRestartOptions gets the startMenuHideRestartOptions property value. Enabling this policy hides 'Restart/Update and Restart' from appearing in the power button in the start menu.
 func (m *Windows10GeneralConfiguration) GetStartMenuHideRestartOptions()(*bool) {
-    return m.startMenuHideRestartOptions
+    val, err := m.GetBackingStore().Get("startMenuHideRestartOptions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetStartMenuHideShutDown gets the startMenuHideShutDown property value. Enabling this policy hides shut down/update and shut down from appearing in the power button in the start menu.
 func (m *Windows10GeneralConfiguration) GetStartMenuHideShutDown()(*bool) {
-    return m.startMenuHideShutDown
+    val, err := m.GetBackingStore().Get("startMenuHideShutDown")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetStartMenuHideSignOut gets the startMenuHideSignOut property value. Enabling this policy hides sign out from appearing in the user tile in the start menu.
 func (m *Windows10GeneralConfiguration) GetStartMenuHideSignOut()(*bool) {
-    return m.startMenuHideSignOut
+    val, err := m.GetBackingStore().Get("startMenuHideSignOut")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetStartMenuHideSleep gets the startMenuHideSleep property value. Enabling this policy hides sleep from appearing in the power button in the start menu.
 func (m *Windows10GeneralConfiguration) GetStartMenuHideSleep()(*bool) {
-    return m.startMenuHideSleep
+    val, err := m.GetBackingStore().Get("startMenuHideSleep")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetStartMenuHideSwitchAccount gets the startMenuHideSwitchAccount property value. Enabling this policy hides switch account from appearing in the user tile in the start menu.
 func (m *Windows10GeneralConfiguration) GetStartMenuHideSwitchAccount()(*bool) {
-    return m.startMenuHideSwitchAccount
+    val, err := m.GetBackingStore().Get("startMenuHideSwitchAccount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetStartMenuHideUserTile gets the startMenuHideUserTile property value. Enabling this policy hides the user tile from appearing in the start menu.
 func (m *Windows10GeneralConfiguration) GetStartMenuHideUserTile()(*bool) {
-    return m.startMenuHideUserTile
+    val, err := m.GetBackingStore().Get("startMenuHideUserTile")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetStartMenuLayoutEdgeAssetsXml gets the startMenuLayoutEdgeAssetsXml property value. This policy setting allows you to import Edge assets to be used with startMenuLayoutXml policy. Start layout can contain secondary tile from Edge app which looks for Edge local asset file. Edge local asset would not exist and cause Edge secondary tile to appear empty in this case. This policy only gets applied when startMenuLayoutXml policy is modified. The value should be a UTF-8 Base64 encoded byte array.
 func (m *Windows10GeneralConfiguration) GetStartMenuLayoutEdgeAssetsXml()([]byte) {
-    return m.startMenuLayoutEdgeAssetsXml
+    val, err := m.GetBackingStore().Get("startMenuLayoutEdgeAssetsXml")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
 }
 // GetStartMenuLayoutXml gets the startMenuLayoutXml property value. Allows admins to override the default Start menu layout and prevents the user from changing it. The layout is modified by specifying an XML file based on a layout modification schema. XML needs to be in a UTF8 encoded byte array format.
 func (m *Windows10GeneralConfiguration) GetStartMenuLayoutXml()([]byte) {
-    return m.startMenuLayoutXml
+    val, err := m.GetBackingStore().Get("startMenuLayoutXml")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
 }
 // GetStartMenuMode gets the startMenuMode property value. Type of display modes for the start menu.
 func (m *Windows10GeneralConfiguration) GetStartMenuMode()(*WindowsStartMenuModeType) {
-    return m.startMenuMode
+    val, err := m.GetBackingStore().Get("startMenuMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WindowsStartMenuModeType)
+    }
+    return nil
 }
 // GetStartMenuPinnedFolderDocuments gets the startMenuPinnedFolderDocuments property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) GetStartMenuPinnedFolderDocuments()(*VisibilitySetting) {
-    return m.startMenuPinnedFolderDocuments
+    val, err := m.GetBackingStore().Get("startMenuPinnedFolderDocuments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*VisibilitySetting)
+    }
+    return nil
 }
 // GetStartMenuPinnedFolderDownloads gets the startMenuPinnedFolderDownloads property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) GetStartMenuPinnedFolderDownloads()(*VisibilitySetting) {
-    return m.startMenuPinnedFolderDownloads
+    val, err := m.GetBackingStore().Get("startMenuPinnedFolderDownloads")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*VisibilitySetting)
+    }
+    return nil
 }
 // GetStartMenuPinnedFolderFileExplorer gets the startMenuPinnedFolderFileExplorer property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) GetStartMenuPinnedFolderFileExplorer()(*VisibilitySetting) {
-    return m.startMenuPinnedFolderFileExplorer
+    val, err := m.GetBackingStore().Get("startMenuPinnedFolderFileExplorer")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*VisibilitySetting)
+    }
+    return nil
 }
 // GetStartMenuPinnedFolderHomeGroup gets the startMenuPinnedFolderHomeGroup property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) GetStartMenuPinnedFolderHomeGroup()(*VisibilitySetting) {
-    return m.startMenuPinnedFolderHomeGroup
+    val, err := m.GetBackingStore().Get("startMenuPinnedFolderHomeGroup")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*VisibilitySetting)
+    }
+    return nil
 }
 // GetStartMenuPinnedFolderMusic gets the startMenuPinnedFolderMusic property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) GetStartMenuPinnedFolderMusic()(*VisibilitySetting) {
-    return m.startMenuPinnedFolderMusic
+    val, err := m.GetBackingStore().Get("startMenuPinnedFolderMusic")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*VisibilitySetting)
+    }
+    return nil
 }
 // GetStartMenuPinnedFolderNetwork gets the startMenuPinnedFolderNetwork property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) GetStartMenuPinnedFolderNetwork()(*VisibilitySetting) {
-    return m.startMenuPinnedFolderNetwork
+    val, err := m.GetBackingStore().Get("startMenuPinnedFolderNetwork")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*VisibilitySetting)
+    }
+    return nil
 }
 // GetStartMenuPinnedFolderPersonalFolder gets the startMenuPinnedFolderPersonalFolder property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) GetStartMenuPinnedFolderPersonalFolder()(*VisibilitySetting) {
-    return m.startMenuPinnedFolderPersonalFolder
+    val, err := m.GetBackingStore().Get("startMenuPinnedFolderPersonalFolder")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*VisibilitySetting)
+    }
+    return nil
 }
 // GetStartMenuPinnedFolderPictures gets the startMenuPinnedFolderPictures property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) GetStartMenuPinnedFolderPictures()(*VisibilitySetting) {
-    return m.startMenuPinnedFolderPictures
+    val, err := m.GetBackingStore().Get("startMenuPinnedFolderPictures")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*VisibilitySetting)
+    }
+    return nil
 }
 // GetStartMenuPinnedFolderSettings gets the startMenuPinnedFolderSettings property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) GetStartMenuPinnedFolderSettings()(*VisibilitySetting) {
-    return m.startMenuPinnedFolderSettings
+    val, err := m.GetBackingStore().Get("startMenuPinnedFolderSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*VisibilitySetting)
+    }
+    return nil
 }
 // GetStartMenuPinnedFolderVideos gets the startMenuPinnedFolderVideos property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) GetStartMenuPinnedFolderVideos()(*VisibilitySetting) {
-    return m.startMenuPinnedFolderVideos
+    val, err := m.GetBackingStore().Get("startMenuPinnedFolderVideos")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*VisibilitySetting)
+    }
+    return nil
 }
 // GetStorageBlockRemovableStorage gets the storageBlockRemovableStorage property value. Indicates whether or not to Block the user from using removable storage.
 func (m *Windows10GeneralConfiguration) GetStorageBlockRemovableStorage()(*bool) {
-    return m.storageBlockRemovableStorage
+    val, err := m.GetBackingStore().Get("storageBlockRemovableStorage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetStorageRequireMobileDeviceEncryption gets the storageRequireMobileDeviceEncryption property value. Indicating whether or not to require encryption on a mobile device.
 func (m *Windows10GeneralConfiguration) GetStorageRequireMobileDeviceEncryption()(*bool) {
-    return m.storageRequireMobileDeviceEncryption
+    val, err := m.GetBackingStore().Get("storageRequireMobileDeviceEncryption")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetStorageRestrictAppDataToSystemVolume gets the storageRestrictAppDataToSystemVolume property value. Indicates whether application data is restricted to the system drive.
 func (m *Windows10GeneralConfiguration) GetStorageRestrictAppDataToSystemVolume()(*bool) {
-    return m.storageRestrictAppDataToSystemVolume
+    val, err := m.GetBackingStore().Get("storageRestrictAppDataToSystemVolume")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetStorageRestrictAppInstallToSystemVolume gets the storageRestrictAppInstallToSystemVolume property value. Indicates whether the installation of applications is restricted to the system drive.
 func (m *Windows10GeneralConfiguration) GetStorageRestrictAppInstallToSystemVolume()(*bool) {
-    return m.storageRestrictAppInstallToSystemVolume
+    val, err := m.GetBackingStore().Get("storageRestrictAppInstallToSystemVolume")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSystemTelemetryProxyServer gets the systemTelemetryProxyServer property value. Gets or sets the fully qualified domain name (FQDN) or IP address of a proxy server to forward Connected User Experiences and Telemetry requests.
 func (m *Windows10GeneralConfiguration) GetSystemTelemetryProxyServer()(*string) {
-    return m.systemTelemetryProxyServer
+    val, err := m.GetBackingStore().Get("systemTelemetryProxyServer")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTaskManagerBlockEndTask gets the taskManagerBlockEndTask property value. Specify whether non-administrators can use Task Manager to end tasks.
 func (m *Windows10GeneralConfiguration) GetTaskManagerBlockEndTask()(*bool) {
-    return m.taskManagerBlockEndTask
+    val, err := m.GetBackingStore().Get("taskManagerBlockEndTask")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetTenantLockdownRequireNetworkDuringOutOfBoxExperience gets the tenantLockdownRequireNetworkDuringOutOfBoxExperience property value. Whether the device is required to connect to the network.
 func (m *Windows10GeneralConfiguration) GetTenantLockdownRequireNetworkDuringOutOfBoxExperience()(*bool) {
-    return m.tenantLockdownRequireNetworkDuringOutOfBoxExperience
+    val, err := m.GetBackingStore().Get("tenantLockdownRequireNetworkDuringOutOfBoxExperience")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetUninstallBuiltInApps gets the uninstallBuiltInApps property value. Indicates whether or not to uninstall a fixed list of built-in Windows apps.
 func (m *Windows10GeneralConfiguration) GetUninstallBuiltInApps()(*bool) {
-    return m.uninstallBuiltInApps
+    val, err := m.GetBackingStore().Get("uninstallBuiltInApps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetUsbBlocked gets the usbBlocked property value. Indicates whether or not to Block the user from USB connection.
 func (m *Windows10GeneralConfiguration) GetUsbBlocked()(*bool) {
-    return m.usbBlocked
+    val, err := m.GetBackingStore().Get("usbBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetVoiceRecordingBlocked gets the voiceRecordingBlocked property value. Indicates whether or not to Block the user from voice recording.
 func (m *Windows10GeneralConfiguration) GetVoiceRecordingBlocked()(*bool) {
-    return m.voiceRecordingBlocked
+    val, err := m.GetBackingStore().Get("voiceRecordingBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWebRtcBlockLocalhostIpAddress gets the webRtcBlockLocalhostIpAddress property value. Indicates whether or not user's localhost IP address is displayed while making phone calls using the WebRTC
 func (m *Windows10GeneralConfiguration) GetWebRtcBlockLocalhostIpAddress()(*bool) {
-    return m.webRtcBlockLocalhostIpAddress
+    val, err := m.GetBackingStore().Get("webRtcBlockLocalhostIpAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWiFiBlockAutomaticConnectHotspots gets the wiFiBlockAutomaticConnectHotspots property value. Indicating whether or not to block automatically connecting to Wi-Fi hotspots. Has no impact if Wi-Fi is blocked.
 func (m *Windows10GeneralConfiguration) GetWiFiBlockAutomaticConnectHotspots()(*bool) {
-    return m.wiFiBlockAutomaticConnectHotspots
+    val, err := m.GetBackingStore().Get("wiFiBlockAutomaticConnectHotspots")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWiFiBlocked gets the wiFiBlocked property value. Indicates whether or not to Block the user from using Wi-Fi.
 func (m *Windows10GeneralConfiguration) GetWiFiBlocked()(*bool) {
-    return m.wiFiBlocked
+    val, err := m.GetBackingStore().Get("wiFiBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWiFiBlockManualConfiguration gets the wiFiBlockManualConfiguration property value. Indicates whether or not to Block the user from using Wi-Fi manual configuration.
 func (m *Windows10GeneralConfiguration) GetWiFiBlockManualConfiguration()(*bool) {
-    return m.wiFiBlockManualConfiguration
+    val, err := m.GetBackingStore().Get("wiFiBlockManualConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWiFiScanInterval gets the wiFiScanInterval property value. Specify how often devices scan for Wi-Fi networks. Supported values are 1-500, where 100 = default, and 500 = low frequency. Valid values 1 to 500
 func (m *Windows10GeneralConfiguration) GetWiFiScanInterval()(*int32) {
-    return m.wiFiScanInterval
+    val, err := m.GetBackingStore().Get("wiFiScanInterval")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetWindows10AppsForceUpdateSchedule gets the windows10AppsForceUpdateSchedule property value. Windows 10 force update schedule for Apps.
 func (m *Windows10GeneralConfiguration) GetWindows10AppsForceUpdateSchedule()(Windows10AppsForceUpdateScheduleable) {
-    return m.windows10AppsForceUpdateSchedule
+    val, err := m.GetBackingStore().Get("windows10AppsForceUpdateSchedule")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Windows10AppsForceUpdateScheduleable)
+    }
+    return nil
 }
 // GetWindowsSpotlightBlockConsumerSpecificFeatures gets the windowsSpotlightBlockConsumerSpecificFeatures property value. Allows IT admins to block experiences that are typically for consumers only, such as Start suggestions, Membership notifications, Post-OOBE app install and redirect tiles.
 func (m *Windows10GeneralConfiguration) GetWindowsSpotlightBlockConsumerSpecificFeatures()(*bool) {
-    return m.windowsSpotlightBlockConsumerSpecificFeatures
+    val, err := m.GetBackingStore().Get("windowsSpotlightBlockConsumerSpecificFeatures")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWindowsSpotlightBlocked gets the windowsSpotlightBlocked property value. Allows IT admins to turn off all Windows Spotlight features
 func (m *Windows10GeneralConfiguration) GetWindowsSpotlightBlocked()(*bool) {
-    return m.windowsSpotlightBlocked
+    val, err := m.GetBackingStore().Get("windowsSpotlightBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWindowsSpotlightBlockOnActionCenter gets the windowsSpotlightBlockOnActionCenter property value. Block suggestions from Microsoft that show after each OS clean install, upgrade or in an on-going basis to introduce users to what is new or changed
 func (m *Windows10GeneralConfiguration) GetWindowsSpotlightBlockOnActionCenter()(*bool) {
-    return m.windowsSpotlightBlockOnActionCenter
+    val, err := m.GetBackingStore().Get("windowsSpotlightBlockOnActionCenter")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWindowsSpotlightBlockTailoredExperiences gets the windowsSpotlightBlockTailoredExperiences property value. Block personalized content in Windows spotlight based on user’s device usage.
 func (m *Windows10GeneralConfiguration) GetWindowsSpotlightBlockTailoredExperiences()(*bool) {
-    return m.windowsSpotlightBlockTailoredExperiences
+    val, err := m.GetBackingStore().Get("windowsSpotlightBlockTailoredExperiences")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWindowsSpotlightBlockThirdPartyNotifications gets the windowsSpotlightBlockThirdPartyNotifications property value. Block third party content delivered via Windows Spotlight
 func (m *Windows10GeneralConfiguration) GetWindowsSpotlightBlockThirdPartyNotifications()(*bool) {
-    return m.windowsSpotlightBlockThirdPartyNotifications
+    val, err := m.GetBackingStore().Get("windowsSpotlightBlockThirdPartyNotifications")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWindowsSpotlightBlockWelcomeExperience gets the windowsSpotlightBlockWelcomeExperience property value. Block Windows Spotlight Windows welcome experience
 func (m *Windows10GeneralConfiguration) GetWindowsSpotlightBlockWelcomeExperience()(*bool) {
-    return m.windowsSpotlightBlockWelcomeExperience
+    val, err := m.GetBackingStore().Get("windowsSpotlightBlockWelcomeExperience")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWindowsSpotlightBlockWindowsTips gets the windowsSpotlightBlockWindowsTips property value. Allows IT admins to turn off the popup of Windows Tips.
 func (m *Windows10GeneralConfiguration) GetWindowsSpotlightBlockWindowsTips()(*bool) {
-    return m.windowsSpotlightBlockWindowsTips
+    val, err := m.GetBackingStore().Get("windowsSpotlightBlockWindowsTips")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWindowsSpotlightConfigureOnLockScreen gets the windowsSpotlightConfigureOnLockScreen property value. Allows IT admind to set a predefined default search engine for MDM-Controlled devices
 func (m *Windows10GeneralConfiguration) GetWindowsSpotlightConfigureOnLockScreen()(*WindowsSpotlightEnablementSettings) {
-    return m.windowsSpotlightConfigureOnLockScreen
+    val, err := m.GetBackingStore().Get("windowsSpotlightConfigureOnLockScreen")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WindowsSpotlightEnablementSettings)
+    }
+    return nil
 }
 // GetWindowsStoreBlockAutoUpdate gets the windowsStoreBlockAutoUpdate property value. Indicates whether or not to block automatic update of apps from Windows Store.
 func (m *Windows10GeneralConfiguration) GetWindowsStoreBlockAutoUpdate()(*bool) {
-    return m.windowsStoreBlockAutoUpdate
+    val, err := m.GetBackingStore().Get("windowsStoreBlockAutoUpdate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWindowsStoreBlocked gets the windowsStoreBlocked property value. Indicates whether or not to Block the user from using the Windows store.
 func (m *Windows10GeneralConfiguration) GetWindowsStoreBlocked()(*bool) {
-    return m.windowsStoreBlocked
+    val, err := m.GetBackingStore().Get("windowsStoreBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWindowsStoreEnablePrivateStoreOnly gets the windowsStoreEnablePrivateStoreOnly property value. Indicates whether or not to enable Private Store Only.
 func (m *Windows10GeneralConfiguration) GetWindowsStoreEnablePrivateStoreOnly()(*bool) {
-    return m.windowsStoreEnablePrivateStoreOnly
+    val, err := m.GetBackingStore().Get("windowsStoreEnablePrivateStoreOnly")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWirelessDisplayBlockProjectionToThisDevice gets the wirelessDisplayBlockProjectionToThisDevice property value. Indicates whether or not to allow other devices from discovering this PC for projection.
 func (m *Windows10GeneralConfiguration) GetWirelessDisplayBlockProjectionToThisDevice()(*bool) {
-    return m.wirelessDisplayBlockProjectionToThisDevice
+    val, err := m.GetBackingStore().Get("wirelessDisplayBlockProjectionToThisDevice")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWirelessDisplayBlockUserInputFromReceiver gets the wirelessDisplayBlockUserInputFromReceiver property value. Indicates whether or not to allow user input from wireless display receiver.
 func (m *Windows10GeneralConfiguration) GetWirelessDisplayBlockUserInputFromReceiver()(*bool) {
-    return m.wirelessDisplayBlockUserInputFromReceiver
+    val, err := m.GetBackingStore().Get("wirelessDisplayBlockUserInputFromReceiver")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWirelessDisplayRequirePinForPairing gets the wirelessDisplayRequirePinForPairing property value. Indicates whether or not to require a PIN for new devices to initiate pairing.
 func (m *Windows10GeneralConfiguration) GetWirelessDisplayRequirePinForPairing()(*bool) {
-    return m.wirelessDisplayRequirePinForPairing
+    val, err := m.GetBackingStore().Get("wirelessDisplayRequirePinForPairing")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Windows10GeneralConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -6361,1133 +7776,2553 @@ func (m *Windows10GeneralConfiguration) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAccountsBlockAddingNonMicrosoftAccountEmail sets the accountsBlockAddingNonMicrosoftAccountEmail property value. Indicates whether or not to Block the user from adding email accounts to the device that are not associated with a Microsoft account.
 func (m *Windows10GeneralConfiguration) SetAccountsBlockAddingNonMicrosoftAccountEmail(value *bool)() {
-    m.accountsBlockAddingNonMicrosoftAccountEmail = value
+    err := m.GetBackingStore().Set("accountsBlockAddingNonMicrosoftAccountEmail", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetActivateAppsWithVoice sets the activateAppsWithVoice property value. Possible values of a property
 func (m *Windows10GeneralConfiguration) SetActivateAppsWithVoice(value *Enablement)() {
-    m.activateAppsWithVoice = value
+    err := m.GetBackingStore().Set("activateAppsWithVoice", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAntiTheftModeBlocked sets the antiTheftModeBlocked property value. Indicates whether or not to block the user from selecting an AntiTheft mode preference (Windows 10 Mobile only).
 func (m *Windows10GeneralConfiguration) SetAntiTheftModeBlocked(value *bool)() {
-    m.antiTheftModeBlocked = value
+    err := m.GetBackingStore().Set("antiTheftModeBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppManagementMSIAllowUserControlOverInstall sets the appManagementMSIAllowUserControlOverInstall property value. This policy setting permits users to change installation options that typically are available only to system administrators.
 func (m *Windows10GeneralConfiguration) SetAppManagementMSIAllowUserControlOverInstall(value *bool)() {
-    m.appManagementMSIAllowUserControlOverInstall = value
+    err := m.GetBackingStore().Set("appManagementMSIAllowUserControlOverInstall", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppManagementMSIAlwaysInstallWithElevatedPrivileges sets the appManagementMSIAlwaysInstallWithElevatedPrivileges property value. This policy setting directs Windows Installer to use elevated permissions when it installs any program on the system.
 func (m *Windows10GeneralConfiguration) SetAppManagementMSIAlwaysInstallWithElevatedPrivileges(value *bool)() {
-    m.appManagementMSIAlwaysInstallWithElevatedPrivileges = value
+    err := m.GetBackingStore().Set("appManagementMSIAlwaysInstallWithElevatedPrivileges", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppManagementPackageFamilyNamesToLaunchAfterLogOn sets the appManagementPackageFamilyNamesToLaunchAfterLogOn property value. List of semi-colon delimited Package Family Names of Windows apps. Listed Windows apps are to be launched after logon.​
 func (m *Windows10GeneralConfiguration) SetAppManagementPackageFamilyNamesToLaunchAfterLogOn(value []string)() {
-    m.appManagementPackageFamilyNamesToLaunchAfterLogOn = value
+    err := m.GetBackingStore().Set("appManagementPackageFamilyNamesToLaunchAfterLogOn", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppsAllowTrustedAppsSideloading sets the appsAllowTrustedAppsSideloading property value. State Management Setting.
 func (m *Windows10GeneralConfiguration) SetAppsAllowTrustedAppsSideloading(value *StateManagementSetting)() {
-    m.appsAllowTrustedAppsSideloading = value
+    err := m.GetBackingStore().Set("appsAllowTrustedAppsSideloading", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppsBlockWindowsStoreOriginatedApps sets the appsBlockWindowsStoreOriginatedApps property value. Indicates whether or not to disable the launch of all apps from Windows Store that came pre-installed or were downloaded.
 func (m *Windows10GeneralConfiguration) SetAppsBlockWindowsStoreOriginatedApps(value *bool)() {
-    m.appsBlockWindowsStoreOriginatedApps = value
+    err := m.GetBackingStore().Set("appsBlockWindowsStoreOriginatedApps", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAuthenticationAllowSecondaryDevice sets the authenticationAllowSecondaryDevice property value. Allows secondary authentication devices to work with Windows.
 func (m *Windows10GeneralConfiguration) SetAuthenticationAllowSecondaryDevice(value *bool)() {
-    m.authenticationAllowSecondaryDevice = value
+    err := m.GetBackingStore().Set("authenticationAllowSecondaryDevice", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAuthenticationPreferredAzureADTenantDomainName sets the authenticationPreferredAzureADTenantDomainName property value. Specifies the preferred domain among available domains in the Azure AD tenant.
 func (m *Windows10GeneralConfiguration) SetAuthenticationPreferredAzureADTenantDomainName(value *string)() {
-    m.authenticationPreferredAzureADTenantDomainName = value
+    err := m.GetBackingStore().Set("authenticationPreferredAzureADTenantDomainName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAuthenticationWebSignIn sets the authenticationWebSignIn property value. Possible values of a property
 func (m *Windows10GeneralConfiguration) SetAuthenticationWebSignIn(value *Enablement)() {
-    m.authenticationWebSignIn = value
+    err := m.GetBackingStore().Set("authenticationWebSignIn", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBluetoothAllowedServices sets the bluetoothAllowedServices property value. Specify a list of allowed Bluetooth services and profiles in hex formatted strings.
 func (m *Windows10GeneralConfiguration) SetBluetoothAllowedServices(value []string)() {
-    m.bluetoothAllowedServices = value
+    err := m.GetBackingStore().Set("bluetoothAllowedServices", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBluetoothBlockAdvertising sets the bluetoothBlockAdvertising property value. Whether or not to Block the user from using bluetooth advertising.
 func (m *Windows10GeneralConfiguration) SetBluetoothBlockAdvertising(value *bool)() {
-    m.bluetoothBlockAdvertising = value
+    err := m.GetBackingStore().Set("bluetoothBlockAdvertising", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBluetoothBlockDiscoverableMode sets the bluetoothBlockDiscoverableMode property value. Whether or not to Block the user from using bluetooth discoverable mode.
 func (m *Windows10GeneralConfiguration) SetBluetoothBlockDiscoverableMode(value *bool)() {
-    m.bluetoothBlockDiscoverableMode = value
+    err := m.GetBackingStore().Set("bluetoothBlockDiscoverableMode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBluetoothBlocked sets the bluetoothBlocked property value. Whether or not to Block the user from using bluetooth.
 func (m *Windows10GeneralConfiguration) SetBluetoothBlocked(value *bool)() {
-    m.bluetoothBlocked = value
+    err := m.GetBackingStore().Set("bluetoothBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBluetoothBlockPrePairing sets the bluetoothBlockPrePairing property value. Whether or not to block specific bundled Bluetooth peripherals to automatically pair with the host device.
 func (m *Windows10GeneralConfiguration) SetBluetoothBlockPrePairing(value *bool)() {
-    m.bluetoothBlockPrePairing = value
+    err := m.GetBackingStore().Set("bluetoothBlockPrePairing", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBluetoothBlockPromptedProximalConnections sets the bluetoothBlockPromptedProximalConnections property value. Whether or not to block the users from using Swift Pair and other proximity based scenarios.
 func (m *Windows10GeneralConfiguration) SetBluetoothBlockPromptedProximalConnections(value *bool)() {
-    m.bluetoothBlockPromptedProximalConnections = value
+    err := m.GetBackingStore().Set("bluetoothBlockPromptedProximalConnections", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCameraBlocked sets the cameraBlocked property value. Whether or not to Block the user from accessing the camera of the device.
 func (m *Windows10GeneralConfiguration) SetCameraBlocked(value *bool)() {
-    m.cameraBlocked = value
+    err := m.GetBackingStore().Set("cameraBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCellularBlockDataWhenRoaming sets the cellularBlockDataWhenRoaming property value. Whether or not to Block the user from using data over cellular while roaming.
 func (m *Windows10GeneralConfiguration) SetCellularBlockDataWhenRoaming(value *bool)() {
-    m.cellularBlockDataWhenRoaming = value
+    err := m.GetBackingStore().Set("cellularBlockDataWhenRoaming", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCellularBlockVpn sets the cellularBlockVpn property value. Whether or not to Block the user from using VPN over cellular.
 func (m *Windows10GeneralConfiguration) SetCellularBlockVpn(value *bool)() {
-    m.cellularBlockVpn = value
+    err := m.GetBackingStore().Set("cellularBlockVpn", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCellularBlockVpnWhenRoaming sets the cellularBlockVpnWhenRoaming property value. Whether or not to Block the user from using VPN when roaming over cellular.
 func (m *Windows10GeneralConfiguration) SetCellularBlockVpnWhenRoaming(value *bool)() {
-    m.cellularBlockVpnWhenRoaming = value
+    err := m.GetBackingStore().Set("cellularBlockVpnWhenRoaming", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCellularData sets the cellularData property value. Possible values of the ConfigurationUsage list.
 func (m *Windows10GeneralConfiguration) SetCellularData(value *ConfigurationUsage)() {
-    m.cellularData = value
+    err := m.GetBackingStore().Set("cellularData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCertificatesBlockManualRootCertificateInstallation sets the certificatesBlockManualRootCertificateInstallation property value. Whether or not to Block the user from doing manual root certificate installation.
 func (m *Windows10GeneralConfiguration) SetCertificatesBlockManualRootCertificateInstallation(value *bool)() {
-    m.certificatesBlockManualRootCertificateInstallation = value
+    err := m.GetBackingStore().Set("certificatesBlockManualRootCertificateInstallation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConfigureTimeZone sets the configureTimeZone property value. Specifies the time zone to be applied to the device. This is the standard Windows name for the target time zone.
 func (m *Windows10GeneralConfiguration) SetConfigureTimeZone(value *string)() {
-    m.configureTimeZone = value
+    err := m.GetBackingStore().Set("configureTimeZone", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConnectedDevicesServiceBlocked sets the connectedDevicesServiceBlocked property value. Whether or not to block Connected Devices Service which enables discovery and connection to other devices, remote messaging, remote app sessions and other cross-device experiences.
 func (m *Windows10GeneralConfiguration) SetConnectedDevicesServiceBlocked(value *bool)() {
-    m.connectedDevicesServiceBlocked = value
+    err := m.GetBackingStore().Set("connectedDevicesServiceBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCopyPasteBlocked sets the copyPasteBlocked property value. Whether or not to Block the user from using copy paste.
 func (m *Windows10GeneralConfiguration) SetCopyPasteBlocked(value *bool)() {
-    m.copyPasteBlocked = value
+    err := m.GetBackingStore().Set("copyPasteBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCortanaBlocked sets the cortanaBlocked property value. Whether or not to Block the user from using Cortana.
 func (m *Windows10GeneralConfiguration) SetCortanaBlocked(value *bool)() {
-    m.cortanaBlocked = value
+    err := m.GetBackingStore().Set("cortanaBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCryptographyAllowFipsAlgorithmPolicy sets the cryptographyAllowFipsAlgorithmPolicy property value. Specify whether to allow or disallow the Federal Information Processing Standard (FIPS) policy.
 func (m *Windows10GeneralConfiguration) SetCryptographyAllowFipsAlgorithmPolicy(value *bool)() {
-    m.cryptographyAllowFipsAlgorithmPolicy = value
+    err := m.GetBackingStore().Set("cryptographyAllowFipsAlgorithmPolicy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDataProtectionBlockDirectMemoryAccess sets the dataProtectionBlockDirectMemoryAccess property value. This policy setting allows you to block direct memory access (DMA) for all hot pluggable PCI downstream ports until a user logs into Windows.
 func (m *Windows10GeneralConfiguration) SetDataProtectionBlockDirectMemoryAccess(value *bool)() {
-    m.dataProtectionBlockDirectMemoryAccess = value
+    err := m.GetBackingStore().Set("dataProtectionBlockDirectMemoryAccess", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderBlockEndUserAccess sets the defenderBlockEndUserAccess property value. Whether or not to block end user access to Defender.
 func (m *Windows10GeneralConfiguration) SetDefenderBlockEndUserAccess(value *bool)() {
-    m.defenderBlockEndUserAccess = value
+    err := m.GetBackingStore().Set("defenderBlockEndUserAccess", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderBlockOnAccessProtection sets the defenderBlockOnAccessProtection property value. Allows or disallows Windows Defender On Access Protection functionality.
 func (m *Windows10GeneralConfiguration) SetDefenderBlockOnAccessProtection(value *bool)() {
-    m.defenderBlockOnAccessProtection = value
+    err := m.GetBackingStore().Set("defenderBlockOnAccessProtection", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderCloudBlockLevel sets the defenderCloudBlockLevel property value. Possible values of Cloud Block Level
 func (m *Windows10GeneralConfiguration) SetDefenderCloudBlockLevel(value *DefenderCloudBlockLevelType)() {
-    m.defenderCloudBlockLevel = value
+    err := m.GetBackingStore().Set("defenderCloudBlockLevel", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderCloudExtendedTimeout sets the defenderCloudExtendedTimeout property value. Timeout extension for file scanning by the cloud. Valid values 0 to 50
 func (m *Windows10GeneralConfiguration) SetDefenderCloudExtendedTimeout(value *int32)() {
-    m.defenderCloudExtendedTimeout = value
+    err := m.GetBackingStore().Set("defenderCloudExtendedTimeout", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderCloudExtendedTimeoutInSeconds sets the defenderCloudExtendedTimeoutInSeconds property value. Timeout extension for file scanning by the cloud. Valid values 0 to 50
 func (m *Windows10GeneralConfiguration) SetDefenderCloudExtendedTimeoutInSeconds(value *int32)() {
-    m.defenderCloudExtendedTimeoutInSeconds = value
+    err := m.GetBackingStore().Set("defenderCloudExtendedTimeoutInSeconds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderDaysBeforeDeletingQuarantinedMalware sets the defenderDaysBeforeDeletingQuarantinedMalware property value. Number of days before deleting quarantined malware. Valid values 0 to 90
 func (m *Windows10GeneralConfiguration) SetDefenderDaysBeforeDeletingQuarantinedMalware(value *int32)() {
-    m.defenderDaysBeforeDeletingQuarantinedMalware = value
+    err := m.GetBackingStore().Set("defenderDaysBeforeDeletingQuarantinedMalware", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderDetectedMalwareActions sets the defenderDetectedMalwareActions property value. Gets or sets Defender’s actions to take on detected Malware per threat level.
 func (m *Windows10GeneralConfiguration) SetDefenderDetectedMalwareActions(value DefenderDetectedMalwareActionsable)() {
-    m.defenderDetectedMalwareActions = value
+    err := m.GetBackingStore().Set("defenderDetectedMalwareActions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderDisableCatchupFullScan sets the defenderDisableCatchupFullScan property value. When blocked, catch-up scans for scheduled full scans will be turned off.
 func (m *Windows10GeneralConfiguration) SetDefenderDisableCatchupFullScan(value *bool)() {
-    m.defenderDisableCatchupFullScan = value
+    err := m.GetBackingStore().Set("defenderDisableCatchupFullScan", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderDisableCatchupQuickScan sets the defenderDisableCatchupQuickScan property value. When blocked, catch-up scans for scheduled quick scans will be turned off.
 func (m *Windows10GeneralConfiguration) SetDefenderDisableCatchupQuickScan(value *bool)() {
-    m.defenderDisableCatchupQuickScan = value
+    err := m.GetBackingStore().Set("defenderDisableCatchupQuickScan", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderFileExtensionsToExclude sets the defenderFileExtensionsToExclude property value. File extensions to exclude from scans and real time protection.
 func (m *Windows10GeneralConfiguration) SetDefenderFileExtensionsToExclude(value []string)() {
-    m.defenderFileExtensionsToExclude = value
+    err := m.GetBackingStore().Set("defenderFileExtensionsToExclude", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderFilesAndFoldersToExclude sets the defenderFilesAndFoldersToExclude property value. Files and folder to exclude from scans and real time protection.
 func (m *Windows10GeneralConfiguration) SetDefenderFilesAndFoldersToExclude(value []string)() {
-    m.defenderFilesAndFoldersToExclude = value
+    err := m.GetBackingStore().Set("defenderFilesAndFoldersToExclude", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderMonitorFileActivity sets the defenderMonitorFileActivity property value. Possible values for monitoring file activity.
 func (m *Windows10GeneralConfiguration) SetDefenderMonitorFileActivity(value *DefenderMonitorFileActivity)() {
-    m.defenderMonitorFileActivity = value
+    err := m.GetBackingStore().Set("defenderMonitorFileActivity", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderPotentiallyUnwantedAppAction sets the defenderPotentiallyUnwantedAppAction property value. Gets or sets Defender’s action to take on Potentially Unwanted Application (PUA), which includes software with behaviors of ad-injection, software bundling, persistent solicitation for payment or subscription, etc. Defender alerts user when PUA is being downloaded or attempts to install itself. Added in Windows 10 for desktop. Possible values are: deviceDefault, block, audit.
 func (m *Windows10GeneralConfiguration) SetDefenderPotentiallyUnwantedAppAction(value *DefenderPotentiallyUnwantedAppAction)() {
-    m.defenderPotentiallyUnwantedAppAction = value
+    err := m.GetBackingStore().Set("defenderPotentiallyUnwantedAppAction", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderPotentiallyUnwantedAppActionSetting sets the defenderPotentiallyUnwantedAppActionSetting property value. Possible values of Defender PUA Protection
 func (m *Windows10GeneralConfiguration) SetDefenderPotentiallyUnwantedAppActionSetting(value *DefenderProtectionType)() {
-    m.defenderPotentiallyUnwantedAppActionSetting = value
+    err := m.GetBackingStore().Set("defenderPotentiallyUnwantedAppActionSetting", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderProcessesToExclude sets the defenderProcessesToExclude property value. Processes to exclude from scans and real time protection.
 func (m *Windows10GeneralConfiguration) SetDefenderProcessesToExclude(value []string)() {
-    m.defenderProcessesToExclude = value
+    err := m.GetBackingStore().Set("defenderProcessesToExclude", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderPromptForSampleSubmission sets the defenderPromptForSampleSubmission property value. Possible values for prompting user for samples submission.
 func (m *Windows10GeneralConfiguration) SetDefenderPromptForSampleSubmission(value *DefenderPromptForSampleSubmission)() {
-    m.defenderPromptForSampleSubmission = value
+    err := m.GetBackingStore().Set("defenderPromptForSampleSubmission", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderRequireBehaviorMonitoring sets the defenderRequireBehaviorMonitoring property value. Indicates whether or not to require behavior monitoring.
 func (m *Windows10GeneralConfiguration) SetDefenderRequireBehaviorMonitoring(value *bool)() {
-    m.defenderRequireBehaviorMonitoring = value
+    err := m.GetBackingStore().Set("defenderRequireBehaviorMonitoring", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderRequireCloudProtection sets the defenderRequireCloudProtection property value. Indicates whether or not to require cloud protection.
 func (m *Windows10GeneralConfiguration) SetDefenderRequireCloudProtection(value *bool)() {
-    m.defenderRequireCloudProtection = value
+    err := m.GetBackingStore().Set("defenderRequireCloudProtection", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderRequireNetworkInspectionSystem sets the defenderRequireNetworkInspectionSystem property value. Indicates whether or not to require network inspection system.
 func (m *Windows10GeneralConfiguration) SetDefenderRequireNetworkInspectionSystem(value *bool)() {
-    m.defenderRequireNetworkInspectionSystem = value
+    err := m.GetBackingStore().Set("defenderRequireNetworkInspectionSystem", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderRequireRealTimeMonitoring sets the defenderRequireRealTimeMonitoring property value. Indicates whether or not to require real time monitoring.
 func (m *Windows10GeneralConfiguration) SetDefenderRequireRealTimeMonitoring(value *bool)() {
-    m.defenderRequireRealTimeMonitoring = value
+    err := m.GetBackingStore().Set("defenderRequireRealTimeMonitoring", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderScanArchiveFiles sets the defenderScanArchiveFiles property value. Indicates whether or not to scan archive files.
 func (m *Windows10GeneralConfiguration) SetDefenderScanArchiveFiles(value *bool)() {
-    m.defenderScanArchiveFiles = value
+    err := m.GetBackingStore().Set("defenderScanArchiveFiles", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderScanDownloads sets the defenderScanDownloads property value. Indicates whether or not to scan downloads.
 func (m *Windows10GeneralConfiguration) SetDefenderScanDownloads(value *bool)() {
-    m.defenderScanDownloads = value
+    err := m.GetBackingStore().Set("defenderScanDownloads", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderScanIncomingMail sets the defenderScanIncomingMail property value. Indicates whether or not to scan incoming mail messages.
 func (m *Windows10GeneralConfiguration) SetDefenderScanIncomingMail(value *bool)() {
-    m.defenderScanIncomingMail = value
+    err := m.GetBackingStore().Set("defenderScanIncomingMail", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderScanMappedNetworkDrivesDuringFullScan sets the defenderScanMappedNetworkDrivesDuringFullScan property value. Indicates whether or not to scan mapped network drives during full scan.
 func (m *Windows10GeneralConfiguration) SetDefenderScanMappedNetworkDrivesDuringFullScan(value *bool)() {
-    m.defenderScanMappedNetworkDrivesDuringFullScan = value
+    err := m.GetBackingStore().Set("defenderScanMappedNetworkDrivesDuringFullScan", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderScanMaxCpu sets the defenderScanMaxCpu property value. Max CPU usage percentage during scan. Valid values 0 to 100
 func (m *Windows10GeneralConfiguration) SetDefenderScanMaxCpu(value *int32)() {
-    m.defenderScanMaxCpu = value
+    err := m.GetBackingStore().Set("defenderScanMaxCpu", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderScanNetworkFiles sets the defenderScanNetworkFiles property value. Indicates whether or not to scan files opened from a network folder.
 func (m *Windows10GeneralConfiguration) SetDefenderScanNetworkFiles(value *bool)() {
-    m.defenderScanNetworkFiles = value
+    err := m.GetBackingStore().Set("defenderScanNetworkFiles", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderScanRemovableDrivesDuringFullScan sets the defenderScanRemovableDrivesDuringFullScan property value. Indicates whether or not to scan removable drives during full scan.
 func (m *Windows10GeneralConfiguration) SetDefenderScanRemovableDrivesDuringFullScan(value *bool)() {
-    m.defenderScanRemovableDrivesDuringFullScan = value
+    err := m.GetBackingStore().Set("defenderScanRemovableDrivesDuringFullScan", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderScanScriptsLoadedInInternetExplorer sets the defenderScanScriptsLoadedInInternetExplorer property value. Indicates whether or not to scan scripts loaded in Internet Explorer browser.
 func (m *Windows10GeneralConfiguration) SetDefenderScanScriptsLoadedInInternetExplorer(value *bool)() {
-    m.defenderScanScriptsLoadedInInternetExplorer = value
+    err := m.GetBackingStore().Set("defenderScanScriptsLoadedInInternetExplorer", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderScanType sets the defenderScanType property value. Possible values for system scan type.
 func (m *Windows10GeneralConfiguration) SetDefenderScanType(value *DefenderScanType)() {
-    m.defenderScanType = value
+    err := m.GetBackingStore().Set("defenderScanType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderScheduledQuickScanTime sets the defenderScheduledQuickScanTime property value. The time to perform a daily quick scan.
 func (m *Windows10GeneralConfiguration) SetDefenderScheduledQuickScanTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
-    m.defenderScheduledQuickScanTime = value
+    err := m.GetBackingStore().Set("defenderScheduledQuickScanTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderScheduledScanTime sets the defenderScheduledScanTime property value. The defender time for the system scan.
 func (m *Windows10GeneralConfiguration) SetDefenderScheduledScanTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
-    m.defenderScheduledScanTime = value
+    err := m.GetBackingStore().Set("defenderScheduledScanTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderScheduleScanEnableLowCpuPriority sets the defenderScheduleScanEnableLowCpuPriority property value. When enabled, low CPU priority will be used during scheduled scans.
 func (m *Windows10GeneralConfiguration) SetDefenderScheduleScanEnableLowCpuPriority(value *bool)() {
-    m.defenderScheduleScanEnableLowCpuPriority = value
+    err := m.GetBackingStore().Set("defenderScheduleScanEnableLowCpuPriority", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderSignatureUpdateIntervalInHours sets the defenderSignatureUpdateIntervalInHours property value. The signature update interval in hours. Specify 0 not to check. Valid values 0 to 24
 func (m *Windows10GeneralConfiguration) SetDefenderSignatureUpdateIntervalInHours(value *int32)() {
-    m.defenderSignatureUpdateIntervalInHours = value
+    err := m.GetBackingStore().Set("defenderSignatureUpdateIntervalInHours", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderSubmitSamplesConsentType sets the defenderSubmitSamplesConsentType property value. Checks for the user consent level in Windows Defender to send data. Possible values are: sendSafeSamplesAutomatically, alwaysPrompt, neverSend, sendAllSamplesAutomatically.
 func (m *Windows10GeneralConfiguration) SetDefenderSubmitSamplesConsentType(value *DefenderSubmitSamplesConsentType)() {
-    m.defenderSubmitSamplesConsentType = value
+    err := m.GetBackingStore().Set("defenderSubmitSamplesConsentType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderSystemScanSchedule sets the defenderSystemScanSchedule property value. Possible values for a weekly schedule.
 func (m *Windows10GeneralConfiguration) SetDefenderSystemScanSchedule(value *WeeklySchedule)() {
-    m.defenderSystemScanSchedule = value
+    err := m.GetBackingStore().Set("defenderSystemScanSchedule", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeveloperUnlockSetting sets the developerUnlockSetting property value. State Management Setting.
 func (m *Windows10GeneralConfiguration) SetDeveloperUnlockSetting(value *StateManagementSetting)() {
-    m.developerUnlockSetting = value
+    err := m.GetBackingStore().Set("developerUnlockSetting", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceManagementBlockFactoryResetOnMobile sets the deviceManagementBlockFactoryResetOnMobile property value. Indicates whether or not to Block the user from resetting their phone.
 func (m *Windows10GeneralConfiguration) SetDeviceManagementBlockFactoryResetOnMobile(value *bool)() {
-    m.deviceManagementBlockFactoryResetOnMobile = value
+    err := m.GetBackingStore().Set("deviceManagementBlockFactoryResetOnMobile", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceManagementBlockManualUnenroll sets the deviceManagementBlockManualUnenroll property value. Indicates whether or not to Block the user from doing manual un-enrollment from device management.
 func (m *Windows10GeneralConfiguration) SetDeviceManagementBlockManualUnenroll(value *bool)() {
-    m.deviceManagementBlockManualUnenroll = value
+    err := m.GetBackingStore().Set("deviceManagementBlockManualUnenroll", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDiagnosticsDataSubmissionMode sets the diagnosticsDataSubmissionMode property value. Allow the device to send diagnostic and usage telemetry data, such as Watson.
 func (m *Windows10GeneralConfiguration) SetDiagnosticsDataSubmissionMode(value *DiagnosticDataSubmissionMode)() {
-    m.diagnosticsDataSubmissionMode = value
+    err := m.GetBackingStore().Set("diagnosticsDataSubmissionMode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayAppListWithGdiDPIScalingTurnedOff sets the displayAppListWithGdiDPIScalingTurnedOff property value. List of legacy applications that have GDI DPI Scaling turned off.
 func (m *Windows10GeneralConfiguration) SetDisplayAppListWithGdiDPIScalingTurnedOff(value []string)() {
-    m.displayAppListWithGdiDPIScalingTurnedOff = value
+    err := m.GetBackingStore().Set("displayAppListWithGdiDPIScalingTurnedOff", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayAppListWithGdiDPIScalingTurnedOn sets the displayAppListWithGdiDPIScalingTurnedOn property value. List of legacy applications that have GDI DPI Scaling turned on.
 func (m *Windows10GeneralConfiguration) SetDisplayAppListWithGdiDPIScalingTurnedOn(value []string)() {
-    m.displayAppListWithGdiDPIScalingTurnedOn = value
+    err := m.GetBackingStore().Set("displayAppListWithGdiDPIScalingTurnedOn", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeAllowStartPagesModification sets the edgeAllowStartPagesModification property value. Allow users to change Start pages on Edge. Use the EdgeHomepageUrls to specify the Start pages that the user would see by default when they open Edge.
 func (m *Windows10GeneralConfiguration) SetEdgeAllowStartPagesModification(value *bool)() {
-    m.edgeAllowStartPagesModification = value
+    err := m.GetBackingStore().Set("edgeAllowStartPagesModification", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeBlockAccessToAboutFlags sets the edgeBlockAccessToAboutFlags property value. Indicates whether or not to prevent access to about flags on Edge browser.
 func (m *Windows10GeneralConfiguration) SetEdgeBlockAccessToAboutFlags(value *bool)() {
-    m.edgeBlockAccessToAboutFlags = value
+    err := m.GetBackingStore().Set("edgeBlockAccessToAboutFlags", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeBlockAddressBarDropdown sets the edgeBlockAddressBarDropdown property value. Block the address bar dropdown functionality in Microsoft Edge. Disable this settings to minimize network connections from Microsoft Edge to Microsoft services.
 func (m *Windows10GeneralConfiguration) SetEdgeBlockAddressBarDropdown(value *bool)() {
-    m.edgeBlockAddressBarDropdown = value
+    err := m.GetBackingStore().Set("edgeBlockAddressBarDropdown", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeBlockAutofill sets the edgeBlockAutofill property value. Indicates whether or not to block auto fill.
 func (m *Windows10GeneralConfiguration) SetEdgeBlockAutofill(value *bool)() {
-    m.edgeBlockAutofill = value
+    err := m.GetBackingStore().Set("edgeBlockAutofill", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeBlockCompatibilityList sets the edgeBlockCompatibilityList property value. Block Microsoft compatibility list in Microsoft Edge. This list from Microsoft helps Edge properly display sites with known compatibility issues.
 func (m *Windows10GeneralConfiguration) SetEdgeBlockCompatibilityList(value *bool)() {
-    m.edgeBlockCompatibilityList = value
+    err := m.GetBackingStore().Set("edgeBlockCompatibilityList", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeBlockDeveloperTools sets the edgeBlockDeveloperTools property value. Indicates whether or not to block developer tools in the Edge browser.
 func (m *Windows10GeneralConfiguration) SetEdgeBlockDeveloperTools(value *bool)() {
-    m.edgeBlockDeveloperTools = value
+    err := m.GetBackingStore().Set("edgeBlockDeveloperTools", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeBlocked sets the edgeBlocked property value. Indicates whether or not to Block the user from using the Edge browser.
 func (m *Windows10GeneralConfiguration) SetEdgeBlocked(value *bool)() {
-    m.edgeBlocked = value
+    err := m.GetBackingStore().Set("edgeBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeBlockEditFavorites sets the edgeBlockEditFavorites property value. Indicates whether or not to Block the user from making changes to Favorites.
 func (m *Windows10GeneralConfiguration) SetEdgeBlockEditFavorites(value *bool)() {
-    m.edgeBlockEditFavorites = value
+    err := m.GetBackingStore().Set("edgeBlockEditFavorites", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeBlockExtensions sets the edgeBlockExtensions property value. Indicates whether or not to block extensions in the Edge browser.
 func (m *Windows10GeneralConfiguration) SetEdgeBlockExtensions(value *bool)() {
-    m.edgeBlockExtensions = value
+    err := m.GetBackingStore().Set("edgeBlockExtensions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeBlockFullScreenMode sets the edgeBlockFullScreenMode property value. Allow or prevent Edge from entering the full screen mode.
 func (m *Windows10GeneralConfiguration) SetEdgeBlockFullScreenMode(value *bool)() {
-    m.edgeBlockFullScreenMode = value
+    err := m.GetBackingStore().Set("edgeBlockFullScreenMode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeBlockInPrivateBrowsing sets the edgeBlockInPrivateBrowsing property value. Indicates whether or not to block InPrivate browsing on corporate networks, in the Edge browser.
 func (m *Windows10GeneralConfiguration) SetEdgeBlockInPrivateBrowsing(value *bool)() {
-    m.edgeBlockInPrivateBrowsing = value
+    err := m.GetBackingStore().Set("edgeBlockInPrivateBrowsing", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeBlockJavaScript sets the edgeBlockJavaScript property value. Indicates whether or not to Block the user from using JavaScript.
 func (m *Windows10GeneralConfiguration) SetEdgeBlockJavaScript(value *bool)() {
-    m.edgeBlockJavaScript = value
+    err := m.GetBackingStore().Set("edgeBlockJavaScript", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeBlockLiveTileDataCollection sets the edgeBlockLiveTileDataCollection property value. Block the collection of information by Microsoft for live tile creation when users pin a site to Start from Microsoft Edge.
 func (m *Windows10GeneralConfiguration) SetEdgeBlockLiveTileDataCollection(value *bool)() {
-    m.edgeBlockLiveTileDataCollection = value
+    err := m.GetBackingStore().Set("edgeBlockLiveTileDataCollection", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeBlockPasswordManager sets the edgeBlockPasswordManager property value. Indicates whether or not to Block password manager.
 func (m *Windows10GeneralConfiguration) SetEdgeBlockPasswordManager(value *bool)() {
-    m.edgeBlockPasswordManager = value
+    err := m.GetBackingStore().Set("edgeBlockPasswordManager", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeBlockPopups sets the edgeBlockPopups property value. Indicates whether or not to block popups.
 func (m *Windows10GeneralConfiguration) SetEdgeBlockPopups(value *bool)() {
-    m.edgeBlockPopups = value
+    err := m.GetBackingStore().Set("edgeBlockPopups", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeBlockPrelaunch sets the edgeBlockPrelaunch property value. Decide whether Microsoft Edge is prelaunched at Windows startup.
 func (m *Windows10GeneralConfiguration) SetEdgeBlockPrelaunch(value *bool)() {
-    m.edgeBlockPrelaunch = value
+    err := m.GetBackingStore().Set("edgeBlockPrelaunch", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeBlockPrinting sets the edgeBlockPrinting property value. Configure Edge to allow or block printing.
 func (m *Windows10GeneralConfiguration) SetEdgeBlockPrinting(value *bool)() {
-    m.edgeBlockPrinting = value
+    err := m.GetBackingStore().Set("edgeBlockPrinting", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeBlockSavingHistory sets the edgeBlockSavingHistory property value. Configure Edge to allow browsing history to be saved or to never save browsing history.
 func (m *Windows10GeneralConfiguration) SetEdgeBlockSavingHistory(value *bool)() {
-    m.edgeBlockSavingHistory = value
+    err := m.GetBackingStore().Set("edgeBlockSavingHistory", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeBlockSearchEngineCustomization sets the edgeBlockSearchEngineCustomization property value. Indicates whether or not to block the user from adding new search engine or changing the default search engine.
 func (m *Windows10GeneralConfiguration) SetEdgeBlockSearchEngineCustomization(value *bool)() {
-    m.edgeBlockSearchEngineCustomization = value
+    err := m.GetBackingStore().Set("edgeBlockSearchEngineCustomization", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeBlockSearchSuggestions sets the edgeBlockSearchSuggestions property value. Indicates whether or not to block the user from using the search suggestions in the address bar.
 func (m *Windows10GeneralConfiguration) SetEdgeBlockSearchSuggestions(value *bool)() {
-    m.edgeBlockSearchSuggestions = value
+    err := m.GetBackingStore().Set("edgeBlockSearchSuggestions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeBlockSendingDoNotTrackHeader sets the edgeBlockSendingDoNotTrackHeader property value. Indicates whether or not to Block the user from sending the do not track header.
 func (m *Windows10GeneralConfiguration) SetEdgeBlockSendingDoNotTrackHeader(value *bool)() {
-    m.edgeBlockSendingDoNotTrackHeader = value
+    err := m.GetBackingStore().Set("edgeBlockSendingDoNotTrackHeader", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeBlockSendingIntranetTrafficToInternetExplorer sets the edgeBlockSendingIntranetTrafficToInternetExplorer property value. Indicates whether or not to switch the intranet traffic from Edge to Internet Explorer. Note: the name of this property is misleading; the property is obsolete, use EdgeSendIntranetTrafficToInternetExplorer instead.
 func (m *Windows10GeneralConfiguration) SetEdgeBlockSendingIntranetTrafficToInternetExplorer(value *bool)() {
-    m.edgeBlockSendingIntranetTrafficToInternetExplorer = value
+    err := m.GetBackingStore().Set("edgeBlockSendingIntranetTrafficToInternetExplorer", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeBlockSideloadingExtensions sets the edgeBlockSideloadingExtensions property value. Indicates whether the user can sideload extensions.
 func (m *Windows10GeneralConfiguration) SetEdgeBlockSideloadingExtensions(value *bool)() {
-    m.edgeBlockSideloadingExtensions = value
+    err := m.GetBackingStore().Set("edgeBlockSideloadingExtensions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeBlockTabPreloading sets the edgeBlockTabPreloading property value. Configure whether Edge preloads the new tab page at Windows startup.
 func (m *Windows10GeneralConfiguration) SetEdgeBlockTabPreloading(value *bool)() {
-    m.edgeBlockTabPreloading = value
+    err := m.GetBackingStore().Set("edgeBlockTabPreloading", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeBlockWebContentOnNewTabPage sets the edgeBlockWebContentOnNewTabPage property value. Configure to load a blank page in Edge instead of the default New tab page and prevent users from changing it.
 func (m *Windows10GeneralConfiguration) SetEdgeBlockWebContentOnNewTabPage(value *bool)() {
-    m.edgeBlockWebContentOnNewTabPage = value
+    err := m.GetBackingStore().Set("edgeBlockWebContentOnNewTabPage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeClearBrowsingDataOnExit sets the edgeClearBrowsingDataOnExit property value. Clear browsing data on exiting Microsoft Edge.
 func (m *Windows10GeneralConfiguration) SetEdgeClearBrowsingDataOnExit(value *bool)() {
-    m.edgeClearBrowsingDataOnExit = value
+    err := m.GetBackingStore().Set("edgeClearBrowsingDataOnExit", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeCookiePolicy sets the edgeCookiePolicy property value. Possible values to specify which cookies are allowed in Microsoft Edge.
 func (m *Windows10GeneralConfiguration) SetEdgeCookiePolicy(value *EdgeCookiePolicy)() {
-    m.edgeCookiePolicy = value
+    err := m.GetBackingStore().Set("edgeCookiePolicy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeDisableFirstRunPage sets the edgeDisableFirstRunPage property value. Block the Microsoft web page that opens on the first use of Microsoft Edge. This policy allows enterprises, like those enrolled in zero emissions configurations, to block this page.
 func (m *Windows10GeneralConfiguration) SetEdgeDisableFirstRunPage(value *bool)() {
-    m.edgeDisableFirstRunPage = value
+    err := m.GetBackingStore().Set("edgeDisableFirstRunPage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeEnterpriseModeSiteListLocation sets the edgeEnterpriseModeSiteListLocation property value. Indicates the enterprise mode site list location. Could be a local file, local network or http location.
 func (m *Windows10GeneralConfiguration) SetEdgeEnterpriseModeSiteListLocation(value *string)() {
-    m.edgeEnterpriseModeSiteListLocation = value
+    err := m.GetBackingStore().Set("edgeEnterpriseModeSiteListLocation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeFavoritesBarVisibility sets the edgeFavoritesBarVisibility property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) SetEdgeFavoritesBarVisibility(value *VisibilitySetting)() {
-    m.edgeFavoritesBarVisibility = value
+    err := m.GetBackingStore().Set("edgeFavoritesBarVisibility", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeFavoritesListLocation sets the edgeFavoritesListLocation property value. The location of the favorites list to provision. Could be a local file, local network or http location.
 func (m *Windows10GeneralConfiguration) SetEdgeFavoritesListLocation(value *string)() {
-    m.edgeFavoritesListLocation = value
+    err := m.GetBackingStore().Set("edgeFavoritesListLocation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeFirstRunUrl sets the edgeFirstRunUrl property value. The first run URL for when Edge browser is opened for the first time.
 func (m *Windows10GeneralConfiguration) SetEdgeFirstRunUrl(value *string)() {
-    m.edgeFirstRunUrl = value
+    err := m.GetBackingStore().Set("edgeFirstRunUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeHomeButtonConfiguration sets the edgeHomeButtonConfiguration property value. Causes the Home button to either hide, load the default Start page, load a New tab page, or a custom URL
 func (m *Windows10GeneralConfiguration) SetEdgeHomeButtonConfiguration(value EdgeHomeButtonConfigurationable)() {
-    m.edgeHomeButtonConfiguration = value
+    err := m.GetBackingStore().Set("edgeHomeButtonConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeHomeButtonConfigurationEnabled sets the edgeHomeButtonConfigurationEnabled property value. Enable the Home button configuration.
 func (m *Windows10GeneralConfiguration) SetEdgeHomeButtonConfigurationEnabled(value *bool)() {
-    m.edgeHomeButtonConfigurationEnabled = value
+    err := m.GetBackingStore().Set("edgeHomeButtonConfigurationEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeHomepageUrls sets the edgeHomepageUrls property value. The list of URLs for homepages shodwn on MDM-enrolled devices on Edge browser.
 func (m *Windows10GeneralConfiguration) SetEdgeHomepageUrls(value []string)() {
-    m.edgeHomepageUrls = value
+    err := m.GetBackingStore().Set("edgeHomepageUrls", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeKioskModeRestriction sets the edgeKioskModeRestriction property value. Specify how the Microsoft Edge settings are restricted based on kiosk mode.
 func (m *Windows10GeneralConfiguration) SetEdgeKioskModeRestriction(value *EdgeKioskModeRestrictionType)() {
-    m.edgeKioskModeRestriction = value
+    err := m.GetBackingStore().Set("edgeKioskModeRestriction", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeKioskResetAfterIdleTimeInMinutes sets the edgeKioskResetAfterIdleTimeInMinutes property value. Specifies the time in minutes from the last user activity before Microsoft Edge kiosk resets.  Valid values are 0-1440. The default is 5. 0 indicates no reset. Valid values 0 to 1440
 func (m *Windows10GeneralConfiguration) SetEdgeKioskResetAfterIdleTimeInMinutes(value *int32)() {
-    m.edgeKioskResetAfterIdleTimeInMinutes = value
+    err := m.GetBackingStore().Set("edgeKioskResetAfterIdleTimeInMinutes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeNewTabPageURL sets the edgeNewTabPageURL property value. Specify the page opened when new tabs are created.
 func (m *Windows10GeneralConfiguration) SetEdgeNewTabPageURL(value *string)() {
-    m.edgeNewTabPageURL = value
+    err := m.GetBackingStore().Set("edgeNewTabPageURL", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeOpensWith sets the edgeOpensWith property value. Possible values for the EdgeOpensWith setting.
 func (m *Windows10GeneralConfiguration) SetEdgeOpensWith(value *EdgeOpenOptions)() {
-    m.edgeOpensWith = value
+    err := m.GetBackingStore().Set("edgeOpensWith", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgePreventCertificateErrorOverride sets the edgePreventCertificateErrorOverride property value. Allow or prevent users from overriding certificate errors.
 func (m *Windows10GeneralConfiguration) SetEdgePreventCertificateErrorOverride(value *bool)() {
-    m.edgePreventCertificateErrorOverride = value
+    err := m.GetBackingStore().Set("edgePreventCertificateErrorOverride", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeRequiredExtensionPackageFamilyNames sets the edgeRequiredExtensionPackageFamilyNames property value. Specify the list of package family names of browser extensions that are required and cannot be turned off by the user.
 func (m *Windows10GeneralConfiguration) SetEdgeRequiredExtensionPackageFamilyNames(value []string)() {
-    m.edgeRequiredExtensionPackageFamilyNames = value
+    err := m.GetBackingStore().Set("edgeRequiredExtensionPackageFamilyNames", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeRequireSmartScreen sets the edgeRequireSmartScreen property value. Indicates whether or not to Require the user to use the smart screen filter.
 func (m *Windows10GeneralConfiguration) SetEdgeRequireSmartScreen(value *bool)() {
-    m.edgeRequireSmartScreen = value
+    err := m.GetBackingStore().Set("edgeRequireSmartScreen", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeSearchEngine sets the edgeSearchEngine property value. Allows IT admins to set a default search engine for MDM-Controlled devices. Users can override this and change their default search engine provided the AllowSearchEngineCustomization policy is not set.
 func (m *Windows10GeneralConfiguration) SetEdgeSearchEngine(value EdgeSearchEngineBaseable)() {
-    m.edgeSearchEngine = value
+    err := m.GetBackingStore().Set("edgeSearchEngine", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeSendIntranetTrafficToInternetExplorer sets the edgeSendIntranetTrafficToInternetExplorer property value. Indicates whether or not to switch the intranet traffic from Edge to Internet Explorer.
 func (m *Windows10GeneralConfiguration) SetEdgeSendIntranetTrafficToInternetExplorer(value *bool)() {
-    m.edgeSendIntranetTrafficToInternetExplorer = value
+    err := m.GetBackingStore().Set("edgeSendIntranetTrafficToInternetExplorer", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeShowMessageWhenOpeningInternetExplorerSites sets the edgeShowMessageWhenOpeningInternetExplorerSites property value. What message will be displayed by Edge before switching to Internet Explorer.
 func (m *Windows10GeneralConfiguration) SetEdgeShowMessageWhenOpeningInternetExplorerSites(value *InternetExplorerMessageSetting)() {
-    m.edgeShowMessageWhenOpeningInternetExplorerSites = value
+    err := m.GetBackingStore().Set("edgeShowMessageWhenOpeningInternetExplorerSites", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeSyncFavoritesWithInternetExplorer sets the edgeSyncFavoritesWithInternetExplorer property value. Enable favorites sync between Internet Explorer and Microsoft Edge. Additions, deletions, modifications and order changes to favorites are shared between browsers.
 func (m *Windows10GeneralConfiguration) SetEdgeSyncFavoritesWithInternetExplorer(value *bool)() {
-    m.edgeSyncFavoritesWithInternetExplorer = value
+    err := m.GetBackingStore().Set("edgeSyncFavoritesWithInternetExplorer", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeTelemetryForMicrosoft365Analytics sets the edgeTelemetryForMicrosoft365Analytics property value. Type of browsing data sent to Microsoft 365 analytics
 func (m *Windows10GeneralConfiguration) SetEdgeTelemetryForMicrosoft365Analytics(value *EdgeTelemetryMode)() {
-    m.edgeTelemetryForMicrosoft365Analytics = value
+    err := m.GetBackingStore().Set("edgeTelemetryForMicrosoft365Analytics", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnableAutomaticRedeployment sets the enableAutomaticRedeployment property value. Allow users with administrative rights to delete all user data and settings using CTRL + Win + R at the device lock screen so that the device can be automatically re-configured and re-enrolled into management.
 func (m *Windows10GeneralConfiguration) SetEnableAutomaticRedeployment(value *bool)() {
-    m.enableAutomaticRedeployment = value
+    err := m.GetBackingStore().Set("enableAutomaticRedeployment", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnergySaverOnBatteryThresholdPercentage sets the energySaverOnBatteryThresholdPercentage property value. This setting allows you to specify battery charge level at which Energy Saver is turned on. While on battery, Energy Saver is automatically turned on at (and below) the specified battery charge level. Valid input range (0-100). Valid values 0 to 100
 func (m *Windows10GeneralConfiguration) SetEnergySaverOnBatteryThresholdPercentage(value *int32)() {
-    m.energySaverOnBatteryThresholdPercentage = value
+    err := m.GetBackingStore().Set("energySaverOnBatteryThresholdPercentage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnergySaverPluggedInThresholdPercentage sets the energySaverPluggedInThresholdPercentage property value. This setting allows you to specify battery charge level at which Energy Saver is turned on. While plugged in, Energy Saver is automatically turned on at (and below) the specified battery charge level. Valid input range (0-100). Valid values 0 to 100
 func (m *Windows10GeneralConfiguration) SetEnergySaverPluggedInThresholdPercentage(value *int32)() {
-    m.energySaverPluggedInThresholdPercentage = value
+    err := m.GetBackingStore().Set("energySaverPluggedInThresholdPercentage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnterpriseCloudPrintDiscoveryEndPoint sets the enterpriseCloudPrintDiscoveryEndPoint property value. Endpoint for discovering cloud printers.
 func (m *Windows10GeneralConfiguration) SetEnterpriseCloudPrintDiscoveryEndPoint(value *string)() {
-    m.enterpriseCloudPrintDiscoveryEndPoint = value
+    err := m.GetBackingStore().Set("enterpriseCloudPrintDiscoveryEndPoint", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnterpriseCloudPrintDiscoveryMaxLimit sets the enterpriseCloudPrintDiscoveryMaxLimit property value. Maximum number of printers that should be queried from a discovery endpoint. This is a mobile only setting. Valid values 1 to 65535
 func (m *Windows10GeneralConfiguration) SetEnterpriseCloudPrintDiscoveryMaxLimit(value *int32)() {
-    m.enterpriseCloudPrintDiscoveryMaxLimit = value
+    err := m.GetBackingStore().Set("enterpriseCloudPrintDiscoveryMaxLimit", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnterpriseCloudPrintMopriaDiscoveryResourceIdentifier sets the enterpriseCloudPrintMopriaDiscoveryResourceIdentifier property value. OAuth resource URI for printer discovery service as configured in Azure portal.
 func (m *Windows10GeneralConfiguration) SetEnterpriseCloudPrintMopriaDiscoveryResourceIdentifier(value *string)() {
-    m.enterpriseCloudPrintMopriaDiscoveryResourceIdentifier = value
+    err := m.GetBackingStore().Set("enterpriseCloudPrintMopriaDiscoveryResourceIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnterpriseCloudPrintOAuthAuthority sets the enterpriseCloudPrintOAuthAuthority property value. Authentication endpoint for acquiring OAuth tokens.
 func (m *Windows10GeneralConfiguration) SetEnterpriseCloudPrintOAuthAuthority(value *string)() {
-    m.enterpriseCloudPrintOAuthAuthority = value
+    err := m.GetBackingStore().Set("enterpriseCloudPrintOAuthAuthority", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnterpriseCloudPrintOAuthClientIdentifier sets the enterpriseCloudPrintOAuthClientIdentifier property value. GUID of a client application authorized to retrieve OAuth tokens from the OAuth Authority.
 func (m *Windows10GeneralConfiguration) SetEnterpriseCloudPrintOAuthClientIdentifier(value *string)() {
-    m.enterpriseCloudPrintOAuthClientIdentifier = value
+    err := m.GetBackingStore().Set("enterpriseCloudPrintOAuthClientIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnterpriseCloudPrintResourceIdentifier sets the enterpriseCloudPrintResourceIdentifier property value. OAuth resource URI for print service as configured in the Azure portal.
 func (m *Windows10GeneralConfiguration) SetEnterpriseCloudPrintResourceIdentifier(value *string)() {
-    m.enterpriseCloudPrintResourceIdentifier = value
+    err := m.GetBackingStore().Set("enterpriseCloudPrintResourceIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExperienceBlockDeviceDiscovery sets the experienceBlockDeviceDiscovery property value. Indicates whether or not to enable device discovery UX.
 func (m *Windows10GeneralConfiguration) SetExperienceBlockDeviceDiscovery(value *bool)() {
-    m.experienceBlockDeviceDiscovery = value
+    err := m.GetBackingStore().Set("experienceBlockDeviceDiscovery", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExperienceBlockErrorDialogWhenNoSIM sets the experienceBlockErrorDialogWhenNoSIM property value. Indicates whether or not to allow the error dialog from displaying if no SIM card is detected.
 func (m *Windows10GeneralConfiguration) SetExperienceBlockErrorDialogWhenNoSIM(value *bool)() {
-    m.experienceBlockErrorDialogWhenNoSIM = value
+    err := m.GetBackingStore().Set("experienceBlockErrorDialogWhenNoSIM", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExperienceBlockTaskSwitcher sets the experienceBlockTaskSwitcher property value. Indicates whether or not to enable task switching on the device.
 func (m *Windows10GeneralConfiguration) SetExperienceBlockTaskSwitcher(value *bool)() {
-    m.experienceBlockTaskSwitcher = value
+    err := m.GetBackingStore().Set("experienceBlockTaskSwitcher", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExperienceDoNotSyncBrowserSettings sets the experienceDoNotSyncBrowserSettings property value. Allow(Not Configured) or prevent(Block) the syncing of Microsoft Edge Browser settings. Option to prevent syncing across devices, but allow user override.
 func (m *Windows10GeneralConfiguration) SetExperienceDoNotSyncBrowserSettings(value *BrowserSyncSetting)() {
-    m.experienceDoNotSyncBrowserSettings = value
+    err := m.GetBackingStore().Set("experienceDoNotSyncBrowserSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFindMyFiles sets the findMyFiles property value. Possible values of a property
 func (m *Windows10GeneralConfiguration) SetFindMyFiles(value *Enablement)() {
-    m.findMyFiles = value
+    err := m.GetBackingStore().Set("findMyFiles", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGameDvrBlocked sets the gameDvrBlocked property value. Indicates whether or not to block DVR and broadcasting.
 func (m *Windows10GeneralConfiguration) SetGameDvrBlocked(value *bool)() {
-    m.gameDvrBlocked = value
+    err := m.GetBackingStore().Set("gameDvrBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInkWorkspaceAccess sets the inkWorkspaceAccess property value. Values for the InkWorkspaceAccess setting.
 func (m *Windows10GeneralConfiguration) SetInkWorkspaceAccess(value *InkAccessSetting)() {
-    m.inkWorkspaceAccess = value
+    err := m.GetBackingStore().Set("inkWorkspaceAccess", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInkWorkspaceAccessState sets the inkWorkspaceAccessState property value. State Management Setting.
 func (m *Windows10GeneralConfiguration) SetInkWorkspaceAccessState(value *StateManagementSetting)() {
-    m.inkWorkspaceAccessState = value
+    err := m.GetBackingStore().Set("inkWorkspaceAccessState", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInkWorkspaceBlockSuggestedApps sets the inkWorkspaceBlockSuggestedApps property value. Specify whether to show recommended app suggestions in the ink workspace.
 func (m *Windows10GeneralConfiguration) SetInkWorkspaceBlockSuggestedApps(value *bool)() {
-    m.inkWorkspaceBlockSuggestedApps = value
+    err := m.GetBackingStore().Set("inkWorkspaceBlockSuggestedApps", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInternetSharingBlocked sets the internetSharingBlocked property value. Indicates whether or not to Block the user from using internet sharing.
 func (m *Windows10GeneralConfiguration) SetInternetSharingBlocked(value *bool)() {
-    m.internetSharingBlocked = value
+    err := m.GetBackingStore().Set("internetSharingBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocationServicesBlocked sets the locationServicesBlocked property value. Indicates whether or not to Block the user from location services.
 func (m *Windows10GeneralConfiguration) SetLocationServicesBlocked(value *bool)() {
-    m.locationServicesBlocked = value
+    err := m.GetBackingStore().Set("locationServicesBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLockScreenActivateAppsWithVoice sets the lockScreenActivateAppsWithVoice property value. Possible values of a property
 func (m *Windows10GeneralConfiguration) SetLockScreenActivateAppsWithVoice(value *Enablement)() {
-    m.lockScreenActivateAppsWithVoice = value
+    err := m.GetBackingStore().Set("lockScreenActivateAppsWithVoice", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLockScreenAllowTimeoutConfiguration sets the lockScreenAllowTimeoutConfiguration property value. Specify whether to show a user-configurable setting to control the screen timeout while on the lock screen of Windows 10 Mobile devices. If this policy is set to Allow, the value set by lockScreenTimeoutInSeconds is ignored.
 func (m *Windows10GeneralConfiguration) SetLockScreenAllowTimeoutConfiguration(value *bool)() {
-    m.lockScreenAllowTimeoutConfiguration = value
+    err := m.GetBackingStore().Set("lockScreenAllowTimeoutConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLockScreenBlockActionCenterNotifications sets the lockScreenBlockActionCenterNotifications property value. Indicates whether or not to block action center notifications over lock screen.
 func (m *Windows10GeneralConfiguration) SetLockScreenBlockActionCenterNotifications(value *bool)() {
-    m.lockScreenBlockActionCenterNotifications = value
+    err := m.GetBackingStore().Set("lockScreenBlockActionCenterNotifications", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLockScreenBlockCortana sets the lockScreenBlockCortana property value. Indicates whether or not the user can interact with Cortana using speech while the system is locked.
 func (m *Windows10GeneralConfiguration) SetLockScreenBlockCortana(value *bool)() {
-    m.lockScreenBlockCortana = value
+    err := m.GetBackingStore().Set("lockScreenBlockCortana", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLockScreenBlockToastNotifications sets the lockScreenBlockToastNotifications property value. Indicates whether to allow toast notifications above the device lock screen.
 func (m *Windows10GeneralConfiguration) SetLockScreenBlockToastNotifications(value *bool)() {
-    m.lockScreenBlockToastNotifications = value
+    err := m.GetBackingStore().Set("lockScreenBlockToastNotifications", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLockScreenTimeoutInSeconds sets the lockScreenTimeoutInSeconds property value. Set the duration (in seconds) from the screen locking to the screen turning off for Windows 10 Mobile devices. Supported values are 11-1800. Valid values 11 to 1800
 func (m *Windows10GeneralConfiguration) SetLockScreenTimeoutInSeconds(value *int32)() {
-    m.lockScreenTimeoutInSeconds = value
+    err := m.GetBackingStore().Set("lockScreenTimeoutInSeconds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLogonBlockFastUserSwitching sets the logonBlockFastUserSwitching property value. Disables the ability to quickly switch between users that are logged on simultaneously without logging off.
 func (m *Windows10GeneralConfiguration) SetLogonBlockFastUserSwitching(value *bool)() {
-    m.logonBlockFastUserSwitching = value
+    err := m.GetBackingStore().Set("logonBlockFastUserSwitching", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMessagingBlockMMS sets the messagingBlockMMS property value. Indicates whether or not to block the MMS send/receive functionality on the device.
 func (m *Windows10GeneralConfiguration) SetMessagingBlockMMS(value *bool)() {
-    m.messagingBlockMMS = value
+    err := m.GetBackingStore().Set("messagingBlockMMS", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMessagingBlockRichCommunicationServices sets the messagingBlockRichCommunicationServices property value. Indicates whether or not to block the RCS send/receive functionality on the device.
 func (m *Windows10GeneralConfiguration) SetMessagingBlockRichCommunicationServices(value *bool)() {
-    m.messagingBlockRichCommunicationServices = value
+    err := m.GetBackingStore().Set("messagingBlockRichCommunicationServices", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMessagingBlockSync sets the messagingBlockSync property value. Indicates whether or not to block text message back up and restore and Messaging Everywhere.
 func (m *Windows10GeneralConfiguration) SetMessagingBlockSync(value *bool)() {
-    m.messagingBlockSync = value
+    err := m.GetBackingStore().Set("messagingBlockSync", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMicrosoftAccountBlocked sets the microsoftAccountBlocked property value. Indicates whether or not to Block a Microsoft account.
 func (m *Windows10GeneralConfiguration) SetMicrosoftAccountBlocked(value *bool)() {
-    m.microsoftAccountBlocked = value
+    err := m.GetBackingStore().Set("microsoftAccountBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMicrosoftAccountBlockSettingsSync sets the microsoftAccountBlockSettingsSync property value. Indicates whether or not to Block Microsoft account settings sync.
 func (m *Windows10GeneralConfiguration) SetMicrosoftAccountBlockSettingsSync(value *bool)() {
-    m.microsoftAccountBlockSettingsSync = value
+    err := m.GetBackingStore().Set("microsoftAccountBlockSettingsSync", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMicrosoftAccountSignInAssistantSettings sets the microsoftAccountSignInAssistantSettings property value. Values for the SignInAssistantSettings.
 func (m *Windows10GeneralConfiguration) SetMicrosoftAccountSignInAssistantSettings(value *SignInAssistantOptions)() {
-    m.microsoftAccountSignInAssistantSettings = value
+    err := m.GetBackingStore().Set("microsoftAccountSignInAssistantSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNetworkProxyApplySettingsDeviceWide sets the networkProxyApplySettingsDeviceWide property value. If set, proxy settings will be applied to all processes and accounts in the device. Otherwise, it will be applied to the user account that’s enrolled into MDM.
 func (m *Windows10GeneralConfiguration) SetNetworkProxyApplySettingsDeviceWide(value *bool)() {
-    m.networkProxyApplySettingsDeviceWide = value
+    err := m.GetBackingStore().Set("networkProxyApplySettingsDeviceWide", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNetworkProxyAutomaticConfigurationUrl sets the networkProxyAutomaticConfigurationUrl property value. Address to the proxy auto-config (PAC) script you want to use.
 func (m *Windows10GeneralConfiguration) SetNetworkProxyAutomaticConfigurationUrl(value *string)() {
-    m.networkProxyAutomaticConfigurationUrl = value
+    err := m.GetBackingStore().Set("networkProxyAutomaticConfigurationUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNetworkProxyDisableAutoDetect sets the networkProxyDisableAutoDetect property value. Disable automatic detection of settings. If enabled, the system will try to find the path to a proxy auto-config (PAC) script.
 func (m *Windows10GeneralConfiguration) SetNetworkProxyDisableAutoDetect(value *bool)() {
-    m.networkProxyDisableAutoDetect = value
+    err := m.GetBackingStore().Set("networkProxyDisableAutoDetect", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNetworkProxyServer sets the networkProxyServer property value. Specifies manual proxy server settings.
 func (m *Windows10GeneralConfiguration) SetNetworkProxyServer(value Windows10NetworkProxyServerable)() {
-    m.networkProxyServer = value
+    err := m.GetBackingStore().Set("networkProxyServer", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNfcBlocked sets the nfcBlocked property value. Indicates whether or not to Block the user from using near field communication.
 func (m *Windows10GeneralConfiguration) SetNfcBlocked(value *bool)() {
-    m.nfcBlocked = value
+    err := m.GetBackingStore().Set("nfcBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOneDriveDisableFileSync sets the oneDriveDisableFileSync property value. Gets or sets a value allowing IT admins to prevent apps and features from working with files on OneDrive.
 func (m *Windows10GeneralConfiguration) SetOneDriveDisableFileSync(value *bool)() {
-    m.oneDriveDisableFileSync = value
+    err := m.GetBackingStore().Set("oneDriveDisableFileSync", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordBlockSimple sets the passwordBlockSimple property value. Specify whether PINs or passwords such as '1111' or '1234' are allowed. For Windows 10 desktops, it also controls the use of picture passwords.
 func (m *Windows10GeneralConfiguration) SetPasswordBlockSimple(value *bool)() {
-    m.passwordBlockSimple = value
+    err := m.GetBackingStore().Set("passwordBlockSimple", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordExpirationDays sets the passwordExpirationDays property value. The password expiration in days. Valid values 0 to 730
 func (m *Windows10GeneralConfiguration) SetPasswordExpirationDays(value *int32)() {
-    m.passwordExpirationDays = value
+    err := m.GetBackingStore().Set("passwordExpirationDays", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordMinimumAgeInDays sets the passwordMinimumAgeInDays property value. This security setting determines the period of time (in days) that a password must be used before the user can change it. Valid values 0 to 998
 func (m *Windows10GeneralConfiguration) SetPasswordMinimumAgeInDays(value *int32)() {
-    m.passwordMinimumAgeInDays = value
+    err := m.GetBackingStore().Set("passwordMinimumAgeInDays", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordMinimumCharacterSetCount sets the passwordMinimumCharacterSetCount property value. The number of character sets required in the password.
 func (m *Windows10GeneralConfiguration) SetPasswordMinimumCharacterSetCount(value *int32)() {
-    m.passwordMinimumCharacterSetCount = value
+    err := m.GetBackingStore().Set("passwordMinimumCharacterSetCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordMinimumLength sets the passwordMinimumLength property value. The minimum password length. Valid values 4 to 16
 func (m *Windows10GeneralConfiguration) SetPasswordMinimumLength(value *int32)() {
-    m.passwordMinimumLength = value
+    err := m.GetBackingStore().Set("passwordMinimumLength", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordMinutesOfInactivityBeforeScreenTimeout sets the passwordMinutesOfInactivityBeforeScreenTimeout property value. The minutes of inactivity before the screen times out.
 func (m *Windows10GeneralConfiguration) SetPasswordMinutesOfInactivityBeforeScreenTimeout(value *int32)() {
-    m.passwordMinutesOfInactivityBeforeScreenTimeout = value
+    err := m.GetBackingStore().Set("passwordMinutesOfInactivityBeforeScreenTimeout", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordPreviousPasswordBlockCount sets the passwordPreviousPasswordBlockCount property value. The number of previous passwords to prevent reuse of. Valid values 0 to 50
 func (m *Windows10GeneralConfiguration) SetPasswordPreviousPasswordBlockCount(value *int32)() {
-    m.passwordPreviousPasswordBlockCount = value
+    err := m.GetBackingStore().Set("passwordPreviousPasswordBlockCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordRequired sets the passwordRequired property value. Indicates whether or not to require the user to have a password.
 func (m *Windows10GeneralConfiguration) SetPasswordRequired(value *bool)() {
-    m.passwordRequired = value
+    err := m.GetBackingStore().Set("passwordRequired", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordRequiredType sets the passwordRequiredType property value. Possible values of required passwords.
 func (m *Windows10GeneralConfiguration) SetPasswordRequiredType(value *RequiredPasswordType)() {
-    m.passwordRequiredType = value
+    err := m.GetBackingStore().Set("passwordRequiredType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordRequireWhenResumeFromIdleState sets the passwordRequireWhenResumeFromIdleState property value. Indicates whether or not to require a password upon resuming from an idle state.
 func (m *Windows10GeneralConfiguration) SetPasswordRequireWhenResumeFromIdleState(value *bool)() {
-    m.passwordRequireWhenResumeFromIdleState = value
+    err := m.GetBackingStore().Set("passwordRequireWhenResumeFromIdleState", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordSignInFailureCountBeforeFactoryReset sets the passwordSignInFailureCountBeforeFactoryReset property value. The number of sign in failures before factory reset. Valid values 0 to 999
 func (m *Windows10GeneralConfiguration) SetPasswordSignInFailureCountBeforeFactoryReset(value *int32)() {
-    m.passwordSignInFailureCountBeforeFactoryReset = value
+    err := m.GetBackingStore().Set("passwordSignInFailureCountBeforeFactoryReset", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPersonalizationDesktopImageUrl sets the personalizationDesktopImageUrl property value. A http or https Url to a jpg, jpeg or png image that needs to be downloaded and used as the Desktop Image or a file Url to a local image on the file system that needs to used as the Desktop Image.
 func (m *Windows10GeneralConfiguration) SetPersonalizationDesktopImageUrl(value *string)() {
-    m.personalizationDesktopImageUrl = value
+    err := m.GetBackingStore().Set("personalizationDesktopImageUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPersonalizationLockScreenImageUrl sets the personalizationLockScreenImageUrl property value. A http or https Url to a jpg, jpeg or png image that neeeds to be downloaded and used as the Lock Screen Image or a file Url to a local image on the file system that needs to be used as the Lock Screen Image.
 func (m *Windows10GeneralConfiguration) SetPersonalizationLockScreenImageUrl(value *string)() {
-    m.personalizationLockScreenImageUrl = value
+    err := m.GetBackingStore().Set("personalizationLockScreenImageUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPowerButtonActionOnBattery sets the powerButtonActionOnBattery property value. Power action types
 func (m *Windows10GeneralConfiguration) SetPowerButtonActionOnBattery(value *PowerActionType)() {
-    m.powerButtonActionOnBattery = value
+    err := m.GetBackingStore().Set("powerButtonActionOnBattery", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPowerButtonActionPluggedIn sets the powerButtonActionPluggedIn property value. Power action types
 func (m *Windows10GeneralConfiguration) SetPowerButtonActionPluggedIn(value *PowerActionType)() {
-    m.powerButtonActionPluggedIn = value
+    err := m.GetBackingStore().Set("powerButtonActionPluggedIn", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPowerHybridSleepOnBattery sets the powerHybridSleepOnBattery property value. Possible values of a property
 func (m *Windows10GeneralConfiguration) SetPowerHybridSleepOnBattery(value *Enablement)() {
-    m.powerHybridSleepOnBattery = value
+    err := m.GetBackingStore().Set("powerHybridSleepOnBattery", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPowerHybridSleepPluggedIn sets the powerHybridSleepPluggedIn property value. Possible values of a property
 func (m *Windows10GeneralConfiguration) SetPowerHybridSleepPluggedIn(value *Enablement)() {
-    m.powerHybridSleepPluggedIn = value
+    err := m.GetBackingStore().Set("powerHybridSleepPluggedIn", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPowerLidCloseActionOnBattery sets the powerLidCloseActionOnBattery property value. Power action types
 func (m *Windows10GeneralConfiguration) SetPowerLidCloseActionOnBattery(value *PowerActionType)() {
-    m.powerLidCloseActionOnBattery = value
+    err := m.GetBackingStore().Set("powerLidCloseActionOnBattery", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPowerLidCloseActionPluggedIn sets the powerLidCloseActionPluggedIn property value. Power action types
 func (m *Windows10GeneralConfiguration) SetPowerLidCloseActionPluggedIn(value *PowerActionType)() {
-    m.powerLidCloseActionPluggedIn = value
+    err := m.GetBackingStore().Set("powerLidCloseActionPluggedIn", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPowerSleepButtonActionOnBattery sets the powerSleepButtonActionOnBattery property value. Power action types
 func (m *Windows10GeneralConfiguration) SetPowerSleepButtonActionOnBattery(value *PowerActionType)() {
-    m.powerSleepButtonActionOnBattery = value
+    err := m.GetBackingStore().Set("powerSleepButtonActionOnBattery", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPowerSleepButtonActionPluggedIn sets the powerSleepButtonActionPluggedIn property value. Power action types
 func (m *Windows10GeneralConfiguration) SetPowerSleepButtonActionPluggedIn(value *PowerActionType)() {
-    m.powerSleepButtonActionPluggedIn = value
+    err := m.GetBackingStore().Set("powerSleepButtonActionPluggedIn", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPrinterBlockAddition sets the printerBlockAddition property value. Prevent user installation of additional printers from printers settings.
 func (m *Windows10GeneralConfiguration) SetPrinterBlockAddition(value *bool)() {
-    m.printerBlockAddition = value
+    err := m.GetBackingStore().Set("printerBlockAddition", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPrinterDefaultName sets the printerDefaultName property value. Name (network host name) of an installed printer.
 func (m *Windows10GeneralConfiguration) SetPrinterDefaultName(value *string)() {
-    m.printerDefaultName = value
+    err := m.GetBackingStore().Set("printerDefaultName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPrinterNames sets the printerNames property value. Automatically provision printers based on their names (network host names).
 func (m *Windows10GeneralConfiguration) SetPrinterNames(value []string)() {
-    m.printerNames = value
+    err := m.GetBackingStore().Set("printerNames", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPrivacyAccessControls sets the privacyAccessControls property value. Indicates a list of applications with their access control levels over privacy data categories, and/or the default access levels per category. This collection can contain a maximum of 500 elements.
 func (m *Windows10GeneralConfiguration) SetPrivacyAccessControls(value []WindowsPrivacyDataAccessControlItemable)() {
-    m.privacyAccessControls = value
+    err := m.GetBackingStore().Set("privacyAccessControls", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPrivacyAdvertisingId sets the privacyAdvertisingId property value. State Management Setting.
 func (m *Windows10GeneralConfiguration) SetPrivacyAdvertisingId(value *StateManagementSetting)() {
-    m.privacyAdvertisingId = value
+    err := m.GetBackingStore().Set("privacyAdvertisingId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPrivacyAutoAcceptPairingAndConsentPrompts sets the privacyAutoAcceptPairingAndConsentPrompts property value. Indicates whether or not to allow the automatic acceptance of the pairing and privacy user consent dialog when launching apps.
 func (m *Windows10GeneralConfiguration) SetPrivacyAutoAcceptPairingAndConsentPrompts(value *bool)() {
-    m.privacyAutoAcceptPairingAndConsentPrompts = value
+    err := m.GetBackingStore().Set("privacyAutoAcceptPairingAndConsentPrompts", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPrivacyBlockActivityFeed sets the privacyBlockActivityFeed property value. Blocks the usage of cloud based speech services for Cortana, Dictation, or Store applications.
 func (m *Windows10GeneralConfiguration) SetPrivacyBlockActivityFeed(value *bool)() {
-    m.privacyBlockActivityFeed = value
+    err := m.GetBackingStore().Set("privacyBlockActivityFeed", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPrivacyBlockInputPersonalization sets the privacyBlockInputPersonalization property value. Indicates whether or not to block the usage of cloud based speech services for Cortana, Dictation, or Store applications.
 func (m *Windows10GeneralConfiguration) SetPrivacyBlockInputPersonalization(value *bool)() {
-    m.privacyBlockInputPersonalization = value
+    err := m.GetBackingStore().Set("privacyBlockInputPersonalization", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPrivacyBlockPublishUserActivities sets the privacyBlockPublishUserActivities property value. Blocks the shared experiences/discovery of recently used resources in task switcher etc.
 func (m *Windows10GeneralConfiguration) SetPrivacyBlockPublishUserActivities(value *bool)() {
-    m.privacyBlockPublishUserActivities = value
+    err := m.GetBackingStore().Set("privacyBlockPublishUserActivities", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPrivacyDisableLaunchExperience sets the privacyDisableLaunchExperience property value. This policy prevents the privacy experience from launching during user logon for new and upgraded users.​
 func (m *Windows10GeneralConfiguration) SetPrivacyDisableLaunchExperience(value *bool)() {
-    m.privacyDisableLaunchExperience = value
+    err := m.GetBackingStore().Set("privacyDisableLaunchExperience", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResetProtectionModeBlocked sets the resetProtectionModeBlocked property value. Indicates whether or not to Block the user from reset protection mode.
 func (m *Windows10GeneralConfiguration) SetResetProtectionModeBlocked(value *bool)() {
-    m.resetProtectionModeBlocked = value
+    err := m.GetBackingStore().Set("resetProtectionModeBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSafeSearchFilter sets the safeSearchFilter property value. Specifies what level of safe search (filtering adult content) is required
 func (m *Windows10GeneralConfiguration) SetSafeSearchFilter(value *SafeSearchFilterType)() {
-    m.safeSearchFilter = value
+    err := m.GetBackingStore().Set("safeSearchFilter", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetScreenCaptureBlocked sets the screenCaptureBlocked property value. Indicates whether or not to Block the user from taking Screenshots.
 func (m *Windows10GeneralConfiguration) SetScreenCaptureBlocked(value *bool)() {
-    m.screenCaptureBlocked = value
+    err := m.GetBackingStore().Set("screenCaptureBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSearchBlockDiacritics sets the searchBlockDiacritics property value. Specifies if search can use diacritics.
 func (m *Windows10GeneralConfiguration) SetSearchBlockDiacritics(value *bool)() {
-    m.searchBlockDiacritics = value
+    err := m.GetBackingStore().Set("searchBlockDiacritics", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSearchBlockWebResults sets the searchBlockWebResults property value. Indicates whether or not to block the web search.
 func (m *Windows10GeneralConfiguration) SetSearchBlockWebResults(value *bool)() {
-    m.searchBlockWebResults = value
+    err := m.GetBackingStore().Set("searchBlockWebResults", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSearchDisableAutoLanguageDetection sets the searchDisableAutoLanguageDetection property value. Specifies whether to use automatic language detection when indexing content and properties.
 func (m *Windows10GeneralConfiguration) SetSearchDisableAutoLanguageDetection(value *bool)() {
-    m.searchDisableAutoLanguageDetection = value
+    err := m.GetBackingStore().Set("searchDisableAutoLanguageDetection", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSearchDisableIndexerBackoff sets the searchDisableIndexerBackoff property value. Indicates whether or not to disable the search indexer backoff feature.
 func (m *Windows10GeneralConfiguration) SetSearchDisableIndexerBackoff(value *bool)() {
-    m.searchDisableIndexerBackoff = value
+    err := m.GetBackingStore().Set("searchDisableIndexerBackoff", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSearchDisableIndexingEncryptedItems sets the searchDisableIndexingEncryptedItems property value. Indicates whether or not to block indexing of WIP-protected items to prevent them from appearing in search results for Cortana or Explorer.
 func (m *Windows10GeneralConfiguration) SetSearchDisableIndexingEncryptedItems(value *bool)() {
-    m.searchDisableIndexingEncryptedItems = value
+    err := m.GetBackingStore().Set("searchDisableIndexingEncryptedItems", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSearchDisableIndexingRemovableDrive sets the searchDisableIndexingRemovableDrive property value. Indicates whether or not to allow users to add locations on removable drives to libraries and to be indexed.
 func (m *Windows10GeneralConfiguration) SetSearchDisableIndexingRemovableDrive(value *bool)() {
-    m.searchDisableIndexingRemovableDrive = value
+    err := m.GetBackingStore().Set("searchDisableIndexingRemovableDrive", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSearchDisableLocation sets the searchDisableLocation property value. Specifies if search can use location information.
 func (m *Windows10GeneralConfiguration) SetSearchDisableLocation(value *bool)() {
-    m.searchDisableLocation = value
+    err := m.GetBackingStore().Set("searchDisableLocation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSearchDisableUseLocation sets the searchDisableUseLocation property value. Specifies if search can use location information.
 func (m *Windows10GeneralConfiguration) SetSearchDisableUseLocation(value *bool)() {
-    m.searchDisableUseLocation = value
+    err := m.GetBackingStore().Set("searchDisableUseLocation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSearchEnableAutomaticIndexSizeManangement sets the searchEnableAutomaticIndexSizeManangement property value. Specifies minimum amount of hard drive space on the same drive as the index location before indexing stops.
 func (m *Windows10GeneralConfiguration) SetSearchEnableAutomaticIndexSizeManangement(value *bool)() {
-    m.searchEnableAutomaticIndexSizeManangement = value
+    err := m.GetBackingStore().Set("searchEnableAutomaticIndexSizeManangement", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSearchEnableRemoteQueries sets the searchEnableRemoteQueries property value. Indicates whether or not to block remote queries of this computer’s index.
 func (m *Windows10GeneralConfiguration) SetSearchEnableRemoteQueries(value *bool)() {
-    m.searchEnableRemoteQueries = value
+    err := m.GetBackingStore().Set("searchEnableRemoteQueries", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSecurityBlockAzureADJoinedDevicesAutoEncryption sets the securityBlockAzureADJoinedDevicesAutoEncryption property value. Specify whether to allow automatic device encryption during OOBE when the device is Azure AD joined (desktop only).
 func (m *Windows10GeneralConfiguration) SetSecurityBlockAzureADJoinedDevicesAutoEncryption(value *bool)() {
-    m.securityBlockAzureADJoinedDevicesAutoEncryption = value
+    err := m.GetBackingStore().Set("securityBlockAzureADJoinedDevicesAutoEncryption", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingsBlockAccountsPage sets the settingsBlockAccountsPage property value. Indicates whether or not to block access to Accounts in Settings app.
 func (m *Windows10GeneralConfiguration) SetSettingsBlockAccountsPage(value *bool)() {
-    m.settingsBlockAccountsPage = value
+    err := m.GetBackingStore().Set("settingsBlockAccountsPage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingsBlockAddProvisioningPackage sets the settingsBlockAddProvisioningPackage property value. Indicates whether or not to block the user from installing provisioning packages.
 func (m *Windows10GeneralConfiguration) SetSettingsBlockAddProvisioningPackage(value *bool)() {
-    m.settingsBlockAddProvisioningPackage = value
+    err := m.GetBackingStore().Set("settingsBlockAddProvisioningPackage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingsBlockAppsPage sets the settingsBlockAppsPage property value. Indicates whether or not to block access to Apps in Settings app.
 func (m *Windows10GeneralConfiguration) SetSettingsBlockAppsPage(value *bool)() {
-    m.settingsBlockAppsPage = value
+    err := m.GetBackingStore().Set("settingsBlockAppsPage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingsBlockChangeLanguage sets the settingsBlockChangeLanguage property value. Indicates whether or not to block the user from changing the language settings.
 func (m *Windows10GeneralConfiguration) SetSettingsBlockChangeLanguage(value *bool)() {
-    m.settingsBlockChangeLanguage = value
+    err := m.GetBackingStore().Set("settingsBlockChangeLanguage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingsBlockChangePowerSleep sets the settingsBlockChangePowerSleep property value. Indicates whether or not to block the user from changing power and sleep settings.
 func (m *Windows10GeneralConfiguration) SetSettingsBlockChangePowerSleep(value *bool)() {
-    m.settingsBlockChangePowerSleep = value
+    err := m.GetBackingStore().Set("settingsBlockChangePowerSleep", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingsBlockChangeRegion sets the settingsBlockChangeRegion property value. Indicates whether or not to block the user from changing the region settings.
 func (m *Windows10GeneralConfiguration) SetSettingsBlockChangeRegion(value *bool)() {
-    m.settingsBlockChangeRegion = value
+    err := m.GetBackingStore().Set("settingsBlockChangeRegion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingsBlockChangeSystemTime sets the settingsBlockChangeSystemTime property value. Indicates whether or not to block the user from changing date and time settings.
 func (m *Windows10GeneralConfiguration) SetSettingsBlockChangeSystemTime(value *bool)() {
-    m.settingsBlockChangeSystemTime = value
+    err := m.GetBackingStore().Set("settingsBlockChangeSystemTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingsBlockDevicesPage sets the settingsBlockDevicesPage property value. Indicates whether or not to block access to Devices in Settings app.
 func (m *Windows10GeneralConfiguration) SetSettingsBlockDevicesPage(value *bool)() {
-    m.settingsBlockDevicesPage = value
+    err := m.GetBackingStore().Set("settingsBlockDevicesPage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingsBlockEaseOfAccessPage sets the settingsBlockEaseOfAccessPage property value. Indicates whether or not to block access to Ease of Access in Settings app.
 func (m *Windows10GeneralConfiguration) SetSettingsBlockEaseOfAccessPage(value *bool)() {
-    m.settingsBlockEaseOfAccessPage = value
+    err := m.GetBackingStore().Set("settingsBlockEaseOfAccessPage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingsBlockEditDeviceName sets the settingsBlockEditDeviceName property value. Indicates whether or not to block the user from editing the device name.
 func (m *Windows10GeneralConfiguration) SetSettingsBlockEditDeviceName(value *bool)() {
-    m.settingsBlockEditDeviceName = value
+    err := m.GetBackingStore().Set("settingsBlockEditDeviceName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingsBlockGamingPage sets the settingsBlockGamingPage property value. Indicates whether or not to block access to Gaming in Settings app.
 func (m *Windows10GeneralConfiguration) SetSettingsBlockGamingPage(value *bool)() {
-    m.settingsBlockGamingPage = value
+    err := m.GetBackingStore().Set("settingsBlockGamingPage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingsBlockNetworkInternetPage sets the settingsBlockNetworkInternetPage property value. Indicates whether or not to block access to Network & Internet in Settings app.
 func (m *Windows10GeneralConfiguration) SetSettingsBlockNetworkInternetPage(value *bool)() {
-    m.settingsBlockNetworkInternetPage = value
+    err := m.GetBackingStore().Set("settingsBlockNetworkInternetPage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingsBlockPersonalizationPage sets the settingsBlockPersonalizationPage property value. Indicates whether or not to block access to Personalization in Settings app.
 func (m *Windows10GeneralConfiguration) SetSettingsBlockPersonalizationPage(value *bool)() {
-    m.settingsBlockPersonalizationPage = value
+    err := m.GetBackingStore().Set("settingsBlockPersonalizationPage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingsBlockPrivacyPage sets the settingsBlockPrivacyPage property value. Indicates whether or not to block access to Privacy in Settings app.
 func (m *Windows10GeneralConfiguration) SetSettingsBlockPrivacyPage(value *bool)() {
-    m.settingsBlockPrivacyPage = value
+    err := m.GetBackingStore().Set("settingsBlockPrivacyPage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingsBlockRemoveProvisioningPackage sets the settingsBlockRemoveProvisioningPackage property value. Indicates whether or not to block the runtime configuration agent from removing provisioning packages.
 func (m *Windows10GeneralConfiguration) SetSettingsBlockRemoveProvisioningPackage(value *bool)() {
-    m.settingsBlockRemoveProvisioningPackage = value
+    err := m.GetBackingStore().Set("settingsBlockRemoveProvisioningPackage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingsBlockSettingsApp sets the settingsBlockSettingsApp property value. Indicates whether or not to block access to Settings app.
 func (m *Windows10GeneralConfiguration) SetSettingsBlockSettingsApp(value *bool)() {
-    m.settingsBlockSettingsApp = value
+    err := m.GetBackingStore().Set("settingsBlockSettingsApp", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingsBlockSystemPage sets the settingsBlockSystemPage property value. Indicates whether or not to block access to System in Settings app.
 func (m *Windows10GeneralConfiguration) SetSettingsBlockSystemPage(value *bool)() {
-    m.settingsBlockSystemPage = value
+    err := m.GetBackingStore().Set("settingsBlockSystemPage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingsBlockTimeLanguagePage sets the settingsBlockTimeLanguagePage property value. Indicates whether or not to block access to Time & Language in Settings app.
 func (m *Windows10GeneralConfiguration) SetSettingsBlockTimeLanguagePage(value *bool)() {
-    m.settingsBlockTimeLanguagePage = value
+    err := m.GetBackingStore().Set("settingsBlockTimeLanguagePage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingsBlockUpdateSecurityPage sets the settingsBlockUpdateSecurityPage property value. Indicates whether or not to block access to Update & Security in Settings app.
 func (m *Windows10GeneralConfiguration) SetSettingsBlockUpdateSecurityPage(value *bool)() {
-    m.settingsBlockUpdateSecurityPage = value
+    err := m.GetBackingStore().Set("settingsBlockUpdateSecurityPage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSharedUserAppDataAllowed sets the sharedUserAppDataAllowed property value. Indicates whether or not to block multiple users of the same app to share data.
 func (m *Windows10GeneralConfiguration) SetSharedUserAppDataAllowed(value *bool)() {
-    m.sharedUserAppDataAllowed = value
+    err := m.GetBackingStore().Set("sharedUserAppDataAllowed", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSmartScreenAppInstallControl sets the smartScreenAppInstallControl property value. App Install control Setting
 func (m *Windows10GeneralConfiguration) SetSmartScreenAppInstallControl(value *AppInstallControlType)() {
-    m.smartScreenAppInstallControl = value
+    err := m.GetBackingStore().Set("smartScreenAppInstallControl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSmartScreenBlockPromptOverride sets the smartScreenBlockPromptOverride property value. Indicates whether or not users can override SmartScreen Filter warnings about potentially malicious websites.
 func (m *Windows10GeneralConfiguration) SetSmartScreenBlockPromptOverride(value *bool)() {
-    m.smartScreenBlockPromptOverride = value
+    err := m.GetBackingStore().Set("smartScreenBlockPromptOverride", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSmartScreenBlockPromptOverrideForFiles sets the smartScreenBlockPromptOverrideForFiles property value. Indicates whether or not users can override the SmartScreen Filter warnings about downloading unverified files
 func (m *Windows10GeneralConfiguration) SetSmartScreenBlockPromptOverrideForFiles(value *bool)() {
-    m.smartScreenBlockPromptOverrideForFiles = value
+    err := m.GetBackingStore().Set("smartScreenBlockPromptOverrideForFiles", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSmartScreenEnableAppInstallControl sets the smartScreenEnableAppInstallControl property value. This property will be deprecated in July 2019 and will be replaced by property SmartScreenAppInstallControl. Allows IT Admins to control whether users are allowed to install apps from places other than the Store.
 func (m *Windows10GeneralConfiguration) SetSmartScreenEnableAppInstallControl(value *bool)() {
-    m.smartScreenEnableAppInstallControl = value
+    err := m.GetBackingStore().Set("smartScreenEnableAppInstallControl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartBlockUnpinningAppsFromTaskbar sets the startBlockUnpinningAppsFromTaskbar property value. Indicates whether or not to block the user from unpinning apps from taskbar.
 func (m *Windows10GeneralConfiguration) SetStartBlockUnpinningAppsFromTaskbar(value *bool)() {
-    m.startBlockUnpinningAppsFromTaskbar = value
+    err := m.GetBackingStore().Set("startBlockUnpinningAppsFromTaskbar", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartMenuAppListVisibility sets the startMenuAppListVisibility property value. Type of start menu app list visibility.
 func (m *Windows10GeneralConfiguration) SetStartMenuAppListVisibility(value *WindowsStartMenuAppListVisibilityType)() {
-    m.startMenuAppListVisibility = value
+    err := m.GetBackingStore().Set("startMenuAppListVisibility", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartMenuHideChangeAccountSettings sets the startMenuHideChangeAccountSettings property value. Enabling this policy hides the change account setting from appearing in the user tile in the start menu.
 func (m *Windows10GeneralConfiguration) SetStartMenuHideChangeAccountSettings(value *bool)() {
-    m.startMenuHideChangeAccountSettings = value
+    err := m.GetBackingStore().Set("startMenuHideChangeAccountSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartMenuHideFrequentlyUsedApps sets the startMenuHideFrequentlyUsedApps property value. Enabling this policy hides the most used apps from appearing on the start menu and disables the corresponding toggle in the Settings app.
 func (m *Windows10GeneralConfiguration) SetStartMenuHideFrequentlyUsedApps(value *bool)() {
-    m.startMenuHideFrequentlyUsedApps = value
+    err := m.GetBackingStore().Set("startMenuHideFrequentlyUsedApps", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartMenuHideHibernate sets the startMenuHideHibernate property value. Enabling this policy hides hibernate from appearing in the power button in the start menu.
 func (m *Windows10GeneralConfiguration) SetStartMenuHideHibernate(value *bool)() {
-    m.startMenuHideHibernate = value
+    err := m.GetBackingStore().Set("startMenuHideHibernate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartMenuHideLock sets the startMenuHideLock property value. Enabling this policy hides lock from appearing in the user tile in the start menu.
 func (m *Windows10GeneralConfiguration) SetStartMenuHideLock(value *bool)() {
-    m.startMenuHideLock = value
+    err := m.GetBackingStore().Set("startMenuHideLock", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartMenuHidePowerButton sets the startMenuHidePowerButton property value. Enabling this policy hides the power button from appearing in the start menu.
 func (m *Windows10GeneralConfiguration) SetStartMenuHidePowerButton(value *bool)() {
-    m.startMenuHidePowerButton = value
+    err := m.GetBackingStore().Set("startMenuHidePowerButton", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartMenuHideRecentJumpLists sets the startMenuHideRecentJumpLists property value. Enabling this policy hides recent jump lists from appearing on the start menu/taskbar and disables the corresponding toggle in the Settings app.
 func (m *Windows10GeneralConfiguration) SetStartMenuHideRecentJumpLists(value *bool)() {
-    m.startMenuHideRecentJumpLists = value
+    err := m.GetBackingStore().Set("startMenuHideRecentJumpLists", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartMenuHideRecentlyAddedApps sets the startMenuHideRecentlyAddedApps property value. Enabling this policy hides recently added apps from appearing on the start menu and disables the corresponding toggle in the Settings app.
 func (m *Windows10GeneralConfiguration) SetStartMenuHideRecentlyAddedApps(value *bool)() {
-    m.startMenuHideRecentlyAddedApps = value
+    err := m.GetBackingStore().Set("startMenuHideRecentlyAddedApps", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartMenuHideRestartOptions sets the startMenuHideRestartOptions property value. Enabling this policy hides 'Restart/Update and Restart' from appearing in the power button in the start menu.
 func (m *Windows10GeneralConfiguration) SetStartMenuHideRestartOptions(value *bool)() {
-    m.startMenuHideRestartOptions = value
+    err := m.GetBackingStore().Set("startMenuHideRestartOptions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartMenuHideShutDown sets the startMenuHideShutDown property value. Enabling this policy hides shut down/update and shut down from appearing in the power button in the start menu.
 func (m *Windows10GeneralConfiguration) SetStartMenuHideShutDown(value *bool)() {
-    m.startMenuHideShutDown = value
+    err := m.GetBackingStore().Set("startMenuHideShutDown", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartMenuHideSignOut sets the startMenuHideSignOut property value. Enabling this policy hides sign out from appearing in the user tile in the start menu.
 func (m *Windows10GeneralConfiguration) SetStartMenuHideSignOut(value *bool)() {
-    m.startMenuHideSignOut = value
+    err := m.GetBackingStore().Set("startMenuHideSignOut", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartMenuHideSleep sets the startMenuHideSleep property value. Enabling this policy hides sleep from appearing in the power button in the start menu.
 func (m *Windows10GeneralConfiguration) SetStartMenuHideSleep(value *bool)() {
-    m.startMenuHideSleep = value
+    err := m.GetBackingStore().Set("startMenuHideSleep", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartMenuHideSwitchAccount sets the startMenuHideSwitchAccount property value. Enabling this policy hides switch account from appearing in the user tile in the start menu.
 func (m *Windows10GeneralConfiguration) SetStartMenuHideSwitchAccount(value *bool)() {
-    m.startMenuHideSwitchAccount = value
+    err := m.GetBackingStore().Set("startMenuHideSwitchAccount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartMenuHideUserTile sets the startMenuHideUserTile property value. Enabling this policy hides the user tile from appearing in the start menu.
 func (m *Windows10GeneralConfiguration) SetStartMenuHideUserTile(value *bool)() {
-    m.startMenuHideUserTile = value
+    err := m.GetBackingStore().Set("startMenuHideUserTile", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartMenuLayoutEdgeAssetsXml sets the startMenuLayoutEdgeAssetsXml property value. This policy setting allows you to import Edge assets to be used with startMenuLayoutXml policy. Start layout can contain secondary tile from Edge app which looks for Edge local asset file. Edge local asset would not exist and cause Edge secondary tile to appear empty in this case. This policy only gets applied when startMenuLayoutXml policy is modified. The value should be a UTF-8 Base64 encoded byte array.
 func (m *Windows10GeneralConfiguration) SetStartMenuLayoutEdgeAssetsXml(value []byte)() {
-    m.startMenuLayoutEdgeAssetsXml = value
+    err := m.GetBackingStore().Set("startMenuLayoutEdgeAssetsXml", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartMenuLayoutXml sets the startMenuLayoutXml property value. Allows admins to override the default Start menu layout and prevents the user from changing it. The layout is modified by specifying an XML file based on a layout modification schema. XML needs to be in a UTF8 encoded byte array format.
 func (m *Windows10GeneralConfiguration) SetStartMenuLayoutXml(value []byte)() {
-    m.startMenuLayoutXml = value
+    err := m.GetBackingStore().Set("startMenuLayoutXml", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartMenuMode sets the startMenuMode property value. Type of display modes for the start menu.
 func (m *Windows10GeneralConfiguration) SetStartMenuMode(value *WindowsStartMenuModeType)() {
-    m.startMenuMode = value
+    err := m.GetBackingStore().Set("startMenuMode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartMenuPinnedFolderDocuments sets the startMenuPinnedFolderDocuments property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) SetStartMenuPinnedFolderDocuments(value *VisibilitySetting)() {
-    m.startMenuPinnedFolderDocuments = value
+    err := m.GetBackingStore().Set("startMenuPinnedFolderDocuments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartMenuPinnedFolderDownloads sets the startMenuPinnedFolderDownloads property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) SetStartMenuPinnedFolderDownloads(value *VisibilitySetting)() {
-    m.startMenuPinnedFolderDownloads = value
+    err := m.GetBackingStore().Set("startMenuPinnedFolderDownloads", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartMenuPinnedFolderFileExplorer sets the startMenuPinnedFolderFileExplorer property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) SetStartMenuPinnedFolderFileExplorer(value *VisibilitySetting)() {
-    m.startMenuPinnedFolderFileExplorer = value
+    err := m.GetBackingStore().Set("startMenuPinnedFolderFileExplorer", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartMenuPinnedFolderHomeGroup sets the startMenuPinnedFolderHomeGroup property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) SetStartMenuPinnedFolderHomeGroup(value *VisibilitySetting)() {
-    m.startMenuPinnedFolderHomeGroup = value
+    err := m.GetBackingStore().Set("startMenuPinnedFolderHomeGroup", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartMenuPinnedFolderMusic sets the startMenuPinnedFolderMusic property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) SetStartMenuPinnedFolderMusic(value *VisibilitySetting)() {
-    m.startMenuPinnedFolderMusic = value
+    err := m.GetBackingStore().Set("startMenuPinnedFolderMusic", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartMenuPinnedFolderNetwork sets the startMenuPinnedFolderNetwork property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) SetStartMenuPinnedFolderNetwork(value *VisibilitySetting)() {
-    m.startMenuPinnedFolderNetwork = value
+    err := m.GetBackingStore().Set("startMenuPinnedFolderNetwork", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartMenuPinnedFolderPersonalFolder sets the startMenuPinnedFolderPersonalFolder property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) SetStartMenuPinnedFolderPersonalFolder(value *VisibilitySetting)() {
-    m.startMenuPinnedFolderPersonalFolder = value
+    err := m.GetBackingStore().Set("startMenuPinnedFolderPersonalFolder", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartMenuPinnedFolderPictures sets the startMenuPinnedFolderPictures property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) SetStartMenuPinnedFolderPictures(value *VisibilitySetting)() {
-    m.startMenuPinnedFolderPictures = value
+    err := m.GetBackingStore().Set("startMenuPinnedFolderPictures", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartMenuPinnedFolderSettings sets the startMenuPinnedFolderSettings property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) SetStartMenuPinnedFolderSettings(value *VisibilitySetting)() {
-    m.startMenuPinnedFolderSettings = value
+    err := m.GetBackingStore().Set("startMenuPinnedFolderSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartMenuPinnedFolderVideos sets the startMenuPinnedFolderVideos property value. Generic visibility state.
 func (m *Windows10GeneralConfiguration) SetStartMenuPinnedFolderVideos(value *VisibilitySetting)() {
-    m.startMenuPinnedFolderVideos = value
+    err := m.GetBackingStore().Set("startMenuPinnedFolderVideos", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStorageBlockRemovableStorage sets the storageBlockRemovableStorage property value. Indicates whether or not to Block the user from using removable storage.
 func (m *Windows10GeneralConfiguration) SetStorageBlockRemovableStorage(value *bool)() {
-    m.storageBlockRemovableStorage = value
+    err := m.GetBackingStore().Set("storageBlockRemovableStorage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStorageRequireMobileDeviceEncryption sets the storageRequireMobileDeviceEncryption property value. Indicating whether or not to require encryption on a mobile device.
 func (m *Windows10GeneralConfiguration) SetStorageRequireMobileDeviceEncryption(value *bool)() {
-    m.storageRequireMobileDeviceEncryption = value
+    err := m.GetBackingStore().Set("storageRequireMobileDeviceEncryption", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStorageRestrictAppDataToSystemVolume sets the storageRestrictAppDataToSystemVolume property value. Indicates whether application data is restricted to the system drive.
 func (m *Windows10GeneralConfiguration) SetStorageRestrictAppDataToSystemVolume(value *bool)() {
-    m.storageRestrictAppDataToSystemVolume = value
+    err := m.GetBackingStore().Set("storageRestrictAppDataToSystemVolume", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStorageRestrictAppInstallToSystemVolume sets the storageRestrictAppInstallToSystemVolume property value. Indicates whether the installation of applications is restricted to the system drive.
 func (m *Windows10GeneralConfiguration) SetStorageRestrictAppInstallToSystemVolume(value *bool)() {
-    m.storageRestrictAppInstallToSystemVolume = value
+    err := m.GetBackingStore().Set("storageRestrictAppInstallToSystemVolume", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSystemTelemetryProxyServer sets the systemTelemetryProxyServer property value. Gets or sets the fully qualified domain name (FQDN) or IP address of a proxy server to forward Connected User Experiences and Telemetry requests.
 func (m *Windows10GeneralConfiguration) SetSystemTelemetryProxyServer(value *string)() {
-    m.systemTelemetryProxyServer = value
+    err := m.GetBackingStore().Set("systemTelemetryProxyServer", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTaskManagerBlockEndTask sets the taskManagerBlockEndTask property value. Specify whether non-administrators can use Task Manager to end tasks.
 func (m *Windows10GeneralConfiguration) SetTaskManagerBlockEndTask(value *bool)() {
-    m.taskManagerBlockEndTask = value
+    err := m.GetBackingStore().Set("taskManagerBlockEndTask", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantLockdownRequireNetworkDuringOutOfBoxExperience sets the tenantLockdownRequireNetworkDuringOutOfBoxExperience property value. Whether the device is required to connect to the network.
 func (m *Windows10GeneralConfiguration) SetTenantLockdownRequireNetworkDuringOutOfBoxExperience(value *bool)() {
-    m.tenantLockdownRequireNetworkDuringOutOfBoxExperience = value
+    err := m.GetBackingStore().Set("tenantLockdownRequireNetworkDuringOutOfBoxExperience", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUninstallBuiltInApps sets the uninstallBuiltInApps property value. Indicates whether or not to uninstall a fixed list of built-in Windows apps.
 func (m *Windows10GeneralConfiguration) SetUninstallBuiltInApps(value *bool)() {
-    m.uninstallBuiltInApps = value
+    err := m.GetBackingStore().Set("uninstallBuiltInApps", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUsbBlocked sets the usbBlocked property value. Indicates whether or not to Block the user from USB connection.
 func (m *Windows10GeneralConfiguration) SetUsbBlocked(value *bool)() {
-    m.usbBlocked = value
+    err := m.GetBackingStore().Set("usbBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVoiceRecordingBlocked sets the voiceRecordingBlocked property value. Indicates whether or not to Block the user from voice recording.
 func (m *Windows10GeneralConfiguration) SetVoiceRecordingBlocked(value *bool)() {
-    m.voiceRecordingBlocked = value
+    err := m.GetBackingStore().Set("voiceRecordingBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWebRtcBlockLocalhostIpAddress sets the webRtcBlockLocalhostIpAddress property value. Indicates whether or not user's localhost IP address is displayed while making phone calls using the WebRTC
 func (m *Windows10GeneralConfiguration) SetWebRtcBlockLocalhostIpAddress(value *bool)() {
-    m.webRtcBlockLocalhostIpAddress = value
+    err := m.GetBackingStore().Set("webRtcBlockLocalhostIpAddress", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWiFiBlockAutomaticConnectHotspots sets the wiFiBlockAutomaticConnectHotspots property value. Indicating whether or not to block automatically connecting to Wi-Fi hotspots. Has no impact if Wi-Fi is blocked.
 func (m *Windows10GeneralConfiguration) SetWiFiBlockAutomaticConnectHotspots(value *bool)() {
-    m.wiFiBlockAutomaticConnectHotspots = value
+    err := m.GetBackingStore().Set("wiFiBlockAutomaticConnectHotspots", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWiFiBlocked sets the wiFiBlocked property value. Indicates whether or not to Block the user from using Wi-Fi.
 func (m *Windows10GeneralConfiguration) SetWiFiBlocked(value *bool)() {
-    m.wiFiBlocked = value
+    err := m.GetBackingStore().Set("wiFiBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWiFiBlockManualConfiguration sets the wiFiBlockManualConfiguration property value. Indicates whether or not to Block the user from using Wi-Fi manual configuration.
 func (m *Windows10GeneralConfiguration) SetWiFiBlockManualConfiguration(value *bool)() {
-    m.wiFiBlockManualConfiguration = value
+    err := m.GetBackingStore().Set("wiFiBlockManualConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWiFiScanInterval sets the wiFiScanInterval property value. Specify how often devices scan for Wi-Fi networks. Supported values are 1-500, where 100 = default, and 500 = low frequency. Valid values 1 to 500
 func (m *Windows10GeneralConfiguration) SetWiFiScanInterval(value *int32)() {
-    m.wiFiScanInterval = value
+    err := m.GetBackingStore().Set("wiFiScanInterval", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWindows10AppsForceUpdateSchedule sets the windows10AppsForceUpdateSchedule property value. Windows 10 force update schedule for Apps.
 func (m *Windows10GeneralConfiguration) SetWindows10AppsForceUpdateSchedule(value Windows10AppsForceUpdateScheduleable)() {
-    m.windows10AppsForceUpdateSchedule = value
+    err := m.GetBackingStore().Set("windows10AppsForceUpdateSchedule", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWindowsSpotlightBlockConsumerSpecificFeatures sets the windowsSpotlightBlockConsumerSpecificFeatures property value. Allows IT admins to block experiences that are typically for consumers only, such as Start suggestions, Membership notifications, Post-OOBE app install and redirect tiles.
 func (m *Windows10GeneralConfiguration) SetWindowsSpotlightBlockConsumerSpecificFeatures(value *bool)() {
-    m.windowsSpotlightBlockConsumerSpecificFeatures = value
+    err := m.GetBackingStore().Set("windowsSpotlightBlockConsumerSpecificFeatures", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWindowsSpotlightBlocked sets the windowsSpotlightBlocked property value. Allows IT admins to turn off all Windows Spotlight features
 func (m *Windows10GeneralConfiguration) SetWindowsSpotlightBlocked(value *bool)() {
-    m.windowsSpotlightBlocked = value
+    err := m.GetBackingStore().Set("windowsSpotlightBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWindowsSpotlightBlockOnActionCenter sets the windowsSpotlightBlockOnActionCenter property value. Block suggestions from Microsoft that show after each OS clean install, upgrade or in an on-going basis to introduce users to what is new or changed
 func (m *Windows10GeneralConfiguration) SetWindowsSpotlightBlockOnActionCenter(value *bool)() {
-    m.windowsSpotlightBlockOnActionCenter = value
+    err := m.GetBackingStore().Set("windowsSpotlightBlockOnActionCenter", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWindowsSpotlightBlockTailoredExperiences sets the windowsSpotlightBlockTailoredExperiences property value. Block personalized content in Windows spotlight based on user’s device usage.
 func (m *Windows10GeneralConfiguration) SetWindowsSpotlightBlockTailoredExperiences(value *bool)() {
-    m.windowsSpotlightBlockTailoredExperiences = value
+    err := m.GetBackingStore().Set("windowsSpotlightBlockTailoredExperiences", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWindowsSpotlightBlockThirdPartyNotifications sets the windowsSpotlightBlockThirdPartyNotifications property value. Block third party content delivered via Windows Spotlight
 func (m *Windows10GeneralConfiguration) SetWindowsSpotlightBlockThirdPartyNotifications(value *bool)() {
-    m.windowsSpotlightBlockThirdPartyNotifications = value
+    err := m.GetBackingStore().Set("windowsSpotlightBlockThirdPartyNotifications", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWindowsSpotlightBlockWelcomeExperience sets the windowsSpotlightBlockWelcomeExperience property value. Block Windows Spotlight Windows welcome experience
 func (m *Windows10GeneralConfiguration) SetWindowsSpotlightBlockWelcomeExperience(value *bool)() {
-    m.windowsSpotlightBlockWelcomeExperience = value
+    err := m.GetBackingStore().Set("windowsSpotlightBlockWelcomeExperience", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWindowsSpotlightBlockWindowsTips sets the windowsSpotlightBlockWindowsTips property value. Allows IT admins to turn off the popup of Windows Tips.
 func (m *Windows10GeneralConfiguration) SetWindowsSpotlightBlockWindowsTips(value *bool)() {
-    m.windowsSpotlightBlockWindowsTips = value
+    err := m.GetBackingStore().Set("windowsSpotlightBlockWindowsTips", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWindowsSpotlightConfigureOnLockScreen sets the windowsSpotlightConfigureOnLockScreen property value. Allows IT admind to set a predefined default search engine for MDM-Controlled devices
 func (m *Windows10GeneralConfiguration) SetWindowsSpotlightConfigureOnLockScreen(value *WindowsSpotlightEnablementSettings)() {
-    m.windowsSpotlightConfigureOnLockScreen = value
+    err := m.GetBackingStore().Set("windowsSpotlightConfigureOnLockScreen", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWindowsStoreBlockAutoUpdate sets the windowsStoreBlockAutoUpdate property value. Indicates whether or not to block automatic update of apps from Windows Store.
 func (m *Windows10GeneralConfiguration) SetWindowsStoreBlockAutoUpdate(value *bool)() {
-    m.windowsStoreBlockAutoUpdate = value
+    err := m.GetBackingStore().Set("windowsStoreBlockAutoUpdate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWindowsStoreBlocked sets the windowsStoreBlocked property value. Indicates whether or not to Block the user from using the Windows store.
 func (m *Windows10GeneralConfiguration) SetWindowsStoreBlocked(value *bool)() {
-    m.windowsStoreBlocked = value
+    err := m.GetBackingStore().Set("windowsStoreBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWindowsStoreEnablePrivateStoreOnly sets the windowsStoreEnablePrivateStoreOnly property value. Indicates whether or not to enable Private Store Only.
 func (m *Windows10GeneralConfiguration) SetWindowsStoreEnablePrivateStoreOnly(value *bool)() {
-    m.windowsStoreEnablePrivateStoreOnly = value
+    err := m.GetBackingStore().Set("windowsStoreEnablePrivateStoreOnly", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWirelessDisplayBlockProjectionToThisDevice sets the wirelessDisplayBlockProjectionToThisDevice property value. Indicates whether or not to allow other devices from discovering this PC for projection.
 func (m *Windows10GeneralConfiguration) SetWirelessDisplayBlockProjectionToThisDevice(value *bool)() {
-    m.wirelessDisplayBlockProjectionToThisDevice = value
+    err := m.GetBackingStore().Set("wirelessDisplayBlockProjectionToThisDevice", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWirelessDisplayBlockUserInputFromReceiver sets the wirelessDisplayBlockUserInputFromReceiver property value. Indicates whether or not to allow user input from wireless display receiver.
 func (m *Windows10GeneralConfiguration) SetWirelessDisplayBlockUserInputFromReceiver(value *bool)() {
-    m.wirelessDisplayBlockUserInputFromReceiver = value
+    err := m.GetBackingStore().Set("wirelessDisplayBlockUserInputFromReceiver", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWirelessDisplayRequirePinForPairing sets the wirelessDisplayRequirePinForPairing property value. Indicates whether or not to require a PIN for new devices to initiate pairing.
 func (m *Windows10GeneralConfiguration) SetWirelessDisplayRequirePinForPairing(value *bool)() {
-    m.wirelessDisplayRequirePinForPairing = value
+    err := m.GetBackingStore().Set("wirelessDisplayRequirePinForPairing", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Windows10GeneralConfigurationable 
+type Windows10GeneralConfigurationable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAccountsBlockAddingNonMicrosoftAccountEmail()(*bool)
+    GetActivateAppsWithVoice()(*Enablement)
+    GetAntiTheftModeBlocked()(*bool)
+    GetAppManagementMSIAllowUserControlOverInstall()(*bool)
+    GetAppManagementMSIAlwaysInstallWithElevatedPrivileges()(*bool)
+    GetAppManagementPackageFamilyNamesToLaunchAfterLogOn()([]string)
+    GetAppsAllowTrustedAppsSideloading()(*StateManagementSetting)
+    GetAppsBlockWindowsStoreOriginatedApps()(*bool)
+    GetAuthenticationAllowSecondaryDevice()(*bool)
+    GetAuthenticationPreferredAzureADTenantDomainName()(*string)
+    GetAuthenticationWebSignIn()(*Enablement)
+    GetBluetoothAllowedServices()([]string)
+    GetBluetoothBlockAdvertising()(*bool)
+    GetBluetoothBlockDiscoverableMode()(*bool)
+    GetBluetoothBlocked()(*bool)
+    GetBluetoothBlockPrePairing()(*bool)
+    GetBluetoothBlockPromptedProximalConnections()(*bool)
+    GetCameraBlocked()(*bool)
+    GetCellularBlockDataWhenRoaming()(*bool)
+    GetCellularBlockVpn()(*bool)
+    GetCellularBlockVpnWhenRoaming()(*bool)
+    GetCellularData()(*ConfigurationUsage)
+    GetCertificatesBlockManualRootCertificateInstallation()(*bool)
+    GetConfigureTimeZone()(*string)
+    GetConnectedDevicesServiceBlocked()(*bool)
+    GetCopyPasteBlocked()(*bool)
+    GetCortanaBlocked()(*bool)
+    GetCryptographyAllowFipsAlgorithmPolicy()(*bool)
+    GetDataProtectionBlockDirectMemoryAccess()(*bool)
+    GetDefenderBlockEndUserAccess()(*bool)
+    GetDefenderBlockOnAccessProtection()(*bool)
+    GetDefenderCloudBlockLevel()(*DefenderCloudBlockLevelType)
+    GetDefenderCloudExtendedTimeout()(*int32)
+    GetDefenderCloudExtendedTimeoutInSeconds()(*int32)
+    GetDefenderDaysBeforeDeletingQuarantinedMalware()(*int32)
+    GetDefenderDetectedMalwareActions()(DefenderDetectedMalwareActionsable)
+    GetDefenderDisableCatchupFullScan()(*bool)
+    GetDefenderDisableCatchupQuickScan()(*bool)
+    GetDefenderFileExtensionsToExclude()([]string)
+    GetDefenderFilesAndFoldersToExclude()([]string)
+    GetDefenderMonitorFileActivity()(*DefenderMonitorFileActivity)
+    GetDefenderPotentiallyUnwantedAppAction()(*DefenderPotentiallyUnwantedAppAction)
+    GetDefenderPotentiallyUnwantedAppActionSetting()(*DefenderProtectionType)
+    GetDefenderProcessesToExclude()([]string)
+    GetDefenderPromptForSampleSubmission()(*DefenderPromptForSampleSubmission)
+    GetDefenderRequireBehaviorMonitoring()(*bool)
+    GetDefenderRequireCloudProtection()(*bool)
+    GetDefenderRequireNetworkInspectionSystem()(*bool)
+    GetDefenderRequireRealTimeMonitoring()(*bool)
+    GetDefenderScanArchiveFiles()(*bool)
+    GetDefenderScanDownloads()(*bool)
+    GetDefenderScanIncomingMail()(*bool)
+    GetDefenderScanMappedNetworkDrivesDuringFullScan()(*bool)
+    GetDefenderScanMaxCpu()(*int32)
+    GetDefenderScanNetworkFiles()(*bool)
+    GetDefenderScanRemovableDrivesDuringFullScan()(*bool)
+    GetDefenderScanScriptsLoadedInInternetExplorer()(*bool)
+    GetDefenderScanType()(*DefenderScanType)
+    GetDefenderScheduledQuickScanTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
+    GetDefenderScheduledScanTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
+    GetDefenderScheduleScanEnableLowCpuPriority()(*bool)
+    GetDefenderSignatureUpdateIntervalInHours()(*int32)
+    GetDefenderSubmitSamplesConsentType()(*DefenderSubmitSamplesConsentType)
+    GetDefenderSystemScanSchedule()(*WeeklySchedule)
+    GetDeveloperUnlockSetting()(*StateManagementSetting)
+    GetDeviceManagementBlockFactoryResetOnMobile()(*bool)
+    GetDeviceManagementBlockManualUnenroll()(*bool)
+    GetDiagnosticsDataSubmissionMode()(*DiagnosticDataSubmissionMode)
+    GetDisplayAppListWithGdiDPIScalingTurnedOff()([]string)
+    GetDisplayAppListWithGdiDPIScalingTurnedOn()([]string)
+    GetEdgeAllowStartPagesModification()(*bool)
+    GetEdgeBlockAccessToAboutFlags()(*bool)
+    GetEdgeBlockAddressBarDropdown()(*bool)
+    GetEdgeBlockAutofill()(*bool)
+    GetEdgeBlockCompatibilityList()(*bool)
+    GetEdgeBlockDeveloperTools()(*bool)
+    GetEdgeBlocked()(*bool)
+    GetEdgeBlockEditFavorites()(*bool)
+    GetEdgeBlockExtensions()(*bool)
+    GetEdgeBlockFullScreenMode()(*bool)
+    GetEdgeBlockInPrivateBrowsing()(*bool)
+    GetEdgeBlockJavaScript()(*bool)
+    GetEdgeBlockLiveTileDataCollection()(*bool)
+    GetEdgeBlockPasswordManager()(*bool)
+    GetEdgeBlockPopups()(*bool)
+    GetEdgeBlockPrelaunch()(*bool)
+    GetEdgeBlockPrinting()(*bool)
+    GetEdgeBlockSavingHistory()(*bool)
+    GetEdgeBlockSearchEngineCustomization()(*bool)
+    GetEdgeBlockSearchSuggestions()(*bool)
+    GetEdgeBlockSendingDoNotTrackHeader()(*bool)
+    GetEdgeBlockSendingIntranetTrafficToInternetExplorer()(*bool)
+    GetEdgeBlockSideloadingExtensions()(*bool)
+    GetEdgeBlockTabPreloading()(*bool)
+    GetEdgeBlockWebContentOnNewTabPage()(*bool)
+    GetEdgeClearBrowsingDataOnExit()(*bool)
+    GetEdgeCookiePolicy()(*EdgeCookiePolicy)
+    GetEdgeDisableFirstRunPage()(*bool)
+    GetEdgeEnterpriseModeSiteListLocation()(*string)
+    GetEdgeFavoritesBarVisibility()(*VisibilitySetting)
+    GetEdgeFavoritesListLocation()(*string)
+    GetEdgeFirstRunUrl()(*string)
+    GetEdgeHomeButtonConfiguration()(EdgeHomeButtonConfigurationable)
+    GetEdgeHomeButtonConfigurationEnabled()(*bool)
+    GetEdgeHomepageUrls()([]string)
+    GetEdgeKioskModeRestriction()(*EdgeKioskModeRestrictionType)
+    GetEdgeKioskResetAfterIdleTimeInMinutes()(*int32)
+    GetEdgeNewTabPageURL()(*string)
+    GetEdgeOpensWith()(*EdgeOpenOptions)
+    GetEdgePreventCertificateErrorOverride()(*bool)
+    GetEdgeRequiredExtensionPackageFamilyNames()([]string)
+    GetEdgeRequireSmartScreen()(*bool)
+    GetEdgeSearchEngine()(EdgeSearchEngineBaseable)
+    GetEdgeSendIntranetTrafficToInternetExplorer()(*bool)
+    GetEdgeShowMessageWhenOpeningInternetExplorerSites()(*InternetExplorerMessageSetting)
+    GetEdgeSyncFavoritesWithInternetExplorer()(*bool)
+    GetEdgeTelemetryForMicrosoft365Analytics()(*EdgeTelemetryMode)
+    GetEnableAutomaticRedeployment()(*bool)
+    GetEnergySaverOnBatteryThresholdPercentage()(*int32)
+    GetEnergySaverPluggedInThresholdPercentage()(*int32)
+    GetEnterpriseCloudPrintDiscoveryEndPoint()(*string)
+    GetEnterpriseCloudPrintDiscoveryMaxLimit()(*int32)
+    GetEnterpriseCloudPrintMopriaDiscoveryResourceIdentifier()(*string)
+    GetEnterpriseCloudPrintOAuthAuthority()(*string)
+    GetEnterpriseCloudPrintOAuthClientIdentifier()(*string)
+    GetEnterpriseCloudPrintResourceIdentifier()(*string)
+    GetExperienceBlockDeviceDiscovery()(*bool)
+    GetExperienceBlockErrorDialogWhenNoSIM()(*bool)
+    GetExperienceBlockTaskSwitcher()(*bool)
+    GetExperienceDoNotSyncBrowserSettings()(*BrowserSyncSetting)
+    GetFindMyFiles()(*Enablement)
+    GetGameDvrBlocked()(*bool)
+    GetInkWorkspaceAccess()(*InkAccessSetting)
+    GetInkWorkspaceAccessState()(*StateManagementSetting)
+    GetInkWorkspaceBlockSuggestedApps()(*bool)
+    GetInternetSharingBlocked()(*bool)
+    GetLocationServicesBlocked()(*bool)
+    GetLockScreenActivateAppsWithVoice()(*Enablement)
+    GetLockScreenAllowTimeoutConfiguration()(*bool)
+    GetLockScreenBlockActionCenterNotifications()(*bool)
+    GetLockScreenBlockCortana()(*bool)
+    GetLockScreenBlockToastNotifications()(*bool)
+    GetLockScreenTimeoutInSeconds()(*int32)
+    GetLogonBlockFastUserSwitching()(*bool)
+    GetMessagingBlockMMS()(*bool)
+    GetMessagingBlockRichCommunicationServices()(*bool)
+    GetMessagingBlockSync()(*bool)
+    GetMicrosoftAccountBlocked()(*bool)
+    GetMicrosoftAccountBlockSettingsSync()(*bool)
+    GetMicrosoftAccountSignInAssistantSettings()(*SignInAssistantOptions)
+    GetNetworkProxyApplySettingsDeviceWide()(*bool)
+    GetNetworkProxyAutomaticConfigurationUrl()(*string)
+    GetNetworkProxyDisableAutoDetect()(*bool)
+    GetNetworkProxyServer()(Windows10NetworkProxyServerable)
+    GetNfcBlocked()(*bool)
+    GetOneDriveDisableFileSync()(*bool)
+    GetPasswordBlockSimple()(*bool)
+    GetPasswordExpirationDays()(*int32)
+    GetPasswordMinimumAgeInDays()(*int32)
+    GetPasswordMinimumCharacterSetCount()(*int32)
+    GetPasswordMinimumLength()(*int32)
+    GetPasswordMinutesOfInactivityBeforeScreenTimeout()(*int32)
+    GetPasswordPreviousPasswordBlockCount()(*int32)
+    GetPasswordRequired()(*bool)
+    GetPasswordRequiredType()(*RequiredPasswordType)
+    GetPasswordRequireWhenResumeFromIdleState()(*bool)
+    GetPasswordSignInFailureCountBeforeFactoryReset()(*int32)
+    GetPersonalizationDesktopImageUrl()(*string)
+    GetPersonalizationLockScreenImageUrl()(*string)
+    GetPowerButtonActionOnBattery()(*PowerActionType)
+    GetPowerButtonActionPluggedIn()(*PowerActionType)
+    GetPowerHybridSleepOnBattery()(*Enablement)
+    GetPowerHybridSleepPluggedIn()(*Enablement)
+    GetPowerLidCloseActionOnBattery()(*PowerActionType)
+    GetPowerLidCloseActionPluggedIn()(*PowerActionType)
+    GetPowerSleepButtonActionOnBattery()(*PowerActionType)
+    GetPowerSleepButtonActionPluggedIn()(*PowerActionType)
+    GetPrinterBlockAddition()(*bool)
+    GetPrinterDefaultName()(*string)
+    GetPrinterNames()([]string)
+    GetPrivacyAccessControls()([]WindowsPrivacyDataAccessControlItemable)
+    GetPrivacyAdvertisingId()(*StateManagementSetting)
+    GetPrivacyAutoAcceptPairingAndConsentPrompts()(*bool)
+    GetPrivacyBlockActivityFeed()(*bool)
+    GetPrivacyBlockInputPersonalization()(*bool)
+    GetPrivacyBlockPublishUserActivities()(*bool)
+    GetPrivacyDisableLaunchExperience()(*bool)
+    GetResetProtectionModeBlocked()(*bool)
+    GetSafeSearchFilter()(*SafeSearchFilterType)
+    GetScreenCaptureBlocked()(*bool)
+    GetSearchBlockDiacritics()(*bool)
+    GetSearchBlockWebResults()(*bool)
+    GetSearchDisableAutoLanguageDetection()(*bool)
+    GetSearchDisableIndexerBackoff()(*bool)
+    GetSearchDisableIndexingEncryptedItems()(*bool)
+    GetSearchDisableIndexingRemovableDrive()(*bool)
+    GetSearchDisableLocation()(*bool)
+    GetSearchDisableUseLocation()(*bool)
+    GetSearchEnableAutomaticIndexSizeManangement()(*bool)
+    GetSearchEnableRemoteQueries()(*bool)
+    GetSecurityBlockAzureADJoinedDevicesAutoEncryption()(*bool)
+    GetSettingsBlockAccountsPage()(*bool)
+    GetSettingsBlockAddProvisioningPackage()(*bool)
+    GetSettingsBlockAppsPage()(*bool)
+    GetSettingsBlockChangeLanguage()(*bool)
+    GetSettingsBlockChangePowerSleep()(*bool)
+    GetSettingsBlockChangeRegion()(*bool)
+    GetSettingsBlockChangeSystemTime()(*bool)
+    GetSettingsBlockDevicesPage()(*bool)
+    GetSettingsBlockEaseOfAccessPage()(*bool)
+    GetSettingsBlockEditDeviceName()(*bool)
+    GetSettingsBlockGamingPage()(*bool)
+    GetSettingsBlockNetworkInternetPage()(*bool)
+    GetSettingsBlockPersonalizationPage()(*bool)
+    GetSettingsBlockPrivacyPage()(*bool)
+    GetSettingsBlockRemoveProvisioningPackage()(*bool)
+    GetSettingsBlockSettingsApp()(*bool)
+    GetSettingsBlockSystemPage()(*bool)
+    GetSettingsBlockTimeLanguagePage()(*bool)
+    GetSettingsBlockUpdateSecurityPage()(*bool)
+    GetSharedUserAppDataAllowed()(*bool)
+    GetSmartScreenAppInstallControl()(*AppInstallControlType)
+    GetSmartScreenBlockPromptOverride()(*bool)
+    GetSmartScreenBlockPromptOverrideForFiles()(*bool)
+    GetSmartScreenEnableAppInstallControl()(*bool)
+    GetStartBlockUnpinningAppsFromTaskbar()(*bool)
+    GetStartMenuAppListVisibility()(*WindowsStartMenuAppListVisibilityType)
+    GetStartMenuHideChangeAccountSettings()(*bool)
+    GetStartMenuHideFrequentlyUsedApps()(*bool)
+    GetStartMenuHideHibernate()(*bool)
+    GetStartMenuHideLock()(*bool)
+    GetStartMenuHidePowerButton()(*bool)
+    GetStartMenuHideRecentJumpLists()(*bool)
+    GetStartMenuHideRecentlyAddedApps()(*bool)
+    GetStartMenuHideRestartOptions()(*bool)
+    GetStartMenuHideShutDown()(*bool)
+    GetStartMenuHideSignOut()(*bool)
+    GetStartMenuHideSleep()(*bool)
+    GetStartMenuHideSwitchAccount()(*bool)
+    GetStartMenuHideUserTile()(*bool)
+    GetStartMenuLayoutEdgeAssetsXml()([]byte)
+    GetStartMenuLayoutXml()([]byte)
+    GetStartMenuMode()(*WindowsStartMenuModeType)
+    GetStartMenuPinnedFolderDocuments()(*VisibilitySetting)
+    GetStartMenuPinnedFolderDownloads()(*VisibilitySetting)
+    GetStartMenuPinnedFolderFileExplorer()(*VisibilitySetting)
+    GetStartMenuPinnedFolderHomeGroup()(*VisibilitySetting)
+    GetStartMenuPinnedFolderMusic()(*VisibilitySetting)
+    GetStartMenuPinnedFolderNetwork()(*VisibilitySetting)
+    GetStartMenuPinnedFolderPersonalFolder()(*VisibilitySetting)
+    GetStartMenuPinnedFolderPictures()(*VisibilitySetting)
+    GetStartMenuPinnedFolderSettings()(*VisibilitySetting)
+    GetStartMenuPinnedFolderVideos()(*VisibilitySetting)
+    GetStorageBlockRemovableStorage()(*bool)
+    GetStorageRequireMobileDeviceEncryption()(*bool)
+    GetStorageRestrictAppDataToSystemVolume()(*bool)
+    GetStorageRestrictAppInstallToSystemVolume()(*bool)
+    GetSystemTelemetryProxyServer()(*string)
+    GetTaskManagerBlockEndTask()(*bool)
+    GetTenantLockdownRequireNetworkDuringOutOfBoxExperience()(*bool)
+    GetUninstallBuiltInApps()(*bool)
+    GetUsbBlocked()(*bool)
+    GetVoiceRecordingBlocked()(*bool)
+    GetWebRtcBlockLocalhostIpAddress()(*bool)
+    GetWiFiBlockAutomaticConnectHotspots()(*bool)
+    GetWiFiBlocked()(*bool)
+    GetWiFiBlockManualConfiguration()(*bool)
+    GetWiFiScanInterval()(*int32)
+    GetWindows10AppsForceUpdateSchedule()(Windows10AppsForceUpdateScheduleable)
+    GetWindowsSpotlightBlockConsumerSpecificFeatures()(*bool)
+    GetWindowsSpotlightBlocked()(*bool)
+    GetWindowsSpotlightBlockOnActionCenter()(*bool)
+    GetWindowsSpotlightBlockTailoredExperiences()(*bool)
+    GetWindowsSpotlightBlockThirdPartyNotifications()(*bool)
+    GetWindowsSpotlightBlockWelcomeExperience()(*bool)
+    GetWindowsSpotlightBlockWindowsTips()(*bool)
+    GetWindowsSpotlightConfigureOnLockScreen()(*WindowsSpotlightEnablementSettings)
+    GetWindowsStoreBlockAutoUpdate()(*bool)
+    GetWindowsStoreBlocked()(*bool)
+    GetWindowsStoreEnablePrivateStoreOnly()(*bool)
+    GetWirelessDisplayBlockProjectionToThisDevice()(*bool)
+    GetWirelessDisplayBlockUserInputFromReceiver()(*bool)
+    GetWirelessDisplayRequirePinForPairing()(*bool)
+    SetAccountsBlockAddingNonMicrosoftAccountEmail(value *bool)()
+    SetActivateAppsWithVoice(value *Enablement)()
+    SetAntiTheftModeBlocked(value *bool)()
+    SetAppManagementMSIAllowUserControlOverInstall(value *bool)()
+    SetAppManagementMSIAlwaysInstallWithElevatedPrivileges(value *bool)()
+    SetAppManagementPackageFamilyNamesToLaunchAfterLogOn(value []string)()
+    SetAppsAllowTrustedAppsSideloading(value *StateManagementSetting)()
+    SetAppsBlockWindowsStoreOriginatedApps(value *bool)()
+    SetAuthenticationAllowSecondaryDevice(value *bool)()
+    SetAuthenticationPreferredAzureADTenantDomainName(value *string)()
+    SetAuthenticationWebSignIn(value *Enablement)()
+    SetBluetoothAllowedServices(value []string)()
+    SetBluetoothBlockAdvertising(value *bool)()
+    SetBluetoothBlockDiscoverableMode(value *bool)()
+    SetBluetoothBlocked(value *bool)()
+    SetBluetoothBlockPrePairing(value *bool)()
+    SetBluetoothBlockPromptedProximalConnections(value *bool)()
+    SetCameraBlocked(value *bool)()
+    SetCellularBlockDataWhenRoaming(value *bool)()
+    SetCellularBlockVpn(value *bool)()
+    SetCellularBlockVpnWhenRoaming(value *bool)()
+    SetCellularData(value *ConfigurationUsage)()
+    SetCertificatesBlockManualRootCertificateInstallation(value *bool)()
+    SetConfigureTimeZone(value *string)()
+    SetConnectedDevicesServiceBlocked(value *bool)()
+    SetCopyPasteBlocked(value *bool)()
+    SetCortanaBlocked(value *bool)()
+    SetCryptographyAllowFipsAlgorithmPolicy(value *bool)()
+    SetDataProtectionBlockDirectMemoryAccess(value *bool)()
+    SetDefenderBlockEndUserAccess(value *bool)()
+    SetDefenderBlockOnAccessProtection(value *bool)()
+    SetDefenderCloudBlockLevel(value *DefenderCloudBlockLevelType)()
+    SetDefenderCloudExtendedTimeout(value *int32)()
+    SetDefenderCloudExtendedTimeoutInSeconds(value *int32)()
+    SetDefenderDaysBeforeDeletingQuarantinedMalware(value *int32)()
+    SetDefenderDetectedMalwareActions(value DefenderDetectedMalwareActionsable)()
+    SetDefenderDisableCatchupFullScan(value *bool)()
+    SetDefenderDisableCatchupQuickScan(value *bool)()
+    SetDefenderFileExtensionsToExclude(value []string)()
+    SetDefenderFilesAndFoldersToExclude(value []string)()
+    SetDefenderMonitorFileActivity(value *DefenderMonitorFileActivity)()
+    SetDefenderPotentiallyUnwantedAppAction(value *DefenderPotentiallyUnwantedAppAction)()
+    SetDefenderPotentiallyUnwantedAppActionSetting(value *DefenderProtectionType)()
+    SetDefenderProcessesToExclude(value []string)()
+    SetDefenderPromptForSampleSubmission(value *DefenderPromptForSampleSubmission)()
+    SetDefenderRequireBehaviorMonitoring(value *bool)()
+    SetDefenderRequireCloudProtection(value *bool)()
+    SetDefenderRequireNetworkInspectionSystem(value *bool)()
+    SetDefenderRequireRealTimeMonitoring(value *bool)()
+    SetDefenderScanArchiveFiles(value *bool)()
+    SetDefenderScanDownloads(value *bool)()
+    SetDefenderScanIncomingMail(value *bool)()
+    SetDefenderScanMappedNetworkDrivesDuringFullScan(value *bool)()
+    SetDefenderScanMaxCpu(value *int32)()
+    SetDefenderScanNetworkFiles(value *bool)()
+    SetDefenderScanRemovableDrivesDuringFullScan(value *bool)()
+    SetDefenderScanScriptsLoadedInInternetExplorer(value *bool)()
+    SetDefenderScanType(value *DefenderScanType)()
+    SetDefenderScheduledQuickScanTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)()
+    SetDefenderScheduledScanTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)()
+    SetDefenderScheduleScanEnableLowCpuPriority(value *bool)()
+    SetDefenderSignatureUpdateIntervalInHours(value *int32)()
+    SetDefenderSubmitSamplesConsentType(value *DefenderSubmitSamplesConsentType)()
+    SetDefenderSystemScanSchedule(value *WeeklySchedule)()
+    SetDeveloperUnlockSetting(value *StateManagementSetting)()
+    SetDeviceManagementBlockFactoryResetOnMobile(value *bool)()
+    SetDeviceManagementBlockManualUnenroll(value *bool)()
+    SetDiagnosticsDataSubmissionMode(value *DiagnosticDataSubmissionMode)()
+    SetDisplayAppListWithGdiDPIScalingTurnedOff(value []string)()
+    SetDisplayAppListWithGdiDPIScalingTurnedOn(value []string)()
+    SetEdgeAllowStartPagesModification(value *bool)()
+    SetEdgeBlockAccessToAboutFlags(value *bool)()
+    SetEdgeBlockAddressBarDropdown(value *bool)()
+    SetEdgeBlockAutofill(value *bool)()
+    SetEdgeBlockCompatibilityList(value *bool)()
+    SetEdgeBlockDeveloperTools(value *bool)()
+    SetEdgeBlocked(value *bool)()
+    SetEdgeBlockEditFavorites(value *bool)()
+    SetEdgeBlockExtensions(value *bool)()
+    SetEdgeBlockFullScreenMode(value *bool)()
+    SetEdgeBlockInPrivateBrowsing(value *bool)()
+    SetEdgeBlockJavaScript(value *bool)()
+    SetEdgeBlockLiveTileDataCollection(value *bool)()
+    SetEdgeBlockPasswordManager(value *bool)()
+    SetEdgeBlockPopups(value *bool)()
+    SetEdgeBlockPrelaunch(value *bool)()
+    SetEdgeBlockPrinting(value *bool)()
+    SetEdgeBlockSavingHistory(value *bool)()
+    SetEdgeBlockSearchEngineCustomization(value *bool)()
+    SetEdgeBlockSearchSuggestions(value *bool)()
+    SetEdgeBlockSendingDoNotTrackHeader(value *bool)()
+    SetEdgeBlockSendingIntranetTrafficToInternetExplorer(value *bool)()
+    SetEdgeBlockSideloadingExtensions(value *bool)()
+    SetEdgeBlockTabPreloading(value *bool)()
+    SetEdgeBlockWebContentOnNewTabPage(value *bool)()
+    SetEdgeClearBrowsingDataOnExit(value *bool)()
+    SetEdgeCookiePolicy(value *EdgeCookiePolicy)()
+    SetEdgeDisableFirstRunPage(value *bool)()
+    SetEdgeEnterpriseModeSiteListLocation(value *string)()
+    SetEdgeFavoritesBarVisibility(value *VisibilitySetting)()
+    SetEdgeFavoritesListLocation(value *string)()
+    SetEdgeFirstRunUrl(value *string)()
+    SetEdgeHomeButtonConfiguration(value EdgeHomeButtonConfigurationable)()
+    SetEdgeHomeButtonConfigurationEnabled(value *bool)()
+    SetEdgeHomepageUrls(value []string)()
+    SetEdgeKioskModeRestriction(value *EdgeKioskModeRestrictionType)()
+    SetEdgeKioskResetAfterIdleTimeInMinutes(value *int32)()
+    SetEdgeNewTabPageURL(value *string)()
+    SetEdgeOpensWith(value *EdgeOpenOptions)()
+    SetEdgePreventCertificateErrorOverride(value *bool)()
+    SetEdgeRequiredExtensionPackageFamilyNames(value []string)()
+    SetEdgeRequireSmartScreen(value *bool)()
+    SetEdgeSearchEngine(value EdgeSearchEngineBaseable)()
+    SetEdgeSendIntranetTrafficToInternetExplorer(value *bool)()
+    SetEdgeShowMessageWhenOpeningInternetExplorerSites(value *InternetExplorerMessageSetting)()
+    SetEdgeSyncFavoritesWithInternetExplorer(value *bool)()
+    SetEdgeTelemetryForMicrosoft365Analytics(value *EdgeTelemetryMode)()
+    SetEnableAutomaticRedeployment(value *bool)()
+    SetEnergySaverOnBatteryThresholdPercentage(value *int32)()
+    SetEnergySaverPluggedInThresholdPercentage(value *int32)()
+    SetEnterpriseCloudPrintDiscoveryEndPoint(value *string)()
+    SetEnterpriseCloudPrintDiscoveryMaxLimit(value *int32)()
+    SetEnterpriseCloudPrintMopriaDiscoveryResourceIdentifier(value *string)()
+    SetEnterpriseCloudPrintOAuthAuthority(value *string)()
+    SetEnterpriseCloudPrintOAuthClientIdentifier(value *string)()
+    SetEnterpriseCloudPrintResourceIdentifier(value *string)()
+    SetExperienceBlockDeviceDiscovery(value *bool)()
+    SetExperienceBlockErrorDialogWhenNoSIM(value *bool)()
+    SetExperienceBlockTaskSwitcher(value *bool)()
+    SetExperienceDoNotSyncBrowserSettings(value *BrowserSyncSetting)()
+    SetFindMyFiles(value *Enablement)()
+    SetGameDvrBlocked(value *bool)()
+    SetInkWorkspaceAccess(value *InkAccessSetting)()
+    SetInkWorkspaceAccessState(value *StateManagementSetting)()
+    SetInkWorkspaceBlockSuggestedApps(value *bool)()
+    SetInternetSharingBlocked(value *bool)()
+    SetLocationServicesBlocked(value *bool)()
+    SetLockScreenActivateAppsWithVoice(value *Enablement)()
+    SetLockScreenAllowTimeoutConfiguration(value *bool)()
+    SetLockScreenBlockActionCenterNotifications(value *bool)()
+    SetLockScreenBlockCortana(value *bool)()
+    SetLockScreenBlockToastNotifications(value *bool)()
+    SetLockScreenTimeoutInSeconds(value *int32)()
+    SetLogonBlockFastUserSwitching(value *bool)()
+    SetMessagingBlockMMS(value *bool)()
+    SetMessagingBlockRichCommunicationServices(value *bool)()
+    SetMessagingBlockSync(value *bool)()
+    SetMicrosoftAccountBlocked(value *bool)()
+    SetMicrosoftAccountBlockSettingsSync(value *bool)()
+    SetMicrosoftAccountSignInAssistantSettings(value *SignInAssistantOptions)()
+    SetNetworkProxyApplySettingsDeviceWide(value *bool)()
+    SetNetworkProxyAutomaticConfigurationUrl(value *string)()
+    SetNetworkProxyDisableAutoDetect(value *bool)()
+    SetNetworkProxyServer(value Windows10NetworkProxyServerable)()
+    SetNfcBlocked(value *bool)()
+    SetOneDriveDisableFileSync(value *bool)()
+    SetPasswordBlockSimple(value *bool)()
+    SetPasswordExpirationDays(value *int32)()
+    SetPasswordMinimumAgeInDays(value *int32)()
+    SetPasswordMinimumCharacterSetCount(value *int32)()
+    SetPasswordMinimumLength(value *int32)()
+    SetPasswordMinutesOfInactivityBeforeScreenTimeout(value *int32)()
+    SetPasswordPreviousPasswordBlockCount(value *int32)()
+    SetPasswordRequired(value *bool)()
+    SetPasswordRequiredType(value *RequiredPasswordType)()
+    SetPasswordRequireWhenResumeFromIdleState(value *bool)()
+    SetPasswordSignInFailureCountBeforeFactoryReset(value *int32)()
+    SetPersonalizationDesktopImageUrl(value *string)()
+    SetPersonalizationLockScreenImageUrl(value *string)()
+    SetPowerButtonActionOnBattery(value *PowerActionType)()
+    SetPowerButtonActionPluggedIn(value *PowerActionType)()
+    SetPowerHybridSleepOnBattery(value *Enablement)()
+    SetPowerHybridSleepPluggedIn(value *Enablement)()
+    SetPowerLidCloseActionOnBattery(value *PowerActionType)()
+    SetPowerLidCloseActionPluggedIn(value *PowerActionType)()
+    SetPowerSleepButtonActionOnBattery(value *PowerActionType)()
+    SetPowerSleepButtonActionPluggedIn(value *PowerActionType)()
+    SetPrinterBlockAddition(value *bool)()
+    SetPrinterDefaultName(value *string)()
+    SetPrinterNames(value []string)()
+    SetPrivacyAccessControls(value []WindowsPrivacyDataAccessControlItemable)()
+    SetPrivacyAdvertisingId(value *StateManagementSetting)()
+    SetPrivacyAutoAcceptPairingAndConsentPrompts(value *bool)()
+    SetPrivacyBlockActivityFeed(value *bool)()
+    SetPrivacyBlockInputPersonalization(value *bool)()
+    SetPrivacyBlockPublishUserActivities(value *bool)()
+    SetPrivacyDisableLaunchExperience(value *bool)()
+    SetResetProtectionModeBlocked(value *bool)()
+    SetSafeSearchFilter(value *SafeSearchFilterType)()
+    SetScreenCaptureBlocked(value *bool)()
+    SetSearchBlockDiacritics(value *bool)()
+    SetSearchBlockWebResults(value *bool)()
+    SetSearchDisableAutoLanguageDetection(value *bool)()
+    SetSearchDisableIndexerBackoff(value *bool)()
+    SetSearchDisableIndexingEncryptedItems(value *bool)()
+    SetSearchDisableIndexingRemovableDrive(value *bool)()
+    SetSearchDisableLocation(value *bool)()
+    SetSearchDisableUseLocation(value *bool)()
+    SetSearchEnableAutomaticIndexSizeManangement(value *bool)()
+    SetSearchEnableRemoteQueries(value *bool)()
+    SetSecurityBlockAzureADJoinedDevicesAutoEncryption(value *bool)()
+    SetSettingsBlockAccountsPage(value *bool)()
+    SetSettingsBlockAddProvisioningPackage(value *bool)()
+    SetSettingsBlockAppsPage(value *bool)()
+    SetSettingsBlockChangeLanguage(value *bool)()
+    SetSettingsBlockChangePowerSleep(value *bool)()
+    SetSettingsBlockChangeRegion(value *bool)()
+    SetSettingsBlockChangeSystemTime(value *bool)()
+    SetSettingsBlockDevicesPage(value *bool)()
+    SetSettingsBlockEaseOfAccessPage(value *bool)()
+    SetSettingsBlockEditDeviceName(value *bool)()
+    SetSettingsBlockGamingPage(value *bool)()
+    SetSettingsBlockNetworkInternetPage(value *bool)()
+    SetSettingsBlockPersonalizationPage(value *bool)()
+    SetSettingsBlockPrivacyPage(value *bool)()
+    SetSettingsBlockRemoveProvisioningPackage(value *bool)()
+    SetSettingsBlockSettingsApp(value *bool)()
+    SetSettingsBlockSystemPage(value *bool)()
+    SetSettingsBlockTimeLanguagePage(value *bool)()
+    SetSettingsBlockUpdateSecurityPage(value *bool)()
+    SetSharedUserAppDataAllowed(value *bool)()
+    SetSmartScreenAppInstallControl(value *AppInstallControlType)()
+    SetSmartScreenBlockPromptOverride(value *bool)()
+    SetSmartScreenBlockPromptOverrideForFiles(value *bool)()
+    SetSmartScreenEnableAppInstallControl(value *bool)()
+    SetStartBlockUnpinningAppsFromTaskbar(value *bool)()
+    SetStartMenuAppListVisibility(value *WindowsStartMenuAppListVisibilityType)()
+    SetStartMenuHideChangeAccountSettings(value *bool)()
+    SetStartMenuHideFrequentlyUsedApps(value *bool)()
+    SetStartMenuHideHibernate(value *bool)()
+    SetStartMenuHideLock(value *bool)()
+    SetStartMenuHidePowerButton(value *bool)()
+    SetStartMenuHideRecentJumpLists(value *bool)()
+    SetStartMenuHideRecentlyAddedApps(value *bool)()
+    SetStartMenuHideRestartOptions(value *bool)()
+    SetStartMenuHideShutDown(value *bool)()
+    SetStartMenuHideSignOut(value *bool)()
+    SetStartMenuHideSleep(value *bool)()
+    SetStartMenuHideSwitchAccount(value *bool)()
+    SetStartMenuHideUserTile(value *bool)()
+    SetStartMenuLayoutEdgeAssetsXml(value []byte)()
+    SetStartMenuLayoutXml(value []byte)()
+    SetStartMenuMode(value *WindowsStartMenuModeType)()
+    SetStartMenuPinnedFolderDocuments(value *VisibilitySetting)()
+    SetStartMenuPinnedFolderDownloads(value *VisibilitySetting)()
+    SetStartMenuPinnedFolderFileExplorer(value *VisibilitySetting)()
+    SetStartMenuPinnedFolderHomeGroup(value *VisibilitySetting)()
+    SetStartMenuPinnedFolderMusic(value *VisibilitySetting)()
+    SetStartMenuPinnedFolderNetwork(value *VisibilitySetting)()
+    SetStartMenuPinnedFolderPersonalFolder(value *VisibilitySetting)()
+    SetStartMenuPinnedFolderPictures(value *VisibilitySetting)()
+    SetStartMenuPinnedFolderSettings(value *VisibilitySetting)()
+    SetStartMenuPinnedFolderVideos(value *VisibilitySetting)()
+    SetStorageBlockRemovableStorage(value *bool)()
+    SetStorageRequireMobileDeviceEncryption(value *bool)()
+    SetStorageRestrictAppDataToSystemVolume(value *bool)()
+    SetStorageRestrictAppInstallToSystemVolume(value *bool)()
+    SetSystemTelemetryProxyServer(value *string)()
+    SetTaskManagerBlockEndTask(value *bool)()
+    SetTenantLockdownRequireNetworkDuringOutOfBoxExperience(value *bool)()
+    SetUninstallBuiltInApps(value *bool)()
+    SetUsbBlocked(value *bool)()
+    SetVoiceRecordingBlocked(value *bool)()
+    SetWebRtcBlockLocalhostIpAddress(value *bool)()
+    SetWiFiBlockAutomaticConnectHotspots(value *bool)()
+    SetWiFiBlocked(value *bool)()
+    SetWiFiBlockManualConfiguration(value *bool)()
+    SetWiFiScanInterval(value *int32)()
+    SetWindows10AppsForceUpdateSchedule(value Windows10AppsForceUpdateScheduleable)()
+    SetWindowsSpotlightBlockConsumerSpecificFeatures(value *bool)()
+    SetWindowsSpotlightBlocked(value *bool)()
+    SetWindowsSpotlightBlockOnActionCenter(value *bool)()
+    SetWindowsSpotlightBlockTailoredExperiences(value *bool)()
+    SetWindowsSpotlightBlockThirdPartyNotifications(value *bool)()
+    SetWindowsSpotlightBlockWelcomeExperience(value *bool)()
+    SetWindowsSpotlightBlockWindowsTips(value *bool)()
+    SetWindowsSpotlightConfigureOnLockScreen(value *WindowsSpotlightEnablementSettings)()
+    SetWindowsStoreBlockAutoUpdate(value *bool)()
+    SetWindowsStoreBlocked(value *bool)()
+    SetWindowsStoreEnablePrivateStoreOnly(value *bool)()
+    SetWirelessDisplayBlockProjectionToThisDevice(value *bool)()
+    SetWirelessDisplayBlockUserInputFromReceiver(value *bool)()
+    SetWirelessDisplayRequirePinForPairing(value *bool)()
 }

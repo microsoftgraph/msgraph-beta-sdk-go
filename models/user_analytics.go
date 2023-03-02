@@ -7,10 +7,6 @@ import (
 // UserAnalytics 
 type UserAnalytics struct {
     Entity
-    // The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
-    activityStatistics []ActivityStatisticsable
-    // The current settings for a user to use the analytics API.
-    settings Settingsable
 }
 // NewUserAnalytics instantiates a new userAnalytics and sets the default values.
 func NewUserAnalytics()(*UserAnalytics) {
@@ -25,7 +21,14 @@ func CreateUserAnalyticsFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetActivityStatistics gets the activityStatistics property value. The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
 func (m *UserAnalytics) GetActivityStatistics()([]ActivityStatisticsable) {
-    return m.activityStatistics
+    val, err := m.GetBackingStore().Get("activityStatistics")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ActivityStatisticsable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserAnalytics) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -58,7 +61,14 @@ func (m *UserAnalytics) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetSettings gets the settings property value. The current settings for a user to use the analytics API.
 func (m *UserAnalytics) GetSettings()(Settingsable) {
-    return m.settings
+    val, err := m.GetBackingStore().Get("settings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Settingsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserAnalytics) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -86,9 +96,24 @@ func (m *UserAnalytics) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetActivityStatistics sets the activityStatistics property value. The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
 func (m *UserAnalytics) SetActivityStatistics(value []ActivityStatisticsable)() {
-    m.activityStatistics = value
+    err := m.GetBackingStore().Set("activityStatistics", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettings sets the settings property value. The current settings for a user to use the analytics API.
 func (m *UserAnalytics) SetSettings(value Settingsable)() {
-    m.settings = value
+    err := m.GetBackingStore().Set("settings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserAnalyticsable 
+type UserAnalyticsable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActivityStatistics()([]ActivityStatisticsable)
+    GetSettings()(Settingsable)
+    SetActivityStatistics(value []ActivityStatisticsable)()
+    SetSettings(value Settingsable)()
 }

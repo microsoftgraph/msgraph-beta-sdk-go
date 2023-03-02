@@ -7,18 +7,14 @@ import (
 // DeviceHealthScriptTimeSchedule 
 type DeviceHealthScriptTimeSchedule struct {
     DeviceHealthScriptRunSchedule
-    // At what time the script is scheduled to run. This collection can contain a maximum of 20 elements.
-    time *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
-    // Indicate if the time is Utc or client local time.
-    useUtc *bool
 }
 // NewDeviceHealthScriptTimeSchedule instantiates a new DeviceHealthScriptTimeSchedule and sets the default values.
 func NewDeviceHealthScriptTimeSchedule()(*DeviceHealthScriptTimeSchedule) {
     m := &DeviceHealthScriptTimeSchedule{
         DeviceHealthScriptRunSchedule: *NewDeviceHealthScriptRunSchedule(),
     }
-    odataTypeValue := "#microsoft.graph.deviceHealthScriptTimeSchedule";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceHealthScriptTimeSchedule"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceHealthScriptTimeScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -72,11 +68,25 @@ func (m *DeviceHealthScriptTimeSchedule) GetFieldDeserializers()(map[string]func
 }
 // GetTime gets the time property value. At what time the script is scheduled to run. This collection can contain a maximum of 20 elements.
 func (m *DeviceHealthScriptTimeSchedule) GetTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
-    return m.time
+    val, err := m.GetBackingStore().Get("time")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
+    }
+    return nil
 }
 // GetUseUtc gets the useUtc property value. Indicate if the time is Utc or client local time.
 func (m *DeviceHealthScriptTimeSchedule) GetUseUtc()(*bool) {
-    return m.useUtc
+    val, err := m.GetBackingStore().Get("useUtc")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceHealthScriptTimeSchedule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -100,9 +110,24 @@ func (m *DeviceHealthScriptTimeSchedule) Serialize(writer i878a80d2330e89d268963
 }
 // SetTime sets the time property value. At what time the script is scheduled to run. This collection can contain a maximum of 20 elements.
 func (m *DeviceHealthScriptTimeSchedule) SetTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
-    m.time = value
+    err := m.GetBackingStore().Set("time", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUseUtc sets the useUtc property value. Indicate if the time is Utc or client local time.
 func (m *DeviceHealthScriptTimeSchedule) SetUseUtc(value *bool)() {
-    m.useUtc = value
+    err := m.GetBackingStore().Set("useUtc", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceHealthScriptTimeScheduleable 
+type DeviceHealthScriptTimeScheduleable interface {
+    DeviceHealthScriptRunScheduleable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
+    GetUseUtc()(*bool)
+    SetTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)()
+    SetUseUtc(value *bool)()
 }

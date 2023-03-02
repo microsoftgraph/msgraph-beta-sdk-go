@@ -53,8 +53,8 @@ func NewLifecycleWorkflowsWorkflowTemplatesRequestBuilderInternal(pathParameters
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewLifecycleWorkflowsWorkflowTemplatesRequestBuilder instantiates a new WorkflowTemplatesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewLifecycleWorkflowsWorkflowTemplatesRequestBuilder(rawUrl string, request
 }
 // Count provides operations to count the resources in the collection.
 func (m *LifecycleWorkflowsWorkflowTemplatesRequestBuilder) Count()(*LifecycleWorkflowsWorkflowTemplatesCountRequestBuilder) {
-    return NewLifecycleWorkflowsWorkflowTemplatesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewLifecycleWorkflowsWorkflowTemplatesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of the workflowTemplate objects and their properties.
 // [Find more info here]

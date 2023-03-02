@@ -8,8 +8,6 @@ import (
 // DirectoryObject 
 type DirectoryObject struct {
     Entity
-    // Date and time when this object was deleted. Always null when the object hasn't been deleted.
-    deletedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewDirectoryObject instantiates a new directoryObject and sets the default values.
 func NewDirectoryObject()(*DirectoryObject) {
@@ -104,7 +102,14 @@ func CreateDirectoryObjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetDeletedDateTime gets the deletedDateTime property value. Date and time when this object was deleted. Always null when the object hasn't been deleted.
 func (m *DirectoryObject) GetDeletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.deletedDateTime
+    val, err := m.GetBackingStore().Get("deletedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DirectoryObject) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -137,5 +142,15 @@ func (m *DirectoryObject) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetDeletedDateTime sets the deletedDateTime property value. Date and time when this object was deleted. Always null when the object hasn't been deleted.
 func (m *DirectoryObject) SetDeletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.deletedDateTime = value
+    err := m.GetBackingStore().Set("deletedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DirectoryObjectable 
+type DirectoryObjectable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDeletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    SetDeletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
 }

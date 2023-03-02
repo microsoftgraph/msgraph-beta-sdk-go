@@ -7,8 +7,6 @@ import (
 // DeviceManagementDomainJoinConnectorCollectionResponse 
 type DeviceManagementDomainJoinConnectorCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementDomainJoinConnectorable
 }
 // NewDeviceManagementDomainJoinConnectorCollectionResponse instantiates a new DeviceManagementDomainJoinConnectorCollectionResponse and sets the default values.
 func NewDeviceManagementDomainJoinConnectorCollectionResponse()(*DeviceManagementDomainJoinConnectorCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementDomainJoinConnectorCollectionResponse) GetFieldDeserial
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementDomainJoinConnectorCollectionResponse) GetValue()([]DeviceManagementDomainJoinConnectorable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementDomainJoinConnectorable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementDomainJoinConnectorCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementDomainJoinConnectorCollectionResponse) Serialize(writer
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementDomainJoinConnectorCollectionResponse) SetValue(value []DeviceManagementDomainJoinConnectorable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementDomainJoinConnectorCollectionResponseable 
+type DeviceManagementDomainJoinConnectorCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementDomainJoinConnectorable)
+    SetValue(value []DeviceManagementDomainJoinConnectorable)()
 }

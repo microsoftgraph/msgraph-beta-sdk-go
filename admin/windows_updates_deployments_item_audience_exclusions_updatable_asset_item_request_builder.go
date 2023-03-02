@@ -46,14 +46,6 @@ type WindowsUpdatesDeploymentsItemAudienceExclusionsUpdatableAssetItemRequestBui
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AddMembers provides operations to call the addMembers method.
-func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsUpdatableAssetItemRequestBuilder) AddMembers()(*WindowsUpdatesDeploymentsItemAudienceExclusionsItemAddMembersRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsItemAddMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// AddMembersById provides operations to call the addMembersById method.
-func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsUpdatableAssetItemRequestBuilder) AddMembersById()(*WindowsUpdatesDeploymentsItemAudienceExclusionsItemAddMembersByIdRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsItemAddMembersByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewWindowsUpdatesDeploymentsItemAudienceExclusionsUpdatableAssetItemRequestBuilderInternal instantiates a new UpdatableAssetItemRequestBuilder and sets the default values.
 func NewWindowsUpdatesDeploymentsItemAudienceExclusionsUpdatableAssetItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesDeploymentsItemAudienceExclusionsUpdatableAssetItemRequestBuilder) {
     m := &WindowsUpdatesDeploymentsItemAudienceExclusionsUpdatableAssetItemRequestBuilder{
@@ -63,8 +55,8 @@ func NewWindowsUpdatesDeploymentsItemAudienceExclusionsUpdatableAssetItemRequest
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsUpdatesDeploymentsItemAudienceExclusionsUpdatableAssetItemRequestBuilder instantiates a new UpdatableAssetItemRequestBuilder and sets the default values.
@@ -127,14 +119,6 @@ func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsUpdatableAssetItemReques
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable), nil
 }
-// RemoveMembers provides operations to call the removeMembers method.
-func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsUpdatableAssetItemRequestBuilder) RemoveMembers()(*WindowsUpdatesDeploymentsItemAudienceExclusionsItemRemoveMembersRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsItemRemoveMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// RemoveMembersById provides operations to call the removeMembersById method.
-func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsUpdatableAssetItemRequestBuilder) RemoveMembersById()(*WindowsUpdatesDeploymentsItemAudienceExclusionsItemRemoveMembersByIdRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsItemRemoveMembersByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // ToDeleteRequestInformation delete navigation property exclusions for admin
 func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsUpdatableAssetItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentsItemAudienceExclusionsUpdatableAssetItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -170,10 +154,29 @@ func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsUpdatableAssetItemReques
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WindowsUpdatesAddMembers provides operations to call the addMembers method.
+func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsUpdatableAssetItemRequestBuilder) WindowsUpdatesAddMembers()(*WindowsUpdatesDeploymentsItemAudienceExclusionsItemWindowsUpdatesAddMembersRequestBuilder) {
+    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsItemWindowsUpdatesAddMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// WindowsUpdatesAddMembersById provides operations to call the addMembersById method.
+func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsUpdatableAssetItemRequestBuilder) WindowsUpdatesAddMembersById()(*WindowsUpdatesDeploymentsItemAudienceExclusionsItemWindowsUpdatesAddMembersByIdRequestBuilder) {
+    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsItemWindowsUpdatesAddMembersByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// WindowsUpdatesRemoveMembers provides operations to call the removeMembers method.
+func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsUpdatableAssetItemRequestBuilder) WindowsUpdatesRemoveMembers()(*WindowsUpdatesDeploymentsItemAudienceExclusionsItemWindowsUpdatesRemoveMembersRequestBuilder) {
+    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsItemWindowsUpdatesRemoveMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// WindowsUpdatesRemoveMembersById provides operations to call the removeMembersById method.
+func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsUpdatableAssetItemRequestBuilder) WindowsUpdatesRemoveMembersById()(*WindowsUpdatesDeploymentsItemAudienceExclusionsItemWindowsUpdatesRemoveMembersByIdRequestBuilder) {
+    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsItemWindowsUpdatesRemoveMembersByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

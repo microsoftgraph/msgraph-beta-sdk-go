@@ -60,8 +60,8 @@ func NewDeviceCompliancePoliciesRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceCompliancePoliciesRequestBuilder instantiates a new DeviceCompliancePoliciesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewDeviceCompliancePoliciesRequestBuilder(rawUrl string, requestAdapter i2a
 }
 // Count provides operations to count the resources in the collection.
 func (m *DeviceCompliancePoliciesRequestBuilder) Count()(*DeviceCompliancePoliciesCountRequestBuilder) {
-    return NewDeviceCompliancePoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceCompliancePoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the device compliance policies.
 func (m *DeviceCompliancePoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceCompliancePoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCompliancePolicyCollectionResponseable, error) {
@@ -95,15 +95,15 @@ func (m *DeviceCompliancePoliciesRequestBuilder) Get(ctx context.Context, reques
 }
 // GetDevicesScheduledToRetire provides operations to call the getDevicesScheduledToRetire method.
 func (m *DeviceCompliancePoliciesRequestBuilder) GetDevicesScheduledToRetire()(*DeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilder) {
-    return NewDeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GetNoncompliantDevicesToRetire provides operations to call the getNoncompliantDevicesToRetire method.
 func (m *DeviceCompliancePoliciesRequestBuilder) GetNoncompliantDevicesToRetire()(*DeviceCompliancePoliciesGetNoncompliantDevicesToRetireRequestBuilder) {
-    return NewDeviceCompliancePoliciesGetNoncompliantDevicesToRetireRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceCompliancePoliciesGetNoncompliantDevicesToRetireRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // HasPayloadLinks provides operations to call the hasPayloadLinks method.
 func (m *DeviceCompliancePoliciesRequestBuilder) HasPayloadLinks()(*DeviceCompliancePoliciesHasPayloadLinksRequestBuilder) {
-    return NewDeviceCompliancePoliciesHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceCompliancePoliciesHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to deviceCompliancePolicies for deviceManagement
 func (m *DeviceCompliancePoliciesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCompliancePolicyable, requestConfiguration *DeviceCompliancePoliciesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCompliancePolicyable, error) {
@@ -126,11 +126,11 @@ func (m *DeviceCompliancePoliciesRequestBuilder) Post(ctx context.Context, body 
 }
 // RefreshDeviceComplianceReportSummarization provides operations to call the refreshDeviceComplianceReportSummarization method.
 func (m *DeviceCompliancePoliciesRequestBuilder) RefreshDeviceComplianceReportSummarization()(*DeviceCompliancePoliciesRefreshDeviceComplianceReportSummarizationRequestBuilder) {
-    return NewDeviceCompliancePoliciesRefreshDeviceComplianceReportSummarizationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceCompliancePoliciesRefreshDeviceComplianceReportSummarizationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SetScheduledRetireState provides operations to call the setScheduledRetireState method.
 func (m *DeviceCompliancePoliciesRequestBuilder) SetScheduledRetireState()(*DeviceCompliancePoliciesSetScheduledRetireStateRequestBuilder) {
-    return NewDeviceCompliancePoliciesSetScheduledRetireStateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceCompliancePoliciesSetScheduledRetireStateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation the device compliance policies.
 func (m *DeviceCompliancePoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceCompliancePoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -155,7 +155,10 @@ func (m *DeviceCompliancePoliciesRequestBuilder) ToPostRequestInformation(ctx co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -164,5 +167,5 @@ func (m *DeviceCompliancePoliciesRequestBuilder) ToPostRequestInformation(ctx co
 }
 // ValidateComplianceScript provides operations to call the validateComplianceScript method.
 func (m *DeviceCompliancePoliciesRequestBuilder) ValidateComplianceScript()(*DeviceCompliancePoliciesValidateComplianceScriptRequestBuilder) {
-    return NewDeviceCompliancePoliciesValidateComplianceScriptRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceCompliancePoliciesValidateComplianceScriptRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

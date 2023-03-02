@@ -2,28 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // EducationIdentityMatchingOptions 
 type EducationIdentityMatchingOptions struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The appliesTo property
-    appliesTo *EducationUserRole
-    // The OdataType property
-    odataType *string
-    // The name of the source property, which should be a field name in the source data. This property is case-sensitive.
-    sourcePropertyName *string
-    // The domain to suffix with the source property to match on the target. If provided as null, the source property will be used to match with the target property.
-    targetDomain *string
-    // The name of the target property, which should be a valid property in Azure AD. This property is case-sensitive.
-    targetPropertyName *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewEducationIdentityMatchingOptions instantiates a new educationIdentityMatchingOptions and sets the default values.
 func NewEducationIdentityMatchingOptions()(*EducationIdentityMatchingOptions) {
     m := &EducationIdentityMatchingOptions{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateEducationIdentityMatchingOptionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,11 +24,30 @@ func CreateEducationIdentityMatchingOptionsFromDiscriminatorValue(parseNode i878
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationIdentityMatchingOptions) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAppliesTo gets the appliesTo property value. The appliesTo property
 func (m *EducationIdentityMatchingOptions) GetAppliesTo()(*EducationUserRole) {
-    return m.appliesTo
+    val, err := m.GetBackingStore().Get("appliesTo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*EducationUserRole)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *EducationIdentityMatchingOptions) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationIdentityMatchingOptions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -95,19 +106,47 @@ func (m *EducationIdentityMatchingOptions) GetFieldDeserializers()(map[string]fu
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *EducationIdentityMatchingOptions) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSourcePropertyName gets the sourcePropertyName property value. The name of the source property, which should be a field name in the source data. This property is case-sensitive.
 func (m *EducationIdentityMatchingOptions) GetSourcePropertyName()(*string) {
-    return m.sourcePropertyName
+    val, err := m.GetBackingStore().Get("sourcePropertyName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTargetDomain gets the targetDomain property value. The domain to suffix with the source property to match on the target. If provided as null, the source property will be used to match with the target property.
 func (m *EducationIdentityMatchingOptions) GetTargetDomain()(*string) {
-    return m.targetDomain
+    val, err := m.GetBackingStore().Get("targetDomain")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTargetPropertyName gets the targetPropertyName property value. The name of the target property, which should be a valid property in Azure AD. This property is case-sensitive.
 func (m *EducationIdentityMatchingOptions) GetTargetPropertyName()(*string) {
-    return m.targetPropertyName
+    val, err := m.GetBackingStore().Get("targetPropertyName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EducationIdentityMatchingOptions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -152,25 +191,65 @@ func (m *EducationIdentityMatchingOptions) Serialize(writer i878a80d2330e89d2689
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationIdentityMatchingOptions) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppliesTo sets the appliesTo property value. The appliesTo property
 func (m *EducationIdentityMatchingOptions) SetAppliesTo(value *EducationUserRole)() {
-    m.appliesTo = value
+    err := m.GetBackingStore().Set("appliesTo", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *EducationIdentityMatchingOptions) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *EducationIdentityMatchingOptions) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSourcePropertyName sets the sourcePropertyName property value. The name of the source property, which should be a field name in the source data. This property is case-sensitive.
 func (m *EducationIdentityMatchingOptions) SetSourcePropertyName(value *string)() {
-    m.sourcePropertyName = value
+    err := m.GetBackingStore().Set("sourcePropertyName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTargetDomain sets the targetDomain property value. The domain to suffix with the source property to match on the target. If provided as null, the source property will be used to match with the target property.
 func (m *EducationIdentityMatchingOptions) SetTargetDomain(value *string)() {
-    m.targetDomain = value
+    err := m.GetBackingStore().Set("targetDomain", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTargetPropertyName sets the targetPropertyName property value. The name of the target property, which should be a valid property in Azure AD. This property is case-sensitive.
 func (m *EducationIdentityMatchingOptions) SetTargetPropertyName(value *string)() {
-    m.targetPropertyName = value
+    err := m.GetBackingStore().Set("targetPropertyName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EducationIdentityMatchingOptionsable 
+type EducationIdentityMatchingOptionsable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppliesTo()(*EducationUserRole)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetOdataType()(*string)
+    GetSourcePropertyName()(*string)
+    GetTargetDomain()(*string)
+    GetTargetPropertyName()(*string)
+    SetAppliesTo(value *EducationUserRole)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetOdataType(value *string)()
+    SetSourcePropertyName(value *string)()
+    SetTargetDomain(value *string)()
+    SetTargetPropertyName(value *string)()
 }

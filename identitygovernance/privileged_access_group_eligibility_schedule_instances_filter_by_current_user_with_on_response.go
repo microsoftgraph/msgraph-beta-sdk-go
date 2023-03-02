@@ -8,8 +8,6 @@ import (
 // PrivilegedAccessGroupEligibilityScheduleInstancesFilterByCurrentUserWithOnResponse 
 type PrivilegedAccessGroupEligibilityScheduleInstancesFilterByCurrentUserWithOnResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
-    // The value property
-    value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupEligibilityScheduleInstanceable
 }
 // NewPrivilegedAccessGroupEligibilityScheduleInstancesFilterByCurrentUserWithOnResponse instantiates a new PrivilegedAccessGroupEligibilityScheduleInstancesFilterByCurrentUserWithOnResponse and sets the default values.
 func NewPrivilegedAccessGroupEligibilityScheduleInstancesFilterByCurrentUserWithOnResponse()(*PrivilegedAccessGroupEligibilityScheduleInstancesFilterByCurrentUserWithOnResponse) {
@@ -43,7 +41,14 @@ func (m *PrivilegedAccessGroupEligibilityScheduleInstancesFilterByCurrentUserWit
 }
 // GetValue gets the value property value. The value property
 func (m *PrivilegedAccessGroupEligibilityScheduleInstancesFilterByCurrentUserWithOnResponse) GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupEligibilityScheduleInstanceable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupEligibilityScheduleInstanceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrivilegedAccessGroupEligibilityScheduleInstancesFilterByCurrentUserWithOnResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *PrivilegedAccessGroupEligibilityScheduleInstancesFilterByCurrentUserWit
 }
 // SetValue sets the value property value. The value property
 func (m *PrivilegedAccessGroupEligibilityScheduleInstancesFilterByCurrentUserWithOnResponse) SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupEligibilityScheduleInstanceable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrivilegedAccessGroupEligibilityScheduleInstancesFilterByCurrentUserWithOnResponseable 
+type PrivilegedAccessGroupEligibilityScheduleInstancesFilterByCurrentUserWithOnResponseable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupEligibilityScheduleInstanceable)
+    SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupEligibilityScheduleInstanceable)()
 }

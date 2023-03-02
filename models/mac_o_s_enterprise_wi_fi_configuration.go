@@ -7,32 +7,14 @@ import (
 // MacOSEnterpriseWiFiConfiguration 
 type MacOSEnterpriseWiFiConfiguration struct {
     MacOSWiFiConfiguration
-    // Authentication Method when EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.
-    authenticationMethod *WiFiAuthenticationMethod
-    // EAP-FAST Configuration Option when EAP-FAST is the selected EAP Type. Possible values are: noProtectedAccessCredential, useProtectedAccessCredential, useProtectedAccessCredentialAndProvision, useProtectedAccessCredentialAndProvisionAnonymously.
-    eapFastConfiguration *EapFastConfiguration
-    // Extensible Authentication Protocol (EAP) configuration types.
-    eapType *EapType
-    // Identity Certificate for client authentication when EAP Type is configured to EAP-TLS, EAP-TTLS (with Certificate Authentication), or PEAP (with Certificate Authentication).
-    identityCertificateForClientAuthentication MacOSCertificateProfileBaseable
-    // Non-EAP Method for Authentication (Inner Identity) when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
-    innerAuthenticationProtocolForEapTtls *NonEapAuthenticationMethodForEapTtlsType
-    // Enable identity privacy (Outer Identity) when EAP Type is configured to EAP-TTLS, EAP-FAST or PEAP. This property masks usernames with the text you enter. For example, if you use 'anonymous', each user that authenticates with this Wi-Fi connection using their real username is displayed as 'anonymous'.
-    outerIdentityPrivacyTemporaryValue *string
-    // Trusted Root Certificate for Server Validation when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP.
-    rootCertificateForServerValidation MacOSTrustedRootCertificateable
-    // Trusted Root Certificates for Server Validation when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. If you provide this value you do not need to provide trustedServerCertificateNames, and vice versa. This collection can contain a maximum of 500 elements.
-    rootCertificatesForServerValidation []MacOSTrustedRootCertificateable
-    // Trusted server certificate names when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. This is the common name used in the certificates issued by your trusted certificate authority (CA). If you provide this information, you can bypass the dynamic trust dialog that is displayed on end users devices when they connect to this Wi-Fi network.
-    trustedServerCertificateNames []string
 }
 // NewMacOSEnterpriseWiFiConfiguration instantiates a new MacOSEnterpriseWiFiConfiguration and sets the default values.
 func NewMacOSEnterpriseWiFiConfiguration()(*MacOSEnterpriseWiFiConfiguration) {
     m := &MacOSEnterpriseWiFiConfiguration{
         MacOSWiFiConfiguration: *NewMacOSWiFiConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.macOSEnterpriseWiFiConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.macOSEnterpriseWiFiConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMacOSEnterpriseWiFiConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,15 +23,36 @@ func CreateMacOSEnterpriseWiFiConfigurationFromDiscriminatorValue(parseNode i878
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. Authentication Method when EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.
 func (m *MacOSEnterpriseWiFiConfiguration) GetAuthenticationMethod()(*WiFiAuthenticationMethod) {
-    return m.authenticationMethod
+    val, err := m.GetBackingStore().Get("authenticationMethod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WiFiAuthenticationMethod)
+    }
+    return nil
 }
 // GetEapFastConfiguration gets the eapFastConfiguration property value. EAP-FAST Configuration Option when EAP-FAST is the selected EAP Type. Possible values are: noProtectedAccessCredential, useProtectedAccessCredential, useProtectedAccessCredentialAndProvision, useProtectedAccessCredentialAndProvisionAnonymously.
 func (m *MacOSEnterpriseWiFiConfiguration) GetEapFastConfiguration()(*EapFastConfiguration) {
-    return m.eapFastConfiguration
+    val, err := m.GetBackingStore().Get("eapFastConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*EapFastConfiguration)
+    }
+    return nil
 }
 // GetEapType gets the eapType property value. Extensible Authentication Protocol (EAP) configuration types.
 func (m *MacOSEnterpriseWiFiConfiguration) GetEapType()(*EapType) {
-    return m.eapType
+    val, err := m.GetBackingStore().Get("eapType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*EapType)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSEnterpriseWiFiConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -156,27 +159,69 @@ func (m *MacOSEnterpriseWiFiConfiguration) GetFieldDeserializers()(map[string]fu
 }
 // GetIdentityCertificateForClientAuthentication gets the identityCertificateForClientAuthentication property value. Identity Certificate for client authentication when EAP Type is configured to EAP-TLS, EAP-TTLS (with Certificate Authentication), or PEAP (with Certificate Authentication).
 func (m *MacOSEnterpriseWiFiConfiguration) GetIdentityCertificateForClientAuthentication()(MacOSCertificateProfileBaseable) {
-    return m.identityCertificateForClientAuthentication
+    val, err := m.GetBackingStore().Get("identityCertificateForClientAuthentication")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(MacOSCertificateProfileBaseable)
+    }
+    return nil
 }
 // GetInnerAuthenticationProtocolForEapTtls gets the innerAuthenticationProtocolForEapTtls property value. Non-EAP Method for Authentication (Inner Identity) when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
 func (m *MacOSEnterpriseWiFiConfiguration) GetInnerAuthenticationProtocolForEapTtls()(*NonEapAuthenticationMethodForEapTtlsType) {
-    return m.innerAuthenticationProtocolForEapTtls
+    val, err := m.GetBackingStore().Get("innerAuthenticationProtocolForEapTtls")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*NonEapAuthenticationMethodForEapTtlsType)
+    }
+    return nil
 }
 // GetOuterIdentityPrivacyTemporaryValue gets the outerIdentityPrivacyTemporaryValue property value. Enable identity privacy (Outer Identity) when EAP Type is configured to EAP-TTLS, EAP-FAST or PEAP. This property masks usernames with the text you enter. For example, if you use 'anonymous', each user that authenticates with this Wi-Fi connection using their real username is displayed as 'anonymous'.
 func (m *MacOSEnterpriseWiFiConfiguration) GetOuterIdentityPrivacyTemporaryValue()(*string) {
-    return m.outerIdentityPrivacyTemporaryValue
+    val, err := m.GetBackingStore().Get("outerIdentityPrivacyTemporaryValue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRootCertificateForServerValidation gets the rootCertificateForServerValidation property value. Trusted Root Certificate for Server Validation when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP.
 func (m *MacOSEnterpriseWiFiConfiguration) GetRootCertificateForServerValidation()(MacOSTrustedRootCertificateable) {
-    return m.rootCertificateForServerValidation
+    val, err := m.GetBackingStore().Get("rootCertificateForServerValidation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(MacOSTrustedRootCertificateable)
+    }
+    return nil
 }
 // GetRootCertificatesForServerValidation gets the rootCertificatesForServerValidation property value. Trusted Root Certificates for Server Validation when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. If you provide this value you do not need to provide trustedServerCertificateNames, and vice versa. This collection can contain a maximum of 500 elements.
 func (m *MacOSEnterpriseWiFiConfiguration) GetRootCertificatesForServerValidation()([]MacOSTrustedRootCertificateable) {
-    return m.rootCertificatesForServerValidation
+    val, err := m.GetBackingStore().Get("rootCertificatesForServerValidation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MacOSTrustedRootCertificateable)
+    }
+    return nil
 }
 // GetTrustedServerCertificateNames gets the trustedServerCertificateNames property value. Trusted server certificate names when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. This is the common name used in the certificates issued by your trusted certificate authority (CA). If you provide this information, you can bypass the dynamic trust dialog that is displayed on end users devices when they connect to this Wi-Fi network.
 func (m *MacOSEnterpriseWiFiConfiguration) GetTrustedServerCertificateNames()([]string) {
-    return m.trustedServerCertificateNames
+    val, err := m.GetBackingStore().Get("trustedServerCertificateNames")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MacOSEnterpriseWiFiConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -250,37 +295,87 @@ func (m *MacOSEnterpriseWiFiConfiguration) Serialize(writer i878a80d2330e89d2689
 }
 // SetAuthenticationMethod sets the authenticationMethod property value. Authentication Method when EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.
 func (m *MacOSEnterpriseWiFiConfiguration) SetAuthenticationMethod(value *WiFiAuthenticationMethod)() {
-    m.authenticationMethod = value
+    err := m.GetBackingStore().Set("authenticationMethod", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEapFastConfiguration sets the eapFastConfiguration property value. EAP-FAST Configuration Option when EAP-FAST is the selected EAP Type. Possible values are: noProtectedAccessCredential, useProtectedAccessCredential, useProtectedAccessCredentialAndProvision, useProtectedAccessCredentialAndProvisionAnonymously.
 func (m *MacOSEnterpriseWiFiConfiguration) SetEapFastConfiguration(value *EapFastConfiguration)() {
-    m.eapFastConfiguration = value
+    err := m.GetBackingStore().Set("eapFastConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEapType sets the eapType property value. Extensible Authentication Protocol (EAP) configuration types.
 func (m *MacOSEnterpriseWiFiConfiguration) SetEapType(value *EapType)() {
-    m.eapType = value
+    err := m.GetBackingStore().Set("eapType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentityCertificateForClientAuthentication sets the identityCertificateForClientAuthentication property value. Identity Certificate for client authentication when EAP Type is configured to EAP-TLS, EAP-TTLS (with Certificate Authentication), or PEAP (with Certificate Authentication).
 func (m *MacOSEnterpriseWiFiConfiguration) SetIdentityCertificateForClientAuthentication(value MacOSCertificateProfileBaseable)() {
-    m.identityCertificateForClientAuthentication = value
+    err := m.GetBackingStore().Set("identityCertificateForClientAuthentication", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInnerAuthenticationProtocolForEapTtls sets the innerAuthenticationProtocolForEapTtls property value. Non-EAP Method for Authentication (Inner Identity) when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
 func (m *MacOSEnterpriseWiFiConfiguration) SetInnerAuthenticationProtocolForEapTtls(value *NonEapAuthenticationMethodForEapTtlsType)() {
-    m.innerAuthenticationProtocolForEapTtls = value
+    err := m.GetBackingStore().Set("innerAuthenticationProtocolForEapTtls", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOuterIdentityPrivacyTemporaryValue sets the outerIdentityPrivacyTemporaryValue property value. Enable identity privacy (Outer Identity) when EAP Type is configured to EAP-TTLS, EAP-FAST or PEAP. This property masks usernames with the text you enter. For example, if you use 'anonymous', each user that authenticates with this Wi-Fi connection using their real username is displayed as 'anonymous'.
 func (m *MacOSEnterpriseWiFiConfiguration) SetOuterIdentityPrivacyTemporaryValue(value *string)() {
-    m.outerIdentityPrivacyTemporaryValue = value
+    err := m.GetBackingStore().Set("outerIdentityPrivacyTemporaryValue", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRootCertificateForServerValidation sets the rootCertificateForServerValidation property value. Trusted Root Certificate for Server Validation when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP.
 func (m *MacOSEnterpriseWiFiConfiguration) SetRootCertificateForServerValidation(value MacOSTrustedRootCertificateable)() {
-    m.rootCertificateForServerValidation = value
+    err := m.GetBackingStore().Set("rootCertificateForServerValidation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRootCertificatesForServerValidation sets the rootCertificatesForServerValidation property value. Trusted Root Certificates for Server Validation when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. If you provide this value you do not need to provide trustedServerCertificateNames, and vice versa. This collection can contain a maximum of 500 elements.
 func (m *MacOSEnterpriseWiFiConfiguration) SetRootCertificatesForServerValidation(value []MacOSTrustedRootCertificateable)() {
-    m.rootCertificatesForServerValidation = value
+    err := m.GetBackingStore().Set("rootCertificatesForServerValidation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTrustedServerCertificateNames sets the trustedServerCertificateNames property value. Trusted server certificate names when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. This is the common name used in the certificates issued by your trusted certificate authority (CA). If you provide this information, you can bypass the dynamic trust dialog that is displayed on end users devices when they connect to this Wi-Fi network.
 func (m *MacOSEnterpriseWiFiConfiguration) SetTrustedServerCertificateNames(value []string)() {
-    m.trustedServerCertificateNames = value
+    err := m.GetBackingStore().Set("trustedServerCertificateNames", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MacOSEnterpriseWiFiConfigurationable 
+type MacOSEnterpriseWiFiConfigurationable interface {
+    MacOSWiFiConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAuthenticationMethod()(*WiFiAuthenticationMethod)
+    GetEapFastConfiguration()(*EapFastConfiguration)
+    GetEapType()(*EapType)
+    GetIdentityCertificateForClientAuthentication()(MacOSCertificateProfileBaseable)
+    GetInnerAuthenticationProtocolForEapTtls()(*NonEapAuthenticationMethodForEapTtlsType)
+    GetOuterIdentityPrivacyTemporaryValue()(*string)
+    GetRootCertificateForServerValidation()(MacOSTrustedRootCertificateable)
+    GetRootCertificatesForServerValidation()([]MacOSTrustedRootCertificateable)
+    GetTrustedServerCertificateNames()([]string)
+    SetAuthenticationMethod(value *WiFiAuthenticationMethod)()
+    SetEapFastConfiguration(value *EapFastConfiguration)()
+    SetEapType(value *EapType)()
+    SetIdentityCertificateForClientAuthentication(value MacOSCertificateProfileBaseable)()
+    SetInnerAuthenticationProtocolForEapTtls(value *NonEapAuthenticationMethodForEapTtlsType)()
+    SetOuterIdentityPrivacyTemporaryValue(value *string)()
+    SetRootCertificateForServerValidation(value MacOSTrustedRootCertificateable)()
+    SetRootCertificatesForServerValidation(value []MacOSTrustedRootCertificateable)()
+    SetTrustedServerCertificateNames(value []string)()
 }

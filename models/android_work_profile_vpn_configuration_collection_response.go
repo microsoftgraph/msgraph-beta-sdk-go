@@ -7,8 +7,6 @@ import (
 // AndroidWorkProfileVpnConfigurationCollectionResponse 
 type AndroidWorkProfileVpnConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidWorkProfileVpnConfigurationable
 }
 // NewAndroidWorkProfileVpnConfigurationCollectionResponse instantiates a new AndroidWorkProfileVpnConfigurationCollectionResponse and sets the default values.
 func NewAndroidWorkProfileVpnConfigurationCollectionResponse()(*AndroidWorkProfileVpnConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidWorkProfileVpnConfigurationCollectionResponse) GetFieldDeseriali
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidWorkProfileVpnConfigurationCollectionResponse) GetValue()([]AndroidWorkProfileVpnConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidWorkProfileVpnConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidWorkProfileVpnConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidWorkProfileVpnConfigurationCollectionResponse) Serialize(writer 
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidWorkProfileVpnConfigurationCollectionResponse) SetValue(value []AndroidWorkProfileVpnConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidWorkProfileVpnConfigurationCollectionResponseable 
+type AndroidWorkProfileVpnConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidWorkProfileVpnConfigurationable)
+    SetValue(value []AndroidWorkProfileVpnConfigurationable)()
 }

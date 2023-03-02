@@ -8,8 +8,6 @@ import (
 // TenantCustomizedInformationCollectionResponse 
 type TenantCustomizedInformationCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
-    // The value property
-    value []TenantCustomizedInformationable
 }
 // NewTenantCustomizedInformationCollectionResponse instantiates a new TenantCustomizedInformationCollectionResponse and sets the default values.
 func NewTenantCustomizedInformationCollectionResponse()(*TenantCustomizedInformationCollectionResponse) {
@@ -43,7 +41,14 @@ func (m *TenantCustomizedInformationCollectionResponse) GetFieldDeserializers()(
 }
 // GetValue gets the value property value. The value property
 func (m *TenantCustomizedInformationCollectionResponse) GetValue()([]TenantCustomizedInformationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TenantCustomizedInformationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TenantCustomizedInformationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *TenantCustomizedInformationCollectionResponse) Serialize(writer i878a80
 }
 // SetValue sets the value property value. The value property
 func (m *TenantCustomizedInformationCollectionResponse) SetValue(value []TenantCustomizedInformationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TenantCustomizedInformationCollectionResponseable 
+type TenantCustomizedInformationCollectionResponseable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]TenantCustomizedInformationable)
+    SetValue(value []TenantCustomizedInformationable)()
 }

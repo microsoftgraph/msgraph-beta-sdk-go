@@ -7,50 +7,14 @@ import (
 // OutlookTask 
 type OutlookTask struct {
     OutlookItem
-    // The name of the person who has been assigned the task in Outlook. Read-only.
-    assignedTo *string
-    // The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
-    attachments []Attachmentable
-    // The task body that typically contains information about the task. Note that only HTML type is supported.
-    body ItemBodyable
-    // The date in the specified time zone that the task was finished.
-    completedDateTime DateTimeTimeZoneable
-    // The date in the specified time zone that the task is to be finished.
-    dueDateTime DateTimeTimeZoneable
-    // Set to true if the task has attachments.
-    hasAttachments *bool
-    // The importance property
-    importance *Importance
-    // The isReminderOn property
-    isReminderOn *bool
-    // The collection of multi-value extended properties defined for the task. Read-only. Nullable.
-    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable
-    // The owner property
-    owner *string
-    // The parentFolderId property
-    parentFolderId *string
-    // The recurrence property
-    recurrence PatternedRecurrenceable
-    // The reminderDateTime property
-    reminderDateTime DateTimeTimeZoneable
-    // The sensitivity property
-    sensitivity *Sensitivity
-    // The collection of single-value extended properties defined for the task. Read-only. Nullable.
-    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable
-    // The startDateTime property
-    startDateTime DateTimeTimeZoneable
-    // The status property
-    status *TaskStatus
-    // The subject property
-    subject *string
 }
 // NewOutlookTask instantiates a new OutlookTask and sets the default values.
 func NewOutlookTask()(*OutlookTask) {
     m := &OutlookTask{
         OutlookItem: *NewOutlookItem(),
     }
-    odataTypeValue := "#microsoft.graph.outlookTask";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.outlookTask"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateOutlookTaskFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -59,23 +23,58 @@ func CreateOutlookTaskFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAssignedTo gets the assignedTo property value. The name of the person who has been assigned the task in Outlook. Read-only.
 func (m *OutlookTask) GetAssignedTo()(*string) {
-    return m.assignedTo
+    val, err := m.GetBackingStore().Get("assignedTo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAttachments gets the attachments property value. The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
 func (m *OutlookTask) GetAttachments()([]Attachmentable) {
-    return m.attachments
+    val, err := m.GetBackingStore().Get("attachments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Attachmentable)
+    }
+    return nil
 }
 // GetBody gets the body property value. The task body that typically contains information about the task. Note that only HTML type is supported.
 func (m *OutlookTask) GetBody()(ItemBodyable) {
-    return m.body
+    val, err := m.GetBackingStore().Get("body")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ItemBodyable)
+    }
+    return nil
 }
 // GetCompletedDateTime gets the completedDateTime property value. The date in the specified time zone that the task was finished.
 func (m *OutlookTask) GetCompletedDateTime()(DateTimeTimeZoneable) {
-    return m.completedDateTime
+    val, err := m.GetBackingStore().Get("completedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DateTimeTimeZoneable)
+    }
+    return nil
 }
 // GetDueDateTime gets the dueDateTime property value. The date in the specified time zone that the task is to be finished.
 func (m *OutlookTask) GetDueDateTime()(DateTimeTimeZoneable) {
-    return m.dueDateTime
+    val, err := m.GetBackingStore().Get("dueDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DateTimeTimeZoneable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OutlookTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -276,55 +275,146 @@ func (m *OutlookTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetHasAttachments gets the hasAttachments property value. Set to true if the task has attachments.
 func (m *OutlookTask) GetHasAttachments()(*bool) {
-    return m.hasAttachments
+    val, err := m.GetBackingStore().Get("hasAttachments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetImportance gets the importance property value. The importance property
 func (m *OutlookTask) GetImportance()(*Importance) {
-    return m.importance
+    val, err := m.GetBackingStore().Get("importance")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Importance)
+    }
+    return nil
 }
 // GetIsReminderOn gets the isReminderOn property value. The isReminderOn property
 func (m *OutlookTask) GetIsReminderOn()(*bool) {
-    return m.isReminderOn
+    val, err := m.GetBackingStore().Get("isReminderOn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the task. Read-only. Nullable.
 func (m *OutlookTask) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable) {
-    return m.multiValueExtendedProperties
+    val, err := m.GetBackingStore().Get("multiValueExtendedProperties")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MultiValueLegacyExtendedPropertyable)
+    }
+    return nil
 }
 // GetOwner gets the owner property value. The owner property
 func (m *OutlookTask) GetOwner()(*string) {
-    return m.owner
+    val, err := m.GetBackingStore().Get("owner")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetParentFolderId gets the parentFolderId property value. The parentFolderId property
 func (m *OutlookTask) GetParentFolderId()(*string) {
-    return m.parentFolderId
+    val, err := m.GetBackingStore().Get("parentFolderId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRecurrence gets the recurrence property value. The recurrence property
 func (m *OutlookTask) GetRecurrence()(PatternedRecurrenceable) {
-    return m.recurrence
+    val, err := m.GetBackingStore().Get("recurrence")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PatternedRecurrenceable)
+    }
+    return nil
 }
 // GetReminderDateTime gets the reminderDateTime property value. The reminderDateTime property
 func (m *OutlookTask) GetReminderDateTime()(DateTimeTimeZoneable) {
-    return m.reminderDateTime
+    val, err := m.GetBackingStore().Get("reminderDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DateTimeTimeZoneable)
+    }
+    return nil
 }
 // GetSensitivity gets the sensitivity property value. The sensitivity property
 func (m *OutlookTask) GetSensitivity()(*Sensitivity) {
-    return m.sensitivity
+    val, err := m.GetBackingStore().Get("sensitivity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Sensitivity)
+    }
+    return nil
 }
 // GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the task. Read-only. Nullable.
 func (m *OutlookTask) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable) {
-    return m.singleValueExtendedProperties
+    val, err := m.GetBackingStore().Get("singleValueExtendedProperties")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SingleValueLegacyExtendedPropertyable)
+    }
+    return nil
 }
 // GetStartDateTime gets the startDateTime property value. The startDateTime property
 func (m *OutlookTask) GetStartDateTime()(DateTimeTimeZoneable) {
-    return m.startDateTime
+    val, err := m.GetBackingStore().Get("startDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DateTimeTimeZoneable)
+    }
+    return nil
 }
 // GetStatus gets the status property value. The status property
 func (m *OutlookTask) GetStatus()(*TaskStatus) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*TaskStatus)
+    }
+    return nil
 }
 // GetSubject gets the subject property value. The subject property
 func (m *OutlookTask) GetSubject()(*string) {
-    return m.subject
+    val, err := m.GetBackingStore().Get("subject")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OutlookTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -459,73 +549,168 @@ func (m *OutlookTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAssignedTo sets the assignedTo property value. The name of the person who has been assigned the task in Outlook. Read-only.
 func (m *OutlookTask) SetAssignedTo(value *string)() {
-    m.assignedTo = value
+    err := m.GetBackingStore().Set("assignedTo", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAttachments sets the attachments property value. The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
 func (m *OutlookTask) SetAttachments(value []Attachmentable)() {
-    m.attachments = value
+    err := m.GetBackingStore().Set("attachments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBody sets the body property value. The task body that typically contains information about the task. Note that only HTML type is supported.
 func (m *OutlookTask) SetBody(value ItemBodyable)() {
-    m.body = value
+    err := m.GetBackingStore().Set("body", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCompletedDateTime sets the completedDateTime property value. The date in the specified time zone that the task was finished.
 func (m *OutlookTask) SetCompletedDateTime(value DateTimeTimeZoneable)() {
-    m.completedDateTime = value
+    err := m.GetBackingStore().Set("completedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDueDateTime sets the dueDateTime property value. The date in the specified time zone that the task is to be finished.
 func (m *OutlookTask) SetDueDateTime(value DateTimeTimeZoneable)() {
-    m.dueDateTime = value
+    err := m.GetBackingStore().Set("dueDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHasAttachments sets the hasAttachments property value. Set to true if the task has attachments.
 func (m *OutlookTask) SetHasAttachments(value *bool)() {
-    m.hasAttachments = value
+    err := m.GetBackingStore().Set("hasAttachments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetImportance sets the importance property value. The importance property
 func (m *OutlookTask) SetImportance(value *Importance)() {
-    m.importance = value
+    err := m.GetBackingStore().Set("importance", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsReminderOn sets the isReminderOn property value. The isReminderOn property
 func (m *OutlookTask) SetIsReminderOn(value *bool)() {
-    m.isReminderOn = value
+    err := m.GetBackingStore().Set("isReminderOn", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the task. Read-only. Nullable.
 func (m *OutlookTask) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)() {
-    m.multiValueExtendedProperties = value
+    err := m.GetBackingStore().Set("multiValueExtendedProperties", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOwner sets the owner property value. The owner property
 func (m *OutlookTask) SetOwner(value *string)() {
-    m.owner = value
+    err := m.GetBackingStore().Set("owner", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetParentFolderId sets the parentFolderId property value. The parentFolderId property
 func (m *OutlookTask) SetParentFolderId(value *string)() {
-    m.parentFolderId = value
+    err := m.GetBackingStore().Set("parentFolderId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRecurrence sets the recurrence property value. The recurrence property
 func (m *OutlookTask) SetRecurrence(value PatternedRecurrenceable)() {
-    m.recurrence = value
+    err := m.GetBackingStore().Set("recurrence", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReminderDateTime sets the reminderDateTime property value. The reminderDateTime property
 func (m *OutlookTask) SetReminderDateTime(value DateTimeTimeZoneable)() {
-    m.reminderDateTime = value
+    err := m.GetBackingStore().Set("reminderDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSensitivity sets the sensitivity property value. The sensitivity property
 func (m *OutlookTask) SetSensitivity(value *Sensitivity)() {
-    m.sensitivity = value
+    err := m.GetBackingStore().Set("sensitivity", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the task. Read-only. Nullable.
 func (m *OutlookTask) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)() {
-    m.singleValueExtendedProperties = value
+    err := m.GetBackingStore().Set("singleValueExtendedProperties", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartDateTime sets the startDateTime property value. The startDateTime property
 func (m *OutlookTask) SetStartDateTime(value DateTimeTimeZoneable)() {
-    m.startDateTime = value
+    err := m.GetBackingStore().Set("startDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. The status property
 func (m *OutlookTask) SetStatus(value *TaskStatus)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubject sets the subject property value. The subject property
 func (m *OutlookTask) SetSubject(value *string)() {
-    m.subject = value
+    err := m.GetBackingStore().Set("subject", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OutlookTaskable 
+type OutlookTaskable interface {
+    OutlookItemable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssignedTo()(*string)
+    GetAttachments()([]Attachmentable)
+    GetBody()(ItemBodyable)
+    GetCompletedDateTime()(DateTimeTimeZoneable)
+    GetDueDateTime()(DateTimeTimeZoneable)
+    GetHasAttachments()(*bool)
+    GetImportance()(*Importance)
+    GetIsReminderOn()(*bool)
+    GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable)
+    GetOwner()(*string)
+    GetParentFolderId()(*string)
+    GetRecurrence()(PatternedRecurrenceable)
+    GetReminderDateTime()(DateTimeTimeZoneable)
+    GetSensitivity()(*Sensitivity)
+    GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable)
+    GetStartDateTime()(DateTimeTimeZoneable)
+    GetStatus()(*TaskStatus)
+    GetSubject()(*string)
+    SetAssignedTo(value *string)()
+    SetAttachments(value []Attachmentable)()
+    SetBody(value ItemBodyable)()
+    SetCompletedDateTime(value DateTimeTimeZoneable)()
+    SetDueDateTime(value DateTimeTimeZoneable)()
+    SetHasAttachments(value *bool)()
+    SetImportance(value *Importance)()
+    SetIsReminderOn(value *bool)()
+    SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)()
+    SetOwner(value *string)()
+    SetParentFolderId(value *string)()
+    SetRecurrence(value PatternedRecurrenceable)()
+    SetReminderDateTime(value DateTimeTimeZoneable)()
+    SetSensitivity(value *Sensitivity)()
+    SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)()
+    SetStartDateTime(value DateTimeTimeZoneable)()
+    SetStatus(value *TaskStatus)()
+    SetSubject(value *string)()
 }

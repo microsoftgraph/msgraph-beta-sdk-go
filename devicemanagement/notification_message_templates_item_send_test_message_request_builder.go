@@ -26,13 +26,13 @@ type NotificationMessageTemplatesItemSendTestMessageRequestBuilderPostRequestCon
 func NewNotificationMessageTemplatesItemSendTestMessageRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*NotificationMessageTemplatesItemSendTestMessageRequestBuilder) {
     m := &NotificationMessageTemplatesItemSendTestMessageRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/notificationMessageTemplates/{notificationMessageTemplate%2Did}/microsoft.graph.sendTestMessage";
+    m.urlTemplate = "{+baseurl}/deviceManagement/notificationMessageTemplates/{notificationMessageTemplate%2Did}/sendTestMessage";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewNotificationMessageTemplatesItemSendTestMessageRequestBuilder instantiates a new SendTestMessageRequestBuilder and sets the default values.

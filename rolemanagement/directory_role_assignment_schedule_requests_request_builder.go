@@ -60,8 +60,8 @@ func NewDirectoryRoleAssignmentScheduleRequestsRequestBuilderInternal(pathParame
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDirectoryRoleAssignmentScheduleRequestsRequestBuilder instantiates a new RoleAssignmentScheduleRequestsRequestBuilder and sets the default values.
@@ -72,11 +72,11 @@ func NewDirectoryRoleAssignmentScheduleRequestsRequestBuilder(rawUrl string, req
 }
 // Count provides operations to count the resources in the collection.
 func (m *DirectoryRoleAssignmentScheduleRequestsRequestBuilder) Count()(*DirectoryRoleAssignmentScheduleRequestsCountRequestBuilder) {
-    return NewDirectoryRoleAssignmentScheduleRequestsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDirectoryRoleAssignmentScheduleRequestsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
 func (m *DirectoryRoleAssignmentScheduleRequestsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*DirectoryRoleAssignmentScheduleRequestsFilterByCurrentUserWithOnRequestBuilder) {
-    return NewDirectoryRoleAssignmentScheduleRequestsFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
+    return NewDirectoryRoleAssignmentScheduleRequestsFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Get retrieve the requests for active role assignments to principals. The active assignments include those made through assignments and activation requests, and directly through the role assignments API. The role assignments can be permanently active with or without an expiry date, or temporarily active after user activation of eligible assignments.
 // [Find more info here]
@@ -145,7 +145,10 @@ func (m *DirectoryRoleAssignmentScheduleRequestsRequestBuilder) ToPostRequestInf
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -7,16 +7,14 @@ import (
 // InsightValueInt 
 type InsightValueInt struct {
     UserExperienceAnalyticsInsightValue
-    // Not yet documented
-    value *int32
 }
 // NewInsightValueInt instantiates a new InsightValueInt and sets the default values.
 func NewInsightValueInt()(*InsightValueInt) {
     m := &InsightValueInt{
         UserExperienceAnalyticsInsightValue: *NewUserExperienceAnalyticsInsightValue(),
     }
-    odataTypeValue := "#microsoft.graph.insightValueInt";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.insightValueInt"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateInsightValueIntFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *InsightValueInt) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetValue gets the value property value. Not yet documented
 func (m *InsightValueInt) GetValue()(*int32) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *InsightValueInt) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *InsightValueInt) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetValue sets the value property value. Not yet documented
 func (m *InsightValueInt) SetValue(value *int32)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// InsightValueIntable 
+type InsightValueIntable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    UserExperienceAnalyticsInsightValueable
+    GetValue()(*int32)
+    SetValue(value *int32)()
 }

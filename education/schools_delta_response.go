@@ -8,8 +8,6 @@ import (
 // SchoolsDeltaResponse 
 type SchoolsDeltaResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseDeltaFunctionResponse
-    // The value property
-    value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSchoolable
 }
 // NewSchoolsDeltaResponse instantiates a new SchoolsDeltaResponse and sets the default values.
 func NewSchoolsDeltaResponse()(*SchoolsDeltaResponse) {
@@ -43,7 +41,14 @@ func (m *SchoolsDeltaResponse) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetValue gets the value property value. The value property
 func (m *SchoolsDeltaResponse) GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSchoolable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSchoolable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SchoolsDeltaResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *SchoolsDeltaResponse) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetValue sets the value property value. The value property
 func (m *SchoolsDeltaResponse) SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSchoolable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SchoolsDeltaResponseable 
+type SchoolsDeltaResponseable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseDeltaFunctionResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSchoolable)
+    SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSchoolable)()
 }

@@ -7,16 +7,14 @@ import (
 // DeviceManagementConfigurationReferenceSettingValue 
 type DeviceManagementConfigurationReferenceSettingValue struct {
     DeviceManagementConfigurationStringSettingValue
-    // A note that admin can use to put some contextual information
-    note *string
 }
 // NewDeviceManagementConfigurationReferenceSettingValue instantiates a new DeviceManagementConfigurationReferenceSettingValue and sets the default values.
 func NewDeviceManagementConfigurationReferenceSettingValue()(*DeviceManagementConfigurationReferenceSettingValue) {
     m := &DeviceManagementConfigurationReferenceSettingValue{
         DeviceManagementConfigurationStringSettingValue: *NewDeviceManagementConfigurationStringSettingValue(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationReferenceSettingValue";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationReferenceSettingValue"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementConfigurationReferenceSettingValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *DeviceManagementConfigurationReferenceSettingValue) GetFieldDeserialize
 }
 // GetNote gets the note property value. A note that admin can use to put some contextual information
 func (m *DeviceManagementConfigurationReferenceSettingValue) GetNote()(*string) {
-    return m.note
+    val, err := m.GetBackingStore().Get("note")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationReferenceSettingValue) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *DeviceManagementConfigurationReferenceSettingValue) Serialize(writer i8
 }
 // SetNote sets the note property value. A note that admin can use to put some contextual information
 func (m *DeviceManagementConfigurationReferenceSettingValue) SetNote(value *string)() {
-    m.note = value
+    err := m.GetBackingStore().Set("note", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationReferenceSettingValueable 
+type DeviceManagementConfigurationReferenceSettingValueable interface {
+    DeviceManagementConfigurationStringSettingValueable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetNote()(*string)
+    SetNote(value *string)()
 }

@@ -46,7 +46,7 @@ type MobileAppsGetTopMobileAppsWithStatusWithCountRequestBuilderGetRequestConfig
 func NewMobileAppsGetTopMobileAppsWithStatusWithCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, count *int64, status *string)(*MobileAppsGetTopMobileAppsWithStatusWithCountRequestBuilder) {
     m := &MobileAppsGetTopMobileAppsWithStatusWithCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/microsoft.graph.getTopMobileApps(status='{status}',count={count}){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
+    m.urlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/getTopMobileApps(status='{status}',count={count}){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -57,8 +57,8 @@ func NewMobileAppsGetTopMobileAppsWithStatusWithCountRequestBuilderInternal(path
     if status != nil {
         urlTplParams["status"] = *status
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMobileAppsGetTopMobileAppsWithStatusWithCountRequestBuilder instantiates a new GetTopMobileAppsWithStatusWithCountRequestBuilder and sets the default values.

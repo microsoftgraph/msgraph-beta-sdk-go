@@ -8,8 +8,6 @@ import (
 // ItemTranslateExchangeIdsResponse 
 type ItemTranslateExchangeIdsResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
-    // The value property
-    value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConvertIdResultable
 }
 // NewItemTranslateExchangeIdsResponse instantiates a new ItemTranslateExchangeIdsResponse and sets the default values.
 func NewItemTranslateExchangeIdsResponse()(*ItemTranslateExchangeIdsResponse) {
@@ -43,7 +41,14 @@ func (m *ItemTranslateExchangeIdsResponse) GetFieldDeserializers()(map[string]fu
 }
 // GetValue gets the value property value. The value property
 func (m *ItemTranslateExchangeIdsResponse) GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConvertIdResultable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConvertIdResultable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemTranslateExchangeIdsResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *ItemTranslateExchangeIdsResponse) Serialize(writer i878a80d2330e89d2689
 }
 // SetValue sets the value property value. The value property
 func (m *ItemTranslateExchangeIdsResponse) SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConvertIdResultable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemTranslateExchangeIdsResponseable 
+type ItemTranslateExchangeIdsResponseable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConvertIdResultable)
+    SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConvertIdResultable)()
 }

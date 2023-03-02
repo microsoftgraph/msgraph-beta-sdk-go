@@ -7,12 +7,6 @@ import (
 // DeviceManagementSettingCategory entity representing a setting category
 type DeviceManagementSettingCategory struct {
     Entity
-    // The category name
-    displayName *string
-    // The category contains top level required setting
-    hasRequiredSetting *bool
-    // The setting definitions this category contains
-    settingDefinitions []DeviceManagementSettingDefinitionable
 }
 // NewDeviceManagementSettingCategory instantiates a new deviceManagementSettingCategory and sets the default values.
 func NewDeviceManagementSettingCategory()(*DeviceManagementSettingCategory) {
@@ -47,7 +41,14 @@ func CreateDeviceManagementSettingCategoryFromDiscriminatorValue(parseNode i878a
 }
 // GetDisplayName gets the displayName property value. The category name
 func (m *DeviceManagementSettingCategory) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementSettingCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -90,11 +91,25 @@ func (m *DeviceManagementSettingCategory) GetFieldDeserializers()(map[string]fun
 }
 // GetHasRequiredSetting gets the hasRequiredSetting property value. The category contains top level required setting
 func (m *DeviceManagementSettingCategory) GetHasRequiredSetting()(*bool) {
-    return m.hasRequiredSetting
+    val, err := m.GetBackingStore().Get("hasRequiredSetting")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSettingDefinitions gets the settingDefinitions property value. The setting definitions this category contains
 func (m *DeviceManagementSettingCategory) GetSettingDefinitions()([]DeviceManagementSettingDefinitionable) {
-    return m.settingDefinitions
+    val, err := m.GetBackingStore().Get("settingDefinitions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementSettingDefinitionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementSettingCategory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -128,13 +143,33 @@ func (m *DeviceManagementSettingCategory) Serialize(writer i878a80d2330e89d26896
 }
 // SetDisplayName sets the displayName property value. The category name
 func (m *DeviceManagementSettingCategory) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHasRequiredSetting sets the hasRequiredSetting property value. The category contains top level required setting
 func (m *DeviceManagementSettingCategory) SetHasRequiredSetting(value *bool)() {
-    m.hasRequiredSetting = value
+    err := m.GetBackingStore().Set("hasRequiredSetting", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingDefinitions sets the settingDefinitions property value. The setting definitions this category contains
 func (m *DeviceManagementSettingCategory) SetSettingDefinitions(value []DeviceManagementSettingDefinitionable)() {
-    m.settingDefinitions = value
+    err := m.GetBackingStore().Set("settingDefinitions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementSettingCategoryable 
+type DeviceManagementSettingCategoryable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDisplayName()(*string)
+    GetHasRequiredSetting()(*bool)
+    GetSettingDefinitions()([]DeviceManagementSettingDefinitionable)
+    SetDisplayName(value *string)()
+    SetHasRequiredSetting(value *bool)()
+    SetSettingDefinitions(value []DeviceManagementSettingDefinitionable)()
 }

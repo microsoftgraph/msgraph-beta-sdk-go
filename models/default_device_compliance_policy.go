@@ -13,8 +13,8 @@ func NewDefaultDeviceCompliancePolicy()(*DefaultDeviceCompliancePolicy) {
     m := &DefaultDeviceCompliancePolicy{
         DeviceCompliancePolicy: *NewDeviceCompliancePolicy(),
     }
-    odataTypeValue := "#microsoft.graph.defaultDeviceCompliancePolicy";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.defaultDeviceCompliancePolicy"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDefaultDeviceCompliancePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,4 +33,9 @@ func (m *DefaultDeviceCompliancePolicy) Serialize(writer i878a80d2330e89d2689638
         return err
     }
     return nil
+}
+// DefaultDeviceCompliancePolicyable 
+type DefaultDeviceCompliancePolicyable interface {
+    DeviceCompliancePolicyable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

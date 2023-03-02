@@ -48,7 +48,7 @@ type ItemSynchronizationRequestBuilderPatchRequestConfiguration struct {
 }
 // AcquireAccessToken provides operations to call the acquireAccessToken method.
 func (m *ItemSynchronizationRequestBuilder) AcquireAccessToken()(*ItemSynchronizationAcquireAccessTokenRequestBuilder) {
-    return NewItemSynchronizationAcquireAccessTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSynchronizationAcquireAccessTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewItemSynchronizationRequestBuilderInternal instantiates a new SynchronizationRequestBuilder and sets the default values.
 func NewItemSynchronizationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSynchronizationRequestBuilder) {
@@ -59,8 +59,8 @@ func NewItemSynchronizationRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSynchronizationRequestBuilder instantiates a new SynchronizationRequestBuilder and sets the default values.
@@ -106,7 +106,7 @@ func (m *ItemSynchronizationRequestBuilder) Get(ctx context.Context, requestConf
 }
 // Jobs provides operations to manage the jobs property of the microsoft.graph.synchronization entity.
 func (m *ItemSynchronizationRequestBuilder) Jobs()(*ItemSynchronizationJobsRequestBuilder) {
-    return NewItemSynchronizationJobsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSynchronizationJobsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // JobsById provides operations to manage the jobs property of the microsoft.graph.synchronization entity.
 func (m *ItemSynchronizationRequestBuilder) JobsById(id string)(*ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) {
@@ -117,7 +117,7 @@ func (m *ItemSynchronizationRequestBuilder) JobsById(id string)(*ItemSynchroniza
     if id != "" {
         urlTplParams["synchronizationJob%2Did"] = id
     }
-    return NewItemSynchronizationJobsSynchronizationJobItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSynchronizationJobsSynchronizationJobItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch update the navigation property synchronization in applications
 func (m *ItemSynchronizationRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Synchronizationable, requestConfiguration *ItemSynchronizationRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Synchronizationable, error) {
@@ -140,11 +140,15 @@ func (m *ItemSynchronizationRequestBuilder) Patch(ctx context.Context, body ie23
 }
 // Ping provides operations to call the Ping method.
 func (m *ItemSynchronizationRequestBuilder) Ping()(*ItemSynchronizationPingRequestBuilder) {
-    return NewItemSynchronizationPingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSynchronizationPingRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// Secrets the secrets property
+func (m *ItemSynchronizationRequestBuilder) Secrets()(*ItemSynchronizationSecretsRequestBuilder) {
+    return NewItemSynchronizationSecretsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Templates provides operations to manage the templates property of the microsoft.graph.synchronization entity.
 func (m *ItemSynchronizationRequestBuilder) Templates()(*ItemSynchronizationTemplatesRequestBuilder) {
-    return NewItemSynchronizationTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSynchronizationTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TemplatesById provides operations to manage the templates property of the microsoft.graph.synchronization entity.
 func (m *ItemSynchronizationRequestBuilder) TemplatesById(id string)(*ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) {
@@ -155,7 +159,7 @@ func (m *ItemSynchronizationRequestBuilder) TemplatesById(id string)(*ItemSynchr
     if id != "" {
         urlTplParams["synchronizationTemplate%2Did"] = id
     }
-    return NewItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property synchronization for applications
 func (m *ItemSynchronizationRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -192,7 +196,10 @@ func (m *ItemSynchronizationRequestBuilder) ToPatchRequestInformation(ctx contex
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

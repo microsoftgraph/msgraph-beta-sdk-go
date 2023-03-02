@@ -7,8 +7,6 @@ import (
 // DeviceManagementSettingDependencyCollectionResponse 
 type DeviceManagementSettingDependencyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementSettingDependencyable
 }
 // NewDeviceManagementSettingDependencyCollectionResponse instantiates a new DeviceManagementSettingDependencyCollectionResponse and sets the default values.
 func NewDeviceManagementSettingDependencyCollectionResponse()(*DeviceManagementSettingDependencyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementSettingDependencyCollectionResponse) GetFieldDeserializ
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementSettingDependencyCollectionResponse) GetValue()([]DeviceManagementSettingDependencyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementSettingDependencyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementSettingDependencyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementSettingDependencyCollectionResponse) Serialize(writer i
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementSettingDependencyCollectionResponse) SetValue(value []DeviceManagementSettingDependencyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementSettingDependencyCollectionResponseable 
+type DeviceManagementSettingDependencyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementSettingDependencyable)
+    SetValue(value []DeviceManagementSettingDependencyable)()
 }

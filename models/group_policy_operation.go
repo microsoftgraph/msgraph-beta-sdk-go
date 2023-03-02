@@ -8,14 +8,6 @@ import (
 // GroupPolicyOperation the entity represents an group policy operation.
 type GroupPolicyOperation struct {
     Entity
-    // The date and time the entity was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Type of Group Policy operation status.
-    operationStatus *GroupPolicyOperationStatus
-    // Type of Group Policy operation.
-    operationType *GroupPolicyOperationType
-    // The group policy operation status detail.
-    statusDetails *string
 }
 // NewGroupPolicyOperation instantiates a new groupPolicyOperation and sets the default values.
 func NewGroupPolicyOperation()(*GroupPolicyOperation) {
@@ -75,19 +67,47 @@ func (m *GroupPolicyOperation) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
 func (m *GroupPolicyOperation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetOperationStatus gets the operationStatus property value. Type of Group Policy operation status.
 func (m *GroupPolicyOperation) GetOperationStatus()(*GroupPolicyOperationStatus) {
-    return m.operationStatus
+    val, err := m.GetBackingStore().Get("operationStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*GroupPolicyOperationStatus)
+    }
+    return nil
 }
 // GetOperationType gets the operationType property value. Type of Group Policy operation.
 func (m *GroupPolicyOperation) GetOperationType()(*GroupPolicyOperationType) {
-    return m.operationType
+    val, err := m.GetBackingStore().Get("operationType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*GroupPolicyOperationType)
+    }
+    return nil
 }
 // GetStatusDetails gets the statusDetails property value. The group policy operation status detail.
 func (m *GroupPolicyOperation) GetStatusDetails()(*string) {
-    return m.statusDetails
+    val, err := m.GetBackingStore().Get("statusDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,17 +145,42 @@ func (m *GroupPolicyOperation) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the entity was last modified.
 func (m *GroupPolicyOperation) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOperationStatus sets the operationStatus property value. Type of Group Policy operation status.
 func (m *GroupPolicyOperation) SetOperationStatus(value *GroupPolicyOperationStatus)() {
-    m.operationStatus = value
+    err := m.GetBackingStore().Set("operationStatus", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOperationType sets the operationType property value. Type of Group Policy operation.
 func (m *GroupPolicyOperation) SetOperationType(value *GroupPolicyOperationType)() {
-    m.operationType = value
+    err := m.GetBackingStore().Set("operationType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatusDetails sets the statusDetails property value. The group policy operation status detail.
 func (m *GroupPolicyOperation) SetStatusDetails(value *string)() {
-    m.statusDetails = value
+    err := m.GetBackingStore().Set("statusDetails", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GroupPolicyOperationable 
+type GroupPolicyOperationable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOperationStatus()(*GroupPolicyOperationStatus)
+    GetOperationType()(*GroupPolicyOperationType)
+    GetStatusDetails()(*string)
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOperationStatus(value *GroupPolicyOperationStatus)()
+    SetOperationType(value *GroupPolicyOperationType)()
+    SetStatusDetails(value *string)()
 }

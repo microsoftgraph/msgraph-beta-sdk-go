@@ -9,20 +9,6 @@ import (
 // Journal 
 type Journal struct {
     Entity
-    // The account property
-    account Accountable
-    // The balancingAccountId property
-    balancingAccountId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
-    // The balancingAccountNumber property
-    balancingAccountNumber *string
-    // The code property
-    code *string
-    // The displayName property
-    displayName *string
-    // The journalLines property
-    journalLines []JournalLineable
-    // The lastModifiedDateTime property
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewJournal instantiates a new journal and sets the default values.
 func NewJournal()(*Journal) {
@@ -37,23 +23,58 @@ func CreateJournalFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
 }
 // GetAccount gets the account property value. The account property
 func (m *Journal) GetAccount()(Accountable) {
-    return m.account
+    val, err := m.GetBackingStore().Get("account")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Accountable)
+    }
+    return nil
 }
 // GetBalancingAccountId gets the balancingAccountId property value. The balancingAccountId property
 func (m *Journal) GetBalancingAccountId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
-    return m.balancingAccountId
+    val, err := m.GetBackingStore().Get("balancingAccountId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
 }
 // GetBalancingAccountNumber gets the balancingAccountNumber property value. The balancingAccountNumber property
 func (m *Journal) GetBalancingAccountNumber()(*string) {
-    return m.balancingAccountNumber
+    val, err := m.GetBackingStore().Get("balancingAccountNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCode gets the code property value. The code property
 func (m *Journal) GetCode()(*string) {
-    return m.code
+    val, err := m.GetBackingStore().Get("code")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *Journal) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Journal) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -136,11 +157,25 @@ func (m *Journal) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
 }
 // GetJournalLines gets the journalLines property value. The journalLines property
 func (m *Journal) GetJournalLines()([]JournalLineable) {
-    return m.journalLines
+    val, err := m.GetBackingStore().Get("journalLines")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]JournalLineable)
+    }
+    return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Journal) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Journal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -198,29 +233,69 @@ func (m *Journal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 }
 // SetAccount sets the account property value. The account property
 func (m *Journal) SetAccount(value Accountable)() {
-    m.account = value
+    err := m.GetBackingStore().Set("account", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBalancingAccountId sets the balancingAccountId property value. The balancingAccountId property
 func (m *Journal) SetBalancingAccountId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
-    m.balancingAccountId = value
+    err := m.GetBackingStore().Set("balancingAccountId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBalancingAccountNumber sets the balancingAccountNumber property value. The balancingAccountNumber property
 func (m *Journal) SetBalancingAccountNumber(value *string)() {
-    m.balancingAccountNumber = value
+    err := m.GetBackingStore().Set("balancingAccountNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCode sets the code property value. The code property
 func (m *Journal) SetCode(value *string)() {
-    m.code = value
+    err := m.GetBackingStore().Set("code", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *Journal) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetJournalLines sets the journalLines property value. The journalLines property
 func (m *Journal) SetJournalLines(value []JournalLineable)() {
-    m.journalLines = value
+    err := m.GetBackingStore().Set("journalLines", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Journal) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Journalable 
+type Journalable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAccount()(Accountable)
+    GetBalancingAccountId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    GetBalancingAccountNumber()(*string)
+    GetCode()(*string)
+    GetDisplayName()(*string)
+    GetJournalLines()([]JournalLineable)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    SetAccount(value Accountable)()
+    SetBalancingAccountId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
+    SetBalancingAccountNumber(value *string)()
+    SetCode(value *string)()
+    SetDisplayName(value *string)()
+    SetJournalLines(value []JournalLineable)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
 }

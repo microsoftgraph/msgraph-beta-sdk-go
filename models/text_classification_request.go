@@ -7,16 +7,6 @@ import (
 // TextClassificationRequest 
 type TextClassificationRequest struct {
     Entity
-    // The fileExtension property
-    fileExtension *string
-    // The matchTolerancesToInclude property
-    matchTolerancesToInclude *MlClassificationMatchTolerance
-    // The scopesToRun property
-    scopesToRun *SensitiveTypeScope
-    // The sensitiveTypeIds property
-    sensitiveTypeIds []string
-    // The text property
-    text *string
 }
 // NewTextClassificationRequest instantiates a new TextClassificationRequest and sets the default values.
 func NewTextClassificationRequest()(*TextClassificationRequest) {
@@ -90,23 +80,58 @@ func (m *TextClassificationRequest) GetFieldDeserializers()(map[string]func(i878
 }
 // GetFileExtension gets the fileExtension property value. The fileExtension property
 func (m *TextClassificationRequest) GetFileExtension()(*string) {
-    return m.fileExtension
+    val, err := m.GetBackingStore().Get("fileExtension")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetMatchTolerancesToInclude gets the matchTolerancesToInclude property value. The matchTolerancesToInclude property
 func (m *TextClassificationRequest) GetMatchTolerancesToInclude()(*MlClassificationMatchTolerance) {
-    return m.matchTolerancesToInclude
+    val, err := m.GetBackingStore().Get("matchTolerancesToInclude")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MlClassificationMatchTolerance)
+    }
+    return nil
 }
 // GetScopesToRun gets the scopesToRun property value. The scopesToRun property
 func (m *TextClassificationRequest) GetScopesToRun()(*SensitiveTypeScope) {
-    return m.scopesToRun
+    val, err := m.GetBackingStore().Get("scopesToRun")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SensitiveTypeScope)
+    }
+    return nil
 }
 // GetSensitiveTypeIds gets the sensitiveTypeIds property value. The sensitiveTypeIds property
 func (m *TextClassificationRequest) GetSensitiveTypeIds()([]string) {
-    return m.sensitiveTypeIds
+    val, err := m.GetBackingStore().Get("sensitiveTypeIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetText gets the text property value. The text property
 func (m *TextClassificationRequest) GetText()(*string) {
-    return m.text
+    val, err := m.GetBackingStore().Get("text")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TextClassificationRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -150,21 +175,51 @@ func (m *TextClassificationRequest) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetFileExtension sets the fileExtension property value. The fileExtension property
 func (m *TextClassificationRequest) SetFileExtension(value *string)() {
-    m.fileExtension = value
+    err := m.GetBackingStore().Set("fileExtension", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMatchTolerancesToInclude sets the matchTolerancesToInclude property value. The matchTolerancesToInclude property
 func (m *TextClassificationRequest) SetMatchTolerancesToInclude(value *MlClassificationMatchTolerance)() {
-    m.matchTolerancesToInclude = value
+    err := m.GetBackingStore().Set("matchTolerancesToInclude", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetScopesToRun sets the scopesToRun property value. The scopesToRun property
 func (m *TextClassificationRequest) SetScopesToRun(value *SensitiveTypeScope)() {
-    m.scopesToRun = value
+    err := m.GetBackingStore().Set("scopesToRun", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSensitiveTypeIds sets the sensitiveTypeIds property value. The sensitiveTypeIds property
 func (m *TextClassificationRequest) SetSensitiveTypeIds(value []string)() {
-    m.sensitiveTypeIds = value
+    err := m.GetBackingStore().Set("sensitiveTypeIds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetText sets the text property value. The text property
 func (m *TextClassificationRequest) SetText(value *string)() {
-    m.text = value
+    err := m.GetBackingStore().Set("text", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TextClassificationRequestable 
+type TextClassificationRequestable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetFileExtension()(*string)
+    GetMatchTolerancesToInclude()(*MlClassificationMatchTolerance)
+    GetScopesToRun()(*SensitiveTypeScope)
+    GetSensitiveTypeIds()([]string)
+    GetText()(*string)
+    SetFileExtension(value *string)()
+    SetMatchTolerancesToInclude(value *MlClassificationMatchTolerance)()
+    SetScopesToRun(value *SensitiveTypeScope)()
+    SetSensitiveTypeIds(value []string)()
+    SetText(value *string)()
 }

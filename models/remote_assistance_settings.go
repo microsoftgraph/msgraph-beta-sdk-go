@@ -7,12 +7,6 @@ import (
 // RemoteAssistanceSettings 
 type RemoteAssistanceSettings struct {
     Entity
-    // Indicates if sessions to unenrolled devices are allowed for the account. This setting is configurable by the admin. Default value is false.
-    allowSessionsToUnenrolledDevices *bool
-    // Indicates if sessions to block chat function. This setting is configurable by the admin. Default value is false.
-    blockChat *bool
-    // State of remote assistance for the account
-    remoteAssistanceState *RemoteAssistanceState
 }
 // NewRemoteAssistanceSettings instantiates a new remoteAssistanceSettings and sets the default values.
 func NewRemoteAssistanceSettings()(*RemoteAssistanceSettings) {
@@ -27,11 +21,25 @@ func CreateRemoteAssistanceSettingsFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAllowSessionsToUnenrolledDevices gets the allowSessionsToUnenrolledDevices property value. Indicates if sessions to unenrolled devices are allowed for the account. This setting is configurable by the admin. Default value is false.
 func (m *RemoteAssistanceSettings) GetAllowSessionsToUnenrolledDevices()(*bool) {
-    return m.allowSessionsToUnenrolledDevices
+    val, err := m.GetBackingStore().Get("allowSessionsToUnenrolledDevices")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetBlockChat gets the blockChat property value. Indicates if sessions to block chat function. This setting is configurable by the admin. Default value is false.
 func (m *RemoteAssistanceSettings) GetBlockChat()(*bool) {
-    return m.blockChat
+    val, err := m.GetBackingStore().Get("blockChat")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RemoteAssistanceSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -70,7 +78,14 @@ func (m *RemoteAssistanceSettings) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetRemoteAssistanceState gets the remoteAssistanceState property value. State of remote assistance for the account
 func (m *RemoteAssistanceSettings) GetRemoteAssistanceState()(*RemoteAssistanceState) {
-    return m.remoteAssistanceState
+    val, err := m.GetBackingStore().Get("remoteAssistanceState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RemoteAssistanceState)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RemoteAssistanceSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -101,13 +116,33 @@ func (m *RemoteAssistanceSettings) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAllowSessionsToUnenrolledDevices sets the allowSessionsToUnenrolledDevices property value. Indicates if sessions to unenrolled devices are allowed for the account. This setting is configurable by the admin. Default value is false.
 func (m *RemoteAssistanceSettings) SetAllowSessionsToUnenrolledDevices(value *bool)() {
-    m.allowSessionsToUnenrolledDevices = value
+    err := m.GetBackingStore().Set("allowSessionsToUnenrolledDevices", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBlockChat sets the blockChat property value. Indicates if sessions to block chat function. This setting is configurable by the admin. Default value is false.
 func (m *RemoteAssistanceSettings) SetBlockChat(value *bool)() {
-    m.blockChat = value
+    err := m.GetBackingStore().Set("blockChat", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRemoteAssistanceState sets the remoteAssistanceState property value. State of remote assistance for the account
 func (m *RemoteAssistanceSettings) SetRemoteAssistanceState(value *RemoteAssistanceState)() {
-    m.remoteAssistanceState = value
+    err := m.GetBackingStore().Set("remoteAssistanceState", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RemoteAssistanceSettingsable 
+type RemoteAssistanceSettingsable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllowSessionsToUnenrolledDevices()(*bool)
+    GetBlockChat()(*bool)
+    GetRemoteAssistanceState()(*RemoteAssistanceState)
+    SetAllowSessionsToUnenrolledDevices(value *bool)()
+    SetBlockChat(value *bool)()
+    SetRemoteAssistanceState(value *RemoteAssistanceState)()
 }

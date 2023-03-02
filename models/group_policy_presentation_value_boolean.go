@@ -7,8 +7,6 @@ import (
 // GroupPolicyPresentationValueBoolean 
 type GroupPolicyPresentationValueBoolean struct {
     GroupPolicyPresentationValue
-    // An boolean value for the associated presentation.
-    value *bool
 }
 // NewGroupPolicyPresentationValueBoolean instantiates a new GroupPolicyPresentationValueBoolean and sets the default values.
 func NewGroupPolicyPresentationValueBoolean()(*GroupPolicyPresentationValueBoolean) {
@@ -38,7 +36,14 @@ func (m *GroupPolicyPresentationValueBoolean) GetFieldDeserializers()(map[string
 }
 // GetValue gets the value property value. An boolean value for the associated presentation.
 func (m *GroupPolicyPresentationValueBoolean) GetValue()(*bool) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyPresentationValueBoolean) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *GroupPolicyPresentationValueBoolean) Serialize(writer i878a80d2330e89d2
 }
 // SetValue sets the value property value. An boolean value for the associated presentation.
 func (m *GroupPolicyPresentationValueBoolean) SetValue(value *bool)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GroupPolicyPresentationValueBooleanable 
+type GroupPolicyPresentationValueBooleanable interface {
+    GroupPolicyPresentationValueable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()(*bool)
+    SetValue(value *bool)()
 }

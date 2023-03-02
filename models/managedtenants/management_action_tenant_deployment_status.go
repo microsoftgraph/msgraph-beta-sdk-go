@@ -8,12 +8,6 @@ import (
 // ManagementActionTenantDeploymentStatus 
 type ManagementActionTenantDeploymentStatus struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The collection of deployment status for each instance of a management action. Optional.
-    statuses []ManagementActionDeploymentStatusable
-    // The identifier for the tenant group that is associated with the management action. Required. Read-only.
-    tenantGroupId *string
-    // The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
-    tenantId *string
 }
 // NewManagementActionTenantDeploymentStatus instantiates a new managementActionTenantDeploymentStatus and sets the default values.
 func NewManagementActionTenantDeploymentStatus()(*ManagementActionTenantDeploymentStatus) {
@@ -67,15 +61,36 @@ func (m *ManagementActionTenantDeploymentStatus) GetFieldDeserializers()(map[str
 }
 // GetStatuses gets the statuses property value. The collection of deployment status for each instance of a management action. Optional.
 func (m *ManagementActionTenantDeploymentStatus) GetStatuses()([]ManagementActionDeploymentStatusable) {
-    return m.statuses
+    val, err := m.GetBackingStore().Get("statuses")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagementActionDeploymentStatusable)
+    }
+    return nil
 }
 // GetTenantGroupId gets the tenantGroupId property value. The identifier for the tenant group that is associated with the management action. Required. Read-only.
 func (m *ManagementActionTenantDeploymentStatus) GetTenantGroupId()(*string) {
-    return m.tenantGroupId
+    val, err := m.GetBackingStore().Get("tenantGroupId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
 func (m *ManagementActionTenantDeploymentStatus) GetTenantId()(*string) {
-    return m.tenantId
+    val, err := m.GetBackingStore().Get("tenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagementActionTenantDeploymentStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -109,13 +124,33 @@ func (m *ManagementActionTenantDeploymentStatus) Serialize(writer i878a80d2330e8
 }
 // SetStatuses sets the statuses property value. The collection of deployment status for each instance of a management action. Optional.
 func (m *ManagementActionTenantDeploymentStatus) SetStatuses(value []ManagementActionDeploymentStatusable)() {
-    m.statuses = value
+    err := m.GetBackingStore().Set("statuses", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantGroupId sets the tenantGroupId property value. The identifier for the tenant group that is associated with the management action. Required. Read-only.
 func (m *ManagementActionTenantDeploymentStatus) SetTenantGroupId(value *string)() {
-    m.tenantGroupId = value
+    err := m.GetBackingStore().Set("tenantGroupId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantId sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
 func (m *ManagementActionTenantDeploymentStatus) SetTenantId(value *string)() {
-    m.tenantId = value
+    err := m.GetBackingStore().Set("tenantId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagementActionTenantDeploymentStatusable 
+type ManagementActionTenantDeploymentStatusable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetStatuses()([]ManagementActionDeploymentStatusable)
+    GetTenantGroupId()(*string)
+    GetTenantId()(*string)
+    SetStatuses(value []ManagementActionDeploymentStatusable)()
+    SetTenantGroupId(value *string)()
+    SetTenantId(value *string)()
 }

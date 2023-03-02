@@ -7,16 +7,14 @@ import (
 // WindowsPhone81StoreApp 
 type WindowsPhone81StoreApp struct {
     MobileApp
-    // The Windows Phone 8.1 app store URL.
-    appStoreUrl *string
 }
 // NewWindowsPhone81StoreApp instantiates a new WindowsPhone81StoreApp and sets the default values.
 func NewWindowsPhone81StoreApp()(*WindowsPhone81StoreApp) {
     m := &WindowsPhone81StoreApp{
         MobileApp: *NewMobileApp(),
     }
-    odataTypeValue := "#microsoft.graph.windowsPhone81StoreApp";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsPhone81StoreApp"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsPhone81StoreAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +23,14 @@ func CreateWindowsPhone81StoreAppFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAppStoreUrl gets the appStoreUrl property value. The Windows Phone 8.1 app store URL.
 func (m *WindowsPhone81StoreApp) GetAppStoreUrl()(*string) {
-    return m.appStoreUrl
+    val, err := m.GetBackingStore().Get("appStoreUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsPhone81StoreApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -58,5 +63,15 @@ func (m *WindowsPhone81StoreApp) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAppStoreUrl sets the appStoreUrl property value. The Windows Phone 8.1 app store URL.
 func (m *WindowsPhone81StoreApp) SetAppStoreUrl(value *string)() {
-    m.appStoreUrl = value
+    err := m.GetBackingStore().Set("appStoreUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsPhone81StoreAppable 
+type WindowsPhone81StoreAppable interface {
+    MobileAppable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppStoreUrl()(*string)
+    SetAppStoreUrl(value *string)()
 }

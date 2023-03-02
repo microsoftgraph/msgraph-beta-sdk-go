@@ -7,8 +7,6 @@ import (
 // DeviceManagementComplexSettingDefinitionCollectionResponse 
 type DeviceManagementComplexSettingDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementComplexSettingDefinitionable
 }
 // NewDeviceManagementComplexSettingDefinitionCollectionResponse instantiates a new DeviceManagementComplexSettingDefinitionCollectionResponse and sets the default values.
 func NewDeviceManagementComplexSettingDefinitionCollectionResponse()(*DeviceManagementComplexSettingDefinitionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementComplexSettingDefinitionCollectionResponse) GetFieldDes
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementComplexSettingDefinitionCollectionResponse) GetValue()([]DeviceManagementComplexSettingDefinitionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementComplexSettingDefinitionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementComplexSettingDefinitionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementComplexSettingDefinitionCollectionResponse) Serialize(w
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementComplexSettingDefinitionCollectionResponse) SetValue(value []DeviceManagementComplexSettingDefinitionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementComplexSettingDefinitionCollectionResponseable 
+type DeviceManagementComplexSettingDefinitionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementComplexSettingDefinitionable)
+    SetValue(value []DeviceManagementComplexSettingDefinitionable)()
 }

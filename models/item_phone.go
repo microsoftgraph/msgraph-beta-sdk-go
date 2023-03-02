@@ -7,20 +7,16 @@ import (
 // ItemPhone 
 type ItemPhone struct {
     ItemFacet
-    // Friendly name the user has assigned this phone number.
-    displayName *string
-    // Phone number provided by the user.
-    number *string
     // The type property
-    type_escaped *PhoneType
+    TypeEscaped *PhoneType
 }
 // NewItemPhone instantiates a new ItemPhone and sets the default values.
 func NewItemPhone()(*ItemPhone) {
     m := &ItemPhone{
         ItemFacet: *NewItemFacet(),
     }
-    odataTypeValue := "#microsoft.graph.itemPhone";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.itemPhone"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateItemPhoneFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +25,14 @@ func CreateItemPhoneFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetDisplayName gets the displayName property value. Friendly name the user has assigned this phone number.
 func (m *ItemPhone) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemPhone) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -68,11 +71,25 @@ func (m *ItemPhone) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetNumber gets the number property value. Phone number provided by the user.
 func (m *ItemPhone) GetNumber()(*string) {
-    return m.number
+    val, err := m.GetBackingStore().Get("number")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetType gets the type property value. The type property
 func (m *ItemPhone) GetType()(*PhoneType) {
-    return m.type_escaped
+    val, err := m.GetBackingStore().Get("typeEscaped")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PhoneType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemPhone) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -103,13 +120,33 @@ func (m *ItemPhone) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetDisplayName sets the displayName property value. Friendly name the user has assigned this phone number.
 func (m *ItemPhone) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNumber sets the number property value. Phone number provided by the user.
 func (m *ItemPhone) SetNumber(value *string)() {
-    m.number = value
+    err := m.GetBackingStore().Set("number", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetType sets the type property value. The type property
 func (m *ItemPhone) SetType(value *PhoneType)() {
-    m.type_escaped = value
+    err := m.GetBackingStore().Set("typeEscaped", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemPhoneable 
+type ItemPhoneable interface {
+    ItemFacetable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDisplayName()(*string)
+    GetNumber()(*string)
+    GetType()(*PhoneType)
+    SetDisplayName(value *string)()
+    SetNumber(value *string)()
+    SetType(value *PhoneType)()
 }

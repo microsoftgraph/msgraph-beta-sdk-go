@@ -7,8 +7,6 @@ import (
 // DimensionCollectionResponse 
 type DimensionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Dimensionable
 }
 // NewDimensionCollectionResponse instantiates a new DimensionCollectionResponse and sets the default values.
 func NewDimensionCollectionResponse()(*DimensionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DimensionCollectionResponse) GetFieldDeserializers()(map[string]func(i8
 }
 // GetValue gets the value property value. The value property
 func (m *DimensionCollectionResponse) GetValue()([]Dimensionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Dimensionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DimensionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DimensionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetValue sets the value property value. The value property
 func (m *DimensionCollectionResponse) SetValue(value []Dimensionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DimensionCollectionResponseable 
+type DimensionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Dimensionable)
+    SetValue(value []Dimensionable)()
 }

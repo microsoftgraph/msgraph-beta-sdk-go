@@ -8,8 +8,6 @@ import (
 // Security 
 type Security struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The informationProtection property
-    informationProtection InformationProtectionable
 }
 // NewSecurity instantiates a new security and sets the default values.
 func NewSecurity()(*Security) {
@@ -39,7 +37,14 @@ func (m *Security) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetInformationProtection gets the informationProtection property value. The informationProtection property
 func (m *Security) GetInformationProtection()(InformationProtectionable) {
-    return m.informationProtection
+    val, err := m.GetBackingStore().Get("informationProtection")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(InformationProtectionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -57,5 +62,15 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetInformationProtection sets the informationProtection property value. The informationProtection property
 func (m *Security) SetInformationProtection(value InformationProtectionable)() {
-    m.informationProtection = value
+    err := m.GetBackingStore().Set("informationProtection", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Securityable 
+type Securityable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetInformationProtection()(InformationProtectionable)
+    SetInformationProtection(value InformationProtectionable)()
 }

@@ -60,8 +60,8 @@ func NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionReques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder instantiates a new UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionReques
 }
 // Count provides operations to count the resources in the collection.
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder) Count()(*UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionCountRequestBuilder) {
-    return NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get user experience analytics appHealth Application Performance by App Version
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder) Get(ctx context.Context, requestConfiguration *UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionReque
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

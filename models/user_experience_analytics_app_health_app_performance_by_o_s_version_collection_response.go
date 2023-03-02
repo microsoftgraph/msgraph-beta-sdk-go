@@ -7,8 +7,6 @@ import (
 // UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionCollectionResponse 
 type UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionable
 }
 // NewUserExperienceAnalyticsAppHealthAppPerformanceByOSVersionCollectionResponse instantiates a new UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionCollectionResponse and sets the default values.
 func NewUserExperienceAnalyticsAppHealthAppPerformanceByOSVersionCollectionResponse()(*UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionCollectionResp
 }
 // GetValue gets the value property value. The value property
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionCollectionResponse) GetValue()([]UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionCollectionResp
 }
 // SetValue sets the value property value. The value property
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionCollectionResponse) SetValue(value []UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionCollectionResponseable 
+type UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionable)
+    SetValue(value []UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionable)()
 }

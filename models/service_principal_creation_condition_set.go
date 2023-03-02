@@ -7,16 +7,6 @@ import (
 // ServicePrincipalCreationConditionSet 
 type ServicePrincipalCreationConditionSet struct {
     Entity
-    // The applicationIds property
-    applicationIds []string
-    // The applicationPublisherIds property
-    applicationPublisherIds []string
-    // The applicationsFromVerifiedPublisherOnly property
-    applicationsFromVerifiedPublisherOnly *bool
-    // The applicationTenantIds property
-    applicationTenantIds []string
-    // The certifiedApplicationsOnly property
-    certifiedApplicationsOnly *bool
 }
 // NewServicePrincipalCreationConditionSet instantiates a new servicePrincipalCreationConditionSet and sets the default values.
 func NewServicePrincipalCreationConditionSet()(*ServicePrincipalCreationConditionSet) {
@@ -31,23 +21,58 @@ func CreateServicePrincipalCreationConditionSetFromDiscriminatorValue(parseNode 
 }
 // GetApplicationIds gets the applicationIds property value. The applicationIds property
 func (m *ServicePrincipalCreationConditionSet) GetApplicationIds()([]string) {
-    return m.applicationIds
+    val, err := m.GetBackingStore().Get("applicationIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetApplicationPublisherIds gets the applicationPublisherIds property value. The applicationPublisherIds property
 func (m *ServicePrincipalCreationConditionSet) GetApplicationPublisherIds()([]string) {
-    return m.applicationPublisherIds
+    val, err := m.GetBackingStore().Get("applicationPublisherIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetApplicationsFromVerifiedPublisherOnly gets the applicationsFromVerifiedPublisherOnly property value. The applicationsFromVerifiedPublisherOnly property
 func (m *ServicePrincipalCreationConditionSet) GetApplicationsFromVerifiedPublisherOnly()(*bool) {
-    return m.applicationsFromVerifiedPublisherOnly
+    val, err := m.GetBackingStore().Get("applicationsFromVerifiedPublisherOnly")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetApplicationTenantIds gets the applicationTenantIds property value. The applicationTenantIds property
 func (m *ServicePrincipalCreationConditionSet) GetApplicationTenantIds()([]string) {
-    return m.applicationTenantIds
+    val, err := m.GetBackingStore().Get("applicationTenantIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetCertifiedApplicationsOnly gets the certifiedApplicationsOnly property value. The certifiedApplicationsOnly property
 func (m *ServicePrincipalCreationConditionSet) GetCertifiedApplicationsOnly()(*bool) {
-    return m.certifiedApplicationsOnly
+    val, err := m.GetBackingStore().Get("certifiedApplicationsOnly")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ServicePrincipalCreationConditionSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -156,21 +181,51 @@ func (m *ServicePrincipalCreationConditionSet) Serialize(writer i878a80d2330e89d
 }
 // SetApplicationIds sets the applicationIds property value. The applicationIds property
 func (m *ServicePrincipalCreationConditionSet) SetApplicationIds(value []string)() {
-    m.applicationIds = value
+    err := m.GetBackingStore().Set("applicationIds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApplicationPublisherIds sets the applicationPublisherIds property value. The applicationPublisherIds property
 func (m *ServicePrincipalCreationConditionSet) SetApplicationPublisherIds(value []string)() {
-    m.applicationPublisherIds = value
+    err := m.GetBackingStore().Set("applicationPublisherIds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApplicationsFromVerifiedPublisherOnly sets the applicationsFromVerifiedPublisherOnly property value. The applicationsFromVerifiedPublisherOnly property
 func (m *ServicePrincipalCreationConditionSet) SetApplicationsFromVerifiedPublisherOnly(value *bool)() {
-    m.applicationsFromVerifiedPublisherOnly = value
+    err := m.GetBackingStore().Set("applicationsFromVerifiedPublisherOnly", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApplicationTenantIds sets the applicationTenantIds property value. The applicationTenantIds property
 func (m *ServicePrincipalCreationConditionSet) SetApplicationTenantIds(value []string)() {
-    m.applicationTenantIds = value
+    err := m.GetBackingStore().Set("applicationTenantIds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCertifiedApplicationsOnly sets the certifiedApplicationsOnly property value. The certifiedApplicationsOnly property
 func (m *ServicePrincipalCreationConditionSet) SetCertifiedApplicationsOnly(value *bool)() {
-    m.certifiedApplicationsOnly = value
+    err := m.GetBackingStore().Set("certifiedApplicationsOnly", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ServicePrincipalCreationConditionSetable 
+type ServicePrincipalCreationConditionSetable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetApplicationIds()([]string)
+    GetApplicationPublisherIds()([]string)
+    GetApplicationsFromVerifiedPublisherOnly()(*bool)
+    GetApplicationTenantIds()([]string)
+    GetCertifiedApplicationsOnly()(*bool)
+    SetApplicationIds(value []string)()
+    SetApplicationPublisherIds(value []string)()
+    SetApplicationsFromVerifiedPublisherOnly(value *bool)()
+    SetApplicationTenantIds(value []string)()
+    SetCertifiedApplicationsOnly(value *bool)()
 }

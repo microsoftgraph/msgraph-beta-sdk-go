@@ -7,8 +7,6 @@ import (
 // WindowsQualityUpdateProfileAssignment this entity contains the properties used to assign a windows quality update profile to a group.
 type WindowsQualityUpdateProfileAssignment struct {
     Entity
-    // The assignment target that the quality update profile is assigned to.
-    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewWindowsQualityUpdateProfileAssignment instantiates a new windowsQualityUpdateProfileAssignment and sets the default values.
 func NewWindowsQualityUpdateProfileAssignment()(*WindowsQualityUpdateProfileAssignment) {
@@ -38,7 +36,14 @@ func (m *WindowsQualityUpdateProfileAssignment) GetFieldDeserializers()(map[stri
 }
 // GetTarget gets the target property value. The assignment target that the quality update profile is assigned to.
 func (m *WindowsQualityUpdateProfileAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
-    return m.target
+    val, err := m.GetBackingStore().Get("target")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceAndAppManagementAssignmentTargetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsQualityUpdateProfileAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *WindowsQualityUpdateProfileAssignment) Serialize(writer i878a80d2330e89
 }
 // SetTarget sets the target property value. The assignment target that the quality update profile is assigned to.
 func (m *WindowsQualityUpdateProfileAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
-    m.target = value
+    err := m.GetBackingStore().Set("target", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsQualityUpdateProfileAssignmentable 
+type WindowsQualityUpdateProfileAssignmentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetTarget()(DeviceAndAppManagementAssignmentTargetable)
+    SetTarget(value DeviceAndAppManagementAssignmentTargetable)()
 }

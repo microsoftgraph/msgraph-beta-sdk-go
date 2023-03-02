@@ -7,8 +7,6 @@ import (
 // UserExperienceAnalyticsInsightValueCollectionResponse 
 type UserExperienceAnalyticsInsightValueCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UserExperienceAnalyticsInsightValueable
 }
 // NewUserExperienceAnalyticsInsightValueCollectionResponse instantiates a new UserExperienceAnalyticsInsightValueCollectionResponse and sets the default values.
 func NewUserExperienceAnalyticsInsightValueCollectionResponse()(*UserExperienceAnalyticsInsightValueCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UserExperienceAnalyticsInsightValueCollectionResponse) GetFieldDeserial
 }
 // GetValue gets the value property value. The value property
 func (m *UserExperienceAnalyticsInsightValueCollectionResponse) GetValue()([]UserExperienceAnalyticsInsightValueable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserExperienceAnalyticsInsightValueable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsInsightValueCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UserExperienceAnalyticsInsightValueCollectionResponse) Serialize(writer
 }
 // SetValue sets the value property value. The value property
 func (m *UserExperienceAnalyticsInsightValueCollectionResponse) SetValue(value []UserExperienceAnalyticsInsightValueable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsInsightValueCollectionResponseable 
+type UserExperienceAnalyticsInsightValueCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UserExperienceAnalyticsInsightValueable)
+    SetValue(value []UserExperienceAnalyticsInsightValueable)()
 }

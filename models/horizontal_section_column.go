@@ -7,10 +7,6 @@ import (
 // HorizontalSectionColumn 
 type HorizontalSectionColumn struct {
     Entity
-    // The collection of WebParts in this column.
-    webparts []WebPartable
-    // Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.
-    width *int32
 }
 // NewHorizontalSectionColumn instantiates a new horizontalSectionColumn and sets the default values.
 func NewHorizontalSectionColumn()(*HorizontalSectionColumn) {
@@ -54,11 +50,25 @@ func (m *HorizontalSectionColumn) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetWebparts gets the webparts property value. The collection of WebParts in this column.
 func (m *HorizontalSectionColumn) GetWebparts()([]WebPartable) {
-    return m.webparts
+    val, err := m.GetBackingStore().Get("webparts")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WebPartable)
+    }
+    return nil
 }
 // GetWidth gets the width property value. Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.
 func (m *HorizontalSectionColumn) GetWidth()(*int32) {
-    return m.width
+    val, err := m.GetBackingStore().Get("width")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *HorizontalSectionColumn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -86,9 +96,24 @@ func (m *HorizontalSectionColumn) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetWebparts sets the webparts property value. The collection of WebParts in this column.
 func (m *HorizontalSectionColumn) SetWebparts(value []WebPartable)() {
-    m.webparts = value
+    err := m.GetBackingStore().Set("webparts", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWidth sets the width property value. Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.
 func (m *HorizontalSectionColumn) SetWidth(value *int32)() {
-    m.width = value
+    err := m.GetBackingStore().Set("width", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// HorizontalSectionColumnable 
+type HorizontalSectionColumnable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetWebparts()([]WebPartable)
+    GetWidth()(*int32)
+    SetWebparts(value []WebPartable)()
+    SetWidth(value *int32)()
 }

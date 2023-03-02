@@ -23,7 +23,7 @@ type OnPremisesPublishingProfileItemRequestBuilderDeleteRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// OnPremisesPublishingProfileItemRequestBuilderGetQueryParameters get entity from onPremisesPublishingProfiles by key (id)
+// OnPremisesPublishingProfileItemRequestBuilderGetQueryParameters get entity from onPremisesPublishingProfiles by key
 type OnPremisesPublishingProfileItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -48,7 +48,7 @@ type OnPremisesPublishingProfileItemRequestBuilderPatchRequestConfiguration stru
 }
 // AgentGroups provides operations to manage the agentGroups property of the microsoft.graph.onPremisesPublishingProfile entity.
 func (m *OnPremisesPublishingProfileItemRequestBuilder) AgentGroups()(*ItemAgentGroupsRequestBuilder) {
-    return NewItemAgentGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemAgentGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AgentGroupsById provides operations to manage the agentGroups property of the microsoft.graph.onPremisesPublishingProfile entity.
 func (m *OnPremisesPublishingProfileItemRequestBuilder) AgentGroupsById(id string)(*ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) {
@@ -59,11 +59,11 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) AgentGroupsById(id strin
     if id != "" {
         urlTplParams["onPremisesAgentGroup%2Did"] = id
     }
-    return NewItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Agents provides operations to manage the agents property of the microsoft.graph.onPremisesPublishingProfile entity.
 func (m *OnPremisesPublishingProfileItemRequestBuilder) Agents()(*ItemAgentsRequestBuilder) {
-    return NewItemAgentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemAgentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AgentsById provides operations to manage the agents property of the microsoft.graph.onPremisesPublishingProfile entity.
 func (m *OnPremisesPublishingProfileItemRequestBuilder) AgentsById(id string)(*ItemAgentsOnPremisesAgentItemRequestBuilder) {
@@ -74,11 +74,11 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) AgentsById(id string)(*I
     if id != "" {
         urlTplParams["onPremisesAgent%2Did"] = id
     }
-    return NewItemAgentsOnPremisesAgentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemAgentsOnPremisesAgentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ConnectorGroups provides operations to manage the connectorGroups property of the microsoft.graph.onPremisesPublishingProfile entity.
 func (m *OnPremisesPublishingProfileItemRequestBuilder) ConnectorGroups()(*ItemConnectorGroupsRequestBuilder) {
-    return NewItemConnectorGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemConnectorGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ConnectorGroupsById provides operations to manage the connectorGroups property of the microsoft.graph.onPremisesPublishingProfile entity.
 func (m *OnPremisesPublishingProfileItemRequestBuilder) ConnectorGroupsById(id string)(*ItemConnectorGroupsConnectorGroupItemRequestBuilder) {
@@ -89,11 +89,11 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) ConnectorGroupsById(id s
     if id != "" {
         urlTplParams["connectorGroup%2Did"] = id
     }
-    return NewItemConnectorGroupsConnectorGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemConnectorGroupsConnectorGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Connectors provides operations to manage the connectors property of the microsoft.graph.onPremisesPublishingProfile entity.
 func (m *OnPremisesPublishingProfileItemRequestBuilder) Connectors()(*ItemConnectorsRequestBuilder) {
-    return NewItemConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ConnectorsById provides operations to manage the connectors property of the microsoft.graph.onPremisesPublishingProfile entity.
 func (m *OnPremisesPublishingProfileItemRequestBuilder) ConnectorsById(id string)(*ItemConnectorsConnectorItemRequestBuilder) {
@@ -104,7 +104,7 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) ConnectorsById(id string
     if id != "" {
         urlTplParams["connector%2Did"] = id
     }
-    return NewItemConnectorsConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemConnectorsConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewOnPremisesPublishingProfileItemRequestBuilderInternal instantiates a new OnPremisesPublishingProfileItemRequestBuilder and sets the default values.
 func NewOnPremisesPublishingProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OnPremisesPublishingProfileItemRequestBuilder) {
@@ -115,8 +115,8 @@ func NewOnPremisesPublishingProfileItemRequestBuilderInternal(pathParameters map
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewOnPremisesPublishingProfileItemRequestBuilder instantiates a new OnPremisesPublishingProfileItemRequestBuilder and sets the default values.
@@ -125,7 +125,7 @@ func NewOnPremisesPublishingProfileItemRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewOnPremisesPublishingProfileItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from onPremisesPublishingProfiles by key (id)
+// Delete delete entity from onPremisesPublishingProfiles
 func (m *OnPremisesPublishingProfileItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *OnPremisesPublishingProfileItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -141,7 +141,7 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) Delete(ctx context.Conte
     }
     return nil
 }
-// Get get entity from onPremisesPublishingProfiles by key (id)
+// Get get entity from onPremisesPublishingProfiles by key
 func (m *OnPremisesPublishingProfileItemRequestBuilder) Get(ctx context.Context, requestConfiguration *OnPremisesPublishingProfileItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesPublishingProfileable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -160,7 +160,7 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) Get(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesPublishingProfileable), nil
 }
-// Patch update entity in onPremisesPublishingProfiles by key (id)
+// Patch update entity in onPremisesPublishingProfiles
 func (m *OnPremisesPublishingProfileItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesPublishingProfileable, requestConfiguration *OnPremisesPublishingProfileItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesPublishingProfileable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -181,7 +181,7 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) Patch(ctx context.Contex
 }
 // PublishedResources provides operations to manage the publishedResources property of the microsoft.graph.onPremisesPublishingProfile entity.
 func (m *OnPremisesPublishingProfileItemRequestBuilder) PublishedResources()(*ItemPublishedResourcesRequestBuilder) {
-    return NewItemPublishedResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemPublishedResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PublishedResourcesById provides operations to manage the publishedResources property of the microsoft.graph.onPremisesPublishingProfile entity.
 func (m *OnPremisesPublishingProfileItemRequestBuilder) PublishedResourcesById(id string)(*ItemPublishedResourcesPublishedResourceItemRequestBuilder) {
@@ -192,9 +192,9 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) PublishedResourcesById(i
     if id != "" {
         urlTplParams["publishedResource%2Did"] = id
     }
-    return NewItemPublishedResourcesPublishedResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemPublishedResourcesPublishedResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
-// ToDeleteRequestInformation delete entity from onPremisesPublishingProfiles by key (id)
+// ToDeleteRequestInformation delete entity from onPremisesPublishingProfiles
 func (m *OnPremisesPublishingProfileItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *OnPremisesPublishingProfileItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -206,7 +206,7 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) ToDeleteRequestInformati
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from onPremisesPublishingProfiles by key (id)
+// ToGetRequestInformation get entity from onPremisesPublishingProfiles by key
 func (m *OnPremisesPublishingProfileItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnPremisesPublishingProfileItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -222,14 +222,17 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) ToGetRequestInformation(
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in onPremisesPublishingProfiles by key (id)
+// ToPatchRequestInformation update entity in onPremisesPublishingProfiles
 func (m *OnPremisesPublishingProfileItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesPublishingProfileable, requestConfiguration *OnPremisesPublishingProfileItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

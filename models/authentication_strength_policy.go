@@ -8,22 +8,6 @@ import (
 // AuthenticationStrengthPolicy 
 type AuthenticationStrengthPolicy struct {
     Entity
-    // A collection of authentication method modes that are required be used to satify this authentication strength.
-    allowedCombinations []AuthenticationMethodModes
-    // Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.
-    combinationConfigurations []AuthenticationCombinationConfigurationable
-    // The datetime when this policy was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The human-readable description of this policy.
-    description *string
-    // The human-readable display name of this policy. Supports $filter (eq, ne, not , and in).
-    displayName *string
-    // The datetime when this policy was last modified.
-    modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The policyType property
-    policyType *AuthenticationStrengthPolicyType
-    // The requirementsSatisfied property
-    requirementsSatisfied *AuthenticationStrengthRequirements
 }
 // NewAuthenticationStrengthPolicy instantiates a new AuthenticationStrengthPolicy and sets the default values.
 func NewAuthenticationStrengthPolicy()(*AuthenticationStrengthPolicy) {
@@ -38,23 +22,58 @@ func CreateAuthenticationStrengthPolicyFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAllowedCombinations gets the allowedCombinations property value. A collection of authentication method modes that are required be used to satify this authentication strength.
 func (m *AuthenticationStrengthPolicy) GetAllowedCombinations()([]AuthenticationMethodModes) {
-    return m.allowedCombinations
+    val, err := m.GetBackingStore().Get("allowedCombinations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AuthenticationMethodModes)
+    }
+    return nil
 }
 // GetCombinationConfigurations gets the combinationConfigurations property value. Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.
 func (m *AuthenticationStrengthPolicy) GetCombinationConfigurations()([]AuthenticationCombinationConfigurationable) {
-    return m.combinationConfigurations
+    val, err := m.GetBackingStore().Get("combinationConfigurations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AuthenticationCombinationConfigurationable)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The datetime when this policy was created.
 func (m *AuthenticationStrengthPolicy) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDescription gets the description property value. The human-readable description of this policy.
 func (m *AuthenticationStrengthPolicy) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The human-readable display name of this policy. Supports $filter (eq, ne, not , and in).
 func (m *AuthenticationStrengthPolicy) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuthenticationStrengthPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -151,15 +170,36 @@ func (m *AuthenticationStrengthPolicy) GetFieldDeserializers()(map[string]func(i
 }
 // GetModifiedDateTime gets the modifiedDateTime property value. The datetime when this policy was last modified.
 func (m *AuthenticationStrengthPolicy) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.modifiedDateTime
+    val, err := m.GetBackingStore().Get("modifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetPolicyType gets the policyType property value. The policyType property
 func (m *AuthenticationStrengthPolicy) GetPolicyType()(*AuthenticationStrengthPolicyType) {
-    return m.policyType
+    val, err := m.GetBackingStore().Get("policyType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AuthenticationStrengthPolicyType)
+    }
+    return nil
 }
 // GetRequirementsSatisfied gets the requirementsSatisfied property value. The requirementsSatisfied property
 func (m *AuthenticationStrengthPolicy) GetRequirementsSatisfied()(*AuthenticationStrengthRequirements) {
-    return m.requirementsSatisfied
+    val, err := m.GetBackingStore().Get("requirementsSatisfied")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AuthenticationStrengthRequirements)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AuthenticationStrengthPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -225,33 +265,78 @@ func (m *AuthenticationStrengthPolicy) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAllowedCombinations sets the allowedCombinations property value. A collection of authentication method modes that are required be used to satify this authentication strength.
 func (m *AuthenticationStrengthPolicy) SetAllowedCombinations(value []AuthenticationMethodModes)() {
-    m.allowedCombinations = value
+    err := m.GetBackingStore().Set("allowedCombinations", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCombinationConfigurations sets the combinationConfigurations property value. Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.
 func (m *AuthenticationStrengthPolicy) SetCombinationConfigurations(value []AuthenticationCombinationConfigurationable)() {
-    m.combinationConfigurations = value
+    err := m.GetBackingStore().Set("combinationConfigurations", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The datetime when this policy was created.
 func (m *AuthenticationStrengthPolicy) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. The human-readable description of this policy.
 func (m *AuthenticationStrengthPolicy) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The human-readable display name of this policy. Supports $filter (eq, ne, not , and in).
 func (m *AuthenticationStrengthPolicy) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetModifiedDateTime sets the modifiedDateTime property value. The datetime when this policy was last modified.
 func (m *AuthenticationStrengthPolicy) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.modifiedDateTime = value
+    err := m.GetBackingStore().Set("modifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPolicyType sets the policyType property value. The policyType property
 func (m *AuthenticationStrengthPolicy) SetPolicyType(value *AuthenticationStrengthPolicyType)() {
-    m.policyType = value
+    err := m.GetBackingStore().Set("policyType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRequirementsSatisfied sets the requirementsSatisfied property value. The requirementsSatisfied property
 func (m *AuthenticationStrengthPolicy) SetRequirementsSatisfied(value *AuthenticationStrengthRequirements)() {
-    m.requirementsSatisfied = value
+    err := m.GetBackingStore().Set("requirementsSatisfied", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AuthenticationStrengthPolicyable 
+type AuthenticationStrengthPolicyable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllowedCombinations()([]AuthenticationMethodModes)
+    GetCombinationConfigurations()([]AuthenticationCombinationConfigurationable)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetPolicyType()(*AuthenticationStrengthPolicyType)
+    GetRequirementsSatisfied()(*AuthenticationStrengthRequirements)
+    SetAllowedCombinations(value []AuthenticationMethodModes)()
+    SetCombinationConfigurations(value []AuthenticationCombinationConfigurationable)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetPolicyType(value *AuthenticationStrengthPolicyType)()
+    SetRequirementsSatisfied(value *AuthenticationStrengthRequirements)()
 }

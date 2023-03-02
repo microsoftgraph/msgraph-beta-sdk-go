@@ -53,8 +53,8 @@ func NewItemTokenLifetimePoliciesRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTokenLifetimePoliciesRequestBuilder instantiates a new TokenLifetimePoliciesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemTokenLifetimePoliciesRequestBuilder(rawUrl string, requestAdapter i2
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemTokenLifetimePoliciesRequestBuilder) Count()(*ItemTokenLifetimePoliciesCountRequestBuilder) {
-    return NewItemTokenLifetimePoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTokenLifetimePoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the tokenLifetimePolicies assigned to this service principal. Supports $expand.
 func (m *ItemTokenLifetimePoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTokenLifetimePoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TokenLifetimePolicyCollectionResponseable, error) {

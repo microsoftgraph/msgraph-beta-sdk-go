@@ -7,8 +7,6 @@ import (
 // AndroidManagedStoreAppConfigurationSchemaItemCollectionResponse 
 type AndroidManagedStoreAppConfigurationSchemaItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidManagedStoreAppConfigurationSchemaItemable
 }
 // NewAndroidManagedStoreAppConfigurationSchemaItemCollectionResponse instantiates a new AndroidManagedStoreAppConfigurationSchemaItemCollectionResponse and sets the default values.
 func NewAndroidManagedStoreAppConfigurationSchemaItemCollectionResponse()(*AndroidManagedStoreAppConfigurationSchemaItemCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItemCollectionResponse) GetFie
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidManagedStoreAppConfigurationSchemaItemCollectionResponse) GetValue()([]AndroidManagedStoreAppConfigurationSchemaItemable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidManagedStoreAppConfigurationSchemaItemable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidManagedStoreAppConfigurationSchemaItemCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItemCollectionResponse) Serial
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidManagedStoreAppConfigurationSchemaItemCollectionResponse) SetValue(value []AndroidManagedStoreAppConfigurationSchemaItemable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidManagedStoreAppConfigurationSchemaItemCollectionResponseable 
+type AndroidManagedStoreAppConfigurationSchemaItemCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidManagedStoreAppConfigurationSchemaItemable)
+    SetValue(value []AndroidManagedStoreAppConfigurationSchemaItemable)()
 }

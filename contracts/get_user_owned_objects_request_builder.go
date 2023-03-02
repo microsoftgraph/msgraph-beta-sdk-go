@@ -27,13 +27,13 @@ type GetUserOwnedObjectsRequestBuilderPostRequestConfiguration struct {
 func NewGetUserOwnedObjectsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GetUserOwnedObjectsRequestBuilder) {
     m := &GetUserOwnedObjectsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/contracts/microsoft.graph.getUserOwnedObjects";
+    m.urlTemplate = "{+baseurl}/contracts/getUserOwnedObjects";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGetUserOwnedObjectsRequestBuilder instantiates a new GetUserOwnedObjectsRequestBuilder and sets the default values.
@@ -42,7 +42,10 @@ func NewGetUserOwnedObjectsRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewGetUserOwnedObjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action getUserOwnedObjects
+// Post retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
 func (m *GetUserOwnedObjectsRequestBuilder) Post(ctx context.Context, body GetUserOwnedObjectsPostRequestBodyable, requestConfiguration *GetUserOwnedObjectsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -61,14 +64,17 @@ func (m *GetUserOwnedObjectsRequestBuilder) Post(ctx context.Context, body GetUs
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
 }
-// ToPostRequestInformation invoke action getUserOwnedObjects
+// ToPostRequestInformation retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
 func (m *GetUserOwnedObjectsRequestBuilder) ToPostRequestInformation(ctx context.Context, body GetUserOwnedObjectsPostRequestBodyable, requestConfiguration *GetUserOwnedObjectsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

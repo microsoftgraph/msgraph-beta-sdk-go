@@ -7,28 +7,14 @@ import (
 // ItemPatent 
 type ItemPatent struct {
     ItemFacet
-    // Descpription of the patent or filing.
-    description *string
-    // Title of the patent or filing.
-    displayName *string
-    // Indicates the patent is pending.
-    isPending *bool
-    // The date that the patent was granted.
-    issuedDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // Authority which granted the patent.
-    issuingAuthority *string
-    // The patent number.
-    number *string
-    // URL referencing the patent or filing.
-    webUrl *string
 }
 // NewItemPatent instantiates a new ItemPatent and sets the default values.
 func NewItemPatent()(*ItemPatent) {
     m := &ItemPatent{
         ItemFacet: *NewItemFacet(),
     }
-    odataTypeValue := "#microsoft.graph.itemPatent";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.itemPatent"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateItemPatentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,11 +23,25 @@ func CreateItemPatentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetDescription gets the description property value. Descpription of the patent or filing.
 func (m *ItemPatent) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. Title of the patent or filing.
 func (m *ItemPatent) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemPatent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -120,23 +120,58 @@ func (m *ItemPatent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetIsPending gets the isPending property value. Indicates the patent is pending.
 func (m *ItemPatent) GetIsPending()(*bool) {
-    return m.isPending
+    val, err := m.GetBackingStore().Get("isPending")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIssuedDate gets the issuedDate property value. The date that the patent was granted.
 func (m *ItemPatent) GetIssuedDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.issuedDate
+    val, err := m.GetBackingStore().Get("issuedDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetIssuingAuthority gets the issuingAuthority property value. Authority which granted the patent.
 func (m *ItemPatent) GetIssuingAuthority()(*string) {
-    return m.issuingAuthority
+    val, err := m.GetBackingStore().Get("issuingAuthority")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetNumber gets the number property value. The patent number.
 func (m *ItemPatent) GetNumber()(*string) {
-    return m.number
+    val, err := m.GetBackingStore().Get("number")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetWebUrl gets the webUrl property value. URL referencing the patent or filing.
 func (m *ItemPatent) GetWebUrl()(*string) {
-    return m.webUrl
+    val, err := m.GetBackingStore().Get("webUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemPatent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -190,29 +225,69 @@ func (m *ItemPatent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetDescription sets the description property value. Descpription of the patent or filing.
 func (m *ItemPatent) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. Title of the patent or filing.
 func (m *ItemPatent) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsPending sets the isPending property value. Indicates the patent is pending.
 func (m *ItemPatent) SetIsPending(value *bool)() {
-    m.isPending = value
+    err := m.GetBackingStore().Set("isPending", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIssuedDate sets the issuedDate property value. The date that the patent was granted.
 func (m *ItemPatent) SetIssuedDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.issuedDate = value
+    err := m.GetBackingStore().Set("issuedDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIssuingAuthority sets the issuingAuthority property value. Authority which granted the patent.
 func (m *ItemPatent) SetIssuingAuthority(value *string)() {
-    m.issuingAuthority = value
+    err := m.GetBackingStore().Set("issuingAuthority", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNumber sets the number property value. The patent number.
 func (m *ItemPatent) SetNumber(value *string)() {
-    m.number = value
+    err := m.GetBackingStore().Set("number", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWebUrl sets the webUrl property value. URL referencing the patent or filing.
 func (m *ItemPatent) SetWebUrl(value *string)() {
-    m.webUrl = value
+    err := m.GetBackingStore().Set("webUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemPatentable 
+type ItemPatentable interface {
+    ItemFacetable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetIsPending()(*bool)
+    GetIssuedDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetIssuingAuthority()(*string)
+    GetNumber()(*string)
+    GetWebUrl()(*string)
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetIsPending(value *bool)()
+    SetIssuedDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetIssuingAuthority(value *string)()
+    SetNumber(value *string)()
+    SetWebUrl(value *string)()
 }

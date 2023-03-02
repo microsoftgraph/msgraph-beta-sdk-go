@@ -13,8 +13,8 @@ func NewProtectDoNotForwardAction()(*ProtectDoNotForwardAction) {
     m := &ProtectDoNotForwardAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
     }
-    odataTypeValue := "#microsoft.graph.security.protectDoNotForwardAction";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.security.protectDoNotForwardAction"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateProtectDoNotForwardActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,4 +33,9 @@ func (m *ProtectDoNotForwardAction) Serialize(writer i878a80d2330e89d26896388a3f
         return err
     }
     return nil
+}
+// ProtectDoNotForwardActionable 
+type ProtectDoNotForwardActionable interface {
+    InformationProtectionActionable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

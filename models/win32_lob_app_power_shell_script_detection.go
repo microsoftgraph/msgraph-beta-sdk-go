@@ -7,20 +7,14 @@ import (
 // Win32LobAppPowerShellScriptDetection 
 type Win32LobAppPowerShellScriptDetection struct {
     Win32LobAppDetection
-    // A value indicating whether signature check is enforced
-    enforceSignatureCheck *bool
-    // A value indicating whether this script should run as 32-bit
-    runAs32Bit *bool
-    // The base64 encoded script content to detect Win32 Line of Business (LoB) app
-    scriptContent *string
 }
 // NewWin32LobAppPowerShellScriptDetection instantiates a new Win32LobAppPowerShellScriptDetection and sets the default values.
 func NewWin32LobAppPowerShellScriptDetection()(*Win32LobAppPowerShellScriptDetection) {
     m := &Win32LobAppPowerShellScriptDetection{
         Win32LobAppDetection: *NewWin32LobAppDetection(),
     }
-    odataTypeValue := "#microsoft.graph.win32LobAppPowerShellScriptDetection";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.win32LobAppPowerShellScriptDetection"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWin32LobAppPowerShellScriptDetectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +23,14 @@ func CreateWin32LobAppPowerShellScriptDetectionFromDiscriminatorValue(parseNode 
 }
 // GetEnforceSignatureCheck gets the enforceSignatureCheck property value. A value indicating whether signature check is enforced
 func (m *Win32LobAppPowerShellScriptDetection) GetEnforceSignatureCheck()(*bool) {
-    return m.enforceSignatureCheck
+    val, err := m.GetBackingStore().Get("enforceSignatureCheck")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Win32LobAppPowerShellScriptDetection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -68,11 +69,25 @@ func (m *Win32LobAppPowerShellScriptDetection) GetFieldDeserializers()(map[strin
 }
 // GetRunAs32Bit gets the runAs32Bit property value. A value indicating whether this script should run as 32-bit
 func (m *Win32LobAppPowerShellScriptDetection) GetRunAs32Bit()(*bool) {
-    return m.runAs32Bit
+    val, err := m.GetBackingStore().Get("runAs32Bit")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetScriptContent gets the scriptContent property value. The base64 encoded script content to detect Win32 Line of Business (LoB) app
 func (m *Win32LobAppPowerShellScriptDetection) GetScriptContent()(*string) {
-    return m.scriptContent
+    val, err := m.GetBackingStore().Get("scriptContent")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Win32LobAppPowerShellScriptDetection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -102,13 +117,33 @@ func (m *Win32LobAppPowerShellScriptDetection) Serialize(writer i878a80d2330e89d
 }
 // SetEnforceSignatureCheck sets the enforceSignatureCheck property value. A value indicating whether signature check is enforced
 func (m *Win32LobAppPowerShellScriptDetection) SetEnforceSignatureCheck(value *bool)() {
-    m.enforceSignatureCheck = value
+    err := m.GetBackingStore().Set("enforceSignatureCheck", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRunAs32Bit sets the runAs32Bit property value. A value indicating whether this script should run as 32-bit
 func (m *Win32LobAppPowerShellScriptDetection) SetRunAs32Bit(value *bool)() {
-    m.runAs32Bit = value
+    err := m.GetBackingStore().Set("runAs32Bit", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetScriptContent sets the scriptContent property value. The base64 encoded script content to detect Win32 Line of Business (LoB) app
 func (m *Win32LobAppPowerShellScriptDetection) SetScriptContent(value *string)() {
-    m.scriptContent = value
+    err := m.GetBackingStore().Set("scriptContent", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Win32LobAppPowerShellScriptDetectionable 
+type Win32LobAppPowerShellScriptDetectionable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    Win32LobAppDetectionable
+    GetEnforceSignatureCheck()(*bool)
+    GetRunAs32Bit()(*bool)
+    GetScriptContent()(*string)
+    SetEnforceSignatureCheck(value *bool)()
+    SetRunAs32Bit(value *bool)()
+    SetScriptContent(value *string)()
 }

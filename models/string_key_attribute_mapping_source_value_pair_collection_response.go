@@ -7,8 +7,6 @@ import (
 // StringKeyAttributeMappingSourceValuePairCollectionResponse 
 type StringKeyAttributeMappingSourceValuePairCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []StringKeyAttributeMappingSourceValuePairable
 }
 // NewStringKeyAttributeMappingSourceValuePairCollectionResponse instantiates a new StringKeyAttributeMappingSourceValuePairCollectionResponse and sets the default values.
 func NewStringKeyAttributeMappingSourceValuePairCollectionResponse()(*StringKeyAttributeMappingSourceValuePairCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *StringKeyAttributeMappingSourceValuePairCollectionResponse) GetFieldDes
 }
 // GetValue gets the value property value. The value property
 func (m *StringKeyAttributeMappingSourceValuePairCollectionResponse) GetValue()([]StringKeyAttributeMappingSourceValuePairable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]StringKeyAttributeMappingSourceValuePairable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *StringKeyAttributeMappingSourceValuePairCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *StringKeyAttributeMappingSourceValuePairCollectionResponse) Serialize(w
 }
 // SetValue sets the value property value. The value property
 func (m *StringKeyAttributeMappingSourceValuePairCollectionResponse) SetValue(value []StringKeyAttributeMappingSourceValuePairable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// StringKeyAttributeMappingSourceValuePairCollectionResponseable 
+type StringKeyAttributeMappingSourceValuePairCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]StringKeyAttributeMappingSourceValuePairable)
+    SetValue(value []StringKeyAttributeMappingSourceValuePairable)()
 }

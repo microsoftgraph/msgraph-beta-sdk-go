@@ -60,8 +60,8 @@ func NewItemSitesItemInformationProtectionPolicyLabelsRequestBuilderInternal(pat
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemInformationProtectionPolicyLabelsRequestBuilder instantiates a new LabelsRequestBuilder and sets the default values.
@@ -72,23 +72,23 @@ func NewItemSitesItemInformationProtectionPolicyLabelsRequestBuilder(rawUrl stri
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemSitesItemInformationProtectionPolicyLabelsRequestBuilder) Count()(*ItemSitesItemInformationProtectionPolicyLabelsCountRequestBuilder) {
-    return NewItemSitesItemInformationProtectionPolicyLabelsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemInformationProtectionPolicyLabelsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // EvaluateApplication provides operations to call the evaluateApplication method.
 func (m *ItemSitesItemInformationProtectionPolicyLabelsRequestBuilder) EvaluateApplication()(*ItemSitesItemInformationProtectionPolicyLabelsEvaluateApplicationRequestBuilder) {
-    return NewItemSitesItemInformationProtectionPolicyLabelsEvaluateApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemInformationProtectionPolicyLabelsEvaluateApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // EvaluateClassificationResults provides operations to call the evaluateClassificationResults method.
 func (m *ItemSitesItemInformationProtectionPolicyLabelsRequestBuilder) EvaluateClassificationResults()(*ItemSitesItemInformationProtectionPolicyLabelsEvaluateClassificationResultsRequestBuilder) {
-    return NewItemSitesItemInformationProtectionPolicyLabelsEvaluateClassificationResultsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemInformationProtectionPolicyLabelsEvaluateClassificationResultsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // EvaluateRemoval provides operations to call the evaluateRemoval method.
 func (m *ItemSitesItemInformationProtectionPolicyLabelsRequestBuilder) EvaluateRemoval()(*ItemSitesItemInformationProtectionPolicyLabelsEvaluateRemovalRequestBuilder) {
-    return NewItemSitesItemInformationProtectionPolicyLabelsEvaluateRemovalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemInformationProtectionPolicyLabelsEvaluateRemovalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ExtractLabel provides operations to call the extractLabel method.
 func (m *ItemSitesItemInformationProtectionPolicyLabelsRequestBuilder) ExtractLabel()(*ItemSitesItemInformationProtectionPolicyLabelsExtractLabelRequestBuilder) {
-    return NewItemSitesItemInformationProtectionPolicyLabelsExtractLabelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemInformationProtectionPolicyLabelsExtractLabelRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a collection of information protection labels available to the user or to the organization.
 // [Find more info here]
@@ -154,7 +154,10 @@ func (m *ItemSitesItemInformationProtectionPolicyLabelsRequestBuilder) ToPostReq
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

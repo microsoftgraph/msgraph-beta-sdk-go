@@ -60,8 +60,8 @@ func NewDeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderInter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder instantiates a new DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewDeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder(rawU
 }
 // Count provides operations to count the resources in the collection.
 func (m *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) Count()(*DeviceConfigurationsAllManagedDeviceCertificateStatesCountRequestBuilder) {
-    return NewDeviceConfigurationsAllManagedDeviceCertificateStatesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceConfigurationsAllManagedDeviceCertificateStatesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get summary of all certificates for all devices.
 func (m *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAllDeviceCertificateStateCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) To
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

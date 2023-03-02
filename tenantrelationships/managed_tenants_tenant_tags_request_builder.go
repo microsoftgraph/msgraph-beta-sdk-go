@@ -60,8 +60,8 @@ func NewManagedTenantsTenantTagsRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedTenantsTenantTagsRequestBuilder instantiates a new TenantTagsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewManagedTenantsTenantTagsRequestBuilder(rawUrl string, requestAdapter i2a
 }
 // Count provides operations to count the resources in the collection.
 func (m *ManagedTenantsTenantTagsRequestBuilder) Count()(*ManagedTenantsTenantTagsCountRequestBuilder) {
-    return NewManagedTenantsTenantTagsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedTenantsTenantTagsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of the tenantTag objects and their properties.
 // [Find more info here]
@@ -141,7 +141,10 @@ func (m *ManagedTenantsTenantTagsRequestBuilder) ToPostRequestInformation(ctx co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
