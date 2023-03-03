@@ -4,6 +4,8 @@ import (
 	"errors"
 	"github.com/Azure/azure-sdk-for-go/sdk/azcore"
 	abstractions "github.com/microsoft/kiota-abstractions-go"
+	"github.com/microsoft/kiota-abstractions-go/store"
+	icd01c84a90833c55ac2309fd7034cb1962c60f59eb1ee2b2cf7b04c708402b6a "github.com/microsoftgraph/msgraph-beta-sdk-go/users"
 	az "github.com/microsoftgraph/msgraph-sdk-go-core/authentication"
 )
 
@@ -12,7 +14,7 @@ type GraphServiceClient struct {
 }
 
 func NewGraphServiceClient(adapter abstractions.RequestAdapter) *GraphServiceClient {
-	client := NewGraphBaseServiceClient(adapter)
+	client := NewGraphBaseServiceClient(adapter, store.BackingStoreFactoryInstance)
 	return &GraphServiceClient{
 		*client,
 	}
@@ -57,4 +59,14 @@ func (m *GraphBaseServiceClient) GetAdapter() abstractions.RequestAdapter {
 		panic(errors.New("request adapter has not been initialized"))
 	}
 	return m.requestAdapter
+}
+
+// Me provides operations to manage the user singleton.
+func (m *GraphBaseServiceClient) Me() *icd01c84a90833c55ac2309fd7034cb1962c60f59eb1ee2b2cf7b04c708402b6a.UserItemRequestBuilder {
+	urlTplParams := make(map[string]string)
+	for idx, item := range m.pathParameters {
+		urlTplParams[idx] = item
+	}
+	urlTplParams["user%2Did"] = "me-token-to-replace"
+	return icd01c84a90833c55ac2309fd7034cb1962c60f59eb1ee2b2cf7b04c708402b6a.NewUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
