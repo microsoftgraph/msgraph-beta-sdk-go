@@ -23,7 +23,7 @@ type ProgramControlItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ProgramControlItemRequestBuilderGetQueryParameters get entity from programControls by key (id)
+// ProgramControlItemRequestBuilderGetQueryParameters get entity from programControls by key
 type ProgramControlItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -55,8 +55,8 @@ func NewProgramControlItemRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewProgramControlItemRequestBuilder instantiates a new ProgramControlItemRequestBuilder and sets the default values.
@@ -84,7 +84,7 @@ func (m *ProgramControlItemRequestBuilder) Delete(ctx context.Context, requestCo
     }
     return nil
 }
-// Get get entity from programControls by key (id)
+// Get get entity from programControls by key
 func (m *ProgramControlItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ProgramControlItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProgramControlable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -103,7 +103,7 @@ func (m *ProgramControlItemRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProgramControlable), nil
 }
-// Patch update entity in programControls by key (id)
+// Patch update entity in programControls
 func (m *ProgramControlItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProgramControlable, requestConfiguration *ProgramControlItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProgramControlable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -124,7 +124,7 @@ func (m *ProgramControlItemRequestBuilder) Patch(ctx context.Context, body ie233
 }
 // Program provides operations to manage the program property of the microsoft.graph.programControl entity.
 func (m *ProgramControlItemRequestBuilder) Program()(*ItemProgramRequestBuilder) {
-    return NewItemProgramRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemProgramRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation in the Azure AD access reviews feature, delete a programControl object.  This unlinks an access review from a program.
 func (m *ProgramControlItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ProgramControlItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -138,7 +138,7 @@ func (m *ProgramControlItemRequestBuilder) ToDeleteRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from programControls by key (id)
+// ToGetRequestInformation get entity from programControls by key
 func (m *ProgramControlItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ProgramControlItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -154,14 +154,17 @@ func (m *ProgramControlItemRequestBuilder) ToGetRequestInformation(ctx context.C
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in programControls by key (id)
+// ToPatchRequestInformation update entity in programControls
 func (m *ProgramControlItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProgramControlable, requestConfiguration *ProgramControlItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -55,8 +55,8 @@ func NewUserExperienceAnalyticsDeviceScopeRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewUserExperienceAnalyticsDeviceScopeRequestBuilder instantiates a new UserExperienceAnalyticsDeviceScopeRequestBuilder and sets the default values.
@@ -154,7 +154,10 @@ func (m *UserExperienceAnalyticsDeviceScopeRequestBuilder) ToPatchRequestInforma
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -163,5 +166,5 @@ func (m *UserExperienceAnalyticsDeviceScopeRequestBuilder) ToPatchRequestInforma
 }
 // TriggerDeviceScopeAction provides operations to call the triggerDeviceScopeAction method.
 func (m *UserExperienceAnalyticsDeviceScopeRequestBuilder) TriggerDeviceScopeAction()(*UserExperienceAnalyticsDeviceScopeTriggerDeviceScopeActionRequestBuilder) {
-    return NewUserExperienceAnalyticsDeviceScopeTriggerDeviceScopeActionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsDeviceScopeTriggerDeviceScopeActionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

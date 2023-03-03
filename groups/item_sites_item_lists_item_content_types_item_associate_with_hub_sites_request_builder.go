@@ -26,13 +26,13 @@ type ItemSitesItemListsItemContentTypesItemAssociateWithHubSitesRequestBuilderPo
 func NewItemSitesItemListsItemContentTypesItemAssociateWithHubSitesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemListsItemContentTypesItemAssociateWithHubSitesRequestBuilder) {
     m := &ItemSitesItemListsItemContentTypesItemAssociateWithHubSitesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/contentTypes/{contentType%2Did}/microsoft.graph.associateWithHubSites";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/contentTypes/{contentType%2Did}/associateWithHubSites";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemListsItemContentTypesItemAssociateWithHubSitesRequestBuilder instantiates a new AssociateWithHubSitesRequestBuilder and sets the default values.
@@ -66,7 +66,10 @@ func (m *ItemSitesItemListsItemContentTypesItemAssociateWithHubSitesRequestBuild
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

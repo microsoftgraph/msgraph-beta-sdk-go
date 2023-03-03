@@ -7,34 +7,6 @@ import (
 // ReportRoot 
 type ReportRoot struct {
     Entity
-    // Represents a detailed summary of an application sign-in.
-    applicationSignInDetailedSummary []ApplicationSignInDetailedSummaryable
-    // Container for navigation properties for Azure AD authentication methods resources.
-    authenticationMethods AuthenticationMethodsRootable
-    // Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
-    credentialUserRegistrationDetails []CredentialUserRegistrationDetailsable
-    // The dailyPrintUsage property
-    dailyPrintUsage []PrintUsageable
-    // The dailyPrintUsageByPrinter property
-    dailyPrintUsageByPrinter []PrintUsageByPrinterable
-    // The dailyPrintUsageByUser property
-    dailyPrintUsageByUser []PrintUsageByUserable
-    // The dailyPrintUsageSummariesByPrinter property
-    dailyPrintUsageSummariesByPrinter []PrintUsageByPrinterable
-    // The dailyPrintUsageSummariesByUser property
-    dailyPrintUsageSummariesByUser []PrintUsageByUserable
-    // The monthlyPrintUsageByPrinter property
-    monthlyPrintUsageByPrinter []PrintUsageByPrinterable
-    // The monthlyPrintUsageByUser property
-    monthlyPrintUsageByUser []PrintUsageByUserable
-    // The monthlyPrintUsageSummariesByPrinter property
-    monthlyPrintUsageSummariesByPrinter []PrintUsageByPrinterable
-    // The monthlyPrintUsageSummariesByUser property
-    monthlyPrintUsageSummariesByUser []PrintUsageByUserable
-    // Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
-    security SecurityReportsRootable
-    // Represents the self-service password reset (SSPR) usage for a given tenant.
-    userCredentialUsageDetails []UserCredentialUsageDetailsable
 }
 // NewReportRoot instantiates a new ReportRoot and sets the default values.
 func NewReportRoot()(*ReportRoot) {
@@ -49,35 +21,91 @@ func CreateReportRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetApplicationSignInDetailedSummary gets the applicationSignInDetailedSummary property value. Represents a detailed summary of an application sign-in.
 func (m *ReportRoot) GetApplicationSignInDetailedSummary()([]ApplicationSignInDetailedSummaryable) {
-    return m.applicationSignInDetailedSummary
+    val, err := m.GetBackingStore().Get("applicationSignInDetailedSummary")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ApplicationSignInDetailedSummaryable)
+    }
+    return nil
 }
 // GetAuthenticationMethods gets the authenticationMethods property value. Container for navigation properties for Azure AD authentication methods resources.
 func (m *ReportRoot) GetAuthenticationMethods()(AuthenticationMethodsRootable) {
-    return m.authenticationMethods
+    val, err := m.GetBackingStore().Get("authenticationMethods")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AuthenticationMethodsRootable)
+    }
+    return nil
 }
 // GetCredentialUserRegistrationDetails gets the credentialUserRegistrationDetails property value. Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
 func (m *ReportRoot) GetCredentialUserRegistrationDetails()([]CredentialUserRegistrationDetailsable) {
-    return m.credentialUserRegistrationDetails
+    val, err := m.GetBackingStore().Get("credentialUserRegistrationDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CredentialUserRegistrationDetailsable)
+    }
+    return nil
 }
 // GetDailyPrintUsage gets the dailyPrintUsage property value. The dailyPrintUsage property
 func (m *ReportRoot) GetDailyPrintUsage()([]PrintUsageable) {
-    return m.dailyPrintUsage
+    val, err := m.GetBackingStore().Get("dailyPrintUsage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrintUsageable)
+    }
+    return nil
 }
 // GetDailyPrintUsageByPrinter gets the dailyPrintUsageByPrinter property value. The dailyPrintUsageByPrinter property
 func (m *ReportRoot) GetDailyPrintUsageByPrinter()([]PrintUsageByPrinterable) {
-    return m.dailyPrintUsageByPrinter
+    val, err := m.GetBackingStore().Get("dailyPrintUsageByPrinter")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrintUsageByPrinterable)
+    }
+    return nil
 }
 // GetDailyPrintUsageByUser gets the dailyPrintUsageByUser property value. The dailyPrintUsageByUser property
 func (m *ReportRoot) GetDailyPrintUsageByUser()([]PrintUsageByUserable) {
-    return m.dailyPrintUsageByUser
+    val, err := m.GetBackingStore().Get("dailyPrintUsageByUser")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrintUsageByUserable)
+    }
+    return nil
 }
 // GetDailyPrintUsageSummariesByPrinter gets the dailyPrintUsageSummariesByPrinter property value. The dailyPrintUsageSummariesByPrinter property
 func (m *ReportRoot) GetDailyPrintUsageSummariesByPrinter()([]PrintUsageByPrinterable) {
-    return m.dailyPrintUsageSummariesByPrinter
+    val, err := m.GetBackingStore().Get("dailyPrintUsageSummariesByPrinter")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrintUsageByPrinterable)
+    }
+    return nil
 }
 // GetDailyPrintUsageSummariesByUser gets the dailyPrintUsageSummariesByUser property value. The dailyPrintUsageSummariesByUser property
 func (m *ReportRoot) GetDailyPrintUsageSummariesByUser()([]PrintUsageByUserable) {
-    return m.dailyPrintUsageSummariesByUser
+    val, err := m.GetBackingStore().Get("dailyPrintUsageSummariesByUser")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrintUsageByUserable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ReportRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -274,27 +302,69 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetMonthlyPrintUsageByPrinter gets the monthlyPrintUsageByPrinter property value. The monthlyPrintUsageByPrinter property
 func (m *ReportRoot) GetMonthlyPrintUsageByPrinter()([]PrintUsageByPrinterable) {
-    return m.monthlyPrintUsageByPrinter
+    val, err := m.GetBackingStore().Get("monthlyPrintUsageByPrinter")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrintUsageByPrinterable)
+    }
+    return nil
 }
 // GetMonthlyPrintUsageByUser gets the monthlyPrintUsageByUser property value. The monthlyPrintUsageByUser property
 func (m *ReportRoot) GetMonthlyPrintUsageByUser()([]PrintUsageByUserable) {
-    return m.monthlyPrintUsageByUser
+    val, err := m.GetBackingStore().Get("monthlyPrintUsageByUser")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrintUsageByUserable)
+    }
+    return nil
 }
 // GetMonthlyPrintUsageSummariesByPrinter gets the monthlyPrintUsageSummariesByPrinter property value. The monthlyPrintUsageSummariesByPrinter property
 func (m *ReportRoot) GetMonthlyPrintUsageSummariesByPrinter()([]PrintUsageByPrinterable) {
-    return m.monthlyPrintUsageSummariesByPrinter
+    val, err := m.GetBackingStore().Get("monthlyPrintUsageSummariesByPrinter")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrintUsageByPrinterable)
+    }
+    return nil
 }
 // GetMonthlyPrintUsageSummariesByUser gets the monthlyPrintUsageSummariesByUser property value. The monthlyPrintUsageSummariesByUser property
 func (m *ReportRoot) GetMonthlyPrintUsageSummariesByUser()([]PrintUsageByUserable) {
-    return m.monthlyPrintUsageSummariesByUser
+    val, err := m.GetBackingStore().Get("monthlyPrintUsageSummariesByUser")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrintUsageByUserable)
+    }
+    return nil
 }
 // GetSecurity gets the security property value. Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
 func (m *ReportRoot) GetSecurity()(SecurityReportsRootable) {
-    return m.security
+    val, err := m.GetBackingStore().Get("security")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SecurityReportsRootable)
+    }
+    return nil
 }
 // GetUserCredentialUsageDetails gets the userCredentialUsageDetails property value. Represents the self-service password reset (SSPR) usage for a given tenant.
 func (m *ReportRoot) GetUserCredentialUsageDetails()([]UserCredentialUsageDetailsable) {
-    return m.userCredentialUsageDetails
+    val, err := m.GetBackingStore().Get("userCredentialUsageDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserCredentialUsageDetailsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ReportRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -438,57 +508,132 @@ func (m *ReportRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetApplicationSignInDetailedSummary sets the applicationSignInDetailedSummary property value. Represents a detailed summary of an application sign-in.
 func (m *ReportRoot) SetApplicationSignInDetailedSummary(value []ApplicationSignInDetailedSummaryable)() {
-    m.applicationSignInDetailedSummary = value
+    err := m.GetBackingStore().Set("applicationSignInDetailedSummary", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAuthenticationMethods sets the authenticationMethods property value. Container for navigation properties for Azure AD authentication methods resources.
 func (m *ReportRoot) SetAuthenticationMethods(value AuthenticationMethodsRootable)() {
-    m.authenticationMethods = value
+    err := m.GetBackingStore().Set("authenticationMethods", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCredentialUserRegistrationDetails sets the credentialUserRegistrationDetails property value. Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
 func (m *ReportRoot) SetCredentialUserRegistrationDetails(value []CredentialUserRegistrationDetailsable)() {
-    m.credentialUserRegistrationDetails = value
+    err := m.GetBackingStore().Set("credentialUserRegistrationDetails", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDailyPrintUsage sets the dailyPrintUsage property value. The dailyPrintUsage property
 func (m *ReportRoot) SetDailyPrintUsage(value []PrintUsageable)() {
-    m.dailyPrintUsage = value
+    err := m.GetBackingStore().Set("dailyPrintUsage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDailyPrintUsageByPrinter sets the dailyPrintUsageByPrinter property value. The dailyPrintUsageByPrinter property
 func (m *ReportRoot) SetDailyPrintUsageByPrinter(value []PrintUsageByPrinterable)() {
-    m.dailyPrintUsageByPrinter = value
+    err := m.GetBackingStore().Set("dailyPrintUsageByPrinter", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDailyPrintUsageByUser sets the dailyPrintUsageByUser property value. The dailyPrintUsageByUser property
 func (m *ReportRoot) SetDailyPrintUsageByUser(value []PrintUsageByUserable)() {
-    m.dailyPrintUsageByUser = value
+    err := m.GetBackingStore().Set("dailyPrintUsageByUser", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDailyPrintUsageSummariesByPrinter sets the dailyPrintUsageSummariesByPrinter property value. The dailyPrintUsageSummariesByPrinter property
 func (m *ReportRoot) SetDailyPrintUsageSummariesByPrinter(value []PrintUsageByPrinterable)() {
-    m.dailyPrintUsageSummariesByPrinter = value
+    err := m.GetBackingStore().Set("dailyPrintUsageSummariesByPrinter", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDailyPrintUsageSummariesByUser sets the dailyPrintUsageSummariesByUser property value. The dailyPrintUsageSummariesByUser property
 func (m *ReportRoot) SetDailyPrintUsageSummariesByUser(value []PrintUsageByUserable)() {
-    m.dailyPrintUsageSummariesByUser = value
+    err := m.GetBackingStore().Set("dailyPrintUsageSummariesByUser", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMonthlyPrintUsageByPrinter sets the monthlyPrintUsageByPrinter property value. The monthlyPrintUsageByPrinter property
 func (m *ReportRoot) SetMonthlyPrintUsageByPrinter(value []PrintUsageByPrinterable)() {
-    m.monthlyPrintUsageByPrinter = value
+    err := m.GetBackingStore().Set("monthlyPrintUsageByPrinter", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMonthlyPrintUsageByUser sets the monthlyPrintUsageByUser property value. The monthlyPrintUsageByUser property
 func (m *ReportRoot) SetMonthlyPrintUsageByUser(value []PrintUsageByUserable)() {
-    m.monthlyPrintUsageByUser = value
+    err := m.GetBackingStore().Set("monthlyPrintUsageByUser", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMonthlyPrintUsageSummariesByPrinter sets the monthlyPrintUsageSummariesByPrinter property value. The monthlyPrintUsageSummariesByPrinter property
 func (m *ReportRoot) SetMonthlyPrintUsageSummariesByPrinter(value []PrintUsageByPrinterable)() {
-    m.monthlyPrintUsageSummariesByPrinter = value
+    err := m.GetBackingStore().Set("monthlyPrintUsageSummariesByPrinter", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMonthlyPrintUsageSummariesByUser sets the monthlyPrintUsageSummariesByUser property value. The monthlyPrintUsageSummariesByUser property
 func (m *ReportRoot) SetMonthlyPrintUsageSummariesByUser(value []PrintUsageByUserable)() {
-    m.monthlyPrintUsageSummariesByUser = value
+    err := m.GetBackingStore().Set("monthlyPrintUsageSummariesByUser", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSecurity sets the security property value. Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
 func (m *ReportRoot) SetSecurity(value SecurityReportsRootable)() {
-    m.security = value
+    err := m.GetBackingStore().Set("security", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserCredentialUsageDetails sets the userCredentialUsageDetails property value. Represents the self-service password reset (SSPR) usage for a given tenant.
 func (m *ReportRoot) SetUserCredentialUsageDetails(value []UserCredentialUsageDetailsable)() {
-    m.userCredentialUsageDetails = value
+    err := m.GetBackingStore().Set("userCredentialUsageDetails", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ReportRootable 
+type ReportRootable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetApplicationSignInDetailedSummary()([]ApplicationSignInDetailedSummaryable)
+    GetAuthenticationMethods()(AuthenticationMethodsRootable)
+    GetCredentialUserRegistrationDetails()([]CredentialUserRegistrationDetailsable)
+    GetDailyPrintUsage()([]PrintUsageable)
+    GetDailyPrintUsageByPrinter()([]PrintUsageByPrinterable)
+    GetDailyPrintUsageByUser()([]PrintUsageByUserable)
+    GetDailyPrintUsageSummariesByPrinter()([]PrintUsageByPrinterable)
+    GetDailyPrintUsageSummariesByUser()([]PrintUsageByUserable)
+    GetMonthlyPrintUsageByPrinter()([]PrintUsageByPrinterable)
+    GetMonthlyPrintUsageByUser()([]PrintUsageByUserable)
+    GetMonthlyPrintUsageSummariesByPrinter()([]PrintUsageByPrinterable)
+    GetMonthlyPrintUsageSummariesByUser()([]PrintUsageByUserable)
+    GetSecurity()(SecurityReportsRootable)
+    GetUserCredentialUsageDetails()([]UserCredentialUsageDetailsable)
+    SetApplicationSignInDetailedSummary(value []ApplicationSignInDetailedSummaryable)()
+    SetAuthenticationMethods(value AuthenticationMethodsRootable)()
+    SetCredentialUserRegistrationDetails(value []CredentialUserRegistrationDetailsable)()
+    SetDailyPrintUsage(value []PrintUsageable)()
+    SetDailyPrintUsageByPrinter(value []PrintUsageByPrinterable)()
+    SetDailyPrintUsageByUser(value []PrintUsageByUserable)()
+    SetDailyPrintUsageSummariesByPrinter(value []PrintUsageByPrinterable)()
+    SetDailyPrintUsageSummariesByUser(value []PrintUsageByUserable)()
+    SetMonthlyPrintUsageByPrinter(value []PrintUsageByPrinterable)()
+    SetMonthlyPrintUsageByUser(value []PrintUsageByUserable)()
+    SetMonthlyPrintUsageSummariesByPrinter(value []PrintUsageByPrinterable)()
+    SetMonthlyPrintUsageSummariesByUser(value []PrintUsageByUserable)()
+    SetSecurity(value SecurityReportsRootable)()
+    SetUserCredentialUsageDetails(value []UserCredentialUsageDetailsable)()
 }

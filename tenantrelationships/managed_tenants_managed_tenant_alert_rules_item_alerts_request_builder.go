@@ -53,8 +53,8 @@ func NewManagedTenantsManagedTenantAlertRulesItemAlertsRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedTenantsManagedTenantAlertRulesItemAlertsRequestBuilder instantiates a new AlertsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewManagedTenantsManagedTenantAlertRulesItemAlertsRequestBuilder(rawUrl str
 }
 // Count provides operations to count the resources in the collection.
 func (m *ManagedTenantsManagedTenantAlertRulesItemAlertsRequestBuilder) Count()(*ManagedTenantsManagedTenantAlertRulesItemAlertsCountRequestBuilder) {
-    return NewManagedTenantsManagedTenantAlertRulesItemAlertsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedTenantsManagedTenantAlertRulesItemAlertsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get alerts from tenantRelationships
 func (m *ManagedTenantsManagedTenantAlertRulesItemAlertsRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsManagedTenantAlertRulesItemAlertsRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagedTenantAlertCollectionResponseable, error) {

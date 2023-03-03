@@ -8,10 +8,6 @@ import (
 // InformationProtection 
 type InformationProtection struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // Read the Microsoft Purview Information Protection policy settings for the user or organization.
-    labelPolicySettings InformationProtectionPolicySettingable
-    // Read the Microsoft Purview Information Protection labels for the user or organization.
-    sensitivityLabels []SensitivityLabelable
 }
 // NewInformationProtection instantiates a new informationProtection and sets the default values.
 func NewInformationProtection()(*InformationProtection) {
@@ -55,11 +51,25 @@ func (m *InformationProtection) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetLabelPolicySettings gets the labelPolicySettings property value. Read the Microsoft Purview Information Protection policy settings for the user or organization.
 func (m *InformationProtection) GetLabelPolicySettings()(InformationProtectionPolicySettingable) {
-    return m.labelPolicySettings
+    val, err := m.GetBackingStore().Get("labelPolicySettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(InformationProtectionPolicySettingable)
+    }
+    return nil
 }
 // GetSensitivityLabels gets the sensitivityLabels property value. Read the Microsoft Purview Information Protection labels for the user or organization.
 func (m *InformationProtection) GetSensitivityLabels()([]SensitivityLabelable) {
-    return m.sensitivityLabels
+    val, err := m.GetBackingStore().Get("sensitivityLabels")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SensitivityLabelable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *InformationProtection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -87,9 +97,24 @@ func (m *InformationProtection) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetLabelPolicySettings sets the labelPolicySettings property value. Read the Microsoft Purview Information Protection policy settings for the user or organization.
 func (m *InformationProtection) SetLabelPolicySettings(value InformationProtectionPolicySettingable)() {
-    m.labelPolicySettings = value
+    err := m.GetBackingStore().Set("labelPolicySettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSensitivityLabels sets the sensitivityLabels property value. Read the Microsoft Purview Information Protection labels for the user or organization.
 func (m *InformationProtection) SetSensitivityLabels(value []SensitivityLabelable)() {
-    m.sensitivityLabels = value
+    err := m.GetBackingStore().Set("sensitivityLabels", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// InformationProtectionable 
+type InformationProtectionable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetLabelPolicySettings()(InformationProtectionPolicySettingable)
+    GetSensitivityLabels()([]SensitivityLabelable)
+    SetLabelPolicySettings(value InformationProtectionPolicySettingable)()
+    SetSensitivityLabels(value []SensitivityLabelable)()
 }

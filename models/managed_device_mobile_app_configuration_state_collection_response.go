@@ -7,8 +7,6 @@ import (
 // ManagedDeviceMobileAppConfigurationStateCollectionResponse 
 type ManagedDeviceMobileAppConfigurationStateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ManagedDeviceMobileAppConfigurationStateable
 }
 // NewManagedDeviceMobileAppConfigurationStateCollectionResponse instantiates a new ManagedDeviceMobileAppConfigurationStateCollectionResponse and sets the default values.
 func NewManagedDeviceMobileAppConfigurationStateCollectionResponse()(*ManagedDeviceMobileAppConfigurationStateCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ManagedDeviceMobileAppConfigurationStateCollectionResponse) GetFieldDes
 }
 // GetValue gets the value property value. The value property
 func (m *ManagedDeviceMobileAppConfigurationStateCollectionResponse) GetValue()([]ManagedDeviceMobileAppConfigurationStateable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedDeviceMobileAppConfigurationStateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagedDeviceMobileAppConfigurationStateCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ManagedDeviceMobileAppConfigurationStateCollectionResponse) Serialize(w
 }
 // SetValue sets the value property value. The value property
 func (m *ManagedDeviceMobileAppConfigurationStateCollectionResponse) SetValue(value []ManagedDeviceMobileAppConfigurationStateable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagedDeviceMobileAppConfigurationStateCollectionResponseable 
+type ManagedDeviceMobileAppConfigurationStateCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ManagedDeviceMobileAppConfigurationStateable)
+    SetValue(value []ManagedDeviceMobileAppConfigurationStateable)()
 }

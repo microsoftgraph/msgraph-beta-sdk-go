@@ -8,8 +8,6 @@ import (
 // ResourceConnection 
 type ResourceConnection struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The state of the connection. The possible values are: connected, notAuthorized, notFound, unknownFutureValue.
-    state *ResourceConnectionState
 }
 // NewResourceConnection instantiates a new resourceConnection and sets the default values.
 func NewResourceConnection()(*ResourceConnection) {
@@ -57,7 +55,14 @@ func (m *ResourceConnection) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetState gets the state property value. The state of the connection. The possible values are: connected, notAuthorized, notFound, unknownFutureValue.
 func (m *ResourceConnection) GetState()(*ResourceConnectionState) {
-    return m.state
+    val, err := m.GetBackingStore().Get("state")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ResourceConnectionState)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ResourceConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -76,5 +81,15 @@ func (m *ResourceConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetState sets the state property value. The state of the connection. The possible values are: connected, notAuthorized, notFound, unknownFutureValue.
 func (m *ResourceConnection) SetState(value *ResourceConnectionState)() {
-    m.state = value
+    err := m.GetBackingStore().Set("state", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ResourceConnectionable 
+type ResourceConnectionable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetState()(*ResourceConnectionState)
+    SetState(value *ResourceConnectionState)()
 }

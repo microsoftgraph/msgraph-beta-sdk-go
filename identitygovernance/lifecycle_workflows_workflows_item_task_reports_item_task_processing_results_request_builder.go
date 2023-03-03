@@ -53,8 +53,8 @@ func NewLifecycleWorkflowsWorkflowsItemTaskReportsItemTaskProcessingResultsReque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewLifecycleWorkflowsWorkflowsItemTaskReportsItemTaskProcessingResultsRequestBuilder instantiates a new TaskProcessingResultsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewLifecycleWorkflowsWorkflowsItemTaskReportsItemTaskProcessingResultsReque
 }
 // Count provides operations to count the resources in the collection.
 func (m *LifecycleWorkflowsWorkflowsItemTaskReportsItemTaskProcessingResultsRequestBuilder) Count()(*LifecycleWorkflowsWorkflowsItemTaskReportsItemTaskProcessingResultsCountRequestBuilder) {
-    return NewLifecycleWorkflowsWorkflowsItemTaskReportsItemTaskProcessingResultsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewLifecycleWorkflowsWorkflowsItemTaskReportsItemTaskProcessingResultsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the task processing result resources from the taskReport.
 // [Find more info here]

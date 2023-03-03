@@ -7,16 +7,14 @@ import (
 // TextWebPart 
 type TextWebPart struct {
     WebPart
-    // The HTML string in text web part.
-    innerHtml *string
 }
 // NewTextWebPart instantiates a new TextWebPart and sets the default values.
 func NewTextWebPart()(*TextWebPart) {
     m := &TextWebPart{
         WebPart: *NewWebPart(),
     }
-    odataTypeValue := "#microsoft.graph.textWebPart";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.textWebPart"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateTextWebPartFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *TextWebPart) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetInnerHtml gets the innerHtml property value. The HTML string in text web part.
 func (m *TextWebPart) GetInnerHtml()(*string) {
-    return m.innerHtml
+    val, err := m.GetBackingStore().Get("innerHtml")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TextWebPart) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *TextWebPart) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetInnerHtml sets the innerHtml property value. The HTML string in text web part.
 func (m *TextWebPart) SetInnerHtml(value *string)() {
-    m.innerHtml = value
+    err := m.GetBackingStore().Set("innerHtml", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TextWebPartable 
+type TextWebPartable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    WebPartable
+    GetInnerHtml()(*string)
+    SetInnerHtml(value *string)()
 }

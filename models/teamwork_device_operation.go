@@ -8,24 +8,6 @@ import (
 // TeamworkDeviceOperation 
 type TeamworkDeviceOperation struct {
     Entity
-    // Time at which the operation reached a final state (for example, Successful, Failed, and Cancelled).
-    completedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Identity of the user who created the device operation.
-    createdBy IdentitySetable
-    // The UTC date and time when the device operation was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Error details are available only in case of a failed status.
-    error OperationErrorable
-    // Identity of the user who last modified the device operation.
-    lastActionBy IdentitySetable
-    // The UTC date and time when the device operation was last modified.
-    lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The operationType property
-    operationType *TeamworkDeviceOperationType
-    // Time at which the operation was started.
-    startedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The current status of the async operation, for example, Queued, Scheduled, InProgress,  Successful, Cancelled, and Failed.
-    status *string
 }
 // NewTeamworkDeviceOperation instantiates a new teamworkDeviceOperation and sets the default values.
 func NewTeamworkDeviceOperation()(*TeamworkDeviceOperation) {
@@ -40,19 +22,47 @@ func CreateTeamworkDeviceOperationFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetCompletedDateTime gets the completedDateTime property value. Time at which the operation reached a final state (for example, Successful, Failed, and Cancelled).
 func (m *TeamworkDeviceOperation) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.completedDateTime
+    val, err := m.GetBackingStore().Get("completedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetCreatedBy gets the createdBy property value. Identity of the user who created the device operation.
 func (m *TeamworkDeviceOperation) GetCreatedBy()(IdentitySetable) {
-    return m.createdBy
+    val, err := m.GetBackingStore().Get("createdBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The UTC date and time when the device operation was created.
 func (m *TeamworkDeviceOperation) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetError gets the error property value. Error details are available only in case of a failed status.
 func (m *TeamworkDeviceOperation) GetError()(OperationErrorable) {
-    return m.error
+    val, err := m.GetBackingStore().Get("error")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(OperationErrorable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkDeviceOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -151,23 +161,58 @@ func (m *TeamworkDeviceOperation) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetLastActionBy gets the lastActionBy property value. Identity of the user who last modified the device operation.
 func (m *TeamworkDeviceOperation) GetLastActionBy()(IdentitySetable) {
-    return m.lastActionBy
+    val, err := m.GetBackingStore().Get("lastActionBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
 }
 // GetLastActionDateTime gets the lastActionDateTime property value. The UTC date and time when the device operation was last modified.
 func (m *TeamworkDeviceOperation) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastActionDateTime
+    val, err := m.GetBackingStore().Get("lastActionDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetOperationType gets the operationType property value. The operationType property
 func (m *TeamworkDeviceOperation) GetOperationType()(*TeamworkDeviceOperationType) {
-    return m.operationType
+    val, err := m.GetBackingStore().Get("operationType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*TeamworkDeviceOperationType)
+    }
+    return nil
 }
 // GetStartedDateTime gets the startedDateTime property value. Time at which the operation was started.
 func (m *TeamworkDeviceOperation) GetStartedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.startedDateTime
+    val, err := m.GetBackingStore().Get("startedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetStatus gets the status property value. The current status of the async operation, for example, Queued, Scheduled, InProgress,  Successful, Cancelled, and Failed.
 func (m *TeamworkDeviceOperation) GetStatus()(*string) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TeamworkDeviceOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -234,37 +279,87 @@ func (m *TeamworkDeviceOperation) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetCompletedDateTime sets the completedDateTime property value. Time at which the operation reached a final state (for example, Successful, Failed, and Cancelled).
 func (m *TeamworkDeviceOperation) SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.completedDateTime = value
+    err := m.GetBackingStore().Set("completedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedBy sets the createdBy property value. Identity of the user who created the device operation.
 func (m *TeamworkDeviceOperation) SetCreatedBy(value IdentitySetable)() {
-    m.createdBy = value
+    err := m.GetBackingStore().Set("createdBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The UTC date and time when the device operation was created.
 func (m *TeamworkDeviceOperation) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetError sets the error property value. Error details are available only in case of a failed status.
 func (m *TeamworkDeviceOperation) SetError(value OperationErrorable)() {
-    m.error = value
+    err := m.GetBackingStore().Set("error", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastActionBy sets the lastActionBy property value. Identity of the user who last modified the device operation.
 func (m *TeamworkDeviceOperation) SetLastActionBy(value IdentitySetable)() {
-    m.lastActionBy = value
+    err := m.GetBackingStore().Set("lastActionBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastActionDateTime sets the lastActionDateTime property value. The UTC date and time when the device operation was last modified.
 func (m *TeamworkDeviceOperation) SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastActionDateTime = value
+    err := m.GetBackingStore().Set("lastActionDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOperationType sets the operationType property value. The operationType property
 func (m *TeamworkDeviceOperation) SetOperationType(value *TeamworkDeviceOperationType)() {
-    m.operationType = value
+    err := m.GetBackingStore().Set("operationType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartedDateTime sets the startedDateTime property value. Time at which the operation was started.
 func (m *TeamworkDeviceOperation) SetStartedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.startedDateTime = value
+    err := m.GetBackingStore().Set("startedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. The current status of the async operation, for example, Queued, Scheduled, InProgress,  Successful, Cancelled, and Failed.
 func (m *TeamworkDeviceOperation) SetStatus(value *string)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TeamworkDeviceOperationable 
+type TeamworkDeviceOperationable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetCreatedBy()(IdentitySetable)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetError()(OperationErrorable)
+    GetLastActionBy()(IdentitySetable)
+    GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOperationType()(*TeamworkDeviceOperationType)
+    GetStartedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetStatus()(*string)
+    SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetCreatedBy(value IdentitySetable)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetError(value OperationErrorable)()
+    SetLastActionBy(value IdentitySetable)()
+    SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOperationType(value *TeamworkDeviceOperationType)()
+    SetStartedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetStatus(value *string)()
 }

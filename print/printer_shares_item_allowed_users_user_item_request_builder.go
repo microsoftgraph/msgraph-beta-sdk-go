@@ -22,8 +22,8 @@ func NewPrinterSharesItemAllowedUsersUserItemRequestBuilderInternal(pathParamete
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPrinterSharesItemAllowedUsersUserItemRequestBuilder instantiates a new UserItemRequestBuilder and sets the default values.
@@ -34,5 +34,5 @@ func NewPrinterSharesItemAllowedUsersUserItemRequestBuilder(rawUrl string, reque
 }
 // Ref provides operations to manage the collection of print entities.
 func (m *PrinterSharesItemAllowedUsersUserItemRequestBuilder) Ref()(*PrinterSharesItemAllowedUsersItemRefRequestBuilder) {
-    return NewPrinterSharesItemAllowedUsersItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPrinterSharesItemAllowedUsersItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

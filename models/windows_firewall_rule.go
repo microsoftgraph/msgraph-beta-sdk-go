@@ -2,52 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // WindowsFirewallRule a rule controlling traffic through the Windows Firewall.
 type WindowsFirewallRule struct {
-    // State Management Setting.
-    action *StateManagementSetting
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The description of the rule.
-    description *string
-    // The display name of the rule. Does not need to be unique.
-    displayName *string
-    // State Management Setting.
-    edgeTraversal *StateManagementSetting
-    // The full file path of an app that's affected by the firewall rule.
-    filePath *string
-    // Flags representing firewall rule interface types.
-    interfaceTypes *WindowsFirewallRuleInterfaceTypes
-    // List of local addresses covered by the rule. Default is any address. Valid tokens include:'' indicates any local address. If present, this must be the only token included.A subnet can be specified using either the subnet mask or network prefix notation. If neither a subnet mask nor a network prefix is specified, the subnet mask defaults to 255.255.255.255.A valid IPv6 address.An IPv4 address range in the format of 'start address - end address' with no spaces included.An IPv6 address range in the format of 'start address - end address' with no spaces included.
-    localAddressRanges []string
-    // List of local port ranges. For example, '100-120', '200', '300-320'. If not specified, the default is All.
-    localPortRanges []string
-    // Specifies the list of authorized local users for the app container. This is a string in Security Descriptor Definition Language (SDDL) format.
-    localUserAuthorizations *string
-    // The OdataType property
-    odataType *string
-    // The package family name of a Microsoft Store application that's affected by the firewall rule.
-    packageFamilyName *string
-    // Flags representing which network profile types apply to a firewall rule.
-    profileTypes *WindowsFirewallRuleNetworkProfileTypes
-    // 0-255 number representing the IP protocol (TCP = 6, UDP = 17). If not specified, the default is All. Valid values 0 to 255
-    protocol *int32
-    // List of tokens specifying the remote addresses covered by the rule. Tokens are case insensitive. Default is any address. Valid tokens include:'' indicates any remote address. If present, this must be the only token included.'Defaultgateway''DHCP''DNS''WINS''Intranet' (supported on Windows versions 1809+)'RmtIntranet' (supported on Windows versions 1809+)'Internet' (supported on Windows versions 1809+)'Ply2Renders' (supported on Windows versions 1809+)'LocalSubnet' indicates any local address on the local subnet.A subnet can be specified using either the subnet mask or network prefix notation. If neither a subnet mask nor a network prefix is specified, the subnet mask defaults to 255.255.255.255.A valid IPv6 address.An IPv4 address range in the format of 'start address - end address' with no spaces included.An IPv6 address range in the format of 'start address - end address' with no spaces included.
-    remoteAddressRanges []string
-    // List of remote port ranges. For example, '100-120', '200', '300-320'. If not specified, the default is All.
-    remotePortRanges []string
-    // The name used in cases when a service, not an application, is sending or receiving traffic.
-    serviceName *string
-    // Firewall rule traffic directions.
-    trafficDirection *WindowsFirewallRuleTrafficDirectionType
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewWindowsFirewallRule instantiates a new windowsFirewallRule and sets the default values.
 func NewWindowsFirewallRule()(*WindowsFirewallRule) {
     m := &WindowsFirewallRule{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWindowsFirewallRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -56,23 +24,63 @@ func CreateWindowsFirewallRuleFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAction gets the action property value. State Management Setting.
 func (m *WindowsFirewallRule) GetAction()(*StateManagementSetting) {
-    return m.action
+    val, err := m.GetBackingStore().Get("action")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*StateManagementSetting)
+    }
+    return nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsFirewallRule) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *WindowsFirewallRule) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDescription gets the description property value. The description of the rule.
 func (m *WindowsFirewallRule) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the rule. Does not need to be unique.
 func (m *WindowsFirewallRule) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetEdgeTraversal gets the edgeTraversal property value. State Management Setting.
 func (m *WindowsFirewallRule) GetEdgeTraversal()(*StateManagementSetting) {
-    return m.edgeTraversal
+    val, err := m.GetBackingStore().Get("edgeTraversal")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*StateManagementSetting)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsFirewallRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -267,55 +275,146 @@ func (m *WindowsFirewallRule) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetFilePath gets the filePath property value. The full file path of an app that's affected by the firewall rule.
 func (m *WindowsFirewallRule) GetFilePath()(*string) {
-    return m.filePath
+    val, err := m.GetBackingStore().Get("filePath")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetInterfaceTypes gets the interfaceTypes property value. Flags representing firewall rule interface types.
 func (m *WindowsFirewallRule) GetInterfaceTypes()(*WindowsFirewallRuleInterfaceTypes) {
-    return m.interfaceTypes
+    val, err := m.GetBackingStore().Get("interfaceTypes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WindowsFirewallRuleInterfaceTypes)
+    }
+    return nil
 }
 // GetLocalAddressRanges gets the localAddressRanges property value. List of local addresses covered by the rule. Default is any address. Valid tokens include:'' indicates any local address. If present, this must be the only token included.A subnet can be specified using either the subnet mask or network prefix notation. If neither a subnet mask nor a network prefix is specified, the subnet mask defaults to 255.255.255.255.A valid IPv6 address.An IPv4 address range in the format of 'start address - end address' with no spaces included.An IPv6 address range in the format of 'start address - end address' with no spaces included.
 func (m *WindowsFirewallRule) GetLocalAddressRanges()([]string) {
-    return m.localAddressRanges
+    val, err := m.GetBackingStore().Get("localAddressRanges")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetLocalPortRanges gets the localPortRanges property value. List of local port ranges. For example, '100-120', '200', '300-320'. If not specified, the default is All.
 func (m *WindowsFirewallRule) GetLocalPortRanges()([]string) {
-    return m.localPortRanges
+    val, err := m.GetBackingStore().Get("localPortRanges")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetLocalUserAuthorizations gets the localUserAuthorizations property value. Specifies the list of authorized local users for the app container. This is a string in Security Descriptor Definition Language (SDDL) format.
 func (m *WindowsFirewallRule) GetLocalUserAuthorizations()(*string) {
-    return m.localUserAuthorizations
+    val, err := m.GetBackingStore().Get("localUserAuthorizations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *WindowsFirewallRule) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPackageFamilyName gets the packageFamilyName property value. The package family name of a Microsoft Store application that's affected by the firewall rule.
 func (m *WindowsFirewallRule) GetPackageFamilyName()(*string) {
-    return m.packageFamilyName
+    val, err := m.GetBackingStore().Get("packageFamilyName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProfileTypes gets the profileTypes property value. Flags representing which network profile types apply to a firewall rule.
 func (m *WindowsFirewallRule) GetProfileTypes()(*WindowsFirewallRuleNetworkProfileTypes) {
-    return m.profileTypes
+    val, err := m.GetBackingStore().Get("profileTypes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WindowsFirewallRuleNetworkProfileTypes)
+    }
+    return nil
 }
 // GetProtocol gets the protocol property value. 0-255 number representing the IP protocol (TCP = 6, UDP = 17). If not specified, the default is All. Valid values 0 to 255
 func (m *WindowsFirewallRule) GetProtocol()(*int32) {
-    return m.protocol
+    val, err := m.GetBackingStore().Get("protocol")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetRemoteAddressRanges gets the remoteAddressRanges property value. List of tokens specifying the remote addresses covered by the rule. Tokens are case insensitive. Default is any address. Valid tokens include:'' indicates any remote address. If present, this must be the only token included.'Defaultgateway''DHCP''DNS''WINS''Intranet' (supported on Windows versions 1809+)'RmtIntranet' (supported on Windows versions 1809+)'Internet' (supported on Windows versions 1809+)'Ply2Renders' (supported on Windows versions 1809+)'LocalSubnet' indicates any local address on the local subnet.A subnet can be specified using either the subnet mask or network prefix notation. If neither a subnet mask nor a network prefix is specified, the subnet mask defaults to 255.255.255.255.A valid IPv6 address.An IPv4 address range in the format of 'start address - end address' with no spaces included.An IPv6 address range in the format of 'start address - end address' with no spaces included.
 func (m *WindowsFirewallRule) GetRemoteAddressRanges()([]string) {
-    return m.remoteAddressRanges
+    val, err := m.GetBackingStore().Get("remoteAddressRanges")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetRemotePortRanges gets the remotePortRanges property value. List of remote port ranges. For example, '100-120', '200', '300-320'. If not specified, the default is All.
 func (m *WindowsFirewallRule) GetRemotePortRanges()([]string) {
-    return m.remotePortRanges
+    val, err := m.GetBackingStore().Get("remotePortRanges")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetServiceName gets the serviceName property value. The name used in cases when a service, not an application, is sending or receiving traffic.
 func (m *WindowsFirewallRule) GetServiceName()(*string) {
-    return m.serviceName
+    val, err := m.GetBackingStore().Get("serviceName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTrafficDirection gets the trafficDirection property value. Firewall rule traffic directions.
 func (m *WindowsFirewallRule) GetTrafficDirection()(*WindowsFirewallRuleTrafficDirectionType) {
-    return m.trafficDirection
+    val, err := m.GetBackingStore().Get("trafficDirection")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WindowsFirewallRuleTrafficDirectionType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsFirewallRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -436,73 +535,173 @@ func (m *WindowsFirewallRule) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAction sets the action property value. State Management Setting.
 func (m *WindowsFirewallRule) SetAction(value *StateManagementSetting)() {
-    m.action = value
+    err := m.GetBackingStore().Set("action", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsFirewallRule) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *WindowsFirewallRule) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDescription sets the description property value. The description of the rule.
 func (m *WindowsFirewallRule) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the rule. Does not need to be unique.
 func (m *WindowsFirewallRule) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEdgeTraversal sets the edgeTraversal property value. State Management Setting.
 func (m *WindowsFirewallRule) SetEdgeTraversal(value *StateManagementSetting)() {
-    m.edgeTraversal = value
+    err := m.GetBackingStore().Set("edgeTraversal", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFilePath sets the filePath property value. The full file path of an app that's affected by the firewall rule.
 func (m *WindowsFirewallRule) SetFilePath(value *string)() {
-    m.filePath = value
+    err := m.GetBackingStore().Set("filePath", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInterfaceTypes sets the interfaceTypes property value. Flags representing firewall rule interface types.
 func (m *WindowsFirewallRule) SetInterfaceTypes(value *WindowsFirewallRuleInterfaceTypes)() {
-    m.interfaceTypes = value
+    err := m.GetBackingStore().Set("interfaceTypes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalAddressRanges sets the localAddressRanges property value. List of local addresses covered by the rule. Default is any address. Valid tokens include:'' indicates any local address. If present, this must be the only token included.A subnet can be specified using either the subnet mask or network prefix notation. If neither a subnet mask nor a network prefix is specified, the subnet mask defaults to 255.255.255.255.A valid IPv6 address.An IPv4 address range in the format of 'start address - end address' with no spaces included.An IPv6 address range in the format of 'start address - end address' with no spaces included.
 func (m *WindowsFirewallRule) SetLocalAddressRanges(value []string)() {
-    m.localAddressRanges = value
+    err := m.GetBackingStore().Set("localAddressRanges", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalPortRanges sets the localPortRanges property value. List of local port ranges. For example, '100-120', '200', '300-320'. If not specified, the default is All.
 func (m *WindowsFirewallRule) SetLocalPortRanges(value []string)() {
-    m.localPortRanges = value
+    err := m.GetBackingStore().Set("localPortRanges", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalUserAuthorizations sets the localUserAuthorizations property value. Specifies the list of authorized local users for the app container. This is a string in Security Descriptor Definition Language (SDDL) format.
 func (m *WindowsFirewallRule) SetLocalUserAuthorizations(value *string)() {
-    m.localUserAuthorizations = value
+    err := m.GetBackingStore().Set("localUserAuthorizations", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *WindowsFirewallRule) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPackageFamilyName sets the packageFamilyName property value. The package family name of a Microsoft Store application that's affected by the firewall rule.
 func (m *WindowsFirewallRule) SetPackageFamilyName(value *string)() {
-    m.packageFamilyName = value
+    err := m.GetBackingStore().Set("packageFamilyName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProfileTypes sets the profileTypes property value. Flags representing which network profile types apply to a firewall rule.
 func (m *WindowsFirewallRule) SetProfileTypes(value *WindowsFirewallRuleNetworkProfileTypes)() {
-    m.profileTypes = value
+    err := m.GetBackingStore().Set("profileTypes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProtocol sets the protocol property value. 0-255 number representing the IP protocol (TCP = 6, UDP = 17). If not specified, the default is All. Valid values 0 to 255
 func (m *WindowsFirewallRule) SetProtocol(value *int32)() {
-    m.protocol = value
+    err := m.GetBackingStore().Set("protocol", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRemoteAddressRanges sets the remoteAddressRanges property value. List of tokens specifying the remote addresses covered by the rule. Tokens are case insensitive. Default is any address. Valid tokens include:'' indicates any remote address. If present, this must be the only token included.'Defaultgateway''DHCP''DNS''WINS''Intranet' (supported on Windows versions 1809+)'RmtIntranet' (supported on Windows versions 1809+)'Internet' (supported on Windows versions 1809+)'Ply2Renders' (supported on Windows versions 1809+)'LocalSubnet' indicates any local address on the local subnet.A subnet can be specified using either the subnet mask or network prefix notation. If neither a subnet mask nor a network prefix is specified, the subnet mask defaults to 255.255.255.255.A valid IPv6 address.An IPv4 address range in the format of 'start address - end address' with no spaces included.An IPv6 address range in the format of 'start address - end address' with no spaces included.
 func (m *WindowsFirewallRule) SetRemoteAddressRanges(value []string)() {
-    m.remoteAddressRanges = value
+    err := m.GetBackingStore().Set("remoteAddressRanges", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRemotePortRanges sets the remotePortRanges property value. List of remote port ranges. For example, '100-120', '200', '300-320'. If not specified, the default is All.
 func (m *WindowsFirewallRule) SetRemotePortRanges(value []string)() {
-    m.remotePortRanges = value
+    err := m.GetBackingStore().Set("remotePortRanges", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetServiceName sets the serviceName property value. The name used in cases when a service, not an application, is sending or receiving traffic.
 func (m *WindowsFirewallRule) SetServiceName(value *string)() {
-    m.serviceName = value
+    err := m.GetBackingStore().Set("serviceName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTrafficDirection sets the trafficDirection property value. Firewall rule traffic directions.
 func (m *WindowsFirewallRule) SetTrafficDirection(value *WindowsFirewallRuleTrafficDirectionType)() {
-    m.trafficDirection = value
+    err := m.GetBackingStore().Set("trafficDirection", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsFirewallRuleable 
+type WindowsFirewallRuleable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAction()(*StateManagementSetting)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetEdgeTraversal()(*StateManagementSetting)
+    GetFilePath()(*string)
+    GetInterfaceTypes()(*WindowsFirewallRuleInterfaceTypes)
+    GetLocalAddressRanges()([]string)
+    GetLocalPortRanges()([]string)
+    GetLocalUserAuthorizations()(*string)
+    GetOdataType()(*string)
+    GetPackageFamilyName()(*string)
+    GetProfileTypes()(*WindowsFirewallRuleNetworkProfileTypes)
+    GetProtocol()(*int32)
+    GetRemoteAddressRanges()([]string)
+    GetRemotePortRanges()([]string)
+    GetServiceName()(*string)
+    GetTrafficDirection()(*WindowsFirewallRuleTrafficDirectionType)
+    SetAction(value *StateManagementSetting)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetEdgeTraversal(value *StateManagementSetting)()
+    SetFilePath(value *string)()
+    SetInterfaceTypes(value *WindowsFirewallRuleInterfaceTypes)()
+    SetLocalAddressRanges(value []string)()
+    SetLocalPortRanges(value []string)()
+    SetLocalUserAuthorizations(value *string)()
+    SetOdataType(value *string)()
+    SetPackageFamilyName(value *string)()
+    SetProfileTypes(value *WindowsFirewallRuleNetworkProfileTypes)()
+    SetProtocol(value *int32)()
+    SetRemoteAddressRanges(value []string)()
+    SetRemotePortRanges(value []string)()
+    SetServiceName(value *string)()
+    SetTrafficDirection(value *WindowsFirewallRuleTrafficDirectionType)()
 }

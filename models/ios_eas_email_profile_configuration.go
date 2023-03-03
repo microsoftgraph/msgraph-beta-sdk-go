@@ -7,68 +7,14 @@ import (
 // IosEasEmailProfileConfiguration 
 type IosEasEmailProfileConfiguration struct {
     EasEmailProfileConfigurationBase
-    // Account name.
-    accountName *string
-    // Authentication method for this Email profile. Possible values are: usernameAndPassword, certificate, derivedCredential.
-    authenticationMethod *EasAuthenticationMethod
-    // Indicates whether or not to block moving messages to other email accounts.
-    blockMovingMessagesToOtherEmailAccounts *bool
-    // Indicates whether or not to block sending email from third party apps.
-    blockSendingEmailFromThirdPartyApps *bool
-    // Indicates whether or not to block syncing recently used email addresses, for instance - when composing new email.
-    blockSyncingRecentlyUsedEmailAddresses *bool
-    // Tenant level settings for the Derived Credentials to be used for authentication.
-    derivedCredentialSettings DeviceManagementDerivedCredentialSettingsable
-    // Possible values for email sync duration.
-    durationOfEmailToSync *EmailSyncDuration
-    // Exchange data to sync. Possible values are: none, calendars, contacts, email, notes, reminders.
-    easServices *EasServices
-    // Allow users to change sync settings.
-    easServicesUserOverrideEnabled *bool
-    // Possible values for username source or email source.
-    emailAddressSource *UserEmailSource
-    // Encryption Certificate type for this Email profile. Possible values are: none, certificate, derivedCredential.
-    encryptionCertificateType *EmailCertificateType
-    // Exchange location that (URL) that the native mail app connects to.
-    hostName *string
-    // Identity certificate.
-    identityCertificate IosCertificateProfileBaseable
-    // Profile ID of the Per-App VPN policy to be used to access emails from the native Mail client
-    perAppVPNProfileId *string
-    // Indicates whether or not to use S/MIME certificate.
-    requireSmime *bool
-    // Indicates whether or not to use SSL.
-    requireSsl *bool
-    // Signing Certificate type for this Email profile. Possible values are: none, certificate, derivedCredential.
-    signingCertificateType *EmailCertificateType
-    // Indicates whether or not to allow unencrypted emails.
-    smimeEnablePerMessageSwitch *bool
-    // If set to true S/MIME encryption is enabled by default.
-    smimeEncryptByDefaultEnabled *bool
-    // If set to true, the user can toggle the encryption by default setting.
-    smimeEncryptByDefaultUserOverrideEnabled *bool
-    // S/MIME encryption certificate.
-    smimeEncryptionCertificate IosCertificateProfileable
-    // If set to true the user can select the S/MIME encryption identity.
-    smimeEncryptionCertificateUserOverrideEnabled *bool
-    // S/MIME signing certificate.
-    smimeSigningCertificate IosCertificateProfileable
-    // If set to true, the user can select the signing identity.
-    smimeSigningCertificateUserOverrideEnabled *bool
-    // If set to true S/MIME signing is enabled for this account
-    smimeSigningEnabled *bool
-    // If set to true, the user can toggle S/MIME signing on or off.
-    smimeSigningUserOverrideEnabled *bool
-    // Specifies whether the connection should use OAuth for authentication.
-    useOAuth *bool
 }
 // NewIosEasEmailProfileConfiguration instantiates a new IosEasEmailProfileConfiguration and sets the default values.
 func NewIosEasEmailProfileConfiguration()(*IosEasEmailProfileConfiguration) {
     m := &IosEasEmailProfileConfiguration{
         EasEmailProfileConfigurationBase: *NewEasEmailProfileConfigurationBase(),
     }
-    odataTypeValue := "#microsoft.graph.iosEasEmailProfileConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.iosEasEmailProfileConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateIosEasEmailProfileConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -77,47 +23,124 @@ func CreateIosEasEmailProfileConfigurationFromDiscriminatorValue(parseNode i878a
 }
 // GetAccountName gets the accountName property value. Account name.
 func (m *IosEasEmailProfileConfiguration) GetAccountName()(*string) {
-    return m.accountName
+    val, err := m.GetBackingStore().Get("accountName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. Authentication method for this Email profile. Possible values are: usernameAndPassword, certificate, derivedCredential.
 func (m *IosEasEmailProfileConfiguration) GetAuthenticationMethod()(*EasAuthenticationMethod) {
-    return m.authenticationMethod
+    val, err := m.GetBackingStore().Get("authenticationMethod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*EasAuthenticationMethod)
+    }
+    return nil
 }
 // GetBlockMovingMessagesToOtherEmailAccounts gets the blockMovingMessagesToOtherEmailAccounts property value. Indicates whether or not to block moving messages to other email accounts.
 func (m *IosEasEmailProfileConfiguration) GetBlockMovingMessagesToOtherEmailAccounts()(*bool) {
-    return m.blockMovingMessagesToOtherEmailAccounts
+    val, err := m.GetBackingStore().Get("blockMovingMessagesToOtherEmailAccounts")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetBlockSendingEmailFromThirdPartyApps gets the blockSendingEmailFromThirdPartyApps property value. Indicates whether or not to block sending email from third party apps.
 func (m *IosEasEmailProfileConfiguration) GetBlockSendingEmailFromThirdPartyApps()(*bool) {
-    return m.blockSendingEmailFromThirdPartyApps
+    val, err := m.GetBackingStore().Get("blockSendingEmailFromThirdPartyApps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetBlockSyncingRecentlyUsedEmailAddresses gets the blockSyncingRecentlyUsedEmailAddresses property value. Indicates whether or not to block syncing recently used email addresses, for instance - when composing new email.
 func (m *IosEasEmailProfileConfiguration) GetBlockSyncingRecentlyUsedEmailAddresses()(*bool) {
-    return m.blockSyncingRecentlyUsedEmailAddresses
+    val, err := m.GetBackingStore().Get("blockSyncingRecentlyUsedEmailAddresses")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDerivedCredentialSettings gets the derivedCredentialSettings property value. Tenant level settings for the Derived Credentials to be used for authentication.
 func (m *IosEasEmailProfileConfiguration) GetDerivedCredentialSettings()(DeviceManagementDerivedCredentialSettingsable) {
-    return m.derivedCredentialSettings
+    val, err := m.GetBackingStore().Get("derivedCredentialSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementDerivedCredentialSettingsable)
+    }
+    return nil
 }
 // GetDurationOfEmailToSync gets the durationOfEmailToSync property value. Possible values for email sync duration.
 func (m *IosEasEmailProfileConfiguration) GetDurationOfEmailToSync()(*EmailSyncDuration) {
-    return m.durationOfEmailToSync
+    val, err := m.GetBackingStore().Get("durationOfEmailToSync")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*EmailSyncDuration)
+    }
+    return nil
 }
 // GetEasServices gets the easServices property value. Exchange data to sync. Possible values are: none, calendars, contacts, email, notes, reminders.
 func (m *IosEasEmailProfileConfiguration) GetEasServices()(*EasServices) {
-    return m.easServices
+    val, err := m.GetBackingStore().Get("easServices")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*EasServices)
+    }
+    return nil
 }
 // GetEasServicesUserOverrideEnabled gets the easServicesUserOverrideEnabled property value. Allow users to change sync settings.
 func (m *IosEasEmailProfileConfiguration) GetEasServicesUserOverrideEnabled()(*bool) {
-    return m.easServicesUserOverrideEnabled
+    val, err := m.GetBackingStore().Get("easServicesUserOverrideEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEmailAddressSource gets the emailAddressSource property value. Possible values for username source or email source.
 func (m *IosEasEmailProfileConfiguration) GetEmailAddressSource()(*UserEmailSource) {
-    return m.emailAddressSource
+    val, err := m.GetBackingStore().Get("emailAddressSource")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*UserEmailSource)
+    }
+    return nil
 }
 // GetEncryptionCertificateType gets the encryptionCertificateType property value. Encryption Certificate type for this Email profile. Possible values are: none, certificate, derivedCredential.
 func (m *IosEasEmailProfileConfiguration) GetEncryptionCertificateType()(*EmailCertificateType) {
-    return m.encryptionCertificateType
+    val, err := m.GetBackingStore().Get("encryptionCertificateType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*EmailCertificateType)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosEasEmailProfileConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -396,67 +419,179 @@ func (m *IosEasEmailProfileConfiguration) GetFieldDeserializers()(map[string]fun
 }
 // GetHostName gets the hostName property value. Exchange location that (URL) that the native mail app connects to.
 func (m *IosEasEmailProfileConfiguration) GetHostName()(*string) {
-    return m.hostName
+    val, err := m.GetBackingStore().Get("hostName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIdentityCertificate gets the identityCertificate property value. Identity certificate.
 func (m *IosEasEmailProfileConfiguration) GetIdentityCertificate()(IosCertificateProfileBaseable) {
-    return m.identityCertificate
+    val, err := m.GetBackingStore().Get("identityCertificate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IosCertificateProfileBaseable)
+    }
+    return nil
 }
 // GetPerAppVPNProfileId gets the perAppVPNProfileId property value. Profile ID of the Per-App VPN policy to be used to access emails from the native Mail client
 func (m *IosEasEmailProfileConfiguration) GetPerAppVPNProfileId()(*string) {
-    return m.perAppVPNProfileId
+    val, err := m.GetBackingStore().Get("perAppVPNProfileId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRequireSmime gets the requireSmime property value. Indicates whether or not to use S/MIME certificate.
 func (m *IosEasEmailProfileConfiguration) GetRequireSmime()(*bool) {
-    return m.requireSmime
+    val, err := m.GetBackingStore().Get("requireSmime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetRequireSsl gets the requireSsl property value. Indicates whether or not to use SSL.
 func (m *IosEasEmailProfileConfiguration) GetRequireSsl()(*bool) {
-    return m.requireSsl
+    val, err := m.GetBackingStore().Get("requireSsl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSigningCertificateType gets the signingCertificateType property value. Signing Certificate type for this Email profile. Possible values are: none, certificate, derivedCredential.
 func (m *IosEasEmailProfileConfiguration) GetSigningCertificateType()(*EmailCertificateType) {
-    return m.signingCertificateType
+    val, err := m.GetBackingStore().Get("signingCertificateType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*EmailCertificateType)
+    }
+    return nil
 }
 // GetSmimeEnablePerMessageSwitch gets the smimeEnablePerMessageSwitch property value. Indicates whether or not to allow unencrypted emails.
 func (m *IosEasEmailProfileConfiguration) GetSmimeEnablePerMessageSwitch()(*bool) {
-    return m.smimeEnablePerMessageSwitch
+    val, err := m.GetBackingStore().Get("smimeEnablePerMessageSwitch")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSmimeEncryptByDefaultEnabled gets the smimeEncryptByDefaultEnabled property value. If set to true S/MIME encryption is enabled by default.
 func (m *IosEasEmailProfileConfiguration) GetSmimeEncryptByDefaultEnabled()(*bool) {
-    return m.smimeEncryptByDefaultEnabled
+    val, err := m.GetBackingStore().Get("smimeEncryptByDefaultEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSmimeEncryptByDefaultUserOverrideEnabled gets the smimeEncryptByDefaultUserOverrideEnabled property value. If set to true, the user can toggle the encryption by default setting.
 func (m *IosEasEmailProfileConfiguration) GetSmimeEncryptByDefaultUserOverrideEnabled()(*bool) {
-    return m.smimeEncryptByDefaultUserOverrideEnabled
+    val, err := m.GetBackingStore().Get("smimeEncryptByDefaultUserOverrideEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSmimeEncryptionCertificate gets the smimeEncryptionCertificate property value. S/MIME encryption certificate.
 func (m *IosEasEmailProfileConfiguration) GetSmimeEncryptionCertificate()(IosCertificateProfileable) {
-    return m.smimeEncryptionCertificate
+    val, err := m.GetBackingStore().Get("smimeEncryptionCertificate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IosCertificateProfileable)
+    }
+    return nil
 }
 // GetSmimeEncryptionCertificateUserOverrideEnabled gets the smimeEncryptionCertificateUserOverrideEnabled property value. If set to true the user can select the S/MIME encryption identity.
 func (m *IosEasEmailProfileConfiguration) GetSmimeEncryptionCertificateUserOverrideEnabled()(*bool) {
-    return m.smimeEncryptionCertificateUserOverrideEnabled
+    val, err := m.GetBackingStore().Get("smimeEncryptionCertificateUserOverrideEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSmimeSigningCertificate gets the smimeSigningCertificate property value. S/MIME signing certificate.
 func (m *IosEasEmailProfileConfiguration) GetSmimeSigningCertificate()(IosCertificateProfileable) {
-    return m.smimeSigningCertificate
+    val, err := m.GetBackingStore().Get("smimeSigningCertificate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IosCertificateProfileable)
+    }
+    return nil
 }
 // GetSmimeSigningCertificateUserOverrideEnabled gets the smimeSigningCertificateUserOverrideEnabled property value. If set to true, the user can select the signing identity.
 func (m *IosEasEmailProfileConfiguration) GetSmimeSigningCertificateUserOverrideEnabled()(*bool) {
-    return m.smimeSigningCertificateUserOverrideEnabled
+    val, err := m.GetBackingStore().Get("smimeSigningCertificateUserOverrideEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSmimeSigningEnabled gets the smimeSigningEnabled property value. If set to true S/MIME signing is enabled for this account
 func (m *IosEasEmailProfileConfiguration) GetSmimeSigningEnabled()(*bool) {
-    return m.smimeSigningEnabled
+    val, err := m.GetBackingStore().Get("smimeSigningEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSmimeSigningUserOverrideEnabled gets the smimeSigningUserOverrideEnabled property value. If set to true, the user can toggle S/MIME signing on or off.
 func (m *IosEasEmailProfileConfiguration) GetSmimeSigningUserOverrideEnabled()(*bool) {
-    return m.smimeSigningUserOverrideEnabled
+    val, err := m.GetBackingStore().Get("smimeSigningUserOverrideEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetUseOAuth gets the useOAuth property value. Specifies whether the connection should use OAuth for authentication.
 func (m *IosEasEmailProfileConfiguration) GetUseOAuth()(*bool) {
-    return m.useOAuth
+    val, err := m.GetBackingStore().Get("useOAuth")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosEasEmailProfileConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -636,109 +771,249 @@ func (m *IosEasEmailProfileConfiguration) Serialize(writer i878a80d2330e89d26896
 }
 // SetAccountName sets the accountName property value. Account name.
 func (m *IosEasEmailProfileConfiguration) SetAccountName(value *string)() {
-    m.accountName = value
+    err := m.GetBackingStore().Set("accountName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAuthenticationMethod sets the authenticationMethod property value. Authentication method for this Email profile. Possible values are: usernameAndPassword, certificate, derivedCredential.
 func (m *IosEasEmailProfileConfiguration) SetAuthenticationMethod(value *EasAuthenticationMethod)() {
-    m.authenticationMethod = value
+    err := m.GetBackingStore().Set("authenticationMethod", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBlockMovingMessagesToOtherEmailAccounts sets the blockMovingMessagesToOtherEmailAccounts property value. Indicates whether or not to block moving messages to other email accounts.
 func (m *IosEasEmailProfileConfiguration) SetBlockMovingMessagesToOtherEmailAccounts(value *bool)() {
-    m.blockMovingMessagesToOtherEmailAccounts = value
+    err := m.GetBackingStore().Set("blockMovingMessagesToOtherEmailAccounts", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBlockSendingEmailFromThirdPartyApps sets the blockSendingEmailFromThirdPartyApps property value. Indicates whether or not to block sending email from third party apps.
 func (m *IosEasEmailProfileConfiguration) SetBlockSendingEmailFromThirdPartyApps(value *bool)() {
-    m.blockSendingEmailFromThirdPartyApps = value
+    err := m.GetBackingStore().Set("blockSendingEmailFromThirdPartyApps", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBlockSyncingRecentlyUsedEmailAddresses sets the blockSyncingRecentlyUsedEmailAddresses property value. Indicates whether or not to block syncing recently used email addresses, for instance - when composing new email.
 func (m *IosEasEmailProfileConfiguration) SetBlockSyncingRecentlyUsedEmailAddresses(value *bool)() {
-    m.blockSyncingRecentlyUsedEmailAddresses = value
+    err := m.GetBackingStore().Set("blockSyncingRecentlyUsedEmailAddresses", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDerivedCredentialSettings sets the derivedCredentialSettings property value. Tenant level settings for the Derived Credentials to be used for authentication.
 func (m *IosEasEmailProfileConfiguration) SetDerivedCredentialSettings(value DeviceManagementDerivedCredentialSettingsable)() {
-    m.derivedCredentialSettings = value
+    err := m.GetBackingStore().Set("derivedCredentialSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDurationOfEmailToSync sets the durationOfEmailToSync property value. Possible values for email sync duration.
 func (m *IosEasEmailProfileConfiguration) SetDurationOfEmailToSync(value *EmailSyncDuration)() {
-    m.durationOfEmailToSync = value
+    err := m.GetBackingStore().Set("durationOfEmailToSync", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEasServices sets the easServices property value. Exchange data to sync. Possible values are: none, calendars, contacts, email, notes, reminders.
 func (m *IosEasEmailProfileConfiguration) SetEasServices(value *EasServices)() {
-    m.easServices = value
+    err := m.GetBackingStore().Set("easServices", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEasServicesUserOverrideEnabled sets the easServicesUserOverrideEnabled property value. Allow users to change sync settings.
 func (m *IosEasEmailProfileConfiguration) SetEasServicesUserOverrideEnabled(value *bool)() {
-    m.easServicesUserOverrideEnabled = value
+    err := m.GetBackingStore().Set("easServicesUserOverrideEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEmailAddressSource sets the emailAddressSource property value. Possible values for username source or email source.
 func (m *IosEasEmailProfileConfiguration) SetEmailAddressSource(value *UserEmailSource)() {
-    m.emailAddressSource = value
+    err := m.GetBackingStore().Set("emailAddressSource", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEncryptionCertificateType sets the encryptionCertificateType property value. Encryption Certificate type for this Email profile. Possible values are: none, certificate, derivedCredential.
 func (m *IosEasEmailProfileConfiguration) SetEncryptionCertificateType(value *EmailCertificateType)() {
-    m.encryptionCertificateType = value
+    err := m.GetBackingStore().Set("encryptionCertificateType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHostName sets the hostName property value. Exchange location that (URL) that the native mail app connects to.
 func (m *IosEasEmailProfileConfiguration) SetHostName(value *string)() {
-    m.hostName = value
+    err := m.GetBackingStore().Set("hostName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentityCertificate sets the identityCertificate property value. Identity certificate.
 func (m *IosEasEmailProfileConfiguration) SetIdentityCertificate(value IosCertificateProfileBaseable)() {
-    m.identityCertificate = value
+    err := m.GetBackingStore().Set("identityCertificate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPerAppVPNProfileId sets the perAppVPNProfileId property value. Profile ID of the Per-App VPN policy to be used to access emails from the native Mail client
 func (m *IosEasEmailProfileConfiguration) SetPerAppVPNProfileId(value *string)() {
-    m.perAppVPNProfileId = value
+    err := m.GetBackingStore().Set("perAppVPNProfileId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRequireSmime sets the requireSmime property value. Indicates whether or not to use S/MIME certificate.
 func (m *IosEasEmailProfileConfiguration) SetRequireSmime(value *bool)() {
-    m.requireSmime = value
+    err := m.GetBackingStore().Set("requireSmime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRequireSsl sets the requireSsl property value. Indicates whether or not to use SSL.
 func (m *IosEasEmailProfileConfiguration) SetRequireSsl(value *bool)() {
-    m.requireSsl = value
+    err := m.GetBackingStore().Set("requireSsl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSigningCertificateType sets the signingCertificateType property value. Signing Certificate type for this Email profile. Possible values are: none, certificate, derivedCredential.
 func (m *IosEasEmailProfileConfiguration) SetSigningCertificateType(value *EmailCertificateType)() {
-    m.signingCertificateType = value
+    err := m.GetBackingStore().Set("signingCertificateType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSmimeEnablePerMessageSwitch sets the smimeEnablePerMessageSwitch property value. Indicates whether or not to allow unencrypted emails.
 func (m *IosEasEmailProfileConfiguration) SetSmimeEnablePerMessageSwitch(value *bool)() {
-    m.smimeEnablePerMessageSwitch = value
+    err := m.GetBackingStore().Set("smimeEnablePerMessageSwitch", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSmimeEncryptByDefaultEnabled sets the smimeEncryptByDefaultEnabled property value. If set to true S/MIME encryption is enabled by default.
 func (m *IosEasEmailProfileConfiguration) SetSmimeEncryptByDefaultEnabled(value *bool)() {
-    m.smimeEncryptByDefaultEnabled = value
+    err := m.GetBackingStore().Set("smimeEncryptByDefaultEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSmimeEncryptByDefaultUserOverrideEnabled sets the smimeEncryptByDefaultUserOverrideEnabled property value. If set to true, the user can toggle the encryption by default setting.
 func (m *IosEasEmailProfileConfiguration) SetSmimeEncryptByDefaultUserOverrideEnabled(value *bool)() {
-    m.smimeEncryptByDefaultUserOverrideEnabled = value
+    err := m.GetBackingStore().Set("smimeEncryptByDefaultUserOverrideEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSmimeEncryptionCertificate sets the smimeEncryptionCertificate property value. S/MIME encryption certificate.
 func (m *IosEasEmailProfileConfiguration) SetSmimeEncryptionCertificate(value IosCertificateProfileable)() {
-    m.smimeEncryptionCertificate = value
+    err := m.GetBackingStore().Set("smimeEncryptionCertificate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSmimeEncryptionCertificateUserOverrideEnabled sets the smimeEncryptionCertificateUserOverrideEnabled property value. If set to true the user can select the S/MIME encryption identity.
 func (m *IosEasEmailProfileConfiguration) SetSmimeEncryptionCertificateUserOverrideEnabled(value *bool)() {
-    m.smimeEncryptionCertificateUserOverrideEnabled = value
+    err := m.GetBackingStore().Set("smimeEncryptionCertificateUserOverrideEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSmimeSigningCertificate sets the smimeSigningCertificate property value. S/MIME signing certificate.
 func (m *IosEasEmailProfileConfiguration) SetSmimeSigningCertificate(value IosCertificateProfileable)() {
-    m.smimeSigningCertificate = value
+    err := m.GetBackingStore().Set("smimeSigningCertificate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSmimeSigningCertificateUserOverrideEnabled sets the smimeSigningCertificateUserOverrideEnabled property value. If set to true, the user can select the signing identity.
 func (m *IosEasEmailProfileConfiguration) SetSmimeSigningCertificateUserOverrideEnabled(value *bool)() {
-    m.smimeSigningCertificateUserOverrideEnabled = value
+    err := m.GetBackingStore().Set("smimeSigningCertificateUserOverrideEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSmimeSigningEnabled sets the smimeSigningEnabled property value. If set to true S/MIME signing is enabled for this account
 func (m *IosEasEmailProfileConfiguration) SetSmimeSigningEnabled(value *bool)() {
-    m.smimeSigningEnabled = value
+    err := m.GetBackingStore().Set("smimeSigningEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSmimeSigningUserOverrideEnabled sets the smimeSigningUserOverrideEnabled property value. If set to true, the user can toggle S/MIME signing on or off.
 func (m *IosEasEmailProfileConfiguration) SetSmimeSigningUserOverrideEnabled(value *bool)() {
-    m.smimeSigningUserOverrideEnabled = value
+    err := m.GetBackingStore().Set("smimeSigningUserOverrideEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUseOAuth sets the useOAuth property value. Specifies whether the connection should use OAuth for authentication.
 func (m *IosEasEmailProfileConfiguration) SetUseOAuth(value *bool)() {
-    m.useOAuth = value
+    err := m.GetBackingStore().Set("useOAuth", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosEasEmailProfileConfigurationable 
+type IosEasEmailProfileConfigurationable interface {
+    EasEmailProfileConfigurationBaseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAccountName()(*string)
+    GetAuthenticationMethod()(*EasAuthenticationMethod)
+    GetBlockMovingMessagesToOtherEmailAccounts()(*bool)
+    GetBlockSendingEmailFromThirdPartyApps()(*bool)
+    GetBlockSyncingRecentlyUsedEmailAddresses()(*bool)
+    GetDerivedCredentialSettings()(DeviceManagementDerivedCredentialSettingsable)
+    GetDurationOfEmailToSync()(*EmailSyncDuration)
+    GetEasServices()(*EasServices)
+    GetEasServicesUserOverrideEnabled()(*bool)
+    GetEmailAddressSource()(*UserEmailSource)
+    GetEncryptionCertificateType()(*EmailCertificateType)
+    GetHostName()(*string)
+    GetIdentityCertificate()(IosCertificateProfileBaseable)
+    GetPerAppVPNProfileId()(*string)
+    GetRequireSmime()(*bool)
+    GetRequireSsl()(*bool)
+    GetSigningCertificateType()(*EmailCertificateType)
+    GetSmimeEnablePerMessageSwitch()(*bool)
+    GetSmimeEncryptByDefaultEnabled()(*bool)
+    GetSmimeEncryptByDefaultUserOverrideEnabled()(*bool)
+    GetSmimeEncryptionCertificate()(IosCertificateProfileable)
+    GetSmimeEncryptionCertificateUserOverrideEnabled()(*bool)
+    GetSmimeSigningCertificate()(IosCertificateProfileable)
+    GetSmimeSigningCertificateUserOverrideEnabled()(*bool)
+    GetSmimeSigningEnabled()(*bool)
+    GetSmimeSigningUserOverrideEnabled()(*bool)
+    GetUseOAuth()(*bool)
+    SetAccountName(value *string)()
+    SetAuthenticationMethod(value *EasAuthenticationMethod)()
+    SetBlockMovingMessagesToOtherEmailAccounts(value *bool)()
+    SetBlockSendingEmailFromThirdPartyApps(value *bool)()
+    SetBlockSyncingRecentlyUsedEmailAddresses(value *bool)()
+    SetDerivedCredentialSettings(value DeviceManagementDerivedCredentialSettingsable)()
+    SetDurationOfEmailToSync(value *EmailSyncDuration)()
+    SetEasServices(value *EasServices)()
+    SetEasServicesUserOverrideEnabled(value *bool)()
+    SetEmailAddressSource(value *UserEmailSource)()
+    SetEncryptionCertificateType(value *EmailCertificateType)()
+    SetHostName(value *string)()
+    SetIdentityCertificate(value IosCertificateProfileBaseable)()
+    SetPerAppVPNProfileId(value *string)()
+    SetRequireSmime(value *bool)()
+    SetRequireSsl(value *bool)()
+    SetSigningCertificateType(value *EmailCertificateType)()
+    SetSmimeEnablePerMessageSwitch(value *bool)()
+    SetSmimeEncryptByDefaultEnabled(value *bool)()
+    SetSmimeEncryptByDefaultUserOverrideEnabled(value *bool)()
+    SetSmimeEncryptionCertificate(value IosCertificateProfileable)()
+    SetSmimeEncryptionCertificateUserOverrideEnabled(value *bool)()
+    SetSmimeSigningCertificate(value IosCertificateProfileable)()
+    SetSmimeSigningCertificateUserOverrideEnabled(value *bool)()
+    SetSmimeSigningEnabled(value *bool)()
+    SetSmimeSigningUserOverrideEnabled(value *bool)()
+    SetUseOAuth(value *bool)()
 }

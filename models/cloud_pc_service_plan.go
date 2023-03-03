@@ -7,20 +7,10 @@ import (
 // CloudPcServicePlan 
 type CloudPcServicePlan struct {
     Entity
-    // The name for the service plan. Read-only.
-    displayName *string
-    // The size of the RAM in GB. Read-only.
-    ramInGB *int32
-    // The size of the OS Disk in GB. Read-only.
-    storageInGB *int32
     // The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
-    type_escaped *CloudPcServicePlanType
-    // The size of the user profile disk in GB. Read-only.
-    userProfileInGB *int32
-    // The number of vCPUs. Read-only.
-    vCpuCount *int32
+    TypeEscaped *CloudPcServicePlanType
 }
-// NewCloudPcServicePlan instantiates a new cloudPcServicePlan and sets the default values.
+// NewCloudPcServicePlan instantiates a new CloudPcServicePlan and sets the default values.
 func NewCloudPcServicePlan()(*CloudPcServicePlan) {
     m := &CloudPcServicePlan{
         Entity: *NewEntity(),
@@ -33,7 +23,14 @@ func CreateCloudPcServicePlanFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetDisplayName gets the displayName property value. The name for the service plan. Read-only.
 func (m *CloudPcServicePlan) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -65,6 +62,16 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetStorageInGB(val)
+        }
+        return nil
+    }
+    res["supportedSolution"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCloudPcManagementService)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSupportedSolution(val.(*CloudPcManagementService))
         }
         return nil
     }
@@ -102,23 +109,69 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetRamInGB gets the ramInGB property value. The size of the RAM in GB. Read-only.
 func (m *CloudPcServicePlan) GetRamInGB()(*int32) {
-    return m.ramInGB
+    val, err := m.GetBackingStore().Get("ramInGB")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetStorageInGB gets the storageInGB property value. The size of the OS Disk in GB. Read-only.
 func (m *CloudPcServicePlan) GetStorageInGB()(*int32) {
-    return m.storageInGB
+    val, err := m.GetBackingStore().Get("storageInGB")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetSupportedSolution gets the supportedSolution property value. The supportedSolution property
+func (m *CloudPcServicePlan) GetSupportedSolution()(*CloudPcManagementService) {
+    val, err := m.GetBackingStore().Get("supportedSolution")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcManagementService)
+    }
+    return nil
 }
 // GetType gets the type property value. The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
 func (m *CloudPcServicePlan) GetType()(*CloudPcServicePlanType) {
-    return m.type_escaped
+    val, err := m.GetBackingStore().Get("typeEscaped")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcServicePlanType)
+    }
+    return nil
 }
 // GetUserProfileInGB gets the userProfileInGB property value. The size of the user profile disk in GB. Read-only.
 func (m *CloudPcServicePlan) GetUserProfileInGB()(*int32) {
-    return m.userProfileInGB
+    val, err := m.GetBackingStore().Get("userProfileInGB")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetVCpuCount gets the vCpuCount property value. The number of vCPUs. Read-only.
 func (m *CloudPcServicePlan) GetVCpuCount()(*int32) {
-    return m.vCpuCount
+    val, err := m.GetBackingStore().Get("vCpuCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CloudPcServicePlan) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -140,6 +193,13 @@ func (m *CloudPcServicePlan) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     {
         err = writer.WriteInt32Value("storageInGB", m.GetStorageInGB())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetSupportedSolution() != nil {
+        cast := (*m.GetSupportedSolution()).String()
+        err = writer.WriteStringValue("supportedSolution", &cast)
         if err != nil {
             return err
         }
@@ -167,25 +227,69 @@ func (m *CloudPcServicePlan) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetDisplayName sets the displayName property value. The name for the service plan. Read-only.
 func (m *CloudPcServicePlan) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRamInGB sets the ramInGB property value. The size of the RAM in GB. Read-only.
 func (m *CloudPcServicePlan) SetRamInGB(value *int32)() {
-    m.ramInGB = value
+    err := m.GetBackingStore().Set("ramInGB", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStorageInGB sets the storageInGB property value. The size of the OS Disk in GB. Read-only.
 func (m *CloudPcServicePlan) SetStorageInGB(value *int32)() {
-    m.storageInGB = value
+    err := m.GetBackingStore().Set("storageInGB", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSupportedSolution sets the supportedSolution property value. The supportedSolution property
+func (m *CloudPcServicePlan) SetSupportedSolution(value *CloudPcManagementService)() {
+    err := m.GetBackingStore().Set("supportedSolution", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetType sets the type property value. The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
 func (m *CloudPcServicePlan) SetType(value *CloudPcServicePlanType)() {
-    m.type_escaped = value
+    err := m.GetBackingStore().Set("typeEscaped", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserProfileInGB sets the userProfileInGB property value. The size of the user profile disk in GB. Read-only.
 func (m *CloudPcServicePlan) SetUserProfileInGB(value *int32)() {
-    m.userProfileInGB = value
+    err := m.GetBackingStore().Set("userProfileInGB", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVCpuCount sets the vCpuCount property value. The number of vCPUs. Read-only.
 func (m *CloudPcServicePlan) SetVCpuCount(value *int32)() {
-    m.vCpuCount = value
+    err := m.GetBackingStore().Set("vCpuCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CloudPcServicePlanable 
+type CloudPcServicePlanable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDisplayName()(*string)
+    GetRamInGB()(*int32)
+    GetStorageInGB()(*int32)
+    GetSupportedSolution()(*CloudPcManagementService)
+    GetType()(*CloudPcServicePlanType)
+    GetUserProfileInGB()(*int32)
+    GetVCpuCount()(*int32)
+    SetDisplayName(value *string)()
+    SetRamInGB(value *int32)()
+    SetStorageInGB(value *int32)()
+    SetSupportedSolution(value *CloudPcManagementService)()
+    SetType(value *CloudPcServicePlanType)()
+    SetUserProfileInGB(value *int32)()
+    SetVCpuCount(value *int32)()
 }

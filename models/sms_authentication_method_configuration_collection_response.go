@@ -7,8 +7,6 @@ import (
 // SmsAuthenticationMethodConfigurationCollectionResponse 
 type SmsAuthenticationMethodConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []SmsAuthenticationMethodConfigurationable
 }
 // NewSmsAuthenticationMethodConfigurationCollectionResponse instantiates a new SmsAuthenticationMethodConfigurationCollectionResponse and sets the default values.
 func NewSmsAuthenticationMethodConfigurationCollectionResponse()(*SmsAuthenticationMethodConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *SmsAuthenticationMethodConfigurationCollectionResponse) GetFieldDeseria
 }
 // GetValue gets the value property value. The value property
 func (m *SmsAuthenticationMethodConfigurationCollectionResponse) GetValue()([]SmsAuthenticationMethodConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SmsAuthenticationMethodConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SmsAuthenticationMethodConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *SmsAuthenticationMethodConfigurationCollectionResponse) Serialize(write
 }
 // SetValue sets the value property value. The value property
 func (m *SmsAuthenticationMethodConfigurationCollectionResponse) SetValue(value []SmsAuthenticationMethodConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SmsAuthenticationMethodConfigurationCollectionResponseable 
+type SmsAuthenticationMethodConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]SmsAuthenticationMethodConfigurationable)
+    SetValue(value []SmsAuthenticationMethodConfigurationable)()
 }

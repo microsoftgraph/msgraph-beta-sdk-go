@@ -45,7 +45,7 @@ type ReportsGetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGetReque
 func NewReportsGetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, period *string)(*ReportsGetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder) {
     m := &ReportsGetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/print/reports/microsoft.graph.getOffice365GroupsActivityFileCounts(period='{period}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
+    m.urlTemplate = "{+baseurl}/print/reports/getOffice365GroupsActivityFileCounts(period='{period}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -53,8 +53,8 @@ func NewReportsGetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderInter
     if period != nil {
         urlTplParams["period"] = *period
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewReportsGetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder instantiates a new GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder and sets the default values.

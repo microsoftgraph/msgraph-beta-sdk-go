@@ -55,8 +55,8 @@ func NewRiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewRiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilder instantiates a new RiskyServicePrincipalItemRequestBuilder and sets the default values.
@@ -102,7 +102,7 @@ func (m *RiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilder) Get(ctx 
 }
 // History provides operations to manage the history property of the microsoft.graph.riskyServicePrincipal entity.
 func (m *RiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilder) History()(*RiskyServicePrincipalsItemHistoryRequestBuilder) {
-    return NewRiskyServicePrincipalsItemHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewRiskyServicePrincipalsItemHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // HistoryById provides operations to manage the history property of the microsoft.graph.riskyServicePrincipal entity.
 func (m *RiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilder) HistoryById(id string)(*RiskyServicePrincipalsItemHistoryRiskyServicePrincipalHistoryItemItemRequestBuilder) {
@@ -113,7 +113,7 @@ func (m *RiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilder) HistoryB
     if id != "" {
         urlTplParams["riskyServicePrincipalHistoryItem%2Did"] = id
     }
-    return NewRiskyServicePrincipalsItemHistoryRiskyServicePrincipalHistoryItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewRiskyServicePrincipalsItemHistoryRiskyServicePrincipalHistoryItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch update the navigation property riskyServicePrincipals in identityProtection
 func (m *RiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalable, requestConfiguration *RiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalable, error) {
@@ -169,7 +169,10 @@ func (m *RiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilder) ToPatchR
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

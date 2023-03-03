@@ -55,8 +55,8 @@ func NewMobileAppTroubleshootingEventsItemAppLogCollectionRequestsAppLogCollecti
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMobileAppTroubleshootingEventsItemAppLogCollectionRequestsAppLogCollectionRequestItemRequestBuilder instantiates a new AppLogCollectionRequestItemRequestBuilder and sets the default values.
@@ -67,7 +67,7 @@ func NewMobileAppTroubleshootingEventsItemAppLogCollectionRequestsAppLogCollecti
 }
 // CreateDownloadUrl provides operations to call the createDownloadUrl method.
 func (m *MobileAppTroubleshootingEventsItemAppLogCollectionRequestsAppLogCollectionRequestItemRequestBuilder) CreateDownloadUrl()(*MobileAppTroubleshootingEventsItemAppLogCollectionRequestsItemCreateDownloadUrlRequestBuilder) {
-    return NewMobileAppTroubleshootingEventsItemAppLogCollectionRequestsItemCreateDownloadUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMobileAppTroubleshootingEventsItemAppLogCollectionRequestsItemCreateDownloadUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property appLogCollectionRequests for deviceManagement
 func (m *MobileAppTroubleshootingEventsItemAppLogCollectionRequestsAppLogCollectionRequestItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MobileAppTroubleshootingEventsItemAppLogCollectionRequestsAppLogCollectionRequestItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -158,7 +158,10 @@ func (m *MobileAppTroubleshootingEventsItemAppLogCollectionRequestsAppLogCollect
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

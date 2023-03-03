@@ -7,28 +7,6 @@ import (
 // ManagedDeviceEncryptionState encryption report per device
 type ManagedDeviceEncryptionState struct {
     Entity
-    // Advanced BitLocker State. Possible values are: success, noUserConsent, osVolumeUnprotected, osVolumeTpmRequired, osVolumeTpmOnlyRequired, osVolumeTpmPinRequired, osVolumeTpmStartupKeyRequired, osVolumeTpmPinStartupKeyRequired, osVolumeEncryptionMethodMismatch, recoveryKeyBackupFailed, fixedDriveNotEncrypted, fixedDriveEncryptionMethodMismatch, loggedOnUserNonAdmin, windowsRecoveryEnvironmentNotConfigured, tpmNotAvailable, tpmNotReady, networkError.
-    advancedBitLockerStates *AdvancedBitLockerState
-    // Device name
-    deviceName *string
-    // Device type.
-    deviceType *DeviceTypes
-    // The encryptionPolicySettingState property
-    encryptionPolicySettingState *ComplianceStatus
-    // Encryption readiness state
-    encryptionReadinessState *EncryptionReadinessState
-    // Encryption state
-    encryptionState *EncryptionState
-    // FileVault State. Possible values are: success, driveEncryptedByUser, userDeferredEncryption, escrowNotEnabled.
-    fileVaultStates *FileVaultState
-    // Operating system version of the device
-    osVersion *string
-    // Policy Details
-    policyDetails []EncryptionReportPolicyDetailsable
-    // Device TPM Version
-    tpmSpecificationVersion *string
-    // User name
-    userPrincipalName *string
 }
 // NewManagedDeviceEncryptionState instantiates a new managedDeviceEncryptionState and sets the default values.
 func NewManagedDeviceEncryptionState()(*ManagedDeviceEncryptionState) {
@@ -43,27 +21,69 @@ func CreateManagedDeviceEncryptionStateFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAdvancedBitLockerStates gets the advancedBitLockerStates property value. Advanced BitLocker State. Possible values are: success, noUserConsent, osVolumeUnprotected, osVolumeTpmRequired, osVolumeTpmOnlyRequired, osVolumeTpmPinRequired, osVolumeTpmStartupKeyRequired, osVolumeTpmPinStartupKeyRequired, osVolumeEncryptionMethodMismatch, recoveryKeyBackupFailed, fixedDriveNotEncrypted, fixedDriveEncryptionMethodMismatch, loggedOnUserNonAdmin, windowsRecoveryEnvironmentNotConfigured, tpmNotAvailable, tpmNotReady, networkError.
 func (m *ManagedDeviceEncryptionState) GetAdvancedBitLockerStates()(*AdvancedBitLockerState) {
-    return m.advancedBitLockerStates
+    val, err := m.GetBackingStore().Get("advancedBitLockerStates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AdvancedBitLockerState)
+    }
+    return nil
 }
 // GetDeviceName gets the deviceName property value. Device name
 func (m *ManagedDeviceEncryptionState) GetDeviceName()(*string) {
-    return m.deviceName
+    val, err := m.GetBackingStore().Get("deviceName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDeviceType gets the deviceType property value. Device type.
 func (m *ManagedDeviceEncryptionState) GetDeviceType()(*DeviceTypes) {
-    return m.deviceType
+    val, err := m.GetBackingStore().Get("deviceType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceTypes)
+    }
+    return nil
 }
 // GetEncryptionPolicySettingState gets the encryptionPolicySettingState property value. The encryptionPolicySettingState property
 func (m *ManagedDeviceEncryptionState) GetEncryptionPolicySettingState()(*ComplianceStatus) {
-    return m.encryptionPolicySettingState
+    val, err := m.GetBackingStore().Get("encryptionPolicySettingState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ComplianceStatus)
+    }
+    return nil
 }
 // GetEncryptionReadinessState gets the encryptionReadinessState property value. Encryption readiness state
 func (m *ManagedDeviceEncryptionState) GetEncryptionReadinessState()(*EncryptionReadinessState) {
-    return m.encryptionReadinessState
+    val, err := m.GetBackingStore().Get("encryptionReadinessState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*EncryptionReadinessState)
+    }
+    return nil
 }
 // GetEncryptionState gets the encryptionState property value. Encryption state
 func (m *ManagedDeviceEncryptionState) GetEncryptionState()(*EncryptionState) {
-    return m.encryptionState
+    val, err := m.GetBackingStore().Get("encryptionState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*EncryptionState)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -186,23 +206,58 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
 }
 // GetFileVaultStates gets the fileVaultStates property value. FileVault State. Possible values are: success, driveEncryptedByUser, userDeferredEncryption, escrowNotEnabled.
 func (m *ManagedDeviceEncryptionState) GetFileVaultStates()(*FileVaultState) {
-    return m.fileVaultStates
+    val, err := m.GetBackingStore().Get("fileVaultStates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*FileVaultState)
+    }
+    return nil
 }
 // GetOsVersion gets the osVersion property value. Operating system version of the device
 func (m *ManagedDeviceEncryptionState) GetOsVersion()(*string) {
-    return m.osVersion
+    val, err := m.GetBackingStore().Get("osVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPolicyDetails gets the policyDetails property value. Policy Details
 func (m *ManagedDeviceEncryptionState) GetPolicyDetails()([]EncryptionReportPolicyDetailsable) {
-    return m.policyDetails
+    val, err := m.GetBackingStore().Get("policyDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EncryptionReportPolicyDetailsable)
+    }
+    return nil
 }
 // GetTpmSpecificationVersion gets the tpmSpecificationVersion property value. Device TPM Version
 func (m *ManagedDeviceEncryptionState) GetTpmSpecificationVersion()(*string) {
-    return m.tpmSpecificationVersion
+    val, err := m.GetBackingStore().Get("tpmSpecificationVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. User name
 func (m *ManagedDeviceEncryptionState) GetUserPrincipalName()(*string) {
-    return m.userPrincipalName
+    val, err := m.GetBackingStore().Get("userPrincipalName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagedDeviceEncryptionState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -290,45 +345,105 @@ func (m *ManagedDeviceEncryptionState) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAdvancedBitLockerStates sets the advancedBitLockerStates property value. Advanced BitLocker State. Possible values are: success, noUserConsent, osVolumeUnprotected, osVolumeTpmRequired, osVolumeTpmOnlyRequired, osVolumeTpmPinRequired, osVolumeTpmStartupKeyRequired, osVolumeTpmPinStartupKeyRequired, osVolumeEncryptionMethodMismatch, recoveryKeyBackupFailed, fixedDriveNotEncrypted, fixedDriveEncryptionMethodMismatch, loggedOnUserNonAdmin, windowsRecoveryEnvironmentNotConfigured, tpmNotAvailable, tpmNotReady, networkError.
 func (m *ManagedDeviceEncryptionState) SetAdvancedBitLockerStates(value *AdvancedBitLockerState)() {
-    m.advancedBitLockerStates = value
+    err := m.GetBackingStore().Set("advancedBitLockerStates", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceName sets the deviceName property value. Device name
 func (m *ManagedDeviceEncryptionState) SetDeviceName(value *string)() {
-    m.deviceName = value
+    err := m.GetBackingStore().Set("deviceName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceType sets the deviceType property value. Device type.
 func (m *ManagedDeviceEncryptionState) SetDeviceType(value *DeviceTypes)() {
-    m.deviceType = value
+    err := m.GetBackingStore().Set("deviceType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEncryptionPolicySettingState sets the encryptionPolicySettingState property value. The encryptionPolicySettingState property
 func (m *ManagedDeviceEncryptionState) SetEncryptionPolicySettingState(value *ComplianceStatus)() {
-    m.encryptionPolicySettingState = value
+    err := m.GetBackingStore().Set("encryptionPolicySettingState", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEncryptionReadinessState sets the encryptionReadinessState property value. Encryption readiness state
 func (m *ManagedDeviceEncryptionState) SetEncryptionReadinessState(value *EncryptionReadinessState)() {
-    m.encryptionReadinessState = value
+    err := m.GetBackingStore().Set("encryptionReadinessState", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEncryptionState sets the encryptionState property value. Encryption state
 func (m *ManagedDeviceEncryptionState) SetEncryptionState(value *EncryptionState)() {
-    m.encryptionState = value
+    err := m.GetBackingStore().Set("encryptionState", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFileVaultStates sets the fileVaultStates property value. FileVault State. Possible values are: success, driveEncryptedByUser, userDeferredEncryption, escrowNotEnabled.
 func (m *ManagedDeviceEncryptionState) SetFileVaultStates(value *FileVaultState)() {
-    m.fileVaultStates = value
+    err := m.GetBackingStore().Set("fileVaultStates", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOsVersion sets the osVersion property value. Operating system version of the device
 func (m *ManagedDeviceEncryptionState) SetOsVersion(value *string)() {
-    m.osVersion = value
+    err := m.GetBackingStore().Set("osVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPolicyDetails sets the policyDetails property value. Policy Details
 func (m *ManagedDeviceEncryptionState) SetPolicyDetails(value []EncryptionReportPolicyDetailsable)() {
-    m.policyDetails = value
+    err := m.GetBackingStore().Set("policyDetails", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTpmSpecificationVersion sets the tpmSpecificationVersion property value. Device TPM Version
 func (m *ManagedDeviceEncryptionState) SetTpmSpecificationVersion(value *string)() {
-    m.tpmSpecificationVersion = value
+    err := m.GetBackingStore().Set("tpmSpecificationVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. User name
 func (m *ManagedDeviceEncryptionState) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    err := m.GetBackingStore().Set("userPrincipalName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagedDeviceEncryptionStateable 
+type ManagedDeviceEncryptionStateable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAdvancedBitLockerStates()(*AdvancedBitLockerState)
+    GetDeviceName()(*string)
+    GetDeviceType()(*DeviceTypes)
+    GetEncryptionPolicySettingState()(*ComplianceStatus)
+    GetEncryptionReadinessState()(*EncryptionReadinessState)
+    GetEncryptionState()(*EncryptionState)
+    GetFileVaultStates()(*FileVaultState)
+    GetOsVersion()(*string)
+    GetPolicyDetails()([]EncryptionReportPolicyDetailsable)
+    GetTpmSpecificationVersion()(*string)
+    GetUserPrincipalName()(*string)
+    SetAdvancedBitLockerStates(value *AdvancedBitLockerState)()
+    SetDeviceName(value *string)()
+    SetDeviceType(value *DeviceTypes)()
+    SetEncryptionPolicySettingState(value *ComplianceStatus)()
+    SetEncryptionReadinessState(value *EncryptionReadinessState)()
+    SetEncryptionState(value *EncryptionState)()
+    SetFileVaultStates(value *FileVaultState)()
+    SetOsVersion(value *string)()
+    SetPolicyDetails(value []EncryptionReportPolicyDetailsable)()
+    SetTpmSpecificationVersion(value *string)()
+    SetUserPrincipalName(value *string)()
 }

@@ -7,8 +7,6 @@ import (
 // DeviceManagementStringSettingInstanceCollectionResponse 
 type DeviceManagementStringSettingInstanceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementStringSettingInstanceable
 }
 // NewDeviceManagementStringSettingInstanceCollectionResponse instantiates a new DeviceManagementStringSettingInstanceCollectionResponse and sets the default values.
 func NewDeviceManagementStringSettingInstanceCollectionResponse()(*DeviceManagementStringSettingInstanceCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementStringSettingInstanceCollectionResponse) GetFieldDeseri
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementStringSettingInstanceCollectionResponse) GetValue()([]DeviceManagementStringSettingInstanceable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementStringSettingInstanceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementStringSettingInstanceCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementStringSettingInstanceCollectionResponse) Serialize(writ
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementStringSettingInstanceCollectionResponse) SetValue(value []DeviceManagementStringSettingInstanceable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementStringSettingInstanceCollectionResponseable 
+type DeviceManagementStringSettingInstanceCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementStringSettingInstanceable)
+    SetValue(value []DeviceManagementStringSettingInstanceable)()
 }

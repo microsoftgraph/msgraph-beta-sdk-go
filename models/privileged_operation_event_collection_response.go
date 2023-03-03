@@ -7,8 +7,6 @@ import (
 // PrivilegedOperationEventCollectionResponse 
 type PrivilegedOperationEventCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PrivilegedOperationEventable
 }
 // NewPrivilegedOperationEventCollectionResponse instantiates a new PrivilegedOperationEventCollectionResponse and sets the default values.
 func NewPrivilegedOperationEventCollectionResponse()(*PrivilegedOperationEventCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PrivilegedOperationEventCollectionResponse) GetFieldDeserializers()(map
 }
 // GetValue gets the value property value. The value property
 func (m *PrivilegedOperationEventCollectionResponse) GetValue()([]PrivilegedOperationEventable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrivilegedOperationEventable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrivilegedOperationEventCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PrivilegedOperationEventCollectionResponse) Serialize(writer i878a80d23
 }
 // SetValue sets the value property value. The value property
 func (m *PrivilegedOperationEventCollectionResponse) SetValue(value []PrivilegedOperationEventable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrivilegedOperationEventCollectionResponseable 
+type PrivilegedOperationEventCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PrivilegedOperationEventable)
+    SetValue(value []PrivilegedOperationEventable)()
 }

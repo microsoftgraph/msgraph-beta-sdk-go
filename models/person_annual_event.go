@@ -7,20 +7,16 @@ import (
 // PersonAnnualEvent 
 type PersonAnnualEvent struct {
     ItemFacet
-    // The date property
-    date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // The displayName property
-    displayName *string
     // The type property
-    type_escaped *PersonAnnualEventType
+    TypeEscaped *PersonAnnualEventType
 }
 // NewPersonAnnualEvent instantiates a new PersonAnnualEvent and sets the default values.
 func NewPersonAnnualEvent()(*PersonAnnualEvent) {
     m := &PersonAnnualEvent{
         ItemFacet: *NewItemFacet(),
     }
-    odataTypeValue := "#microsoft.graph.personAnnualEvent";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.personAnnualEvent"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreatePersonAnnualEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,11 +25,25 @@ func CreatePersonAnnualEventFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetDate gets the date property value. The date property
 func (m *PersonAnnualEvent) GetDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.date
+    val, err := m.GetBackingStore().Get("date")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *PersonAnnualEvent) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PersonAnnualEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,7 +82,14 @@ func (m *PersonAnnualEvent) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetType gets the type property value. The type property
 func (m *PersonAnnualEvent) GetType()(*PersonAnnualEventType) {
-    return m.type_escaped
+    val, err := m.GetBackingStore().Get("typeEscaped")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PersonAnnualEventType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PersonAnnualEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -103,13 +120,33 @@ func (m *PersonAnnualEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetDate sets the date property value. The date property
 func (m *PersonAnnualEvent) SetDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.date = value
+    err := m.GetBackingStore().Set("date", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *PersonAnnualEvent) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetType sets the type property value. The type property
 func (m *PersonAnnualEvent) SetType(value *PersonAnnualEventType)() {
-    m.type_escaped = value
+    err := m.GetBackingStore().Set("typeEscaped", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PersonAnnualEventable 
+type PersonAnnualEventable interface {
+    ItemFacetable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetDisplayName()(*string)
+    GetType()(*PersonAnnualEventType)
+    SetDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetDisplayName(value *string)()
+    SetType(value *PersonAnnualEventType)()
 }

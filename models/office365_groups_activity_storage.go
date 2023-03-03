@@ -7,16 +7,6 @@ import (
 // Office365GroupsActivityStorage 
 type Office365GroupsActivityStorage struct {
     Entity
-    // The storage used in group mailbox.
-    mailboxStorageUsedInBytes *int64
-    // The snapshot date for Exchange and SharePoint used storage.
-    reportDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // The number of days the report covers.
-    reportPeriod *string
-    // The latest date of the content.
-    reportRefreshDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // The storage used in SharePoint document library.
-    siteStorageUsedInBytes *int64
 }
 // NewOffice365GroupsActivityStorage instantiates a new Office365GroupsActivityStorage and sets the default values.
 func NewOffice365GroupsActivityStorage()(*Office365GroupsActivityStorage) {
@@ -86,23 +76,58 @@ func (m *Office365GroupsActivityStorage) GetFieldDeserializers()(map[string]func
 }
 // GetMailboxStorageUsedInBytes gets the mailboxStorageUsedInBytes property value. The storage used in group mailbox.
 func (m *Office365GroupsActivityStorage) GetMailboxStorageUsedInBytes()(*int64) {
-    return m.mailboxStorageUsedInBytes
+    val, err := m.GetBackingStore().Get("mailboxStorageUsedInBytes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetReportDate gets the reportDate property value. The snapshot date for Exchange and SharePoint used storage.
 func (m *Office365GroupsActivityStorage) GetReportDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.reportDate
+    val, err := m.GetBackingStore().Get("reportDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetReportPeriod gets the reportPeriod property value. The number of days the report covers.
 func (m *Office365GroupsActivityStorage) GetReportPeriod()(*string) {
-    return m.reportPeriod
+    val, err := m.GetBackingStore().Get("reportPeriod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetReportRefreshDate gets the reportRefreshDate property value. The latest date of the content.
 func (m *Office365GroupsActivityStorage) GetReportRefreshDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.reportRefreshDate
+    val, err := m.GetBackingStore().Get("reportRefreshDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetSiteStorageUsedInBytes gets the siteStorageUsedInBytes property value. The storage used in SharePoint document library.
 func (m *Office365GroupsActivityStorage) GetSiteStorageUsedInBytes()(*int64) {
-    return m.siteStorageUsedInBytes
+    val, err := m.GetBackingStore().Get("siteStorageUsedInBytes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Office365GroupsActivityStorage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -144,21 +169,51 @@ func (m *Office365GroupsActivityStorage) Serialize(writer i878a80d2330e89d268963
 }
 // SetMailboxStorageUsedInBytes sets the mailboxStorageUsedInBytes property value. The storage used in group mailbox.
 func (m *Office365GroupsActivityStorage) SetMailboxStorageUsedInBytes(value *int64)() {
-    m.mailboxStorageUsedInBytes = value
+    err := m.GetBackingStore().Set("mailboxStorageUsedInBytes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReportDate sets the reportDate property value. The snapshot date for Exchange and SharePoint used storage.
 func (m *Office365GroupsActivityStorage) SetReportDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.reportDate = value
+    err := m.GetBackingStore().Set("reportDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. The number of days the report covers.
 func (m *Office365GroupsActivityStorage) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    err := m.GetBackingStore().Set("reportPeriod", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. The latest date of the content.
 func (m *Office365GroupsActivityStorage) SetReportRefreshDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.reportRefreshDate = value
+    err := m.GetBackingStore().Set("reportRefreshDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSiteStorageUsedInBytes sets the siteStorageUsedInBytes property value. The storage used in SharePoint document library.
 func (m *Office365GroupsActivityStorage) SetSiteStorageUsedInBytes(value *int64)() {
-    m.siteStorageUsedInBytes = value
+    err := m.GetBackingStore().Set("siteStorageUsedInBytes", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Office365GroupsActivityStorageable 
+type Office365GroupsActivityStorageable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetMailboxStorageUsedInBytes()(*int64)
+    GetReportDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetReportPeriod()(*string)
+    GetReportRefreshDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetSiteStorageUsedInBytes()(*int64)
+    SetMailboxStorageUsedInBytes(value *int64)()
+    SetReportDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetReportPeriod(value *string)()
+    SetReportRefreshDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetSiteStorageUsedInBytes(value *int64)()
 }

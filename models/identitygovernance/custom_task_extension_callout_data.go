@@ -8,22 +8,14 @@ import (
 // CustomTaskExtensionCalloutData 
 type CustomTaskExtensionCalloutData struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomExtensionData
-    // The subject property
-    subject ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable
-    // The task property
-    task Taskable
-    // The taskProcessingresult property
-    taskProcessingresult TaskProcessingResultable
-    // The workflow property
-    workflow Workflowable
 }
 // NewCustomTaskExtensionCalloutData instantiates a new CustomTaskExtensionCalloutData and sets the default values.
 func NewCustomTaskExtensionCalloutData()(*CustomTaskExtensionCalloutData) {
     m := &CustomTaskExtensionCalloutData{
         CustomExtensionData: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewCustomExtensionData(),
     }
-    odataTypeValue := "#microsoft.graph.identityGovernance.customTaskExtensionCalloutData";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.identityGovernance.customTaskExtensionCalloutData"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateCustomTaskExtensionCalloutDataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -77,19 +69,47 @@ func (m *CustomTaskExtensionCalloutData) GetFieldDeserializers()(map[string]func
 }
 // GetSubject gets the subject property value. The subject property
 func (m *CustomTaskExtensionCalloutData) GetSubject()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable) {
-    return m.subject
+    val, err := m.GetBackingStore().Get("subject")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)
+    }
+    return nil
 }
 // GetTask gets the task property value. The task property
 func (m *CustomTaskExtensionCalloutData) GetTask()(Taskable) {
-    return m.task
+    val, err := m.GetBackingStore().Get("task")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Taskable)
+    }
+    return nil
 }
 // GetTaskProcessingresult gets the taskProcessingresult property value. The taskProcessingresult property
 func (m *CustomTaskExtensionCalloutData) GetTaskProcessingresult()(TaskProcessingResultable) {
-    return m.taskProcessingresult
+    val, err := m.GetBackingStore().Get("taskProcessingresult")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TaskProcessingResultable)
+    }
+    return nil
 }
 // GetWorkflow gets the workflow property value. The workflow property
 func (m *CustomTaskExtensionCalloutData) GetWorkflow()(Workflowable) {
-    return m.workflow
+    val, err := m.GetBackingStore().Get("workflow")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Workflowable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CustomTaskExtensionCalloutData) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,17 +145,42 @@ func (m *CustomTaskExtensionCalloutData) Serialize(writer i878a80d2330e89d268963
 }
 // SetSubject sets the subject property value. The subject property
 func (m *CustomTaskExtensionCalloutData) SetSubject(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)() {
-    m.subject = value
+    err := m.GetBackingStore().Set("subject", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTask sets the task property value. The task property
 func (m *CustomTaskExtensionCalloutData) SetTask(value Taskable)() {
-    m.task = value
+    err := m.GetBackingStore().Set("task", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTaskProcessingresult sets the taskProcessingresult property value. The taskProcessingresult property
 func (m *CustomTaskExtensionCalloutData) SetTaskProcessingresult(value TaskProcessingResultable)() {
-    m.taskProcessingresult = value
+    err := m.GetBackingStore().Set("taskProcessingresult", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkflow sets the workflow property value. The workflow property
 func (m *CustomTaskExtensionCalloutData) SetWorkflow(value Workflowable)() {
-    m.workflow = value
+    err := m.GetBackingStore().Set("workflow", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CustomTaskExtensionCalloutDataable 
+type CustomTaskExtensionCalloutDataable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomExtensionDataable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetSubject()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)
+    GetTask()(Taskable)
+    GetTaskProcessingresult()(TaskProcessingResultable)
+    GetWorkflow()(Workflowable)
+    SetSubject(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)()
+    SetTask(value Taskable)()
+    SetTaskProcessingresult(value TaskProcessingResultable)()
+    SetWorkflow(value Workflowable)()
 }

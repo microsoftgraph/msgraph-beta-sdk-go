@@ -55,8 +55,8 @@ func NewPrivilegedAccessGroupEligibilitySchedulesPrivilegedAccessGroupEligibilit
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPrivilegedAccessGroupEligibilitySchedulesPrivilegedAccessGroupEligibilityScheduleItemRequestBuilder instantiates a new PrivilegedAccessGroupEligibilityScheduleItemRequestBuilder and sets the default values.
@@ -102,7 +102,7 @@ func (m *PrivilegedAccessGroupEligibilitySchedulesPrivilegedAccessGroupEligibili
 }
 // Group provides operations to manage the group property of the microsoft.graph.privilegedAccessGroupEligibilitySchedule entity.
 func (m *PrivilegedAccessGroupEligibilitySchedulesPrivilegedAccessGroupEligibilityScheduleItemRequestBuilder) Group()(*PrivilegedAccessGroupEligibilitySchedulesItemGroupRequestBuilder) {
-    return NewPrivilegedAccessGroupEligibilitySchedulesItemGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPrivilegedAccessGroupEligibilitySchedulesItemGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property eligibilitySchedules in identityGovernance
 func (m *PrivilegedAccessGroupEligibilitySchedulesPrivilegedAccessGroupEligibilityScheduleItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupEligibilityScheduleable, requestConfiguration *PrivilegedAccessGroupEligibilitySchedulesPrivilegedAccessGroupEligibilityScheduleItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupEligibilityScheduleable, error) {
@@ -125,7 +125,7 @@ func (m *PrivilegedAccessGroupEligibilitySchedulesPrivilegedAccessGroupEligibili
 }
 // Principal provides operations to manage the principal property of the microsoft.graph.privilegedAccessGroupEligibilitySchedule entity.
 func (m *PrivilegedAccessGroupEligibilitySchedulesPrivilegedAccessGroupEligibilityScheduleItemRequestBuilder) Principal()(*PrivilegedAccessGroupEligibilitySchedulesItemPrincipalRequestBuilder) {
-    return NewPrivilegedAccessGroupEligibilitySchedulesItemPrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPrivilegedAccessGroupEligibilitySchedulesItemPrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property eligibilitySchedules for identityGovernance
 func (m *PrivilegedAccessGroupEligibilitySchedulesPrivilegedAccessGroupEligibilityScheduleItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessGroupEligibilitySchedulesPrivilegedAccessGroupEligibilityScheduleItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -162,7 +162,10 @@ func (m *PrivilegedAccessGroupEligibilitySchedulesPrivilegedAccessGroupEligibili
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

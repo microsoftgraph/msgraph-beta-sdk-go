@@ -7,8 +7,6 @@ import (
 // AssignmentFilterEvaluationSummaryCollectionResponse 
 type AssignmentFilterEvaluationSummaryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AssignmentFilterEvaluationSummaryable
 }
 // NewAssignmentFilterEvaluationSummaryCollectionResponse instantiates a new AssignmentFilterEvaluationSummaryCollectionResponse and sets the default values.
 func NewAssignmentFilterEvaluationSummaryCollectionResponse()(*AssignmentFilterEvaluationSummaryCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AssignmentFilterEvaluationSummaryCollectionResponse) GetFieldDeserializ
 }
 // GetValue gets the value property value. The value property
 func (m *AssignmentFilterEvaluationSummaryCollectionResponse) GetValue()([]AssignmentFilterEvaluationSummaryable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AssignmentFilterEvaluationSummaryable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AssignmentFilterEvaluationSummaryCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AssignmentFilterEvaluationSummaryCollectionResponse) Serialize(writer i
 }
 // SetValue sets the value property value. The value property
 func (m *AssignmentFilterEvaluationSummaryCollectionResponse) SetValue(value []AssignmentFilterEvaluationSummaryable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AssignmentFilterEvaluationSummaryCollectionResponseable 
+type AssignmentFilterEvaluationSummaryCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AssignmentFilterEvaluationSummaryable)
+    SetValue(value []AssignmentFilterEvaluationSummaryable)()
 }

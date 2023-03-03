@@ -48,7 +48,7 @@ type AccessReviewItemRequestBuilderPatchRequestConfiguration struct {
 }
 // ApplyDecisions provides operations to call the applyDecisions method.
 func (m *AccessReviewItemRequestBuilder) ApplyDecisions()(*ItemApplyDecisionsRequestBuilder) {
-    return NewItemApplyDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemApplyDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewAccessReviewItemRequestBuilderInternal instantiates a new AccessReviewItemRequestBuilder and sets the default values.
 func NewAccessReviewItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessReviewItemRequestBuilder) {
@@ -59,8 +59,8 @@ func NewAccessReviewItemRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAccessReviewItemRequestBuilder instantiates a new AccessReviewItemRequestBuilder and sets the default values.
@@ -71,7 +71,7 @@ func NewAccessReviewItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 }
 // Decisions provides operations to manage the decisions property of the microsoft.graph.accessReview entity.
 func (m *AccessReviewItemRequestBuilder) Decisions()(*ItemDecisionsRequestBuilder) {
-    return NewItemDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DecisionsById provides operations to manage the decisions property of the microsoft.graph.accessReview entity.
 func (m *AccessReviewItemRequestBuilder) DecisionsById(id string)(*ItemDecisionsAccessReviewDecisionItemRequestBuilder) {
@@ -82,7 +82,7 @@ func (m *AccessReviewItemRequestBuilder) DecisionsById(id string)(*ItemDecisions
     if id != "" {
         urlTplParams["accessReviewDecision%2Did"] = id
     }
-    return NewItemDecisionsAccessReviewDecisionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemDecisionsAccessReviewDecisionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Delete in the Azure AD access reviews feature, delete an accessReview object.
 // [Find more info here]
@@ -127,7 +127,7 @@ func (m *AccessReviewItemRequestBuilder) Get(ctx context.Context, requestConfigu
 }
 // Instances provides operations to manage the instances property of the microsoft.graph.accessReview entity.
 func (m *AccessReviewItemRequestBuilder) Instances()(*ItemInstancesRequestBuilder) {
-    return NewItemInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // InstancesById provides operations to manage the instances property of the microsoft.graph.accessReview entity.
 func (m *AccessReviewItemRequestBuilder) InstancesById(id string)(*ItemInstancesAccessReviewItemRequestBuilder) {
@@ -138,11 +138,11 @@ func (m *AccessReviewItemRequestBuilder) InstancesById(id string)(*ItemInstances
     if id != "" {
         urlTplParams["accessReview%2Did1"] = id
     }
-    return NewItemInstancesAccessReviewItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemInstancesAccessReviewItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // MyDecisions provides operations to manage the myDecisions property of the microsoft.graph.accessReview entity.
 func (m *AccessReviewItemRequestBuilder) MyDecisions()(*ItemMyDecisionsRequestBuilder) {
-    return NewItemMyDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemMyDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MyDecisionsById provides operations to manage the myDecisions property of the microsoft.graph.accessReview entity.
 func (m *AccessReviewItemRequestBuilder) MyDecisionsById(id string)(*ItemMyDecisionsAccessReviewDecisionItemRequestBuilder) {
@@ -153,7 +153,7 @@ func (m *AccessReviewItemRequestBuilder) MyDecisionsById(id string)(*ItemMyDecis
     if id != "" {
         urlTplParams["accessReviewDecision%2Did"] = id
     }
-    return NewItemMyDecisionsAccessReviewDecisionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemMyDecisionsAccessReviewDecisionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch in the Azure AD access reviews feature, update an existing accessReview object to change one or more of its properties. This API is not intended to change the reviewers or decisions of a review.  To change the reviewers, use the addReviewer or removeReviewer APIs.  To stop an already-started one-time review, or an already-started instance of a recurring review, early, use the stop API. To apply the decisions to the target group or app access rights, use the apply API. 
 // [Find more info here]
@@ -179,11 +179,11 @@ func (m *AccessReviewItemRequestBuilder) Patch(ctx context.Context, body ie233ee
 }
 // ResetDecisions provides operations to call the resetDecisions method.
 func (m *AccessReviewItemRequestBuilder) ResetDecisions()(*ItemResetDecisionsRequestBuilder) {
-    return NewItemResetDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemResetDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Reviewers provides operations to manage the reviewers property of the microsoft.graph.accessReview entity.
 func (m *AccessReviewItemRequestBuilder) Reviewers()(*ItemReviewersRequestBuilder) {
-    return NewItemReviewersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemReviewersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ReviewersById provides operations to manage the reviewers property of the microsoft.graph.accessReview entity.
 func (m *AccessReviewItemRequestBuilder) ReviewersById(id string)(*ItemReviewersAccessReviewReviewerItemRequestBuilder) {
@@ -194,15 +194,15 @@ func (m *AccessReviewItemRequestBuilder) ReviewersById(id string)(*ItemReviewers
     if id != "" {
         urlTplParams["accessReviewReviewer%2Did"] = id
     }
-    return NewItemReviewersAccessReviewReviewerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemReviewersAccessReviewReviewerItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // SendReminder provides operations to call the sendReminder method.
 func (m *AccessReviewItemRequestBuilder) SendReminder()(*ItemSendReminderRequestBuilder) {
-    return NewItemSendReminderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSendReminderRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Stop provides operations to call the stop method.
 func (m *AccessReviewItemRequestBuilder) Stop()(*ItemStopRequestBuilder) {
-    return NewItemStopRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemStopRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation in the Azure AD access reviews feature, delete an accessReview object.
 func (m *AccessReviewItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AccessReviewItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -239,7 +239,10 @@ func (m *AccessReviewItemRequestBuilder) ToPatchRequestInformation(ctx context.C
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

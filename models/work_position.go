@@ -7,24 +7,14 @@ import (
 // WorkPosition 
 type WorkPosition struct {
     ItemFacet
-    // Categories that the user has associated with this position.
-    categories []string
-    // Colleagues that are associated with this position.
-    colleagues []RelatedPersonable
-    // The detail property
-    detail PositionDetailable
-    // Denotes whether or not the position is current.
-    isCurrent *bool
-    // Contains detail of the user's manager in this position.
-    manager RelatedPersonable
 }
 // NewWorkPosition instantiates a new WorkPosition and sets the default values.
 func NewWorkPosition()(*WorkPosition) {
     m := &WorkPosition{
         ItemFacet: *NewItemFacet(),
     }
-    odataTypeValue := "#microsoft.graph.workPosition";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.workPosition"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWorkPositionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,15 +23,36 @@ func CreateWorkPositionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetCategories gets the categories property value. Categories that the user has associated with this position.
 func (m *WorkPosition) GetCategories()([]string) {
-    return m.categories
+    val, err := m.GetBackingStore().Get("categories")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetColleagues gets the colleagues property value. Colleagues that are associated with this position.
 func (m *WorkPosition) GetColleagues()([]RelatedPersonable) {
-    return m.colleagues
+    val, err := m.GetBackingStore().Get("colleagues")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]RelatedPersonable)
+    }
+    return nil
 }
 // GetDetail gets the detail property value. The detail property
 func (m *WorkPosition) GetDetail()(PositionDetailable) {
-    return m.detail
+    val, err := m.GetBackingStore().Get("detail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PositionDetailable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkPosition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -108,11 +119,25 @@ func (m *WorkPosition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetIsCurrent gets the isCurrent property value. Denotes whether or not the position is current.
 func (m *WorkPosition) GetIsCurrent()(*bool) {
-    return m.isCurrent
+    val, err := m.GetBackingStore().Get("isCurrent")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetManager gets the manager property value. Contains detail of the user's manager in this position.
 func (m *WorkPosition) GetManager()(RelatedPersonable) {
-    return m.manager
+    val, err := m.GetBackingStore().Get("manager")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(RelatedPersonable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WorkPosition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -158,21 +183,51 @@ func (m *WorkPosition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetCategories sets the categories property value. Categories that the user has associated with this position.
 func (m *WorkPosition) SetCategories(value []string)() {
-    m.categories = value
+    err := m.GetBackingStore().Set("categories", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetColleagues sets the colleagues property value. Colleagues that are associated with this position.
 func (m *WorkPosition) SetColleagues(value []RelatedPersonable)() {
-    m.colleagues = value
+    err := m.GetBackingStore().Set("colleagues", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDetail sets the detail property value. The detail property
 func (m *WorkPosition) SetDetail(value PositionDetailable)() {
-    m.detail = value
+    err := m.GetBackingStore().Set("detail", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsCurrent sets the isCurrent property value. Denotes whether or not the position is current.
 func (m *WorkPosition) SetIsCurrent(value *bool)() {
-    m.isCurrent = value
+    err := m.GetBackingStore().Set("isCurrent", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManager sets the manager property value. Contains detail of the user's manager in this position.
 func (m *WorkPosition) SetManager(value RelatedPersonable)() {
-    m.manager = value
+    err := m.GetBackingStore().Set("manager", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WorkPositionable 
+type WorkPositionable interface {
+    ItemFacetable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCategories()([]string)
+    GetColleagues()([]RelatedPersonable)
+    GetDetail()(PositionDetailable)
+    GetIsCurrent()(*bool)
+    GetManager()(RelatedPersonable)
+    SetCategories(value []string)()
+    SetColleagues(value []RelatedPersonable)()
+    SetDetail(value PositionDetailable)()
+    SetIsCurrent(value *bool)()
+    SetManager(value RelatedPersonable)()
 }

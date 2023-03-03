@@ -7,18 +7,14 @@ import (
 // IosWebContentFilterAutoFilter 
 type IosWebContentFilterAutoFilter struct {
     IosWebContentFilterBase
-    // Additional URLs allowed for access
-    allowedUrls []string
-    // Additional URLs blocked for access
-    blockedUrls []string
 }
 // NewIosWebContentFilterAutoFilter instantiates a new IosWebContentFilterAutoFilter and sets the default values.
 func NewIosWebContentFilterAutoFilter()(*IosWebContentFilterAutoFilter) {
     m := &IosWebContentFilterAutoFilter{
         IosWebContentFilterBase: *NewIosWebContentFilterBase(),
     }
-    odataTypeValue := "#microsoft.graph.iosWebContentFilterAutoFilter";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.iosWebContentFilterAutoFilter"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateIosWebContentFilterAutoFilterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,11 +23,25 @@ func CreateIosWebContentFilterAutoFilterFromDiscriminatorValue(parseNode i878a80
 }
 // GetAllowedUrls gets the allowedUrls property value. Additional URLs allowed for access
 func (m *IosWebContentFilterAutoFilter) GetAllowedUrls()([]string) {
-    return m.allowedUrls
+    val, err := m.GetBackingStore().Get("allowedUrls")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetBlockedUrls gets the blockedUrls property value. Additional URLs blocked for access
 func (m *IosWebContentFilterAutoFilter) GetBlockedUrls()([]string) {
-    return m.blockedUrls
+    val, err := m.GetBackingStore().Get("blockedUrls")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosWebContentFilterAutoFilter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -88,9 +98,24 @@ func (m *IosWebContentFilterAutoFilter) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAllowedUrls sets the allowedUrls property value. Additional URLs allowed for access
 func (m *IosWebContentFilterAutoFilter) SetAllowedUrls(value []string)() {
-    m.allowedUrls = value
+    err := m.GetBackingStore().Set("allowedUrls", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBlockedUrls sets the blockedUrls property value. Additional URLs blocked for access
 func (m *IosWebContentFilterAutoFilter) SetBlockedUrls(value []string)() {
-    m.blockedUrls = value
+    err := m.GetBackingStore().Set("blockedUrls", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosWebContentFilterAutoFilterable 
+type IosWebContentFilterAutoFilterable interface {
+    IosWebContentFilterBaseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllowedUrls()([]string)
+    GetBlockedUrls()([]string)
+    SetAllowedUrls(value []string)()
+    SetBlockedUrls(value []string)()
 }

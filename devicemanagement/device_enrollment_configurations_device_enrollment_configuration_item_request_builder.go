@@ -48,11 +48,11 @@ type DeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuild
 }
 // Assign provides operations to call the assign method.
 func (m *DeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder) Assign()(*DeviceEnrollmentConfigurationsItemAssignRequestBuilder) {
-    return NewDeviceEnrollmentConfigurationsItemAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceEnrollmentConfigurationsItemAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Assignments provides operations to manage the assignments property of the microsoft.graph.deviceEnrollmentConfiguration entity.
 func (m *DeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder) Assignments()(*DeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder) {
-    return NewDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.deviceEnrollmentConfiguration entity.
 func (m *DeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder) AssignmentsById(id string)(*DeviceEnrollmentConfigurationsItemAssignmentsEnrollmentConfigurationAssignmentItemRequestBuilder) {
@@ -63,7 +63,7 @@ func (m *DeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestB
     if id != "" {
         urlTplParams["enrollmentConfigurationAssignment%2Did"] = id
     }
-    return NewDeviceEnrollmentConfigurationsItemAssignmentsEnrollmentConfigurationAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceEnrollmentConfigurationsItemAssignmentsEnrollmentConfigurationAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilderInternal instantiates a new DeviceEnrollmentConfigurationItemRequestBuilder and sets the default values.
 func NewDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder) {
@@ -74,8 +74,8 @@ func NewDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBu
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder instantiates a new DeviceEnrollmentConfigurationItemRequestBuilder and sets the default values.
@@ -140,7 +140,7 @@ func (m *DeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestB
 }
 // SetPriority provides operations to call the setPriority method.
 func (m *DeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder) SetPriority()(*DeviceEnrollmentConfigurationsItemSetPriorityRequestBuilder) {
-    return NewDeviceEnrollmentConfigurationsItemSetPriorityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceEnrollmentConfigurationsItemSetPriorityRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property deviceEnrollmentConfigurations for deviceManagement
 func (m *DeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -177,7 +177,10 @@ func (m *DeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestB
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

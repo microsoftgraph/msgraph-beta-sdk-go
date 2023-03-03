@@ -8,12 +8,6 @@ import (
 // WindowsAutopilotSettings 
 type WindowsAutopilotSettings struct {
     Entity
-    // Last data sync date time with DDS service.
-    lastManualSyncTriggerDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Last data sync date time with DDS service.
-    lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The syncStatus property
-    syncStatus *WindowsAutopilotSyncStatus
 }
 // NewWindowsAutopilotSettings instantiates a new windowsAutopilotSettings and sets the default values.
 func NewWindowsAutopilotSettings()(*WindowsAutopilotSettings) {
@@ -63,15 +57,36 @@ func (m *WindowsAutopilotSettings) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetLastManualSyncTriggerDateTime gets the lastManualSyncTriggerDateTime property value. Last data sync date time with DDS service.
 func (m *WindowsAutopilotSettings) GetLastManualSyncTriggerDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastManualSyncTriggerDateTime
+    val, err := m.GetBackingStore().Get("lastManualSyncTriggerDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetLastSyncDateTime gets the lastSyncDateTime property value. Last data sync date time with DDS service.
 func (m *WindowsAutopilotSettings) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastSyncDateTime
+    val, err := m.GetBackingStore().Get("lastSyncDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetSyncStatus gets the syncStatus property value. The syncStatus property
 func (m *WindowsAutopilotSettings) GetSyncStatus()(*WindowsAutopilotSyncStatus) {
-    return m.syncStatus
+    val, err := m.GetBackingStore().Get("syncStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WindowsAutopilotSyncStatus)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsAutopilotSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -102,13 +117,33 @@ func (m *WindowsAutopilotSettings) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetLastManualSyncTriggerDateTime sets the lastManualSyncTriggerDateTime property value. Last data sync date time with DDS service.
 func (m *WindowsAutopilotSettings) SetLastManualSyncTriggerDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastManualSyncTriggerDateTime = value
+    err := m.GetBackingStore().Set("lastManualSyncTriggerDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastSyncDateTime sets the lastSyncDateTime property value. Last data sync date time with DDS service.
 func (m *WindowsAutopilotSettings) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastSyncDateTime = value
+    err := m.GetBackingStore().Set("lastSyncDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSyncStatus sets the syncStatus property value. The syncStatus property
 func (m *WindowsAutopilotSettings) SetSyncStatus(value *WindowsAutopilotSyncStatus)() {
-    m.syncStatus = value
+    err := m.GetBackingStore().Set("syncStatus", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsAutopilotSettingsable 
+type WindowsAutopilotSettingsable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetLastManualSyncTriggerDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetSyncStatus()(*WindowsAutopilotSyncStatus)
+    SetLastManualSyncTriggerDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetSyncStatus(value *WindowsAutopilotSyncStatus)()
 }

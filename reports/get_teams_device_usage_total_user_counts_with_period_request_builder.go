@@ -26,7 +26,7 @@ type GetTeamsDeviceUsageTotalUserCountsWithPeriodRequestBuilderGetRequestConfigu
 func NewGetTeamsDeviceUsageTotalUserCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, period *string)(*GetTeamsDeviceUsageTotalUserCountsWithPeriodRequestBuilder) {
     m := &GetTeamsDeviceUsageTotalUserCountsWithPeriodRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/reports/microsoft.graph.getTeamsDeviceUsageTotalUserCounts(period='{period}')";
+    m.urlTemplate = "{+baseurl}/reports/getTeamsDeviceUsageTotalUserCounts(period='{period}')";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -34,8 +34,8 @@ func NewGetTeamsDeviceUsageTotalUserCountsWithPeriodRequestBuilderInternal(pathP
     if period != nil {
         urlTplParams["period"] = *period
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGetTeamsDeviceUsageTotalUserCountsWithPeriodRequestBuilder instantiates a new GetTeamsDeviceUsageTotalUserCountsWithPeriodRequestBuilder and sets the default values.

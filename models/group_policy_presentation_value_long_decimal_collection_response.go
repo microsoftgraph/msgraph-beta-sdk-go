@@ -7,8 +7,6 @@ import (
 // GroupPolicyPresentationValueLongDecimalCollectionResponse 
 type GroupPolicyPresentationValueLongDecimalCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []GroupPolicyPresentationValueLongDecimalable
 }
 // NewGroupPolicyPresentationValueLongDecimalCollectionResponse instantiates a new GroupPolicyPresentationValueLongDecimalCollectionResponse and sets the default values.
 func NewGroupPolicyPresentationValueLongDecimalCollectionResponse()(*GroupPolicyPresentationValueLongDecimalCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *GroupPolicyPresentationValueLongDecimalCollectionResponse) GetFieldDese
 }
 // GetValue gets the value property value. The value property
 func (m *GroupPolicyPresentationValueLongDecimalCollectionResponse) GetValue()([]GroupPolicyPresentationValueLongDecimalable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GroupPolicyPresentationValueLongDecimalable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyPresentationValueLongDecimalCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *GroupPolicyPresentationValueLongDecimalCollectionResponse) Serialize(wr
 }
 // SetValue sets the value property value. The value property
 func (m *GroupPolicyPresentationValueLongDecimalCollectionResponse) SetValue(value []GroupPolicyPresentationValueLongDecimalable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GroupPolicyPresentationValueLongDecimalCollectionResponseable 
+type GroupPolicyPresentationValueLongDecimalCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]GroupPolicyPresentationValueLongDecimalable)
+    SetValue(value []GroupPolicyPresentationValueLongDecimalable)()
 }

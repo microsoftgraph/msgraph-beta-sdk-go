@@ -27,13 +27,13 @@ type ItemSitesItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfigurat
 func NewItemSitesItemPermissionsItemRevokeGrantsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemPermissionsItemRevokeGrantsRequestBuilder) {
     m := &ItemSitesItemPermissionsItemRevokeGrantsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/permissions/{permission%2Did}/microsoft.graph.revokeGrants";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/permissions/{permission%2Did}/revokeGrants";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemPermissionsItemRevokeGrantsRequestBuilder instantiates a new RevokeGrantsRequestBuilder and sets the default values.
@@ -71,7 +71,10 @@ func (m *ItemSitesItemPermissionsItemRevokeGrantsRequestBuilder) ToPostRequestIn
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

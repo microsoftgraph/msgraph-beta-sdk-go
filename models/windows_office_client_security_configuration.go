@@ -13,8 +13,8 @@ func NewWindowsOfficeClientSecurityConfiguration()(*WindowsOfficeClientSecurityC
     m := &WindowsOfficeClientSecurityConfiguration{
         OfficeClientConfiguration: *NewOfficeClientConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.windowsOfficeClientSecurityConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsOfficeClientSecurityConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsOfficeClientSecurityConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,4 +33,9 @@ func (m *WindowsOfficeClientSecurityConfiguration) Serialize(writer i878a80d2330
         return err
     }
     return nil
+}
+// WindowsOfficeClientSecurityConfigurationable 
+type WindowsOfficeClientSecurityConfigurationable interface {
+    OfficeClientConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

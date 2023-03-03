@@ -7,8 +7,6 @@ import (
 // AndroidDeviceOwnerSilentCertificateAccessCollectionResponse 
 type AndroidDeviceOwnerSilentCertificateAccessCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidDeviceOwnerSilentCertificateAccessable
 }
 // NewAndroidDeviceOwnerSilentCertificateAccessCollectionResponse instantiates a new AndroidDeviceOwnerSilentCertificateAccessCollectionResponse and sets the default values.
 func NewAndroidDeviceOwnerSilentCertificateAccessCollectionResponse()(*AndroidDeviceOwnerSilentCertificateAccessCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidDeviceOwnerSilentCertificateAccessCollectionResponse) GetFieldDe
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidDeviceOwnerSilentCertificateAccessCollectionResponse) GetValue()([]AndroidDeviceOwnerSilentCertificateAccessable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidDeviceOwnerSilentCertificateAccessable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerSilentCertificateAccessCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidDeviceOwnerSilentCertificateAccessCollectionResponse) Serialize(
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidDeviceOwnerSilentCertificateAccessCollectionResponse) SetValue(value []AndroidDeviceOwnerSilentCertificateAccessable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidDeviceOwnerSilentCertificateAccessCollectionResponseable 
+type AndroidDeviceOwnerSilentCertificateAccessCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidDeviceOwnerSilentCertificateAccessable)
+    SetValue(value []AndroidDeviceOwnerSilentCertificateAccessable)()
 }

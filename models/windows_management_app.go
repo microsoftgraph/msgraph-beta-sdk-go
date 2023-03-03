@@ -7,14 +7,6 @@ import (
 // WindowsManagementApp 
 type WindowsManagementApp struct {
     Entity
-    // Windows management app available version.
-    availableVersion *string
-    // The list of health states for installed Windows management app.
-    healthStates []WindowsManagementAppHealthStateable
-    // ManagedInstallerStatus
-    managedInstaller *ManagedInstallerStatus
-    // Managed Installer Configured Date Time
-    managedInstallerConfiguredDateTime *string
 }
 // NewWindowsManagementApp instantiates a new windowsManagementApp and sets the default values.
 func NewWindowsManagementApp()(*WindowsManagementApp) {
@@ -29,7 +21,14 @@ func CreateWindowsManagementAppFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetAvailableVersion gets the availableVersion property value. Windows management app available version.
 func (m *WindowsManagementApp) GetAvailableVersion()(*string) {
-    return m.availableVersion
+    val, err := m.GetBackingStore().Get("availableVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsManagementApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -82,15 +81,36 @@ func (m *WindowsManagementApp) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetHealthStates gets the healthStates property value. The list of health states for installed Windows management app.
 func (m *WindowsManagementApp) GetHealthStates()([]WindowsManagementAppHealthStateable) {
-    return m.healthStates
+    val, err := m.GetBackingStore().Get("healthStates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsManagementAppHealthStateable)
+    }
+    return nil
 }
 // GetManagedInstaller gets the managedInstaller property value. ManagedInstallerStatus
 func (m *WindowsManagementApp) GetManagedInstaller()(*ManagedInstallerStatus) {
-    return m.managedInstaller
+    val, err := m.GetBackingStore().Get("managedInstaller")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ManagedInstallerStatus)
+    }
+    return nil
 }
 // GetManagedInstallerConfiguredDateTime gets the managedInstallerConfiguredDateTime property value. Managed Installer Configured Date Time
 func (m *WindowsManagementApp) GetManagedInstallerConfiguredDateTime()(*string) {
-    return m.managedInstallerConfiguredDateTime
+    val, err := m.GetBackingStore().Get("managedInstallerConfiguredDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsManagementApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -131,17 +151,42 @@ func (m *WindowsManagementApp) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetAvailableVersion sets the availableVersion property value. Windows management app available version.
 func (m *WindowsManagementApp) SetAvailableVersion(value *string)() {
-    m.availableVersion = value
+    err := m.GetBackingStore().Set("availableVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHealthStates sets the healthStates property value. The list of health states for installed Windows management app.
 func (m *WindowsManagementApp) SetHealthStates(value []WindowsManagementAppHealthStateable)() {
-    m.healthStates = value
+    err := m.GetBackingStore().Set("healthStates", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedInstaller sets the managedInstaller property value. ManagedInstallerStatus
 func (m *WindowsManagementApp) SetManagedInstaller(value *ManagedInstallerStatus)() {
-    m.managedInstaller = value
+    err := m.GetBackingStore().Set("managedInstaller", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedInstallerConfiguredDateTime sets the managedInstallerConfiguredDateTime property value. Managed Installer Configured Date Time
 func (m *WindowsManagementApp) SetManagedInstallerConfiguredDateTime(value *string)() {
-    m.managedInstallerConfiguredDateTime = value
+    err := m.GetBackingStore().Set("managedInstallerConfiguredDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsManagementAppable 
+type WindowsManagementAppable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAvailableVersion()(*string)
+    GetHealthStates()([]WindowsManagementAppHealthStateable)
+    GetManagedInstaller()(*ManagedInstallerStatus)
+    GetManagedInstallerConfiguredDateTime()(*string)
+    SetAvailableVersion(value *string)()
+    SetHealthStates(value []WindowsManagementAppHealthStateable)()
+    SetManagedInstaller(value *ManagedInstallerStatus)()
+    SetManagedInstallerConfiguredDateTime(value *string)()
 }

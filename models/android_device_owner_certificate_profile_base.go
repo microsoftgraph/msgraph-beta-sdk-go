@@ -7,28 +7,14 @@ import (
 // AndroidDeviceOwnerCertificateProfileBase 
 type AndroidDeviceOwnerCertificateProfileBase struct {
     DeviceConfiguration
-    // Certificate Validity Period Options.
-    certificateValidityPeriodScale *CertificateValidityPeriodScale
-    // Value for the Certificate Validity Period.
-    certificateValidityPeriodValue *int32
-    // Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
-    extendedKeyUsages []ExtendedKeyUsageable
-    // Certificate renewal threshold percentage. Valid values 1 to 99
-    renewalThresholdPercentage *int32
-    // Trusted Root Certificate.
-    rootCertificate AndroidDeviceOwnerTrustedRootCertificateable
-    // Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
-    subjectAlternativeNameType *SubjectAlternativeNameType
-    // Certificate Subject Name Format. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
-    subjectNameFormat *SubjectNameFormat
 }
 // NewAndroidDeviceOwnerCertificateProfileBase instantiates a new AndroidDeviceOwnerCertificateProfileBase and sets the default values.
 func NewAndroidDeviceOwnerCertificateProfileBase()(*AndroidDeviceOwnerCertificateProfileBase) {
     m := &AndroidDeviceOwnerCertificateProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.androidDeviceOwnerCertificateProfileBase";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidDeviceOwnerCertificateProfileBase"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidDeviceOwnerCertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -59,15 +45,36 @@ func CreateAndroidDeviceOwnerCertificateProfileBaseFromDiscriminatorValue(parseN
 }
 // GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *AndroidDeviceOwnerCertificateProfileBase) GetCertificateValidityPeriodScale()(*CertificateValidityPeriodScale) {
-    return m.certificateValidityPeriodScale
+    val, err := m.GetBackingStore().Get("certificateValidityPeriodScale")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CertificateValidityPeriodScale)
+    }
+    return nil
 }
 // GetCertificateValidityPeriodValue gets the certificateValidityPeriodValue property value. Value for the Certificate Validity Period.
 func (m *AndroidDeviceOwnerCertificateProfileBase) GetCertificateValidityPeriodValue()(*int32) {
-    return m.certificateValidityPeriodValue
+    val, err := m.GetBackingStore().Get("certificateValidityPeriodValue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetExtendedKeyUsages gets the extendedKeyUsages property value. Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
 func (m *AndroidDeviceOwnerCertificateProfileBase) GetExtendedKeyUsages()([]ExtendedKeyUsageable) {
-    return m.extendedKeyUsages
+    val, err := m.GetBackingStore().Get("extendedKeyUsages")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ExtendedKeyUsageable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidDeviceOwnerCertificateProfileBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -150,19 +157,47 @@ func (m *AndroidDeviceOwnerCertificateProfileBase) GetFieldDeserializers()(map[s
 }
 // GetRenewalThresholdPercentage gets the renewalThresholdPercentage property value. Certificate renewal threshold percentage. Valid values 1 to 99
 func (m *AndroidDeviceOwnerCertificateProfileBase) GetRenewalThresholdPercentage()(*int32) {
-    return m.renewalThresholdPercentage
+    val, err := m.GetBackingStore().Get("renewalThresholdPercentage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetRootCertificate gets the rootCertificate property value. Trusted Root Certificate.
 func (m *AndroidDeviceOwnerCertificateProfileBase) GetRootCertificate()(AndroidDeviceOwnerTrustedRootCertificateable) {
-    return m.rootCertificate
+    val, err := m.GetBackingStore().Get("rootCertificate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AndroidDeviceOwnerTrustedRootCertificateable)
+    }
+    return nil
 }
 // GetSubjectAlternativeNameType gets the subjectAlternativeNameType property value. Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
 func (m *AndroidDeviceOwnerCertificateProfileBase) GetSubjectAlternativeNameType()(*SubjectAlternativeNameType) {
-    return m.subjectAlternativeNameType
+    val, err := m.GetBackingStore().Get("subjectAlternativeNameType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SubjectAlternativeNameType)
+    }
+    return nil
 }
 // GetSubjectNameFormat gets the subjectNameFormat property value. Certificate Subject Name Format. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
 func (m *AndroidDeviceOwnerCertificateProfileBase) GetSubjectNameFormat()(*SubjectNameFormat) {
-    return m.subjectNameFormat
+    val, err := m.GetBackingStore().Get("subjectNameFormat")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SubjectNameFormat)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerCertificateProfileBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -223,29 +258,69 @@ func (m *AndroidDeviceOwnerCertificateProfileBase) Serialize(writer i878a80d2330
 }
 // SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *AndroidDeviceOwnerCertificateProfileBase) SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)() {
-    m.certificateValidityPeriodScale = value
+    err := m.GetBackingStore().Set("certificateValidityPeriodScale", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCertificateValidityPeriodValue sets the certificateValidityPeriodValue property value. Value for the Certificate Validity Period.
 func (m *AndroidDeviceOwnerCertificateProfileBase) SetCertificateValidityPeriodValue(value *int32)() {
-    m.certificateValidityPeriodValue = value
+    err := m.GetBackingStore().Set("certificateValidityPeriodValue", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExtendedKeyUsages sets the extendedKeyUsages property value. Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
 func (m *AndroidDeviceOwnerCertificateProfileBase) SetExtendedKeyUsages(value []ExtendedKeyUsageable)() {
-    m.extendedKeyUsages = value
+    err := m.GetBackingStore().Set("extendedKeyUsages", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRenewalThresholdPercentage sets the renewalThresholdPercentage property value. Certificate renewal threshold percentage. Valid values 1 to 99
 func (m *AndroidDeviceOwnerCertificateProfileBase) SetRenewalThresholdPercentage(value *int32)() {
-    m.renewalThresholdPercentage = value
+    err := m.GetBackingStore().Set("renewalThresholdPercentage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRootCertificate sets the rootCertificate property value. Trusted Root Certificate.
 func (m *AndroidDeviceOwnerCertificateProfileBase) SetRootCertificate(value AndroidDeviceOwnerTrustedRootCertificateable)() {
-    m.rootCertificate = value
+    err := m.GetBackingStore().Set("rootCertificate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubjectAlternativeNameType sets the subjectAlternativeNameType property value. Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
 func (m *AndroidDeviceOwnerCertificateProfileBase) SetSubjectAlternativeNameType(value *SubjectAlternativeNameType)() {
-    m.subjectAlternativeNameType = value
+    err := m.GetBackingStore().Set("subjectAlternativeNameType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubjectNameFormat sets the subjectNameFormat property value. Certificate Subject Name Format. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
 func (m *AndroidDeviceOwnerCertificateProfileBase) SetSubjectNameFormat(value *SubjectNameFormat)() {
-    m.subjectNameFormat = value
+    err := m.GetBackingStore().Set("subjectNameFormat", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidDeviceOwnerCertificateProfileBaseable 
+type AndroidDeviceOwnerCertificateProfileBaseable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCertificateValidityPeriodScale()(*CertificateValidityPeriodScale)
+    GetCertificateValidityPeriodValue()(*int32)
+    GetExtendedKeyUsages()([]ExtendedKeyUsageable)
+    GetRenewalThresholdPercentage()(*int32)
+    GetRootCertificate()(AndroidDeviceOwnerTrustedRootCertificateable)
+    GetSubjectAlternativeNameType()(*SubjectAlternativeNameType)
+    GetSubjectNameFormat()(*SubjectNameFormat)
+    SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)()
+    SetCertificateValidityPeriodValue(value *int32)()
+    SetExtendedKeyUsages(value []ExtendedKeyUsageable)()
+    SetRenewalThresholdPercentage(value *int32)()
+    SetRootCertificate(value AndroidDeviceOwnerTrustedRootCertificateable)()
+    SetSubjectAlternativeNameType(value *SubjectAlternativeNameType)()
+    SetSubjectNameFormat(value *SubjectNameFormat)()
 }

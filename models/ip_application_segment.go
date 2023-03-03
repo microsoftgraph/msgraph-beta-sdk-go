@@ -7,18 +7,14 @@ import (
 // IpApplicationSegment 
 type IpApplicationSegment struct {
     ApplicationSegment
-    // The destinationHost property
-    destinationHost *string
-    // The port property
-    port *int32
 }
 // NewIpApplicationSegment instantiates a new IpApplicationSegment and sets the default values.
 func NewIpApplicationSegment()(*IpApplicationSegment) {
     m := &IpApplicationSegment{
         ApplicationSegment: *NewApplicationSegment(),
     }
-    odataTypeValue := "#microsoft.graph.ipApplicationSegment";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.ipApplicationSegment"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateIpApplicationSegmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +23,14 @@ func CreateIpApplicationSegmentFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetDestinationHost gets the destinationHost property value. The destinationHost property
 func (m *IpApplicationSegment) GetDestinationHost()(*string) {
-    return m.destinationHost
+    val, err := m.GetBackingStore().Get("destinationHost")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IpApplicationSegment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,7 +59,14 @@ func (m *IpApplicationSegment) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetPort gets the port property value. The port property
 func (m *IpApplicationSegment) GetPort()(*int32) {
-    return m.port
+    val, err := m.GetBackingStore().Get("port")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IpApplicationSegment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *IpApplicationSegment) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetDestinationHost sets the destinationHost property value. The destinationHost property
 func (m *IpApplicationSegment) SetDestinationHost(value *string)() {
-    m.destinationHost = value
+    err := m.GetBackingStore().Set("destinationHost", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPort sets the port property value. The port property
 func (m *IpApplicationSegment) SetPort(value *int32)() {
-    m.port = value
+    err := m.GetBackingStore().Set("port", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IpApplicationSegmentable 
+type IpApplicationSegmentable interface {
+    ApplicationSegmentable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDestinationHost()(*string)
+    GetPort()(*int32)
+    SetDestinationHost(value *string)()
+    SetPort(value *int32)()
 }

@@ -8,30 +8,6 @@ import (
 // ManagedAllDeviceCertificateState 
 type ManagedAllDeviceCertificateState struct {
     Entity
-    // Certificate expiry date
-    certificateExpirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Enhanced Key Usage
-    certificateExtendedKeyUsages *string
-    // Issuance date
-    certificateIssuanceDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Issuer
-    certificateIssuerName *string
-    // Key Usage
-    certificateKeyUsages *int32
-    // Certificate Revocation Status.
-    certificateRevokeStatus *CertificateRevocationStatus
-    // The time the revoke status was last changed
-    certificateRevokeStatusLastChangeDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Serial number
-    certificateSerialNumber *string
-    // Certificate subject name
-    certificateSubjectName *string
-    // Thumbprint
-    certificateThumbprint *string
-    // Device display name
-    managedDeviceDisplayName *string
-    // User principal name
-    userPrincipalName *string
 }
 // NewManagedAllDeviceCertificateState instantiates a new managedAllDeviceCertificateState and sets the default values.
 func NewManagedAllDeviceCertificateState()(*ManagedAllDeviceCertificateState) {
@@ -46,43 +22,113 @@ func CreateManagedAllDeviceCertificateStateFromDiscriminatorValue(parseNode i878
 }
 // GetCertificateExpirationDateTime gets the certificateExpirationDateTime property value. Certificate expiry date
 func (m *ManagedAllDeviceCertificateState) GetCertificateExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.certificateExpirationDateTime
+    val, err := m.GetBackingStore().Get("certificateExpirationDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetCertificateExtendedKeyUsages gets the certificateExtendedKeyUsages property value. Enhanced Key Usage
 func (m *ManagedAllDeviceCertificateState) GetCertificateExtendedKeyUsages()(*string) {
-    return m.certificateExtendedKeyUsages
+    val, err := m.GetBackingStore().Get("certificateExtendedKeyUsages")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCertificateIssuanceDateTime gets the certificateIssuanceDateTime property value. Issuance date
 func (m *ManagedAllDeviceCertificateState) GetCertificateIssuanceDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.certificateIssuanceDateTime
+    val, err := m.GetBackingStore().Get("certificateIssuanceDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetCertificateIssuerName gets the certificateIssuerName property value. Issuer
 func (m *ManagedAllDeviceCertificateState) GetCertificateIssuerName()(*string) {
-    return m.certificateIssuerName
+    val, err := m.GetBackingStore().Get("certificateIssuerName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCertificateKeyUsages gets the certificateKeyUsages property value. Key Usage
 func (m *ManagedAllDeviceCertificateState) GetCertificateKeyUsages()(*int32) {
-    return m.certificateKeyUsages
+    val, err := m.GetBackingStore().Get("certificateKeyUsages")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetCertificateRevokeStatus gets the certificateRevokeStatus property value. Certificate Revocation Status.
 func (m *ManagedAllDeviceCertificateState) GetCertificateRevokeStatus()(*CertificateRevocationStatus) {
-    return m.certificateRevokeStatus
+    val, err := m.GetBackingStore().Get("certificateRevokeStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CertificateRevocationStatus)
+    }
+    return nil
 }
 // GetCertificateRevokeStatusLastChangeDateTime gets the certificateRevokeStatusLastChangeDateTime property value. The time the revoke status was last changed
 func (m *ManagedAllDeviceCertificateState) GetCertificateRevokeStatusLastChangeDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.certificateRevokeStatusLastChangeDateTime
+    val, err := m.GetBackingStore().Get("certificateRevokeStatusLastChangeDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetCertificateSerialNumber gets the certificateSerialNumber property value. Serial number
 func (m *ManagedAllDeviceCertificateState) GetCertificateSerialNumber()(*string) {
-    return m.certificateSerialNumber
+    val, err := m.GetBackingStore().Get("certificateSerialNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCertificateSubjectName gets the certificateSubjectName property value. Certificate subject name
 func (m *ManagedAllDeviceCertificateState) GetCertificateSubjectName()(*string) {
-    return m.certificateSubjectName
+    val, err := m.GetBackingStore().Get("certificateSubjectName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCertificateThumbprint gets the certificateThumbprint property value. Thumbprint
 func (m *ManagedAllDeviceCertificateState) GetCertificateThumbprint()(*string) {
-    return m.certificateThumbprint
+    val, err := m.GetBackingStore().Get("certificateThumbprint")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedAllDeviceCertificateState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -211,11 +257,25 @@ func (m *ManagedAllDeviceCertificateState) GetFieldDeserializers()(map[string]fu
 }
 // GetManagedDeviceDisplayName gets the managedDeviceDisplayName property value. Device display name
 func (m *ManagedAllDeviceCertificateState) GetManagedDeviceDisplayName()(*string) {
-    return m.managedDeviceDisplayName
+    val, err := m.GetBackingStore().Get("managedDeviceDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. User principal name
 func (m *ManagedAllDeviceCertificateState) GetUserPrincipalName()(*string) {
-    return m.userPrincipalName
+    val, err := m.GetBackingStore().Get("userPrincipalName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagedAllDeviceCertificateState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -300,49 +360,114 @@ func (m *ManagedAllDeviceCertificateState) Serialize(writer i878a80d2330e89d2689
 }
 // SetCertificateExpirationDateTime sets the certificateExpirationDateTime property value. Certificate expiry date
 func (m *ManagedAllDeviceCertificateState) SetCertificateExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.certificateExpirationDateTime = value
+    err := m.GetBackingStore().Set("certificateExpirationDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCertificateExtendedKeyUsages sets the certificateExtendedKeyUsages property value. Enhanced Key Usage
 func (m *ManagedAllDeviceCertificateState) SetCertificateExtendedKeyUsages(value *string)() {
-    m.certificateExtendedKeyUsages = value
+    err := m.GetBackingStore().Set("certificateExtendedKeyUsages", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCertificateIssuanceDateTime sets the certificateIssuanceDateTime property value. Issuance date
 func (m *ManagedAllDeviceCertificateState) SetCertificateIssuanceDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.certificateIssuanceDateTime = value
+    err := m.GetBackingStore().Set("certificateIssuanceDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCertificateIssuerName sets the certificateIssuerName property value. Issuer
 func (m *ManagedAllDeviceCertificateState) SetCertificateIssuerName(value *string)() {
-    m.certificateIssuerName = value
+    err := m.GetBackingStore().Set("certificateIssuerName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCertificateKeyUsages sets the certificateKeyUsages property value. Key Usage
 func (m *ManagedAllDeviceCertificateState) SetCertificateKeyUsages(value *int32)() {
-    m.certificateKeyUsages = value
+    err := m.GetBackingStore().Set("certificateKeyUsages", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCertificateRevokeStatus sets the certificateRevokeStatus property value. Certificate Revocation Status.
 func (m *ManagedAllDeviceCertificateState) SetCertificateRevokeStatus(value *CertificateRevocationStatus)() {
-    m.certificateRevokeStatus = value
+    err := m.GetBackingStore().Set("certificateRevokeStatus", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCertificateRevokeStatusLastChangeDateTime sets the certificateRevokeStatusLastChangeDateTime property value. The time the revoke status was last changed
 func (m *ManagedAllDeviceCertificateState) SetCertificateRevokeStatusLastChangeDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.certificateRevokeStatusLastChangeDateTime = value
+    err := m.GetBackingStore().Set("certificateRevokeStatusLastChangeDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCertificateSerialNumber sets the certificateSerialNumber property value. Serial number
 func (m *ManagedAllDeviceCertificateState) SetCertificateSerialNumber(value *string)() {
-    m.certificateSerialNumber = value
+    err := m.GetBackingStore().Set("certificateSerialNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCertificateSubjectName sets the certificateSubjectName property value. Certificate subject name
 func (m *ManagedAllDeviceCertificateState) SetCertificateSubjectName(value *string)() {
-    m.certificateSubjectName = value
+    err := m.GetBackingStore().Set("certificateSubjectName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCertificateThumbprint sets the certificateThumbprint property value. Thumbprint
 func (m *ManagedAllDeviceCertificateState) SetCertificateThumbprint(value *string)() {
-    m.certificateThumbprint = value
+    err := m.GetBackingStore().Set("certificateThumbprint", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedDeviceDisplayName sets the managedDeviceDisplayName property value. Device display name
 func (m *ManagedAllDeviceCertificateState) SetManagedDeviceDisplayName(value *string)() {
-    m.managedDeviceDisplayName = value
+    err := m.GetBackingStore().Set("managedDeviceDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. User principal name
 func (m *ManagedAllDeviceCertificateState) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    err := m.GetBackingStore().Set("userPrincipalName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagedAllDeviceCertificateStateable 
+type ManagedAllDeviceCertificateStateable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCertificateExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetCertificateExtendedKeyUsages()(*string)
+    GetCertificateIssuanceDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetCertificateIssuerName()(*string)
+    GetCertificateKeyUsages()(*int32)
+    GetCertificateRevokeStatus()(*CertificateRevocationStatus)
+    GetCertificateRevokeStatusLastChangeDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetCertificateSerialNumber()(*string)
+    GetCertificateSubjectName()(*string)
+    GetCertificateThumbprint()(*string)
+    GetManagedDeviceDisplayName()(*string)
+    GetUserPrincipalName()(*string)
+    SetCertificateExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetCertificateExtendedKeyUsages(value *string)()
+    SetCertificateIssuanceDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetCertificateIssuerName(value *string)()
+    SetCertificateKeyUsages(value *int32)()
+    SetCertificateRevokeStatus(value *CertificateRevocationStatus)()
+    SetCertificateRevokeStatusLastChangeDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetCertificateSerialNumber(value *string)()
+    SetCertificateSubjectName(value *string)()
+    SetCertificateThumbprint(value *string)()
+    SetManagedDeviceDisplayName(value *string)()
+    SetUserPrincipalName(value *string)()
 }

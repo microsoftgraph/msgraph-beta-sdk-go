@@ -7,8 +7,6 @@ import (
 // IosExpeditedCheckinConfigurationCollectionResponse 
 type IosExpeditedCheckinConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []IosExpeditedCheckinConfigurationable
 }
 // NewIosExpeditedCheckinConfigurationCollectionResponse instantiates a new IosExpeditedCheckinConfigurationCollectionResponse and sets the default values.
 func NewIosExpeditedCheckinConfigurationCollectionResponse()(*IosExpeditedCheckinConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *IosExpeditedCheckinConfigurationCollectionResponse) GetFieldDeserialize
 }
 // GetValue gets the value property value. The value property
 func (m *IosExpeditedCheckinConfigurationCollectionResponse) GetValue()([]IosExpeditedCheckinConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IosExpeditedCheckinConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosExpeditedCheckinConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *IosExpeditedCheckinConfigurationCollectionResponse) Serialize(writer i8
 }
 // SetValue sets the value property value. The value property
 func (m *IosExpeditedCheckinConfigurationCollectionResponse) SetValue(value []IosExpeditedCheckinConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosExpeditedCheckinConfigurationCollectionResponseable 
+type IosExpeditedCheckinConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]IosExpeditedCheckinConfigurationable)
+    SetValue(value []IosExpeditedCheckinConfigurationable)()
 }

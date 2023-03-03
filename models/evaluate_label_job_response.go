@@ -7,8 +7,6 @@ import (
 // EvaluateLabelJobResponse 
 type EvaluateLabelJobResponse struct {
     JobResponseBase
-    // The result property
-    result EvaluateLabelJobResultGroupable
 }
 // NewEvaluateLabelJobResponse instantiates a new EvaluateLabelJobResponse and sets the default values.
 func NewEvaluateLabelJobResponse()(*EvaluateLabelJobResponse) {
@@ -38,7 +36,14 @@ func (m *EvaluateLabelJobResponse) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetResult gets the result property value. The result property
 func (m *EvaluateLabelJobResponse) GetResult()(EvaluateLabelJobResultGroupable) {
-    return m.result
+    val, err := m.GetBackingStore().Get("result")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EvaluateLabelJobResultGroupable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EvaluateLabelJobResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *EvaluateLabelJobResponse) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetResult sets the result property value. The result property
 func (m *EvaluateLabelJobResponse) SetResult(value EvaluateLabelJobResultGroupable)() {
-    m.result = value
+    err := m.GetBackingStore().Set("result", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EvaluateLabelJobResponseable 
+type EvaluateLabelJobResponseable interface {
+    JobResponseBaseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetResult()(EvaluateLabelJobResultGroupable)
+    SetResult(value EvaluateLabelJobResultGroupable)()
 }

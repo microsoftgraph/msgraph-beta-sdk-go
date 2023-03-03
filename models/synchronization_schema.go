@@ -7,12 +7,6 @@ import (
 // SynchronizationSchema 
 type SynchronizationSchema struct {
     Entity
-    // Contains the collection of directories and all of their objects.
-    directories []DirectoryDefinitionable
-    // A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
-    synchronizationRules []SynchronizationRuleable
-    // The version of the schema, updated automatically with every schema change.
-    version *string
 }
 // NewSynchronizationSchema instantiates a new synchronizationSchema and sets the default values.
 func NewSynchronizationSchema()(*SynchronizationSchema) {
@@ -27,7 +21,14 @@ func CreateSynchronizationSchemaFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetDirectories gets the directories property value. Contains the collection of directories and all of their objects.
 func (m *SynchronizationSchema) GetDirectories()([]DirectoryDefinitionable) {
-    return m.directories
+    val, err := m.GetBackingStore().Get("directories")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DirectoryDefinitionable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SynchronizationSchema) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -74,11 +75,25 @@ func (m *SynchronizationSchema) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetSynchronizationRules gets the synchronizationRules property value. A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
 func (m *SynchronizationSchema) GetSynchronizationRules()([]SynchronizationRuleable) {
-    return m.synchronizationRules
+    val, err := m.GetBackingStore().Get("synchronizationRules")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SynchronizationRuleable)
+    }
+    return nil
 }
 // GetVersion gets the version property value. The version of the schema, updated automatically with every schema change.
 func (m *SynchronizationSchema) GetVersion()(*string) {
-    return m.version
+    val, err := m.GetBackingStore().Get("version")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SynchronizationSchema) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -116,13 +131,33 @@ func (m *SynchronizationSchema) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetDirectories sets the directories property value. Contains the collection of directories and all of their objects.
 func (m *SynchronizationSchema) SetDirectories(value []DirectoryDefinitionable)() {
-    m.directories = value
+    err := m.GetBackingStore().Set("directories", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSynchronizationRules sets the synchronizationRules property value. A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
 func (m *SynchronizationSchema) SetSynchronizationRules(value []SynchronizationRuleable)() {
-    m.synchronizationRules = value
+    err := m.GetBackingStore().Set("synchronizationRules", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVersion sets the version property value. The version of the schema, updated automatically with every schema change.
 func (m *SynchronizationSchema) SetVersion(value *string)() {
-    m.version = value
+    err := m.GetBackingStore().Set("version", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SynchronizationSchemaable 
+type SynchronizationSchemaable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDirectories()([]DirectoryDefinitionable)
+    GetSynchronizationRules()([]SynchronizationRuleable)
+    GetVersion()(*string)
+    SetDirectories(value []DirectoryDefinitionable)()
+    SetSynchronizationRules(value []SynchronizationRuleable)()
+    SetVersion(value *string)()
 }

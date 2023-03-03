@@ -7,10 +7,6 @@ import (
 // DocumentCommentReply 
 type DocumentCommentReply struct {
     Entity
-    // The content property
-    content *string
-    // The location property
-    location *string
 }
 // NewDocumentCommentReply instantiates a new documentCommentReply and sets the default values.
 func NewDocumentCommentReply()(*DocumentCommentReply) {
@@ -25,7 +21,14 @@ func CreateDocumentCommentReplyFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetContent gets the content property value. The content property
 func (m *DocumentCommentReply) GetContent()(*string) {
-    return m.content
+    val, err := m.GetBackingStore().Get("content")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DocumentCommentReply) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -54,7 +57,14 @@ func (m *DocumentCommentReply) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetLocation gets the location property value. The location property
 func (m *DocumentCommentReply) GetLocation()(*string) {
-    return m.location
+    val, err := m.GetBackingStore().Get("location")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DocumentCommentReply) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -78,9 +88,24 @@ func (m *DocumentCommentReply) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetContent sets the content property value. The content property
 func (m *DocumentCommentReply) SetContent(value *string)() {
-    m.content = value
+    err := m.GetBackingStore().Set("content", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocation sets the location property value. The location property
 func (m *DocumentCommentReply) SetLocation(value *string)() {
-    m.location = value
+    err := m.GetBackingStore().Set("location", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DocumentCommentReplyable 
+type DocumentCommentReplyable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetContent()(*string)
+    GetLocation()(*string)
+    SetContent(value *string)()
+    SetLocation(value *string)()
 }

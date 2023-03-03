@@ -7,8 +7,6 @@ import (
 // SecurityBaselineCategoryStateSummaryCollectionResponse 
 type SecurityBaselineCategoryStateSummaryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []SecurityBaselineCategoryStateSummaryable
 }
 // NewSecurityBaselineCategoryStateSummaryCollectionResponse instantiates a new SecurityBaselineCategoryStateSummaryCollectionResponse and sets the default values.
 func NewSecurityBaselineCategoryStateSummaryCollectionResponse()(*SecurityBaselineCategoryStateSummaryCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *SecurityBaselineCategoryStateSummaryCollectionResponse) GetFieldDeseria
 }
 // GetValue gets the value property value. The value property
 func (m *SecurityBaselineCategoryStateSummaryCollectionResponse) GetValue()([]SecurityBaselineCategoryStateSummaryable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SecurityBaselineCategoryStateSummaryable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SecurityBaselineCategoryStateSummaryCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *SecurityBaselineCategoryStateSummaryCollectionResponse) Serialize(write
 }
 // SetValue sets the value property value. The value property
 func (m *SecurityBaselineCategoryStateSummaryCollectionResponse) SetValue(value []SecurityBaselineCategoryStateSummaryable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SecurityBaselineCategoryStateSummaryCollectionResponseable 
+type SecurityBaselineCategoryStateSummaryCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]SecurityBaselineCategoryStateSummaryable)
+    SetValue(value []SecurityBaselineCategoryStateSummaryable)()
 }

@@ -7,8 +7,6 @@ import (
 // UserCredentialUsageDetailsCollectionResponse 
 type UserCredentialUsageDetailsCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UserCredentialUsageDetailsable
 }
 // NewUserCredentialUsageDetailsCollectionResponse instantiates a new UserCredentialUsageDetailsCollectionResponse and sets the default values.
 func NewUserCredentialUsageDetailsCollectionResponse()(*UserCredentialUsageDetailsCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UserCredentialUsageDetailsCollectionResponse) GetFieldDeserializers()(m
 }
 // GetValue gets the value property value. The value property
 func (m *UserCredentialUsageDetailsCollectionResponse) GetValue()([]UserCredentialUsageDetailsable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserCredentialUsageDetailsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserCredentialUsageDetailsCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UserCredentialUsageDetailsCollectionResponse) Serialize(writer i878a80d
 }
 // SetValue sets the value property value. The value property
 func (m *UserCredentialUsageDetailsCollectionResponse) SetValue(value []UserCredentialUsageDetailsable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserCredentialUsageDetailsCollectionResponseable 
+type UserCredentialUsageDetailsCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UserCredentialUsageDetailsable)
+    SetValue(value []UserCredentialUsageDetailsable)()
 }

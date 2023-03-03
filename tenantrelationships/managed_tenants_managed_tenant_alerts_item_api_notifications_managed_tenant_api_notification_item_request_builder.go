@@ -41,8 +41,8 @@ func NewManagedTenantsManagedTenantAlertsItemApiNotificationsManagedTenantApiNot
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedTenantsManagedTenantAlertsItemApiNotificationsManagedTenantApiNotificationItemRequestBuilder instantiates a new ManagedTenantApiNotificationItemRequestBuilder and sets the default values.

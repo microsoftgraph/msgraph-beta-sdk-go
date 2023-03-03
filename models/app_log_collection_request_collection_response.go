@@ -7,8 +7,6 @@ import (
 // AppLogCollectionRequestCollectionResponse 
 type AppLogCollectionRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AppLogCollectionRequestable
 }
 // NewAppLogCollectionRequestCollectionResponse instantiates a new AppLogCollectionRequestCollectionResponse and sets the default values.
 func NewAppLogCollectionRequestCollectionResponse()(*AppLogCollectionRequestCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AppLogCollectionRequestCollectionResponse) GetFieldDeserializers()(map[
 }
 // GetValue gets the value property value. The value property
 func (m *AppLogCollectionRequestCollectionResponse) GetValue()([]AppLogCollectionRequestable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AppLogCollectionRequestable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AppLogCollectionRequestCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AppLogCollectionRequestCollectionResponse) Serialize(writer i878a80d233
 }
 // SetValue sets the value property value. The value property
 func (m *AppLogCollectionRequestCollectionResponse) SetValue(value []AppLogCollectionRequestable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AppLogCollectionRequestCollectionResponseable 
+type AppLogCollectionRequestCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AppLogCollectionRequestable)
+    SetValue(value []AppLogCollectionRequestable)()
 }

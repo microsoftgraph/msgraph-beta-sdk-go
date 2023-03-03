@@ -48,11 +48,11 @@ type WindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityItemRequestBu
 }
 // AssignResourceAccountToDevice provides operations to call the assignResourceAccountToDevice method.
 func (m *WindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityItemRequestBuilder) AssignResourceAccountToDevice()(*WindowsAutopilotDeviceIdentitiesItemAssignResourceAccountToDeviceRequestBuilder) {
-    return NewWindowsAutopilotDeviceIdentitiesItemAssignResourceAccountToDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsAutopilotDeviceIdentitiesItemAssignResourceAccountToDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AssignUserToDevice provides operations to call the assignUserToDevice method.
 func (m *WindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityItemRequestBuilder) AssignUserToDevice()(*WindowsAutopilotDeviceIdentitiesItemAssignUserToDeviceRequestBuilder) {
-    return NewWindowsAutopilotDeviceIdentitiesItemAssignUserToDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsAutopilotDeviceIdentitiesItemAssignUserToDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewWindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityItemRequestBuilderInternal instantiates a new WindowsAutopilotDeviceIdentityItemRequestBuilder and sets the default values.
 func NewWindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityItemRequestBuilder) {
@@ -63,8 +63,8 @@ func NewWindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityItemReques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityItemRequestBuilder instantiates a new WindowsAutopilotDeviceIdentityItemRequestBuilder and sets the default values.
@@ -91,7 +91,7 @@ func (m *WindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityItemReque
 }
 // DeploymentProfile provides operations to manage the deploymentProfile property of the microsoft.graph.windowsAutopilotDeviceIdentity entity.
 func (m *WindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityItemRequestBuilder) DeploymentProfile()(*WindowsAutopilotDeviceIdentitiesItemDeploymentProfileRequestBuilder) {
-    return NewWindowsAutopilotDeviceIdentitiesItemDeploymentProfileRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsAutopilotDeviceIdentitiesItemDeploymentProfileRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the Windows autopilot device identities contained collection.
 func (m *WindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotDeviceIdentityable, error) {
@@ -114,7 +114,7 @@ func (m *WindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityItemReque
 }
 // IntendedDeploymentProfile provides operations to manage the intendedDeploymentProfile property of the microsoft.graph.windowsAutopilotDeviceIdentity entity.
 func (m *WindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityItemRequestBuilder) IntendedDeploymentProfile()(*WindowsAutopilotDeviceIdentitiesItemIntendedDeploymentProfileRequestBuilder) {
-    return NewWindowsAutopilotDeviceIdentitiesItemIntendedDeploymentProfileRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsAutopilotDeviceIdentitiesItemIntendedDeploymentProfileRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property windowsAutopilotDeviceIdentities in deviceManagement
 func (m *WindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotDeviceIdentityable, requestConfiguration *WindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotDeviceIdentityable, error) {
@@ -170,7 +170,10 @@ func (m *WindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityItemReque
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -179,13 +182,13 @@ func (m *WindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityItemReque
 }
 // UnassignResourceAccountFromDevice provides operations to call the unassignResourceAccountFromDevice method.
 func (m *WindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityItemRequestBuilder) UnassignResourceAccountFromDevice()(*WindowsAutopilotDeviceIdentitiesItemUnassignResourceAccountFromDeviceRequestBuilder) {
-    return NewWindowsAutopilotDeviceIdentitiesItemUnassignResourceAccountFromDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsAutopilotDeviceIdentitiesItemUnassignResourceAccountFromDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UnassignUserFromDevice provides operations to call the unassignUserFromDevice method.
 func (m *WindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityItemRequestBuilder) UnassignUserFromDevice()(*WindowsAutopilotDeviceIdentitiesItemUnassignUserFromDeviceRequestBuilder) {
-    return NewWindowsAutopilotDeviceIdentitiesItemUnassignUserFromDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsAutopilotDeviceIdentitiesItemUnassignUserFromDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UpdateDeviceProperties provides operations to call the updateDeviceProperties method.
 func (m *WindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityItemRequestBuilder) UpdateDeviceProperties()(*WindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesRequestBuilder) {
-    return NewWindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

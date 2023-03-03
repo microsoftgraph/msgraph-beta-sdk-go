@@ -8,16 +8,6 @@ import (
 // WindowsManagementAppHealthState windows management app health state entity.
 type WindowsManagementAppHealthState struct {
     Entity
-    // Name of the device on which Windows management app is installed.
-    deviceName *string
-    // Windows 10 OS version of the device on which Windows management app is installed.
-    deviceOSVersion *string
-    // Indicates health state of the Windows management app.
-    healthState *HealthState
-    // Windows management app installed version.
-    installedVersion *string
-    // Windows management app last check-in time.
-    lastCheckInDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewWindowsManagementAppHealthState instantiates a new windowsManagementAppHealthState and sets the default values.
 func NewWindowsManagementAppHealthState()(*WindowsManagementAppHealthState) {
@@ -32,11 +22,25 @@ func CreateWindowsManagementAppHealthStateFromDiscriminatorValue(parseNode i878a
 }
 // GetDeviceName gets the deviceName property value. Name of the device on which Windows management app is installed.
 func (m *WindowsManagementAppHealthState) GetDeviceName()(*string) {
-    return m.deviceName
+    val, err := m.GetBackingStore().Get("deviceName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDeviceOSVersion gets the deviceOSVersion property value. Windows 10 OS version of the device on which Windows management app is installed.
 func (m *WindowsManagementAppHealthState) GetDeviceOSVersion()(*string) {
-    return m.deviceOSVersion
+    val, err := m.GetBackingStore().Get("deviceOSVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsManagementAppHealthState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -95,15 +99,36 @@ func (m *WindowsManagementAppHealthState) GetFieldDeserializers()(map[string]fun
 }
 // GetHealthState gets the healthState property value. Indicates health state of the Windows management app.
 func (m *WindowsManagementAppHealthState) GetHealthState()(*HealthState) {
-    return m.healthState
+    val, err := m.GetBackingStore().Get("healthState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*HealthState)
+    }
+    return nil
 }
 // GetInstalledVersion gets the installedVersion property value. Windows management app installed version.
 func (m *WindowsManagementAppHealthState) GetInstalledVersion()(*string) {
-    return m.installedVersion
+    val, err := m.GetBackingStore().Get("installedVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLastCheckInDateTime gets the lastCheckInDateTime property value. Windows management app last check-in time.
 func (m *WindowsManagementAppHealthState) GetLastCheckInDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastCheckInDateTime
+    val, err := m.GetBackingStore().Get("lastCheckInDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsManagementAppHealthState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -146,21 +171,51 @@ func (m *WindowsManagementAppHealthState) Serialize(writer i878a80d2330e89d26896
 }
 // SetDeviceName sets the deviceName property value. Name of the device on which Windows management app is installed.
 func (m *WindowsManagementAppHealthState) SetDeviceName(value *string)() {
-    m.deviceName = value
+    err := m.GetBackingStore().Set("deviceName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceOSVersion sets the deviceOSVersion property value. Windows 10 OS version of the device on which Windows management app is installed.
 func (m *WindowsManagementAppHealthState) SetDeviceOSVersion(value *string)() {
-    m.deviceOSVersion = value
+    err := m.GetBackingStore().Set("deviceOSVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHealthState sets the healthState property value. Indicates health state of the Windows management app.
 func (m *WindowsManagementAppHealthState) SetHealthState(value *HealthState)() {
-    m.healthState = value
+    err := m.GetBackingStore().Set("healthState", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInstalledVersion sets the installedVersion property value. Windows management app installed version.
 func (m *WindowsManagementAppHealthState) SetInstalledVersion(value *string)() {
-    m.installedVersion = value
+    err := m.GetBackingStore().Set("installedVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastCheckInDateTime sets the lastCheckInDateTime property value. Windows management app last check-in time.
 func (m *WindowsManagementAppHealthState) SetLastCheckInDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastCheckInDateTime = value
+    err := m.GetBackingStore().Set("lastCheckInDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsManagementAppHealthStateable 
+type WindowsManagementAppHealthStateable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDeviceName()(*string)
+    GetDeviceOSVersion()(*string)
+    GetHealthState()(*HealthState)
+    GetInstalledVersion()(*string)
+    GetLastCheckInDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    SetDeviceName(value *string)()
+    SetDeviceOSVersion(value *string)()
+    SetHealthState(value *HealthState)()
+    SetInstalledVersion(value *string)()
+    SetLastCheckInDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
 }

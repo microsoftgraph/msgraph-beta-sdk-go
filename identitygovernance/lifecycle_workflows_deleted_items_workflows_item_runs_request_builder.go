@@ -54,8 +54,8 @@ func NewLifecycleWorkflowsDeletedItemsWorkflowsItemRunsRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewLifecycleWorkflowsDeletedItemsWorkflowsItemRunsRequestBuilder instantiates a new RunsRequestBuilder and sets the default values.
@@ -66,7 +66,7 @@ func NewLifecycleWorkflowsDeletedItemsWorkflowsItemRunsRequestBuilder(rawUrl str
 }
 // Count provides operations to count the resources in the collection.
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsRequestBuilder) Count()(*LifecycleWorkflowsDeletedItemsWorkflowsItemRunsCountRequestBuilder) {
-    return NewLifecycleWorkflowsDeletedItemsWorkflowsItemRunsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewLifecycleWorkflowsDeletedItemsWorkflowsItemRunsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of the run objects and their properties for a lifecycle workflow.
 // [Find more info here]
@@ -90,9 +90,9 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsRequestBuilder) Get(ctx 
     }
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.RunCollectionResponseable), nil
 }
-// SummaryWithStartDateTimeWithEndDateTime provides operations to call the summary method.
-func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsRequestBuilder) SummaryWithStartDateTimeWithEndDateTime(endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*LifecycleWorkflowsDeletedItemsWorkflowsItemRunsSummaryWithStartDateTimeWithEndDateTimeRequestBuilder) {
-    return NewLifecycleWorkflowsDeletedItemsWorkflowsItemRunsSummaryWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, startDateTime);
+// IdentityGovernanceSummaryWithStartDateTimeWithEndDateTime provides operations to call the summary method.
+func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsRequestBuilder) IdentityGovernanceSummaryWithStartDateTimeWithEndDateTime(endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*LifecycleWorkflowsDeletedItemsWorkflowsItemRunsIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder) {
+    return NewLifecycleWorkflowsDeletedItemsWorkflowsItemRunsIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, startDateTime)
 }
 // ToGetRequestInformation get a list of the run objects and their properties for a lifecycle workflow.
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

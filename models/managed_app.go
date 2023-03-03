@@ -4,21 +4,17 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedApp 
+// ManagedApp abstract class that contains properties and inherited properties for apps that you can manage with an Intune app protection policy.
 type ManagedApp struct {
     MobileApp
-    // A managed (MAM) application's availability.
-    appAvailability *ManagedAppAvailability
-    // The Application's version.
-    version *string
 }
-// NewManagedApp instantiates a new ManagedApp and sets the default values.
+// NewManagedApp instantiates a new managedApp and sets the default values.
 func NewManagedApp()(*ManagedApp) {
     m := &ManagedApp{
         MobileApp: *NewMobileApp(),
     }
-    odataTypeValue := "#microsoft.graph.managedApp";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.managedApp"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateManagedAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,7 +49,14 @@ func CreateManagedAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetAppAvailability gets the appAvailability property value. A managed (MAM) application's availability.
 func (m *ManagedApp) GetAppAvailability()(*ManagedAppAvailability) {
-    return m.appAvailability
+    val, err := m.GetBackingStore().Get("appAvailability")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ManagedAppAvailability)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -82,7 +85,14 @@ func (m *ManagedApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetVersion gets the version property value. The Application's version.
 func (m *ManagedApp) GetVersion()(*string) {
-    return m.version
+    val, err := m.GetBackingStore().Get("version")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagedApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -107,9 +117,24 @@ func (m *ManagedApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetAppAvailability sets the appAvailability property value. A managed (MAM) application's availability.
 func (m *ManagedApp) SetAppAvailability(value *ManagedAppAvailability)() {
-    m.appAvailability = value
+    err := m.GetBackingStore().Set("appAvailability", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVersion sets the version property value. The Application's version.
 func (m *ManagedApp) SetVersion(value *string)() {
-    m.version = value
+    err := m.GetBackingStore().Set("version", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagedAppable 
+type ManagedAppable interface {
+    MobileAppable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppAvailability()(*ManagedAppAvailability)
+    GetVersion()(*string)
+    SetAppAvailability(value *ManagedAppAvailability)()
+    SetVersion(value *string)()
 }

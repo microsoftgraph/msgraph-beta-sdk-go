@@ -7,16 +7,14 @@ import (
 // RemoveContentFooterAction 
 type RemoveContentFooterAction struct {
     InformationProtectionAction
-    // The name of the UI element of the footer to be removed.
-    uiElementNames []string
 }
 // NewRemoveContentFooterAction instantiates a new RemoveContentFooterAction and sets the default values.
 func NewRemoveContentFooterAction()(*RemoveContentFooterAction) {
     m := &RemoveContentFooterAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
     }
-    odataTypeValue := "#microsoft.graph.removeContentFooterAction";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.removeContentFooterAction"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateRemoveContentFooterActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,7 +42,14 @@ func (m *RemoveContentFooterAction) GetFieldDeserializers()(map[string]func(i878
 }
 // GetUiElementNames gets the uiElementNames property value. The name of the UI element of the footer to be removed.
 func (m *RemoveContentFooterAction) GetUiElementNames()([]string) {
-    return m.uiElementNames
+    val, err := m.GetBackingStore().Get("uiElementNames")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RemoveContentFooterAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,5 +67,15 @@ func (m *RemoveContentFooterAction) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetUiElementNames sets the uiElementNames property value. The name of the UI element of the footer to be removed.
 func (m *RemoveContentFooterAction) SetUiElementNames(value []string)() {
-    m.uiElementNames = value
+    err := m.GetBackingStore().Set("uiElementNames", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RemoveContentFooterActionable 
+type RemoveContentFooterActionable interface {
+    InformationProtectionActionable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetUiElementNames()([]string)
+    SetUiElementNames(value []string)()
 }

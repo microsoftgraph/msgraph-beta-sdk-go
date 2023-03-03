@@ -9,24 +9,6 @@ import (
 // ManagedTenantApiNotification 
 type ManagedTenantApiNotification struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The alert property
-    alert ManagedTenantAlertable
-    // The createdByUserId property
-    createdByUserId *string
-    // The createdDateTime property
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The isAcknowledged property
-    isAcknowledged *bool
-    // The lastActionByUserId property
-    lastActionByUserId *string
-    // The lastActionDateTime property
-    lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The message property
-    message *string
-    // The title property
-    title *string
-    // The userId property
-    userId *string
 }
 // NewManagedTenantApiNotification instantiates a new managedTenantApiNotification and sets the default values.
 func NewManagedTenantApiNotification()(*ManagedTenantApiNotification) {
@@ -41,15 +23,36 @@ func CreateManagedTenantApiNotificationFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAlert gets the alert property value. The alert property
 func (m *ManagedTenantApiNotification) GetAlert()(ManagedTenantAlertable) {
-    return m.alert
+    val, err := m.GetBackingStore().Get("alert")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ManagedTenantAlertable)
+    }
+    return nil
 }
 // GetCreatedByUserId gets the createdByUserId property value. The createdByUserId property
 func (m *ManagedTenantApiNotification) GetCreatedByUserId()(*string) {
-    return m.createdByUserId
+    val, err := m.GetBackingStore().Get("createdByUserId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
 func (m *ManagedTenantApiNotification) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedTenantApiNotification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -148,27 +151,69 @@ func (m *ManagedTenantApiNotification) GetFieldDeserializers()(map[string]func(i
 }
 // GetIsAcknowledged gets the isAcknowledged property value. The isAcknowledged property
 func (m *ManagedTenantApiNotification) GetIsAcknowledged()(*bool) {
-    return m.isAcknowledged
+    val, err := m.GetBackingStore().Get("isAcknowledged")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLastActionByUserId gets the lastActionByUserId property value. The lastActionByUserId property
 func (m *ManagedTenantApiNotification) GetLastActionByUserId()(*string) {
-    return m.lastActionByUserId
+    val, err := m.GetBackingStore().Get("lastActionByUserId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLastActionDateTime gets the lastActionDateTime property value. The lastActionDateTime property
 func (m *ManagedTenantApiNotification) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastActionDateTime
+    val, err := m.GetBackingStore().Get("lastActionDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetMessage gets the message property value. The message property
 func (m *ManagedTenantApiNotification) GetMessage()(*string) {
-    return m.message
+    val, err := m.GetBackingStore().Get("message")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTitle gets the title property value. The title property
 func (m *ManagedTenantApiNotification) GetTitle()(*string) {
-    return m.title
+    val, err := m.GetBackingStore().Get("title")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserId gets the userId property value. The userId property
 func (m *ManagedTenantApiNotification) GetUserId()(*string) {
-    return m.userId
+    val, err := m.GetBackingStore().Get("userId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagedTenantApiNotification) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -234,37 +279,87 @@ func (m *ManagedTenantApiNotification) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAlert sets the alert property value. The alert property
 func (m *ManagedTenantApiNotification) SetAlert(value ManagedTenantAlertable)() {
-    m.alert = value
+    err := m.GetBackingStore().Set("alert", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedByUserId sets the createdByUserId property value. The createdByUserId property
 func (m *ManagedTenantApiNotification) SetCreatedByUserId(value *string)() {
-    m.createdByUserId = value
+    err := m.GetBackingStore().Set("createdByUserId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
 func (m *ManagedTenantApiNotification) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsAcknowledged sets the isAcknowledged property value. The isAcknowledged property
 func (m *ManagedTenantApiNotification) SetIsAcknowledged(value *bool)() {
-    m.isAcknowledged = value
+    err := m.GetBackingStore().Set("isAcknowledged", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastActionByUserId sets the lastActionByUserId property value. The lastActionByUserId property
 func (m *ManagedTenantApiNotification) SetLastActionByUserId(value *string)() {
-    m.lastActionByUserId = value
+    err := m.GetBackingStore().Set("lastActionByUserId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastActionDateTime sets the lastActionDateTime property value. The lastActionDateTime property
 func (m *ManagedTenantApiNotification) SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastActionDateTime = value
+    err := m.GetBackingStore().Set("lastActionDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMessage sets the message property value. The message property
 func (m *ManagedTenantApiNotification) SetMessage(value *string)() {
-    m.message = value
+    err := m.GetBackingStore().Set("message", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTitle sets the title property value. The title property
 func (m *ManagedTenantApiNotification) SetTitle(value *string)() {
-    m.title = value
+    err := m.GetBackingStore().Set("title", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserId sets the userId property value. The userId property
 func (m *ManagedTenantApiNotification) SetUserId(value *string)() {
-    m.userId = value
+    err := m.GetBackingStore().Set("userId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagedTenantApiNotificationable 
+type ManagedTenantApiNotificationable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAlert()(ManagedTenantAlertable)
+    GetCreatedByUserId()(*string)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetIsAcknowledged()(*bool)
+    GetLastActionByUserId()(*string)
+    GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetMessage()(*string)
+    GetTitle()(*string)
+    GetUserId()(*string)
+    SetAlert(value ManagedTenantAlertable)()
+    SetCreatedByUserId(value *string)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetIsAcknowledged(value *bool)()
+    SetLastActionByUserId(value *string)()
+    SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetMessage(value *string)()
+    SetTitle(value *string)()
+    SetUserId(value *string)()
 }

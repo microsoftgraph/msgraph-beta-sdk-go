@@ -8,8 +8,6 @@ import (
 // Ediscoveryroot 
 type Ediscoveryroot struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The cases property
-    cases []Case_escapedable
 }
 // NewEdiscoveryroot instantiates a new Ediscoveryroot and sets the default values.
 func NewEdiscoveryroot()(*Ediscoveryroot) {
@@ -23,21 +21,28 @@ func CreateEdiscoveryrootFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewEdiscoveryroot(), nil
 }
 // GetCases gets the cases property value. The cases property
-func (m *Ediscoveryroot) GetCases()([]Case_escapedable) {
-    return m.cases
+func (m *Ediscoveryroot) GetCases()([]CaseEscapedable) {
+    val, err := m.GetBackingStore().Get("cases")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CaseEscapedable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Ediscoveryroot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["cases"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCase_escapedFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(CreateCaseEscapedFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Case_escapedable, len(val))
+            res := make([]CaseEscapedable, len(val))
             for i, v := range val {
-                res[i] = v.(Case_escapedable)
+                res[i] = v.(CaseEscapedable)
             }
             m.SetCases(res)
         }
@@ -64,6 +69,16 @@ func (m *Ediscoveryroot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     return nil
 }
 // SetCases sets the cases property value. The cases property
-func (m *Ediscoveryroot) SetCases(value []Case_escapedable)() {
-    m.cases = value
+func (m *Ediscoveryroot) SetCases(value []CaseEscapedable)() {
+    err := m.GetBackingStore().Set("cases", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Ediscoveryrootable 
+type Ediscoveryrootable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCases()([]CaseEscapedable)
+    SetCases(value []CaseEscapedable)()
 }

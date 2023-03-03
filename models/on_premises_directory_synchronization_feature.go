@@ -2,58 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // OnPremisesDirectorySynchronizationFeature 
 type OnPremisesDirectorySynchronizationFeature struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Used to block cloud object takeover via source anchor hard match if enabled.
-    blockCloudObjectTakeoverThroughHardMatchEnabled *bool
-    // Use to block soft match for all objects if enabled for the  tenant. Customers are encouraged to enable this feature and keep it enabled until soft matching is required again for their tenancy. This flag should be enabled again after any soft matching has been completed and is no longer needed.
-    blockSoftMatchEnabled *bool
-    // When true, persists the values of Mobile and OtherMobile in on-premises AD during sync cycles instead of values of MobilePhone or AlternateMobilePhones in Azure AD.
-    bypassDirSyncOverridesEnabled *bool
-    // Used to indicate that cloud password policy applies to users whose passwords are synchronized from on-premises.
-    cloudPasswordPolicyForPasswordSyncedUsersEnabled *bool
-    // Used to enable concurrent user credentials update in OrgId.
-    concurrentCredentialUpdateEnabled *bool
-    // Used to enable concurrent user creation in OrgId.
-    concurrentOrgIdProvisioningEnabled *bool
-    // Used to indicate that device write-back is enabled.
-    deviceWritebackEnabled *bool
-    // Used to indicate that directory extensions are being synced from on-premises AD to Azure AD.
-    directoryExtensionsEnabled *bool
-    // Used to indicate that for a Microsoft Forefront Online Protection for Exchange (FOPE) migrated tenant, the conflicting proxy address should be migrated over.
-    fopeConflictResolutionEnabled *bool
-    // Used to enable object-level group writeback feature for additional group types.
-    groupWriteBackEnabled *bool
-    // The OdataType property
-    odataType *string
-    // Used to indicate on-premise password synchronization is enabled.
-    passwordSyncEnabled *bool
-    // Used to indicate that writeback of password resets from Azure AD to on-premises AD is enabled.
-    passwordWritebackEnabled *bool
-    // Used to indicate that we should quarantine objects with conflicting proxy address.
-    quarantineUponProxyAddressesConflictEnabled *bool
-    // Used to indicate that we should quarantine objects conflicting with duplicate userPrincipalName.
-    quarantineUponUpnConflictEnabled *bool
-    // Used to indicate that we should soft match objects based on userPrincipalName.
-    softMatchOnUpnEnabled *bool
-    // Used to indicate that we should synchronize userPrincipalName objects for managed users with licenses.
-    synchronizeUpnForManagedUsersEnabled *bool
-    // Used to indicate that Microsoft 365 Group write-back is enabled.
-    unifiedGroupWritebackEnabled *bool
-    // Used to indicate that feature to force password change for a user on logon is enabled while synchronizing on-premise credentials.
-    userForcePasswordChangeOnLogonEnabled *bool
-    // Used to indicate that user writeback is enabled.
-    userWritebackEnabled *bool
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewOnPremisesDirectorySynchronizationFeature instantiates a new onPremisesDirectorySynchronizationFeature and sets the default values.
 func NewOnPremisesDirectorySynchronizationFeature()(*OnPremisesDirectorySynchronizationFeature) {
     m := &OnPremisesDirectorySynchronizationFeature{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateOnPremisesDirectorySynchronizationFeatureFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -62,39 +24,107 @@ func CreateOnPremisesDirectorySynchronizationFeatureFromDiscriminatorValue(parse
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OnPremisesDirectorySynchronizationFeature) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *OnPremisesDirectorySynchronizationFeature) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetBlockCloudObjectTakeoverThroughHardMatchEnabled gets the blockCloudObjectTakeoverThroughHardMatchEnabled property value. Used to block cloud object takeover via source anchor hard match if enabled.
 func (m *OnPremisesDirectorySynchronizationFeature) GetBlockCloudObjectTakeoverThroughHardMatchEnabled()(*bool) {
-    return m.blockCloudObjectTakeoverThroughHardMatchEnabled
+    val, err := m.GetBackingStore().Get("blockCloudObjectTakeoverThroughHardMatchEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetBlockSoftMatchEnabled gets the blockSoftMatchEnabled property value. Use to block soft match for all objects if enabled for the  tenant. Customers are encouraged to enable this feature and keep it enabled until soft matching is required again for their tenancy. This flag should be enabled again after any soft matching has been completed and is no longer needed.
 func (m *OnPremisesDirectorySynchronizationFeature) GetBlockSoftMatchEnabled()(*bool) {
-    return m.blockSoftMatchEnabled
+    val, err := m.GetBackingStore().Get("blockSoftMatchEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetBypassDirSyncOverridesEnabled gets the bypassDirSyncOverridesEnabled property value. When true, persists the values of Mobile and OtherMobile in on-premises AD during sync cycles instead of values of MobilePhone or AlternateMobilePhones in Azure AD.
 func (m *OnPremisesDirectorySynchronizationFeature) GetBypassDirSyncOverridesEnabled()(*bool) {
-    return m.bypassDirSyncOverridesEnabled
+    val, err := m.GetBackingStore().Get("bypassDirSyncOverridesEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetCloudPasswordPolicyForPasswordSyncedUsersEnabled gets the cloudPasswordPolicyForPasswordSyncedUsersEnabled property value. Used to indicate that cloud password policy applies to users whose passwords are synchronized from on-premises.
 func (m *OnPremisesDirectorySynchronizationFeature) GetCloudPasswordPolicyForPasswordSyncedUsersEnabled()(*bool) {
-    return m.cloudPasswordPolicyForPasswordSyncedUsersEnabled
+    val, err := m.GetBackingStore().Get("cloudPasswordPolicyForPasswordSyncedUsersEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetConcurrentCredentialUpdateEnabled gets the concurrentCredentialUpdateEnabled property value. Used to enable concurrent user credentials update in OrgId.
 func (m *OnPremisesDirectorySynchronizationFeature) GetConcurrentCredentialUpdateEnabled()(*bool) {
-    return m.concurrentCredentialUpdateEnabled
+    val, err := m.GetBackingStore().Get("concurrentCredentialUpdateEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetConcurrentOrgIdProvisioningEnabled gets the concurrentOrgIdProvisioningEnabled property value. Used to enable concurrent user creation in OrgId.
 func (m *OnPremisesDirectorySynchronizationFeature) GetConcurrentOrgIdProvisioningEnabled()(*bool) {
-    return m.concurrentOrgIdProvisioningEnabled
+    val, err := m.GetBackingStore().Get("concurrentOrgIdProvisioningEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDeviceWritebackEnabled gets the deviceWritebackEnabled property value. Used to indicate that device write-back is enabled.
 func (m *OnPremisesDirectorySynchronizationFeature) GetDeviceWritebackEnabled()(*bool) {
-    return m.deviceWritebackEnabled
+    val, err := m.GetBackingStore().Get("deviceWritebackEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDirectoryExtensionsEnabled gets the directoryExtensionsEnabled property value. Used to indicate that directory extensions are being synced from on-premises AD to Azure AD.
 func (m *OnPremisesDirectorySynchronizationFeature) GetDirectoryExtensionsEnabled()(*bool) {
-    return m.directoryExtensionsEnabled
+    val, err := m.GetBackingStore().Get("directoryExtensionsEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OnPremisesDirectorySynchronizationFeature) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -303,51 +333,135 @@ func (m *OnPremisesDirectorySynchronizationFeature) GetFieldDeserializers()(map[
 }
 // GetFopeConflictResolutionEnabled gets the fopeConflictResolutionEnabled property value. Used to indicate that for a Microsoft Forefront Online Protection for Exchange (FOPE) migrated tenant, the conflicting proxy address should be migrated over.
 func (m *OnPremisesDirectorySynchronizationFeature) GetFopeConflictResolutionEnabled()(*bool) {
-    return m.fopeConflictResolutionEnabled
+    val, err := m.GetBackingStore().Get("fopeConflictResolutionEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetGroupWriteBackEnabled gets the groupWriteBackEnabled property value. Used to enable object-level group writeback feature for additional group types.
 func (m *OnPremisesDirectorySynchronizationFeature) GetGroupWriteBackEnabled()(*bool) {
-    return m.groupWriteBackEnabled
+    val, err := m.GetBackingStore().Get("groupWriteBackEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *OnPremisesDirectorySynchronizationFeature) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPasswordSyncEnabled gets the passwordSyncEnabled property value. Used to indicate on-premise password synchronization is enabled.
 func (m *OnPremisesDirectorySynchronizationFeature) GetPasswordSyncEnabled()(*bool) {
-    return m.passwordSyncEnabled
+    val, err := m.GetBackingStore().Get("passwordSyncEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPasswordWritebackEnabled gets the passwordWritebackEnabled property value. Used to indicate that writeback of password resets from Azure AD to on-premises AD is enabled.
 func (m *OnPremisesDirectorySynchronizationFeature) GetPasswordWritebackEnabled()(*bool) {
-    return m.passwordWritebackEnabled
+    val, err := m.GetBackingStore().Get("passwordWritebackEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetQuarantineUponProxyAddressesConflictEnabled gets the quarantineUponProxyAddressesConflictEnabled property value. Used to indicate that we should quarantine objects with conflicting proxy address.
 func (m *OnPremisesDirectorySynchronizationFeature) GetQuarantineUponProxyAddressesConflictEnabled()(*bool) {
-    return m.quarantineUponProxyAddressesConflictEnabled
+    val, err := m.GetBackingStore().Get("quarantineUponProxyAddressesConflictEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetQuarantineUponUpnConflictEnabled gets the quarantineUponUpnConflictEnabled property value. Used to indicate that we should quarantine objects conflicting with duplicate userPrincipalName.
 func (m *OnPremisesDirectorySynchronizationFeature) GetQuarantineUponUpnConflictEnabled()(*bool) {
-    return m.quarantineUponUpnConflictEnabled
+    val, err := m.GetBackingStore().Get("quarantineUponUpnConflictEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSoftMatchOnUpnEnabled gets the softMatchOnUpnEnabled property value. Used to indicate that we should soft match objects based on userPrincipalName.
 func (m *OnPremisesDirectorySynchronizationFeature) GetSoftMatchOnUpnEnabled()(*bool) {
-    return m.softMatchOnUpnEnabled
+    val, err := m.GetBackingStore().Get("softMatchOnUpnEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSynchronizeUpnForManagedUsersEnabled gets the synchronizeUpnForManagedUsersEnabled property value. Used to indicate that we should synchronize userPrincipalName objects for managed users with licenses.
 func (m *OnPremisesDirectorySynchronizationFeature) GetSynchronizeUpnForManagedUsersEnabled()(*bool) {
-    return m.synchronizeUpnForManagedUsersEnabled
+    val, err := m.GetBackingStore().Get("synchronizeUpnForManagedUsersEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetUnifiedGroupWritebackEnabled gets the unifiedGroupWritebackEnabled property value. Used to indicate that Microsoft 365 Group write-back is enabled.
 func (m *OnPremisesDirectorySynchronizationFeature) GetUnifiedGroupWritebackEnabled()(*bool) {
-    return m.unifiedGroupWritebackEnabled
+    val, err := m.GetBackingStore().Get("unifiedGroupWritebackEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetUserForcePasswordChangeOnLogonEnabled gets the userForcePasswordChangeOnLogonEnabled property value. Used to indicate that feature to force password change for a user on logon is enabled while synchronizing on-premise credentials.
 func (m *OnPremisesDirectorySynchronizationFeature) GetUserForcePasswordChangeOnLogonEnabled()(*bool) {
-    return m.userForcePasswordChangeOnLogonEnabled
+    val, err := m.GetBackingStore().Get("userForcePasswordChangeOnLogonEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetUserWritebackEnabled gets the userWritebackEnabled property value. Used to indicate that user writeback is enabled.
 func (m *OnPremisesDirectorySynchronizationFeature) GetUserWritebackEnabled()(*bool) {
-    return m.userWritebackEnabled
+    val, err := m.GetBackingStore().Get("userWritebackEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OnPremisesDirectorySynchronizationFeature) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -481,85 +595,200 @@ func (m *OnPremisesDirectorySynchronizationFeature) Serialize(writer i878a80d233
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OnPremisesDirectorySynchronizationFeature) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *OnPremisesDirectorySynchronizationFeature) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetBlockCloudObjectTakeoverThroughHardMatchEnabled sets the blockCloudObjectTakeoverThroughHardMatchEnabled property value. Used to block cloud object takeover via source anchor hard match if enabled.
 func (m *OnPremisesDirectorySynchronizationFeature) SetBlockCloudObjectTakeoverThroughHardMatchEnabled(value *bool)() {
-    m.blockCloudObjectTakeoverThroughHardMatchEnabled = value
+    err := m.GetBackingStore().Set("blockCloudObjectTakeoverThroughHardMatchEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBlockSoftMatchEnabled sets the blockSoftMatchEnabled property value. Use to block soft match for all objects if enabled for the  tenant. Customers are encouraged to enable this feature and keep it enabled until soft matching is required again for their tenancy. This flag should be enabled again after any soft matching has been completed and is no longer needed.
 func (m *OnPremisesDirectorySynchronizationFeature) SetBlockSoftMatchEnabled(value *bool)() {
-    m.blockSoftMatchEnabled = value
+    err := m.GetBackingStore().Set("blockSoftMatchEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBypassDirSyncOverridesEnabled sets the bypassDirSyncOverridesEnabled property value. When true, persists the values of Mobile and OtherMobile in on-premises AD during sync cycles instead of values of MobilePhone or AlternateMobilePhones in Azure AD.
 func (m *OnPremisesDirectorySynchronizationFeature) SetBypassDirSyncOverridesEnabled(value *bool)() {
-    m.bypassDirSyncOverridesEnabled = value
+    err := m.GetBackingStore().Set("bypassDirSyncOverridesEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCloudPasswordPolicyForPasswordSyncedUsersEnabled sets the cloudPasswordPolicyForPasswordSyncedUsersEnabled property value. Used to indicate that cloud password policy applies to users whose passwords are synchronized from on-premises.
 func (m *OnPremisesDirectorySynchronizationFeature) SetCloudPasswordPolicyForPasswordSyncedUsersEnabled(value *bool)() {
-    m.cloudPasswordPolicyForPasswordSyncedUsersEnabled = value
+    err := m.GetBackingStore().Set("cloudPasswordPolicyForPasswordSyncedUsersEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConcurrentCredentialUpdateEnabled sets the concurrentCredentialUpdateEnabled property value. Used to enable concurrent user credentials update in OrgId.
 func (m *OnPremisesDirectorySynchronizationFeature) SetConcurrentCredentialUpdateEnabled(value *bool)() {
-    m.concurrentCredentialUpdateEnabled = value
+    err := m.GetBackingStore().Set("concurrentCredentialUpdateEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConcurrentOrgIdProvisioningEnabled sets the concurrentOrgIdProvisioningEnabled property value. Used to enable concurrent user creation in OrgId.
 func (m *OnPremisesDirectorySynchronizationFeature) SetConcurrentOrgIdProvisioningEnabled(value *bool)() {
-    m.concurrentOrgIdProvisioningEnabled = value
+    err := m.GetBackingStore().Set("concurrentOrgIdProvisioningEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceWritebackEnabled sets the deviceWritebackEnabled property value. Used to indicate that device write-back is enabled.
 func (m *OnPremisesDirectorySynchronizationFeature) SetDeviceWritebackEnabled(value *bool)() {
-    m.deviceWritebackEnabled = value
+    err := m.GetBackingStore().Set("deviceWritebackEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDirectoryExtensionsEnabled sets the directoryExtensionsEnabled property value. Used to indicate that directory extensions are being synced from on-premises AD to Azure AD.
 func (m *OnPremisesDirectorySynchronizationFeature) SetDirectoryExtensionsEnabled(value *bool)() {
-    m.directoryExtensionsEnabled = value
+    err := m.GetBackingStore().Set("directoryExtensionsEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFopeConflictResolutionEnabled sets the fopeConflictResolutionEnabled property value. Used to indicate that for a Microsoft Forefront Online Protection for Exchange (FOPE) migrated tenant, the conflicting proxy address should be migrated over.
 func (m *OnPremisesDirectorySynchronizationFeature) SetFopeConflictResolutionEnabled(value *bool)() {
-    m.fopeConflictResolutionEnabled = value
+    err := m.GetBackingStore().Set("fopeConflictResolutionEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGroupWriteBackEnabled sets the groupWriteBackEnabled property value. Used to enable object-level group writeback feature for additional group types.
 func (m *OnPremisesDirectorySynchronizationFeature) SetGroupWriteBackEnabled(value *bool)() {
-    m.groupWriteBackEnabled = value
+    err := m.GetBackingStore().Set("groupWriteBackEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *OnPremisesDirectorySynchronizationFeature) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordSyncEnabled sets the passwordSyncEnabled property value. Used to indicate on-premise password synchronization is enabled.
 func (m *OnPremisesDirectorySynchronizationFeature) SetPasswordSyncEnabled(value *bool)() {
-    m.passwordSyncEnabled = value
+    err := m.GetBackingStore().Set("passwordSyncEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordWritebackEnabled sets the passwordWritebackEnabled property value. Used to indicate that writeback of password resets from Azure AD to on-premises AD is enabled.
 func (m *OnPremisesDirectorySynchronizationFeature) SetPasswordWritebackEnabled(value *bool)() {
-    m.passwordWritebackEnabled = value
+    err := m.GetBackingStore().Set("passwordWritebackEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetQuarantineUponProxyAddressesConflictEnabled sets the quarantineUponProxyAddressesConflictEnabled property value. Used to indicate that we should quarantine objects with conflicting proxy address.
 func (m *OnPremisesDirectorySynchronizationFeature) SetQuarantineUponProxyAddressesConflictEnabled(value *bool)() {
-    m.quarantineUponProxyAddressesConflictEnabled = value
+    err := m.GetBackingStore().Set("quarantineUponProxyAddressesConflictEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetQuarantineUponUpnConflictEnabled sets the quarantineUponUpnConflictEnabled property value. Used to indicate that we should quarantine objects conflicting with duplicate userPrincipalName.
 func (m *OnPremisesDirectorySynchronizationFeature) SetQuarantineUponUpnConflictEnabled(value *bool)() {
-    m.quarantineUponUpnConflictEnabled = value
+    err := m.GetBackingStore().Set("quarantineUponUpnConflictEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSoftMatchOnUpnEnabled sets the softMatchOnUpnEnabled property value. Used to indicate that we should soft match objects based on userPrincipalName.
 func (m *OnPremisesDirectorySynchronizationFeature) SetSoftMatchOnUpnEnabled(value *bool)() {
-    m.softMatchOnUpnEnabled = value
+    err := m.GetBackingStore().Set("softMatchOnUpnEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSynchronizeUpnForManagedUsersEnabled sets the synchronizeUpnForManagedUsersEnabled property value. Used to indicate that we should synchronize userPrincipalName objects for managed users with licenses.
 func (m *OnPremisesDirectorySynchronizationFeature) SetSynchronizeUpnForManagedUsersEnabled(value *bool)() {
-    m.synchronizeUpnForManagedUsersEnabled = value
+    err := m.GetBackingStore().Set("synchronizeUpnForManagedUsersEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUnifiedGroupWritebackEnabled sets the unifiedGroupWritebackEnabled property value. Used to indicate that Microsoft 365 Group write-back is enabled.
 func (m *OnPremisesDirectorySynchronizationFeature) SetUnifiedGroupWritebackEnabled(value *bool)() {
-    m.unifiedGroupWritebackEnabled = value
+    err := m.GetBackingStore().Set("unifiedGroupWritebackEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserForcePasswordChangeOnLogonEnabled sets the userForcePasswordChangeOnLogonEnabled property value. Used to indicate that feature to force password change for a user on logon is enabled while synchronizing on-premise credentials.
 func (m *OnPremisesDirectorySynchronizationFeature) SetUserForcePasswordChangeOnLogonEnabled(value *bool)() {
-    m.userForcePasswordChangeOnLogonEnabled = value
+    err := m.GetBackingStore().Set("userForcePasswordChangeOnLogonEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserWritebackEnabled sets the userWritebackEnabled property value. Used to indicate that user writeback is enabled.
 func (m *OnPremisesDirectorySynchronizationFeature) SetUserWritebackEnabled(value *bool)() {
-    m.userWritebackEnabled = value
+    err := m.GetBackingStore().Set("userWritebackEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OnPremisesDirectorySynchronizationFeatureable 
+type OnPremisesDirectorySynchronizationFeatureable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetBlockCloudObjectTakeoverThroughHardMatchEnabled()(*bool)
+    GetBlockSoftMatchEnabled()(*bool)
+    GetBypassDirSyncOverridesEnabled()(*bool)
+    GetCloudPasswordPolicyForPasswordSyncedUsersEnabled()(*bool)
+    GetConcurrentCredentialUpdateEnabled()(*bool)
+    GetConcurrentOrgIdProvisioningEnabled()(*bool)
+    GetDeviceWritebackEnabled()(*bool)
+    GetDirectoryExtensionsEnabled()(*bool)
+    GetFopeConflictResolutionEnabled()(*bool)
+    GetGroupWriteBackEnabled()(*bool)
+    GetOdataType()(*string)
+    GetPasswordSyncEnabled()(*bool)
+    GetPasswordWritebackEnabled()(*bool)
+    GetQuarantineUponProxyAddressesConflictEnabled()(*bool)
+    GetQuarantineUponUpnConflictEnabled()(*bool)
+    GetSoftMatchOnUpnEnabled()(*bool)
+    GetSynchronizeUpnForManagedUsersEnabled()(*bool)
+    GetUnifiedGroupWritebackEnabled()(*bool)
+    GetUserForcePasswordChangeOnLogonEnabled()(*bool)
+    GetUserWritebackEnabled()(*bool)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetBlockCloudObjectTakeoverThroughHardMatchEnabled(value *bool)()
+    SetBlockSoftMatchEnabled(value *bool)()
+    SetBypassDirSyncOverridesEnabled(value *bool)()
+    SetCloudPasswordPolicyForPasswordSyncedUsersEnabled(value *bool)()
+    SetConcurrentCredentialUpdateEnabled(value *bool)()
+    SetConcurrentOrgIdProvisioningEnabled(value *bool)()
+    SetDeviceWritebackEnabled(value *bool)()
+    SetDirectoryExtensionsEnabled(value *bool)()
+    SetFopeConflictResolutionEnabled(value *bool)()
+    SetGroupWriteBackEnabled(value *bool)()
+    SetOdataType(value *string)()
+    SetPasswordSyncEnabled(value *bool)()
+    SetPasswordWritebackEnabled(value *bool)()
+    SetQuarantineUponProxyAddressesConflictEnabled(value *bool)()
+    SetQuarantineUponUpnConflictEnabled(value *bool)()
+    SetSoftMatchOnUpnEnabled(value *bool)()
+    SetSynchronizeUpnForManagedUsersEnabled(value *bool)()
+    SetUnifiedGroupWritebackEnabled(value *bool)()
+    SetUserForcePasswordChangeOnLogonEnabled(value *bool)()
+    SetUserWritebackEnabled(value *bool)()
 }

@@ -7,8 +7,6 @@ import (
 // AuthenticationCombinationConfiguration 
 type AuthenticationCombinationConfiguration struct {
     Entity
-    // Which authentication method combinations this configuration applies to. Must be an allowedCombinations object that's defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is 'fido2'.
-    appliesToCombinations []AuthenticationMethodModes
 }
 // NewAuthenticationCombinationConfiguration instantiates a new AuthenticationCombinationConfiguration and sets the default values.
 func NewAuthenticationCombinationConfiguration()(*AuthenticationCombinationConfiguration) {
@@ -41,7 +39,14 @@ func CreateAuthenticationCombinationConfigurationFromDiscriminatorValue(parseNod
 }
 // GetAppliesToCombinations gets the appliesToCombinations property value. Which authentication method combinations this configuration applies to. Must be an allowedCombinations object that's defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is 'fido2'.
 func (m *AuthenticationCombinationConfiguration) GetAppliesToCombinations()([]AuthenticationMethodModes) {
-    return m.appliesToCombinations
+    val, err := m.GetBackingStore().Get("appliesToCombinations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AuthenticationMethodModes)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuthenticationCombinationConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -78,5 +83,15 @@ func (m *AuthenticationCombinationConfiguration) Serialize(writer i878a80d2330e8
 }
 // SetAppliesToCombinations sets the appliesToCombinations property value. Which authentication method combinations this configuration applies to. Must be an allowedCombinations object that's defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is 'fido2'.
 func (m *AuthenticationCombinationConfiguration) SetAppliesToCombinations(value []AuthenticationMethodModes)() {
-    m.appliesToCombinations = value
+    err := m.GetBackingStore().Set("appliesToCombinations", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AuthenticationCombinationConfigurationable 
+type AuthenticationCombinationConfigurationable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppliesToCombinations()([]AuthenticationMethodModes)
+    SetAppliesToCombinations(value []AuthenticationMethodModes)()
 }

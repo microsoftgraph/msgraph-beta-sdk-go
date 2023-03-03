@@ -7,8 +7,6 @@ import (
 // TenantAppManagementPolicyCollectionResponse 
 type TenantAppManagementPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []TenantAppManagementPolicyable
 }
 // NewTenantAppManagementPolicyCollectionResponse instantiates a new TenantAppManagementPolicyCollectionResponse and sets the default values.
 func NewTenantAppManagementPolicyCollectionResponse()(*TenantAppManagementPolicyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *TenantAppManagementPolicyCollectionResponse) GetFieldDeserializers()(ma
 }
 // GetValue gets the value property value. The value property
 func (m *TenantAppManagementPolicyCollectionResponse) GetValue()([]TenantAppManagementPolicyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TenantAppManagementPolicyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TenantAppManagementPolicyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *TenantAppManagementPolicyCollectionResponse) Serialize(writer i878a80d2
 }
 // SetValue sets the value property value. The value property
 func (m *TenantAppManagementPolicyCollectionResponse) SetValue(value []TenantAppManagementPolicyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TenantAppManagementPolicyCollectionResponseable 
+type TenantAppManagementPolicyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]TenantAppManagementPolicyable)
+    SetValue(value []TenantAppManagementPolicyable)()
 }

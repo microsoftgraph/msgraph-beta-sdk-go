@@ -26,13 +26,13 @@ type ItemSynchronizationJobsItemPauseRequestBuilderPostRequestConfiguration stru
 func NewItemSynchronizationJobsItemPauseRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSynchronizationJobsItemPauseRequestBuilder) {
     m := &ItemSynchronizationJobsItemPauseRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/applications/{application%2Did}/synchronization/jobs/{synchronizationJob%2Did}/microsoft.graph.pause";
+    m.urlTemplate = "{+baseurl}/applications/{application%2Did}/synchronization/jobs/{synchronizationJob%2Did}/pause";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSynchronizationJobsItemPauseRequestBuilder instantiates a new PauseRequestBuilder and sets the default values.

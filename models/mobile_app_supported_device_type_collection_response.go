@@ -7,8 +7,6 @@ import (
 // MobileAppSupportedDeviceTypeCollectionResponse 
 type MobileAppSupportedDeviceTypeCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MobileAppSupportedDeviceTypeable
 }
 // NewMobileAppSupportedDeviceTypeCollectionResponse instantiates a new MobileAppSupportedDeviceTypeCollectionResponse and sets the default values.
 func NewMobileAppSupportedDeviceTypeCollectionResponse()(*MobileAppSupportedDeviceTypeCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MobileAppSupportedDeviceTypeCollectionResponse) GetFieldDeserializers()
 }
 // GetValue gets the value property value. The value property
 func (m *MobileAppSupportedDeviceTypeCollectionResponse) GetValue()([]MobileAppSupportedDeviceTypeable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MobileAppSupportedDeviceTypeable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MobileAppSupportedDeviceTypeCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MobileAppSupportedDeviceTypeCollectionResponse) Serialize(writer i878a8
 }
 // SetValue sets the value property value. The value property
 func (m *MobileAppSupportedDeviceTypeCollectionResponse) SetValue(value []MobileAppSupportedDeviceTypeable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MobileAppSupportedDeviceTypeCollectionResponseable 
+type MobileAppSupportedDeviceTypeCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MobileAppSupportedDeviceTypeable)
+    SetValue(value []MobileAppSupportedDeviceTypeable)()
 }

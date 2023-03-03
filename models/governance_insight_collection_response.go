@@ -7,8 +7,6 @@ import (
 // GovernanceInsightCollectionResponse 
 type GovernanceInsightCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []GovernanceInsightable
 }
 // NewGovernanceInsightCollectionResponse instantiates a new GovernanceInsightCollectionResponse and sets the default values.
 func NewGovernanceInsightCollectionResponse()(*GovernanceInsightCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *GovernanceInsightCollectionResponse) GetFieldDeserializers()(map[string
 }
 // GetValue gets the value property value. The value property
 func (m *GovernanceInsightCollectionResponse) GetValue()([]GovernanceInsightable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GovernanceInsightable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GovernanceInsightCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *GovernanceInsightCollectionResponse) Serialize(writer i878a80d2330e89d2
 }
 // SetValue sets the value property value. The value property
 func (m *GovernanceInsightCollectionResponse) SetValue(value []GovernanceInsightable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GovernanceInsightCollectionResponseable 
+type GovernanceInsightCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]GovernanceInsightable)
+    SetValue(value []GovernanceInsightable)()
 }

@@ -60,8 +60,8 @@ func NewItemItemsItemActivitiesRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemItemsItemActivitiesRequestBuilder instantiates a new ActivitiesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemItemsItemActivitiesRequestBuilder(rawUrl string, requestAdapter i2ae
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemItemsItemActivitiesRequestBuilder) Count()(*ItemItemsItemActivitiesCountRequestBuilder) {
-    return NewItemItemsItemActivitiesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemItemsItemActivitiesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get write-only property. Returns results.
 func (m *ItemItemsItemActivitiesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemActivitiesRequestBuilderGetRequestConfiguration)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalActivityCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *ItemItemsItemActivitiesRequestBuilder) ToPostRequestInformation(ctx con
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

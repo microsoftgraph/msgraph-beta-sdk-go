@@ -8,26 +8,14 @@ import (
 // PrinterShare 
 type PrinterShare struct {
     PrinterBase
-    // If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
-    allowAllUsers *bool
-    // The groups whose users have access to print using the printer.
-    allowedGroups []Groupable
-    // The users who have access to print using the printer.
-    allowedUsers []Userable
-    // The DateTimeOffset when the printer share was created. Read-only.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The printer that this printer share is related to.
-    printer Printerable
-    // Additional data for a printer share as viewed by the signed-in user.
-    viewPoint PrinterShareViewpointable
 }
 // NewPrinterShare instantiates a new PrinterShare and sets the default values.
 func NewPrinterShare()(*PrinterShare) {
     m := &PrinterShare{
         PrinterBase: *NewPrinterBase(),
     }
-    odataTypeValue := "#microsoft.graph.printerShare";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.printerShare"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreatePrinterShareFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,19 +24,47 @@ func CreatePrinterShareFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAllowAllUsers gets the allowAllUsers property value. If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
 func (m *PrinterShare) GetAllowAllUsers()(*bool) {
-    return m.allowAllUsers
+    val, err := m.GetBackingStore().Get("allowAllUsers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetAllowedGroups gets the allowedGroups property value. The groups whose users have access to print using the printer.
 func (m *PrinterShare) GetAllowedGroups()([]Groupable) {
-    return m.allowedGroups
+    val, err := m.GetBackingStore().Get("allowedGroups")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Groupable)
+    }
+    return nil
 }
 // GetAllowedUsers gets the allowedUsers property value. The users who have access to print using the printer.
 func (m *PrinterShare) GetAllowedUsers()([]Userable) {
-    return m.allowedUsers
+    val, err := m.GetBackingStore().Get("allowedUsers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Userable)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The DateTimeOffset when the printer share was created. Read-only.
 func (m *PrinterShare) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrinterShare) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -125,11 +141,25 @@ func (m *PrinterShare) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetPrinter gets the printer property value. The printer that this printer share is related to.
 func (m *PrinterShare) GetPrinter()(Printerable) {
-    return m.printer
+    val, err := m.GetBackingStore().Get("printer")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Printerable)
+    }
+    return nil
 }
 // GetViewPoint gets the viewPoint property value. Additional data for a printer share as viewed by the signed-in user.
 func (m *PrinterShare) GetViewPoint()(PrinterShareViewpointable) {
-    return m.viewPoint
+    val, err := m.GetBackingStore().Get("viewPoint")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PrinterShareViewpointable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrinterShare) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -185,25 +215,60 @@ func (m *PrinterShare) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAllowAllUsers sets the allowAllUsers property value. If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
 func (m *PrinterShare) SetAllowAllUsers(value *bool)() {
-    m.allowAllUsers = value
+    err := m.GetBackingStore().Set("allowAllUsers", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAllowedGroups sets the allowedGroups property value. The groups whose users have access to print using the printer.
 func (m *PrinterShare) SetAllowedGroups(value []Groupable)() {
-    m.allowedGroups = value
+    err := m.GetBackingStore().Set("allowedGroups", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAllowedUsers sets the allowedUsers property value. The users who have access to print using the printer.
 func (m *PrinterShare) SetAllowedUsers(value []Userable)() {
-    m.allowedUsers = value
+    err := m.GetBackingStore().Set("allowedUsers", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The DateTimeOffset when the printer share was created. Read-only.
 func (m *PrinterShare) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPrinter sets the printer property value. The printer that this printer share is related to.
 func (m *PrinterShare) SetPrinter(value Printerable)() {
-    m.printer = value
+    err := m.GetBackingStore().Set("printer", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetViewPoint sets the viewPoint property value. Additional data for a printer share as viewed by the signed-in user.
 func (m *PrinterShare) SetViewPoint(value PrinterShareViewpointable)() {
-    m.viewPoint = value
+    err := m.GetBackingStore().Set("viewPoint", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrinterShareable 
+type PrinterShareable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    PrinterBaseable
+    GetAllowAllUsers()(*bool)
+    GetAllowedGroups()([]Groupable)
+    GetAllowedUsers()([]Userable)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetPrinter()(Printerable)
+    GetViewPoint()(PrinterShareViewpointable)
+    SetAllowAllUsers(value *bool)()
+    SetAllowedGroups(value []Groupable)()
+    SetAllowedUsers(value []Userable)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetPrinter(value Printerable)()
+    SetViewPoint(value PrinterShareViewpointable)()
 }

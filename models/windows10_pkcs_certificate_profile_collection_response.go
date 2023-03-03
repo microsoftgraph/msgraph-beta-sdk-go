@@ -7,8 +7,6 @@ import (
 // Windows10PkcsCertificateProfileCollectionResponse 
 type Windows10PkcsCertificateProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Windows10PkcsCertificateProfileable
 }
 // NewWindows10PkcsCertificateProfileCollectionResponse instantiates a new Windows10PkcsCertificateProfileCollectionResponse and sets the default values.
 func NewWindows10PkcsCertificateProfileCollectionResponse()(*Windows10PkcsCertificateProfileCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *Windows10PkcsCertificateProfileCollectionResponse) GetFieldDeserializer
 }
 // GetValue gets the value property value. The value property
 func (m *Windows10PkcsCertificateProfileCollectionResponse) GetValue()([]Windows10PkcsCertificateProfileable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Windows10PkcsCertificateProfileable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Windows10PkcsCertificateProfileCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *Windows10PkcsCertificateProfileCollectionResponse) Serialize(writer i87
 }
 // SetValue sets the value property value. The value property
 func (m *Windows10PkcsCertificateProfileCollectionResponse) SetValue(value []Windows10PkcsCertificateProfileable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Windows10PkcsCertificateProfileCollectionResponseable 
+type Windows10PkcsCertificateProfileCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Windows10PkcsCertificateProfileable)
+    SetValue(value []Windows10PkcsCertificateProfileable)()
 }

@@ -7,8 +7,6 @@ import (
 // DeviceHealthScriptRemediationHistoryDataCollectionResponse 
 type DeviceHealthScriptRemediationHistoryDataCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceHealthScriptRemediationHistoryDataable
 }
 // NewDeviceHealthScriptRemediationHistoryDataCollectionResponse instantiates a new DeviceHealthScriptRemediationHistoryDataCollectionResponse and sets the default values.
 func NewDeviceHealthScriptRemediationHistoryDataCollectionResponse()(*DeviceHealthScriptRemediationHistoryDataCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceHealthScriptRemediationHistoryDataCollectionResponse) GetFieldDes
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceHealthScriptRemediationHistoryDataCollectionResponse) GetValue()([]DeviceHealthScriptRemediationHistoryDataable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceHealthScriptRemediationHistoryDataable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceHealthScriptRemediationHistoryDataCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceHealthScriptRemediationHistoryDataCollectionResponse) Serialize(w
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceHealthScriptRemediationHistoryDataCollectionResponse) SetValue(value []DeviceHealthScriptRemediationHistoryDataable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceHealthScriptRemediationHistoryDataCollectionResponseable 
+type DeviceHealthScriptRemediationHistoryDataCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceHealthScriptRemediationHistoryDataable)
+    SetValue(value []DeviceHealthScriptRemediationHistoryDataable)()
 }

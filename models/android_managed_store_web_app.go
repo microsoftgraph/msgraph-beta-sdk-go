@@ -13,8 +13,8 @@ func NewAndroidManagedStoreWebApp()(*AndroidManagedStoreWebApp) {
     m := &AndroidManagedStoreWebApp{
         AndroidManagedStoreApp: *NewAndroidManagedStoreApp(),
     }
-    odataTypeValue := "#microsoft.graph.androidManagedStoreWebApp";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidManagedStoreWebApp"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidManagedStoreWebAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,4 +33,9 @@ func (m *AndroidManagedStoreWebApp) Serialize(writer i878a80d2330e89d26896388a3f
         return err
     }
     return nil
+}
+// AndroidManagedStoreWebAppable 
+type AndroidManagedStoreWebAppable interface {
+    AndroidManagedStoreAppable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

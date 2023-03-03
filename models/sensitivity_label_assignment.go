@@ -2,26 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // SensitivityLabelAssignment 
 type SensitivityLabelAssignment struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The assignmentMethod property
-    assignmentMethod *SensitivityLabelAssignmentMethod
-    // The OdataType property
-    odataType *string
-    // The unique identifier for the sensitivity label assigned to the file.
-    sensitivityLabelId *string
-    // The unique identifier for the tenant that hosts the file when this label is applied.
-    tenantId *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewSensitivityLabelAssignment instantiates a new sensitivityLabelAssignment and sets the default values.
 func NewSensitivityLabelAssignment()(*SensitivityLabelAssignment) {
     m := &SensitivityLabelAssignment{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSensitivityLabelAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,11 +24,30 @@ func CreateSensitivityLabelAssignmentFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SensitivityLabelAssignment) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAssignmentMethod gets the assignmentMethod property value. The assignmentMethod property
 func (m *SensitivityLabelAssignment) GetAssignmentMethod()(*SensitivityLabelAssignmentMethod) {
-    return m.assignmentMethod
+    val, err := m.GetBackingStore().Get("assignmentMethod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SensitivityLabelAssignmentMethod)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *SensitivityLabelAssignment) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SensitivityLabelAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -83,15 +96,36 @@ func (m *SensitivityLabelAssignment) GetFieldDeserializers()(map[string]func(i87
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SensitivityLabelAssignment) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSensitivityLabelId gets the sensitivityLabelId property value. The unique identifier for the sensitivity label assigned to the file.
 func (m *SensitivityLabelAssignment) GetSensitivityLabelId()(*string) {
-    return m.sensitivityLabelId
+    val, err := m.GetBackingStore().Get("sensitivityLabelId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTenantId gets the tenantId property value. The unique identifier for the tenant that hosts the file when this label is applied.
 func (m *SensitivityLabelAssignment) GetTenantId()(*string) {
-    return m.tenantId
+    val, err := m.GetBackingStore().Get("tenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SensitivityLabelAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -130,21 +164,56 @@ func (m *SensitivityLabelAssignment) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SensitivityLabelAssignment) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAssignmentMethod sets the assignmentMethod property value. The assignmentMethod property
 func (m *SensitivityLabelAssignment) SetAssignmentMethod(value *SensitivityLabelAssignmentMethod)() {
-    m.assignmentMethod = value
+    err := m.GetBackingStore().Set("assignmentMethod", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *SensitivityLabelAssignment) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SensitivityLabelAssignment) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSensitivityLabelId sets the sensitivityLabelId property value. The unique identifier for the sensitivity label assigned to the file.
 func (m *SensitivityLabelAssignment) SetSensitivityLabelId(value *string)() {
-    m.sensitivityLabelId = value
+    err := m.GetBackingStore().Set("sensitivityLabelId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantId sets the tenantId property value. The unique identifier for the tenant that hosts the file when this label is applied.
 func (m *SensitivityLabelAssignment) SetTenantId(value *string)() {
-    m.tenantId = value
+    err := m.GetBackingStore().Set("tenantId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SensitivityLabelAssignmentable 
+type SensitivityLabelAssignmentable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssignmentMethod()(*SensitivityLabelAssignmentMethod)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetOdataType()(*string)
+    GetSensitivityLabelId()(*string)
+    GetTenantId()(*string)
+    SetAssignmentMethod(value *SensitivityLabelAssignmentMethod)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetOdataType(value *string)()
+    SetSensitivityLabelId(value *string)()
+    SetTenantId(value *string)()
 }

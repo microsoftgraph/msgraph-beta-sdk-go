@@ -26,13 +26,13 @@ type ItemUnpublishRequestBuilderPostRequestConfiguration struct {
 func NewItemUnpublishRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemUnpublishRequestBuilder) {
     m := &ItemUnpublishRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/microsoft.graph.unpublish";
+    m.urlTemplate = "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/unpublish";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemUnpublishRequestBuilder instantiates a new UnpublishRequestBuilder and sets the default values.

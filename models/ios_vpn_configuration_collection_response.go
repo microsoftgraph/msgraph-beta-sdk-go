@@ -7,8 +7,6 @@ import (
 // IosVpnConfigurationCollectionResponse 
 type IosVpnConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []IosVpnConfigurationable
 }
 // NewIosVpnConfigurationCollectionResponse instantiates a new IosVpnConfigurationCollectionResponse and sets the default values.
 func NewIosVpnConfigurationCollectionResponse()(*IosVpnConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *IosVpnConfigurationCollectionResponse) GetFieldDeserializers()(map[stri
 }
 // GetValue gets the value property value. The value property
 func (m *IosVpnConfigurationCollectionResponse) GetValue()([]IosVpnConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IosVpnConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosVpnConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *IosVpnConfigurationCollectionResponse) Serialize(writer i878a80d2330e89
 }
 // SetValue sets the value property value. The value property
 func (m *IosVpnConfigurationCollectionResponse) SetValue(value []IosVpnConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosVpnConfigurationCollectionResponseable 
+type IosVpnConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]IosVpnConfigurationable)
+    SetValue(value []IosVpnConfigurationable)()
 }

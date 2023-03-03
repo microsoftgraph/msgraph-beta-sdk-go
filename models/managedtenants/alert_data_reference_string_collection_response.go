@@ -8,8 +8,6 @@ import (
 // AlertDataReferenceStringCollectionResponse 
 type AlertDataReferenceStringCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
-    // The value property
-    value []AlertDataReferenceStringable
 }
 // NewAlertDataReferenceStringCollectionResponse instantiates a new AlertDataReferenceStringCollectionResponse and sets the default values.
 func NewAlertDataReferenceStringCollectionResponse()(*AlertDataReferenceStringCollectionResponse) {
@@ -43,7 +41,14 @@ func (m *AlertDataReferenceStringCollectionResponse) GetFieldDeserializers()(map
 }
 // GetValue gets the value property value. The value property
 func (m *AlertDataReferenceStringCollectionResponse) GetValue()([]AlertDataReferenceStringable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AlertDataReferenceStringable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AlertDataReferenceStringCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *AlertDataReferenceStringCollectionResponse) Serialize(writer i878a80d23
 }
 // SetValue sets the value property value. The value property
 func (m *AlertDataReferenceStringCollectionResponse) SetValue(value []AlertDataReferenceStringable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AlertDataReferenceStringCollectionResponseable 
+type AlertDataReferenceStringCollectionResponseable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AlertDataReferenceStringable)
+    SetValue(value []AlertDataReferenceStringable)()
 }

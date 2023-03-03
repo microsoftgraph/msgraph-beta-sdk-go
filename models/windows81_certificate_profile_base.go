@@ -7,18 +7,14 @@ import (
 // Windows81CertificateProfileBase 
 type Windows81CertificateProfileBase struct {
     WindowsCertificateProfileBase
-    // Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
-    customSubjectAlternativeNames []CustomSubjectAlternativeNameable
-    // Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
-    extendedKeyUsages []ExtendedKeyUsageable
 }
 // NewWindows81CertificateProfileBase instantiates a new Windows81CertificateProfileBase and sets the default values.
 func NewWindows81CertificateProfileBase()(*Windows81CertificateProfileBase) {
     m := &Windows81CertificateProfileBase{
         WindowsCertificateProfileBase: *NewWindowsCertificateProfileBase(),
     }
-    odataTypeValue := "#microsoft.graph.windows81CertificateProfileBase";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windows81CertificateProfileBase"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindows81CertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,11 +41,25 @@ func CreateWindows81CertificateProfileBaseFromDiscriminatorValue(parseNode i878a
 }
 // GetCustomSubjectAlternativeNames gets the customSubjectAlternativeNames property value. Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
 func (m *Windows81CertificateProfileBase) GetCustomSubjectAlternativeNames()([]CustomSubjectAlternativeNameable) {
-    return m.customSubjectAlternativeNames
+    val, err := m.GetBackingStore().Get("customSubjectAlternativeNames")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CustomSubjectAlternativeNameable)
+    }
+    return nil
 }
 // GetExtendedKeyUsages gets the extendedKeyUsages property value. Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
 func (m *Windows81CertificateProfileBase) GetExtendedKeyUsages()([]ExtendedKeyUsageable) {
-    return m.extendedKeyUsages
+    val, err := m.GetBackingStore().Get("extendedKeyUsages")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ExtendedKeyUsageable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows81CertificateProfileBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -114,9 +124,24 @@ func (m *Windows81CertificateProfileBase) Serialize(writer i878a80d2330e89d26896
 }
 // SetCustomSubjectAlternativeNames sets the customSubjectAlternativeNames property value. Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
 func (m *Windows81CertificateProfileBase) SetCustomSubjectAlternativeNames(value []CustomSubjectAlternativeNameable)() {
-    m.customSubjectAlternativeNames = value
+    err := m.GetBackingStore().Set("customSubjectAlternativeNames", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExtendedKeyUsages sets the extendedKeyUsages property value. Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
 func (m *Windows81CertificateProfileBase) SetExtendedKeyUsages(value []ExtendedKeyUsageable)() {
-    m.extendedKeyUsages = value
+    err := m.GetBackingStore().Set("extendedKeyUsages", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Windows81CertificateProfileBaseable 
+type Windows81CertificateProfileBaseable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    WindowsCertificateProfileBaseable
+    GetCustomSubjectAlternativeNames()([]CustomSubjectAlternativeNameable)
+    GetExtendedKeyUsages()([]ExtendedKeyUsageable)
+    SetCustomSubjectAlternativeNames(value []CustomSubjectAlternativeNameable)()
+    SetExtendedKeyUsages(value []ExtendedKeyUsageable)()
 }

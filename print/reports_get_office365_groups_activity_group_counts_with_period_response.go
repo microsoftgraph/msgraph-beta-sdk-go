@@ -8,8 +8,6 @@ import (
 // ReportsGetOffice365GroupsActivityGroupCountsWithPeriodResponse 
 type ReportsGetOffice365GroupsActivityGroupCountsWithPeriodResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
-    // The value property
-    value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365GroupsActivityGroupCountsable
 }
 // NewReportsGetOffice365GroupsActivityGroupCountsWithPeriodResponse instantiates a new ReportsGetOffice365GroupsActivityGroupCountsWithPeriodResponse and sets the default values.
 func NewReportsGetOffice365GroupsActivityGroupCountsWithPeriodResponse()(*ReportsGetOffice365GroupsActivityGroupCountsWithPeriodResponse) {
@@ -43,7 +41,14 @@ func (m *ReportsGetOffice365GroupsActivityGroupCountsWithPeriodResponse) GetFiel
 }
 // GetValue gets the value property value. The value property
 func (m *ReportsGetOffice365GroupsActivityGroupCountsWithPeriodResponse) GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365GroupsActivityGroupCountsable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365GroupsActivityGroupCountsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ReportsGetOffice365GroupsActivityGroupCountsWithPeriodResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *ReportsGetOffice365GroupsActivityGroupCountsWithPeriodResponse) Seriali
 }
 // SetValue sets the value property value. The value property
 func (m *ReportsGetOffice365GroupsActivityGroupCountsWithPeriodResponse) SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365GroupsActivityGroupCountsable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ReportsGetOffice365GroupsActivityGroupCountsWithPeriodResponseable 
+type ReportsGetOffice365GroupsActivityGroupCountsWithPeriodResponseable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365GroupsActivityGroupCountsable)
+    SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365GroupsActivityGroupCountsable)()
 }

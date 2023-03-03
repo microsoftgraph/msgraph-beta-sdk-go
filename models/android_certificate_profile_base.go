@@ -7,28 +7,14 @@ import (
 // AndroidCertificateProfileBase 
 type AndroidCertificateProfileBase struct {
     DeviceConfiguration
-    // Certificate Validity Period Options.
-    certificateValidityPeriodScale *CertificateValidityPeriodScale
-    // Value for the Certificate Validity Period.
-    certificateValidityPeriodValue *int32
-    // Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
-    extendedKeyUsages []ExtendedKeyUsageable
-    // Certificate renewal threshold percentage. Valid values 1 to 99
-    renewalThresholdPercentage *int32
-    // Trusted Root Certificate.
-    rootCertificate AndroidTrustedRootCertificateable
-    // Subject Alternative Name Options.
-    subjectAlternativeNameType *SubjectAlternativeNameType
-    // Subject Name Format Options.
-    subjectNameFormat *SubjectNameFormat
 }
 // NewAndroidCertificateProfileBase instantiates a new AndroidCertificateProfileBase and sets the default values.
 func NewAndroidCertificateProfileBase()(*AndroidCertificateProfileBase) {
     m := &AndroidCertificateProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.androidCertificateProfileBase";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidCertificateProfileBase"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidCertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -61,15 +47,36 @@ func CreateAndroidCertificateProfileBaseFromDiscriminatorValue(parseNode i878a80
 }
 // GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *AndroidCertificateProfileBase) GetCertificateValidityPeriodScale()(*CertificateValidityPeriodScale) {
-    return m.certificateValidityPeriodScale
+    val, err := m.GetBackingStore().Get("certificateValidityPeriodScale")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CertificateValidityPeriodScale)
+    }
+    return nil
 }
 // GetCertificateValidityPeriodValue gets the certificateValidityPeriodValue property value. Value for the Certificate Validity Period.
 func (m *AndroidCertificateProfileBase) GetCertificateValidityPeriodValue()(*int32) {
-    return m.certificateValidityPeriodValue
+    val, err := m.GetBackingStore().Get("certificateValidityPeriodValue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetExtendedKeyUsages gets the extendedKeyUsages property value. Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
 func (m *AndroidCertificateProfileBase) GetExtendedKeyUsages()([]ExtendedKeyUsageable) {
-    return m.extendedKeyUsages
+    val, err := m.GetBackingStore().Get("extendedKeyUsages")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ExtendedKeyUsageable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidCertificateProfileBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -152,19 +159,47 @@ func (m *AndroidCertificateProfileBase) GetFieldDeserializers()(map[string]func(
 }
 // GetRenewalThresholdPercentage gets the renewalThresholdPercentage property value. Certificate renewal threshold percentage. Valid values 1 to 99
 func (m *AndroidCertificateProfileBase) GetRenewalThresholdPercentage()(*int32) {
-    return m.renewalThresholdPercentage
+    val, err := m.GetBackingStore().Get("renewalThresholdPercentage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetRootCertificate gets the rootCertificate property value. Trusted Root Certificate.
 func (m *AndroidCertificateProfileBase) GetRootCertificate()(AndroidTrustedRootCertificateable) {
-    return m.rootCertificate
+    val, err := m.GetBackingStore().Get("rootCertificate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AndroidTrustedRootCertificateable)
+    }
+    return nil
 }
 // GetSubjectAlternativeNameType gets the subjectAlternativeNameType property value. Subject Alternative Name Options.
 func (m *AndroidCertificateProfileBase) GetSubjectAlternativeNameType()(*SubjectAlternativeNameType) {
-    return m.subjectAlternativeNameType
+    val, err := m.GetBackingStore().Get("subjectAlternativeNameType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SubjectAlternativeNameType)
+    }
+    return nil
 }
 // GetSubjectNameFormat gets the subjectNameFormat property value. Subject Name Format Options.
 func (m *AndroidCertificateProfileBase) GetSubjectNameFormat()(*SubjectNameFormat) {
-    return m.subjectNameFormat
+    val, err := m.GetBackingStore().Get("subjectNameFormat")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SubjectNameFormat)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidCertificateProfileBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -225,29 +260,69 @@ func (m *AndroidCertificateProfileBase) Serialize(writer i878a80d2330e89d2689638
 }
 // SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *AndroidCertificateProfileBase) SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)() {
-    m.certificateValidityPeriodScale = value
+    err := m.GetBackingStore().Set("certificateValidityPeriodScale", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCertificateValidityPeriodValue sets the certificateValidityPeriodValue property value. Value for the Certificate Validity Period.
 func (m *AndroidCertificateProfileBase) SetCertificateValidityPeriodValue(value *int32)() {
-    m.certificateValidityPeriodValue = value
+    err := m.GetBackingStore().Set("certificateValidityPeriodValue", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExtendedKeyUsages sets the extendedKeyUsages property value. Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
 func (m *AndroidCertificateProfileBase) SetExtendedKeyUsages(value []ExtendedKeyUsageable)() {
-    m.extendedKeyUsages = value
+    err := m.GetBackingStore().Set("extendedKeyUsages", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRenewalThresholdPercentage sets the renewalThresholdPercentage property value. Certificate renewal threshold percentage. Valid values 1 to 99
 func (m *AndroidCertificateProfileBase) SetRenewalThresholdPercentage(value *int32)() {
-    m.renewalThresholdPercentage = value
+    err := m.GetBackingStore().Set("renewalThresholdPercentage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRootCertificate sets the rootCertificate property value. Trusted Root Certificate.
 func (m *AndroidCertificateProfileBase) SetRootCertificate(value AndroidTrustedRootCertificateable)() {
-    m.rootCertificate = value
+    err := m.GetBackingStore().Set("rootCertificate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubjectAlternativeNameType sets the subjectAlternativeNameType property value. Subject Alternative Name Options.
 func (m *AndroidCertificateProfileBase) SetSubjectAlternativeNameType(value *SubjectAlternativeNameType)() {
-    m.subjectAlternativeNameType = value
+    err := m.GetBackingStore().Set("subjectAlternativeNameType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubjectNameFormat sets the subjectNameFormat property value. Subject Name Format Options.
 func (m *AndroidCertificateProfileBase) SetSubjectNameFormat(value *SubjectNameFormat)() {
-    m.subjectNameFormat = value
+    err := m.GetBackingStore().Set("subjectNameFormat", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidCertificateProfileBaseable 
+type AndroidCertificateProfileBaseable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCertificateValidityPeriodScale()(*CertificateValidityPeriodScale)
+    GetCertificateValidityPeriodValue()(*int32)
+    GetExtendedKeyUsages()([]ExtendedKeyUsageable)
+    GetRenewalThresholdPercentage()(*int32)
+    GetRootCertificate()(AndroidTrustedRootCertificateable)
+    GetSubjectAlternativeNameType()(*SubjectAlternativeNameType)
+    GetSubjectNameFormat()(*SubjectNameFormat)
+    SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)()
+    SetCertificateValidityPeriodValue(value *int32)()
+    SetExtendedKeyUsages(value []ExtendedKeyUsageable)()
+    SetRenewalThresholdPercentage(value *int32)()
+    SetRootCertificate(value AndroidTrustedRootCertificateable)()
+    SetSubjectAlternativeNameType(value *SubjectAlternativeNameType)()
+    SetSubjectNameFormat(value *SubjectNameFormat)()
 }

@@ -7,16 +7,14 @@ import (
 // MacOSVpnConfiguration 
 type MacOSVpnConfiguration struct {
     AppleVpnConfiguration
-    // Identity certificate for client authentication when authentication method is certificate.
-    identityCertificate MacOSCertificateProfileBaseable
 }
 // NewMacOSVpnConfiguration instantiates a new MacOSVpnConfiguration and sets the default values.
 func NewMacOSVpnConfiguration()(*MacOSVpnConfiguration) {
     m := &MacOSVpnConfiguration{
         AppleVpnConfiguration: *NewAppleVpnConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.macOSVpnConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.macOSVpnConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMacOSVpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *MacOSVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetIdentityCertificate gets the identityCertificate property value. Identity certificate for client authentication when authentication method is certificate.
 func (m *MacOSVpnConfiguration) GetIdentityCertificate()(MacOSCertificateProfileBaseable) {
-    return m.identityCertificate
+    val, err := m.GetBackingStore().Get("identityCertificate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(MacOSCertificateProfileBaseable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MacOSVpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *MacOSVpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetIdentityCertificate sets the identityCertificate property value. Identity certificate for client authentication when authentication method is certificate.
 func (m *MacOSVpnConfiguration) SetIdentityCertificate(value MacOSCertificateProfileBaseable)() {
-    m.identityCertificate = value
+    err := m.GetBackingStore().Set("identityCertificate", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MacOSVpnConfigurationable 
+type MacOSVpnConfigurationable interface {
+    AppleVpnConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetIdentityCertificate()(MacOSCertificateProfileBaseable)
+    SetIdentityCertificate(value MacOSCertificateProfileBaseable)()
 }

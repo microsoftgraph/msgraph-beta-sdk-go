@@ -8,8 +8,6 @@ import (
 // MyRoleCollectionResponse 
 type MyRoleCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
-    // The value property
-    value []MyRoleable
 }
 // NewMyRoleCollectionResponse instantiates a new MyRoleCollectionResponse and sets the default values.
 func NewMyRoleCollectionResponse()(*MyRoleCollectionResponse) {
@@ -43,7 +41,14 @@ func (m *MyRoleCollectionResponse) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetValue gets the value property value. The value property
 func (m *MyRoleCollectionResponse) GetValue()([]MyRoleable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MyRoleable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MyRoleCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *MyRoleCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetValue sets the value property value. The value property
 func (m *MyRoleCollectionResponse) SetValue(value []MyRoleable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MyRoleCollectionResponseable 
+type MyRoleCollectionResponseable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MyRoleable)
+    SetValue(value []MyRoleable)()
 }

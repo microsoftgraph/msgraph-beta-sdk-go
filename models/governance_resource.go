@@ -8,28 +8,8 @@ import (
 // GovernanceResource 
 type GovernanceResource struct {
     Entity
-    // The display name of the resource.
-    displayName *string
-    // The external id of the resource, representing its original id in the external system. For example, a subscription resource's external id can be '/subscriptions/c14ae696-5e0c-4e5d-88cc-bef6637737ac'.
-    externalId *string
-    // Read-only. The parent resource. for pimforazurerbac scenario, it can represent the subscription the resource belongs to.
-    parent GovernanceResourceable
-    // Represents the date time when the resource is registered in PIM.
-    registeredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The externalId of the resource's root scope that is registered in PIM. The root scope can be the parent, grandparent, or higher ancestor resources.
-    registeredRoot *string
-    // The collection of role assignment requests for the resource.
-    roleAssignmentRequests []GovernanceRoleAssignmentRequestable
-    // The collection of role assignments for the resource.
-    roleAssignments []GovernanceRoleAssignmentable
-    // The collection of role defintions for the resource.
-    roleDefinitions []GovernanceRoleDefinitionable
-    // The collection of role settings for the resource.
-    roleSettings []GovernanceRoleSettingable
-    // The status of a given resource. For example, it could represent whether the resource is locked or not (values: Active/Locked). Note: This property may be extended in the future to support more scenarios.
-    status *string
     // Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
-    type_escaped *string
+    TypeEscaped *string
 }
 // NewGovernanceResource instantiates a new governanceResource and sets the default values.
 func NewGovernanceResource()(*GovernanceResource) {
@@ -44,11 +24,25 @@ func CreateGovernanceResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetDisplayName gets the displayName property value. The display name of the resource.
 func (m *GovernanceResource) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetExternalId gets the externalId property value. The external id of the resource, representing its original id in the external system. For example, a subscription resource's external id can be '/subscriptions/c14ae696-5e0c-4e5d-88cc-bef6637737ac'.
 func (m *GovernanceResource) GetExternalId()(*string) {
-    return m.externalId
+    val, err := m.GetBackingStore().Get("externalId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GovernanceResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -183,39 +177,102 @@ func (m *GovernanceResource) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetParent gets the parent property value. Read-only. The parent resource. for pimforazurerbac scenario, it can represent the subscription the resource belongs to.
 func (m *GovernanceResource) GetParent()(GovernanceResourceable) {
-    return m.parent
+    val, err := m.GetBackingStore().Get("parent")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(GovernanceResourceable)
+    }
+    return nil
 }
 // GetRegisteredDateTime gets the registeredDateTime property value. Represents the date time when the resource is registered in PIM.
 func (m *GovernanceResource) GetRegisteredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.registeredDateTime
+    val, err := m.GetBackingStore().Get("registeredDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetRegisteredRoot gets the registeredRoot property value. The externalId of the resource's root scope that is registered in PIM. The root scope can be the parent, grandparent, or higher ancestor resources.
 func (m *GovernanceResource) GetRegisteredRoot()(*string) {
-    return m.registeredRoot
+    val, err := m.GetBackingStore().Get("registeredRoot")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRoleAssignmentRequests gets the roleAssignmentRequests property value. The collection of role assignment requests for the resource.
 func (m *GovernanceResource) GetRoleAssignmentRequests()([]GovernanceRoleAssignmentRequestable) {
-    return m.roleAssignmentRequests
+    val, err := m.GetBackingStore().Get("roleAssignmentRequests")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GovernanceRoleAssignmentRequestable)
+    }
+    return nil
 }
 // GetRoleAssignments gets the roleAssignments property value. The collection of role assignments for the resource.
 func (m *GovernanceResource) GetRoleAssignments()([]GovernanceRoleAssignmentable) {
-    return m.roleAssignments
+    val, err := m.GetBackingStore().Get("roleAssignments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GovernanceRoleAssignmentable)
+    }
+    return nil
 }
 // GetRoleDefinitions gets the roleDefinitions property value. The collection of role defintions for the resource.
 func (m *GovernanceResource) GetRoleDefinitions()([]GovernanceRoleDefinitionable) {
-    return m.roleDefinitions
+    val, err := m.GetBackingStore().Get("roleDefinitions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GovernanceRoleDefinitionable)
+    }
+    return nil
 }
 // GetRoleSettings gets the roleSettings property value. The collection of role settings for the resource.
 func (m *GovernanceResource) GetRoleSettings()([]GovernanceRoleSettingable) {
-    return m.roleSettings
+    val, err := m.GetBackingStore().Get("roleSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GovernanceRoleSettingable)
+    }
+    return nil
 }
 // GetStatus gets the status property value. The status of a given resource. For example, it could represent whether the resource is locked or not (values: Active/Locked). Note: This property may be extended in the future to support more scenarios.
 func (m *GovernanceResource) GetStatus()(*string) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetType gets the type property value. Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
 func (m *GovernanceResource) GetType()(*string) {
-    return m.type_escaped
+    val, err := m.GetBackingStore().Get("typeEscaped")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GovernanceResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -309,45 +366,105 @@ func (m *GovernanceResource) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetDisplayName sets the displayName property value. The display name of the resource.
 func (m *GovernanceResource) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExternalId sets the externalId property value. The external id of the resource, representing its original id in the external system. For example, a subscription resource's external id can be '/subscriptions/c14ae696-5e0c-4e5d-88cc-bef6637737ac'.
 func (m *GovernanceResource) SetExternalId(value *string)() {
-    m.externalId = value
+    err := m.GetBackingStore().Set("externalId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetParent sets the parent property value. Read-only. The parent resource. for pimforazurerbac scenario, it can represent the subscription the resource belongs to.
 func (m *GovernanceResource) SetParent(value GovernanceResourceable)() {
-    m.parent = value
+    err := m.GetBackingStore().Set("parent", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRegisteredDateTime sets the registeredDateTime property value. Represents the date time when the resource is registered in PIM.
 func (m *GovernanceResource) SetRegisteredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.registeredDateTime = value
+    err := m.GetBackingStore().Set("registeredDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRegisteredRoot sets the registeredRoot property value. The externalId of the resource's root scope that is registered in PIM. The root scope can be the parent, grandparent, or higher ancestor resources.
 func (m *GovernanceResource) SetRegisteredRoot(value *string)() {
-    m.registeredRoot = value
+    err := m.GetBackingStore().Set("registeredRoot", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleAssignmentRequests sets the roleAssignmentRequests property value. The collection of role assignment requests for the resource.
 func (m *GovernanceResource) SetRoleAssignmentRequests(value []GovernanceRoleAssignmentRequestable)() {
-    m.roleAssignmentRequests = value
+    err := m.GetBackingStore().Set("roleAssignmentRequests", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleAssignments sets the roleAssignments property value. The collection of role assignments for the resource.
 func (m *GovernanceResource) SetRoleAssignments(value []GovernanceRoleAssignmentable)() {
-    m.roleAssignments = value
+    err := m.GetBackingStore().Set("roleAssignments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleDefinitions sets the roleDefinitions property value. The collection of role defintions for the resource.
 func (m *GovernanceResource) SetRoleDefinitions(value []GovernanceRoleDefinitionable)() {
-    m.roleDefinitions = value
+    err := m.GetBackingStore().Set("roleDefinitions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleSettings sets the roleSettings property value. The collection of role settings for the resource.
 func (m *GovernanceResource) SetRoleSettings(value []GovernanceRoleSettingable)() {
-    m.roleSettings = value
+    err := m.GetBackingStore().Set("roleSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. The status of a given resource. For example, it could represent whether the resource is locked or not (values: Active/Locked). Note: This property may be extended in the future to support more scenarios.
 func (m *GovernanceResource) SetStatus(value *string)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetType sets the type property value. Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
 func (m *GovernanceResource) SetType(value *string)() {
-    m.type_escaped = value
+    err := m.GetBackingStore().Set("typeEscaped", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GovernanceResourceable 
+type GovernanceResourceable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDisplayName()(*string)
+    GetExternalId()(*string)
+    GetParent()(GovernanceResourceable)
+    GetRegisteredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetRegisteredRoot()(*string)
+    GetRoleAssignmentRequests()([]GovernanceRoleAssignmentRequestable)
+    GetRoleAssignments()([]GovernanceRoleAssignmentable)
+    GetRoleDefinitions()([]GovernanceRoleDefinitionable)
+    GetRoleSettings()([]GovernanceRoleSettingable)
+    GetStatus()(*string)
+    GetType()(*string)
+    SetDisplayName(value *string)()
+    SetExternalId(value *string)()
+    SetParent(value GovernanceResourceable)()
+    SetRegisteredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetRegisteredRoot(value *string)()
+    SetRoleAssignmentRequests(value []GovernanceRoleAssignmentRequestable)()
+    SetRoleAssignments(value []GovernanceRoleAssignmentable)()
+    SetRoleDefinitions(value []GovernanceRoleDefinitionable)()
+    SetRoleSettings(value []GovernanceRoleSettingable)()
+    SetStatus(value *string)()
+    SetType(value *string)()
 }

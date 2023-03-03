@@ -9,38 +9,6 @@ import (
 // ManagementTemplate 
 type ManagementTemplate struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
-    category *ManagementCategory
-    // The createdByUserId property
-    createdByUserId *string
-    // The createdDateTime property
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The description for the management template. Optional. Read-only.
-    description *string
-    // The display name for the management template. Required. Read-only.
-    displayName *string
-    // The informationLinks property
-    informationLinks []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActionUrlable
-    // The lastActionByUserId property
-    lastActionByUserId *string
-    // The lastActionDateTime property
-    lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The managementTemplateCollections property
-    managementTemplateCollections []ManagementTemplateCollectionable
-    // The managementTemplateSteps property
-    managementTemplateSteps []ManagementTemplateStepable
-    // The collection of parameters used by the management template. Optional. Read-only.
-    parameters []TemplateParameterable
-    // The priority property
-    priority *int32
-    // The provider property
-    provider *ManagementProvider
-    // The userImpact property
-    userImpact *string
-    // The version property
-    version *int32
-    // The collection of workload actions associated with the management template. Optional. Read-only.
-    workloadActions []WorkloadActionable
 }
 // NewManagementTemplate instantiates a new managementTemplate and sets the default values.
 func NewManagementTemplate()(*ManagementTemplate) {
@@ -55,23 +23,58 @@ func CreateManagementTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetCategory gets the category property value. The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
 func (m *ManagementTemplate) GetCategory()(*ManagementCategory) {
-    return m.category
+    val, err := m.GetBackingStore().Get("category")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ManagementCategory)
+    }
+    return nil
 }
 // GetCreatedByUserId gets the createdByUserId property value. The createdByUserId property
 func (m *ManagementTemplate) GetCreatedByUserId()(*string) {
-    return m.createdByUserId
+    val, err := m.GetBackingStore().Get("createdByUserId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
 func (m *ManagementTemplate) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDescription gets the description property value. The description for the management template. Optional. Read-only.
 func (m *ManagementTemplate) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The display name for the management template. Required. Read-only.
 func (m *ManagementTemplate) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -260,47 +263,124 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetInformationLinks gets the informationLinks property value. The informationLinks property
 func (m *ManagementTemplate) GetInformationLinks()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActionUrlable) {
-    return m.informationLinks
+    val, err := m.GetBackingStore().Get("informationLinks")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActionUrlable)
+    }
+    return nil
 }
 // GetLastActionByUserId gets the lastActionByUserId property value. The lastActionByUserId property
 func (m *ManagementTemplate) GetLastActionByUserId()(*string) {
-    return m.lastActionByUserId
+    val, err := m.GetBackingStore().Get("lastActionByUserId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLastActionDateTime gets the lastActionDateTime property value. The lastActionDateTime property
 func (m *ManagementTemplate) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastActionDateTime
+    val, err := m.GetBackingStore().Get("lastActionDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetManagementTemplateCollections gets the managementTemplateCollections property value. The managementTemplateCollections property
 func (m *ManagementTemplate) GetManagementTemplateCollections()([]ManagementTemplateCollectionable) {
-    return m.managementTemplateCollections
+    val, err := m.GetBackingStore().Get("managementTemplateCollections")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagementTemplateCollectionable)
+    }
+    return nil
 }
 // GetManagementTemplateSteps gets the managementTemplateSteps property value. The managementTemplateSteps property
 func (m *ManagementTemplate) GetManagementTemplateSteps()([]ManagementTemplateStepable) {
-    return m.managementTemplateSteps
+    val, err := m.GetBackingStore().Get("managementTemplateSteps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagementTemplateStepable)
+    }
+    return nil
 }
 // GetParameters gets the parameters property value. The collection of parameters used by the management template. Optional. Read-only.
 func (m *ManagementTemplate) GetParameters()([]TemplateParameterable) {
-    return m.parameters
+    val, err := m.GetBackingStore().Get("parameters")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TemplateParameterable)
+    }
+    return nil
 }
 // GetPriority gets the priority property value. The priority property
 func (m *ManagementTemplate) GetPriority()(*int32) {
-    return m.priority
+    val, err := m.GetBackingStore().Get("priority")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetProvider gets the provider property value. The provider property
 func (m *ManagementTemplate) GetProvider()(*ManagementProvider) {
-    return m.provider
+    val, err := m.GetBackingStore().Get("provider")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ManagementProvider)
+    }
+    return nil
 }
 // GetUserImpact gets the userImpact property value. The userImpact property
 func (m *ManagementTemplate) GetUserImpact()(*string) {
-    return m.userImpact
+    val, err := m.GetBackingStore().Get("userImpact")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetVersion gets the version property value. The version property
 func (m *ManagementTemplate) GetVersion()(*int32) {
-    return m.version
+    val, err := m.GetBackingStore().Get("version")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetWorkloadActions gets the workloadActions property value. The collection of workload actions associated with the management template. Optional. Read-only.
 func (m *ManagementTemplate) GetWorkloadActions()([]WorkloadActionable) {
-    return m.workloadActions
+    val, err := m.GetBackingStore().Get("workloadActions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WorkloadActionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagementTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -430,65 +510,150 @@ func (m *ManagementTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetCategory sets the category property value. The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
 func (m *ManagementTemplate) SetCategory(value *ManagementCategory)() {
-    m.category = value
+    err := m.GetBackingStore().Set("category", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedByUserId sets the createdByUserId property value. The createdByUserId property
 func (m *ManagementTemplate) SetCreatedByUserId(value *string)() {
-    m.createdByUserId = value
+    err := m.GetBackingStore().Set("createdByUserId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
 func (m *ManagementTemplate) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. The description for the management template. Optional. Read-only.
 func (m *ManagementTemplate) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The display name for the management template. Required. Read-only.
 func (m *ManagementTemplate) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInformationLinks sets the informationLinks property value. The informationLinks property
 func (m *ManagementTemplate) SetInformationLinks(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActionUrlable)() {
-    m.informationLinks = value
+    err := m.GetBackingStore().Set("informationLinks", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastActionByUserId sets the lastActionByUserId property value. The lastActionByUserId property
 func (m *ManagementTemplate) SetLastActionByUserId(value *string)() {
-    m.lastActionByUserId = value
+    err := m.GetBackingStore().Set("lastActionByUserId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastActionDateTime sets the lastActionDateTime property value. The lastActionDateTime property
 func (m *ManagementTemplate) SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastActionDateTime = value
+    err := m.GetBackingStore().Set("lastActionDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagementTemplateCollections sets the managementTemplateCollections property value. The managementTemplateCollections property
 func (m *ManagementTemplate) SetManagementTemplateCollections(value []ManagementTemplateCollectionable)() {
-    m.managementTemplateCollections = value
+    err := m.GetBackingStore().Set("managementTemplateCollections", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagementTemplateSteps sets the managementTemplateSteps property value. The managementTemplateSteps property
 func (m *ManagementTemplate) SetManagementTemplateSteps(value []ManagementTemplateStepable)() {
-    m.managementTemplateSteps = value
+    err := m.GetBackingStore().Set("managementTemplateSteps", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetParameters sets the parameters property value. The collection of parameters used by the management template. Optional. Read-only.
 func (m *ManagementTemplate) SetParameters(value []TemplateParameterable)() {
-    m.parameters = value
+    err := m.GetBackingStore().Set("parameters", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPriority sets the priority property value. The priority property
 func (m *ManagementTemplate) SetPriority(value *int32)() {
-    m.priority = value
+    err := m.GetBackingStore().Set("priority", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProvider sets the provider property value. The provider property
 func (m *ManagementTemplate) SetProvider(value *ManagementProvider)() {
-    m.provider = value
+    err := m.GetBackingStore().Set("provider", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserImpact sets the userImpact property value. The userImpact property
 func (m *ManagementTemplate) SetUserImpact(value *string)() {
-    m.userImpact = value
+    err := m.GetBackingStore().Set("userImpact", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVersion sets the version property value. The version property
 func (m *ManagementTemplate) SetVersion(value *int32)() {
-    m.version = value
+    err := m.GetBackingStore().Set("version", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkloadActions sets the workloadActions property value. The collection of workload actions associated with the management template. Optional. Read-only.
 func (m *ManagementTemplate) SetWorkloadActions(value []WorkloadActionable)() {
-    m.workloadActions = value
+    err := m.GetBackingStore().Set("workloadActions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagementTemplateable 
+type ManagementTemplateable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCategory()(*ManagementCategory)
+    GetCreatedByUserId()(*string)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetInformationLinks()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActionUrlable)
+    GetLastActionByUserId()(*string)
+    GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetManagementTemplateCollections()([]ManagementTemplateCollectionable)
+    GetManagementTemplateSteps()([]ManagementTemplateStepable)
+    GetParameters()([]TemplateParameterable)
+    GetPriority()(*int32)
+    GetProvider()(*ManagementProvider)
+    GetUserImpact()(*string)
+    GetVersion()(*int32)
+    GetWorkloadActions()([]WorkloadActionable)
+    SetCategory(value *ManagementCategory)()
+    SetCreatedByUserId(value *string)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetInformationLinks(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActionUrlable)()
+    SetLastActionByUserId(value *string)()
+    SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetManagementTemplateCollections(value []ManagementTemplateCollectionable)()
+    SetManagementTemplateSteps(value []ManagementTemplateStepable)()
+    SetParameters(value []TemplateParameterable)()
+    SetPriority(value *int32)()
+    SetProvider(value *ManagementProvider)()
+    SetUserImpact(value *string)()
+    SetVersion(value *int32)()
+    SetWorkloadActions(value []WorkloadActionable)()
 }

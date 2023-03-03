@@ -7,8 +7,6 @@ import (
 // AndroidDeviceOwnerVpnConfigurationCollectionResponse 
 type AndroidDeviceOwnerVpnConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidDeviceOwnerVpnConfigurationable
 }
 // NewAndroidDeviceOwnerVpnConfigurationCollectionResponse instantiates a new AndroidDeviceOwnerVpnConfigurationCollectionResponse and sets the default values.
 func NewAndroidDeviceOwnerVpnConfigurationCollectionResponse()(*AndroidDeviceOwnerVpnConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidDeviceOwnerVpnConfigurationCollectionResponse) GetFieldDeseriali
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidDeviceOwnerVpnConfigurationCollectionResponse) GetValue()([]AndroidDeviceOwnerVpnConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidDeviceOwnerVpnConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerVpnConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidDeviceOwnerVpnConfigurationCollectionResponse) Serialize(writer 
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidDeviceOwnerVpnConfigurationCollectionResponse) SetValue(value []AndroidDeviceOwnerVpnConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidDeviceOwnerVpnConfigurationCollectionResponseable 
+type AndroidDeviceOwnerVpnConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidDeviceOwnerVpnConfigurationable)
+    SetValue(value []AndroidDeviceOwnerVpnConfigurationable)()
 }

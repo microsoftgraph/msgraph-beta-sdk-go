@@ -2,24 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // AuthenticationConfigurationValidation 
 type AuthenticationConfigurationValidation struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The errors property
-    errors []GenericErrorable
-    // The OdataType property
-    odataType *string
-    // The warnings property
-    warnings []GenericErrorable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewAuthenticationConfigurationValidation instantiates a new authenticationConfigurationValidation and sets the default values.
 func NewAuthenticationConfigurationValidation()(*AuthenticationConfigurationValidation) {
     m := &AuthenticationConfigurationValidation{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAuthenticationConfigurationValidationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,11 +24,30 @@ func CreateAuthenticationConfigurationValidationFromDiscriminatorValue(parseNode
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuthenticationConfigurationValidation) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *AuthenticationConfigurationValidation) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetErrors gets the errors property value. The errors property
 func (m *AuthenticationConfigurationValidation) GetErrors()([]GenericErrorable) {
-    return m.errors
+    val, err := m.GetBackingStore().Get("errors")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GenericErrorable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuthenticationConfigurationValidation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -79,11 +94,25 @@ func (m *AuthenticationConfigurationValidation) GetFieldDeserializers()(map[stri
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AuthenticationConfigurationValidation) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetWarnings gets the warnings property value. The warnings property
 func (m *AuthenticationConfigurationValidation) GetWarnings()([]GenericErrorable) {
-    return m.warnings
+    val, err := m.GetBackingStore().Get("warnings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GenericErrorable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AuthenticationConfigurationValidation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -123,17 +152,47 @@ func (m *AuthenticationConfigurationValidation) Serialize(writer i878a80d2330e89
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuthenticationConfigurationValidation) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *AuthenticationConfigurationValidation) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetErrors sets the errors property value. The errors property
 func (m *AuthenticationConfigurationValidation) SetErrors(value []GenericErrorable)() {
-    m.errors = value
+    err := m.GetBackingStore().Set("errors", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AuthenticationConfigurationValidation) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWarnings sets the warnings property value. The warnings property
 func (m *AuthenticationConfigurationValidation) SetWarnings(value []GenericErrorable)() {
-    m.warnings = value
+    err := m.GetBackingStore().Set("warnings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AuthenticationConfigurationValidationable 
+type AuthenticationConfigurationValidationable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetErrors()([]GenericErrorable)
+    GetOdataType()(*string)
+    GetWarnings()([]GenericErrorable)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetErrors(value []GenericErrorable)()
+    SetOdataType(value *string)()
+    SetWarnings(value []GenericErrorable)()
 }

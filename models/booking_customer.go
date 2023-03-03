@@ -7,10 +7,6 @@ import (
 // BookingCustomer 
 type BookingCustomer struct {
     BookingPerson
-    // Addresses associated with the customer, including home, business and other addresses.
-    addresses []PhysicalAddressable
-    // Phone numbers associated with the customer, including home, business and mobile numbers.
-    phones []Phoneable
 }
 // NewBookingCustomer instantiates a new BookingCustomer and sets the default values.
 func NewBookingCustomer()(*BookingCustomer) {
@@ -25,7 +21,14 @@ func CreateBookingCustomerFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAddresses gets the addresses property value. Addresses associated with the customer, including home, business and other addresses.
 func (m *BookingCustomer) GetAddresses()([]PhysicalAddressable) {
-    return m.addresses
+    val, err := m.GetBackingStore().Get("addresses")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PhysicalAddressable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BookingCustomer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +65,14 @@ func (m *BookingCustomer) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetPhones gets the phones property value. Phone numbers associated with the customer, including home, business and mobile numbers.
 func (m *BookingCustomer) GetPhones()([]Phoneable) {
-    return m.phones
+    val, err := m.GetBackingStore().Get("phones")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Phoneable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *BookingCustomer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -94,9 +104,24 @@ func (m *BookingCustomer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAddresses sets the addresses property value. Addresses associated with the customer, including home, business and other addresses.
 func (m *BookingCustomer) SetAddresses(value []PhysicalAddressable)() {
-    m.addresses = value
+    err := m.GetBackingStore().Set("addresses", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPhones sets the phones property value. Phone numbers associated with the customer, including home, business and mobile numbers.
 func (m *BookingCustomer) SetPhones(value []Phoneable)() {
-    m.phones = value
+    err := m.GetBackingStore().Set("phones", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// BookingCustomerable 
+type BookingCustomerable interface {
+    BookingPersonable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAddresses()([]PhysicalAddressable)
+    GetPhones()([]Phoneable)
+    SetAddresses(value []PhysicalAddressable)()
+    SetPhones(value []Phoneable)()
 }

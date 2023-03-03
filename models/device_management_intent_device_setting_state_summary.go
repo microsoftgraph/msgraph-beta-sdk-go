@@ -7,20 +7,6 @@ import (
 // DeviceManagementIntentDeviceSettingStateSummary entity that represents device setting state summary for an intent
 type DeviceManagementIntentDeviceSettingStateSummary struct {
     Entity
-    // Number of compliant devices
-    compliantCount *int32
-    // Number of devices in conflict
-    conflictCount *int32
-    // Number of error devices
-    errorCount *int32
-    // Number of non compliant devices
-    nonCompliantCount *int32
-    // Number of not applicable devices
-    notApplicableCount *int32
-    // Number of remediated devices
-    remediatedCount *int32
-    // Name of a setting
-    settingName *string
 }
 // NewDeviceManagementIntentDeviceSettingStateSummary instantiates a new deviceManagementIntentDeviceSettingStateSummary and sets the default values.
 func NewDeviceManagementIntentDeviceSettingStateSummary()(*DeviceManagementIntentDeviceSettingStateSummary) {
@@ -35,15 +21,36 @@ func CreateDeviceManagementIntentDeviceSettingStateSummaryFromDiscriminatorValue
 }
 // GetCompliantCount gets the compliantCount property value. Number of compliant devices
 func (m *DeviceManagementIntentDeviceSettingStateSummary) GetCompliantCount()(*int32) {
-    return m.compliantCount
+    val, err := m.GetBackingStore().Get("compliantCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetConflictCount gets the conflictCount property value. Number of devices in conflict
 func (m *DeviceManagementIntentDeviceSettingStateSummary) GetConflictCount()(*int32) {
-    return m.conflictCount
+    val, err := m.GetBackingStore().Get("conflictCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetErrorCount gets the errorCount property value. Number of error devices
 func (m *DeviceManagementIntentDeviceSettingStateSummary) GetErrorCount()(*int32) {
-    return m.errorCount
+    val, err := m.GetBackingStore().Get("errorCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementIntentDeviceSettingStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -122,19 +129,47 @@ func (m *DeviceManagementIntentDeviceSettingStateSummary) GetFieldDeserializers(
 }
 // GetNonCompliantCount gets the nonCompliantCount property value. Number of non compliant devices
 func (m *DeviceManagementIntentDeviceSettingStateSummary) GetNonCompliantCount()(*int32) {
-    return m.nonCompliantCount
+    val, err := m.GetBackingStore().Get("nonCompliantCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetNotApplicableCount gets the notApplicableCount property value. Number of not applicable devices
 func (m *DeviceManagementIntentDeviceSettingStateSummary) GetNotApplicableCount()(*int32) {
-    return m.notApplicableCount
+    val, err := m.GetBackingStore().Get("notApplicableCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetRemediatedCount gets the remediatedCount property value. Number of remediated devices
 func (m *DeviceManagementIntentDeviceSettingStateSummary) GetRemediatedCount()(*int32) {
-    return m.remediatedCount
+    val, err := m.GetBackingStore().Get("remediatedCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetSettingName gets the settingName property value. Name of a setting
 func (m *DeviceManagementIntentDeviceSettingStateSummary) GetSettingName()(*string) {
-    return m.settingName
+    val, err := m.GetBackingStore().Get("settingName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementIntentDeviceSettingStateSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -188,29 +223,69 @@ func (m *DeviceManagementIntentDeviceSettingStateSummary) Serialize(writer i878a
 }
 // SetCompliantCount sets the compliantCount property value. Number of compliant devices
 func (m *DeviceManagementIntentDeviceSettingStateSummary) SetCompliantCount(value *int32)() {
-    m.compliantCount = value
+    err := m.GetBackingStore().Set("compliantCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConflictCount sets the conflictCount property value. Number of devices in conflict
 func (m *DeviceManagementIntentDeviceSettingStateSummary) SetConflictCount(value *int32)() {
-    m.conflictCount = value
+    err := m.GetBackingStore().Set("conflictCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetErrorCount sets the errorCount property value. Number of error devices
 func (m *DeviceManagementIntentDeviceSettingStateSummary) SetErrorCount(value *int32)() {
-    m.errorCount = value
+    err := m.GetBackingStore().Set("errorCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNonCompliantCount sets the nonCompliantCount property value. Number of non compliant devices
 func (m *DeviceManagementIntentDeviceSettingStateSummary) SetNonCompliantCount(value *int32)() {
-    m.nonCompliantCount = value
+    err := m.GetBackingStore().Set("nonCompliantCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotApplicableCount sets the notApplicableCount property value. Number of not applicable devices
 func (m *DeviceManagementIntentDeviceSettingStateSummary) SetNotApplicableCount(value *int32)() {
-    m.notApplicableCount = value
+    err := m.GetBackingStore().Set("notApplicableCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRemediatedCount sets the remediatedCount property value. Number of remediated devices
 func (m *DeviceManagementIntentDeviceSettingStateSummary) SetRemediatedCount(value *int32)() {
-    m.remediatedCount = value
+    err := m.GetBackingStore().Set("remediatedCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingName sets the settingName property value. Name of a setting
 func (m *DeviceManagementIntentDeviceSettingStateSummary) SetSettingName(value *string)() {
-    m.settingName = value
+    err := m.GetBackingStore().Set("settingName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementIntentDeviceSettingStateSummaryable 
+type DeviceManagementIntentDeviceSettingStateSummaryable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCompliantCount()(*int32)
+    GetConflictCount()(*int32)
+    GetErrorCount()(*int32)
+    GetNonCompliantCount()(*int32)
+    GetNotApplicableCount()(*int32)
+    GetRemediatedCount()(*int32)
+    GetSettingName()(*string)
+    SetCompliantCount(value *int32)()
+    SetConflictCount(value *int32)()
+    SetErrorCount(value *int32)()
+    SetNonCompliantCount(value *int32)()
+    SetNotApplicableCount(value *int32)()
+    SetRemediatedCount(value *int32)()
+    SetSettingName(value *string)()
 }

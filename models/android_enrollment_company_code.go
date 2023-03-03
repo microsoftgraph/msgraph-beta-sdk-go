@@ -2,26 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // AndroidEnrollmentCompanyCode a class to hold specialty enrollment data used for enrolling via Google's Android Management API, such as Token, Url, and QR code content
 type AndroidEnrollmentCompanyCode struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Enrollment Token used by the User to enroll their device.
-    enrollmentToken *string
-    // The OdataType property
-    odataType *string
-    // String used to generate a QR code for the token.
-    qrCodeContent *string
-    // Generated QR code for the token.
-    qrCodeImage MimeContentable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewAndroidEnrollmentCompanyCode instantiates a new androidEnrollmentCompanyCode and sets the default values.
 func NewAndroidEnrollmentCompanyCode()(*AndroidEnrollmentCompanyCode) {
     m := &AndroidEnrollmentCompanyCode{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAndroidEnrollmentCompanyCodeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,11 +24,30 @@ func CreateAndroidEnrollmentCompanyCodeFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AndroidEnrollmentCompanyCode) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *AndroidEnrollmentCompanyCode) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetEnrollmentToken gets the enrollmentToken property value. Enrollment Token used by the User to enroll their device.
 func (m *AndroidEnrollmentCompanyCode) GetEnrollmentToken()(*string) {
-    return m.enrollmentToken
+    val, err := m.GetBackingStore().Get("enrollmentToken")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidEnrollmentCompanyCode) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -83,15 +96,36 @@ func (m *AndroidEnrollmentCompanyCode) GetFieldDeserializers()(map[string]func(i
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AndroidEnrollmentCompanyCode) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetQrCodeContent gets the qrCodeContent property value. String used to generate a QR code for the token.
 func (m *AndroidEnrollmentCompanyCode) GetQrCodeContent()(*string) {
-    return m.qrCodeContent
+    val, err := m.GetBackingStore().Get("qrCodeContent")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetQrCodeImage gets the qrCodeImage property value. Generated QR code for the token.
 func (m *AndroidEnrollmentCompanyCode) GetQrCodeImage()(MimeContentable) {
-    return m.qrCodeImage
+    val, err := m.GetBackingStore().Get("qrCodeImage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(MimeContentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidEnrollmentCompanyCode) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -129,21 +163,56 @@ func (m *AndroidEnrollmentCompanyCode) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AndroidEnrollmentCompanyCode) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *AndroidEnrollmentCompanyCode) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetEnrollmentToken sets the enrollmentToken property value. Enrollment Token used by the User to enroll their device.
 func (m *AndroidEnrollmentCompanyCode) SetEnrollmentToken(value *string)() {
-    m.enrollmentToken = value
+    err := m.GetBackingStore().Set("enrollmentToken", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AndroidEnrollmentCompanyCode) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetQrCodeContent sets the qrCodeContent property value. String used to generate a QR code for the token.
 func (m *AndroidEnrollmentCompanyCode) SetQrCodeContent(value *string)() {
-    m.qrCodeContent = value
+    err := m.GetBackingStore().Set("qrCodeContent", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetQrCodeImage sets the qrCodeImage property value. Generated QR code for the token.
 func (m *AndroidEnrollmentCompanyCode) SetQrCodeImage(value MimeContentable)() {
-    m.qrCodeImage = value
+    err := m.GetBackingStore().Set("qrCodeImage", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidEnrollmentCompanyCodeable 
+type AndroidEnrollmentCompanyCodeable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetEnrollmentToken()(*string)
+    GetOdataType()(*string)
+    GetQrCodeContent()(*string)
+    GetQrCodeImage()(MimeContentable)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetEnrollmentToken(value *string)()
+    SetOdataType(value *string)()
+    SetQrCodeContent(value *string)()
+    SetQrCodeImage(value MimeContentable)()
 }

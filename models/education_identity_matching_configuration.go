@@ -7,16 +7,14 @@ import (
 // EducationIdentityMatchingConfiguration 
 type EducationIdentityMatchingConfiguration struct {
     EducationIdentitySynchronizationConfiguration
-    // Mapping between the user account and the options to use to uniquely identify the user to update.
-    matchingOptions []EducationIdentityMatchingOptionsable
 }
 // NewEducationIdentityMatchingConfiguration instantiates a new EducationIdentityMatchingConfiguration and sets the default values.
 func NewEducationIdentityMatchingConfiguration()(*EducationIdentityMatchingConfiguration) {
     m := &EducationIdentityMatchingConfiguration{
         EducationIdentitySynchronizationConfiguration: *NewEducationIdentitySynchronizationConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.educationIdentityMatchingConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.educationIdentityMatchingConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEducationIdentityMatchingConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,7 +42,14 @@ func (m *EducationIdentityMatchingConfiguration) GetFieldDeserializers()(map[str
 }
 // GetMatchingOptions gets the matchingOptions property value. Mapping between the user account and the options to use to uniquely identify the user to update.
 func (m *EducationIdentityMatchingConfiguration) GetMatchingOptions()([]EducationIdentityMatchingOptionsable) {
-    return m.matchingOptions
+    val, err := m.GetBackingStore().Get("matchingOptions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EducationIdentityMatchingOptionsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EducationIdentityMatchingConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -66,5 +71,15 @@ func (m *EducationIdentityMatchingConfiguration) Serialize(writer i878a80d2330e8
 }
 // SetMatchingOptions sets the matchingOptions property value. Mapping between the user account and the options to use to uniquely identify the user to update.
 func (m *EducationIdentityMatchingConfiguration) SetMatchingOptions(value []EducationIdentityMatchingOptionsable)() {
-    m.matchingOptions = value
+    err := m.GetBackingStore().Set("matchingOptions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EducationIdentityMatchingConfigurationable 
+type EducationIdentityMatchingConfigurationable interface {
+    EducationIdentitySynchronizationConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetMatchingOptions()([]EducationIdentityMatchingOptionsable)
+    SetMatchingOptions(value []EducationIdentityMatchingOptionsable)()
 }

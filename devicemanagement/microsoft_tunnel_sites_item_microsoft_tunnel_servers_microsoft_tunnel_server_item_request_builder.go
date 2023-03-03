@@ -55,8 +55,8 @@ func NewMicrosoftTunnelSitesItemMicrosoftTunnelServersMicrosoftTunnelServerItemR
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMicrosoftTunnelSitesItemMicrosoftTunnelServersMicrosoftTunnelServerItemRequestBuilder instantiates a new MicrosoftTunnelServerItemRequestBuilder and sets the default values.
@@ -67,7 +67,7 @@ func NewMicrosoftTunnelSitesItemMicrosoftTunnelServersMicrosoftTunnelServerItemR
 }
 // CreateServerLogCollectionRequest provides operations to call the createServerLogCollectionRequest method.
 func (m *MicrosoftTunnelSitesItemMicrosoftTunnelServersMicrosoftTunnelServerItemRequestBuilder) CreateServerLogCollectionRequest()(*MicrosoftTunnelSitesItemMicrosoftTunnelServersItemCreateServerLogCollectionRequestRequestBuilder) {
-    return NewMicrosoftTunnelSitesItemMicrosoftTunnelServersItemCreateServerLogCollectionRequestRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMicrosoftTunnelSitesItemMicrosoftTunnelServersItemCreateServerLogCollectionRequestRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property microsoftTunnelServers for deviceManagement
 func (m *MicrosoftTunnelSitesItemMicrosoftTunnelServersMicrosoftTunnelServerItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MicrosoftTunnelSitesItemMicrosoftTunnelServersMicrosoftTunnelServerItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -87,7 +87,7 @@ func (m *MicrosoftTunnelSitesItemMicrosoftTunnelServersMicrosoftTunnelServerItem
 }
 // GenerateServerLogCollectionRequest provides operations to call the generateServerLogCollectionRequest method.
 func (m *MicrosoftTunnelSitesItemMicrosoftTunnelServersMicrosoftTunnelServerItemRequestBuilder) GenerateServerLogCollectionRequest()(*MicrosoftTunnelSitesItemMicrosoftTunnelServersItemGenerateServerLogCollectionRequestRequestBuilder) {
-    return NewMicrosoftTunnelSitesItemMicrosoftTunnelServersItemGenerateServerLogCollectionRequestRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMicrosoftTunnelSitesItemMicrosoftTunnelServersItemGenerateServerLogCollectionRequestRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get a list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
 func (m *MicrosoftTunnelSitesItemMicrosoftTunnelServersMicrosoftTunnelServerItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MicrosoftTunnelSitesItemMicrosoftTunnelServersMicrosoftTunnelServerItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelServerable, error) {
@@ -110,11 +110,11 @@ func (m *MicrosoftTunnelSitesItemMicrosoftTunnelServersMicrosoftTunnelServerItem
 }
 // GetHealthMetrics provides operations to call the getHealthMetrics method.
 func (m *MicrosoftTunnelSitesItemMicrosoftTunnelServersMicrosoftTunnelServerItemRequestBuilder) GetHealthMetrics()(*MicrosoftTunnelSitesItemMicrosoftTunnelServersItemGetHealthMetricsRequestBuilder) {
-    return NewMicrosoftTunnelSitesItemMicrosoftTunnelServersItemGetHealthMetricsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMicrosoftTunnelSitesItemMicrosoftTunnelServersItemGetHealthMetricsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GetHealthMetricTimeSeries provides operations to call the getHealthMetricTimeSeries method.
 func (m *MicrosoftTunnelSitesItemMicrosoftTunnelServersMicrosoftTunnelServerItemRequestBuilder) GetHealthMetricTimeSeries()(*MicrosoftTunnelSitesItemMicrosoftTunnelServersItemGetHealthMetricTimeSeriesRequestBuilder) {
-    return NewMicrosoftTunnelSitesItemMicrosoftTunnelServersItemGetHealthMetricTimeSeriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMicrosoftTunnelSitesItemMicrosoftTunnelServersItemGetHealthMetricTimeSeriesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property microsoftTunnelServers in deviceManagement
 func (m *MicrosoftTunnelSitesItemMicrosoftTunnelServersMicrosoftTunnelServerItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelServerable, requestConfiguration *MicrosoftTunnelSitesItemMicrosoftTunnelServersMicrosoftTunnelServerItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelServerable, error) {
@@ -170,7 +170,10 @@ func (m *MicrosoftTunnelSitesItemMicrosoftTunnelServersMicrosoftTunnelServerItem
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

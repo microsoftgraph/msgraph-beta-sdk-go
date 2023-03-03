@@ -7,16 +7,14 @@ import (
 // ManagedAppProtectionPolicySetItem 
 type ManagedAppProtectionPolicySetItem struct {
     PolicySetItem
-    // TargetedAppManagementLevels of the ManagedAppPolicySetItem.
-    targetedAppManagementLevels *string
 }
 // NewManagedAppProtectionPolicySetItem instantiates a new ManagedAppProtectionPolicySetItem and sets the default values.
 func NewManagedAppProtectionPolicySetItem()(*ManagedAppProtectionPolicySetItem) {
     m := &ManagedAppProtectionPolicySetItem{
         PolicySetItem: *NewPolicySetItem(),
     }
-    odataTypeValue := "#microsoft.graph.managedAppProtectionPolicySetItem";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.managedAppProtectionPolicySetItem"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateManagedAppProtectionPolicySetItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *ManagedAppProtectionPolicySetItem) GetFieldDeserializers()(map[string]f
 }
 // GetTargetedAppManagementLevels gets the targetedAppManagementLevels property value. TargetedAppManagementLevels of the ManagedAppPolicySetItem.
 func (m *ManagedAppProtectionPolicySetItem) GetTargetedAppManagementLevels()(*string) {
-    return m.targetedAppManagementLevels
+    val, err := m.GetBackingStore().Get("targetedAppManagementLevels")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagedAppProtectionPolicySetItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *ManagedAppProtectionPolicySetItem) Serialize(writer i878a80d2330e89d268
 }
 // SetTargetedAppManagementLevels sets the targetedAppManagementLevels property value. TargetedAppManagementLevels of the ManagedAppPolicySetItem.
 func (m *ManagedAppProtectionPolicySetItem) SetTargetedAppManagementLevels(value *string)() {
-    m.targetedAppManagementLevels = value
+    err := m.GetBackingStore().Set("targetedAppManagementLevels", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagedAppProtectionPolicySetItemable 
+type ManagedAppProtectionPolicySetItemable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    PolicySetItemable
+    GetTargetedAppManagementLevels()(*string)
+    SetTargetedAppManagementLevels(value *string)()
 }

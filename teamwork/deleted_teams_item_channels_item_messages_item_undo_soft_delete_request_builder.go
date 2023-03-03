@@ -26,13 +26,13 @@ type DeletedTeamsItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilderPostReq
 func NewDeletedTeamsItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedTeamsItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilder) {
     m := &DeletedTeamsItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/teamwork/deletedTeams/{deletedTeam%2Did}/channels/{channel%2Did}/messages/{chatMessage%2Did}/microsoft.graph.undoSoftDelete";
+    m.urlTemplate = "{+baseurl}/teamwork/deletedTeams/{deletedTeam%2Did}/channels/{channel%2Did}/messages/{chatMessage%2Did}/undoSoftDelete";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeletedTeamsItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilder instantiates a new UndoSoftDeleteRequestBuilder and sets the default values.

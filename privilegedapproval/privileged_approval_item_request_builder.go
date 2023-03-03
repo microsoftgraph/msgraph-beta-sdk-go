@@ -55,8 +55,8 @@ func NewPrivilegedApprovalItemRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPrivilegedApprovalItemRequestBuilder instantiates a new PrivilegedApprovalItemRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewPrivilegedApprovalItemRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedApprovalItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from privilegedApproval by key (id)
+// Delete delete entity from privilegedApproval
 func (m *PrivilegedApprovalItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *PrivilegedApprovalItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -127,13 +127,13 @@ func (m *PrivilegedApprovalItemRequestBuilder) Patch(ctx context.Context, body i
 }
 // Request provides operations to manage the request property of the microsoft.graph.privilegedApproval entity.
 func (m *PrivilegedApprovalItemRequestBuilder) Request()(*ItemRequestRequestBuilder) {
-    return NewItemRequestRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRequestRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RoleInfo provides operations to manage the roleInfo property of the microsoft.graph.privilegedApproval entity.
 func (m *PrivilegedApprovalItemRequestBuilder) RoleInfo()(*ItemRoleInfoRequestBuilder) {
-    return NewItemRoleInfoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRoleInfoRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// ToDeleteRequestInformation delete entity from privilegedApproval by key (id)
+// ToDeleteRequestInformation delete entity from privilegedApproval
 func (m *PrivilegedApprovalItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PrivilegedApprovalItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -168,7 +168,10 @@ func (m *PrivilegedApprovalItemRequestBuilder) ToPatchRequestInformation(ctx con
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -7,8 +7,6 @@ import (
 // DeviceManagementExchangeDeviceClassCollectionResponse 
 type DeviceManagementExchangeDeviceClassCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementExchangeDeviceClassable
 }
 // NewDeviceManagementExchangeDeviceClassCollectionResponse instantiates a new DeviceManagementExchangeDeviceClassCollectionResponse and sets the default values.
 func NewDeviceManagementExchangeDeviceClassCollectionResponse()(*DeviceManagementExchangeDeviceClassCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementExchangeDeviceClassCollectionResponse) GetFieldDeserial
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementExchangeDeviceClassCollectionResponse) GetValue()([]DeviceManagementExchangeDeviceClassable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementExchangeDeviceClassable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementExchangeDeviceClassCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementExchangeDeviceClassCollectionResponse) Serialize(writer
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementExchangeDeviceClassCollectionResponse) SetValue(value []DeviceManagementExchangeDeviceClassable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementExchangeDeviceClassCollectionResponseable 
+type DeviceManagementExchangeDeviceClassCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementExchangeDeviceClassable)
+    SetValue(value []DeviceManagementExchangeDeviceClassable)()
 }

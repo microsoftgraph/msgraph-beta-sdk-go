@@ -2,26 +2,20 @@ package windowsupdates
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // MonitoringRule 
 type MonitoringRule struct {
-    // The action triggered when the threshold for the given signal is met. Possible values are: alertError, pauseDeployment, unknownFutureValue.
-    action *MonitoringAction
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The OdataType property
-    odataType *string
-    // The signal to monitor. Possible values are: rollback, unknownFutureValue.
-    signal *MonitoringSignal
-    // The threshold for a signal at which to trigger action. An integer from 1 to 100 (inclusive).
-    threshold *int32
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewMonitoringRule instantiates a new monitoringRule and sets the default values.
 func NewMonitoringRule()(*MonitoringRule) {
     m := &MonitoringRule{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMonitoringRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,11 +24,30 @@ func CreateMonitoringRuleFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetAction gets the action property value. The action triggered when the threshold for the given signal is met. Possible values are: alertError, pauseDeployment, unknownFutureValue.
 func (m *MonitoringRule) GetAction()(*MonitoringAction) {
-    return m.action
+    val, err := m.GetBackingStore().Get("action")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MonitoringAction)
+    }
+    return nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MonitoringRule) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *MonitoringRule) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MonitoringRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -83,15 +96,36 @@ func (m *MonitoringRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MonitoringRule) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSignal gets the signal property value. The signal to monitor. Possible values are: rollback, unknownFutureValue.
 func (m *MonitoringRule) GetSignal()(*MonitoringSignal) {
-    return m.signal
+    val, err := m.GetBackingStore().Get("signal")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MonitoringSignal)
+    }
+    return nil
 }
 // GetThreshold gets the threshold property value. The threshold for a signal at which to trigger action. An integer from 1 to 100 (inclusive).
 func (m *MonitoringRule) GetThreshold()(*int32) {
-    return m.threshold
+    val, err := m.GetBackingStore().Get("threshold")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MonitoringRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -131,21 +165,56 @@ func (m *MonitoringRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetAction sets the action property value. The action triggered when the threshold for the given signal is met. Possible values are: alertError, pauseDeployment, unknownFutureValue.
 func (m *MonitoringRule) SetAction(value *MonitoringAction)() {
-    m.action = value
+    err := m.GetBackingStore().Set("action", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MonitoringRule) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *MonitoringRule) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MonitoringRule) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSignal sets the signal property value. The signal to monitor. Possible values are: rollback, unknownFutureValue.
 func (m *MonitoringRule) SetSignal(value *MonitoringSignal)() {
-    m.signal = value
+    err := m.GetBackingStore().Set("signal", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetThreshold sets the threshold property value. The threshold for a signal at which to trigger action. An integer from 1 to 100 (inclusive).
 func (m *MonitoringRule) SetThreshold(value *int32)() {
-    m.threshold = value
+    err := m.GetBackingStore().Set("threshold", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MonitoringRuleable 
+type MonitoringRuleable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAction()(*MonitoringAction)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetOdataType()(*string)
+    GetSignal()(*MonitoringSignal)
+    GetThreshold()(*int32)
+    SetAction(value *MonitoringAction)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetOdataType(value *string)()
+    SetSignal(value *MonitoringSignal)()
+    SetThreshold(value *int32)()
 }

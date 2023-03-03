@@ -7,8 +7,6 @@ import (
 // WindowsFeatureUpdateProfileAssignment this entity contains the properties used to assign a windows feature update profile to a group.
 type WindowsFeatureUpdateProfileAssignment struct {
     Entity
-    // The assignment target that the feature update profile is assigned to.
-    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewWindowsFeatureUpdateProfileAssignment instantiates a new windowsFeatureUpdateProfileAssignment and sets the default values.
 func NewWindowsFeatureUpdateProfileAssignment()(*WindowsFeatureUpdateProfileAssignment) {
@@ -38,7 +36,14 @@ func (m *WindowsFeatureUpdateProfileAssignment) GetFieldDeserializers()(map[stri
 }
 // GetTarget gets the target property value. The assignment target that the feature update profile is assigned to.
 func (m *WindowsFeatureUpdateProfileAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
-    return m.target
+    val, err := m.GetBackingStore().Get("target")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceAndAppManagementAssignmentTargetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsFeatureUpdateProfileAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *WindowsFeatureUpdateProfileAssignment) Serialize(writer i878a80d2330e89
 }
 // SetTarget sets the target property value. The assignment target that the feature update profile is assigned to.
 func (m *WindowsFeatureUpdateProfileAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
-    m.target = value
+    err := m.GetBackingStore().Set("target", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsFeatureUpdateProfileAssignmentable 
+type WindowsFeatureUpdateProfileAssignmentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetTarget()(DeviceAndAppManagementAssignmentTargetable)
+    SetTarget(value DeviceAndAppManagementAssignmentTargetable)()
 }

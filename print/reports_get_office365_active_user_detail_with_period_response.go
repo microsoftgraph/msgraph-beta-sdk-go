@@ -8,8 +8,6 @@ import (
 // ReportsGetOffice365ActiveUserDetailWithPeriodResponse 
 type ReportsGetOffice365ActiveUserDetailWithPeriodResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
-    // The value property
-    value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365ActiveUserDetailable
 }
 // NewReportsGetOffice365ActiveUserDetailWithPeriodResponse instantiates a new ReportsGetOffice365ActiveUserDetailWithPeriodResponse and sets the default values.
 func NewReportsGetOffice365ActiveUserDetailWithPeriodResponse()(*ReportsGetOffice365ActiveUserDetailWithPeriodResponse) {
@@ -43,7 +41,14 @@ func (m *ReportsGetOffice365ActiveUserDetailWithPeriodResponse) GetFieldDeserial
 }
 // GetValue gets the value property value. The value property
 func (m *ReportsGetOffice365ActiveUserDetailWithPeriodResponse) GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365ActiveUserDetailable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365ActiveUserDetailable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ReportsGetOffice365ActiveUserDetailWithPeriodResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *ReportsGetOffice365ActiveUserDetailWithPeriodResponse) Serialize(writer
 }
 // SetValue sets the value property value. The value property
 func (m *ReportsGetOffice365ActiveUserDetailWithPeriodResponse) SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365ActiveUserDetailable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ReportsGetOffice365ActiveUserDetailWithPeriodResponseable 
+type ReportsGetOffice365ActiveUserDetailWithPeriodResponseable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365ActiveUserDetailable)
+    SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365ActiveUserDetailable)()
 }

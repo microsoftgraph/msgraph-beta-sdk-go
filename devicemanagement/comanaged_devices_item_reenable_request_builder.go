@@ -26,13 +26,13 @@ type ComanagedDevicesItemReenableRequestBuilderPostRequestConfiguration struct {
 func NewComanagedDevicesItemReenableRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ComanagedDevicesItemReenableRequestBuilder) {
     m := &ComanagedDevicesItemReenableRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/microsoft.graph.reenable";
+    m.urlTemplate = "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/reenable";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewComanagedDevicesItemReenableRequestBuilder instantiates a new ReenableRequestBuilder and sets the default values.

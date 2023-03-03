@@ -7,8 +7,6 @@ import (
 // OnPremisesDirectorySynchronizationCollectionResponse 
 type OnPremisesDirectorySynchronizationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []OnPremisesDirectorySynchronizationable
 }
 // NewOnPremisesDirectorySynchronizationCollectionResponse instantiates a new OnPremisesDirectorySynchronizationCollectionResponse and sets the default values.
 func NewOnPremisesDirectorySynchronizationCollectionResponse()(*OnPremisesDirectorySynchronizationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *OnPremisesDirectorySynchronizationCollectionResponse) GetFieldDeseriali
 }
 // GetValue gets the value property value. The value property
 func (m *OnPremisesDirectorySynchronizationCollectionResponse) GetValue()([]OnPremisesDirectorySynchronizationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OnPremisesDirectorySynchronizationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OnPremisesDirectorySynchronizationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *OnPremisesDirectorySynchronizationCollectionResponse) Serialize(writer 
 }
 // SetValue sets the value property value. The value property
 func (m *OnPremisesDirectorySynchronizationCollectionResponse) SetValue(value []OnPremisesDirectorySynchronizationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OnPremisesDirectorySynchronizationCollectionResponseable 
+type OnPremisesDirectorySynchronizationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]OnPremisesDirectorySynchronizationable)
+    SetValue(value []OnPremisesDirectorySynchronizationable)()
 }

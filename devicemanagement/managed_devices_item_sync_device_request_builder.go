@@ -26,13 +26,13 @@ type ManagedDevicesItemSyncDeviceRequestBuilderPostRequestConfiguration struct {
 func NewManagedDevicesItemSyncDeviceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedDevicesItemSyncDeviceRequestBuilder) {
     m := &ManagedDevicesItemSyncDeviceRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/microsoft.graph.syncDevice";
+    m.urlTemplate = "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/syncDevice";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedDevicesItemSyncDeviceRequestBuilder instantiates a new SyncDeviceRequestBuilder and sets the default values.

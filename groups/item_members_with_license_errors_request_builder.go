@@ -44,10 +44,6 @@ type ItemMembersWithLicenseErrorsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemMembersWithLicenseErrorsRequestBuilderGetQueryParameters
 }
-// Application casts the previous resource to application.
-func (m *ItemMembersWithLicenseErrorsRequestBuilder) Application()(*ItemMembersWithLicenseErrorsApplicationRequestBuilder) {
-    return NewItemMembersWithLicenseErrorsApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewItemMembersWithLicenseErrorsRequestBuilderInternal instantiates a new MembersWithLicenseErrorsRequestBuilder and sets the default values.
 func NewItemMembersWithLicenseErrorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMembersWithLicenseErrorsRequestBuilder) {
     m := &ItemMembersWithLicenseErrorsRequestBuilder{
@@ -57,8 +53,8 @@ func NewItemMembersWithLicenseErrorsRequestBuilderInternal(pathParameters map[st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemMembersWithLicenseErrorsRequestBuilder instantiates a new MembersWithLicenseErrorsRequestBuilder and sets the default values.
@@ -69,11 +65,7 @@ func NewItemMembersWithLicenseErrorsRequestBuilder(rawUrl string, requestAdapter
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemMembersWithLicenseErrorsRequestBuilder) Count()(*ItemMembersWithLicenseErrorsCountRequestBuilder) {
-    return NewItemMembersWithLicenseErrorsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Device casts the previous resource to device.
-func (m *ItemMembersWithLicenseErrorsRequestBuilder) Device()(*ItemMembersWithLicenseErrorsDeviceRequestBuilder) {
-    return NewItemMembersWithLicenseErrorsDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemMembersWithLicenseErrorsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get a list of group members with license errors from this group-based license assignment. Read-only.
 func (m *ItemMembersWithLicenseErrorsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMembersWithLicenseErrorsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
@@ -94,17 +86,29 @@ func (m *ItemMembersWithLicenseErrorsRequestBuilder) Get(ctx context.Context, re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
-// Group casts the previous resource to group.
-func (m *ItemMembersWithLicenseErrorsRequestBuilder) Group()(*ItemMembersWithLicenseErrorsGroupRequestBuilder) {
-    return NewItemMembersWithLicenseErrorsGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// GraphApplication casts the previous resource to application.
+func (m *ItemMembersWithLicenseErrorsRequestBuilder) GraphApplication()(*ItemMembersWithLicenseErrorsGraphApplicationRequestBuilder) {
+    return NewItemMembersWithLicenseErrorsGraphApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// OrgContact casts the previous resource to orgContact.
-func (m *ItemMembersWithLicenseErrorsRequestBuilder) OrgContact()(*ItemMembersWithLicenseErrorsOrgContactRequestBuilder) {
-    return NewItemMembersWithLicenseErrorsOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// GraphDevice casts the previous resource to device.
+func (m *ItemMembersWithLicenseErrorsRequestBuilder) GraphDevice()(*ItemMembersWithLicenseErrorsGraphDeviceRequestBuilder) {
+    return NewItemMembersWithLicenseErrorsGraphDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// ServicePrincipal casts the previous resource to servicePrincipal.
-func (m *ItemMembersWithLicenseErrorsRequestBuilder) ServicePrincipal()(*ItemMembersWithLicenseErrorsServicePrincipalRequestBuilder) {
-    return NewItemMembersWithLicenseErrorsServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// GraphGroup casts the previous resource to group.
+func (m *ItemMembersWithLicenseErrorsRequestBuilder) GraphGroup()(*ItemMembersWithLicenseErrorsGraphGroupRequestBuilder) {
+    return NewItemMembersWithLicenseErrorsGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// GraphOrgContact casts the previous resource to orgContact.
+func (m *ItemMembersWithLicenseErrorsRequestBuilder) GraphOrgContact()(*ItemMembersWithLicenseErrorsGraphOrgContactRequestBuilder) {
+    return NewItemMembersWithLicenseErrorsGraphOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// GraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *ItemMembersWithLicenseErrorsRequestBuilder) GraphServicePrincipal()(*ItemMembersWithLicenseErrorsGraphServicePrincipalRequestBuilder) {
+    return NewItemMembersWithLicenseErrorsGraphServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// GraphUser casts the previous resource to user.
+func (m *ItemMembersWithLicenseErrorsRequestBuilder) GraphUser()(*ItemMembersWithLicenseErrorsGraphUserRequestBuilder) {
+    return NewItemMembersWithLicenseErrorsGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation a list of group members with license errors from this group-based license assignment. Read-only.
 func (m *ItemMembersWithLicenseErrorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMembersWithLicenseErrorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -121,8 +125,4 @@ func (m *ItemMembersWithLicenseErrorsRequestBuilder) ToGetRequestInformation(ctx
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// User casts the previous resource to user.
-func (m *ItemMembersWithLicenseErrorsRequestBuilder) User()(*ItemMembersWithLicenseErrorsUserRequestBuilder) {
-    return NewItemMembersWithLicenseErrorsUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

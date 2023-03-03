@@ -2,24 +2,20 @@ package security
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // SubmissionDetectedFile 
 type SubmissionDetectedFile struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The file hash.
-    fileHash *string
-    // The file name.
-    fileName *string
-    // The OdataType property
-    odataType *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewSubmissionDetectedFile instantiates a new submissionDetectedFile and sets the default values.
 func NewSubmissionDetectedFile()(*SubmissionDetectedFile) {
     m := &SubmissionDetectedFile{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSubmissionDetectedFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,7 +24,19 @@ func CreateSubmissionDetectedFileFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SubmissionDetectedFile) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *SubmissionDetectedFile) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SubmissionDetectedFile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -67,15 +75,36 @@ func (m *SubmissionDetectedFile) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetFileHash gets the fileHash property value. The file hash.
 func (m *SubmissionDetectedFile) GetFileHash()(*string) {
-    return m.fileHash
+    val, err := m.GetBackingStore().Get("fileHash")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFileName gets the fileName property value. The file name.
 func (m *SubmissionDetectedFile) GetFileName()(*string) {
-    return m.fileName
+    val, err := m.GetBackingStore().Get("fileName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SubmissionDetectedFile) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SubmissionDetectedFile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -107,17 +136,47 @@ func (m *SubmissionDetectedFile) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SubmissionDetectedFile) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *SubmissionDetectedFile) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetFileHash sets the fileHash property value. The file hash.
 func (m *SubmissionDetectedFile) SetFileHash(value *string)() {
-    m.fileHash = value
+    err := m.GetBackingStore().Set("fileHash", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFileName sets the fileName property value. The file name.
 func (m *SubmissionDetectedFile) SetFileName(value *string)() {
-    m.fileName = value
+    err := m.GetBackingStore().Set("fileName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SubmissionDetectedFile) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SubmissionDetectedFileable 
+type SubmissionDetectedFileable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetFileHash()(*string)
+    GetFileName()(*string)
+    GetOdataType()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetFileHash(value *string)()
+    SetFileName(value *string)()
+    SetOdataType(value *string)()
 }

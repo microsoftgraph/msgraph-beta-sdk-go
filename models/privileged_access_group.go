@@ -7,18 +7,6 @@ import (
 // PrivilegedAccessGroup 
 type PrivilegedAccessGroup struct {
     Entity
-    // The assignmentScheduleInstances property
-    assignmentScheduleInstances []PrivilegedAccessGroupAssignmentScheduleInstanceable
-    // The assignmentScheduleRequests property
-    assignmentScheduleRequests []PrivilegedAccessGroupAssignmentScheduleRequestable
-    // The assignmentSchedules property
-    assignmentSchedules []PrivilegedAccessGroupAssignmentScheduleable
-    // The eligibilityScheduleInstances property
-    eligibilityScheduleInstances []PrivilegedAccessGroupEligibilityScheduleInstanceable
-    // The eligibilityScheduleRequests property
-    eligibilityScheduleRequests []PrivilegedAccessGroupEligibilityScheduleRequestable
-    // The eligibilitySchedules property
-    eligibilitySchedules []PrivilegedAccessGroupEligibilityScheduleable
 }
 // NewPrivilegedAccessGroup instantiates a new privilegedAccessGroup and sets the default values.
 func NewPrivilegedAccessGroup()(*PrivilegedAccessGroup) {
@@ -33,27 +21,69 @@ func CreatePrivilegedAccessGroupFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAssignmentScheduleInstances gets the assignmentScheduleInstances property value. The assignmentScheduleInstances property
 func (m *PrivilegedAccessGroup) GetAssignmentScheduleInstances()([]PrivilegedAccessGroupAssignmentScheduleInstanceable) {
-    return m.assignmentScheduleInstances
+    val, err := m.GetBackingStore().Get("assignmentScheduleInstances")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrivilegedAccessGroupAssignmentScheduleInstanceable)
+    }
+    return nil
 }
 // GetAssignmentScheduleRequests gets the assignmentScheduleRequests property value. The assignmentScheduleRequests property
 func (m *PrivilegedAccessGroup) GetAssignmentScheduleRequests()([]PrivilegedAccessGroupAssignmentScheduleRequestable) {
-    return m.assignmentScheduleRequests
+    val, err := m.GetBackingStore().Get("assignmentScheduleRequests")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrivilegedAccessGroupAssignmentScheduleRequestable)
+    }
+    return nil
 }
 // GetAssignmentSchedules gets the assignmentSchedules property value. The assignmentSchedules property
 func (m *PrivilegedAccessGroup) GetAssignmentSchedules()([]PrivilegedAccessGroupAssignmentScheduleable) {
-    return m.assignmentSchedules
+    val, err := m.GetBackingStore().Get("assignmentSchedules")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrivilegedAccessGroupAssignmentScheduleable)
+    }
+    return nil
 }
 // GetEligibilityScheduleInstances gets the eligibilityScheduleInstances property value. The eligibilityScheduleInstances property
 func (m *PrivilegedAccessGroup) GetEligibilityScheduleInstances()([]PrivilegedAccessGroupEligibilityScheduleInstanceable) {
-    return m.eligibilityScheduleInstances
+    val, err := m.GetBackingStore().Get("eligibilityScheduleInstances")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrivilegedAccessGroupEligibilityScheduleInstanceable)
+    }
+    return nil
 }
 // GetEligibilityScheduleRequests gets the eligibilityScheduleRequests property value. The eligibilityScheduleRequests property
 func (m *PrivilegedAccessGroup) GetEligibilityScheduleRequests()([]PrivilegedAccessGroupEligibilityScheduleRequestable) {
-    return m.eligibilityScheduleRequests
+    val, err := m.GetBackingStore().Get("eligibilityScheduleRequests")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrivilegedAccessGroupEligibilityScheduleRequestable)
+    }
+    return nil
 }
 // GetEligibilitySchedules gets the eligibilitySchedules property value. The eligibilitySchedules property
 func (m *PrivilegedAccessGroup) GetEligibilitySchedules()([]PrivilegedAccessGroupEligibilityScheduleable) {
-    return m.eligibilitySchedules
+    val, err := m.GetBackingStore().Get("eligibilitySchedules")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrivilegedAccessGroupEligibilityScheduleable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrivilegedAccessGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -214,25 +244,60 @@ func (m *PrivilegedAccessGroup) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAssignmentScheduleInstances sets the assignmentScheduleInstances property value. The assignmentScheduleInstances property
 func (m *PrivilegedAccessGroup) SetAssignmentScheduleInstances(value []PrivilegedAccessGroupAssignmentScheduleInstanceable)() {
-    m.assignmentScheduleInstances = value
+    err := m.GetBackingStore().Set("assignmentScheduleInstances", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAssignmentScheduleRequests sets the assignmentScheduleRequests property value. The assignmentScheduleRequests property
 func (m *PrivilegedAccessGroup) SetAssignmentScheduleRequests(value []PrivilegedAccessGroupAssignmentScheduleRequestable)() {
-    m.assignmentScheduleRequests = value
+    err := m.GetBackingStore().Set("assignmentScheduleRequests", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAssignmentSchedules sets the assignmentSchedules property value. The assignmentSchedules property
 func (m *PrivilegedAccessGroup) SetAssignmentSchedules(value []PrivilegedAccessGroupAssignmentScheduleable)() {
-    m.assignmentSchedules = value
+    err := m.GetBackingStore().Set("assignmentSchedules", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEligibilityScheduleInstances sets the eligibilityScheduleInstances property value. The eligibilityScheduleInstances property
 func (m *PrivilegedAccessGroup) SetEligibilityScheduleInstances(value []PrivilegedAccessGroupEligibilityScheduleInstanceable)() {
-    m.eligibilityScheduleInstances = value
+    err := m.GetBackingStore().Set("eligibilityScheduleInstances", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEligibilityScheduleRequests sets the eligibilityScheduleRequests property value. The eligibilityScheduleRequests property
 func (m *PrivilegedAccessGroup) SetEligibilityScheduleRequests(value []PrivilegedAccessGroupEligibilityScheduleRequestable)() {
-    m.eligibilityScheduleRequests = value
+    err := m.GetBackingStore().Set("eligibilityScheduleRequests", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEligibilitySchedules sets the eligibilitySchedules property value. The eligibilitySchedules property
 func (m *PrivilegedAccessGroup) SetEligibilitySchedules(value []PrivilegedAccessGroupEligibilityScheduleable)() {
-    m.eligibilitySchedules = value
+    err := m.GetBackingStore().Set("eligibilitySchedules", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrivilegedAccessGroupable 
+type PrivilegedAccessGroupable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssignmentScheduleInstances()([]PrivilegedAccessGroupAssignmentScheduleInstanceable)
+    GetAssignmentScheduleRequests()([]PrivilegedAccessGroupAssignmentScheduleRequestable)
+    GetAssignmentSchedules()([]PrivilegedAccessGroupAssignmentScheduleable)
+    GetEligibilityScheduleInstances()([]PrivilegedAccessGroupEligibilityScheduleInstanceable)
+    GetEligibilityScheduleRequests()([]PrivilegedAccessGroupEligibilityScheduleRequestable)
+    GetEligibilitySchedules()([]PrivilegedAccessGroupEligibilityScheduleable)
+    SetAssignmentScheduleInstances(value []PrivilegedAccessGroupAssignmentScheduleInstanceable)()
+    SetAssignmentScheduleRequests(value []PrivilegedAccessGroupAssignmentScheduleRequestable)()
+    SetAssignmentSchedules(value []PrivilegedAccessGroupAssignmentScheduleable)()
+    SetEligibilityScheduleInstances(value []PrivilegedAccessGroupEligibilityScheduleInstanceable)()
+    SetEligibilityScheduleRequests(value []PrivilegedAccessGroupEligibilityScheduleRequestable)()
+    SetEligibilitySchedules(value []PrivilegedAccessGroupEligibilityScheduleable)()
 }

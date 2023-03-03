@@ -7,20 +7,14 @@ import (
 // AndroidDeviceOwnerGlobalProxyDirect 
 type AndroidDeviceOwnerGlobalProxyDirect struct {
     AndroidDeviceOwnerGlobalProxy
-    // The excluded hosts
-    excludedHosts []string
-    // The host name
-    host *string
-    // The port
-    port *int32
 }
 // NewAndroidDeviceOwnerGlobalProxyDirect instantiates a new AndroidDeviceOwnerGlobalProxyDirect and sets the default values.
 func NewAndroidDeviceOwnerGlobalProxyDirect()(*AndroidDeviceOwnerGlobalProxyDirect) {
     m := &AndroidDeviceOwnerGlobalProxyDirect{
         AndroidDeviceOwnerGlobalProxy: *NewAndroidDeviceOwnerGlobalProxy(),
     }
-    odataTypeValue := "#microsoft.graph.androidDeviceOwnerGlobalProxyDirect";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidDeviceOwnerGlobalProxyDirect"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidDeviceOwnerGlobalProxyDirectFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +23,14 @@ func CreateAndroidDeviceOwnerGlobalProxyDirectFromDiscriminatorValue(parseNode i
 }
 // GetExcludedHosts gets the excludedHosts property value. The excluded hosts
 func (m *AndroidDeviceOwnerGlobalProxyDirect) GetExcludedHosts()([]string) {
-    return m.excludedHosts
+    val, err := m.GetBackingStore().Get("excludedHosts")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidDeviceOwnerGlobalProxyDirect) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,11 +73,25 @@ func (m *AndroidDeviceOwnerGlobalProxyDirect) GetFieldDeserializers()(map[string
 }
 // GetHost gets the host property value. The host name
 func (m *AndroidDeviceOwnerGlobalProxyDirect) GetHost()(*string) {
-    return m.host
+    val, err := m.GetBackingStore().Get("host")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPort gets the port property value. The port
 func (m *AndroidDeviceOwnerGlobalProxyDirect) GetPort()(*int32) {
-    return m.port
+    val, err := m.GetBackingStore().Get("port")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerGlobalProxyDirect) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -106,13 +121,33 @@ func (m *AndroidDeviceOwnerGlobalProxyDirect) Serialize(writer i878a80d2330e89d2
 }
 // SetExcludedHosts sets the excludedHosts property value. The excluded hosts
 func (m *AndroidDeviceOwnerGlobalProxyDirect) SetExcludedHosts(value []string)() {
-    m.excludedHosts = value
+    err := m.GetBackingStore().Set("excludedHosts", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHost sets the host property value. The host name
 func (m *AndroidDeviceOwnerGlobalProxyDirect) SetHost(value *string)() {
-    m.host = value
+    err := m.GetBackingStore().Set("host", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPort sets the port property value. The port
 func (m *AndroidDeviceOwnerGlobalProxyDirect) SetPort(value *int32)() {
-    m.port = value
+    err := m.GetBackingStore().Set("port", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidDeviceOwnerGlobalProxyDirectable 
+type AndroidDeviceOwnerGlobalProxyDirectable interface {
+    AndroidDeviceOwnerGlobalProxyable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetExcludedHosts()([]string)
+    GetHost()(*string)
+    GetPort()(*int32)
+    SetExcludedHosts(value []string)()
+    SetHost(value *string)()
+    SetPort(value *int32)()
 }

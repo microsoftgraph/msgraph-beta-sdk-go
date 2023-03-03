@@ -2,24 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // SiteSettings 
 type SiteSettings struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The language tag for the language used on this site.
-    languageTag *string
-    // The OdataType property
-    odataType *string
-    // Indicates the time offset for the time zone of the site from Coordinated Universal Time (UTC).
-    timeZone *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewSiteSettings instantiates a new siteSettings and sets the default values.
 func NewSiteSettings()(*SiteSettings) {
     m := &SiteSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSiteSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,7 +24,19 @@ func CreateSiteSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SiteSettings) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *SiteSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SiteSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -67,15 +75,36 @@ func (m *SiteSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetLanguageTag gets the languageTag property value. The language tag for the language used on this site.
 func (m *SiteSettings) GetLanguageTag()(*string) {
-    return m.languageTag
+    val, err := m.GetBackingStore().Get("languageTag")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SiteSettings) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTimeZone gets the timeZone property value. Indicates the time offset for the time zone of the site from Coordinated Universal Time (UTC).
 func (m *SiteSettings) GetTimeZone()(*string) {
-    return m.timeZone
+    val, err := m.GetBackingStore().Get("timeZone")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SiteSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -107,17 +136,47 @@ func (m *SiteSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SiteSettings) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *SiteSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetLanguageTag sets the languageTag property value. The language tag for the language used on this site.
 func (m *SiteSettings) SetLanguageTag(value *string)() {
-    m.languageTag = value
+    err := m.GetBackingStore().Set("languageTag", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SiteSettings) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTimeZone sets the timeZone property value. Indicates the time offset for the time zone of the site from Coordinated Universal Time (UTC).
 func (m *SiteSettings) SetTimeZone(value *string)() {
-    m.timeZone = value
+    err := m.GetBackingStore().Set("timeZone", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SiteSettingsable 
+type SiteSettingsable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetLanguageTag()(*string)
+    GetOdataType()(*string)
+    GetTimeZone()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetLanguageTag(value *string)()
+    SetOdataType(value *string)()
+    SetTimeZone(value *string)()
 }

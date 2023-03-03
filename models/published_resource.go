@@ -7,14 +7,6 @@ import (
 // PublishedResource 
 type PublishedResource struct {
     Entity
-    // List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
-    agentGroups []OnPremisesAgentGroupable
-    // Display Name of the publishedResource.
-    displayName *string
-    // The publishingType property
-    publishingType *OnPremisesPublishingType
-    // Name of the publishedResource.
-    resourceName *string
 }
 // NewPublishedResource instantiates a new publishedResource and sets the default values.
 func NewPublishedResource()(*PublishedResource) {
@@ -29,11 +21,25 @@ func CreatePublishedResourceFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAgentGroups gets the agentGroups property value. List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
 func (m *PublishedResource) GetAgentGroups()([]OnPremisesAgentGroupable) {
-    return m.agentGroups
+    val, err := m.GetBackingStore().Get("agentGroups")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OnPremisesAgentGroupable)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. Display Name of the publishedResource.
 func (m *PublishedResource) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PublishedResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -86,11 +92,25 @@ func (m *PublishedResource) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetPublishingType gets the publishingType property value. The publishingType property
 func (m *PublishedResource) GetPublishingType()(*OnPremisesPublishingType) {
-    return m.publishingType
+    val, err := m.GetBackingStore().Get("publishingType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*OnPremisesPublishingType)
+    }
+    return nil
 }
 // GetResourceName gets the resourceName property value. Name of the publishedResource.
 func (m *PublishedResource) GetResourceName()(*string) {
-    return m.resourceName
+    val, err := m.GetBackingStore().Get("resourceName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PublishedResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -131,17 +151,42 @@ func (m *PublishedResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAgentGroups sets the agentGroups property value. List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
 func (m *PublishedResource) SetAgentGroups(value []OnPremisesAgentGroupable)() {
-    m.agentGroups = value
+    err := m.GetBackingStore().Set("agentGroups", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. Display Name of the publishedResource.
 func (m *PublishedResource) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPublishingType sets the publishingType property value. The publishingType property
 func (m *PublishedResource) SetPublishingType(value *OnPremisesPublishingType)() {
-    m.publishingType = value
+    err := m.GetBackingStore().Set("publishingType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResourceName sets the resourceName property value. Name of the publishedResource.
 func (m *PublishedResource) SetResourceName(value *string)() {
-    m.resourceName = value
+    err := m.GetBackingStore().Set("resourceName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PublishedResourceable 
+type PublishedResourceable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAgentGroups()([]OnPremisesAgentGroupable)
+    GetDisplayName()(*string)
+    GetPublishingType()(*OnPremisesPublishingType)
+    GetResourceName()(*string)
+    SetAgentGroups(value []OnPremisesAgentGroupable)()
+    SetDisplayName(value *string)()
+    SetPublishingType(value *OnPremisesPublishingType)()
+    SetResourceName(value *string)()
 }

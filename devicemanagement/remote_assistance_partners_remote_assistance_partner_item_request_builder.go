@@ -48,7 +48,7 @@ type RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilderPatchReque
 }
 // BeginOnboarding provides operations to call the beginOnboarding method.
 func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) BeginOnboarding()(*RemoteAssistancePartnersItemBeginOnboardingRequestBuilder) {
-    return NewRemoteAssistancePartnersItemBeginOnboardingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewRemoteAssistancePartnersItemBeginOnboardingRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewRemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilderInternal instantiates a new RemoteAssistancePartnerItemRequestBuilder and sets the default values.
 func NewRemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) {
@@ -59,8 +59,8 @@ func NewRemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilderInterna
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewRemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder instantiates a new RemoteAssistancePartnerItemRequestBuilder and sets the default values.
@@ -87,7 +87,7 @@ func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) Dele
 }
 // Disconnect provides operations to call the disconnect method.
 func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) Disconnect()(*RemoteAssistancePartnersItemDisconnectRequestBuilder) {
-    return NewRemoteAssistancePartnersItemDisconnectRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewRemoteAssistancePartnersItemDisconnectRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the remote assist partners.
 func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemoteAssistancePartnerable, error) {
@@ -162,7 +162,10 @@ func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) ToPa
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

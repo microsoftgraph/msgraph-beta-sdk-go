@@ -7,8 +7,6 @@ import (
 // CartToClassAssociationCollectionResponse 
 type CartToClassAssociationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []CartToClassAssociationable
 }
 // NewCartToClassAssociationCollectionResponse instantiates a new CartToClassAssociationCollectionResponse and sets the default values.
 func NewCartToClassAssociationCollectionResponse()(*CartToClassAssociationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *CartToClassAssociationCollectionResponse) GetFieldDeserializers()(map[s
 }
 // GetValue gets the value property value. The value property
 func (m *CartToClassAssociationCollectionResponse) GetValue()([]CartToClassAssociationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CartToClassAssociationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CartToClassAssociationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *CartToClassAssociationCollectionResponse) Serialize(writer i878a80d2330
 }
 // SetValue sets the value property value. The value property
 func (m *CartToClassAssociationCollectionResponse) SetValue(value []CartToClassAssociationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CartToClassAssociationCollectionResponseable 
+type CartToClassAssociationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]CartToClassAssociationable)
+    SetValue(value []CartToClassAssociationable)()
 }

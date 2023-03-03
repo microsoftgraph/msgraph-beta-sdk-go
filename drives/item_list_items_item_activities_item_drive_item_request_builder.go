@@ -41,8 +41,8 @@ func NewItemListItemsItemActivitiesItemDriveItemRequestBuilderInternal(pathParam
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemListItemsItemActivitiesItemDriveItemRequestBuilder instantiates a new DriveItemRequestBuilder and sets the default values.
@@ -53,7 +53,7 @@ func NewItemListItemsItemActivitiesItemDriveItemRequestBuilder(rawUrl string, re
 }
 // Content provides operations to manage the media for the drive entity.
 func (m *ItemListItemsItemActivitiesItemDriveItemRequestBuilder) Content()(*ItemListItemsItemActivitiesItemDriveItemContentRequestBuilder) {
-    return NewItemListItemsItemActivitiesItemDriveItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemListItemsItemActivitiesItemDriveItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get driveItem from drives
 func (m *ItemListItemsItemActivitiesItemDriveItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListItemsItemActivitiesItemDriveItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {

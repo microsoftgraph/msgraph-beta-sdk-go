@@ -3,38 +3,20 @@ package models
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // OfficeClientCheckinStatus 
 type OfficeClientCheckinStatus struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // List of policies delivered to the device as last checkin.
-    appliedPolicies []string
-    // Last device check-in time in UTC.
-    checkinDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Device name trying to check-in.
-    deviceName *string
-    // Device platform trying to check-in.
-    devicePlatform *string
-    // Device platform version trying to check-in.
-    devicePlatformVersion *string
-    // Error message if any associated for the last checkin.
-    errorMessage *string
-    // The OdataType property
-    odataType *string
-    // User identifier using the device.
-    userId *string
-    // User principal name using the device.
-    userPrincipalName *string
-    // If the last checkin was successful.
-    wasSuccessful *bool
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewOfficeClientCheckinStatus instantiates a new officeClientCheckinStatus and sets the default values.
 func NewOfficeClientCheckinStatus()(*OfficeClientCheckinStatus) {
     m := &OfficeClientCheckinStatus{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateOfficeClientCheckinStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,31 +25,85 @@ func CreateOfficeClientCheckinStatusFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OfficeClientCheckinStatus) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAppliedPolicies gets the appliedPolicies property value. List of policies delivered to the device as last checkin.
 func (m *OfficeClientCheckinStatus) GetAppliedPolicies()([]string) {
-    return m.appliedPolicies
+    val, err := m.GetBackingStore().Get("appliedPolicies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *OfficeClientCheckinStatus) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetCheckinDateTime gets the checkinDateTime property value. Last device check-in time in UTC.
 func (m *OfficeClientCheckinStatus) GetCheckinDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.checkinDateTime
+    val, err := m.GetBackingStore().Get("checkinDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDeviceName gets the deviceName property value. Device name trying to check-in.
 func (m *OfficeClientCheckinStatus) GetDeviceName()(*string) {
-    return m.deviceName
+    val, err := m.GetBackingStore().Get("deviceName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDevicePlatform gets the devicePlatform property value. Device platform trying to check-in.
 func (m *OfficeClientCheckinStatus) GetDevicePlatform()(*string) {
-    return m.devicePlatform
+    val, err := m.GetBackingStore().Get("devicePlatform")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDevicePlatformVersion gets the devicePlatformVersion property value. Device platform version trying to check-in.
 func (m *OfficeClientCheckinStatus) GetDevicePlatformVersion()(*string) {
-    return m.devicePlatformVersion
+    val, err := m.GetBackingStore().Get("devicePlatformVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetErrorMessage gets the errorMessage property value. Error message if any associated for the last checkin.
 func (m *OfficeClientCheckinStatus) GetErrorMessage()(*string) {
-    return m.errorMessage
+    val, err := m.GetBackingStore().Get("errorMessage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OfficeClientCheckinStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -180,19 +216,47 @@ func (m *OfficeClientCheckinStatus) GetFieldDeserializers()(map[string]func(i878
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *OfficeClientCheckinStatus) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserId gets the userId property value. User identifier using the device.
 func (m *OfficeClientCheckinStatus) GetUserId()(*string) {
-    return m.userId
+    val, err := m.GetBackingStore().Get("userId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. User principal name using the device.
 func (m *OfficeClientCheckinStatus) GetUserPrincipalName()(*string) {
-    return m.userPrincipalName
+    val, err := m.GetBackingStore().Get("userPrincipalName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetWasSuccessful gets the wasSuccessful property value. If the last checkin was successful.
 func (m *OfficeClientCheckinStatus) GetWasSuccessful()(*bool) {
-    return m.wasSuccessful
+    val, err := m.GetBackingStore().Get("wasSuccessful")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OfficeClientCheckinStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -266,45 +330,110 @@ func (m *OfficeClientCheckinStatus) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OfficeClientCheckinStatus) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppliedPolicies sets the appliedPolicies property value. List of policies delivered to the device as last checkin.
 func (m *OfficeClientCheckinStatus) SetAppliedPolicies(value []string)() {
-    m.appliedPolicies = value
+    err := m.GetBackingStore().Set("appliedPolicies", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *OfficeClientCheckinStatus) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetCheckinDateTime sets the checkinDateTime property value. Last device check-in time in UTC.
 func (m *OfficeClientCheckinStatus) SetCheckinDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.checkinDateTime = value
+    err := m.GetBackingStore().Set("checkinDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceName sets the deviceName property value. Device name trying to check-in.
 func (m *OfficeClientCheckinStatus) SetDeviceName(value *string)() {
-    m.deviceName = value
+    err := m.GetBackingStore().Set("deviceName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDevicePlatform sets the devicePlatform property value. Device platform trying to check-in.
 func (m *OfficeClientCheckinStatus) SetDevicePlatform(value *string)() {
-    m.devicePlatform = value
+    err := m.GetBackingStore().Set("devicePlatform", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDevicePlatformVersion sets the devicePlatformVersion property value. Device platform version trying to check-in.
 func (m *OfficeClientCheckinStatus) SetDevicePlatformVersion(value *string)() {
-    m.devicePlatformVersion = value
+    err := m.GetBackingStore().Set("devicePlatformVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetErrorMessage sets the errorMessage property value. Error message if any associated for the last checkin.
 func (m *OfficeClientCheckinStatus) SetErrorMessage(value *string)() {
-    m.errorMessage = value
+    err := m.GetBackingStore().Set("errorMessage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *OfficeClientCheckinStatus) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserId sets the userId property value. User identifier using the device.
 func (m *OfficeClientCheckinStatus) SetUserId(value *string)() {
-    m.userId = value
+    err := m.GetBackingStore().Set("userId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. User principal name using the device.
 func (m *OfficeClientCheckinStatus) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    err := m.GetBackingStore().Set("userPrincipalName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWasSuccessful sets the wasSuccessful property value. If the last checkin was successful.
 func (m *OfficeClientCheckinStatus) SetWasSuccessful(value *bool)() {
-    m.wasSuccessful = value
+    err := m.GetBackingStore().Set("wasSuccessful", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OfficeClientCheckinStatusable 
+type OfficeClientCheckinStatusable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppliedPolicies()([]string)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCheckinDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDeviceName()(*string)
+    GetDevicePlatform()(*string)
+    GetDevicePlatformVersion()(*string)
+    GetErrorMessage()(*string)
+    GetOdataType()(*string)
+    GetUserId()(*string)
+    GetUserPrincipalName()(*string)
+    GetWasSuccessful()(*bool)
+    SetAppliedPolicies(value []string)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCheckinDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDeviceName(value *string)()
+    SetDevicePlatform(value *string)()
+    SetDevicePlatformVersion(value *string)()
+    SetErrorMessage(value *string)()
+    SetOdataType(value *string)()
+    SetUserId(value *string)()
+    SetUserPrincipalName(value *string)()
+    SetWasSuccessful(value *bool)()
 }

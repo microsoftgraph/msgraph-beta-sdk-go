@@ -7,24 +7,8 @@ import (
 // MobilityManagementPolicy 
 type MobilityManagementPolicy struct {
     Entity
-    // Indicates the user scope of the mobility management policy. Possible values are: none, all, selected.
-    appliesTo *PolicyScope
-    // Compliance URL of the mobility management application.
-    complianceUrl *string
-    // Description of the mobility management application.
-    description *string
-    // Discovery URL of the mobility management application.
-    discoveryUrl *string
-    // Display name of the mobility management application.
-    displayName *string
-    // Azure AD groups under the scope of the mobility management application if appliesTo is selected
-    includedGroups []Groupable
-    // Whether policy is valid. Invalid policies may not be updated and should be deleted.
-    isValid *bool
-    // Terms of Use URL of the mobility management application.
-    termsOfUseUrl *string
 }
-// NewMobilityManagementPolicy instantiates a new MobilityManagementPolicy and sets the default values.
+// NewMobilityManagementPolicy instantiates a new mobilityManagementPolicy and sets the default values.
 func NewMobilityManagementPolicy()(*MobilityManagementPolicy) {
     m := &MobilityManagementPolicy{
         Entity: *NewEntity(),
@@ -37,23 +21,58 @@ func CreateMobilityManagementPolicyFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAppliesTo gets the appliesTo property value. Indicates the user scope of the mobility management policy. Possible values are: none, all, selected.
 func (m *MobilityManagementPolicy) GetAppliesTo()(*PolicyScope) {
-    return m.appliesTo
+    val, err := m.GetBackingStore().Get("appliesTo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PolicyScope)
+    }
+    return nil
 }
 // GetComplianceUrl gets the complianceUrl property value. Compliance URL of the mobility management application.
 func (m *MobilityManagementPolicy) GetComplianceUrl()(*string) {
-    return m.complianceUrl
+    val, err := m.GetBackingStore().Get("complianceUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDescription gets the description property value. Description of the mobility management application.
 func (m *MobilityManagementPolicy) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDiscoveryUrl gets the discoveryUrl property value. Discovery URL of the mobility management application.
 func (m *MobilityManagementPolicy) GetDiscoveryUrl()(*string) {
-    return m.discoveryUrl
+    val, err := m.GetBackingStore().Get("discoveryUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. Display name of the mobility management application.
 func (m *MobilityManagementPolicy) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MobilityManagementPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -146,15 +165,36 @@ func (m *MobilityManagementPolicy) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetIncludedGroups gets the includedGroups property value. Azure AD groups under the scope of the mobility management application if appliesTo is selected
 func (m *MobilityManagementPolicy) GetIncludedGroups()([]Groupable) {
-    return m.includedGroups
+    val, err := m.GetBackingStore().Get("includedGroups")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Groupable)
+    }
+    return nil
 }
 // GetIsValid gets the isValid property value. Whether policy is valid. Invalid policies may not be updated and should be deleted.
 func (m *MobilityManagementPolicy) GetIsValid()(*bool) {
-    return m.isValid
+    val, err := m.GetBackingStore().Get("isValid")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetTermsOfUseUrl gets the termsOfUseUrl property value. Terms of Use URL of the mobility management application.
 func (m *MobilityManagementPolicy) GetTermsOfUseUrl()(*string) {
-    return m.termsOfUseUrl
+    val, err := m.GetBackingStore().Get("termsOfUseUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MobilityManagementPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -219,33 +259,78 @@ func (m *MobilityManagementPolicy) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAppliesTo sets the appliesTo property value. Indicates the user scope of the mobility management policy. Possible values are: none, all, selected.
 func (m *MobilityManagementPolicy) SetAppliesTo(value *PolicyScope)() {
-    m.appliesTo = value
+    err := m.GetBackingStore().Set("appliesTo", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetComplianceUrl sets the complianceUrl property value. Compliance URL of the mobility management application.
 func (m *MobilityManagementPolicy) SetComplianceUrl(value *string)() {
-    m.complianceUrl = value
+    err := m.GetBackingStore().Set("complianceUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. Description of the mobility management application.
 func (m *MobilityManagementPolicy) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDiscoveryUrl sets the discoveryUrl property value. Discovery URL of the mobility management application.
 func (m *MobilityManagementPolicy) SetDiscoveryUrl(value *string)() {
-    m.discoveryUrl = value
+    err := m.GetBackingStore().Set("discoveryUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. Display name of the mobility management application.
 func (m *MobilityManagementPolicy) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIncludedGroups sets the includedGroups property value. Azure AD groups under the scope of the mobility management application if appliesTo is selected
 func (m *MobilityManagementPolicy) SetIncludedGroups(value []Groupable)() {
-    m.includedGroups = value
+    err := m.GetBackingStore().Set("includedGroups", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsValid sets the isValid property value. Whether policy is valid. Invalid policies may not be updated and should be deleted.
 func (m *MobilityManagementPolicy) SetIsValid(value *bool)() {
-    m.isValid = value
+    err := m.GetBackingStore().Set("isValid", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTermsOfUseUrl sets the termsOfUseUrl property value. Terms of Use URL of the mobility management application.
 func (m *MobilityManagementPolicy) SetTermsOfUseUrl(value *string)() {
-    m.termsOfUseUrl = value
+    err := m.GetBackingStore().Set("termsOfUseUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MobilityManagementPolicyable 
+type MobilityManagementPolicyable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppliesTo()(*PolicyScope)
+    GetComplianceUrl()(*string)
+    GetDescription()(*string)
+    GetDiscoveryUrl()(*string)
+    GetDisplayName()(*string)
+    GetIncludedGroups()([]Groupable)
+    GetIsValid()(*bool)
+    GetTermsOfUseUrl()(*string)
+    SetAppliesTo(value *PolicyScope)()
+    SetComplianceUrl(value *string)()
+    SetDescription(value *string)()
+    SetDiscoveryUrl(value *string)()
+    SetDisplayName(value *string)()
+    SetIncludedGroups(value []Groupable)()
+    SetIsValid(value *bool)()
+    SetTermsOfUseUrl(value *string)()
 }

@@ -9,18 +9,6 @@ import (
 // ManagedTenantAlertLog 
 type ManagedTenantAlertLog struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The alert property
-    alert ManagedTenantAlertable
-    // The content property
-    content AlertLogContentable
-    // The createdByUserId property
-    createdByUserId *string
-    // The createdDateTime property
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The lastActionByUserId property
-    lastActionByUserId *string
-    // The lastActionDateTime property
-    lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewManagedTenantAlertLog instantiates a new managedTenantAlertLog and sets the default values.
 func NewManagedTenantAlertLog()(*ManagedTenantAlertLog) {
@@ -35,19 +23,47 @@ func CreateManagedTenantAlertLogFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAlert gets the alert property value. The alert property
 func (m *ManagedTenantAlertLog) GetAlert()(ManagedTenantAlertable) {
-    return m.alert
+    val, err := m.GetBackingStore().Get("alert")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ManagedTenantAlertable)
+    }
+    return nil
 }
 // GetContent gets the content property value. The content property
 func (m *ManagedTenantAlertLog) GetContent()(AlertLogContentable) {
-    return m.content
+    val, err := m.GetBackingStore().Get("content")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AlertLogContentable)
+    }
+    return nil
 }
 // GetCreatedByUserId gets the createdByUserId property value. The createdByUserId property
 func (m *ManagedTenantAlertLog) GetCreatedByUserId()(*string) {
-    return m.createdByUserId
+    val, err := m.GetBackingStore().Get("createdByUserId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
 func (m *ManagedTenantAlertLog) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedTenantAlertLog) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -116,11 +132,25 @@ func (m *ManagedTenantAlertLog) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetLastActionByUserId gets the lastActionByUserId property value. The lastActionByUserId property
 func (m *ManagedTenantAlertLog) GetLastActionByUserId()(*string) {
-    return m.lastActionByUserId
+    val, err := m.GetBackingStore().Get("lastActionByUserId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLastActionDateTime gets the lastActionDateTime property value. The lastActionDateTime property
 func (m *ManagedTenantAlertLog) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastActionDateTime
+    val, err := m.GetBackingStore().Get("lastActionDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagedTenantAlertLog) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -168,25 +198,60 @@ func (m *ManagedTenantAlertLog) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAlert sets the alert property value. The alert property
 func (m *ManagedTenantAlertLog) SetAlert(value ManagedTenantAlertable)() {
-    m.alert = value
+    err := m.GetBackingStore().Set("alert", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetContent sets the content property value. The content property
 func (m *ManagedTenantAlertLog) SetContent(value AlertLogContentable)() {
-    m.content = value
+    err := m.GetBackingStore().Set("content", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedByUserId sets the createdByUserId property value. The createdByUserId property
 func (m *ManagedTenantAlertLog) SetCreatedByUserId(value *string)() {
-    m.createdByUserId = value
+    err := m.GetBackingStore().Set("createdByUserId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
 func (m *ManagedTenantAlertLog) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastActionByUserId sets the lastActionByUserId property value. The lastActionByUserId property
 func (m *ManagedTenantAlertLog) SetLastActionByUserId(value *string)() {
-    m.lastActionByUserId = value
+    err := m.GetBackingStore().Set("lastActionByUserId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastActionDateTime sets the lastActionDateTime property value. The lastActionDateTime property
 func (m *ManagedTenantAlertLog) SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastActionDateTime = value
+    err := m.GetBackingStore().Set("lastActionDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagedTenantAlertLogable 
+type ManagedTenantAlertLogable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAlert()(ManagedTenantAlertable)
+    GetContent()(AlertLogContentable)
+    GetCreatedByUserId()(*string)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetLastActionByUserId()(*string)
+    GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    SetAlert(value ManagedTenantAlertable)()
+    SetContent(value AlertLogContentable)()
+    SetCreatedByUserId(value *string)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetLastActionByUserId(value *string)()
+    SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
 }

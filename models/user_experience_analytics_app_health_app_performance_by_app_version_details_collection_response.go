@@ -7,8 +7,6 @@ import (
 // UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsCollectionResponse 
 type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsable
 }
 // NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsCollectionResponse instantiates a new UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsCollectionResponse and sets the default values.
 func NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsCollectionResponse()(*UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsCollec
 }
 // GetValue gets the value property value. The value property
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsCollectionResponse) GetValue()([]UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsCollec
 }
 // SetValue sets the value property value. The value property
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsCollectionResponse) SetValue(value []UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsCollectionResponseable 
+type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsable)
+    SetValue(value []UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsable)()
 }

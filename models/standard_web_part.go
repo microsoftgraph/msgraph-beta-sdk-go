@@ -7,18 +7,14 @@ import (
 // StandardWebPart 
 type StandardWebPart struct {
     WebPart
-    // Data of the webPart.
-    data WebPartDataable
-    // A Guid which indicates the type of the webParts
-    webPartType *string
 }
 // NewStandardWebPart instantiates a new StandardWebPart and sets the default values.
 func NewStandardWebPart()(*StandardWebPart) {
     m := &StandardWebPart{
         WebPart: *NewWebPart(),
     }
-    odataTypeValue := "#microsoft.graph.standardWebPart";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.standardWebPart"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateStandardWebPartFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +23,14 @@ func CreateStandardWebPartFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetData gets the data property value. Data of the webPart.
 func (m *StandardWebPart) GetData()(WebPartDataable) {
-    return m.data
+    val, err := m.GetBackingStore().Get("data")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WebPartDataable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *StandardWebPart) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,7 +59,14 @@ func (m *StandardWebPart) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetWebPartType gets the webPartType property value. A Guid which indicates the type of the webParts
 func (m *StandardWebPart) GetWebPartType()(*string) {
-    return m.webPartType
+    val, err := m.GetBackingStore().Get("webPartType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *StandardWebPart) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *StandardWebPart) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetData sets the data property value. Data of the webPart.
 func (m *StandardWebPart) SetData(value WebPartDataable)() {
-    m.data = value
+    err := m.GetBackingStore().Set("data", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWebPartType sets the webPartType property value. A Guid which indicates the type of the webParts
 func (m *StandardWebPart) SetWebPartType(value *string)() {
-    m.webPartType = value
+    err := m.GetBackingStore().Set("webPartType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// StandardWebPartable 
+type StandardWebPartable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    WebPartable
+    GetData()(WebPartDataable)
+    GetWebPartType()(*string)
+    SetData(value WebPartDataable)()
+    SetWebPartType(value *string)()
 }

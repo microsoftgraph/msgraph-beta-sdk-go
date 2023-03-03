@@ -7,20 +7,14 @@ import (
 // WindowsKioskDesktopApp 
 type WindowsKioskDesktopApp struct {
     WindowsKioskAppBase
-    // Define the DesktopApplicationID of the app
-    desktopApplicationId *string
-    // Define the DesktopApplicationLinkPath of the app
-    desktopApplicationLinkPath *string
-    // Define the path of a desktop app
-    path *string
 }
 // NewWindowsKioskDesktopApp instantiates a new WindowsKioskDesktopApp and sets the default values.
 func NewWindowsKioskDesktopApp()(*WindowsKioskDesktopApp) {
     m := &WindowsKioskDesktopApp{
         WindowsKioskAppBase: *NewWindowsKioskAppBase(),
     }
-    odataTypeValue := "#microsoft.graph.windowsKioskDesktopApp";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsKioskDesktopApp"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsKioskDesktopAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,11 +23,25 @@ func CreateWindowsKioskDesktopAppFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetDesktopApplicationId gets the desktopApplicationId property value. Define the DesktopApplicationID of the app
 func (m *WindowsKioskDesktopApp) GetDesktopApplicationId()(*string) {
-    return m.desktopApplicationId
+    val, err := m.GetBackingStore().Get("desktopApplicationId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDesktopApplicationLinkPath gets the desktopApplicationLinkPath property value. Define the DesktopApplicationLinkPath of the app
 func (m *WindowsKioskDesktopApp) GetDesktopApplicationLinkPath()(*string) {
-    return m.desktopApplicationLinkPath
+    val, err := m.GetBackingStore().Get("desktopApplicationLinkPath")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsKioskDesktopApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,7 +80,14 @@ func (m *WindowsKioskDesktopApp) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetPath gets the path property value. Define the path of a desktop app
 func (m *WindowsKioskDesktopApp) GetPath()(*string) {
-    return m.path
+    val, err := m.GetBackingStore().Get("path")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsKioskDesktopApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -102,13 +117,33 @@ func (m *WindowsKioskDesktopApp) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetDesktopApplicationId sets the desktopApplicationId property value. Define the DesktopApplicationID of the app
 func (m *WindowsKioskDesktopApp) SetDesktopApplicationId(value *string)() {
-    m.desktopApplicationId = value
+    err := m.GetBackingStore().Set("desktopApplicationId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDesktopApplicationLinkPath sets the desktopApplicationLinkPath property value. Define the DesktopApplicationLinkPath of the app
 func (m *WindowsKioskDesktopApp) SetDesktopApplicationLinkPath(value *string)() {
-    m.desktopApplicationLinkPath = value
+    err := m.GetBackingStore().Set("desktopApplicationLinkPath", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPath sets the path property value. Define the path of a desktop app
 func (m *WindowsKioskDesktopApp) SetPath(value *string)() {
-    m.path = value
+    err := m.GetBackingStore().Set("path", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsKioskDesktopAppable 
+type WindowsKioskDesktopAppable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    WindowsKioskAppBaseable
+    GetDesktopApplicationId()(*string)
+    GetDesktopApplicationLinkPath()(*string)
+    GetPath()(*string)
+    SetDesktopApplicationId(value *string)()
+    SetDesktopApplicationLinkPath(value *string)()
+    SetPath(value *string)()
 }

@@ -7,8 +7,6 @@ import (
 // DeviceManagementConfigurationPolicyTemplateCollectionResponse 
 type DeviceManagementConfigurationPolicyTemplateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementConfigurationPolicyTemplateable
 }
 // NewDeviceManagementConfigurationPolicyTemplateCollectionResponse instantiates a new DeviceManagementConfigurationPolicyTemplateCollectionResponse and sets the default values.
 func NewDeviceManagementConfigurationPolicyTemplateCollectionResponse()(*DeviceManagementConfigurationPolicyTemplateCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementConfigurationPolicyTemplateCollectionResponse) GetField
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementConfigurationPolicyTemplateCollectionResponse) GetValue()([]DeviceManagementConfigurationPolicyTemplateable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementConfigurationPolicyTemplateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationPolicyTemplateCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementConfigurationPolicyTemplateCollectionResponse) Serializ
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementConfigurationPolicyTemplateCollectionResponse) SetValue(value []DeviceManagementConfigurationPolicyTemplateable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationPolicyTemplateCollectionResponseable 
+type DeviceManagementConfigurationPolicyTemplateCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementConfigurationPolicyTemplateable)
+    SetValue(value []DeviceManagementConfigurationPolicyTemplateable)()
 }

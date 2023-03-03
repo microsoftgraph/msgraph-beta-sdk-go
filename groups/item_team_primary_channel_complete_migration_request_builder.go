@@ -26,13 +26,13 @@ type ItemTeamPrimaryChannelCompleteMigrationRequestBuilderPostRequestConfigurati
 func NewItemTeamPrimaryChannelCompleteMigrationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamPrimaryChannelCompleteMigrationRequestBuilder) {
     m := &ItemTeamPrimaryChannelCompleteMigrationRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/team/primaryChannel/microsoft.graph.completeMigration";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/team/primaryChannel/completeMigration";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTeamPrimaryChannelCompleteMigrationRequestBuilder instantiates a new CompleteMigrationRequestBuilder and sets the default values.

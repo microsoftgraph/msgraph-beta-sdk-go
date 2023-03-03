@@ -39,8 +39,8 @@ func NewItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesItemCa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesItemCalendarRequestBuilder instantiates a new CalendarRequestBuilder and sets the default values.

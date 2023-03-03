@@ -55,8 +55,8 @@ func NewManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRe
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilder instantiates a new DeviceLogCollectionResponseItemRequestBuilder and sets the default values.
@@ -67,7 +67,7 @@ func NewManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRe
 }
 // CreateDownloadUrl provides operations to call the createDownloadUrl method.
 func (m *ManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilder) CreateDownloadUrl()(*ManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilder) {
-    return NewManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property logCollectionRequests for deviceManagement
 func (m *ManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -158,7 +158,10 @@ func (m *ManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemR
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

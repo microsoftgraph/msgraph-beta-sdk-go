@@ -13,8 +13,8 @@ func NewDeviceManagementSettingXmlConstraint()(*DeviceManagementSettingXmlConstr
     m := &DeviceManagementSettingXmlConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementSettingXmlConstraint";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementSettingXmlConstraint"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementSettingXmlConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,4 +33,9 @@ func (m *DeviceManagementSettingXmlConstraint) Serialize(writer i878a80d2330e89d
         return err
     }
     return nil
+}
+// DeviceManagementSettingXmlConstraintable 
+type DeviceManagementSettingXmlConstraintable interface {
+    DeviceManagementConstraintable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

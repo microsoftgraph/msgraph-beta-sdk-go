@@ -46,10 +46,6 @@ type CasesEdiscoveryCasesItemReviewSetsEdiscoveryReviewSetItemRequestBuilderPatc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AddToReviewSet provides operations to call the addToReviewSet method.
-func (m *CasesEdiscoveryCasesItemReviewSetsEdiscoveryReviewSetItemRequestBuilder) AddToReviewSet()(*CasesEdiscoveryCasesItemReviewSetsItemAddToReviewSetRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemReviewSetsItemAddToReviewSetRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewCasesEdiscoveryCasesItemReviewSetsEdiscoveryReviewSetItemRequestBuilderInternal instantiates a new EdiscoveryReviewSetItemRequestBuilder and sets the default values.
 func NewCasesEdiscoveryCasesItemReviewSetsEdiscoveryReviewSetItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesItemReviewSetsEdiscoveryReviewSetItemRequestBuilder) {
     m := &CasesEdiscoveryCasesItemReviewSetsEdiscoveryReviewSetItemRequestBuilder{
@@ -59,8 +55,8 @@ func NewCasesEdiscoveryCasesItemReviewSetsEdiscoveryReviewSetItemRequestBuilderI
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCasesEdiscoveryCasesItemReviewSetsEdiscoveryReviewSetItemRequestBuilder instantiates a new EdiscoveryReviewSetItemRequestBuilder and sets the default values.
@@ -85,13 +81,9 @@ func (m *CasesEdiscoveryCasesItemReviewSetsEdiscoveryReviewSetItemRequestBuilder
     }
     return nil
 }
-// Export provides operations to call the export method.
-func (m *CasesEdiscoveryCasesItemReviewSetsEdiscoveryReviewSetItemRequestBuilder) Export()(*CasesEdiscoveryCasesItemReviewSetsItemExportRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemReviewSetsItemExportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Files provides operations to manage the files property of the microsoft.graph.security.ediscoveryReviewSet entity.
 func (m *CasesEdiscoveryCasesItemReviewSetsEdiscoveryReviewSetItemRequestBuilder) Files()(*CasesEdiscoveryCasesItemReviewSetsItemFilesRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemReviewSetsItemFilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCasesEdiscoveryCasesItemReviewSetsItemFilesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // FilesById provides operations to manage the files property of the microsoft.graph.security.ediscoveryReviewSet entity.
 func (m *CasesEdiscoveryCasesItemReviewSetsEdiscoveryReviewSetItemRequestBuilder) FilesById(id string)(*CasesEdiscoveryCasesItemReviewSetsItemFilesEdiscoveryFileItemRequestBuilder) {
@@ -102,7 +94,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsEdiscoveryReviewSetItemRequestBuilder
     if id != "" {
         urlTplParams["ediscoveryFile%2Did"] = id
     }
-    return NewCasesEdiscoveryCasesItemReviewSetsItemFilesEdiscoveryFileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCasesEdiscoveryCasesItemReviewSetsItemFilesEdiscoveryFileItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Get returns a list of eDiscoveryReviewSet objects in the case.
 func (m *CasesEdiscoveryCasesItemReviewSetsEdiscoveryReviewSetItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsEdiscoveryReviewSetItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewSetable, error) {
@@ -144,7 +136,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsEdiscoveryReviewSetItemRequestBuilder
 }
 // Queries provides operations to manage the queries property of the microsoft.graph.security.ediscoveryReviewSet entity.
 func (m *CasesEdiscoveryCasesItemReviewSetsEdiscoveryReviewSetItemRequestBuilder) Queries()(*CasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // QueriesById provides operations to manage the queries property of the microsoft.graph.security.ediscoveryReviewSet entity.
 func (m *CasesEdiscoveryCasesItemReviewSetsEdiscoveryReviewSetItemRequestBuilder) QueriesById(id string)(*CasesEdiscoveryCasesItemReviewSetsItemQueriesEdiscoveryReviewSetQueryItemRequestBuilder) {
@@ -155,7 +147,15 @@ func (m *CasesEdiscoveryCasesItemReviewSetsEdiscoveryReviewSetItemRequestBuilder
     if id != "" {
         urlTplParams["ediscoveryReviewSetQuery%2Did"] = id
     }
-    return NewCasesEdiscoveryCasesItemReviewSetsItemQueriesEdiscoveryReviewSetQueryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCasesEdiscoveryCasesItemReviewSetsItemQueriesEdiscoveryReviewSetQueryItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+// SecurityAddToReviewSet provides operations to call the addToReviewSet method.
+func (m *CasesEdiscoveryCasesItemReviewSetsEdiscoveryReviewSetItemRequestBuilder) SecurityAddToReviewSet()(*CasesEdiscoveryCasesItemReviewSetsItemSecurityAddToReviewSetRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemReviewSetsItemSecurityAddToReviewSetRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// SecurityExport provides operations to call the export method.
+func (m *CasesEdiscoveryCasesItemReviewSetsEdiscoveryReviewSetItemRequestBuilder) SecurityExport()(*CasesEdiscoveryCasesItemReviewSetsItemSecurityExportRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemReviewSetsItemSecurityExportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property reviewSets for security
 func (m *CasesEdiscoveryCasesItemReviewSetsEdiscoveryReviewSetItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsEdiscoveryReviewSetItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -192,7 +192,10 @@ func (m *CasesEdiscoveryCasesItemReviewSetsEdiscoveryReviewSetItemRequestBuilder
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

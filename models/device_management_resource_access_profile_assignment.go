@@ -7,12 +7,6 @@ import (
 // DeviceManagementResourceAccessProfileAssignment entity that describes tenant level settings for derived credentials
 type DeviceManagementResourceAccessProfileAssignment struct {
     Entity
-    // The administrator intent for the assignment of the profile.
-    intent *DeviceManagementResourceAccessProfileIntent
-    // The identifier of the source of the assignment.
-    sourceId *string
-    // Base type for assignment targets.
-    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewDeviceManagementResourceAccessProfileAssignment instantiates a new deviceManagementResourceAccessProfileAssignment and sets the default values.
 func NewDeviceManagementResourceAccessProfileAssignment()(*DeviceManagementResourceAccessProfileAssignment) {
@@ -62,15 +56,36 @@ func (m *DeviceManagementResourceAccessProfileAssignment) GetFieldDeserializers(
 }
 // GetIntent gets the intent property value. The administrator intent for the assignment of the profile.
 func (m *DeviceManagementResourceAccessProfileAssignment) GetIntent()(*DeviceManagementResourceAccessProfileIntent) {
-    return m.intent
+    val, err := m.GetBackingStore().Get("intent")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceManagementResourceAccessProfileIntent)
+    }
+    return nil
 }
 // GetSourceId gets the sourceId property value. The identifier of the source of the assignment.
 func (m *DeviceManagementResourceAccessProfileAssignment) GetSourceId()(*string) {
-    return m.sourceId
+    val, err := m.GetBackingStore().Get("sourceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTarget gets the target property value. Base type for assignment targets.
 func (m *DeviceManagementResourceAccessProfileAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
-    return m.target
+    val, err := m.GetBackingStore().Get("target")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceAndAppManagementAssignmentTargetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementResourceAccessProfileAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -101,13 +116,33 @@ func (m *DeviceManagementResourceAccessProfileAssignment) Serialize(writer i878a
 }
 // SetIntent sets the intent property value. The administrator intent for the assignment of the profile.
 func (m *DeviceManagementResourceAccessProfileAssignment) SetIntent(value *DeviceManagementResourceAccessProfileIntent)() {
-    m.intent = value
+    err := m.GetBackingStore().Set("intent", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSourceId sets the sourceId property value. The identifier of the source of the assignment.
 func (m *DeviceManagementResourceAccessProfileAssignment) SetSourceId(value *string)() {
-    m.sourceId = value
+    err := m.GetBackingStore().Set("sourceId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTarget sets the target property value. Base type for assignment targets.
 func (m *DeviceManagementResourceAccessProfileAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
-    m.target = value
+    err := m.GetBackingStore().Set("target", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementResourceAccessProfileAssignmentable 
+type DeviceManagementResourceAccessProfileAssignmentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetIntent()(*DeviceManagementResourceAccessProfileIntent)
+    GetSourceId()(*string)
+    GetTarget()(DeviceAndAppManagementAssignmentTargetable)
+    SetIntent(value *DeviceManagementResourceAccessProfileIntent)()
+    SetSourceId(value *string)()
+    SetTarget(value DeviceAndAppManagementAssignmentTargetable)()
 }

@@ -55,8 +55,8 @@ func NewTeamTemplatesTeamTemplateItemRequestBuilderInternal(pathParameters map[s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTeamTemplatesTeamTemplateItemRequestBuilder instantiates a new TeamTemplateItemRequestBuilder and sets the default values.
@@ -67,7 +67,7 @@ func NewTeamTemplatesTeamTemplateItemRequestBuilder(rawUrl string, requestAdapte
 }
 // Definitions provides operations to manage the definitions property of the microsoft.graph.teamTemplate entity.
 func (m *TeamTemplatesTeamTemplateItemRequestBuilder) Definitions()(*TeamTemplatesItemDefinitionsRequestBuilder) {
-    return NewTeamTemplatesItemDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTeamTemplatesItemDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DefinitionsById provides operations to manage the definitions property of the microsoft.graph.teamTemplate entity.
 func (m *TeamTemplatesTeamTemplateItemRequestBuilder) DefinitionsById(id string)(*TeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilder) {
@@ -78,7 +78,7 @@ func (m *TeamTemplatesTeamTemplateItemRequestBuilder) DefinitionsById(id string)
     if id != "" {
         urlTplParams["teamTemplateDefinition%2Did"] = id
     }
-    return NewTeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Delete delete navigation property teamTemplates for teamwork
 func (m *TeamTemplatesTeamTemplateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TeamTemplatesTeamTemplateItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -169,7 +169,10 @@ func (m *TeamTemplatesTeamTemplateItemRequestBuilder) ToPatchRequestInformation(
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

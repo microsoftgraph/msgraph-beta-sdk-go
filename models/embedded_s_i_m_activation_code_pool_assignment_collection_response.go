@@ -7,8 +7,6 @@ import (
 // EmbeddedSIMActivationCodePoolAssignmentCollectionResponse 
 type EmbeddedSIMActivationCodePoolAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []EmbeddedSIMActivationCodePoolAssignmentable
 }
 // NewEmbeddedSIMActivationCodePoolAssignmentCollectionResponse instantiates a new EmbeddedSIMActivationCodePoolAssignmentCollectionResponse and sets the default values.
 func NewEmbeddedSIMActivationCodePoolAssignmentCollectionResponse()(*EmbeddedSIMActivationCodePoolAssignmentCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *EmbeddedSIMActivationCodePoolAssignmentCollectionResponse) GetFieldDese
 }
 // GetValue gets the value property value. The value property
 func (m *EmbeddedSIMActivationCodePoolAssignmentCollectionResponse) GetValue()([]EmbeddedSIMActivationCodePoolAssignmentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EmbeddedSIMActivationCodePoolAssignmentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EmbeddedSIMActivationCodePoolAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *EmbeddedSIMActivationCodePoolAssignmentCollectionResponse) Serialize(wr
 }
 // SetValue sets the value property value. The value property
 func (m *EmbeddedSIMActivationCodePoolAssignmentCollectionResponse) SetValue(value []EmbeddedSIMActivationCodePoolAssignmentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EmbeddedSIMActivationCodePoolAssignmentCollectionResponseable 
+type EmbeddedSIMActivationCodePoolAssignmentCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]EmbeddedSIMActivationCodePoolAssignmentable)
+    SetValue(value []EmbeddedSIMActivationCodePoolAssignmentable)()
 }

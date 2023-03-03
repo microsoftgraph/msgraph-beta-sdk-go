@@ -7,8 +7,6 @@ import (
 // MacOSAppleEventReceiverCollectionResponse 
 type MacOSAppleEventReceiverCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MacOSAppleEventReceiverable
 }
 // NewMacOSAppleEventReceiverCollectionResponse instantiates a new MacOSAppleEventReceiverCollectionResponse and sets the default values.
 func NewMacOSAppleEventReceiverCollectionResponse()(*MacOSAppleEventReceiverCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MacOSAppleEventReceiverCollectionResponse) GetFieldDeserializers()(map[
 }
 // GetValue gets the value property value. The value property
 func (m *MacOSAppleEventReceiverCollectionResponse) GetValue()([]MacOSAppleEventReceiverable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MacOSAppleEventReceiverable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MacOSAppleEventReceiverCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MacOSAppleEventReceiverCollectionResponse) Serialize(writer i878a80d233
 }
 // SetValue sets the value property value. The value property
 func (m *MacOSAppleEventReceiverCollectionResponse) SetValue(value []MacOSAppleEventReceiverable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MacOSAppleEventReceiverCollectionResponseable 
+type MacOSAppleEventReceiverCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MacOSAppleEventReceiverable)
+    SetValue(value []MacOSAppleEventReceiverable)()
 }

@@ -2,28 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ContentClassification 
 type ContentClassification struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The confidence property
-    confidence *int32
-    // The matches property
-    matches []MatchLocationable
-    // The OdataType property
-    odataType *string
-    // The sensitiveTypeId property
-    sensitiveTypeId *string
-    // The uniqueCount property
-    uniqueCount *int32
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewContentClassification instantiates a new contentClassification and sets the default values.
 func NewContentClassification()(*ContentClassification) {
     m := &ContentClassification{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateContentClassificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,11 +24,30 @@ func CreateContentClassificationFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ContentClassification) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ContentClassification) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetConfidence gets the confidence property value. The confidence property
 func (m *ContentClassification) GetConfidence()(*int32) {
-    return m.confidence
+    val, err := m.GetBackingStore().Get("confidence")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ContentClassification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -99,19 +110,47 @@ func (m *ContentClassification) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetMatches gets the matches property value. The matches property
 func (m *ContentClassification) GetMatches()([]MatchLocationable) {
-    return m.matches
+    val, err := m.GetBackingStore().Get("matches")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MatchLocationable)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ContentClassification) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSensitiveTypeId gets the sensitiveTypeId property value. The sensitiveTypeId property
 func (m *ContentClassification) GetSensitiveTypeId()(*string) {
-    return m.sensitiveTypeId
+    val, err := m.GetBackingStore().Get("sensitiveTypeId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUniqueCount gets the uniqueCount property value. The uniqueCount property
 func (m *ContentClassification) GetUniqueCount()(*int32) {
-    return m.uniqueCount
+    val, err := m.GetBackingStore().Get("uniqueCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ContentClassification) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -159,25 +198,65 @@ func (m *ContentClassification) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ContentClassification) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ContentClassification) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetConfidence sets the confidence property value. The confidence property
 func (m *ContentClassification) SetConfidence(value *int32)() {
-    m.confidence = value
+    err := m.GetBackingStore().Set("confidence", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMatches sets the matches property value. The matches property
 func (m *ContentClassification) SetMatches(value []MatchLocationable)() {
-    m.matches = value
+    err := m.GetBackingStore().Set("matches", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ContentClassification) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSensitiveTypeId sets the sensitiveTypeId property value. The sensitiveTypeId property
 func (m *ContentClassification) SetSensitiveTypeId(value *string)() {
-    m.sensitiveTypeId = value
+    err := m.GetBackingStore().Set("sensitiveTypeId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUniqueCount sets the uniqueCount property value. The uniqueCount property
 func (m *ContentClassification) SetUniqueCount(value *int32)() {
-    m.uniqueCount = value
+    err := m.GetBackingStore().Set("uniqueCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ContentClassificationable 
+type ContentClassificationable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetConfidence()(*int32)
+    GetMatches()([]MatchLocationable)
+    GetOdataType()(*string)
+    GetSensitiveTypeId()(*string)
+    GetUniqueCount()(*int32)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetConfidence(value *int32)()
+    SetMatches(value []MatchLocationable)()
+    SetOdataType(value *string)()
+    SetSensitiveTypeId(value *string)()
+    SetUniqueCount(value *int32)()
 }

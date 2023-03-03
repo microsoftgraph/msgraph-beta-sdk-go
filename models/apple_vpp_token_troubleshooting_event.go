@@ -7,8 +7,6 @@ import (
 // AppleVppTokenTroubleshootingEvent 
 type AppleVppTokenTroubleshootingEvent struct {
     DeviceManagementTroubleshootingEvent
-    // Apple Volume Purchase Program Token Identifier.
-    tokenId *string
 }
 // NewAppleVppTokenTroubleshootingEvent instantiates a new AppleVppTokenTroubleshootingEvent and sets the default values.
 func NewAppleVppTokenTroubleshootingEvent()(*AppleVppTokenTroubleshootingEvent) {
@@ -38,7 +36,14 @@ func (m *AppleVppTokenTroubleshootingEvent) GetFieldDeserializers()(map[string]f
 }
 // GetTokenId gets the tokenId property value. Apple Volume Purchase Program Token Identifier.
 func (m *AppleVppTokenTroubleshootingEvent) GetTokenId()(*string) {
-    return m.tokenId
+    val, err := m.GetBackingStore().Get("tokenId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AppleVppTokenTroubleshootingEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *AppleVppTokenTroubleshootingEvent) Serialize(writer i878a80d2330e89d268
 }
 // SetTokenId sets the tokenId property value. Apple Volume Purchase Program Token Identifier.
 func (m *AppleVppTokenTroubleshootingEvent) SetTokenId(value *string)() {
-    m.tokenId = value
+    err := m.GetBackingStore().Set("tokenId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AppleVppTokenTroubleshootingEventable 
+type AppleVppTokenTroubleshootingEventable interface {
+    DeviceManagementTroubleshootingEventable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetTokenId()(*string)
+    SetTokenId(value *string)()
 }

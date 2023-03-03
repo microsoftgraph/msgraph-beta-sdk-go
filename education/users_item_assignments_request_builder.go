@@ -60,8 +60,8 @@ func NewUsersItemAssignmentsRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewUsersItemAssignmentsRequestBuilder instantiates a new AssignmentsRequestBuilder and sets the default values.
@@ -72,11 +72,11 @@ func NewUsersItemAssignmentsRequestBuilder(rawUrl string, requestAdapter i2ae418
 }
 // Count provides operations to count the resources in the collection.
 func (m *UsersItemAssignmentsRequestBuilder) Count()(*UsersItemAssignmentsCountRequestBuilder) {
-    return NewUsersItemAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUsersItemAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delta provides operations to call the delta method.
 func (m *UsersItemAssignmentsRequestBuilder) Delta()(*UsersItemAssignmentsDeltaRequestBuilder) {
-    return NewUsersItemAssignmentsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUsersItemAssignmentsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get returns a list of assignments assigned to a user for all classes. Only teachers, students, and applications with application permissions can perform this operation. This utility namespace allows a caller to find all the assignments belonging to a student or a teacher in a single call rather than having to request assignments from each class. The assignment list contains what is needed to get the detailed information for the assignment from within the class namespace. All other operations on the assignment should use the class namespace.
 // [Find more info here]
@@ -142,7 +142,10 @@ func (m *UsersItemAssignmentsRequestBuilder) ToPostRequestInformation(ctx contex
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

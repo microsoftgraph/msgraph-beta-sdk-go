@@ -7,16 +7,14 @@ import (
 // Windows10EnrollmentCompletionPageConfigurationPolicySetItem 
 type Windows10EnrollmentCompletionPageConfigurationPolicySetItem struct {
     PolicySetItem
-    // Priority of the Windows10EnrollmentCompletionPageConfigurationPolicySetItem.
-    priority *int32
 }
 // NewWindows10EnrollmentCompletionPageConfigurationPolicySetItem instantiates a new Windows10EnrollmentCompletionPageConfigurationPolicySetItem and sets the default values.
 func NewWindows10EnrollmentCompletionPageConfigurationPolicySetItem()(*Windows10EnrollmentCompletionPageConfigurationPolicySetItem) {
     m := &Windows10EnrollmentCompletionPageConfigurationPolicySetItem{
         PolicySetItem: *NewPolicySetItem(),
     }
-    odataTypeValue := "#microsoft.graph.windows10EnrollmentCompletionPageConfigurationPolicySetItem";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windows10EnrollmentCompletionPageConfigurationPolicySetItem"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindows10EnrollmentCompletionPageConfigurationPolicySetItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *Windows10EnrollmentCompletionPageConfigurationPolicySetItem) GetFieldDe
 }
 // GetPriority gets the priority property value. Priority of the Windows10EnrollmentCompletionPageConfigurationPolicySetItem.
 func (m *Windows10EnrollmentCompletionPageConfigurationPolicySetItem) GetPriority()(*int32) {
-    return m.priority
+    val, err := m.GetBackingStore().Get("priority")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Windows10EnrollmentCompletionPageConfigurationPolicySetItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *Windows10EnrollmentCompletionPageConfigurationPolicySetItem) Serialize(
 }
 // SetPriority sets the priority property value. Priority of the Windows10EnrollmentCompletionPageConfigurationPolicySetItem.
 func (m *Windows10EnrollmentCompletionPageConfigurationPolicySetItem) SetPriority(value *int32)() {
-    m.priority = value
+    err := m.GetBackingStore().Set("priority", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Windows10EnrollmentCompletionPageConfigurationPolicySetItemable 
+type Windows10EnrollmentCompletionPageConfigurationPolicySetItemable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    PolicySetItemable
+    GetPriority()(*int32)
+    SetPriority(value *int32)()
 }

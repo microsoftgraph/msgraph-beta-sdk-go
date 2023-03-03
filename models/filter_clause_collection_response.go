@@ -7,8 +7,6 @@ import (
 // FilterClauseCollectionResponse 
 type FilterClauseCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []FilterClauseable
 }
 // NewFilterClauseCollectionResponse instantiates a new FilterClauseCollectionResponse and sets the default values.
 func NewFilterClauseCollectionResponse()(*FilterClauseCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *FilterClauseCollectionResponse) GetFieldDeserializers()(map[string]func
 }
 // GetValue gets the value property value. The value property
 func (m *FilterClauseCollectionResponse) GetValue()([]FilterClauseable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]FilterClauseable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *FilterClauseCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *FilterClauseCollectionResponse) Serialize(writer i878a80d2330e89d268963
 }
 // SetValue sets the value property value. The value property
 func (m *FilterClauseCollectionResponse) SetValue(value []FilterClauseable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// FilterClauseCollectionResponseable 
+type FilterClauseCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]FilterClauseable)
+    SetValue(value []FilterClauseable)()
 }

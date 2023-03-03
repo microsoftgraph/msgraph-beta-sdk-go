@@ -7,8 +7,6 @@ import (
 // TeamsAppSettings 
 type TeamsAppSettings struct {
     Entity
-    // Indicates whether resource-specific consent for chats/meetings has been enabled for the tenant. If true, Teams apps that are allowed in the tenant and require resource-specific permissions can be installed inside chats and meetings. If false, the installation of any Teams app that requires resource-specific permissions in a chat or a meeting will be blocked.
-    isChatResourceSpecificConsentEnabled *bool
 }
 // NewTeamsAppSettings instantiates a new TeamsAppSettings and sets the default values.
 func NewTeamsAppSettings()(*TeamsAppSettings) {
@@ -21,9 +19,30 @@ func NewTeamsAppSettings()(*TeamsAppSettings) {
 func CreateTeamsAppSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamsAppSettings(), nil
 }
+// GetAllowUserRequestsForAppAccess gets the allowUserRequestsForAppAccess property value. Indicates whether Teams users are allowed to request admins access to certain Teams apps.
+func (m *TeamsAppSettings) GetAllowUserRequestsForAppAccess()(*bool) {
+    val, err := m.GetBackingStore().Get("allowUserRequestsForAppAccess")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamsAppSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["allowUserRequestsForAppAccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowUserRequestsForAppAccess(val)
+        }
+        return nil
+    }
     res["isChatResourceSpecificConsentEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -38,13 +57,26 @@ func (m *TeamsAppSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetIsChatResourceSpecificConsentEnabled gets the isChatResourceSpecificConsentEnabled property value. Indicates whether resource-specific consent for chats/meetings has been enabled for the tenant. If true, Teams apps that are allowed in the tenant and require resource-specific permissions can be installed inside chats and meetings. If false, the installation of any Teams app that requires resource-specific permissions in a chat or a meeting will be blocked.
 func (m *TeamsAppSettings) GetIsChatResourceSpecificConsentEnabled()(*bool) {
-    return m.isChatResourceSpecificConsentEnabled
+    val, err := m.GetBackingStore().Get("isChatResourceSpecificConsentEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TeamsAppSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
         return err
+    }
+    {
+        err = writer.WriteBoolValue("allowUserRequestsForAppAccess", m.GetAllowUserRequestsForAppAccess())
+        if err != nil {
+            return err
+        }
     }
     {
         err = writer.WriteBoolValue("isChatResourceSpecificConsentEnabled", m.GetIsChatResourceSpecificConsentEnabled())
@@ -54,7 +86,26 @@ func (m *TeamsAppSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
+// SetAllowUserRequestsForAppAccess sets the allowUserRequestsForAppAccess property value. Indicates whether Teams users are allowed to request admins access to certain Teams apps.
+func (m *TeamsAppSettings) SetAllowUserRequestsForAppAccess(value *bool)() {
+    err := m.GetBackingStore().Set("allowUserRequestsForAppAccess", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsChatResourceSpecificConsentEnabled sets the isChatResourceSpecificConsentEnabled property value. Indicates whether resource-specific consent for chats/meetings has been enabled for the tenant. If true, Teams apps that are allowed in the tenant and require resource-specific permissions can be installed inside chats and meetings. If false, the installation of any Teams app that requires resource-specific permissions in a chat or a meeting will be blocked.
 func (m *TeamsAppSettings) SetIsChatResourceSpecificConsentEnabled(value *bool)() {
-    m.isChatResourceSpecificConsentEnabled = value
+    err := m.GetBackingStore().Set("isChatResourceSpecificConsentEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TeamsAppSettingsable 
+type TeamsAppSettingsable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllowUserRequestsForAppAccess()(*bool)
+    GetIsChatResourceSpecificConsentEnabled()(*bool)
+    SetAllowUserRequestsForAppAccess(value *bool)()
+    SetIsChatResourceSpecificConsentEnabled(value *bool)()
 }

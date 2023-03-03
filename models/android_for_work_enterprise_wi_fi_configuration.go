@@ -7,30 +7,14 @@ import (
 // AndroidForWorkEnterpriseWiFiConfiguration 
 type AndroidForWorkEnterpriseWiFiConfiguration struct {
     AndroidForWorkWiFiConfiguration
-    // Indicates the Authentication Method the client (device) needs to use when the EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.
-    authenticationMethod *WiFiAuthenticationMethod
-    // Extensible Authentication Protocol (EAP) Configuration Types.
-    eapType *AndroidEapType
-    // Identity Certificate for client authentication when EAP Type is configured to EAP-TLS, EAP-TTLS (with Certificate Authentication), or PEAP (with Certificate Authentication). This is the certificate presented by client to the Wi-Fi endpoint. The authentication server sitting behind the Wi-Fi endpoint must accept this certificate to successfully establish a Wi-Fi connection.
-    identityCertificateForClientAuthentication AndroidForWorkCertificateProfileBaseable
-    // Non-EAP Method for Authentication (Inner Identity) when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
-    innerAuthenticationProtocolForEapTtls *NonEapAuthenticationMethodForEapTtlsType
-    // Non-EAP Method for Authentication (Inner Identity) when EAP Type is PEAP and Authenticationmethod is Username and Password. Possible values are: none, microsoftChapVersionTwo.
-    innerAuthenticationProtocolForPeap *NonEapAuthenticationMethodForPeap
-    // Enable identity privacy (Outer Identity) when EAP Type is configured to EAP-TTLS or PEAP. The String provided here is used to mask the username of individual users when they attempt to connect to Wi-Fi network.
-    outerIdentityPrivacyTemporaryValue *string
-    // Trusted Root Certificate for Server Validation when EAP Type is configured to EAP-TLS, EAP-TTLS or PEAP. This is the certificate presented by the Wi-Fi endpoint when the device attempts to connect to Wi-Fi endpoint. The device (or user) must accept this certificate to continue the connection attempt.
-    rootCertificateForServerValidation AndroidForWorkTrustedRootCertificateable
-    // Trusted server certificate names when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. This is the common name used in the certificates issued by your trusted certificate authority (CA). If you provide this information, you can bypass the dynamic trust dialog that is displayed on end users' devices when they connect to this Wi-Fi network.
-    trustedServerCertificateNames []string
 }
 // NewAndroidForWorkEnterpriseWiFiConfiguration instantiates a new AndroidForWorkEnterpriseWiFiConfiguration and sets the default values.
 func NewAndroidForWorkEnterpriseWiFiConfiguration()(*AndroidForWorkEnterpriseWiFiConfiguration) {
     m := &AndroidForWorkEnterpriseWiFiConfiguration{
         AndroidForWorkWiFiConfiguration: *NewAndroidForWorkWiFiConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.androidForWorkEnterpriseWiFiConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidForWorkEnterpriseWiFiConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidForWorkEnterpriseWiFiConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -39,11 +23,25 @@ func CreateAndroidForWorkEnterpriseWiFiConfigurationFromDiscriminatorValue(parse
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. Indicates the Authentication Method the client (device) needs to use when the EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.
 func (m *AndroidForWorkEnterpriseWiFiConfiguration) GetAuthenticationMethod()(*WiFiAuthenticationMethod) {
-    return m.authenticationMethod
+    val, err := m.GetBackingStore().Get("authenticationMethod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WiFiAuthenticationMethod)
+    }
+    return nil
 }
 // GetEapType gets the eapType property value. Extensible Authentication Protocol (EAP) Configuration Types.
 func (m *AndroidForWorkEnterpriseWiFiConfiguration) GetEapType()(*AndroidEapType) {
-    return m.eapType
+    val, err := m.GetBackingStore().Get("eapType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AndroidEapType)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidForWorkEnterpriseWiFiConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -136,27 +134,69 @@ func (m *AndroidForWorkEnterpriseWiFiConfiguration) GetFieldDeserializers()(map[
 }
 // GetIdentityCertificateForClientAuthentication gets the identityCertificateForClientAuthentication property value. Identity Certificate for client authentication when EAP Type is configured to EAP-TLS, EAP-TTLS (with Certificate Authentication), or PEAP (with Certificate Authentication). This is the certificate presented by client to the Wi-Fi endpoint. The authentication server sitting behind the Wi-Fi endpoint must accept this certificate to successfully establish a Wi-Fi connection.
 func (m *AndroidForWorkEnterpriseWiFiConfiguration) GetIdentityCertificateForClientAuthentication()(AndroidForWorkCertificateProfileBaseable) {
-    return m.identityCertificateForClientAuthentication
+    val, err := m.GetBackingStore().Get("identityCertificateForClientAuthentication")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AndroidForWorkCertificateProfileBaseable)
+    }
+    return nil
 }
 // GetInnerAuthenticationProtocolForEapTtls gets the innerAuthenticationProtocolForEapTtls property value. Non-EAP Method for Authentication (Inner Identity) when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
 func (m *AndroidForWorkEnterpriseWiFiConfiguration) GetInnerAuthenticationProtocolForEapTtls()(*NonEapAuthenticationMethodForEapTtlsType) {
-    return m.innerAuthenticationProtocolForEapTtls
+    val, err := m.GetBackingStore().Get("innerAuthenticationProtocolForEapTtls")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*NonEapAuthenticationMethodForEapTtlsType)
+    }
+    return nil
 }
 // GetInnerAuthenticationProtocolForPeap gets the innerAuthenticationProtocolForPeap property value. Non-EAP Method for Authentication (Inner Identity) when EAP Type is PEAP and Authenticationmethod is Username and Password. Possible values are: none, microsoftChapVersionTwo.
 func (m *AndroidForWorkEnterpriseWiFiConfiguration) GetInnerAuthenticationProtocolForPeap()(*NonEapAuthenticationMethodForPeap) {
-    return m.innerAuthenticationProtocolForPeap
+    val, err := m.GetBackingStore().Get("innerAuthenticationProtocolForPeap")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*NonEapAuthenticationMethodForPeap)
+    }
+    return nil
 }
 // GetOuterIdentityPrivacyTemporaryValue gets the outerIdentityPrivacyTemporaryValue property value. Enable identity privacy (Outer Identity) when EAP Type is configured to EAP-TTLS or PEAP. The String provided here is used to mask the username of individual users when they attempt to connect to Wi-Fi network.
 func (m *AndroidForWorkEnterpriseWiFiConfiguration) GetOuterIdentityPrivacyTemporaryValue()(*string) {
-    return m.outerIdentityPrivacyTemporaryValue
+    val, err := m.GetBackingStore().Get("outerIdentityPrivacyTemporaryValue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRootCertificateForServerValidation gets the rootCertificateForServerValidation property value. Trusted Root Certificate for Server Validation when EAP Type is configured to EAP-TLS, EAP-TTLS or PEAP. This is the certificate presented by the Wi-Fi endpoint when the device attempts to connect to Wi-Fi endpoint. The device (or user) must accept this certificate to continue the connection attempt.
 func (m *AndroidForWorkEnterpriseWiFiConfiguration) GetRootCertificateForServerValidation()(AndroidForWorkTrustedRootCertificateable) {
-    return m.rootCertificateForServerValidation
+    val, err := m.GetBackingStore().Get("rootCertificateForServerValidation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AndroidForWorkTrustedRootCertificateable)
+    }
+    return nil
 }
 // GetTrustedServerCertificateNames gets the trustedServerCertificateNames property value. Trusted server certificate names when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. This is the common name used in the certificates issued by your trusted certificate authority (CA). If you provide this information, you can bypass the dynamic trust dialog that is displayed on end users' devices when they connect to this Wi-Fi network.
 func (m *AndroidForWorkEnterpriseWiFiConfiguration) GetTrustedServerCertificateNames()([]string) {
-    return m.trustedServerCertificateNames
+    val, err := m.GetBackingStore().Get("trustedServerCertificateNames")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidForWorkEnterpriseWiFiConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -220,33 +260,78 @@ func (m *AndroidForWorkEnterpriseWiFiConfiguration) Serialize(writer i878a80d233
 }
 // SetAuthenticationMethod sets the authenticationMethod property value. Indicates the Authentication Method the client (device) needs to use when the EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.
 func (m *AndroidForWorkEnterpriseWiFiConfiguration) SetAuthenticationMethod(value *WiFiAuthenticationMethod)() {
-    m.authenticationMethod = value
+    err := m.GetBackingStore().Set("authenticationMethod", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEapType sets the eapType property value. Extensible Authentication Protocol (EAP) Configuration Types.
 func (m *AndroidForWorkEnterpriseWiFiConfiguration) SetEapType(value *AndroidEapType)() {
-    m.eapType = value
+    err := m.GetBackingStore().Set("eapType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentityCertificateForClientAuthentication sets the identityCertificateForClientAuthentication property value. Identity Certificate for client authentication when EAP Type is configured to EAP-TLS, EAP-TTLS (with Certificate Authentication), or PEAP (with Certificate Authentication). This is the certificate presented by client to the Wi-Fi endpoint. The authentication server sitting behind the Wi-Fi endpoint must accept this certificate to successfully establish a Wi-Fi connection.
 func (m *AndroidForWorkEnterpriseWiFiConfiguration) SetIdentityCertificateForClientAuthentication(value AndroidForWorkCertificateProfileBaseable)() {
-    m.identityCertificateForClientAuthentication = value
+    err := m.GetBackingStore().Set("identityCertificateForClientAuthentication", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInnerAuthenticationProtocolForEapTtls sets the innerAuthenticationProtocolForEapTtls property value. Non-EAP Method for Authentication (Inner Identity) when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
 func (m *AndroidForWorkEnterpriseWiFiConfiguration) SetInnerAuthenticationProtocolForEapTtls(value *NonEapAuthenticationMethodForEapTtlsType)() {
-    m.innerAuthenticationProtocolForEapTtls = value
+    err := m.GetBackingStore().Set("innerAuthenticationProtocolForEapTtls", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInnerAuthenticationProtocolForPeap sets the innerAuthenticationProtocolForPeap property value. Non-EAP Method for Authentication (Inner Identity) when EAP Type is PEAP and Authenticationmethod is Username and Password. Possible values are: none, microsoftChapVersionTwo.
 func (m *AndroidForWorkEnterpriseWiFiConfiguration) SetInnerAuthenticationProtocolForPeap(value *NonEapAuthenticationMethodForPeap)() {
-    m.innerAuthenticationProtocolForPeap = value
+    err := m.GetBackingStore().Set("innerAuthenticationProtocolForPeap", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOuterIdentityPrivacyTemporaryValue sets the outerIdentityPrivacyTemporaryValue property value. Enable identity privacy (Outer Identity) when EAP Type is configured to EAP-TTLS or PEAP. The String provided here is used to mask the username of individual users when they attempt to connect to Wi-Fi network.
 func (m *AndroidForWorkEnterpriseWiFiConfiguration) SetOuterIdentityPrivacyTemporaryValue(value *string)() {
-    m.outerIdentityPrivacyTemporaryValue = value
+    err := m.GetBackingStore().Set("outerIdentityPrivacyTemporaryValue", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRootCertificateForServerValidation sets the rootCertificateForServerValidation property value. Trusted Root Certificate for Server Validation when EAP Type is configured to EAP-TLS, EAP-TTLS or PEAP. This is the certificate presented by the Wi-Fi endpoint when the device attempts to connect to Wi-Fi endpoint. The device (or user) must accept this certificate to continue the connection attempt.
 func (m *AndroidForWorkEnterpriseWiFiConfiguration) SetRootCertificateForServerValidation(value AndroidForWorkTrustedRootCertificateable)() {
-    m.rootCertificateForServerValidation = value
+    err := m.GetBackingStore().Set("rootCertificateForServerValidation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTrustedServerCertificateNames sets the trustedServerCertificateNames property value. Trusted server certificate names when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. This is the common name used in the certificates issued by your trusted certificate authority (CA). If you provide this information, you can bypass the dynamic trust dialog that is displayed on end users' devices when they connect to this Wi-Fi network.
 func (m *AndroidForWorkEnterpriseWiFiConfiguration) SetTrustedServerCertificateNames(value []string)() {
-    m.trustedServerCertificateNames = value
+    err := m.GetBackingStore().Set("trustedServerCertificateNames", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidForWorkEnterpriseWiFiConfigurationable 
+type AndroidForWorkEnterpriseWiFiConfigurationable interface {
+    AndroidForWorkWiFiConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAuthenticationMethod()(*WiFiAuthenticationMethod)
+    GetEapType()(*AndroidEapType)
+    GetIdentityCertificateForClientAuthentication()(AndroidForWorkCertificateProfileBaseable)
+    GetInnerAuthenticationProtocolForEapTtls()(*NonEapAuthenticationMethodForEapTtlsType)
+    GetInnerAuthenticationProtocolForPeap()(*NonEapAuthenticationMethodForPeap)
+    GetOuterIdentityPrivacyTemporaryValue()(*string)
+    GetRootCertificateForServerValidation()(AndroidForWorkTrustedRootCertificateable)
+    GetTrustedServerCertificateNames()([]string)
+    SetAuthenticationMethod(value *WiFiAuthenticationMethod)()
+    SetEapType(value *AndroidEapType)()
+    SetIdentityCertificateForClientAuthentication(value AndroidForWorkCertificateProfileBaseable)()
+    SetInnerAuthenticationProtocolForEapTtls(value *NonEapAuthenticationMethodForEapTtlsType)()
+    SetInnerAuthenticationProtocolForPeap(value *NonEapAuthenticationMethodForPeap)()
+    SetOuterIdentityPrivacyTemporaryValue(value *string)()
+    SetRootCertificateForServerValidation(value AndroidForWorkTrustedRootCertificateable)()
+    SetTrustedServerCertificateNames(value []string)()
 }

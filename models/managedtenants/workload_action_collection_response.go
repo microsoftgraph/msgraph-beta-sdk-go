@@ -8,8 +8,6 @@ import (
 // WorkloadActionCollectionResponse 
 type WorkloadActionCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
-    // The value property
-    value []WorkloadActionable
 }
 // NewWorkloadActionCollectionResponse instantiates a new WorkloadActionCollectionResponse and sets the default values.
 func NewWorkloadActionCollectionResponse()(*WorkloadActionCollectionResponse) {
@@ -43,7 +41,14 @@ func (m *WorkloadActionCollectionResponse) GetFieldDeserializers()(map[string]fu
 }
 // GetValue gets the value property value. The value property
 func (m *WorkloadActionCollectionResponse) GetValue()([]WorkloadActionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WorkloadActionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WorkloadActionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *WorkloadActionCollectionResponse) Serialize(writer i878a80d2330e89d2689
 }
 // SetValue sets the value property value. The value property
 func (m *WorkloadActionCollectionResponse) SetValue(value []WorkloadActionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WorkloadActionCollectionResponseable 
+type WorkloadActionCollectionResponseable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WorkloadActionable)
+    SetValue(value []WorkloadActionable)()
 }

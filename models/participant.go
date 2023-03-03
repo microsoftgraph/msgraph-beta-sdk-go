@@ -7,22 +7,6 @@ import (
 // Participant 
 type Participant struct {
     Entity
-    // The info property
-    info ParticipantInfoable
-    // The isIdentityAnonymized property
-    isIdentityAnonymized *bool
-    // true if the participant is in lobby.
-    isInLobby *bool
-    // true if the participant is muted (client or server muted).
-    isMuted *bool
-    // The list of media streams.
-    mediaStreams []MediaStreamable
-    // A blob of data provided by the participant in the roster.
-    metadata *string
-    // Information on whether the participant has recording capability.
-    recordingInfo RecordingInfoable
-    // The restrictedExperience property
-    restrictedExperience OnlineMeetingRestrictedable
 }
 // NewParticipant instantiates a new participant and sets the default values.
 func NewParticipant()(*Participant) {
@@ -126,35 +110,91 @@ func (m *Participant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetInfo gets the info property value. The info property
 func (m *Participant) GetInfo()(ParticipantInfoable) {
-    return m.info
+    val, err := m.GetBackingStore().Get("info")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ParticipantInfoable)
+    }
+    return nil
 }
 // GetIsIdentityAnonymized gets the isIdentityAnonymized property value. The isIdentityAnonymized property
 func (m *Participant) GetIsIdentityAnonymized()(*bool) {
-    return m.isIdentityAnonymized
+    val, err := m.GetBackingStore().Get("isIdentityAnonymized")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsInLobby gets the isInLobby property value. true if the participant is in lobby.
 func (m *Participant) GetIsInLobby()(*bool) {
-    return m.isInLobby
+    val, err := m.GetBackingStore().Get("isInLobby")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsMuted gets the isMuted property value. true if the participant is muted (client or server muted).
 func (m *Participant) GetIsMuted()(*bool) {
-    return m.isMuted
+    val, err := m.GetBackingStore().Get("isMuted")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetMediaStreams gets the mediaStreams property value. The list of media streams.
 func (m *Participant) GetMediaStreams()([]MediaStreamable) {
-    return m.mediaStreams
+    val, err := m.GetBackingStore().Get("mediaStreams")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MediaStreamable)
+    }
+    return nil
 }
 // GetMetadata gets the metadata property value. A blob of data provided by the participant in the roster.
 func (m *Participant) GetMetadata()(*string) {
-    return m.metadata
+    val, err := m.GetBackingStore().Get("metadata")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRecordingInfo gets the recordingInfo property value. Information on whether the participant has recording capability.
 func (m *Participant) GetRecordingInfo()(RecordingInfoable) {
-    return m.recordingInfo
+    val, err := m.GetBackingStore().Get("recordingInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(RecordingInfoable)
+    }
+    return nil
 }
-// GetRestrictedExperience gets the restrictedExperience property value. The restrictedExperience property
+// GetRestrictedExperience gets the restrictedExperience property value. Indicates the reason or reasons why media content from this participant is restricted.
 func (m *Participant) GetRestrictedExperience()(OnlineMeetingRestrictedable) {
-    return m.restrictedExperience
+    val, err := m.GetBackingStore().Get("restrictedExperience")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(OnlineMeetingRestrictedable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Participant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -218,33 +258,78 @@ func (m *Participant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetInfo sets the info property value. The info property
 func (m *Participant) SetInfo(value ParticipantInfoable)() {
-    m.info = value
+    err := m.GetBackingStore().Set("info", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsIdentityAnonymized sets the isIdentityAnonymized property value. The isIdentityAnonymized property
 func (m *Participant) SetIsIdentityAnonymized(value *bool)() {
-    m.isIdentityAnonymized = value
+    err := m.GetBackingStore().Set("isIdentityAnonymized", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsInLobby sets the isInLobby property value. true if the participant is in lobby.
 func (m *Participant) SetIsInLobby(value *bool)() {
-    m.isInLobby = value
+    err := m.GetBackingStore().Set("isInLobby", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsMuted sets the isMuted property value. true if the participant is muted (client or server muted).
 func (m *Participant) SetIsMuted(value *bool)() {
-    m.isMuted = value
+    err := m.GetBackingStore().Set("isMuted", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMediaStreams sets the mediaStreams property value. The list of media streams.
 func (m *Participant) SetMediaStreams(value []MediaStreamable)() {
-    m.mediaStreams = value
+    err := m.GetBackingStore().Set("mediaStreams", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMetadata sets the metadata property value. A blob of data provided by the participant in the roster.
 func (m *Participant) SetMetadata(value *string)() {
-    m.metadata = value
+    err := m.GetBackingStore().Set("metadata", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRecordingInfo sets the recordingInfo property value. Information on whether the participant has recording capability.
 func (m *Participant) SetRecordingInfo(value RecordingInfoable)() {
-    m.recordingInfo = value
+    err := m.GetBackingStore().Set("recordingInfo", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetRestrictedExperience sets the restrictedExperience property value. The restrictedExperience property
+// SetRestrictedExperience sets the restrictedExperience property value. Indicates the reason or reasons why media content from this participant is restricted.
 func (m *Participant) SetRestrictedExperience(value OnlineMeetingRestrictedable)() {
-    m.restrictedExperience = value
+    err := m.GetBackingStore().Set("restrictedExperience", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Participantable 
+type Participantable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetInfo()(ParticipantInfoable)
+    GetIsIdentityAnonymized()(*bool)
+    GetIsInLobby()(*bool)
+    GetIsMuted()(*bool)
+    GetMediaStreams()([]MediaStreamable)
+    GetMetadata()(*string)
+    GetRecordingInfo()(RecordingInfoable)
+    GetRestrictedExperience()(OnlineMeetingRestrictedable)
+    SetInfo(value ParticipantInfoable)()
+    SetIsIdentityAnonymized(value *bool)()
+    SetIsInLobby(value *bool)()
+    SetIsMuted(value *bool)()
+    SetMediaStreams(value []MediaStreamable)()
+    SetMetadata(value *string)()
+    SetRecordingInfo(value RecordingInfoable)()
+    SetRestrictedExperience(value OnlineMeetingRestrictedable)()
 }

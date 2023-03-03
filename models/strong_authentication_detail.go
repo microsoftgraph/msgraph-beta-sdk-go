@@ -7,10 +7,6 @@ import (
 // StrongAuthenticationDetail 
 type StrongAuthenticationDetail struct {
     Entity
-    // The encryptedPinHashHistory property
-    encryptedPinHashHistory []byte
-    // The proofupTime property
-    proofupTime *int64
 }
 // NewStrongAuthenticationDetail instantiates a new StrongAuthenticationDetail and sets the default values.
 func NewStrongAuthenticationDetail()(*StrongAuthenticationDetail) {
@@ -25,7 +21,14 @@ func CreateStrongAuthenticationDetailFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetEncryptedPinHashHistory gets the encryptedPinHashHistory property value. The encryptedPinHashHistory property
 func (m *StrongAuthenticationDetail) GetEncryptedPinHashHistory()([]byte) {
-    return m.encryptedPinHashHistory
+    val, err := m.GetBackingStore().Get("encryptedPinHashHistory")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *StrongAuthenticationDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -54,7 +57,14 @@ func (m *StrongAuthenticationDetail) GetFieldDeserializers()(map[string]func(i87
 }
 // GetProofupTime gets the proofupTime property value. The proofupTime property
 func (m *StrongAuthenticationDetail) GetProofupTime()(*int64) {
-    return m.proofupTime
+    val, err := m.GetBackingStore().Get("proofupTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *StrongAuthenticationDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -78,9 +88,24 @@ func (m *StrongAuthenticationDetail) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetEncryptedPinHashHistory sets the encryptedPinHashHistory property value. The encryptedPinHashHistory property
 func (m *StrongAuthenticationDetail) SetEncryptedPinHashHistory(value []byte)() {
-    m.encryptedPinHashHistory = value
+    err := m.GetBackingStore().Set("encryptedPinHashHistory", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProofupTime sets the proofupTime property value. The proofupTime property
 func (m *StrongAuthenticationDetail) SetProofupTime(value *int64)() {
-    m.proofupTime = value
+    err := m.GetBackingStore().Set("proofupTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// StrongAuthenticationDetailable 
+type StrongAuthenticationDetailable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetEncryptedPinHashHistory()([]byte)
+    GetProofupTime()(*int64)
+    SetEncryptedPinHashHistory(value []byte)()
+    SetProofupTime(value *int64)()
 }

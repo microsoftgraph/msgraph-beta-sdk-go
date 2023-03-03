@@ -45,7 +45,7 @@ type ItemSearchWithQRequestBuilderGetRequestConfiguration struct {
 func NewItemSearchWithQRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, q *string)(*ItemSearchWithQRequestBuilder) {
     m := &ItemSearchWithQRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/drives/{drive%2Did}/microsoft.graph.search(q='{q}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
+    m.urlTemplate = "{+baseurl}/drives/{drive%2Did}/search(q='{q}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -53,8 +53,8 @@ func NewItemSearchWithQRequestBuilderInternal(pathParameters map[string]string, 
     if q != nil {
         urlTplParams["q"] = *q
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSearchWithQRequestBuilder instantiates a new SearchWithQRequestBuilder and sets the default values.

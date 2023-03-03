@@ -53,7 +53,7 @@ type ItemTeamDefinitionMembersRequestBuilderPostRequestConfiguration struct {
 }
 // Add provides operations to call the add method.
 func (m *ItemTeamDefinitionMembersRequestBuilder) Add()(*ItemTeamDefinitionMembersAddRequestBuilder) {
-    return NewItemTeamDefinitionMembersAddRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTeamDefinitionMembersAddRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewItemTeamDefinitionMembersRequestBuilderInternal instantiates a new MembersRequestBuilder and sets the default values.
 func NewItemTeamDefinitionMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionMembersRequestBuilder) {
@@ -64,8 +64,8 @@ func NewItemTeamDefinitionMembersRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTeamDefinitionMembersRequestBuilder instantiates a new MembersRequestBuilder and sets the default values.
@@ -76,7 +76,7 @@ func NewItemTeamDefinitionMembersRequestBuilder(rawUrl string, requestAdapter i2
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemTeamDefinitionMembersRequestBuilder) Count()(*ItemTeamDefinitionMembersCountRequestBuilder) {
-    return NewItemTeamDefinitionMembersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTeamDefinitionMembersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the conversationMember collection of a team.
 // [Find more info here]
@@ -145,7 +145,10 @@ func (m *ItemTeamDefinitionMembersRequestBuilder) ToPostRequestInformation(ctx c
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

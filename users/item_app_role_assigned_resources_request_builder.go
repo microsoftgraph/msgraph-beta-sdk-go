@@ -53,8 +53,8 @@ func NewItemAppRoleAssignedResourcesRequestBuilderInternal(pathParameters map[st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemAppRoleAssignedResourcesRequestBuilder instantiates a new AppRoleAssignedResourcesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemAppRoleAssignedResourcesRequestBuilder(rawUrl string, requestAdapter
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemAppRoleAssignedResourcesRequestBuilder) Count()(*ItemAppRoleAssignedResourcesCountRequestBuilder) {
-    return NewItemAppRoleAssignedResourcesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemAppRoleAssignedResourcesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the service principals to which the user has an app role assignment either directly or through group membership.
 // [Find more info here]

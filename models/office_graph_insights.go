@@ -7,12 +7,6 @@ import (
 // OfficeGraphInsights 
 type OfficeGraphInsights struct {
     Entity
-    // Access this property from the derived type itemInsights.
-    shared []SharedInsightable
-    // Access this property from the derived type itemInsights.
-    trending []Trendingable
-    // Access this property from the derived type itemInsights.
-    used []UsedInsightable
 }
 // NewOfficeGraphInsights instantiates a new officeGraphInsights and sets the default values.
 func NewOfficeGraphInsights()(*OfficeGraphInsights) {
@@ -92,15 +86,36 @@ func (m *OfficeGraphInsights) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetShared gets the shared property value. Access this property from the derived type itemInsights.
 func (m *OfficeGraphInsights) GetShared()([]SharedInsightable) {
-    return m.shared
+    val, err := m.GetBackingStore().Get("shared")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SharedInsightable)
+    }
+    return nil
 }
 // GetTrending gets the trending property value. Access this property from the derived type itemInsights.
 func (m *OfficeGraphInsights) GetTrending()([]Trendingable) {
-    return m.trending
+    val, err := m.GetBackingStore().Get("trending")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Trendingable)
+    }
+    return nil
 }
 // GetUsed gets the used property value. Access this property from the derived type itemInsights.
 func (m *OfficeGraphInsights) GetUsed()([]UsedInsightable) {
-    return m.used
+    val, err := m.GetBackingStore().Get("used")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UsedInsightable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OfficeGraphInsights) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -142,13 +157,33 @@ func (m *OfficeGraphInsights) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetShared sets the shared property value. Access this property from the derived type itemInsights.
 func (m *OfficeGraphInsights) SetShared(value []SharedInsightable)() {
-    m.shared = value
+    err := m.GetBackingStore().Set("shared", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTrending sets the trending property value. Access this property from the derived type itemInsights.
 func (m *OfficeGraphInsights) SetTrending(value []Trendingable)() {
-    m.trending = value
+    err := m.GetBackingStore().Set("trending", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUsed sets the used property value. Access this property from the derived type itemInsights.
 func (m *OfficeGraphInsights) SetUsed(value []UsedInsightable)() {
-    m.used = value
+    err := m.GetBackingStore().Set("used", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OfficeGraphInsightsable 
+type OfficeGraphInsightsable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetShared()([]SharedInsightable)
+    GetTrending()([]Trendingable)
+    GetUsed()([]UsedInsightable)
+    SetShared(value []SharedInsightable)()
+    SetTrending(value []Trendingable)()
+    SetUsed(value []UsedInsightable)()
 }

@@ -7,8 +7,6 @@ import (
 // IosLobAppProvisioningConfigurationAssignmentCollectionResponse 
 type IosLobAppProvisioningConfigurationAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []IosLobAppProvisioningConfigurationAssignmentable
 }
 // NewIosLobAppProvisioningConfigurationAssignmentCollectionResponse instantiates a new IosLobAppProvisioningConfigurationAssignmentCollectionResponse and sets the default values.
 func NewIosLobAppProvisioningConfigurationAssignmentCollectionResponse()(*IosLobAppProvisioningConfigurationAssignmentCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *IosLobAppProvisioningConfigurationAssignmentCollectionResponse) GetFiel
 }
 // GetValue gets the value property value. The value property
 func (m *IosLobAppProvisioningConfigurationAssignmentCollectionResponse) GetValue()([]IosLobAppProvisioningConfigurationAssignmentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IosLobAppProvisioningConfigurationAssignmentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosLobAppProvisioningConfigurationAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *IosLobAppProvisioningConfigurationAssignmentCollectionResponse) Seriali
 }
 // SetValue sets the value property value. The value property
 func (m *IosLobAppProvisioningConfigurationAssignmentCollectionResponse) SetValue(value []IosLobAppProvisioningConfigurationAssignmentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosLobAppProvisioningConfigurationAssignmentCollectionResponseable 
+type IosLobAppProvisioningConfigurationAssignmentCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]IosLobAppProvisioningConfigurationAssignmentable)
+    SetValue(value []IosLobAppProvisioningConfigurationAssignmentable)()
 }

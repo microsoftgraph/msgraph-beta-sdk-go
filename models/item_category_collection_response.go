@@ -7,8 +7,6 @@ import (
 // ItemCategoryCollectionResponse 
 type ItemCategoryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ItemCategoryable
 }
 // NewItemCategoryCollectionResponse instantiates a new ItemCategoryCollectionResponse and sets the default values.
 func NewItemCategoryCollectionResponse()(*ItemCategoryCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ItemCategoryCollectionResponse) GetFieldDeserializers()(map[string]func
 }
 // GetValue gets the value property value. The value property
 func (m *ItemCategoryCollectionResponse) GetValue()([]ItemCategoryable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ItemCategoryable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemCategoryCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ItemCategoryCollectionResponse) Serialize(writer i878a80d2330e89d268963
 }
 // SetValue sets the value property value. The value property
 func (m *ItemCategoryCollectionResponse) SetValue(value []ItemCategoryable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemCategoryCollectionResponseable 
+type ItemCategoryCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ItemCategoryable)
+    SetValue(value []ItemCategoryable)()
 }

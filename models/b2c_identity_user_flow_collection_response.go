@@ -7,8 +7,6 @@ import (
 // B2cIdentityUserFlowCollectionResponse 
 type B2cIdentityUserFlowCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []B2cIdentityUserFlowable
 }
 // NewB2cIdentityUserFlowCollectionResponse instantiates a new B2cIdentityUserFlowCollectionResponse and sets the default values.
 func NewB2cIdentityUserFlowCollectionResponse()(*B2cIdentityUserFlowCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *B2cIdentityUserFlowCollectionResponse) GetFieldDeserializers()(map[stri
 }
 // GetValue gets the value property value. The value property
 func (m *B2cIdentityUserFlowCollectionResponse) GetValue()([]B2cIdentityUserFlowable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]B2cIdentityUserFlowable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *B2cIdentityUserFlowCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *B2cIdentityUserFlowCollectionResponse) Serialize(writer i878a80d2330e89
 }
 // SetValue sets the value property value. The value property
 func (m *B2cIdentityUserFlowCollectionResponse) SetValue(value []B2cIdentityUserFlowable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// B2cIdentityUserFlowCollectionResponseable 
+type B2cIdentityUserFlowCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]B2cIdentityUserFlowable)
+    SetValue(value []B2cIdentityUserFlowable)()
 }

@@ -7,8 +7,6 @@ import (
 // FilterGroupCollectionResponse 
 type FilterGroupCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []FilterGroupable
 }
 // NewFilterGroupCollectionResponse instantiates a new FilterGroupCollectionResponse and sets the default values.
 func NewFilterGroupCollectionResponse()(*FilterGroupCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *FilterGroupCollectionResponse) GetFieldDeserializers()(map[string]func(
 }
 // GetValue gets the value property value. The value property
 func (m *FilterGroupCollectionResponse) GetValue()([]FilterGroupable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]FilterGroupable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *FilterGroupCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *FilterGroupCollectionResponse) Serialize(writer i878a80d2330e89d2689638
 }
 // SetValue sets the value property value. The value property
 func (m *FilterGroupCollectionResponse) SetValue(value []FilterGroupable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// FilterGroupCollectionResponseable 
+type FilterGroupCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]FilterGroupable)
+    SetValue(value []FilterGroupable)()
 }

@@ -7,20 +7,14 @@ import (
 // MobileAppDependency 
 type MobileAppDependency struct {
     MobileAppRelationship
-    // Indicates the dependency type associated with a relationship between two mobile apps.
-    dependencyType *MobileAppDependencyType
-    // The total number of apps that directly or indirectly depend on the parent app.
-    dependentAppCount *int32
-    // The total number of apps the child app directly or indirectly depends on.
-    dependsOnAppCount *int32
 }
 // NewMobileAppDependency instantiates a new MobileAppDependency and sets the default values.
 func NewMobileAppDependency()(*MobileAppDependency) {
     m := &MobileAppDependency{
         MobileAppRelationship: *NewMobileAppRelationship(),
     }
-    odataTypeValue := "#microsoft.graph.mobileAppDependency";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.mobileAppDependency"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMobileAppDependencyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,15 +23,36 @@ func CreateMobileAppDependencyFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetDependencyType gets the dependencyType property value. Indicates the dependency type associated with a relationship between two mobile apps.
 func (m *MobileAppDependency) GetDependencyType()(*MobileAppDependencyType) {
-    return m.dependencyType
+    val, err := m.GetBackingStore().Get("dependencyType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MobileAppDependencyType)
+    }
+    return nil
 }
 // GetDependentAppCount gets the dependentAppCount property value. The total number of apps that directly or indirectly depend on the parent app.
 func (m *MobileAppDependency) GetDependentAppCount()(*int32) {
-    return m.dependentAppCount
+    val, err := m.GetBackingStore().Get("dependentAppCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetDependsOnAppCount gets the dependsOnAppCount property value. The total number of apps the child app directly or indirectly depends on.
 func (m *MobileAppDependency) GetDependsOnAppCount()(*int32) {
-    return m.dependsOnAppCount
+    val, err := m.GetBackingStore().Get("dependsOnAppCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MobileAppDependency) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -103,13 +118,33 @@ func (m *MobileAppDependency) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetDependencyType sets the dependencyType property value. Indicates the dependency type associated with a relationship between two mobile apps.
 func (m *MobileAppDependency) SetDependencyType(value *MobileAppDependencyType)() {
-    m.dependencyType = value
+    err := m.GetBackingStore().Set("dependencyType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDependentAppCount sets the dependentAppCount property value. The total number of apps that directly or indirectly depend on the parent app.
 func (m *MobileAppDependency) SetDependentAppCount(value *int32)() {
-    m.dependentAppCount = value
+    err := m.GetBackingStore().Set("dependentAppCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDependsOnAppCount sets the dependsOnAppCount property value. The total number of apps the child app directly or indirectly depends on.
 func (m *MobileAppDependency) SetDependsOnAppCount(value *int32)() {
-    m.dependsOnAppCount = value
+    err := m.GetBackingStore().Set("dependsOnAppCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MobileAppDependencyable 
+type MobileAppDependencyable interface {
+    MobileAppRelationshipable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDependencyType()(*MobileAppDependencyType)
+    GetDependentAppCount()(*int32)
+    GetDependsOnAppCount()(*int32)
+    SetDependencyType(value *MobileAppDependencyType)()
+    SetDependentAppCount(value *int32)()
+    SetDependsOnAppCount(value *int32)()
 }

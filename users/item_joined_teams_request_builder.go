@@ -53,8 +53,8 @@ func NewItemJoinedTeamsRequestBuilderInternal(pathParameters map[string]string, 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemJoinedTeamsRequestBuilder instantiates a new JoinedTeamsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemJoinedTeamsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemJoinedTeamsRequestBuilder) Count()(*ItemJoinedTeamsCountRequestBuilder) {
-    return NewItemJoinedTeamsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemJoinedTeamsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the teams in Microsoft Teams that the user is a direct member of.
 // [Find more info here]

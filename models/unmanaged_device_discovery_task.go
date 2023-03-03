@@ -7,16 +7,14 @@ import (
 // UnmanagedDeviceDiscoveryTask 
 type UnmanagedDeviceDiscoveryTask struct {
     DeviceAppManagementTask
-    // Unmanaged devices discovered in the network.
-    unmanagedDevices []UnmanagedDeviceable
 }
 // NewUnmanagedDeviceDiscoveryTask instantiates a new UnmanagedDeviceDiscoveryTask and sets the default values.
 func NewUnmanagedDeviceDiscoveryTask()(*UnmanagedDeviceDiscoveryTask) {
     m := &UnmanagedDeviceDiscoveryTask{
         DeviceAppManagementTask: *NewDeviceAppManagementTask(),
     }
-    odataTypeValue := "#microsoft.graph.unmanagedDeviceDiscoveryTask";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.unmanagedDeviceDiscoveryTask"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateUnmanagedDeviceDiscoveryTaskFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,7 +42,14 @@ func (m *UnmanagedDeviceDiscoveryTask) GetFieldDeserializers()(map[string]func(i
 }
 // GetUnmanagedDevices gets the unmanagedDevices property value. Unmanaged devices discovered in the network.
 func (m *UnmanagedDeviceDiscoveryTask) GetUnmanagedDevices()([]UnmanagedDeviceable) {
-    return m.unmanagedDevices
+    val, err := m.GetBackingStore().Get("unmanagedDevices")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnmanagedDeviceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UnmanagedDeviceDiscoveryTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -66,5 +71,15 @@ func (m *UnmanagedDeviceDiscoveryTask) Serialize(writer i878a80d2330e89d26896388
 }
 // SetUnmanagedDevices sets the unmanagedDevices property value. Unmanaged devices discovered in the network.
 func (m *UnmanagedDeviceDiscoveryTask) SetUnmanagedDevices(value []UnmanagedDeviceable)() {
-    m.unmanagedDevices = value
+    err := m.GetBackingStore().Set("unmanagedDevices", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UnmanagedDeviceDiscoveryTaskable 
+type UnmanagedDeviceDiscoveryTaskable interface {
+    DeviceAppManagementTaskable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetUnmanagedDevices()([]UnmanagedDeviceable)
+    SetUnmanagedDevices(value []UnmanagedDeviceable)()
 }

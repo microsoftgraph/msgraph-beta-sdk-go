@@ -16,7 +16,7 @@ type LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemTaskProcessingResultsReq
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemTaskProcessingResultsRequestBuilderGetQueryParameters the related taskProcessingResults.
+// LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemTaskProcessingResultsRequestBuilderGetQueryParameters get the taskProcessingResult resources for a run.
 type LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemTaskProcessingResultsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -53,8 +53,8 @@ func NewLifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemTaskProcessingResults
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewLifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemTaskProcessingResultsRequestBuilder instantiates a new TaskProcessingResultsRequestBuilder and sets the default values.
@@ -65,9 +65,12 @@ func NewLifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemTaskProcessingResults
 }
 // Count provides operations to count the resources in the collection.
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemTaskProcessingResultsRequestBuilder) Count()(*LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemTaskProcessingResultsCountRequestBuilder) {
-    return NewLifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemTaskProcessingResultsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewLifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemTaskProcessingResultsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// Get the related taskProcessingResults.
+// Get get the taskProcessingResult resources for a run.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/identitygovernance-run-list-taskprocessingresults?view=graph-rest-1.0
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemTaskProcessingResultsRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemTaskProcessingResultsRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.TaskProcessingResultCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,7 +89,7 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemTaskProcessingResult
     }
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.TaskProcessingResultCollectionResponseable), nil
 }
-// ToGetRequestInformation the related taskProcessingResults.
+// ToGetRequestInformation get the taskProcessingResult resources for a run.
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemTaskProcessingResultsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemTaskProcessingResultsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

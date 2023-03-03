@@ -23,7 +23,7 @@ type ApprovalWorkflowProviderItemRequestBuilderDeleteRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ApprovalWorkflowProviderItemRequestBuilderGetQueryParameters get entity from approvalWorkflowProviders by key (id)
+// ApprovalWorkflowProviderItemRequestBuilderGetQueryParameters get entity from approvalWorkflowProviders by key
 type ApprovalWorkflowProviderItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -48,7 +48,7 @@ type ApprovalWorkflowProviderItemRequestBuilderPatchRequestConfiguration struct 
 }
 // BusinessFlows provides operations to manage the businessFlows property of the microsoft.graph.approvalWorkflowProvider entity.
 func (m *ApprovalWorkflowProviderItemRequestBuilder) BusinessFlows()(*ItemBusinessFlowsRequestBuilder) {
-    return NewItemBusinessFlowsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemBusinessFlowsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // BusinessFlowsById provides operations to manage the businessFlows property of the microsoft.graph.approvalWorkflowProvider entity.
 func (m *ApprovalWorkflowProviderItemRequestBuilder) BusinessFlowsById(id string)(*ItemBusinessFlowsBusinessFlowItemRequestBuilder) {
@@ -59,11 +59,11 @@ func (m *ApprovalWorkflowProviderItemRequestBuilder) BusinessFlowsById(id string
     if id != "" {
         urlTplParams["businessFlow%2Did"] = id
     }
-    return NewItemBusinessFlowsBusinessFlowItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemBusinessFlowsBusinessFlowItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // BusinessFlowsWithRequestsAwaitingMyDecision provides operations to manage the businessFlowsWithRequestsAwaitingMyDecision property of the microsoft.graph.approvalWorkflowProvider entity.
 func (m *ApprovalWorkflowProviderItemRequestBuilder) BusinessFlowsWithRequestsAwaitingMyDecision()(*ItemBusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) {
-    return NewItemBusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemBusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // BusinessFlowsWithRequestsAwaitingMyDecisionById provides operations to manage the businessFlowsWithRequestsAwaitingMyDecision property of the microsoft.graph.approvalWorkflowProvider entity.
 func (m *ApprovalWorkflowProviderItemRequestBuilder) BusinessFlowsWithRequestsAwaitingMyDecisionById(id string)(*ItemBusinessFlowsWithRequestsAwaitingMyDecisionBusinessFlowItemRequestBuilder) {
@@ -74,7 +74,7 @@ func (m *ApprovalWorkflowProviderItemRequestBuilder) BusinessFlowsWithRequestsAw
     if id != "" {
         urlTplParams["businessFlow%2Did"] = id
     }
-    return NewItemBusinessFlowsWithRequestsAwaitingMyDecisionBusinessFlowItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemBusinessFlowsWithRequestsAwaitingMyDecisionBusinessFlowItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewApprovalWorkflowProviderItemRequestBuilderInternal instantiates a new ApprovalWorkflowProviderItemRequestBuilder and sets the default values.
 func NewApprovalWorkflowProviderItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApprovalWorkflowProviderItemRequestBuilder) {
@@ -85,8 +85,8 @@ func NewApprovalWorkflowProviderItemRequestBuilderInternal(pathParameters map[st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewApprovalWorkflowProviderItemRequestBuilder instantiates a new ApprovalWorkflowProviderItemRequestBuilder and sets the default values.
@@ -95,7 +95,7 @@ func NewApprovalWorkflowProviderItemRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewApprovalWorkflowProviderItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from approvalWorkflowProviders by key (id)
+// Delete delete entity from approvalWorkflowProviders
 func (m *ApprovalWorkflowProviderItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ApprovalWorkflowProviderItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -111,7 +111,7 @@ func (m *ApprovalWorkflowProviderItemRequestBuilder) Delete(ctx context.Context,
     }
     return nil
 }
-// Get get entity from approvalWorkflowProviders by key (id)
+// Get get entity from approvalWorkflowProviders by key
 func (m *ApprovalWorkflowProviderItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ApprovalWorkflowProviderItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalWorkflowProviderable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -130,7 +130,7 @@ func (m *ApprovalWorkflowProviderItemRequestBuilder) Get(ctx context.Context, re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalWorkflowProviderable), nil
 }
-// Patch update entity in approvalWorkflowProviders by key (id)
+// Patch update entity in approvalWorkflowProviders
 func (m *ApprovalWorkflowProviderItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalWorkflowProviderable, requestConfiguration *ApprovalWorkflowProviderItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalWorkflowProviderable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *ApprovalWorkflowProviderItemRequestBuilder) Patch(ctx context.Context, 
 }
 // PolicyTemplates provides operations to manage the policyTemplates property of the microsoft.graph.approvalWorkflowProvider entity.
 func (m *ApprovalWorkflowProviderItemRequestBuilder) PolicyTemplates()(*ItemPolicyTemplatesRequestBuilder) {
-    return NewItemPolicyTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemPolicyTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PolicyTemplatesById provides operations to manage the policyTemplates property of the microsoft.graph.approvalWorkflowProvider entity.
 func (m *ApprovalWorkflowProviderItemRequestBuilder) PolicyTemplatesById(id string)(*ItemPolicyTemplatesGovernancePolicyTemplateItemRequestBuilder) {
@@ -162,9 +162,9 @@ func (m *ApprovalWorkflowProviderItemRequestBuilder) PolicyTemplatesById(id stri
     if id != "" {
         urlTplParams["governancePolicyTemplate%2Did"] = id
     }
-    return NewItemPolicyTemplatesGovernancePolicyTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemPolicyTemplatesGovernancePolicyTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
-// ToDeleteRequestInformation delete entity from approvalWorkflowProviders by key (id)
+// ToDeleteRequestInformation delete entity from approvalWorkflowProviders
 func (m *ApprovalWorkflowProviderItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ApprovalWorkflowProviderItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -176,7 +176,7 @@ func (m *ApprovalWorkflowProviderItemRequestBuilder) ToDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from approvalWorkflowProviders by key (id)
+// ToGetRequestInformation get entity from approvalWorkflowProviders by key
 func (m *ApprovalWorkflowProviderItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ApprovalWorkflowProviderItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -192,14 +192,17 @@ func (m *ApprovalWorkflowProviderItemRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in approvalWorkflowProviders by key (id)
+// ToPatchRequestInformation update entity in approvalWorkflowProviders
 func (m *ApprovalWorkflowProviderItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalWorkflowProviderable, requestConfiguration *ApprovalWorkflowProviderItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -26,13 +26,13 @@ type WindowsAutopilotDeviceIdentitiesItemUnassignResourceAccountFromDeviceReques
 func NewWindowsAutopilotDeviceIdentitiesItemUnassignResourceAccountFromDeviceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsAutopilotDeviceIdentitiesItemUnassignResourceAccountFromDeviceRequestBuilder) {
     m := &WindowsAutopilotDeviceIdentitiesItemUnassignResourceAccountFromDeviceRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity%2Did}/microsoft.graph.unassignResourceAccountFromDevice";
+    m.urlTemplate = "{+baseurl}/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity%2Did}/unassignResourceAccountFromDevice";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsAutopilotDeviceIdentitiesItemUnassignResourceAccountFromDeviceRequestBuilder instantiates a new UnassignResourceAccountFromDeviceRequestBuilder and sets the default values.

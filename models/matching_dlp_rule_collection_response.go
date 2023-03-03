@@ -7,8 +7,6 @@ import (
 // MatchingDlpRuleCollectionResponse 
 type MatchingDlpRuleCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MatchingDlpRuleable
 }
 // NewMatchingDlpRuleCollectionResponse instantiates a new MatchingDlpRuleCollectionResponse and sets the default values.
 func NewMatchingDlpRuleCollectionResponse()(*MatchingDlpRuleCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MatchingDlpRuleCollectionResponse) GetFieldDeserializers()(map[string]f
 }
 // GetValue gets the value property value. The value property
 func (m *MatchingDlpRuleCollectionResponse) GetValue()([]MatchingDlpRuleable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MatchingDlpRuleable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MatchingDlpRuleCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MatchingDlpRuleCollectionResponse) Serialize(writer i878a80d2330e89d268
 }
 // SetValue sets the value property value. The value property
 func (m *MatchingDlpRuleCollectionResponse) SetValue(value []MatchingDlpRuleable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MatchingDlpRuleCollectionResponseable 
+type MatchingDlpRuleCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MatchingDlpRuleable)
+    SetValue(value []MatchingDlpRuleable)()
 }

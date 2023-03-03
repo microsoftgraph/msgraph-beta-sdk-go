@@ -53,8 +53,8 @@ func NewRostersItemPlansRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewRostersItemPlansRequestBuilder instantiates a new PlansRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewRostersItemPlansRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 }
 // Count provides operations to count the resources in the collection.
 func (m *RostersItemPlansRequestBuilder) Count()(*RostersItemPlansCountRequestBuilder) {
-    return NewRostersItemPlansCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewRostersItemPlansCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the plannerPlans contained by the plannerRoster.
 // [Find more info here]

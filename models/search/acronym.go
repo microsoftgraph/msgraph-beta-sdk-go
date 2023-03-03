@@ -7,10 +7,6 @@ import (
 // Acronym 
 type Acronym struct {
     SearchAnswer
-    // What the acronym stands for.
-    standsFor *string
-    // The state property
-    state *AnswerState
 }
 // NewAcronym instantiates a new Acronym and sets the default values.
 func NewAcronym()(*Acronym) {
@@ -50,11 +46,25 @@ func (m *Acronym) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
 }
 // GetStandsFor gets the standsFor property value. What the acronym stands for.
 func (m *Acronym) GetStandsFor()(*string) {
-    return m.standsFor
+    val, err := m.GetBackingStore().Get("standsFor")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetState gets the state property value. The state property
 func (m *Acronym) GetState()(*AnswerState) {
-    return m.state
+    val, err := m.GetBackingStore().Get("state")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AnswerState)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Acronym) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -79,9 +89,24 @@ func (m *Acronym) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 }
 // SetStandsFor sets the standsFor property value. What the acronym stands for.
 func (m *Acronym) SetStandsFor(value *string)() {
-    m.standsFor = value
+    err := m.GetBackingStore().Set("standsFor", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetState sets the state property value. The state property
 func (m *Acronym) SetState(value *AnswerState)() {
-    m.state = value
+    err := m.GetBackingStore().Set("state", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Acronymable 
+type Acronymable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    SearchAnswerable
+    GetStandsFor()(*string)
+    GetState()(*AnswerState)
+    SetStandsFor(value *string)()
+    SetState(value *AnswerState)()
 }

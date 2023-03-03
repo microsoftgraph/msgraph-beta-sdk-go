@@ -26,13 +26,13 @@ type ItemOutlookTasksItemCompleteRequestBuilderPostRequestConfiguration struct {
 func NewItemOutlookTasksItemCompleteRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOutlookTasksItemCompleteRequestBuilder) {
     m := &ItemOutlookTasksItemCompleteRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/outlook/tasks/{outlookTask%2Did}/microsoft.graph.complete";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/outlook/tasks/{outlookTask%2Did}/complete";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemOutlookTasksItemCompleteRequestBuilder instantiates a new CompleteRequestBuilder and sets the default values.

@@ -7,8 +7,6 @@ import (
 // WindowsPhone81TrustedRootCertificateCollectionResponse 
 type WindowsPhone81TrustedRootCertificateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WindowsPhone81TrustedRootCertificateable
 }
 // NewWindowsPhone81TrustedRootCertificateCollectionResponse instantiates a new WindowsPhone81TrustedRootCertificateCollectionResponse and sets the default values.
 func NewWindowsPhone81TrustedRootCertificateCollectionResponse()(*WindowsPhone81TrustedRootCertificateCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WindowsPhone81TrustedRootCertificateCollectionResponse) GetFieldDeseria
 }
 // GetValue gets the value property value. The value property
 func (m *WindowsPhone81TrustedRootCertificateCollectionResponse) GetValue()([]WindowsPhone81TrustedRootCertificateable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsPhone81TrustedRootCertificateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsPhone81TrustedRootCertificateCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WindowsPhone81TrustedRootCertificateCollectionResponse) Serialize(write
 }
 // SetValue sets the value property value. The value property
 func (m *WindowsPhone81TrustedRootCertificateCollectionResponse) SetValue(value []WindowsPhone81TrustedRootCertificateable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsPhone81TrustedRootCertificateCollectionResponseable 
+type WindowsPhone81TrustedRootCertificateCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WindowsPhone81TrustedRootCertificateable)
+    SetValue(value []WindowsPhone81TrustedRootCertificateable)()
 }

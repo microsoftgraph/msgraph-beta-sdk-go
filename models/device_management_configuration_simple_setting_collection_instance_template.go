@@ -7,18 +7,14 @@ import (
 // DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate 
 type DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate struct {
     DeviceManagementConfigurationSettingInstanceTemplate
-    // Linked policy may append values which are not present in the template.
-    allowUnmanagedValues *bool
-    // Simple Setting Collection Value Template
-    simpleSettingCollectionValueTemplate []DeviceManagementConfigurationSimpleSettingValueTemplateable
 }
 // NewDeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate instantiates a new DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate and sets the default values.
 func NewDeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate()(*DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate) {
     m := &DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate{
         DeviceManagementConfigurationSettingInstanceTemplate: *NewDeviceManagementConfigurationSettingInstanceTemplate(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationSimpleSettingCollectionInstanceTemplate";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationSimpleSettingCollectionInstanceTemplate"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementConfigurationSimpleSettingCollectionInstanceTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +23,14 @@ func CreateDeviceManagementConfigurationSimpleSettingCollectionInstanceTemplateF
 }
 // GetAllowUnmanagedValues gets the allowUnmanagedValues property value. Linked policy may append values which are not present in the template.
 func (m *DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate) GetAllowUnmanagedValues()(*bool) {
-    return m.allowUnmanagedValues
+    val, err := m.GetBackingStore().Get("allowUnmanagedValues")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,7 +63,14 @@ func (m *DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate) G
 }
 // GetSimpleSettingCollectionValueTemplate gets the simpleSettingCollectionValueTemplate property value. Simple Setting Collection Value Template
 func (m *DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate) GetSimpleSettingCollectionValueTemplate()([]DeviceManagementConfigurationSimpleSettingValueTemplateable) {
-    return m.simpleSettingCollectionValueTemplate
+    val, err := m.GetBackingStore().Get("simpleSettingCollectionValueTemplate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementConfigurationSimpleSettingValueTemplateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,9 +98,24 @@ func (m *DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate) S
 }
 // SetAllowUnmanagedValues sets the allowUnmanagedValues property value. Linked policy may append values which are not present in the template.
 func (m *DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate) SetAllowUnmanagedValues(value *bool)() {
-    m.allowUnmanagedValues = value
+    err := m.GetBackingStore().Set("allowUnmanagedValues", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSimpleSettingCollectionValueTemplate sets the simpleSettingCollectionValueTemplate property value. Simple Setting Collection Value Template
 func (m *DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate) SetSimpleSettingCollectionValueTemplate(value []DeviceManagementConfigurationSimpleSettingValueTemplateable)() {
-    m.simpleSettingCollectionValueTemplate = value
+    err := m.GetBackingStore().Set("simpleSettingCollectionValueTemplate", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplateable 
+type DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplateable interface {
+    DeviceManagementConfigurationSettingInstanceTemplateable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllowUnmanagedValues()(*bool)
+    GetSimpleSettingCollectionValueTemplate()([]DeviceManagementConfigurationSimpleSettingValueTemplateable)
+    SetAllowUnmanagedValues(value *bool)()
+    SetSimpleSettingCollectionValueTemplate(value []DeviceManagementConfigurationSimpleSettingValueTemplateable)()
 }

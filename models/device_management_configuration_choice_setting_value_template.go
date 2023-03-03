@@ -2,28 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // DeviceManagementConfigurationChoiceSettingValueTemplate choice Setting Value Template
 type DeviceManagementConfigurationChoiceSettingValueTemplate struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Choice Setting Value Default Template.
-    defaultValue DeviceManagementConfigurationChoiceSettingValueDefaultTemplateable
-    // The OdataType property
-    odataType *string
-    // Recommended definition override.
-    recommendedValueDefinition DeviceManagementConfigurationChoiceSettingValueDefinitionTemplateable
-    // Required definition override.
-    requiredValueDefinition DeviceManagementConfigurationChoiceSettingValueDefinitionTemplateable
-    // Setting Value Template Id
-    settingValueTemplateId *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewDeviceManagementConfigurationChoiceSettingValueTemplate instantiates a new deviceManagementConfigurationChoiceSettingValueTemplate and sets the default values.
 func NewDeviceManagementConfigurationChoiceSettingValueTemplate()(*DeviceManagementConfigurationChoiceSettingValueTemplate) {
     m := &DeviceManagementConfigurationChoiceSettingValueTemplate{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceManagementConfigurationChoiceSettingValueTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,11 +24,30 @@ func CreateDeviceManagementConfigurationChoiceSettingValueTemplateFromDiscrimina
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDefaultValue gets the defaultValue property value. Choice Setting Value Default Template.
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) GetDefaultValue()(DeviceManagementConfigurationChoiceSettingValueDefaultTemplateable) {
-    return m.defaultValue
+    val, err := m.GetBackingStore().Get("defaultValue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementConfigurationChoiceSettingValueDefaultTemplateable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -95,19 +106,47 @@ func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) GetFieldDeseri
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRecommendedValueDefinition gets the recommendedValueDefinition property value. Recommended definition override.
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) GetRecommendedValueDefinition()(DeviceManagementConfigurationChoiceSettingValueDefinitionTemplateable) {
-    return m.recommendedValueDefinition
+    val, err := m.GetBackingStore().Get("recommendedValueDefinition")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementConfigurationChoiceSettingValueDefinitionTemplateable)
+    }
+    return nil
 }
 // GetRequiredValueDefinition gets the requiredValueDefinition property value. Required definition override.
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) GetRequiredValueDefinition()(DeviceManagementConfigurationChoiceSettingValueDefinitionTemplateable) {
-    return m.requiredValueDefinition
+    val, err := m.GetBackingStore().Get("requiredValueDefinition")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementConfigurationChoiceSettingValueDefinitionTemplateable)
+    }
+    return nil
 }
 // GetSettingValueTemplateId gets the settingValueTemplateId property value. Setting Value Template Id
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) GetSettingValueTemplateId()(*string) {
-    return m.settingValueTemplateId
+    val, err := m.GetBackingStore().Get("settingValueTemplateId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,25 +190,65 @@ func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) Serialize(writ
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDefaultValue sets the defaultValue property value. Choice Setting Value Default Template.
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) SetDefaultValue(value DeviceManagementConfigurationChoiceSettingValueDefaultTemplateable)() {
-    m.defaultValue = value
+    err := m.GetBackingStore().Set("defaultValue", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRecommendedValueDefinition sets the recommendedValueDefinition property value. Recommended definition override.
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) SetRecommendedValueDefinition(value DeviceManagementConfigurationChoiceSettingValueDefinitionTemplateable)() {
-    m.recommendedValueDefinition = value
+    err := m.GetBackingStore().Set("recommendedValueDefinition", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRequiredValueDefinition sets the requiredValueDefinition property value. Required definition override.
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) SetRequiredValueDefinition(value DeviceManagementConfigurationChoiceSettingValueDefinitionTemplateable)() {
-    m.requiredValueDefinition = value
+    err := m.GetBackingStore().Set("requiredValueDefinition", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingValueTemplateId sets the settingValueTemplateId property value. Setting Value Template Id
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) SetSettingValueTemplateId(value *string)() {
-    m.settingValueTemplateId = value
+    err := m.GetBackingStore().Set("settingValueTemplateId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationChoiceSettingValueTemplateable 
+type DeviceManagementConfigurationChoiceSettingValueTemplateable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDefaultValue()(DeviceManagementConfigurationChoiceSettingValueDefaultTemplateable)
+    GetOdataType()(*string)
+    GetRecommendedValueDefinition()(DeviceManagementConfigurationChoiceSettingValueDefinitionTemplateable)
+    GetRequiredValueDefinition()(DeviceManagementConfigurationChoiceSettingValueDefinitionTemplateable)
+    GetSettingValueTemplateId()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDefaultValue(value DeviceManagementConfigurationChoiceSettingValueDefaultTemplateable)()
+    SetOdataType(value *string)()
+    SetRecommendedValueDefinition(value DeviceManagementConfigurationChoiceSettingValueDefinitionTemplateable)()
+    SetRequiredValueDefinition(value DeviceManagementConfigurationChoiceSettingValueDefinitionTemplateable)()
+    SetSettingValueTemplateId(value *string)()
 }

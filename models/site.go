@@ -7,54 +7,14 @@ import (
 // Site 
 type Site struct {
     BaseItem
-    // Analytics about the view activities that took place in this site.
-    analytics ItemAnalyticsable
-    // The collection of column definitions reusable across lists under this site.
-    columns []ColumnDefinitionable
-    // The collection of content types defined for this site.
-    contentTypes []ContentTypeable
-    // The deleted property
-    deleted Deletedable
-    // The full title for the site. Read-only.
-    displayName *string
-    // The default drive (document library) for this site.
-    drive Driveable
-    // The collection of drives (document libraries) under this site.
-    drives []Driveable
-    // The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
-    externalColumns []ColumnDefinitionable
-    // The informationProtection property
-    informationProtection InformationProtectionable
-    // Used to address any item contained in this site. This collection cannot be enumerated.
-    items []BaseItemable
-    // The collection of lists under this site.
-    lists []Listable
-    // The onenote property
-    onenote Onenoteable
-    // The collection of long running operations for the site.
-    operations []RichLongRunningOperationable
-    // The collection of pages in the SitePages list in this site.
-    pages []SitePageable
-    // The permissions associated with the site. Nullable.
-    permissions []Permissionable
-    // If present, indicates that this is the root site in the site collection. Read-only.
-    root Rootable
-    // The settings on this site. Read-only.
-    settings SiteSettingsable
-    // Returns identifiers useful for SharePoint REST compatibility. Read-only.
-    sharepointIds SharepointIdsable
-    // Provides details about the site's site collection. Available only on the root site. Read-only.
-    siteCollection SiteCollectionable
-    // The collection of the sub-sites under this site.
-    sites []Siteable
 }
 // NewSite instantiates a new site and sets the default values.
 func NewSite()(*Site) {
     m := &Site{
         BaseItem: *NewBaseItem(),
     }
-    odataTypeValue := "#microsoft.graph.site";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.site"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateSiteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -63,35 +23,91 @@ func CreateSiteFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487ee
 }
 // GetAnalytics gets the analytics property value. Analytics about the view activities that took place in this site.
 func (m *Site) GetAnalytics()(ItemAnalyticsable) {
-    return m.analytics
+    val, err := m.GetBackingStore().Get("analytics")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ItemAnalyticsable)
+    }
+    return nil
 }
 // GetColumns gets the columns property value. The collection of column definitions reusable across lists under this site.
 func (m *Site) GetColumns()([]ColumnDefinitionable) {
-    return m.columns
+    val, err := m.GetBackingStore().Get("columns")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ColumnDefinitionable)
+    }
+    return nil
 }
 // GetContentTypes gets the contentTypes property value. The collection of content types defined for this site.
 func (m *Site) GetContentTypes()([]ContentTypeable) {
-    return m.contentTypes
+    val, err := m.GetBackingStore().Get("contentTypes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ContentTypeable)
+    }
+    return nil
 }
 // GetDeleted gets the deleted property value. The deleted property
 func (m *Site) GetDeleted()(Deletedable) {
-    return m.deleted
+    val, err := m.GetBackingStore().Get("deleted")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Deletedable)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The full title for the site. Read-only.
 func (m *Site) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDrive gets the drive property value. The default drive (document library) for this site.
 func (m *Site) GetDrive()(Driveable) {
-    return m.drive
+    val, err := m.GetBackingStore().Get("drive")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Driveable)
+    }
+    return nil
 }
 // GetDrives gets the drives property value. The collection of drives (document libraries) under this site.
 func (m *Site) GetDrives()([]Driveable) {
-    return m.drives
+    val, err := m.GetBackingStore().Get("drives")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Driveable)
+    }
+    return nil
 }
 // GetExternalColumns gets the externalColumns property value. The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
 func (m *Site) GetExternalColumns()([]ColumnDefinitionable) {
-    return m.externalColumns
+    val, err := m.GetBackingStore().Get("externalColumns")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ColumnDefinitionable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Site) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -340,51 +356,135 @@ func (m *Site) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
 }
 // GetInformationProtection gets the informationProtection property value. The informationProtection property
 func (m *Site) GetInformationProtection()(InformationProtectionable) {
-    return m.informationProtection
+    val, err := m.GetBackingStore().Get("informationProtection")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(InformationProtectionable)
+    }
+    return nil
 }
 // GetItems gets the items property value. Used to address any item contained in this site. This collection cannot be enumerated.
 func (m *Site) GetItems()([]BaseItemable) {
-    return m.items
+    val, err := m.GetBackingStore().Get("items")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]BaseItemable)
+    }
+    return nil
 }
 // GetLists gets the lists property value. The collection of lists under this site.
 func (m *Site) GetLists()([]Listable) {
-    return m.lists
+    val, err := m.GetBackingStore().Get("lists")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Listable)
+    }
+    return nil
 }
 // GetOnenote gets the onenote property value. The onenote property
 func (m *Site) GetOnenote()(Onenoteable) {
-    return m.onenote
+    val, err := m.GetBackingStore().Get("onenote")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Onenoteable)
+    }
+    return nil
 }
 // GetOperations gets the operations property value. The collection of long running operations for the site.
 func (m *Site) GetOperations()([]RichLongRunningOperationable) {
-    return m.operations
+    val, err := m.GetBackingStore().Get("operations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]RichLongRunningOperationable)
+    }
+    return nil
 }
 // GetPages gets the pages property value. The collection of pages in the SitePages list in this site.
 func (m *Site) GetPages()([]SitePageable) {
-    return m.pages
+    val, err := m.GetBackingStore().Get("pages")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SitePageable)
+    }
+    return nil
 }
 // GetPermissions gets the permissions property value. The permissions associated with the site. Nullable.
 func (m *Site) GetPermissions()([]Permissionable) {
-    return m.permissions
+    val, err := m.GetBackingStore().Get("permissions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Permissionable)
+    }
+    return nil
 }
 // GetRoot gets the root property value. If present, indicates that this is the root site in the site collection. Read-only.
 func (m *Site) GetRoot()(Rootable) {
-    return m.root
+    val, err := m.GetBackingStore().Get("root")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Rootable)
+    }
+    return nil
 }
 // GetSettings gets the settings property value. The settings on this site. Read-only.
 func (m *Site) GetSettings()(SiteSettingsable) {
-    return m.settings
+    val, err := m.GetBackingStore().Get("settings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SiteSettingsable)
+    }
+    return nil
 }
 // GetSharepointIds gets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
 func (m *Site) GetSharepointIds()(SharepointIdsable) {
-    return m.sharepointIds
+    val, err := m.GetBackingStore().Get("sharepointIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SharepointIdsable)
+    }
+    return nil
 }
 // GetSiteCollection gets the siteCollection property value. Provides details about the site's site collection. Available only on the root site. Read-only.
 func (m *Site) GetSiteCollection()(SiteCollectionable) {
-    return m.siteCollection
+    val, err := m.GetBackingStore().Get("siteCollection")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SiteCollectionable)
+    }
+    return nil
 }
 // GetSites gets the sites property value. The collection of the sub-sites under this site.
 func (m *Site) GetSites()([]Siteable) {
-    return m.sites
+    val, err := m.GetBackingStore().Get("sites")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Siteable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Site) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -556,81 +656,186 @@ func (m *Site) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
 }
 // SetAnalytics sets the analytics property value. Analytics about the view activities that took place in this site.
 func (m *Site) SetAnalytics(value ItemAnalyticsable)() {
-    m.analytics = value
+    err := m.GetBackingStore().Set("analytics", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetColumns sets the columns property value. The collection of column definitions reusable across lists under this site.
 func (m *Site) SetColumns(value []ColumnDefinitionable)() {
-    m.columns = value
+    err := m.GetBackingStore().Set("columns", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetContentTypes sets the contentTypes property value. The collection of content types defined for this site.
 func (m *Site) SetContentTypes(value []ContentTypeable)() {
-    m.contentTypes = value
+    err := m.GetBackingStore().Set("contentTypes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeleted sets the deleted property value. The deleted property
 func (m *Site) SetDeleted(value Deletedable)() {
-    m.deleted = value
+    err := m.GetBackingStore().Set("deleted", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The full title for the site. Read-only.
 func (m *Site) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDrive sets the drive property value. The default drive (document library) for this site.
 func (m *Site) SetDrive(value Driveable)() {
-    m.drive = value
+    err := m.GetBackingStore().Set("drive", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDrives sets the drives property value. The collection of drives (document libraries) under this site.
 func (m *Site) SetDrives(value []Driveable)() {
-    m.drives = value
+    err := m.GetBackingStore().Set("drives", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExternalColumns sets the externalColumns property value. The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
 func (m *Site) SetExternalColumns(value []ColumnDefinitionable)() {
-    m.externalColumns = value
+    err := m.GetBackingStore().Set("externalColumns", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInformationProtection sets the informationProtection property value. The informationProtection property
 func (m *Site) SetInformationProtection(value InformationProtectionable)() {
-    m.informationProtection = value
+    err := m.GetBackingStore().Set("informationProtection", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetItems sets the items property value. Used to address any item contained in this site. This collection cannot be enumerated.
 func (m *Site) SetItems(value []BaseItemable)() {
-    m.items = value
+    err := m.GetBackingStore().Set("items", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLists sets the lists property value. The collection of lists under this site.
 func (m *Site) SetLists(value []Listable)() {
-    m.lists = value
+    err := m.GetBackingStore().Set("lists", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOnenote sets the onenote property value. The onenote property
 func (m *Site) SetOnenote(value Onenoteable)() {
-    m.onenote = value
+    err := m.GetBackingStore().Set("onenote", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOperations sets the operations property value. The collection of long running operations for the site.
 func (m *Site) SetOperations(value []RichLongRunningOperationable)() {
-    m.operations = value
+    err := m.GetBackingStore().Set("operations", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPages sets the pages property value. The collection of pages in the SitePages list in this site.
 func (m *Site) SetPages(value []SitePageable)() {
-    m.pages = value
+    err := m.GetBackingStore().Set("pages", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPermissions sets the permissions property value. The permissions associated with the site. Nullable.
 func (m *Site) SetPermissions(value []Permissionable)() {
-    m.permissions = value
+    err := m.GetBackingStore().Set("permissions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoot sets the root property value. If present, indicates that this is the root site in the site collection. Read-only.
 func (m *Site) SetRoot(value Rootable)() {
-    m.root = value
+    err := m.GetBackingStore().Set("root", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettings sets the settings property value. The settings on this site. Read-only.
 func (m *Site) SetSettings(value SiteSettingsable)() {
-    m.settings = value
+    err := m.GetBackingStore().Set("settings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSharepointIds sets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
 func (m *Site) SetSharepointIds(value SharepointIdsable)() {
-    m.sharepointIds = value
+    err := m.GetBackingStore().Set("sharepointIds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSiteCollection sets the siteCollection property value. Provides details about the site's site collection. Available only on the root site. Read-only.
 func (m *Site) SetSiteCollection(value SiteCollectionable)() {
-    m.siteCollection = value
+    err := m.GetBackingStore().Set("siteCollection", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSites sets the sites property value. The collection of the sub-sites under this site.
 func (m *Site) SetSites(value []Siteable)() {
-    m.sites = value
+    err := m.GetBackingStore().Set("sites", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Siteable 
+type Siteable interface {
+    BaseItemable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAnalytics()(ItemAnalyticsable)
+    GetColumns()([]ColumnDefinitionable)
+    GetContentTypes()([]ContentTypeable)
+    GetDeleted()(Deletedable)
+    GetDisplayName()(*string)
+    GetDrive()(Driveable)
+    GetDrives()([]Driveable)
+    GetExternalColumns()([]ColumnDefinitionable)
+    GetInformationProtection()(InformationProtectionable)
+    GetItems()([]BaseItemable)
+    GetLists()([]Listable)
+    GetOnenote()(Onenoteable)
+    GetOperations()([]RichLongRunningOperationable)
+    GetPages()([]SitePageable)
+    GetPermissions()([]Permissionable)
+    GetRoot()(Rootable)
+    GetSettings()(SiteSettingsable)
+    GetSharepointIds()(SharepointIdsable)
+    GetSiteCollection()(SiteCollectionable)
+    GetSites()([]Siteable)
+    SetAnalytics(value ItemAnalyticsable)()
+    SetColumns(value []ColumnDefinitionable)()
+    SetContentTypes(value []ContentTypeable)()
+    SetDeleted(value Deletedable)()
+    SetDisplayName(value *string)()
+    SetDrive(value Driveable)()
+    SetDrives(value []Driveable)()
+    SetExternalColumns(value []ColumnDefinitionable)()
+    SetInformationProtection(value InformationProtectionable)()
+    SetItems(value []BaseItemable)()
+    SetLists(value []Listable)()
+    SetOnenote(value Onenoteable)()
+    SetOperations(value []RichLongRunningOperationable)()
+    SetPages(value []SitePageable)()
+    SetPermissions(value []Permissionable)()
+    SetRoot(value Rootable)()
+    SetSettings(value SiteSettingsable)()
+    SetSharepointIds(value SharepointIdsable)()
+    SetSiteCollection(value SiteCollectionable)()
+    SetSites(value []Siteable)()
 }

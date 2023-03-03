@@ -7,14 +7,6 @@ import (
 // MacOsVppAppAssignedLicense macOS Volume Purchase Program license assignment. This class does not support Create, Delete, or Update.
 type MacOsVppAppAssignedLicense struct {
     Entity
-    // The user email address.
-    userEmailAddress *string
-    // The user ID.
-    userId *string
-    // The user name.
-    userName *string
-    // The user principal name.
-    userPrincipalName *string
 }
 // NewMacOsVppAppAssignedLicense instantiates a new macOsVppAppAssignedLicense and sets the default values.
 func NewMacOsVppAppAssignedLicense()(*MacOsVppAppAssignedLicense) {
@@ -74,19 +66,47 @@ func (m *MacOsVppAppAssignedLicense) GetFieldDeserializers()(map[string]func(i87
 }
 // GetUserEmailAddress gets the userEmailAddress property value. The user email address.
 func (m *MacOsVppAppAssignedLicense) GetUserEmailAddress()(*string) {
-    return m.userEmailAddress
+    val, err := m.GetBackingStore().Get("userEmailAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserId gets the userId property value. The user ID.
 func (m *MacOsVppAppAssignedLicense) GetUserId()(*string) {
-    return m.userId
+    val, err := m.GetBackingStore().Get("userId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserName gets the userName property value. The user name.
 func (m *MacOsVppAppAssignedLicense) GetUserName()(*string) {
-    return m.userName
+    val, err := m.GetBackingStore().Get("userName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The user principal name.
 func (m *MacOsVppAppAssignedLicense) GetUserPrincipalName()(*string) {
-    return m.userPrincipalName
+    val, err := m.GetBackingStore().Get("userPrincipalName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MacOsVppAppAssignedLicense) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -122,17 +142,42 @@ func (m *MacOsVppAppAssignedLicense) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetUserEmailAddress sets the userEmailAddress property value. The user email address.
 func (m *MacOsVppAppAssignedLicense) SetUserEmailAddress(value *string)() {
-    m.userEmailAddress = value
+    err := m.GetBackingStore().Set("userEmailAddress", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserId sets the userId property value. The user ID.
 func (m *MacOsVppAppAssignedLicense) SetUserId(value *string)() {
-    m.userId = value
+    err := m.GetBackingStore().Set("userId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserName sets the userName property value. The user name.
 func (m *MacOsVppAppAssignedLicense) SetUserName(value *string)() {
-    m.userName = value
+    err := m.GetBackingStore().Set("userName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The user principal name.
 func (m *MacOsVppAppAssignedLicense) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    err := m.GetBackingStore().Set("userPrincipalName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MacOsVppAppAssignedLicenseable 
+type MacOsVppAppAssignedLicenseable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetUserEmailAddress()(*string)
+    GetUserId()(*string)
+    GetUserName()(*string)
+    GetUserPrincipalName()(*string)
+    SetUserEmailAddress(value *string)()
+    SetUserId(value *string)()
+    SetUserName(value *string)()
+    SetUserPrincipalName(value *string)()
 }

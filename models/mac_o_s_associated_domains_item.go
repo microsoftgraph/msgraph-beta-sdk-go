@@ -2,26 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // MacOSAssociatedDomainsItem a mapping of application identifiers to associated domains.
 type MacOSAssociatedDomainsItem struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The application identifier of the app to associate domains with.
-    applicationIdentifier *string
-    // Determines whether data should be downloaded directly or via a CDN.
-    directDownloadsEnabled *bool
-    // The list of domains to associate.
-    domains []string
-    // The OdataType property
-    odataType *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewMacOSAssociatedDomainsItem instantiates a new macOSAssociatedDomainsItem and sets the default values.
 func NewMacOSAssociatedDomainsItem()(*MacOSAssociatedDomainsItem) {
     m := &MacOSAssociatedDomainsItem{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMacOSAssociatedDomainsItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,19 +24,52 @@ func CreateMacOSAssociatedDomainsItemFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MacOSAssociatedDomainsItem) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetApplicationIdentifier gets the applicationIdentifier property value. The application identifier of the app to associate domains with.
 func (m *MacOSAssociatedDomainsItem) GetApplicationIdentifier()(*string) {
-    return m.applicationIdentifier
+    val, err := m.GetBackingStore().Get("applicationIdentifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *MacOSAssociatedDomainsItem) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDirectDownloadsEnabled gets the directDownloadsEnabled property value. Determines whether data should be downloaded directly or via a CDN.
 func (m *MacOSAssociatedDomainsItem) GetDirectDownloadsEnabled()(*bool) {
-    return m.directDownloadsEnabled
+    val, err := m.GetBackingStore().Get("directDownloadsEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDomains gets the domains property value. The list of domains to associate.
 func (m *MacOSAssociatedDomainsItem) GetDomains()([]string) {
-    return m.domains
+    val, err := m.GetBackingStore().Get("domains")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSAssociatedDomainsItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -95,7 +122,14 @@ func (m *MacOSAssociatedDomainsItem) GetFieldDeserializers()(map[string]func(i87
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MacOSAssociatedDomainsItem) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MacOSAssociatedDomainsItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -133,21 +167,56 @@ func (m *MacOSAssociatedDomainsItem) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MacOSAssociatedDomainsItem) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApplicationIdentifier sets the applicationIdentifier property value. The application identifier of the app to associate domains with.
 func (m *MacOSAssociatedDomainsItem) SetApplicationIdentifier(value *string)() {
-    m.applicationIdentifier = value
+    err := m.GetBackingStore().Set("applicationIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *MacOSAssociatedDomainsItem) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDirectDownloadsEnabled sets the directDownloadsEnabled property value. Determines whether data should be downloaded directly or via a CDN.
 func (m *MacOSAssociatedDomainsItem) SetDirectDownloadsEnabled(value *bool)() {
-    m.directDownloadsEnabled = value
+    err := m.GetBackingStore().Set("directDownloadsEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDomains sets the domains property value. The list of domains to associate.
 func (m *MacOSAssociatedDomainsItem) SetDomains(value []string)() {
-    m.domains = value
+    err := m.GetBackingStore().Set("domains", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MacOSAssociatedDomainsItem) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MacOSAssociatedDomainsItemable 
+type MacOSAssociatedDomainsItemable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetApplicationIdentifier()(*string)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDirectDownloadsEnabled()(*bool)
+    GetDomains()([]string)
+    GetOdataType()(*string)
+    SetApplicationIdentifier(value *string)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDirectDownloadsEnabled(value *bool)()
+    SetDomains(value []string)()
+    SetOdataType(value *string)()
 }

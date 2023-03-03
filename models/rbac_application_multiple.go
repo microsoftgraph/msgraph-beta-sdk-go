@@ -7,12 +7,6 @@ import (
 // RbacApplicationMultiple 
 type RbacApplicationMultiple struct {
     Entity
-    // The resourceNamespaces property
-    resourceNamespaces []UnifiedRbacResourceNamespaceable
-    // The roleAssignments property
-    roleAssignments []UnifiedRoleAssignmentMultipleable
-    // The roleDefinitions property
-    roleDefinitions []UnifiedRoleDefinitionable
 }
 // NewRbacApplicationMultiple instantiates a new RbacApplicationMultiple and sets the default values.
 func NewRbacApplicationMultiple()(*RbacApplicationMultiple) {
@@ -74,15 +68,36 @@ func (m *RbacApplicationMultiple) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetResourceNamespaces gets the resourceNamespaces property value. The resourceNamespaces property
 func (m *RbacApplicationMultiple) GetResourceNamespaces()([]UnifiedRbacResourceNamespaceable) {
-    return m.resourceNamespaces
+    val, err := m.GetBackingStore().Get("resourceNamespaces")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnifiedRbacResourceNamespaceable)
+    }
+    return nil
 }
 // GetRoleAssignments gets the roleAssignments property value. The roleAssignments property
 func (m *RbacApplicationMultiple) GetRoleAssignments()([]UnifiedRoleAssignmentMultipleable) {
-    return m.roleAssignments
+    val, err := m.GetBackingStore().Get("roleAssignments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnifiedRoleAssignmentMultipleable)
+    }
+    return nil
 }
 // GetRoleDefinitions gets the roleDefinitions property value. The roleDefinitions property
 func (m *RbacApplicationMultiple) GetRoleDefinitions()([]UnifiedRoleDefinitionable) {
-    return m.roleDefinitions
+    val, err := m.GetBackingStore().Get("roleDefinitions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnifiedRoleDefinitionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RbacApplicationMultiple) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -124,13 +139,33 @@ func (m *RbacApplicationMultiple) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetResourceNamespaces sets the resourceNamespaces property value. The resourceNamespaces property
 func (m *RbacApplicationMultiple) SetResourceNamespaces(value []UnifiedRbacResourceNamespaceable)() {
-    m.resourceNamespaces = value
+    err := m.GetBackingStore().Set("resourceNamespaces", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleAssignments sets the roleAssignments property value. The roleAssignments property
 func (m *RbacApplicationMultiple) SetRoleAssignments(value []UnifiedRoleAssignmentMultipleable)() {
-    m.roleAssignments = value
+    err := m.GetBackingStore().Set("roleAssignments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleDefinitions sets the roleDefinitions property value. The roleDefinitions property
 func (m *RbacApplicationMultiple) SetRoleDefinitions(value []UnifiedRoleDefinitionable)() {
-    m.roleDefinitions = value
+    err := m.GetBackingStore().Set("roleDefinitions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RbacApplicationMultipleable 
+type RbacApplicationMultipleable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetResourceNamespaces()([]UnifiedRbacResourceNamespaceable)
+    GetRoleAssignments()([]UnifiedRoleAssignmentMultipleable)
+    GetRoleDefinitions()([]UnifiedRoleDefinitionable)
+    SetResourceNamespaces(value []UnifiedRbacResourceNamespaceable)()
+    SetRoleAssignments(value []UnifiedRoleAssignmentMultipleable)()
+    SetRoleDefinitions(value []UnifiedRoleDefinitionable)()
 }

@@ -8,14 +8,8 @@ import (
 // MessageEvent 
 type MessageEvent struct {
     Entity
-    // The dateTime property
-    dateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The description property
-    description *string
-    // The eventType property
-    eventType *MessageEventType
 }
-// NewMessageEvent instantiates a new MessageEvent and sets the default values.
+// NewMessageEvent instantiates a new messageEvent and sets the default values.
 func NewMessageEvent()(*MessageEvent) {
     m := &MessageEvent{
         Entity: *NewEntity(),
@@ -28,15 +22,36 @@ func CreateMessageEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetDateTime gets the dateTime property value. The dateTime property
 func (m *MessageEvent) GetDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.dateTime
+    val, err := m.GetBackingStore().Get("dateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDescription gets the description property value. The description property
 func (m *MessageEvent) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetEventType gets the eventType property value. The eventType property
 func (m *MessageEvent) GetEventType()(*MessageEventType) {
-    return m.eventType
+    val, err := m.GetBackingStore().Get("eventType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MessageEventType)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MessageEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -102,13 +117,33 @@ func (m *MessageEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetDateTime sets the dateTime property value. The dateTime property
 func (m *MessageEvent) SetDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.dateTime = value
+    err := m.GetBackingStore().Set("dateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. The description property
 func (m *MessageEvent) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEventType sets the eventType property value. The eventType property
 func (m *MessageEvent) SetEventType(value *MessageEventType)() {
-    m.eventType = value
+    err := m.GetBackingStore().Set("eventType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MessageEventable 
+type MessageEventable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDescription()(*string)
+    GetEventType()(*MessageEventType)
+    SetDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDescription(value *string)()
+    SetEventType(value *MessageEventType)()
 }

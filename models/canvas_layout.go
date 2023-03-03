@@ -7,10 +7,6 @@ import (
 // CanvasLayout 
 type CanvasLayout struct {
     Entity
-    // Collection of horizontal sections on the SharePoint page.
-    horizontalSections []HorizontalSectionable
-    // Vertical section on the SharePoint page.
-    verticalSection VerticalSectionable
 }
 // NewCanvasLayout instantiates a new canvasLayout and sets the default values.
 func NewCanvasLayout()(*CanvasLayout) {
@@ -54,11 +50,25 @@ func (m *CanvasLayout) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetHorizontalSections gets the horizontalSections property value. Collection of horizontal sections on the SharePoint page.
 func (m *CanvasLayout) GetHorizontalSections()([]HorizontalSectionable) {
-    return m.horizontalSections
+    val, err := m.GetBackingStore().Get("horizontalSections")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]HorizontalSectionable)
+    }
+    return nil
 }
 // GetVerticalSection gets the verticalSection property value. Vertical section on the SharePoint page.
 func (m *CanvasLayout) GetVerticalSection()(VerticalSectionable) {
-    return m.verticalSection
+    val, err := m.GetBackingStore().Get("verticalSection")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(VerticalSectionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CanvasLayout) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -86,9 +96,24 @@ func (m *CanvasLayout) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetHorizontalSections sets the horizontalSections property value. Collection of horizontal sections on the SharePoint page.
 func (m *CanvasLayout) SetHorizontalSections(value []HorizontalSectionable)() {
-    m.horizontalSections = value
+    err := m.GetBackingStore().Set("horizontalSections", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVerticalSection sets the verticalSection property value. Vertical section on the SharePoint page.
 func (m *CanvasLayout) SetVerticalSection(value VerticalSectionable)() {
-    m.verticalSection = value
+    err := m.GetBackingStore().Set("verticalSection", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CanvasLayoutable 
+type CanvasLayoutable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetHorizontalSections()([]HorizontalSectionable)
+    GetVerticalSection()(VerticalSectionable)
+    SetHorizontalSections(value []HorizontalSectionable)()
+    SetVerticalSection(value VerticalSectionable)()
 }

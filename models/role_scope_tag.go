@@ -7,14 +7,6 @@ import (
 // RoleScopeTag role Scope Tag
 type RoleScopeTag struct {
     Entity
-    // The list of assignments for this Role Scope Tag.
-    assignments []RoleScopeTagAutoAssignmentable
-    // Description of the Role Scope Tag.
-    description *string
-    // The display or friendly name of the Role Scope Tag.
-    displayName *string
-    // Description of the Role Scope Tag. This property is read-only.
-    isBuiltIn *bool
 }
 // NewRoleScopeTag instantiates a new roleScopeTag and sets the default values.
 func NewRoleScopeTag()(*RoleScopeTag) {
@@ -29,15 +21,36 @@ func CreateRoleScopeTagFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAssignments gets the assignments property value. The list of assignments for this Role Scope Tag.
 func (m *RoleScopeTag) GetAssignments()([]RoleScopeTagAutoAssignmentable) {
-    return m.assignments
+    val, err := m.GetBackingStore().Get("assignments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]RoleScopeTagAutoAssignmentable)
+    }
+    return nil
 }
 // GetDescription gets the description property value. Description of the Role Scope Tag.
 func (m *RoleScopeTag) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The display or friendly name of the Role Scope Tag.
 func (m *RoleScopeTag) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RoleScopeTag) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -90,7 +103,14 @@ func (m *RoleScopeTag) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetIsBuiltIn gets the isBuiltIn property value. Description of the Role Scope Tag. This property is read-only.
 func (m *RoleScopeTag) GetIsBuiltIn()(*bool) {
-    return m.isBuiltIn
+    val, err := m.GetBackingStore().Get("isBuiltIn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RoleScopeTag) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -124,17 +144,42 @@ func (m *RoleScopeTag) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAssignments sets the assignments property value. The list of assignments for this Role Scope Tag.
 func (m *RoleScopeTag) SetAssignments(value []RoleScopeTagAutoAssignmentable)() {
-    m.assignments = value
+    err := m.GetBackingStore().Set("assignments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. Description of the Role Scope Tag.
 func (m *RoleScopeTag) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The display or friendly name of the Role Scope Tag.
 func (m *RoleScopeTag) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsBuiltIn sets the isBuiltIn property value. Description of the Role Scope Tag. This property is read-only.
 func (m *RoleScopeTag) SetIsBuiltIn(value *bool)() {
-    m.isBuiltIn = value
+    err := m.GetBackingStore().Set("isBuiltIn", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RoleScopeTagable 
+type RoleScopeTagable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssignments()([]RoleScopeTagAutoAssignmentable)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetIsBuiltIn()(*bool)
+    SetAssignments(value []RoleScopeTagAutoAssignmentable)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetIsBuiltIn(value *bool)()
 }

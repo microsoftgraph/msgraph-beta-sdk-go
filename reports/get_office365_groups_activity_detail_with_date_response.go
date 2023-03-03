@@ -8,8 +8,6 @@ import (
 // GetOffice365GroupsActivityDetailWithDateResponse 
 type GetOffice365GroupsActivityDetailWithDateResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
-    // The value property
-    value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365GroupsActivityDetailable
 }
 // NewGetOffice365GroupsActivityDetailWithDateResponse instantiates a new GetOffice365GroupsActivityDetailWithDateResponse and sets the default values.
 func NewGetOffice365GroupsActivityDetailWithDateResponse()(*GetOffice365GroupsActivityDetailWithDateResponse) {
@@ -43,7 +41,14 @@ func (m *GetOffice365GroupsActivityDetailWithDateResponse) GetFieldDeserializers
 }
 // GetValue gets the value property value. The value property
 func (m *GetOffice365GroupsActivityDetailWithDateResponse) GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365GroupsActivityDetailable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365GroupsActivityDetailable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GetOffice365GroupsActivityDetailWithDateResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *GetOffice365GroupsActivityDetailWithDateResponse) Serialize(writer i878
 }
 // SetValue sets the value property value. The value property
 func (m *GetOffice365GroupsActivityDetailWithDateResponse) SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365GroupsActivityDetailable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GetOffice365GroupsActivityDetailWithDateResponseable 
+type GetOffice365GroupsActivityDetailWithDateResponseable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365GroupsActivityDetailable)
+    SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365GroupsActivityDetailable)()
 }

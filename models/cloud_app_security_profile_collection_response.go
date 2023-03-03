@@ -7,8 +7,6 @@ import (
 // CloudAppSecurityProfileCollectionResponse 
 type CloudAppSecurityProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []CloudAppSecurityProfileable
 }
 // NewCloudAppSecurityProfileCollectionResponse instantiates a new CloudAppSecurityProfileCollectionResponse and sets the default values.
 func NewCloudAppSecurityProfileCollectionResponse()(*CloudAppSecurityProfileCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *CloudAppSecurityProfileCollectionResponse) GetFieldDeserializers()(map[
 }
 // GetValue gets the value property value. The value property
 func (m *CloudAppSecurityProfileCollectionResponse) GetValue()([]CloudAppSecurityProfileable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CloudAppSecurityProfileable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CloudAppSecurityProfileCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *CloudAppSecurityProfileCollectionResponse) Serialize(writer i878a80d233
 }
 // SetValue sets the value property value. The value property
 func (m *CloudAppSecurityProfileCollectionResponse) SetValue(value []CloudAppSecurityProfileable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CloudAppSecurityProfileCollectionResponseable 
+type CloudAppSecurityProfileCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]CloudAppSecurityProfileable)
+    SetValue(value []CloudAppSecurityProfileable)()
 }

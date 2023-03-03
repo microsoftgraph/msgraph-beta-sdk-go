@@ -7,8 +7,6 @@ import (
 // ExactMatchDataStoreCollectionResponse 
 type ExactMatchDataStoreCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ExactMatchDataStoreable
 }
 // NewExactMatchDataStoreCollectionResponse instantiates a new ExactMatchDataStoreCollectionResponse and sets the default values.
 func NewExactMatchDataStoreCollectionResponse()(*ExactMatchDataStoreCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ExactMatchDataStoreCollectionResponse) GetFieldDeserializers()(map[stri
 }
 // GetValue gets the value property value. The value property
 func (m *ExactMatchDataStoreCollectionResponse) GetValue()([]ExactMatchDataStoreable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ExactMatchDataStoreable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ExactMatchDataStoreCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ExactMatchDataStoreCollectionResponse) Serialize(writer i878a80d2330e89
 }
 // SetValue sets the value property value. The value property
 func (m *ExactMatchDataStoreCollectionResponse) SetValue(value []ExactMatchDataStoreable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ExactMatchDataStoreCollectionResponseable 
+type ExactMatchDataStoreCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ExactMatchDataStoreable)
+    SetValue(value []ExactMatchDataStoreable)()
 }

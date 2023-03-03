@@ -55,8 +55,8 @@ func NewDetectedAppsDetectedAppItemRequestBuilderInternal(pathParameters map[str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDetectedAppsDetectedAppItemRequestBuilder instantiates a new DetectedAppItemRequestBuilder and sets the default values.
@@ -102,7 +102,7 @@ func (m *DetectedAppsDetectedAppItemRequestBuilder) Get(ctx context.Context, req
 }
 // ManagedDevices provides operations to manage the managedDevices property of the microsoft.graph.detectedApp entity.
 func (m *DetectedAppsDetectedAppItemRequestBuilder) ManagedDevices()(*DetectedAppsItemManagedDevicesRequestBuilder) {
-    return NewDetectedAppsItemManagedDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDetectedAppsItemManagedDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ManagedDevicesById provides operations to manage the managedDevices property of the microsoft.graph.detectedApp entity.
 func (m *DetectedAppsDetectedAppItemRequestBuilder) ManagedDevicesById(id string)(*DetectedAppsItemManagedDevicesManagedDeviceItemRequestBuilder) {
@@ -113,7 +113,7 @@ func (m *DetectedAppsDetectedAppItemRequestBuilder) ManagedDevicesById(id string
     if id != "" {
         urlTplParams["managedDevice%2Did"] = id
     }
-    return NewDetectedAppsItemManagedDevicesManagedDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDetectedAppsItemManagedDevicesManagedDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch update the navigation property detectedApps in deviceManagement
 func (m *DetectedAppsDetectedAppItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DetectedAppable, requestConfiguration *DetectedAppsDetectedAppItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DetectedAppable, error) {
@@ -169,7 +169,10 @@ func (m *DetectedAppsDetectedAppItemRequestBuilder) ToPatchRequestInformation(ct
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

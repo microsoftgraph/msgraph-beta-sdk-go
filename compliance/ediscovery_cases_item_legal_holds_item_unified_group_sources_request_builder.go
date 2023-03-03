@@ -60,8 +60,8 @@ func NewEdiscoveryCasesItemLegalHoldsItemUnifiedGroupSourcesRequestBuilderIntern
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEdiscoveryCasesItemLegalHoldsItemUnifiedGroupSourcesRequestBuilder instantiates a new UnifiedGroupSourcesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewEdiscoveryCasesItemLegalHoldsItemUnifiedGroupSourcesRequestBuilder(rawUr
 }
 // Count provides operations to count the resources in the collection.
 func (m *EdiscoveryCasesItemLegalHoldsItemUnifiedGroupSourcesRequestBuilder) Count()(*EdiscoveryCasesItemLegalHoldsItemUnifiedGroupSourcesCountRequestBuilder) {
-    return NewEdiscoveryCasesItemLegalHoldsItemUnifiedGroupSourcesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesItemLegalHoldsItemUnifiedGroupSourcesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get unifiedGroupSources from compliance
 func (m *EdiscoveryCasesItemLegalHoldsItemUnifiedGroupSourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemLegalHoldsItemUnifiedGroupSourcesRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UnifiedGroupSourceCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *EdiscoveryCasesItemLegalHoldsItemUnifiedGroupSourcesRequestBuilder) ToP
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

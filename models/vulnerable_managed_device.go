@@ -8,12 +8,6 @@ import (
 // VulnerableManagedDevice this entity represents a device associated with a task.
 type VulnerableManagedDevice struct {
     Entity
-    // The device name.
-    displayName *string
-    // The last sync date.
-    lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The Intune managed device ID.
-    managedDeviceId *string
 }
 // NewVulnerableManagedDevice instantiates a new vulnerableManagedDevice and sets the default values.
 func NewVulnerableManagedDevice()(*VulnerableManagedDevice) {
@@ -28,7 +22,14 @@ func CreateVulnerableManagedDeviceFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetDisplayName gets the displayName property value. The device name.
 func (m *VulnerableManagedDevice) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *VulnerableManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -67,11 +68,25 @@ func (m *VulnerableManagedDevice) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetLastSyncDateTime gets the lastSyncDateTime property value. The last sync date.
 func (m *VulnerableManagedDevice) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastSyncDateTime
+    val, err := m.GetBackingStore().Get("lastSyncDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetManagedDeviceId gets the managedDeviceId property value. The Intune managed device ID.
 func (m *VulnerableManagedDevice) GetManagedDeviceId()(*string) {
-    return m.managedDeviceId
+    val, err := m.GetBackingStore().Get("managedDeviceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *VulnerableManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -101,13 +116,33 @@ func (m *VulnerableManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetDisplayName sets the displayName property value. The device name.
 func (m *VulnerableManagedDevice) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastSyncDateTime sets the lastSyncDateTime property value. The last sync date.
 func (m *VulnerableManagedDevice) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastSyncDateTime = value
+    err := m.GetBackingStore().Set("lastSyncDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedDeviceId sets the managedDeviceId property value. The Intune managed device ID.
 func (m *VulnerableManagedDevice) SetManagedDeviceId(value *string)() {
-    m.managedDeviceId = value
+    err := m.GetBackingStore().Set("managedDeviceId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// VulnerableManagedDeviceable 
+type VulnerableManagedDeviceable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDisplayName()(*string)
+    GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetManagedDeviceId()(*string)
+    SetDisplayName(value *string)()
+    SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetManagedDeviceId(value *string)()
 }

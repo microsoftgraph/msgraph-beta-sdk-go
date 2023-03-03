@@ -53,8 +53,8 @@ func NewMobileDeviceManagementPoliciesItemIncludedGroupsRequestBuilderInternal(p
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMobileDeviceManagementPoliciesItemIncludedGroupsRequestBuilder instantiates a new IncludedGroupsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewMobileDeviceManagementPoliciesItemIncludedGroupsRequestBuilder(rawUrl st
 }
 // Count provides operations to count the resources in the collection.
 func (m *MobileDeviceManagementPoliciesItemIncludedGroupsRequestBuilder) Count()(*MobileDeviceManagementPoliciesItemIncludedGroupsCountRequestBuilder) {
-    return NewMobileDeviceManagementPoliciesItemIncludedGroupsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMobileDeviceManagementPoliciesItemIncludedGroupsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the list of groups that are included in a mobile app management policy.
 // [Find more info here]
@@ -91,7 +91,7 @@ func (m *MobileDeviceManagementPoliciesItemIncludedGroupsRequestBuilder) Get(ctx
 }
 // Ref provides operations to manage the collection of policyRoot entities.
 func (m *MobileDeviceManagementPoliciesItemIncludedGroupsRequestBuilder) Ref()(*MobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilder) {
-    return NewMobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation get the list of groups that are included in a mobile app management policy.
 func (m *MobileDeviceManagementPoliciesItemIncludedGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileDeviceManagementPoliciesItemIncludedGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

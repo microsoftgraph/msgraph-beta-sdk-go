@@ -9,26 +9,6 @@ import (
 // ThreatSubmission 
 type ThreatSubmission struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // Specifies the admin review property which constitutes of who reviewed the user submission, when and what was it identified as.
-    adminReview SubmissionAdminReviewable
-    // The category property
-    category *SubmissionCategory
-    // Specifies the source of the submission. The possible values are: microsoft,  other and unkownFutureValue.
-    clientSource *SubmissionClientSource
-    // Specifies the type of content being submitted. The possible values are: email, url, file, app and unkownFutureValue.
-    contentType *SubmissionContentType
-    // Specifies who submitted the email as a threat. Supports $filter = createdBy/email eq 'value'.
-    createdBy SubmissionUserIdentityable
-    // Specifies when the threat submission was created. Supports $filter = createdDateTime ge 2022-01-01T00:00:00Z and createdDateTime lt 2022-01-02T00:00:00Z.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Specifies the result of the analysis performed by Microsoft.
-    result SubmissionResultable
-    // Specifies the role of the submitter. Supports $filter = source eq 'value'. The possible values are: administrator,  user and unkownFutureValue.
-    source *SubmissionSource
-    // Indicates whether the threat submission has been analyzed by Microsoft. Supports $filter = status eq 'value'. The possible values are: notStarted, running, succeeded, failed, skipped and unkownFutureValue.
-    status *LongRunningOperationStatus
-    // Indicates the tenant id of the submitter. Not required when created using a POST operation. It is extracted from the token of the post API call.
-    tenantId *string
 }
 // NewThreatSubmission instantiates a new threatSubmission and sets the default values.
 func NewThreatSubmission()(*ThreatSubmission) {
@@ -73,27 +53,69 @@ func CreateThreatSubmissionFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAdminReview gets the adminReview property value. Specifies the admin review property which constitutes of who reviewed the user submission, when and what was it identified as.
 func (m *ThreatSubmission) GetAdminReview()(SubmissionAdminReviewable) {
-    return m.adminReview
+    val, err := m.GetBackingStore().Get("adminReview")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SubmissionAdminReviewable)
+    }
+    return nil
 }
 // GetCategory gets the category property value. The category property
 func (m *ThreatSubmission) GetCategory()(*SubmissionCategory) {
-    return m.category
+    val, err := m.GetBackingStore().Get("category")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SubmissionCategory)
+    }
+    return nil
 }
 // GetClientSource gets the clientSource property value. Specifies the source of the submission. The possible values are: microsoft,  other and unkownFutureValue.
 func (m *ThreatSubmission) GetClientSource()(*SubmissionClientSource) {
-    return m.clientSource
+    val, err := m.GetBackingStore().Get("clientSource")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SubmissionClientSource)
+    }
+    return nil
 }
 // GetContentType gets the contentType property value. Specifies the type of content being submitted. The possible values are: email, url, file, app and unkownFutureValue.
 func (m *ThreatSubmission) GetContentType()(*SubmissionContentType) {
-    return m.contentType
+    val, err := m.GetBackingStore().Get("contentType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SubmissionContentType)
+    }
+    return nil
 }
 // GetCreatedBy gets the createdBy property value. Specifies who submitted the email as a threat. Supports $filter = createdBy/email eq 'value'.
 func (m *ThreatSubmission) GetCreatedBy()(SubmissionUserIdentityable) {
-    return m.createdBy
+    val, err := m.GetBackingStore().Get("createdBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SubmissionUserIdentityable)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Specifies when the threat submission was created. Supports $filter = createdDateTime ge 2022-01-01T00:00:00Z and createdDateTime lt 2022-01-02T00:00:00Z.
 func (m *ThreatSubmission) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ThreatSubmission) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -202,19 +224,47 @@ func (m *ThreatSubmission) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetResult gets the result property value. Specifies the result of the analysis performed by Microsoft.
 func (m *ThreatSubmission) GetResult()(SubmissionResultable) {
-    return m.result
+    val, err := m.GetBackingStore().Get("result")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SubmissionResultable)
+    }
+    return nil
 }
 // GetSource gets the source property value. Specifies the role of the submitter. Supports $filter = source eq 'value'. The possible values are: administrator,  user and unkownFutureValue.
 func (m *ThreatSubmission) GetSource()(*SubmissionSource) {
-    return m.source
+    val, err := m.GetBackingStore().Get("source")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SubmissionSource)
+    }
+    return nil
 }
 // GetStatus gets the status property value. Indicates whether the threat submission has been analyzed by Microsoft. Supports $filter = status eq 'value'. The possible values are: notStarted, running, succeeded, failed, skipped and unkownFutureValue.
 func (m *ThreatSubmission) GetStatus()(*LongRunningOperationStatus) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*LongRunningOperationStatus)
+    }
+    return nil
 }
 // GetTenantId gets the tenantId property value. Indicates the tenant id of the submitter. Not required when created using a POST operation. It is extracted from the token of the post API call.
 func (m *ThreatSubmission) GetTenantId()(*string) {
-    return m.tenantId
+    val, err := m.GetBackingStore().Get("tenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ThreatSubmission) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -291,41 +341,96 @@ func (m *ThreatSubmission) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAdminReview sets the adminReview property value. Specifies the admin review property which constitutes of who reviewed the user submission, when and what was it identified as.
 func (m *ThreatSubmission) SetAdminReview(value SubmissionAdminReviewable)() {
-    m.adminReview = value
+    err := m.GetBackingStore().Set("adminReview", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCategory sets the category property value. The category property
 func (m *ThreatSubmission) SetCategory(value *SubmissionCategory)() {
-    m.category = value
+    err := m.GetBackingStore().Set("category", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetClientSource sets the clientSource property value. Specifies the source of the submission. The possible values are: microsoft,  other and unkownFutureValue.
 func (m *ThreatSubmission) SetClientSource(value *SubmissionClientSource)() {
-    m.clientSource = value
+    err := m.GetBackingStore().Set("clientSource", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetContentType sets the contentType property value. Specifies the type of content being submitted. The possible values are: email, url, file, app and unkownFutureValue.
 func (m *ThreatSubmission) SetContentType(value *SubmissionContentType)() {
-    m.contentType = value
+    err := m.GetBackingStore().Set("contentType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedBy sets the createdBy property value. Specifies who submitted the email as a threat. Supports $filter = createdBy/email eq 'value'.
 func (m *ThreatSubmission) SetCreatedBy(value SubmissionUserIdentityable)() {
-    m.createdBy = value
+    err := m.GetBackingStore().Set("createdBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Specifies when the threat submission was created. Supports $filter = createdDateTime ge 2022-01-01T00:00:00Z and createdDateTime lt 2022-01-02T00:00:00Z.
 func (m *ThreatSubmission) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResult sets the result property value. Specifies the result of the analysis performed by Microsoft.
 func (m *ThreatSubmission) SetResult(value SubmissionResultable)() {
-    m.result = value
+    err := m.GetBackingStore().Set("result", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSource sets the source property value. Specifies the role of the submitter. Supports $filter = source eq 'value'. The possible values are: administrator,  user and unkownFutureValue.
 func (m *ThreatSubmission) SetSource(value *SubmissionSource)() {
-    m.source = value
+    err := m.GetBackingStore().Set("source", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. Indicates whether the threat submission has been analyzed by Microsoft. Supports $filter = status eq 'value'. The possible values are: notStarted, running, succeeded, failed, skipped and unkownFutureValue.
 func (m *ThreatSubmission) SetStatus(value *LongRunningOperationStatus)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantId sets the tenantId property value. Indicates the tenant id of the submitter. Not required when created using a POST operation. It is extracted from the token of the post API call.
 func (m *ThreatSubmission) SetTenantId(value *string)() {
-    m.tenantId = value
+    err := m.GetBackingStore().Set("tenantId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ThreatSubmissionable 
+type ThreatSubmissionable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAdminReview()(SubmissionAdminReviewable)
+    GetCategory()(*SubmissionCategory)
+    GetClientSource()(*SubmissionClientSource)
+    GetContentType()(*SubmissionContentType)
+    GetCreatedBy()(SubmissionUserIdentityable)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetResult()(SubmissionResultable)
+    GetSource()(*SubmissionSource)
+    GetStatus()(*LongRunningOperationStatus)
+    GetTenantId()(*string)
+    SetAdminReview(value SubmissionAdminReviewable)()
+    SetCategory(value *SubmissionCategory)()
+    SetClientSource(value *SubmissionClientSource)()
+    SetContentType(value *SubmissionContentType)()
+    SetCreatedBy(value SubmissionUserIdentityable)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetResult(value SubmissionResultable)()
+    SetSource(value *SubmissionSource)()
+    SetStatus(value *LongRunningOperationStatus)()
+    SetTenantId(value *string)()
 }

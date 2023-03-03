@@ -7,54 +7,6 @@ import (
 // Office365ActiveUserDetail 
 type Office365ActiveUserDetail struct {
     Entity
-    // All the products assigned for the user.
-    assignedProducts []string
-    // The date when the delete operation happened. Default value is 'null' when the user has not been deleted.
-    deletedDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates.
-    displayName *string
-    // The date when user last read or sent email.
-    exchangeLastActivityDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // The last date when the user was assigned an Exchange license.
-    exchangeLicenseAssignDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // Whether the user has been assigned an Exchange license.
-    hasExchangeLicense *bool
-    // Whether the user has been assigned a OneDrive license.
-    hasOneDriveLicense *bool
-    // Whether the user has been assigned a SharePoint license.
-    hasSharePointLicense *bool
-    // Whether the user has been assigned a Skype For Business license.
-    hasSkypeForBusinessLicense *bool
-    // Whether the user has been assigned a Teams license.
-    hasTeamsLicense *bool
-    // Whether the user has been assigned a Yammer license.
-    hasYammerLicense *bool
-    // Whether this user has been deleted or soft deleted.
-    isDeleted *bool
-    // The date when user last viewed or edited files, shared files internally or externally, or synced files.
-    oneDriveLastActivityDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // The last date when the user was assigned a OneDrive license.
-    oneDriveLicenseAssignDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // The latest date of the content.
-    reportRefreshDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // The date when user last viewed or edited files, shared files internally or externally, synced files, or viewed SharePoint pages.
-    sharePointLastActivityDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // The last date when the user was assigned a SharePoint license.
-    sharePointLicenseAssignDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // The date when user last organized or participated in conferences, or joined peer-to-peer sessions.
-    skypeForBusinessLastActivityDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // The last date when the user was assigned a Skype For Business license.
-    skypeForBusinessLicenseAssignDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // The date when user last posted messages in team channels, sent messages in private chat sessions, or participated in meetings or calls.
-    teamsLastActivityDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // The last date when the user was assigned a Teams license.
-    teamsLicenseAssignDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant’s collection of verified domains. This property is required when a user is created.
-    userPrincipalName *string
-    // The date when user last posted, read, or liked message.
-    yammerLastActivityDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // The last date when the user was assigned a Yammer license.
-    yammerLicenseAssignDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
 }
 // NewOffice365ActiveUserDetail instantiates a new Office365ActiveUserDetail and sets the default values.
 func NewOffice365ActiveUserDetail()(*Office365ActiveUserDetail) {
@@ -69,23 +21,58 @@ func CreateOffice365ActiveUserDetailFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAssignedProducts gets the assignedProducts property value. All the products assigned for the user.
 func (m *Office365ActiveUserDetail) GetAssignedProducts()([]string) {
-    return m.assignedProducts
+    val, err := m.GetBackingStore().Get("assignedProducts")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetDeletedDate gets the deletedDate property value. The date when the delete operation happened. Default value is 'null' when the user has not been deleted.
 func (m *Office365ActiveUserDetail) GetDeletedDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.deletedDate
+    val, err := m.GetBackingStore().Get("deletedDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates.
 func (m *Office365ActiveUserDetail) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetExchangeLastActivityDate gets the exchangeLastActivityDate property value. The date when user last read or sent email.
 func (m *Office365ActiveUserDetail) GetExchangeLastActivityDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.exchangeLastActivityDate
+    val, err := m.GetBackingStore().Get("exchangeLastActivityDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetExchangeLicenseAssignDate gets the exchangeLicenseAssignDate property value. The last date when the user was assigned an Exchange license.
 func (m *Office365ActiveUserDetail) GetExchangeLicenseAssignDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.exchangeLicenseAssignDate
+    val, err := m.GetBackingStore().Get("exchangeLicenseAssignDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Office365ActiveUserDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -338,79 +325,212 @@ func (m *Office365ActiveUserDetail) GetFieldDeserializers()(map[string]func(i878
 }
 // GetHasExchangeLicense gets the hasExchangeLicense property value. Whether the user has been assigned an Exchange license.
 func (m *Office365ActiveUserDetail) GetHasExchangeLicense()(*bool) {
-    return m.hasExchangeLicense
+    val, err := m.GetBackingStore().Get("hasExchangeLicense")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetHasOneDriveLicense gets the hasOneDriveLicense property value. Whether the user has been assigned a OneDrive license.
 func (m *Office365ActiveUserDetail) GetHasOneDriveLicense()(*bool) {
-    return m.hasOneDriveLicense
+    val, err := m.GetBackingStore().Get("hasOneDriveLicense")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetHasSharePointLicense gets the hasSharePointLicense property value. Whether the user has been assigned a SharePoint license.
 func (m *Office365ActiveUserDetail) GetHasSharePointLicense()(*bool) {
-    return m.hasSharePointLicense
+    val, err := m.GetBackingStore().Get("hasSharePointLicense")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetHasSkypeForBusinessLicense gets the hasSkypeForBusinessLicense property value. Whether the user has been assigned a Skype For Business license.
 func (m *Office365ActiveUserDetail) GetHasSkypeForBusinessLicense()(*bool) {
-    return m.hasSkypeForBusinessLicense
+    val, err := m.GetBackingStore().Get("hasSkypeForBusinessLicense")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetHasTeamsLicense gets the hasTeamsLicense property value. Whether the user has been assigned a Teams license.
 func (m *Office365ActiveUserDetail) GetHasTeamsLicense()(*bool) {
-    return m.hasTeamsLicense
+    val, err := m.GetBackingStore().Get("hasTeamsLicense")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetHasYammerLicense gets the hasYammerLicense property value. Whether the user has been assigned a Yammer license.
 func (m *Office365ActiveUserDetail) GetHasYammerLicense()(*bool) {
-    return m.hasYammerLicense
+    val, err := m.GetBackingStore().Get("hasYammerLicense")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsDeleted gets the isDeleted property value. Whether this user has been deleted or soft deleted.
 func (m *Office365ActiveUserDetail) GetIsDeleted()(*bool) {
-    return m.isDeleted
+    val, err := m.GetBackingStore().Get("isDeleted")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetOneDriveLastActivityDate gets the oneDriveLastActivityDate property value. The date when user last viewed or edited files, shared files internally or externally, or synced files.
 func (m *Office365ActiveUserDetail) GetOneDriveLastActivityDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.oneDriveLastActivityDate
+    val, err := m.GetBackingStore().Get("oneDriveLastActivityDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetOneDriveLicenseAssignDate gets the oneDriveLicenseAssignDate property value. The last date when the user was assigned a OneDrive license.
 func (m *Office365ActiveUserDetail) GetOneDriveLicenseAssignDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.oneDriveLicenseAssignDate
+    val, err := m.GetBackingStore().Get("oneDriveLicenseAssignDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetReportRefreshDate gets the reportRefreshDate property value. The latest date of the content.
 func (m *Office365ActiveUserDetail) GetReportRefreshDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.reportRefreshDate
+    val, err := m.GetBackingStore().Get("reportRefreshDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetSharePointLastActivityDate gets the sharePointLastActivityDate property value. The date when user last viewed or edited files, shared files internally or externally, synced files, or viewed SharePoint pages.
 func (m *Office365ActiveUserDetail) GetSharePointLastActivityDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.sharePointLastActivityDate
+    val, err := m.GetBackingStore().Get("sharePointLastActivityDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetSharePointLicenseAssignDate gets the sharePointLicenseAssignDate property value. The last date when the user was assigned a SharePoint license.
 func (m *Office365ActiveUserDetail) GetSharePointLicenseAssignDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.sharePointLicenseAssignDate
+    val, err := m.GetBackingStore().Get("sharePointLicenseAssignDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetSkypeForBusinessLastActivityDate gets the skypeForBusinessLastActivityDate property value. The date when user last organized or participated in conferences, or joined peer-to-peer sessions.
 func (m *Office365ActiveUserDetail) GetSkypeForBusinessLastActivityDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.skypeForBusinessLastActivityDate
+    val, err := m.GetBackingStore().Get("skypeForBusinessLastActivityDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetSkypeForBusinessLicenseAssignDate gets the skypeForBusinessLicenseAssignDate property value. The last date when the user was assigned a Skype For Business license.
 func (m *Office365ActiveUserDetail) GetSkypeForBusinessLicenseAssignDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.skypeForBusinessLicenseAssignDate
+    val, err := m.GetBackingStore().Get("skypeForBusinessLicenseAssignDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetTeamsLastActivityDate gets the teamsLastActivityDate property value. The date when user last posted messages in team channels, sent messages in private chat sessions, or participated in meetings or calls.
 func (m *Office365ActiveUserDetail) GetTeamsLastActivityDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.teamsLastActivityDate
+    val, err := m.GetBackingStore().Get("teamsLastActivityDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetTeamsLicenseAssignDate gets the teamsLicenseAssignDate property value. The last date when the user was assigned a Teams license.
 func (m *Office365ActiveUserDetail) GetTeamsLicenseAssignDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.teamsLicenseAssignDate
+    val, err := m.GetBackingStore().Get("teamsLicenseAssignDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant’s collection of verified domains. This property is required when a user is created.
 func (m *Office365ActiveUserDetail) GetUserPrincipalName()(*string) {
-    return m.userPrincipalName
+    val, err := m.GetBackingStore().Get("userPrincipalName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetYammerLastActivityDate gets the yammerLastActivityDate property value. The date when user last posted, read, or liked message.
 func (m *Office365ActiveUserDetail) GetYammerLastActivityDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.yammerLastActivityDate
+    val, err := m.GetBackingStore().Get("yammerLastActivityDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetYammerLicenseAssignDate gets the yammerLicenseAssignDate property value. The last date when the user was assigned a Yammer license.
 func (m *Office365ActiveUserDetail) GetYammerLicenseAssignDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.yammerLicenseAssignDate
+    val, err := m.GetBackingStore().Get("yammerLicenseAssignDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Office365ActiveUserDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -566,97 +686,222 @@ func (m *Office365ActiveUserDetail) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAssignedProducts sets the assignedProducts property value. All the products assigned for the user.
 func (m *Office365ActiveUserDetail) SetAssignedProducts(value []string)() {
-    m.assignedProducts = value
+    err := m.GetBackingStore().Set("assignedProducts", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeletedDate sets the deletedDate property value. The date when the delete operation happened. Default value is 'null' when the user has not been deleted.
 func (m *Office365ActiveUserDetail) SetDeletedDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.deletedDate = value
+    err := m.GetBackingStore().Set("deletedDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates.
 func (m *Office365ActiveUserDetail) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExchangeLastActivityDate sets the exchangeLastActivityDate property value. The date when user last read or sent email.
 func (m *Office365ActiveUserDetail) SetExchangeLastActivityDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.exchangeLastActivityDate = value
+    err := m.GetBackingStore().Set("exchangeLastActivityDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExchangeLicenseAssignDate sets the exchangeLicenseAssignDate property value. The last date when the user was assigned an Exchange license.
 func (m *Office365ActiveUserDetail) SetExchangeLicenseAssignDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.exchangeLicenseAssignDate = value
+    err := m.GetBackingStore().Set("exchangeLicenseAssignDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHasExchangeLicense sets the hasExchangeLicense property value. Whether the user has been assigned an Exchange license.
 func (m *Office365ActiveUserDetail) SetHasExchangeLicense(value *bool)() {
-    m.hasExchangeLicense = value
+    err := m.GetBackingStore().Set("hasExchangeLicense", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHasOneDriveLicense sets the hasOneDriveLicense property value. Whether the user has been assigned a OneDrive license.
 func (m *Office365ActiveUserDetail) SetHasOneDriveLicense(value *bool)() {
-    m.hasOneDriveLicense = value
+    err := m.GetBackingStore().Set("hasOneDriveLicense", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHasSharePointLicense sets the hasSharePointLicense property value. Whether the user has been assigned a SharePoint license.
 func (m *Office365ActiveUserDetail) SetHasSharePointLicense(value *bool)() {
-    m.hasSharePointLicense = value
+    err := m.GetBackingStore().Set("hasSharePointLicense", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHasSkypeForBusinessLicense sets the hasSkypeForBusinessLicense property value. Whether the user has been assigned a Skype For Business license.
 func (m *Office365ActiveUserDetail) SetHasSkypeForBusinessLicense(value *bool)() {
-    m.hasSkypeForBusinessLicense = value
+    err := m.GetBackingStore().Set("hasSkypeForBusinessLicense", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHasTeamsLicense sets the hasTeamsLicense property value. Whether the user has been assigned a Teams license.
 func (m *Office365ActiveUserDetail) SetHasTeamsLicense(value *bool)() {
-    m.hasTeamsLicense = value
+    err := m.GetBackingStore().Set("hasTeamsLicense", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHasYammerLicense sets the hasYammerLicense property value. Whether the user has been assigned a Yammer license.
 func (m *Office365ActiveUserDetail) SetHasYammerLicense(value *bool)() {
-    m.hasYammerLicense = value
+    err := m.GetBackingStore().Set("hasYammerLicense", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsDeleted sets the isDeleted property value. Whether this user has been deleted or soft deleted.
 func (m *Office365ActiveUserDetail) SetIsDeleted(value *bool)() {
-    m.isDeleted = value
+    err := m.GetBackingStore().Set("isDeleted", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOneDriveLastActivityDate sets the oneDriveLastActivityDate property value. The date when user last viewed or edited files, shared files internally or externally, or synced files.
 func (m *Office365ActiveUserDetail) SetOneDriveLastActivityDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.oneDriveLastActivityDate = value
+    err := m.GetBackingStore().Set("oneDriveLastActivityDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOneDriveLicenseAssignDate sets the oneDriveLicenseAssignDate property value. The last date when the user was assigned a OneDrive license.
 func (m *Office365ActiveUserDetail) SetOneDriveLicenseAssignDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.oneDriveLicenseAssignDate = value
+    err := m.GetBackingStore().Set("oneDriveLicenseAssignDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. The latest date of the content.
 func (m *Office365ActiveUserDetail) SetReportRefreshDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.reportRefreshDate = value
+    err := m.GetBackingStore().Set("reportRefreshDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSharePointLastActivityDate sets the sharePointLastActivityDate property value. The date when user last viewed or edited files, shared files internally or externally, synced files, or viewed SharePoint pages.
 func (m *Office365ActiveUserDetail) SetSharePointLastActivityDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.sharePointLastActivityDate = value
+    err := m.GetBackingStore().Set("sharePointLastActivityDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSharePointLicenseAssignDate sets the sharePointLicenseAssignDate property value. The last date when the user was assigned a SharePoint license.
 func (m *Office365ActiveUserDetail) SetSharePointLicenseAssignDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.sharePointLicenseAssignDate = value
+    err := m.GetBackingStore().Set("sharePointLicenseAssignDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSkypeForBusinessLastActivityDate sets the skypeForBusinessLastActivityDate property value. The date when user last organized or participated in conferences, or joined peer-to-peer sessions.
 func (m *Office365ActiveUserDetail) SetSkypeForBusinessLastActivityDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.skypeForBusinessLastActivityDate = value
+    err := m.GetBackingStore().Set("skypeForBusinessLastActivityDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSkypeForBusinessLicenseAssignDate sets the skypeForBusinessLicenseAssignDate property value. The last date when the user was assigned a Skype For Business license.
 func (m *Office365ActiveUserDetail) SetSkypeForBusinessLicenseAssignDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.skypeForBusinessLicenseAssignDate = value
+    err := m.GetBackingStore().Set("skypeForBusinessLicenseAssignDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTeamsLastActivityDate sets the teamsLastActivityDate property value. The date when user last posted messages in team channels, sent messages in private chat sessions, or participated in meetings or calls.
 func (m *Office365ActiveUserDetail) SetTeamsLastActivityDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.teamsLastActivityDate = value
+    err := m.GetBackingStore().Set("teamsLastActivityDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTeamsLicenseAssignDate sets the teamsLicenseAssignDate property value. The last date when the user was assigned a Teams license.
 func (m *Office365ActiveUserDetail) SetTeamsLicenseAssignDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.teamsLicenseAssignDate = value
+    err := m.GetBackingStore().Set("teamsLicenseAssignDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant’s collection of verified domains. This property is required when a user is created.
 func (m *Office365ActiveUserDetail) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    err := m.GetBackingStore().Set("userPrincipalName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetYammerLastActivityDate sets the yammerLastActivityDate property value. The date when user last posted, read, or liked message.
 func (m *Office365ActiveUserDetail) SetYammerLastActivityDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.yammerLastActivityDate = value
+    err := m.GetBackingStore().Set("yammerLastActivityDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetYammerLicenseAssignDate sets the yammerLicenseAssignDate property value. The last date when the user was assigned a Yammer license.
 func (m *Office365ActiveUserDetail) SetYammerLicenseAssignDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.yammerLicenseAssignDate = value
+    err := m.GetBackingStore().Set("yammerLicenseAssignDate", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Office365ActiveUserDetailable 
+type Office365ActiveUserDetailable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssignedProducts()([]string)
+    GetDeletedDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetDisplayName()(*string)
+    GetExchangeLastActivityDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetExchangeLicenseAssignDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetHasExchangeLicense()(*bool)
+    GetHasOneDriveLicense()(*bool)
+    GetHasSharePointLicense()(*bool)
+    GetHasSkypeForBusinessLicense()(*bool)
+    GetHasTeamsLicense()(*bool)
+    GetHasYammerLicense()(*bool)
+    GetIsDeleted()(*bool)
+    GetOneDriveLastActivityDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetOneDriveLicenseAssignDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetReportRefreshDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetSharePointLastActivityDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetSharePointLicenseAssignDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetSkypeForBusinessLastActivityDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetSkypeForBusinessLicenseAssignDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetTeamsLastActivityDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetTeamsLicenseAssignDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetUserPrincipalName()(*string)
+    GetYammerLastActivityDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetYammerLicenseAssignDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    SetAssignedProducts(value []string)()
+    SetDeletedDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetDisplayName(value *string)()
+    SetExchangeLastActivityDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetExchangeLicenseAssignDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetHasExchangeLicense(value *bool)()
+    SetHasOneDriveLicense(value *bool)()
+    SetHasSharePointLicense(value *bool)()
+    SetHasSkypeForBusinessLicense(value *bool)()
+    SetHasTeamsLicense(value *bool)()
+    SetHasYammerLicense(value *bool)()
+    SetIsDeleted(value *bool)()
+    SetOneDriveLastActivityDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetOneDriveLicenseAssignDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetReportRefreshDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetSharePointLastActivityDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetSharePointLicenseAssignDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetSkypeForBusinessLastActivityDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetSkypeForBusinessLicenseAssignDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetTeamsLastActivityDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetTeamsLicenseAssignDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetUserPrincipalName(value *string)()
+    SetYammerLastActivityDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetYammerLicenseAssignDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
 }

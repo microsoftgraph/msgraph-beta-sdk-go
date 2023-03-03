@@ -7,10 +7,6 @@ import (
 // DeviceManagementConfigurationSetting setting instance within policy
 type DeviceManagementConfigurationSetting struct {
     Entity
-    // List of related Setting Definitions. This property is read-only.
-    settingDefinitions []DeviceManagementConfigurationSettingDefinitionable
-    // Setting instance within policy
-    settingInstance DeviceManagementConfigurationSettingInstanceable
 }
 // NewDeviceManagementConfigurationSetting instantiates a new deviceManagementConfigurationSetting and sets the default values.
 func NewDeviceManagementConfigurationSetting()(*DeviceManagementConfigurationSetting) {
@@ -54,11 +50,25 @@ func (m *DeviceManagementConfigurationSetting) GetFieldDeserializers()(map[strin
 }
 // GetSettingDefinitions gets the settingDefinitions property value. List of related Setting Definitions. This property is read-only.
 func (m *DeviceManagementConfigurationSetting) GetSettingDefinitions()([]DeviceManagementConfigurationSettingDefinitionable) {
-    return m.settingDefinitions
+    val, err := m.GetBackingStore().Get("settingDefinitions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementConfigurationSettingDefinitionable)
+    }
+    return nil
 }
 // GetSettingInstance gets the settingInstance property value. Setting instance within policy
 func (m *DeviceManagementConfigurationSetting) GetSettingInstance()(DeviceManagementConfigurationSettingInstanceable) {
-    return m.settingInstance
+    val, err := m.GetBackingStore().Get("settingInstance")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementConfigurationSettingInstanceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -86,9 +96,24 @@ func (m *DeviceManagementConfigurationSetting) Serialize(writer i878a80d2330e89d
 }
 // SetSettingDefinitions sets the settingDefinitions property value. List of related Setting Definitions. This property is read-only.
 func (m *DeviceManagementConfigurationSetting) SetSettingDefinitions(value []DeviceManagementConfigurationSettingDefinitionable)() {
-    m.settingDefinitions = value
+    err := m.GetBackingStore().Set("settingDefinitions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingInstance sets the settingInstance property value. Setting instance within policy
 func (m *DeviceManagementConfigurationSetting) SetSettingInstance(value DeviceManagementConfigurationSettingInstanceable)() {
-    m.settingInstance = value
+    err := m.GetBackingStore().Set("settingInstance", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationSettingable 
+type DeviceManagementConfigurationSettingable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetSettingDefinitions()([]DeviceManagementConfigurationSettingDefinitionable)
+    GetSettingInstance()(DeviceManagementConfigurationSettingInstanceable)
+    SetSettingDefinitions(value []DeviceManagementConfigurationSettingDefinitionable)()
+    SetSettingInstance(value DeviceManagementConfigurationSettingInstanceable)()
 }

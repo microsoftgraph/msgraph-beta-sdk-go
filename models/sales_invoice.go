@@ -9,82 +9,6 @@ import (
 // SalesInvoice 
 type SalesInvoice struct {
     Entity
-    // The billingPostalAddress property
-    billingPostalAddress PostalAddressTypeable
-    // The billToCustomerId property
-    billToCustomerId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
-    // The billToCustomerNumber property
-    billToCustomerNumber *string
-    // The billToName property
-    billToName *string
-    // The currency property
-    currency Currencyable
-    // The currencyCode property
-    currencyCode *string
-    // The currencyId property
-    currencyId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
-    // The customer property
-    customer Customerable
-    // The customerId property
-    customerId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
-    // The customerName property
-    customerName *string
-    // The customerNumber property
-    customerNumber *string
-    // The customerPurchaseOrderReference property
-    customerPurchaseOrderReference *string
-    // The discountAmount property
-    discountAmount *float64
-    // The discountAppliedBeforeTax property
-    discountAppliedBeforeTax *bool
-    // The dueDate property
-    dueDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // The email property
-    email *string
-    // The externalDocumentNumber property
-    externalDocumentNumber *string
-    // The invoiceDate property
-    invoiceDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // The lastModifiedDateTime property
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The number property
-    number *string
-    // The orderId property
-    orderId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
-    // The orderNumber property
-    orderNumber *string
-    // The paymentTerm property
-    paymentTerm PaymentTermable
-    // The paymentTermsId property
-    paymentTermsId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
-    // The phoneNumber property
-    phoneNumber *string
-    // The pricesIncludeTax property
-    pricesIncludeTax *bool
-    // The salesInvoiceLines property
-    salesInvoiceLines []SalesInvoiceLineable
-    // The salesperson property
-    salesperson *string
-    // The sellingPostalAddress property
-    sellingPostalAddress PostalAddressTypeable
-    // The shipmentMethod property
-    shipmentMethod ShipmentMethodable
-    // The shipmentMethodId property
-    shipmentMethodId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
-    // The shippingPostalAddress property
-    shippingPostalAddress PostalAddressTypeable
-    // The shipToContact property
-    shipToContact *string
-    // The shipToName property
-    shipToName *string
-    // The status property
-    status *string
-    // The totalAmountExcludingTax property
-    totalAmountExcludingTax *float64
-    // The totalAmountIncludingTax property
-    totalAmountIncludingTax *float64
-    // The totalTaxAmount property
-    totalTaxAmount *float64
 }
 // NewSalesInvoice instantiates a new salesInvoice and sets the default values.
 func NewSalesInvoice()(*SalesInvoice) {
@@ -99,71 +23,190 @@ func CreateSalesInvoiceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetBillingPostalAddress gets the billingPostalAddress property value. The billingPostalAddress property
 func (m *SalesInvoice) GetBillingPostalAddress()(PostalAddressTypeable) {
-    return m.billingPostalAddress
+    val, err := m.GetBackingStore().Get("billingPostalAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PostalAddressTypeable)
+    }
+    return nil
 }
 // GetBillToCustomerId gets the billToCustomerId property value. The billToCustomerId property
 func (m *SalesInvoice) GetBillToCustomerId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
-    return m.billToCustomerId
+    val, err := m.GetBackingStore().Get("billToCustomerId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
 }
 // GetBillToCustomerNumber gets the billToCustomerNumber property value. The billToCustomerNumber property
 func (m *SalesInvoice) GetBillToCustomerNumber()(*string) {
-    return m.billToCustomerNumber
+    val, err := m.GetBackingStore().Get("billToCustomerNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetBillToName gets the billToName property value. The billToName property
 func (m *SalesInvoice) GetBillToName()(*string) {
-    return m.billToName
+    val, err := m.GetBackingStore().Get("billToName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCurrency gets the currency property value. The currency property
 func (m *SalesInvoice) GetCurrency()(Currencyable) {
-    return m.currency
+    val, err := m.GetBackingStore().Get("currency")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Currencyable)
+    }
+    return nil
 }
 // GetCurrencyCode gets the currencyCode property value. The currencyCode property
 func (m *SalesInvoice) GetCurrencyCode()(*string) {
-    return m.currencyCode
+    val, err := m.GetBackingStore().Get("currencyCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCurrencyId gets the currencyId property value. The currencyId property
 func (m *SalesInvoice) GetCurrencyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
-    return m.currencyId
+    val, err := m.GetBackingStore().Get("currencyId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
 }
 // GetCustomer gets the customer property value. The customer property
 func (m *SalesInvoice) GetCustomer()(Customerable) {
-    return m.customer
+    val, err := m.GetBackingStore().Get("customer")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Customerable)
+    }
+    return nil
 }
 // GetCustomerId gets the customerId property value. The customerId property
 func (m *SalesInvoice) GetCustomerId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
-    return m.customerId
+    val, err := m.GetBackingStore().Get("customerId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
 }
 // GetCustomerName gets the customerName property value. The customerName property
 func (m *SalesInvoice) GetCustomerName()(*string) {
-    return m.customerName
+    val, err := m.GetBackingStore().Get("customerName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCustomerNumber gets the customerNumber property value. The customerNumber property
 func (m *SalesInvoice) GetCustomerNumber()(*string) {
-    return m.customerNumber
+    val, err := m.GetBackingStore().Get("customerNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCustomerPurchaseOrderReference gets the customerPurchaseOrderReference property value. The customerPurchaseOrderReference property
 func (m *SalesInvoice) GetCustomerPurchaseOrderReference()(*string) {
-    return m.customerPurchaseOrderReference
+    val, err := m.GetBackingStore().Get("customerPurchaseOrderReference")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDiscountAmount gets the discountAmount property value. The discountAmount property
 func (m *SalesInvoice) GetDiscountAmount()(*float64) {
-    return m.discountAmount
+    val, err := m.GetBackingStore().Get("discountAmount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetDiscountAppliedBeforeTax gets the discountAppliedBeforeTax property value. The discountAppliedBeforeTax property
 func (m *SalesInvoice) GetDiscountAppliedBeforeTax()(*bool) {
-    return m.discountAppliedBeforeTax
+    val, err := m.GetBackingStore().Get("discountAppliedBeforeTax")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDueDate gets the dueDate property value. The dueDate property
 func (m *SalesInvoice) GetDueDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.dueDate
+    val, err := m.GetBackingStore().Get("dueDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetEmail gets the email property value. The email property
 func (m *SalesInvoice) GetEmail()(*string) {
-    return m.email
+    val, err := m.GetBackingStore().Get("email")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetExternalDocumentNumber gets the externalDocumentNumber property value. The externalDocumentNumber property
 func (m *SalesInvoice) GetExternalDocumentNumber()(*string) {
-    return m.externalDocumentNumber
+    val, err := m.GetBackingStore().Get("externalDocumentNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SalesInvoice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -556,87 +599,234 @@ func (m *SalesInvoice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetInvoiceDate gets the invoiceDate property value. The invoiceDate property
 func (m *SalesInvoice) GetInvoiceDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.invoiceDate
+    val, err := m.GetBackingStore().Get("invoiceDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *SalesInvoice) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetNumber gets the number property value. The number property
 func (m *SalesInvoice) GetNumber()(*string) {
-    return m.number
+    val, err := m.GetBackingStore().Get("number")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOrderId gets the orderId property value. The orderId property
 func (m *SalesInvoice) GetOrderId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
-    return m.orderId
+    val, err := m.GetBackingStore().Get("orderId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
 }
 // GetOrderNumber gets the orderNumber property value. The orderNumber property
 func (m *SalesInvoice) GetOrderNumber()(*string) {
-    return m.orderNumber
+    val, err := m.GetBackingStore().Get("orderNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPaymentTerm gets the paymentTerm property value. The paymentTerm property
 func (m *SalesInvoice) GetPaymentTerm()(PaymentTermable) {
-    return m.paymentTerm
+    val, err := m.GetBackingStore().Get("paymentTerm")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PaymentTermable)
+    }
+    return nil
 }
 // GetPaymentTermsId gets the paymentTermsId property value. The paymentTermsId property
 func (m *SalesInvoice) GetPaymentTermsId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
-    return m.paymentTermsId
+    val, err := m.GetBackingStore().Get("paymentTermsId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
 }
 // GetPhoneNumber gets the phoneNumber property value. The phoneNumber property
 func (m *SalesInvoice) GetPhoneNumber()(*string) {
-    return m.phoneNumber
+    val, err := m.GetBackingStore().Get("phoneNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPricesIncludeTax gets the pricesIncludeTax property value. The pricesIncludeTax property
 func (m *SalesInvoice) GetPricesIncludeTax()(*bool) {
-    return m.pricesIncludeTax
+    val, err := m.GetBackingStore().Get("pricesIncludeTax")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSalesInvoiceLines gets the salesInvoiceLines property value. The salesInvoiceLines property
 func (m *SalesInvoice) GetSalesInvoiceLines()([]SalesInvoiceLineable) {
-    return m.salesInvoiceLines
+    val, err := m.GetBackingStore().Get("salesInvoiceLines")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SalesInvoiceLineable)
+    }
+    return nil
 }
 // GetSalesperson gets the salesperson property value. The salesperson property
 func (m *SalesInvoice) GetSalesperson()(*string) {
-    return m.salesperson
+    val, err := m.GetBackingStore().Get("salesperson")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSellingPostalAddress gets the sellingPostalAddress property value. The sellingPostalAddress property
 func (m *SalesInvoice) GetSellingPostalAddress()(PostalAddressTypeable) {
-    return m.sellingPostalAddress
+    val, err := m.GetBackingStore().Get("sellingPostalAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PostalAddressTypeable)
+    }
+    return nil
 }
 // GetShipmentMethod gets the shipmentMethod property value. The shipmentMethod property
 func (m *SalesInvoice) GetShipmentMethod()(ShipmentMethodable) {
-    return m.shipmentMethod
+    val, err := m.GetBackingStore().Get("shipmentMethod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ShipmentMethodable)
+    }
+    return nil
 }
 // GetShipmentMethodId gets the shipmentMethodId property value. The shipmentMethodId property
 func (m *SalesInvoice) GetShipmentMethodId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
-    return m.shipmentMethodId
+    val, err := m.GetBackingStore().Get("shipmentMethodId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
 }
 // GetShippingPostalAddress gets the shippingPostalAddress property value. The shippingPostalAddress property
 func (m *SalesInvoice) GetShippingPostalAddress()(PostalAddressTypeable) {
-    return m.shippingPostalAddress
+    val, err := m.GetBackingStore().Get("shippingPostalAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PostalAddressTypeable)
+    }
+    return nil
 }
 // GetShipToContact gets the shipToContact property value. The shipToContact property
 func (m *SalesInvoice) GetShipToContact()(*string) {
-    return m.shipToContact
+    val, err := m.GetBackingStore().Get("shipToContact")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetShipToName gets the shipToName property value. The shipToName property
 func (m *SalesInvoice) GetShipToName()(*string) {
-    return m.shipToName
+    val, err := m.GetBackingStore().Get("shipToName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetStatus gets the status property value. The status property
 func (m *SalesInvoice) GetStatus()(*string) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTotalAmountExcludingTax gets the totalAmountExcludingTax property value. The totalAmountExcludingTax property
 func (m *SalesInvoice) GetTotalAmountExcludingTax()(*float64) {
-    return m.totalAmountExcludingTax
+    val, err := m.GetBackingStore().Get("totalAmountExcludingTax")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetTotalAmountIncludingTax gets the totalAmountIncludingTax property value. The totalAmountIncludingTax property
 func (m *SalesInvoice) GetTotalAmountIncludingTax()(*float64) {
-    return m.totalAmountIncludingTax
+    val, err := m.GetBackingStore().Get("totalAmountIncludingTax")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetTotalTaxAmount gets the totalTaxAmount property value. The totalTaxAmount property
 func (m *SalesInvoice) GetTotalTaxAmount()(*float64) {
-    return m.totalTaxAmount
+    val, err := m.GetBackingStore().Get("totalTaxAmount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SalesInvoice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -880,153 +1070,348 @@ func (m *SalesInvoice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetBillingPostalAddress sets the billingPostalAddress property value. The billingPostalAddress property
 func (m *SalesInvoice) SetBillingPostalAddress(value PostalAddressTypeable)() {
-    m.billingPostalAddress = value
+    err := m.GetBackingStore().Set("billingPostalAddress", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBillToCustomerId sets the billToCustomerId property value. The billToCustomerId property
 func (m *SalesInvoice) SetBillToCustomerId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
-    m.billToCustomerId = value
+    err := m.GetBackingStore().Set("billToCustomerId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBillToCustomerNumber sets the billToCustomerNumber property value. The billToCustomerNumber property
 func (m *SalesInvoice) SetBillToCustomerNumber(value *string)() {
-    m.billToCustomerNumber = value
+    err := m.GetBackingStore().Set("billToCustomerNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBillToName sets the billToName property value. The billToName property
 func (m *SalesInvoice) SetBillToName(value *string)() {
-    m.billToName = value
+    err := m.GetBackingStore().Set("billToName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCurrency sets the currency property value. The currency property
 func (m *SalesInvoice) SetCurrency(value Currencyable)() {
-    m.currency = value
+    err := m.GetBackingStore().Set("currency", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCurrencyCode sets the currencyCode property value. The currencyCode property
 func (m *SalesInvoice) SetCurrencyCode(value *string)() {
-    m.currencyCode = value
+    err := m.GetBackingStore().Set("currencyCode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCurrencyId sets the currencyId property value. The currencyId property
 func (m *SalesInvoice) SetCurrencyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
-    m.currencyId = value
+    err := m.GetBackingStore().Set("currencyId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomer sets the customer property value. The customer property
 func (m *SalesInvoice) SetCustomer(value Customerable)() {
-    m.customer = value
+    err := m.GetBackingStore().Set("customer", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomerId sets the customerId property value. The customerId property
 func (m *SalesInvoice) SetCustomerId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
-    m.customerId = value
+    err := m.GetBackingStore().Set("customerId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomerName sets the customerName property value. The customerName property
 func (m *SalesInvoice) SetCustomerName(value *string)() {
-    m.customerName = value
+    err := m.GetBackingStore().Set("customerName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomerNumber sets the customerNumber property value. The customerNumber property
 func (m *SalesInvoice) SetCustomerNumber(value *string)() {
-    m.customerNumber = value
+    err := m.GetBackingStore().Set("customerNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomerPurchaseOrderReference sets the customerPurchaseOrderReference property value. The customerPurchaseOrderReference property
 func (m *SalesInvoice) SetCustomerPurchaseOrderReference(value *string)() {
-    m.customerPurchaseOrderReference = value
+    err := m.GetBackingStore().Set("customerPurchaseOrderReference", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDiscountAmount sets the discountAmount property value. The discountAmount property
 func (m *SalesInvoice) SetDiscountAmount(value *float64)() {
-    m.discountAmount = value
+    err := m.GetBackingStore().Set("discountAmount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDiscountAppliedBeforeTax sets the discountAppliedBeforeTax property value. The discountAppliedBeforeTax property
 func (m *SalesInvoice) SetDiscountAppliedBeforeTax(value *bool)() {
-    m.discountAppliedBeforeTax = value
+    err := m.GetBackingStore().Set("discountAppliedBeforeTax", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDueDate sets the dueDate property value. The dueDate property
 func (m *SalesInvoice) SetDueDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.dueDate = value
+    err := m.GetBackingStore().Set("dueDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEmail sets the email property value. The email property
 func (m *SalesInvoice) SetEmail(value *string)() {
-    m.email = value
+    err := m.GetBackingStore().Set("email", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExternalDocumentNumber sets the externalDocumentNumber property value. The externalDocumentNumber property
 func (m *SalesInvoice) SetExternalDocumentNumber(value *string)() {
-    m.externalDocumentNumber = value
+    err := m.GetBackingStore().Set("externalDocumentNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInvoiceDate sets the invoiceDate property value. The invoiceDate property
 func (m *SalesInvoice) SetInvoiceDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.invoiceDate = value
+    err := m.GetBackingStore().Set("invoiceDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *SalesInvoice) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNumber sets the number property value. The number property
 func (m *SalesInvoice) SetNumber(value *string)() {
-    m.number = value
+    err := m.GetBackingStore().Set("number", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOrderId sets the orderId property value. The orderId property
 func (m *SalesInvoice) SetOrderId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
-    m.orderId = value
+    err := m.GetBackingStore().Set("orderId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOrderNumber sets the orderNumber property value. The orderNumber property
 func (m *SalesInvoice) SetOrderNumber(value *string)() {
-    m.orderNumber = value
+    err := m.GetBackingStore().Set("orderNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPaymentTerm sets the paymentTerm property value. The paymentTerm property
 func (m *SalesInvoice) SetPaymentTerm(value PaymentTermable)() {
-    m.paymentTerm = value
+    err := m.GetBackingStore().Set("paymentTerm", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPaymentTermsId sets the paymentTermsId property value. The paymentTermsId property
 func (m *SalesInvoice) SetPaymentTermsId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
-    m.paymentTermsId = value
+    err := m.GetBackingStore().Set("paymentTermsId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPhoneNumber sets the phoneNumber property value. The phoneNumber property
 func (m *SalesInvoice) SetPhoneNumber(value *string)() {
-    m.phoneNumber = value
+    err := m.GetBackingStore().Set("phoneNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPricesIncludeTax sets the pricesIncludeTax property value. The pricesIncludeTax property
 func (m *SalesInvoice) SetPricesIncludeTax(value *bool)() {
-    m.pricesIncludeTax = value
+    err := m.GetBackingStore().Set("pricesIncludeTax", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSalesInvoiceLines sets the salesInvoiceLines property value. The salesInvoiceLines property
 func (m *SalesInvoice) SetSalesInvoiceLines(value []SalesInvoiceLineable)() {
-    m.salesInvoiceLines = value
+    err := m.GetBackingStore().Set("salesInvoiceLines", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSalesperson sets the salesperson property value. The salesperson property
 func (m *SalesInvoice) SetSalesperson(value *string)() {
-    m.salesperson = value
+    err := m.GetBackingStore().Set("salesperson", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSellingPostalAddress sets the sellingPostalAddress property value. The sellingPostalAddress property
 func (m *SalesInvoice) SetSellingPostalAddress(value PostalAddressTypeable)() {
-    m.sellingPostalAddress = value
+    err := m.GetBackingStore().Set("sellingPostalAddress", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetShipmentMethod sets the shipmentMethod property value. The shipmentMethod property
 func (m *SalesInvoice) SetShipmentMethod(value ShipmentMethodable)() {
-    m.shipmentMethod = value
+    err := m.GetBackingStore().Set("shipmentMethod", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetShipmentMethodId sets the shipmentMethodId property value. The shipmentMethodId property
 func (m *SalesInvoice) SetShipmentMethodId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
-    m.shipmentMethodId = value
+    err := m.GetBackingStore().Set("shipmentMethodId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetShippingPostalAddress sets the shippingPostalAddress property value. The shippingPostalAddress property
 func (m *SalesInvoice) SetShippingPostalAddress(value PostalAddressTypeable)() {
-    m.shippingPostalAddress = value
+    err := m.GetBackingStore().Set("shippingPostalAddress", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetShipToContact sets the shipToContact property value. The shipToContact property
 func (m *SalesInvoice) SetShipToContact(value *string)() {
-    m.shipToContact = value
+    err := m.GetBackingStore().Set("shipToContact", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetShipToName sets the shipToName property value. The shipToName property
 func (m *SalesInvoice) SetShipToName(value *string)() {
-    m.shipToName = value
+    err := m.GetBackingStore().Set("shipToName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. The status property
 func (m *SalesInvoice) SetStatus(value *string)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTotalAmountExcludingTax sets the totalAmountExcludingTax property value. The totalAmountExcludingTax property
 func (m *SalesInvoice) SetTotalAmountExcludingTax(value *float64)() {
-    m.totalAmountExcludingTax = value
+    err := m.GetBackingStore().Set("totalAmountExcludingTax", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTotalAmountIncludingTax sets the totalAmountIncludingTax property value. The totalAmountIncludingTax property
 func (m *SalesInvoice) SetTotalAmountIncludingTax(value *float64)() {
-    m.totalAmountIncludingTax = value
+    err := m.GetBackingStore().Set("totalAmountIncludingTax", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTotalTaxAmount sets the totalTaxAmount property value. The totalTaxAmount property
 func (m *SalesInvoice) SetTotalTaxAmount(value *float64)() {
-    m.totalTaxAmount = value
+    err := m.GetBackingStore().Set("totalTaxAmount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SalesInvoiceable 
+type SalesInvoiceable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBillingPostalAddress()(PostalAddressTypeable)
+    GetBillToCustomerId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    GetBillToCustomerNumber()(*string)
+    GetBillToName()(*string)
+    GetCurrency()(Currencyable)
+    GetCurrencyCode()(*string)
+    GetCurrencyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    GetCustomer()(Customerable)
+    GetCustomerId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    GetCustomerName()(*string)
+    GetCustomerNumber()(*string)
+    GetCustomerPurchaseOrderReference()(*string)
+    GetDiscountAmount()(*float64)
+    GetDiscountAppliedBeforeTax()(*bool)
+    GetDueDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetEmail()(*string)
+    GetExternalDocumentNumber()(*string)
+    GetInvoiceDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetNumber()(*string)
+    GetOrderId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    GetOrderNumber()(*string)
+    GetPaymentTerm()(PaymentTermable)
+    GetPaymentTermsId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    GetPhoneNumber()(*string)
+    GetPricesIncludeTax()(*bool)
+    GetSalesInvoiceLines()([]SalesInvoiceLineable)
+    GetSalesperson()(*string)
+    GetSellingPostalAddress()(PostalAddressTypeable)
+    GetShipmentMethod()(ShipmentMethodable)
+    GetShipmentMethodId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    GetShippingPostalAddress()(PostalAddressTypeable)
+    GetShipToContact()(*string)
+    GetShipToName()(*string)
+    GetStatus()(*string)
+    GetTotalAmountExcludingTax()(*float64)
+    GetTotalAmountIncludingTax()(*float64)
+    GetTotalTaxAmount()(*float64)
+    SetBillingPostalAddress(value PostalAddressTypeable)()
+    SetBillToCustomerId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
+    SetBillToCustomerNumber(value *string)()
+    SetBillToName(value *string)()
+    SetCurrency(value Currencyable)()
+    SetCurrencyCode(value *string)()
+    SetCurrencyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
+    SetCustomer(value Customerable)()
+    SetCustomerId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
+    SetCustomerName(value *string)()
+    SetCustomerNumber(value *string)()
+    SetCustomerPurchaseOrderReference(value *string)()
+    SetDiscountAmount(value *float64)()
+    SetDiscountAppliedBeforeTax(value *bool)()
+    SetDueDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetEmail(value *string)()
+    SetExternalDocumentNumber(value *string)()
+    SetInvoiceDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetNumber(value *string)()
+    SetOrderId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
+    SetOrderNumber(value *string)()
+    SetPaymentTerm(value PaymentTermable)()
+    SetPaymentTermsId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
+    SetPhoneNumber(value *string)()
+    SetPricesIncludeTax(value *bool)()
+    SetSalesInvoiceLines(value []SalesInvoiceLineable)()
+    SetSalesperson(value *string)()
+    SetSellingPostalAddress(value PostalAddressTypeable)()
+    SetShipmentMethod(value ShipmentMethodable)()
+    SetShipmentMethodId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
+    SetShippingPostalAddress(value PostalAddressTypeable)()
+    SetShipToContact(value *string)()
+    SetShipToName(value *string)()
+    SetStatus(value *string)()
+    SetTotalAmountExcludingTax(value *float64)()
+    SetTotalAmountIncludingTax(value *float64)()
+    SetTotalTaxAmount(value *float64)()
 }

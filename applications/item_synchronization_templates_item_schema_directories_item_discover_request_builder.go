@@ -27,13 +27,13 @@ type ItemSynchronizationTemplatesItemSchemaDirectoriesItemDiscoverRequestBuilder
 func NewItemSynchronizationTemplatesItemSchemaDirectoriesItemDiscoverRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSynchronizationTemplatesItemSchemaDirectoriesItemDiscoverRequestBuilder) {
     m := &ItemSynchronizationTemplatesItemSchemaDirectoriesItemDiscoverRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/applications/{application%2Did}/synchronization/templates/{synchronizationTemplate%2Did}/schema/directories/{directoryDefinition%2Did}/microsoft.graph.discover";
+    m.urlTemplate = "{+baseurl}/applications/{application%2Did}/synchronization/templates/{synchronizationTemplate%2Did}/schema/directories/{directoryDefinition%2Did}/discover";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSynchronizationTemplatesItemSchemaDirectoriesItemDiscoverRequestBuilder instantiates a new DiscoverRequestBuilder and sets the default values.

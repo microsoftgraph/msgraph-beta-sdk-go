@@ -55,8 +55,8 @@ func NewItemPendingAccessReviewInstancesItemDecisionsAccessReviewInstanceDecisio
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemPendingAccessReviewInstancesItemDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder instantiates a new AccessReviewInstanceDecisionItemItemRequestBuilder and sets the default values.
@@ -102,7 +102,7 @@ func (m *ItemPendingAccessReviewInstancesItemDecisionsAccessReviewInstanceDecisi
 }
 // Insights provides operations to manage the insights property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
 func (m *ItemPendingAccessReviewInstancesItemDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder) Insights()(*ItemPendingAccessReviewInstancesItemDecisionsItemInsightsRequestBuilder) {
-    return NewItemPendingAccessReviewInstancesItemDecisionsItemInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemPendingAccessReviewInstancesItemDecisionsItemInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // InsightsById provides operations to manage the insights property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
 func (m *ItemPendingAccessReviewInstancesItemDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder) InsightsById(id string)(*ItemPendingAccessReviewInstancesItemDecisionsItemInsightsGovernanceInsightItemRequestBuilder) {
@@ -113,11 +113,11 @@ func (m *ItemPendingAccessReviewInstancesItemDecisionsAccessReviewInstanceDecisi
     if id != "" {
         urlTplParams["governanceInsight%2Did"] = id
     }
-    return NewItemPendingAccessReviewInstancesItemDecisionsItemInsightsGovernanceInsightItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemPendingAccessReviewInstancesItemDecisionsItemInsightsGovernanceInsightItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Instance provides operations to manage the instance property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
 func (m *ItemPendingAccessReviewInstancesItemDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder) Instance()(*ItemPendingAccessReviewInstancesItemDecisionsItemInstanceRequestBuilder) {
-    return NewItemPendingAccessReviewInstancesItemDecisionsItemInstanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemPendingAccessReviewInstancesItemDecisionsItemInstanceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property decisions in users
 func (m *ItemPendingAccessReviewInstancesItemDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemable, requestConfiguration *ItemPendingAccessReviewInstancesItemDecisionsAccessReviewInstanceDecisionItemItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemable, error) {
@@ -173,7 +173,10 @@ func (m *ItemPendingAccessReviewInstancesItemDecisionsAccessReviewInstanceDecisi
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -7,16 +7,14 @@ import (
 // DeliveryOptimizationGroupIdSourceOptions 
 type DeliveryOptimizationGroupIdSourceOptions struct {
     DeliveryOptimizationGroupIdSource
-    // Possible values for the DeliveryOptimizationGroupIdOptionsType setting.
-    groupIdSourceOption *DeliveryOptimizationGroupIdOptionsType
 }
 // NewDeliveryOptimizationGroupIdSourceOptions instantiates a new DeliveryOptimizationGroupIdSourceOptions and sets the default values.
 func NewDeliveryOptimizationGroupIdSourceOptions()(*DeliveryOptimizationGroupIdSourceOptions) {
     m := &DeliveryOptimizationGroupIdSourceOptions{
         DeliveryOptimizationGroupIdSource: *NewDeliveryOptimizationGroupIdSource(),
     }
-    odataTypeValue := "#microsoft.graph.deliveryOptimizationGroupIdSourceOptions";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deliveryOptimizationGroupIdSourceOptions"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeliveryOptimizationGroupIdSourceOptionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *DeliveryOptimizationGroupIdSourceOptions) GetFieldDeserializers()(map[s
 }
 // GetGroupIdSourceOption gets the groupIdSourceOption property value. Possible values for the DeliveryOptimizationGroupIdOptionsType setting.
 func (m *DeliveryOptimizationGroupIdSourceOptions) GetGroupIdSourceOption()(*DeliveryOptimizationGroupIdOptionsType) {
-    return m.groupIdSourceOption
+    val, err := m.GetBackingStore().Get("groupIdSourceOption")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeliveryOptimizationGroupIdOptionsType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeliveryOptimizationGroupIdSourceOptions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -59,5 +64,15 @@ func (m *DeliveryOptimizationGroupIdSourceOptions) Serialize(writer i878a80d2330
 }
 // SetGroupIdSourceOption sets the groupIdSourceOption property value. Possible values for the DeliveryOptimizationGroupIdOptionsType setting.
 func (m *DeliveryOptimizationGroupIdSourceOptions) SetGroupIdSourceOption(value *DeliveryOptimizationGroupIdOptionsType)() {
-    m.groupIdSourceOption = value
+    err := m.GetBackingStore().Set("groupIdSourceOption", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeliveryOptimizationGroupIdSourceOptionsable 
+type DeliveryOptimizationGroupIdSourceOptionsable interface {
+    DeliveryOptimizationGroupIdSourceable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetGroupIdSourceOption()(*DeliveryOptimizationGroupIdOptionsType)
+    SetGroupIdSourceOption(value *DeliveryOptimizationGroupIdOptionsType)()
 }

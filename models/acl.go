@@ -2,28 +2,22 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // Acl 
 type Acl struct {
-    // The accessType property
-    accessType *AccessType
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The identitySource property
-    identitySource *IdentitySourceType
-    // The OdataType property
-    odataType *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
     // The type property
-    type_escaped *AclType
-    // The value property
-    value *string
+    TypeEscaped *AclType
 }
 // NewAcl instantiates a new acl and sets the default values.
 func NewAcl()(*Acl) {
     m := &Acl{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAclFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,11 +26,30 @@ func CreateAclFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef
 }
 // GetAccessType gets the accessType property value. The accessType property
 func (m *Acl) GetAccessType()(*AccessType) {
-    return m.accessType
+    val, err := m.GetBackingStore().Get("accessType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AccessType)
+    }
+    return nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Acl) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *Acl) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Acl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -95,19 +108,47 @@ func (m *Acl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3
 }
 // GetIdentitySource gets the identitySource property value. The identitySource property
 func (m *Acl) GetIdentitySource()(*IdentitySourceType) {
-    return m.identitySource
+    val, err := m.GetBackingStore().Get("identitySource")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*IdentitySourceType)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Acl) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetType gets the type property value. The type property
 func (m *Acl) GetType()(*AclType) {
-    return m.type_escaped
+    val, err := m.GetBackingStore().Get("typeEscaped")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AclType)
+    }
+    return nil
 }
 // GetValue gets the value property value. The value property
 func (m *Acl) GetValue()(*string) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Acl) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -154,25 +195,65 @@ func (m *Acl) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493
 }
 // SetAccessType sets the accessType property value. The accessType property
 func (m *Acl) SetAccessType(value *AccessType)() {
-    m.accessType = value
+    err := m.GetBackingStore().Set("accessType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Acl) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *Acl) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetIdentitySource sets the identitySource property value. The identitySource property
 func (m *Acl) SetIdentitySource(value *IdentitySourceType)() {
-    m.identitySource = value
+    err := m.GetBackingStore().Set("identitySource", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Acl) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetType sets the type property value. The type property
 func (m *Acl) SetType(value *AclType)() {
-    m.type_escaped = value
+    err := m.GetBackingStore().Set("typeEscaped", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetValue sets the value property value. The value property
 func (m *Acl) SetValue(value *string)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Aclable 
+type Aclable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAccessType()(*AccessType)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetIdentitySource()(*IdentitySourceType)
+    GetOdataType()(*string)
+    GetType()(*AclType)
+    GetValue()(*string)
+    SetAccessType(value *AccessType)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetIdentitySource(value *IdentitySourceType)()
+    SetOdataType(value *string)()
+    SetType(value *AclType)()
+    SetValue(value *string)()
 }

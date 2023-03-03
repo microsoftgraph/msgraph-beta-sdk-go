@@ -7,8 +7,6 @@ import (
 // MeetingSpeakerCollectionResponse 
 type MeetingSpeakerCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MeetingSpeakerable
 }
 // NewMeetingSpeakerCollectionResponse instantiates a new MeetingSpeakerCollectionResponse and sets the default values.
 func NewMeetingSpeakerCollectionResponse()(*MeetingSpeakerCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MeetingSpeakerCollectionResponse) GetFieldDeserializers()(map[string]fu
 }
 // GetValue gets the value property value. The value property
 func (m *MeetingSpeakerCollectionResponse) GetValue()([]MeetingSpeakerable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MeetingSpeakerable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MeetingSpeakerCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MeetingSpeakerCollectionResponse) Serialize(writer i878a80d2330e89d2689
 }
 // SetValue sets the value property value. The value property
 func (m *MeetingSpeakerCollectionResponse) SetValue(value []MeetingSpeakerable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MeetingSpeakerCollectionResponseable 
+type MeetingSpeakerCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MeetingSpeakerable)
+    SetValue(value []MeetingSpeakerable)()
 }

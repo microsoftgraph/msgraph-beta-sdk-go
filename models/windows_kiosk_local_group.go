@@ -7,16 +7,14 @@ import (
 // WindowsKioskLocalGroup 
 type WindowsKioskLocalGroup struct {
     WindowsKioskUser
-    // The name of the local group that will be locked to this kiosk configuration
-    groupName *string
 }
 // NewWindowsKioskLocalGroup instantiates a new WindowsKioskLocalGroup and sets the default values.
 func NewWindowsKioskLocalGroup()(*WindowsKioskLocalGroup) {
     m := &WindowsKioskLocalGroup{
         WindowsKioskUser: *NewWindowsKioskUser(),
     }
-    odataTypeValue := "#microsoft.graph.windowsKioskLocalGroup";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsKioskLocalGroup"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsKioskLocalGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *WindowsKioskLocalGroup) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetGroupName gets the groupName property value. The name of the local group that will be locked to this kiosk configuration
 func (m *WindowsKioskLocalGroup) GetGroupName()(*string) {
-    return m.groupName
+    val, err := m.GetBackingStore().Get("groupName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsKioskLocalGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *WindowsKioskLocalGroup) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetGroupName sets the groupName property value. The name of the local group that will be locked to this kiosk configuration
 func (m *WindowsKioskLocalGroup) SetGroupName(value *string)() {
-    m.groupName = value
+    err := m.GetBackingStore().Set("groupName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsKioskLocalGroupable 
+type WindowsKioskLocalGroupable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    WindowsKioskUserable
+    GetGroupName()(*string)
+    SetGroupName(value *string)()
 }

@@ -7,10 +7,6 @@ import (
 // AuthenticationMethodConfiguration 
 type AuthenticationMethodConfiguration struct {
     Entity
-    // Groups of users that are excluded from a policy.
-    excludeTargets []ExcludeTargetable
-    // The state of the policy. Possible values are: enabled, disabled.
-    state *AuthenticationMethodState
 }
 // NewAuthenticationMethodConfiguration instantiates a new AuthenticationMethodConfiguration and sets the default values.
 func NewAuthenticationMethodConfiguration()(*AuthenticationMethodConfiguration) {
@@ -57,7 +53,14 @@ func CreateAuthenticationMethodConfigurationFromDiscriminatorValue(parseNode i87
 }
 // GetExcludeTargets gets the excludeTargets property value. Groups of users that are excluded from a policy.
 func (m *AuthenticationMethodConfiguration) GetExcludeTargets()([]ExcludeTargetable) {
-    return m.excludeTargets
+    val, err := m.GetBackingStore().Get("excludeTargets")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ExcludeTargetable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -90,7 +93,14 @@ func (m *AuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]f
 }
 // GetState gets the state property value. The state of the policy. Possible values are: enabled, disabled.
 func (m *AuthenticationMethodConfiguration) GetState()(*AuthenticationMethodState) {
-    return m.state
+    val, err := m.GetBackingStore().Get("state")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AuthenticationMethodState)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AuthenticationMethodConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -119,9 +129,24 @@ func (m *AuthenticationMethodConfiguration) Serialize(writer i878a80d2330e89d268
 }
 // SetExcludeTargets sets the excludeTargets property value. Groups of users that are excluded from a policy.
 func (m *AuthenticationMethodConfiguration) SetExcludeTargets(value []ExcludeTargetable)() {
-    m.excludeTargets = value
+    err := m.GetBackingStore().Set("excludeTargets", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetState sets the state property value. The state of the policy. Possible values are: enabled, disabled.
 func (m *AuthenticationMethodConfiguration) SetState(value *AuthenticationMethodState)() {
-    m.state = value
+    err := m.GetBackingStore().Set("state", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AuthenticationMethodConfigurationable 
+type AuthenticationMethodConfigurationable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetExcludeTargets()([]ExcludeTargetable)
+    GetState()(*AuthenticationMethodState)
+    SetExcludeTargets(value []ExcludeTargetable)()
+    SetState(value *AuthenticationMethodState)()
 }

@@ -7,8 +7,6 @@ import (
 // WindowsCertificateProfileBaseCollectionResponse 
 type WindowsCertificateProfileBaseCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WindowsCertificateProfileBaseable
 }
 // NewWindowsCertificateProfileBaseCollectionResponse instantiates a new WindowsCertificateProfileBaseCollectionResponse and sets the default values.
 func NewWindowsCertificateProfileBaseCollectionResponse()(*WindowsCertificateProfileBaseCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WindowsCertificateProfileBaseCollectionResponse) GetFieldDeserializers(
 }
 // GetValue gets the value property value. The value property
 func (m *WindowsCertificateProfileBaseCollectionResponse) GetValue()([]WindowsCertificateProfileBaseable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsCertificateProfileBaseable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsCertificateProfileBaseCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WindowsCertificateProfileBaseCollectionResponse) Serialize(writer i878a
 }
 // SetValue sets the value property value. The value property
 func (m *WindowsCertificateProfileBaseCollectionResponse) SetValue(value []WindowsCertificateProfileBaseable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsCertificateProfileBaseCollectionResponseable 
+type WindowsCertificateProfileBaseCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WindowsCertificateProfileBaseable)
+    SetValue(value []WindowsCertificateProfileBaseable)()
 }

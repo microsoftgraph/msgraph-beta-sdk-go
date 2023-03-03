@@ -8,8 +8,6 @@ import (
 // PolicyLabelsEvaluateApplicationResponse 
 type PolicyLabelsEvaluateApplicationResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
-    // The value property
-    value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionActionable
 }
 // NewPolicyLabelsEvaluateApplicationResponse instantiates a new PolicyLabelsEvaluateApplicationResponse and sets the default values.
 func NewPolicyLabelsEvaluateApplicationResponse()(*PolicyLabelsEvaluateApplicationResponse) {
@@ -43,7 +41,14 @@ func (m *PolicyLabelsEvaluateApplicationResponse) GetFieldDeserializers()(map[st
 }
 // GetValue gets the value property value. The value property
 func (m *PolicyLabelsEvaluateApplicationResponse) GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionActionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionActionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PolicyLabelsEvaluateApplicationResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *PolicyLabelsEvaluateApplicationResponse) Serialize(writer i878a80d2330e
 }
 // SetValue sets the value property value. The value property
 func (m *PolicyLabelsEvaluateApplicationResponse) SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionActionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PolicyLabelsEvaluateApplicationResponseable 
+type PolicyLabelsEvaluateApplicationResponseable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionActionable)
+    SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionActionable)()
 }

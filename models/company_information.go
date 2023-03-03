@@ -8,30 +8,6 @@ import (
 // CompanyInformation 
 type CompanyInformation struct {
     Entity
-    // The address property
-    address PostalAddressTypeable
-    // The currencyCode property
-    currencyCode *string
-    // The currentFiscalYearStartDate property
-    currentFiscalYearStartDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // The displayName property
-    displayName *string
-    // The email property
-    email *string
-    // The faxNumber property
-    faxNumber *string
-    // The industry property
-    industry *string
-    // The lastModifiedDateTime property
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The phoneNumber property
-    phoneNumber *string
-    // The picture property
-    picture []byte
-    // The taxRegistrationNumber property
-    taxRegistrationNumber *string
-    // The website property
-    website *string
 }
 // NewCompanyInformation instantiates a new companyInformation and sets the default values.
 func NewCompanyInformation()(*CompanyInformation) {
@@ -46,27 +22,69 @@ func CreateCompanyInformationFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetAddress gets the address property value. The address property
 func (m *CompanyInformation) GetAddress()(PostalAddressTypeable) {
-    return m.address
+    val, err := m.GetBackingStore().Get("address")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PostalAddressTypeable)
+    }
+    return nil
 }
 // GetCurrencyCode gets the currencyCode property value. The currencyCode property
 func (m *CompanyInformation) GetCurrencyCode()(*string) {
-    return m.currencyCode
+    val, err := m.GetBackingStore().Get("currencyCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCurrentFiscalYearStartDate gets the currentFiscalYearStartDate property value. The currentFiscalYearStartDate property
 func (m *CompanyInformation) GetCurrentFiscalYearStartDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.currentFiscalYearStartDate
+    val, err := m.GetBackingStore().Get("currentFiscalYearStartDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *CompanyInformation) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetEmail gets the email property value. The email property
 func (m *CompanyInformation) GetEmail()(*string) {
-    return m.email
+    val, err := m.GetBackingStore().Get("email")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFaxNumber gets the faxNumber property value. The faxNumber property
 func (m *CompanyInformation) GetFaxNumber()(*string) {
-    return m.faxNumber
+    val, err := m.GetBackingStore().Get("faxNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CompanyInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -195,27 +213,69 @@ func (m *CompanyInformation) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetIndustry gets the industry property value. The industry property
 func (m *CompanyInformation) GetIndustry()(*string) {
-    return m.industry
+    val, err := m.GetBackingStore().Get("industry")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *CompanyInformation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetPhoneNumber gets the phoneNumber property value. The phoneNumber property
 func (m *CompanyInformation) GetPhoneNumber()(*string) {
-    return m.phoneNumber
+    val, err := m.GetBackingStore().Get("phoneNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPicture gets the picture property value. The picture property
 func (m *CompanyInformation) GetPicture()([]byte) {
-    return m.picture
+    val, err := m.GetBackingStore().Get("picture")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
 }
 // GetTaxRegistrationNumber gets the taxRegistrationNumber property value. The taxRegistrationNumber property
 func (m *CompanyInformation) GetTaxRegistrationNumber()(*string) {
-    return m.taxRegistrationNumber
+    val, err := m.GetBackingStore().Get("taxRegistrationNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetWebsite gets the website property value. The website property
 func (m *CompanyInformation) GetWebsite()(*string) {
-    return m.website
+    val, err := m.GetBackingStore().Get("website")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CompanyInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -299,49 +359,114 @@ func (m *CompanyInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetAddress sets the address property value. The address property
 func (m *CompanyInformation) SetAddress(value PostalAddressTypeable)() {
-    m.address = value
+    err := m.GetBackingStore().Set("address", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCurrencyCode sets the currencyCode property value. The currencyCode property
 func (m *CompanyInformation) SetCurrencyCode(value *string)() {
-    m.currencyCode = value
+    err := m.GetBackingStore().Set("currencyCode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCurrentFiscalYearStartDate sets the currentFiscalYearStartDate property value. The currentFiscalYearStartDate property
 func (m *CompanyInformation) SetCurrentFiscalYearStartDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.currentFiscalYearStartDate = value
+    err := m.GetBackingStore().Set("currentFiscalYearStartDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *CompanyInformation) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEmail sets the email property value. The email property
 func (m *CompanyInformation) SetEmail(value *string)() {
-    m.email = value
+    err := m.GetBackingStore().Set("email", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFaxNumber sets the faxNumber property value. The faxNumber property
 func (m *CompanyInformation) SetFaxNumber(value *string)() {
-    m.faxNumber = value
+    err := m.GetBackingStore().Set("faxNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIndustry sets the industry property value. The industry property
 func (m *CompanyInformation) SetIndustry(value *string)() {
-    m.industry = value
+    err := m.GetBackingStore().Set("industry", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *CompanyInformation) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPhoneNumber sets the phoneNumber property value. The phoneNumber property
 func (m *CompanyInformation) SetPhoneNumber(value *string)() {
-    m.phoneNumber = value
+    err := m.GetBackingStore().Set("phoneNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPicture sets the picture property value. The picture property
 func (m *CompanyInformation) SetPicture(value []byte)() {
-    m.picture = value
+    err := m.GetBackingStore().Set("picture", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTaxRegistrationNumber sets the taxRegistrationNumber property value. The taxRegistrationNumber property
 func (m *CompanyInformation) SetTaxRegistrationNumber(value *string)() {
-    m.taxRegistrationNumber = value
+    err := m.GetBackingStore().Set("taxRegistrationNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWebsite sets the website property value. The website property
 func (m *CompanyInformation) SetWebsite(value *string)() {
-    m.website = value
+    err := m.GetBackingStore().Set("website", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CompanyInformationable 
+type CompanyInformationable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAddress()(PostalAddressTypeable)
+    GetCurrencyCode()(*string)
+    GetCurrentFiscalYearStartDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetDisplayName()(*string)
+    GetEmail()(*string)
+    GetFaxNumber()(*string)
+    GetIndustry()(*string)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetPhoneNumber()(*string)
+    GetPicture()([]byte)
+    GetTaxRegistrationNumber()(*string)
+    GetWebsite()(*string)
+    SetAddress(value PostalAddressTypeable)()
+    SetCurrencyCode(value *string)()
+    SetCurrentFiscalYearStartDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetDisplayName(value *string)()
+    SetEmail(value *string)()
+    SetFaxNumber(value *string)()
+    SetIndustry(value *string)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetPhoneNumber(value *string)()
+    SetPicture(value []byte)()
+    SetTaxRegistrationNumber(value *string)()
+    SetWebsite(value *string)()
 }

@@ -8,8 +8,6 @@ import (
 // LifecycleManagementSettings 
 type LifecycleManagementSettings struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24. The default value is 3 hours.
-    workflowScheduleIntervalInHours *int32
 }
 // NewLifecycleManagementSettings instantiates a new lifecycleManagementSettings and sets the default values.
 func NewLifecycleManagementSettings()(*LifecycleManagementSettings) {
@@ -39,7 +37,14 @@ func (m *LifecycleManagementSettings) GetFieldDeserializers()(map[string]func(i8
 }
 // GetWorkflowScheduleIntervalInHours gets the workflowScheduleIntervalInHours property value. The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24. The default value is 3 hours.
 func (m *LifecycleManagementSettings) GetWorkflowScheduleIntervalInHours()(*int32) {
-    return m.workflowScheduleIntervalInHours
+    val, err := m.GetBackingStore().Get("workflowScheduleIntervalInHours")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *LifecycleManagementSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -57,5 +62,15 @@ func (m *LifecycleManagementSettings) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetWorkflowScheduleIntervalInHours sets the workflowScheduleIntervalInHours property value. The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24. The default value is 3 hours.
 func (m *LifecycleManagementSettings) SetWorkflowScheduleIntervalInHours(value *int32)() {
-    m.workflowScheduleIntervalInHours = value
+    err := m.GetBackingStore().Set("workflowScheduleIntervalInHours", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// LifecycleManagementSettingsable 
+type LifecycleManagementSettingsable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetWorkflowScheduleIntervalInHours()(*int32)
+    SetWorkflowScheduleIntervalInHours(value *int32)()
 }

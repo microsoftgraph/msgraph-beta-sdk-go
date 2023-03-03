@@ -8,36 +8,6 @@ import (
 // AccessPackage 
 type AccessPackage struct {
     Entity
-    // Read-only. Nullable. Supports $expand.
-    accessPackageAssignmentPolicies []AccessPackageAssignmentPolicyable
-    // The accessPackageCatalog property
-    accessPackageCatalog AccessPackageCatalogable
-    // The accessPackageResourceRoleScopes property
-    accessPackageResourceRoleScopes []AccessPackageResourceRoleScopeable
-    // The access packages that are incompatible with this package. Read-only.
-    accessPackagesIncompatibleWith []AccessPackageable
-    // Identifier of the access package catalog referencing this access package. Read-only.
-    catalogId *string
-    // The userPrincipalName of the user or identity of the subject who created this resource. Read-only.
-    createdBy *string
-    // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The description of the access package.
-    description *string
-    // The display name of the access package. Supports $filter (eq, contains).
-    displayName *string
-    // The  access packages whose assigned users are ineligible to be assigned this access package.
-    incompatibleAccessPackages []AccessPackageable
-    // The groups whose members are ineligible to be assigned this access package.
-    incompatibleGroups []Groupable
-    // Whether the access package is hidden from the requestor.
-    isHidden *bool
-    // Indicates whether role scopes are visible.
-    isRoleScopesVisible *bool
-    // The userPrincipalName of the user who last modified this resource. Read-only.
-    modifiedBy *string
-    // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-    modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewAccessPackage instantiates a new accessPackage and sets the default values.
 func NewAccessPackage()(*AccessPackage) {
@@ -52,39 +22,102 @@ func CreateAccessPackageFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAccessPackageAssignmentPolicies gets the accessPackageAssignmentPolicies property value. Read-only. Nullable. Supports $expand.
 func (m *AccessPackage) GetAccessPackageAssignmentPolicies()([]AccessPackageAssignmentPolicyable) {
-    return m.accessPackageAssignmentPolicies
+    val, err := m.GetBackingStore().Get("accessPackageAssignmentPolicies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AccessPackageAssignmentPolicyable)
+    }
+    return nil
 }
 // GetAccessPackageCatalog gets the accessPackageCatalog property value. The accessPackageCatalog property
 func (m *AccessPackage) GetAccessPackageCatalog()(AccessPackageCatalogable) {
-    return m.accessPackageCatalog
+    val, err := m.GetBackingStore().Get("accessPackageCatalog")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AccessPackageCatalogable)
+    }
+    return nil
 }
 // GetAccessPackageResourceRoleScopes gets the accessPackageResourceRoleScopes property value. The accessPackageResourceRoleScopes property
 func (m *AccessPackage) GetAccessPackageResourceRoleScopes()([]AccessPackageResourceRoleScopeable) {
-    return m.accessPackageResourceRoleScopes
+    val, err := m.GetBackingStore().Get("accessPackageResourceRoleScopes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AccessPackageResourceRoleScopeable)
+    }
+    return nil
 }
 // GetAccessPackagesIncompatibleWith gets the accessPackagesIncompatibleWith property value. The access packages that are incompatible with this package. Read-only.
 func (m *AccessPackage) GetAccessPackagesIncompatibleWith()([]AccessPackageable) {
-    return m.accessPackagesIncompatibleWith
+    val, err := m.GetBackingStore().Get("accessPackagesIncompatibleWith")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AccessPackageable)
+    }
+    return nil
 }
 // GetCatalogId gets the catalogId property value. Identifier of the access package catalog referencing this access package. Read-only.
 func (m *AccessPackage) GetCatalogId()(*string) {
-    return m.catalogId
+    val, err := m.GetBackingStore().Get("catalogId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCreatedBy gets the createdBy property value. The userPrincipalName of the user or identity of the subject who created this resource. Read-only.
 func (m *AccessPackage) GetCreatedBy()(*string) {
-    return m.createdBy
+    val, err := m.GetBackingStore().Get("createdBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessPackage) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDescription gets the description property value. The description of the access package.
 func (m *AccessPackage) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the access package. Supports $filter (eq, contains).
 func (m *AccessPackage) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -263,27 +296,69 @@ func (m *AccessPackage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetIncompatibleAccessPackages gets the incompatibleAccessPackages property value. The  access packages whose assigned users are ineligible to be assigned this access package.
 func (m *AccessPackage) GetIncompatibleAccessPackages()([]AccessPackageable) {
-    return m.incompatibleAccessPackages
+    val, err := m.GetBackingStore().Get("incompatibleAccessPackages")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AccessPackageable)
+    }
+    return nil
 }
 // GetIncompatibleGroups gets the incompatibleGroups property value. The groups whose members are ineligible to be assigned this access package.
 func (m *AccessPackage) GetIncompatibleGroups()([]Groupable) {
-    return m.incompatibleGroups
+    val, err := m.GetBackingStore().Get("incompatibleGroups")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Groupable)
+    }
+    return nil
 }
 // GetIsHidden gets the isHidden property value. Whether the access package is hidden from the requestor.
 func (m *AccessPackage) GetIsHidden()(*bool) {
-    return m.isHidden
+    val, err := m.GetBackingStore().Get("isHidden")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsRoleScopesVisible gets the isRoleScopesVisible property value. Indicates whether role scopes are visible.
 func (m *AccessPackage) GetIsRoleScopesVisible()(*bool) {
-    return m.isRoleScopesVisible
+    val, err := m.GetBackingStore().Get("isRoleScopesVisible")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetModifiedBy gets the modifiedBy property value. The userPrincipalName of the user who last modified this resource. Read-only.
 func (m *AccessPackage) GetModifiedBy()(*string) {
-    return m.modifiedBy
+    val, err := m.GetBackingStore().Get("modifiedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessPackage) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.modifiedDateTime
+    val, err := m.GetBackingStore().Get("modifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AccessPackage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -405,61 +480,141 @@ func (m *AccessPackage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAccessPackageAssignmentPolicies sets the accessPackageAssignmentPolicies property value. Read-only. Nullable. Supports $expand.
 func (m *AccessPackage) SetAccessPackageAssignmentPolicies(value []AccessPackageAssignmentPolicyable)() {
-    m.accessPackageAssignmentPolicies = value
+    err := m.GetBackingStore().Set("accessPackageAssignmentPolicies", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAccessPackageCatalog sets the accessPackageCatalog property value. The accessPackageCatalog property
 func (m *AccessPackage) SetAccessPackageCatalog(value AccessPackageCatalogable)() {
-    m.accessPackageCatalog = value
+    err := m.GetBackingStore().Set("accessPackageCatalog", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAccessPackageResourceRoleScopes sets the accessPackageResourceRoleScopes property value. The accessPackageResourceRoleScopes property
 func (m *AccessPackage) SetAccessPackageResourceRoleScopes(value []AccessPackageResourceRoleScopeable)() {
-    m.accessPackageResourceRoleScopes = value
+    err := m.GetBackingStore().Set("accessPackageResourceRoleScopes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAccessPackagesIncompatibleWith sets the accessPackagesIncompatibleWith property value. The access packages that are incompatible with this package. Read-only.
 func (m *AccessPackage) SetAccessPackagesIncompatibleWith(value []AccessPackageable)() {
-    m.accessPackagesIncompatibleWith = value
+    err := m.GetBackingStore().Set("accessPackagesIncompatibleWith", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCatalogId sets the catalogId property value. Identifier of the access package catalog referencing this access package. Read-only.
 func (m *AccessPackage) SetCatalogId(value *string)() {
-    m.catalogId = value
+    err := m.GetBackingStore().Set("catalogId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedBy sets the createdBy property value. The userPrincipalName of the user or identity of the subject who created this resource. Read-only.
 func (m *AccessPackage) SetCreatedBy(value *string)() {
-    m.createdBy = value
+    err := m.GetBackingStore().Set("createdBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessPackage) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. The description of the access package.
 func (m *AccessPackage) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the access package. Supports $filter (eq, contains).
 func (m *AccessPackage) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIncompatibleAccessPackages sets the incompatibleAccessPackages property value. The  access packages whose assigned users are ineligible to be assigned this access package.
 func (m *AccessPackage) SetIncompatibleAccessPackages(value []AccessPackageable)() {
-    m.incompatibleAccessPackages = value
+    err := m.GetBackingStore().Set("incompatibleAccessPackages", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIncompatibleGroups sets the incompatibleGroups property value. The groups whose members are ineligible to be assigned this access package.
 func (m *AccessPackage) SetIncompatibleGroups(value []Groupable)() {
-    m.incompatibleGroups = value
+    err := m.GetBackingStore().Set("incompatibleGroups", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsHidden sets the isHidden property value. Whether the access package is hidden from the requestor.
 func (m *AccessPackage) SetIsHidden(value *bool)() {
-    m.isHidden = value
+    err := m.GetBackingStore().Set("isHidden", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsRoleScopesVisible sets the isRoleScopesVisible property value. Indicates whether role scopes are visible.
 func (m *AccessPackage) SetIsRoleScopesVisible(value *bool)() {
-    m.isRoleScopesVisible = value
+    err := m.GetBackingStore().Set("isRoleScopesVisible", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetModifiedBy sets the modifiedBy property value. The userPrincipalName of the user who last modified this resource. Read-only.
 func (m *AccessPackage) SetModifiedBy(value *string)() {
-    m.modifiedBy = value
+    err := m.GetBackingStore().Set("modifiedBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetModifiedDateTime sets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessPackage) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.modifiedDateTime = value
+    err := m.GetBackingStore().Set("modifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AccessPackageable 
+type AccessPackageable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAccessPackageAssignmentPolicies()([]AccessPackageAssignmentPolicyable)
+    GetAccessPackageCatalog()(AccessPackageCatalogable)
+    GetAccessPackageResourceRoleScopes()([]AccessPackageResourceRoleScopeable)
+    GetAccessPackagesIncompatibleWith()([]AccessPackageable)
+    GetCatalogId()(*string)
+    GetCreatedBy()(*string)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetIncompatibleAccessPackages()([]AccessPackageable)
+    GetIncompatibleGroups()([]Groupable)
+    GetIsHidden()(*bool)
+    GetIsRoleScopesVisible()(*bool)
+    GetModifiedBy()(*string)
+    GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    SetAccessPackageAssignmentPolicies(value []AccessPackageAssignmentPolicyable)()
+    SetAccessPackageCatalog(value AccessPackageCatalogable)()
+    SetAccessPackageResourceRoleScopes(value []AccessPackageResourceRoleScopeable)()
+    SetAccessPackagesIncompatibleWith(value []AccessPackageable)()
+    SetCatalogId(value *string)()
+    SetCreatedBy(value *string)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetIncompatibleAccessPackages(value []AccessPackageable)()
+    SetIncompatibleGroups(value []Groupable)()
+    SetIsHidden(value *bool)()
+    SetIsRoleScopesVisible(value *bool)()
+    SetModifiedBy(value *string)()
+    SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
 }

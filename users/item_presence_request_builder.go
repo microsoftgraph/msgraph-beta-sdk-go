@@ -23,7 +23,7 @@ type ItemPresenceRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemPresenceRequestBuilderGetQueryParameters get a user's presence information.
+// ItemPresenceRequestBuilderGetQueryParameters set a presence status message for a user. An optional expiration date and time can be supplied.
 type ItemPresenceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -48,11 +48,11 @@ type ItemPresenceRequestBuilderPatchRequestConfiguration struct {
 }
 // ClearPresence provides operations to call the clearPresence method.
 func (m *ItemPresenceRequestBuilder) ClearPresence()(*ItemPresenceClearPresenceRequestBuilder) {
-    return NewItemPresenceClearPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemPresenceClearPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ClearUserPreferredPresence provides operations to call the clearUserPreferredPresence method.
 func (m *ItemPresenceRequestBuilder) ClearUserPreferredPresence()(*ItemPresenceClearUserPreferredPresenceRequestBuilder) {
-    return NewItemPresenceClearUserPreferredPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemPresenceClearUserPreferredPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewItemPresenceRequestBuilderInternal instantiates a new PresenceRequestBuilder and sets the default values.
 func NewItemPresenceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPresenceRequestBuilder) {
@@ -63,8 +63,8 @@ func NewItemPresenceRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemPresenceRequestBuilder instantiates a new PresenceRequestBuilder and sets the default values.
@@ -89,10 +89,10 @@ func (m *ItemPresenceRequestBuilder) Delete(ctx context.Context, requestConfigur
     }
     return nil
 }
-// Get get a user's presence information.
+// Get set a presence status message for a user. An optional expiration date and time can be supplied.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/presence-get?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0
 func (m *ItemPresenceRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPresenceRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Presenceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -132,15 +132,15 @@ func (m *ItemPresenceRequestBuilder) Patch(ctx context.Context, body ie233ee762e
 }
 // SetPresence provides operations to call the setPresence method.
 func (m *ItemPresenceRequestBuilder) SetPresence()(*ItemPresenceSetPresenceRequestBuilder) {
-    return NewItemPresenceSetPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemPresenceSetPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SetStatusMessage provides operations to call the setStatusMessage method.
 func (m *ItemPresenceRequestBuilder) SetStatusMessage()(*ItemPresenceSetStatusMessageRequestBuilder) {
-    return NewItemPresenceSetStatusMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemPresenceSetStatusMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SetUserPreferredPresence provides operations to call the setUserPreferredPresence method.
 func (m *ItemPresenceRequestBuilder) SetUserPreferredPresence()(*ItemPresenceSetUserPreferredPresenceRequestBuilder) {
-    return NewItemPresenceSetUserPreferredPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemPresenceSetUserPreferredPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property presence for users
 func (m *ItemPresenceRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemPresenceRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -154,7 +154,7 @@ func (m *ItemPresenceRequestBuilder) ToDeleteRequestInformation(ctx context.Cont
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get a user's presence information.
+// ToGetRequestInformation set a presence status message for a user. An optional expiration date and time can be supplied.
 func (m *ItemPresenceRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPresenceRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -177,7 +177,10 @@ func (m *ItemPresenceRequestBuilder) ToPatchRequestInformation(ctx context.Conte
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

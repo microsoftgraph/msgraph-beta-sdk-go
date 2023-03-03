@@ -7,16 +7,14 @@ import (
 // FileThreatSubmission 
 type FileThreatSubmission struct {
     ThreatSubmission
-    // It specifies the file name to be submitted.
-    fileName *string
 }
 // NewFileThreatSubmission instantiates a new FileThreatSubmission and sets the default values.
 func NewFileThreatSubmission()(*FileThreatSubmission) {
     m := &FileThreatSubmission{
         ThreatSubmission: *NewThreatSubmission(),
     }
-    odataTypeValue := "#microsoft.graph.security.fileThreatSubmission";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.security.fileThreatSubmission"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateFileThreatSubmissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -60,7 +58,14 @@ func (m *FileThreatSubmission) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetFileName gets the fileName property value. It specifies the file name to be submitted.
 func (m *FileThreatSubmission) GetFileName()(*string) {
-    return m.fileName
+    val, err := m.GetBackingStore().Get("fileName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *FileThreatSubmission) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -78,5 +83,15 @@ func (m *FileThreatSubmission) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetFileName sets the fileName property value. It specifies the file name to be submitted.
 func (m *FileThreatSubmission) SetFileName(value *string)() {
-    m.fileName = value
+    err := m.GetBackingStore().Set("fileName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// FileThreatSubmissionable 
+type FileThreatSubmissionable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    ThreatSubmissionable
+    GetFileName()(*string)
+    SetFileName(value *string)()
 }

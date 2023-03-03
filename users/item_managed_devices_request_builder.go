@@ -53,19 +53,19 @@ type ItemManagedDevicesRequestBuilderPostRequestConfiguration struct {
 }
 // AppDiagnosticsWithUpn provides operations to call the appDiagnostics method.
 func (m *ItemManagedDevicesRequestBuilder) AppDiagnosticsWithUpn(upn *string)(*ItemManagedDevicesAppDiagnosticsWithUpnRequestBuilder) {
-    return NewItemManagedDevicesAppDiagnosticsWithUpnRequestBuilderInternal(m.pathParameters, m.requestAdapter, upn);
+    return NewItemManagedDevicesAppDiagnosticsWithUpnRequestBuilderInternal(m.pathParameters, m.requestAdapter, upn)
 }
 // BulkReprovisionCloudPc provides operations to call the bulkReprovisionCloudPc method.
 func (m *ItemManagedDevicesRequestBuilder) BulkReprovisionCloudPc()(*ItemManagedDevicesBulkReprovisionCloudPcRequestBuilder) {
-    return NewItemManagedDevicesBulkReprovisionCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemManagedDevicesBulkReprovisionCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // BulkRestoreCloudPc provides operations to call the bulkRestoreCloudPc method.
 func (m *ItemManagedDevicesRequestBuilder) BulkRestoreCloudPc()(*ItemManagedDevicesBulkRestoreCloudPcRequestBuilder) {
-    return NewItemManagedDevicesBulkRestoreCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemManagedDevicesBulkRestoreCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // BulkSetCloudPcReviewStatus provides operations to call the bulkSetCloudPcReviewStatus method.
 func (m *ItemManagedDevicesRequestBuilder) BulkSetCloudPcReviewStatus()(*ItemManagedDevicesBulkSetCloudPcReviewStatusRequestBuilder) {
-    return NewItemManagedDevicesBulkSetCloudPcReviewStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemManagedDevicesBulkSetCloudPcReviewStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewItemManagedDevicesRequestBuilderInternal instantiates a new ManagedDevicesRequestBuilder and sets the default values.
 func NewItemManagedDevicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemManagedDevicesRequestBuilder) {
@@ -76,8 +76,8 @@ func NewItemManagedDevicesRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemManagedDevicesRequestBuilder instantiates a new ManagedDevicesRequestBuilder and sets the default values.
@@ -88,15 +88,15 @@ func NewItemManagedDevicesRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemManagedDevicesRequestBuilder) Count()(*ItemManagedDevicesCountRequestBuilder) {
-    return NewItemManagedDevicesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemManagedDevicesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DownloadAppDiagnostics provides operations to call the downloadAppDiagnostics method.
 func (m *ItemManagedDevicesRequestBuilder) DownloadAppDiagnostics()(*ItemManagedDevicesDownloadAppDiagnosticsRequestBuilder) {
-    return NewItemManagedDevicesDownloadAppDiagnosticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemManagedDevicesDownloadAppDiagnosticsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ExecuteAction provides operations to call the executeAction method.
 func (m *ItemManagedDevicesRequestBuilder) ExecuteAction()(*ItemManagedDevicesExecuteActionRequestBuilder) {
-    return NewItemManagedDevicesExecuteActionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemManagedDevicesExecuteActionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the managed devices associated with the user.
 func (m *ItemManagedDevicesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemManagedDevicesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceCollectionResponseable, error) {
@@ -119,7 +119,7 @@ func (m *ItemManagedDevicesRequestBuilder) Get(ctx context.Context, requestConfi
 }
 // MoveDevicesToOU provides operations to call the moveDevicesToOU method.
 func (m *ItemManagedDevicesRequestBuilder) MoveDevicesToOU()(*ItemManagedDevicesMoveDevicesToOURequestBuilder) {
-    return NewItemManagedDevicesMoveDevicesToOURequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemManagedDevicesMoveDevicesToOURequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to managedDevices for users
 func (m *ItemManagedDevicesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable, requestConfiguration *ItemManagedDevicesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable, error) {
@@ -163,7 +163,10 @@ func (m *ItemManagedDevicesRequestBuilder) ToPostRequestInformation(ctx context.
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -8,22 +8,6 @@ import (
 // GroupPolicyCategory 
 type GroupPolicyCategory struct {
     Entity
-    // The children categories
-    children []GroupPolicyCategoryable
-    // The id of the definition file the category came from
-    definitionFile GroupPolicyDefinitionFileable
-    // The immediate GroupPolicyDefinition children of the category
-    definitions []GroupPolicyDefinitionable
-    // The string id of the category's display name
-    displayName *string
-    // Category Ingestion source
-    ingestionSource *IngestionSource
-    // Defines if the category is a root category
-    isRoot *bool
-    // The date and time the entity was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The parent category
-    parent GroupPolicyCategoryable
 }
 // NewGroupPolicyCategory instantiates a new groupPolicyCategory and sets the default values.
 func NewGroupPolicyCategory()(*GroupPolicyCategory) {
@@ -38,19 +22,47 @@ func CreateGroupPolicyCategoryFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetChildren gets the children property value. The children categories
 func (m *GroupPolicyCategory) GetChildren()([]GroupPolicyCategoryable) {
-    return m.children
+    val, err := m.GetBackingStore().Get("children")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GroupPolicyCategoryable)
+    }
+    return nil
 }
 // GetDefinitionFile gets the definitionFile property value. The id of the definition file the category came from
 func (m *GroupPolicyCategory) GetDefinitionFile()(GroupPolicyDefinitionFileable) {
-    return m.definitionFile
+    val, err := m.GetBackingStore().Get("definitionFile")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(GroupPolicyDefinitionFileable)
+    }
+    return nil
 }
 // GetDefinitions gets the definitions property value. The immediate GroupPolicyDefinition children of the category
 func (m *GroupPolicyCategory) GetDefinitions()([]GroupPolicyDefinitionable) {
-    return m.definitions
+    val, err := m.GetBackingStore().Get("definitions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GroupPolicyDefinitionable)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The string id of the category's display name
 func (m *GroupPolicyCategory) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -147,19 +159,47 @@ func (m *GroupPolicyCategory) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetIngestionSource gets the ingestionSource property value. Category Ingestion source
 func (m *GroupPolicyCategory) GetIngestionSource()(*IngestionSource) {
-    return m.ingestionSource
+    val, err := m.GetBackingStore().Get("ingestionSource")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*IngestionSource)
+    }
+    return nil
 }
 // GetIsRoot gets the isRoot property value. Defines if the category is a root category
 func (m *GroupPolicyCategory) GetIsRoot()(*bool) {
-    return m.isRoot
+    val, err := m.GetBackingStore().Get("isRoot")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
 func (m *GroupPolicyCategory) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetParent gets the parent property value. The parent category
 func (m *GroupPolicyCategory) GetParent()(GroupPolicyCategoryable) {
-    return m.parent
+    val, err := m.GetBackingStore().Get("parent")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(GroupPolicyCategoryable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyCategory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -228,33 +268,78 @@ func (m *GroupPolicyCategory) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetChildren sets the children property value. The children categories
 func (m *GroupPolicyCategory) SetChildren(value []GroupPolicyCategoryable)() {
-    m.children = value
+    err := m.GetBackingStore().Set("children", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefinitionFile sets the definitionFile property value. The id of the definition file the category came from
 func (m *GroupPolicyCategory) SetDefinitionFile(value GroupPolicyDefinitionFileable)() {
-    m.definitionFile = value
+    err := m.GetBackingStore().Set("definitionFile", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefinitions sets the definitions property value. The immediate GroupPolicyDefinition children of the category
 func (m *GroupPolicyCategory) SetDefinitions(value []GroupPolicyDefinitionable)() {
-    m.definitions = value
+    err := m.GetBackingStore().Set("definitions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The string id of the category's display name
 func (m *GroupPolicyCategory) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIngestionSource sets the ingestionSource property value. Category Ingestion source
 func (m *GroupPolicyCategory) SetIngestionSource(value *IngestionSource)() {
-    m.ingestionSource = value
+    err := m.GetBackingStore().Set("ingestionSource", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsRoot sets the isRoot property value. Defines if the category is a root category
 func (m *GroupPolicyCategory) SetIsRoot(value *bool)() {
-    m.isRoot = value
+    err := m.GetBackingStore().Set("isRoot", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the entity was last modified.
 func (m *GroupPolicyCategory) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetParent sets the parent property value. The parent category
 func (m *GroupPolicyCategory) SetParent(value GroupPolicyCategoryable)() {
-    m.parent = value
+    err := m.GetBackingStore().Set("parent", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GroupPolicyCategoryable 
+type GroupPolicyCategoryable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetChildren()([]GroupPolicyCategoryable)
+    GetDefinitionFile()(GroupPolicyDefinitionFileable)
+    GetDefinitions()([]GroupPolicyDefinitionable)
+    GetDisplayName()(*string)
+    GetIngestionSource()(*IngestionSource)
+    GetIsRoot()(*bool)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetParent()(GroupPolicyCategoryable)
+    SetChildren(value []GroupPolicyCategoryable)()
+    SetDefinitionFile(value GroupPolicyDefinitionFileable)()
+    SetDefinitions(value []GroupPolicyDefinitionable)()
+    SetDisplayName(value *string)()
+    SetIngestionSource(value *IngestionSource)()
+    SetIsRoot(value *bool)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetParent(value GroupPolicyCategoryable)()
 }

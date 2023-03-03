@@ -7,8 +7,6 @@ import (
 // CloudPcHealthCheckItemCollectionResponse 
 type CloudPcHealthCheckItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []CloudPcHealthCheckItemable
 }
 // NewCloudPcHealthCheckItemCollectionResponse instantiates a new CloudPcHealthCheckItemCollectionResponse and sets the default values.
 func NewCloudPcHealthCheckItemCollectionResponse()(*CloudPcHealthCheckItemCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *CloudPcHealthCheckItemCollectionResponse) GetFieldDeserializers()(map[s
 }
 // GetValue gets the value property value. The value property
 func (m *CloudPcHealthCheckItemCollectionResponse) GetValue()([]CloudPcHealthCheckItemable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CloudPcHealthCheckItemable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CloudPcHealthCheckItemCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *CloudPcHealthCheckItemCollectionResponse) Serialize(writer i878a80d2330
 }
 // SetValue sets the value property value. The value property
 func (m *CloudPcHealthCheckItemCollectionResponse) SetValue(value []CloudPcHealthCheckItemable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CloudPcHealthCheckItemCollectionResponseable 
+type CloudPcHealthCheckItemCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]CloudPcHealthCheckItemable)
+    SetValue(value []CloudPcHealthCheckItemable)()
 }

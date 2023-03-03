@@ -53,8 +53,8 @@ func NewGroupPolicyCategoriesItemChildrenRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGroupPolicyCategoriesItemChildrenRequestBuilder instantiates a new ChildrenRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewGroupPolicyCategoriesItemChildrenRequestBuilder(rawUrl string, requestAd
 }
 // Count provides operations to count the resources in the collection.
 func (m *GroupPolicyCategoriesItemChildrenRequestBuilder) Count()(*GroupPolicyCategoriesItemChildrenCountRequestBuilder) {
-    return NewGroupPolicyCategoriesItemChildrenCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyCategoriesItemChildrenCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the children categories
 func (m *GroupPolicyCategoriesItemChildrenRequestBuilder) Get(ctx context.Context, requestConfiguration *GroupPolicyCategoriesItemChildrenRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyCategoryCollectionResponseable, error) {

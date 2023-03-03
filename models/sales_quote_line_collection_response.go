@@ -7,8 +7,6 @@ import (
 // SalesQuoteLineCollectionResponse 
 type SalesQuoteLineCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []SalesQuoteLineable
 }
 // NewSalesQuoteLineCollectionResponse instantiates a new SalesQuoteLineCollectionResponse and sets the default values.
 func NewSalesQuoteLineCollectionResponse()(*SalesQuoteLineCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *SalesQuoteLineCollectionResponse) GetFieldDeserializers()(map[string]fu
 }
 // GetValue gets the value property value. The value property
 func (m *SalesQuoteLineCollectionResponse) GetValue()([]SalesQuoteLineable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SalesQuoteLineable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SalesQuoteLineCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *SalesQuoteLineCollectionResponse) Serialize(writer i878a80d2330e89d2689
 }
 // SetValue sets the value property value. The value property
 func (m *SalesQuoteLineCollectionResponse) SetValue(value []SalesQuoteLineable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SalesQuoteLineCollectionResponseable 
+type SalesQuoteLineCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]SalesQuoteLineable)
+    SetValue(value []SalesQuoteLineable)()
 }

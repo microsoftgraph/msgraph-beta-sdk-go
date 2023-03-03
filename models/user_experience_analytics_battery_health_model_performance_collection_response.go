@@ -7,8 +7,6 @@ import (
 // UserExperienceAnalyticsBatteryHealthModelPerformanceCollectionResponse 
 type UserExperienceAnalyticsBatteryHealthModelPerformanceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UserExperienceAnalyticsBatteryHealthModelPerformanceable
 }
 // NewUserExperienceAnalyticsBatteryHealthModelPerformanceCollectionResponse instantiates a new UserExperienceAnalyticsBatteryHealthModelPerformanceCollectionResponse and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthModelPerformanceCollectionResponse()(*UserExperienceAnalyticsBatteryHealthModelPerformanceCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformanceCollectionResponse)
 }
 // GetValue gets the value property value. The value property
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformanceCollectionResponse) GetValue()([]UserExperienceAnalyticsBatteryHealthModelPerformanceable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserExperienceAnalyticsBatteryHealthModelPerformanceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformanceCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformanceCollectionResponse)
 }
 // SetValue sets the value property value. The value property
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformanceCollectionResponse) SetValue(value []UserExperienceAnalyticsBatteryHealthModelPerformanceable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsBatteryHealthModelPerformanceCollectionResponseable 
+type UserExperienceAnalyticsBatteryHealthModelPerformanceCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UserExperienceAnalyticsBatteryHealthModelPerformanceable)
+    SetValue(value []UserExperienceAnalyticsBatteryHealthModelPerformanceable)()
 }

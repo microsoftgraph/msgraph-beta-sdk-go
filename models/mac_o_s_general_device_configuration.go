@@ -7,132 +7,14 @@ import (
 // MacOSGeneralDeviceConfiguration 
 type MacOSGeneralDeviceConfiguration struct {
     DeviceConfiguration
-    // Yes prevents users from adding friends to Game Center. Available for devices running macOS versions 10.13 and later.
-    addingGameCenterFriendsBlocked *bool
-    // Indicates whether or not to allow AirDrop.
-    airDropBlocked *bool
-    // Indicates whether or to block users from unlocking their Mac with Apple Watch.
-    appleWatchBlockAutoUnlock *bool
-    // Indicates whether or not to block the user from accessing the camera of the device.
-    cameraBlocked *bool
-    // Indicates whether or not to allow remote screen observation by Classroom app. Requires MDM enrollment via Apple School Manager or Apple Business Manager.
-    classroomAppBlockRemoteScreenObservation *bool
-    // Indicates whether or not to automatically give permission to the teacher of a managed course on the Classroom app to view a student's screen without prompting. Requires MDM enrollment via Apple School Manager or Apple Business Manager.
-    classroomAppForceUnpromptedScreenObservation *bool
-    // Indicates whether or not to automatically give permission to the teacher's requests, without prompting the student. Requires MDM enrollment via Apple School Manager or Apple Business Manager.
-    classroomForceAutomaticallyJoinClasses *bool
-    // Indicates whether a student enrolled in an unmanaged course via Classroom will be required to request permission from the teacher when attempting to leave the course. Requires MDM enrollment via Apple School Manager or Apple Business Manager.
-    classroomForceRequestPermissionToLeaveClasses *bool
-    // Indicates whether or not to allow the teacher to lock apps or the device without prompting the student. Requires MDM enrollment via Apple School Manager or Apple Business Manager.
-    classroomForceUnpromptedAppAndDeviceLock *bool
-    // Possible values of the compliance app list.
-    compliantAppListType *AppListType
-    // List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
-    compliantAppsList []AppListItemable
-    // Indicates whether or not to allow content caching.
-    contentCachingBlocked *bool
-    // Indicates whether or not to block definition lookup.
-    definitionLookupBlocked *bool
-    // An email address lacking a suffix that matches any of these strings will be considered out-of-domain.
-    emailInDomainSuffixes []string
-    // TRUE disables the reset option on supervised devices. FALSE enables the reset option on supervised devices. Available for devices running macOS versions 12.0 and later.
-    eraseContentAndSettingsBlocked *bool
-    // Yes disables Game Center, and the Game Center icon is removed from the Home screen. Available for devices running macOS versions 10.13 and later.
-    gameCenterBlocked *bool
-    // Indicates whether or not to block the user from continuing work that they started on a MacOS device on another iOS or MacOS device (MacOS 10.15 or later).
-    iCloudBlockActivityContinuation *bool
-    // Indicates whether or not to block iCloud from syncing contacts.
-    iCloudBlockAddressBook *bool
-    // Indicates whether or not to block iCloud from syncing bookmarks.
-    iCloudBlockBookmarks *bool
-    // Indicates whether or not to block iCloud from syncing calendars.
-    iCloudBlockCalendar *bool
-    // Indicates whether or not to block iCloud document sync.
-    iCloudBlockDocumentSync *bool
-    // Indicates whether or not to block iCloud from syncing mail.
-    iCloudBlockMail *bool
-    // Indicates whether or not to block iCloud from syncing notes.
-    iCloudBlockNotes *bool
-    // Indicates whether or not to block iCloud Photo Library.
-    iCloudBlockPhotoLibrary *bool
-    // Indicates whether or not to block iCloud from syncing reminders.
-    iCloudBlockReminders *bool
-    // When TRUE the synchronization of cloud desktop and documents is blocked. When FALSE, synchronization of the cloud desktop and documents are allowed. Available for devices running macOS 10.12.4 and later.
-    iCloudDesktopAndDocumentsBlocked *bool
-    // iCloud private relay is an iCloud+ service that prevents networks and servers from monitoring a person's activity across the internet. By blocking iCloud private relay, Apple will not encrypt the traffic leaving the device. Available for devices running macOS 12 and later.
-    iCloudPrivateRelayBlocked *bool
-    // Indicates whether or not to block files from being transferred using iTunes.
-    iTunesBlockFileSharing *bool
-    // Indicates whether or not to block Music service and revert Music app to classic mode.
-    iTunesBlockMusicService *bool
-    // Indicates whether or not to block the user from using dictation input.
-    keyboardBlockDictation *bool
-    // Indicates whether or not iCloud keychain synchronization is blocked (macOS 10.12 and later).
-    keychainBlockCloudSync *bool
-    // TRUE prevents multiplayer gaming when using Game Center. FALSE allows multiplayer gaming when using Game Center. Available for devices running macOS versions 10.13 and later.
-    multiplayerGamingBlocked *bool
-    // Indicates whether or not to block sharing passwords with the AirDrop passwords feature.
-    passwordBlockAirDropSharing *bool
-    // Indicates whether or not to block the AutoFill Passwords feature.
-    passwordBlockAutoFill *bool
-    // Indicates whether or not to block fingerprint unlock.
-    passwordBlockFingerprintUnlock *bool
-    // Indicates whether or not to allow passcode modification.
-    passwordBlockModification *bool
-    // Indicates whether or not to block requesting passwords from nearby devices.
-    passwordBlockProximityRequests *bool
-    // Block simple passwords.
-    passwordBlockSimple *bool
-    // Number of days before the password expires.
-    passwordExpirationDays *int32
-    // The number of allowed failed attempts to enter the passcode at the device's lock screen. Valid values 2 to 11
-    passwordMaximumAttemptCount *int32
-    // Number of character sets a password must contain. Valid values 0 to 4
-    passwordMinimumCharacterSetCount *int32
-    // Minimum length of passwords.
-    passwordMinimumLength *int32
-    // Minutes of inactivity required before a password is required.
-    passwordMinutesOfInactivityBeforeLock *int32
-    // Minutes of inactivity required before the screen times out.
-    passwordMinutesOfInactivityBeforeScreenTimeout *int32
-    // The number of minutes before the login is reset after the maximum number of unsuccessful login attempts is reached.
-    passwordMinutesUntilFailedLoginReset *int32
-    // Number of previous passwords to block.
-    passwordPreviousPasswordBlockCount *int32
-    // Whether or not to require a password.
-    passwordRequired *bool
-    // Possible values of required passwords.
-    passwordRequiredType *RequiredPasswordType
-    // List of privacy preference policy controls. This collection can contain a maximum of 10000 elements.
-    privacyAccessControls []MacOSPrivacyAccessControlItemable
-    // Indicates whether or not to block the user from using Auto fill in Safari.
-    safariBlockAutofill *bool
-    // Indicates whether or not to block the user from taking Screenshots.
-    screenCaptureBlocked *bool
-    // Specify the number of days (1-90) to delay visibility of major OS software updates. Available for devices running macOS versions 11.3 and later. Valid values 0 to 90
-    softwareUpdateMajorOSDeferredInstallDelayInDays *int32
-    // Specify the number of days (1-90) to delay visibility of minor OS software updates. Available for devices running macOS versions 11.3 and later. Valid values 0 to 90
-    softwareUpdateMinorOSDeferredInstallDelayInDays *int32
-    // Specify the number of days (1-90) to delay visibility of non-OS software updates. Available for devices running macOS versions 11.3 and later. Valid values 0 to 90
-    softwareUpdateNonOSDeferredInstallDelayInDays *int32
-    // Sets how many days a software update will be delyed for a supervised device. Valid values 0 to 90
-    softwareUpdatesEnforcedDelayInDays *int32
-    // Indicates whether or not to block Spotlight from returning any results from an Internet search.
-    spotlightBlockInternetResults *bool
-    // Maximum hours after which the user must enter their password to unlock the device instead of using Touch ID. Available for devices running macOS 12 and later. Valid values 0 to 2147483647
-    touchIdTimeoutInHours *int32
-    // Determines whether to delay OS and/or app updates for macOS. Possible values are: none, delayOSUpdateVisibility, delayAppUpdateVisibility, unknownFutureValue, delayMajorOsUpdateVisibility.
-    updateDelayPolicy *MacOSSoftwareUpdateDelayPolicy
-    // TRUE prevents the wallpaper from being changed. FALSE allows the wallpaper to be changed. Available for devices running macOS versions 10.13 and later.
-    wallpaperModificationBlocked *bool
 }
 // NewMacOSGeneralDeviceConfiguration instantiates a new MacOSGeneralDeviceConfiguration and sets the default values.
 func NewMacOSGeneralDeviceConfiguration()(*MacOSGeneralDeviceConfiguration) {
     m := &MacOSGeneralDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.macOSGeneralDeviceConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.macOSGeneralDeviceConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMacOSGeneralDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -141,63 +23,168 @@ func CreateMacOSGeneralDeviceConfigurationFromDiscriminatorValue(parseNode i878a
 }
 // GetAddingGameCenterFriendsBlocked gets the addingGameCenterFriendsBlocked property value. Yes prevents users from adding friends to Game Center. Available for devices running macOS versions 10.13 and later.
 func (m *MacOSGeneralDeviceConfiguration) GetAddingGameCenterFriendsBlocked()(*bool) {
-    return m.addingGameCenterFriendsBlocked
+    val, err := m.GetBackingStore().Get("addingGameCenterFriendsBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetAirDropBlocked gets the airDropBlocked property value. Indicates whether or not to allow AirDrop.
 func (m *MacOSGeneralDeviceConfiguration) GetAirDropBlocked()(*bool) {
-    return m.airDropBlocked
+    val, err := m.GetBackingStore().Get("airDropBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetAppleWatchBlockAutoUnlock gets the appleWatchBlockAutoUnlock property value. Indicates whether or to block users from unlocking their Mac with Apple Watch.
 func (m *MacOSGeneralDeviceConfiguration) GetAppleWatchBlockAutoUnlock()(*bool) {
-    return m.appleWatchBlockAutoUnlock
+    val, err := m.GetBackingStore().Get("appleWatchBlockAutoUnlock")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetCameraBlocked gets the cameraBlocked property value. Indicates whether or not to block the user from accessing the camera of the device.
 func (m *MacOSGeneralDeviceConfiguration) GetCameraBlocked()(*bool) {
-    return m.cameraBlocked
+    val, err := m.GetBackingStore().Get("cameraBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetClassroomAppBlockRemoteScreenObservation gets the classroomAppBlockRemoteScreenObservation property value. Indicates whether or not to allow remote screen observation by Classroom app. Requires MDM enrollment via Apple School Manager or Apple Business Manager.
 func (m *MacOSGeneralDeviceConfiguration) GetClassroomAppBlockRemoteScreenObservation()(*bool) {
-    return m.classroomAppBlockRemoteScreenObservation
+    val, err := m.GetBackingStore().Get("classroomAppBlockRemoteScreenObservation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetClassroomAppForceUnpromptedScreenObservation gets the classroomAppForceUnpromptedScreenObservation property value. Indicates whether or not to automatically give permission to the teacher of a managed course on the Classroom app to view a student's screen without prompting. Requires MDM enrollment via Apple School Manager or Apple Business Manager.
 func (m *MacOSGeneralDeviceConfiguration) GetClassroomAppForceUnpromptedScreenObservation()(*bool) {
-    return m.classroomAppForceUnpromptedScreenObservation
+    val, err := m.GetBackingStore().Get("classroomAppForceUnpromptedScreenObservation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetClassroomForceAutomaticallyJoinClasses gets the classroomForceAutomaticallyJoinClasses property value. Indicates whether or not to automatically give permission to the teacher's requests, without prompting the student. Requires MDM enrollment via Apple School Manager or Apple Business Manager.
 func (m *MacOSGeneralDeviceConfiguration) GetClassroomForceAutomaticallyJoinClasses()(*bool) {
-    return m.classroomForceAutomaticallyJoinClasses
+    val, err := m.GetBackingStore().Get("classroomForceAutomaticallyJoinClasses")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetClassroomForceRequestPermissionToLeaveClasses gets the classroomForceRequestPermissionToLeaveClasses property value. Indicates whether a student enrolled in an unmanaged course via Classroom will be required to request permission from the teacher when attempting to leave the course. Requires MDM enrollment via Apple School Manager or Apple Business Manager.
 func (m *MacOSGeneralDeviceConfiguration) GetClassroomForceRequestPermissionToLeaveClasses()(*bool) {
-    return m.classroomForceRequestPermissionToLeaveClasses
+    val, err := m.GetBackingStore().Get("classroomForceRequestPermissionToLeaveClasses")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetClassroomForceUnpromptedAppAndDeviceLock gets the classroomForceUnpromptedAppAndDeviceLock property value. Indicates whether or not to allow the teacher to lock apps or the device without prompting the student. Requires MDM enrollment via Apple School Manager or Apple Business Manager.
 func (m *MacOSGeneralDeviceConfiguration) GetClassroomForceUnpromptedAppAndDeviceLock()(*bool) {
-    return m.classroomForceUnpromptedAppAndDeviceLock
+    val, err := m.GetBackingStore().Get("classroomForceUnpromptedAppAndDeviceLock")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetCompliantAppListType gets the compliantAppListType property value. Possible values of the compliance app list.
 func (m *MacOSGeneralDeviceConfiguration) GetCompliantAppListType()(*AppListType) {
-    return m.compliantAppListType
+    val, err := m.GetBackingStore().Get("compliantAppListType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AppListType)
+    }
+    return nil
 }
 // GetCompliantAppsList gets the compliantAppsList property value. List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
 func (m *MacOSGeneralDeviceConfiguration) GetCompliantAppsList()([]AppListItemable) {
-    return m.compliantAppsList
+    val, err := m.GetBackingStore().Get("compliantAppsList")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AppListItemable)
+    }
+    return nil
 }
 // GetContentCachingBlocked gets the contentCachingBlocked property value. Indicates whether or not to allow content caching.
 func (m *MacOSGeneralDeviceConfiguration) GetContentCachingBlocked()(*bool) {
-    return m.contentCachingBlocked
+    val, err := m.GetBackingStore().Get("contentCachingBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefinitionLookupBlocked gets the definitionLookupBlocked property value. Indicates whether or not to block definition lookup.
 func (m *MacOSGeneralDeviceConfiguration) GetDefinitionLookupBlocked()(*bool) {
-    return m.definitionLookupBlocked
+    val, err := m.GetBackingStore().Get("definitionLookupBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEmailInDomainSuffixes gets the emailInDomainSuffixes property value. An email address lacking a suffix that matches any of these strings will be considered out-of-domain.
 func (m *MacOSGeneralDeviceConfiguration) GetEmailInDomainSuffixes()([]string) {
-    return m.emailInDomainSuffixes
+    val, err := m.GetBackingStore().Get("emailInDomainSuffixes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetEraseContentAndSettingsBlocked gets the eraseContentAndSettingsBlocked property value. TRUE disables the reset option on supervised devices. FALSE enables the reset option on supervised devices. Available for devices running macOS versions 12.0 and later.
 func (m *MacOSGeneralDeviceConfiguration) GetEraseContentAndSettingsBlocked()(*bool) {
-    return m.eraseContentAndSettingsBlocked
+    val, err := m.GetBackingStore().Get("eraseContentAndSettingsBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -808,179 +795,487 @@ func (m *MacOSGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]fun
 }
 // GetGameCenterBlocked gets the gameCenterBlocked property value. Yes disables Game Center, and the Game Center icon is removed from the Home screen. Available for devices running macOS versions 10.13 and later.
 func (m *MacOSGeneralDeviceConfiguration) GetGameCenterBlocked()(*bool) {
-    return m.gameCenterBlocked
+    val, err := m.GetBackingStore().Get("gameCenterBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetICloudBlockActivityContinuation gets the iCloudBlockActivityContinuation property value. Indicates whether or not to block the user from continuing work that they started on a MacOS device on another iOS or MacOS device (MacOS 10.15 or later).
 func (m *MacOSGeneralDeviceConfiguration) GetICloudBlockActivityContinuation()(*bool) {
-    return m.iCloudBlockActivityContinuation
+    val, err := m.GetBackingStore().Get("iCloudBlockActivityContinuation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetICloudBlockAddressBook gets the iCloudBlockAddressBook property value. Indicates whether or not to block iCloud from syncing contacts.
 func (m *MacOSGeneralDeviceConfiguration) GetICloudBlockAddressBook()(*bool) {
-    return m.iCloudBlockAddressBook
+    val, err := m.GetBackingStore().Get("iCloudBlockAddressBook")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetICloudBlockBookmarks gets the iCloudBlockBookmarks property value. Indicates whether or not to block iCloud from syncing bookmarks.
 func (m *MacOSGeneralDeviceConfiguration) GetICloudBlockBookmarks()(*bool) {
-    return m.iCloudBlockBookmarks
+    val, err := m.GetBackingStore().Get("iCloudBlockBookmarks")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetICloudBlockCalendar gets the iCloudBlockCalendar property value. Indicates whether or not to block iCloud from syncing calendars.
 func (m *MacOSGeneralDeviceConfiguration) GetICloudBlockCalendar()(*bool) {
-    return m.iCloudBlockCalendar
+    val, err := m.GetBackingStore().Get("iCloudBlockCalendar")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetICloudBlockDocumentSync gets the iCloudBlockDocumentSync property value. Indicates whether or not to block iCloud document sync.
 func (m *MacOSGeneralDeviceConfiguration) GetICloudBlockDocumentSync()(*bool) {
-    return m.iCloudBlockDocumentSync
+    val, err := m.GetBackingStore().Get("iCloudBlockDocumentSync")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetICloudBlockMail gets the iCloudBlockMail property value. Indicates whether or not to block iCloud from syncing mail.
 func (m *MacOSGeneralDeviceConfiguration) GetICloudBlockMail()(*bool) {
-    return m.iCloudBlockMail
+    val, err := m.GetBackingStore().Get("iCloudBlockMail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetICloudBlockNotes gets the iCloudBlockNotes property value. Indicates whether or not to block iCloud from syncing notes.
 func (m *MacOSGeneralDeviceConfiguration) GetICloudBlockNotes()(*bool) {
-    return m.iCloudBlockNotes
+    val, err := m.GetBackingStore().Get("iCloudBlockNotes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetICloudBlockPhotoLibrary gets the iCloudBlockPhotoLibrary property value. Indicates whether or not to block iCloud Photo Library.
 func (m *MacOSGeneralDeviceConfiguration) GetICloudBlockPhotoLibrary()(*bool) {
-    return m.iCloudBlockPhotoLibrary
+    val, err := m.GetBackingStore().Get("iCloudBlockPhotoLibrary")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetICloudBlockReminders gets the iCloudBlockReminders property value. Indicates whether or not to block iCloud from syncing reminders.
 func (m *MacOSGeneralDeviceConfiguration) GetICloudBlockReminders()(*bool) {
-    return m.iCloudBlockReminders
+    val, err := m.GetBackingStore().Get("iCloudBlockReminders")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetICloudDesktopAndDocumentsBlocked gets the iCloudDesktopAndDocumentsBlocked property value. When TRUE the synchronization of cloud desktop and documents is blocked. When FALSE, synchronization of the cloud desktop and documents are allowed. Available for devices running macOS 10.12.4 and later.
 func (m *MacOSGeneralDeviceConfiguration) GetICloudDesktopAndDocumentsBlocked()(*bool) {
-    return m.iCloudDesktopAndDocumentsBlocked
+    val, err := m.GetBackingStore().Get("iCloudDesktopAndDocumentsBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetICloudPrivateRelayBlocked gets the iCloudPrivateRelayBlocked property value. iCloud private relay is an iCloud+ service that prevents networks and servers from monitoring a person's activity across the internet. By blocking iCloud private relay, Apple will not encrypt the traffic leaving the device. Available for devices running macOS 12 and later.
 func (m *MacOSGeneralDeviceConfiguration) GetICloudPrivateRelayBlocked()(*bool) {
-    return m.iCloudPrivateRelayBlocked
+    val, err := m.GetBackingStore().Get("iCloudPrivateRelayBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetITunesBlockFileSharing gets the iTunesBlockFileSharing property value. Indicates whether or not to block files from being transferred using iTunes.
 func (m *MacOSGeneralDeviceConfiguration) GetITunesBlockFileSharing()(*bool) {
-    return m.iTunesBlockFileSharing
+    val, err := m.GetBackingStore().Get("iTunesBlockFileSharing")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetITunesBlockMusicService gets the iTunesBlockMusicService property value. Indicates whether or not to block Music service and revert Music app to classic mode.
 func (m *MacOSGeneralDeviceConfiguration) GetITunesBlockMusicService()(*bool) {
-    return m.iTunesBlockMusicService
+    val, err := m.GetBackingStore().Get("iTunesBlockMusicService")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetKeyboardBlockDictation gets the keyboardBlockDictation property value. Indicates whether or not to block the user from using dictation input.
 func (m *MacOSGeneralDeviceConfiguration) GetKeyboardBlockDictation()(*bool) {
-    return m.keyboardBlockDictation
+    val, err := m.GetBackingStore().Get("keyboardBlockDictation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetKeychainBlockCloudSync gets the keychainBlockCloudSync property value. Indicates whether or not iCloud keychain synchronization is blocked (macOS 10.12 and later).
 func (m *MacOSGeneralDeviceConfiguration) GetKeychainBlockCloudSync()(*bool) {
-    return m.keychainBlockCloudSync
+    val, err := m.GetBackingStore().Get("keychainBlockCloudSync")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetMultiplayerGamingBlocked gets the multiplayerGamingBlocked property value. TRUE prevents multiplayer gaming when using Game Center. FALSE allows multiplayer gaming when using Game Center. Available for devices running macOS versions 10.13 and later.
 func (m *MacOSGeneralDeviceConfiguration) GetMultiplayerGamingBlocked()(*bool) {
-    return m.multiplayerGamingBlocked
+    val, err := m.GetBackingStore().Get("multiplayerGamingBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPasswordBlockAirDropSharing gets the passwordBlockAirDropSharing property value. Indicates whether or not to block sharing passwords with the AirDrop passwords feature.
 func (m *MacOSGeneralDeviceConfiguration) GetPasswordBlockAirDropSharing()(*bool) {
-    return m.passwordBlockAirDropSharing
+    val, err := m.GetBackingStore().Get("passwordBlockAirDropSharing")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPasswordBlockAutoFill gets the passwordBlockAutoFill property value. Indicates whether or not to block the AutoFill Passwords feature.
 func (m *MacOSGeneralDeviceConfiguration) GetPasswordBlockAutoFill()(*bool) {
-    return m.passwordBlockAutoFill
+    val, err := m.GetBackingStore().Get("passwordBlockAutoFill")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPasswordBlockFingerprintUnlock gets the passwordBlockFingerprintUnlock property value. Indicates whether or not to block fingerprint unlock.
 func (m *MacOSGeneralDeviceConfiguration) GetPasswordBlockFingerprintUnlock()(*bool) {
-    return m.passwordBlockFingerprintUnlock
+    val, err := m.GetBackingStore().Get("passwordBlockFingerprintUnlock")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPasswordBlockModification gets the passwordBlockModification property value. Indicates whether or not to allow passcode modification.
 func (m *MacOSGeneralDeviceConfiguration) GetPasswordBlockModification()(*bool) {
-    return m.passwordBlockModification
+    val, err := m.GetBackingStore().Get("passwordBlockModification")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPasswordBlockProximityRequests gets the passwordBlockProximityRequests property value. Indicates whether or not to block requesting passwords from nearby devices.
 func (m *MacOSGeneralDeviceConfiguration) GetPasswordBlockProximityRequests()(*bool) {
-    return m.passwordBlockProximityRequests
+    val, err := m.GetBackingStore().Get("passwordBlockProximityRequests")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPasswordBlockSimple gets the passwordBlockSimple property value. Block simple passwords.
 func (m *MacOSGeneralDeviceConfiguration) GetPasswordBlockSimple()(*bool) {
-    return m.passwordBlockSimple
+    val, err := m.GetBackingStore().Get("passwordBlockSimple")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPasswordExpirationDays gets the passwordExpirationDays property value. Number of days before the password expires.
 func (m *MacOSGeneralDeviceConfiguration) GetPasswordExpirationDays()(*int32) {
-    return m.passwordExpirationDays
+    val, err := m.GetBackingStore().Get("passwordExpirationDays")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPasswordMaximumAttemptCount gets the passwordMaximumAttemptCount property value. The number of allowed failed attempts to enter the passcode at the device's lock screen. Valid values 2 to 11
 func (m *MacOSGeneralDeviceConfiguration) GetPasswordMaximumAttemptCount()(*int32) {
-    return m.passwordMaximumAttemptCount
+    val, err := m.GetBackingStore().Get("passwordMaximumAttemptCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPasswordMinimumCharacterSetCount gets the passwordMinimumCharacterSetCount property value. Number of character sets a password must contain. Valid values 0 to 4
 func (m *MacOSGeneralDeviceConfiguration) GetPasswordMinimumCharacterSetCount()(*int32) {
-    return m.passwordMinimumCharacterSetCount
+    val, err := m.GetBackingStore().Get("passwordMinimumCharacterSetCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPasswordMinimumLength gets the passwordMinimumLength property value. Minimum length of passwords.
 func (m *MacOSGeneralDeviceConfiguration) GetPasswordMinimumLength()(*int32) {
-    return m.passwordMinimumLength
+    val, err := m.GetBackingStore().Get("passwordMinimumLength")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPasswordMinutesOfInactivityBeforeLock gets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity required before a password is required.
 func (m *MacOSGeneralDeviceConfiguration) GetPasswordMinutesOfInactivityBeforeLock()(*int32) {
-    return m.passwordMinutesOfInactivityBeforeLock
+    val, err := m.GetBackingStore().Get("passwordMinutesOfInactivityBeforeLock")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPasswordMinutesOfInactivityBeforeScreenTimeout gets the passwordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity required before the screen times out.
 func (m *MacOSGeneralDeviceConfiguration) GetPasswordMinutesOfInactivityBeforeScreenTimeout()(*int32) {
-    return m.passwordMinutesOfInactivityBeforeScreenTimeout
+    val, err := m.GetBackingStore().Get("passwordMinutesOfInactivityBeforeScreenTimeout")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPasswordMinutesUntilFailedLoginReset gets the passwordMinutesUntilFailedLoginReset property value. The number of minutes before the login is reset after the maximum number of unsuccessful login attempts is reached.
 func (m *MacOSGeneralDeviceConfiguration) GetPasswordMinutesUntilFailedLoginReset()(*int32) {
-    return m.passwordMinutesUntilFailedLoginReset
+    val, err := m.GetBackingStore().Get("passwordMinutesUntilFailedLoginReset")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPasswordPreviousPasswordBlockCount gets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block.
 func (m *MacOSGeneralDeviceConfiguration) GetPasswordPreviousPasswordBlockCount()(*int32) {
-    return m.passwordPreviousPasswordBlockCount
+    val, err := m.GetBackingStore().Get("passwordPreviousPasswordBlockCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPasswordRequired gets the passwordRequired property value. Whether or not to require a password.
 func (m *MacOSGeneralDeviceConfiguration) GetPasswordRequired()(*bool) {
-    return m.passwordRequired
+    val, err := m.GetBackingStore().Get("passwordRequired")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPasswordRequiredType gets the passwordRequiredType property value. Possible values of required passwords.
 func (m *MacOSGeneralDeviceConfiguration) GetPasswordRequiredType()(*RequiredPasswordType) {
-    return m.passwordRequiredType
+    val, err := m.GetBackingStore().Get("passwordRequiredType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RequiredPasswordType)
+    }
+    return nil
 }
 // GetPrivacyAccessControls gets the privacyAccessControls property value. List of privacy preference policy controls. This collection can contain a maximum of 10000 elements.
 func (m *MacOSGeneralDeviceConfiguration) GetPrivacyAccessControls()([]MacOSPrivacyAccessControlItemable) {
-    return m.privacyAccessControls
+    val, err := m.GetBackingStore().Get("privacyAccessControls")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MacOSPrivacyAccessControlItemable)
+    }
+    return nil
 }
 // GetSafariBlockAutofill gets the safariBlockAutofill property value. Indicates whether or not to block the user from using Auto fill in Safari.
 func (m *MacOSGeneralDeviceConfiguration) GetSafariBlockAutofill()(*bool) {
-    return m.safariBlockAutofill
+    val, err := m.GetBackingStore().Get("safariBlockAutofill")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetScreenCaptureBlocked gets the screenCaptureBlocked property value. Indicates whether or not to block the user from taking Screenshots.
 func (m *MacOSGeneralDeviceConfiguration) GetScreenCaptureBlocked()(*bool) {
-    return m.screenCaptureBlocked
+    val, err := m.GetBackingStore().Get("screenCaptureBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSoftwareUpdateMajorOSDeferredInstallDelayInDays gets the softwareUpdateMajorOSDeferredInstallDelayInDays property value. Specify the number of days (1-90) to delay visibility of major OS software updates. Available for devices running macOS versions 11.3 and later. Valid values 0 to 90
 func (m *MacOSGeneralDeviceConfiguration) GetSoftwareUpdateMajorOSDeferredInstallDelayInDays()(*int32) {
-    return m.softwareUpdateMajorOSDeferredInstallDelayInDays
+    val, err := m.GetBackingStore().Get("softwareUpdateMajorOSDeferredInstallDelayInDays")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetSoftwareUpdateMinorOSDeferredInstallDelayInDays gets the softwareUpdateMinorOSDeferredInstallDelayInDays property value. Specify the number of days (1-90) to delay visibility of minor OS software updates. Available for devices running macOS versions 11.3 and later. Valid values 0 to 90
 func (m *MacOSGeneralDeviceConfiguration) GetSoftwareUpdateMinorOSDeferredInstallDelayInDays()(*int32) {
-    return m.softwareUpdateMinorOSDeferredInstallDelayInDays
+    val, err := m.GetBackingStore().Get("softwareUpdateMinorOSDeferredInstallDelayInDays")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetSoftwareUpdateNonOSDeferredInstallDelayInDays gets the softwareUpdateNonOSDeferredInstallDelayInDays property value. Specify the number of days (1-90) to delay visibility of non-OS software updates. Available for devices running macOS versions 11.3 and later. Valid values 0 to 90
 func (m *MacOSGeneralDeviceConfiguration) GetSoftwareUpdateNonOSDeferredInstallDelayInDays()(*int32) {
-    return m.softwareUpdateNonOSDeferredInstallDelayInDays
+    val, err := m.GetBackingStore().Get("softwareUpdateNonOSDeferredInstallDelayInDays")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetSoftwareUpdatesEnforcedDelayInDays gets the softwareUpdatesEnforcedDelayInDays property value. Sets how many days a software update will be delyed for a supervised device. Valid values 0 to 90
 func (m *MacOSGeneralDeviceConfiguration) GetSoftwareUpdatesEnforcedDelayInDays()(*int32) {
-    return m.softwareUpdatesEnforcedDelayInDays
+    val, err := m.GetBackingStore().Get("softwareUpdatesEnforcedDelayInDays")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetSpotlightBlockInternetResults gets the spotlightBlockInternetResults property value. Indicates whether or not to block Spotlight from returning any results from an Internet search.
 func (m *MacOSGeneralDeviceConfiguration) GetSpotlightBlockInternetResults()(*bool) {
-    return m.spotlightBlockInternetResults
+    val, err := m.GetBackingStore().Get("spotlightBlockInternetResults")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetTouchIdTimeoutInHours gets the touchIdTimeoutInHours property value. Maximum hours after which the user must enter their password to unlock the device instead of using Touch ID. Available for devices running macOS 12 and later. Valid values 0 to 2147483647
 func (m *MacOSGeneralDeviceConfiguration) GetTouchIdTimeoutInHours()(*int32) {
-    return m.touchIdTimeoutInHours
+    val, err := m.GetBackingStore().Get("touchIdTimeoutInHours")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetUpdateDelayPolicy gets the updateDelayPolicy property value. Determines whether to delay OS and/or app updates for macOS. Possible values are: none, delayOSUpdateVisibility, delayAppUpdateVisibility, unknownFutureValue, delayMajorOsUpdateVisibility.
 func (m *MacOSGeneralDeviceConfiguration) GetUpdateDelayPolicy()(*MacOSSoftwareUpdateDelayPolicy) {
-    return m.updateDelayPolicy
+    val, err := m.GetBackingStore().Get("updateDelayPolicy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MacOSSoftwareUpdateDelayPolicy)
+    }
+    return nil
 }
 // GetWallpaperModificationBlocked gets the wallpaperModificationBlocked property value. TRUE prevents the wallpaper from being changed. FALSE allows the wallpaper to be changed. Available for devices running macOS versions 10.13 and later.
 func (m *MacOSGeneralDeviceConfiguration) GetWallpaperModificationBlocked()(*bool) {
-    return m.wallpaperModificationBlocked
+    val, err := m.GetBackingStore().Get("wallpaperModificationBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MacOSGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -1357,237 +1652,537 @@ func (m *MacOSGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d26896
 }
 // SetAddingGameCenterFriendsBlocked sets the addingGameCenterFriendsBlocked property value. Yes prevents users from adding friends to Game Center. Available for devices running macOS versions 10.13 and later.
 func (m *MacOSGeneralDeviceConfiguration) SetAddingGameCenterFriendsBlocked(value *bool)() {
-    m.addingGameCenterFriendsBlocked = value
+    err := m.GetBackingStore().Set("addingGameCenterFriendsBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAirDropBlocked sets the airDropBlocked property value. Indicates whether or not to allow AirDrop.
 func (m *MacOSGeneralDeviceConfiguration) SetAirDropBlocked(value *bool)() {
-    m.airDropBlocked = value
+    err := m.GetBackingStore().Set("airDropBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppleWatchBlockAutoUnlock sets the appleWatchBlockAutoUnlock property value. Indicates whether or to block users from unlocking their Mac with Apple Watch.
 func (m *MacOSGeneralDeviceConfiguration) SetAppleWatchBlockAutoUnlock(value *bool)() {
-    m.appleWatchBlockAutoUnlock = value
+    err := m.GetBackingStore().Set("appleWatchBlockAutoUnlock", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCameraBlocked sets the cameraBlocked property value. Indicates whether or not to block the user from accessing the camera of the device.
 func (m *MacOSGeneralDeviceConfiguration) SetCameraBlocked(value *bool)() {
-    m.cameraBlocked = value
+    err := m.GetBackingStore().Set("cameraBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetClassroomAppBlockRemoteScreenObservation sets the classroomAppBlockRemoteScreenObservation property value. Indicates whether or not to allow remote screen observation by Classroom app. Requires MDM enrollment via Apple School Manager or Apple Business Manager.
 func (m *MacOSGeneralDeviceConfiguration) SetClassroomAppBlockRemoteScreenObservation(value *bool)() {
-    m.classroomAppBlockRemoteScreenObservation = value
+    err := m.GetBackingStore().Set("classroomAppBlockRemoteScreenObservation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetClassroomAppForceUnpromptedScreenObservation sets the classroomAppForceUnpromptedScreenObservation property value. Indicates whether or not to automatically give permission to the teacher of a managed course on the Classroom app to view a student's screen without prompting. Requires MDM enrollment via Apple School Manager or Apple Business Manager.
 func (m *MacOSGeneralDeviceConfiguration) SetClassroomAppForceUnpromptedScreenObservation(value *bool)() {
-    m.classroomAppForceUnpromptedScreenObservation = value
+    err := m.GetBackingStore().Set("classroomAppForceUnpromptedScreenObservation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetClassroomForceAutomaticallyJoinClasses sets the classroomForceAutomaticallyJoinClasses property value. Indicates whether or not to automatically give permission to the teacher's requests, without prompting the student. Requires MDM enrollment via Apple School Manager or Apple Business Manager.
 func (m *MacOSGeneralDeviceConfiguration) SetClassroomForceAutomaticallyJoinClasses(value *bool)() {
-    m.classroomForceAutomaticallyJoinClasses = value
+    err := m.GetBackingStore().Set("classroomForceAutomaticallyJoinClasses", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetClassroomForceRequestPermissionToLeaveClasses sets the classroomForceRequestPermissionToLeaveClasses property value. Indicates whether a student enrolled in an unmanaged course via Classroom will be required to request permission from the teacher when attempting to leave the course. Requires MDM enrollment via Apple School Manager or Apple Business Manager.
 func (m *MacOSGeneralDeviceConfiguration) SetClassroomForceRequestPermissionToLeaveClasses(value *bool)() {
-    m.classroomForceRequestPermissionToLeaveClasses = value
+    err := m.GetBackingStore().Set("classroomForceRequestPermissionToLeaveClasses", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetClassroomForceUnpromptedAppAndDeviceLock sets the classroomForceUnpromptedAppAndDeviceLock property value. Indicates whether or not to allow the teacher to lock apps or the device without prompting the student. Requires MDM enrollment via Apple School Manager or Apple Business Manager.
 func (m *MacOSGeneralDeviceConfiguration) SetClassroomForceUnpromptedAppAndDeviceLock(value *bool)() {
-    m.classroomForceUnpromptedAppAndDeviceLock = value
+    err := m.GetBackingStore().Set("classroomForceUnpromptedAppAndDeviceLock", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCompliantAppListType sets the compliantAppListType property value. Possible values of the compliance app list.
 func (m *MacOSGeneralDeviceConfiguration) SetCompliantAppListType(value *AppListType)() {
-    m.compliantAppListType = value
+    err := m.GetBackingStore().Set("compliantAppListType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCompliantAppsList sets the compliantAppsList property value. List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
 func (m *MacOSGeneralDeviceConfiguration) SetCompliantAppsList(value []AppListItemable)() {
-    m.compliantAppsList = value
+    err := m.GetBackingStore().Set("compliantAppsList", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetContentCachingBlocked sets the contentCachingBlocked property value. Indicates whether or not to allow content caching.
 func (m *MacOSGeneralDeviceConfiguration) SetContentCachingBlocked(value *bool)() {
-    m.contentCachingBlocked = value
+    err := m.GetBackingStore().Set("contentCachingBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefinitionLookupBlocked sets the definitionLookupBlocked property value. Indicates whether or not to block definition lookup.
 func (m *MacOSGeneralDeviceConfiguration) SetDefinitionLookupBlocked(value *bool)() {
-    m.definitionLookupBlocked = value
+    err := m.GetBackingStore().Set("definitionLookupBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEmailInDomainSuffixes sets the emailInDomainSuffixes property value. An email address lacking a suffix that matches any of these strings will be considered out-of-domain.
 func (m *MacOSGeneralDeviceConfiguration) SetEmailInDomainSuffixes(value []string)() {
-    m.emailInDomainSuffixes = value
+    err := m.GetBackingStore().Set("emailInDomainSuffixes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEraseContentAndSettingsBlocked sets the eraseContentAndSettingsBlocked property value. TRUE disables the reset option on supervised devices. FALSE enables the reset option on supervised devices. Available for devices running macOS versions 12.0 and later.
 func (m *MacOSGeneralDeviceConfiguration) SetEraseContentAndSettingsBlocked(value *bool)() {
-    m.eraseContentAndSettingsBlocked = value
+    err := m.GetBackingStore().Set("eraseContentAndSettingsBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGameCenterBlocked sets the gameCenterBlocked property value. Yes disables Game Center, and the Game Center icon is removed from the Home screen. Available for devices running macOS versions 10.13 and later.
 func (m *MacOSGeneralDeviceConfiguration) SetGameCenterBlocked(value *bool)() {
-    m.gameCenterBlocked = value
+    err := m.GetBackingStore().Set("gameCenterBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetICloudBlockActivityContinuation sets the iCloudBlockActivityContinuation property value. Indicates whether or not to block the user from continuing work that they started on a MacOS device on another iOS or MacOS device (MacOS 10.15 or later).
 func (m *MacOSGeneralDeviceConfiguration) SetICloudBlockActivityContinuation(value *bool)() {
-    m.iCloudBlockActivityContinuation = value
+    err := m.GetBackingStore().Set("iCloudBlockActivityContinuation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetICloudBlockAddressBook sets the iCloudBlockAddressBook property value. Indicates whether or not to block iCloud from syncing contacts.
 func (m *MacOSGeneralDeviceConfiguration) SetICloudBlockAddressBook(value *bool)() {
-    m.iCloudBlockAddressBook = value
+    err := m.GetBackingStore().Set("iCloudBlockAddressBook", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetICloudBlockBookmarks sets the iCloudBlockBookmarks property value. Indicates whether or not to block iCloud from syncing bookmarks.
 func (m *MacOSGeneralDeviceConfiguration) SetICloudBlockBookmarks(value *bool)() {
-    m.iCloudBlockBookmarks = value
+    err := m.GetBackingStore().Set("iCloudBlockBookmarks", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetICloudBlockCalendar sets the iCloudBlockCalendar property value. Indicates whether or not to block iCloud from syncing calendars.
 func (m *MacOSGeneralDeviceConfiguration) SetICloudBlockCalendar(value *bool)() {
-    m.iCloudBlockCalendar = value
+    err := m.GetBackingStore().Set("iCloudBlockCalendar", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetICloudBlockDocumentSync sets the iCloudBlockDocumentSync property value. Indicates whether or not to block iCloud document sync.
 func (m *MacOSGeneralDeviceConfiguration) SetICloudBlockDocumentSync(value *bool)() {
-    m.iCloudBlockDocumentSync = value
+    err := m.GetBackingStore().Set("iCloudBlockDocumentSync", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetICloudBlockMail sets the iCloudBlockMail property value. Indicates whether or not to block iCloud from syncing mail.
 func (m *MacOSGeneralDeviceConfiguration) SetICloudBlockMail(value *bool)() {
-    m.iCloudBlockMail = value
+    err := m.GetBackingStore().Set("iCloudBlockMail", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetICloudBlockNotes sets the iCloudBlockNotes property value. Indicates whether or not to block iCloud from syncing notes.
 func (m *MacOSGeneralDeviceConfiguration) SetICloudBlockNotes(value *bool)() {
-    m.iCloudBlockNotes = value
+    err := m.GetBackingStore().Set("iCloudBlockNotes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetICloudBlockPhotoLibrary sets the iCloudBlockPhotoLibrary property value. Indicates whether or not to block iCloud Photo Library.
 func (m *MacOSGeneralDeviceConfiguration) SetICloudBlockPhotoLibrary(value *bool)() {
-    m.iCloudBlockPhotoLibrary = value
+    err := m.GetBackingStore().Set("iCloudBlockPhotoLibrary", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetICloudBlockReminders sets the iCloudBlockReminders property value. Indicates whether or not to block iCloud from syncing reminders.
 func (m *MacOSGeneralDeviceConfiguration) SetICloudBlockReminders(value *bool)() {
-    m.iCloudBlockReminders = value
+    err := m.GetBackingStore().Set("iCloudBlockReminders", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetICloudDesktopAndDocumentsBlocked sets the iCloudDesktopAndDocumentsBlocked property value. When TRUE the synchronization of cloud desktop and documents is blocked. When FALSE, synchronization of the cloud desktop and documents are allowed. Available for devices running macOS 10.12.4 and later.
 func (m *MacOSGeneralDeviceConfiguration) SetICloudDesktopAndDocumentsBlocked(value *bool)() {
-    m.iCloudDesktopAndDocumentsBlocked = value
+    err := m.GetBackingStore().Set("iCloudDesktopAndDocumentsBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetICloudPrivateRelayBlocked sets the iCloudPrivateRelayBlocked property value. iCloud private relay is an iCloud+ service that prevents networks and servers from monitoring a person's activity across the internet. By blocking iCloud private relay, Apple will not encrypt the traffic leaving the device. Available for devices running macOS 12 and later.
 func (m *MacOSGeneralDeviceConfiguration) SetICloudPrivateRelayBlocked(value *bool)() {
-    m.iCloudPrivateRelayBlocked = value
+    err := m.GetBackingStore().Set("iCloudPrivateRelayBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetITunesBlockFileSharing sets the iTunesBlockFileSharing property value. Indicates whether or not to block files from being transferred using iTunes.
 func (m *MacOSGeneralDeviceConfiguration) SetITunesBlockFileSharing(value *bool)() {
-    m.iTunesBlockFileSharing = value
+    err := m.GetBackingStore().Set("iTunesBlockFileSharing", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetITunesBlockMusicService sets the iTunesBlockMusicService property value. Indicates whether or not to block Music service and revert Music app to classic mode.
 func (m *MacOSGeneralDeviceConfiguration) SetITunesBlockMusicService(value *bool)() {
-    m.iTunesBlockMusicService = value
+    err := m.GetBackingStore().Set("iTunesBlockMusicService", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetKeyboardBlockDictation sets the keyboardBlockDictation property value. Indicates whether or not to block the user from using dictation input.
 func (m *MacOSGeneralDeviceConfiguration) SetKeyboardBlockDictation(value *bool)() {
-    m.keyboardBlockDictation = value
+    err := m.GetBackingStore().Set("keyboardBlockDictation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetKeychainBlockCloudSync sets the keychainBlockCloudSync property value. Indicates whether or not iCloud keychain synchronization is blocked (macOS 10.12 and later).
 func (m *MacOSGeneralDeviceConfiguration) SetKeychainBlockCloudSync(value *bool)() {
-    m.keychainBlockCloudSync = value
+    err := m.GetBackingStore().Set("keychainBlockCloudSync", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMultiplayerGamingBlocked sets the multiplayerGamingBlocked property value. TRUE prevents multiplayer gaming when using Game Center. FALSE allows multiplayer gaming when using Game Center. Available for devices running macOS versions 10.13 and later.
 func (m *MacOSGeneralDeviceConfiguration) SetMultiplayerGamingBlocked(value *bool)() {
-    m.multiplayerGamingBlocked = value
+    err := m.GetBackingStore().Set("multiplayerGamingBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordBlockAirDropSharing sets the passwordBlockAirDropSharing property value. Indicates whether or not to block sharing passwords with the AirDrop passwords feature.
 func (m *MacOSGeneralDeviceConfiguration) SetPasswordBlockAirDropSharing(value *bool)() {
-    m.passwordBlockAirDropSharing = value
+    err := m.GetBackingStore().Set("passwordBlockAirDropSharing", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordBlockAutoFill sets the passwordBlockAutoFill property value. Indicates whether or not to block the AutoFill Passwords feature.
 func (m *MacOSGeneralDeviceConfiguration) SetPasswordBlockAutoFill(value *bool)() {
-    m.passwordBlockAutoFill = value
+    err := m.GetBackingStore().Set("passwordBlockAutoFill", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordBlockFingerprintUnlock sets the passwordBlockFingerprintUnlock property value. Indicates whether or not to block fingerprint unlock.
 func (m *MacOSGeneralDeviceConfiguration) SetPasswordBlockFingerprintUnlock(value *bool)() {
-    m.passwordBlockFingerprintUnlock = value
+    err := m.GetBackingStore().Set("passwordBlockFingerprintUnlock", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordBlockModification sets the passwordBlockModification property value. Indicates whether or not to allow passcode modification.
 func (m *MacOSGeneralDeviceConfiguration) SetPasswordBlockModification(value *bool)() {
-    m.passwordBlockModification = value
+    err := m.GetBackingStore().Set("passwordBlockModification", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordBlockProximityRequests sets the passwordBlockProximityRequests property value. Indicates whether or not to block requesting passwords from nearby devices.
 func (m *MacOSGeneralDeviceConfiguration) SetPasswordBlockProximityRequests(value *bool)() {
-    m.passwordBlockProximityRequests = value
+    err := m.GetBackingStore().Set("passwordBlockProximityRequests", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordBlockSimple sets the passwordBlockSimple property value. Block simple passwords.
 func (m *MacOSGeneralDeviceConfiguration) SetPasswordBlockSimple(value *bool)() {
-    m.passwordBlockSimple = value
+    err := m.GetBackingStore().Set("passwordBlockSimple", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordExpirationDays sets the passwordExpirationDays property value. Number of days before the password expires.
 func (m *MacOSGeneralDeviceConfiguration) SetPasswordExpirationDays(value *int32)() {
-    m.passwordExpirationDays = value
+    err := m.GetBackingStore().Set("passwordExpirationDays", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordMaximumAttemptCount sets the passwordMaximumAttemptCount property value. The number of allowed failed attempts to enter the passcode at the device's lock screen. Valid values 2 to 11
 func (m *MacOSGeneralDeviceConfiguration) SetPasswordMaximumAttemptCount(value *int32)() {
-    m.passwordMaximumAttemptCount = value
+    err := m.GetBackingStore().Set("passwordMaximumAttemptCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordMinimumCharacterSetCount sets the passwordMinimumCharacterSetCount property value. Number of character sets a password must contain. Valid values 0 to 4
 func (m *MacOSGeneralDeviceConfiguration) SetPasswordMinimumCharacterSetCount(value *int32)() {
-    m.passwordMinimumCharacterSetCount = value
+    err := m.GetBackingStore().Set("passwordMinimumCharacterSetCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordMinimumLength sets the passwordMinimumLength property value. Minimum length of passwords.
 func (m *MacOSGeneralDeviceConfiguration) SetPasswordMinimumLength(value *int32)() {
-    m.passwordMinimumLength = value
+    err := m.GetBackingStore().Set("passwordMinimumLength", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordMinutesOfInactivityBeforeLock sets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity required before a password is required.
 func (m *MacOSGeneralDeviceConfiguration) SetPasswordMinutesOfInactivityBeforeLock(value *int32)() {
-    m.passwordMinutesOfInactivityBeforeLock = value
+    err := m.GetBackingStore().Set("passwordMinutesOfInactivityBeforeLock", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordMinutesOfInactivityBeforeScreenTimeout sets the passwordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity required before the screen times out.
 func (m *MacOSGeneralDeviceConfiguration) SetPasswordMinutesOfInactivityBeforeScreenTimeout(value *int32)() {
-    m.passwordMinutesOfInactivityBeforeScreenTimeout = value
+    err := m.GetBackingStore().Set("passwordMinutesOfInactivityBeforeScreenTimeout", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordMinutesUntilFailedLoginReset sets the passwordMinutesUntilFailedLoginReset property value. The number of minutes before the login is reset after the maximum number of unsuccessful login attempts is reached.
 func (m *MacOSGeneralDeviceConfiguration) SetPasswordMinutesUntilFailedLoginReset(value *int32)() {
-    m.passwordMinutesUntilFailedLoginReset = value
+    err := m.GetBackingStore().Set("passwordMinutesUntilFailedLoginReset", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordPreviousPasswordBlockCount sets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block.
 func (m *MacOSGeneralDeviceConfiguration) SetPasswordPreviousPasswordBlockCount(value *int32)() {
-    m.passwordPreviousPasswordBlockCount = value
+    err := m.GetBackingStore().Set("passwordPreviousPasswordBlockCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordRequired sets the passwordRequired property value. Whether or not to require a password.
 func (m *MacOSGeneralDeviceConfiguration) SetPasswordRequired(value *bool)() {
-    m.passwordRequired = value
+    err := m.GetBackingStore().Set("passwordRequired", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordRequiredType sets the passwordRequiredType property value. Possible values of required passwords.
 func (m *MacOSGeneralDeviceConfiguration) SetPasswordRequiredType(value *RequiredPasswordType)() {
-    m.passwordRequiredType = value
+    err := m.GetBackingStore().Set("passwordRequiredType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPrivacyAccessControls sets the privacyAccessControls property value. List of privacy preference policy controls. This collection can contain a maximum of 10000 elements.
 func (m *MacOSGeneralDeviceConfiguration) SetPrivacyAccessControls(value []MacOSPrivacyAccessControlItemable)() {
-    m.privacyAccessControls = value
+    err := m.GetBackingStore().Set("privacyAccessControls", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSafariBlockAutofill sets the safariBlockAutofill property value. Indicates whether or not to block the user from using Auto fill in Safari.
 func (m *MacOSGeneralDeviceConfiguration) SetSafariBlockAutofill(value *bool)() {
-    m.safariBlockAutofill = value
+    err := m.GetBackingStore().Set("safariBlockAutofill", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetScreenCaptureBlocked sets the screenCaptureBlocked property value. Indicates whether or not to block the user from taking Screenshots.
 func (m *MacOSGeneralDeviceConfiguration) SetScreenCaptureBlocked(value *bool)() {
-    m.screenCaptureBlocked = value
+    err := m.GetBackingStore().Set("screenCaptureBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSoftwareUpdateMajorOSDeferredInstallDelayInDays sets the softwareUpdateMajorOSDeferredInstallDelayInDays property value. Specify the number of days (1-90) to delay visibility of major OS software updates. Available for devices running macOS versions 11.3 and later. Valid values 0 to 90
 func (m *MacOSGeneralDeviceConfiguration) SetSoftwareUpdateMajorOSDeferredInstallDelayInDays(value *int32)() {
-    m.softwareUpdateMajorOSDeferredInstallDelayInDays = value
+    err := m.GetBackingStore().Set("softwareUpdateMajorOSDeferredInstallDelayInDays", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSoftwareUpdateMinorOSDeferredInstallDelayInDays sets the softwareUpdateMinorOSDeferredInstallDelayInDays property value. Specify the number of days (1-90) to delay visibility of minor OS software updates. Available for devices running macOS versions 11.3 and later. Valid values 0 to 90
 func (m *MacOSGeneralDeviceConfiguration) SetSoftwareUpdateMinorOSDeferredInstallDelayInDays(value *int32)() {
-    m.softwareUpdateMinorOSDeferredInstallDelayInDays = value
+    err := m.GetBackingStore().Set("softwareUpdateMinorOSDeferredInstallDelayInDays", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSoftwareUpdateNonOSDeferredInstallDelayInDays sets the softwareUpdateNonOSDeferredInstallDelayInDays property value. Specify the number of days (1-90) to delay visibility of non-OS software updates. Available for devices running macOS versions 11.3 and later. Valid values 0 to 90
 func (m *MacOSGeneralDeviceConfiguration) SetSoftwareUpdateNonOSDeferredInstallDelayInDays(value *int32)() {
-    m.softwareUpdateNonOSDeferredInstallDelayInDays = value
+    err := m.GetBackingStore().Set("softwareUpdateNonOSDeferredInstallDelayInDays", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSoftwareUpdatesEnforcedDelayInDays sets the softwareUpdatesEnforcedDelayInDays property value. Sets how many days a software update will be delyed for a supervised device. Valid values 0 to 90
 func (m *MacOSGeneralDeviceConfiguration) SetSoftwareUpdatesEnforcedDelayInDays(value *int32)() {
-    m.softwareUpdatesEnforcedDelayInDays = value
+    err := m.GetBackingStore().Set("softwareUpdatesEnforcedDelayInDays", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSpotlightBlockInternetResults sets the spotlightBlockInternetResults property value. Indicates whether or not to block Spotlight from returning any results from an Internet search.
 func (m *MacOSGeneralDeviceConfiguration) SetSpotlightBlockInternetResults(value *bool)() {
-    m.spotlightBlockInternetResults = value
+    err := m.GetBackingStore().Set("spotlightBlockInternetResults", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTouchIdTimeoutInHours sets the touchIdTimeoutInHours property value. Maximum hours after which the user must enter their password to unlock the device instead of using Touch ID. Available for devices running macOS 12 and later. Valid values 0 to 2147483647
 func (m *MacOSGeneralDeviceConfiguration) SetTouchIdTimeoutInHours(value *int32)() {
-    m.touchIdTimeoutInHours = value
+    err := m.GetBackingStore().Set("touchIdTimeoutInHours", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUpdateDelayPolicy sets the updateDelayPolicy property value. Determines whether to delay OS and/or app updates for macOS. Possible values are: none, delayOSUpdateVisibility, delayAppUpdateVisibility, unknownFutureValue, delayMajorOsUpdateVisibility.
 func (m *MacOSGeneralDeviceConfiguration) SetUpdateDelayPolicy(value *MacOSSoftwareUpdateDelayPolicy)() {
-    m.updateDelayPolicy = value
+    err := m.GetBackingStore().Set("updateDelayPolicy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWallpaperModificationBlocked sets the wallpaperModificationBlocked property value. TRUE prevents the wallpaper from being changed. FALSE allows the wallpaper to be changed. Available for devices running macOS versions 10.13 and later.
 func (m *MacOSGeneralDeviceConfiguration) SetWallpaperModificationBlocked(value *bool)() {
-    m.wallpaperModificationBlocked = value
+    err := m.GetBackingStore().Set("wallpaperModificationBlocked", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MacOSGeneralDeviceConfigurationable 
+type MacOSGeneralDeviceConfigurationable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAddingGameCenterFriendsBlocked()(*bool)
+    GetAirDropBlocked()(*bool)
+    GetAppleWatchBlockAutoUnlock()(*bool)
+    GetCameraBlocked()(*bool)
+    GetClassroomAppBlockRemoteScreenObservation()(*bool)
+    GetClassroomAppForceUnpromptedScreenObservation()(*bool)
+    GetClassroomForceAutomaticallyJoinClasses()(*bool)
+    GetClassroomForceRequestPermissionToLeaveClasses()(*bool)
+    GetClassroomForceUnpromptedAppAndDeviceLock()(*bool)
+    GetCompliantAppListType()(*AppListType)
+    GetCompliantAppsList()([]AppListItemable)
+    GetContentCachingBlocked()(*bool)
+    GetDefinitionLookupBlocked()(*bool)
+    GetEmailInDomainSuffixes()([]string)
+    GetEraseContentAndSettingsBlocked()(*bool)
+    GetGameCenterBlocked()(*bool)
+    GetICloudBlockActivityContinuation()(*bool)
+    GetICloudBlockAddressBook()(*bool)
+    GetICloudBlockBookmarks()(*bool)
+    GetICloudBlockCalendar()(*bool)
+    GetICloudBlockDocumentSync()(*bool)
+    GetICloudBlockMail()(*bool)
+    GetICloudBlockNotes()(*bool)
+    GetICloudBlockPhotoLibrary()(*bool)
+    GetICloudBlockReminders()(*bool)
+    GetICloudDesktopAndDocumentsBlocked()(*bool)
+    GetICloudPrivateRelayBlocked()(*bool)
+    GetITunesBlockFileSharing()(*bool)
+    GetITunesBlockMusicService()(*bool)
+    GetKeyboardBlockDictation()(*bool)
+    GetKeychainBlockCloudSync()(*bool)
+    GetMultiplayerGamingBlocked()(*bool)
+    GetPasswordBlockAirDropSharing()(*bool)
+    GetPasswordBlockAutoFill()(*bool)
+    GetPasswordBlockFingerprintUnlock()(*bool)
+    GetPasswordBlockModification()(*bool)
+    GetPasswordBlockProximityRequests()(*bool)
+    GetPasswordBlockSimple()(*bool)
+    GetPasswordExpirationDays()(*int32)
+    GetPasswordMaximumAttemptCount()(*int32)
+    GetPasswordMinimumCharacterSetCount()(*int32)
+    GetPasswordMinimumLength()(*int32)
+    GetPasswordMinutesOfInactivityBeforeLock()(*int32)
+    GetPasswordMinutesOfInactivityBeforeScreenTimeout()(*int32)
+    GetPasswordMinutesUntilFailedLoginReset()(*int32)
+    GetPasswordPreviousPasswordBlockCount()(*int32)
+    GetPasswordRequired()(*bool)
+    GetPasswordRequiredType()(*RequiredPasswordType)
+    GetPrivacyAccessControls()([]MacOSPrivacyAccessControlItemable)
+    GetSafariBlockAutofill()(*bool)
+    GetScreenCaptureBlocked()(*bool)
+    GetSoftwareUpdateMajorOSDeferredInstallDelayInDays()(*int32)
+    GetSoftwareUpdateMinorOSDeferredInstallDelayInDays()(*int32)
+    GetSoftwareUpdateNonOSDeferredInstallDelayInDays()(*int32)
+    GetSoftwareUpdatesEnforcedDelayInDays()(*int32)
+    GetSpotlightBlockInternetResults()(*bool)
+    GetTouchIdTimeoutInHours()(*int32)
+    GetUpdateDelayPolicy()(*MacOSSoftwareUpdateDelayPolicy)
+    GetWallpaperModificationBlocked()(*bool)
+    SetAddingGameCenterFriendsBlocked(value *bool)()
+    SetAirDropBlocked(value *bool)()
+    SetAppleWatchBlockAutoUnlock(value *bool)()
+    SetCameraBlocked(value *bool)()
+    SetClassroomAppBlockRemoteScreenObservation(value *bool)()
+    SetClassroomAppForceUnpromptedScreenObservation(value *bool)()
+    SetClassroomForceAutomaticallyJoinClasses(value *bool)()
+    SetClassroomForceRequestPermissionToLeaveClasses(value *bool)()
+    SetClassroomForceUnpromptedAppAndDeviceLock(value *bool)()
+    SetCompliantAppListType(value *AppListType)()
+    SetCompliantAppsList(value []AppListItemable)()
+    SetContentCachingBlocked(value *bool)()
+    SetDefinitionLookupBlocked(value *bool)()
+    SetEmailInDomainSuffixes(value []string)()
+    SetEraseContentAndSettingsBlocked(value *bool)()
+    SetGameCenterBlocked(value *bool)()
+    SetICloudBlockActivityContinuation(value *bool)()
+    SetICloudBlockAddressBook(value *bool)()
+    SetICloudBlockBookmarks(value *bool)()
+    SetICloudBlockCalendar(value *bool)()
+    SetICloudBlockDocumentSync(value *bool)()
+    SetICloudBlockMail(value *bool)()
+    SetICloudBlockNotes(value *bool)()
+    SetICloudBlockPhotoLibrary(value *bool)()
+    SetICloudBlockReminders(value *bool)()
+    SetICloudDesktopAndDocumentsBlocked(value *bool)()
+    SetICloudPrivateRelayBlocked(value *bool)()
+    SetITunesBlockFileSharing(value *bool)()
+    SetITunesBlockMusicService(value *bool)()
+    SetKeyboardBlockDictation(value *bool)()
+    SetKeychainBlockCloudSync(value *bool)()
+    SetMultiplayerGamingBlocked(value *bool)()
+    SetPasswordBlockAirDropSharing(value *bool)()
+    SetPasswordBlockAutoFill(value *bool)()
+    SetPasswordBlockFingerprintUnlock(value *bool)()
+    SetPasswordBlockModification(value *bool)()
+    SetPasswordBlockProximityRequests(value *bool)()
+    SetPasswordBlockSimple(value *bool)()
+    SetPasswordExpirationDays(value *int32)()
+    SetPasswordMaximumAttemptCount(value *int32)()
+    SetPasswordMinimumCharacterSetCount(value *int32)()
+    SetPasswordMinimumLength(value *int32)()
+    SetPasswordMinutesOfInactivityBeforeLock(value *int32)()
+    SetPasswordMinutesOfInactivityBeforeScreenTimeout(value *int32)()
+    SetPasswordMinutesUntilFailedLoginReset(value *int32)()
+    SetPasswordPreviousPasswordBlockCount(value *int32)()
+    SetPasswordRequired(value *bool)()
+    SetPasswordRequiredType(value *RequiredPasswordType)()
+    SetPrivacyAccessControls(value []MacOSPrivacyAccessControlItemable)()
+    SetSafariBlockAutofill(value *bool)()
+    SetScreenCaptureBlocked(value *bool)()
+    SetSoftwareUpdateMajorOSDeferredInstallDelayInDays(value *int32)()
+    SetSoftwareUpdateMinorOSDeferredInstallDelayInDays(value *int32)()
+    SetSoftwareUpdateNonOSDeferredInstallDelayInDays(value *int32)()
+    SetSoftwareUpdatesEnforcedDelayInDays(value *int32)()
+    SetSpotlightBlockInternetResults(value *bool)()
+    SetTouchIdTimeoutInHours(value *int32)()
+    SetUpdateDelayPolicy(value *MacOSSoftwareUpdateDelayPolicy)()
+    SetWallpaperModificationBlocked(value *bool)()
 }

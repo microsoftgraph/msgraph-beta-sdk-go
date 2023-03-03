@@ -8,34 +8,6 @@ import (
 // DeviceManagementConfigurationPolicy device Management Configuration Policy
 type DeviceManagementConfigurationPolicy struct {
     Entity
-    // Policy assignments
-    assignments []DeviceManagementConfigurationPolicyAssignmentable
-    // Policy creation date and time
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Policy creation source
-    creationSource *string
-    // Policy description
-    description *string
-    // Policy assignment status. This property is read-only.
-    isAssigned *bool
-    // Policy last modification date and time
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Policy name
-    name *string
-    // Supported platform types.
-    platforms *DeviceManagementConfigurationPlatforms
-    // Indicates the priority of each policies that are selected by the admin during enrollment process
-    priorityMetaData DeviceManagementPriorityMetaDataable
-    // List of Scope Tags for this Entity instance.
-    roleScopeTagIds []string
-    // Number of settings
-    settingCount *int32
-    // Policy settings
-    settings []DeviceManagementConfigurationSettingable
-    // Describes which technology this setting can be deployed with
-    technologies *DeviceManagementConfigurationTechnologies
-    // Template reference information
-    templateReference DeviceManagementConfigurationPolicyTemplateReferenceable
 }
 // NewDeviceManagementConfigurationPolicy instantiates a new deviceManagementConfigurationPolicy and sets the default values.
 func NewDeviceManagementConfigurationPolicy()(*DeviceManagementConfigurationPolicy) {
@@ -50,19 +22,47 @@ func CreateDeviceManagementConfigurationPolicyFromDiscriminatorValue(parseNode i
 }
 // GetAssignments gets the assignments property value. Policy assignments
 func (m *DeviceManagementConfigurationPolicy) GetAssignments()([]DeviceManagementConfigurationPolicyAssignmentable) {
-    return m.assignments
+    val, err := m.GetBackingStore().Get("assignments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementConfigurationPolicyAssignmentable)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Policy creation date and time
 func (m *DeviceManagementConfigurationPolicy) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetCreationSource gets the creationSource property value. Policy creation source
 func (m *DeviceManagementConfigurationPolicy) GetCreationSource()(*string) {
-    return m.creationSource
+    val, err := m.GetBackingStore().Get("creationSource")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDescription gets the description property value. Policy description
 func (m *DeviceManagementConfigurationPolicy) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -223,43 +223,113 @@ func (m *DeviceManagementConfigurationPolicy) GetFieldDeserializers()(map[string
 }
 // GetIsAssigned gets the isAssigned property value. Policy assignment status. This property is read-only.
 func (m *DeviceManagementConfigurationPolicy) GetIsAssigned()(*bool) {
-    return m.isAssigned
+    val, err := m.GetBackingStore().Get("isAssigned")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Policy last modification date and time
 func (m *DeviceManagementConfigurationPolicy) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetName gets the name property value. Policy name
 func (m *DeviceManagementConfigurationPolicy) GetName()(*string) {
-    return m.name
+    val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPlatforms gets the platforms property value. Supported platform types.
 func (m *DeviceManagementConfigurationPolicy) GetPlatforms()(*DeviceManagementConfigurationPlatforms) {
-    return m.platforms
+    val, err := m.GetBackingStore().Get("platforms")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceManagementConfigurationPlatforms)
+    }
+    return nil
 }
 // GetPriorityMetaData gets the priorityMetaData property value. Indicates the priority of each policies that are selected by the admin during enrollment process
 func (m *DeviceManagementConfigurationPolicy) GetPriorityMetaData()(DeviceManagementPriorityMetaDataable) {
-    return m.priorityMetaData
+    val, err := m.GetBackingStore().Get("priorityMetaData")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementPriorityMetaDataable)
+    }
+    return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
 func (m *DeviceManagementConfigurationPolicy) GetRoleScopeTagIds()([]string) {
-    return m.roleScopeTagIds
+    val, err := m.GetBackingStore().Get("roleScopeTagIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetSettingCount gets the settingCount property value. Number of settings
 func (m *DeviceManagementConfigurationPolicy) GetSettingCount()(*int32) {
-    return m.settingCount
+    val, err := m.GetBackingStore().Get("settingCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetSettings gets the settings property value. Policy settings
 func (m *DeviceManagementConfigurationPolicy) GetSettings()([]DeviceManagementConfigurationSettingable) {
-    return m.settings
+    val, err := m.GetBackingStore().Get("settings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementConfigurationSettingable)
+    }
+    return nil
 }
 // GetTechnologies gets the technologies property value. Describes which technology this setting can be deployed with
 func (m *DeviceManagementConfigurationPolicy) GetTechnologies()(*DeviceManagementConfigurationTechnologies) {
-    return m.technologies
+    val, err := m.GetBackingStore().Get("technologies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceManagementConfigurationTechnologies)
+    }
+    return nil
 }
 // GetTemplateReference gets the templateReference property value. Template reference information
 func (m *DeviceManagementConfigurationPolicy) GetTemplateReference()(DeviceManagementConfigurationPolicyTemplateReferenceable) {
-    return m.templateReference
+    val, err := m.GetBackingStore().Get("templateReference")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementConfigurationPolicyTemplateReferenceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -359,57 +429,132 @@ func (m *DeviceManagementConfigurationPolicy) Serialize(writer i878a80d2330e89d2
 }
 // SetAssignments sets the assignments property value. Policy assignments
 func (m *DeviceManagementConfigurationPolicy) SetAssignments(value []DeviceManagementConfigurationPolicyAssignmentable)() {
-    m.assignments = value
+    err := m.GetBackingStore().Set("assignments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Policy creation date and time
 func (m *DeviceManagementConfigurationPolicy) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreationSource sets the creationSource property value. Policy creation source
 func (m *DeviceManagementConfigurationPolicy) SetCreationSource(value *string)() {
-    m.creationSource = value
+    err := m.GetBackingStore().Set("creationSource", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. Policy description
 func (m *DeviceManagementConfigurationPolicy) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsAssigned sets the isAssigned property value. Policy assignment status. This property is read-only.
 func (m *DeviceManagementConfigurationPolicy) SetIsAssigned(value *bool)() {
-    m.isAssigned = value
+    err := m.GetBackingStore().Set("isAssigned", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Policy last modification date and time
 func (m *DeviceManagementConfigurationPolicy) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetName sets the name property value. Policy name
 func (m *DeviceManagementConfigurationPolicy) SetName(value *string)() {
-    m.name = value
+    err := m.GetBackingStore().Set("name", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPlatforms sets the platforms property value. Supported platform types.
 func (m *DeviceManagementConfigurationPolicy) SetPlatforms(value *DeviceManagementConfigurationPlatforms)() {
-    m.platforms = value
+    err := m.GetBackingStore().Set("platforms", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPriorityMetaData sets the priorityMetaData property value. Indicates the priority of each policies that are selected by the admin during enrollment process
 func (m *DeviceManagementConfigurationPolicy) SetPriorityMetaData(value DeviceManagementPriorityMetaDataable)() {
-    m.priorityMetaData = value
+    err := m.GetBackingStore().Set("priorityMetaData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
 func (m *DeviceManagementConfigurationPolicy) SetRoleScopeTagIds(value []string)() {
-    m.roleScopeTagIds = value
+    err := m.GetBackingStore().Set("roleScopeTagIds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingCount sets the settingCount property value. Number of settings
 func (m *DeviceManagementConfigurationPolicy) SetSettingCount(value *int32)() {
-    m.settingCount = value
+    err := m.GetBackingStore().Set("settingCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettings sets the settings property value. Policy settings
 func (m *DeviceManagementConfigurationPolicy) SetSettings(value []DeviceManagementConfigurationSettingable)() {
-    m.settings = value
+    err := m.GetBackingStore().Set("settings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTechnologies sets the technologies property value. Describes which technology this setting can be deployed with
 func (m *DeviceManagementConfigurationPolicy) SetTechnologies(value *DeviceManagementConfigurationTechnologies)() {
-    m.technologies = value
+    err := m.GetBackingStore().Set("technologies", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTemplateReference sets the templateReference property value. Template reference information
 func (m *DeviceManagementConfigurationPolicy) SetTemplateReference(value DeviceManagementConfigurationPolicyTemplateReferenceable)() {
-    m.templateReference = value
+    err := m.GetBackingStore().Set("templateReference", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationPolicyable 
+type DeviceManagementConfigurationPolicyable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssignments()([]DeviceManagementConfigurationPolicyAssignmentable)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetCreationSource()(*string)
+    GetDescription()(*string)
+    GetIsAssigned()(*bool)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetName()(*string)
+    GetPlatforms()(*DeviceManagementConfigurationPlatforms)
+    GetPriorityMetaData()(DeviceManagementPriorityMetaDataable)
+    GetRoleScopeTagIds()([]string)
+    GetSettingCount()(*int32)
+    GetSettings()([]DeviceManagementConfigurationSettingable)
+    GetTechnologies()(*DeviceManagementConfigurationTechnologies)
+    GetTemplateReference()(DeviceManagementConfigurationPolicyTemplateReferenceable)
+    SetAssignments(value []DeviceManagementConfigurationPolicyAssignmentable)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetCreationSource(value *string)()
+    SetDescription(value *string)()
+    SetIsAssigned(value *bool)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetName(value *string)()
+    SetPlatforms(value *DeviceManagementConfigurationPlatforms)()
+    SetPriorityMetaData(value DeviceManagementPriorityMetaDataable)()
+    SetRoleScopeTagIds(value []string)()
+    SetSettingCount(value *int32)()
+    SetSettings(value []DeviceManagementConfigurationSettingable)()
+    SetTechnologies(value *DeviceManagementConfigurationTechnologies)()
+    SetTemplateReference(value DeviceManagementConfigurationPolicyTemplateReferenceable)()
 }

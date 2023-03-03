@@ -2,38 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // VpnOnDemandRule vPN On-Demand Rule definition.
 type VpnOnDemandRule struct {
-    // VPN On-Demand Rule Connection Action.
-    action *VpnOnDemandRuleConnectionAction
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // DNS Search Domains.
-    dnsSearchDomains []string
-    // DNS Search Server Address.
-    dnsServerAddressMatch []string
-    // VPN On-Demand Rule Connection Domain Action.
-    domainAction *VpnOnDemandRuleConnectionDomainAction
-    // Domains (Only applicable when Action is evaluate connection).
-    domains []string
-    // VPN On-Demand Rule Connection network interface type.
-    interfaceTypeMatch *VpnOnDemandRuleInterfaceTypeMatch
-    // The OdataType property
-    odataType *string
-    // Probe Required Url (Only applicable when Action is evaluate connection and DomainAction is connect if needed).
-    probeRequiredUrl *string
-    // A URL to probe. If this URL is successfully fetched (returning a 200 HTTP status code) without redirection, this rule matches.
-    probeUrl *string
-    // Network Service Set Identifiers (SSIDs).
-    ssids []string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewVpnOnDemandRule instantiates a new vpnOnDemandRule and sets the default values.
 func NewVpnOnDemandRule()(*VpnOnDemandRule) {
     m := &VpnOnDemandRule{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateVpnOnDemandRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -42,27 +24,74 @@ func CreateVpnOnDemandRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAction gets the action property value. VPN On-Demand Rule Connection Action.
 func (m *VpnOnDemandRule) GetAction()(*VpnOnDemandRuleConnectionAction) {
-    return m.action
+    val, err := m.GetBackingStore().Get("action")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*VpnOnDemandRuleConnectionAction)
+    }
+    return nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VpnOnDemandRule) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *VpnOnDemandRule) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDnsSearchDomains gets the dnsSearchDomains property value. DNS Search Domains.
 func (m *VpnOnDemandRule) GetDnsSearchDomains()([]string) {
-    return m.dnsSearchDomains
+    val, err := m.GetBackingStore().Get("dnsSearchDomains")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetDnsServerAddressMatch gets the dnsServerAddressMatch property value. DNS Search Server Address.
 func (m *VpnOnDemandRule) GetDnsServerAddressMatch()([]string) {
-    return m.dnsServerAddressMatch
+    val, err := m.GetBackingStore().Get("dnsServerAddressMatch")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetDomainAction gets the domainAction property value. VPN On-Demand Rule Connection Domain Action.
 func (m *VpnOnDemandRule) GetDomainAction()(*VpnOnDemandRuleConnectionDomainAction) {
-    return m.domainAction
+    val, err := m.GetBackingStore().Get("domainAction")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*VpnOnDemandRuleConnectionDomainAction)
+    }
+    return nil
 }
 // GetDomains gets the domains property value. Domains (Only applicable when Action is evaluate connection).
 func (m *VpnOnDemandRule) GetDomains()([]string) {
-    return m.domains
+    val, err := m.GetBackingStore().Get("domains")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *VpnOnDemandRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -187,23 +216,58 @@ func (m *VpnOnDemandRule) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetInterfaceTypeMatch gets the interfaceTypeMatch property value. VPN On-Demand Rule Connection network interface type.
 func (m *VpnOnDemandRule) GetInterfaceTypeMatch()(*VpnOnDemandRuleInterfaceTypeMatch) {
-    return m.interfaceTypeMatch
+    val, err := m.GetBackingStore().Get("interfaceTypeMatch")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*VpnOnDemandRuleInterfaceTypeMatch)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *VpnOnDemandRule) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProbeRequiredUrl gets the probeRequiredUrl property value. Probe Required Url (Only applicable when Action is evaluate connection and DomainAction is connect if needed).
 func (m *VpnOnDemandRule) GetProbeRequiredUrl()(*string) {
-    return m.probeRequiredUrl
+    val, err := m.GetBackingStore().Get("probeRequiredUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProbeUrl gets the probeUrl property value. A URL to probe. If this URL is successfully fetched (returning a 200 HTTP status code) without redirection, this rule matches.
 func (m *VpnOnDemandRule) GetProbeUrl()(*string) {
-    return m.probeUrl
+    val, err := m.GetBackingStore().Get("probeUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSsids gets the ssids property value. Network Service Set Identifiers (SSIDs).
 func (m *VpnOnDemandRule) GetSsids()([]string) {
-    return m.ssids
+    val, err := m.GetBackingStore().Get("ssids")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *VpnOnDemandRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -280,45 +344,110 @@ func (m *VpnOnDemandRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAction sets the action property value. VPN On-Demand Rule Connection Action.
 func (m *VpnOnDemandRule) SetAction(value *VpnOnDemandRuleConnectionAction)() {
-    m.action = value
+    err := m.GetBackingStore().Set("action", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VpnOnDemandRule) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *VpnOnDemandRule) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDnsSearchDomains sets the dnsSearchDomains property value. DNS Search Domains.
 func (m *VpnOnDemandRule) SetDnsSearchDomains(value []string)() {
-    m.dnsSearchDomains = value
+    err := m.GetBackingStore().Set("dnsSearchDomains", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDnsServerAddressMatch sets the dnsServerAddressMatch property value. DNS Search Server Address.
 func (m *VpnOnDemandRule) SetDnsServerAddressMatch(value []string)() {
-    m.dnsServerAddressMatch = value
+    err := m.GetBackingStore().Set("dnsServerAddressMatch", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDomainAction sets the domainAction property value. VPN On-Demand Rule Connection Domain Action.
 func (m *VpnOnDemandRule) SetDomainAction(value *VpnOnDemandRuleConnectionDomainAction)() {
-    m.domainAction = value
+    err := m.GetBackingStore().Set("domainAction", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDomains sets the domains property value. Domains (Only applicable when Action is evaluate connection).
 func (m *VpnOnDemandRule) SetDomains(value []string)() {
-    m.domains = value
+    err := m.GetBackingStore().Set("domains", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInterfaceTypeMatch sets the interfaceTypeMatch property value. VPN On-Demand Rule Connection network interface type.
 func (m *VpnOnDemandRule) SetInterfaceTypeMatch(value *VpnOnDemandRuleInterfaceTypeMatch)() {
-    m.interfaceTypeMatch = value
+    err := m.GetBackingStore().Set("interfaceTypeMatch", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *VpnOnDemandRule) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProbeRequiredUrl sets the probeRequiredUrl property value. Probe Required Url (Only applicable when Action is evaluate connection and DomainAction is connect if needed).
 func (m *VpnOnDemandRule) SetProbeRequiredUrl(value *string)() {
-    m.probeRequiredUrl = value
+    err := m.GetBackingStore().Set("probeRequiredUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProbeUrl sets the probeUrl property value. A URL to probe. If this URL is successfully fetched (returning a 200 HTTP status code) without redirection, this rule matches.
 func (m *VpnOnDemandRule) SetProbeUrl(value *string)() {
-    m.probeUrl = value
+    err := m.GetBackingStore().Set("probeUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSsids sets the ssids property value. Network Service Set Identifiers (SSIDs).
 func (m *VpnOnDemandRule) SetSsids(value []string)() {
-    m.ssids = value
+    err := m.GetBackingStore().Set("ssids", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// VpnOnDemandRuleable 
+type VpnOnDemandRuleable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAction()(*VpnOnDemandRuleConnectionAction)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDnsSearchDomains()([]string)
+    GetDnsServerAddressMatch()([]string)
+    GetDomainAction()(*VpnOnDemandRuleConnectionDomainAction)
+    GetDomains()([]string)
+    GetInterfaceTypeMatch()(*VpnOnDemandRuleInterfaceTypeMatch)
+    GetOdataType()(*string)
+    GetProbeRequiredUrl()(*string)
+    GetProbeUrl()(*string)
+    GetSsids()([]string)
+    SetAction(value *VpnOnDemandRuleConnectionAction)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDnsSearchDomains(value []string)()
+    SetDnsServerAddressMatch(value []string)()
+    SetDomainAction(value *VpnOnDemandRuleConnectionDomainAction)()
+    SetDomains(value []string)()
+    SetInterfaceTypeMatch(value *VpnOnDemandRuleInterfaceTypeMatch)()
+    SetOdataType(value *string)()
+    SetProbeRequiredUrl(value *string)()
+    SetProbeUrl(value *string)()
+    SetSsids(value []string)()
 }

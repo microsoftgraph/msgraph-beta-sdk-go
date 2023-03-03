@@ -7,38 +7,14 @@ import (
 // AndroidDeviceOwnerWiFiConfiguration 
 type AndroidDeviceOwnerWiFiConfiguration struct {
     DeviceConfiguration
-    // Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
-    connectAutomatically *bool
-    // When set to true, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices.
-    connectWhenNetworkNameIsHidden *bool
-    // Network Name
-    networkName *string
-    // This is the pre-shared key for WPA Personal Wi-Fi network.
-    preSharedKey *string
-    // This is the pre-shared key for WPA Personal Wi-Fi network.
-    preSharedKeyIsSet *bool
-    // Specify the proxy server configuration script URL.
-    proxyAutomaticConfigurationUrl *string
-    // List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as .example.com.
-    proxyExclusionList *string
-    // Specify the proxy server IP address. Android documentation does not specify IPv4 or IPv6. For example: 192.168.1.1.
-    proxyManualAddress *string
-    // Specify the proxy server port.
-    proxyManualPort *int32
-    // Wi-Fi Proxy Settings.
-    proxySettings *WiFiProxySetting
-    // This is the name of the Wi-Fi network that is broadcast to all devices.
-    ssid *string
-    // Wi-Fi Security Types for Android Device Owner.
-    wiFiSecurityType *AndroidDeviceOwnerWiFiSecurityType
 }
 // NewAndroidDeviceOwnerWiFiConfiguration instantiates a new AndroidDeviceOwnerWiFiConfiguration and sets the default values.
 func NewAndroidDeviceOwnerWiFiConfiguration()(*AndroidDeviceOwnerWiFiConfiguration) {
     m := &AndroidDeviceOwnerWiFiConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.androidDeviceOwnerWiFiConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidDeviceOwnerWiFiConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidDeviceOwnerWiFiConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -65,11 +41,25 @@ func CreateAndroidDeviceOwnerWiFiConfigurationFromDiscriminatorValue(parseNode i
 }
 // GetConnectAutomatically gets the connectAutomatically property value. Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
 func (m *AndroidDeviceOwnerWiFiConfiguration) GetConnectAutomatically()(*bool) {
-    return m.connectAutomatically
+    val, err := m.GetBackingStore().Get("connectAutomatically")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetConnectWhenNetworkNameIsHidden gets the connectWhenNetworkNameIsHidden property value. When set to true, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices.
 func (m *AndroidDeviceOwnerWiFiConfiguration) GetConnectWhenNetworkNameIsHidden()(*bool) {
-    return m.connectWhenNetworkNameIsHidden
+    val, err := m.GetBackingStore().Get("connectWhenNetworkNameIsHidden")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidDeviceOwnerWiFiConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -198,43 +188,113 @@ func (m *AndroidDeviceOwnerWiFiConfiguration) GetFieldDeserializers()(map[string
 }
 // GetNetworkName gets the networkName property value. Network Name
 func (m *AndroidDeviceOwnerWiFiConfiguration) GetNetworkName()(*string) {
-    return m.networkName
+    val, err := m.GetBackingStore().Get("networkName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPreSharedKey gets the preSharedKey property value. This is the pre-shared key for WPA Personal Wi-Fi network.
 func (m *AndroidDeviceOwnerWiFiConfiguration) GetPreSharedKey()(*string) {
-    return m.preSharedKey
+    val, err := m.GetBackingStore().Get("preSharedKey")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPreSharedKeyIsSet gets the preSharedKeyIsSet property value. This is the pre-shared key for WPA Personal Wi-Fi network.
 func (m *AndroidDeviceOwnerWiFiConfiguration) GetPreSharedKeyIsSet()(*bool) {
-    return m.preSharedKeyIsSet
+    val, err := m.GetBackingStore().Get("preSharedKeyIsSet")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetProxyAutomaticConfigurationUrl gets the proxyAutomaticConfigurationUrl property value. Specify the proxy server configuration script URL.
 func (m *AndroidDeviceOwnerWiFiConfiguration) GetProxyAutomaticConfigurationUrl()(*string) {
-    return m.proxyAutomaticConfigurationUrl
+    val, err := m.GetBackingStore().Get("proxyAutomaticConfigurationUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProxyExclusionList gets the proxyExclusionList property value. List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as .example.com.
 func (m *AndroidDeviceOwnerWiFiConfiguration) GetProxyExclusionList()(*string) {
-    return m.proxyExclusionList
+    val, err := m.GetBackingStore().Get("proxyExclusionList")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProxyManualAddress gets the proxyManualAddress property value. Specify the proxy server IP address. Android documentation does not specify IPv4 or IPv6. For example: 192.168.1.1.
 func (m *AndroidDeviceOwnerWiFiConfiguration) GetProxyManualAddress()(*string) {
-    return m.proxyManualAddress
+    val, err := m.GetBackingStore().Get("proxyManualAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProxyManualPort gets the proxyManualPort property value. Specify the proxy server port.
 func (m *AndroidDeviceOwnerWiFiConfiguration) GetProxyManualPort()(*int32) {
-    return m.proxyManualPort
+    val, err := m.GetBackingStore().Get("proxyManualPort")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetProxySettings gets the proxySettings property value. Wi-Fi Proxy Settings.
 func (m *AndroidDeviceOwnerWiFiConfiguration) GetProxySettings()(*WiFiProxySetting) {
-    return m.proxySettings
+    val, err := m.GetBackingStore().Get("proxySettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WiFiProxySetting)
+    }
+    return nil
 }
 // GetSsid gets the ssid property value. This is the name of the Wi-Fi network that is broadcast to all devices.
 func (m *AndroidDeviceOwnerWiFiConfiguration) GetSsid()(*string) {
-    return m.ssid
+    val, err := m.GetBackingStore().Get("ssid")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetWiFiSecurityType gets the wiFiSecurityType property value. Wi-Fi Security Types for Android Device Owner.
 func (m *AndroidDeviceOwnerWiFiConfiguration) GetWiFiSecurityType()(*AndroidDeviceOwnerWiFiSecurityType) {
-    return m.wiFiSecurityType
+    val, err := m.GetBackingStore().Get("wiFiSecurityType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AndroidDeviceOwnerWiFiSecurityType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerWiFiConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -320,49 +380,114 @@ func (m *AndroidDeviceOwnerWiFiConfiguration) Serialize(writer i878a80d2330e89d2
 }
 // SetConnectAutomatically sets the connectAutomatically property value. Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
 func (m *AndroidDeviceOwnerWiFiConfiguration) SetConnectAutomatically(value *bool)() {
-    m.connectAutomatically = value
+    err := m.GetBackingStore().Set("connectAutomatically", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConnectWhenNetworkNameIsHidden sets the connectWhenNetworkNameIsHidden property value. When set to true, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices.
 func (m *AndroidDeviceOwnerWiFiConfiguration) SetConnectWhenNetworkNameIsHidden(value *bool)() {
-    m.connectWhenNetworkNameIsHidden = value
+    err := m.GetBackingStore().Set("connectWhenNetworkNameIsHidden", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNetworkName sets the networkName property value. Network Name
 func (m *AndroidDeviceOwnerWiFiConfiguration) SetNetworkName(value *string)() {
-    m.networkName = value
+    err := m.GetBackingStore().Set("networkName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPreSharedKey sets the preSharedKey property value. This is the pre-shared key for WPA Personal Wi-Fi network.
 func (m *AndroidDeviceOwnerWiFiConfiguration) SetPreSharedKey(value *string)() {
-    m.preSharedKey = value
+    err := m.GetBackingStore().Set("preSharedKey", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPreSharedKeyIsSet sets the preSharedKeyIsSet property value. This is the pre-shared key for WPA Personal Wi-Fi network.
 func (m *AndroidDeviceOwnerWiFiConfiguration) SetPreSharedKeyIsSet(value *bool)() {
-    m.preSharedKeyIsSet = value
+    err := m.GetBackingStore().Set("preSharedKeyIsSet", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProxyAutomaticConfigurationUrl sets the proxyAutomaticConfigurationUrl property value. Specify the proxy server configuration script URL.
 func (m *AndroidDeviceOwnerWiFiConfiguration) SetProxyAutomaticConfigurationUrl(value *string)() {
-    m.proxyAutomaticConfigurationUrl = value
+    err := m.GetBackingStore().Set("proxyAutomaticConfigurationUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProxyExclusionList sets the proxyExclusionList property value. List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as .example.com.
 func (m *AndroidDeviceOwnerWiFiConfiguration) SetProxyExclusionList(value *string)() {
-    m.proxyExclusionList = value
+    err := m.GetBackingStore().Set("proxyExclusionList", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProxyManualAddress sets the proxyManualAddress property value. Specify the proxy server IP address. Android documentation does not specify IPv4 or IPv6. For example: 192.168.1.1.
 func (m *AndroidDeviceOwnerWiFiConfiguration) SetProxyManualAddress(value *string)() {
-    m.proxyManualAddress = value
+    err := m.GetBackingStore().Set("proxyManualAddress", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProxyManualPort sets the proxyManualPort property value. Specify the proxy server port.
 func (m *AndroidDeviceOwnerWiFiConfiguration) SetProxyManualPort(value *int32)() {
-    m.proxyManualPort = value
+    err := m.GetBackingStore().Set("proxyManualPort", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProxySettings sets the proxySettings property value. Wi-Fi Proxy Settings.
 func (m *AndroidDeviceOwnerWiFiConfiguration) SetProxySettings(value *WiFiProxySetting)() {
-    m.proxySettings = value
+    err := m.GetBackingStore().Set("proxySettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSsid sets the ssid property value. This is the name of the Wi-Fi network that is broadcast to all devices.
 func (m *AndroidDeviceOwnerWiFiConfiguration) SetSsid(value *string)() {
-    m.ssid = value
+    err := m.GetBackingStore().Set("ssid", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWiFiSecurityType sets the wiFiSecurityType property value. Wi-Fi Security Types for Android Device Owner.
 func (m *AndroidDeviceOwnerWiFiConfiguration) SetWiFiSecurityType(value *AndroidDeviceOwnerWiFiSecurityType)() {
-    m.wiFiSecurityType = value
+    err := m.GetBackingStore().Set("wiFiSecurityType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidDeviceOwnerWiFiConfigurationable 
+type AndroidDeviceOwnerWiFiConfigurationable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetConnectAutomatically()(*bool)
+    GetConnectWhenNetworkNameIsHidden()(*bool)
+    GetNetworkName()(*string)
+    GetPreSharedKey()(*string)
+    GetPreSharedKeyIsSet()(*bool)
+    GetProxyAutomaticConfigurationUrl()(*string)
+    GetProxyExclusionList()(*string)
+    GetProxyManualAddress()(*string)
+    GetProxyManualPort()(*int32)
+    GetProxySettings()(*WiFiProxySetting)
+    GetSsid()(*string)
+    GetWiFiSecurityType()(*AndroidDeviceOwnerWiFiSecurityType)
+    SetConnectAutomatically(value *bool)()
+    SetConnectWhenNetworkNameIsHidden(value *bool)()
+    SetNetworkName(value *string)()
+    SetPreSharedKey(value *string)()
+    SetPreSharedKeyIsSet(value *bool)()
+    SetProxyAutomaticConfigurationUrl(value *string)()
+    SetProxyExclusionList(value *string)()
+    SetProxyManualAddress(value *string)()
+    SetProxyManualPort(value *int32)()
+    SetProxySettings(value *WiFiProxySetting)()
+    SetSsid(value *string)()
+    SetWiFiSecurityType(value *AndroidDeviceOwnerWiFiSecurityType)()
 }

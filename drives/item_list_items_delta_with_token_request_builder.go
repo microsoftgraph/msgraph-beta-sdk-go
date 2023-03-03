@@ -45,7 +45,7 @@ type ItemListItemsDeltaWithTokenRequestBuilderGetRequestConfiguration struct {
 func NewItemListItemsDeltaWithTokenRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, token *string)(*ItemListItemsDeltaWithTokenRequestBuilder) {
     m := &ItemListItemsDeltaWithTokenRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/drives/{drive%2Did}/list/items/microsoft.graph.delta(token='{token}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
+    m.urlTemplate = "{+baseurl}/drives/{drive%2Did}/list/items/delta(token='{token}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -53,8 +53,8 @@ func NewItemListItemsDeltaWithTokenRequestBuilderInternal(pathParameters map[str
     if token != nil {
         urlTplParams["token"] = *token
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemListItemsDeltaWithTokenRequestBuilder instantiates a new DeltaWithTokenRequestBuilder and sets the default values.

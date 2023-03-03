@@ -7,12 +7,6 @@ import (
 // RecordOperation 
 type RecordOperation struct {
     CommsOperation
-    // Possible values are: operationCanceled, stopToneDetected, maxRecordDurationReached, initialSilenceTimeout, maxSilenceTimeout, playPromptFailed, playBeepFailed, mediaReceiveTimeout, unspecifiedError, none.
-    completionReason *RecordCompletionReason
-    // The access token required to retrieve the recording.
-    recordingAccessToken *string
-    // The location where the recording is located.
-    recordingLocation *string
 }
 // NewRecordOperation instantiates a new RecordOperation and sets the default values.
 func NewRecordOperation()(*RecordOperation) {
@@ -27,7 +21,14 @@ func CreateRecordOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetCompletionReason gets the completionReason property value. Possible values are: operationCanceled, stopToneDetected, maxRecordDurationReached, initialSilenceTimeout, maxSilenceTimeout, playPromptFailed, playBeepFailed, mediaReceiveTimeout, unspecifiedError, none.
 func (m *RecordOperation) GetCompletionReason()(*RecordCompletionReason) {
-    return m.completionReason
+    val, err := m.GetBackingStore().Get("completionReason")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RecordCompletionReason)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RecordOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -66,11 +67,25 @@ func (m *RecordOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetRecordingAccessToken gets the recordingAccessToken property value. The access token required to retrieve the recording.
 func (m *RecordOperation) GetRecordingAccessToken()(*string) {
-    return m.recordingAccessToken
+    val, err := m.GetBackingStore().Get("recordingAccessToken")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRecordingLocation gets the recordingLocation property value. The location where the recording is located.
 func (m *RecordOperation) GetRecordingLocation()(*string) {
-    return m.recordingLocation
+    val, err := m.GetBackingStore().Get("recordingLocation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RecordOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -101,13 +116,33 @@ func (m *RecordOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetCompletionReason sets the completionReason property value. Possible values are: operationCanceled, stopToneDetected, maxRecordDurationReached, initialSilenceTimeout, maxSilenceTimeout, playPromptFailed, playBeepFailed, mediaReceiveTimeout, unspecifiedError, none.
 func (m *RecordOperation) SetCompletionReason(value *RecordCompletionReason)() {
-    m.completionReason = value
+    err := m.GetBackingStore().Set("completionReason", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRecordingAccessToken sets the recordingAccessToken property value. The access token required to retrieve the recording.
 func (m *RecordOperation) SetRecordingAccessToken(value *string)() {
-    m.recordingAccessToken = value
+    err := m.GetBackingStore().Set("recordingAccessToken", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRecordingLocation sets the recordingLocation property value. The location where the recording is located.
 func (m *RecordOperation) SetRecordingLocation(value *string)() {
-    m.recordingLocation = value
+    err := m.GetBackingStore().Set("recordingLocation", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RecordOperationable 
+type RecordOperationable interface {
+    CommsOperationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCompletionReason()(*RecordCompletionReason)
+    GetRecordingAccessToken()(*string)
+    GetRecordingLocation()(*string)
+    SetCompletionReason(value *RecordCompletionReason)()
+    SetRecordingAccessToken(value *string)()
+    SetRecordingLocation(value *string)()
 }

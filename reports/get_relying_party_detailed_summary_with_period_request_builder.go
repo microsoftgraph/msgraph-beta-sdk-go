@@ -45,7 +45,7 @@ type GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfigurati
 func NewGetRelyingPartyDetailedSummaryWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, period *string)(*GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder) {
     m := &GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/reports/microsoft.graph.getRelyingPartyDetailedSummary(period='{period}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
+    m.urlTemplate = "{+baseurl}/reports/getRelyingPartyDetailedSummary(period='{period}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -53,8 +53,8 @@ func NewGetRelyingPartyDetailedSummaryWithPeriodRequestBuilderInternal(pathParam
     if period != nil {
         urlTplParams["period"] = *period
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGetRelyingPartyDetailedSummaryWithPeriodRequestBuilder instantiates a new GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder and sets the default values.

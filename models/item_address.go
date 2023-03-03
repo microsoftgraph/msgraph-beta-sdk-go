@@ -7,20 +7,14 @@ import (
 // ItemAddress 
 type ItemAddress struct {
     ItemFacet
-    // The detail property
-    detail PhysicalAddressable
-    // Friendly name the user has assigned to this address.
-    displayName *string
-    // The geocoordinates of the address.
-    geoCoordinates GeoCoordinatesable
 }
 // NewItemAddress instantiates a new ItemAddress and sets the default values.
 func NewItemAddress()(*ItemAddress) {
     m := &ItemAddress{
         ItemFacet: *NewItemFacet(),
     }
-    odataTypeValue := "#microsoft.graph.itemAddress";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.itemAddress"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateItemAddressFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,11 +23,25 @@ func CreateItemAddressFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetDetail gets the detail property value. The detail property
 func (m *ItemAddress) GetDetail()(PhysicalAddressable) {
-    return m.detail
+    val, err := m.GetBackingStore().Get("detail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PhysicalAddressable)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. Friendly name the user has assigned to this address.
 func (m *ItemAddress) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemAddress) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,7 +80,14 @@ func (m *ItemAddress) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetGeoCoordinates gets the geoCoordinates property value. The geocoordinates of the address.
 func (m *ItemAddress) GetGeoCoordinates()(GeoCoordinatesable) {
-    return m.geoCoordinates
+    val, err := m.GetBackingStore().Get("geoCoordinates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(GeoCoordinatesable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemAddress) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -102,13 +117,33 @@ func (m *ItemAddress) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetDetail sets the detail property value. The detail property
 func (m *ItemAddress) SetDetail(value PhysicalAddressable)() {
-    m.detail = value
+    err := m.GetBackingStore().Set("detail", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. Friendly name the user has assigned to this address.
 func (m *ItemAddress) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGeoCoordinates sets the geoCoordinates property value. The geocoordinates of the address.
 func (m *ItemAddress) SetGeoCoordinates(value GeoCoordinatesable)() {
-    m.geoCoordinates = value
+    err := m.GetBackingStore().Set("geoCoordinates", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemAddressable 
+type ItemAddressable interface {
+    ItemFacetable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDetail()(PhysicalAddressable)
+    GetDisplayName()(*string)
+    GetGeoCoordinates()(GeoCoordinatesable)
+    SetDetail(value PhysicalAddressable)()
+    SetDisplayName(value *string)()
+    SetGeoCoordinates(value GeoCoordinatesable)()
 }

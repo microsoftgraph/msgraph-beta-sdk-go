@@ -7,16 +7,14 @@ import (
 // WindowsAppIdentifier 
 type WindowsAppIdentifier struct {
     MobileAppIdentifier
-    // The identifier for an app, as specified in the app store.
-    windowsAppId *string
 }
 // NewWindowsAppIdentifier instantiates a new WindowsAppIdentifier and sets the default values.
 func NewWindowsAppIdentifier()(*WindowsAppIdentifier) {
     m := &WindowsAppIdentifier{
         MobileAppIdentifier: *NewMobileAppIdentifier(),
     }
-    odataTypeValue := "#microsoft.graph.windowsAppIdentifier";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsAppIdentifier"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsAppIdentifierFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *WindowsAppIdentifier) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetWindowsAppId gets the windowsAppId property value. The identifier for an app, as specified in the app store.
 func (m *WindowsAppIdentifier) GetWindowsAppId()(*string) {
-    return m.windowsAppId
+    val, err := m.GetBackingStore().Get("windowsAppId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsAppIdentifier) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *WindowsAppIdentifier) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetWindowsAppId sets the windowsAppId property value. The identifier for an app, as specified in the app store.
 func (m *WindowsAppIdentifier) SetWindowsAppId(value *string)() {
-    m.windowsAppId = value
+    err := m.GetBackingStore().Set("windowsAppId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsAppIdentifierable 
+type WindowsAppIdentifierable interface {
+    MobileAppIdentifierable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetWindowsAppId()(*string)
+    SetWindowsAppId(value *string)()
 }

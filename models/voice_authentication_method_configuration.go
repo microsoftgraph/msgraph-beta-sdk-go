@@ -7,18 +7,14 @@ import (
 // VoiceAuthenticationMethodConfiguration 
 type VoiceAuthenticationMethodConfiguration struct {
     AuthenticationMethodConfiguration
-    // A collection of groups that are enabled to use the authentication method. Expanded by default.
-    includeTargets []VoiceAuthenticationMethodTargetable
-    // true if users can register office phones, otherwise, false.
-    isOfficePhoneAllowed *bool
 }
 // NewVoiceAuthenticationMethodConfiguration instantiates a new VoiceAuthenticationMethodConfiguration and sets the default values.
 func NewVoiceAuthenticationMethodConfiguration()(*VoiceAuthenticationMethodConfiguration) {
     m := &VoiceAuthenticationMethodConfiguration{
         AuthenticationMethodConfiguration: *NewAuthenticationMethodConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.voiceAuthenticationMethodConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.voiceAuthenticationMethodConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateVoiceAuthenticationMethodConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -56,11 +52,25 @@ func (m *VoiceAuthenticationMethodConfiguration) GetFieldDeserializers()(map[str
 }
 // GetIncludeTargets gets the includeTargets property value. A collection of groups that are enabled to use the authentication method. Expanded by default.
 func (m *VoiceAuthenticationMethodConfiguration) GetIncludeTargets()([]VoiceAuthenticationMethodTargetable) {
-    return m.includeTargets
+    val, err := m.GetBackingStore().Get("includeTargets")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]VoiceAuthenticationMethodTargetable)
+    }
+    return nil
 }
 // GetIsOfficePhoneAllowed gets the isOfficePhoneAllowed property value. true if users can register office phones, otherwise, false.
 func (m *VoiceAuthenticationMethodConfiguration) GetIsOfficePhoneAllowed()(*bool) {
-    return m.isOfficePhoneAllowed
+    val, err := m.GetBackingStore().Get("isOfficePhoneAllowed")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *VoiceAuthenticationMethodConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,9 +98,24 @@ func (m *VoiceAuthenticationMethodConfiguration) Serialize(writer i878a80d2330e8
 }
 // SetIncludeTargets sets the includeTargets property value. A collection of groups that are enabled to use the authentication method. Expanded by default.
 func (m *VoiceAuthenticationMethodConfiguration) SetIncludeTargets(value []VoiceAuthenticationMethodTargetable)() {
-    m.includeTargets = value
+    err := m.GetBackingStore().Set("includeTargets", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsOfficePhoneAllowed sets the isOfficePhoneAllowed property value. true if users can register office phones, otherwise, false.
 func (m *VoiceAuthenticationMethodConfiguration) SetIsOfficePhoneAllowed(value *bool)() {
-    m.isOfficePhoneAllowed = value
+    err := m.GetBackingStore().Set("isOfficePhoneAllowed", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// VoiceAuthenticationMethodConfigurationable 
+type VoiceAuthenticationMethodConfigurationable interface {
+    AuthenticationMethodConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetIncludeTargets()([]VoiceAuthenticationMethodTargetable)
+    GetIsOfficePhoneAllowed()(*bool)
+    SetIncludeTargets(value []VoiceAuthenticationMethodTargetable)()
+    SetIsOfficePhoneAllowed(value *bool)()
 }

@@ -7,58 +7,14 @@ import (
 // AppleVpnConfiguration 
 type AppleVpnConfiguration struct {
     DeviceConfiguration
-    // Associated Domains
-    associatedDomains []string
-    // VPN Authentication Method.
-    authenticationMethod *VpnAuthenticationMethod
-    // Connection name displayed to the user.
-    connectionName *string
-    // Apple VPN connection type.
-    connectionType *AppleVpnConnectionType
-    // Custom data when connection type is set to Custom VPN. Use this field to enable functionality not supported by Intune, but available in your VPN solution. Contact your VPN vendor to learn how to add these key/value pairs. This collection can contain a maximum of 25 elements.
-    customData []KeyValueable
-    // Custom data when connection type is set to Custom VPN. Use this field to enable functionality not supported by Intune, but available in your VPN solution. Contact your VPN vendor to learn how to add these key/value pairs. This collection can contain a maximum of 25 elements.
-    customKeyValueData []KeyValuePairable
-    // Toggle to prevent user from disabling automatic VPN in the Settings app
-    disableOnDemandUserOverride *bool
-    // Whether to disconnect after on-demand connection idles
-    disconnectOnIdle *bool
-    // The length of time in seconds to wait before disconnecting an on-demand connection. Valid values 0 to 65535
-    disconnectOnIdleTimerInSeconds *int32
-    // Setting this to true creates Per-App VPN payload which can later be associated with Apps that can trigger this VPN conneciton on the end user's iOS device.
-    enablePerApp *bool
-    // Send all network traffic through VPN.
-    enableSplitTunneling *bool
-    // Domains that are accessed through the public internet instead of through VPN, even when per-app VPN is activated
-    excludedDomains []string
-    // Identifier provided by VPN vendor when connection type is set to Custom VPN. For example: Cisco AnyConnect uses an identifier of the form com.cisco.anyconnect.applevpn.plugin
-    identifier *string
-    // Login group or domain when connection type is set to Dell SonicWALL Mobile Connection.
-    loginGroupOrDomain *string
-    // On-Demand Rules. This collection can contain a maximum of 500 elements.
-    onDemandRules []VpnOnDemandRuleable
-    // Opt-In to sharing the device's Id to third-party vpn clients for use during network access control validation.
-    optInToDeviceIdSharing *bool
-    // Provider type for per-app VPN. Possible values are: notConfigured, appProxy, packetTunnel.
-    providerType *VpnProviderType
-    // Proxy Server.
-    proxyServer VpnProxyServerable
-    // Realm when connection type is set to Pulse Secure.
-    realm *string
-    // Role when connection type is set to Pulse Secure.
-    role *string
-    // Safari domains when this VPN per App setting is enabled. In addition to the apps associated with this VPN, Safari domains specified here will also be able to trigger this VPN connection.
-    safariDomains []string
-    // VPN Server definition.
-    server VpnServerable
 }
 // NewAppleVpnConfiguration instantiates a new AppleVpnConfiguration and sets the default values.
 func NewAppleVpnConfiguration()(*AppleVpnConfiguration) {
     m := &AppleVpnConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.appleVpnConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.appleVpnConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAppleVpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -89,51 +45,135 @@ func CreateAppleVpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAssociatedDomains gets the associatedDomains property value. Associated Domains
 func (m *AppleVpnConfiguration) GetAssociatedDomains()([]string) {
-    return m.associatedDomains
+    val, err := m.GetBackingStore().Get("associatedDomains")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. VPN Authentication Method.
 func (m *AppleVpnConfiguration) GetAuthenticationMethod()(*VpnAuthenticationMethod) {
-    return m.authenticationMethod
+    val, err := m.GetBackingStore().Get("authenticationMethod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*VpnAuthenticationMethod)
+    }
+    return nil
 }
 // GetConnectionName gets the connectionName property value. Connection name displayed to the user.
 func (m *AppleVpnConfiguration) GetConnectionName()(*string) {
-    return m.connectionName
+    val, err := m.GetBackingStore().Get("connectionName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetConnectionType gets the connectionType property value. Apple VPN connection type.
 func (m *AppleVpnConfiguration) GetConnectionType()(*AppleVpnConnectionType) {
-    return m.connectionType
+    val, err := m.GetBackingStore().Get("connectionType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AppleVpnConnectionType)
+    }
+    return nil
 }
 // GetCustomData gets the customData property value. Custom data when connection type is set to Custom VPN. Use this field to enable functionality not supported by Intune, but available in your VPN solution. Contact your VPN vendor to learn how to add these key/value pairs. This collection can contain a maximum of 25 elements.
 func (m *AppleVpnConfiguration) GetCustomData()([]KeyValueable) {
-    return m.customData
+    val, err := m.GetBackingStore().Get("customData")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]KeyValueable)
+    }
+    return nil
 }
 // GetCustomKeyValueData gets the customKeyValueData property value. Custom data when connection type is set to Custom VPN. Use this field to enable functionality not supported by Intune, but available in your VPN solution. Contact your VPN vendor to learn how to add these key/value pairs. This collection can contain a maximum of 25 elements.
 func (m *AppleVpnConfiguration) GetCustomKeyValueData()([]KeyValuePairable) {
-    return m.customKeyValueData
+    val, err := m.GetBackingStore().Get("customKeyValueData")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]KeyValuePairable)
+    }
+    return nil
 }
 // GetDisableOnDemandUserOverride gets the disableOnDemandUserOverride property value. Toggle to prevent user from disabling automatic VPN in the Settings app
 func (m *AppleVpnConfiguration) GetDisableOnDemandUserOverride()(*bool) {
-    return m.disableOnDemandUserOverride
+    val, err := m.GetBackingStore().Get("disableOnDemandUserOverride")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDisconnectOnIdle gets the disconnectOnIdle property value. Whether to disconnect after on-demand connection idles
 func (m *AppleVpnConfiguration) GetDisconnectOnIdle()(*bool) {
-    return m.disconnectOnIdle
+    val, err := m.GetBackingStore().Get("disconnectOnIdle")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDisconnectOnIdleTimerInSeconds gets the disconnectOnIdleTimerInSeconds property value. The length of time in seconds to wait before disconnecting an on-demand connection. Valid values 0 to 65535
 func (m *AppleVpnConfiguration) GetDisconnectOnIdleTimerInSeconds()(*int32) {
-    return m.disconnectOnIdleTimerInSeconds
+    val, err := m.GetBackingStore().Get("disconnectOnIdleTimerInSeconds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetEnablePerApp gets the enablePerApp property value. Setting this to true creates Per-App VPN payload which can later be associated with Apps that can trigger this VPN conneciton on the end user's iOS device.
 func (m *AppleVpnConfiguration) GetEnablePerApp()(*bool) {
-    return m.enablePerApp
+    val, err := m.GetBackingStore().Get("enablePerApp")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEnableSplitTunneling gets the enableSplitTunneling property value. Send all network traffic through VPN.
 func (m *AppleVpnConfiguration) GetEnableSplitTunneling()(*bool) {
-    return m.enableSplitTunneling
+    val, err := m.GetBackingStore().Get("enableSplitTunneling")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetExcludedDomains gets the excludedDomains property value. Domains that are accessed through the public internet instead of through VPN, even when per-app VPN is activated
 func (m *AppleVpnConfiguration) GetExcludedDomains()([]string) {
-    return m.excludedDomains
+    val, err := m.GetBackingStore().Get("excludedDomains")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AppleVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -386,43 +426,113 @@ func (m *AppleVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetIdentifier gets the identifier property value. Identifier provided by VPN vendor when connection type is set to Custom VPN. For example: Cisco AnyConnect uses an identifier of the form com.cisco.anyconnect.applevpn.plugin
 func (m *AppleVpnConfiguration) GetIdentifier()(*string) {
-    return m.identifier
+    val, err := m.GetBackingStore().Get("identifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLoginGroupOrDomain gets the loginGroupOrDomain property value. Login group or domain when connection type is set to Dell SonicWALL Mobile Connection.
 func (m *AppleVpnConfiguration) GetLoginGroupOrDomain()(*string) {
-    return m.loginGroupOrDomain
+    val, err := m.GetBackingStore().Get("loginGroupOrDomain")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOnDemandRules gets the onDemandRules property value. On-Demand Rules. This collection can contain a maximum of 500 elements.
 func (m *AppleVpnConfiguration) GetOnDemandRules()([]VpnOnDemandRuleable) {
-    return m.onDemandRules
+    val, err := m.GetBackingStore().Get("onDemandRules")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]VpnOnDemandRuleable)
+    }
+    return nil
 }
 // GetOptInToDeviceIdSharing gets the optInToDeviceIdSharing property value. Opt-In to sharing the device's Id to third-party vpn clients for use during network access control validation.
 func (m *AppleVpnConfiguration) GetOptInToDeviceIdSharing()(*bool) {
-    return m.optInToDeviceIdSharing
+    val, err := m.GetBackingStore().Get("optInToDeviceIdSharing")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetProviderType gets the providerType property value. Provider type for per-app VPN. Possible values are: notConfigured, appProxy, packetTunnel.
 func (m *AppleVpnConfiguration) GetProviderType()(*VpnProviderType) {
-    return m.providerType
+    val, err := m.GetBackingStore().Get("providerType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*VpnProviderType)
+    }
+    return nil
 }
 // GetProxyServer gets the proxyServer property value. Proxy Server.
 func (m *AppleVpnConfiguration) GetProxyServer()(VpnProxyServerable) {
-    return m.proxyServer
+    val, err := m.GetBackingStore().Get("proxyServer")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(VpnProxyServerable)
+    }
+    return nil
 }
 // GetRealm gets the realm property value. Realm when connection type is set to Pulse Secure.
 func (m *AppleVpnConfiguration) GetRealm()(*string) {
-    return m.realm
+    val, err := m.GetBackingStore().Get("realm")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRole gets the role property value. Role when connection type is set to Pulse Secure.
 func (m *AppleVpnConfiguration) GetRole()(*string) {
-    return m.role
+    val, err := m.GetBackingStore().Get("role")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSafariDomains gets the safariDomains property value. Safari domains when this VPN per App setting is enabled. In addition to the apps associated with this VPN, Safari domains specified here will also be able to trigger this VPN connection.
 func (m *AppleVpnConfiguration) GetSafariDomains()([]string) {
-    return m.safariDomains
+    val, err := m.GetBackingStore().Get("safariDomains")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetServer gets the server property value. VPN Server definition.
 func (m *AppleVpnConfiguration) GetServer()(VpnServerable) {
-    return m.server
+    val, err := m.GetBackingStore().Get("server")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(VpnServerable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AppleVpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -581,89 +691,204 @@ func (m *AppleVpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAssociatedDomains sets the associatedDomains property value. Associated Domains
 func (m *AppleVpnConfiguration) SetAssociatedDomains(value []string)() {
-    m.associatedDomains = value
+    err := m.GetBackingStore().Set("associatedDomains", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAuthenticationMethod sets the authenticationMethod property value. VPN Authentication Method.
 func (m *AppleVpnConfiguration) SetAuthenticationMethod(value *VpnAuthenticationMethod)() {
-    m.authenticationMethod = value
+    err := m.GetBackingStore().Set("authenticationMethod", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConnectionName sets the connectionName property value. Connection name displayed to the user.
 func (m *AppleVpnConfiguration) SetConnectionName(value *string)() {
-    m.connectionName = value
+    err := m.GetBackingStore().Set("connectionName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConnectionType sets the connectionType property value. Apple VPN connection type.
 func (m *AppleVpnConfiguration) SetConnectionType(value *AppleVpnConnectionType)() {
-    m.connectionType = value
+    err := m.GetBackingStore().Set("connectionType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomData sets the customData property value. Custom data when connection type is set to Custom VPN. Use this field to enable functionality not supported by Intune, but available in your VPN solution. Contact your VPN vendor to learn how to add these key/value pairs. This collection can contain a maximum of 25 elements.
 func (m *AppleVpnConfiguration) SetCustomData(value []KeyValueable)() {
-    m.customData = value
+    err := m.GetBackingStore().Set("customData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomKeyValueData sets the customKeyValueData property value. Custom data when connection type is set to Custom VPN. Use this field to enable functionality not supported by Intune, but available in your VPN solution. Contact your VPN vendor to learn how to add these key/value pairs. This collection can contain a maximum of 25 elements.
 func (m *AppleVpnConfiguration) SetCustomKeyValueData(value []KeyValuePairable)() {
-    m.customKeyValueData = value
+    err := m.GetBackingStore().Set("customKeyValueData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisableOnDemandUserOverride sets the disableOnDemandUserOverride property value. Toggle to prevent user from disabling automatic VPN in the Settings app
 func (m *AppleVpnConfiguration) SetDisableOnDemandUserOverride(value *bool)() {
-    m.disableOnDemandUserOverride = value
+    err := m.GetBackingStore().Set("disableOnDemandUserOverride", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisconnectOnIdle sets the disconnectOnIdle property value. Whether to disconnect after on-demand connection idles
 func (m *AppleVpnConfiguration) SetDisconnectOnIdle(value *bool)() {
-    m.disconnectOnIdle = value
+    err := m.GetBackingStore().Set("disconnectOnIdle", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisconnectOnIdleTimerInSeconds sets the disconnectOnIdleTimerInSeconds property value. The length of time in seconds to wait before disconnecting an on-demand connection. Valid values 0 to 65535
 func (m *AppleVpnConfiguration) SetDisconnectOnIdleTimerInSeconds(value *int32)() {
-    m.disconnectOnIdleTimerInSeconds = value
+    err := m.GetBackingStore().Set("disconnectOnIdleTimerInSeconds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnablePerApp sets the enablePerApp property value. Setting this to true creates Per-App VPN payload which can later be associated with Apps that can trigger this VPN conneciton on the end user's iOS device.
 func (m *AppleVpnConfiguration) SetEnablePerApp(value *bool)() {
-    m.enablePerApp = value
+    err := m.GetBackingStore().Set("enablePerApp", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnableSplitTunneling sets the enableSplitTunneling property value. Send all network traffic through VPN.
 func (m *AppleVpnConfiguration) SetEnableSplitTunneling(value *bool)() {
-    m.enableSplitTunneling = value
+    err := m.GetBackingStore().Set("enableSplitTunneling", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExcludedDomains sets the excludedDomains property value. Domains that are accessed through the public internet instead of through VPN, even when per-app VPN is activated
 func (m *AppleVpnConfiguration) SetExcludedDomains(value []string)() {
-    m.excludedDomains = value
+    err := m.GetBackingStore().Set("excludedDomains", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentifier sets the identifier property value. Identifier provided by VPN vendor when connection type is set to Custom VPN. For example: Cisco AnyConnect uses an identifier of the form com.cisco.anyconnect.applevpn.plugin
 func (m *AppleVpnConfiguration) SetIdentifier(value *string)() {
-    m.identifier = value
+    err := m.GetBackingStore().Set("identifier", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLoginGroupOrDomain sets the loginGroupOrDomain property value. Login group or domain when connection type is set to Dell SonicWALL Mobile Connection.
 func (m *AppleVpnConfiguration) SetLoginGroupOrDomain(value *string)() {
-    m.loginGroupOrDomain = value
+    err := m.GetBackingStore().Set("loginGroupOrDomain", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOnDemandRules sets the onDemandRules property value. On-Demand Rules. This collection can contain a maximum of 500 elements.
 func (m *AppleVpnConfiguration) SetOnDemandRules(value []VpnOnDemandRuleable)() {
-    m.onDemandRules = value
+    err := m.GetBackingStore().Set("onDemandRules", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOptInToDeviceIdSharing sets the optInToDeviceIdSharing property value. Opt-In to sharing the device's Id to third-party vpn clients for use during network access control validation.
 func (m *AppleVpnConfiguration) SetOptInToDeviceIdSharing(value *bool)() {
-    m.optInToDeviceIdSharing = value
+    err := m.GetBackingStore().Set("optInToDeviceIdSharing", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProviderType sets the providerType property value. Provider type for per-app VPN. Possible values are: notConfigured, appProxy, packetTunnel.
 func (m *AppleVpnConfiguration) SetProviderType(value *VpnProviderType)() {
-    m.providerType = value
+    err := m.GetBackingStore().Set("providerType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProxyServer sets the proxyServer property value. Proxy Server.
 func (m *AppleVpnConfiguration) SetProxyServer(value VpnProxyServerable)() {
-    m.proxyServer = value
+    err := m.GetBackingStore().Set("proxyServer", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRealm sets the realm property value. Realm when connection type is set to Pulse Secure.
 func (m *AppleVpnConfiguration) SetRealm(value *string)() {
-    m.realm = value
+    err := m.GetBackingStore().Set("realm", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRole sets the role property value. Role when connection type is set to Pulse Secure.
 func (m *AppleVpnConfiguration) SetRole(value *string)() {
-    m.role = value
+    err := m.GetBackingStore().Set("role", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSafariDomains sets the safariDomains property value. Safari domains when this VPN per App setting is enabled. In addition to the apps associated with this VPN, Safari domains specified here will also be able to trigger this VPN connection.
 func (m *AppleVpnConfiguration) SetSafariDomains(value []string)() {
-    m.safariDomains = value
+    err := m.GetBackingStore().Set("safariDomains", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetServer sets the server property value. VPN Server definition.
 func (m *AppleVpnConfiguration) SetServer(value VpnServerable)() {
-    m.server = value
+    err := m.GetBackingStore().Set("server", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AppleVpnConfigurationable 
+type AppleVpnConfigurationable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssociatedDomains()([]string)
+    GetAuthenticationMethod()(*VpnAuthenticationMethod)
+    GetConnectionName()(*string)
+    GetConnectionType()(*AppleVpnConnectionType)
+    GetCustomData()([]KeyValueable)
+    GetCustomKeyValueData()([]KeyValuePairable)
+    GetDisableOnDemandUserOverride()(*bool)
+    GetDisconnectOnIdle()(*bool)
+    GetDisconnectOnIdleTimerInSeconds()(*int32)
+    GetEnablePerApp()(*bool)
+    GetEnableSplitTunneling()(*bool)
+    GetExcludedDomains()([]string)
+    GetIdentifier()(*string)
+    GetLoginGroupOrDomain()(*string)
+    GetOnDemandRules()([]VpnOnDemandRuleable)
+    GetOptInToDeviceIdSharing()(*bool)
+    GetProviderType()(*VpnProviderType)
+    GetProxyServer()(VpnProxyServerable)
+    GetRealm()(*string)
+    GetRole()(*string)
+    GetSafariDomains()([]string)
+    GetServer()(VpnServerable)
+    SetAssociatedDomains(value []string)()
+    SetAuthenticationMethod(value *VpnAuthenticationMethod)()
+    SetConnectionName(value *string)()
+    SetConnectionType(value *AppleVpnConnectionType)()
+    SetCustomData(value []KeyValueable)()
+    SetCustomKeyValueData(value []KeyValuePairable)()
+    SetDisableOnDemandUserOverride(value *bool)()
+    SetDisconnectOnIdle(value *bool)()
+    SetDisconnectOnIdleTimerInSeconds(value *int32)()
+    SetEnablePerApp(value *bool)()
+    SetEnableSplitTunneling(value *bool)()
+    SetExcludedDomains(value []string)()
+    SetIdentifier(value *string)()
+    SetLoginGroupOrDomain(value *string)()
+    SetOnDemandRules(value []VpnOnDemandRuleable)()
+    SetOptInToDeviceIdSharing(value *bool)()
+    SetProviderType(value *VpnProviderType)()
+    SetProxyServer(value VpnProxyServerable)()
+    SetRealm(value *string)()
+    SetRole(value *string)()
+    SetSafariDomains(value []string)()
+    SetServer(value VpnServerable)()
 }

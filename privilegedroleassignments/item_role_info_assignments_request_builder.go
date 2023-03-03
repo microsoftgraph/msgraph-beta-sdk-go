@@ -53,8 +53,8 @@ func NewItemRoleInfoAssignmentsRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemRoleInfoAssignmentsRequestBuilder instantiates a new AssignmentsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemRoleInfoAssignmentsRequestBuilder(rawUrl string, requestAdapter i2ae
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemRoleInfoAssignmentsRequestBuilder) Count()(*ItemRoleInfoAssignmentsCountRequestBuilder) {
-    return NewItemRoleInfoAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRoleInfoAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of privilegedRoleAssignment objects that are associated with the role. Each privilegedRoleAssignment represents a role assignment to a user.
 // [Find more info here]

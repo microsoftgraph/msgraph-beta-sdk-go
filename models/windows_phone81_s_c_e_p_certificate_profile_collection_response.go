@@ -7,8 +7,6 @@ import (
 // WindowsPhone81SCEPCertificateProfileCollectionResponse 
 type WindowsPhone81SCEPCertificateProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WindowsPhone81SCEPCertificateProfileable
 }
 // NewWindowsPhone81SCEPCertificateProfileCollectionResponse instantiates a new WindowsPhone81SCEPCertificateProfileCollectionResponse and sets the default values.
 func NewWindowsPhone81SCEPCertificateProfileCollectionResponse()(*WindowsPhone81SCEPCertificateProfileCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WindowsPhone81SCEPCertificateProfileCollectionResponse) GetFieldDeseria
 }
 // GetValue gets the value property value. The value property
 func (m *WindowsPhone81SCEPCertificateProfileCollectionResponse) GetValue()([]WindowsPhone81SCEPCertificateProfileable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsPhone81SCEPCertificateProfileable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsPhone81SCEPCertificateProfileCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WindowsPhone81SCEPCertificateProfileCollectionResponse) Serialize(write
 }
 // SetValue sets the value property value. The value property
 func (m *WindowsPhone81SCEPCertificateProfileCollectionResponse) SetValue(value []WindowsPhone81SCEPCertificateProfileable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsPhone81SCEPCertificateProfileCollectionResponseable 
+type WindowsPhone81SCEPCertificateProfileCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WindowsPhone81SCEPCertificateProfileable)
+    SetValue(value []WindowsPhone81SCEPCertificateProfileable)()
 }

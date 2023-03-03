@@ -46,8 +46,8 @@ func NewItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderInt
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder instantiates a new AttachmentBaseItemRequestBuilder and sets the default values.
@@ -58,7 +58,7 @@ func NewItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder(ra
 }
 // Content provides operations to manage the media for the user entity.
 func (m *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) Content()(*ItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilder) {
-    return NewItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property attachments for users
 func (m *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderDeleteRequestConfiguration)(error) {

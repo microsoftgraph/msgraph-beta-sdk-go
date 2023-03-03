@@ -7,16 +7,14 @@ import (
 // AndroidOmaCpConfiguration 
 type AndroidOmaCpConfiguration struct {
     DeviceConfiguration
-    // Configuration XML that will be applied to the device. When it is read, it only provides a placeholder string since the original data is encrypted and stored.
-    configurationXml []byte
 }
 // NewAndroidOmaCpConfiguration instantiates a new AndroidOmaCpConfiguration and sets the default values.
 func NewAndroidOmaCpConfiguration()(*AndroidOmaCpConfiguration) {
     m := &AndroidOmaCpConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.androidOmaCpConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidOmaCpConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidOmaCpConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +23,14 @@ func CreateAndroidOmaCpConfigurationFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetConfigurationXml gets the configurationXml property value. Configuration XML that will be applied to the device. When it is read, it only provides a placeholder string since the original data is encrypted and stored.
 func (m *AndroidOmaCpConfiguration) GetConfigurationXml()([]byte) {
-    return m.configurationXml
+    val, err := m.GetBackingStore().Get("configurationXml")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidOmaCpConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -58,5 +63,15 @@ func (m *AndroidOmaCpConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetConfigurationXml sets the configurationXml property value. Configuration XML that will be applied to the device. When it is read, it only provides a placeholder string since the original data is encrypted and stored.
 func (m *AndroidOmaCpConfiguration) SetConfigurationXml(value []byte)() {
-    m.configurationXml = value
+    err := m.GetBackingStore().Set("configurationXml", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidOmaCpConfigurationable 
+type AndroidOmaCpConfigurationable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetConfigurationXml()([]byte)
+    SetConfigurationXml(value []byte)()
 }

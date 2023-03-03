@@ -8,28 +8,6 @@ import (
 // PrivilegedApproval 
 type PrivilegedApproval struct {
     Entity
-    // The approvalDuration property
-    approvalDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
-    // Possible values are: pending, approved, denied, aborted, canceled.
-    approvalState *ApprovalState
-    // The approvalType property
-    approvalType *string
-    // The approverReason property
-    approverReason *string
-    // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Read-only. The role assignment request for this approval object
-    request PrivilegedRoleAssignmentRequestable
-    // The requestorReason property
-    requestorReason *string
-    // The roleId property
-    roleId *string
-    // The roleInfo property
-    roleInfo PrivilegedRoleable
-    // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The userId property
-    userId *string
 }
 // NewPrivilegedApproval instantiates a new PrivilegedApproval and sets the default values.
 func NewPrivilegedApproval()(*PrivilegedApproval) {
@@ -44,23 +22,58 @@ func CreatePrivilegedApprovalFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetApprovalDuration gets the approvalDuration property value. The approvalDuration property
 func (m *PrivilegedApproval) GetApprovalDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    return m.approvalDuration
+    val, err := m.GetBackingStore().Get("approvalDuration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    }
+    return nil
 }
 // GetApprovalState gets the approvalState property value. Possible values are: pending, approved, denied, aborted, canceled.
 func (m *PrivilegedApproval) GetApprovalState()(*ApprovalState) {
-    return m.approvalState
+    val, err := m.GetBackingStore().Get("approvalState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ApprovalState)
+    }
+    return nil
 }
 // GetApprovalType gets the approvalType property value. The approvalType property
 func (m *PrivilegedApproval) GetApprovalType()(*string) {
-    return m.approvalType
+    val, err := m.GetBackingStore().Get("approvalType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetApproverReason gets the approverReason property value. The approverReason property
 func (m *PrivilegedApproval) GetApproverReason()(*string) {
-    return m.approverReason
+    val, err := m.GetBackingStore().Get("approverReason")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetEndDateTime gets the endDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *PrivilegedApproval) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.endDateTime
+    val, err := m.GetBackingStore().Get("endDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -179,27 +192,69 @@ func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetRequest gets the request property value. Read-only. The role assignment request for this approval object
 func (m *PrivilegedApproval) GetRequest()(PrivilegedRoleAssignmentRequestable) {
-    return m.request
+    val, err := m.GetBackingStore().Get("request")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PrivilegedRoleAssignmentRequestable)
+    }
+    return nil
 }
 // GetRequestorReason gets the requestorReason property value. The requestorReason property
 func (m *PrivilegedApproval) GetRequestorReason()(*string) {
-    return m.requestorReason
+    val, err := m.GetBackingStore().Get("requestorReason")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRoleId gets the roleId property value. The roleId property
 func (m *PrivilegedApproval) GetRoleId()(*string) {
-    return m.roleId
+    val, err := m.GetBackingStore().Get("roleId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRoleInfo gets the roleInfo property value. The roleInfo property
 func (m *PrivilegedApproval) GetRoleInfo()(PrivilegedRoleable) {
-    return m.roleInfo
+    val, err := m.GetBackingStore().Get("roleInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PrivilegedRoleable)
+    }
+    return nil
 }
 // GetStartDateTime gets the startDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *PrivilegedApproval) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.startDateTime
+    val, err := m.GetBackingStore().Get("startDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetUserId gets the userId property value. The userId property
 func (m *PrivilegedApproval) GetUserId()(*string) {
-    return m.userId
+    val, err := m.GetBackingStore().Get("userId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrivilegedApproval) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -278,45 +333,105 @@ func (m *PrivilegedApproval) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetApprovalDuration sets the approvalDuration property value. The approvalDuration property
 func (m *PrivilegedApproval) SetApprovalDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    m.approvalDuration = value
+    err := m.GetBackingStore().Set("approvalDuration", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApprovalState sets the approvalState property value. Possible values are: pending, approved, denied, aborted, canceled.
 func (m *PrivilegedApproval) SetApprovalState(value *ApprovalState)() {
-    m.approvalState = value
+    err := m.GetBackingStore().Set("approvalState", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApprovalType sets the approvalType property value. The approvalType property
 func (m *PrivilegedApproval) SetApprovalType(value *string)() {
-    m.approvalType = value
+    err := m.GetBackingStore().Set("approvalType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApproverReason sets the approverReason property value. The approverReason property
 func (m *PrivilegedApproval) SetApproverReason(value *string)() {
-    m.approverReason = value
+    err := m.GetBackingStore().Set("approverReason", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEndDateTime sets the endDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *PrivilegedApproval) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.endDateTime = value
+    err := m.GetBackingStore().Set("endDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRequest sets the request property value. Read-only. The role assignment request for this approval object
 func (m *PrivilegedApproval) SetRequest(value PrivilegedRoleAssignmentRequestable)() {
-    m.request = value
+    err := m.GetBackingStore().Set("request", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRequestorReason sets the requestorReason property value. The requestorReason property
 func (m *PrivilegedApproval) SetRequestorReason(value *string)() {
-    m.requestorReason = value
+    err := m.GetBackingStore().Set("requestorReason", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleId sets the roleId property value. The roleId property
 func (m *PrivilegedApproval) SetRoleId(value *string)() {
-    m.roleId = value
+    err := m.GetBackingStore().Set("roleId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleInfo sets the roleInfo property value. The roleInfo property
 func (m *PrivilegedApproval) SetRoleInfo(value PrivilegedRoleable)() {
-    m.roleInfo = value
+    err := m.GetBackingStore().Set("roleInfo", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartDateTime sets the startDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *PrivilegedApproval) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.startDateTime = value
+    err := m.GetBackingStore().Set("startDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserId sets the userId property value. The userId property
 func (m *PrivilegedApproval) SetUserId(value *string)() {
-    m.userId = value
+    err := m.GetBackingStore().Set("userId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrivilegedApprovalable 
+type PrivilegedApprovalable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetApprovalDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    GetApprovalState()(*ApprovalState)
+    GetApprovalType()(*string)
+    GetApproverReason()(*string)
+    GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetRequest()(PrivilegedRoleAssignmentRequestable)
+    GetRequestorReason()(*string)
+    GetRoleId()(*string)
+    GetRoleInfo()(PrivilegedRoleable)
+    GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetUserId()(*string)
+    SetApprovalDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
+    SetApprovalState(value *ApprovalState)()
+    SetApprovalType(value *string)()
+    SetApproverReason(value *string)()
+    SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetRequest(value PrivilegedRoleAssignmentRequestable)()
+    SetRequestorReason(value *string)()
+    SetRoleId(value *string)()
+    SetRoleInfo(value PrivilegedRoleable)()
+    SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetUserId(value *string)()
 }

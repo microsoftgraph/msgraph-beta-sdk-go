@@ -7,18 +7,14 @@ import (
 // ConnectedOrganizationMembers 
 type ConnectedOrganizationMembers struct {
     UserSet
-    // The name of the connected organization. Read only.
-    description *string
-    // The ID of the connected organization in entitlement management.
-    id *string
 }
 // NewConnectedOrganizationMembers instantiates a new ConnectedOrganizationMembers and sets the default values.
 func NewConnectedOrganizationMembers()(*ConnectedOrganizationMembers) {
     m := &ConnectedOrganizationMembers{
         UserSet: *NewUserSet(),
     }
-    odataTypeValue := "#microsoft.graph.connectedOrganizationMembers";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.connectedOrganizationMembers"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateConnectedOrganizationMembersFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +23,14 @@ func CreateConnectedOrganizationMembersFromDiscriminatorValue(parseNode i878a80d
 }
 // GetDescription gets the description property value. The name of the connected organization. Read only.
 func (m *ConnectedOrganizationMembers) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConnectedOrganizationMembers) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,7 +59,14 @@ func (m *ConnectedOrganizationMembers) GetFieldDeserializers()(map[string]func(i
 }
 // GetId gets the id property value. The ID of the connected organization in entitlement management.
 func (m *ConnectedOrganizationMembers) GetId()(*string) {
-    return m.id
+    val, err := m.GetBackingStore().Get("id")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ConnectedOrganizationMembers) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *ConnectedOrganizationMembers) Serialize(writer i878a80d2330e89d26896388
 }
 // SetDescription sets the description property value. The name of the connected organization. Read only.
 func (m *ConnectedOrganizationMembers) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetId sets the id property value. The ID of the connected organization in entitlement management.
 func (m *ConnectedOrganizationMembers) SetId(value *string)() {
-    m.id = value
+    err := m.GetBackingStore().Set("id", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ConnectedOrganizationMembersable 
+type ConnectedOrganizationMembersable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    UserSetable
+    GetDescription()(*string)
+    GetId()(*string)
+    SetDescription(value *string)()
+    SetId(value *string)()
 }

@@ -60,8 +60,8 @@ func NewCompliancePoliciesItemScheduledActionsForRuleItemScheduledActionConfigur
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompliancePoliciesItemScheduledActionsForRuleItemScheduledActionConfigurationsRequestBuilder instantiates a new ScheduledActionConfigurationsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewCompliancePoliciesItemScheduledActionsForRuleItemScheduledActionConfigur
 }
 // Count provides operations to count the resources in the collection.
 func (m *CompliancePoliciesItemScheduledActionsForRuleItemScheduledActionConfigurationsRequestBuilder) Count()(*CompliancePoliciesItemScheduledActionsForRuleItemScheduledActionConfigurationsCountRequestBuilder) {
-    return NewCompliancePoliciesItemScheduledActionsForRuleItemScheduledActionConfigurationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompliancePoliciesItemScheduledActionsForRuleItemScheduledActionConfigurationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
 func (m *CompliancePoliciesItemScheduledActionsForRuleItemScheduledActionConfigurationsRequestBuilder) Get(ctx context.Context, requestConfiguration *CompliancePoliciesItemScheduledActionsForRuleItemScheduledActionConfigurationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementComplianceActionItemCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *CompliancePoliciesItemScheduledActionsForRuleItemScheduledActionConfigu
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

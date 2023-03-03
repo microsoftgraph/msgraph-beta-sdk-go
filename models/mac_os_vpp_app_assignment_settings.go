@@ -7,18 +7,14 @@ import (
 // MacOsVppAppAssignmentSettings 
 type MacOsVppAppAssignmentSettings struct {
     MobileAppAssignmentSettings
-    // Whether or not to uninstall the app when device is removed from Intune.
-    uninstallOnDeviceRemoval *bool
-    // Whether or not to use device licensing.
-    useDeviceLicensing *bool
 }
 // NewMacOsVppAppAssignmentSettings instantiates a new MacOsVppAppAssignmentSettings and sets the default values.
 func NewMacOsVppAppAssignmentSettings()(*MacOsVppAppAssignmentSettings) {
     m := &MacOsVppAppAssignmentSettings{
         MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),
     }
-    odataTypeValue := "#microsoft.graph.macOsVppAppAssignmentSettings";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.macOsVppAppAssignmentSettings"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMacOsVppAppAssignmentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -52,11 +48,25 @@ func (m *MacOsVppAppAssignmentSettings) GetFieldDeserializers()(map[string]func(
 }
 // GetUninstallOnDeviceRemoval gets the uninstallOnDeviceRemoval property value. Whether or not to uninstall the app when device is removed from Intune.
 func (m *MacOsVppAppAssignmentSettings) GetUninstallOnDeviceRemoval()(*bool) {
-    return m.uninstallOnDeviceRemoval
+    val, err := m.GetBackingStore().Get("uninstallOnDeviceRemoval")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetUseDeviceLicensing gets the useDeviceLicensing property value. Whether or not to use device licensing.
 func (m *MacOsVppAppAssignmentSettings) GetUseDeviceLicensing()(*bool) {
-    return m.useDeviceLicensing
+    val, err := m.GetBackingStore().Get("useDeviceLicensing")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MacOsVppAppAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *MacOsVppAppAssignmentSettings) Serialize(writer i878a80d2330e89d2689638
 }
 // SetUninstallOnDeviceRemoval sets the uninstallOnDeviceRemoval property value. Whether or not to uninstall the app when device is removed from Intune.
 func (m *MacOsVppAppAssignmentSettings) SetUninstallOnDeviceRemoval(value *bool)() {
-    m.uninstallOnDeviceRemoval = value
+    err := m.GetBackingStore().Set("uninstallOnDeviceRemoval", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUseDeviceLicensing sets the useDeviceLicensing property value. Whether or not to use device licensing.
 func (m *MacOsVppAppAssignmentSettings) SetUseDeviceLicensing(value *bool)() {
-    m.useDeviceLicensing = value
+    err := m.GetBackingStore().Set("useDeviceLicensing", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MacOsVppAppAssignmentSettingsable 
+type MacOsVppAppAssignmentSettingsable interface {
+    MobileAppAssignmentSettingsable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetUninstallOnDeviceRemoval()(*bool)
+    GetUseDeviceLicensing()(*bool)
+    SetUninstallOnDeviceRemoval(value *bool)()
+    SetUseDeviceLicensing(value *bool)()
 }

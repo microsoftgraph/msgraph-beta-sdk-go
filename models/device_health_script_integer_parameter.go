@@ -7,16 +7,14 @@ import (
 // DeviceHealthScriptIntegerParameter 
 type DeviceHealthScriptIntegerParameter struct {
     DeviceHealthScriptParameter
-    // The default value of Integer param. Valid values -2147483648 to 2147483647
-    defaultValue *int32
 }
 // NewDeviceHealthScriptIntegerParameter instantiates a new DeviceHealthScriptIntegerParameter and sets the default values.
 func NewDeviceHealthScriptIntegerParameter()(*DeviceHealthScriptIntegerParameter) {
     m := &DeviceHealthScriptIntegerParameter{
         DeviceHealthScriptParameter: *NewDeviceHealthScriptParameter(),
     }
-    odataTypeValue := "#microsoft.graph.deviceHealthScriptIntegerParameter";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceHealthScriptIntegerParameter"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceHealthScriptIntegerParameterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +23,14 @@ func CreateDeviceHealthScriptIntegerParameterFromDiscriminatorValue(parseNode i8
 }
 // GetDefaultValue gets the defaultValue property value. The default value of Integer param. Valid values -2147483648 to 2147483647
 func (m *DeviceHealthScriptIntegerParameter) GetDefaultValue()(*int32) {
-    return m.defaultValue
+    val, err := m.GetBackingStore().Get("defaultValue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceHealthScriptIntegerParameter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -58,5 +63,15 @@ func (m *DeviceHealthScriptIntegerParameter) Serialize(writer i878a80d2330e89d26
 }
 // SetDefaultValue sets the defaultValue property value. The default value of Integer param. Valid values -2147483648 to 2147483647
 func (m *DeviceHealthScriptIntegerParameter) SetDefaultValue(value *int32)() {
-    m.defaultValue = value
+    err := m.GetBackingStore().Set("defaultValue", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceHealthScriptIntegerParameterable 
+type DeviceHealthScriptIntegerParameterable interface {
+    DeviceHealthScriptParameterable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDefaultValue()(*int32)
+    SetDefaultValue(value *int32)()
 }

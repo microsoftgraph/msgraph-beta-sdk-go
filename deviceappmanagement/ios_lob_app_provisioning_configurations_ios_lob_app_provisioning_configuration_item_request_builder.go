@@ -48,11 +48,11 @@ type IosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationItemRe
 }
 // Assign provides operations to call the assign method.
 func (m *IosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationItemRequestBuilder) Assign()(*IosLobAppProvisioningConfigurationsItemAssignRequestBuilder) {
-    return NewIosLobAppProvisioningConfigurationsItemAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIosLobAppProvisioningConfigurationsItemAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Assignments provides operations to manage the assignments property of the microsoft.graph.iosLobAppProvisioningConfiguration entity.
 func (m *IosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationItemRequestBuilder) Assignments()(*IosLobAppProvisioningConfigurationsItemAssignmentsRequestBuilder) {
-    return NewIosLobAppProvisioningConfigurationsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIosLobAppProvisioningConfigurationsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.iosLobAppProvisioningConfiguration entity.
 func (m *IosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationItemRequestBuilder) AssignmentsById(id string)(*IosLobAppProvisioningConfigurationsItemAssignmentsIosLobAppProvisioningConfigurationAssignmentItemRequestBuilder) {
@@ -63,7 +63,7 @@ func (m *IosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationIt
     if id != "" {
         urlTplParams["iosLobAppProvisioningConfigurationAssignment%2Did"] = id
     }
-    return NewIosLobAppProvisioningConfigurationsItemAssignmentsIosLobAppProvisioningConfigurationAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewIosLobAppProvisioningConfigurationsItemAssignmentsIosLobAppProvisioningConfigurationAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewIosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationItemRequestBuilderInternal instantiates a new IosLobAppProvisioningConfigurationItemRequestBuilder and sets the default values.
 func NewIosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationItemRequestBuilder) {
@@ -74,8 +74,8 @@ func NewIosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationIte
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewIosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationItemRequestBuilder instantiates a new IosLobAppProvisioningConfigurationItemRequestBuilder and sets the default values.
@@ -102,7 +102,7 @@ func (m *IosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationIt
 }
 // DeviceStatuses provides operations to manage the deviceStatuses property of the microsoft.graph.iosLobAppProvisioningConfiguration entity.
 func (m *IosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationItemRequestBuilder) DeviceStatuses()(*IosLobAppProvisioningConfigurationsItemDeviceStatusesRequestBuilder) {
-    return NewIosLobAppProvisioningConfigurationsItemDeviceStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIosLobAppProvisioningConfigurationsItemDeviceStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeviceStatusesById provides operations to manage the deviceStatuses property of the microsoft.graph.iosLobAppProvisioningConfiguration entity.
 func (m *IosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationItemRequestBuilder) DeviceStatusesById(id string)(*IosLobAppProvisioningConfigurationsItemDeviceStatusesManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilder) {
@@ -113,7 +113,7 @@ func (m *IosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationIt
     if id != "" {
         urlTplParams["managedDeviceMobileAppConfigurationDeviceStatus%2Did"] = id
     }
-    return NewIosLobAppProvisioningConfigurationsItemDeviceStatusesManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewIosLobAppProvisioningConfigurationsItemDeviceStatusesManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Get the IOS Lob App Provisioning Configurations.
 func (m *IosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationable, error) {
@@ -136,7 +136,7 @@ func (m *IosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationIt
 }
 // GroupAssignments provides operations to manage the groupAssignments property of the microsoft.graph.iosLobAppProvisioningConfiguration entity.
 func (m *IosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationItemRequestBuilder) GroupAssignments()(*IosLobAppProvisioningConfigurationsItemGroupAssignmentsRequestBuilder) {
-    return NewIosLobAppProvisioningConfigurationsItemGroupAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIosLobAppProvisioningConfigurationsItemGroupAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GroupAssignmentsById provides operations to manage the groupAssignments property of the microsoft.graph.iosLobAppProvisioningConfiguration entity.
 func (m *IosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationItemRequestBuilder) GroupAssignmentsById(id string)(*IosLobAppProvisioningConfigurationsItemGroupAssignmentsMobileAppProvisioningConfigGroupAssignmentItemRequestBuilder) {
@@ -147,7 +147,7 @@ func (m *IosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationIt
     if id != "" {
         urlTplParams["mobileAppProvisioningConfigGroupAssignment%2Did"] = id
     }
-    return NewIosLobAppProvisioningConfigurationsItemGroupAssignmentsMobileAppProvisioningConfigGroupAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewIosLobAppProvisioningConfigurationsItemGroupAssignmentsMobileAppProvisioningConfigGroupAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch update the navigation property iosLobAppProvisioningConfigurations in deviceAppManagement
 func (m *IosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationable, requestConfiguration *IosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationable, error) {
@@ -203,7 +203,10 @@ func (m *IosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationIt
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -212,7 +215,7 @@ func (m *IosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationIt
 }
 // UserStatuses provides operations to manage the userStatuses property of the microsoft.graph.iosLobAppProvisioningConfiguration entity.
 func (m *IosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationItemRequestBuilder) UserStatuses()(*IosLobAppProvisioningConfigurationsItemUserStatusesRequestBuilder) {
-    return NewIosLobAppProvisioningConfigurationsItemUserStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIosLobAppProvisioningConfigurationsItemUserStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserStatusesById provides operations to manage the userStatuses property of the microsoft.graph.iosLobAppProvisioningConfiguration entity.
 func (m *IosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationItemRequestBuilder) UserStatusesById(id string)(*IosLobAppProvisioningConfigurationsItemUserStatusesManagedDeviceMobileAppConfigurationUserStatusItemRequestBuilder) {
@@ -223,5 +226,5 @@ func (m *IosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationIt
     if id != "" {
         urlTplParams["managedDeviceMobileAppConfigurationUserStatus%2Did"] = id
     }
-    return NewIosLobAppProvisioningConfigurationsItemUserStatusesManagedDeviceMobileAppConfigurationUserStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewIosLobAppProvisioningConfigurationsItemUserStatusesManagedDeviceMobileAppConfigurationUserStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }

@@ -7,8 +7,6 @@ import (
 // DocumentCommentCollectionResponse 
 type DocumentCommentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DocumentCommentable
 }
 // NewDocumentCommentCollectionResponse instantiates a new DocumentCommentCollectionResponse and sets the default values.
 func NewDocumentCommentCollectionResponse()(*DocumentCommentCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DocumentCommentCollectionResponse) GetFieldDeserializers()(map[string]f
 }
 // GetValue gets the value property value. The value property
 func (m *DocumentCommentCollectionResponse) GetValue()([]DocumentCommentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DocumentCommentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DocumentCommentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DocumentCommentCollectionResponse) Serialize(writer i878a80d2330e89d268
 }
 // SetValue sets the value property value. The value property
 func (m *DocumentCommentCollectionResponse) SetValue(value []DocumentCommentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DocumentCommentCollectionResponseable 
+type DocumentCommentCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DocumentCommentable)
+    SetValue(value []DocumentCommentable)()
 }

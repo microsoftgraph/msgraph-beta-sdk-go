@@ -7,16 +7,14 @@ import (
 // SecurityBaselineCategoryStateSummary 
 type SecurityBaselineCategoryStateSummary struct {
     SecurityBaselineStateSummary
-    // The category name
-    displayName *string
 }
 // NewSecurityBaselineCategoryStateSummary instantiates a new SecurityBaselineCategoryStateSummary and sets the default values.
 func NewSecurityBaselineCategoryStateSummary()(*SecurityBaselineCategoryStateSummary) {
     m := &SecurityBaselineCategoryStateSummary{
         SecurityBaselineStateSummary: *NewSecurityBaselineStateSummary(),
     }
-    odataTypeValue := "#microsoft.graph.securityBaselineCategoryStateSummary";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.securityBaselineCategoryStateSummary"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateSecurityBaselineCategoryStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +23,14 @@ func CreateSecurityBaselineCategoryStateSummaryFromDiscriminatorValue(parseNode 
 }
 // GetDisplayName gets the displayName property value. The category name
 func (m *SecurityBaselineCategoryStateSummary) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SecurityBaselineCategoryStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -58,5 +63,15 @@ func (m *SecurityBaselineCategoryStateSummary) Serialize(writer i878a80d2330e89d
 }
 // SetDisplayName sets the displayName property value. The category name
 func (m *SecurityBaselineCategoryStateSummary) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SecurityBaselineCategoryStateSummaryable 
+type SecurityBaselineCategoryStateSummaryable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    SecurityBaselineStateSummaryable
+    GetDisplayName()(*string)
+    SetDisplayName(value *string)()
 }

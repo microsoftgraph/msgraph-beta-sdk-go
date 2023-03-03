@@ -55,8 +55,8 @@ func NewAppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalRequestBu
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalRequestBuilder instantiates a new ApprovalRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalRequestB
 }
 // Steps provides operations to manage the steps property of the microsoft.graph.approval entity.
 func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalRequestBuilder) Steps()(*AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsRequestBuilder) {
-    return NewAppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // StepsById provides operations to manage the steps property of the microsoft.graph.approval entity.
 func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalRequestBuilder) StepsById(id string)(*AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilder) {
@@ -132,7 +132,7 @@ func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalRequestB
     if id != "" {
         urlTplParams["approvalStep%2Did"] = id
     }
-    return NewAppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property approval for identityGovernance
 func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +169,10 @@ func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalRequestB
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

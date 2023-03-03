@@ -7,20 +7,14 @@ import (
 // TenantAppManagementPolicy 
 type TenantAppManagementPolicy struct {
     PolicyBase
-    // Restrictions that apply as default to all application objects in the tenant.
-    applicationRestrictions AppManagementConfigurationable
-    // Denotes whether the policy is enabled. Default value is false.
-    isEnabled *bool
-    // Restrictions that apply as default to all service principal objects in the tenant.
-    servicePrincipalRestrictions AppManagementConfigurationable
 }
 // NewTenantAppManagementPolicy instantiates a new TenantAppManagementPolicy and sets the default values.
 func NewTenantAppManagementPolicy()(*TenantAppManagementPolicy) {
     m := &TenantAppManagementPolicy{
         PolicyBase: *NewPolicyBase(),
     }
-    odataTypeValue := "#microsoft.graph.tenantAppManagementPolicy";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.tenantAppManagementPolicy"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateTenantAppManagementPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +23,14 @@ func CreateTenantAppManagementPolicyFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetApplicationRestrictions gets the applicationRestrictions property value. Restrictions that apply as default to all application objects in the tenant.
 func (m *TenantAppManagementPolicy) GetApplicationRestrictions()(AppManagementConfigurationable) {
-    return m.applicationRestrictions
+    val, err := m.GetBackingStore().Get("applicationRestrictions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AppManagementConfigurationable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TenantAppManagementPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -68,11 +69,25 @@ func (m *TenantAppManagementPolicy) GetFieldDeserializers()(map[string]func(i878
 }
 // GetIsEnabled gets the isEnabled property value. Denotes whether the policy is enabled. Default value is false.
 func (m *TenantAppManagementPolicy) GetIsEnabled()(*bool) {
-    return m.isEnabled
+    val, err := m.GetBackingStore().Get("isEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetServicePrincipalRestrictions gets the servicePrincipalRestrictions property value. Restrictions that apply as default to all service principal objects in the tenant.
 func (m *TenantAppManagementPolicy) GetServicePrincipalRestrictions()(AppManagementConfigurationable) {
-    return m.servicePrincipalRestrictions
+    val, err := m.GetBackingStore().Get("servicePrincipalRestrictions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AppManagementConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TenantAppManagementPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -102,13 +117,33 @@ func (m *TenantAppManagementPolicy) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetApplicationRestrictions sets the applicationRestrictions property value. Restrictions that apply as default to all application objects in the tenant.
 func (m *TenantAppManagementPolicy) SetApplicationRestrictions(value AppManagementConfigurationable)() {
-    m.applicationRestrictions = value
+    err := m.GetBackingStore().Set("applicationRestrictions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsEnabled sets the isEnabled property value. Denotes whether the policy is enabled. Default value is false.
 func (m *TenantAppManagementPolicy) SetIsEnabled(value *bool)() {
-    m.isEnabled = value
+    err := m.GetBackingStore().Set("isEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetServicePrincipalRestrictions sets the servicePrincipalRestrictions property value. Restrictions that apply as default to all service principal objects in the tenant.
 func (m *TenantAppManagementPolicy) SetServicePrincipalRestrictions(value AppManagementConfigurationable)() {
-    m.servicePrincipalRestrictions = value
+    err := m.GetBackingStore().Set("servicePrincipalRestrictions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TenantAppManagementPolicyable 
+type TenantAppManagementPolicyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    PolicyBaseable
+    GetApplicationRestrictions()(AppManagementConfigurationable)
+    GetIsEnabled()(*bool)
+    GetServicePrincipalRestrictions()(AppManagementConfigurationable)
+    SetApplicationRestrictions(value AppManagementConfigurationable)()
+    SetIsEnabled(value *bool)()
+    SetServicePrincipalRestrictions(value AppManagementConfigurationable)()
 }

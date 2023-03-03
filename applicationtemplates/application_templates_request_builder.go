@@ -44,13 +44,6 @@ type ApplicationTemplatesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ApplicationTemplatesRequestBuilderGetQueryParameters
 }
-// ApplicationTemplatesRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ApplicationTemplatesRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // NewApplicationTemplatesRequestBuilderInternal instantiates a new ApplicationTemplatesRequestBuilder and sets the default values.
 func NewApplicationTemplatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApplicationTemplatesRequestBuilder) {
     m := &ApplicationTemplatesRequestBuilder{
@@ -60,8 +53,8 @@ func NewApplicationTemplatesRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewApplicationTemplatesRequestBuilder instantiates a new ApplicationTemplatesRequestBuilder and sets the default values.
@@ -72,7 +65,7 @@ func NewApplicationTemplatesRequestBuilder(rawUrl string, requestAdapter i2ae418
 }
 // Count provides operations to count the resources in the collection.
 func (m *ApplicationTemplatesRequestBuilder) Count()(*CountRequestBuilder) {
-    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of applicationTemplate objects from the Azure AD application gallery.
 // [Find more info here]
@@ -96,25 +89,6 @@ func (m *ApplicationTemplatesRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationTemplateCollectionResponseable), nil
 }
-// Post add new entity to applicationTemplates
-func (m *ApplicationTemplatesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationTemplateable, requestConfiguration *ApplicationTemplatesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationTemplateable, error) {
-    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateApplicationTemplateFromDiscriminatorValue, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationTemplateable), nil
-}
 // ToGetRequestInformation retrieve a list of applicationTemplate objects from the Azure AD application gallery.
 func (m *ApplicationTemplatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ApplicationTemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -126,20 +100,6 @@ func (m *ApplicationTemplatesRequestBuilder) ToGetRequestInformation(ctx context
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
-// ToPostRequestInformation add new entity to applicationTemplates
-func (m *ApplicationTemplatesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationTemplateable, requestConfiguration *ApplicationTemplatesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

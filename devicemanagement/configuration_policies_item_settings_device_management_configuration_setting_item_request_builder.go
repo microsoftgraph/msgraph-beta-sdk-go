@@ -55,8 +55,8 @@ func NewConfigurationPoliciesItemSettingsDeviceManagementConfigurationSettingIte
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewConfigurationPoliciesItemSettingsDeviceManagementConfigurationSettingItemRequestBuilder instantiates a new DeviceManagementConfigurationSettingItemRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *ConfigurationPoliciesItemSettingsDeviceManagementConfigurationSettingIt
 }
 // SettingDefinitions provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementConfigurationSetting entity.
 func (m *ConfigurationPoliciesItemSettingsDeviceManagementConfigurationSettingItemRequestBuilder) SettingDefinitions()(*ConfigurationPoliciesItemSettingsItemSettingDefinitionsRequestBuilder) {
-    return NewConfigurationPoliciesItemSettingsItemSettingDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewConfigurationPoliciesItemSettingsItemSettingDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SettingDefinitionsById provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementConfigurationSetting entity.
 func (m *ConfigurationPoliciesItemSettingsDeviceManagementConfigurationSettingItemRequestBuilder) SettingDefinitionsById(id string)(*ConfigurationPoliciesItemSettingsItemSettingDefinitionsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder) {
@@ -132,7 +132,7 @@ func (m *ConfigurationPoliciesItemSettingsDeviceManagementConfigurationSettingIt
     if id != "" {
         urlTplParams["deviceManagementConfigurationSettingDefinition%2Did"] = id
     }
-    return NewConfigurationPoliciesItemSettingsItemSettingDefinitionsDeviceManagementConfigurationSettingDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewConfigurationPoliciesItemSettingsItemSettingDefinitionsDeviceManagementConfigurationSettingDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property settings for deviceManagement
 func (m *ConfigurationPoliciesItemSettingsDeviceManagementConfigurationSettingItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConfigurationPoliciesItemSettingsDeviceManagementConfigurationSettingItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +169,10 @@ func (m *ConfigurationPoliciesItemSettingsDeviceManagementConfigurationSettingIt
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

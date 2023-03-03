@@ -7,8 +7,6 @@ import (
 // DirectoryRoleAccessReviewPolicy 
 type DirectoryRoleAccessReviewPolicy struct {
     Entity
-    // The settings property
-    settings AccessReviewScheduleSettingsable
 }
 // NewDirectoryRoleAccessReviewPolicy instantiates a new DirectoryRoleAccessReviewPolicy and sets the default values.
 func NewDirectoryRoleAccessReviewPolicy()(*DirectoryRoleAccessReviewPolicy) {
@@ -38,7 +36,14 @@ func (m *DirectoryRoleAccessReviewPolicy) GetFieldDeserializers()(map[string]fun
 }
 // GetSettings gets the settings property value. The settings property
 func (m *DirectoryRoleAccessReviewPolicy) GetSettings()(AccessReviewScheduleSettingsable) {
-    return m.settings
+    val, err := m.GetBackingStore().Get("settings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AccessReviewScheduleSettingsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DirectoryRoleAccessReviewPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *DirectoryRoleAccessReviewPolicy) Serialize(writer i878a80d2330e89d26896
 }
 // SetSettings sets the settings property value. The settings property
 func (m *DirectoryRoleAccessReviewPolicy) SetSettings(value AccessReviewScheduleSettingsable)() {
-    m.settings = value
+    err := m.GetBackingStore().Set("settings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DirectoryRoleAccessReviewPolicyable 
+type DirectoryRoleAccessReviewPolicyable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetSettings()(AccessReviewScheduleSettingsable)
+    SetSettings(value AccessReviewScheduleSettingsable)()
 }

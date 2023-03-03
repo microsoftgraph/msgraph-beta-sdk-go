@@ -7,8 +7,6 @@ import (
 // MobileAppTroubleshootingEventCollectionResponse 
 type MobileAppTroubleshootingEventCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MobileAppTroubleshootingEventable
 }
 // NewMobileAppTroubleshootingEventCollectionResponse instantiates a new MobileAppTroubleshootingEventCollectionResponse and sets the default values.
 func NewMobileAppTroubleshootingEventCollectionResponse()(*MobileAppTroubleshootingEventCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MobileAppTroubleshootingEventCollectionResponse) GetFieldDeserializers(
 }
 // GetValue gets the value property value. The value property
 func (m *MobileAppTroubleshootingEventCollectionResponse) GetValue()([]MobileAppTroubleshootingEventable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MobileAppTroubleshootingEventable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MobileAppTroubleshootingEventCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MobileAppTroubleshootingEventCollectionResponse) Serialize(writer i878a
 }
 // SetValue sets the value property value. The value property
 func (m *MobileAppTroubleshootingEventCollectionResponse) SetValue(value []MobileAppTroubleshootingEventable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MobileAppTroubleshootingEventCollectionResponseable 
+type MobileAppTroubleshootingEventCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MobileAppTroubleshootingEventable)
+    SetValue(value []MobileAppTroubleshootingEventable)()
 }

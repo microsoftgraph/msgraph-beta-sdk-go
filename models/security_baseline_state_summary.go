@@ -7,18 +7,6 @@ import (
 // SecurityBaselineStateSummary the security baseline compliance state summary for the security baseline of the account.
 type SecurityBaselineStateSummary struct {
     Entity
-    // Number of conflict devices
-    conflictCount *int32
-    // Number of error devices
-    errorCount *int32
-    // Number of not applicable devices
-    notApplicableCount *int32
-    // Number of not secure devices
-    notSecureCount *int32
-    // Number of secure devices
-    secureCount *int32
-    // Number of unknown devices
-    unknownCount *int32
 }
 // NewSecurityBaselineStateSummary instantiates a new securityBaselineStateSummary and sets the default values.
 func NewSecurityBaselineStateSummary()(*SecurityBaselineStateSummary) {
@@ -51,11 +39,25 @@ func CreateSecurityBaselineStateSummaryFromDiscriminatorValue(parseNode i878a80d
 }
 // GetConflictCount gets the conflictCount property value. Number of conflict devices
 func (m *SecurityBaselineStateSummary) GetConflictCount()(*int32) {
-    return m.conflictCount
+    val, err := m.GetBackingStore().Get("conflictCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetErrorCount gets the errorCount property value. Number of error devices
 func (m *SecurityBaselineStateSummary) GetErrorCount()(*int32) {
-    return m.errorCount
+    val, err := m.GetBackingStore().Get("errorCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SecurityBaselineStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -124,19 +126,47 @@ func (m *SecurityBaselineStateSummary) GetFieldDeserializers()(map[string]func(i
 }
 // GetNotApplicableCount gets the notApplicableCount property value. Number of not applicable devices
 func (m *SecurityBaselineStateSummary) GetNotApplicableCount()(*int32) {
-    return m.notApplicableCount
+    val, err := m.GetBackingStore().Get("notApplicableCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetNotSecureCount gets the notSecureCount property value. Number of not secure devices
 func (m *SecurityBaselineStateSummary) GetNotSecureCount()(*int32) {
-    return m.notSecureCount
+    val, err := m.GetBackingStore().Get("notSecureCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetSecureCount gets the secureCount property value. Number of secure devices
 func (m *SecurityBaselineStateSummary) GetSecureCount()(*int32) {
-    return m.secureCount
+    val, err := m.GetBackingStore().Get("secureCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetUnknownCount gets the unknownCount property value. Number of unknown devices
 func (m *SecurityBaselineStateSummary) GetUnknownCount()(*int32) {
-    return m.unknownCount
+    val, err := m.GetBackingStore().Get("unknownCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SecurityBaselineStateSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -184,25 +214,60 @@ func (m *SecurityBaselineStateSummary) Serialize(writer i878a80d2330e89d26896388
 }
 // SetConflictCount sets the conflictCount property value. Number of conflict devices
 func (m *SecurityBaselineStateSummary) SetConflictCount(value *int32)() {
-    m.conflictCount = value
+    err := m.GetBackingStore().Set("conflictCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetErrorCount sets the errorCount property value. Number of error devices
 func (m *SecurityBaselineStateSummary) SetErrorCount(value *int32)() {
-    m.errorCount = value
+    err := m.GetBackingStore().Set("errorCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotApplicableCount sets the notApplicableCount property value. Number of not applicable devices
 func (m *SecurityBaselineStateSummary) SetNotApplicableCount(value *int32)() {
-    m.notApplicableCount = value
+    err := m.GetBackingStore().Set("notApplicableCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotSecureCount sets the notSecureCount property value. Number of not secure devices
 func (m *SecurityBaselineStateSummary) SetNotSecureCount(value *int32)() {
-    m.notSecureCount = value
+    err := m.GetBackingStore().Set("notSecureCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSecureCount sets the secureCount property value. Number of secure devices
 func (m *SecurityBaselineStateSummary) SetSecureCount(value *int32)() {
-    m.secureCount = value
+    err := m.GetBackingStore().Set("secureCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUnknownCount sets the unknownCount property value. Number of unknown devices
 func (m *SecurityBaselineStateSummary) SetUnknownCount(value *int32)() {
-    m.unknownCount = value
+    err := m.GetBackingStore().Set("unknownCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SecurityBaselineStateSummaryable 
+type SecurityBaselineStateSummaryable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetConflictCount()(*int32)
+    GetErrorCount()(*int32)
+    GetNotApplicableCount()(*int32)
+    GetNotSecureCount()(*int32)
+    GetSecureCount()(*int32)
+    GetUnknownCount()(*int32)
+    SetConflictCount(value *int32)()
+    SetErrorCount(value *int32)()
+    SetNotApplicableCount(value *int32)()
+    SetNotSecureCount(value *int32)()
+    SetSecureCount(value *int32)()
+    SetUnknownCount(value *int32)()
 }

@@ -8,22 +8,6 @@ import (
 // UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId the user experience analytics application performance entity contains app performance by app version device id.
 type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId struct {
     Entity
-    // The number of crashes for the app. Valid values -2147483648 to 2147483647
-    appCrashCount *int32
-    // The friendly name of the application.
-    appDisplayName *string
-    // The name of the application.
-    appName *string
-    // The publisher of the application.
-    appPublisher *string
-    // The version of the application.
-    appVersion *string
-    // The name of the device.
-    deviceDisplayName *string
-    // The id of the device.
-    deviceId *string
-    // The date and time when the statistics were last computed.
-    processedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId instantiates a new userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId and sets the default values.
 func NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId()(*UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) {
@@ -38,31 +22,80 @@ func CreateUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdFro
 }
 // GetAppCrashCount gets the appCrashCount property value. The number of crashes for the app. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) GetAppCrashCount()(*int32) {
-    return m.appCrashCount
+    val, err := m.GetBackingStore().Get("appCrashCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetAppDisplayName gets the appDisplayName property value. The friendly name of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) GetAppDisplayName()(*string) {
-    return m.appDisplayName
+    val, err := m.GetBackingStore().Get("appDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAppName gets the appName property value. The name of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) GetAppName()(*string) {
-    return m.appName
+    val, err := m.GetBackingStore().Get("appName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAppPublisher gets the appPublisher property value. The publisher of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) GetAppPublisher()(*string) {
-    return m.appPublisher
+    val, err := m.GetBackingStore().Get("appPublisher")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAppVersion gets the appVersion property value. The version of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) GetAppVersion()(*string) {
-    return m.appVersion
+    val, err := m.GetBackingStore().Get("appVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDeviceDisplayName gets the deviceDisplayName property value. The name of the device.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) GetDeviceDisplayName()(*string) {
-    return m.deviceDisplayName
+    val, err := m.GetBackingStore().Get("deviceDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDeviceId gets the deviceId property value. The id of the device.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) GetDeviceId()(*string) {
-    return m.deviceId
+    val, err := m.GetBackingStore().Get("deviceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -151,7 +184,14 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) Get
 }
 // GetProcessedDateTime gets the processedDateTime property value. The date and time when the statistics were last computed.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) GetProcessedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.processedDateTime
+    val, err := m.GetBackingStore().Get("processedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -211,33 +251,78 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) Ser
 }
 // SetAppCrashCount sets the appCrashCount property value. The number of crashes for the app. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) SetAppCrashCount(value *int32)() {
-    m.appCrashCount = value
+    err := m.GetBackingStore().Set("appCrashCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppDisplayName sets the appDisplayName property value. The friendly name of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) SetAppDisplayName(value *string)() {
-    m.appDisplayName = value
+    err := m.GetBackingStore().Set("appDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppName sets the appName property value. The name of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) SetAppName(value *string)() {
-    m.appName = value
+    err := m.GetBackingStore().Set("appName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppPublisher sets the appPublisher property value. The publisher of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) SetAppPublisher(value *string)() {
-    m.appPublisher = value
+    err := m.GetBackingStore().Set("appPublisher", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppVersion sets the appVersion property value. The version of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) SetAppVersion(value *string)() {
-    m.appVersion = value
+    err := m.GetBackingStore().Set("appVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceDisplayName sets the deviceDisplayName property value. The name of the device.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) SetDeviceDisplayName(value *string)() {
-    m.deviceDisplayName = value
+    err := m.GetBackingStore().Set("deviceDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceId sets the deviceId property value. The id of the device.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) SetDeviceId(value *string)() {
-    m.deviceId = value
+    err := m.GetBackingStore().Set("deviceId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProcessedDateTime sets the processedDateTime property value. The date and time when the statistics were last computed.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) SetProcessedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.processedDateTime = value
+    err := m.GetBackingStore().Set("processedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdable 
+type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppCrashCount()(*int32)
+    GetAppDisplayName()(*string)
+    GetAppName()(*string)
+    GetAppPublisher()(*string)
+    GetAppVersion()(*string)
+    GetDeviceDisplayName()(*string)
+    GetDeviceId()(*string)
+    GetProcessedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    SetAppCrashCount(value *int32)()
+    SetAppDisplayName(value *string)()
+    SetAppName(value *string)()
+    SetAppPublisher(value *string)()
+    SetAppVersion(value *string)()
+    SetDeviceDisplayName(value *string)()
+    SetDeviceId(value *string)()
+    SetProcessedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
 }

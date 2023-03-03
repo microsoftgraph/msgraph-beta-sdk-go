@@ -7,20 +7,14 @@ import (
 // ServicePrincipalCreationPolicy 
 type ServicePrincipalCreationPolicy struct {
     PolicyBase
-    // The excludes property
-    excludes []ServicePrincipalCreationConditionSetable
-    // The includes property
-    includes []ServicePrincipalCreationConditionSetable
-    // The isBuiltIn property
-    isBuiltIn *bool
 }
 // NewServicePrincipalCreationPolicy instantiates a new ServicePrincipalCreationPolicy and sets the default values.
 func NewServicePrincipalCreationPolicy()(*ServicePrincipalCreationPolicy) {
     m := &ServicePrincipalCreationPolicy{
         PolicyBase: *NewPolicyBase(),
     }
-    odataTypeValue := "#microsoft.graph.servicePrincipalCreationPolicy";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.servicePrincipalCreationPolicy"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateServicePrincipalCreationPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +23,14 @@ func CreateServicePrincipalCreationPolicyFromDiscriminatorValue(parseNode i878a8
 }
 // GetExcludes gets the excludes property value. The excludes property
 func (m *ServicePrincipalCreationPolicy) GetExcludes()([]ServicePrincipalCreationConditionSetable) {
-    return m.excludes
+    val, err := m.GetBackingStore().Get("excludes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ServicePrincipalCreationConditionSetable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ServicePrincipalCreationPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -76,11 +77,25 @@ func (m *ServicePrincipalCreationPolicy) GetFieldDeserializers()(map[string]func
 }
 // GetIncludes gets the includes property value. The includes property
 func (m *ServicePrincipalCreationPolicy) GetIncludes()([]ServicePrincipalCreationConditionSetable) {
-    return m.includes
+    val, err := m.GetBackingStore().Get("includes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ServicePrincipalCreationConditionSetable)
+    }
+    return nil
 }
 // GetIsBuiltIn gets the isBuiltIn property value. The isBuiltIn property
 func (m *ServicePrincipalCreationPolicy) GetIsBuiltIn()(*bool) {
-    return m.isBuiltIn
+    val, err := m.GetBackingStore().Get("isBuiltIn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ServicePrincipalCreationPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -118,13 +133,33 @@ func (m *ServicePrincipalCreationPolicy) Serialize(writer i878a80d2330e89d268963
 }
 // SetExcludes sets the excludes property value. The excludes property
 func (m *ServicePrincipalCreationPolicy) SetExcludes(value []ServicePrincipalCreationConditionSetable)() {
-    m.excludes = value
+    err := m.GetBackingStore().Set("excludes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIncludes sets the includes property value. The includes property
 func (m *ServicePrincipalCreationPolicy) SetIncludes(value []ServicePrincipalCreationConditionSetable)() {
-    m.includes = value
+    err := m.GetBackingStore().Set("includes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsBuiltIn sets the isBuiltIn property value. The isBuiltIn property
 func (m *ServicePrincipalCreationPolicy) SetIsBuiltIn(value *bool)() {
-    m.isBuiltIn = value
+    err := m.GetBackingStore().Set("isBuiltIn", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ServicePrincipalCreationPolicyable 
+type ServicePrincipalCreationPolicyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    PolicyBaseable
+    GetExcludes()([]ServicePrincipalCreationConditionSetable)
+    GetIncludes()([]ServicePrincipalCreationConditionSetable)
+    GetIsBuiltIn()(*bool)
+    SetExcludes(value []ServicePrincipalCreationConditionSetable)()
+    SetIncludes(value []ServicePrincipalCreationConditionSetable)()
+    SetIsBuiltIn(value *bool)()
 }

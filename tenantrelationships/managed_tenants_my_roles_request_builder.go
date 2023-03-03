@@ -60,8 +60,8 @@ func NewManagedTenantsMyRolesRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedTenantsMyRolesRequestBuilder instantiates a new MyRolesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewManagedTenantsMyRolesRequestBuilder(rawUrl string, requestAdapter i2ae41
 }
 // Count provides operations to count the resources in the collection.
 func (m *ManagedTenantsMyRolesRequestBuilder) Count()(*ManagedTenantsMyRolesCountRequestBuilder) {
-    return NewManagedTenantsMyRolesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedTenantsMyRolesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the roles that a signed-in user has through a delegated relationship across managed tenants. For information on the types of delegated relationships between a Managed Service Provider (MSP) who uses Microsoft 365 Lighthouse, and their business customers with Microsoft 365 Business Premium tenants, see the following articles on the Partner Center:- Delegated administration privileges (DAP)- Granular delegated admin privileges (GDAP)
 // [Find more info here]
@@ -138,7 +138,10 @@ func (m *ManagedTenantsMyRolesRequestBuilder) ToPostRequestInformation(ctx conte
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

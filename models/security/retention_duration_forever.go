@@ -13,8 +13,8 @@ func NewRetentionDurationForever()(*RetentionDurationForever) {
     m := &RetentionDurationForever{
         RetentionDuration: *NewRetentionDuration(),
     }
-    odataTypeValue := "#microsoft.graph.security.retentionDurationForever";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.security.retentionDurationForever"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateRetentionDurationForeverFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,4 +33,9 @@ func (m *RetentionDurationForever) Serialize(writer i878a80d2330e89d26896388a3f4
         return err
     }
     return nil
+}
+// RetentionDurationForeverable 
+type RetentionDurationForeverable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    RetentionDurationable
 }

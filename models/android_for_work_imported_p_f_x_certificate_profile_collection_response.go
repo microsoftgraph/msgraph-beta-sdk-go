@@ -7,8 +7,6 @@ import (
 // AndroidForWorkImportedPFXCertificateProfileCollectionResponse 
 type AndroidForWorkImportedPFXCertificateProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidForWorkImportedPFXCertificateProfileable
 }
 // NewAndroidForWorkImportedPFXCertificateProfileCollectionResponse instantiates a new AndroidForWorkImportedPFXCertificateProfileCollectionResponse and sets the default values.
 func NewAndroidForWorkImportedPFXCertificateProfileCollectionResponse()(*AndroidForWorkImportedPFXCertificateProfileCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidForWorkImportedPFXCertificateProfileCollectionResponse) GetField
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidForWorkImportedPFXCertificateProfileCollectionResponse) GetValue()([]AndroidForWorkImportedPFXCertificateProfileable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidForWorkImportedPFXCertificateProfileable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidForWorkImportedPFXCertificateProfileCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidForWorkImportedPFXCertificateProfileCollectionResponse) Serializ
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidForWorkImportedPFXCertificateProfileCollectionResponse) SetValue(value []AndroidForWorkImportedPFXCertificateProfileable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidForWorkImportedPFXCertificateProfileCollectionResponseable 
+type AndroidForWorkImportedPFXCertificateProfileCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidForWorkImportedPFXCertificateProfileable)
+    SetValue(value []AndroidForWorkImportedPFXCertificateProfileable)()
 }

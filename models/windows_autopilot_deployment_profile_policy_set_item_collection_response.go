@@ -7,8 +7,6 @@ import (
 // WindowsAutopilotDeploymentProfilePolicySetItemCollectionResponse 
 type WindowsAutopilotDeploymentProfilePolicySetItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WindowsAutopilotDeploymentProfilePolicySetItemable
 }
 // NewWindowsAutopilotDeploymentProfilePolicySetItemCollectionResponse instantiates a new WindowsAutopilotDeploymentProfilePolicySetItemCollectionResponse and sets the default values.
 func NewWindowsAutopilotDeploymentProfilePolicySetItemCollectionResponse()(*WindowsAutopilotDeploymentProfilePolicySetItemCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WindowsAutopilotDeploymentProfilePolicySetItemCollectionResponse) GetFi
 }
 // GetValue gets the value property value. The value property
 func (m *WindowsAutopilotDeploymentProfilePolicySetItemCollectionResponse) GetValue()([]WindowsAutopilotDeploymentProfilePolicySetItemable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsAutopilotDeploymentProfilePolicySetItemable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsAutopilotDeploymentProfilePolicySetItemCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WindowsAutopilotDeploymentProfilePolicySetItemCollectionResponse) Seria
 }
 // SetValue sets the value property value. The value property
 func (m *WindowsAutopilotDeploymentProfilePolicySetItemCollectionResponse) SetValue(value []WindowsAutopilotDeploymentProfilePolicySetItemable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsAutopilotDeploymentProfilePolicySetItemCollectionResponseable 
+type WindowsAutopilotDeploymentProfilePolicySetItemCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WindowsAutopilotDeploymentProfilePolicySetItemable)
+    SetValue(value []WindowsAutopilotDeploymentProfilePolicySetItemable)()
 }

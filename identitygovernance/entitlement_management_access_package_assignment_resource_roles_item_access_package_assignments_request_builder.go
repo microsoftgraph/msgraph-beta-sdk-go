@@ -53,8 +53,8 @@ func NewEntitlementManagementAccessPackageAssignmentResourceRolesItemAccessPacka
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementAccessPackageAssignmentResourceRolesItemAccessPackageAssignmentsRequestBuilder instantiates a new AccessPackageAssignmentsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewEntitlementManagementAccessPackageAssignmentResourceRolesItemAccessPacka
 }
 // Count provides operations to count the resources in the collection.
 func (m *EntitlementManagementAccessPackageAssignmentResourceRolesItemAccessPackageAssignmentsRequestBuilder) Count()(*EntitlementManagementAccessPackageAssignmentResourceRolesItemAccessPackageAssignmentsCountRequestBuilder) {
-    return NewEntitlementManagementAccessPackageAssignmentResourceRolesItemAccessPackageAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementAccessPackageAssignmentResourceRolesItemAccessPackageAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the access package assignments resulting in this role assignment. Read-only. Nullable.
 func (m *EntitlementManagementAccessPackageAssignmentResourceRolesItemAccessPackageAssignmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentResourceRolesItemAccessPackageAssignmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentCollectionResponseable, error) {

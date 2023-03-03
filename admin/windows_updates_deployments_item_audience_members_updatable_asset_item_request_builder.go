@@ -46,14 +46,6 @@ type WindowsUpdatesDeploymentsItemAudienceMembersUpdatableAssetItemRequestBuilde
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AddMembers provides operations to call the addMembers method.
-func (m *WindowsUpdatesDeploymentsItemAudienceMembersUpdatableAssetItemRequestBuilder) AddMembers()(*WindowsUpdatesDeploymentsItemAudienceMembersItemAddMembersRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsItemAudienceMembersItemAddMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// AddMembersById provides operations to call the addMembersById method.
-func (m *WindowsUpdatesDeploymentsItemAudienceMembersUpdatableAssetItemRequestBuilder) AddMembersById()(*WindowsUpdatesDeploymentsItemAudienceMembersItemAddMembersByIdRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsItemAudienceMembersItemAddMembersByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewWindowsUpdatesDeploymentsItemAudienceMembersUpdatableAssetItemRequestBuilderInternal instantiates a new UpdatableAssetItemRequestBuilder and sets the default values.
 func NewWindowsUpdatesDeploymentsItemAudienceMembersUpdatableAssetItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesDeploymentsItemAudienceMembersUpdatableAssetItemRequestBuilder) {
     m := &WindowsUpdatesDeploymentsItemAudienceMembersUpdatableAssetItemRequestBuilder{
@@ -63,8 +55,8 @@ func NewWindowsUpdatesDeploymentsItemAudienceMembersUpdatableAssetItemRequestBui
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsUpdatesDeploymentsItemAudienceMembersUpdatableAssetItemRequestBuilder instantiates a new UpdatableAssetItemRequestBuilder and sets the default values.
@@ -127,14 +119,6 @@ func (m *WindowsUpdatesDeploymentsItemAudienceMembersUpdatableAssetItemRequestBu
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable), nil
 }
-// RemoveMembers provides operations to call the removeMembers method.
-func (m *WindowsUpdatesDeploymentsItemAudienceMembersUpdatableAssetItemRequestBuilder) RemoveMembers()(*WindowsUpdatesDeploymentsItemAudienceMembersItemRemoveMembersRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsItemAudienceMembersItemRemoveMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// RemoveMembersById provides operations to call the removeMembersById method.
-func (m *WindowsUpdatesDeploymentsItemAudienceMembersUpdatableAssetItemRequestBuilder) RemoveMembersById()(*WindowsUpdatesDeploymentsItemAudienceMembersItemRemoveMembersByIdRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsItemAudienceMembersItemRemoveMembersByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // ToDeleteRequestInformation delete navigation property members for admin
 func (m *WindowsUpdatesDeploymentsItemAudienceMembersUpdatableAssetItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentsItemAudienceMembersUpdatableAssetItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -170,10 +154,29 @@ func (m *WindowsUpdatesDeploymentsItemAudienceMembersUpdatableAssetItemRequestBu
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WindowsUpdatesAddMembers provides operations to call the addMembers method.
+func (m *WindowsUpdatesDeploymentsItemAudienceMembersUpdatableAssetItemRequestBuilder) WindowsUpdatesAddMembers()(*WindowsUpdatesDeploymentsItemAudienceMembersItemWindowsUpdatesAddMembersRequestBuilder) {
+    return NewWindowsUpdatesDeploymentsItemAudienceMembersItemWindowsUpdatesAddMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// WindowsUpdatesAddMembersById provides operations to call the addMembersById method.
+func (m *WindowsUpdatesDeploymentsItemAudienceMembersUpdatableAssetItemRequestBuilder) WindowsUpdatesAddMembersById()(*WindowsUpdatesDeploymentsItemAudienceMembersItemWindowsUpdatesAddMembersByIdRequestBuilder) {
+    return NewWindowsUpdatesDeploymentsItemAudienceMembersItemWindowsUpdatesAddMembersByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// WindowsUpdatesRemoveMembers provides operations to call the removeMembers method.
+func (m *WindowsUpdatesDeploymentsItemAudienceMembersUpdatableAssetItemRequestBuilder) WindowsUpdatesRemoveMembers()(*WindowsUpdatesDeploymentsItemAudienceMembersItemWindowsUpdatesRemoveMembersRequestBuilder) {
+    return NewWindowsUpdatesDeploymentsItemAudienceMembersItemWindowsUpdatesRemoveMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// WindowsUpdatesRemoveMembersById provides operations to call the removeMembersById method.
+func (m *WindowsUpdatesDeploymentsItemAudienceMembersUpdatableAssetItemRequestBuilder) WindowsUpdatesRemoveMembersById()(*WindowsUpdatesDeploymentsItemAudienceMembersItemWindowsUpdatesRemoveMembersByIdRequestBuilder) {
+    return NewWindowsUpdatesDeploymentsItemAudienceMembersItemWindowsUpdatesRemoveMembersByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

@@ -60,8 +60,8 @@ func NewB2cUserFlowsItemUserAttributeAssignmentsRequestBuilderInternal(pathParam
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewB2cUserFlowsItemUserAttributeAssignmentsRequestBuilder instantiates a new UserAttributeAssignmentsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewB2cUserFlowsItemUserAttributeAssignmentsRequestBuilder(rawUrl string, re
 }
 // Count provides operations to count the resources in the collection.
 func (m *B2cUserFlowsItemUserAttributeAssignmentsRequestBuilder) Count()(*B2cUserFlowsItemUserAttributeAssignmentsCountRequestBuilder) {
-    return NewB2cUserFlowsItemUserAttributeAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewB2cUserFlowsItemUserAttributeAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the identityUserFlowAttributeAssignment resources from the userAttributeAssignments navigation property in a b2cIdentityUserFlow.
 // [Find more info here]
@@ -98,7 +98,7 @@ func (m *B2cUserFlowsItemUserAttributeAssignmentsRequestBuilder) Get(ctx context
 }
 // GetOrder provides operations to call the getOrder method.
 func (m *B2cUserFlowsItemUserAttributeAssignmentsRequestBuilder) GetOrder()(*B2cUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilder) {
-    return NewB2cUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewB2cUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create a new identityUserFlowAttributeAssignment object in a b2cIdentityUserFlow.
 // [Find more info here]
@@ -124,7 +124,7 @@ func (m *B2cUserFlowsItemUserAttributeAssignmentsRequestBuilder) Post(ctx contex
 }
 // SetOrder provides operations to call the setOrder method.
 func (m *B2cUserFlowsItemUserAttributeAssignmentsRequestBuilder) SetOrder()(*B2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder) {
-    return NewB2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewB2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation get the identityUserFlowAttributeAssignment resources from the userAttributeAssignments navigation property in a b2cIdentityUserFlow.
 func (m *B2cUserFlowsItemUserAttributeAssignmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2cUserFlowsItemUserAttributeAssignmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -149,7 +149,10 @@ func (m *B2cUserFlowsItemUserAttributeAssignmentsRequestBuilder) ToPostRequestIn
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

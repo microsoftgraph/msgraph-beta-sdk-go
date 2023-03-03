@@ -2,30 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // TeamworkHardwareDetail 
 type TeamworkHardwareDetail struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // MAC address.
-    macAddresses []string
-    // Device manufacturer.
-    manufacturer *string
-    // Devie model.
-    model *string
-    // The OdataType property
-    odataType *string
-    // Device serial number.
-    serialNumber *string
-    // The unique identifier for the device.
-    uniqueId *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewTeamworkHardwareDetail instantiates a new teamworkHardwareDetail and sets the default values.
 func NewTeamworkHardwareDetail()(*TeamworkHardwareDetail) {
     m := &TeamworkHardwareDetail{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTeamworkHardwareDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -34,7 +24,19 @@ func CreateTeamworkHardwareDetailFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkHardwareDetail) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *TeamworkHardwareDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkHardwareDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -107,27 +109,69 @@ func (m *TeamworkHardwareDetail) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetMacAddresses gets the macAddresses property value. MAC address.
 func (m *TeamworkHardwareDetail) GetMacAddresses()([]string) {
-    return m.macAddresses
+    val, err := m.GetBackingStore().Get("macAddresses")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetManufacturer gets the manufacturer property value. Device manufacturer.
 func (m *TeamworkHardwareDetail) GetManufacturer()(*string) {
-    return m.manufacturer
+    val, err := m.GetBackingStore().Get("manufacturer")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetModel gets the model property value. Devie model.
 func (m *TeamworkHardwareDetail) GetModel()(*string) {
-    return m.model
+    val, err := m.GetBackingStore().Get("model")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TeamworkHardwareDetail) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSerialNumber gets the serialNumber property value. Device serial number.
 func (m *TeamworkHardwareDetail) GetSerialNumber()(*string) {
-    return m.serialNumber
+    val, err := m.GetBackingStore().Get("serialNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUniqueId gets the uniqueId property value. The unique identifier for the device.
 func (m *TeamworkHardwareDetail) GetUniqueId()(*string) {
-    return m.uniqueId
+    val, err := m.GetBackingStore().Get("uniqueId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TeamworkHardwareDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -177,29 +221,74 @@ func (m *TeamworkHardwareDetail) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkHardwareDetail) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *TeamworkHardwareDetail) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetMacAddresses sets the macAddresses property value. MAC address.
 func (m *TeamworkHardwareDetail) SetMacAddresses(value []string)() {
-    m.macAddresses = value
+    err := m.GetBackingStore().Set("macAddresses", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManufacturer sets the manufacturer property value. Device manufacturer.
 func (m *TeamworkHardwareDetail) SetManufacturer(value *string)() {
-    m.manufacturer = value
+    err := m.GetBackingStore().Set("manufacturer", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetModel sets the model property value. Devie model.
 func (m *TeamworkHardwareDetail) SetModel(value *string)() {
-    m.model = value
+    err := m.GetBackingStore().Set("model", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TeamworkHardwareDetail) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSerialNumber sets the serialNumber property value. Device serial number.
 func (m *TeamworkHardwareDetail) SetSerialNumber(value *string)() {
-    m.serialNumber = value
+    err := m.GetBackingStore().Set("serialNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUniqueId sets the uniqueId property value. The unique identifier for the device.
 func (m *TeamworkHardwareDetail) SetUniqueId(value *string)() {
-    m.uniqueId = value
+    err := m.GetBackingStore().Set("uniqueId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TeamworkHardwareDetailable 
+type TeamworkHardwareDetailable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetMacAddresses()([]string)
+    GetManufacturer()(*string)
+    GetModel()(*string)
+    GetOdataType()(*string)
+    GetSerialNumber()(*string)
+    GetUniqueId()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetMacAddresses(value []string)()
+    SetManufacturer(value *string)()
+    SetModel(value *string)()
+    SetOdataType(value *string)()
+    SetSerialNumber(value *string)()
+    SetUniqueId(value *string)()
 }

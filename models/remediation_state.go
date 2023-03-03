@@ -16,10 +16,12 @@ const (
     REMEDIATIONFAILED_REMEDIATIONSTATE
     // Remediation script execution encountered and error or timed out
     SCRIPTERROR_REMEDIATIONSTATE
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_REMEDIATIONSTATE
 )
 
 func (i RemediationState) String() string {
-    return []string{"unknown", "skipped", "success", "remediationFailed", "scriptError"}[i]
+    return []string{"unknown", "skipped", "success", "remediationFailed", "scriptError", "unknownFutureValue"}[i]
 }
 func ParseRemediationState(v string) (any, error) {
     result := UNKNOWN_REMEDIATIONSTATE
@@ -34,6 +36,8 @@ func ParseRemediationState(v string) (any, error) {
             result = REMEDIATIONFAILED_REMEDIATIONSTATE
         case "scriptError":
             result = SCRIPTERROR_REMEDIATIONSTATE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_REMEDIATIONSTATE
         default:
             return 0, errors.New("Unknown RemediationState value: " + v)
     }

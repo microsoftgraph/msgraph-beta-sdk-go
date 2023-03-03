@@ -7,8 +7,6 @@ import (
 // DeviceAndAppManagementAssignmentFilterCollectionResponse 
 type DeviceAndAppManagementAssignmentFilterCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceAndAppManagementAssignmentFilterable
 }
 // NewDeviceAndAppManagementAssignmentFilterCollectionResponse instantiates a new DeviceAndAppManagementAssignmentFilterCollectionResponse and sets the default values.
 func NewDeviceAndAppManagementAssignmentFilterCollectionResponse()(*DeviceAndAppManagementAssignmentFilterCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceAndAppManagementAssignmentFilterCollectionResponse) GetFieldDeser
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceAndAppManagementAssignmentFilterCollectionResponse) GetValue()([]DeviceAndAppManagementAssignmentFilterable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceAndAppManagementAssignmentFilterable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceAndAppManagementAssignmentFilterCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceAndAppManagementAssignmentFilterCollectionResponse) Serialize(wri
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceAndAppManagementAssignmentFilterCollectionResponse) SetValue(value []DeviceAndAppManagementAssignmentFilterable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceAndAppManagementAssignmentFilterCollectionResponseable 
+type DeviceAndAppManagementAssignmentFilterCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceAndAppManagementAssignmentFilterable)
+    SetValue(value []DeviceAndAppManagementAssignmentFilterable)()
 }

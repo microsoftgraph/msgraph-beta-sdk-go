@@ -7,8 +7,6 @@ import (
 // DeviceManagementReusablePolicySettingCollectionResponse 
 type DeviceManagementReusablePolicySettingCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementReusablePolicySettingable
 }
 // NewDeviceManagementReusablePolicySettingCollectionResponse instantiates a new DeviceManagementReusablePolicySettingCollectionResponse and sets the default values.
 func NewDeviceManagementReusablePolicySettingCollectionResponse()(*DeviceManagementReusablePolicySettingCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementReusablePolicySettingCollectionResponse) GetFieldDeseri
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementReusablePolicySettingCollectionResponse) GetValue()([]DeviceManagementReusablePolicySettingable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementReusablePolicySettingable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementReusablePolicySettingCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementReusablePolicySettingCollectionResponse) Serialize(writ
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementReusablePolicySettingCollectionResponse) SetValue(value []DeviceManagementReusablePolicySettingable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementReusablePolicySettingCollectionResponseable 
+type DeviceManagementReusablePolicySettingCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementReusablePolicySettingable)
+    SetValue(value []DeviceManagementReusablePolicySettingable)()
 }

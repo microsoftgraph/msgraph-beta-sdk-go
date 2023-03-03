@@ -26,13 +26,13 @@ type DeletedTeamsItemChannelsItemRemoveEmailRequestBuilderPostRequestConfigurati
 func NewDeletedTeamsItemChannelsItemRemoveEmailRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedTeamsItemChannelsItemRemoveEmailRequestBuilder) {
     m := &DeletedTeamsItemChannelsItemRemoveEmailRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/teamwork/deletedTeams/{deletedTeam%2Did}/channels/{channel%2Did}/microsoft.graph.removeEmail";
+    m.urlTemplate = "{+baseurl}/teamwork/deletedTeams/{deletedTeam%2Did}/channels/{channel%2Did}/removeEmail";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeletedTeamsItemChannelsItemRemoveEmailRequestBuilder instantiates a new RemoveEmailRequestBuilder and sets the default values.

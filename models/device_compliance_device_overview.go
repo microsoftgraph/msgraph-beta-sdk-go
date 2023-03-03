@@ -8,24 +8,6 @@ import (
 // DeviceComplianceDeviceOverview 
 type DeviceComplianceDeviceOverview struct {
     Entity
-    // Version of the policy for that overview
-    configurationVersion *int32
-    // Number of devices in conflict
-    conflictCount *int32
-    // Number of error devices
-    errorCount *int32
-    // Number of failed devices
-    failedCount *int32
-    // Last update time
-    lastUpdateDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Number of not applicable devices
-    notApplicableCount *int32
-    // Number of not applicable devices due to mismatch platform and policy
-    notApplicablePlatformCount *int32
-    // Number of pending devices
-    pendingCount *int32
-    // Number of succeeded devices
-    successCount *int32
 }
 // NewDeviceComplianceDeviceOverview instantiates a new deviceComplianceDeviceOverview and sets the default values.
 func NewDeviceComplianceDeviceOverview()(*DeviceComplianceDeviceOverview) {
@@ -40,19 +22,47 @@ func CreateDeviceComplianceDeviceOverviewFromDiscriminatorValue(parseNode i878a8
 }
 // GetConfigurationVersion gets the configurationVersion property value. Version of the policy for that overview
 func (m *DeviceComplianceDeviceOverview) GetConfigurationVersion()(*int32) {
-    return m.configurationVersion
+    val, err := m.GetBackingStore().Get("configurationVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetConflictCount gets the conflictCount property value. Number of devices in conflict
 func (m *DeviceComplianceDeviceOverview) GetConflictCount()(*int32) {
-    return m.conflictCount
+    val, err := m.GetBackingStore().Get("conflictCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetErrorCount gets the errorCount property value. Number of error devices
 func (m *DeviceComplianceDeviceOverview) GetErrorCount()(*int32) {
-    return m.errorCount
+    val, err := m.GetBackingStore().Get("errorCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFailedCount gets the failedCount property value. Number of failed devices
 func (m *DeviceComplianceDeviceOverview) GetFailedCount()(*int32) {
-    return m.failedCount
+    val, err := m.GetBackingStore().Get("failedCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceComplianceDeviceOverview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -151,23 +161,58 @@ func (m *DeviceComplianceDeviceOverview) GetFieldDeserializers()(map[string]func
 }
 // GetLastUpdateDateTime gets the lastUpdateDateTime property value. Last update time
 func (m *DeviceComplianceDeviceOverview) GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastUpdateDateTime
+    val, err := m.GetBackingStore().Get("lastUpdateDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetNotApplicableCount gets the notApplicableCount property value. Number of not applicable devices
 func (m *DeviceComplianceDeviceOverview) GetNotApplicableCount()(*int32) {
-    return m.notApplicableCount
+    val, err := m.GetBackingStore().Get("notApplicableCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetNotApplicablePlatformCount gets the notApplicablePlatformCount property value. Number of not applicable devices due to mismatch platform and policy
 func (m *DeviceComplianceDeviceOverview) GetNotApplicablePlatformCount()(*int32) {
-    return m.notApplicablePlatformCount
+    val, err := m.GetBackingStore().Get("notApplicablePlatformCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPendingCount gets the pendingCount property value. Number of pending devices
 func (m *DeviceComplianceDeviceOverview) GetPendingCount()(*int32) {
-    return m.pendingCount
+    val, err := m.GetBackingStore().Get("pendingCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetSuccessCount gets the successCount property value. Number of succeeded devices
 func (m *DeviceComplianceDeviceOverview) GetSuccessCount()(*int32) {
-    return m.successCount
+    val, err := m.GetBackingStore().Get("successCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceComplianceDeviceOverview) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -233,37 +278,87 @@ func (m *DeviceComplianceDeviceOverview) Serialize(writer i878a80d2330e89d268963
 }
 // SetConfigurationVersion sets the configurationVersion property value. Version of the policy for that overview
 func (m *DeviceComplianceDeviceOverview) SetConfigurationVersion(value *int32)() {
-    m.configurationVersion = value
+    err := m.GetBackingStore().Set("configurationVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConflictCount sets the conflictCount property value. Number of devices in conflict
 func (m *DeviceComplianceDeviceOverview) SetConflictCount(value *int32)() {
-    m.conflictCount = value
+    err := m.GetBackingStore().Set("conflictCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetErrorCount sets the errorCount property value. Number of error devices
 func (m *DeviceComplianceDeviceOverview) SetErrorCount(value *int32)() {
-    m.errorCount = value
+    err := m.GetBackingStore().Set("errorCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFailedCount sets the failedCount property value. Number of failed devices
 func (m *DeviceComplianceDeviceOverview) SetFailedCount(value *int32)() {
-    m.failedCount = value
+    err := m.GetBackingStore().Set("failedCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastUpdateDateTime sets the lastUpdateDateTime property value. Last update time
 func (m *DeviceComplianceDeviceOverview) SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastUpdateDateTime = value
+    err := m.GetBackingStore().Set("lastUpdateDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotApplicableCount sets the notApplicableCount property value. Number of not applicable devices
 func (m *DeviceComplianceDeviceOverview) SetNotApplicableCount(value *int32)() {
-    m.notApplicableCount = value
+    err := m.GetBackingStore().Set("notApplicableCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotApplicablePlatformCount sets the notApplicablePlatformCount property value. Number of not applicable devices due to mismatch platform and policy
 func (m *DeviceComplianceDeviceOverview) SetNotApplicablePlatformCount(value *int32)() {
-    m.notApplicablePlatformCount = value
+    err := m.GetBackingStore().Set("notApplicablePlatformCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPendingCount sets the pendingCount property value. Number of pending devices
 func (m *DeviceComplianceDeviceOverview) SetPendingCount(value *int32)() {
-    m.pendingCount = value
+    err := m.GetBackingStore().Set("pendingCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSuccessCount sets the successCount property value. Number of succeeded devices
 func (m *DeviceComplianceDeviceOverview) SetSuccessCount(value *int32)() {
-    m.successCount = value
+    err := m.GetBackingStore().Set("successCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceComplianceDeviceOverviewable 
+type DeviceComplianceDeviceOverviewable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetConfigurationVersion()(*int32)
+    GetConflictCount()(*int32)
+    GetErrorCount()(*int32)
+    GetFailedCount()(*int32)
+    GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetNotApplicableCount()(*int32)
+    GetNotApplicablePlatformCount()(*int32)
+    GetPendingCount()(*int32)
+    GetSuccessCount()(*int32)
+    SetConfigurationVersion(value *int32)()
+    SetConflictCount(value *int32)()
+    SetErrorCount(value *int32)()
+    SetFailedCount(value *int32)()
+    SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetNotApplicableCount(value *int32)()
+    SetNotApplicablePlatformCount(value *int32)()
+    SetPendingCount(value *int32)()
+    SetSuccessCount(value *int32)()
 }

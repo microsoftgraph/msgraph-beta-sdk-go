@@ -60,8 +60,8 @@ func NewMobileAppsItemUserStatusesRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMobileAppsItemUserStatusesRequestBuilder instantiates a new UserStatusesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewMobileAppsItemUserStatusesRequestBuilder(rawUrl string, requestAdapter i
 }
 // Count provides operations to count the resources in the collection.
 func (m *MobileAppsItemUserStatusesRequestBuilder) Count()(*MobileAppsItemUserStatusesCountRequestBuilder) {
-    return NewMobileAppsItemUserStatusesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMobileAppsItemUserStatusesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the list of installation states for this mobile app.
 func (m *MobileAppsItemUserStatusesRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemUserStatusesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAppInstallStatusCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *MobileAppsItemUserStatusesRequestBuilder) ToPostRequestInformation(ctx 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

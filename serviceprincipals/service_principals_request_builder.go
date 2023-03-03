@@ -60,8 +60,8 @@ func NewServicePrincipalsRequestBuilderInternal(pathParameters map[string]string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewServicePrincipalsRequestBuilder instantiates a new ServicePrincipalsRequestBuilder and sets the default values.
@@ -72,11 +72,11 @@ func NewServicePrincipalsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 }
 // Count provides operations to count the resources in the collection.
 func (m *ServicePrincipalsRequestBuilder) Count()(*CountRequestBuilder) {
-    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delta provides operations to call the delta method.
 func (m *ServicePrincipalsRequestBuilder) Delta()(*DeltaRequestBuilder) {
-    return NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of servicePrincipal objects.
 // [Find more info here]
@@ -102,11 +102,11 @@ func (m *ServicePrincipalsRequestBuilder) Get(ctx context.Context, requestConfig
 }
 // GetByIds provides operations to call the getByIds method.
 func (m *ServicePrincipalsRequestBuilder) GetByIds()(*GetByIdsRequestBuilder) {
-    return NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
 func (m *ServicePrincipalsRequestBuilder) GetUserOwnedObjects()(*GetUserOwnedObjectsRequestBuilder) {
-    return NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create a new servicePrincipal object.
 // [Find more info here]
@@ -153,7 +153,10 @@ func (m *ServicePrincipalsRequestBuilder) ToPostRequestInformation(ctx context.C
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -162,5 +165,5 @@ func (m *ServicePrincipalsRequestBuilder) ToPostRequestInformation(ctx context.C
 }
 // ValidateProperties provides operations to call the validateProperties method.
 func (m *ServicePrincipalsRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
-    return NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

@@ -26,13 +26,13 @@ type EnableAndroidDeviceAdministratorEnrollmentRequestBuilderPostRequestConfigur
 func NewEnableAndroidDeviceAdministratorEnrollmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EnableAndroidDeviceAdministratorEnrollmentRequestBuilder) {
     m := &EnableAndroidDeviceAdministratorEnrollmentRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/microsoft.graph.enableAndroidDeviceAdministratorEnrollment";
+    m.urlTemplate = "{+baseurl}/deviceManagement/enableAndroidDeviceAdministratorEnrollment";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEnableAndroidDeviceAdministratorEnrollmentRequestBuilder instantiates a new EnableAndroidDeviceAdministratorEnrollmentRequestBuilder and sets the default values.

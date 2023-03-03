@@ -7,8 +7,6 @@ import (
 // IosDerivedCredentialAuthenticationConfigurationCollectionResponse 
 type IosDerivedCredentialAuthenticationConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []IosDerivedCredentialAuthenticationConfigurationable
 }
 // NewIosDerivedCredentialAuthenticationConfigurationCollectionResponse instantiates a new IosDerivedCredentialAuthenticationConfigurationCollectionResponse and sets the default values.
 func NewIosDerivedCredentialAuthenticationConfigurationCollectionResponse()(*IosDerivedCredentialAuthenticationConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *IosDerivedCredentialAuthenticationConfigurationCollectionResponse) GetF
 }
 // GetValue gets the value property value. The value property
 func (m *IosDerivedCredentialAuthenticationConfigurationCollectionResponse) GetValue()([]IosDerivedCredentialAuthenticationConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IosDerivedCredentialAuthenticationConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosDerivedCredentialAuthenticationConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *IosDerivedCredentialAuthenticationConfigurationCollectionResponse) Seri
 }
 // SetValue sets the value property value. The value property
 func (m *IosDerivedCredentialAuthenticationConfigurationCollectionResponse) SetValue(value []IosDerivedCredentialAuthenticationConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosDerivedCredentialAuthenticationConfigurationCollectionResponseable 
+type IosDerivedCredentialAuthenticationConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]IosDerivedCredentialAuthenticationConfigurationable)
+    SetValue(value []IosDerivedCredentialAuthenticationConfigurationable)()
 }

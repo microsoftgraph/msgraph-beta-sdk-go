@@ -7,8 +7,6 @@ import (
 // UnsupportedDeviceConfigurationDetailCollectionResponse 
 type UnsupportedDeviceConfigurationDetailCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UnsupportedDeviceConfigurationDetailable
 }
 // NewUnsupportedDeviceConfigurationDetailCollectionResponse instantiates a new UnsupportedDeviceConfigurationDetailCollectionResponse and sets the default values.
 func NewUnsupportedDeviceConfigurationDetailCollectionResponse()(*UnsupportedDeviceConfigurationDetailCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UnsupportedDeviceConfigurationDetailCollectionResponse) GetFieldDeseria
 }
 // GetValue gets the value property value. The value property
 func (m *UnsupportedDeviceConfigurationDetailCollectionResponse) GetValue()([]UnsupportedDeviceConfigurationDetailable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnsupportedDeviceConfigurationDetailable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UnsupportedDeviceConfigurationDetailCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UnsupportedDeviceConfigurationDetailCollectionResponse) Serialize(write
 }
 // SetValue sets the value property value. The value property
 func (m *UnsupportedDeviceConfigurationDetailCollectionResponse) SetValue(value []UnsupportedDeviceConfigurationDetailable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UnsupportedDeviceConfigurationDetailCollectionResponseable 
+type UnsupportedDeviceConfigurationDetailCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UnsupportedDeviceConfigurationDetailable)
+    SetValue(value []UnsupportedDeviceConfigurationDetailable)()
 }

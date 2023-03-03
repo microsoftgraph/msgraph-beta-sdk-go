@@ -38,8 +38,8 @@ func NewClientConfigurationsItemPolicyPayloadRequestBuilderInternal(pathParamete
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewClientConfigurationsItemPolicyPayloadRequestBuilder instantiates a new PolicyPayloadRequestBuilder and sets the default values.

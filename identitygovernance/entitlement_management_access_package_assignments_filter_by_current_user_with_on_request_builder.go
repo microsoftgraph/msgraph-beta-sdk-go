@@ -45,7 +45,7 @@ type EntitlementManagementAccessPackageAssignmentsFilterByCurrentUserWithOnReque
 func NewEntitlementManagementAccessPackageAssignmentsFilterByCurrentUserWithOnRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, on *string)(*EntitlementManagementAccessPackageAssignmentsFilterByCurrentUserWithOnRequestBuilder) {
     m := &EntitlementManagementAccessPackageAssignmentsFilterByCurrentUserWithOnRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignments/microsoft.graph.filterByCurrentUser(on='{on}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
+    m.urlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignments/filterByCurrentUser(on='{on}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -53,8 +53,8 @@ func NewEntitlementManagementAccessPackageAssignmentsFilterByCurrentUserWithOnRe
     if on != nil {
         urlTplParams["on"] = *on
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementAccessPackageAssignmentsFilterByCurrentUserWithOnRequestBuilder instantiates a new FilterByCurrentUserWithOnRequestBuilder and sets the default values.

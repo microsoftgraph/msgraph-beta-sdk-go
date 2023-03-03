@@ -7,10 +7,6 @@ import (
 // AndroidForWorkAppConfigurationSchema schema describing an Android for Work application's custom configurations.
 type AndroidForWorkAppConfigurationSchema struct {
     Entity
-    // UTF8 encoded byte array containing example JSON string conforming to this schema that demonstrates how to set the configuration for this app
-    exampleJson []byte
-    // Collection of items each representing a named configuration option in the schema
-    schemaItems []AndroidForWorkAppConfigurationSchemaItemable
 }
 // NewAndroidForWorkAppConfigurationSchema instantiates a new androidForWorkAppConfigurationSchema and sets the default values.
 func NewAndroidForWorkAppConfigurationSchema()(*AndroidForWorkAppConfigurationSchema) {
@@ -25,7 +21,14 @@ func CreateAndroidForWorkAppConfigurationSchemaFromDiscriminatorValue(parseNode 
 }
 // GetExampleJson gets the exampleJson property value. UTF8 encoded byte array containing example JSON string conforming to this schema that demonstrates how to set the configuration for this app
 func (m *AndroidForWorkAppConfigurationSchema) GetExampleJson()([]byte) {
-    return m.exampleJson
+    val, err := m.GetBackingStore().Get("exampleJson")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidForWorkAppConfigurationSchema) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -58,7 +61,14 @@ func (m *AndroidForWorkAppConfigurationSchema) GetFieldDeserializers()(map[strin
 }
 // GetSchemaItems gets the schemaItems property value. Collection of items each representing a named configuration option in the schema
 func (m *AndroidForWorkAppConfigurationSchema) GetSchemaItems()([]AndroidForWorkAppConfigurationSchemaItemable) {
-    return m.schemaItems
+    val, err := m.GetBackingStore().Get("schemaItems")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidForWorkAppConfigurationSchemaItemable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidForWorkAppConfigurationSchema) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -86,9 +96,24 @@ func (m *AndroidForWorkAppConfigurationSchema) Serialize(writer i878a80d2330e89d
 }
 // SetExampleJson sets the exampleJson property value. UTF8 encoded byte array containing example JSON string conforming to this schema that demonstrates how to set the configuration for this app
 func (m *AndroidForWorkAppConfigurationSchema) SetExampleJson(value []byte)() {
-    m.exampleJson = value
+    err := m.GetBackingStore().Set("exampleJson", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSchemaItems sets the schemaItems property value. Collection of items each representing a named configuration option in the schema
 func (m *AndroidForWorkAppConfigurationSchema) SetSchemaItems(value []AndroidForWorkAppConfigurationSchemaItemable)() {
-    m.schemaItems = value
+    err := m.GetBackingStore().Set("schemaItems", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidForWorkAppConfigurationSchemaable 
+type AndroidForWorkAppConfigurationSchemaable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetExampleJson()([]byte)
+    GetSchemaItems()([]AndroidForWorkAppConfigurationSchemaItemable)
+    SetExampleJson(value []byte)()
+    SetSchemaItems(value []AndroidForWorkAppConfigurationSchemaItemable)()
 }

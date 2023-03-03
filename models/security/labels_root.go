@@ -8,8 +8,6 @@ import (
 // LabelsRoot 
 type LabelsRoot struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The retentionLabels property
-    retentionLabels []RetentionLabelable
 }
 // NewLabelsRoot instantiates a new labelsRoot and sets the default values.
 func NewLabelsRoot()(*LabelsRoot) {
@@ -43,7 +41,14 @@ func (m *LabelsRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetRetentionLabels gets the retentionLabels property value. The retentionLabels property
 func (m *LabelsRoot) GetRetentionLabels()([]RetentionLabelable) {
-    return m.retentionLabels
+    val, err := m.GetBackingStore().Get("retentionLabels")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]RetentionLabelable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *LabelsRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *LabelsRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetRetentionLabels sets the retentionLabels property value. The retentionLabels property
 func (m *LabelsRoot) SetRetentionLabels(value []RetentionLabelable)() {
-    m.retentionLabels = value
+    err := m.GetBackingStore().Set("retentionLabels", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// LabelsRootable 
+type LabelsRootable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetRetentionLabels()([]RetentionLabelable)
+    SetRetentionLabels(value []RetentionLabelable)()
 }

@@ -55,8 +55,8 @@ func NewDeviceManagementResourceNamespacesItemResourceActionsUnifiedRbacResource
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder instantiates a new UnifiedRbacResourceActionItemRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *DeviceManagementResourceNamespacesItemResourceActionsUnifiedRbacResourc
 }
 // ResourceScope provides operations to manage the resourceScope property of the microsoft.graph.unifiedRbacResourceAction entity.
 func (m *DeviceManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder) ResourceScope()(*DeviceManagementResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilder) {
-    return NewDeviceManagementResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceManagementResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property resourceActions for roleManagement
 func (m *DeviceManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DeviceManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +158,10 @@ func (m *DeviceManagementResourceNamespacesItemResourceActionsUnifiedRbacResourc
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

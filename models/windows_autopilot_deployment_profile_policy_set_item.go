@@ -13,8 +13,8 @@ func NewWindowsAutopilotDeploymentProfilePolicySetItem()(*WindowsAutopilotDeploy
     m := &WindowsAutopilotDeploymentProfilePolicySetItem{
         PolicySetItem: *NewPolicySetItem(),
     }
-    odataTypeValue := "#microsoft.graph.windowsAutopilotDeploymentProfilePolicySetItem";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsAutopilotDeploymentProfilePolicySetItem"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsAutopilotDeploymentProfilePolicySetItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,4 +33,9 @@ func (m *WindowsAutopilotDeploymentProfilePolicySetItem) Serialize(writer i878a8
         return err
     }
     return nil
+}
+// WindowsAutopilotDeploymentProfilePolicySetItemable 
+type WindowsAutopilotDeploymentProfilePolicySetItemable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    PolicySetItemable
 }

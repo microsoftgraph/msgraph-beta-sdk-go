@@ -55,8 +55,8 @@ func NewItemSynchronizationJobsItemSchemaRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSynchronizationJobsItemSchemaRequestBuilder instantiates a new SchemaRequestBuilder and sets the default values.
@@ -83,7 +83,7 @@ func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) Delete(ctx context.Con
 }
 // Directories provides operations to manage the directories property of the microsoft.graph.synchronizationSchema entity.
 func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) Directories()(*ItemSynchronizationJobsItemSchemaDirectoriesRequestBuilder) {
-    return NewItemSynchronizationJobsItemSchemaDirectoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSynchronizationJobsItemSchemaDirectoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DirectoriesById provides operations to manage the directories property of the microsoft.graph.synchronizationSchema entity.
 func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) DirectoriesById(id string)(*ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilder) {
@@ -94,15 +94,15 @@ func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) DirectoriesById(id str
     if id != "" {
         urlTplParams["directoryDefinition%2Did"] = id
     }
-    return NewItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // FilterOperators provides operations to call the filterOperators method.
 func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) FilterOperators()(*ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder) {
-    return NewItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Functions provides operations to call the functions method.
 func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) Functions()(*ItemSynchronizationJobsItemSchemaFunctionsRequestBuilder) {
-    return NewItemSynchronizationJobsItemSchemaFunctionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSynchronizationJobsItemSchemaFunctionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve the schema for a given synchronization job or template.
 // [Find more info here]
@@ -128,7 +128,7 @@ func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) Get(ctx context.Contex
 }
 // ParseExpression provides operations to call the parseExpression method.
 func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) ParseExpression()(*ItemSynchronizationJobsItemSchemaParseExpressionRequestBuilder) {
-    return NewItemSynchronizationJobsItemSchemaParseExpressionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSynchronizationJobsItemSchemaParseExpressionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the synchronization schema for a given job or template. This method fully replaces the current schema with the one provided in the request. To update the schema of a template, make the call on the application object. You must be the owner of the application.
 // [Find more info here]
@@ -187,7 +187,10 @@ func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) ToPatchRequestInformat
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

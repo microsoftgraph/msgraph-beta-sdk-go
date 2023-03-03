@@ -48,7 +48,7 @@ type ItemMobileAppTroubleshootingEventsMobileAppTroubleshootingEventItemRequestB
 }
 // AppLogCollectionRequests provides operations to manage the appLogCollectionRequests property of the microsoft.graph.mobileAppTroubleshootingEvent entity.
 func (m *ItemMobileAppTroubleshootingEventsMobileAppTroubleshootingEventItemRequestBuilder) AppLogCollectionRequests()(*ItemMobileAppTroubleshootingEventsItemAppLogCollectionRequestsRequestBuilder) {
-    return NewItemMobileAppTroubleshootingEventsItemAppLogCollectionRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemMobileAppTroubleshootingEventsItemAppLogCollectionRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AppLogCollectionRequestsById provides operations to manage the appLogCollectionRequests property of the microsoft.graph.mobileAppTroubleshootingEvent entity.
 func (m *ItemMobileAppTroubleshootingEventsMobileAppTroubleshootingEventItemRequestBuilder) AppLogCollectionRequestsById(id string)(*ItemMobileAppTroubleshootingEventsItemAppLogCollectionRequestsAppLogCollectionRequestItemRequestBuilder) {
@@ -59,7 +59,7 @@ func (m *ItemMobileAppTroubleshootingEventsMobileAppTroubleshootingEventItemRequ
     if id != "" {
         urlTplParams["appLogCollectionRequest%2Did"] = id
     }
-    return NewItemMobileAppTroubleshootingEventsItemAppLogCollectionRequestsAppLogCollectionRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemMobileAppTroubleshootingEventsItemAppLogCollectionRequestsAppLogCollectionRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewItemMobileAppTroubleshootingEventsMobileAppTroubleshootingEventItemRequestBuilderInternal instantiates a new MobileAppTroubleshootingEventItemRequestBuilder and sets the default values.
 func NewItemMobileAppTroubleshootingEventsMobileAppTroubleshootingEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMobileAppTroubleshootingEventsMobileAppTroubleshootingEventItemRequestBuilder) {
@@ -70,8 +70,8 @@ func NewItemMobileAppTroubleshootingEventsMobileAppTroubleshootingEventItemReque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemMobileAppTroubleshootingEventsMobileAppTroubleshootingEventItemRequestBuilder instantiates a new MobileAppTroubleshootingEventItemRequestBuilder and sets the default values.
@@ -169,7 +169,10 @@ func (m *ItemMobileAppTroubleshootingEventsMobileAppTroubleshootingEventItemRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

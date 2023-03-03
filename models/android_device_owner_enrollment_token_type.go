@@ -7,7 +7,7 @@ type AndroidDeviceOwnerEnrollmentTokenType int
 
 const (
     // Default token type.
-    DEFAULT_ESCAPED_ANDROIDDEVICEOWNERENROLLMENTTOKENTYPE AndroidDeviceOwnerEnrollmentTokenType = iota
+    DEFAULTESCAPED_ANDROIDDEVICEOWNERENROLLMENTTOKENTYPE AndroidDeviceOwnerEnrollmentTokenType = iota
     // Token type for Azure AD shared dedicated device enrollment. It applies to CorporateOwnedDedicatedDevice enrollment mode only.
     CORPORATEOWNEDDEDICATEDDEVICEWITHAZUREADSHAREDMODE_ANDROIDDEVICEOWNERENROLLMENTTOKENTYPE
 )
@@ -16,10 +16,10 @@ func (i AndroidDeviceOwnerEnrollmentTokenType) String() string {
     return []string{"default", "corporateOwnedDedicatedDeviceWithAzureADSharedMode"}[i]
 }
 func ParseAndroidDeviceOwnerEnrollmentTokenType(v string) (any, error) {
-    result := DEFAULT_ESCAPED_ANDROIDDEVICEOWNERENROLLMENTTOKENTYPE
+    result := DEFAULTESCAPED_ANDROIDDEVICEOWNERENROLLMENTTOKENTYPE
     switch v {
         case "default":
-            result = DEFAULT_ESCAPED_ANDROIDDEVICEOWNERENROLLMENTTOKENTYPE
+            result = DEFAULTESCAPED_ANDROIDDEVICEOWNERENROLLMENTTOKENTYPE
         case "corporateOwnedDedicatedDeviceWithAzureADSharedMode":
             result = CORPORATEOWNEDDEDICATEDDEVICEWITHAZUREADSHAREDMODE_ANDROIDDEVICEOWNERENROLLMENTTOKENTYPE
         default:

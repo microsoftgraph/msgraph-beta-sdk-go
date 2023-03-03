@@ -7,14 +7,6 @@ import (
 // UnsupportedGroupPolicyExtension unsupported Group Policy Extension.
 type UnsupportedGroupPolicyExtension struct {
     Entity
-    // ExtensionType of the unsupported extension.
-    extensionType *string
-    // Namespace Url of the unsupported extension.
-    namespaceUrl *string
-    // Node name of the unsupported extension.
-    nodeName *string
-    // Scope of the group policy setting.
-    settingScope *GroupPolicySettingScope
 }
 // NewUnsupportedGroupPolicyExtension instantiates a new unsupportedGroupPolicyExtension and sets the default values.
 func NewUnsupportedGroupPolicyExtension()(*UnsupportedGroupPolicyExtension) {
@@ -29,7 +21,14 @@ func CreateUnsupportedGroupPolicyExtensionFromDiscriminatorValue(parseNode i878a
 }
 // GetExtensionType gets the extensionType property value. ExtensionType of the unsupported extension.
 func (m *UnsupportedGroupPolicyExtension) GetExtensionType()(*string) {
-    return m.extensionType
+    val, err := m.GetBackingStore().Get("extensionType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnsupportedGroupPolicyExtension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -78,15 +77,36 @@ func (m *UnsupportedGroupPolicyExtension) GetFieldDeserializers()(map[string]fun
 }
 // GetNamespaceUrl gets the namespaceUrl property value. Namespace Url of the unsupported extension.
 func (m *UnsupportedGroupPolicyExtension) GetNamespaceUrl()(*string) {
-    return m.namespaceUrl
+    val, err := m.GetBackingStore().Get("namespaceUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetNodeName gets the nodeName property value. Node name of the unsupported extension.
 func (m *UnsupportedGroupPolicyExtension) GetNodeName()(*string) {
-    return m.nodeName
+    val, err := m.GetBackingStore().Get("nodeName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSettingScope gets the settingScope property value. Scope of the group policy setting.
 func (m *UnsupportedGroupPolicyExtension) GetSettingScope()(*GroupPolicySettingScope) {
-    return m.settingScope
+    val, err := m.GetBackingStore().Get("settingScope")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*GroupPolicySettingScope)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UnsupportedGroupPolicyExtension) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -123,17 +143,42 @@ func (m *UnsupportedGroupPolicyExtension) Serialize(writer i878a80d2330e89d26896
 }
 // SetExtensionType sets the extensionType property value. ExtensionType of the unsupported extension.
 func (m *UnsupportedGroupPolicyExtension) SetExtensionType(value *string)() {
-    m.extensionType = value
+    err := m.GetBackingStore().Set("extensionType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNamespaceUrl sets the namespaceUrl property value. Namespace Url of the unsupported extension.
 func (m *UnsupportedGroupPolicyExtension) SetNamespaceUrl(value *string)() {
-    m.namespaceUrl = value
+    err := m.GetBackingStore().Set("namespaceUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNodeName sets the nodeName property value. Node name of the unsupported extension.
 func (m *UnsupportedGroupPolicyExtension) SetNodeName(value *string)() {
-    m.nodeName = value
+    err := m.GetBackingStore().Set("nodeName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingScope sets the settingScope property value. Scope of the group policy setting.
 func (m *UnsupportedGroupPolicyExtension) SetSettingScope(value *GroupPolicySettingScope)() {
-    m.settingScope = value
+    err := m.GetBackingStore().Set("settingScope", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UnsupportedGroupPolicyExtensionable 
+type UnsupportedGroupPolicyExtensionable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetExtensionType()(*string)
+    GetNamespaceUrl()(*string)
+    GetNodeName()(*string)
+    GetSettingScope()(*GroupPolicySettingScope)
+    SetExtensionType(value *string)()
+    SetNamespaceUrl(value *string)()
+    SetNodeName(value *string)()
+    SetSettingScope(value *GroupPolicySettingScope)()
 }

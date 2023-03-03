@@ -26,7 +26,7 @@ type GetTeamsTeamActivityCountsWithPeriodRequestBuilderGetRequestConfiguration s
 func NewGetTeamsTeamActivityCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, period *string)(*GetTeamsTeamActivityCountsWithPeriodRequestBuilder) {
     m := &GetTeamsTeamActivityCountsWithPeriodRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/reports/microsoft.graph.getTeamsTeamActivityCounts(period='{period}')";
+    m.urlTemplate = "{+baseurl}/reports/getTeamsTeamActivityCounts(period='{period}')";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -34,8 +34,8 @@ func NewGetTeamsTeamActivityCountsWithPeriodRequestBuilderInternal(pathParameter
     if period != nil {
         urlTplParams["period"] = *period
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGetTeamsTeamActivityCountsWithPeriodRequestBuilder instantiates a new GetTeamsTeamActivityCountsWithPeriodRequestBuilder and sets the default values.

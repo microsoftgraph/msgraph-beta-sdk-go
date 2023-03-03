@@ -23,7 +23,7 @@ type VirtualEndpointSharedUseServicePlansCloudPcSharedUseServicePlanItemRequestB
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEndpointSharedUseServicePlansCloudPcSharedUseServicePlanItemRequestBuilderGetQueryParameters get sharedUseServicePlans from deviceManagement
+// VirtualEndpointSharedUseServicePlansCloudPcSharedUseServicePlanItemRequestBuilderGetQueryParameters cloud PC shared-use service plans.
 type VirtualEndpointSharedUseServicePlansCloudPcSharedUseServicePlanItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -55,8 +55,8 @@ func NewVirtualEndpointSharedUseServicePlansCloudPcSharedUseServicePlanItemReque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewVirtualEndpointSharedUseServicePlansCloudPcSharedUseServicePlanItemRequestBuilder instantiates a new CloudPcSharedUseServicePlanItemRequestBuilder and sets the default values.
@@ -81,7 +81,7 @@ func (m *VirtualEndpointSharedUseServicePlansCloudPcSharedUseServicePlanItemRequ
     }
     return nil
 }
-// Get get sharedUseServicePlans from deviceManagement
+// Get cloud PC shared-use service plans.
 func (m *VirtualEndpointSharedUseServicePlansCloudPcSharedUseServicePlanItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointSharedUseServicePlansCloudPcSharedUseServicePlanItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSharedUseServicePlanable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -131,7 +131,7 @@ func (m *VirtualEndpointSharedUseServicePlansCloudPcSharedUseServicePlanItemRequ
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get sharedUseServicePlans from deviceManagement
+// ToGetRequestInformation cloud PC shared-use service plans.
 func (m *VirtualEndpointSharedUseServicePlansCloudPcSharedUseServicePlanItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointSharedUseServicePlansCloudPcSharedUseServicePlanItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -154,7 +154,10 @@ func (m *VirtualEndpointSharedUseServicePlansCloudPcSharedUseServicePlanItemRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

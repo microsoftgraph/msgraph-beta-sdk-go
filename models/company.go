@@ -7,86 +7,8 @@ import (
 // Company 
 type Company struct {
     Entity
-    // The accounts property
-    accounts []Accountable
-    // The agedAccountsPayable property
-    agedAccountsPayable []AgedAccountsPayableable
-    // The agedAccountsReceivable property
-    agedAccountsReceivable []AgedAccountsReceivableable
-    // The businessProfileId property
-    businessProfileId *string
-    // The companyInformation property
-    companyInformation []CompanyInformationable
-    // The countriesRegions property
-    countriesRegions []CountryRegionable
-    // The currencies property
-    currencies []Currencyable
-    // The customerPaymentJournals property
-    customerPaymentJournals []CustomerPaymentJournalable
-    // The customerPayments property
-    customerPayments []CustomerPaymentable
-    // The customers property
-    customers []Customerable
-    // The dimensions property
-    dimensions []Dimensionable
-    // The dimensionValues property
-    dimensionValues []DimensionValueable
-    // The displayName property
-    displayName *string
-    // The employees property
-    employees []Employeeable
-    // The generalLedgerEntries property
-    generalLedgerEntries []GeneralLedgerEntryable
-    // The itemCategories property
-    itemCategories []ItemCategoryable
-    // The items property
-    items []Itemable
-    // The journalLines property
-    journalLines []JournalLineable
-    // The journals property
-    journals []Journalable
-    // The name property
-    name *string
-    // The paymentMethods property
-    paymentMethods []PaymentMethodable
-    // The paymentTerms property
-    paymentTerms []PaymentTermable
-    // The picture property
-    picture []Pictureable
-    // The purchaseInvoiceLines property
-    purchaseInvoiceLines []PurchaseInvoiceLineable
-    // The purchaseInvoices property
-    purchaseInvoices []PurchaseInvoiceable
-    // The salesCreditMemoLines property
-    salesCreditMemoLines []SalesCreditMemoLineable
-    // The salesCreditMemos property
-    salesCreditMemos []SalesCreditMemoable
-    // The salesInvoiceLines property
-    salesInvoiceLines []SalesInvoiceLineable
-    // The salesInvoices property
-    salesInvoices []SalesInvoiceable
-    // The salesOrderLines property
-    salesOrderLines []SalesOrderLineable
-    // The salesOrders property
-    salesOrders []SalesOrderable
-    // The salesQuoteLines property
-    salesQuoteLines []SalesQuoteLineable
-    // The salesQuotes property
-    salesQuotes []SalesQuoteable
-    // The shipmentMethods property
-    shipmentMethods []ShipmentMethodable
-    // The systemVersion property
-    systemVersion *string
-    // The taxAreas property
-    taxAreas []TaxAreaable
-    // The taxGroups property
-    taxGroups []TaxGroupable
-    // The unitsOfMeasure property
-    unitsOfMeasure []UnitOfMeasureable
-    // The vendors property
-    vendors []Vendor_escapedable
 }
-// NewCompany instantiates a new company and sets the default values.
+// NewCompany instantiates a new Company and sets the default values.
 func NewCompany()(*Company) {
     m := &Company{
         Entity: *NewEntity(),
@@ -99,59 +21,157 @@ func CreateCompanyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
 }
 // GetAccounts gets the accounts property value. The accounts property
 func (m *Company) GetAccounts()([]Accountable) {
-    return m.accounts
+    val, err := m.GetBackingStore().Get("accounts")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Accountable)
+    }
+    return nil
 }
 // GetAgedAccountsPayable gets the agedAccountsPayable property value. The agedAccountsPayable property
 func (m *Company) GetAgedAccountsPayable()([]AgedAccountsPayableable) {
-    return m.agedAccountsPayable
+    val, err := m.GetBackingStore().Get("agedAccountsPayable")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AgedAccountsPayableable)
+    }
+    return nil
 }
 // GetAgedAccountsReceivable gets the agedAccountsReceivable property value. The agedAccountsReceivable property
 func (m *Company) GetAgedAccountsReceivable()([]AgedAccountsReceivableable) {
-    return m.agedAccountsReceivable
+    val, err := m.GetBackingStore().Get("agedAccountsReceivable")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AgedAccountsReceivableable)
+    }
+    return nil
 }
 // GetBusinessProfileId gets the businessProfileId property value. The businessProfileId property
 func (m *Company) GetBusinessProfileId()(*string) {
-    return m.businessProfileId
+    val, err := m.GetBackingStore().Get("businessProfileId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCompanyInformation gets the companyInformation property value. The companyInformation property
 func (m *Company) GetCompanyInformation()([]CompanyInformationable) {
-    return m.companyInformation
+    val, err := m.GetBackingStore().Get("companyInformation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CompanyInformationable)
+    }
+    return nil
 }
 // GetCountriesRegions gets the countriesRegions property value. The countriesRegions property
 func (m *Company) GetCountriesRegions()([]CountryRegionable) {
-    return m.countriesRegions
+    val, err := m.GetBackingStore().Get("countriesRegions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CountryRegionable)
+    }
+    return nil
 }
 // GetCurrencies gets the currencies property value. The currencies property
 func (m *Company) GetCurrencies()([]Currencyable) {
-    return m.currencies
+    val, err := m.GetBackingStore().Get("currencies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Currencyable)
+    }
+    return nil
 }
 // GetCustomerPaymentJournals gets the customerPaymentJournals property value. The customerPaymentJournals property
 func (m *Company) GetCustomerPaymentJournals()([]CustomerPaymentJournalable) {
-    return m.customerPaymentJournals
+    val, err := m.GetBackingStore().Get("customerPaymentJournals")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CustomerPaymentJournalable)
+    }
+    return nil
 }
 // GetCustomerPayments gets the customerPayments property value. The customerPayments property
 func (m *Company) GetCustomerPayments()([]CustomerPaymentable) {
-    return m.customerPayments
+    val, err := m.GetBackingStore().Get("customerPayments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CustomerPaymentable)
+    }
+    return nil
 }
 // GetCustomers gets the customers property value. The customers property
 func (m *Company) GetCustomers()([]Customerable) {
-    return m.customers
+    val, err := m.GetBackingStore().Get("customers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Customerable)
+    }
+    return nil
 }
 // GetDimensions gets the dimensions property value. The dimensions property
 func (m *Company) GetDimensions()([]Dimensionable) {
-    return m.dimensions
+    val, err := m.GetBackingStore().Get("dimensions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Dimensionable)
+    }
+    return nil
 }
 // GetDimensionValues gets the dimensionValues property value. The dimensionValues property
 func (m *Company) GetDimensionValues()([]DimensionValueable) {
-    return m.dimensionValues
+    val, err := m.GetBackingStore().Get("dimensionValues")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DimensionValueable)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *Company) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetEmployees gets the employees property value. The employees property
 func (m *Company) GetEmployees()([]Employeeable) {
-    return m.employees
+    val, err := m.GetBackingStore().Get("employees")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Employeeable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -673,14 +693,14 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         return nil
     }
     res["vendors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateVendor_escapedFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(CreateVendorEscapedFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Vendor_escapedable, len(val))
+            res := make([]VendorEscapedable, len(val))
             for i, v := range val {
-                res[i] = v.(Vendor_escapedable)
+                res[i] = v.(VendorEscapedable)
             }
             m.SetVendors(res)
         }
@@ -690,103 +710,278 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
 }
 // GetGeneralLedgerEntries gets the generalLedgerEntries property value. The generalLedgerEntries property
 func (m *Company) GetGeneralLedgerEntries()([]GeneralLedgerEntryable) {
-    return m.generalLedgerEntries
+    val, err := m.GetBackingStore().Get("generalLedgerEntries")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GeneralLedgerEntryable)
+    }
+    return nil
 }
 // GetItemCategories gets the itemCategories property value. The itemCategories property
 func (m *Company) GetItemCategories()([]ItemCategoryable) {
-    return m.itemCategories
+    val, err := m.GetBackingStore().Get("itemCategories")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ItemCategoryable)
+    }
+    return nil
 }
 // GetItems gets the items property value. The items property
 func (m *Company) GetItems()([]Itemable) {
-    return m.items
+    val, err := m.GetBackingStore().Get("items")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Itemable)
+    }
+    return nil
 }
 // GetJournalLines gets the journalLines property value. The journalLines property
 func (m *Company) GetJournalLines()([]JournalLineable) {
-    return m.journalLines
+    val, err := m.GetBackingStore().Get("journalLines")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]JournalLineable)
+    }
+    return nil
 }
 // GetJournals gets the journals property value. The journals property
 func (m *Company) GetJournals()([]Journalable) {
-    return m.journals
+    val, err := m.GetBackingStore().Get("journals")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Journalable)
+    }
+    return nil
 }
 // GetName gets the name property value. The name property
 func (m *Company) GetName()(*string) {
-    return m.name
+    val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPaymentMethods gets the paymentMethods property value. The paymentMethods property
 func (m *Company) GetPaymentMethods()([]PaymentMethodable) {
-    return m.paymentMethods
+    val, err := m.GetBackingStore().Get("paymentMethods")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PaymentMethodable)
+    }
+    return nil
 }
 // GetPaymentTerms gets the paymentTerms property value. The paymentTerms property
 func (m *Company) GetPaymentTerms()([]PaymentTermable) {
-    return m.paymentTerms
+    val, err := m.GetBackingStore().Get("paymentTerms")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PaymentTermable)
+    }
+    return nil
 }
 // GetPicture gets the picture property value. The picture property
 func (m *Company) GetPicture()([]Pictureable) {
-    return m.picture
+    val, err := m.GetBackingStore().Get("picture")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Pictureable)
+    }
+    return nil
 }
 // GetPurchaseInvoiceLines gets the purchaseInvoiceLines property value. The purchaseInvoiceLines property
 func (m *Company) GetPurchaseInvoiceLines()([]PurchaseInvoiceLineable) {
-    return m.purchaseInvoiceLines
+    val, err := m.GetBackingStore().Get("purchaseInvoiceLines")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PurchaseInvoiceLineable)
+    }
+    return nil
 }
 // GetPurchaseInvoices gets the purchaseInvoices property value. The purchaseInvoices property
 func (m *Company) GetPurchaseInvoices()([]PurchaseInvoiceable) {
-    return m.purchaseInvoices
+    val, err := m.GetBackingStore().Get("purchaseInvoices")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PurchaseInvoiceable)
+    }
+    return nil
 }
 // GetSalesCreditMemoLines gets the salesCreditMemoLines property value. The salesCreditMemoLines property
 func (m *Company) GetSalesCreditMemoLines()([]SalesCreditMemoLineable) {
-    return m.salesCreditMemoLines
+    val, err := m.GetBackingStore().Get("salesCreditMemoLines")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SalesCreditMemoLineable)
+    }
+    return nil
 }
 // GetSalesCreditMemos gets the salesCreditMemos property value. The salesCreditMemos property
 func (m *Company) GetSalesCreditMemos()([]SalesCreditMemoable) {
-    return m.salesCreditMemos
+    val, err := m.GetBackingStore().Get("salesCreditMemos")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SalesCreditMemoable)
+    }
+    return nil
 }
 // GetSalesInvoiceLines gets the salesInvoiceLines property value. The salesInvoiceLines property
 func (m *Company) GetSalesInvoiceLines()([]SalesInvoiceLineable) {
-    return m.salesInvoiceLines
+    val, err := m.GetBackingStore().Get("salesInvoiceLines")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SalesInvoiceLineable)
+    }
+    return nil
 }
 // GetSalesInvoices gets the salesInvoices property value. The salesInvoices property
 func (m *Company) GetSalesInvoices()([]SalesInvoiceable) {
-    return m.salesInvoices
+    val, err := m.GetBackingStore().Get("salesInvoices")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SalesInvoiceable)
+    }
+    return nil
 }
 // GetSalesOrderLines gets the salesOrderLines property value. The salesOrderLines property
 func (m *Company) GetSalesOrderLines()([]SalesOrderLineable) {
-    return m.salesOrderLines
+    val, err := m.GetBackingStore().Get("salesOrderLines")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SalesOrderLineable)
+    }
+    return nil
 }
 // GetSalesOrders gets the salesOrders property value. The salesOrders property
 func (m *Company) GetSalesOrders()([]SalesOrderable) {
-    return m.salesOrders
+    val, err := m.GetBackingStore().Get("salesOrders")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SalesOrderable)
+    }
+    return nil
 }
 // GetSalesQuoteLines gets the salesQuoteLines property value. The salesQuoteLines property
 func (m *Company) GetSalesQuoteLines()([]SalesQuoteLineable) {
-    return m.salesQuoteLines
+    val, err := m.GetBackingStore().Get("salesQuoteLines")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SalesQuoteLineable)
+    }
+    return nil
 }
 // GetSalesQuotes gets the salesQuotes property value. The salesQuotes property
 func (m *Company) GetSalesQuotes()([]SalesQuoteable) {
-    return m.salesQuotes
+    val, err := m.GetBackingStore().Get("salesQuotes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SalesQuoteable)
+    }
+    return nil
 }
 // GetShipmentMethods gets the shipmentMethods property value. The shipmentMethods property
 func (m *Company) GetShipmentMethods()([]ShipmentMethodable) {
-    return m.shipmentMethods
+    val, err := m.GetBackingStore().Get("shipmentMethods")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ShipmentMethodable)
+    }
+    return nil
 }
 // GetSystemVersion gets the systemVersion property value. The systemVersion property
 func (m *Company) GetSystemVersion()(*string) {
-    return m.systemVersion
+    val, err := m.GetBackingStore().Get("systemVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTaxAreas gets the taxAreas property value. The taxAreas property
 func (m *Company) GetTaxAreas()([]TaxAreaable) {
-    return m.taxAreas
+    val, err := m.GetBackingStore().Get("taxAreas")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TaxAreaable)
+    }
+    return nil
 }
 // GetTaxGroups gets the taxGroups property value. The taxGroups property
 func (m *Company) GetTaxGroups()([]TaxGroupable) {
-    return m.taxGroups
+    val, err := m.GetBackingStore().Get("taxGroups")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TaxGroupable)
+    }
+    return nil
 }
 // GetUnitsOfMeasure gets the unitsOfMeasure property value. The unitsOfMeasure property
 func (m *Company) GetUnitsOfMeasure()([]UnitOfMeasureable) {
-    return m.unitsOfMeasure
+    val, err := m.GetBackingStore().Get("unitsOfMeasure")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnitOfMeasureable)
+    }
+    return nil
 }
 // GetVendors gets the vendors property value. The vendors property
-func (m *Company) GetVendors()([]Vendor_escapedable) {
-    return m.vendors
+func (m *Company) GetVendors()([]VendorEscapedable) {
+    val, err := m.GetBackingStore().Get("vendors")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]VendorEscapedable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -1172,157 +1367,357 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 }
 // SetAccounts sets the accounts property value. The accounts property
 func (m *Company) SetAccounts(value []Accountable)() {
-    m.accounts = value
+    err := m.GetBackingStore().Set("accounts", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAgedAccountsPayable sets the agedAccountsPayable property value. The agedAccountsPayable property
 func (m *Company) SetAgedAccountsPayable(value []AgedAccountsPayableable)() {
-    m.agedAccountsPayable = value
+    err := m.GetBackingStore().Set("agedAccountsPayable", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAgedAccountsReceivable sets the agedAccountsReceivable property value. The agedAccountsReceivable property
 func (m *Company) SetAgedAccountsReceivable(value []AgedAccountsReceivableable)() {
-    m.agedAccountsReceivable = value
+    err := m.GetBackingStore().Set("agedAccountsReceivable", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBusinessProfileId sets the businessProfileId property value. The businessProfileId property
 func (m *Company) SetBusinessProfileId(value *string)() {
-    m.businessProfileId = value
+    err := m.GetBackingStore().Set("businessProfileId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCompanyInformation sets the companyInformation property value. The companyInformation property
 func (m *Company) SetCompanyInformation(value []CompanyInformationable)() {
-    m.companyInformation = value
+    err := m.GetBackingStore().Set("companyInformation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCountriesRegions sets the countriesRegions property value. The countriesRegions property
 func (m *Company) SetCountriesRegions(value []CountryRegionable)() {
-    m.countriesRegions = value
+    err := m.GetBackingStore().Set("countriesRegions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCurrencies sets the currencies property value. The currencies property
 func (m *Company) SetCurrencies(value []Currencyable)() {
-    m.currencies = value
+    err := m.GetBackingStore().Set("currencies", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomerPaymentJournals sets the customerPaymentJournals property value. The customerPaymentJournals property
 func (m *Company) SetCustomerPaymentJournals(value []CustomerPaymentJournalable)() {
-    m.customerPaymentJournals = value
+    err := m.GetBackingStore().Set("customerPaymentJournals", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomerPayments sets the customerPayments property value. The customerPayments property
 func (m *Company) SetCustomerPayments(value []CustomerPaymentable)() {
-    m.customerPayments = value
+    err := m.GetBackingStore().Set("customerPayments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomers sets the customers property value. The customers property
 func (m *Company) SetCustomers(value []Customerable)() {
-    m.customers = value
+    err := m.GetBackingStore().Set("customers", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDimensions sets the dimensions property value. The dimensions property
 func (m *Company) SetDimensions(value []Dimensionable)() {
-    m.dimensions = value
+    err := m.GetBackingStore().Set("dimensions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDimensionValues sets the dimensionValues property value. The dimensionValues property
 func (m *Company) SetDimensionValues(value []DimensionValueable)() {
-    m.dimensionValues = value
+    err := m.GetBackingStore().Set("dimensionValues", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *Company) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEmployees sets the employees property value. The employees property
 func (m *Company) SetEmployees(value []Employeeable)() {
-    m.employees = value
+    err := m.GetBackingStore().Set("employees", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGeneralLedgerEntries sets the generalLedgerEntries property value. The generalLedgerEntries property
 func (m *Company) SetGeneralLedgerEntries(value []GeneralLedgerEntryable)() {
-    m.generalLedgerEntries = value
+    err := m.GetBackingStore().Set("generalLedgerEntries", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetItemCategories sets the itemCategories property value. The itemCategories property
 func (m *Company) SetItemCategories(value []ItemCategoryable)() {
-    m.itemCategories = value
+    err := m.GetBackingStore().Set("itemCategories", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetItems sets the items property value. The items property
 func (m *Company) SetItems(value []Itemable)() {
-    m.items = value
+    err := m.GetBackingStore().Set("items", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetJournalLines sets the journalLines property value. The journalLines property
 func (m *Company) SetJournalLines(value []JournalLineable)() {
-    m.journalLines = value
+    err := m.GetBackingStore().Set("journalLines", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetJournals sets the journals property value. The journals property
 func (m *Company) SetJournals(value []Journalable)() {
-    m.journals = value
+    err := m.GetBackingStore().Set("journals", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetName sets the name property value. The name property
 func (m *Company) SetName(value *string)() {
-    m.name = value
+    err := m.GetBackingStore().Set("name", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPaymentMethods sets the paymentMethods property value. The paymentMethods property
 func (m *Company) SetPaymentMethods(value []PaymentMethodable)() {
-    m.paymentMethods = value
+    err := m.GetBackingStore().Set("paymentMethods", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPaymentTerms sets the paymentTerms property value. The paymentTerms property
 func (m *Company) SetPaymentTerms(value []PaymentTermable)() {
-    m.paymentTerms = value
+    err := m.GetBackingStore().Set("paymentTerms", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPicture sets the picture property value. The picture property
 func (m *Company) SetPicture(value []Pictureable)() {
-    m.picture = value
+    err := m.GetBackingStore().Set("picture", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPurchaseInvoiceLines sets the purchaseInvoiceLines property value. The purchaseInvoiceLines property
 func (m *Company) SetPurchaseInvoiceLines(value []PurchaseInvoiceLineable)() {
-    m.purchaseInvoiceLines = value
+    err := m.GetBackingStore().Set("purchaseInvoiceLines", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPurchaseInvoices sets the purchaseInvoices property value. The purchaseInvoices property
 func (m *Company) SetPurchaseInvoices(value []PurchaseInvoiceable)() {
-    m.purchaseInvoices = value
+    err := m.GetBackingStore().Set("purchaseInvoices", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSalesCreditMemoLines sets the salesCreditMemoLines property value. The salesCreditMemoLines property
 func (m *Company) SetSalesCreditMemoLines(value []SalesCreditMemoLineable)() {
-    m.salesCreditMemoLines = value
+    err := m.GetBackingStore().Set("salesCreditMemoLines", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSalesCreditMemos sets the salesCreditMemos property value. The salesCreditMemos property
 func (m *Company) SetSalesCreditMemos(value []SalesCreditMemoable)() {
-    m.salesCreditMemos = value
+    err := m.GetBackingStore().Set("salesCreditMemos", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSalesInvoiceLines sets the salesInvoiceLines property value. The salesInvoiceLines property
 func (m *Company) SetSalesInvoiceLines(value []SalesInvoiceLineable)() {
-    m.salesInvoiceLines = value
+    err := m.GetBackingStore().Set("salesInvoiceLines", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSalesInvoices sets the salesInvoices property value. The salesInvoices property
 func (m *Company) SetSalesInvoices(value []SalesInvoiceable)() {
-    m.salesInvoices = value
+    err := m.GetBackingStore().Set("salesInvoices", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSalesOrderLines sets the salesOrderLines property value. The salesOrderLines property
 func (m *Company) SetSalesOrderLines(value []SalesOrderLineable)() {
-    m.salesOrderLines = value
+    err := m.GetBackingStore().Set("salesOrderLines", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSalesOrders sets the salesOrders property value. The salesOrders property
 func (m *Company) SetSalesOrders(value []SalesOrderable)() {
-    m.salesOrders = value
+    err := m.GetBackingStore().Set("salesOrders", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSalesQuoteLines sets the salesQuoteLines property value. The salesQuoteLines property
 func (m *Company) SetSalesQuoteLines(value []SalesQuoteLineable)() {
-    m.salesQuoteLines = value
+    err := m.GetBackingStore().Set("salesQuoteLines", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSalesQuotes sets the salesQuotes property value. The salesQuotes property
 func (m *Company) SetSalesQuotes(value []SalesQuoteable)() {
-    m.salesQuotes = value
+    err := m.GetBackingStore().Set("salesQuotes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetShipmentMethods sets the shipmentMethods property value. The shipmentMethods property
 func (m *Company) SetShipmentMethods(value []ShipmentMethodable)() {
-    m.shipmentMethods = value
+    err := m.GetBackingStore().Set("shipmentMethods", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSystemVersion sets the systemVersion property value. The systemVersion property
 func (m *Company) SetSystemVersion(value *string)() {
-    m.systemVersion = value
+    err := m.GetBackingStore().Set("systemVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTaxAreas sets the taxAreas property value. The taxAreas property
 func (m *Company) SetTaxAreas(value []TaxAreaable)() {
-    m.taxAreas = value
+    err := m.GetBackingStore().Set("taxAreas", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTaxGroups sets the taxGroups property value. The taxGroups property
 func (m *Company) SetTaxGroups(value []TaxGroupable)() {
-    m.taxGroups = value
+    err := m.GetBackingStore().Set("taxGroups", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUnitsOfMeasure sets the unitsOfMeasure property value. The unitsOfMeasure property
 func (m *Company) SetUnitsOfMeasure(value []UnitOfMeasureable)() {
-    m.unitsOfMeasure = value
+    err := m.GetBackingStore().Set("unitsOfMeasure", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVendors sets the vendors property value. The vendors property
-func (m *Company) SetVendors(value []Vendor_escapedable)() {
-    m.vendors = value
+func (m *Company) SetVendors(value []VendorEscapedable)() {
+    err := m.GetBackingStore().Set("vendors", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Companyable 
+type Companyable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAccounts()([]Accountable)
+    GetAgedAccountsPayable()([]AgedAccountsPayableable)
+    GetAgedAccountsReceivable()([]AgedAccountsReceivableable)
+    GetBusinessProfileId()(*string)
+    GetCompanyInformation()([]CompanyInformationable)
+    GetCountriesRegions()([]CountryRegionable)
+    GetCurrencies()([]Currencyable)
+    GetCustomerPaymentJournals()([]CustomerPaymentJournalable)
+    GetCustomerPayments()([]CustomerPaymentable)
+    GetCustomers()([]Customerable)
+    GetDimensions()([]Dimensionable)
+    GetDimensionValues()([]DimensionValueable)
+    GetDisplayName()(*string)
+    GetEmployees()([]Employeeable)
+    GetGeneralLedgerEntries()([]GeneralLedgerEntryable)
+    GetItemCategories()([]ItemCategoryable)
+    GetItems()([]Itemable)
+    GetJournalLines()([]JournalLineable)
+    GetJournals()([]Journalable)
+    GetName()(*string)
+    GetPaymentMethods()([]PaymentMethodable)
+    GetPaymentTerms()([]PaymentTermable)
+    GetPicture()([]Pictureable)
+    GetPurchaseInvoiceLines()([]PurchaseInvoiceLineable)
+    GetPurchaseInvoices()([]PurchaseInvoiceable)
+    GetSalesCreditMemoLines()([]SalesCreditMemoLineable)
+    GetSalesCreditMemos()([]SalesCreditMemoable)
+    GetSalesInvoiceLines()([]SalesInvoiceLineable)
+    GetSalesInvoices()([]SalesInvoiceable)
+    GetSalesOrderLines()([]SalesOrderLineable)
+    GetSalesOrders()([]SalesOrderable)
+    GetSalesQuoteLines()([]SalesQuoteLineable)
+    GetSalesQuotes()([]SalesQuoteable)
+    GetShipmentMethods()([]ShipmentMethodable)
+    GetSystemVersion()(*string)
+    GetTaxAreas()([]TaxAreaable)
+    GetTaxGroups()([]TaxGroupable)
+    GetUnitsOfMeasure()([]UnitOfMeasureable)
+    GetVendors()([]VendorEscapedable)
+    SetAccounts(value []Accountable)()
+    SetAgedAccountsPayable(value []AgedAccountsPayableable)()
+    SetAgedAccountsReceivable(value []AgedAccountsReceivableable)()
+    SetBusinessProfileId(value *string)()
+    SetCompanyInformation(value []CompanyInformationable)()
+    SetCountriesRegions(value []CountryRegionable)()
+    SetCurrencies(value []Currencyable)()
+    SetCustomerPaymentJournals(value []CustomerPaymentJournalable)()
+    SetCustomerPayments(value []CustomerPaymentable)()
+    SetCustomers(value []Customerable)()
+    SetDimensions(value []Dimensionable)()
+    SetDimensionValues(value []DimensionValueable)()
+    SetDisplayName(value *string)()
+    SetEmployees(value []Employeeable)()
+    SetGeneralLedgerEntries(value []GeneralLedgerEntryable)()
+    SetItemCategories(value []ItemCategoryable)()
+    SetItems(value []Itemable)()
+    SetJournalLines(value []JournalLineable)()
+    SetJournals(value []Journalable)()
+    SetName(value *string)()
+    SetPaymentMethods(value []PaymentMethodable)()
+    SetPaymentTerms(value []PaymentTermable)()
+    SetPicture(value []Pictureable)()
+    SetPurchaseInvoiceLines(value []PurchaseInvoiceLineable)()
+    SetPurchaseInvoices(value []PurchaseInvoiceable)()
+    SetSalesCreditMemoLines(value []SalesCreditMemoLineable)()
+    SetSalesCreditMemos(value []SalesCreditMemoable)()
+    SetSalesInvoiceLines(value []SalesInvoiceLineable)()
+    SetSalesInvoices(value []SalesInvoiceable)()
+    SetSalesOrderLines(value []SalesOrderLineable)()
+    SetSalesOrders(value []SalesOrderable)()
+    SetSalesQuoteLines(value []SalesQuoteLineable)()
+    SetSalesQuotes(value []SalesQuoteable)()
+    SetShipmentMethods(value []ShipmentMethodable)()
+    SetSystemVersion(value *string)()
+    SetTaxAreas(value []TaxAreaable)()
+    SetTaxGroups(value []TaxGroupable)()
+    SetUnitsOfMeasure(value []UnitOfMeasureable)()
+    SetVendors(value []VendorEscapedable)()
 }

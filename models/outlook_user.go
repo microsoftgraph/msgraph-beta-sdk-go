@@ -7,14 +7,6 @@ import (
 // OutlookUser 
 type OutlookUser struct {
     Entity
-    // A list of categories defined for the user.
-    masterCategories []OutlookCategoryable
-    // The taskFolders property
-    taskFolders []OutlookTaskFolderable
-    // The taskGroups property
-    taskGroups []OutlookTaskGroupable
-    // The tasks property
-    tasks []OutlookTaskable
 }
 // NewOutlookUser instantiates a new outlookUser and sets the default values.
 func NewOutlookUser()(*OutlookUser) {
@@ -90,19 +82,47 @@ func (m *OutlookUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetMasterCategories gets the masterCategories property value. A list of categories defined for the user.
 func (m *OutlookUser) GetMasterCategories()([]OutlookCategoryable) {
-    return m.masterCategories
+    val, err := m.GetBackingStore().Get("masterCategories")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OutlookCategoryable)
+    }
+    return nil
 }
 // GetTaskFolders gets the taskFolders property value. The taskFolders property
 func (m *OutlookUser) GetTaskFolders()([]OutlookTaskFolderable) {
-    return m.taskFolders
+    val, err := m.GetBackingStore().Get("taskFolders")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OutlookTaskFolderable)
+    }
+    return nil
 }
 // GetTaskGroups gets the taskGroups property value. The taskGroups property
 func (m *OutlookUser) GetTaskGroups()([]OutlookTaskGroupable) {
-    return m.taskGroups
+    val, err := m.GetBackingStore().Get("taskGroups")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OutlookTaskGroupable)
+    }
+    return nil
 }
 // GetTasks gets the tasks property value. The tasks property
 func (m *OutlookUser) GetTasks()([]OutlookTaskable) {
-    return m.tasks
+    val, err := m.GetBackingStore().Get("tasks")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OutlookTaskable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OutlookUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -154,17 +174,42 @@ func (m *OutlookUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetMasterCategories sets the masterCategories property value. A list of categories defined for the user.
 func (m *OutlookUser) SetMasterCategories(value []OutlookCategoryable)() {
-    m.masterCategories = value
+    err := m.GetBackingStore().Set("masterCategories", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTaskFolders sets the taskFolders property value. The taskFolders property
 func (m *OutlookUser) SetTaskFolders(value []OutlookTaskFolderable)() {
-    m.taskFolders = value
+    err := m.GetBackingStore().Set("taskFolders", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTaskGroups sets the taskGroups property value. The taskGroups property
 func (m *OutlookUser) SetTaskGroups(value []OutlookTaskGroupable)() {
-    m.taskGroups = value
+    err := m.GetBackingStore().Set("taskGroups", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTasks sets the tasks property value. The tasks property
 func (m *OutlookUser) SetTasks(value []OutlookTaskable)() {
-    m.tasks = value
+    err := m.GetBackingStore().Set("tasks", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OutlookUserable 
+type OutlookUserable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetMasterCategories()([]OutlookCategoryable)
+    GetTaskFolders()([]OutlookTaskFolderable)
+    GetTaskGroups()([]OutlookTaskGroupable)
+    GetTasks()([]OutlookTaskable)
+    SetMasterCategories(value []OutlookCategoryable)()
+    SetTaskFolders(value []OutlookTaskFolderable)()
+    SetTaskGroups(value []OutlookTaskGroupable)()
+    SetTasks(value []OutlookTaskable)()
 }

@@ -5,17 +5,9 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AppLogCollectionRequest appLogCollectionRequest Entity.
+// AppLogCollectionRequest entity for AppLogCollectionRequest contains all logs values.
 type AppLogCollectionRequest struct {
     Entity
-    // Time at which the upload log request reached a terminal state
-    completedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // List of log folders.
-    customLogFolders []string
-    // Error message if any during the upload process
-    errorMessage *string
-    // AppLogUploadStatus
-    status *AppLogUploadState
 }
 // NewAppLogCollectionRequest instantiates a new appLogCollectionRequest and sets the default values.
 func NewAppLogCollectionRequest()(*AppLogCollectionRequest) {
@@ -28,17 +20,38 @@ func NewAppLogCollectionRequest()(*AppLogCollectionRequest) {
 func CreateAppLogCollectionRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAppLogCollectionRequest(), nil
 }
-// GetCompletedDateTime gets the completedDateTime property value. Time at which the upload log request reached a terminal state
+// GetCompletedDateTime gets the completedDateTime property value. Time at which the upload log request reached a completed state if not completed yet NULL will be returned.
 func (m *AppLogCollectionRequest) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.completedDateTime
+    val, err := m.GetBackingStore().Get("completedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetCustomLogFolders gets the customLogFolders property value. List of log folders.
 func (m *AppLogCollectionRequest) GetCustomLogFolders()([]string) {
-    return m.customLogFolders
+    val, err := m.GetBackingStore().Get("customLogFolders")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
-// GetErrorMessage gets the errorMessage property value. Error message if any during the upload process
+// GetErrorMessage gets the errorMessage property value. Indicates error message if any during the upload process.
 func (m *AppLogCollectionRequest) GetErrorMessage()(*string) {
-    return m.errorMessage
+    val, err := m.GetBackingStore().Get("errorMessage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AppLogCollectionRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -91,7 +104,14 @@ func (m *AppLogCollectionRequest) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetStatus gets the status property value. AppLogUploadStatus
 func (m *AppLogCollectionRequest) GetStatus()(*AppLogUploadState) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AppLogUploadState)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AppLogCollectionRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -126,19 +146,44 @@ func (m *AppLogCollectionRequest) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetCompletedDateTime sets the completedDateTime property value. Time at which the upload log request reached a terminal state
+// SetCompletedDateTime sets the completedDateTime property value. Time at which the upload log request reached a completed state if not completed yet NULL will be returned.
 func (m *AppLogCollectionRequest) SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.completedDateTime = value
+    err := m.GetBackingStore().Set("completedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomLogFolders sets the customLogFolders property value. List of log folders.
 func (m *AppLogCollectionRequest) SetCustomLogFolders(value []string)() {
-    m.customLogFolders = value
+    err := m.GetBackingStore().Set("customLogFolders", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetErrorMessage sets the errorMessage property value. Error message if any during the upload process
+// SetErrorMessage sets the errorMessage property value. Indicates error message if any during the upload process.
 func (m *AppLogCollectionRequest) SetErrorMessage(value *string)() {
-    m.errorMessage = value
+    err := m.GetBackingStore().Set("errorMessage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. AppLogUploadStatus
 func (m *AppLogCollectionRequest) SetStatus(value *AppLogUploadState)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AppLogCollectionRequestable 
+type AppLogCollectionRequestable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetCustomLogFolders()([]string)
+    GetErrorMessage()(*string)
+    GetStatus()(*AppLogUploadState)
+    SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetCustomLogFolders(value []string)()
+    SetErrorMessage(value *string)()
+    SetStatus(value *AppLogUploadState)()
 }

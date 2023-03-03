@@ -7,8 +7,6 @@ import (
 // PlannerAssignedToTaskBoardTaskFormatCollectionResponse 
 type PlannerAssignedToTaskBoardTaskFormatCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PlannerAssignedToTaskBoardTaskFormatable
 }
 // NewPlannerAssignedToTaskBoardTaskFormatCollectionResponse instantiates a new PlannerAssignedToTaskBoardTaskFormatCollectionResponse and sets the default values.
 func NewPlannerAssignedToTaskBoardTaskFormatCollectionResponse()(*PlannerAssignedToTaskBoardTaskFormatCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PlannerAssignedToTaskBoardTaskFormatCollectionResponse) GetFieldDeseria
 }
 // GetValue gets the value property value. The value property
 func (m *PlannerAssignedToTaskBoardTaskFormatCollectionResponse) GetValue()([]PlannerAssignedToTaskBoardTaskFormatable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerAssignedToTaskBoardTaskFormatable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PlannerAssignedToTaskBoardTaskFormatCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PlannerAssignedToTaskBoardTaskFormatCollectionResponse) Serialize(write
 }
 // SetValue sets the value property value. The value property
 func (m *PlannerAssignedToTaskBoardTaskFormatCollectionResponse) SetValue(value []PlannerAssignedToTaskBoardTaskFormatable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PlannerAssignedToTaskBoardTaskFormatCollectionResponseable 
+type PlannerAssignedToTaskBoardTaskFormatCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PlannerAssignedToTaskBoardTaskFormatable)
+    SetValue(value []PlannerAssignedToTaskBoardTaskFormatable)()
 }

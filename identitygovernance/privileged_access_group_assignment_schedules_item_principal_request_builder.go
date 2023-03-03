@@ -41,8 +41,8 @@ func NewPrivilegedAccessGroupAssignmentSchedulesItemPrincipalRequestBuilderInter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPrivilegedAccessGroupAssignmentSchedulesItemPrincipalRequestBuilder instantiates a new PrincipalRequestBuilder and sets the default values.

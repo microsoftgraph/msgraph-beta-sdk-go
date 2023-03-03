@@ -7,102 +7,14 @@ import (
 // AndroidForWorkGeneralDeviceConfiguration 
 type AndroidForWorkGeneralDeviceConfiguration struct {
     DeviceConfiguration
-    // Indicates whether or not to block face unlock.
-    passwordBlockFaceUnlock *bool
-    // Indicates whether or not to block fingerprint unlock.
-    passwordBlockFingerprintUnlock *bool
-    // Indicates whether or not to block iris unlock.
-    passwordBlockIrisUnlock *bool
-    // Indicates whether or not to block Smart Lock and other trust agents.
-    passwordBlockTrustAgents *bool
-    // Number of days before the password expires. Valid values 1 to 365
-    passwordExpirationDays *int32
-    // Minimum length of passwords. Valid values 4 to 16
-    passwordMinimumLength *int32
-    // Minutes of inactivity before the screen times out.
-    passwordMinutesOfInactivityBeforeScreenTimeout *int32
-    // Number of previous passwords to block. Valid values 0 to 24
-    passwordPreviousPasswordBlockCount *int32
-    // Android For Work required password type.
-    passwordRequiredType *AndroidForWorkRequiredPasswordType
-    // Number of sign in failures allowed before factory reset. Valid values 1 to 16
-    passwordSignInFailureCountBeforeFactoryReset *int32
-    // The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
-    requiredPasswordComplexity *AndroidRequiredPasswordComplexity
-    // Require the Android Verify apps feature is turned on.
-    securityRequireVerifyApps *bool
-    // Enable lockdown mode for always-on VPN.
-    vpnAlwaysOnPackageIdentifier *string
-    // Enable lockdown mode for always-on VPN.
-    vpnEnableAlwaysOnLockdownMode *bool
-    // Allow widgets from work profile apps.
-    workProfileAllowWidgets *bool
-    // Block users from adding/removing accounts in work profile.
-    workProfileBlockAddingAccounts *bool
-    // Block work profile camera.
-    workProfileBlockCamera *bool
-    // Block display work profile caller ID in personal profile.
-    workProfileBlockCrossProfileCallerId *bool
-    // Block work profile contacts availability in personal profile.
-    workProfileBlockCrossProfileContactsSearch *bool
-    // Boolean that indicates if the setting disallow cross profile copy/paste is enabled.
-    workProfileBlockCrossProfileCopyPaste *bool
-    // Indicates whether or not to block notifications while device locked.
-    workProfileBlockNotificationsWhileDeviceLocked *bool
-    // Prevent app installations from unknown sources in the personal profile.
-    workProfileBlockPersonalAppInstallsFromUnknownSources *bool
-    // Block screen capture in work profile.
-    workProfileBlockScreenCapture *bool
-    // Allow bluetooth devices to access enterprise contacts.
-    workProfileBluetoothEnableContactSharing *bool
-    // Android For Work cross profile data sharing type.
-    workProfileDataSharingType *AndroidForWorkCrossProfileDataSharingType
-    // Android For Work default app permission policy type.
-    workProfileDefaultAppPermissionPolicy *AndroidForWorkDefaultAppPermissionPolicyType
-    // Indicates whether or not to block face unlock for work profile.
-    workProfilePasswordBlockFaceUnlock *bool
-    // Indicates whether or not to block fingerprint unlock for work profile.
-    workProfilePasswordBlockFingerprintUnlock *bool
-    // Indicates whether or not to block iris unlock for work profile.
-    workProfilePasswordBlockIrisUnlock *bool
-    // Indicates whether or not to block Smart Lock and other trust agents for work profile.
-    workProfilePasswordBlockTrustAgents *bool
-    // Number of days before the work profile password expires. Valid values 1 to 365
-    workProfilePasswordExpirationDays *int32
-    // Minimum length of work profile password. Valid values 4 to 16
-    workProfilePasswordMinimumLength *int32
-    // Minimum # of letter characters required in work profile password. Valid values 1 to 10
-    workProfilePasswordMinLetterCharacters *int32
-    // Minimum # of lower-case characters required in work profile password. Valid values 1 to 10
-    workProfilePasswordMinLowerCaseCharacters *int32
-    // Minimum # of non-letter characters required in work profile password. Valid values 1 to 10
-    workProfilePasswordMinNonLetterCharacters *int32
-    // Minimum # of numeric characters required in work profile password. Valid values 1 to 10
-    workProfilePasswordMinNumericCharacters *int32
-    // Minimum # of symbols required in work profile password. Valid values 1 to 10
-    workProfilePasswordMinSymbolCharacters *int32
-    // Minimum # of upper-case characters required in work profile password. Valid values 1 to 10
-    workProfilePasswordMinUpperCaseCharacters *int32
-    // Minutes of inactivity before the screen times out.
-    workProfilePasswordMinutesOfInactivityBeforeScreenTimeout *int32
-    // Number of previous work profile passwords to block. Valid values 0 to 24
-    workProfilePasswordPreviousPasswordBlockCount *int32
-    // Android For Work required password type.
-    workProfilePasswordRequiredType *AndroidForWorkRequiredPasswordType
-    // Number of sign in failures allowed before work profile is removed and all corporate data deleted. Valid values 1 to 16
-    workProfilePasswordSignInFailureCountBeforeFactoryReset *int32
-    // The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
-    workProfileRequiredPasswordComplexity *AndroidRequiredPasswordComplexity
-    // Password is required or not for work profile
-    workProfileRequirePassword *bool
 }
 // NewAndroidForWorkGeneralDeviceConfiguration instantiates a new AndroidForWorkGeneralDeviceConfiguration and sets the default values.
 func NewAndroidForWorkGeneralDeviceConfiguration()(*AndroidForWorkGeneralDeviceConfiguration) {
     m := &AndroidForWorkGeneralDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.androidForWorkGeneralDeviceConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidForWorkGeneralDeviceConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidForWorkGeneralDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -556,179 +468,487 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetFieldDeserializers()(map[s
 }
 // GetPasswordBlockFaceUnlock gets the passwordBlockFaceUnlock property value. Indicates whether or not to block face unlock.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordBlockFaceUnlock()(*bool) {
-    return m.passwordBlockFaceUnlock
+    val, err := m.GetBackingStore().Get("passwordBlockFaceUnlock")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPasswordBlockFingerprintUnlock gets the passwordBlockFingerprintUnlock property value. Indicates whether or not to block fingerprint unlock.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordBlockFingerprintUnlock()(*bool) {
-    return m.passwordBlockFingerprintUnlock
+    val, err := m.GetBackingStore().Get("passwordBlockFingerprintUnlock")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPasswordBlockIrisUnlock gets the passwordBlockIrisUnlock property value. Indicates whether or not to block iris unlock.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordBlockIrisUnlock()(*bool) {
-    return m.passwordBlockIrisUnlock
+    val, err := m.GetBackingStore().Get("passwordBlockIrisUnlock")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPasswordBlockTrustAgents gets the passwordBlockTrustAgents property value. Indicates whether or not to block Smart Lock and other trust agents.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordBlockTrustAgents()(*bool) {
-    return m.passwordBlockTrustAgents
+    val, err := m.GetBackingStore().Get("passwordBlockTrustAgents")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPasswordExpirationDays gets the passwordExpirationDays property value. Number of days before the password expires. Valid values 1 to 365
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordExpirationDays()(*int32) {
-    return m.passwordExpirationDays
+    val, err := m.GetBackingStore().Get("passwordExpirationDays")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPasswordMinimumLength gets the passwordMinimumLength property value. Minimum length of passwords. Valid values 4 to 16
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordMinimumLength()(*int32) {
-    return m.passwordMinimumLength
+    val, err := m.GetBackingStore().Get("passwordMinimumLength")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPasswordMinutesOfInactivityBeforeScreenTimeout gets the passwordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before the screen times out.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordMinutesOfInactivityBeforeScreenTimeout()(*int32) {
-    return m.passwordMinutesOfInactivityBeforeScreenTimeout
+    val, err := m.GetBackingStore().Get("passwordMinutesOfInactivityBeforeScreenTimeout")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPasswordPreviousPasswordBlockCount gets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block. Valid values 0 to 24
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordPreviousPasswordBlockCount()(*int32) {
-    return m.passwordPreviousPasswordBlockCount
+    val, err := m.GetBackingStore().Get("passwordPreviousPasswordBlockCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPasswordRequiredType gets the passwordRequiredType property value. Android For Work required password type.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordRequiredType()(*AndroidForWorkRequiredPasswordType) {
-    return m.passwordRequiredType
+    val, err := m.GetBackingStore().Get("passwordRequiredType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AndroidForWorkRequiredPasswordType)
+    }
+    return nil
 }
 // GetPasswordSignInFailureCountBeforeFactoryReset gets the passwordSignInFailureCountBeforeFactoryReset property value. Number of sign in failures allowed before factory reset. Valid values 1 to 16
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordSignInFailureCountBeforeFactoryReset()(*int32) {
-    return m.passwordSignInFailureCountBeforeFactoryReset
+    val, err := m.GetBackingStore().Get("passwordSignInFailureCountBeforeFactoryReset")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetRequiredPasswordComplexity gets the requiredPasswordComplexity property value. The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetRequiredPasswordComplexity()(*AndroidRequiredPasswordComplexity) {
-    return m.requiredPasswordComplexity
+    val, err := m.GetBackingStore().Get("requiredPasswordComplexity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AndroidRequiredPasswordComplexity)
+    }
+    return nil
 }
 // GetSecurityRequireVerifyApps gets the securityRequireVerifyApps property value. Require the Android Verify apps feature is turned on.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetSecurityRequireVerifyApps()(*bool) {
-    return m.securityRequireVerifyApps
+    val, err := m.GetBackingStore().Get("securityRequireVerifyApps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetVpnAlwaysOnPackageIdentifier gets the vpnAlwaysOnPackageIdentifier property value. Enable lockdown mode for always-on VPN.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetVpnAlwaysOnPackageIdentifier()(*string) {
-    return m.vpnAlwaysOnPackageIdentifier
+    val, err := m.GetBackingStore().Get("vpnAlwaysOnPackageIdentifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetVpnEnableAlwaysOnLockdownMode gets the vpnEnableAlwaysOnLockdownMode property value. Enable lockdown mode for always-on VPN.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetVpnEnableAlwaysOnLockdownMode()(*bool) {
-    return m.vpnEnableAlwaysOnLockdownMode
+    val, err := m.GetBackingStore().Get("vpnEnableAlwaysOnLockdownMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWorkProfileAllowWidgets gets the workProfileAllowWidgets property value. Allow widgets from work profile apps.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileAllowWidgets()(*bool) {
-    return m.workProfileAllowWidgets
+    val, err := m.GetBackingStore().Get("workProfileAllowWidgets")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWorkProfileBlockAddingAccounts gets the workProfileBlockAddingAccounts property value. Block users from adding/removing accounts in work profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockAddingAccounts()(*bool) {
-    return m.workProfileBlockAddingAccounts
+    val, err := m.GetBackingStore().Get("workProfileBlockAddingAccounts")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWorkProfileBlockCamera gets the workProfileBlockCamera property value. Block work profile camera.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockCamera()(*bool) {
-    return m.workProfileBlockCamera
+    val, err := m.GetBackingStore().Get("workProfileBlockCamera")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWorkProfileBlockCrossProfileCallerId gets the workProfileBlockCrossProfileCallerId property value. Block display work profile caller ID in personal profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockCrossProfileCallerId()(*bool) {
-    return m.workProfileBlockCrossProfileCallerId
+    val, err := m.GetBackingStore().Get("workProfileBlockCrossProfileCallerId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWorkProfileBlockCrossProfileContactsSearch gets the workProfileBlockCrossProfileContactsSearch property value. Block work profile contacts availability in personal profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockCrossProfileContactsSearch()(*bool) {
-    return m.workProfileBlockCrossProfileContactsSearch
+    val, err := m.GetBackingStore().Get("workProfileBlockCrossProfileContactsSearch")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWorkProfileBlockCrossProfileCopyPaste gets the workProfileBlockCrossProfileCopyPaste property value. Boolean that indicates if the setting disallow cross profile copy/paste is enabled.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockCrossProfileCopyPaste()(*bool) {
-    return m.workProfileBlockCrossProfileCopyPaste
+    val, err := m.GetBackingStore().Get("workProfileBlockCrossProfileCopyPaste")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWorkProfileBlockNotificationsWhileDeviceLocked gets the workProfileBlockNotificationsWhileDeviceLocked property value. Indicates whether or not to block notifications while device locked.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockNotificationsWhileDeviceLocked()(*bool) {
-    return m.workProfileBlockNotificationsWhileDeviceLocked
+    val, err := m.GetBackingStore().Get("workProfileBlockNotificationsWhileDeviceLocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWorkProfileBlockPersonalAppInstallsFromUnknownSources gets the workProfileBlockPersonalAppInstallsFromUnknownSources property value. Prevent app installations from unknown sources in the personal profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockPersonalAppInstallsFromUnknownSources()(*bool) {
-    return m.workProfileBlockPersonalAppInstallsFromUnknownSources
+    val, err := m.GetBackingStore().Get("workProfileBlockPersonalAppInstallsFromUnknownSources")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWorkProfileBlockScreenCapture gets the workProfileBlockScreenCapture property value. Block screen capture in work profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockScreenCapture()(*bool) {
-    return m.workProfileBlockScreenCapture
+    val, err := m.GetBackingStore().Get("workProfileBlockScreenCapture")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWorkProfileBluetoothEnableContactSharing gets the workProfileBluetoothEnableContactSharing property value. Allow bluetooth devices to access enterprise contacts.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBluetoothEnableContactSharing()(*bool) {
-    return m.workProfileBluetoothEnableContactSharing
+    val, err := m.GetBackingStore().Get("workProfileBluetoothEnableContactSharing")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWorkProfileDataSharingType gets the workProfileDataSharingType property value. Android For Work cross profile data sharing type.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileDataSharingType()(*AndroidForWorkCrossProfileDataSharingType) {
-    return m.workProfileDataSharingType
+    val, err := m.GetBackingStore().Get("workProfileDataSharingType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AndroidForWorkCrossProfileDataSharingType)
+    }
+    return nil
 }
 // GetWorkProfileDefaultAppPermissionPolicy gets the workProfileDefaultAppPermissionPolicy property value. Android For Work default app permission policy type.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileDefaultAppPermissionPolicy()(*AndroidForWorkDefaultAppPermissionPolicyType) {
-    return m.workProfileDefaultAppPermissionPolicy
+    val, err := m.GetBackingStore().Get("workProfileDefaultAppPermissionPolicy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AndroidForWorkDefaultAppPermissionPolicyType)
+    }
+    return nil
 }
 // GetWorkProfilePasswordBlockFaceUnlock gets the workProfilePasswordBlockFaceUnlock property value. Indicates whether or not to block face unlock for work profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordBlockFaceUnlock()(*bool) {
-    return m.workProfilePasswordBlockFaceUnlock
+    val, err := m.GetBackingStore().Get("workProfilePasswordBlockFaceUnlock")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWorkProfilePasswordBlockFingerprintUnlock gets the workProfilePasswordBlockFingerprintUnlock property value. Indicates whether or not to block fingerprint unlock for work profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordBlockFingerprintUnlock()(*bool) {
-    return m.workProfilePasswordBlockFingerprintUnlock
+    val, err := m.GetBackingStore().Get("workProfilePasswordBlockFingerprintUnlock")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWorkProfilePasswordBlockIrisUnlock gets the workProfilePasswordBlockIrisUnlock property value. Indicates whether or not to block iris unlock for work profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordBlockIrisUnlock()(*bool) {
-    return m.workProfilePasswordBlockIrisUnlock
+    val, err := m.GetBackingStore().Get("workProfilePasswordBlockIrisUnlock")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWorkProfilePasswordBlockTrustAgents gets the workProfilePasswordBlockTrustAgents property value. Indicates whether or not to block Smart Lock and other trust agents for work profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordBlockTrustAgents()(*bool) {
-    return m.workProfilePasswordBlockTrustAgents
+    val, err := m.GetBackingStore().Get("workProfilePasswordBlockTrustAgents")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWorkProfilePasswordExpirationDays gets the workProfilePasswordExpirationDays property value. Number of days before the work profile password expires. Valid values 1 to 365
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordExpirationDays()(*int32) {
-    return m.workProfilePasswordExpirationDays
+    val, err := m.GetBackingStore().Get("workProfilePasswordExpirationDays")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetWorkProfilePasswordMinimumLength gets the workProfilePasswordMinimumLength property value. Minimum length of work profile password. Valid values 4 to 16
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinimumLength()(*int32) {
-    return m.workProfilePasswordMinimumLength
+    val, err := m.GetBackingStore().Get("workProfilePasswordMinimumLength")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetWorkProfilePasswordMinLetterCharacters gets the workProfilePasswordMinLetterCharacters property value. Minimum # of letter characters required in work profile password. Valid values 1 to 10
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinLetterCharacters()(*int32) {
-    return m.workProfilePasswordMinLetterCharacters
+    val, err := m.GetBackingStore().Get("workProfilePasswordMinLetterCharacters")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetWorkProfilePasswordMinLowerCaseCharacters gets the workProfilePasswordMinLowerCaseCharacters property value. Minimum # of lower-case characters required in work profile password. Valid values 1 to 10
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinLowerCaseCharacters()(*int32) {
-    return m.workProfilePasswordMinLowerCaseCharacters
+    val, err := m.GetBackingStore().Get("workProfilePasswordMinLowerCaseCharacters")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetWorkProfilePasswordMinNonLetterCharacters gets the workProfilePasswordMinNonLetterCharacters property value. Minimum # of non-letter characters required in work profile password. Valid values 1 to 10
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinNonLetterCharacters()(*int32) {
-    return m.workProfilePasswordMinNonLetterCharacters
+    val, err := m.GetBackingStore().Get("workProfilePasswordMinNonLetterCharacters")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetWorkProfilePasswordMinNumericCharacters gets the workProfilePasswordMinNumericCharacters property value. Minimum # of numeric characters required in work profile password. Valid values 1 to 10
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinNumericCharacters()(*int32) {
-    return m.workProfilePasswordMinNumericCharacters
+    val, err := m.GetBackingStore().Get("workProfilePasswordMinNumericCharacters")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetWorkProfilePasswordMinSymbolCharacters gets the workProfilePasswordMinSymbolCharacters property value. Minimum # of symbols required in work profile password. Valid values 1 to 10
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinSymbolCharacters()(*int32) {
-    return m.workProfilePasswordMinSymbolCharacters
+    val, err := m.GetBackingStore().Get("workProfilePasswordMinSymbolCharacters")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetWorkProfilePasswordMinUpperCaseCharacters gets the workProfilePasswordMinUpperCaseCharacters property value. Minimum # of upper-case characters required in work profile password. Valid values 1 to 10
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinUpperCaseCharacters()(*int32) {
-    return m.workProfilePasswordMinUpperCaseCharacters
+    val, err := m.GetBackingStore().Get("workProfilePasswordMinUpperCaseCharacters")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetWorkProfilePasswordMinutesOfInactivityBeforeScreenTimeout gets the workProfilePasswordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before the screen times out.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinutesOfInactivityBeforeScreenTimeout()(*int32) {
-    return m.workProfilePasswordMinutesOfInactivityBeforeScreenTimeout
+    val, err := m.GetBackingStore().Get("workProfilePasswordMinutesOfInactivityBeforeScreenTimeout")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetWorkProfilePasswordPreviousPasswordBlockCount gets the workProfilePasswordPreviousPasswordBlockCount property value. Number of previous work profile passwords to block. Valid values 0 to 24
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordPreviousPasswordBlockCount()(*int32) {
-    return m.workProfilePasswordPreviousPasswordBlockCount
+    val, err := m.GetBackingStore().Get("workProfilePasswordPreviousPasswordBlockCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetWorkProfilePasswordRequiredType gets the workProfilePasswordRequiredType property value. Android For Work required password type.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordRequiredType()(*AndroidForWorkRequiredPasswordType) {
-    return m.workProfilePasswordRequiredType
+    val, err := m.GetBackingStore().Get("workProfilePasswordRequiredType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AndroidForWorkRequiredPasswordType)
+    }
+    return nil
 }
 // GetWorkProfilePasswordSignInFailureCountBeforeFactoryReset gets the workProfilePasswordSignInFailureCountBeforeFactoryReset property value. Number of sign in failures allowed before work profile is removed and all corporate data deleted. Valid values 1 to 16
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordSignInFailureCountBeforeFactoryReset()(*int32) {
-    return m.workProfilePasswordSignInFailureCountBeforeFactoryReset
+    val, err := m.GetBackingStore().Get("workProfilePasswordSignInFailureCountBeforeFactoryReset")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetWorkProfileRequiredPasswordComplexity gets the workProfileRequiredPasswordComplexity property value. The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileRequiredPasswordComplexity()(*AndroidRequiredPasswordComplexity) {
-    return m.workProfileRequiredPasswordComplexity
+    val, err := m.GetBackingStore().Get("workProfileRequiredPasswordComplexity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AndroidRequiredPasswordComplexity)
+    }
+    return nil
 }
 // GetWorkProfileRequirePassword gets the workProfileRequirePassword property value. Password is required or not for work profile
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileRequirePassword()(*bool) {
-    return m.workProfileRequirePassword
+    val, err := m.GetBackingStore().Get("workProfileRequirePassword")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidForWorkGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -1010,177 +1230,402 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) Serialize(writer i878a80d2330
 }
 // SetPasswordBlockFaceUnlock sets the passwordBlockFaceUnlock property value. Indicates whether or not to block face unlock.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetPasswordBlockFaceUnlock(value *bool)() {
-    m.passwordBlockFaceUnlock = value
+    err := m.GetBackingStore().Set("passwordBlockFaceUnlock", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordBlockFingerprintUnlock sets the passwordBlockFingerprintUnlock property value. Indicates whether or not to block fingerprint unlock.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetPasswordBlockFingerprintUnlock(value *bool)() {
-    m.passwordBlockFingerprintUnlock = value
+    err := m.GetBackingStore().Set("passwordBlockFingerprintUnlock", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordBlockIrisUnlock sets the passwordBlockIrisUnlock property value. Indicates whether or not to block iris unlock.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetPasswordBlockIrisUnlock(value *bool)() {
-    m.passwordBlockIrisUnlock = value
+    err := m.GetBackingStore().Set("passwordBlockIrisUnlock", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordBlockTrustAgents sets the passwordBlockTrustAgents property value. Indicates whether or not to block Smart Lock and other trust agents.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetPasswordBlockTrustAgents(value *bool)() {
-    m.passwordBlockTrustAgents = value
+    err := m.GetBackingStore().Set("passwordBlockTrustAgents", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordExpirationDays sets the passwordExpirationDays property value. Number of days before the password expires. Valid values 1 to 365
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetPasswordExpirationDays(value *int32)() {
-    m.passwordExpirationDays = value
+    err := m.GetBackingStore().Set("passwordExpirationDays", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordMinimumLength sets the passwordMinimumLength property value. Minimum length of passwords. Valid values 4 to 16
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetPasswordMinimumLength(value *int32)() {
-    m.passwordMinimumLength = value
+    err := m.GetBackingStore().Set("passwordMinimumLength", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordMinutesOfInactivityBeforeScreenTimeout sets the passwordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before the screen times out.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetPasswordMinutesOfInactivityBeforeScreenTimeout(value *int32)() {
-    m.passwordMinutesOfInactivityBeforeScreenTimeout = value
+    err := m.GetBackingStore().Set("passwordMinutesOfInactivityBeforeScreenTimeout", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordPreviousPasswordBlockCount sets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block. Valid values 0 to 24
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetPasswordPreviousPasswordBlockCount(value *int32)() {
-    m.passwordPreviousPasswordBlockCount = value
+    err := m.GetBackingStore().Set("passwordPreviousPasswordBlockCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordRequiredType sets the passwordRequiredType property value. Android For Work required password type.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetPasswordRequiredType(value *AndroidForWorkRequiredPasswordType)() {
-    m.passwordRequiredType = value
+    err := m.GetBackingStore().Set("passwordRequiredType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordSignInFailureCountBeforeFactoryReset sets the passwordSignInFailureCountBeforeFactoryReset property value. Number of sign in failures allowed before factory reset. Valid values 1 to 16
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetPasswordSignInFailureCountBeforeFactoryReset(value *int32)() {
-    m.passwordSignInFailureCountBeforeFactoryReset = value
+    err := m.GetBackingStore().Set("passwordSignInFailureCountBeforeFactoryReset", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRequiredPasswordComplexity sets the requiredPasswordComplexity property value. The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetRequiredPasswordComplexity(value *AndroidRequiredPasswordComplexity)() {
-    m.requiredPasswordComplexity = value
+    err := m.GetBackingStore().Set("requiredPasswordComplexity", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSecurityRequireVerifyApps sets the securityRequireVerifyApps property value. Require the Android Verify apps feature is turned on.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetSecurityRequireVerifyApps(value *bool)() {
-    m.securityRequireVerifyApps = value
+    err := m.GetBackingStore().Set("securityRequireVerifyApps", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVpnAlwaysOnPackageIdentifier sets the vpnAlwaysOnPackageIdentifier property value. Enable lockdown mode for always-on VPN.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetVpnAlwaysOnPackageIdentifier(value *string)() {
-    m.vpnAlwaysOnPackageIdentifier = value
+    err := m.GetBackingStore().Set("vpnAlwaysOnPackageIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVpnEnableAlwaysOnLockdownMode sets the vpnEnableAlwaysOnLockdownMode property value. Enable lockdown mode for always-on VPN.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetVpnEnableAlwaysOnLockdownMode(value *bool)() {
-    m.vpnEnableAlwaysOnLockdownMode = value
+    err := m.GetBackingStore().Set("vpnEnableAlwaysOnLockdownMode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkProfileAllowWidgets sets the workProfileAllowWidgets property value. Allow widgets from work profile apps.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfileAllowWidgets(value *bool)() {
-    m.workProfileAllowWidgets = value
+    err := m.GetBackingStore().Set("workProfileAllowWidgets", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkProfileBlockAddingAccounts sets the workProfileBlockAddingAccounts property value. Block users from adding/removing accounts in work profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfileBlockAddingAccounts(value *bool)() {
-    m.workProfileBlockAddingAccounts = value
+    err := m.GetBackingStore().Set("workProfileBlockAddingAccounts", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkProfileBlockCamera sets the workProfileBlockCamera property value. Block work profile camera.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfileBlockCamera(value *bool)() {
-    m.workProfileBlockCamera = value
+    err := m.GetBackingStore().Set("workProfileBlockCamera", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkProfileBlockCrossProfileCallerId sets the workProfileBlockCrossProfileCallerId property value. Block display work profile caller ID in personal profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfileBlockCrossProfileCallerId(value *bool)() {
-    m.workProfileBlockCrossProfileCallerId = value
+    err := m.GetBackingStore().Set("workProfileBlockCrossProfileCallerId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkProfileBlockCrossProfileContactsSearch sets the workProfileBlockCrossProfileContactsSearch property value. Block work profile contacts availability in personal profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfileBlockCrossProfileContactsSearch(value *bool)() {
-    m.workProfileBlockCrossProfileContactsSearch = value
+    err := m.GetBackingStore().Set("workProfileBlockCrossProfileContactsSearch", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkProfileBlockCrossProfileCopyPaste sets the workProfileBlockCrossProfileCopyPaste property value. Boolean that indicates if the setting disallow cross profile copy/paste is enabled.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfileBlockCrossProfileCopyPaste(value *bool)() {
-    m.workProfileBlockCrossProfileCopyPaste = value
+    err := m.GetBackingStore().Set("workProfileBlockCrossProfileCopyPaste", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkProfileBlockNotificationsWhileDeviceLocked sets the workProfileBlockNotificationsWhileDeviceLocked property value. Indicates whether or not to block notifications while device locked.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfileBlockNotificationsWhileDeviceLocked(value *bool)() {
-    m.workProfileBlockNotificationsWhileDeviceLocked = value
+    err := m.GetBackingStore().Set("workProfileBlockNotificationsWhileDeviceLocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkProfileBlockPersonalAppInstallsFromUnknownSources sets the workProfileBlockPersonalAppInstallsFromUnknownSources property value. Prevent app installations from unknown sources in the personal profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfileBlockPersonalAppInstallsFromUnknownSources(value *bool)() {
-    m.workProfileBlockPersonalAppInstallsFromUnknownSources = value
+    err := m.GetBackingStore().Set("workProfileBlockPersonalAppInstallsFromUnknownSources", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkProfileBlockScreenCapture sets the workProfileBlockScreenCapture property value. Block screen capture in work profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfileBlockScreenCapture(value *bool)() {
-    m.workProfileBlockScreenCapture = value
+    err := m.GetBackingStore().Set("workProfileBlockScreenCapture", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkProfileBluetoothEnableContactSharing sets the workProfileBluetoothEnableContactSharing property value. Allow bluetooth devices to access enterprise contacts.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfileBluetoothEnableContactSharing(value *bool)() {
-    m.workProfileBluetoothEnableContactSharing = value
+    err := m.GetBackingStore().Set("workProfileBluetoothEnableContactSharing", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkProfileDataSharingType sets the workProfileDataSharingType property value. Android For Work cross profile data sharing type.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfileDataSharingType(value *AndroidForWorkCrossProfileDataSharingType)() {
-    m.workProfileDataSharingType = value
+    err := m.GetBackingStore().Set("workProfileDataSharingType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkProfileDefaultAppPermissionPolicy sets the workProfileDefaultAppPermissionPolicy property value. Android For Work default app permission policy type.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfileDefaultAppPermissionPolicy(value *AndroidForWorkDefaultAppPermissionPolicyType)() {
-    m.workProfileDefaultAppPermissionPolicy = value
+    err := m.GetBackingStore().Set("workProfileDefaultAppPermissionPolicy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkProfilePasswordBlockFaceUnlock sets the workProfilePasswordBlockFaceUnlock property value. Indicates whether or not to block face unlock for work profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordBlockFaceUnlock(value *bool)() {
-    m.workProfilePasswordBlockFaceUnlock = value
+    err := m.GetBackingStore().Set("workProfilePasswordBlockFaceUnlock", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkProfilePasswordBlockFingerprintUnlock sets the workProfilePasswordBlockFingerprintUnlock property value. Indicates whether or not to block fingerprint unlock for work profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordBlockFingerprintUnlock(value *bool)() {
-    m.workProfilePasswordBlockFingerprintUnlock = value
+    err := m.GetBackingStore().Set("workProfilePasswordBlockFingerprintUnlock", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkProfilePasswordBlockIrisUnlock sets the workProfilePasswordBlockIrisUnlock property value. Indicates whether or not to block iris unlock for work profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordBlockIrisUnlock(value *bool)() {
-    m.workProfilePasswordBlockIrisUnlock = value
+    err := m.GetBackingStore().Set("workProfilePasswordBlockIrisUnlock", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkProfilePasswordBlockTrustAgents sets the workProfilePasswordBlockTrustAgents property value. Indicates whether or not to block Smart Lock and other trust agents for work profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordBlockTrustAgents(value *bool)() {
-    m.workProfilePasswordBlockTrustAgents = value
+    err := m.GetBackingStore().Set("workProfilePasswordBlockTrustAgents", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkProfilePasswordExpirationDays sets the workProfilePasswordExpirationDays property value. Number of days before the work profile password expires. Valid values 1 to 365
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordExpirationDays(value *int32)() {
-    m.workProfilePasswordExpirationDays = value
+    err := m.GetBackingStore().Set("workProfilePasswordExpirationDays", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkProfilePasswordMinimumLength sets the workProfilePasswordMinimumLength property value. Minimum length of work profile password. Valid values 4 to 16
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordMinimumLength(value *int32)() {
-    m.workProfilePasswordMinimumLength = value
+    err := m.GetBackingStore().Set("workProfilePasswordMinimumLength", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkProfilePasswordMinLetterCharacters sets the workProfilePasswordMinLetterCharacters property value. Minimum # of letter characters required in work profile password. Valid values 1 to 10
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordMinLetterCharacters(value *int32)() {
-    m.workProfilePasswordMinLetterCharacters = value
+    err := m.GetBackingStore().Set("workProfilePasswordMinLetterCharacters", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkProfilePasswordMinLowerCaseCharacters sets the workProfilePasswordMinLowerCaseCharacters property value. Minimum # of lower-case characters required in work profile password. Valid values 1 to 10
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordMinLowerCaseCharacters(value *int32)() {
-    m.workProfilePasswordMinLowerCaseCharacters = value
+    err := m.GetBackingStore().Set("workProfilePasswordMinLowerCaseCharacters", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkProfilePasswordMinNonLetterCharacters sets the workProfilePasswordMinNonLetterCharacters property value. Minimum # of non-letter characters required in work profile password. Valid values 1 to 10
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordMinNonLetterCharacters(value *int32)() {
-    m.workProfilePasswordMinNonLetterCharacters = value
+    err := m.GetBackingStore().Set("workProfilePasswordMinNonLetterCharacters", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkProfilePasswordMinNumericCharacters sets the workProfilePasswordMinNumericCharacters property value. Minimum # of numeric characters required in work profile password. Valid values 1 to 10
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordMinNumericCharacters(value *int32)() {
-    m.workProfilePasswordMinNumericCharacters = value
+    err := m.GetBackingStore().Set("workProfilePasswordMinNumericCharacters", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkProfilePasswordMinSymbolCharacters sets the workProfilePasswordMinSymbolCharacters property value. Minimum # of symbols required in work profile password. Valid values 1 to 10
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordMinSymbolCharacters(value *int32)() {
-    m.workProfilePasswordMinSymbolCharacters = value
+    err := m.GetBackingStore().Set("workProfilePasswordMinSymbolCharacters", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkProfilePasswordMinUpperCaseCharacters sets the workProfilePasswordMinUpperCaseCharacters property value. Minimum # of upper-case characters required in work profile password. Valid values 1 to 10
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordMinUpperCaseCharacters(value *int32)() {
-    m.workProfilePasswordMinUpperCaseCharacters = value
+    err := m.GetBackingStore().Set("workProfilePasswordMinUpperCaseCharacters", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkProfilePasswordMinutesOfInactivityBeforeScreenTimeout sets the workProfilePasswordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before the screen times out.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordMinutesOfInactivityBeforeScreenTimeout(value *int32)() {
-    m.workProfilePasswordMinutesOfInactivityBeforeScreenTimeout = value
+    err := m.GetBackingStore().Set("workProfilePasswordMinutesOfInactivityBeforeScreenTimeout", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkProfilePasswordPreviousPasswordBlockCount sets the workProfilePasswordPreviousPasswordBlockCount property value. Number of previous work profile passwords to block. Valid values 0 to 24
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordPreviousPasswordBlockCount(value *int32)() {
-    m.workProfilePasswordPreviousPasswordBlockCount = value
+    err := m.GetBackingStore().Set("workProfilePasswordPreviousPasswordBlockCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkProfilePasswordRequiredType sets the workProfilePasswordRequiredType property value. Android For Work required password type.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordRequiredType(value *AndroidForWorkRequiredPasswordType)() {
-    m.workProfilePasswordRequiredType = value
+    err := m.GetBackingStore().Set("workProfilePasswordRequiredType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkProfilePasswordSignInFailureCountBeforeFactoryReset sets the workProfilePasswordSignInFailureCountBeforeFactoryReset property value. Number of sign in failures allowed before work profile is removed and all corporate data deleted. Valid values 1 to 16
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordSignInFailureCountBeforeFactoryReset(value *int32)() {
-    m.workProfilePasswordSignInFailureCountBeforeFactoryReset = value
+    err := m.GetBackingStore().Set("workProfilePasswordSignInFailureCountBeforeFactoryReset", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkProfileRequiredPasswordComplexity sets the workProfileRequiredPasswordComplexity property value. The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfileRequiredPasswordComplexity(value *AndroidRequiredPasswordComplexity)() {
-    m.workProfileRequiredPasswordComplexity = value
+    err := m.GetBackingStore().Set("workProfileRequiredPasswordComplexity", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkProfileRequirePassword sets the workProfileRequirePassword property value. Password is required or not for work profile
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfileRequirePassword(value *bool)() {
-    m.workProfileRequirePassword = value
+    err := m.GetBackingStore().Set("workProfileRequirePassword", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidForWorkGeneralDeviceConfigurationable 
+type AndroidForWorkGeneralDeviceConfigurationable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetPasswordBlockFaceUnlock()(*bool)
+    GetPasswordBlockFingerprintUnlock()(*bool)
+    GetPasswordBlockIrisUnlock()(*bool)
+    GetPasswordBlockTrustAgents()(*bool)
+    GetPasswordExpirationDays()(*int32)
+    GetPasswordMinimumLength()(*int32)
+    GetPasswordMinutesOfInactivityBeforeScreenTimeout()(*int32)
+    GetPasswordPreviousPasswordBlockCount()(*int32)
+    GetPasswordRequiredType()(*AndroidForWorkRequiredPasswordType)
+    GetPasswordSignInFailureCountBeforeFactoryReset()(*int32)
+    GetRequiredPasswordComplexity()(*AndroidRequiredPasswordComplexity)
+    GetSecurityRequireVerifyApps()(*bool)
+    GetVpnAlwaysOnPackageIdentifier()(*string)
+    GetVpnEnableAlwaysOnLockdownMode()(*bool)
+    GetWorkProfileAllowWidgets()(*bool)
+    GetWorkProfileBlockAddingAccounts()(*bool)
+    GetWorkProfileBlockCamera()(*bool)
+    GetWorkProfileBlockCrossProfileCallerId()(*bool)
+    GetWorkProfileBlockCrossProfileContactsSearch()(*bool)
+    GetWorkProfileBlockCrossProfileCopyPaste()(*bool)
+    GetWorkProfileBlockNotificationsWhileDeviceLocked()(*bool)
+    GetWorkProfileBlockPersonalAppInstallsFromUnknownSources()(*bool)
+    GetWorkProfileBlockScreenCapture()(*bool)
+    GetWorkProfileBluetoothEnableContactSharing()(*bool)
+    GetWorkProfileDataSharingType()(*AndroidForWorkCrossProfileDataSharingType)
+    GetWorkProfileDefaultAppPermissionPolicy()(*AndroidForWorkDefaultAppPermissionPolicyType)
+    GetWorkProfilePasswordBlockFaceUnlock()(*bool)
+    GetWorkProfilePasswordBlockFingerprintUnlock()(*bool)
+    GetWorkProfilePasswordBlockIrisUnlock()(*bool)
+    GetWorkProfilePasswordBlockTrustAgents()(*bool)
+    GetWorkProfilePasswordExpirationDays()(*int32)
+    GetWorkProfilePasswordMinimumLength()(*int32)
+    GetWorkProfilePasswordMinLetterCharacters()(*int32)
+    GetWorkProfilePasswordMinLowerCaseCharacters()(*int32)
+    GetWorkProfilePasswordMinNonLetterCharacters()(*int32)
+    GetWorkProfilePasswordMinNumericCharacters()(*int32)
+    GetWorkProfilePasswordMinSymbolCharacters()(*int32)
+    GetWorkProfilePasswordMinUpperCaseCharacters()(*int32)
+    GetWorkProfilePasswordMinutesOfInactivityBeforeScreenTimeout()(*int32)
+    GetWorkProfilePasswordPreviousPasswordBlockCount()(*int32)
+    GetWorkProfilePasswordRequiredType()(*AndroidForWorkRequiredPasswordType)
+    GetWorkProfilePasswordSignInFailureCountBeforeFactoryReset()(*int32)
+    GetWorkProfileRequiredPasswordComplexity()(*AndroidRequiredPasswordComplexity)
+    GetWorkProfileRequirePassword()(*bool)
+    SetPasswordBlockFaceUnlock(value *bool)()
+    SetPasswordBlockFingerprintUnlock(value *bool)()
+    SetPasswordBlockIrisUnlock(value *bool)()
+    SetPasswordBlockTrustAgents(value *bool)()
+    SetPasswordExpirationDays(value *int32)()
+    SetPasswordMinimumLength(value *int32)()
+    SetPasswordMinutesOfInactivityBeforeScreenTimeout(value *int32)()
+    SetPasswordPreviousPasswordBlockCount(value *int32)()
+    SetPasswordRequiredType(value *AndroidForWorkRequiredPasswordType)()
+    SetPasswordSignInFailureCountBeforeFactoryReset(value *int32)()
+    SetRequiredPasswordComplexity(value *AndroidRequiredPasswordComplexity)()
+    SetSecurityRequireVerifyApps(value *bool)()
+    SetVpnAlwaysOnPackageIdentifier(value *string)()
+    SetVpnEnableAlwaysOnLockdownMode(value *bool)()
+    SetWorkProfileAllowWidgets(value *bool)()
+    SetWorkProfileBlockAddingAccounts(value *bool)()
+    SetWorkProfileBlockCamera(value *bool)()
+    SetWorkProfileBlockCrossProfileCallerId(value *bool)()
+    SetWorkProfileBlockCrossProfileContactsSearch(value *bool)()
+    SetWorkProfileBlockCrossProfileCopyPaste(value *bool)()
+    SetWorkProfileBlockNotificationsWhileDeviceLocked(value *bool)()
+    SetWorkProfileBlockPersonalAppInstallsFromUnknownSources(value *bool)()
+    SetWorkProfileBlockScreenCapture(value *bool)()
+    SetWorkProfileBluetoothEnableContactSharing(value *bool)()
+    SetWorkProfileDataSharingType(value *AndroidForWorkCrossProfileDataSharingType)()
+    SetWorkProfileDefaultAppPermissionPolicy(value *AndroidForWorkDefaultAppPermissionPolicyType)()
+    SetWorkProfilePasswordBlockFaceUnlock(value *bool)()
+    SetWorkProfilePasswordBlockFingerprintUnlock(value *bool)()
+    SetWorkProfilePasswordBlockIrisUnlock(value *bool)()
+    SetWorkProfilePasswordBlockTrustAgents(value *bool)()
+    SetWorkProfilePasswordExpirationDays(value *int32)()
+    SetWorkProfilePasswordMinimumLength(value *int32)()
+    SetWorkProfilePasswordMinLetterCharacters(value *int32)()
+    SetWorkProfilePasswordMinLowerCaseCharacters(value *int32)()
+    SetWorkProfilePasswordMinNonLetterCharacters(value *int32)()
+    SetWorkProfilePasswordMinNumericCharacters(value *int32)()
+    SetWorkProfilePasswordMinSymbolCharacters(value *int32)()
+    SetWorkProfilePasswordMinUpperCaseCharacters(value *int32)()
+    SetWorkProfilePasswordMinutesOfInactivityBeforeScreenTimeout(value *int32)()
+    SetWorkProfilePasswordPreviousPasswordBlockCount(value *int32)()
+    SetWorkProfilePasswordRequiredType(value *AndroidForWorkRequiredPasswordType)()
+    SetWorkProfilePasswordSignInFailureCountBeforeFactoryReset(value *int32)()
+    SetWorkProfileRequiredPasswordComplexity(value *AndroidRequiredPasswordComplexity)()
+    SetWorkProfileRequirePassword(value *bool)()
 }

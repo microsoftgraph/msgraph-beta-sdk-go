@@ -7,16 +7,14 @@ import (
 // EmailUrlThreatSubmission 
 type EmailUrlThreatSubmission struct {
     EmailThreatSubmission
-    // Specifies the url of the message to be submitted.
-    messageUrl *string
 }
 // NewEmailUrlThreatSubmission instantiates a new EmailUrlThreatSubmission and sets the default values.
 func NewEmailUrlThreatSubmission()(*EmailUrlThreatSubmission) {
     m := &EmailUrlThreatSubmission{
         EmailThreatSubmission: *NewEmailThreatSubmission(),
     }
-    odataTypeValue := "#microsoft.graph.security.emailUrlThreatSubmission";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.security.emailUrlThreatSubmission"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEmailUrlThreatSubmissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *EmailUrlThreatSubmission) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetMessageUrl gets the messageUrl property value. Specifies the url of the message to be submitted.
 func (m *EmailUrlThreatSubmission) GetMessageUrl()(*string) {
-    return m.messageUrl
+    val, err := m.GetBackingStore().Get("messageUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EmailUrlThreatSubmission) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *EmailUrlThreatSubmission) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetMessageUrl sets the messageUrl property value. Specifies the url of the message to be submitted.
 func (m *EmailUrlThreatSubmission) SetMessageUrl(value *string)() {
-    m.messageUrl = value
+    err := m.GetBackingStore().Set("messageUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EmailUrlThreatSubmissionable 
+type EmailUrlThreatSubmissionable interface {
+    EmailThreatSubmissionable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetMessageUrl()(*string)
+    SetMessageUrl(value *string)()
 }

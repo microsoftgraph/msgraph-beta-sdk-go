@@ -7,26 +7,6 @@ import (
 // AgedAccountsReceivable 
 type AgedAccountsReceivable struct {
     Entity
-    // The agedAsOfDate property
-    agedAsOfDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // The balanceDue property
-    balanceDue *float64
-    // The currencyCode property
-    currencyCode *string
-    // The currentAmount property
-    currentAmount *float64
-    // The customerNumber property
-    customerNumber *string
-    // The name property
-    name *string
-    // The period1Amount property
-    period1Amount *float64
-    // The period2Amount property
-    period2Amount *float64
-    // The period3Amount property
-    period3Amount *float64
-    // The periodLengthFilter property
-    periodLengthFilter *string
 }
 // NewAgedAccountsReceivable instantiates a new agedAccountsReceivable and sets the default values.
 func NewAgedAccountsReceivable()(*AgedAccountsReceivable) {
@@ -41,23 +21,58 @@ func CreateAgedAccountsReceivableFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAgedAsOfDate gets the agedAsOfDate property value. The agedAsOfDate property
 func (m *AgedAccountsReceivable) GetAgedAsOfDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.agedAsOfDate
+    val, err := m.GetBackingStore().Get("agedAsOfDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetBalanceDue gets the balanceDue property value. The balanceDue property
 func (m *AgedAccountsReceivable) GetBalanceDue()(*float64) {
-    return m.balanceDue
+    val, err := m.GetBackingStore().Get("balanceDue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetCurrencyCode gets the currencyCode property value. The currencyCode property
 func (m *AgedAccountsReceivable) GetCurrencyCode()(*string) {
-    return m.currencyCode
+    val, err := m.GetBackingStore().Get("currencyCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCurrentAmount gets the currentAmount property value. The currentAmount property
 func (m *AgedAccountsReceivable) GetCurrentAmount()(*float64) {
-    return m.currentAmount
+    val, err := m.GetBackingStore().Get("currentAmount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetCustomerNumber gets the customerNumber property value. The customerNumber property
 func (m *AgedAccountsReceivable) GetCustomerNumber()(*string) {
-    return m.customerNumber
+    val, err := m.GetBackingStore().Get("customerNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -166,23 +181,58 @@ func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetName gets the name property value. The name property
 func (m *AgedAccountsReceivable) GetName()(*string) {
-    return m.name
+    val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPeriod1Amount gets the period1Amount property value. The period1Amount property
 func (m *AgedAccountsReceivable) GetPeriod1Amount()(*float64) {
-    return m.period1Amount
+    val, err := m.GetBackingStore().Get("period1Amount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetPeriod2Amount gets the period2Amount property value. The period2Amount property
 func (m *AgedAccountsReceivable) GetPeriod2Amount()(*float64) {
-    return m.period2Amount
+    val, err := m.GetBackingStore().Get("period2Amount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetPeriod3Amount gets the period3Amount property value. The period3Amount property
 func (m *AgedAccountsReceivable) GetPeriod3Amount()(*float64) {
-    return m.period3Amount
+    val, err := m.GetBackingStore().Get("period3Amount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetPeriodLengthFilter gets the periodLengthFilter property value. The periodLengthFilter property
 func (m *AgedAccountsReceivable) GetPeriodLengthFilter()(*string) {
-    return m.periodLengthFilter
+    val, err := m.GetBackingStore().Get("periodLengthFilter")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AgedAccountsReceivable) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -254,41 +304,96 @@ func (m *AgedAccountsReceivable) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAgedAsOfDate sets the agedAsOfDate property value. The agedAsOfDate property
 func (m *AgedAccountsReceivable) SetAgedAsOfDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.agedAsOfDate = value
+    err := m.GetBackingStore().Set("agedAsOfDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBalanceDue sets the balanceDue property value. The balanceDue property
 func (m *AgedAccountsReceivable) SetBalanceDue(value *float64)() {
-    m.balanceDue = value
+    err := m.GetBackingStore().Set("balanceDue", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCurrencyCode sets the currencyCode property value. The currencyCode property
 func (m *AgedAccountsReceivable) SetCurrencyCode(value *string)() {
-    m.currencyCode = value
+    err := m.GetBackingStore().Set("currencyCode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCurrentAmount sets the currentAmount property value. The currentAmount property
 func (m *AgedAccountsReceivable) SetCurrentAmount(value *float64)() {
-    m.currentAmount = value
+    err := m.GetBackingStore().Set("currentAmount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomerNumber sets the customerNumber property value. The customerNumber property
 func (m *AgedAccountsReceivable) SetCustomerNumber(value *string)() {
-    m.customerNumber = value
+    err := m.GetBackingStore().Set("customerNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetName sets the name property value. The name property
 func (m *AgedAccountsReceivable) SetName(value *string)() {
-    m.name = value
+    err := m.GetBackingStore().Set("name", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPeriod1Amount sets the period1Amount property value. The period1Amount property
 func (m *AgedAccountsReceivable) SetPeriod1Amount(value *float64)() {
-    m.period1Amount = value
+    err := m.GetBackingStore().Set("period1Amount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPeriod2Amount sets the period2Amount property value. The period2Amount property
 func (m *AgedAccountsReceivable) SetPeriod2Amount(value *float64)() {
-    m.period2Amount = value
+    err := m.GetBackingStore().Set("period2Amount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPeriod3Amount sets the period3Amount property value. The period3Amount property
 func (m *AgedAccountsReceivable) SetPeriod3Amount(value *float64)() {
-    m.period3Amount = value
+    err := m.GetBackingStore().Set("period3Amount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPeriodLengthFilter sets the periodLengthFilter property value. The periodLengthFilter property
 func (m *AgedAccountsReceivable) SetPeriodLengthFilter(value *string)() {
-    m.periodLengthFilter = value
+    err := m.GetBackingStore().Set("periodLengthFilter", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AgedAccountsReceivableable 
+type AgedAccountsReceivableable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAgedAsOfDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetBalanceDue()(*float64)
+    GetCurrencyCode()(*string)
+    GetCurrentAmount()(*float64)
+    GetCustomerNumber()(*string)
+    GetName()(*string)
+    GetPeriod1Amount()(*float64)
+    GetPeriod2Amount()(*float64)
+    GetPeriod3Amount()(*float64)
+    GetPeriodLengthFilter()(*string)
+    SetAgedAsOfDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetBalanceDue(value *float64)()
+    SetCurrencyCode(value *string)()
+    SetCurrentAmount(value *float64)()
+    SetCustomerNumber(value *string)()
+    SetName(value *string)()
+    SetPeriod1Amount(value *float64)()
+    SetPeriod2Amount(value *float64)()
+    SetPeriod3Amount(value *float64)()
+    SetPeriodLengthFilter(value *string)()
 }

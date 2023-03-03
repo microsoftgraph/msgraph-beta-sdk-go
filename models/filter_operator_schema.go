@@ -7,14 +7,8 @@ import (
 // FilterOperatorSchema 
 type FilterOperatorSchema struct {
     Entity
-    // The arity property
-    arity *ScopeOperatorType
-    // The multivaluedComparisonType property
-    multivaluedComparisonType *ScopeOperatorMultiValuedComparisonType
-    // Attribute types supported by the operator. Possible values are: Boolean, Binary, Reference, Integer, String.
-    supportedAttributeTypes []AttributeType
 }
-// NewFilterOperatorSchema instantiates a new FilterOperatorSchema and sets the default values.
+// NewFilterOperatorSchema instantiates a new filterOperatorSchema and sets the default values.
 func NewFilterOperatorSchema()(*FilterOperatorSchema) {
     m := &FilterOperatorSchema{
         Entity: *NewEntity(),
@@ -27,7 +21,14 @@ func CreateFilterOperatorSchemaFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetArity gets the arity property value. The arity property
 func (m *FilterOperatorSchema) GetArity()(*ScopeOperatorType) {
-    return m.arity
+    val, err := m.GetBackingStore().Get("arity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ScopeOperatorType)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *FilterOperatorSchema) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -70,11 +71,25 @@ func (m *FilterOperatorSchema) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetMultivaluedComparisonType gets the multivaluedComparisonType property value. The multivaluedComparisonType property
 func (m *FilterOperatorSchema) GetMultivaluedComparisonType()(*ScopeOperatorMultiValuedComparisonType) {
-    return m.multivaluedComparisonType
+    val, err := m.GetBackingStore().Get("multivaluedComparisonType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ScopeOperatorMultiValuedComparisonType)
+    }
+    return nil
 }
 // GetSupportedAttributeTypes gets the supportedAttributeTypes property value. Attribute types supported by the operator. Possible values are: Boolean, Binary, Reference, Integer, String.
 func (m *FilterOperatorSchema) GetSupportedAttributeTypes()([]AttributeType) {
-    return m.supportedAttributeTypes
+    val, err := m.GetBackingStore().Get("supportedAttributeTypes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AttributeType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *FilterOperatorSchema) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -106,13 +121,33 @@ func (m *FilterOperatorSchema) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetArity sets the arity property value. The arity property
 func (m *FilterOperatorSchema) SetArity(value *ScopeOperatorType)() {
-    m.arity = value
+    err := m.GetBackingStore().Set("arity", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMultivaluedComparisonType sets the multivaluedComparisonType property value. The multivaluedComparisonType property
 func (m *FilterOperatorSchema) SetMultivaluedComparisonType(value *ScopeOperatorMultiValuedComparisonType)() {
-    m.multivaluedComparisonType = value
+    err := m.GetBackingStore().Set("multivaluedComparisonType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSupportedAttributeTypes sets the supportedAttributeTypes property value. Attribute types supported by the operator. Possible values are: Boolean, Binary, Reference, Integer, String.
 func (m *FilterOperatorSchema) SetSupportedAttributeTypes(value []AttributeType)() {
-    m.supportedAttributeTypes = value
+    err := m.GetBackingStore().Set("supportedAttributeTypes", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// FilterOperatorSchemaable 
+type FilterOperatorSchemaable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetArity()(*ScopeOperatorType)
+    GetMultivaluedComparisonType()(*ScopeOperatorMultiValuedComparisonType)
+    GetSupportedAttributeTypes()([]AttributeType)
+    SetArity(value *ScopeOperatorType)()
+    SetMultivaluedComparisonType(value *ScopeOperatorMultiValuedComparisonType)()
+    SetSupportedAttributeTypes(value []AttributeType)()
 }

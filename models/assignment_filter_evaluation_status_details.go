@@ -7,8 +7,6 @@ import (
 // AssignmentFilterEvaluationStatusDetails a class containing information about the payloads on which filter has been applied.
 type AssignmentFilterEvaluationStatusDetails struct {
     Entity
-    // PayloadId on which filter has been applied.
-    payloadId *string
 }
 // NewAssignmentFilterEvaluationStatusDetails instantiates a new assignmentFilterEvaluationStatusDetails and sets the default values.
 func NewAssignmentFilterEvaluationStatusDetails()(*AssignmentFilterEvaluationStatusDetails) {
@@ -38,7 +36,14 @@ func (m *AssignmentFilterEvaluationStatusDetails) GetFieldDeserializers()(map[st
 }
 // GetPayloadId gets the payloadId property value. PayloadId on which filter has been applied.
 func (m *AssignmentFilterEvaluationStatusDetails) GetPayloadId()(*string) {
-    return m.payloadId
+    val, err := m.GetBackingStore().Get("payloadId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AssignmentFilterEvaluationStatusDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *AssignmentFilterEvaluationStatusDetails) Serialize(writer i878a80d2330e
 }
 // SetPayloadId sets the payloadId property value. PayloadId on which filter has been applied.
 func (m *AssignmentFilterEvaluationStatusDetails) SetPayloadId(value *string)() {
-    m.payloadId = value
+    err := m.GetBackingStore().Set("payloadId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AssignmentFilterEvaluationStatusDetailsable 
+type AssignmentFilterEvaluationStatusDetailsable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetPayloadId()(*string)
+    SetPayloadId(value *string)()
 }

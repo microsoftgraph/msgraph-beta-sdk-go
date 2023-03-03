@@ -2,26 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // OnPremisesDirectorySynchronizationConfiguration 
 type OnPremisesDirectorySynchronizationConfiguration struct {
-    // Contains the accidental deletion prevention configuration for a tenant.
-    accidentalDeletionPrevention OnPremisesAccidentalDeletionPreventionable
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Interval of time that the customer requested the sync client waits between sync cycles.
-    customerRequestedSynchronizationInterval *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
-    // The OdataType property
-    odataType *string
-    // Interval of time the sync client should honor between sync cycles
-    synchronizationInterval *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewOnPremisesDirectorySynchronizationConfiguration instantiates a new onPremisesDirectorySynchronizationConfiguration and sets the default values.
 func NewOnPremisesDirectorySynchronizationConfiguration()(*OnPremisesDirectorySynchronizationConfiguration) {
     m := &OnPremisesDirectorySynchronizationConfiguration{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateOnPremisesDirectorySynchronizationConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,15 +24,41 @@ func CreateOnPremisesDirectorySynchronizationConfigurationFromDiscriminatorValue
 }
 // GetAccidentalDeletionPrevention gets the accidentalDeletionPrevention property value. Contains the accidental deletion prevention configuration for a tenant.
 func (m *OnPremisesDirectorySynchronizationConfiguration) GetAccidentalDeletionPrevention()(OnPremisesAccidentalDeletionPreventionable) {
-    return m.accidentalDeletionPrevention
+    val, err := m.GetBackingStore().Get("accidentalDeletionPrevention")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(OnPremisesAccidentalDeletionPreventionable)
+    }
+    return nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OnPremisesDirectorySynchronizationConfiguration) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *OnPremisesDirectorySynchronizationConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetCustomerRequestedSynchronizationInterval gets the customerRequestedSynchronizationInterval property value. Interval of time that the customer requested the sync client waits between sync cycles.
 func (m *OnPremisesDirectorySynchronizationConfiguration) GetCustomerRequestedSynchronizationInterval()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    return m.customerRequestedSynchronizationInterval
+    val, err := m.GetBackingStore().Get("customerRequestedSynchronizationInterval")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OnPremisesDirectorySynchronizationConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -87,11 +107,25 @@ func (m *OnPremisesDirectorySynchronizationConfiguration) GetFieldDeserializers(
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *OnPremisesDirectorySynchronizationConfiguration) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSynchronizationInterval gets the synchronizationInterval property value. Interval of time the sync client should honor between sync cycles
 func (m *OnPremisesDirectorySynchronizationConfiguration) GetSynchronizationInterval()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    return m.synchronizationInterval
+    val, err := m.GetBackingStore().Get("synchronizationInterval")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OnPremisesDirectorySynchronizationConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -129,21 +163,56 @@ func (m *OnPremisesDirectorySynchronizationConfiguration) Serialize(writer i878a
 }
 // SetAccidentalDeletionPrevention sets the accidentalDeletionPrevention property value. Contains the accidental deletion prevention configuration for a tenant.
 func (m *OnPremisesDirectorySynchronizationConfiguration) SetAccidentalDeletionPrevention(value OnPremisesAccidentalDeletionPreventionable)() {
-    m.accidentalDeletionPrevention = value
+    err := m.GetBackingStore().Set("accidentalDeletionPrevention", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OnPremisesDirectorySynchronizationConfiguration) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *OnPremisesDirectorySynchronizationConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetCustomerRequestedSynchronizationInterval sets the customerRequestedSynchronizationInterval property value. Interval of time that the customer requested the sync client waits between sync cycles.
 func (m *OnPremisesDirectorySynchronizationConfiguration) SetCustomerRequestedSynchronizationInterval(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    m.customerRequestedSynchronizationInterval = value
+    err := m.GetBackingStore().Set("customerRequestedSynchronizationInterval", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *OnPremisesDirectorySynchronizationConfiguration) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSynchronizationInterval sets the synchronizationInterval property value. Interval of time the sync client should honor between sync cycles
 func (m *OnPremisesDirectorySynchronizationConfiguration) SetSynchronizationInterval(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    m.synchronizationInterval = value
+    err := m.GetBackingStore().Set("synchronizationInterval", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OnPremisesDirectorySynchronizationConfigurationable 
+type OnPremisesDirectorySynchronizationConfigurationable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAccidentalDeletionPrevention()(OnPremisesAccidentalDeletionPreventionable)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCustomerRequestedSynchronizationInterval()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    GetOdataType()(*string)
+    GetSynchronizationInterval()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    SetAccidentalDeletionPrevention(value OnPremisesAccidentalDeletionPreventionable)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCustomerRequestedSynchronizationInterval(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
+    SetOdataType(value *string)()
+    SetSynchronizationInterval(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
 }

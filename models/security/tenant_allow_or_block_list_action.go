@@ -3,28 +3,20 @@ package security
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // TenantAllowOrBlockListAction 
 type TenantAllowOrBlockListAction struct {
-    // Specifies whether the tenant allow block list is an allow or block. The possible values are: allow, block, and unkownFutureValue.
-    action *TenantAllowBlockListAction
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Specifies when the tenant allow-block-list expires in date time.
-    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Specifies the note added to the tenant allow block list entry in the format of string.
-    note *string
-    // The OdataType property
-    odataType *string
-    // Contains the result of the submission that lead to the tenant allow-block-list entry creation.
-    results []TenantAllowBlockListEntryResultable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewTenantAllowOrBlockListAction instantiates a new tenantAllowOrBlockListAction and sets the default values.
 func NewTenantAllowOrBlockListAction()(*TenantAllowOrBlockListAction) {
     m := &TenantAllowOrBlockListAction{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTenantAllowOrBlockListActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,15 +25,41 @@ func CreateTenantAllowOrBlockListActionFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAction gets the action property value. Specifies whether the tenant allow block list is an allow or block. The possible values are: allow, block, and unkownFutureValue.
 func (m *TenantAllowOrBlockListAction) GetAction()(*TenantAllowBlockListAction) {
-    return m.action
+    val, err := m.GetBackingStore().Get("action")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*TenantAllowBlockListAction)
+    }
+    return nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TenantAllowOrBlockListAction) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *TenantAllowOrBlockListAction) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetExpirationDateTime gets the expirationDateTime property value. Specifies when the tenant allow-block-list expires in date time.
 func (m *TenantAllowOrBlockListAction) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.expirationDateTime
+    val, err := m.GetBackingStore().Get("expirationDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TenantAllowOrBlockListAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -104,15 +122,36 @@ func (m *TenantAllowOrBlockListAction) GetFieldDeserializers()(map[string]func(i
 }
 // GetNote gets the note property value. Specifies the note added to the tenant allow block list entry in the format of string.
 func (m *TenantAllowOrBlockListAction) GetNote()(*string) {
-    return m.note
+    val, err := m.GetBackingStore().Get("note")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TenantAllowOrBlockListAction) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetResults gets the results property value. Contains the result of the submission that lead to the tenant allow-block-list entry creation.
 func (m *TenantAllowOrBlockListAction) GetResults()([]TenantAllowBlockListEntryResultable) {
-    return m.results
+    val, err := m.GetBackingStore().Get("results")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TenantAllowBlockListEntryResultable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TenantAllowOrBlockListAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -161,25 +200,65 @@ func (m *TenantAllowOrBlockListAction) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAction sets the action property value. Specifies whether the tenant allow block list is an allow or block. The possible values are: allow, block, and unkownFutureValue.
 func (m *TenantAllowOrBlockListAction) SetAction(value *TenantAllowBlockListAction)() {
-    m.action = value
+    err := m.GetBackingStore().Set("action", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TenantAllowOrBlockListAction) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *TenantAllowOrBlockListAction) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetExpirationDateTime sets the expirationDateTime property value. Specifies when the tenant allow-block-list expires in date time.
 func (m *TenantAllowOrBlockListAction) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.expirationDateTime = value
+    err := m.GetBackingStore().Set("expirationDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNote sets the note property value. Specifies the note added to the tenant allow block list entry in the format of string.
 func (m *TenantAllowOrBlockListAction) SetNote(value *string)() {
-    m.note = value
+    err := m.GetBackingStore().Set("note", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TenantAllowOrBlockListAction) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResults sets the results property value. Contains the result of the submission that lead to the tenant allow-block-list entry creation.
 func (m *TenantAllowOrBlockListAction) SetResults(value []TenantAllowBlockListEntryResultable)() {
-    m.results = value
+    err := m.GetBackingStore().Set("results", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TenantAllowOrBlockListActionable 
+type TenantAllowOrBlockListActionable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAction()(*TenantAllowBlockListAction)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetNote()(*string)
+    GetOdataType()(*string)
+    GetResults()([]TenantAllowBlockListEntryResultable)
+    SetAction(value *TenantAllowBlockListAction)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetNote(value *string)()
+    SetOdataType(value *string)()
+    SetResults(value []TenantAllowBlockListEntryResultable)()
 }

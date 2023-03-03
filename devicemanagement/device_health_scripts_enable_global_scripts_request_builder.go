@@ -26,13 +26,13 @@ type DeviceHealthScriptsEnableGlobalScriptsRequestBuilderPostRequestConfiguratio
 func NewDeviceHealthScriptsEnableGlobalScriptsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceHealthScriptsEnableGlobalScriptsRequestBuilder) {
     m := &DeviceHealthScriptsEnableGlobalScriptsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/deviceHealthScripts/microsoft.graph.enableGlobalScripts";
+    m.urlTemplate = "{+baseurl}/deviceManagement/deviceHealthScripts/enableGlobalScripts";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceHealthScriptsEnableGlobalScriptsRequestBuilder instantiates a new EnableGlobalScriptsRequestBuilder and sets the default values.

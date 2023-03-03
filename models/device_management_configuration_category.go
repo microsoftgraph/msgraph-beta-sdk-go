@@ -7,28 +7,6 @@ import (
 // DeviceManagementConfigurationCategory device Management Configuration Policy
 type DeviceManagementConfigurationCategory struct {
     Entity
-    // Description of the category header
-    categoryDescription *string
-    // List of child ids of the category.
-    childCategoryIds []string
-    // Description of the item
-    description *string
-    // Display name of the item
-    displayName *string
-    // Help text of the item
-    helpText *string
-    // Name of the item
-    name *string
-    // Parent id of the category.
-    parentCategoryId *string
-    // Supported platform types.
-    platforms *DeviceManagementConfigurationPlatforms
-    // Root id of the category.
-    rootCategoryId *string
-    // Supported setting types
-    settingUsage *DeviceManagementConfigurationSettingUsage
-    // Describes which technology this setting can be deployed with
-    technologies *DeviceManagementConfigurationTechnologies
 }
 // NewDeviceManagementConfigurationCategory instantiates a new deviceManagementConfigurationCategory and sets the default values.
 func NewDeviceManagementConfigurationCategory()(*DeviceManagementConfigurationCategory) {
@@ -43,19 +21,47 @@ func CreateDeviceManagementConfigurationCategoryFromDiscriminatorValue(parseNode
 }
 // GetCategoryDescription gets the categoryDescription property value. Description of the category header
 func (m *DeviceManagementConfigurationCategory) GetCategoryDescription()(*string) {
-    return m.categoryDescription
+    val, err := m.GetBackingStore().Get("categoryDescription")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetChildCategoryIds gets the childCategoryIds property value. List of child ids of the category.
 func (m *DeviceManagementConfigurationCategory) GetChildCategoryIds()([]string) {
-    return m.childCategoryIds
+    val, err := m.GetBackingStore().Get("childCategoryIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetDescription gets the description property value. Description of the item
 func (m *DeviceManagementConfigurationCategory) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. Display name of the item
 func (m *DeviceManagementConfigurationCategory) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -178,31 +184,80 @@ func (m *DeviceManagementConfigurationCategory) GetFieldDeserializers()(map[stri
 }
 // GetHelpText gets the helpText property value. Help text of the item
 func (m *DeviceManagementConfigurationCategory) GetHelpText()(*string) {
-    return m.helpText
+    val, err := m.GetBackingStore().Get("helpText")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetName gets the name property value. Name of the item
 func (m *DeviceManagementConfigurationCategory) GetName()(*string) {
-    return m.name
+    val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetParentCategoryId gets the parentCategoryId property value. Parent id of the category.
 func (m *DeviceManagementConfigurationCategory) GetParentCategoryId()(*string) {
-    return m.parentCategoryId
+    val, err := m.GetBackingStore().Get("parentCategoryId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPlatforms gets the platforms property value. Supported platform types.
 func (m *DeviceManagementConfigurationCategory) GetPlatforms()(*DeviceManagementConfigurationPlatforms) {
-    return m.platforms
+    val, err := m.GetBackingStore().Get("platforms")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceManagementConfigurationPlatforms)
+    }
+    return nil
 }
 // GetRootCategoryId gets the rootCategoryId property value. Root id of the category.
 func (m *DeviceManagementConfigurationCategory) GetRootCategoryId()(*string) {
-    return m.rootCategoryId
+    val, err := m.GetBackingStore().Get("rootCategoryId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSettingUsage gets the settingUsage property value. Supported setting types
 func (m *DeviceManagementConfigurationCategory) GetSettingUsage()(*DeviceManagementConfigurationSettingUsage) {
-    return m.settingUsage
+    val, err := m.GetBackingStore().Get("settingUsage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceManagementConfigurationSettingUsage)
+    }
+    return nil
 }
 // GetTechnologies gets the technologies property value. Describes which technology this setting can be deployed with
 func (m *DeviceManagementConfigurationCategory) GetTechnologies()(*DeviceManagementConfigurationTechnologies) {
-    return m.technologies
+    val, err := m.GetBackingStore().Get("technologies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceManagementConfigurationTechnologies)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationCategory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -283,45 +338,105 @@ func (m *DeviceManagementConfigurationCategory) Serialize(writer i878a80d2330e89
 }
 // SetCategoryDescription sets the categoryDescription property value. Description of the category header
 func (m *DeviceManagementConfigurationCategory) SetCategoryDescription(value *string)() {
-    m.categoryDescription = value
+    err := m.GetBackingStore().Set("categoryDescription", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetChildCategoryIds sets the childCategoryIds property value. List of child ids of the category.
 func (m *DeviceManagementConfigurationCategory) SetChildCategoryIds(value []string)() {
-    m.childCategoryIds = value
+    err := m.GetBackingStore().Set("childCategoryIds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. Description of the item
 func (m *DeviceManagementConfigurationCategory) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. Display name of the item
 func (m *DeviceManagementConfigurationCategory) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHelpText sets the helpText property value. Help text of the item
 func (m *DeviceManagementConfigurationCategory) SetHelpText(value *string)() {
-    m.helpText = value
+    err := m.GetBackingStore().Set("helpText", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetName sets the name property value. Name of the item
 func (m *DeviceManagementConfigurationCategory) SetName(value *string)() {
-    m.name = value
+    err := m.GetBackingStore().Set("name", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetParentCategoryId sets the parentCategoryId property value. Parent id of the category.
 func (m *DeviceManagementConfigurationCategory) SetParentCategoryId(value *string)() {
-    m.parentCategoryId = value
+    err := m.GetBackingStore().Set("parentCategoryId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPlatforms sets the platforms property value. Supported platform types.
 func (m *DeviceManagementConfigurationCategory) SetPlatforms(value *DeviceManagementConfigurationPlatforms)() {
-    m.platforms = value
+    err := m.GetBackingStore().Set("platforms", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRootCategoryId sets the rootCategoryId property value. Root id of the category.
 func (m *DeviceManagementConfigurationCategory) SetRootCategoryId(value *string)() {
-    m.rootCategoryId = value
+    err := m.GetBackingStore().Set("rootCategoryId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingUsage sets the settingUsage property value. Supported setting types
 func (m *DeviceManagementConfigurationCategory) SetSettingUsage(value *DeviceManagementConfigurationSettingUsage)() {
-    m.settingUsage = value
+    err := m.GetBackingStore().Set("settingUsage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTechnologies sets the technologies property value. Describes which technology this setting can be deployed with
 func (m *DeviceManagementConfigurationCategory) SetTechnologies(value *DeviceManagementConfigurationTechnologies)() {
-    m.technologies = value
+    err := m.GetBackingStore().Set("technologies", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationCategoryable 
+type DeviceManagementConfigurationCategoryable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCategoryDescription()(*string)
+    GetChildCategoryIds()([]string)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetHelpText()(*string)
+    GetName()(*string)
+    GetParentCategoryId()(*string)
+    GetPlatforms()(*DeviceManagementConfigurationPlatforms)
+    GetRootCategoryId()(*string)
+    GetSettingUsage()(*DeviceManagementConfigurationSettingUsage)
+    GetTechnologies()(*DeviceManagementConfigurationTechnologies)
+    SetCategoryDescription(value *string)()
+    SetChildCategoryIds(value []string)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetHelpText(value *string)()
+    SetName(value *string)()
+    SetParentCategoryId(value *string)()
+    SetPlatforms(value *DeviceManagementConfigurationPlatforms)()
+    SetRootCategoryId(value *string)()
+    SetSettingUsage(value *DeviceManagementConfigurationSettingUsage)()
+    SetTechnologies(value *DeviceManagementConfigurationTechnologies)()
 }

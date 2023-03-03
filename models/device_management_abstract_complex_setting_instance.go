@@ -7,18 +7,14 @@ import (
 // DeviceManagementAbstractComplexSettingInstance 
 type DeviceManagementAbstractComplexSettingInstance struct {
     DeviceManagementSettingInstance
-    // The definition ID for the chosen implementation of this complex setting
-    implementationId *string
-    // The values that make up the complex setting
-    value []DeviceManagementSettingInstanceable
 }
 // NewDeviceManagementAbstractComplexSettingInstance instantiates a new DeviceManagementAbstractComplexSettingInstance and sets the default values.
 func NewDeviceManagementAbstractComplexSettingInstance()(*DeviceManagementAbstractComplexSettingInstance) {
     m := &DeviceManagementAbstractComplexSettingInstance{
         DeviceManagementSettingInstance: *NewDeviceManagementSettingInstance(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementAbstractComplexSettingInstance";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementAbstractComplexSettingInstance"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementAbstractComplexSettingInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -56,11 +52,25 @@ func (m *DeviceManagementAbstractComplexSettingInstance) GetFieldDeserializers()
 }
 // GetImplementationId gets the implementationId property value. The definition ID for the chosen implementation of this complex setting
 func (m *DeviceManagementAbstractComplexSettingInstance) GetImplementationId()(*string) {
-    return m.implementationId
+    val, err := m.GetBackingStore().Get("implementationId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetValue gets the value property value. The values that make up the complex setting
 func (m *DeviceManagementAbstractComplexSettingInstance) GetValue()([]DeviceManagementSettingInstanceable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementSettingInstanceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementAbstractComplexSettingInstance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,9 +98,24 @@ func (m *DeviceManagementAbstractComplexSettingInstance) Serialize(writer i878a8
 }
 // SetImplementationId sets the implementationId property value. The definition ID for the chosen implementation of this complex setting
 func (m *DeviceManagementAbstractComplexSettingInstance) SetImplementationId(value *string)() {
-    m.implementationId = value
+    err := m.GetBackingStore().Set("implementationId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetValue sets the value property value. The values that make up the complex setting
 func (m *DeviceManagementAbstractComplexSettingInstance) SetValue(value []DeviceManagementSettingInstanceable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementAbstractComplexSettingInstanceable 
+type DeviceManagementAbstractComplexSettingInstanceable interface {
+    DeviceManagementSettingInstanceable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetImplementationId()(*string)
+    GetValue()([]DeviceManagementSettingInstanceable)
+    SetImplementationId(value *string)()
+    SetValue(value []DeviceManagementSettingInstanceable)()
 }

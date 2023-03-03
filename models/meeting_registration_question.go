@@ -7,14 +7,6 @@ import (
 // MeetingRegistrationQuestion 
 type MeetingRegistrationQuestion struct {
     Entity
-    // Answer input type of the custom registration question.
-    answerInputType *AnswerInputType
-    // Answer options when answerInputType is radioButton.
-    answerOptions []string
-    // Display name of the custom registration question.
-    displayName *string
-    // Indicates whether the question is required. Default value is false.
-    isRequired *bool
 }
 // NewMeetingRegistrationQuestion instantiates a new meetingRegistrationQuestion and sets the default values.
 func NewMeetingRegistrationQuestion()(*MeetingRegistrationQuestion) {
@@ -29,15 +21,36 @@ func CreateMeetingRegistrationQuestionFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAnswerInputType gets the answerInputType property value. Answer input type of the custom registration question.
 func (m *MeetingRegistrationQuestion) GetAnswerInputType()(*AnswerInputType) {
-    return m.answerInputType
+    val, err := m.GetBackingStore().Get("answerInputType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AnswerInputType)
+    }
+    return nil
 }
 // GetAnswerOptions gets the answerOptions property value. Answer options when answerInputType is radioButton.
 func (m *MeetingRegistrationQuestion) GetAnswerOptions()([]string) {
-    return m.answerOptions
+    val, err := m.GetBackingStore().Get("answerOptions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. Display name of the custom registration question.
 func (m *MeetingRegistrationQuestion) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MeetingRegistrationQuestion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -90,7 +103,14 @@ func (m *MeetingRegistrationQuestion) GetFieldDeserializers()(map[string]func(i8
 }
 // GetIsRequired gets the isRequired property value. Indicates whether the question is required. Default value is false.
 func (m *MeetingRegistrationQuestion) GetIsRequired()(*bool) {
-    return m.isRequired
+    val, err := m.GetBackingStore().Get("isRequired")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MeetingRegistrationQuestion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -127,17 +147,42 @@ func (m *MeetingRegistrationQuestion) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAnswerInputType sets the answerInputType property value. Answer input type of the custom registration question.
 func (m *MeetingRegistrationQuestion) SetAnswerInputType(value *AnswerInputType)() {
-    m.answerInputType = value
+    err := m.GetBackingStore().Set("answerInputType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAnswerOptions sets the answerOptions property value. Answer options when answerInputType is radioButton.
 func (m *MeetingRegistrationQuestion) SetAnswerOptions(value []string)() {
-    m.answerOptions = value
+    err := m.GetBackingStore().Set("answerOptions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. Display name of the custom registration question.
 func (m *MeetingRegistrationQuestion) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsRequired sets the isRequired property value. Indicates whether the question is required. Default value is false.
 func (m *MeetingRegistrationQuestion) SetIsRequired(value *bool)() {
-    m.isRequired = value
+    err := m.GetBackingStore().Set("isRequired", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MeetingRegistrationQuestionable 
+type MeetingRegistrationQuestionable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAnswerInputType()(*AnswerInputType)
+    GetAnswerOptions()([]string)
+    GetDisplayName()(*string)
+    GetIsRequired()(*bool)
+    SetAnswerInputType(value *AnswerInputType)()
+    SetAnswerOptions(value []string)()
+    SetDisplayName(value *string)()
+    SetIsRequired(value *bool)()
 }

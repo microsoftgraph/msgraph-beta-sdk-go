@@ -7,16 +7,14 @@ import (
 // DeviceManagementStringSettingInstance 
 type DeviceManagementStringSettingInstance struct {
     DeviceManagementSettingInstance
-    // The string value
-    value *string
 }
 // NewDeviceManagementStringSettingInstance instantiates a new DeviceManagementStringSettingInstance and sets the default values.
 func NewDeviceManagementStringSettingInstance()(*DeviceManagementStringSettingInstance) {
     m := &DeviceManagementStringSettingInstance{
         DeviceManagementSettingInstance: *NewDeviceManagementSettingInstance(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementStringSettingInstance";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementStringSettingInstance"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementStringSettingInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *DeviceManagementStringSettingInstance) GetFieldDeserializers()(map[stri
 }
 // GetValue gets the value property value. The string value
 func (m *DeviceManagementStringSettingInstance) GetValue()(*string) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementStringSettingInstance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *DeviceManagementStringSettingInstance) Serialize(writer i878a80d2330e89
 }
 // SetValue sets the value property value. The string value
 func (m *DeviceManagementStringSettingInstance) SetValue(value *string)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementStringSettingInstanceable 
+type DeviceManagementStringSettingInstanceable interface {
+    DeviceManagementSettingInstanceable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()(*string)
+    SetValue(value *string)()
 }

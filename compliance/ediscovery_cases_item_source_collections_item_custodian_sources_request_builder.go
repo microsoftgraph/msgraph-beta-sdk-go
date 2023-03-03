@@ -53,8 +53,8 @@ func NewEdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilderIn
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilder instantiates a new CustodianSourcesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewEdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilder(r
 }
 // Count provides operations to count the resources in the collection.
 func (m *EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilder) Count()(*EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesCountRequestBuilder) {
-    return NewEdiscoveryCasesItemSourceCollectionsItemCustodianSourcesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesItemSourceCollectionsItemCustodianSourcesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the list of dataSource objects associated with a source collection.
 // [Find more info here]

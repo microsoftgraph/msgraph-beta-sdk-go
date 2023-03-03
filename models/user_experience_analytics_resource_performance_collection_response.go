@@ -7,8 +7,6 @@ import (
 // UserExperienceAnalyticsResourcePerformanceCollectionResponse 
 type UserExperienceAnalyticsResourcePerformanceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UserExperienceAnalyticsResourcePerformanceable
 }
 // NewUserExperienceAnalyticsResourcePerformanceCollectionResponse instantiates a new UserExperienceAnalyticsResourcePerformanceCollectionResponse and sets the default values.
 func NewUserExperienceAnalyticsResourcePerformanceCollectionResponse()(*UserExperienceAnalyticsResourcePerformanceCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UserExperienceAnalyticsResourcePerformanceCollectionResponse) GetFieldD
 }
 // GetValue gets the value property value. The value property
 func (m *UserExperienceAnalyticsResourcePerformanceCollectionResponse) GetValue()([]UserExperienceAnalyticsResourcePerformanceable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserExperienceAnalyticsResourcePerformanceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsResourcePerformanceCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UserExperienceAnalyticsResourcePerformanceCollectionResponse) Serialize
 }
 // SetValue sets the value property value. The value property
 func (m *UserExperienceAnalyticsResourcePerformanceCollectionResponse) SetValue(value []UserExperienceAnalyticsResourcePerformanceable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsResourcePerformanceCollectionResponseable 
+type UserExperienceAnalyticsResourcePerformanceCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UserExperienceAnalyticsResourcePerformanceable)
+    SetValue(value []UserExperienceAnalyticsResourcePerformanceable)()
 }

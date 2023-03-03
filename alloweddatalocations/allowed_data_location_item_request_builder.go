@@ -23,7 +23,7 @@ type AllowedDataLocationItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AllowedDataLocationItemRequestBuilderGetQueryParameters get entity from allowedDataLocations by key (id)
+// AllowedDataLocationItemRequestBuilderGetQueryParameters get entity from allowedDataLocations by key
 type AllowedDataLocationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -55,8 +55,8 @@ func NewAllowedDataLocationItemRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAllowedDataLocationItemRequestBuilder instantiates a new AllowedDataLocationItemRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewAllowedDataLocationItemRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewAllowedDataLocationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from allowedDataLocations by key (id)
+// Delete delete entity from allowedDataLocations
 func (m *AllowedDataLocationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AllowedDataLocationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,7 +81,7 @@ func (m *AllowedDataLocationItemRequestBuilder) Delete(ctx context.Context, requ
     }
     return nil
 }
-// Get get entity from allowedDataLocations by key (id)
+// Get get entity from allowedDataLocations by key
 func (m *AllowedDataLocationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AllowedDataLocationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AllowedDataLocationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,7 +100,7 @@ func (m *AllowedDataLocationItemRequestBuilder) Get(ctx context.Context, request
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AllowedDataLocationable), nil
 }
-// Patch update entity in allowedDataLocations by key (id)
+// Patch update entity in allowedDataLocations
 func (m *AllowedDataLocationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AllowedDataLocationable, requestConfiguration *AllowedDataLocationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AllowedDataLocationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +119,7 @@ func (m *AllowedDataLocationItemRequestBuilder) Patch(ctx context.Context, body 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AllowedDataLocationable), nil
 }
-// ToDeleteRequestInformation delete entity from allowedDataLocations by key (id)
+// ToDeleteRequestInformation delete entity from allowedDataLocations
 func (m *AllowedDataLocationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AllowedDataLocationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,7 +131,7 @@ func (m *AllowedDataLocationItemRequestBuilder) ToDeleteRequestInformation(ctx c
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from allowedDataLocations by key (id)
+// ToGetRequestInformation get entity from allowedDataLocations by key
 func (m *AllowedDataLocationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AllowedDataLocationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,14 +147,17 @@ func (m *AllowedDataLocationItemRequestBuilder) ToGetRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in allowedDataLocations by key (id)
+// ToPatchRequestInformation update entity in allowedDataLocations
 func (m *AllowedDataLocationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AllowedDataLocationable, requestConfiguration *AllowedDataLocationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

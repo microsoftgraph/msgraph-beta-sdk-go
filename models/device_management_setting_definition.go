@@ -7,28 +7,6 @@ import (
 // DeviceManagementSettingDefinition entity representing the defintion for a given setting
 type DeviceManagementSettingDefinition struct {
     Entity
-    // Collection of constraints for the setting value
-    constraints []DeviceManagementConstraintable
-    // Collection of dependencies on other settings
-    dependencies []DeviceManagementSettingDependencyable
-    // The setting's description
-    description *string
-    // The setting's display name
-    displayName *string
-    // Url to setting documentation
-    documentationUrl *string
-    // subtitle of the setting header for more details about the category/section
-    headerSubtitle *string
-    // title of the setting header represents a category/section of a setting/settings
-    headerTitle *string
-    // If the setting is top level, it can be configured without the need to be wrapped in a collection or complex setting
-    isTopLevel *bool
-    // Keywords associated with the setting
-    keywords []string
-    // Placeholder text as an example of valid input
-    placeholderText *string
-    // The valueType property
-    valueType *DeviceManangementIntentValueType
 }
 // NewDeviceManagementSettingDefinition instantiates a new deviceManagementSettingDefinition and sets the default values.
 func NewDeviceManagementSettingDefinition()(*DeviceManagementSettingDefinition) {
@@ -65,23 +43,58 @@ func CreateDeviceManagementSettingDefinitionFromDiscriminatorValue(parseNode i87
 }
 // GetConstraints gets the constraints property value. Collection of constraints for the setting value
 func (m *DeviceManagementSettingDefinition) GetConstraints()([]DeviceManagementConstraintable) {
-    return m.constraints
+    val, err := m.GetBackingStore().Get("constraints")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementConstraintable)
+    }
+    return nil
 }
 // GetDependencies gets the dependencies property value. Collection of dependencies on other settings
 func (m *DeviceManagementSettingDefinition) GetDependencies()([]DeviceManagementSettingDependencyable) {
-    return m.dependencies
+    val, err := m.GetBackingStore().Get("dependencies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementSettingDependencyable)
+    }
+    return nil
 }
 // GetDescription gets the description property value. The setting's description
 func (m *DeviceManagementSettingDefinition) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The setting's display name
 func (m *DeviceManagementSettingDefinition) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDocumentationUrl gets the documentationUrl property value. Url to setting documentation
 func (m *DeviceManagementSettingDefinition) GetDocumentationUrl()(*string) {
-    return m.documentationUrl
+    val, err := m.GetBackingStore().Get("documentationUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementSettingDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -212,27 +225,69 @@ func (m *DeviceManagementSettingDefinition) GetFieldDeserializers()(map[string]f
 }
 // GetHeaderSubtitle gets the headerSubtitle property value. subtitle of the setting header for more details about the category/section
 func (m *DeviceManagementSettingDefinition) GetHeaderSubtitle()(*string) {
-    return m.headerSubtitle
+    val, err := m.GetBackingStore().Get("headerSubtitle")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetHeaderTitle gets the headerTitle property value. title of the setting header represents a category/section of a setting/settings
 func (m *DeviceManagementSettingDefinition) GetHeaderTitle()(*string) {
-    return m.headerTitle
+    val, err := m.GetBackingStore().Get("headerTitle")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIsTopLevel gets the isTopLevel property value. If the setting is top level, it can be configured without the need to be wrapped in a collection or complex setting
 func (m *DeviceManagementSettingDefinition) GetIsTopLevel()(*bool) {
-    return m.isTopLevel
+    val, err := m.GetBackingStore().Get("isTopLevel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetKeywords gets the keywords property value. Keywords associated with the setting
 func (m *DeviceManagementSettingDefinition) GetKeywords()([]string) {
-    return m.keywords
+    val, err := m.GetBackingStore().Get("keywords")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetPlaceholderText gets the placeholderText property value. Placeholder text as an example of valid input
 func (m *DeviceManagementSettingDefinition) GetPlaceholderText()(*string) {
-    return m.placeholderText
+    val, err := m.GetBackingStore().Get("placeholderText")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetValueType gets the valueType property value. The valueType property
 func (m *DeviceManagementSettingDefinition) GetValueType()(*DeviceManangementIntentValueType) {
-    return m.valueType
+    val, err := m.GetBackingStore().Get("valueType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceManangementIntentValueType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementSettingDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -319,45 +374,105 @@ func (m *DeviceManagementSettingDefinition) Serialize(writer i878a80d2330e89d268
 }
 // SetConstraints sets the constraints property value. Collection of constraints for the setting value
 func (m *DeviceManagementSettingDefinition) SetConstraints(value []DeviceManagementConstraintable)() {
-    m.constraints = value
+    err := m.GetBackingStore().Set("constraints", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDependencies sets the dependencies property value. Collection of dependencies on other settings
 func (m *DeviceManagementSettingDefinition) SetDependencies(value []DeviceManagementSettingDependencyable)() {
-    m.dependencies = value
+    err := m.GetBackingStore().Set("dependencies", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. The setting's description
 func (m *DeviceManagementSettingDefinition) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The setting's display name
 func (m *DeviceManagementSettingDefinition) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDocumentationUrl sets the documentationUrl property value. Url to setting documentation
 func (m *DeviceManagementSettingDefinition) SetDocumentationUrl(value *string)() {
-    m.documentationUrl = value
+    err := m.GetBackingStore().Set("documentationUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHeaderSubtitle sets the headerSubtitle property value. subtitle of the setting header for more details about the category/section
 func (m *DeviceManagementSettingDefinition) SetHeaderSubtitle(value *string)() {
-    m.headerSubtitle = value
+    err := m.GetBackingStore().Set("headerSubtitle", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHeaderTitle sets the headerTitle property value. title of the setting header represents a category/section of a setting/settings
 func (m *DeviceManagementSettingDefinition) SetHeaderTitle(value *string)() {
-    m.headerTitle = value
+    err := m.GetBackingStore().Set("headerTitle", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsTopLevel sets the isTopLevel property value. If the setting is top level, it can be configured without the need to be wrapped in a collection or complex setting
 func (m *DeviceManagementSettingDefinition) SetIsTopLevel(value *bool)() {
-    m.isTopLevel = value
+    err := m.GetBackingStore().Set("isTopLevel", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetKeywords sets the keywords property value. Keywords associated with the setting
 func (m *DeviceManagementSettingDefinition) SetKeywords(value []string)() {
-    m.keywords = value
+    err := m.GetBackingStore().Set("keywords", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPlaceholderText sets the placeholderText property value. Placeholder text as an example of valid input
 func (m *DeviceManagementSettingDefinition) SetPlaceholderText(value *string)() {
-    m.placeholderText = value
+    err := m.GetBackingStore().Set("placeholderText", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetValueType sets the valueType property value. The valueType property
 func (m *DeviceManagementSettingDefinition) SetValueType(value *DeviceManangementIntentValueType)() {
-    m.valueType = value
+    err := m.GetBackingStore().Set("valueType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementSettingDefinitionable 
+type DeviceManagementSettingDefinitionable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetConstraints()([]DeviceManagementConstraintable)
+    GetDependencies()([]DeviceManagementSettingDependencyable)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetDocumentationUrl()(*string)
+    GetHeaderSubtitle()(*string)
+    GetHeaderTitle()(*string)
+    GetIsTopLevel()(*bool)
+    GetKeywords()([]string)
+    GetPlaceholderText()(*string)
+    GetValueType()(*DeviceManangementIntentValueType)
+    SetConstraints(value []DeviceManagementConstraintable)()
+    SetDependencies(value []DeviceManagementSettingDependencyable)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetDocumentationUrl(value *string)()
+    SetHeaderSubtitle(value *string)()
+    SetHeaderTitle(value *string)()
+    SetIsTopLevel(value *bool)()
+    SetKeywords(value []string)()
+    SetPlaceholderText(value *string)()
+    SetValueType(value *DeviceManangementIntentValueType)()
 }

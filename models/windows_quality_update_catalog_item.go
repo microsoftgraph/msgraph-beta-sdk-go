@@ -7,20 +7,14 @@ import (
 // WindowsQualityUpdateCatalogItem 
 type WindowsQualityUpdateCatalogItem struct {
     WindowsUpdateCatalogItem
-    // Windows quality update classification
-    classification *WindowsQualityUpdateClassification
-    // Flag indicating if update qualifies for expedite
-    isExpeditable *bool
-    // Knowledge base article id
-    kbArticleId *string
 }
 // NewWindowsQualityUpdateCatalogItem instantiates a new WindowsQualityUpdateCatalogItem and sets the default values.
 func NewWindowsQualityUpdateCatalogItem()(*WindowsQualityUpdateCatalogItem) {
     m := &WindowsQualityUpdateCatalogItem{
         WindowsUpdateCatalogItem: *NewWindowsUpdateCatalogItem(),
     }
-    odataTypeValue := "#microsoft.graph.windowsQualityUpdateCatalogItem";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsQualityUpdateCatalogItem"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsQualityUpdateCatalogItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +23,14 @@ func CreateWindowsQualityUpdateCatalogItemFromDiscriminatorValue(parseNode i878a
 }
 // GetClassification gets the classification property value. Windows quality update classification
 func (m *WindowsQualityUpdateCatalogItem) GetClassification()(*WindowsQualityUpdateClassification) {
-    return m.classification
+    val, err := m.GetBackingStore().Get("classification")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WindowsQualityUpdateClassification)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsQualityUpdateCatalogItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -68,11 +69,25 @@ func (m *WindowsQualityUpdateCatalogItem) GetFieldDeserializers()(map[string]fun
 }
 // GetIsExpeditable gets the isExpeditable property value. Flag indicating if update qualifies for expedite
 func (m *WindowsQualityUpdateCatalogItem) GetIsExpeditable()(*bool) {
-    return m.isExpeditable
+    val, err := m.GetBackingStore().Get("isExpeditable")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetKbArticleId gets the kbArticleId property value. Knowledge base article id
 func (m *WindowsQualityUpdateCatalogItem) GetKbArticleId()(*string) {
-    return m.kbArticleId
+    val, err := m.GetBackingStore().Get("kbArticleId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsQualityUpdateCatalogItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -103,13 +118,33 @@ func (m *WindowsQualityUpdateCatalogItem) Serialize(writer i878a80d2330e89d26896
 }
 // SetClassification sets the classification property value. Windows quality update classification
 func (m *WindowsQualityUpdateCatalogItem) SetClassification(value *WindowsQualityUpdateClassification)() {
-    m.classification = value
+    err := m.GetBackingStore().Set("classification", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsExpeditable sets the isExpeditable property value. Flag indicating if update qualifies for expedite
 func (m *WindowsQualityUpdateCatalogItem) SetIsExpeditable(value *bool)() {
-    m.isExpeditable = value
+    err := m.GetBackingStore().Set("isExpeditable", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetKbArticleId sets the kbArticleId property value. Knowledge base article id
 func (m *WindowsQualityUpdateCatalogItem) SetKbArticleId(value *string)() {
-    m.kbArticleId = value
+    err := m.GetBackingStore().Set("kbArticleId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsQualityUpdateCatalogItemable 
+type WindowsQualityUpdateCatalogItemable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    WindowsUpdateCatalogItemable
+    GetClassification()(*WindowsQualityUpdateClassification)
+    GetIsExpeditable()(*bool)
+    GetKbArticleId()(*string)
+    SetClassification(value *WindowsQualityUpdateClassification)()
+    SetIsExpeditable(value *bool)()
+    SetKbArticleId(value *string)()
 }

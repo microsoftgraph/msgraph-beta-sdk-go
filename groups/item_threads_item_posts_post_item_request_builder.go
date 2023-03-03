@@ -41,7 +41,7 @@ type ItemThreadsItemPostsPostItemRequestBuilderPatchRequestConfiguration struct 
 }
 // Attachments provides operations to manage the attachments property of the microsoft.graph.post entity.
 func (m *ItemThreadsItemPostsPostItemRequestBuilder) Attachments()(*ItemThreadsItemPostsItemAttachmentsRequestBuilder) {
-    return NewItemThreadsItemPostsItemAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemThreadsItemPostsItemAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AttachmentsById provides operations to manage the attachments property of the microsoft.graph.post entity.
 func (m *ItemThreadsItemPostsPostItemRequestBuilder) AttachmentsById(id string)(*ItemThreadsItemPostsItemAttachmentsAttachmentItemRequestBuilder) {
@@ -52,7 +52,7 @@ func (m *ItemThreadsItemPostsPostItemRequestBuilder) AttachmentsById(id string)(
     if id != "" {
         urlTplParams["attachment%2Did"] = id
     }
-    return NewItemThreadsItemPostsItemAttachmentsAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemThreadsItemPostsItemAttachmentsAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewItemThreadsItemPostsPostItemRequestBuilderInternal instantiates a new PostItemRequestBuilder and sets the default values.
 func NewItemThreadsItemPostsPostItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemThreadsItemPostsPostItemRequestBuilder) {
@@ -63,8 +63,8 @@ func NewItemThreadsItemPostsPostItemRequestBuilderInternal(pathParameters map[st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemThreadsItemPostsPostItemRequestBuilder instantiates a new PostItemRequestBuilder and sets the default values.
@@ -75,7 +75,7 @@ func NewItemThreadsItemPostsPostItemRequestBuilder(rawUrl string, requestAdapter
 }
 // Extensions provides operations to manage the extensions property of the microsoft.graph.post entity.
 func (m *ItemThreadsItemPostsPostItemRequestBuilder) Extensions()(*ItemThreadsItemPostsItemExtensionsRequestBuilder) {
-    return NewItemThreadsItemPostsItemExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemThreadsItemPostsItemExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ExtensionsById provides operations to manage the extensions property of the microsoft.graph.post entity.
 func (m *ItemThreadsItemPostsPostItemRequestBuilder) ExtensionsById(id string)(*ItemThreadsItemPostsItemExtensionsExtensionItemRequestBuilder) {
@@ -86,11 +86,11 @@ func (m *ItemThreadsItemPostsPostItemRequestBuilder) ExtensionsById(id string)(*
     if id != "" {
         urlTplParams["extension%2Did"] = id
     }
-    return NewItemThreadsItemPostsItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemThreadsItemPostsItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Forward provides operations to call the forward method.
 func (m *ItemThreadsItemPostsPostItemRequestBuilder) Forward()(*ItemThreadsItemPostsItemForwardRequestBuilder) {
-    return NewItemThreadsItemPostsItemForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemThreadsItemPostsItemForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get posts from groups
 func (m *ItemThreadsItemPostsPostItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemThreadsItemPostsPostItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Postable, error) {
@@ -113,11 +113,11 @@ func (m *ItemThreadsItemPostsPostItemRequestBuilder) Get(ctx context.Context, re
 }
 // InReplyTo provides operations to manage the inReplyTo property of the microsoft.graph.post entity.
 func (m *ItemThreadsItemPostsPostItemRequestBuilder) InReplyTo()(*ItemThreadsItemPostsItemInReplyToRequestBuilder) {
-    return NewItemThreadsItemPostsItemInReplyToRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemThreadsItemPostsItemInReplyToRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Mentions provides operations to manage the mentions property of the microsoft.graph.post entity.
 func (m *ItemThreadsItemPostsPostItemRequestBuilder) Mentions()(*ItemThreadsItemPostsItemMentionsRequestBuilder) {
-    return NewItemThreadsItemPostsItemMentionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemThreadsItemPostsItemMentionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MentionsById provides operations to manage the mentions property of the microsoft.graph.post entity.
 func (m *ItemThreadsItemPostsPostItemRequestBuilder) MentionsById(id string)(*ItemThreadsItemPostsItemMentionsMentionItemRequestBuilder) {
@@ -128,11 +128,11 @@ func (m *ItemThreadsItemPostsPostItemRequestBuilder) MentionsById(id string)(*It
     if id != "" {
         urlTplParams["mention%2Did"] = id
     }
-    return NewItemThreadsItemPostsItemMentionsMentionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemThreadsItemPostsItemMentionsMentionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.post entity.
 func (m *ItemThreadsItemPostsPostItemRequestBuilder) MultiValueExtendedProperties()(*ItemThreadsItemPostsItemMultiValueExtendedPropertiesRequestBuilder) {
-    return NewItemThreadsItemPostsItemMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemThreadsItemPostsItemMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MultiValueExtendedPropertiesById provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.post entity.
 func (m *ItemThreadsItemPostsPostItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(*ItemThreadsItemPostsItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilder) {
@@ -143,7 +143,7 @@ func (m *ItemThreadsItemPostsPostItemRequestBuilder) MultiValueExtendedPropertie
     if id != "" {
         urlTplParams["multiValueLegacyExtendedProperty%2Did"] = id
     }
-    return NewItemThreadsItemPostsItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemThreadsItemPostsItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch update the navigation property posts in groups
 func (m *ItemThreadsItemPostsPostItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Postable, requestConfiguration *ItemThreadsItemPostsPostItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Postable, error) {
@@ -166,11 +166,11 @@ func (m *ItemThreadsItemPostsPostItemRequestBuilder) Patch(ctx context.Context, 
 }
 // Reply provides operations to call the reply method.
 func (m *ItemThreadsItemPostsPostItemRequestBuilder) Reply()(*ItemThreadsItemPostsItemReplyRequestBuilder) {
-    return NewItemThreadsItemPostsItemReplyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemThreadsItemPostsItemReplyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.post entity.
 func (m *ItemThreadsItemPostsPostItemRequestBuilder) SingleValueExtendedProperties()(*ItemThreadsItemPostsItemSingleValueExtendedPropertiesRequestBuilder) {
-    return NewItemThreadsItemPostsItemSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemThreadsItemPostsItemSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SingleValueExtendedPropertiesById provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.post entity.
 func (m *ItemThreadsItemPostsPostItemRequestBuilder) SingleValueExtendedPropertiesById(id string)(*ItemThreadsItemPostsItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilder) {
@@ -181,7 +181,7 @@ func (m *ItemThreadsItemPostsPostItemRequestBuilder) SingleValueExtendedProperti
     if id != "" {
         urlTplParams["singleValueLegacyExtendedProperty%2Did"] = id
     }
-    return NewItemThreadsItemPostsItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemThreadsItemPostsItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToGetRequestInformation get posts from groups
 func (m *ItemThreadsItemPostsPostItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemThreadsItemPostsPostItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -206,7 +206,10 @@ func (m *ItemThreadsItemPostsPostItemRequestBuilder) ToPatchRequestInformation(c
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

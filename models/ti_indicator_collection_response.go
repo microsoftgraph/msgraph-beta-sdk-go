@@ -7,8 +7,6 @@ import (
 // TiIndicatorCollectionResponse 
 type TiIndicatorCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []TiIndicatorable
 }
 // NewTiIndicatorCollectionResponse instantiates a new TiIndicatorCollectionResponse and sets the default values.
 func NewTiIndicatorCollectionResponse()(*TiIndicatorCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *TiIndicatorCollectionResponse) GetFieldDeserializers()(map[string]func(
 }
 // GetValue gets the value property value. The value property
 func (m *TiIndicatorCollectionResponse) GetValue()([]TiIndicatorable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TiIndicatorable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TiIndicatorCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *TiIndicatorCollectionResponse) Serialize(writer i878a80d2330e89d2689638
 }
 // SetValue sets the value property value. The value property
 func (m *TiIndicatorCollectionResponse) SetValue(value []TiIndicatorable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TiIndicatorCollectionResponseable 
+type TiIndicatorCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]TiIndicatorable)
+    SetValue(value []TiIndicatorable)()
 }

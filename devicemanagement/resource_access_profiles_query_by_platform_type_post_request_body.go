@@ -3,20 +3,20 @@ package devicemanagement
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ResourceAccessProfilesQueryByPlatformTypePostRequestBody 
 type ResourceAccessProfilesQueryByPlatformTypePostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Supported platform types for policies.
-    platformType *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicyPlatformType
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewResourceAccessProfilesQueryByPlatformTypePostRequestBody instantiates a new ResourceAccessProfilesQueryByPlatformTypePostRequestBody and sets the default values.
 func NewResourceAccessProfilesQueryByPlatformTypePostRequestBody()(*ResourceAccessProfilesQueryByPlatformTypePostRequestBody) {
     m := &ResourceAccessProfilesQueryByPlatformTypePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateResourceAccessProfilesQueryByPlatformTypePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,19 @@ func CreateResourceAccessProfilesQueryByPlatformTypePostRequestBodyFromDiscrimin
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResourceAccessProfilesQueryByPlatformTypePostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ResourceAccessProfilesQueryByPlatformTypePostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ResourceAccessProfilesQueryByPlatformTypePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -44,7 +56,14 @@ func (m *ResourceAccessProfilesQueryByPlatformTypePostRequestBody) GetFieldDeser
 }
 // GetPlatformType gets the platformType property value. Supported platform types for policies.
 func (m *ResourceAccessProfilesQueryByPlatformTypePostRequestBody) GetPlatformType()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicyPlatformType) {
-    return m.platformType
+    val, err := m.GetBackingStore().Get("platformType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicyPlatformType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ResourceAccessProfilesQueryByPlatformTypePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,9 +84,29 @@ func (m *ResourceAccessProfilesQueryByPlatformTypePostRequestBody) Serialize(wri
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResourceAccessProfilesQueryByPlatformTypePostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ResourceAccessProfilesQueryByPlatformTypePostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetPlatformType sets the platformType property value. Supported platform types for policies.
 func (m *ResourceAccessProfilesQueryByPlatformTypePostRequestBody) SetPlatformType(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicyPlatformType)() {
-    m.platformType = value
+    err := m.GetBackingStore().Set("platformType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ResourceAccessProfilesQueryByPlatformTypePostRequestBodyable 
+type ResourceAccessProfilesQueryByPlatformTypePostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetPlatformType()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicyPlatformType)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetPlatformType(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicyPlatformType)()
 }

@@ -7,16 +7,14 @@ import (
 // KeyIntegerValuePair 
 type KeyIntegerValuePair struct {
     KeyTypedValuePair
-    // The integer value of the key-value pair.
-    value *int32
 }
 // NewKeyIntegerValuePair instantiates a new KeyIntegerValuePair and sets the default values.
 func NewKeyIntegerValuePair()(*KeyIntegerValuePair) {
     m := &KeyIntegerValuePair{
         KeyTypedValuePair: *NewKeyTypedValuePair(),
     }
-    odataTypeValue := "#microsoft.graph.keyIntegerValuePair";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.keyIntegerValuePair"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateKeyIntegerValuePairFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *KeyIntegerValuePair) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetValue gets the value property value. The integer value of the key-value pair.
 func (m *KeyIntegerValuePair) GetValue()(*int32) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *KeyIntegerValuePair) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *KeyIntegerValuePair) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetValue sets the value property value. The integer value of the key-value pair.
 func (m *KeyIntegerValuePair) SetValue(value *int32)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// KeyIntegerValuePairable 
+type KeyIntegerValuePairable interface {
+    KeyTypedValuePairable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()(*int32)
+    SetValue(value *int32)()
 }

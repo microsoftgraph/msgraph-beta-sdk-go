@@ -27,13 +27,13 @@ type CustomAuthenticationExtensionsItemValidateAuthenticationConfigurationReques
 func NewCustomAuthenticationExtensionsItemValidateAuthenticationConfigurationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CustomAuthenticationExtensionsItemValidateAuthenticationConfigurationRequestBuilder) {
     m := &CustomAuthenticationExtensionsItemValidateAuthenticationConfigurationRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identity/customAuthenticationExtensions/{customAuthenticationExtension%2Did}/microsoft.graph.validateAuthenticationConfiguration";
+    m.urlTemplate = "{+baseurl}/identity/customAuthenticationExtensions/{customAuthenticationExtension%2Did}/validateAuthenticationConfiguration";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCustomAuthenticationExtensionsItemValidateAuthenticationConfigurationRequestBuilder instantiates a new ValidateAuthenticationConfigurationRequestBuilder and sets the default values.

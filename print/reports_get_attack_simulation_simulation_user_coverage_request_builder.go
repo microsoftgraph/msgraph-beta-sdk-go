@@ -41,13 +41,13 @@ type ReportsGetAttackSimulationSimulationUserCoverageRequestBuilderGetRequestCon
 func NewReportsGetAttackSimulationSimulationUserCoverageRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsGetAttackSimulationSimulationUserCoverageRequestBuilder) {
     m := &ReportsGetAttackSimulationSimulationUserCoverageRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/print/reports/microsoft.graph.getAttackSimulationSimulationUserCoverage(){?%24top,%24skip,%24search,%24filter,%24count}";
+    m.urlTemplate = "{+baseurl}/print/reports/getAttackSimulationSimulationUserCoverage(){?%24top,%24skip,%24search,%24filter,%24count}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewReportsGetAttackSimulationSimulationUserCoverageRequestBuilder instantiates a new GetAttackSimulationSimulationUserCoverageRequestBuilder and sets the default values.

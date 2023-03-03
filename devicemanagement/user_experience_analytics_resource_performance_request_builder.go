@@ -60,8 +60,8 @@ func NewUserExperienceAnalyticsResourcePerformanceRequestBuilderInternal(pathPar
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewUserExperienceAnalyticsResourcePerformanceRequestBuilder instantiates a new UserExperienceAnalyticsResourcePerformanceRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewUserExperienceAnalyticsResourcePerformanceRequestBuilder(rawUrl string, 
 }
 // Count provides operations to count the resources in the collection.
 func (m *UserExperienceAnalyticsResourcePerformanceRequestBuilder) Count()(*UserExperienceAnalyticsResourcePerformanceCountRequestBuilder) {
-    return NewUserExperienceAnalyticsResourcePerformanceCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsResourcePerformanceCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get user experience analytics resource performance
 func (m *UserExperienceAnalyticsResourcePerformanceRequestBuilder) Get(ctx context.Context, requestConfiguration *UserExperienceAnalyticsResourcePerformanceRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsResourcePerformanceCollectionResponseable, error) {
@@ -114,7 +114,7 @@ func (m *UserExperienceAnalyticsResourcePerformanceRequestBuilder) Post(ctx cont
 }
 // SummarizeDeviceResourcePerformanceWithSummarizeBy provides operations to call the summarizeDeviceResourcePerformance method.
 func (m *UserExperienceAnalyticsResourcePerformanceRequestBuilder) SummarizeDeviceResourcePerformanceWithSummarizeBy(summarizeBy *string)(*UserExperienceAnalyticsResourcePerformanceSummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder) {
-    return NewUserExperienceAnalyticsResourcePerformanceSummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderInternal(m.pathParameters, m.requestAdapter, summarizeBy);
+    return NewUserExperienceAnalyticsResourcePerformanceSummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderInternal(m.pathParameters, m.requestAdapter, summarizeBy)
 }
 // ToGetRequestInformation user experience analytics resource performance
 func (m *UserExperienceAnalyticsResourcePerformanceRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserExperienceAnalyticsResourcePerformanceRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -139,7 +139,10 @@ func (m *UserExperienceAnalyticsResourcePerformanceRequestBuilder) ToPostRequest
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

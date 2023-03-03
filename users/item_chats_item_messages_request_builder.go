@@ -60,8 +60,8 @@ func NewItemChatsItemMessagesRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemChatsItemMessagesRequestBuilder instantiates a new MessagesRequestBuilder and sets the default values.
@@ -72,11 +72,11 @@ func NewItemChatsItemMessagesRequestBuilder(rawUrl string, requestAdapter i2ae41
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemChatsItemMessagesRequestBuilder) Count()(*ItemChatsItemMessagesCountRequestBuilder) {
-    return NewItemChatsItemMessagesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemChatsItemMessagesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delta provides operations to call the delta method.
 func (m *ItemChatsItemMessagesRequestBuilder) Delta()(*ItemChatsItemMessagesDeltaRequestBuilder) {
-    return NewItemChatsItemMessagesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemChatsItemMessagesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve the list of messages in a chat. This method supports federation. To list chat messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).
 // [Find more info here]
@@ -100,10 +100,10 @@ func (m *ItemChatsItemMessagesRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageCollectionResponseable), nil
 }
-// Post send a new chatMessage in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
+// Post send a new chatMessage in the specified channel or a chat.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
 func (m *ItemChatsItemMessagesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, requestConfiguration *ItemChatsItemMessagesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -138,14 +138,17 @@ func (m *ItemChatsItemMessagesRequestBuilder) ToGetRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation send a new chatMessage in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
+// ToPostRequestInformation send a new chatMessage in the specified channel or a chat.
 func (m *ItemChatsItemMessagesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, requestConfiguration *ItemChatsItemMessagesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

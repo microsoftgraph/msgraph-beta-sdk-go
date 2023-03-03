@@ -7,8 +7,6 @@ import (
 // CloudPcUserRoleScopeTagInfoCollectionResponse 
 type CloudPcUserRoleScopeTagInfoCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []CloudPcUserRoleScopeTagInfoable
 }
 // NewCloudPcUserRoleScopeTagInfoCollectionResponse instantiates a new CloudPcUserRoleScopeTagInfoCollectionResponse and sets the default values.
 func NewCloudPcUserRoleScopeTagInfoCollectionResponse()(*CloudPcUserRoleScopeTagInfoCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *CloudPcUserRoleScopeTagInfoCollectionResponse) GetFieldDeserializers()(
 }
 // GetValue gets the value property value. The value property
 func (m *CloudPcUserRoleScopeTagInfoCollectionResponse) GetValue()([]CloudPcUserRoleScopeTagInfoable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CloudPcUserRoleScopeTagInfoable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CloudPcUserRoleScopeTagInfoCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *CloudPcUserRoleScopeTagInfoCollectionResponse) Serialize(writer i878a80
 }
 // SetValue sets the value property value. The value property
 func (m *CloudPcUserRoleScopeTagInfoCollectionResponse) SetValue(value []CloudPcUserRoleScopeTagInfoable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CloudPcUserRoleScopeTagInfoCollectionResponseable 
+type CloudPcUserRoleScopeTagInfoCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]CloudPcUserRoleScopeTagInfoable)
+    SetValue(value []CloudPcUserRoleScopeTagInfoable)()
 }

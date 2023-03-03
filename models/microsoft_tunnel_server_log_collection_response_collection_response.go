@@ -7,8 +7,6 @@ import (
 // MicrosoftTunnelServerLogCollectionResponseCollectionResponse 
 type MicrosoftTunnelServerLogCollectionResponseCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MicrosoftTunnelServerLogCollectionResponseable
 }
 // NewMicrosoftTunnelServerLogCollectionResponseCollectionResponse instantiates a new MicrosoftTunnelServerLogCollectionResponseCollectionResponse and sets the default values.
 func NewMicrosoftTunnelServerLogCollectionResponseCollectionResponse()(*MicrosoftTunnelServerLogCollectionResponseCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MicrosoftTunnelServerLogCollectionResponseCollectionResponse) GetFieldD
 }
 // GetValue gets the value property value. The value property
 func (m *MicrosoftTunnelServerLogCollectionResponseCollectionResponse) GetValue()([]MicrosoftTunnelServerLogCollectionResponseable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MicrosoftTunnelServerLogCollectionResponseable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MicrosoftTunnelServerLogCollectionResponseCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MicrosoftTunnelServerLogCollectionResponseCollectionResponse) Serialize
 }
 // SetValue sets the value property value. The value property
 func (m *MicrosoftTunnelServerLogCollectionResponseCollectionResponse) SetValue(value []MicrosoftTunnelServerLogCollectionResponseable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MicrosoftTunnelServerLogCollectionResponseCollectionResponseable 
+type MicrosoftTunnelServerLogCollectionResponseCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MicrosoftTunnelServerLogCollectionResponseable)
+    SetValue(value []MicrosoftTunnelServerLogCollectionResponseable)()
 }

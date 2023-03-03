@@ -48,7 +48,7 @@ type AppManagementPoliciesAppManagementPolicyItemRequestBuilderPatchRequestConfi
 }
 // AppliesTo provides operations to manage the appliesTo property of the microsoft.graph.appManagementPolicy entity.
 func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) AppliesTo()(*AppManagementPoliciesItemAppliesToRequestBuilder) {
-    return NewAppManagementPoliciesItemAppliesToRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAppManagementPoliciesItemAppliesToRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AppliesToById provides operations to manage the appliesTo property of the microsoft.graph.appManagementPolicy entity.
 func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) AppliesToById(id string)(*AppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) {
@@ -59,7 +59,7 @@ func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) AppliesToBy
     if id != "" {
         urlTplParams["directoryObject%2Did"] = id
     }
-    return NewAppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal instantiates a new AppManagementPolicyItemRequestBuilder and sets the default values.
 func NewAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppManagementPoliciesAppManagementPolicyItemRequestBuilder) {
@@ -70,8 +70,8 @@ func NewAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal(pathP
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAppManagementPoliciesAppManagementPolicyItemRequestBuilder instantiates a new AppManagementPolicyItemRequestBuilder and sets the default values.
@@ -169,7 +169,10 @@ func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) ToPatchRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

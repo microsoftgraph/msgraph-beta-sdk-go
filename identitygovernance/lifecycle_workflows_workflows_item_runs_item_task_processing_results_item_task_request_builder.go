@@ -41,8 +41,8 @@ func NewLifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsItemTaskRequ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewLifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsItemTaskRequestBuilder instantiates a new TaskRequestBuilder and sets the default values.

@@ -26,13 +26,13 @@ type CompliancePoliciesItemSetScheduledActionsRequestBuilderPostRequestConfigura
 func NewCompliancePoliciesItemSetScheduledActionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompliancePoliciesItemSetScheduledActionsRequestBuilder) {
     m := &CompliancePoliciesItemSetScheduledActionsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/compliancePolicies/{deviceManagementCompliancePolicy%2Did}/microsoft.graph.setScheduledActions";
+    m.urlTemplate = "{+baseurl}/deviceManagement/compliancePolicies/{deviceManagementCompliancePolicy%2Did}/setScheduledActions";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompliancePoliciesItemSetScheduledActionsRequestBuilder instantiates a new SetScheduledActionsRequestBuilder and sets the default values.
@@ -67,7 +67,10 @@ func (m *CompliancePoliciesItemSetScheduledActionsRequestBuilder) ToPostRequestI
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

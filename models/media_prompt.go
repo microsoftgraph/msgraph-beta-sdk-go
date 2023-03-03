@@ -7,18 +7,14 @@ import (
 // MediaPrompt 
 type MediaPrompt struct {
     Prompt
-    // The loop property
-    loop *int32
-    // The mediaInfo property
-    mediaInfo MediaInfoable
 }
 // NewMediaPrompt instantiates a new MediaPrompt and sets the default values.
 func NewMediaPrompt()(*MediaPrompt) {
     m := &MediaPrompt{
         Prompt: *NewPrompt(),
     }
-    odataTypeValue := "#microsoft.graph.mediaPrompt";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.mediaPrompt"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMediaPromptFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -52,11 +48,25 @@ func (m *MediaPrompt) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetLoop gets the loop property value. The loop property
 func (m *MediaPrompt) GetLoop()(*int32) {
-    return m.loop
+    val, err := m.GetBackingStore().Get("loop")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetMediaInfo gets the mediaInfo property value. The mediaInfo property
 func (m *MediaPrompt) GetMediaInfo()(MediaInfoable) {
-    return m.mediaInfo
+    val, err := m.GetBackingStore().Get("mediaInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(MediaInfoable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MediaPrompt) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *MediaPrompt) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetLoop sets the loop property value. The loop property
 func (m *MediaPrompt) SetLoop(value *int32)() {
-    m.loop = value
+    err := m.GetBackingStore().Set("loop", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMediaInfo sets the mediaInfo property value. The mediaInfo property
 func (m *MediaPrompt) SetMediaInfo(value MediaInfoable)() {
-    m.mediaInfo = value
+    err := m.GetBackingStore().Set("mediaInfo", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MediaPromptable 
+type MediaPromptable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    Promptable
+    GetLoop()(*int32)
+    GetMediaInfo()(MediaInfoable)
+    SetLoop(value *int32)()
+    SetMediaInfo(value MediaInfoable)()
 }

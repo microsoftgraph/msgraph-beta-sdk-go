@@ -26,13 +26,13 @@ type ItemManagedDevicesItemResetPasscodeRequestBuilderPostRequestConfiguration s
 func NewItemManagedDevicesItemResetPasscodeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemManagedDevicesItemResetPasscodeRequestBuilder) {
     m := &ItemManagedDevicesItemResetPasscodeRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/managedDevices/{managedDevice%2Did}/microsoft.graph.resetPasscode";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/managedDevices/{managedDevice%2Did}/resetPasscode";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemManagedDevicesItemResetPasscodeRequestBuilder instantiates a new ResetPasscodeRequestBuilder and sets the default values.

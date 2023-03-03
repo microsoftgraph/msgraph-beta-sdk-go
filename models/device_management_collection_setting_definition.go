@@ -7,8 +7,6 @@ import (
 // DeviceManagementCollectionSettingDefinition 
 type DeviceManagementCollectionSettingDefinition struct {
     DeviceManagementSettingDefinition
-    // The Setting Definition ID that describes what each element of the collection looks like
-    elementDefinitionId *string
 }
 // NewDeviceManagementCollectionSettingDefinition instantiates a new DeviceManagementCollectionSettingDefinition and sets the default values.
 func NewDeviceManagementCollectionSettingDefinition()(*DeviceManagementCollectionSettingDefinition) {
@@ -23,7 +21,14 @@ func CreateDeviceManagementCollectionSettingDefinitionFromDiscriminatorValue(par
 }
 // GetElementDefinitionId gets the elementDefinitionId property value. The Setting Definition ID that describes what each element of the collection looks like
 func (m *DeviceManagementCollectionSettingDefinition) GetElementDefinitionId()(*string) {
-    return m.elementDefinitionId
+    val, err := m.GetBackingStore().Get("elementDefinitionId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementCollectionSettingDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,5 +61,15 @@ func (m *DeviceManagementCollectionSettingDefinition) Serialize(writer i878a80d2
 }
 // SetElementDefinitionId sets the elementDefinitionId property value. The Setting Definition ID that describes what each element of the collection looks like
 func (m *DeviceManagementCollectionSettingDefinition) SetElementDefinitionId(value *string)() {
-    m.elementDefinitionId = value
+    err := m.GetBackingStore().Set("elementDefinitionId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementCollectionSettingDefinitionable 
+type DeviceManagementCollectionSettingDefinitionable interface {
+    DeviceManagementSettingDefinitionable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetElementDefinitionId()(*string)
+    SetElementDefinitionId(value *string)()
 }
